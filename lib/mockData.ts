@@ -1,0 +1,278 @@
+export type LoanType = 'Conventional' | 'FHA' | 'VA' | 'USDA' | 'Jumbo' | 'ARM' | 'Refinance';
+export type CreditTier = 'Excellent' | 'Good' | 'Fair' | 'Rebuilding';
+export type LenderType = 'Lender' | 'Broker' | 'Credit Union' | 'Bank';
+
+export interface Lender {
+  id: string;
+  slug: string;
+  name: string;
+  nmlsId: string;
+  type: LenderType;
+  city: string;
+  state: string;
+  stateSlug: string;
+  county: string;
+  countySlug: string;
+  zipCodes: string[];
+  rating: number;
+  reviewCount: number;
+  trustScore: number;
+  countyExperienceScore: number;
+  nationalVolumeRank: number;
+  loanTypes: LoanType[];
+  specialties: string[];
+  creditTiers: CreditTier[];
+  nmlsVerified: boolean;
+  cfpbComplaints: number;
+  bbbRating: 'A+' | 'A' | 'A-' | 'B+' | 'B';
+  googleRating: number;
+  trustpilotRating: number;
+  avgCloseDays: number;
+  onTimeCloseRate: number;
+  shortDescription: string;
+  website?: string;
+  phone?: string;
+}
+
+export const TRUST_STATS = {
+  verifiedLenders: 12450,
+  totalReviews: 2_800_000,
+  countiesCovered: 3142,
+  dataSources: ['NMLS', 'CFPB', 'BBB', 'Google', 'Trustpilot'],
+};
+
+export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; county: string; countySlug: string }> = {
+  '33301': { state: 'Florida', stateSlug: 'florida', county: 'Broward', countySlug: 'broward' },
+  '33101': { state: 'Florida', stateSlug: 'florida', county: 'Miami-Dade', countySlug: 'miami-dade' },
+  '90210': { state: 'California', stateSlug: 'california', county: 'Los Angeles', countySlug: 'los-angeles' },
+  '10001': { state: 'New York', stateSlug: 'new-york', county: 'New York', countySlug: 'new-york' },
+  '77001': { state: 'Texas', stateSlug: 'texas', county: 'Harris', countySlug: 'harris' },
+  '60601': { state: 'Illinois', stateSlug: 'illinois', county: 'Cook', countySlug: 'cook' },
+  '30301': { state: 'Georgia', stateSlug: 'georgia', county: 'Fulton', countySlug: 'fulton' },
+  '85001': { state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa' },
+  '98101': { state: 'Washington', stateSlug: 'washington', county: 'King', countySlug: 'king' },
+  '80201': { state: 'Colorado', stateSlug: 'colorado', county: 'Denver', countySlug: 'denver' },
+};
+
+export const lenders: Lender[] = [
+  {
+    id: '1', slug: 'summit-home-lending', name: 'Summit Home Lending', nmlsId: '1847293', type: 'Lender',
+    city: 'Fort Lauderdale', state: 'Florida', stateSlug: 'florida', county: 'Broward', countySlug: 'broward',
+    zipCodes: ['33301', '33304', '33308'], rating: 4.9, reviewCount: 1247, trustScore: 96, countyExperienceScore: 94,
+    nationalVolumeRank: 42, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'], specialties: ['First-Time Buyers', 'Self-Employed'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A+',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 28, onTimeCloseRate: 97,
+    shortDescription: 'Broward County specialist with transparent rates and fast closings for first-time and move-up buyers.',
+    website: 'https://example.com', phone: '(954) 555-0101',
+  },
+  {
+    id: '2', slug: 'coastal-mortgage-partners', name: 'Coastal Mortgage Partners', nmlsId: '2103847', type: 'Broker',
+    city: 'Hollywood', state: 'Florida', stateSlug: 'florida', county: 'Broward', countySlug: 'broward',
+    zipCodes: ['33019', '33020', '33301'], rating: 4.7, reviewCount: 892, trustScore: 91, countyExperienceScore: 89,
+    nationalVolumeRank: 78, loanTypes: ['Conventional', 'Jumbo', 'ARM'], specialties: ['Luxury Homes', 'Investment Properties'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A',
+    googleRating: 4.6, trustpilotRating: 4.5, avgCloseDays: 32, onTimeCloseRate: 94,
+    shortDescription: 'Independent broker comparing 40+ lenders for Broward jumbo and waterfront purchases.',
+    phone: '(954) 555-0102',
+  },
+  {
+    id: '3', slug: 'evergreen-lending-group', name: 'Evergreen Lending Group', nmlsId: '1562038', type: 'Lender',
+    city: 'Miami', state: 'Florida', stateSlug: 'florida', county: 'Miami-Dade', countySlug: 'miami-dade',
+    zipCodes: ['33101', '33130', '33139'], rating: 4.8, reviewCount: 2103, trustScore: 93, countyExperienceScore: 97,
+    nationalVolumeRank: 31, loanTypes: ['Conventional', 'FHA', 'VA', 'USDA'], specialties: ['Bilingual Services', 'FHA 203k'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 6, bbbRating: 'A+',
+    googleRating: 4.7, trustpilotRating: 4.6, avgCloseDays: 30, onTimeCloseRate: 95,
+    shortDescription: 'Miami-Dade leader in FHA and renovation loans with bilingual loan officers.',
+    phone: '(305) 555-0201',
+  },
+  {
+    id: '4', slug: 'pacific-trust-mortgage', name: 'Pacific Trust Mortgage', nmlsId: '1984721', type: 'Lender',
+    city: 'Los Angeles', state: 'California', stateSlug: 'california', county: 'Los Angeles', countySlug: 'los-angeles',
+    zipCodes: ['90210', '90024', '90012'], rating: 4.6, reviewCount: 3421, trustScore: 88, countyExperienceScore: 92,
+    nationalVolumeRank: 15, loanTypes: ['Conventional', 'Jumbo', 'ARM', 'Refinance'], specialties: ['High-Cost Areas', 'Rate Locks'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 12, bbbRating: 'A',
+    googleRating: 4.5, trustpilotRating: 4.4, avgCloseDays: 35, onTimeCloseRate: 91,
+    shortDescription: 'LA County jumbo specialist navigating California conforming limits and complex appraisals.',
+    phone: '(310) 555-0301',
+  },
+  {
+    id: '5', slug: 'metro-home-finance', name: 'Metro Home Finance', nmlsId: '2239104', type: 'Bank',
+    city: 'New York', state: 'New York', stateSlug: 'new-york', county: 'New York', countySlug: 'new-york',
+    zipCodes: ['10001', '10011', '10022'], rating: 4.5, reviewCount: 1876, trustScore: 86, countyExperienceScore: 90,
+    nationalVolumeRank: 22, loanTypes: ['Conventional', 'Jumbo', 'Refinance'], specialties: ['Co-ops', 'Condos'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 18, bbbRating: 'A-',
+    googleRating: 4.4, trustpilotRating: 4.3, avgCloseDays: 38, onTimeCloseRate: 89,
+    shortDescription: 'Manhattan co-op and condo financing with deep NYC board approval experience.',
+    phone: '(212) 555-0401',
+  },
+  {
+    id: '6', slug: 'lone-star-lending', name: 'Lone Star Lending', nmlsId: '1673842', type: 'Lender',
+    city: 'Houston', state: 'Texas', stateSlug: 'texas', county: 'Harris', countySlug: 'harris',
+    zipCodes: ['77001', '77002', '77019'], rating: 4.8, reviewCount: 2654, trustScore: 92, countyExperienceScore: 95,
+    nationalVolumeRank: 28, loanTypes: ['Conventional', 'FHA', 'VA', 'USDA'], specialties: ['VA Loans', 'Rural Properties'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A+',
+    googleRating: 4.7, trustpilotRating: 4.8, avgCloseDays: 27, onTimeCloseRate: 96,
+    shortDescription: 'Harris County VA and USDA expert serving Houston metro military families.',
+    phone: '(713) 555-0501',
+  },
+  {
+    id: '7', slug: 'windy-city-mortgage', name: 'Windy City Mortgage Co.', nmlsId: '1892047', type: 'Broker',
+    city: 'Chicago', state: 'Illinois', stateSlug: 'illinois', county: 'Cook', countySlug: 'cook',
+    zipCodes: ['60601', '60614', '60657'], rating: 4.7, reviewCount: 1543, trustScore: 90, countyExperienceScore: 93,
+    nationalVolumeRank: 55, loanTypes: ['Conventional', 'FHA', 'Refinance'], specialties: ['First-Time Buyers', 'Down Payment Assistance'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 7, bbbRating: 'A',
+    googleRating: 4.6, trustpilotRating: 4.5, avgCloseDays: 31, onTimeCloseRate: 93,
+    shortDescription: 'Cook County broker connecting buyers with Illinois down-payment assistance programs.',
+    phone: '(312) 555-0601',
+  },
+  {
+    id: '8', slug: 'peach-state-home-loans', name: 'Peach State Home Loans', nmlsId: '2019384', type: 'Lender',
+    city: 'Atlanta', state: 'Georgia', stateSlug: 'georgia', county: 'Fulton', countySlug: 'fulton',
+    zipCodes: ['30301', '30309', '30318'], rating: 4.9, reviewCount: 987, trustScore: 94, countyExperienceScore: 91,
+    nationalVolumeRank: 67, loanTypes: ['Conventional', 'FHA', 'VA'], specialties: ['New Construction', 'Rate Buydowns'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 3, bbbRating: 'A+',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 29, onTimeCloseRate: 95,
+    shortDescription: 'Fulton County new-build specialist with builder partnerships across metro Atlanta.',
+    phone: '(404) 555-0701',
+  },
+  {
+    id: '9', slug: 'desert-sun-mortgage', name: 'Desert Sun Mortgage', nmlsId: '1748293', type: 'Lender',
+    city: 'Phoenix', state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa',
+    zipCodes: ['85001', '85004', '85016'], rating: 4.6, reviewCount: 1789, trustScore: 87, countyExperienceScore: 88,
+    nationalVolumeRank: 44, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'], specialties: ['Cash-Out Refi', 'Investment'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 9, bbbRating: 'A',
+    googleRating: 4.5, trustpilotRating: 4.4, avgCloseDays: 33, onTimeCloseRate: 92,
+    shortDescription: 'Maricopa County refinance leader with competitive cash-out options.',
+    phone: '(602) 555-0801',
+  },
+  {
+    id: '10', slug: 'cascade-home-lending', name: 'Cascade Home Lending', nmlsId: '1928471', type: 'Credit Union',
+    city: 'Seattle', state: 'Washington', stateSlug: 'washington', county: 'King', countySlug: 'king',
+    zipCodes: ['98101', '98109', '98122'], rating: 4.8, reviewCount: 756, trustScore: 95, countyExperienceScore: 96,
+    nationalVolumeRank: 89, loanTypes: ['Conventional', 'Jumbo', 'Refinance'], specialties: ['Member Benefits', 'Low Fees'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 26, onTimeCloseRate: 98,
+    shortDescription: 'King County credit union offering member-exclusive rates and minimal closing costs.',
+    phone: '(206) 555-0901',
+  },
+  {
+    id: '11', slug: 'rocky-mountain-mortgage', name: 'Rocky Mountain Mortgage', nmlsId: '2083746', type: 'Lender',
+    city: 'Denver', state: 'Colorado', stateSlug: 'colorado', county: 'Denver', countySlug: 'denver',
+    zipCodes: ['80201', '80202', '80206'], rating: 4.7, reviewCount: 1123, trustScore: 91, countyExperienceScore: 90,
+    nationalVolumeRank: 61, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo'], specialties: ['Mountain Properties', 'Second Homes'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A',
+    googleRating: 4.6, trustpilotRating: 4.5, avgCloseDays: 30, onTimeCloseRate: 94,
+    shortDescription: 'Denver County expert in mountain and vacation home financing across Colorado.',
+    phone: '(303) 555-1001',
+  },
+  {
+    id: '12', slug: 'harbor-bay-lending', name: 'Harbor Bay Lending', nmlsId: '1839204', type: 'Broker',
+    city: 'Pompano Beach', state: 'Florida', stateSlug: 'florida', county: 'Broward', countySlug: 'broward',
+    zipCodes: ['33062', '33064', '33301'], rating: 4.5, reviewCount: 634, trustScore: 85, countyExperienceScore: 87,
+    nationalVolumeRank: 102, loanTypes: ['Conventional', 'FHA', 'USDA'], specialties: ['Credit Repair Path', 'FHA'],
+    creditTiers: ['Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 8, bbbRating: 'A-',
+    googleRating: 4.4, trustpilotRating: 4.3, avgCloseDays: 36, onTimeCloseRate: 88,
+    shortDescription: 'Broward broker helping credit-challenged buyers find FHA-friendly lenders.',
+    phone: '(954) 555-1101',
+  },
+  {
+    id: '13', slug: 'sunshine-state-mortgage', name: 'Sunshine State Mortgage', nmlsId: '2156783', type: 'Lender',
+    city: 'Coral Springs', state: 'Florida', stateSlug: 'florida', county: 'Broward', countySlug: 'broward',
+    zipCodes: ['33065', '33067', '33301'], rating: 4.8, reviewCount: 1456, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 48, loanTypes: ['Conventional', 'VA', 'Refinance'], specialties: ['Veterans', 'IRRRL'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 3, bbbRating: 'A+',
+    googleRating: 4.7, trustpilotRating: 4.6, avgCloseDays: 25, onTimeCloseRate: 97,
+    shortDescription: 'Broward VA streamline refinance specialist with military family focus.',
+    phone: '(954) 555-1201',
+  },
+  {
+    id: '14', slug: 'golden-gate-home-loans', name: 'Golden Gate Home Loans', nmlsId: '1765432', type: 'Lender',
+    city: 'San Francisco', state: 'California', stateSlug: 'california', county: 'San Francisco', countySlug: 'san-francisco',
+    zipCodes: ['94102', '94107', '94110'], rating: 4.4, reviewCount: 892, trustScore: 84, countyExperienceScore: 91,
+    nationalVolumeRank: 73, loanTypes: ['Jumbo', 'Conventional', 'ARM'], specialties: ['Tech Employee RSU', 'High DTI'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 11, bbbRating: 'A-',
+    googleRating: 4.3, trustpilotRating: 4.2, avgCloseDays: 40, onTimeCloseRate: 87,
+    shortDescription: 'SF Bay Area jumbo lender experienced with RSU income and stock-option buyers.',
+    phone: '(415) 555-1301',
+  },
+  {
+    id: '15', slug: 'heartland-home-finance', name: 'Heartland Home Finance', nmlsId: '1948273', type: 'Lender',
+    city: 'Dallas', state: 'Texas', stateSlug: 'texas', county: 'Dallas', countySlug: 'dallas',
+    zipCodes: ['75201', '75204', '75219'], rating: 4.7, reviewCount: 2034, trustScore: 89, countyExperienceScore: 88,
+    nationalVolumeRank: 35, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'], specialties: ['Fast Closings', 'Digital Process'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 7, bbbRating: 'A',
+    googleRating: 4.6, trustpilotRating: 4.5, avgCloseDays: 24, onTimeCloseRate: 95,
+    shortDescription: 'Dallas County digital-first lender with 21-day average close times.',
+    phone: '(214) 555-1401',
+  },
+  {
+    id: '16', slug: 'liberty-lending-solutions', name: 'Liberty Lending Solutions', nmlsId: '1873645', type: 'Broker',
+    city: 'Philadelphia', state: 'Pennsylvania', stateSlug: 'pennsylvania', county: 'Philadelphia', countySlug: 'philadelphia',
+    zipCodes: ['19102', '19103', '19106'], rating: 4.6, reviewCount: 1087, trustScore: 88, countyExperienceScore: 86,
+    nationalVolumeRank: 81, loanTypes: ['Conventional', 'FHA', 'USDA'], specialties: ['Urban Rehab', 'Historic Homes'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 6, bbbRating: 'A',
+    googleRating: 4.5, trustpilotRating: 4.4, avgCloseDays: 34, onTimeCloseRate: 90,
+    shortDescription: 'Philadelphia broker specializing in FHA 203k and historic property renovations.',
+    phone: '(215) 555-1501',
+  },
+  {
+    id: '17', slug: 'capital-trust-mortgage', name: 'Capital Trust Mortgage', nmlsId: '2093847', type: 'Lender',
+    city: 'Washington', state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia',
+    zipCodes: ['20001', '20002', '20009'], rating: 4.5, reviewCount: 743, trustScore: 87, countyExperienceScore: 92,
+    nationalVolumeRank: 95, loanTypes: ['Conventional', 'Jumbo', 'VA'], specialties: ['Government Employees', 'Condo'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A',
+    googleRating: 4.4, trustpilotRating: 4.3, avgCloseDays: 32, onTimeCloseRate: 92,
+    shortDescription: 'DC metro lender serving federal employees and Capitol Hill condo buyers.',
+    phone: '(202) 555-1601',
+  },
+  {
+    id: '18', slug: 'blue-ridge-home-lending', name: 'Blue Ridge Home Lending', nmlsId: '1729384', type: 'Lender',
+    city: 'Charlotte', state: 'North Carolina', stateSlug: 'north-carolina', county: 'Mecklenburg', countySlug: 'mecklenburg',
+    zipCodes: ['28202', '28203', '28204'], rating: 4.8, reviewCount: 1567, trustScore: 91, countyExperienceScore: 89,
+    nationalVolumeRank: 52, loanTypes: ['Conventional', 'FHA', 'VA', 'USDA'], specialties: ['Relocation', 'First-Time Buyers'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A+',
+    googleRating: 4.7, trustpilotRating: 4.6, avgCloseDays: 28, onTimeCloseRate: 94,
+    shortDescription: 'Mecklenburg County relocation specialist for corporate transferees.',
+    phone: '(704) 555-1701',
+  },
+  {
+    id: '19', slug: 'great-lakes-mortgage', name: 'Great Lakes Mortgage Group', nmlsId: '1964728', type: 'Lender',
+    city: 'Detroit', state: 'Michigan', stateSlug: 'michigan', county: 'Wayne', countySlug: 'wayne',
+    zipCodes: ['48201', '48202', '48226'], rating: 4.4, reviewCount: 923, trustScore: 83, countyExperienceScore: 85,
+    nationalVolumeRank: 88, loanTypes: ['Conventional', 'FHA', 'Refinance'], specialties: ['Affordable Housing', 'Michigan MSHDA'],
+    creditTiers: ['Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 10, bbbRating: 'B+',
+    googleRating: 4.3, trustpilotRating: 4.2, avgCloseDays: 37, onTimeCloseRate: 86,
+    shortDescription: 'Wayne County affordable housing lender with MSHDA down-payment programs.',
+    phone: '(313) 555-1801',
+  },
+  {
+    id: '20', slug: 'pioneer-valley-lending', name: 'Pioneer Valley Lending', nmlsId: '2038471', type: 'Broker',
+    city: 'Springfield', state: 'Massachusetts', stateSlug: 'massachusetts', county: 'Hampden', countySlug: 'hampden',
+    zipCodes: ['01103', '01104', '01105'], rating: 4.7, reviewCount: 512, trustScore: 90, countyExperienceScore: 94,
+    nationalVolumeRank: 118, loanTypes: ['Conventional', 'FHA', 'VA'], specialties: ['MassHousing', 'Rural Western MA'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A+',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 30, onTimeCloseRate: 93,
+    shortDescription: 'Western Massachusetts broker with MassHousing program expertise.',
+    phone: '(413) 555-1901',
+  },
+  {
+    id: '21', slug: 'tampa-bay-trust-lending', name: 'Tampa Bay Trust Lending', nmlsId: '2183947', type: 'Lender',
+    city: 'Tampa', state: 'Florida', stateSlug: 'florida', county: 'Hillsborough', countySlug: 'hillsborough',
+    zipCodes: ['33602', '33606', '33609'], rating: 4.8, reviewCount: 1876, trustScore: 92, countyExperienceScore: 90,
+    nationalVolumeRank: 46, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'], specialties: ['Flood Zone Properties', 'Insurance Coordination'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A',
+    googleRating: 4.7, trustpilotRating: 4.6, avgCloseDays: 29, onTimeCloseRate: 94,
+    shortDescription: 'Hillsborough County lender navigating Florida flood insurance requirements.',
+    phone: '(813) 555-2001',
+  },
+  {
+    id: '22', slug: 'nashville-home-mortgage', name: 'Nashville Home Mortgage', nmlsId: '1857293', type: 'Lender',
+    city: 'Nashville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Davidson', countySlug: 'davidson',
+    zipCodes: ['37201', '37203', '37206'], rating: 4.9, reviewCount: 1345, trustScore: 93, countyExperienceScore: 91,
+    nationalVolumeRank: 58, loanTypes: ['Conventional', 'FHA', 'Jumbo'], specialties: ['Music City Relocation', 'New Construction'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 3, bbbRating: 'A+',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 96,
+    shortDescription: 'Davidson County leader in Music City relocations and new-build financing.',
+    phone: '(615) 555-2101',
+  },
+];
