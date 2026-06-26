@@ -1,0 +1,194 @@
+1st Bank in Hominy,01/01/1934,4122,Federal Reserve Board,"117 N Price Ave, Hominy, OK 74035",www.1stbankhominy.com
+ACB Bank,01/01/1934,4061,Federal Deposit Insurance Corporation,"323 S Grand Ave, Cherokee, OK 73728",www.acbbank.net
+All America Bank,12/22/1969,20093,Federal Deposit Insurance Corporation,"200 S Rockwell Ave, Oklahoma City, OK 73128",www.allamerica.bank
+All Capital Bank,06/06/1949,16795,Federal Reserve Board,"210 E Main St, Locust Grove, OK 74352",www.banklg.com
+AllNations Bank,01/01/1934,4051,Federal Reserve Board,"114 East Main Street, Calumet, OK 73014",www.allnations.bank
+American Bank and Trust Company,11/05/1971,20537,Federal Deposit Insurance Corporation,"6060 S American Plaza St E, Tulsa, OK 74135",www.americanbanktulsa.com
+American Exchange Bank,01/01/1934,428,Federal Deposit Insurance Corporation,"510 W Main St # 512, Henryetta, OK 74437",americanexchange.bank
+American Exchange Bank, Lindsay, Oklahoma,01/01/1934,2328,Federal Deposit Insurance Corporation,"402 S Main St, Lindsay, OK 73052",*Not Listed*
+American Heritage Bank,01/01/1934,4190,Federal Reserve Board,"2 S Main St, Sapulpa, OK 74066",www.ahb.bank
+American Nation Bank,05/02/1983,24472,Federal Reserve Board,"1901 N Commerce St, Ardmore, OK 73401",www.bankanb.com
+Ameristate Bank,07/02/1937,15510,Federal Reserve Board,"131 S Pennsylvania Ave, Atoka, OK 74525",www.ameristatebank.com
+Anchor D Bank,01/01/1934,4208,Federal Reserve Board,"222 Main Street, Texhoma, OK 73949",www.anchordbank.com
+Armstrong Bank,01/01/1934,2315,Federal Reserve Board,"1215 W Okmulgee St, Muskogee, OK 74401",www.armstrong.bank
+Arvest Bank,01/01/1934,8728,Federal Reserve Board,"75 N East Ave, Fayetteville, AR 72701",www.arvest.com
+AVB Bank,01/01/1934,2326,Federal Deposit Insurance Corporation,"322 S Main St, Broken Arrow, OK 47012",www.avb.bank
+BancFirst,04/01/1989,27476,Federal Reserve Board,"100 N Broadway Ave, Oklahoma City, OK 73102",www.bancfirst.bank
+Bank 7,01/01/1934,4147,Federal Reserve Board,"1039 Nw 63rd St, Oklahoma City, OK 73116",www.bank7.com
+Bank of America, National Association,01/01/1934,3510,Comptroller of the Currency,"100 N Tryon St, Charlotte, NC 28202",www.bankofamerica.com
+Bank of Commerce,01/01/1934,13274,Federal Reserve Board,"322 W 6th St, Chelsea, OK 74016",www.bankboc.com
+Bank of Commerce,12/16/2002,57491,Federal Deposit Insurance Corporation,"1601 Commerce St, Duncan, OK 73533",www.bocokonline.com
+Bank of Eufaula,01/01/1934,4094,Federal Reserve Board,"102 N Main St, Eufaula, OK 74432",www.bankofeufaula.com
+Bank of Grand Lake,06/09/2005,57915,Federal Deposit Insurance Corporation,"201 E 18th St, Grove, OK 74344",www.bankofgrandlake.com
+Bank of Hydro,01/01/1934,10674,Federal Deposit Insurance Corporation,"146 W Main St, Hydro, OK 73048",www.bankofhydro.com
+Bank of Vici,01/01/1934,420,Federal Deposit Insurance Corporation,"121 W Broadway, Vici, OK 73859",www.bankofvici.com
+Bank of Western Oklahoma,01/01/1934,4087,Federal Reserve Board,"201 E Broadway Ave, Elk City, OK 73644",www.bankofwesternoklahoma.com
+BANK360,01/01/1934,9875,Federal Deposit Insurance Corporation,"808 N Glenn L English St, Cordell, OK 73632",bank360.bank
+Blue Sky Bank,12/04/1934,14899,Federal Reserve Board,"101 E 8th St, Pawhuska, OK 74056",www.bluesky.bank
+BMO Bank National Association,05/17/1947,16571,Comptroller of the Currency,"320 S Canal St, Chicago, IL 60606",www.bmo.com
+BOKF, National Association,01/01/1934,4214,Comptroller of the Currency,"1 Williams Ctr, Tulsa, OK 74172",www.bokfinancial.com
+Busey Bank,07/08/1946,16450,Federal Reserve Board,"100 W University Ave, Champaign, IL 61820",www.busey.com
+Carson Community Bank,01/01/1934,2320,Federal Deposit Insurance Corporation,"24 W Division St, Stilwell, OK 74960",www.carsoncommunity.bank
+Cattlemens Bank,01/01/1934,12285,Federal Deposit Insurance Corporation,"3421 N Main St, Altus, OK 73521",www.cattlemensbank.com
+Chickasaw Community Bank,01/01/1934,11521,Federal Reserve Board,"7500 W Memorial Rd, Oklahoma City, OK 73142",www.ccb.bank
+Citizens Bank and Trust Company of Ardmore,09/18/1978,22717,Federal Reserve Board,"1100 N Commerce St, Ardmore, OK 73401",www.citizensbt.com
+Citizens Bank of Ada,02/20/1967,19679,Federal Deposit Insurance Corporation,"123 W 12th St, Ada, OK 74820",www.citizensada.bank
+Cleo State Bank,01/01/1934,406,Federal Deposit Insurance Corporation,"202 S Square St, Cleo Springs, OK 73729",cleostatebank.com
+Commerce Bank,02/21/1984,24998,Federal Reserve Board,"1000 Walnut St, Kansas City, MO 64106",www.commercebank.com
+Community Bank,01/01/1934,8975,Federal Deposit Insurance Corporation,"104 S Main St, Bristow, OK 74010",www.cbbristow.com
+COMMUNITY BANK OF OKLAHOMA,01/01/1934,4217,Federal Deposit Insurance Corporation,"101 West Highway 62, Verden, OK 73092",bankofverden.com
+Community National Bank & Trust,09/04/1987,27046,Comptroller of the Currency,"14 N Lincoln Ave, Chanute, KS 66720",www.mybankcnb.com
+Community State Bank,03/24/1988,27201,Federal Deposit Insurance Corporation,"525 N Main St, Hennessey, OK 73742",www.mycsb.com
+Community State Bank of Canton,10/10/1985,26416,Federal Deposit Insurance Corporation,"101 W Main St, Canton, OK 73724",www.csbcanton.com
+COREBANK,07/20/1959,18063,Federal Deposit Insurance Corporation,"1522 Missouri St, Waynoka, OK 73860",corebankok.com
+Cowboy Bank,01/01/1934,11526,Federal Reserve Board,"102 6th St, Kremlin, OK 73753",www.cowboyfirst.bank
+Dream First Bank, National Association,01/01/1934,4779,Comptroller of the Currency,"11 N Main St, Syracuse, KS 67878",www.dreamfirst.bank
+Elevate Bank, National Association,01/01/1934,4770,Comptroller of the Currency,"101 W Main St, Sedan, KS 67361",www.elevate.bank
+Equity Bank,01/21/1985,25858,Federal Reserve Board,"345 N Andover Rd, Andover, KS 67002",www.equitybank.com
+Exchange Bank and Trust Company,01/01/1934,13366,Federal Reserve Board,"523 Delaware St, Perry, OK 73077",www.easybanking.bank
+F&M Bank,01/01/1934,12761,Federal Deposit Insurance Corporation,"17100 N May Ave, Edmond, OK 73012",www.fmbankok.com
+Fairview Savings and Loan Association,08/09/1989,28652,Comptroller of the Currency,"301 N Main St, Fairview, OK 73737",www.fairviewsavings.com
+Farmers & Merchants Bank,01/01/1934,12284,Federal Deposit Insurance Corporation,"101 East Second Street, Duke, OK 73532",www.fmbok.com
+Farmers and Merchants Bank,01/01/1934,13415,Federal Deposit Insurance Corporation,"225 E Renfrow Ave, Arnett, OK 73832",fmbankarnett.com
+Farmers and Merchants Bank,01/01/1934,4144,Federal Deposit Insurance Corporation,"621 Main Street, Maysville, OK 73057",www.fmbokonline.com
+Farmers Bank & Trust Company,01/01/1934,1291,Federal Reserve Board,"200 E Main St, Magnolia, AR 71753",www.myfarmers.bank
+Farmers State Bank, Allen, Oklahoma,01/01/1934,12758,Federal Deposit Insurance Corporation,"201 E Broadway, Allen, OK 74825",www.fsballen.com
+Fidelity Bank, National Association,08/09/1989,30895,Comptroller of the Currency,"100 E English St, Wichita, KS 67202",www.fidelitybank.com
+First Bank of Thomas,01/01/1934,4209,Federal Reserve Board,"301 W Broadway St, Thomas, OK 73669",www.fnbthomas.com
+First American Bank,07/04/1940,15762,Federal Deposit Insurance Corporation,"301 West Main Street, Stonewall, OK 74871",www.fabstonewall.com
+First Bank,01/01/1934,4092,Federal Deposit Insurance Corporation,"118 West Roger Miller Boulevard, Erick, OK 73645",www.yourfirst.bank
+First Bank & Trust Co.,12/08/1988,27394,Federal Deposit Insurance Corporation,"923 W Main St, Duncan, OK 73533",www.fb247.com
+First Bank & Trust Company,02/21/1934,13946,Federal Deposit Insurance Corporation,"401 N 7th St, Perry, OK 73077",www.fbt.bank
+First Bank and Trust Company,02/01/1936,15348,Federal Reserve Board,"501 Frisco Ave, Clinton, OK 73601",www.fbtok.com
+First Bank of Owasso,09/08/1962,18592,Federal Deposit Insurance Corporation,"8601 N Garnett Rd, Owasso, OK 74055",www.firstbank.net
+First Bethany Bank & Trust,01/01/1934,4228,Federal Reserve Board,"6500 Nw 39th Expy, Bethany, OK 73008",www.firstbethany.com
+First Enterprise Bank,01/01/1934,4049,Federal Deposit Insurance Corporation,"100 W Britton Rd, Oklahoma City, OK 73114",www.febokc.com
+First Fidelity Bank,07/01/1981,23473,Federal Reserve Board,"5100 N Classen Blvd, Oklahoma City, OK 73118",ffb.com
+First Liberty Bank,01/01/1934,14029,Federal Deposit Insurance Corporation,"9601 N May Ave, Oklahoma City, OK 73120",www.myfirstliberty.com
+First National Bank,01/01/1934,4111,Comptroller of the Currency,"400 E 1st St, Heavener, OK 74937",www.okfnb.com
+First National Bank & Trust Company of McAlester,01/01/1934,4145,Comptroller of the Currency,"235 E Choctaw Ave, Mcalester, OK 74501",www.fnbmcalester.com
+First National Bank and Trust Company of Ardmore,01/01/1934,4037,Comptroller of the Currency,"405 W Main St, Ardmore, OK 73401",www.1nb.bank
+First National Bank of Oklahoma,01/01/1934,4211,Comptroller of the Currency,"10900 Hefner Pointe Dr, Oklahoma City, OK 73120",www.fnbok.bank
+First Oklahoma Bank,01/01/1934,12484,Federal Deposit Insurance Corporation,"100 S Riverfront Dr, Jenks, OK 74037",www.firstoklahomabank.com
+First Pryority Bank,01/01/1934,4185,Federal Reserve Board,"310 E Graham Ave, Pryor, OK 74361",www.pryority.bank
+First Security Bank and Trust Company,04/06/1951,17001,Federal Deposit Insurance Corporation,"1541 Ne 23rd St, Oklahoma City, OK 73111",www.fsbokc.com
+First State Bank,01/01/1934,12283,Federal Reserve Board,"102 W Main St, Anadarko, OK 73005",www.fsbanadarko.bank
+First State Bank,01/01/1934,12757,Federal Deposit Insurance Corporation,"106 N Dalton St, Valliant, OK 74764",www.fsbvalliant.com
+First State Bank,09/05/1974,21752,Federal Deposit Insurance Corporation,"321 W Main St, Watonga, OK 73772",www.fsbwatonga.com
+First State Bank,04/13/1977,22448,Federal Deposit Insurance Corporation,"1111 S Muskogee Ave, Tahlequah, OK 74464",www.fsbtahlequah.com
+First State Bank,01/01/1934,9879,Federal Deposit Insurance Corporation,"102 N Main St, Noble, OK 73068",www.fsbnoble.com
+First State Bank in Temple,01/01/1934,5999,Federal Reserve Board,"111 South Commercial, Temple, OK 73568",www.fstbank.com
+First Summit Bank,01/01/1934,399,Federal Deposit Insurance Corporation,"527 Washington Street, Ryan, OK 73565",www.fsbwford.com
+First Texoma National Bank,01/01/1934,13905,Comptroller of the Currency,"220 W Main St, Durant, OK 74701",www.ftnb.net
+First United Bank and Trust Company,01/01/1934,4239,Federal Reserve Board,"1400 W Main St, Durant, OK 74701",www.firstunitedbank.com
+First-Citizens Bank & Trust Company,01/01/1934,11063,Federal Deposit Insurance Corporation,"239 Fayetteville St, Raleigh, NC 27601",www.firstcitizens.com
+Firstar Bank,11/19/1964,19288,Federal Deposit Insurance Corporation,"1720 E Cherokee Ave, Sallisaw, OK 74955",www.firstar.bank
+FirstBank,05/03/1934,14331,Federal Reserve Board,"100 N High St, Antlers, OK 74523",www.firstbank-ok.com
+FNB Community Bank,03/04/1944,16127,Federal Reserve Board,"2911 S Air Depot Blvd, Midwest City, OK 73110",www.fnbmwc.com
+FNB Coweta,01/01/1934,4071,Federal Reserve Board,"106 S Broadway, Coweta, OK 74429",fnbcoweta.com
+Frazer Bank,01/01/1934,4031,Federal Reserve Board,"110 E Broadway St, Altus, OK 73521",www.frazerbank.com
+Frontier State Bank,04/14/1975,21978,Federal Deposit Insurance Corporation,"5100 S I 35 Service Rd, Oklahoma City, OK 73129",www.frontier-ok.com
+FSNB, National Association,07/01/1946,16416,Comptroller of the Currency,"1420 Sw Lee Blvd, Lawton, OK 73501",www.fsnb.com
+Gateway First Bank,05/03/1935,15118,Federal Deposit Insurance Corporation,"244 S Gateway Pl, Jenks, OK 74037",www.gatewayfirst.com
+Grand Bank,07/21/1975,22065,Federal Reserve Board,"2642 E 21st St, Tulsa, OK 74114",www.grandbank.com
+Grand Savings Bank,08/09/1989,32084,Federal Deposit Insurance Corporation,"1022 S Main St, Grove, OK 74344",www.grandsavingsbank.com
+Grant County Bank,01/23/1940,15778,Federal Reserve Board,"120 S Main St, Medford, OK 73759",www.grantcobank.com
+Great Nations Bank,09/28/2009,58680,Federal Deposit Insurance Corporation,"2200 Alameda St, Norman, OK 73071",www.greatnationsbank.com
+Great Plains National Bank,07/17/1996,34207,Comptroller of the Currency,"2017 W 3rd St, Elk City, OK 73644",www.gpbankok.com.
+Great Southern Bank,08/09/1989,29546,Federal Deposit Insurance Corporation,"14309 State Highway 13, Reeds Spring, MO 65737",www.greatsouthernbank.com
+Herring Bank,01/01/1934,5568,Federal Deposit Insurance Corporation,"2201 Civic Cir, Amarillo, TX 79109",www.herringbank.com
+High Plains Bank,01/01/1934,418,Federal Deposit Insurance Corporation,"202 N Main St, Okeene, OK 73763",www.hpbank.us
+InterBank,03/31/1988,27210,Federal Reserve Board,"4921 N May Ave, Oklahoma City, OK 73112",www.interbank.com
+International Bank of Commerce,01/01/2017,59093,Federal Deposit Insurance Corporation,"3817 N West Expy, Oklahoma City, OK 73112",www.ibc.com
+Intrust Bank, National Association,01/01/1934,4799,Comptroller of the Currency,"105 N Main St, Wichita, KS 67202",www.intrustbank.com
+JPMorgan Chase Bank, National Association,01/01/1934,628,Comptroller of the Currency,"1111 Polaris Pkwy, Columbus, OH 43240",www.jpmorganchase.com
+Kirkpatrick Bank,03/23/1970,20156,Federal Deposit Insurance Corporation,"15 E 15th St, Edmond, OK 73013",www.kirkpatrickbank.com
+Lakeside Bank of Salina,10/09/1973,21255,Federal Reserve Board,"103 W Ferry St, Salina, OK 74365",lakesidebankofsalina.com
+Latimer State Bank,04/09/1979,22839,Federal Deposit Insurance Corporation,"301 W Main St, Wilburton, OK 74578",*Not Listed*
+Legacy Bank,01/01/1934,4042,Federal Deposit Insurance Corporation,"101 W Main St, Hinton, OK 73047",www.legacybank.com
+Legacy Bank & Trust Company,08/17/1976,22319,Federal Reserve Board,"1500 N Main St, Mountain Grove, MO 65711",www.legacybankandtrust.com
+Liberty National Bank,01/01/1934,11522,Comptroller of the Currency,"629 Sw C Ave, Lawton, OK 73501",www.weareliberty.bank
+Local Bank,01/01/1934,2327,Federal Reserve Board,"385 E Main St, Hulbert, OK 74441",localbank.com
+Mabrey Bank,01/01/1934,10667,Federal Reserve Board,"14821 S Memorial Dr, Bixby, OK 74008",www.mabreybank.com
+MapleMark Bank,01/01/1934,3182,Federal Reserve Board,"2431 E 61st St, Tulsa, OK 74136",maplemarkbank.com
+McClain Bank,01/01/1934,4187,Federal Deposit Insurance Corporation,"131 W Main St, Purcell, OK 73080",www.mcclainbank.com
+McCurtain County National Bank,04/23/1982,23798,Comptroller of the Currency,"20 N Park Dr, Broken Bow, OK 74728",www.mcnbonline.com
+Method Bank,01/01/1934,2317,Federal Reserve Board,"2 E Broadway, Wyandotte, OK 74370",www.method.bank
+MidFirst Bank,08/09/1989,4063,Comptroller of the Currency,"501 Nw Grand Blvd, Oklahoma City, OK 73118",www.midfirst.com
+Oklahoma Bank and Trust Company,01/01/1934,4067,Federal Deposit Insurance Corporation,"600 W Gary Blvd, Clinton, OK 73601",www.oklabank.com
+Oklahoma Capital Bank,08/10/1963,18856,Federal Reserve Board,"8080 S Yale Ave, Tulsa, OK 74136",www.oklahomacapitalbank.com
+Oklahoma State Bank,01/02/1934,13416,Federal Deposit Insurance Corporation,"122 South Hoy St, Buffalo, OK 73834",www.osbbuffalo.com
+Old Glory Bank,10/24/1963,18924,Federal Deposit Insurance Corporation,"206 S Main St, Elmore City, OK 73433",www.oldglorybank.com
+Panhandle First Bank,10/12/1976,22340,Federal Deposit Insurance Corporation,"1223 N Main St, Guymon, OK 73942",www.mypfb.bank
+Patrons Bank, National Association,01/01/1934,4170,Comptroller of the Currency,"610 E 8th St, Okmulgee, OK 74447",www.mybankfnb.com
+Peoples Bank and Trust Company,01/01/1934,2331,Federal Deposit Insurance Corporation,"517 Washington Street, Ryan, OK 73565",www.peoplesbankusa.com
+Peoples State Bank,08/25/1952,17138,Federal Deposit Insurance Corporation,"117 East Main Street, Blair, OK 73526",www.psbokonline.com
+Prism Bank,01/01/1934,5994,Federal Deposit Insurance Corporation,"2610 S Division St, Guthrie, OK 73044",www.prism.bank
+Prosperity Bank,09/13/1949,16835,Federal Deposit Insurance Corporation,"1301 N Mechanic St, El Campo, TX 77437",www.prosperitybankusa.com
+Quail Creek Bank,12/04/1974,21848,Federal Deposit Insurance Corporation,"12201 N May Ave, Oklahoma City, OK 73120",quailcreek.bank
+RCB Bank,07/09/1936,15399,Federal Reserve Board,"300 W Patti Page Blvd, Claremore, OK 74017",www.rcbbank.bank
+Regent Bank,01/01/1934,4160,Federal Deposit Insurance Corporation,"7136 S Yale Ave Ste 100, Tulsa, OK 74136",www.regent.bank
+Security Bank,01/01/1934,4178,Federal Reserve Board,"10727 E 51st St, Tulsa, OK 74146",www.sbtulsa.bank
+Security Bank and Trust Company,01/01/1934,9881,Federal Deposit Insurance Corporation,"2 S Main St, Miami, OK 74354",www.sbtmiami.com
+Security First National Bank of Hugo,01/01/1934,432,Comptroller of the Currency,"100 S Broadway St, Hugo, OK 74743",www.sfnb.net
+Security State Bank,01/01/1934,421,Federal Deposit Insurance Corporation,"402 E Broadway Ave, Cheyenne, OK 73628",www.ssbcheyenne.com
+Security State Bank of Oklahoma,01/01/1934,8980,Federal Deposit Insurance Corporation,"210 S Mekusukey Ave, Wewoka, OK 74884",www.ssbok.com
+Shamrock Bank, N.A.,01/01/1934,4236,Comptroller of the Currency,"101 N Main St, Coalgate, OK 74538",www.shamrockbank.com
+Simmons Bank,01/01/1934,3890,Federal Reserve Board,"501 S Main St, Pine Bluff, AR 71601",www.simmonsbank.com
+SNB Bank, National Association,01/01/1934,4196,Comptroller of the Currency,"503 S Main St, Shattuck, OK 73858",www.snbbankna.com
+Sooner State Bank,01/01/1934,402,Federal Deposit Insurance Corporation,"2 Se 4th St, Tuttle, OK 73089",www.soonerstatebank.com
+Southwest Bank of Weatherford,01/01/1934,4076,Federal Reserve Board,"720 E Main St, Weatherford, OK 73096",www.swnbank.com
+Sovereign Bank,10/29/1984,25738,Federal Reserve Board,"130 E Macarthur St, Shawnee, OK 74804",www.banksovereign.com
+SpiritBank,01/01/1934,4048,Federal Deposit Insurance Corporation,"4815 S Harvard Ave Ste 100, Tulsa, OK 74135",www.spiritbank.com
+SSB Bank,05/15/1950,16908,Federal Deposit Insurance Corporation,"1008 W Broadway St, Spiro, OK 74959",www.spirostatebank.com
+Stride Bank, National Association,01/01/1934,4091,Comptroller of the Currency,"324 W Broadway Ave, Enid, OK 73701",www.stridebank.com
+The Bank of Beaver City,01/01/1934,11862,Federal Deposit Insurance Corporation,"130 Douglas Ave, Beaver, OK 73932",www.bankofbeaver.bank
+The Bank of the West,10/19/1984,25703,Federal Deposit Insurance Corporation,"101 S Main St, Thomas, OK 73669",www.botw.bank
+The Bank, National Association,01/01/1934,4146,Comptroller of the Currency,"201 E Carl Albert Pkwy, Mcalester, OK 74501",www.thebankna.com
+The Bankers Bank,05/28/1986,26677,Federal Reserve Board,"9020 N May Ave Ste 200, Oklahoma City, OK 73120",www.tbb.bank
+The Central Trust Bank,01/01/1934,12633,Federal Reserve Board,"238 Madison St, Jefferson City, MO 65101",www.centralbank.net
+The Citizens Bank of Edmond,01/01/1934,4084,Federal Reserve Board,"1 E 1st St, Edmond, OK 73034",www.mycitizens.bank
+The City National Bank and Trust Company of Lawton, Oklahoma,01/01/1934,4132,Comptroller of the Currency,"500 Montgomery Sq, Lawton, OK 73501",www.cnb1901.com
+The Community State Bank,10/19/1970,20279,Federal Reserve Board,"1409 N Broadway St, Poteau, OK 74953",www.thecommunitysb.com
+The Exchange Bank,01/01/1934,10672,Federal Deposit Insurance Corporation,"300 W Rogers Blvd, Skiatook, OK 74070",www.exb-ok.com
+The Farmers and Merchants National Bank of Fairview,01/01/1934,4097,Comptroller of the Currency,"312 N Main St, Fairview, OK 73737",www.fairview.bank
+The Farmers Bank,01/01/1934,4054,Federal Deposit Insurance Corporation,"31 West Main Street, Carnegie, OK 73015",www.farmersbankok.com
+The Farmers State Bank,01/01/1934,404,Federal Reserve Board,"1100 Main St, Quinton, OK 74561",www.fsb1908.bank
+The First Bank of Okarche,01/01/1934,1165,Federal Deposit Insurance Corporation,"203 W Oklahoma, Okarche, OK 73762",www.firstbankokarche.com
+The First Farmers National Bank of Waurika,01/01/1934,4222,Comptroller of the Currency,"319 E D Ave, Waurika, OK 73573",www.ffnbank.com
+The First National Bank & Trust,01/01/1934,4086,Comptroller of the Currency,"2714 West Third Street, Elk City, OK 73644",www.fnbec.com
+The First National Bank and Trust Co., Chickasha, Oklahoma,01/01/1934,4062,Comptroller of the Currency,"302 W Chickasha Ave, Chickasha, OK 73018",www.bankfnbt.com
+The First National Bank and Trust Company of Broken Arrow,01/01/1934,4050,Comptroller of the Currency,"121 S Main St, Broken Arrow, OK 74012",fnbba.com
+The First National Bank and Trust Company of Miami,01/01/1934,4148,Comptroller of the Currency,"2 N Main St, Miami, OK 74354",www.fnbmiami.com
+The First National Bank in Marlow,01/24/1985,26260,Comptroller of the Currency,"301 W Main St, Marlow, OK 73055",www.fnbmarlow.com
+The First National Bank of Fletcher,01/01/1934,4098,Comptroller of the Currency,"401 West Cole Ave, Fletcher, OK 73541",fletcherbank.com
+The First National Bank of Fort Smith,01/01/1934,3864,Comptroller of the Currency,"602 Garrison Ave, Fort Smith, AR 72901",www.fnbfs.com
+The First National Bank of Hooker,01/01/1934,4123,Comptroller of the Currency,"119 N Broadway, Hooker, OK 73945",www.hookerbank.com
+The First Security Bank,01/01/1934,4041,Federal Deposit Insurance Corporation,"15 South Douglas Avenue, Beaver, OK 73932",www.thefirstsecuritybank.com
+The First State Bank,01/01/1934,2301,Federal Deposit Insurance Corporation,"16 Courthouse Square, Boise City, OK 73933",www.fsbboisecity.com
+The First State Bank of Pond Creek, Oklahoma,01/01/1934,11527,Federal Deposit Insurance Corporation,"136 W Broadway St, Pond Creek, OK 73766",www.fsbpondcreek.com
+The Hopeton State Bank,01/01/1934,12585,Federal Deposit Insurance Corporation,"19495 County Rd 440, Hopeton, OK 73746",hopetonbank.com
+The Idabel National Bank,01/01/1934,4241,Comptroller of the Currency,"1201 E Washington St, Idabel, OK 74745",www.idabelnational.com
+The Pauls Valley National Bank,01/01/1934,4173,Comptroller of the Currency,"101 W Paul Ave, Pauls Valley, OK 73075",www.pvnb.com/www.pvnational.com
+The Payne County Bank,01/01/1934,12485,Federal Reserve Board,"202 S Main St, Perkins, OK 74059",www.paynecountybank.com
+The Peoples National Bank of Checotah,01/01/1934,4059,Comptroller of the Currency,"300 W Gentry Ave, Checotah, OK 74426",www.peoplesok.com/
+The Security National Bank of Enid,02/02/1935,14966,Comptroller of the Currency,"100 S Independence St, Enid, OK 73701",www.snbenid.com
+THE SEILING STATE BANK,01/01/1934,4193,Federal Deposit Insurance Corporation,"301 N Main St, Seiling, OK 73663",www.seilingsb.com
+The State Bank of Wynnewood,01/01/1934,4232,Federal Deposit Insurance Corporation,"117 S Dean A Mcgee Ave, Wynnewood, OK 73098",www.sbwok.com
+The State Exchange Bank,01/01/1934,13551,Federal Deposit Insurance Corporation,"1280 Main St, Lamont, OK 74643",www.stateexchangebank.com
+The Stock Exchange Bank,01/01/1934,414,Federal Deposit Insurance Corporation,"1117 10th St, Woodward, OK 73801",www.stockexchangebank.com
+TIB National Association,01/21/1982,23647,Comptroller of the Currency,"11701 Luna Rd, Farmers Branch, TX 75234",www.tib.bank
+Triad Bank, National Association,08/29/1983,24677,Comptroller of the Currency,"7646 E 61st St, Tulsa, OK 74133",triadbank.com
+UMB Bank, National Association,01/01/1934,8273,Comptroller of the Currency,"1010 Grand Blvd, Kansas City, MO 64106",www.umb.com
+Union State Bank,01/01/1934,1869,Federal Reserve Board,"127 S Summit St, Arkansas City, KS 67005",www.myunionstate.bank
+Valliance Bank,10/20/2004,57841,Federal Deposit Insurance Corporation,"1601 Nw Expressway, Oklahoma City, OK 73118",www.valliance.bank
+VALOR BANK,01/01/1934,9467,Federal Deposit Insurance Corporation,"1501 Renaissance Blvd, Edmond, OK 73013",valor.bank
+Vast Bank, National Association,02/16/1982,23737,Comptroller of the Currency,"110 N Elgin Ave, Tulsa, OK 74120",www.vast.bank
+Vision Bank,01/01/1934,4029,Federal Reserve Board,"101 E Main St, Ada, OK 74820",www.visionbank.bank
+Walters Bank and Trust Company,04/14/1934,14260,Federal Deposit Insurance Corporation,"201 N Broadway St, Walters, OK 73572",waltersbt.com
+Washita State Bank,03/11/1977,22430,Federal Deposit Insurance Corporation,"701 State Highway 44, Burns Flat, OK 73624",www.washitastatebank.com
+Washita Valley Bank,01/01/1934,2308,Federal Deposit Insurance Corporation,"204 N Hazlett St, Fort Cobb, OK 73038",*Not Listed*
+Watermark Bank,01/22/2019,59148,Federal Deposit Insurance Corporation,"6501 N. Classen Boulevard Suite 300, Oklahoma City, OK 73116",watermark.bank
+Welch State Bank of Welch, Okla.,01/01/1934,9472,Federal Deposit Insurance Corporation,"396 S Commercial St, Welch, OK 74369",www.welchstatebank.com
+Wisdom Heritage Bank,01/01/1934,9465,Federal Reserve Board,"518 College Ave, Alva, OK 73717",www.wisdomheritage.bank
+YNB,01/01/1934,4235,Federal Deposit Insurance Corporation,"401 Elm Ave, Yukon, OK 73099",www.ynbok.com

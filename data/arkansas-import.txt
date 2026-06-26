@@ -1,0 +1,109 @@
+Academy Bank, National Association,06/15/1966,19600,Comptroller of the Currency,"1201 Walnut St, Kansas City, MO 64106",www.academybank.com
+Anstaff Bank,01/01/1934,3869,Federal Reserve Board,"100 First National Ave, Green Forest, AR 72638",www.anstaff.bank
+Armor Bank,08/09/1989,28812,Federal Reserve Board,"715 N Washington St, Forrest City, AR 72335",www.armor.bank
+Armstrong Bank,01/01/1934,2315,Federal Reserve Board,"1215 W Okmulgee St, Muskogee, OK 74401",www.armstrong.bank
+Arvest Bank,01/01/1934,8728,Federal Reserve Board,"75 N East Ave, Fayetteville, AR 72701",www.arvest.com
+Bank of 1889,01/01/1934,3854,Federal Reserve Board,"305 Public Sq, Berryville, AR 72616",www.1889.bank
+Bank of America, National Association,01/01/1934,3510,Comptroller of the Currency,"100 N Tryon St, Charlotte, NC 28202",www.bankofamerica.com
+Bank of Bearden,07/05/1945,16282,Federal Deposit Insurance Corporation,"1 N 2nd St, Bearden, AR 71720",www.bankofbearden.com
+Bank of Cave City,01/01/1934,105,Federal Reserve Board,"137 S Main St, Cave City, AR 72521",www.bankofcavecity.com
+Bank of Delight,01/01/1934,99,Federal Deposit Insurance Corporation,"503 E Antioch St, Delight, AR 71940",www.bankofdelight.com
+Bank of England,01/01/1934,13303,Federal Deposit Insurance Corporation,"123 S Main St, England, AR 72046",www.bankofengland-ar.com
+Bank of Lake Village,01/01/1934,15547,Federal Reserve Board,"101 Main St, Lake Village, AR 71653",www.bankoflakevillage.com
+Bank of Little Rock,12/21/1987,91280,Federal Reserve Board,"200 N State St, Little Rock, AR 72201",www.bankoflittlerock.com
+Bank of Salem,01/01/1934,11243,Federal Reserve Board,"207 Church St, Salem, AR 72576",www.bksalem.net
+Bank OZK,01/01/1934,110,Federal Deposit Insurance Corporation,"18000 Cantrell Rd, Little Rock, AR 72223",www.ozk.com
+Bodcaw Bank,01/01/1934,5624,Federal Deposit Insurance Corporation,"307 Thomas St, Stamps, AR 71860",www.bodcaw.bank
+BOKF, National Association,01/01/1934,4214,Comptroller of the Currency,"1 Williams Ctr, Tulsa, OK 74172",www.bokfinancial.com
+Centennial Bank,01/01/1934,11241,Federal Reserve Board,"620 Chestnut St, Conway, AR 72032",www.my100bank.com
+Central Bank,01/01/1934,1756,Federal Deposit Insurance Corporation,"1506 Market St Ste C180, Little Rock, AR 72211",www.centralbankar.com
+Century Bank of the Ozarks,01/01/1934,8296,Federal Reserve Board,"42 Court Sq, Gainesville, MO 65655",www.cbozarks.com
+Century Next Bank,08/09/1989,29700,Comptroller of the Currency,"505 N Vienna St, Ruston, LA 71270",www.cnext.bank
+Chambers Bank,01/01/1934,5615,Federal Reserve Board,"901 Main St, Danville, AR 72833",www.chambers.bank
+Citizens' Bank & Trust Co.,01/01/1934,8738,Federal Reserve Board,"3110 Alma Hwy, Van Buren, AR 72956",www.cbankandtrust.com
+Commercial Bank & Trust Company,01/01/1934,90,Federal Reserve Board,"212 W Gaines St, Monticello, AR 71655",www.commercial-bank.net
+Commercial Capital Bank,02/22/1999,34784,Federal Deposit Insurance Corporation,"311 Broadway St, Delhi, LA 71232",www.comcapbank.com
+Commercial National Bank of Texarkana,02/05/1964,19024,Comptroller of the Currency,"5515 Summerhill Rd, Texarkana, TX 75503",www.cnbtxk.com
+COMMUNITY STATE BANK,01/01/1934,5619,Federal Deposit Insurance Corporation,"208 W 4th St, Bradley, AR 71826",www.csbarkansas.com
+Connect Bank,01/01/1934,5634,Federal Reserve Board,"116 N Lincoln Ave, Star City, AR 71667",www.connectbank.us
+Cross Bank,02/01/1934,13821,Federal Deposit Insurance Corporation,"399 Merriman Ave E, Wynne, AR 72396",www.mycrossbank.com
+CS Bank,01/01/1934,5635,Federal Reserve Board,"70 S Main St, Eureka Springs, AR 72632",www.cs.bank
+Diamond Bank,01/01/1934,1527,Federal Reserve Board,"319 E Main, Murfreesboro, AR 71958",www.diamond.bank
+Eagle Bank and Trust Company,01/01/1934,3873,Federal Reserve Board,"650 S Shackleford Rd Ste 150, Little Rock, AR 72211",www.eaglebank.com
+ENCORE BANK,09/08/1997,34562,Federal Reserve Board,"1801 Rahling Rd, Little Rock, AR 72223",www.bankencore.com
+Equity Bank,01/21/1985,25858,Federal Reserve Board,"345 N Andover Rd, Andover, KS 67002",www.equitybank.com
+Evolve Bank & Trust,01/01/1934,1299,Federal Reserve Board,"301 Shoppingway Blvd, West Memphis, AR 72301",www.getevolved.com
+Farmers Bank,01/01/1934,1296,Federal Deposit Insurance Corporation,"71 W Center St, Greenwood, AR 72936",www.gofarmersbank.com
+Farmers Bank & Trust Company,01/01/1934,1291,Federal Reserve Board,"200 E Main St, Magnolia, AR 71753",www.myfarmers.bank
+FBT Bank & Mortgage,01/01/1934,1028,Federal Reserve Board,"200 W 4th St, Fordyce, AR 71742",www.fbtbank.com
+Fidelity Bank,11/04/1966,19644,Federal Reserve Board,"330 W Broadway St, West Memphis, AR 72301",www.fidelitybanker.com
+First Arkansas Bank and Trust,11/05/1949,16849,Federal Deposit Insurance Corporation,"600 W Main St, Jacksonville, AR 72076",www.fabandt.bank
+First Community Bank,08/04/1997,34533,Federal Deposit Insurance Corporation,"1325 Harrison St, Batesville, AR 72501",www.firstcommunity.net
+First Financial Bank,08/09/1989,28905,Federal Reserve Board,"300 East Peach Street, El Dorado, AR 71730",www.ffb1.com
+First Horizon Bank,01/01/1934,4977,Federal Reserve Board,"165 Madison Ave, Memphis, TN 38103",www.firsthorizon.com
+First National Bank,01/01/1934,3887,Comptroller of the Currency,"200 W Court St, Paragould, AR 72450",www.fnbank.net
+First National Bank Of Commerce,01/01/1934,3896,Comptroller of the Currency,"206 W Main St, Walnut Ridge, AR 72476",www.firstnb.bank
+First National Bank of Eastern Arkansas,01/01/1934,3863,Comptroller of the Currency,"101 N Washington St, Forrest City, AR 72335",www.fnbea.com
+First National Bank Texas,01/01/1934,3285,Comptroller of the Currency,"901 E Central Texas Expy, Killeen, TX 76541",www.1stnb.com
+First National Banker's Bank,07/02/1984,25247,Comptroller of the Currency,"7813 Office Park Blvd, Baton Rouge, LA 70809",www.bankers-bank.com
+First Naturalstate Bank,01/02/1974,21379,Federal Reserve Board,"500 N 2nd St, Mcgehee, AR 71654",www.fnsbank.com
+First Security Bank,01/01/1934,5633,Federal Reserve Board,"314 N Spring St, Searcy, AR 72143",www.fsbank.com
+First Service Bank,05/07/1962,18519,Federal Deposit Insurance Corporation,"134 S Broadview St, Greenbrier, AR 72058",www.firstservicebank.com
+First Southern Bank,08/09/1989,29332,Federal Deposit Insurance Corporation,"201 S Court Street, Florence, AL 35630",www.firstsouthern.com
+First State Bank,01/12/1934,13632,Federal Reserve Board,"3103 E Main St, Russellville, AR 72802",www.fsbmybank.com
+First State Bank,03/18/1935,15050,Federal Deposit Insurance Corporation,"101 S Center St, Lonoke, AR 72086",www.firststatebk.com
+First State Bank of DeQueen,11/01/1974,21805,Federal Reserve Board,"402 W Collin Raye Dr, De Queen, AR 71832",www.fsbdequeen.com
+First Western Bank,01/01/1934,13083,Federal Reserve Board,"80 W Main St, Booneville, AR 72927",www.fwbank.com
+Firstar Bank,11/19/1964,19288,Federal Deposit Insurance Corporation,"1720 E Cherokee Ave, Sallisaw, OK 74955",www.firstar.bank
+Fm Bank And Trust,01/01/1934,1027,Federal Reserve Board,"400 W Main St, Blytheville, AR 72315",www.myfm.bank
+FNBC Bank,01/01/1934,1294,Federal Reserve Board,"636 Ash Flat Dr, Ash Flat, AR 72513",www.fnbc.us
+Focus Bank,01/01/1934,1426,Federal Deposit Insurance Corporation,"101 South Main Street, Charleston, MO 63834",www.focusbank.com
+FSNB, National Association,07/01/1946,16416,Comptroller of the Currency,"1420 Sw Lee Blvd, Lawton, OK 73501",www.fsnb.com
+Gateway Bank,01/01/1934,8730,Federal Reserve Board,"112 Main Street, Rison, AR 71665",www.gatewaybank.bank
+Generations Bank,01/01/1934,88,Federal Reserve Board,"3710 W Southern Hills Blvd Ste 100, Rogers, AR 72758",www.mygenerations.bank
+Grand Savings Bank,08/09/1989,32084,Federal Deposit Insurance Corporation,"1022 S Main St, Grove, OK 74344",www.grandsavingsbank.com
+Great Southern Bank,08/09/1989,29546,Federal Deposit Insurance Corporation,"14309 State Highway 13, Reeds Spring, MO 65737",www.greatsouthernbank.com
+Horatio State Bank,01/01/1934,109,Federal Deposit Insurance Corporation,"123 W Main St, Horatio, AR 71842",www.horatiostatebank.com
+Intrust Bank, National Association,01/01/1934,4799,Comptroller of the Currency,"105 N Main St, Wichita, KS 67202",www.intrustbank.com
+JPMorgan Chase Bank, National Association,01/01/1934,628,Comptroller of the Currency,"1111 Polaris Pkwy, Columbus, OH 43240",www.jpmorganchase.com
+Legacy National Bank,03/28/2005,57953,Comptroller of the Currency,"4055 W Sunset Ave, Springdale, AR 72762",www.legacyar.com
+Logan County Bank,01/01/1934,5632,Federal Deposit Insurance Corporation,"524 Main St, Scranton, AR 72863",logancountybank.net
+Merchants & Planters' Bank,08/06/1946,16464,Federal Deposit Insurance Corporation,"120 Hazel St, Newport, AR 72112",www.mandp.bank
+Merchants and Farmers Bank,01/01/1934,8735,Federal Reserve Board,"500 Highway 65 S, Dumas, AR 71639",www.mfbanknet.com
+Oakstar Bank,10/24/2005,58115,Federal Reserve Board,"1020 E Battlefield St, Springfield, MO 65807",www.oakstarbank.com
+Partners Bank,04/01/1940,15729,Federal Deposit Insurance Corporation,"302 Cherry St, Helena, AR 72342",www.mypartners.bank
+PEOPLES BANK,09/13/2000,57058,Federal Reserve Board,"1120 S Rock St, Sheridan, AR 72150",www.peoplesbankar.com
+Petit Jean State Bank,02/16/1999,35084,Federal Reserve Board,"707 N Saint Joseph St, Morrilton, AR 72110",www.pjsb.com
+Priority Bank,07/03/1993,33818,Comptroller of the Currency,"3401 E Mission Blvd, Fayetteville, AR 72703",www.prioritybank.com
+Producers Bank & Trust,01/01/1934,11242,Federal Reserve Board,"301 N 2nd St, Mcgehee, AR 71654",www.producers.bank
+Regions Bank,01/01/1934,12368,Federal Reserve Board,"1900 5th Ave N, Birmingham, AL 35203",www.regions.com
+Relyance Bank,02/11/1965,19371,Federal Reserve Board,"8500 Sheridan Rd, White Hall, AR 71602",www.rely.bank
+RiverBank,08/09/1989,31711,Federal Deposit Insurance Corporation,"203 W Broadway St, Pocahontas, AR 72455",eriverbank.com
+Riverside Bank,01/01/1934,93,Federal Deposit Insurance Corporation,"103 W Main St, Sparkman, AR 71763",www.riversidebanc.com
+Riverwind Bank,03/04/1935,15035,Federal Reserve Board,"100 S 2nd St, Augusta, AR 72006",riverwindbank.com
+Signature Bank of Arkansas,01/01/1934,89,Federal Reserve Board,"3878 N Crossover Rd Ste 20, Fayetteville, AR 72703",www.signature.bank
+Simmons Bank,01/01/1934,3890,Federal Reserve Board,"501 S Main St, Pine Bluff, AR 71601",www.simmonsbank.com
+Smackover State Bank,01/01/1934,5623,Federal Deposit Insurance Corporation,"708 Broadway St, Smackover, AR 71762",www.smackoverbank.com
+Southern Bancorp Bank,01/01/1934,1528,Federal Reserve Board,"601 Main St, Arkadelphia, AR 71923",www.banksouthern.com
+Southern Bank,08/09/1989,28332,Federal Reserve Board,"2991 Oak Grove Rd, Poplar Bluff, MO 63901",www.bankwithsouthern.com
+Sterling Bank,10/19/2004,57813,Federal Deposit Insurance Corporation,"1100 Sterling Dr, Poplar Bluff, MO 63901",www.sterbank.bank
+Stone Bank,04/29/1955,17431,Federal Reserve Board,"802 E Main St, Mountain View, AR 72560",www.stonebank.com
+Texana Bank, National Association,01/01/1934,3302,Comptroller of the Currency,"124 E Rush St, Linden, TX 75563",www.texanabank.com
+The Citizens Bank,04/24/1953,17211,Federal Reserve Board,"655 S Saint Louis St, Batesville, AR 72501",www.thecitizensbank.net
+The Farmers & Merchants Bank,01/02/1945,16216,Federal Reserve Board,"708 S Main St, Stuttgart, AR 72160",www.gofm.bank
+The First National Bank of Fort Smith,01/01/1934,3864,Comptroller of the Currency,"602 Garrison Ave, Fort Smith, AR 72901",www.fnbfs.com
+The First National Bank of Izard County,01/01/1934,11252,Comptroller of the Currency,"2184 Ar 56 Hwy, Calico Rock, AR 72519",www.fnbizardcounty.com
+The First National Bank of Tom Bean,01/01/1934,5557,Comptroller of the Currency,"109 S Britton St, Tom Bean, TX 75489",www.fnbtb.com
+The Huntington National Bank,01/01/1934,6560,Comptroller of the Currency,"17 S High St, Columbus, OH 43215",www.huntington.com
+The Malvern National Bank,08/07/1934,14644,Comptroller of the Currency,"501 S Main St, Malvern, AR 72104",www.mnbbank.com
+The Merchants & Planters Bank,01/01/1934,107,Federal Deposit Insurance Corporation,"297 Madison St, Clarendon, AR 72029",*Not Listed*
+The Peoples Bank,01/01/1934,12531,Federal Deposit Insurance Corporation,"500 N Jackson, Magnolia, AR 71753",www.pbmag.com
+Today's Bank,07/26/1991,33470,Federal Deposit Insurance Corporation,"432 Harmony Rd, Huntsville, AR 72740",www.todaysbank.com
+Truist Bank,01/01/1934,9846,Federal Deposit Insurance Corporation,"214 N Tryon St, Charlotte, NC 28202",www.truist.com
+U.S. Bank National Association,01/01/1934,6548,Comptroller of the Currency,"425 Walnut St, Cincinnati, OH 45202",www.usbank.com
+UNICO Bank,01/01/1934,10608,Federal Deposit Insurance Corporation,"625 Veterans Dr, Mineral Point, MO 63660",www.unicobank.com
+Union Bank,07/26/1934,14597,Federal Reserve Board,"303 Highway 71 N, Mena, AR 71953",www.gounion.bank
+Union Bank & Trust Company,01/01/1934,1753,Federal Reserve Board,"102 W Mccloy St, Monticello, AR 71655",www.unionbnk.com
+United Bank,08/09/1989,32025,Federal Reserve Board,"2600 S Thompson St, Springdale, AR 72764",www.united-bk.com
+Warren Bank and Trust Company,01/01/1934,81,Federal Reserve Board,"201 S Main St, Warren, AR 71671",www.warrenbanktrust.com
+Wells Fargo Bank, National Association,01/01/1934,3511,Comptroller of the Currency,"3201 N 4th Ave, Sioux Falls, SD 57104",www.wellsfargo.com

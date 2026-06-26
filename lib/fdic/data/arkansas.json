@@ -1,0 +1,879 @@
+{
+  "fullName": "Arkansas",
+  "abbr": "AR",
+  "banks": [
+    {
+      "name": "Academy Bank, National Association",
+      "fdic_insured_since": "06/15/1966",
+      "fdic_cert": "19600",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1201 Walnut St, Kansas City, MO 64106",
+      "website": "https://www.academybank.com"
+    },
+    {
+      "name": "Anstaff Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3869",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 First National Ave, Green Forest, AR 72638",
+      "website": "https://www.anstaff.bank"
+    },
+    {
+      "name": "Armor Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28812",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "715 N Washington St, Forrest City, AR 72335",
+      "website": "https://www.armor.bank"
+    },
+    {
+      "name": "Armstrong Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2315",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1215 W Okmulgee St, Muskogee, OK 74401",
+      "website": "https://www.armstrong.bank"
+    },
+    {
+      "name": "Arvest Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8728",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "75 N East Ave, Fayetteville, AR 72701",
+      "website": "https://www.arvest.com"
+    },
+    {
+      "name": "Bank of 1889",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3854",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "305 Public Sq, Berryville, AR 72616",
+      "website": "https://www.1889.bank"
+    },
+    {
+      "name": "Bank of America, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3510",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 N Tryon St, Charlotte, NC 28202",
+      "website": "https://www.bankofamerica.com"
+    },
+    {
+      "name": "Bank of Bearden",
+      "fdic_insured_since": "07/05/1945",
+      "fdic_cert": "16282",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 N 2nd St, Bearden, AR 71720",
+      "website": "https://www.bankofbearden.com"
+    },
+    {
+      "name": "Bank of Cave City",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "105",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "137 S Main St, Cave City, AR 72521",
+      "website": "https://www.bankofcavecity.com"
+    },
+    {
+      "name": "Bank of Delight",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "99",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "503 E Antioch St, Delight, AR 71940",
+      "website": "https://www.bankofdelight.com"
+    },
+    {
+      "name": "Bank of England",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13303",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "123 S Main St, England, AR 72046",
+      "website": "https://www.bankofengland-ar.com"
+    },
+    {
+      "name": "Bank of Lake Village",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "15547",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 Main St, Lake Village, AR 71653",
+      "website": "https://www.bankoflakevillage.com"
+    },
+    {
+      "name": "Bank of Little Rock",
+      "fdic_insured_since": "12/21/1987",
+      "fdic_cert": "91280",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "200 N State St, Little Rock, AR 72201",
+      "website": "https://www.bankoflittlerock.com"
+    },
+    {
+      "name": "Bank of Salem",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11243",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "207 Church St, Salem, AR 72576",
+      "website": "https://www.bksalem.net"
+    },
+    {
+      "name": "Bank OZK",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "110",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "18000 Cantrell Rd, Little Rock, AR 72223",
+      "website": "https://www.ozk.com"
+    },
+    {
+      "name": "Bodcaw Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5624",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "307 Thomas St, Stamps, AR 71860",
+      "website": "https://www.bodcaw.bank"
+    },
+    {
+      "name": "BOKF, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4214",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Williams Ctr, Tulsa, OK 74172",
+      "website": "https://www.bokfinancial.com"
+    },
+    {
+      "name": "Centennial Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11241",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "620 Chestnut St, Conway, AR 72032",
+      "website": "https://www.my100bank.com"
+    },
+    {
+      "name": "Central Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1756",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1506 Market St Ste C180, Little Rock, AR 72211",
+      "website": "https://www.centralbankar.com"
+    },
+    {
+      "name": "Century Bank of the Ozarks",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8296",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "42 Court Sq, Gainesville, MO 65655",
+      "website": "https://www.cbozarks.com"
+    },
+    {
+      "name": "Century Next Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29700",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "505 N Vienna St, Ruston, LA 71270",
+      "website": "https://www.cnext.bank"
+    },
+    {
+      "name": "Chambers Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5615",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "901 Main St, Danville, AR 72833",
+      "website": "https://www.chambers.bank"
+    },
+    {
+      "name": "Citizens' Bank & Trust Co.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8738",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3110 Alma Hwy, Van Buren, AR 72956",
+      "website": "https://www.cbankandtrust.com"
+    },
+    {
+      "name": "Commercial Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "90",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "212 W Gaines St, Monticello, AR 71655",
+      "website": "https://www.commercial-bank.net"
+    },
+    {
+      "name": "Commercial Capital Bank",
+      "fdic_insured_since": "02/22/1999",
+      "fdic_cert": "34784",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "311 Broadway St, Delhi, LA 71232",
+      "website": "https://www.comcapbank.com"
+    },
+    {
+      "name": "Commercial National Bank of Texarkana",
+      "fdic_insured_since": "02/05/1964",
+      "fdic_cert": "19024",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "5515 Summerhill Rd, Texarkana, TX 75503",
+      "website": "https://www.cnbtxk.com"
+    },
+    {
+      "name": "COMMUNITY STATE BANK",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5619",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "208 W 4th St, Bradley, AR 71826",
+      "website": "https://www.csbarkansas.com"
+    },
+    {
+      "name": "Connect Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5634",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "116 N Lincoln Ave, Star City, AR 71667",
+      "website": "https://www.connectbank.us"
+    },
+    {
+      "name": "Cross Bank",
+      "fdic_insured_since": "02/01/1934",
+      "fdic_cert": "13821",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "399 Merriman Ave E, Wynne, AR 72396",
+      "website": "https://www.mycrossbank.com"
+    },
+    {
+      "name": "CS Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5635",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "70 S Main St, Eureka Springs, AR 72632",
+      "website": "https://www.cs.bank"
+    },
+    {
+      "name": "Diamond Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1527",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "319 E Main, Murfreesboro, AR 71958",
+      "website": "https://www.diamond.bank"
+    },
+    {
+      "name": "Eagle Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3873",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "650 S Shackleford Rd Ste 150, Little Rock, AR 72211",
+      "website": "https://www.eaglebank.com"
+    },
+    {
+      "name": "ENCORE BANK",
+      "fdic_insured_since": "09/08/1997",
+      "fdic_cert": "34562",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1801 Rahling Rd, Little Rock, AR 72223",
+      "website": "https://www.bankencore.com"
+    },
+    {
+      "name": "Equity Bank",
+      "fdic_insured_since": "01/21/1985",
+      "fdic_cert": "25858",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "345 N Andover Rd, Andover, KS 67002",
+      "website": "https://www.equitybank.com"
+    },
+    {
+      "name": "Evolve Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1299",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "301 Shoppingway Blvd, West Memphis, AR 72301",
+      "website": "https://www.getevolved.com"
+    },
+    {
+      "name": "Farmers Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1296",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "71 W Center St, Greenwood, AR 72936",
+      "website": "https://www.gofarmersbank.com"
+    },
+    {
+      "name": "Farmers Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1291",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "200 E Main St, Magnolia, AR 71753",
+      "website": "https://www.myfarmers.bank"
+    },
+    {
+      "name": "FBT Bank & Mortgage",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1028",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "200 W 4th St, Fordyce, AR 71742",
+      "website": "https://www.fbtbank.com"
+    },
+    {
+      "name": "Fidelity Bank",
+      "fdic_insured_since": "11/04/1966",
+      "fdic_cert": "19644",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "330 W Broadway St, West Memphis, AR 72301",
+      "website": "https://www.fidelitybanker.com"
+    },
+    {
+      "name": "First Arkansas Bank and Trust",
+      "fdic_insured_since": "11/05/1949",
+      "fdic_cert": "16849",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "600 W Main St, Jacksonville, AR 72076",
+      "website": "https://www.fabandt.bank"
+    },
+    {
+      "name": "First Community Bank",
+      "fdic_insured_since": "08/04/1997",
+      "fdic_cert": "34533",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1325 Harrison St, Batesville, AR 72501",
+      "website": "https://www.firstcommunity.net"
+    },
+    {
+      "name": "First Financial Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28905",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "300 East Peach Street, El Dorado, AR 71730",
+      "website": "https://www.ffb1.com"
+    },
+    {
+      "name": "First Horizon Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4977",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "165 Madison Ave, Memphis, TN 38103",
+      "website": "https://www.firsthorizon.com"
+    },
+    {
+      "name": "First National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3887",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "200 W Court St, Paragould, AR 72450",
+      "website": "https://www.fnbank.net"
+    },
+    {
+      "name": "First National Bank Of Commerce",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3896",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "206 W Main St, Walnut Ridge, AR 72476",
+      "website": "https://www.firstnb.bank"
+    },
+    {
+      "name": "First National Bank of Eastern Arkansas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3863",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "101 N Washington St, Forrest City, AR 72335",
+      "website": "https://www.fnbea.com"
+    },
+    {
+      "name": "First National Bank Texas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3285",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "901 E Central Texas Expy, Killeen, TX 76541",
+      "website": "https://www.1stnb.com"
+    },
+    {
+      "name": "First National Banker's Bank",
+      "fdic_insured_since": "07/02/1984",
+      "fdic_cert": "25247",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "7813 Office Park Blvd, Baton Rouge, LA 70809",
+      "website": "https://www.bankers-bank.com"
+    },
+    {
+      "name": "First Naturalstate Bank",
+      "fdic_insured_since": "01/02/1974",
+      "fdic_cert": "21379",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "500 N 2nd St, Mcgehee, AR 71654",
+      "website": "https://www.fnsbank.com"
+    },
+    {
+      "name": "First Security Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5633",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "314 N Spring St, Searcy, AR 72143",
+      "website": "https://www.fsbank.com"
+    },
+    {
+      "name": "First Service Bank",
+      "fdic_insured_since": "05/07/1962",
+      "fdic_cert": "18519",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "134 S Broadview St, Greenbrier, AR 72058",
+      "website": "https://www.firstservicebank.com"
+    },
+    {
+      "name": "First Southern Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29332",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 S Court Street, Florence, AL 35630",
+      "website": "https://www.firstsouthern.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "01/12/1934",
+      "fdic_cert": "13632",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3103 E Main St, Russellville, AR 72802",
+      "website": "https://www.fsbmybank.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "03/18/1935",
+      "fdic_cert": "15050",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 S Center St, Lonoke, AR 72086",
+      "website": "https://www.firststatebk.com"
+    },
+    {
+      "name": "First State Bank of DeQueen",
+      "fdic_insured_since": "11/01/1974",
+      "fdic_cert": "21805",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "402 W Collin Raye Dr, De Queen, AR 71832",
+      "website": "https://www.fsbdequeen.com"
+    },
+    {
+      "name": "First Western Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13083",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "80 W Main St, Booneville, AR 72927",
+      "website": "https://www.fwbank.com"
+    },
+    {
+      "name": "Firstar Bank",
+      "fdic_insured_since": "11/19/1964",
+      "fdic_cert": "19288",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1720 E Cherokee Ave, Sallisaw, OK 74955",
+      "website": "https://www.firstar.bank"
+    },
+    {
+      "name": "Fm Bank And Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1027",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "400 W Main St, Blytheville, AR 72315",
+      "website": "https://www.myfm.bank"
+    },
+    {
+      "name": "FNBC Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1294",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "636 Ash Flat Dr, Ash Flat, AR 72513",
+      "website": "https://www.fnbc.us"
+    },
+    {
+      "name": "Focus Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1426",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 South Main Street, Charleston, MO 63834",
+      "website": "https://www.focusbank.com"
+    },
+    {
+      "name": "FSNB, National Association",
+      "fdic_insured_since": "07/01/1946",
+      "fdic_cert": "16416",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1420 Sw Lee Blvd, Lawton, OK 73501",
+      "website": "https://www.fsnb.com"
+    },
+    {
+      "name": "Gateway Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8730",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "112 Main Street, Rison, AR 71665",
+      "website": "https://www.gatewaybank.bank"
+    },
+    {
+      "name": "Generations Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "88",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3710 W Southern Hills Blvd Ste 100, Rogers, AR 72758",
+      "website": "https://www.mygenerations.bank"
+    },
+    {
+      "name": "Grand Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32084",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1022 S Main St, Grove, OK 74344",
+      "website": "https://www.grandsavingsbank.com"
+    },
+    {
+      "name": "Great Southern Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29546",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "14309 State Highway 13, Reeds Spring, MO 65737",
+      "website": "https://www.greatsouthernbank.com"
+    },
+    {
+      "name": "Horatio State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "109",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "123 W Main St, Horatio, AR 71842",
+      "website": "https://www.horatiostatebank.com"
+    },
+    {
+      "name": "Intrust Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4799",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "105 N Main St, Wichita, KS 67202",
+      "website": "https://www.intrustbank.com"
+    },
+    {
+      "name": "JPMorgan Chase Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "628",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1111 Polaris Pkwy, Columbus, OH 43240",
+      "website": "https://www.jpmorganchase.com"
+    },
+    {
+      "name": "Legacy National Bank",
+      "fdic_insured_since": "03/28/2005",
+      "fdic_cert": "57953",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4055 W Sunset Ave, Springdale, AR 72762",
+      "website": "https://www.legacyar.com"
+    },
+    {
+      "name": "Logan County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5632",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "524 Main St, Scranton, AR 72863",
+      "website": "https://logancountybank.net"
+    },
+    {
+      "name": "Merchants & Planters' Bank",
+      "fdic_insured_since": "08/06/1946",
+      "fdic_cert": "16464",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "120 Hazel St, Newport, AR 72112",
+      "website": "https://www.mandp.bank"
+    },
+    {
+      "name": "Merchants and Farmers Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8735",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "500 Highway 65 S, Dumas, AR 71639",
+      "website": "https://www.mfbanknet.com"
+    },
+    {
+      "name": "Oakstar Bank",
+      "fdic_insured_since": "10/24/2005",
+      "fdic_cert": "58115",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1020 E Battlefield St, Springfield, MO 65807",
+      "website": "https://www.oakstarbank.com"
+    },
+    {
+      "name": "Partners Bank",
+      "fdic_insured_since": "04/01/1940",
+      "fdic_cert": "15729",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "302 Cherry St, Helena, AR 72342",
+      "website": "https://www.mypartners.bank"
+    },
+    {
+      "name": "PEOPLES BANK",
+      "fdic_insured_since": "09/13/2000",
+      "fdic_cert": "57058",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1120 S Rock St, Sheridan, AR 72150",
+      "website": "https://www.peoplesbankar.com"
+    },
+    {
+      "name": "Petit Jean State Bank",
+      "fdic_insured_since": "02/16/1999",
+      "fdic_cert": "35084",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "707 N Saint Joseph St, Morrilton, AR 72110",
+      "website": "https://www.pjsb.com"
+    },
+    {
+      "name": "Priority Bank",
+      "fdic_insured_since": "07/03/1993",
+      "fdic_cert": "33818",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3401 E Mission Blvd, Fayetteville, AR 72703",
+      "website": "https://www.prioritybank.com"
+    },
+    {
+      "name": "Producers Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11242",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "301 N 2nd St, Mcgehee, AR 71654",
+      "website": "https://www.producers.bank"
+    },
+    {
+      "name": "Regions Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12368",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1900 5th Ave N, Birmingham, AL 35203",
+      "website": "https://www.regions.com"
+    },
+    {
+      "name": "Relyance Bank",
+      "fdic_insured_since": "02/11/1965",
+      "fdic_cert": "19371",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "8500 Sheridan Rd, White Hall, AR 71602",
+      "website": "https://www.rely.bank"
+    },
+    {
+      "name": "RiverBank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31711",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "203 W Broadway St, Pocahontas, AR 72455",
+      "website": "https://eriverbank.com"
+    },
+    {
+      "name": "Riverside Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "93",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "103 W Main St, Sparkman, AR 71763",
+      "website": "https://www.riversidebanc.com"
+    },
+    {
+      "name": "Riverwind Bank",
+      "fdic_insured_since": "03/04/1935",
+      "fdic_cert": "15035",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 S 2nd St, Augusta, AR 72006",
+      "website": "https://riverwindbank.com"
+    },
+    {
+      "name": "Signature Bank of Arkansas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "89",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3878 N Crossover Rd Ste 20, Fayetteville, AR 72703",
+      "website": "https://www.signature.bank"
+    },
+    {
+      "name": "Simmons Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3890",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "501 S Main St, Pine Bluff, AR 71601",
+      "website": "https://www.simmonsbank.com"
+    },
+    {
+      "name": "Smackover State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5623",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "708 Broadway St, Smackover, AR 71762",
+      "website": "https://www.smackoverbank.com"
+    },
+    {
+      "name": "Southern Bancorp Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1528",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "601 Main St, Arkadelphia, AR 71923",
+      "website": "https://www.banksouthern.com"
+    },
+    {
+      "name": "Southern Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28332",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2991 Oak Grove Rd, Poplar Bluff, MO 63901",
+      "website": "https://www.bankwithsouthern.com"
+    },
+    {
+      "name": "Sterling Bank",
+      "fdic_insured_since": "10/19/2004",
+      "fdic_cert": "57813",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1100 Sterling Dr, Poplar Bluff, MO 63901",
+      "website": "https://www.sterbank.bank"
+    },
+    {
+      "name": "Stone Bank",
+      "fdic_insured_since": "04/29/1955",
+      "fdic_cert": "17431",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "802 E Main St, Mountain View, AR 72560",
+      "website": "https://www.stonebank.com"
+    },
+    {
+      "name": "Texana Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3302",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "124 E Rush St, Linden, TX 75563",
+      "website": "https://www.texanabank.com"
+    },
+    {
+      "name": "The Citizens Bank",
+      "fdic_insured_since": "04/24/1953",
+      "fdic_cert": "17211",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "655 S Saint Louis St, Batesville, AR 72501",
+      "website": "https://www.thecitizensbank.net"
+    },
+    {
+      "name": "The Farmers & Merchants Bank",
+      "fdic_insured_since": "01/02/1945",
+      "fdic_cert": "16216",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "708 S Main St, Stuttgart, AR 72160",
+      "website": "https://www.gofm.bank"
+    },
+    {
+      "name": "The First National Bank of Fort Smith",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3864",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "602 Garrison Ave, Fort Smith, AR 72901",
+      "website": "https://www.fnbfs.com"
+    },
+    {
+      "name": "The First National Bank of Izard County",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11252",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2184 Ar 56 Hwy, Calico Rock, AR 72519",
+      "website": "https://www.fnbizardcounty.com"
+    },
+    {
+      "name": "The First National Bank of Tom Bean",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5557",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "109 S Britton St, Tom Bean, TX 75489",
+      "website": "https://www.fnbtb.com"
+    },
+    {
+      "name": "The Huntington National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6560",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "17 S High St, Columbus, OH 43215",
+      "website": "https://www.huntington.com"
+    },
+    {
+      "name": "The Malvern National Bank",
+      "fdic_insured_since": "08/07/1934",
+      "fdic_cert": "14644",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "501 S Main St, Malvern, AR 72104",
+      "website": "https://www.mnbbank.com"
+    },
+    {
+      "name": "The Merchants & Planters Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "107",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "297 Madison St, Clarendon, AR 72029",
+      "website": ""
+    },
+    {
+      "name": "The Peoples Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12531",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "500 N Jackson, Magnolia, AR 71753",
+      "website": "https://www.pbmag.com"
+    },
+    {
+      "name": "Today's Bank",
+      "fdic_insured_since": "07/26/1991",
+      "fdic_cert": "33470",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "432 Harmony Rd, Huntsville, AR 72740",
+      "website": "https://www.todaysbank.com"
+    },
+    {
+      "name": "Truist Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9846",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "214 N Tryon St, Charlotte, NC 28202",
+      "website": "https://www.truist.com"
+    },
+    {
+      "name": "U.S. Bank National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6548",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "425 Walnut St, Cincinnati, OH 45202",
+      "website": "https://www.usbank.com"
+    },
+    {
+      "name": "UNICO Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10608",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "625 Veterans Dr, Mineral Point, MO 63660",
+      "website": "https://www.unicobank.com"
+    },
+    {
+      "name": "Union Bank",
+      "fdic_insured_since": "07/26/1934",
+      "fdic_cert": "14597",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "303 Highway 71 N, Mena, AR 71953",
+      "website": "https://www.gounion.bank"
+    },
+    {
+      "name": "Union Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1753",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "102 W Mccloy St, Monticello, AR 71655",
+      "website": "https://www.unionbnk.com"
+    },
+    {
+      "name": "United Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32025",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2600 S Thompson St, Springdale, AR 72764",
+      "website": "https://www.united-bk.com"
+    },
+    {
+      "name": "Warren Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "81",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "201 S Main St, Warren, AR 71671",
+      "website": "https://www.warrenbanktrust.com"
+    },
+    {
+      "name": "Wells Fargo Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3511",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3201 N 4th Ave, Sioux Falls, SD 57104",
+      "website": "https://www.wellsfargo.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

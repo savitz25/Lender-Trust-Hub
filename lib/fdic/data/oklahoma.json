@@ -1,0 +1,1559 @@
+{
+  "fullName": "Oklahoma",
+  "abbr": "OK",
+  "banks": [
+    {
+      "name": "1st Bank in Hominy",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4122",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "117 N Price Ave, Hominy, OK 74035",
+      "website": "https://www.1stbankhominy.com"
+    },
+    {
+      "name": "ACB Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4061",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "323 S Grand Ave, Cherokee, OK 73728",
+      "website": "https://www.acbbank.net"
+    },
+    {
+      "name": "All America Bank",
+      "fdic_insured_since": "12/22/1969",
+      "fdic_cert": "20093",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 S Rockwell Ave, Oklahoma City, OK 73128",
+      "website": "https://www.allamerica.bank"
+    },
+    {
+      "name": "All Capital Bank",
+      "fdic_insured_since": "06/06/1949",
+      "fdic_cert": "16795",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "210 E Main St, Locust Grove, OK 74352",
+      "website": "https://www.banklg.com"
+    },
+    {
+      "name": "AllNations Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4051",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "114 East Main Street, Calumet, OK 73014",
+      "website": "https://www.allnations.bank"
+    },
+    {
+      "name": "American Bank and Trust Company",
+      "fdic_insured_since": "11/05/1971",
+      "fdic_cert": "20537",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6060 S American Plaza St E, Tulsa, OK 74135",
+      "website": "https://www.americanbanktulsa.com"
+    },
+    {
+      "name": "American Exchange Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "428",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "510 W Main St # 512, Henryetta, OK 74437",
+      "website": "https://americanexchange.bank"
+    },
+    {
+      "name": "American Exchange Bank, Lindsay, Oklahoma",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2328",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "402 S Main St, Lindsay, OK 73052",
+      "website": ""
+    },
+    {
+      "name": "American Heritage Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4190",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2 S Main St, Sapulpa, OK 74066",
+      "website": "https://www.ahb.bank"
+    },
+    {
+      "name": "American Nation Bank",
+      "fdic_insured_since": "05/02/1983",
+      "fdic_cert": "24472",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1901 N Commerce St, Ardmore, OK 73401",
+      "website": "https://www.bankanb.com"
+    },
+    {
+      "name": "Ameristate Bank",
+      "fdic_insured_since": "07/02/1937",
+      "fdic_cert": "15510",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "131 S Pennsylvania Ave, Atoka, OK 74525",
+      "website": "https://www.ameristatebank.com"
+    },
+    {
+      "name": "Anchor D Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4208",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "222 Main Street, Texhoma, OK 73949",
+      "website": "https://www.anchordbank.com"
+    },
+    {
+      "name": "Armstrong Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2315",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1215 W Okmulgee St, Muskogee, OK 74401",
+      "website": "https://www.armstrong.bank"
+    },
+    {
+      "name": "Arvest Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8728",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "75 N East Ave, Fayetteville, AR 72701",
+      "website": "https://www.arvest.com"
+    },
+    {
+      "name": "AVB Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2326",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "322 S Main St, Broken Arrow, OK 47012",
+      "website": "https://www.avb.bank"
+    },
+    {
+      "name": "BancFirst",
+      "fdic_insured_since": "04/01/1989",
+      "fdic_cert": "27476",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 N Broadway Ave, Oklahoma City, OK 73102",
+      "website": "https://www.bancfirst.bank"
+    },
+    {
+      "name": "Bank 7",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4147",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1039 Nw 63rd St, Oklahoma City, OK 73116",
+      "website": "https://www.bank7.com"
+    },
+    {
+      "name": "Bank of America, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3510",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 N Tryon St, Charlotte, NC 28202",
+      "website": "https://www.bankofamerica.com"
+    },
+    {
+      "name": "Bank of Commerce",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13274",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "322 W 6th St, Chelsea, OK 74016",
+      "website": "https://www.bankboc.com"
+    },
+    {
+      "name": "Bank of Commerce",
+      "fdic_insured_since": "12/16/2002",
+      "fdic_cert": "57491",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1601 Commerce St, Duncan, OK 73533",
+      "website": "https://www.bocokonline.com"
+    },
+    {
+      "name": "Bank of Eufaula",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4094",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "102 N Main St, Eufaula, OK 74432",
+      "website": "https://www.bankofeufaula.com"
+    },
+    {
+      "name": "Bank of Grand Lake",
+      "fdic_insured_since": "06/09/2005",
+      "fdic_cert": "57915",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 E 18th St, Grove, OK 74344",
+      "website": "https://www.bankofgrandlake.com"
+    },
+    {
+      "name": "Bank of Hydro",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10674",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "146 W Main St, Hydro, OK 73048",
+      "website": "https://www.bankofhydro.com"
+    },
+    {
+      "name": "Bank of Vici",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "420",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "121 W Broadway, Vici, OK 73859",
+      "website": "https://www.bankofvici.com"
+    },
+    {
+      "name": "Bank of Western Oklahoma",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4087",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "201 E Broadway Ave, Elk City, OK 73644",
+      "website": "https://www.bankofwesternoklahoma.com"
+    },
+    {
+      "name": "BANK360",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9875",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "808 N Glenn L English St, Cordell, OK 73632",
+      "website": "https://bank360.bank"
+    },
+    {
+      "name": "Blue Sky Bank",
+      "fdic_insured_since": "12/04/1934",
+      "fdic_cert": "14899",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 E 8th St, Pawhuska, OK 74056",
+      "website": "https://www.bluesky.bank"
+    },
+    {
+      "name": "BMO Bank National Association",
+      "fdic_insured_since": "05/17/1947",
+      "fdic_cert": "16571",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "320 S Canal St, Chicago, IL 60606",
+      "website": "https://www.bmo.com"
+    },
+    {
+      "name": "BOKF, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4214",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Williams Ctr, Tulsa, OK 74172",
+      "website": "https://www.bokfinancial.com"
+    },
+    {
+      "name": "Busey Bank",
+      "fdic_insured_since": "07/08/1946",
+      "fdic_cert": "16450",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 W University Ave, Champaign, IL 61820",
+      "website": "https://www.busey.com"
+    },
+    {
+      "name": "Carson Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2320",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "24 W Division St, Stilwell, OK 74960",
+      "website": "https://www.carsoncommunity.bank"
+    },
+    {
+      "name": "Cattlemens Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12285",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3421 N Main St, Altus, OK 73521",
+      "website": "https://www.cattlemensbank.com"
+    },
+    {
+      "name": "Chickasaw Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11521",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "7500 W Memorial Rd, Oklahoma City, OK 73142",
+      "website": "https://www.ccb.bank"
+    },
+    {
+      "name": "Citizens Bank and Trust Company of Ardmore",
+      "fdic_insured_since": "09/18/1978",
+      "fdic_cert": "22717",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1100 N Commerce St, Ardmore, OK 73401",
+      "website": "https://www.citizensbt.com"
+    },
+    {
+      "name": "Citizens Bank of Ada",
+      "fdic_insured_since": "02/20/1967",
+      "fdic_cert": "19679",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "123 W 12th St, Ada, OK 74820",
+      "website": "https://www.citizensada.bank"
+    },
+    {
+      "name": "Cleo State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "406",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 S Square St, Cleo Springs, OK 73729",
+      "website": "https://cleostatebank.com"
+    },
+    {
+      "name": "Commerce Bank",
+      "fdic_insured_since": "02/21/1984",
+      "fdic_cert": "24998",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1000 Walnut St, Kansas City, MO 64106",
+      "website": "https://www.commercebank.com"
+    },
+    {
+      "name": "Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8975",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "104 S Main St, Bristow, OK 74010",
+      "website": "https://www.cbbristow.com"
+    },
+    {
+      "name": "COMMUNITY BANK OF OKLAHOMA",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4217",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 West Highway 62, Verden, OK 73092",
+      "website": "https://bankofverden.com"
+    },
+    {
+      "name": "Community National Bank & Trust",
+      "fdic_insured_since": "09/04/1987",
+      "fdic_cert": "27046",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "14 N Lincoln Ave, Chanute, KS 66720",
+      "website": "https://www.mybankcnb.com"
+    },
+    {
+      "name": "Community State Bank",
+      "fdic_insured_since": "03/24/1988",
+      "fdic_cert": "27201",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "525 N Main St, Hennessey, OK 73742",
+      "website": "https://www.mycsb.com"
+    },
+    {
+      "name": "Community State Bank of Canton",
+      "fdic_insured_since": "10/10/1985",
+      "fdic_cert": "26416",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 W Main St, Canton, OK 73724",
+      "website": "https://www.csbcanton.com"
+    },
+    {
+      "name": "COREBANK",
+      "fdic_insured_since": "07/20/1959",
+      "fdic_cert": "18063",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1522 Missouri St, Waynoka, OK 73860",
+      "website": "https://corebankok.com"
+    },
+    {
+      "name": "Cowboy Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11526",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "102 6th St, Kremlin, OK 73753",
+      "website": "https://www.cowboyfirst.bank"
+    },
+    {
+      "name": "Dream First Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4779",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "11 N Main St, Syracuse, KS 67878",
+      "website": "https://www.dreamfirst.bank"
+    },
+    {
+      "name": "Elevate Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4770",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "101 W Main St, Sedan, KS 67361",
+      "website": "https://www.elevate.bank"
+    },
+    {
+      "name": "Equity Bank",
+      "fdic_insured_since": "01/21/1985",
+      "fdic_cert": "25858",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "345 N Andover Rd, Andover, KS 67002",
+      "website": "https://www.equitybank.com"
+    },
+    {
+      "name": "Exchange Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13366",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "523 Delaware St, Perry, OK 73077",
+      "website": "https://www.easybanking.bank"
+    },
+    {
+      "name": "F&M Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12761",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "17100 N May Ave, Edmond, OK 73012",
+      "website": "https://www.fmbankok.com"
+    },
+    {
+      "name": "Fairview Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28652",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "301 N Main St, Fairview, OK 73737",
+      "website": "https://www.fairviewsavings.com"
+    },
+    {
+      "name": "Farmers & Merchants Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12284",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 East Second Street, Duke, OK 73532",
+      "website": "https://www.fmbok.com"
+    },
+    {
+      "name": "Farmers and Merchants Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13415",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "225 E Renfrow Ave, Arnett, OK 73832",
+      "website": "https://fmbankarnett.com"
+    },
+    {
+      "name": "Farmers and Merchants Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4144",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "621 Main Street, Maysville, OK 73057",
+      "website": "https://www.fmbokonline.com"
+    },
+    {
+      "name": "Farmers Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1291",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "200 E Main St, Magnolia, AR 71753",
+      "website": "https://www.myfarmers.bank"
+    },
+    {
+      "name": "Farmers State Bank, Allen, Oklahoma",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12758",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 E Broadway, Allen, OK 74825",
+      "website": "https://www.fsballen.com"
+    },
+    {
+      "name": "Fidelity Bank, National Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30895",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 E English St, Wichita, KS 67202",
+      "website": "https://www.fidelitybank.com"
+    },
+    {
+      "name": "First Bank of Thomas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4209",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "301 W Broadway St, Thomas, OK 73669",
+      "website": "https://www.fnbthomas.com"
+    },
+    {
+      "name": "First American Bank",
+      "fdic_insured_since": "07/04/1940",
+      "fdic_cert": "15762",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 West Main Street, Stonewall, OK 74871",
+      "website": "https://www.fabstonewall.com"
+    },
+    {
+      "name": "First Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4092",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "118 West Roger Miller Boulevard, Erick, OK 73645",
+      "website": "https://www.yourfirst.bank"
+    },
+    {
+      "name": "First Bank & Trust Co.",
+      "fdic_insured_since": "12/08/1988",
+      "fdic_cert": "27394",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "923 W Main St, Duncan, OK 73533",
+      "website": "https://www.fb247.com"
+    },
+    {
+      "name": "First Bank & Trust Company",
+      "fdic_insured_since": "02/21/1934",
+      "fdic_cert": "13946",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 N 7th St, Perry, OK 73077",
+      "website": "https://www.fbt.bank"
+    },
+    {
+      "name": "First Bank and Trust Company",
+      "fdic_insured_since": "02/01/1936",
+      "fdic_cert": "15348",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "501 Frisco Ave, Clinton, OK 73601",
+      "website": "https://www.fbtok.com"
+    },
+    {
+      "name": "First Bank of Owasso",
+      "fdic_insured_since": "09/08/1962",
+      "fdic_cert": "18592",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8601 N Garnett Rd, Owasso, OK 74055",
+      "website": "https://www.firstbank.net"
+    },
+    {
+      "name": "First Bethany Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4228",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "6500 Nw 39th Expy, Bethany, OK 73008",
+      "website": "https://www.firstbethany.com"
+    },
+    {
+      "name": "First Enterprise Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4049",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 W Britton Rd, Oklahoma City, OK 73114",
+      "website": "https://www.febokc.com"
+    },
+    {
+      "name": "First Fidelity Bank",
+      "fdic_insured_since": "07/01/1981",
+      "fdic_cert": "23473",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "5100 N Classen Blvd, Oklahoma City, OK 73118",
+      "website": "https://ffb.com"
+    },
+    {
+      "name": "First Liberty Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "14029",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9601 N May Ave, Oklahoma City, OK 73120",
+      "website": "https://www.myfirstliberty.com"
+    },
+    {
+      "name": "First National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4111",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "400 E 1st St, Heavener, OK 74937",
+      "website": "https://www.okfnb.com"
+    },
+    {
+      "name": "First National Bank & Trust Company of McAlester",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4145",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "235 E Choctaw Ave, Mcalester, OK 74501",
+      "website": "https://www.fnbmcalester.com"
+    },
+    {
+      "name": "First National Bank and Trust Company of Ardmore",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4037",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "405 W Main St, Ardmore, OK 73401",
+      "website": "https://www.1nb.bank"
+    },
+    {
+      "name": "First National Bank of Oklahoma",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4211",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "10900 Hefner Pointe Dr, Oklahoma City, OK 73120",
+      "website": "https://www.fnbok.bank"
+    },
+    {
+      "name": "First Oklahoma Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12484",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 S Riverfront Dr, Jenks, OK 74037",
+      "website": "https://www.firstoklahomabank.com"
+    },
+    {
+      "name": "First Pryority Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4185",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "310 E Graham Ave, Pryor, OK 74361",
+      "website": "https://www.pryority.bank"
+    },
+    {
+      "name": "First Security Bank and Trust Company",
+      "fdic_insured_since": "04/06/1951",
+      "fdic_cert": "17001",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1541 Ne 23rd St, Oklahoma City, OK 73111",
+      "website": "https://www.fsbokc.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12283",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "102 W Main St, Anadarko, OK 73005",
+      "website": "https://www.fsbanadarko.bank"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12757",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "106 N Dalton St, Valliant, OK 74764",
+      "website": "https://www.fsbvalliant.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "09/05/1974",
+      "fdic_cert": "21752",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "321 W Main St, Watonga, OK 73772",
+      "website": "https://www.fsbwatonga.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "04/13/1977",
+      "fdic_cert": "22448",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1111 S Muskogee Ave, Tahlequah, OK 74464",
+      "website": "https://www.fsbtahlequah.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9879",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 N Main St, Noble, OK 73068",
+      "website": "https://www.fsbnoble.com"
+    },
+    {
+      "name": "First State Bank in Temple",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5999",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "111 South Commercial, Temple, OK 73568",
+      "website": "https://www.fstbank.com"
+    },
+    {
+      "name": "First Summit Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "399",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "527 Washington Street, Ryan, OK 73565",
+      "website": "https://www.fsbwford.com"
+    },
+    {
+      "name": "First Texoma National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13905",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "220 W Main St, Durant, OK 74701",
+      "website": "https://www.ftnb.net"
+    },
+    {
+      "name": "First United Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4239",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1400 W Main St, Durant, OK 74701",
+      "website": "https://www.firstunitedbank.com"
+    },
+    {
+      "name": "First-Citizens Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11063",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "239 Fayetteville St, Raleigh, NC 27601",
+      "website": "https://www.firstcitizens.com"
+    },
+    {
+      "name": "Firstar Bank",
+      "fdic_insured_since": "11/19/1964",
+      "fdic_cert": "19288",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1720 E Cherokee Ave, Sallisaw, OK 74955",
+      "website": "https://www.firstar.bank"
+    },
+    {
+      "name": "FirstBank",
+      "fdic_insured_since": "05/03/1934",
+      "fdic_cert": "14331",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 N High St, Antlers, OK 74523",
+      "website": "https://www.firstbank-ok.com"
+    },
+    {
+      "name": "FNB Community Bank",
+      "fdic_insured_since": "03/04/1944",
+      "fdic_cert": "16127",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2911 S Air Depot Blvd, Midwest City, OK 73110",
+      "website": "https://www.fnbmwc.com"
+    },
+    {
+      "name": "FNB Coweta",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4071",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "106 S Broadway, Coweta, OK 74429",
+      "website": "https://fnbcoweta.com"
+    },
+    {
+      "name": "Frazer Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4031",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "110 E Broadway St, Altus, OK 73521",
+      "website": "https://www.frazerbank.com"
+    },
+    {
+      "name": "Frontier State Bank",
+      "fdic_insured_since": "04/14/1975",
+      "fdic_cert": "21978",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5100 S I 35 Service Rd, Oklahoma City, OK 73129",
+      "website": "https://www.frontier-ok.com"
+    },
+    {
+      "name": "FSNB, National Association",
+      "fdic_insured_since": "07/01/1946",
+      "fdic_cert": "16416",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1420 Sw Lee Blvd, Lawton, OK 73501",
+      "website": "https://www.fsnb.com"
+    },
+    {
+      "name": "Gateway First Bank",
+      "fdic_insured_since": "05/03/1935",
+      "fdic_cert": "15118",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "244 S Gateway Pl, Jenks, OK 74037",
+      "website": "https://www.gatewayfirst.com"
+    },
+    {
+      "name": "Grand Bank",
+      "fdic_insured_since": "07/21/1975",
+      "fdic_cert": "22065",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2642 E 21st St, Tulsa, OK 74114",
+      "website": "https://www.grandbank.com"
+    },
+    {
+      "name": "Grand Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32084",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1022 S Main St, Grove, OK 74344",
+      "website": "https://www.grandsavingsbank.com"
+    },
+    {
+      "name": "Grant County Bank",
+      "fdic_insured_since": "01/23/1940",
+      "fdic_cert": "15778",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "120 S Main St, Medford, OK 73759",
+      "website": "https://www.grantcobank.com"
+    },
+    {
+      "name": "Great Nations Bank",
+      "fdic_insured_since": "09/28/2009",
+      "fdic_cert": "58680",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2200 Alameda St, Norman, OK 73071",
+      "website": "https://www.greatnationsbank.com"
+    },
+    {
+      "name": "Great Plains National Bank",
+      "fdic_insured_since": "07/17/1996",
+      "fdic_cert": "34207",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2017 W 3rd St, Elk City, OK 73644",
+      "website": "https://www.gpbankok.com."
+    },
+    {
+      "name": "Great Southern Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29546",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "14309 State Highway 13, Reeds Spring, MO 65737",
+      "website": "https://www.greatsouthernbank.com"
+    },
+    {
+      "name": "Herring Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5568",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2201 Civic Cir, Amarillo, TX 79109",
+      "website": "https://www.herringbank.com"
+    },
+    {
+      "name": "High Plains Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "418",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 N Main St, Okeene, OK 73763",
+      "website": "https://www.hpbank.us"
+    },
+    {
+      "name": "InterBank",
+      "fdic_insured_since": "03/31/1988",
+      "fdic_cert": "27210",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "4921 N May Ave, Oklahoma City, OK 73112",
+      "website": "https://www.interbank.com"
+    },
+    {
+      "name": "International Bank of Commerce",
+      "fdic_insured_since": "01/01/2017",
+      "fdic_cert": "59093",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3817 N West Expy, Oklahoma City, OK 73112",
+      "website": "https://www.ibc.com"
+    },
+    {
+      "name": "Intrust Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4799",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "105 N Main St, Wichita, KS 67202",
+      "website": "https://www.intrustbank.com"
+    },
+    {
+      "name": "JPMorgan Chase Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "628",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1111 Polaris Pkwy, Columbus, OH 43240",
+      "website": "https://www.jpmorganchase.com"
+    },
+    {
+      "name": "Kirkpatrick Bank",
+      "fdic_insured_since": "03/23/1970",
+      "fdic_cert": "20156",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15 E 15th St, Edmond, OK 73013",
+      "website": "https://www.kirkpatrickbank.com"
+    },
+    {
+      "name": "Lakeside Bank of Salina",
+      "fdic_insured_since": "10/09/1973",
+      "fdic_cert": "21255",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "103 W Ferry St, Salina, OK 74365",
+      "website": "https://lakesidebankofsalina.com"
+    },
+    {
+      "name": "Latimer State Bank",
+      "fdic_insured_since": "04/09/1979",
+      "fdic_cert": "22839",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 W Main St, Wilburton, OK 74578",
+      "website": ""
+    },
+    {
+      "name": "Legacy Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4042",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 W Main St, Hinton, OK 73047",
+      "website": "https://www.legacybank.com"
+    },
+    {
+      "name": "Legacy Bank & Trust Company",
+      "fdic_insured_since": "08/17/1976",
+      "fdic_cert": "22319",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1500 N Main St, Mountain Grove, MO 65711",
+      "website": "https://www.legacybankandtrust.com"
+    },
+    {
+      "name": "Liberty National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11522",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "629 Sw C Ave, Lawton, OK 73501",
+      "website": "https://www.weareliberty.bank"
+    },
+    {
+      "name": "Local Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2327",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "385 E Main St, Hulbert, OK 74441",
+      "website": "https://localbank.com"
+    },
+    {
+      "name": "Mabrey Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10667",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "14821 S Memorial Dr, Bixby, OK 74008",
+      "website": "https://www.mabreybank.com"
+    },
+    {
+      "name": "MapleMark Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3182",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2431 E 61st St, Tulsa, OK 74136",
+      "website": "https://maplemarkbank.com"
+    },
+    {
+      "name": "McClain Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4187",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "131 W Main St, Purcell, OK 73080",
+      "website": "https://www.mcclainbank.com"
+    },
+    {
+      "name": "McCurtain County National Bank",
+      "fdic_insured_since": "04/23/1982",
+      "fdic_cert": "23798",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "20 N Park Dr, Broken Bow, OK 74728",
+      "website": "https://www.mcnbonline.com"
+    },
+    {
+      "name": "Method Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2317",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2 E Broadway, Wyandotte, OK 74370",
+      "website": "https://www.method.bank"
+    },
+    {
+      "name": "MidFirst Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "4063",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "501 Nw Grand Blvd, Oklahoma City, OK 73118",
+      "website": "https://www.midfirst.com"
+    },
+    {
+      "name": "Oklahoma Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4067",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "600 W Gary Blvd, Clinton, OK 73601",
+      "website": "https://www.oklabank.com"
+    },
+    {
+      "name": "Oklahoma Capital Bank",
+      "fdic_insured_since": "08/10/1963",
+      "fdic_cert": "18856",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "8080 S Yale Ave, Tulsa, OK 74136",
+      "website": "https://www.oklahomacapitalbank.com"
+    },
+    {
+      "name": "Oklahoma State Bank",
+      "fdic_insured_since": "01/02/1934",
+      "fdic_cert": "13416",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "122 South Hoy St, Buffalo, OK 73834",
+      "website": "https://www.osbbuffalo.com"
+    },
+    {
+      "name": "Old Glory Bank",
+      "fdic_insured_since": "10/24/1963",
+      "fdic_cert": "18924",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "206 S Main St, Elmore City, OK 73433",
+      "website": "https://www.oldglorybank.com"
+    },
+    {
+      "name": "Panhandle First Bank",
+      "fdic_insured_since": "10/12/1976",
+      "fdic_cert": "22340",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1223 N Main St, Guymon, OK 73942",
+      "website": "https://www.mypfb.bank"
+    },
+    {
+      "name": "Patrons Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4170",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "610 E 8th St, Okmulgee, OK 74447",
+      "website": "https://www.mybankfnb.com"
+    },
+    {
+      "name": "Peoples Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2331",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "517 Washington Street, Ryan, OK 73565",
+      "website": "https://www.peoplesbankusa.com"
+    },
+    {
+      "name": "Peoples State Bank",
+      "fdic_insured_since": "08/25/1952",
+      "fdic_cert": "17138",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "117 East Main Street, Blair, OK 73526",
+      "website": "https://www.psbokonline.com"
+    },
+    {
+      "name": "Prism Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5994",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2610 S Division St, Guthrie, OK 73044",
+      "website": "https://www.prism.bank"
+    },
+    {
+      "name": "Prosperity Bank",
+      "fdic_insured_since": "09/13/1949",
+      "fdic_cert": "16835",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1301 N Mechanic St, El Campo, TX 77437",
+      "website": "https://www.prosperitybankusa.com"
+    },
+    {
+      "name": "Quail Creek Bank",
+      "fdic_insured_since": "12/04/1974",
+      "fdic_cert": "21848",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "12201 N May Ave, Oklahoma City, OK 73120",
+      "website": "https://quailcreek.bank"
+    },
+    {
+      "name": "RCB Bank",
+      "fdic_insured_since": "07/09/1936",
+      "fdic_cert": "15399",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "300 W Patti Page Blvd, Claremore, OK 74017",
+      "website": "https://www.rcbbank.bank"
+    },
+    {
+      "name": "Regent Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4160",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7136 S Yale Ave Ste 100, Tulsa, OK 74136",
+      "website": "https://www.regent.bank"
+    },
+    {
+      "name": "Security Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4178",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "10727 E 51st St, Tulsa, OK 74146",
+      "website": "https://www.sbtulsa.bank"
+    },
+    {
+      "name": "Security Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9881",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2 S Main St, Miami, OK 74354",
+      "website": "https://www.sbtmiami.com"
+    },
+    {
+      "name": "Security First National Bank of Hugo",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "432",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 S Broadway St, Hugo, OK 74743",
+      "website": "https://www.sfnb.net"
+    },
+    {
+      "name": "Security State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "421",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "402 E Broadway Ave, Cheyenne, OK 73628",
+      "website": "https://www.ssbcheyenne.com"
+    },
+    {
+      "name": "Security State Bank of Oklahoma",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8980",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "210 S Mekusukey Ave, Wewoka, OK 74884",
+      "website": "https://www.ssbok.com"
+    },
+    {
+      "name": "Shamrock Bank, N.A.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4236",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "101 N Main St, Coalgate, OK 74538",
+      "website": "https://www.shamrockbank.com"
+    },
+    {
+      "name": "Simmons Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3890",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "501 S Main St, Pine Bluff, AR 71601",
+      "website": "https://www.simmonsbank.com"
+    },
+    {
+      "name": "SNB Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4196",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "503 S Main St, Shattuck, OK 73858",
+      "website": "https://www.snbbankna.com"
+    },
+    {
+      "name": "Sooner State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "402",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2 Se 4th St, Tuttle, OK 73089",
+      "website": "https://www.soonerstatebank.com"
+    },
+    {
+      "name": "Southwest Bank of Weatherford",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4076",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "720 E Main St, Weatherford, OK 73096",
+      "website": "https://www.swnbank.com"
+    },
+    {
+      "name": "Sovereign Bank",
+      "fdic_insured_since": "10/29/1984",
+      "fdic_cert": "25738",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "130 E Macarthur St, Shawnee, OK 74804",
+      "website": "https://www.banksovereign.com"
+    },
+    {
+      "name": "SpiritBank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4048",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4815 S Harvard Ave Ste 100, Tulsa, OK 74135",
+      "website": "https://www.spiritbank.com"
+    },
+    {
+      "name": "SSB Bank",
+      "fdic_insured_since": "05/15/1950",
+      "fdic_cert": "16908",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1008 W Broadway St, Spiro, OK 74959",
+      "website": "https://www.spirostatebank.com"
+    },
+    {
+      "name": "Stride Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4091",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "324 W Broadway Ave, Enid, OK 73701",
+      "website": "https://www.stridebank.com"
+    },
+    {
+      "name": "The Bank of Beaver City",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11862",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "130 Douglas Ave, Beaver, OK 73932",
+      "website": "https://www.bankofbeaver.bank"
+    },
+    {
+      "name": "The Bank of the West",
+      "fdic_insured_since": "10/19/1984",
+      "fdic_cert": "25703",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 S Main St, Thomas, OK 73669",
+      "website": "https://www.botw.bank"
+    },
+    {
+      "name": "The Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4146",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "201 E Carl Albert Pkwy, Mcalester, OK 74501",
+      "website": "https://www.thebankna.com"
+    },
+    {
+      "name": "The Bankers Bank",
+      "fdic_insured_since": "05/28/1986",
+      "fdic_cert": "26677",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "9020 N May Ave Ste 200, Oklahoma City, OK 73120",
+      "website": "https://www.tbb.bank"
+    },
+    {
+      "name": "The Central Trust Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12633",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "238 Madison St, Jefferson City, MO 65101",
+      "website": "https://www.centralbank.net"
+    },
+    {
+      "name": "The Citizens Bank of Edmond",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4084",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1 E 1st St, Edmond, OK 73034",
+      "website": "https://www.mycitizens.bank"
+    },
+    {
+      "name": "The City National Bank and Trust Company of Lawton, Oklahoma",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4132",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "500 Montgomery Sq, Lawton, OK 73501",
+      "website": "https://www.cnb1901.com"
+    },
+    {
+      "name": "The Community State Bank",
+      "fdic_insured_since": "10/19/1970",
+      "fdic_cert": "20279",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1409 N Broadway St, Poteau, OK 74953",
+      "website": "https://www.thecommunitysb.com"
+    },
+    {
+      "name": "The Exchange Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10672",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 W Rogers Blvd, Skiatook, OK 74070",
+      "website": "https://www.exb-ok.com"
+    },
+    {
+      "name": "The Farmers and Merchants National Bank of Fairview",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4097",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "312 N Main St, Fairview, OK 73737",
+      "website": "https://www.fairview.bank"
+    },
+    {
+      "name": "The Farmers Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4054",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "31 West Main Street, Carnegie, OK 73015",
+      "website": "https://www.farmersbankok.com"
+    },
+    {
+      "name": "The Farmers State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "404",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1100 Main St, Quinton, OK 74561",
+      "website": "https://www.fsb1908.bank"
+    },
+    {
+      "name": "The First Bank of Okarche",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1165",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "203 W Oklahoma, Okarche, OK 73762",
+      "website": "https://www.firstbankokarche.com"
+    },
+    {
+      "name": "The First Farmers National Bank of Waurika",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4222",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "319 E D Ave, Waurika, OK 73573",
+      "website": "https://www.ffnbank.com"
+    },
+    {
+      "name": "The First National Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4086",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2714 West Third Street, Elk City, OK 73644",
+      "website": "https://www.fnbec.com"
+    },
+    {
+      "name": "The First National Bank and Trust Co., Chickasha, Oklahoma",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4062",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "302 W Chickasha Ave, Chickasha, OK 73018",
+      "website": "https://www.bankfnbt.com"
+    },
+    {
+      "name": "The First National Bank and Trust Company of Broken Arrow",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4050",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "121 S Main St, Broken Arrow, OK 74012",
+      "website": "https://fnbba.com"
+    },
+    {
+      "name": "The First National Bank and Trust Company of Miami",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4148",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2 N Main St, Miami, OK 74354",
+      "website": "https://www.fnbmiami.com"
+    },
+    {
+      "name": "The First National Bank in Marlow",
+      "fdic_insured_since": "01/24/1985",
+      "fdic_cert": "26260",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "301 W Main St, Marlow, OK 73055",
+      "website": "https://www.fnbmarlow.com"
+    },
+    {
+      "name": "The First National Bank of Fletcher",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4098",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "401 West Cole Ave, Fletcher, OK 73541",
+      "website": "https://fletcherbank.com"
+    },
+    {
+      "name": "The First National Bank of Fort Smith",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3864",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "602 Garrison Ave, Fort Smith, AR 72901",
+      "website": "https://www.fnbfs.com"
+    },
+    {
+      "name": "The First National Bank of Hooker",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4123",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "119 N Broadway, Hooker, OK 73945",
+      "website": "https://www.hookerbank.com"
+    },
+    {
+      "name": "The First Security Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4041",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15 South Douglas Avenue, Beaver, OK 73932",
+      "website": "https://www.thefirstsecuritybank.com"
+    },
+    {
+      "name": "The First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2301",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "16 Courthouse Square, Boise City, OK 73933",
+      "website": "https://www.fsbboisecity.com"
+    },
+    {
+      "name": "The First State Bank of Pond Creek, Oklahoma",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11527",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "136 W Broadway St, Pond Creek, OK 73766",
+      "website": "https://www.fsbpondcreek.com"
+    },
+    {
+      "name": "The Hopeton State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12585",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "19495 County Rd 440, Hopeton, OK 73746",
+      "website": "https://hopetonbank.com"
+    },
+    {
+      "name": "The Idabel National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4241",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1201 E Washington St, Idabel, OK 74745",
+      "website": "https://www.idabelnational.com"
+    },
+    {
+      "name": "The Pauls Valley National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4173",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "101 W Paul Ave, Pauls Valley, OK 73075",
+      "website": "https://www.pvnb.com/www.pvnational.com"
+    },
+    {
+      "name": "The Payne County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12485",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "202 S Main St, Perkins, OK 74059",
+      "website": "https://www.paynecountybank.com"
+    },
+    {
+      "name": "The Peoples National Bank of Checotah",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4059",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "300 W Gentry Ave, Checotah, OK 74426",
+      "website": "https://www.peoplesok.com/"
+    },
+    {
+      "name": "The Security National Bank of Enid",
+      "fdic_insured_since": "02/02/1935",
+      "fdic_cert": "14966",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 S Independence St, Enid, OK 73701",
+      "website": "https://www.snbenid.com"
+    },
+    {
+      "name": "THE SEILING STATE BANK",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4193",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 N Main St, Seiling, OK 73663",
+      "website": "https://www.seilingsb.com"
+    },
+    {
+      "name": "The State Bank of Wynnewood",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4232",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "117 S Dean A Mcgee Ave, Wynnewood, OK 73098",
+      "website": "https://www.sbwok.com"
+    },
+    {
+      "name": "The State Exchange Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13551",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1280 Main St, Lamont, OK 74643",
+      "website": "https://www.stateexchangebank.com"
+    },
+    {
+      "name": "The Stock Exchange Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "414",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1117 10th St, Woodward, OK 73801",
+      "website": "https://www.stockexchangebank.com"
+    },
+    {
+      "name": "TIB National Association",
+      "fdic_insured_since": "01/21/1982",
+      "fdic_cert": "23647",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "11701 Luna Rd, Farmers Branch, TX 75234",
+      "website": "https://www.tib.bank"
+    },
+    {
+      "name": "Triad Bank, National Association",
+      "fdic_insured_since": "08/29/1983",
+      "fdic_cert": "24677",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "7646 E 61st St, Tulsa, OK 74133",
+      "website": "https://triadbank.com"
+    },
+    {
+      "name": "UMB Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8273",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1010 Grand Blvd, Kansas City, MO 64106",
+      "website": "https://www.umb.com"
+    },
+    {
+      "name": "Union State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1869",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "127 S Summit St, Arkansas City, KS 67005",
+      "website": "https://www.myunionstate.bank"
+    },
+    {
+      "name": "Valliance Bank",
+      "fdic_insured_since": "10/20/2004",
+      "fdic_cert": "57841",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1601 Nw Expressway, Oklahoma City, OK 73118",
+      "website": "https://www.valliance.bank"
+    },
+    {
+      "name": "VALOR BANK",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9467",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1501 Renaissance Blvd, Edmond, OK 73013",
+      "website": "https://valor.bank"
+    },
+    {
+      "name": "Vast Bank, National Association",
+      "fdic_insured_since": "02/16/1982",
+      "fdic_cert": "23737",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "110 N Elgin Ave, Tulsa, OK 74120",
+      "website": "https://www.vast.bank"
+    },
+    {
+      "name": "Vision Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4029",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 E Main St, Ada, OK 74820",
+      "website": "https://www.visionbank.bank"
+    },
+    {
+      "name": "Walters Bank and Trust Company",
+      "fdic_insured_since": "04/14/1934",
+      "fdic_cert": "14260",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 N Broadway St, Walters, OK 73572",
+      "website": "https://waltersbt.com"
+    },
+    {
+      "name": "Washita State Bank",
+      "fdic_insured_since": "03/11/1977",
+      "fdic_cert": "22430",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "701 State Highway 44, Burns Flat, OK 73624",
+      "website": "https://www.washitastatebank.com"
+    },
+    {
+      "name": "Washita Valley Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2308",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "204 N Hazlett St, Fort Cobb, OK 73038",
+      "website": ""
+    },
+    {
+      "name": "Watermark Bank",
+      "fdic_insured_since": "01/22/2019",
+      "fdic_cert": "59148",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6501 N. Classen Boulevard Suite 300, Oklahoma City, OK 73116",
+      "website": "https://watermark.bank"
+    },
+    {
+      "name": "Welch State Bank of Welch, Okla.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9472",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "396 S Commercial St, Welch, OK 74369",
+      "website": "https://www.welchstatebank.com"
+    },
+    {
+      "name": "Wisdom Heritage Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9465",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "518 College Ave, Alva, OK 73717",
+      "website": "https://www.wisdomheritage.bank"
+    },
+    {
+      "name": "YNB",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4235",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 Elm Ave, Yukon, OK 73099",
+      "website": "https://www.ynbok.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

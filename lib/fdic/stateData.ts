@@ -8,11 +8,13 @@
  */
 import type { StateFDICData } from './types';
 import alabamaData from './data/alabama.json';
+import arkansasData from './data/arkansas.json';
 import floridaData from './data/florida.json';
 import georgiaData from './data/georgia.json';
 import louisianaData from './data/louisiana.json';
 import mississippiData from './data/mississippi.json';
 import northCarolinaData from './data/north-carolina.json';
+import oklahomaData from './data/oklahoma.json';
 import southCarolinaData from './data/south-carolina.json';
 import texasData from './data/texas.json';
 import virginiaData from './data/virginia.json';
@@ -20,11 +22,13 @@ import westVirginiaData from './data/west-virginia.json';
 
 export const stateData: Record<string, StateFDICData> = {
   AL: alabamaData as StateFDICData,
+  AR: arkansasData as StateFDICData,
   FL: floridaData as StateFDICData,
   GA: georgiaData as StateFDICData,
   LA: louisianaData as StateFDICData,
   MS: mississippiData as StateFDICData,
   NC: northCarolinaData as StateFDICData,
+  OK: oklahomaData as StateFDICData,
   SC: southCarolinaData as StateFDICData,
   TX: texasData as StateFDICData,
   VA: virginiaData as StateFDICData,

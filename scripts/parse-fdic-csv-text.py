@@ -12,6 +12,11 @@ TX_SRC = ROOT / "data" / "texas-import.txt"
 TX_PROMPT = Path(
     r"C:\Users\makei\.grok\sessions\C%3A%5CUsers%5Cmakei\019efc5b-cf82-7612-8aff-b4ae0767aaa7\prompts\prompt_4.txt"
 )
+OK_SRC = ROOT / "data" / "oklahoma-import.txt"
+AR_SRC = ROOT / "data" / "arkansas-import.txt"
+OK_AR_PROMPT = Path(
+    r"C:\Users\makei\.grok\sessions\C%3A%5CUsers%5Cmakei\019efc5b-cf82-7612-8aff-b4ae0767aaa7\prompts\prompt_5.txt"
+)
 OUT_DIR = ROOT / "lib" / "fdic" / "data"
 
 STATE_META = {
@@ -24,6 +29,8 @@ STATE_META = {
     "MS": ("Mississippi", "mississippi"),
     "LA": ("Louisiana", "louisiana"),
     "TX": ("Texas", "texas"),
+    "OK": ("Oklahoma", "oklahoma"),
+    "AR": ("Arkansas", "arkansas"),
 }
 
 # Use anchored line markers so intro text and bank names do not false-match.
@@ -177,6 +184,65 @@ def ensure_texas_import() -> None:
     TX_SRC.write_text(extract_texas_lines(raw), encoding="utf-8")
 
 
+def extract_oklahoma_lines(content: str) -> str:
+    if "<user_query>" in content:
+        content = content.split("<user_query>", 1)[1]
+
+    block_lines: list[str] = []
+    for raw in content.splitlines():
+        line = raw.strip().rstrip("\t").replace("\t", "")
+        if re.match(r"^arkansas\s*$", line, re.I):
+            break
+        if not line or line.startswith("<"):
+            continue
+        if re.match(r"^ok now arkansas", line, re.I):
+            continue
+        if line.lower().startswith("bank name,fdic"):
+            continue
+        block_lines.append(line)
+
+    return "\n".join(block_lines)
+
+
+def extract_arkansas_lines(content: str) -> str:
+    if "<user_query>" in content:
+        content = content.split("<user_query>", 1)[1]
+
+    lines = content.splitlines()
+    ar_start = None
+    for i, line in enumerate(lines):
+        if re.match(r"^arkansas\s*$", line.strip(), re.I):
+            ar_start = i
+            break
+    if ar_start is None:
+        return ""
+
+    last_header = ar_start
+    for j in range(ar_start + 1, len(lines)):
+        if lines[j].strip().lower().startswith("bank name,fdic"):
+            last_header = j
+
+    block_lines: list[str] = []
+    for raw in lines[last_header + 1 :]:
+        line = raw.strip().rstrip("\t").replace("\t", "")
+        if not line or line.startswith("<"):
+            continue
+        block_lines.append(line)
+
+    return "\n".join(block_lines)
+
+
+def ensure_ok_ar_imports() -> None:
+    if not OK_AR_PROMPT.exists():
+        return
+    raw = OK_AR_PROMPT.read_text(encoding="utf-8")
+    OK_SRC.parent.mkdir(parents=True, exist_ok=True)
+    if not OK_SRC.exists():
+        OK_SRC.write_text(extract_oklahoma_lines(raw), encoding="utf-8")
+    if not AR_SRC.exists():
+        AR_SRC.write_text(extract_arkansas_lines(raw), encoding="utf-8")
+
+
 def main():
     if not SRC.exists():
         prompt = Path(
@@ -199,6 +265,12 @@ def main():
     ensure_texas_import()
     if TX_SRC.exists():
         sections["TX"] = TX_SRC.read_text(encoding="utf-8")
+
+    ensure_ok_ar_imports()
+    if OK_SRC.exists():
+        sections["OK"] = OK_SRC.read_text(encoding="utf-8")
+    if AR_SRC.exists():
+        sections["AR"] = AR_SRC.read_text(encoding="utf-8")
 
     for code, text in sections.items():
         full_name, slug = STATE_META[code]
