@@ -1,0 +1,1887 @@
+{
+  "fullName": "Kansas",
+  "abbr": "KS",
+  "banks": [
+    {
+      "name": "Academy Bank, National Association",
+      "fdic_insured_since": "06/15/1966",
+      "fdic_cert": "19600",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1201 Walnut St, Kansas City, MO 64106",
+      "website": "https://www.academybank.com"
+    },
+    {
+      "name": "Adams Bank & Trust",
+      "fdic_insured_since": "02/26/1962",
+      "fdic_cert": "18489",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "315 N Spruce St, Ogallala, NE 69153",
+      "website": "https://www.abtbank.com"
+    },
+    {
+      "name": "American Bank of Baxter Springs",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4624",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1201 Military Ave, Baxter Springs, KS 66713",
+      "website": "https://www.americanbankbaxter.com"
+    },
+    {
+      "name": "Andover State Bank",
+      "fdic_insured_since": "04/19/1946",
+      "fdic_cert": "16410",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "511 N Andover Rd, Andover, KS 67002",
+      "website": "https://www.goasb.com"
+    },
+    {
+      "name": "Argentine Federal Savings",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28507",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3004 Strong Ave, Kansas City, KS 66106",
+      "website": "https://www.argentinefed.com"
+    },
+    {
+      "name": "Armed Forces Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4666",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "320 Kansas Ave, Fort Leavenworth, KS 66027",
+      "website": "https://afbank.com"
+    },
+    {
+      "name": "Arvest Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8728",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "75 N East Ave, Fayetteville, AR 72701",
+      "website": "https://www.arvest.com"
+    },
+    {
+      "name": "Astra Bank",
+      "fdic_insured_since": "07/27/1956",
+      "fdic_cert": "17636",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "323 4th St, Scandia, KS 66966",
+      "website": "https://astra.bank"
+    },
+    {
+      "name": "Bank 7",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4147",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1039 Nw 63rd St, Oklahoma City, OK 73116",
+      "website": "https://www.bank7.com"
+    },
+    {
+      "name": "Bank of America, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3510",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 N Tryon St, Charlotte, NC 28202",
+      "website": "https://www.bankofamerica.com"
+    },
+    {
+      "name": "Bank of Commerce",
+      "fdic_insured_since": "05/02/1985",
+      "fdic_cert": "26217",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 W Main St, Chanute, KS 66720",
+      "website": "https://www.boc-ks.com"
+    },
+    {
+      "name": "Bank of Commerce and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4796",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 W Harvey Ave, Wellington, KS 67152",
+      "website": "https://www.bankofcommerce.ws"
+    },
+    {
+      "name": "Bank of England",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13303",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "123 S Main St, England, AR 72046",
+      "website": "https://www.bankofengland-ar.com"
+    },
+    {
+      "name": "Bank of Greeley",
+      "fdic_insured_since": "05/04/1959",
+      "fdic_cert": "17995",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "118 W Brown St, Greeley, KS 66033",
+      "website": "https://bankofgreeley.com"
+    },
+    {
+      "name": "Bank of Hays",
+      "fdic_insured_since": "06/12/1957",
+      "fdic_cert": "17769",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1000 W 27th St, Hays, KS 67601",
+      "website": "https://www.bankofhays.com"
+    },
+    {
+      "name": "Bank of Holyrood",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9661",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 S Main St, Holyrood, KS 67450",
+      "website": "https://www.bankofholyrood.com"
+    },
+    {
+      "name": "Bank of Labor",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1874",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6301 Glenwood St, Third Floor, Overland Park, KS 66202",
+      "website": "https://www.bankoflabor.com"
+    },
+    {
+      "name": "Bank of Prairie Village",
+      "fdic_insured_since": "09/27/1956",
+      "fdic_cert": "17671",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3515 W 75th St, Prairie Village, KS 66208",
+      "website": "https://www.bankofprairievillage.com"
+    },
+    {
+      "name": "Bank of the Flint Hills",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4791",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "806 5th St, Wamego, KS 66547",
+      "website": "https://www.bankflinthills.com"
+    },
+    {
+      "name": "Bank of the Plains",
+      "fdic_insured_since": "11/25/1959",
+      "fdic_cert": "18118",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "411 Grand Ave, Plains, KS 67869",
+      "website": "https://www.bankoftheplains.com"
+    },
+    {
+      "name": "Bankers' Bank of Kansas",
+      "fdic_insured_since": "10/05/1988",
+      "fdic_cert": "27351",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "555 N Woodlawn St, Wichita, KS 67208",
+      "website": "https://www.bbok.com"
+    },
+    {
+      "name": "Bison State Bank",
+      "fdic_insured_since": "03/21/1934",
+      "fdic_cert": "14083",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "223 Main St, Bison, KS 67520",
+      "website": "https://www.bisonstatebank.com"
+    },
+    {
+      "name": "BMO Bank National Association",
+      "fdic_insured_since": "05/17/1947",
+      "fdic_cert": "16571",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "320 S Canal St, Chicago, IL 60606",
+      "website": "https://www.bmo.com"
+    },
+    {
+      "name": "BOKF, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4214",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Williams Ctr, Tulsa, OK 74172",
+      "website": "https://www.bokfinancial.com"
+    },
+    {
+      "name": "Busey Bank",
+      "fdic_insured_since": "07/08/1946",
+      "fdic_cert": "16450",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 W University Ave, Champaign, IL 61820",
+      "website": "https://www.busey.com"
+    },
+    {
+      "name": "Capitol Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27981",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "700 S Kansas Ave, Topeka, KS 66603",
+      "website": "https://www.capfed.com"
+    },
+    {
+      "name": "Carson Bank",
+      "fdic_insured_since": "11/05/1954",
+      "fdic_cert": "17369",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "122 W Main St, Mulvane, KS 67110",
+      "website": "https://www.carsonbank.com"
+    },
+    {
+      "name": "CBW Bank",
+      "fdic_insured_since": "02/28/1934",
+      "fdic_cert": "13959",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "109 E Main St, Weir, KS 66781",
+      "website": "https://www.cbwbank.com"
+    },
+    {
+      "name": "Centera Bank",
+      "fdic_insured_since": "05/31/1946",
+      "fdic_cert": "16436",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "119 S Inman St, Sublette, KS 67877",
+      "website": "https://www.centerabank.com"
+    },
+    {
+      "name": "Central National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4702",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "802 N Washington St, Junction City, KS 66441",
+      "website": "https://www.centralnational.com"
+    },
+    {
+      "name": "Citizens Bank",
+      "fdic_insured_since": "01/27/1978",
+      "fdic_cert": "22601",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "19 S Orange St, Butler, MO 64730",
+      "website": "https://www.citizensbank.ws"
+    },
+    {
+      "name": "Citizens Bank of Kansas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4707",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "300 N Main St, Kingman, KS 67068",
+      "website": "https://www.citizensbankofkansas.com"
+    },
+    {
+      "name": "Citizens Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30150",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "5151 S 4th St, Leavenworth, KS 66048",
+      "website": "https://www.citizensfsb.bank"
+    },
+    {
+      "name": "Citizens State Bank and Trust Co., Ellsworth, Kansas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11778",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "203 N Douglas Ave, Ellsworth, KS 67439",
+      "website": "https://www.csbanc.com"
+    },
+    {
+      "name": "Citizens State Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5830",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "610 Oregon St, Hiawatha, KS 66434",
+      "website": "https://www.csbkansas.com"
+    },
+    {
+      "name": "Commerce Bank",
+      "fdic_insured_since": "02/21/1984",
+      "fdic_cert": "24998",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1000 Walnut St, Kansas City, MO 64106",
+      "website": "https://www.commercebank.com"
+    },
+    {
+      "name": "Commercial Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11777",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1901 Main St, Parsons, KS 67357",
+      "website": "https://commercialbank.net"
+    },
+    {
+      "name": "Community Bank",
+      "fdic_insured_since": "05/22/1995",
+      "fdic_cert": "34020",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "5431 Sw 29th St, Topeka, KS 66614",
+      "website": "https://www.cbtopeka.bank"
+    },
+    {
+      "name": "Community Bank and Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13068",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 S Wood St, Neosho, MO 64850",
+      "website": "https://www.cbthomebank.com"
+    },
+    {
+      "name": "Community Bank of Wichita, Inc.",
+      "fdic_insured_since": "08/16/1999",
+      "fdic_cert": "35118",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "11330 E 21st St N, Wichita, KS 67206",
+      "website": "https://www.cbw.bank"
+    },
+    {
+      "name": "Community First National Bank",
+      "fdic_insured_since": "02/01/2001",
+      "fdic_cert": "35585",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "215 S Seth Child Rd, Manhattan, KS 66502",
+      "website": "https://www.cfnb.bank"
+    },
+    {
+      "name": "Community National Bank",
+      "fdic_insured_since": "10/04/1984",
+      "fdic_cert": "25665",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "210 Main St, Seneca, KS 66538",
+      "website": "https://www.bankoncnb.com"
+    },
+    {
+      "name": "Community National Bank & Trust",
+      "fdic_insured_since": "09/04/1987",
+      "fdic_cert": "27046",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "14 N Lincoln Ave, Chanute, KS 66720",
+      "website": "https://www.mybankcnb.com"
+    },
+    {
+      "name": "Core Bank",
+      "fdic_insured_since": "12/27/1996",
+      "fdic_cert": "34363",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "17807 Burke St, Omaha, NE 68118",
+      "website": "https://www.corebank.com"
+    },
+    {
+      "name": "CoreFirst Bank & Trust",
+      "fdic_insured_since": "11/30/1959",
+      "fdic_cert": "18100",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3035 Sw Topeka Blvd, Topeka, KS 66611",
+      "website": "https://www.cbtks.com"
+    },
+    {
+      "name": "Cornerstone Bank",
+      "fdic_insured_since": "10/26/2001",
+      "fdic_cert": "57250",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9120 W 135th St, Overland Park, KS 66221",
+      "website": "https://www.cornerstonebk.com"
+    },
+    {
+      "name": "Cottonwood Valley Bank",
+      "fdic_insured_since": "12/08/1952",
+      "fdic_cert": "17160",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "106 Main St, Cedar Point, KS 66843",
+      "website": "https://www.cottonwoodvalleybank.com"
+    },
+    {
+      "name": "Dream First Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4779",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "11 N Main St, Syracuse, KS 67878",
+      "website": "https://www.dreamfirst.bank"
+    },
+    {
+      "name": "Elevate Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4770",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "101 W Main St, Sedan, KS 67361",
+      "website": "https://www.elevate.bank"
+    },
+    {
+      "name": "Elk State Bank",
+      "fdic_insured_since": "08/21/1935",
+      "fdic_cert": "15259",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "328 Washington St, Clyde, KS 66938",
+      "website": "https://www.elkstatebank.com"
+    },
+    {
+      "name": "Emprise Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4789",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "257 N Broadway Ave, Wichita, KS 67202",
+      "website": "https://www.emprisebank.com"
+    },
+    {
+      "name": "Enterprise Bank & Trust",
+      "fdic_insured_since": "05/09/1988",
+      "fdic_cert": "27237",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "150 N Meramec Ave, Clayton, MO 63105",
+      "website": "https://www.enterprisebank.com"
+    },
+    {
+      "name": "Equity Bank",
+      "fdic_insured_since": "01/21/1985",
+      "fdic_cert": "25858",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "345 N Andover Rd, Andover, KS 67002",
+      "website": "https://www.equitybank.com"
+    },
+    {
+      "name": "ESB Financial",
+      "fdic_insured_since": "10/01/1947",
+      "fdic_cert": "16629",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "801 Merchant St, Emporia, KS 66801",
+      "website": "https://www.esbfinancial.com"
+    },
+    {
+      "name": "Exchange Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1435",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3110 2nd Ave, Kearney, NE 68847",
+      "website": "https://www.eb-us.com"
+    },
+    {
+      "name": "Exchange Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4619",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "600 Commercial St, Atchison, KS 66002",
+      "website": "https://www.ebt.bank"
+    },
+    {
+      "name": "Exchange State Bank",
+      "fdic_insured_since": "07/06/1934",
+      "fdic_cert": "14556",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "408 5th Street, Saint Paul, KS 66771",
+      "website": "https://www.esbks.com"
+    },
+    {
+      "name": "Farmers & Merchants Bank of Colby",
+      "fdic_insured_since": "03/13/1998",
+      "fdic_cert": "34719",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "240 W 4th St, Colby, KS 67701",
+      "website": "https://www.fmbcolby.com"
+    },
+    {
+      "name": "Farmers and Drovers Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12602",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 W Main St, Council Grove, KS 66846",
+      "website": "https://www.farmersanddrovers.com"
+    },
+    {
+      "name": "Farmers and Merchants Bank",
+      "fdic_insured_since": "04/24/1934",
+      "fdic_cert": "14275",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "501 Main St, Milligan, NE 68406",
+      "website": "https://www.fmbmilligan.com"
+    },
+    {
+      "name": "Farmers and Merchants Bank of Mound City, Kansas",
+      "fdic_insured_since": "03/09/1934",
+      "fdic_cert": "14024",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "103 S 5th St, Mound City, KS 66056",
+      "website": "https://www.fmbankmc.com"
+    },
+    {
+      "name": "Farmers Bank & Trust",
+      "fdic_insured_since": "06/07/1956",
+      "fdic_cert": "17614",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1017 Harrison St, Great Bend, KS 67530",
+      "website": "https://www.farmersbankks.com"
+    },
+    {
+      "name": "Farmers Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4621",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 S 4th St, Atwood, KS 67730",
+      "website": "https://www.farmersbank-trust.com"
+    },
+    {
+      "name": "Farmers National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4611",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "759 State St, Phillipsburg, KS 67661",
+      "website": "https://www.farmersnationalbankonline.com"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "05/08/1934",
+      "fdic_cert": "14344",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "110 W State St, Phillipsburg, KS 67661",
+      "website": "https://www.fsbphillipsburg.com"
+    },
+    {
+      "name": "Fidelity Bank, National Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30895",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 E English St, Wichita, KS 67202",
+      "website": "https://www.fidelitybank.com"
+    },
+    {
+      "name": "First Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12229",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "11901 Olive Boulevard, St. Louis, MO 63141",
+      "website": "https://www.first.bank"
+    },
+    {
+      "name": "First Bank",
+      "fdic_insured_since": "08/26/1946",
+      "fdic_cert": "16473",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "128 S Broadway Ave, Sterling, KS 67579",
+      "website": "https://www.first-bank..net"
+    },
+    {
+      "name": "First Bank Kansas",
+      "fdic_insured_since": "09/11/1961",
+      "fdic_cert": "18431",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "235 S Santa Fe Ave, Salina, KS 67401",
+      "website": "https://www.firstbankkansas.com"
+    },
+    {
+      "name": "First Business Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "15229",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 Charmany Dr, Madison, WI 53719",
+      "website": "https://www.firstbusiness.bank"
+    },
+    {
+      "name": "First Commerce Bank",
+      "fdic_insured_since": "08/21/2002",
+      "fdic_cert": "57273",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "902 Broadway, Marysville, KS 66508",
+      "website": "https://www.bankfirstcommerce.com"
+    },
+    {
+      "name": "First FarmBank",
+      "fdic_insured_since": "02/12/2007",
+      "fdic_cert": "58508",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2939 65th Ave, Greeley, CO 80634",
+      "website": "https://www.firstfarmbank.com"
+    },
+    {
+      "name": "First Federal Bank of Kansas City",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29047",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1255 Se Oldham Pkwy, Lees Summit, MO 64081",
+      "website": "https://www.ffbkc.com"
+    },
+    {
+      "name": "First Federal Savings and Loan Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28635",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "700 E Santa Fe St, Olathe, KS 66061",
+      "website": "https://www.firstfederalolathe.com"
+    },
+    {
+      "name": "First Heritage Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4636",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "620 4th St, Centralia, KS 66415",
+      "website": "https://www.1hbank.com"
+    },
+    {
+      "name": "First Kansas Bank",
+      "fdic_insured_since": "12/30/1961",
+      "fdic_cert": "18474",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 N Main St, Hoisington, KS 67544",
+      "website": "https://www.firstkansasbank.com"
+    },
+    {
+      "name": "First National Bank and Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4756",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "225 State St, Phillipsburg, KS 67661",
+      "website": "https://www.agbank.bank"
+    },
+    {
+      "name": "First National Bank in Frankfort",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4668",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "124 N Kansas Ave, Frankfort, KS 66427",
+      "website": "https://www.fnbfrankfortks.com"
+    },
+    {
+      "name": "First National Bank in Fredonia",
+      "fdic_insured_since": "01/31/1934",
+      "fdic_cert": "13798",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "730 Madison St, Fredonia, KS 66736",
+      "website": "https://www.fnbfredonia.com"
+    },
+    {
+      "name": "First National Bank of Kansas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4794",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "600 N 4th St, Burlington, KS 66839",
+      "website": "https://www.fnbofks.bank"
+    },
+    {
+      "name": "First National Bank of Omaha",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5452",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1601 Capitol Avenue, Omaha, NE 68102",
+      "website": "https://www.fnbo.com"
+    },
+    {
+      "name": "First Option Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4746",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "601 Main St, Osawatomie, KS 66064",
+      "website": "https://www.firstoptionbank.com"
+    },
+    {
+      "name": "First State Bank and Trust",
+      "fdic_insured_since": "01/08/1935",
+      "fdic_cert": "14974",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 S Bury St, Tonganoxie, KS 66086",
+      "website": "https://www.firststateks.com"
+    },
+    {
+      "name": "First State Bank of St. Charles, Missouri",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12219",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "206 N 5th St, St. Charles, MO 63301",
+      "website": "https://www.fsbfinancial.com"
+    },
+    {
+      "name": "First-Citizens Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11063",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "239 Fayetteville St, Raleigh, NC 27601",
+      "website": "https://www.firstcitizens.com"
+    },
+    {
+      "name": "FirstOak Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4660",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "113 N Penn Ave, Independence, KS 67301",
+      "website": "https://www.firstoakbank.com"
+    },
+    {
+      "name": "FNB Bank",
+      "fdic_insured_since": "05/24/1934",
+      "fdic_cert": "14420",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 E 11th St, Goodland, KS 67735",
+      "website": "https://www.fnb.com"
+    },
+    {
+      "name": "FNB Washington",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4792",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 C St, Washington, KS 66968",
+      "website": "https://www.fnbwashington.com"
+    },
+    {
+      "name": "Ford County State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12139",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "322 N Main St, Spearville, KS 67876",
+      "website": "https://fordcountystatebank.com"
+    },
+    {
+      "name": "Fusion Bank",
+      "fdic_insured_since": "06/26/1942",
+      "fdic_cert": "15899",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "116 W 6th St, Larned, KS 67550",
+      "website": "https://www.fusion.bank"
+    },
+    {
+      "name": "Garden Plain State Bank",
+      "fdic_insured_since": "03/17/1967",
+      "fdic_cert": "19687",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "10526 W Maple St, Wichita, KS 67209",
+      "website": "https://www.gpsbank.com"
+    },
+    {
+      "name": "GNBank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4673",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 E Forest Ave, Girard, KS 66743",
+      "website": "https://www.gn-bank.com"
+    },
+    {
+      "name": "Golden Belt Bank, FSA",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28735",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1100 E 27th St, Hays, KS 67601",
+      "website": "https://www.goldenbeltbank.com"
+    },
+    {
+      "name": "Goppert State Service Bank",
+      "fdic_insured_since": "04/12/1954",
+      "fdic_cert": "17317",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "106 E 5th Ave, Garnett, KS 66032",
+      "website": "https://www.gssb.us.com"
+    },
+    {
+      "name": "Grant County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10918",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 S Main St, Ulysses, KS 67880",
+      "website": "https://www.gcbks.bank"
+    },
+    {
+      "name": "Great American Bank",
+      "fdic_insured_since": "08/07/2000",
+      "fdic_cert": "35292",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "888 New Hampshire St, Lawrence, KS 66044",
+      "website": "https://www.greatambank.com"
+    },
+    {
+      "name": "Great Southern Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29546",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "14309 State Highway 13, Reeds Spring, MO 65737",
+      "website": "https://www.greatsouthernbank.com"
+    },
+    {
+      "name": "Guaranty State Bank and Trust Company",
+      "fdic_insured_since": "01/02/1934",
+      "fdic_cert": "10907",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 S Mill St, Beloit, KS 67420",
+      "website": "https://www.guarantystate.com"
+    },
+    {
+      "name": "Halstead Bank",
+      "fdic_insured_since": "06/08/1955",
+      "fdic_cert": "17451",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "314 Main St, Halstead, KS 67056",
+      "website": "https://www.halsteadbank.com"
+    },
+    {
+      "name": "Hawthorn Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10619",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "132 E High St, Jefferson City, MO 65101",
+      "website": "https://www.hawthornbank.com"
+    },
+    {
+      "name": "Heritage Bank",
+      "fdic_insured_since": "04/14/2003",
+      "fdic_cert": "57548",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3024 Sw Wanamaker Rd, Topeka, KS 66614",
+      "website": "https://www.heritagebankonline.com"
+    },
+    {
+      "name": "Home Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4664",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "217 N Main St, Eureka, KS 67045",
+      "website": "https://www.homebank-trust.com"
+    },
+    {
+      "name": "Home Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28246",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "214 N Lincoln Ave, Chanute, KS 66720",
+      "website": "https://www.homesavingschanute.com"
+    },
+    {
+      "name": "Impact Bank",
+      "fdic_insured_since": "02/10/1955",
+      "fdic_cert": "17399",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "206 E Harvey Ave, Wellington, KS 67152",
+      "website": "https://www.impact-bank.com"
+    },
+    {
+      "name": "Integrity Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13450",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 N Main St, Fowler, KS 67844",
+      "website": "https://www.integrityks.bank"
+    },
+    {
+      "name": "Intrust Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4799",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "105 N Main St, Wichita, KS 67202",
+      "website": "https://www.intrustbank.com"
+    },
+    {
+      "name": "Johnson State Bank",
+      "fdic_insured_since": "07/19/1935",
+      "fdic_cert": "15237",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "106 N Main St, Johnson, KS 67855",
+      "website": "https://www.johnsonstatebank.com"
+    },
+    {
+      "name": "JPMorgan Chase Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "628",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1111 Polaris Pkwy, Columbus, OH 43240",
+      "website": "https://www.jpmorganchase.com"
+    },
+    {
+      "name": "Kaw Valley Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9665",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1110 N Kansas Ave, Topeka, KS 66608",
+      "website": "https://www.kawvalleybank.com"
+    },
+    {
+      "name": "Kaw Valley State Bank and Trust Company",
+      "fdic_insured_since": "01/23/1958",
+      "fdic_cert": "17832",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1015 Kaw Valley Park Cir, Wamego, KS 66547",
+      "website": "https://kvsb.com"
+    },
+    {
+      "name": "KCB Bank",
+      "fdic_insured_since": "06/26/1935",
+      "fdic_cert": "15194",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "221 N Main St, Lakin, KS 67860",
+      "website": "https://www.kcbks.bank"
+    },
+    {
+      "name": "Kendall Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8110",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "11225 College Blvd, Overland Park, KS 66210",
+      "website": "https://www.kendallbank.com"
+    },
+    {
+      "name": "KS StateBank",
+      "fdic_insured_since": "01/21/1969",
+      "fdic_cert": "19899",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1010 Westloop Pl, Manhattan, KS 66502",
+      "website": "https://ksstate.bank"
+    },
+    {
+      "name": "Labette Bank",
+      "fdic_insured_since": "12/21/1951",
+      "fdic_cert": "17068",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "319 E 4th St, Altamont, KS 67330",
+      "website": "https://www.labettebank.com"
+    },
+    {
+      "name": "Landmark National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5826",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "701 Poyntz Ave, Manhattan, KS 66502",
+      "website": "https://www.banklandmark.com"
+    },
+    {
+      "name": "Legacy Bank",
+      "fdic_insured_since": "10/04/1956",
+      "fdic_cert": "17676",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "123 E Chicago Ave, Colwich, KS 67030",
+      "website": "https://www.legacy.bank"
+    },
+    {
+      "name": "Liberty Bank and Trust Company",
+      "fdic_insured_since": "11/16/1972",
+      "fdic_cert": "20856",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6600 Plaza Dr, New Orleans, LA 70127",
+      "website": "https://www.libertybank.net"
+    },
+    {
+      "name": "Lyons Federal Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27727",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "200 East Ave S, Lyons, KS 67554",
+      "website": "https://www.lyonsfed.com"
+    },
+    {
+      "name": "Marquette Farmers State Bank of Marquette",
+      "fdic_insured_since": "10/15/1959",
+      "fdic_cert": "18094",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "205 N Washington St, Marquette, KS 67464",
+      "website": "https://www.mfsb.com"
+    },
+    {
+      "name": "Mid-America Bank",
+      "fdic_insured_since": "12/16/1954",
+      "fdic_cert": "17374",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "802 Ames St, Baldwin City, KS 66006",
+      "website": "https://www.mid-americabank.com"
+    },
+    {
+      "name": "Midwest Heritage Bank, FSB",
+      "fdic_insured_since": "02/09/1995",
+      "fdic_cert": "4432",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3580 Ep True Pkwy Ste 100, West Des Moines, IA 50265",
+      "website": "https://www.midwestheritage.com"
+    },
+    {
+      "name": "Mutual Savings Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29988",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 S 4th St, Leavenworth, KS 66048",
+      "website": "https://www.msa.bank"
+    },
+    {
+      "name": "National Advisors Trust Company",
+      "fdic_insured_since": "10/01/2001",
+      "fdic_cert": "57160",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "11141 Overbrook Rd, Leawood, KS 66211",
+      "website": "https://www.nationaladvisors.com"
+    },
+    {
+      "name": "NBH Bank",
+      "fdic_insured_since": "12/10/2010",
+      "fdic_cert": "59052",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "7800 E Orchard Rd Ste 200, Greenwood Village, CO 80111",
+      "website": "https://www.nbhbank.com"
+    },
+    {
+      "name": "nbkc bank",
+      "fdic_insured_since": "03/30/1999",
+      "fdic_cert": "35014",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3510 W 95th St, Leawood, KS 66206",
+      "website": "https://www.nbkc.com"
+    },
+    {
+      "name": "New Century Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8108",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1211 28th St, Belleville, KS 66935",
+      "website": "https://www.newcenturybankna.com"
+    },
+    {
+      "name": "NINNESCAH VALLEY BANK",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4652",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 E 1st St, Cunningham, KS 67035",
+      "website": "https://www.nvalleybank.com"
+    },
+    {
+      "name": "Oakstar Bank",
+      "fdic_insured_since": "10/24/2005",
+      "fdic_cert": "58115",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1020 E Battlefield St, Springfield, MO 65807",
+      "website": "https://www.oakstarbank.com"
+    },
+    {
+      "name": "Omb Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8252",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3570 S National Ave, Springfield, MO 65807",
+      "website": "https://www.ombbank.com"
+    },
+    {
+      "name": "Outdoor Bank",
+      "fdic_insured_since": "11/01/1956",
+      "fdic_cert": "17685",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2401 N Seth Child Rd, Manhattan, KS 66503",
+      "website": "https://www.outdoorbank.com"
+    },
+    {
+      "name": "Patriots Bank",
+      "fdic_insured_since": "06/04/1959",
+      "fdic_cert": "18019",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "131 E 4th Ave, Garnett, KS 66032",
+      "website": "https://www.patriotsbank.com"
+    },
+    {
+      "name": "Peoples Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1365",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 S Main St, Mcpherson, KS 67460",
+      "website": "https://www.peoples.bank"
+    },
+    {
+      "name": "Pinnacle Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10634",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1401 N St, Lincoln, NE 68508",
+      "website": "https://www.pinnbank.com"
+    },
+    {
+      "name": "PNC Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6384",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "222 Delaware Ave, Wilmington, DE 19801",
+      "website": "https://www.pnc.com"
+    },
+    {
+      "name": "Prescott State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13729",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "283 E Main St, Prescott, KS 66767",
+      "website": "https://onlinebanking.prescottstatebank.com"
+    },
+    {
+      "name": "RCB Bank",
+      "fdic_insured_since": "07/09/1936",
+      "fdic_cert": "15399",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "300 W Patti Page Blvd, Claremore, OK 74017",
+      "website": "https://www.rcbbank.bank"
+    },
+    {
+      "name": "Security Bank of Kansas City",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4705",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "701 Minnesota Ave, Kansas City, KS 66101",
+      "website": "https://www.securitybankkc.com"
+    },
+    {
+      "name": "Security State Bank",
+      "fdic_insured_since": "04/21/1961",
+      "fdic_cert": "18374",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "506 S Main St, Scott City, KS 67871",
+      "website": "https://www.ssbscott.com"
+    },
+    {
+      "name": "Silver Lake Bank",
+      "fdic_insured_since": "12/16/1935",
+      "fdic_cert": "15323",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 Nw Us Highway 24, Topeka, KS 66608",
+      "website": "https://www.silverlakebank.com"
+    },
+    {
+      "name": "Simmons Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3890",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "501 S Main St, Pine Bluff, AR 71601",
+      "website": "https://www.simmonsbank.com"
+    },
+    {
+      "name": "SJN Bank of Kansas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4766",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "116 E 3rd Ave, Saint John, KS 67576",
+      "website": "https://www.sjnbank.com"
+    },
+    {
+      "name": "Small Business Bank",
+      "fdic_insured_since": "11/07/1984",
+      "fdic_cert": "25744",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "13423 W 92nd St, Lenexa, KS 66215",
+      "website": "https://www.smallbusinessbank.com"
+    },
+    {
+      "name": "SOLUTIONS NORTH BANK",
+      "fdic_insured_since": "01/02/1951",
+      "fdic_cert": "16971",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "123 N Cedar St, Stockton, KS 67669",
+      "website": "https://www.snbks.com"
+    },
+    {
+      "name": "Southern Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28332",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2991 Oak Grove Rd, Poplar Bluff, MO 63901",
+      "website": "https://www.bankwithsouthern.com"
+    },
+    {
+      "name": "Southwest National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4801",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "400 E Douglas Ave, Wichita, KS 67202",
+      "website": "https://www.southwestnb.com"
+    },
+    {
+      "name": "Southwind Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4735",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "702 N 2nd St, Natoma, KS 67651",
+      "website": "https://southwindbank.com"
+    },
+    {
+      "name": "State Bank of Burrton",
+      "fdic_insured_since": "05/22/1947",
+      "fdic_cert": "16583",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "200 N Burrton Ave, Burrton, KS 67020",
+      "website": "https://www.statebankofburrtononline.com"
+    },
+    {
+      "name": "State Bank of Downs",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9659",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "900 Morgan Ave, Downs, KS 67437",
+      "website": "https://www.statebankofdowns.com"
+    },
+    {
+      "name": "Stryv Bank",
+      "fdic_insured_since": "03/14/1975",
+      "fdic_cert": "21955",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "6160 N Broadway Ave, Wichita, KS 67219",
+      "website": "https://www.stryvbank.com"
+    },
+    {
+      "name": "Sunflower Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4767",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "8117 Preston Rd Ste 220, Dallas, TX 75225",
+      "website": "https://www.sunflowerbank.com"
+    },
+    {
+      "name": "Swedish-American State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12865",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "324 Liberty St, Courtland, KS 66939",
+      "website": "https://www.mysasb.com"
+    },
+    {
+      "name": "TBK BANK, SSB",
+      "fdic_insured_since": "07/15/1981",
+      "fdic_cert": "23498",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "12700 Park Central Dr Ste 1700, Dallas, TX 75251",
+      "website": "https://www.tbkbank.com"
+    },
+    {
+      "name": "TBO Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10597",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "113 E South Front St, Orrick, MO 64077",
+      "website": "https://www.tbobank.com"
+    },
+    {
+      "name": "The Baldwin State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10906",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "721 High St, Baldwin City, KS 66006",
+      "website": "https://www.baldwinstatebank.com"
+    },
+    {
+      "name": "The Bank",
+      "fdic_insured_since": "11/21/1985",
+      "fdic_cert": "26522",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "205 S Penn Ave, Oberlin, KS 67749",
+      "website": "https://www.thebankks.com"
+    },
+    {
+      "name": "The Bank of Beaver City",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11862",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "130 Douglas Ave, Beaver, OK 73932",
+      "website": "https://www.bankofbeaver.bank"
+    },
+    {
+      "name": "The Bank of Protection",
+      "fdic_insured_since": "04/02/1980",
+      "fdic_cert": "23099",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "302 N Broadway, Protection, KS 67127",
+      "website": "https://www.bankofprotection.com"
+    },
+    {
+      "name": "The Bank of Tescott",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1868",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "104 S Main St, Tescott, KS 67484",
+      "website": "https://www.bankoftescott.com"
+    },
+    {
+      "name": "The Baxter State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12432",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1401 Military Ave, Baxter Springs, KS 66713",
+      "website": "https://www.baxterstatebank.com"
+    },
+    {
+      "name": "The Bendena State Bank",
+      "fdic_insured_since": "03/17/1955",
+      "fdic_cert": "17410",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "933 Friendship Rd, Bendena, KS 66008",
+      "website": "https://www.bendenastatebank.com"
+    },
+    {
+      "name": "The Bennington State Bank",
+      "fdic_insured_since": "04/04/1946",
+      "fdic_cert": "16402",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2130 S Ohio St, Salina, KS 67401",
+      "website": "https://www.bsbks.com"
+    },
+    {
+      "name": "The Central Trust Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12633",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "238 Madison St, Jefferson City, MO 65101",
+      "website": "https://www.centralbank.net"
+    },
+    {
+      "name": "The Citizens National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4678",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "417 Commercial St, Greenleaf, KS 66943",
+      "website": "https://www.thecnb.bank"
+    },
+    {
+      "name": "The Citizens State Bank",
+      "fdic_insured_since": "04/19/1934",
+      "fdic_cert": "14269",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "800 Broadway, Marysville, KS 66508",
+      "website": "https://www.csbmarysville.com"
+    },
+    {
+      "name": "The Citizens State Bank",
+      "fdic_insured_since": "05/01/1935",
+      "fdic_cert": "15111",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "410 Main St, Gridley, KS 66852",
+      "website": "https://www.bankcsb.bank"
+    },
+    {
+      "name": "The Citizens State Bank",
+      "fdic_insured_since": "08/22/1935",
+      "fdic_cert": "15261",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "601 S Main St, Hugoton, KS 67951",
+      "website": "https://www.csbks.com"
+    },
+    {
+      "name": "The Citizens State Bank",
+      "fdic_insured_since": "09/27/1956",
+      "fdic_cert": "17672",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 S Christian Ave, Moundridge, KS 67107",
+      "website": "https://www.thecsb.com"
+    },
+    {
+      "name": "The Citizens State Bank and Trust Company",
+      "fdic_insured_since": "08/15/1935",
+      "fdic_cert": "15254",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "314 Main St, Council Grove, KS 66846",
+      "website": "https://extramilebank.com"
+    },
+    {
+      "name": "The Citizens State Bank of Cheney, Kansas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9658",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "306 N Main St, Cheney, KS 67025",
+      "website": "https://www.csbcheneyks.com"
+    },
+    {
+      "name": "The City National Bank and Trust Company of Lawton, Oklahoma",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4132",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "500 Montgomery Sq, Lawton, OK 73501",
+      "website": "https://www.cnb1901.com"
+    },
+    {
+      "name": "The City State Bank",
+      "fdic_insured_since": "05/24/1956",
+      "fdic_cert": "17607",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1012 Highway 69, Fort Scott, KS 66701",
+      "website": "https://www.citysb.com"
+    },
+    {
+      "name": "The Community Bank",
+      "fdic_insured_since": "04/06/1998",
+      "fdic_cert": "34666",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2320 N Kansas Ave, Liberal, KS 67901",
+      "website": "https://www.communitybankliberal.com"
+    },
+    {
+      "name": "The Denison State Bank",
+      "fdic_insured_since": "11/19/1935",
+      "fdic_cert": "15305",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "421 New York Ave, Holton, KS 66436",
+      "website": "https://www.dsbks.com"
+    },
+    {
+      "name": "The Dickinson County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12425",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 S Factory, Enterprise, KS 67441",
+      "website": "https://www.dcbonline.net"
+    },
+    {
+      "name": "The Eastern Colorado Bank",
+      "fdic_insured_since": "03/01/1944",
+      "fdic_cert": "16125",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "10 S 1st St E, Cheyenne Wells, CO 80810",
+      "website": "https://www.yourfriendlybank.com"
+    },
+    {
+      "name": "The Farmers State Bank",
+      "fdic_insured_since": "02/12/1934",
+      "fdic_cert": "13883",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2074 E Kansas Ave, McPherson, KS 67460",
+      "website": "https://www.fsb-online.com"
+    },
+    {
+      "name": "The Farmers State Bank",
+      "fdic_insured_since": "08/21/1935",
+      "fdic_cert": "15258",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "209 Montana Ave, Holton, KS 66436",
+      "website": "https://www.fsbks.bank"
+    },
+    {
+      "name": "The Farmers State Bank",
+      "fdic_insured_since": "10/11/1941",
+      "fdic_cert": "15853",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "412 W Commercial St, Fairview, KS 66425",
+      "website": "https://www.fsbfairview.com"
+    },
+    {
+      "name": "The Farmers State Bank",
+      "fdic_insured_since": "10/14/1950",
+      "fdic_cert": "16941",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "211 Saint Joseph St, Wathena, KS 66090",
+      "website": "https://www.fsbwathena.com"
+    },
+    {
+      "name": "The Farmers State Bank",
+      "fdic_insured_since": "07/18/1956",
+      "fdic_cert": "17632",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "624 Main St, Dwight, KS 66849",
+      "website": ""
+    },
+    {
+      "name": "The Farmers State Bank of Aliceville, Kansas",
+      "fdic_insured_since": "11/30/1959",
+      "fdic_cert": "18120",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "305 Dobell St, Westphalia, KS 66093",
+      "website": "https://www.fsbaliceville.com"
+    },
+    {
+      "name": "The Farmers State Bank of Blue Mound",
+      "fdic_insured_since": "07/12/1956",
+      "fdic_cert": "17629",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "205 South Fifth Street, Blue Mound, KS 66010",
+      "website": "https://www.fsbkansas.com"
+    },
+    {
+      "name": "The Farmers State Bank of Bucklin, Kansas",
+      "fdic_insured_since": "10/15/1959",
+      "fdic_cert": "18101",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 N Main St, Bucklin, KS 67834",
+      "website": "https://www.fsbbucklin.com"
+    },
+    {
+      "name": "The Farmers State Bank of Oakley, Kansas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1867",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 Center Ave, Oakley, KS 67748",
+      "website": "https://www.fsboakley.com"
+    },
+    {
+      "name": "The Farmers State Bank of Westmoreland",
+      "fdic_insured_since": "05/24/1935",
+      "fdic_cert": "15164",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "307 Main St, Westmoreland, KS 66549",
+      "website": "https://bankwithfarmers.com"
+    },
+    {
+      "name": "The Fidelity State Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10920",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "510 N 2nd Ave, Dodge City, KS 67801",
+      "website": "https://www.fidelitybankdc.com"
+    },
+    {
+      "name": "The First National Bank in Cimarron",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4638",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "121 N Main St, Cimarron, KS 67835",
+      "website": "https://www.fnbcimarron.com"
+    },
+    {
+      "name": "The First National Bank of Dighton",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4654",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "105 E Long St, Dighton, KS 67839",
+      "website": "https://www.fnbdighton.com"
+    },
+    {
+      "name": "The First National Bank of Hope",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4690",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "112 N Main St, Hope, KS 67451",
+      "website": "https://www.fnbks.com"
+    },
+    {
+      "name": "The First National Bank of Hutchinson",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4697",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 N Main St, Hutchinson, KS 67501",
+      "website": "https://www.fnbhutch.bank"
+    },
+    {
+      "name": "The First National Bank of Louisburg",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4722",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1201 W Amity St, Louisburg, KS 66053",
+      "website": "https://go.ibankfirst.com"
+    },
+    {
+      "name": "The First National Bank of Scott City",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4769",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "501 S Main St, Scott City, KS 67871",
+      "website": "https://www.fnbscott.com"
+    },
+    {
+      "name": "The First National Bank of Spearville",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4774",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "303 N Main St, Spearville, KS 67876",
+      "website": "https://www.fnbspearville.com"
+    },
+    {
+      "name": "The First Security Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4752",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "312 Maple St, Overbrook, KS 66524",
+      "website": "https://www.firstsecurityks.com"
+    },
+    {
+      "name": "The First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10503",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "206 N Pennsylvania Ave, Ness City, KS 67560",
+      "website": "https://www.fsbnesscity.com"
+    },
+    {
+      "name": "The First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5835",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 W Main St, Norton, KS 67654",
+      "website": "https://www.thefsb.bank"
+    },
+    {
+      "name": "The First State Bank of Healy",
+      "fdic_insured_since": "09/14/1956",
+      "fdic_cert": "17661",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4004 W Highway 4, Healy, KS 67850",
+      "website": "https://www.fsbhealy.com"
+    },
+    {
+      "name": "The First State Bank of Ransom",
+      "fdic_insured_since": "03/04/1937",
+      "fdic_cert": "15469",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "306 S Vermont Ave, Ransom, KS 67572",
+      "website": "https://fsbransom.com"
+    },
+    {
+      "name": "The Howard State Bank, Howard, Kansas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4693",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 S Wabash, Howard, KS 67349",
+      "website": "https://www.howardstatebank.com"
+    },
+    {
+      "name": "The Kansas State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10505",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "236 N Main St, Ottawa, KS 66067",
+      "website": "https://www.mykansasstatebank.com"
+    },
+    {
+      "name": "The Kansas State Bank Overbrook Kansas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1865",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 Maple St, Overbrook, KS 66524",
+      "website": "https://www.theksb.com"
+    },
+    {
+      "name": "The Liberty Savings Association, FSA",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29857",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "24 S Judson St, Fort Scott, KS 66701",
+      "website": "https://www.libertysavingsfsa.com"
+    },
+    {
+      "name": "The Lyndon State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12135",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "817 Topeka Ave, Lyndon, KS 66451",
+      "website": "https://www.lyndonstatebank.com"
+    },
+    {
+      "name": "The Lyon County State Bank",
+      "fdic_insured_since": "12/28/1934",
+      "fdic_cert": "14952",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "902 Merchant St, Emporia, KS 66801",
+      "website": "https://www.mylcsb.com"
+    },
+    {
+      "name": "The Marion National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4728",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "302 E Main St, Marion, KS 66861",
+      "website": "https://bankwithmnb.com"
+    },
+    {
+      "name": "The Peoples Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1147",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "222 S Main St, Pratt, KS 67124",
+      "website": "https://www.tpb.bank"
+    },
+    {
+      "name": "The Peoples State Bank",
+      "fdic_insured_since": "11/04/1948",
+      "fdic_cert": "16744",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 W Main St, Cherryvale, KS 67335",
+      "website": "https://www.psbcherryvale.com"
+    },
+    {
+      "name": "The Riley State Bank of Riley, Kansas",
+      "fdic_insured_since": "01/27/1944",
+      "fdic_cert": "16120",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 S Broadway St, Riley, KS 66531",
+      "website": "https://www.rileystatebank.com"
+    },
+    {
+      "name": "The Security State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12422",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 N Washington Ave, Wellington, KS 67152",
+      "website": "https://www.ssbwellington.com"
+    },
+    {
+      "name": "The Solomon State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4773",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "126 W Main St, Solomon, KS 67480",
+      "website": ""
+    },
+    {
+      "name": "The State Bank of Bern",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10919",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "402 Main St, Bern, KS 66408",
+      "website": "https://statebankofbern.com"
+    },
+    {
+      "name": "The State Bank of Canton, Canton, Kansas",
+      "fdic_insured_since": "02/21/1934",
+      "fdic_cert": "13926",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "103 S Main St, Canton, KS 67428",
+      "website": "https://www.statebankofcanton.com"
+    },
+    {
+      "name": "The State Exchange Bank",
+      "fdic_insured_since": "12/16/1954",
+      "fdic_cert": "17375",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "107 S Commercial St, Mankato, KS 66956",
+      "website": "https://www.stateexchange.net"
+    },
+    {
+      "name": "The Stock Exchange Bank, Caldwell, Kansas",
+      "fdic_insured_since": "12/27/1940",
+      "fdic_cert": "15784",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "103 S Main St, Caldwell, KS 67022",
+      "website": "https://www.stockxbank.com"
+    },
+    {
+      "name": "The Stockgrowers State Bank",
+      "fdic_insured_since": "03/08/1960",
+      "fdic_cert": "18165",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "225 Main St, Maple Hill, KS 66507",
+      "website": "https://www.stockgrowers.biz"
+    },
+    {
+      "name": "The Stockgrowers State Bank of Ashland, Kansas",
+      "fdic_insured_since": "08/23/1956",
+      "fdic_cert": "17650",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "622 Main St, Ashland, KS 67831",
+      "website": "https://www.stockgrowersbank.com"
+    },
+    {
+      "name": "The Union State Bank of Everest",
+      "fdic_insured_since": "11/19/1954",
+      "fdic_cert": "18610",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "545 Main St, Everest, KS 66424",
+      "website": "https://www.mybankusb.com"
+    },
+    {
+      "name": "The Valley State Bank",
+      "fdic_insured_since": "02/28/1935",
+      "fdic_cert": "15038",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "502 N Merchant St, Belle Plaine, KS 67013",
+      "website": "https://www.valleystatebank.com"
+    },
+    {
+      "name": "The Walton State Bank",
+      "fdic_insured_since": "04/09/1959",
+      "fdic_cert": "17982",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "116 Main St, Walton, KS 67151",
+      "website": "https://waltonstatebank.com"
+    },
+    {
+      "name": "The Western State Bank",
+      "fdic_insured_since": "06/19/1973",
+      "fdic_cert": "21121",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1500 E Kansas Ave, Garden City, KS 67846",
+      "website": "https://www.wsbks.com"
+    },
+    {
+      "name": "The Wilson State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12136",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "422 26th St, Wilson, KS 67490",
+      "website": "https://www.wilsonstatebank.net"
+    },
+    {
+      "name": "TriCentury Bank",
+      "fdic_insured_since": "11/16/1959",
+      "fdic_cert": "18109",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "33485 Lexington Ave, De Soto, KS 66018",
+      "website": "https://www.tricentury.bank"
+    },
+    {
+      "name": "U.S. Bank National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6548",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "425 Walnut St, Cincinnati, OH 45202",
+      "website": "https://www.usbank.com"
+    },
+    {
+      "name": "UMB Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8273",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1010 Grand Blvd, Kansas City, MO 64106",
+      "website": "https://www.umb.com"
+    },
+    {
+      "name": "Union Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13421",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3643 S 48th St, Lincoln, NE 68506",
+      "website": "https://www.ubt.com"
+    },
+    {
+      "name": "Union State Bank",
+      "fdic_insured_since": "04/24/1935",
+      "fdic_cert": "15098",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "204 E Highway 16, Olsburg, KS 66520",
+      "website": ""
+    },
+    {
+      "name": "Union State Bank",
+      "fdic_insured_since": "08/13/1942",
+      "fdic_cert": "15908",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "701 5th St, Clay Center, KS 67432",
+      "website": "https://www.usbcc.com"
+    },
+    {
+      "name": "Union State Bank",
+      "fdic_insured_since": "04/22/1949",
+      "fdic_cert": "16788",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "204 Sherman St, Uniontown, KS 66779",
+      "website": "https://www.unionstbank.com"
+    },
+    {
+      "name": "Union State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1869",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "127 S Summit St, Arkansas City, KS 67005",
+      "website": "https://www.myunionstate.bank"
+    },
+    {
+      "name": "United Bank & Trust",
+      "fdic_insured_since": "07/28/1955",
+      "fdic_cert": "17477",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "823 Broadway, Marysville, KS 66508",
+      "website": "https://www.ubankonline.com"
+    },
+    {
+      "name": "Ventura National Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4683",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "197 Main St, Harveyville, KS 66431",
+      "website": "https://www.vnbt.bank"
+    },
+    {
+      "name": "Vintage Bank Kansas",
+      "fdic_insured_since": "11/12/1958",
+      "fdic_cert": "17927",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 S Main St, Leon, KS 67074",
+      "website": "https://www.vintagebankks.com"
+    },
+    {
+      "name": "Wells Fargo Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3511",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3201 N 4th Ave, Sioux Falls, SD 57104",
+      "website": "https://www.wellsfargo.com"
+    },
+    {
+      "name": "Western National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4778",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "523 Thayer Ave, Chester, NE 68327",
+      "website": "https://www.mywnb.com"
+    },
+    {
+      "name": "Wisdom Heritage Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9465",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "518 College Ave, Alva, OK 73717",
+      "website": "https://www.wisdomheritage.bank"
+    }
+  ],
+  "updated": "2026-06-26"
+}

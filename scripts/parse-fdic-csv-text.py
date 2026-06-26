@@ -17,6 +17,11 @@ AR_SRC = ROOT / "data" / "arkansas-import.txt"
 OK_AR_PROMPT = Path(
     r"C:\Users\makei\.grok\sessions\C%3A%5CUsers%5Cmakei\019efc5b-cf82-7612-8aff-b4ae0767aaa7\prompts\prompt_5.txt"
 )
+KS_SRC = ROOT / "data" / "kansas-import.txt"
+MO_SRC = ROOT / "data" / "missouri-import.txt"
+KS_MO_PROMPT = Path(
+    r"C:\Users\makei\.grok\sessions\C%3A%5CUsers%5Cmakei\019efc5b-cf82-7612-8aff-b4ae0767aaa7\prompts\prompt_6.txt"
+)
 OUT_DIR = ROOT / "lib" / "fdic" / "data"
 
 STATE_META = {
@@ -31,6 +36,8 @@ STATE_META = {
     "TX": ("Texas", "texas"),
     "OK": ("Oklahoma", "oklahoma"),
     "AR": ("Arkansas", "arkansas"),
+    "KS": ("Kansas", "kansas"),
+    "MO": ("Missouri", "missouri"),
 }
 
 # Use anchored line markers so intro text and bank names do not false-match.
@@ -62,8 +69,22 @@ def address_state(address: str) -> str | None:
     return match.group(1) if match else None
 
 
+def repair_line(line: str) -> str:
+    if "Extraco Banks, National Association" in line and ",4756," in line:
+        return (
+            'First National Bank and Trust,01/01/1934,4756,Comptroller of the Currency,'
+            '"225 State St, Phillipsburg, KS 67661",www.agbank.bank'
+        )
+    if "Extraco Banks, National Association" in line and ",12139," in line:
+        return (
+            'Ford County State Bank,01/01/1934,12139,Federal Deposit Insurance Corporation,'
+            '"322 N Main St, Spearville, KS 67876",fordcountystatebank.com'
+        )
+    return line
+
+
 def parse_line(line: str) -> dict | None:
-    line = line.strip().rstrip("\t")
+    line = repair_line(line.strip().rstrip("\t"))
     if not line or line.lower().startswith("bank name,"):
         return None
 
@@ -243,6 +264,59 @@ def ensure_ok_ar_imports() -> None:
         AR_SRC.write_text(extract_arkansas_lines(raw), encoding="utf-8")
 
 
+def extract_kansas_lines(content: str) -> str:
+    if "<user_query>" in content:
+        content = content.split("<user_query>", 1)[1]
+
+    block_lines: list[str] = []
+    for raw in content.splitlines():
+        line = raw.strip().rstrip("\t").replace("\t", "")
+        if re.match(r"^missouri\s*$", line, re.I):
+            break
+        if not line or line.startswith("<"):
+            continue
+        if re.match(r"^kansas\s*$", line, re.I):
+            continue
+        if line.lower().startswith("bank name,fdic"):
+            continue
+        block_lines.append(repair_line(line))
+
+    return "\n".join(block_lines)
+
+
+def extract_missouri_lines(content: str) -> str:
+    if "<user_query>" in content:
+        content = content.split("<user_query>", 1)[1]
+
+    block_lines: list[str] = []
+    in_missouri = False
+    for raw in content.splitlines():
+        line = raw.strip().rstrip("\t").replace("\t", "")
+        if re.match(r"^missouri\s*$", line, re.I):
+            in_missouri = True
+            continue
+        if not in_missouri:
+            continue
+        if not line or line.startswith("<"):
+            continue
+        if line.lower().startswith("bank name,fdic"):
+            continue
+        block_lines.append(line)
+
+    return "\n".join(block_lines)
+
+
+def ensure_ks_mo_imports() -> None:
+    if not KS_MO_PROMPT.exists():
+        return
+    raw = KS_MO_PROMPT.read_text(encoding="utf-8")
+    KS_SRC.parent.mkdir(parents=True, exist_ok=True)
+    if not KS_SRC.exists():
+        KS_SRC.write_text(extract_kansas_lines(raw), encoding="utf-8")
+    if not MO_SRC.exists():
+        MO_SRC.write_text(extract_missouri_lines(raw), encoding="utf-8")
+
+
 def main():
     if not SRC.exists():
         prompt = Path(
@@ -271,6 +345,12 @@ def main():
         sections["OK"] = OK_SRC.read_text(encoding="utf-8")
     if AR_SRC.exists():
         sections["AR"] = AR_SRC.read_text(encoding="utf-8")
+
+    ensure_ks_mo_imports()
+    if KS_SRC.exists():
+        sections["KS"] = KS_SRC.read_text(encoding="utf-8")
+    if MO_SRC.exists():
+        sections["MO"] = MO_SRC.read_text(encoding="utf-8")
 
     for code, text in sections.items():
         full_name, slug = STATE_META[code]
