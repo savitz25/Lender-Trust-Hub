@@ -1,11 +1,12 @@
 import type { FDICBank, StateFDICData, StateMeta } from './types';
 import { computeExtendedStateStats } from './utils';
+import { SITE_URL, FDIC_CATEGORY } from '@/lib/directory/categories';
+import { generateStateInsights } from './insights';
 
-const SITE_URL = 'https://www.lendertrusthub.com';
-const CURRENT_YEAR = 2026;
+const CURRENT_YEAR = FDIC_CATEGORY.year;
 
 export function statePagePath(slug: string): string {
-  return `/fdic-insured-banks/${slug}`;
+  return FDIC_CATEGORY.statePath(slug);
 }
 
 export function statePageUrl(slug: string): string {
@@ -20,9 +21,11 @@ export function buildStateTitle(stateName: string, bankCount?: number): string {
 export function buildStateDescription(
   stateName: string,
   bankCount: number,
-  updated: string
+  updated: string,
+  hqCount?: number
 ): string {
-  return `Complete ${CURRENT_YEAR} list of ${bankCount} FDIC-insured banks serving ${stateName}. Certificate numbers, regulators, headquarters, and official FDIC BankFind links. Updated ${updated}. Free, transparent, no paid placements.`;
+  const hqPart = hqCount ? ` ${hqCount} headquartered locally.` : '';
+  return `Complete ${CURRENT_YEAR} list of ${bankCount} FDIC-insured banks in ${stateName}.${hqPart} Compare institutions, filter by regulator, verify via FDIC BankFind. Updated ${updated}. Free — no paid placements.`;
 }
 
 export function buildHubTitle(): string {
@@ -30,7 +33,101 @@ export function buildHubTitle(): string {
 }
 
 export function buildHubDescription(totalBanks: number): string {
-  return `Explore ${totalBanks.toLocaleString()}+ FDIC-insured banks across all 50 states and DC. Interactive map, filters, certificate lookup, and official FDIC data. Free directory — no paid placements.`;
+  return `Explore ${totalBanks.toLocaleString()}+ FDIC-insured banks across all 50 states and DC. Interactive map, bank comparison, certificate lookup, and official FDIC data. Free directory — no paid placements.`;
+}
+
+function buildWebSiteSchema() {
+  return {
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    name: 'Lender Trust Hub',
+    url: SITE_URL,
+    description:
+      'Independent financial directory — FDIC banks, mortgage lenders, calculators. Verified data. No paid placements.',
+    publisher: { '@id': `${SITE_URL}/#organization` },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_URL}/fdic-insured-banks?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+}
+
+function buildOrganizationSchema() {
+  return {
+    '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
+    name: 'Lender Trust Hub',
+    url: SITE_URL,
+    logo: `${SITE_URL}/favicon.ico`,
+    description:
+      'Independent financial directory with verified FDIC bank data. No paid placements.',
+    sameAs: ['https://www.movetrusthub.com'],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '128',
+      bestRating: '5',
+      worstRating: '1',
+    },
+  };
+}
+
+function buildBreadcrumbSchema(stateMeta: StateMeta) {
+  return {
+    '@type': 'BreadcrumbList',
+    '@id': `${statePageUrl(stateMeta.slug)}#breadcrumb`,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'FDIC Insured Banks',
+        item: `${SITE_URL}${FDIC_CATEGORY.hubPath}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: stateMeta.fullName,
+        item: statePageUrl(stateMeta.slug),
+      },
+    ],
+  };
+}
+
+function buildAggregateOfferSchema(stateName: string) {
+  return {
+    '@type': 'AggregateOffer',
+    name: `Free FDIC Bank Directory — ${stateName}`,
+    price: '0',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+    description: 'Free access to verified FDIC-insured bank listings. No paid placements.',
+  };
+}
+
+function bankToFinancialService(bank: FDICBank, stateMeta: StateMeta) {
+  const hqInState = new RegExp(`, ${stateMeta.code}(?:\\s|$)`).test(bank.headquarters_address);
+  return {
+    '@type': ['FinancialService', ...(hqInState ? ['LocalBusiness'] : [])],
+    name: bank.name,
+    url: bank.website || undefined,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: bank.headquarters_address,
+      addressRegion: stateMeta.code,
+      addressCountry: 'US',
+    },
+    identifier: {
+      '@type': 'PropertyValue',
+      name: 'FDIC Certificate',
+      value: bank.fdic_cert,
+    },
+    sameAs: `https://banks.data.fdic.gov/bankfind-suite/bankfind?cert=${bank.fdic_cert}`,
+  };
 }
 
 export function buildStateJsonLd(
@@ -38,6 +135,7 @@ export function buildStateJsonLd(
   stateData: StateFDICData
 ): Record<string, unknown> {
   const stats = computeExtendedStateStats(stateData.banks, stateMeta.code);
+  const insights = generateStateInsights(stateData.banks, stateMeta);
   const pageUrl = statePageUrl(stateMeta.slug);
 
   const faqEntities = [
@@ -55,8 +153,18 @@ export function buildStateJsonLd(
       acceptedAnswer: {
         '@type': 'Answer',
         text: stats.oldest
-          ? `${stats.oldest.name} has been FDIC-insured since ${stats.oldest.fdic_insured_since}, among the oldest institutions in our ${stateMeta.fullName} directory.`
-          : `Our ${stateMeta.fullName} directory includes institutions with long FDIC insurance histories. Filter by "Oldest First" to explore.`,
+          ? `${stats.oldest.name} has been FDIC-insured since ${stats.oldest.fdic_insured_since}.`
+          : `Filter by "Oldest First" to explore long-established institutions in ${stateMeta.fullName}.`,
+      },
+    },
+    {
+      '@type': 'Question',
+      name: `Which regulator oversees most banks in ${stateMeta.fullName}?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: insights.regulatorBreakdown[0]
+          ? `${insights.regulatorBreakdown[0].regulator} regulates ${insights.regulatorBreakdown[0].count} institutions (${insights.regulatorBreakdown[0].percentage}%) in our ${stateMeta.fullName} directory.`
+          : `Use regulator filters to explore OCC, Federal Reserve, and FDIC-chartered banks.`,
       },
     },
     {
@@ -72,7 +180,7 @@ export function buildStateJsonLd(
       name: 'How do I verify a bank on the FDIC website?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Use FDIC BankFind at banks.data.fdic.gov with the institution certificate number shown on each bank card in our directory.',
+        text: 'Use FDIC BankFind at banks.data.fdic.gov with the institution certificate number shown on each bank card.',
       },
     },
     {
@@ -88,7 +196,15 @@ export function buildStateJsonLd(
       name: `Where can I find mortgage lenders in ${stateMeta.fullName}?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Explore verified mortgage lenders in ${stateMeta.fullName} and use our free mortgage calculators to compare loan scenarios.`,
+        text: `Explore verified mortgage lenders in ${stateMeta.fullName} and use our free mortgage calculators.`,
+      },
+    },
+    {
+      '@type': 'Question',
+      name: `What banks are best for ${stateMeta.fullName} homeowners?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: insights.bestFor[0]?.description ?? `Compare banks headquartered in ${stateMeta.fullName} for local branch access.`,
       },
     },
   ];
@@ -96,59 +212,45 @@ export function buildStateJsonLd(
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'Organization',
-        name: 'Lender Trust Hub',
-        url: SITE_URL,
-        description:
-          'Independent financial directory with verified FDIC bank data. No paid placements.',
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.9',
-          reviewCount: '128',
-          bestRating: '5',
-          worstRating: '1',
-        },
-      },
+      buildOrganizationSchema(),
+      buildWebSiteSchema(),
+      buildBreadcrumbSchema(stateMeta),
       {
         '@type': 'WebPage',
+        '@id': pageUrl,
         name: buildStateTitle(stateMeta.fullName, stats.total),
-        description: buildStateDescription(stateMeta.fullName, stats.total, stateData.updated),
+        description: buildStateDescription(
+          stateMeta.fullName,
+          stats.total,
+          stateData.updated,
+          stats.headquartered
+        ),
         url: pageUrl,
         dateModified: stateData.updated,
-        isPartOf: { '@type': 'WebSite', name: 'Lender Trust Hub', url: SITE_URL },
-        breadcrumb: {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: 'FDIC Insured Banks',
-              item: `${SITE_URL}/fdic-insured-banks`,
-            },
-            { '@type': 'ListItem', position: 3, name: stateMeta.fullName, item: pageUrl },
-          ],
-        },
+        inLanguage: 'en-US',
+        isPartOf: { '@id': `${SITE_URL}/#website` },
+        about: { '@type': 'Thing', name: `FDIC Insured Banks in ${stateMeta.fullName}` },
+        offers: buildAggregateOfferSchema(stateMeta.fullName),
       },
       {
         '@type': 'ItemList',
         name: `FDIC Insured Banks in ${stateMeta.fullName}`,
         numberOfItems: stats.total,
-        itemListElement: stateData.banks.slice(0, 50).map((bank, i) => ({
+        itemListElement: stateData.banks.slice(0, 100).map((bank, i) => ({
           '@type': 'ListItem',
           position: i + 1,
-          item: bankToFinancialService(bank, stateMeta.fullName),
+          item: bankToFinancialService(bank, stateMeta),
         })),
       },
       {
         '@type': 'FAQPage',
+        '@id': `${pageUrl}#faq`,
         mainEntity: faqEntities,
       },
       {
         '@type': 'HowTo',
         name: `How to choose an FDIC-insured bank in ${stateMeta.fullName}`,
-        description: `A step-by-step guide to selecting a verified FDIC-insured bank in ${stateMeta.fullName}.`,
+        description: `Step-by-step guide for selecting a verified bank in ${stateMeta.fullName}.`,
         step: [
           {
             '@type': 'HowToStep',
@@ -160,19 +262,19 @@ export function buildStateJsonLd(
             '@type': 'HowToStep',
             position: 2,
             name: 'Filter by your preferences',
-            text: 'Use regulator, headquarters, and establishment date filters to narrow your list.',
+            text: 'Use regulator, headquarters, and establishment date filters.',
           },
           {
             '@type': 'HowToStep',
             position: 3,
-            name: 'Verify on FDIC BankFind',
-            text: 'Click the certificate number to confirm official FDIC records.',
+            name: 'Compare up to three banks',
+            text: 'Use the comparison tool to evaluate insurance dates and regulators side by side.',
           },
           {
             '@type': 'HowToStep',
             position: 4,
-            name: 'Compare institutions',
-            text: 'Select up to three banks to compare insurance dates, regulators, and headquarters.',
+            name: 'Verify on FDIC BankFind',
+            text: 'Click the certificate number to confirm official FDIC records.',
           },
         ],
       },
@@ -204,35 +306,33 @@ export function buildStateJsonLd(
   };
 }
 
-function bankToFinancialService(bank: FDICBank, stateName: string) {
-  return {
-    '@type': 'FinancialService',
-    name: bank.name,
-    url: bank.website || undefined,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: bank.headquarters_address,
-      addressRegion: stateName,
-    },
-    identifier: bank.fdic_cert,
-    additionalProperty: {
-      '@type': 'PropertyValue',
-      name: 'FDIC Certificate',
-      value: bank.fdic_cert,
-    },
-  };
-}
-
 export function buildHubJsonLd(totalBanks: number, stateCount: number): Record<string, unknown> {
   return {
     '@context': 'https://schema.org',
     '@graph': [
+      buildOrganizationSchema(),
+      buildWebSiteSchema(),
       {
         '@type': 'WebPage',
+        '@id': `${SITE_URL}${FDIC_CATEGORY.hubPath}`,
         name: buildHubTitle(),
         description: buildHubDescription(totalBanks),
-        url: `${SITE_URL}/fdic-insured-banks`,
-        isPartOf: { '@type': 'WebSite', name: 'Lender Trust Hub' },
+        url: `${SITE_URL}${FDIC_CATEGORY.hubPath}`,
+        inLanguage: 'en-US',
+        isPartOf: { '@id': `${SITE_URL}/#website` },
+        offers: buildAggregateOfferSchema('United States'),
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'FDIC Insured Banks',
+            item: `${SITE_URL}${FDIC_CATEGORY.hubPath}`,
+          },
+        ],
       },
       {
         '@type': 'ItemList',

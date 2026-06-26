@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Share2, Bookmark, BookmarkCheck, Link2, Check } from 'lucide-react';
+import { trackDirectoryEvent } from '@/lib/directory/analytics';
 
 const BOOKMARK_KEY = 'lth-fdic-bookmarks';
 
@@ -33,6 +34,12 @@ export function ShareBookmarkBar({
       const saved = JSON.parse(localStorage.getItem(BOOKMARK_KEY) || '[]') as string[];
       const next = bookmarked ? saved.filter((u) => u !== url) : [...saved, url];
       localStorage.setItem(BOOKMARK_KEY, JSON.stringify(next));
+      trackDirectoryEvent({
+        name: 'directory_bookmark',
+        category: 'fdic',
+        state: stateName,
+        action: bookmarked ? 'remove' : 'add',
+      });
       setBookmarked(!bookmarked);
     } catch {
       /* storage unavailable */
@@ -58,6 +65,12 @@ export function ShareBookmarkBar({
   async function copyLink() {
     try {
       await navigator.clipboard.writeText(url);
+      trackDirectoryEvent({
+        name: 'directory_share',
+        category: 'fdic',
+        state: stateName,
+        method: 'clipboard',
+      });
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {

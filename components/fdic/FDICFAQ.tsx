@@ -26,6 +26,18 @@ export function FDICFAQ({ stateMeta, bankCount, hqCount }: {
       q: `Can I find mortgage lenders in ${stateMeta.fullName} too?`,
       a: `Yes. After reviewing FDIC-insured banks, explore our verified mortgage lender directory and calculators for ${stateMeta.fullName} to compare lending options.`,
     },
+    {
+      q: `Are all banks listed actually located in ${stateMeta.fullName}?`,
+      a: `This directory includes every FDIC-insured institution serving ${stateMeta.fullName}, including national banks headquartered elsewhere that operate branches in the state. Use the "HQ in ${stateMeta.code}" filter to show only banks headquartered locally.`,
+    },
+    {
+      q: 'What is the difference between OCC, Federal Reserve, and FDIC regulators?',
+      a: 'OCC supervises national bank charters, the Federal Reserve oversees state-chartered banks that are members of the Fed system, and the FDIC directly supervises many state-chartered non-member banks. All three can oversee FDIC-insured institutions.',
+    },
+    {
+      q: `How often is the ${stateMeta.fullName} bank list updated?`,
+      a: 'We sync with official FDIC BankFind records and display the last-updated date at the top of each page. Always verify critical decisions using the certificate link on each listing.',
+    },
   ];
 
   return (

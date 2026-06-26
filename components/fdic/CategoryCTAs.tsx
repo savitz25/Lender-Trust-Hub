@@ -1,37 +1,22 @@
 import Link from 'next/link';
-import { Building2, Car, Calculator, Shield, Wrench } from 'lucide-react';
+import { Building2, Car, Calculator, Shield, Wrench, Landmark } from 'lucide-react';
 import type { StateMeta } from '@/lib/fdic/types';
+import { FDIC_CATEGORY } from '@/lib/directory/categories';
+
+const ICONS = [Building2, Calculator, Car, Wrench, Shield, Landmark] as const;
 
 export function CategoryCTAs({ stateMeta }: { stateMeta: StateMeta }) {
   const items = [
-    {
-      href: `/local-lenders/${stateMeta.slug}`,
-      icon: Building2,
-      title: `Mortgage Lenders in ${stateMeta.fullName}`,
-      desc: 'Verified local mortgage brokers and companies',
-      live: true,
-    },
-    {
-      href: '/calculators',
-      icon: Calculator,
-      title: 'Mortgage Calculators',
-      desc: 'Payment, affordability, and refinance tools',
-      live: true,
-    },
-    {
-      href: `/auto-loan-companies/${stateMeta.slug}`,
-      icon: Car,
-      title: `Auto Loan Companies in ${stateMeta.fullName}`,
-      desc: 'Coming soon — same trusted directory framework',
-      live: false,
-    },
-    {
-      href: `/credit-repair/${stateMeta.slug}`,
-      icon: Wrench,
-      title: `Credit Repair in ${stateMeta.fullName}`,
-      desc: 'Coming soon — transparent, verified listings',
-      live: false,
-    },
+    ...FDIC_CATEGORY.relatedVerticals.map((v, i) => ({
+      href: v.href(stateMeta.slug),
+      icon: ICONS[i] ?? Building2,
+      title: v.label.includes('Calculator')
+        ? v.label
+        : `${v.label} in ${stateMeta.fullName}`,
+      desc: v.description,
+      live: v.live,
+      external: false as boolean,
+    })),
     {
       href: 'https://www.movetrusthub.com',
       icon: Shield,

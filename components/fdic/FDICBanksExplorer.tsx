@@ -28,8 +28,8 @@ import { BankComparison } from '@/components/fdic/BankComparison';
 import { StateEducationSections } from '@/components/fdic/StateEducationSections';
 import { CategoryCTAs } from '@/components/fdic/CategoryCTAs';
 import { US_STATES } from '@/lib/fdic/states';
-import { getStateData, getAvailableStateCodes } from '@/lib/fdic/stateData';
-import type { FDICBank, RegulatorKey } from '@/lib/fdic/types';
+import type { FDICBank, RegulatorKey, StateFDICData, StateMeta } from '@/lib/fdic/types';
+import { trackDirectoryEvent } from '@/lib/directory/analytics';
 import {
   computeExtendedStateStats,
   downloadCSV,
@@ -68,17 +68,20 @@ function celebrate() {
 }
 
 export function FDICBanksExplorer({
-  defaultStateCode = 'FL',
+  stateData,
+  stateMeta,
   statePageMode = false,
   stateSlug,
 }: {
-  defaultStateCode?: string;
+  /** Single-state data from server — avoids bundling all 51 states client-side */
+  stateData: StateFDICData;
+  stateMeta: StateMeta;
   statePageMode?: boolean;
   stateSlug?: string;
 }) {
   const router = useRouter();
   const listRef = useRef<HTMLDivElement>(null);
-  const [selectedCode, setSelectedCode] = useState(defaultStateCode);
+  const selectedCode = stateMeta.code;
   const [search, setSearch] = useState('');
   const [regulators, setRegulators] = useState<Set<RegulatorKey>>(new Set());
   const [yearFilter, setYearFilter] = useState<YearFilter>('all');
@@ -89,39 +92,37 @@ export function FDICBanksExplorer({
   const [visible, setVisible] = useState(PAGE_SIZE);
   const [celebrated, setCelebrated] = useState(false);
 
-  const availableCodes = useMemo(() => new Set(getAvailableStateCodes()), []);
-  const stateMeta = US_STATES.find((s) => s.code === selectedCode)!;
-  const stateData = getStateData(selectedCode);
+  const availableCodes = useMemo(
+    () => new Set(US_STATES.filter((s) => s.hasData).map((s) => s.code)),
+    []
+  );
 
   const navigateToState = useCallback(
     (code: string, withCelebration = false) => {
       const meta = US_STATES.find((s) => s.code === code);
       if (!meta) return;
 
+      trackDirectoryEvent({
+        name: 'directory_state_switch',
+        category: 'fdic',
+        from: selectedCode,
+        to: code,
+      });
+
       if (availableCodes.has(code) && meta.slug !== stateSlug) {
         router.push(statePagePath(meta.slug));
         return;
       }
 
-      setSelectedCode(code);
-      setSearch('');
-      setRegulators(new Set());
-      setYearFilter('all');
-      setHqOnly(false);
-      setCompareCerts([]);
-      setSort('name');
-      setVisible(PAGE_SIZE);
-      if (withCelebration || (!celebrated && getStateData(code))) {
+      if (withCelebration) {
         celebrate();
         setCelebrated(true);
       }
-      setTimeout(() => listRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
     },
-    [availableCodes, celebrated, router, stateSlug]
+    [availableCodes, celebrated, router, stateSlug, selectedCode]
   );
 
   const filteredBanks = useMemo(() => {
-    if (!stateData) return [] as FDICBank[];
     let list = [...stateData.banks];
 
     if (search.trim()) {
@@ -165,17 +166,15 @@ export function FDICBanksExplorer({
     return list;
   }, [stateData, search, regulators, yearFilter, hqOnly, sort, selectedCode]);
 
-  const stats = stateData ? computeExtendedStateStats(stateData.banks, selectedCode) : null;
+  const stats = computeExtendedStateStats(stateData.banks, selectedCode);
 
-  const top5Oldest = stateData
-    ? [...stateData.banks]
-        .sort((a, b) => {
-          const da = parseInsuredDate(a.fdic_insured_since)?.getTime() ?? Infinity;
-          const db = parseInsuredDate(b.fdic_insured_since)?.getTime() ?? Infinity;
-          return da - db;
-        })
-        .slice(0, 5)
-    : [];
+  const top5Oldest = [...stateData.banks]
+    .sort((a, b) => {
+      const da = parseInsuredDate(a.fdic_insured_since)?.getTime() ?? Infinity;
+      const db = parseInsuredDate(b.fdic_insured_since)?.getTime() ?? Infinity;
+      return da - db;
+    })
+    .slice(0, 5);
 
   function toggleRegulator(key: RegulatorKey) {
     setRegulators((prev) => {
@@ -199,6 +198,12 @@ export function FDICBanksExplorer({
     setCompareCerts((prev) => {
       if (prev.includes(cert)) return prev.filter((c) => c !== cert);
       if (prev.length >= 3) return prev;
+      trackDirectoryEvent({
+        name: 'directory_compare_add',
+        category: 'fdic',
+        state: stateMeta.fullName,
+        cert,
+      });
       return [...prev, cert];
     });
   }
@@ -270,7 +275,7 @@ export function FDICBanksExplorer({
               )}
             </p>
             <p className="text-sm text-zinc-400">
-              Updated {stateData?.updated ?? 'June 2026'} • No paid placements • Verify at FDIC
+              Updated {stateData.updated} • No paid placements • Verify at FDIC
               BankFind
             </p>
             {!statePageMode && (
@@ -392,7 +397,7 @@ export function FDICBanksExplorer({
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.25 }}
             >
-              {stateData && stats && (
+              {stats && (
                 <>
                   <StateStatsBar banks={stateData.banks} stateMeta={stateMeta} />
 
@@ -536,7 +541,7 @@ export function FDICBanksExplorer({
                       {filteredBanks.length > 0 ? (
                         <>
                           {viewMode === 'grid' ? (
-                            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 [&>article]:[content-visibility:auto]">
                               {filteredBanks.slice(0, visible).map((bank) => (
                                 <BankCard
                                   key={bank.fdic_cert}
@@ -629,7 +634,7 @@ export function FDICBanksExplorer({
           </AnimatePresence>
         </div>
       </section>
-      {stateData && compareCerts.length > 0 && (
+      {compareCerts.length > 0 && (
         <BankComparison
           banks={stateData.banks}
           selectedCerts={compareCerts}

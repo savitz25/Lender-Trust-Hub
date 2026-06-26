@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ChevronRight } from 'lucide-react';
-import { FDICBanksExplorer } from '@/components/fdic/FDICBanksExplorer';
+import { Breadcrumbs } from '@/components/directory/Breadcrumbs';
+import { JsonLd } from '@/components/directory/JsonLd';
+import { LeadCaptureForm } from '@/components/directory/LeadCaptureForm';
+import { InternalLinkHub } from '@/components/directory/InternalLinkHub';
+import { FDICBanksExplorerDynamic } from '@/components/fdic/FDICBanksExplorerDynamic';
+import { StateInsightsSection } from '@/components/fdic/StateInsightsSection';
 import { STATE_BY_SLUG, US_STATES } from '@/lib/fdic/states';
 import { getStateData, DATA_UPDATED } from '@/lib/fdic/stateData';
 import {
@@ -11,6 +14,9 @@ import {
   buildStateTitle,
   statePageUrl,
 } from '@/lib/fdic/seo';
+
+/** ISR: revalidate daily — keeps data fresh without full rebuilds */
+export const revalidate = 86400;
 
 export function generateStaticParams() {
   return US_STATES.filter((s) => s.hasData).map((s) => ({ state: s.slug }));
@@ -28,11 +34,16 @@ export async function generateMetadata({
   const stateData = getStateData(stateMeta.code);
   if (!stateData) return { title: 'FDIC Banks | LenderTrustHub' };
 
+  const hqCount = stateData.banks.filter((b) =>
+    new RegExp(`, ${stateMeta.code}(?:\\s|$)`).test(b.headquarters_address)
+  ).length;
+
   const title = buildStateTitle(stateMeta.fullName, stateData.banks.length);
   const description = buildStateDescription(
     stateMeta.fullName,
     stateData.banks.length,
-    stateData.updated
+    stateData.updated,
+    hqCount
   );
 
   return {
@@ -41,7 +52,8 @@ export async function generateMetadata({
     keywords: [
       `FDIC insured banks in ${stateMeta.fullName}`,
       `list of FDIC banks in ${stateMeta.fullName} 2026`,
-      `${stateMeta.fullName} FDIC banks`,
+      `${stateMeta.fullName} FDIC banks near me`,
+      `best FDIC banks in ${stateMeta.fullName}`,
       'FDIC bank directory',
       'verified FDIC institutions',
     ],
@@ -51,10 +63,13 @@ export async function generateMetadata({
       siteName: 'Lender Trust Hub',
       type: 'website',
       url: statePageUrl(slug),
+      locale: 'en_US',
     },
     alternates: {
       canonical: statePageUrl(slug),
+      // hreflang: expand when adding locales — languages: { 'en-US': statePageUrl(slug) }
     },
+    robots: { index: true, follow: true },
   };
 }
 
@@ -71,40 +86,55 @@ export default async function FDICStatePage({
   if (!stateData) notFound();
 
   const jsonLd = buildStateJsonLd(stateMeta, stateData);
+  const neighbors = US_STATES.filter(
+    (s) => s.region === stateMeta.region && s.hasData && s.slug !== slug
+  ).map((s) => s.slug);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <nav
-        aria-label="Breadcrumb"
-        className="container mx-auto px-4 pt-6 text-sm text-zinc-500"
-      >
-        <ol className="flex flex-wrap items-center gap-1">
-          <li>
-            <Link href="/" className="hover:text-[#00A3A1]">
-              Home
-            </Link>
-          </li>
-          <ChevronRight className="h-4 w-4" aria-hidden="true" />
-          <li>
-            <Link href="/fdic-insured-banks" className="hover:text-[#00A3A1]">
-              FDIC Insured Banks
-            </Link>
-          </li>
-          <ChevronRight className="h-4 w-4" aria-hidden="true" />
-          <li>
-            <span className="text-[#0A2540]">{stateMeta.fullName}</span>
-          </li>
-        </ol>
-      </nav>
-      <FDICBanksExplorer
-        defaultStateCode={stateMeta.code}
+      <JsonLd data={jsonLd} />
+
+      <div className="container mx-auto px-4 pt-6">
+        <Breadcrumbs
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'FDIC Insured Banks', href: '/fdic-insured-banks' },
+            { label: stateMeta.fullName },
+          ]}
+        />
+      </div>
+
+      <FDICBanksExplorerDynamic
+        stateData={stateData}
+        stateMeta={stateMeta}
         statePageMode
         stateSlug={slug}
       />
+
+      {/* Server-rendered E-E-A-T content — fully crawlable, unique per state */}
+      <div className="container mx-auto px-4 pb-12">
+        <StateInsightsSection banks={stateData.banks} stateMeta={stateMeta} />
+
+        <div className="mt-10 grid gap-8 lg:grid-cols-3">
+          <div className="lg:col-span-2">
+            <LeadCaptureForm stateName={stateMeta.fullName} variant="state-page-v2" />
+          </div>
+          <InternalLinkHub stateMeta={stateMeta} neighborSlugs={neighbors} />
+        </div>
+      </div>
+
+      {/* Crawler-visible institution index (first 30) — supplements JSON-LD */}
+      <section className="sr-only" aria-label={`FDIC bank index for ${stateMeta.fullName}`}>
+        <h2>FDIC Insured Banks in {stateMeta.fullName}</h2>
+        <ul>
+          {stateData.banks.slice(0, 30).map((bank) => (
+            <li key={bank.fdic_cert}>
+              {bank.name} — FDIC #{bank.fdic_cert} — {bank.headquarters_address}
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section className="border-t border-zinc-200 bg-[#0A2540] py-6 text-center text-xs text-zinc-400">
         Data last updated from FDIC {DATA_UPDATED}. This directory is for informational purposes
         only. Not financial advice. Verify all data at{' '}
