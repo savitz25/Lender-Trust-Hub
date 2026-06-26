@@ -51,7 +51,7 @@ export const US_STATES: StateMeta[] = [
   { code: 'VA', fullName: 'Virginia', slug: 'virginia', region: 'Southeast', hasData: true },
   { code: 'WA', fullName: 'Washington', slug: 'washington', region: 'West', hasData: false },
   { code: 'WV', fullName: 'West Virginia', slug: 'west-virginia', region: 'Southeast', hasData: true },
-  { code: 'WI', fullName: 'Wisconsin', slug: 'wisconsin', region: 'Midwest', hasData: false },
+  { code: 'WI', fullName: 'Wisconsin', slug: 'wisconsin', region: 'Midwest', hasData: true },
   { code: 'WY', fullName: 'Wyoming', slug: 'wyoming', region: 'West', hasData: false },
 ];
 

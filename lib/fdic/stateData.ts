@@ -23,6 +23,7 @@ import southCarolinaData from './data/south-carolina.json';
 import texasData from './data/texas.json';
 import virginiaData from './data/virginia.json';
 import westVirginiaData from './data/west-virginia.json';
+import wisconsinData from './data/wisconsin.json';
 
 export const stateData: Record<string, StateFDICData> = {
   AL: alabamaData as StateFDICData,
@@ -40,6 +41,7 @@ export const stateData: Record<string, StateFDICData> = {
   SC: southCarolinaData as StateFDICData,
   TX: texasData as StateFDICData,
   VA: virginiaData as StateFDICData,
+  WI: wisconsinData as StateFDICData,
   WV: westVirginiaData as StateFDICData,
 };
 

@@ -30,6 +30,10 @@ MN_SRC = ROOT / "data" / "minnesota-import.txt"
 MN_PROMPT = Path(
     r"C:\Users\makei\.grok\sessions\C%3A%5CUsers%5Cmakei\019efc5b-cf82-7612-8aff-b4ae0767aaa7\prompts\prompt_8.txt"
 )
+WI_SRC = ROOT / "data" / "wisconsin-import.txt"
+WI_PROMPT = Path(
+    r"C:\Users\makei\.grok\sessions\C%3A%5CUsers%5Cmakei\019efc5b-cf82-7612-8aff-b4ae0767aaa7\prompts\prompt_9.txt"
+)
 OUT_DIR = ROOT / "lib" / "fdic" / "data"
 
 STATE_META = {
@@ -48,6 +52,25 @@ STATE_META = {
     "MO": ("Missouri", "missouri"),
     "IA": ("Iowa", "iowa"),
     "MN": ("Minnesota", "minnesota"),
+    "WI": ("Wisconsin", "wisconsin"),
+}
+
+BULK_MIN_COLS = 133
+BULK_COL_STREET = 1
+BULK_COL_SUITE = 2
+BULK_COL_CITY = 22
+BULK_COL_CERT = 37
+BULK_COL_INSURED = 54
+BULK_COL_NAME = 67
+BULK_COL_REGULATOR = 84
+BULK_COL_STALP = 99
+BULK_COL_WEBSITE = 131
+BULK_COL_ZIP = 132
+
+REGULATOR_MAP = {
+    "OCC": "Comptroller of the Currency",
+    "FDIC": "Federal Deposit Insurance Corporation",
+    "FED": "Federal Reserve Board",
 }
 
 # Use anchored line markers so intro text and bank names do not false-match.
@@ -63,6 +86,15 @@ SECTION_MARKERS = [
 ]
 
 DATE_RE = re.compile(r"^\d{2}/\d{2}/\d{4}$")
+BULK_DATE_RE = re.compile(r"^\d{1,2}/\d{1,2}/\d{4}$")
+
+
+def normalize_bulk_date(value: str) -> str:
+    match = BULK_DATE_RE.match(value.strip())
+    if not match:
+        return value.strip()
+    month, day, year = value.strip().split("/")
+    return f"{int(month):02d}/{int(day):02d}/{year}"
 
 
 def normalize_website(url: str) -> str:
@@ -162,6 +194,61 @@ def parse_line(line: str) -> dict | None:
         "headquarters_address": address,
         "website": normalize_website(website),
     }
+
+
+def parse_bulk_line(line: str) -> dict | None:
+    parts = line.split("\t")
+    if len(parts) < BULK_MIN_COLS:
+        return None
+
+    cert = parts[BULK_COL_CERT].strip()
+    name = parts[BULK_COL_NAME].strip()
+    insured_since = parts[BULK_COL_INSURED].strip()
+    regulator_code = parts[BULK_COL_REGULATOR].strip().upper()
+
+    if not cert.isdigit() or not name or not BULK_DATE_RE.match(insured_since):
+        return None
+
+    insured_since = normalize_bulk_date(insured_since)
+
+    street = parts[BULK_COL_STREET].strip()
+    suite = parts[BULK_COL_SUITE].strip()
+    city = parts[BULK_COL_CITY].strip()
+    state = parts[BULK_COL_STALP].strip()
+    zip_code = parts[BULK_COL_ZIP].strip()
+
+    address_parts = [p for p in (street, suite, city) if p]
+    if state and zip_code:
+        address_parts.append(f"{state} {zip_code}")
+    elif state:
+        address_parts.append(state)
+
+    regulator = REGULATOR_MAP.get(regulator_code, regulator_code)
+
+    return {
+        "name": name,
+        "fdic_insured_since": insured_since,
+        "fdic_cert": cert,
+        "primary_regulator": regulator,
+        "headquarters_address": ", ".join(address_parts),
+        "website": normalize_website(parts[BULK_COL_WEBSITE].strip()),
+    }
+
+
+def parse_bulk_section(text: str) -> list[dict]:
+    banks = []
+    seen_certs = set()
+
+    for raw_line in text.splitlines():
+        bank = parse_bulk_line(raw_line)
+        if not bank:
+            continue
+        if bank["fdic_cert"] in seen_certs:
+            continue
+        seen_certs.add(bank["fdic_cert"])
+        banks.append(bank)
+
+    return banks
 
 
 def parse_section(text: str, *, filter_state: str | None = None) -> list[dict]:
@@ -414,6 +501,30 @@ def ensure_minnesota_import() -> None:
     MN_SRC.write_text(extract_minnesota_lines(raw), encoding="utf-8")
 
 
+def extract_wisconsin_lines(content: str) -> str:
+    if "<user_query>" in content:
+        content = content.split("<user_query>", 1)[1]
+
+    block_lines: list[str] = []
+    for raw in content.splitlines():
+        line = raw.strip()
+        if not line or line.startswith("<"):
+            continue
+        if "\t" not in line:
+            continue
+        block_lines.append(line)
+
+    return "\n".join(block_lines)
+
+
+def ensure_wisconsin_import() -> None:
+    if not WI_PROMPT.exists():
+        return
+    raw = WI_PROMPT.read_text(encoding="utf-8")
+    WI_SRC.parent.mkdir(parents=True, exist_ok=True)
+    WI_SRC.write_text(extract_wisconsin_lines(raw), encoding="utf-8")
+
+
 def main():
     if not SRC.exists():
         prompt = Path(
@@ -457,9 +568,27 @@ def main():
     if MN_SRC.exists():
         sections["MN"] = MN_SRC.read_text(encoding="utf-8")
 
+    ensure_wisconsin_import()
+    bulk_sections: dict[str, str] = {}
+    if WI_SRC.exists():
+        bulk_sections["WI"] = WI_SRC.read_text(encoding="utf-8")
+
     for code, text in sections.items():
         full_name, slug = STATE_META[code]
         banks = parse_section(text)
+        payload = {
+            "fullName": full_name,
+            "abbr": code,
+            "banks": banks,
+            "updated": updated,
+        }
+        out_path = OUT_DIR / f"{slug}.json"
+        out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+        print(f"{code}: {len(banks)} banks -> {out_path.name}")
+
+    for code, text in bulk_sections.items():
+        full_name, slug = STATE_META[code]
+        banks = parse_bulk_section(text)
         payload = {
             "fullName": full_name,
             "abbr": code,

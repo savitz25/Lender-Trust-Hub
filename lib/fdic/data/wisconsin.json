@@ -1,0 +1,927 @@
+{
+  "fullName": "Wisconsin",
+  "abbr": "WI",
+  "banks": [
+    {
+      "name": "First National Bank in Tigerton",
+      "fdic_insured_since": "05/25/1934",
+      "fdic_cert": "3993",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "140 Cedar St, Tigerton, WI 54486",
+      "website": "http://www.bank1stnational.com"
+    },
+    {
+      "name": "First National Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "26022",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "109 E 2nd St, New Richmond, WI 54017",
+      "website": "https://www.fnc.bank"
+    },
+    {
+      "name": "First Resource Bank",
+      "fdic_insured_since": "06/27/2005",
+      "fdic_cert": "80623",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7449 Village Dr, Lino Lakes, MN 55014",
+      "website": "https://www.myfrbank.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "48840",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "220 W Waupaca St, New London, WI 54961",
+      "website": "https://www.bankfirststate.com"
+    },
+    {
+      "name": "First State Bank and Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "38788",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "950 Highway 95 N, Bayport, MN 55003",
+      "website": "https://www.fsbt.com"
+    },
+    {
+      "name": "First-Citizens Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "23476000",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "239 Fayetteville St, Raleigh, NC 7078",
+      "website": "https://11063"
+    },
+    {
+      "name": "Flagstar Bank, National Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "8120652",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "102 Duffy Ave, Hicksville, NY 11801",
+      "website": "https://www.flagstar.com"
+    },
+    {
+      "name": "FORTE BANK",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "42055",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "116 W Sumner St, Hartford, WI 53027",
+      "website": "https://www.fortebankwi.com"
+    },
+    {
+      "name": "Fortifi Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "87643",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "240 Broadway, Berlin, WI 54923",
+      "website": "https://www.fortifibank.com"
+    },
+    {
+      "name": "Forward Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "116087",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1001 N Central Ave, Marshfield, WI 54449",
+      "website": "https://www.forward.bank"
+    },
+    {
+      "name": "Fox Valley Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "53242",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "51 E 1st St, Fond Du Lac, WI 54935",
+      "website": "https://www.fvsbank.com"
+    },
+    {
+      "name": "Frandsen Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "426118",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "116 Central St W, Lonsdale, MN 55046",
+      "website": "https://frandsenbank.com"
+    },
+    {
+      "name": "Great Midwest Bank, S.S.B.",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "167927",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15900 W Bluemound Rd, Brookfield, WI 53005",
+      "website": "https://www.greatmidwestbank.com"
+    },
+    {
+      "name": "Great North Bank",
+      "fdic_insured_since": "05/16/1935",
+      "fdic_cert": "34325",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "541 Central Ave, Florence, WI 54121",
+      "website": "https://www.greatnorthbank.com"
+    },
+    {
+      "name": "GreenLeaf Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12153",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1608 Day St, Greenleaf, WI 54126",
+      "website": "http://www.greenleaf.bank"
+    },
+    {
+      "name": "Headwaters State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "19059",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4175 County Road B, Land O' Lakes, WI 54540",
+      "website": "https://www.headwatersstatebank.com"
+    },
+    {
+      "name": "Hiawatha National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "84235",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "N1555 770th St, Hager City, WI 54014",
+      "website": "https://www.hnbank.com"
+    },
+    {
+      "name": "Highland State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5413",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "541 Main St, Highland, WI 53543",
+      "website": "https://www.highlandstatebank.net"
+    },
+    {
+      "name": "Horicon Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "168676",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "326 E Lake St, Horicon, WI 53032",
+      "website": "https://www.horiconbank.com"
+    },
+    {
+      "name": "Hustisford State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10776",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 S Lake St, Hustisford, WI 53034",
+      "website": "https://www.hustisfordstatebank.com"
+    },
+    {
+      "name": "IncredibleBank",
+      "fdic_insured_since": "12/08/1967",
+      "fdic_cert": "157969",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "327 N 17th Ave, Wausau, WI 54401",
+      "website": "https://www.incrediblebank.com"
+    },
+    {
+      "name": "Independence State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8386",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "23942 Senty Dr, Independence, WI 54747",
+      "website": "https://www.independencestatebank.com"
+    },
+    {
+      "name": "Ixonia Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "90813",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "W 1046 Marietta  Ave, Ixonia, WI 53036",
+      "website": "https://www.ixoniabank.com"
+    },
+    {
+      "name": "John Deere Financial, f.s.b.",
+      "fdic_insured_since": "12/24/2000",
+      "fdic_cert": "869513",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "8383 Greenway Blvd, Ste 300, Middleton, WI 53562",
+      "website": "https://www.deere.com"
+    },
+    {
+      "name": "Johnson Bank",
+      "fdic_insured_since": "11/12/1970",
+      "fdic_cert": "881316",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "555 Main St, Racine, WI 53403",
+      "website": "https://www.johnsonfinancialgroup.com"
+    },
+    {
+      "name": "JPMorgan Chase Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "335931000",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1111 Polaris Pkwy, Columbus, OH 43240",
+      "website": "https://www.jpmorganchase.com"
+    },
+    {
+      "name": "KeySavings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "9524",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "811 E Grand Ave, Wisconsin Rapids, WI 54494",
+      "website": "https://www.keysavingsbank.com"
+    },
+    {
+      "name": "Ladysmith Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "7553",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "119 W 4th St N, Ladysmith, WI 54848",
+      "website": "https://www.ladysmithfederal.com"
+    },
+    {
+      "name": "Lake Ridge Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "340777",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8301 University Ave, Middleton, WI 53562",
+      "website": "https://www.lakeridge.bank"
+    },
+    {
+      "name": "Laona State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "21668",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5308 Beech St, Laona, WI 54541",
+      "website": "https://WWW.LAONASTATEBANK.COM"
+    },
+    {
+      "name": "Marathon Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "37747",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "500 Scott St, Wausau, WI 54403",
+      "website": "https://WWW.MARATHONBANK.COM"
+    },
+    {
+      "name": "Mayville Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "10547",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 S Main St, Mayville, WI 53050",
+      "website": "http://www.mayvillesavings.com"
+    },
+    {
+      "name": "Merchants Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "340547",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 E 3rd St, # 106, Winona, MN 55987",
+      "website": "https://www.merchantsbank.com"
+    },
+    {
+      "name": "Mound City Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "66721",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "25 E Pine St, Platteville, WI 53818",
+      "website": "http://www.moundcitybank.com"
+    },
+    {
+      "name": "National Bank of Commerce",
+      "fdic_insured_since": "04/23/1934",
+      "fdic_cert": "212705",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1127 Tower Ave, Superior, WI 54880",
+      "website": "https://www.nbcbanking.com"
+    },
+    {
+      "name": "National Exchange Bank and Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "555430",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "130 S Main St, Fond Du Lac, WI 54935",
+      "website": "https://www.nebat.com"
+    },
+    {
+      "name": "Nekoosa Port Edwards State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "40253",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "405 Market St, Nekoosa, WI 54457",
+      "website": "https://www.npesb.bank"
+    },
+    {
+      "name": "Nicolet National Bank",
+      "fdic_insured_since": "10/31/2000",
+      "fdic_cert": "2307196",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "111 N Washington St, Green Bay, WI 54301",
+      "website": "https://www.nicoletbank.com"
+    },
+    {
+      "name": "North Shore Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "392631",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15700 W Bluemound Rd, Brookfield, WI 53005",
+      "website": "https://www.northshorebank.com"
+    },
+    {
+      "name": "Northern State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "32756",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "321 Main St W, Ashland, WI 54806",
+      "website": "http://www.nsbashland.com"
+    },
+    {
+      "name": "Northwestern Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "73802",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "202 N Bridge St, Chippewa Falls, WI 54729",
+      "website": "https://www.northwesternbank.com"
+    },
+    {
+      "name": "Northwestern Mutual Wealth Management",
+      "fdic_insured_since": "04/06/2001",
+      "fdic_cert": "323450",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "720 E Wisconsin Ave, Milwaukee, WI 53202",
+      "website": "https://www.northwesternmutual.com"
+    },
+    {
+      "name": "Oak Bank",
+      "fdic_insured_since": "08/14/2000",
+      "fdic_cert": "50695",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5951 Mckee Rd, Fitchburg, WI 53719",
+      "website": "https://HTTP://WWW.OAK.BANK"
+    },
+    {
+      "name": "Oakwood Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "16451",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "40214 S Ekern Avenue, Pigeon Falls, WI 54760",
+      "website": "https://www.oakwoodbank.net"
+    },
+    {
+      "name": "Old National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8213684",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Main St, Evansville, IN 47708",
+      "website": "https://www.oldnational.com"
+    },
+    {
+      "name": "One Community Bank",
+      "fdic_insured_since": "09/15/1976",
+      "fdic_cert": "323246",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "733 N Main St, Oregon, WI 53575",
+      "website": "https://www.onecommunity.bank"
+    },
+    {
+      "name": "Oostburg State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "45314",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "905 Center Ave, Oostburg, WI 53070",
+      "website": "https://www.oostburgstate.bank"
+    },
+    {
+      "name": "Paper City Savings Bank, S.A.",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "33014",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4200 8th St S, Wisconsin Rapids, WI 54494",
+      "website": "https://www.pcs.bank"
+    },
+    {
+      "name": "Park Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10790",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1200 S Main St, Holmen, WI 54636",
+      "website": "https://www.parkbank.bank"
+    },
+    {
+      "name": "Partners Bank of Wisconsin",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "39122",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "907 N Central Ave, Marshfield, WI 54449",
+      "website": "https://www.partnersbankwi.com"
+    },
+    {
+      "name": "Peoples State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "96030",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 E Blackhawk Ave, Prairie Du Chien, WI 53821",
+      "website": "http://www.peoplesfinancial.com"
+    },
+    {
+      "name": "Peoples State Bank",
+      "fdic_insured_since": "08/01/1962",
+      "fdic_cert": "139297",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1905 Stewart Ave, Wausau, WI 54401",
+      "website": "https://www.bankpeoples.com"
+    },
+    {
+      "name": "Peoples State Bank of Plainview",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "27495",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 4th Ave Se, Plainview, MN 55964",
+      "website": "https://www.peoplesstatebank.com"
+    },
+    {
+      "name": "Pillar Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "20079",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "990 Main Street, Baldwin, WI 54002",
+      "website": "https://www.pillar.bank"
+    },
+    {
+      "name": "PNC Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "59440316",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "222 Delaware Ave, Wilmington, DE 19801",
+      "website": "https://www.pnc.com"
+    },
+    {
+      "name": "Premier Community Bank",
+      "fdic_insured_since": "02/24/1941",
+      "fdic_cert": "41724",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "230 Mavis Rd, Marion, WI 54950",
+      "website": "https://www.premiercommunity.com"
+    },
+    {
+      "name": "PremierBank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "48089",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "70 N Main St, Fort Atkinson, WI 53538",
+      "website": "https://www.bankwithpremier.com"
+    },
+    {
+      "name": "Prevail Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "133498",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "675 E Broadway Ave, Medford, WI 54451",
+      "website": "https://www.prevail.bank"
+    },
+    {
+      "name": "PyraMax Bank, FSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "65133",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "7001 W Edgerton Ave, Greenfield, WI 53220",
+      "website": "https://www.pyramaxbank.com"
+    },
+    {
+      "name": "Range Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "63812",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 N Front St, Marquette, MI 49855",
+      "website": "https://www.rangebank.com"
+    },
+    {
+      "name": "Richland County Bank",
+      "fdic_insured_since": "04/12/1935",
+      "fdic_cert": "17274",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "195 W Court St, Richland Center, WI 53581",
+      "website": "https://www.richlandcountybank.com"
+    },
+    {
+      "name": "River Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "122297",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "145 N Main St, Stoddard, WI 54658",
+      "website": "https://www.riverbank.biz"
+    },
+    {
+      "name": "River Falls State Bank",
+      "fdic_insured_since": "10/03/1949",
+      "fdic_cert": "13760",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "124 S 2nd St, River Falls, WI 54022",
+      "website": "https://www.rfstatebankonline2.com"
+    },
+    {
+      "name": "Royal Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "85345",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 Main St, Elroy, WI 53929",
+      "website": "http://www.royalbank-usa.com"
+    },
+    {
+      "name": "Sauk Valley Bank & Trust Company",
+      "fdic_insured_since": "07/09/1999",
+      "fdic_cert": "59030",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 W 3rd St, Sterling, IL 61081",
+      "website": "https://www.saukvalleybank.com"
+    },
+    {
+      "name": "Security Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "28395",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "112 E Main St, New Auburn, WI 54757",
+      "website": "https://www.securityonlinebank.com"
+    },
+    {
+      "name": "Security Financial Bank",
+      "fdic_insured_since": "04/10/1934",
+      "fdic_cert": "94665",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "212 W Prospect St, Durand, WI 54736",
+      "website": "https://www.sfbank.com"
+    },
+    {
+      "name": "Security State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "27738",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7865 Us Highway 2, Iron River, WI 54847",
+      "website": "https://www.sbankonline.com"
+    },
+    {
+      "name": "Shell Lake State Bank",
+      "fdic_insured_since": "12/05/1934",
+      "fdic_cert": "37899",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 W 5th Ave, Shell Lake, WI 54871",
+      "website": "https://www.shelllakestatebank.com"
+    },
+    {
+      "name": "Spring Bank",
+      "fdic_insured_since": "08/28/2008",
+      "fdic_cert": "50277",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "16620 W Bluemound Rd Ste 100a, Brookfield, WI 53005",
+      "website": "https://www.springbankwi.bank"
+    },
+    {
+      "name": "Starion Bank",
+      "fdic_insured_since": "01/01/1993",
+      "fdic_cert": "176488",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "333 N 4th St, Bismarck, ND 58501",
+      "website": "https://WWW.STARIONBANK.COM"
+    },
+    {
+      "name": "State Bank Financial",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "47051",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "401 Main St, La Crosse, WI 54601",
+      "website": "https://www.statebankfinancial.bank"
+    },
+    {
+      "name": "State Bank of Chilton",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "64187",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "26 E Main St, Chilton, WI 53014",
+      "website": "https://www.statebankofchilton.com"
+    },
+    {
+      "name": "State Bank of Newburg",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "54613",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 Congress Dr Hwy 33, Newburg, WI 53060",
+      "website": "https://www.newburg.bank"
+    },
+    {
+      "name": "State Bank of Reeseville",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11983",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "203 S Main St, Reeseville, WI 53579",
+      "website": "https://www.statebankofreeseville.com"
+    },
+    {
+      "name": "State Bank of the Lakes, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "276941",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "440 Lake St, Antioch, IL 60002",
+      "website": "https://www.sbotl.com"
+    },
+    {
+      "name": "Sterling Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "32211",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "234 E La Salle Ave, Barron, WI 54812",
+      "website": "http://www.sterlingbank.ws"
+    },
+    {
+      "name": "Superior Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "16631",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1130 Tower Ave, Superior, WI 54880",
+      "website": "https://www.ss-bank.com"
+    },
+    {
+      "name": "The Bank of Brodhead",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "36705",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "806 E Exchange St, Brodhead, WI 53520",
+      "website": "https://www.bankofbrodhead.com"
+    },
+    {
+      "name": "The Bank of Kaukauna",
+      "fdic_insured_since": "07/01/1935",
+      "fdic_cert": "13960",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "264 W Wisconsin Ave, Kaukauna, WI 54130",
+      "website": "https://WWW.BANKOFKAUKAUNA.COM"
+    },
+    {
+      "name": "The Bank of New Glarus",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "80461",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "501 1st St, New Glarus, WI 53574",
+      "website": "https://www.thebankofnewglarus.bank"
+    },
+    {
+      "name": "The Equitable Bank, S.S.B.",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29000",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2290 N Mayfair Rd, Wauwatosa, WI 53226",
+      "website": "https://equitablebank.net"
+    },
+    {
+      "name": "The Farmers & Merchants Bank",
+      "fdic_insured_since": "12/02/1940",
+      "fdic_cert": "80219",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "123 W Huron St, Berlin, WI 54923",
+      "website": "http://www.fmberlin.com"
+    },
+    {
+      "name": "The Farmers State Bank of Waupaca",
+      "fdic_insured_since": "09/17/1935",
+      "fdic_cert": "28407",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "112 W Fulton St, Waupaca, WI 54981",
+      "website": "https://www.fsbwaupaca.com"
+    },
+    {
+      "name": "The First National Bank of Bangor",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "110967",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1798 Commercial St, Bangor, WI 54614",
+      "website": "https://fnbbangor.net"
+    },
+    {
+      "name": "The First National Bank of River Falls",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "23364",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "104 E Locust St, River Falls, WI 54022",
+      "website": "http://www.fnbrf.com"
+    },
+    {
+      "name": "The Huntington National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "33143721",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "17 S High St, Columbus, OH 43215",
+      "website": "https://www.huntington.com"
+    },
+    {
+      "name": "The International Bank of Amherst",
+      "fdic_insured_since": "06/30/1934",
+      "fdic_cert": "14269",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "103 S Main St, Amherst, WI 54406",
+      "website": "https://www.ibamherst.com"
+    },
+    {
+      "name": "The Northern Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11546963",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "50 S La Salle St, Chicago, IL 60603",
+      "website": "https://www.northerntrust.com"
+    },
+    {
+      "name": "The Park Bank",
+      "fdic_insured_since": "07/18/1966",
+      "fdic_cert": "152484",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2401 S Park St, Madison, WI 53713",
+      "website": "https://www.park.bank"
+    },
+    {
+      "name": "The Peoples Community Bank",
+      "fdic_insured_since": "03/08/1935",
+      "fdic_cert": "46485",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "222 W Commercial St, Mazomanie, WI 53560",
+      "website": "https://www.thepcb.bank"
+    },
+    {
+      "name": "The Peshtigo National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "20712",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "250 French St, Peshtigo, WI 54157",
+      "website": "https://www.pnbwi.com"
+    },
+    {
+      "name": "The Pineries Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "16751",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3601 Main St, Stevens Point, WI 54481",
+      "website": "https://www.pineries.com"
+    },
+    {
+      "name": "The Port Washington State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "70114",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "206 N Franklin St, Port Washington, WI 53074",
+      "website": "https://www.pwsb.bank"
+    },
+    {
+      "name": "The Portage County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "26606",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1155 County Road D, Almond, WI 54909",
+      "website": "http://www.PORTAGECOUNTYBANK.COM"
+    },
+    {
+      "name": "The Stephenson National Bank and Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "60745",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1818 Hall Ave, Marinette, WI 54143",
+      "website": "http://www.snbt.com"
+    },
+    {
+      "name": "Thrivent Trust Company",
+      "fdic_insured_since": "11/02/1998",
+      "fdic_cert": "12224",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4321 N Ballard Rd, Appleton, WI 54919",
+      "website": "https://WWW.THRIVENTTRUST.COM"
+    },
+    {
+      "name": "Town Bank, National Association",
+      "fdic_insured_since": "07/23/1998",
+      "fdic_cert": "469431",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "850 W North Shore Dr, Hartland, WI 53029",
+      "website": "https://www.townbank.us"
+    },
+    {
+      "name": "Tri City National Bank",
+      "fdic_insured_since": "10/28/1963",
+      "fdic_cert": "186642",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "6400 S 27th St, Oak Creek, WI 53154",
+      "website": "https://www.tcnb.com"
+    },
+    {
+      "name": "U.S. Bank National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "67968276",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "425 Walnut St, Cincinnati, OH 45202",
+      "website": "https://www.usbank.com"
+    },
+    {
+      "name": "UMB Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7675387",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1010 Grand Blvd, Kansas City, MO 64106",
+      "website": "https://www.umb.com"
+    },
+    {
+      "name": "Union Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "23573",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "104 N Tremont St, Kewanee, IL 61443",
+      "website": "https://www.myunionfederal.com"
+    },
+    {
+      "name": "Union State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11912",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "120 Mill St S, West Salem, WI 54669",
+      "website": "https://www.usbwestsalem.com"
+    },
+    {
+      "name": "Unity Bank",
+      "fdic_insured_since": "01/02/1934",
+      "fdic_cert": "52057",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "207 W Lincoln St, Augusta, WI 54722",
+      "website": "https://www.unitybanking.com"
+    },
+    {
+      "name": "Waldo State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "14795",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "119 Depot St, Waldo, WI 53093",
+      "website": "https://www.waldostate.bank"
+    },
+    {
+      "name": "WaterStone Bank, SSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "339063",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "11200 W Plank Ct, Wauwatosa, WI 53226",
+      "website": "https://www.wsbonline.com"
+    },
+    {
+      "name": "Waukesha State Bank",
+      "fdic_insured_since": "06/15/1944",
+      "fdic_cert": "169051",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "151 E Saint Paul Ave, Waukesha, WI 53188",
+      "website": "https://WWW.WAUKESHABANK.COM"
+    },
+    {
+      "name": "Waumandee State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "38132",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "S2021 County Road U, Waumandee, WI 54622",
+      "website": "http://www.waumandeebank.com"
+    },
+    {
+      "name": "Wells Fargo Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "173016000",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3201 N 4th Ave, Sioux Falls, SD 57104",
+      "website": "https://www.wellsfargo.com"
+    },
+    {
+      "name": "West Pointe Bank",
+      "fdic_insured_since": "04/22/1996",
+      "fdic_cert": "70277",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1750 Witzel Ave, Oshkosh, WI 54902",
+      "website": "https://www.westptebank.com"
+    },
+    {
+      "name": "Westbury Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "65016",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "N16w23250 Stone Ridge Dr, Waukesha, WI 53188",
+      "website": "https://westburybankwi.com"
+    },
+    {
+      "name": "WNB FINANCIAL, N.A.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "58900",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "204 Main St, Winona, MN 55987",
+      "website": "http://www.wnbfinancial.com"
+    },
+    {
+      "name": "Wolf River Community Bank",
+      "fdic_insured_since": "10/16/1996",
+      "fdic_cert": "44194",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "309 E Main St, Hortonville, WI 54944",
+      "website": "http://wolfriverbank.com"
+    },
+    {
+      "name": "Woodford State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "32783",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "403 W 8th St, Monroe, WI 53566",
+      "website": "https://www.woodfordstatebank.com"
+    },
+    {
+      "name": "WOODTRUST BANK",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "66489",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "181 2nd St S, Wisconsin Rapids, WI 54494",
+      "website": "https://www.woodtrust.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}
