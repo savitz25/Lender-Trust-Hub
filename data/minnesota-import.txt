@@ -1,0 +1,281 @@
+21st Century Bank,01/01/1934,9751,Federal Deposit Insurance Corporation,"699 N Medina St, Loretto, MN 55357",www.21stcenturybank.com
+Alerus Financial, National Association,01/01/1934,3931,Comptroller of the Currency,"401 Demers Ave, Grand Forks, ND 58201",www.alerus.com
+Alliance Bank,01/01/1934,10973,Federal Deposit Insurance Corporation,"105 E Lyon Ave, Lake City, MN 55041",www.alliancebanks.com
+American Bank & Trust,01/01/1934,1117,Federal Deposit Insurance Corporation,"6810 S Minnesota Ave, Sioux Falls, SD 57108",www.abt.bank
+American Federal Bank,08/09/1989,29140,Comptroller of the Currency,"215 5th St N, Fargo, ND 58102",www.americanfederalbank.com
+American Heritage National Bank,01/01/1934,8843,Comptroller of the Currency,"24 2nd St S, Long Prairie, MN 56347",www.logbank.com
+American National Bank of Minnesota,01/02/1986,26499,Comptroller of the Currency,"7638 Woida Rd, Baxter, MN 56425",www.anbmn.com
+American State Bank of Grygla,04/30/1976,22263,Federal Reserve Board,"102 S Main Ave, Grygla, MN 56727",www.asbgrygla.com
+Americana Community Bank,01/01/1934,8205,Federal Deposit Insurance Corporation,"300 Main St W, Sleepy Eye, MN 56085",www.americanafinancial.com
+Ameriprise Bank, FSB,09/14/2006,58303,Comptroller of the Currency,"901 3rd Avenue South 14th Floor, Minneapolis, MN 55402",www.ameriprise.com
+Arcadian Bank,01/01/1934,10561,Federal Deposit Insurance Corporation,"601 Broadway St, Hartland, MN 56042",www.arcadian.bank
+Arlington State Bank,01/01/1934,1391,Federal Deposit Insurance Corporation,"230 W Main St, Arlington, MN 55307",www.arlingtonstatebank.com
+Associated Bank, National Association,01/01/1934,5296,Comptroller of the Currency,"200 N Adams St, Green Bay, WI 54301",www.associatedbank.com
+B2 Bank National Association,01/01/1934,5105,Comptroller of the Currency,"8355 Unity Dr, Virginia, MN 55792",www.b2.bank
+Bank Forward,01/01/1934,8941,Federal Deposit Insurance Corporation,"5650 37th Ave S, Fargo, ND 58104",www.bankforward.com
+Bank Midwest,01/01/1934,5170,Federal Reserve Board,"1800 Royal Ave, Spirit Lake, IA 51360",bankmidwest.com
+Bank of Alma,06/20/1986,26689,Federal Deposit Insurance Corporation,"211 S Main St, Alma, WI 54610",www.bankofalma.net
+Bank of America, National Association,01/01/1934,3510,Comptroller of the Currency,"100 N Tryon St, Charlotte, NC 28202",www.bankofamerica.com
+Bank of Maple Plain,01/01/1934,9332,Federal Deposit Insurance Corporation,"4980 Highway 12, Maple Plain, MN 55359",www.bankofmapleplain.com
+BankCherokee,01/01/1934,8537,Federal Deposit Insurance Corporation,"607 Smith Ave S, Saint Paul, MN 55107",www.bankcherokee.com
+BankVista,02/15/2000,35406,Federal Deposit Insurance Corporation,"125 Twin Rivers Ct, Sartell, MN 56377",www.bankvista.com
+BANKWEST,06/01/1948,16704,Federal Deposit Insurance Corporation,"5921 Main St, Rockford, MN 55373",www.bankwestmn.com
+Battle Bank, National Association,01/01/1934,9336,Comptroller of the Currency,"105 S Main St, Upsala, MN 56384",www.battlebank.com
+Bell Bank,05/06/1966,19581,Federal Deposit Insurance Corporation,"520 Main Ave, Fargo, ND 58103",www.bell.bank
+BMO Bank National Association,05/17/1947,16571,Comptroller of the Currency,"320 S Canal St, Chicago, IL 60606",www.bmo.com
+Bonanza Valley State Bank,01/01/1934,10993,Federal Deposit Insurance Corporation,"147 Central Ave S, Brooten, MN 56316",www.bvsb.bank
+Border Bank,08/21/1972,20776,Federal Deposit Insurance Corporation,"4530 17th Ave S, Fargo, ND 58103",www.border.bank
+Bravera Bank,12/01/1977,22559,Federal Deposit Insurance Corporation,"220 1st Ave W, Dickinson, ND 58601",www.bravera.bank
+Bridgewater Bank,11/02/2005,58210,Federal Deposit Insurance Corporation,"4450 Excelsior Blvd, Saint Louis Park, MN 55416",www.bridgewaterbankmn.com
+Castle Rock Bank,01/01/1934,1913,Federal Deposit Insurance Corporation,"27925 Danville Avenue, Castle Rock, MN 55010",www.castlerockbank.net
+CCFBank National Association,12/10/2001,57265,Comptroller of the Currency,"219 Fairfax St, Altoona, WI 54720",www.ccf.us
+Center National Bank,01/01/1934,10976,Comptroller of the Currency,"301 N Ramsey Ave, Litchfield, MN 55355",www.centernationalbank.com
+Choice Financial Group,01/01/1934,9423,Federal Deposit Insurance Corporation,"4501 23rd Ave S, Fargo, ND 58104",www.bankwithchoice.com
+Citizens Alliance Bank,01/01/1934,1402,Federal Deposit Insurance Corporation,"55 1st St Nw, Clara City, MN 56222",www.citizensalliancebank.com
+Citizens Bank & Trust Co.,01/01/1934,10218,Federal Deposit Insurance Corporation,"102 Main St S, Hutchinson, MN 55350",www.cbhutch.com
+Citizens Bank Minnesota,01/01/1934,8200,Federal Deposit Insurance Corporation,"105 N Minnesota St, New Ulm, MN 56073",www.citizensmn.bank/
+Citizens Independent Bank,01/16/1950,16863,Federal Deposit Insurance Corporation,"5000 W 36th St, Saint Louis Park, MN 55416",www.bankcib.com
+Citizens State Bank Norwood Young America,01/01/1934,1933,Federal Deposit Insurance Corporation,"409 Faxon Rd N, Norwood Young America, MN 55368",www.citizensstatebanknya.com
+Citizens State Bank of Roseau,01/01/1934,10167,Federal Deposit Insurance Corporation,"118 Main Ave S, Roseau, MN 56751",www.citizensros.com
+Commerce Bank,01/01/1934,10212,Federal Deposit Insurance Corporation,"101 Central Ave S, Geneva, MN 56035",www.cbmn.bank
+Community Bank Mankato,01/01/1934,9760,Federal Deposit Insurance Corporation,"201 Main St E, Vernon Center, MN 56090",www.cbfg.net
+Community Bank Owatonna,01/13/2003,57468,Federal Deposit Insurance Corporation,"640 W Bridge St, Owatonna, MN 55060",www.cbowatonna.com
+COMMUNITY FIRST BANK,01/01/1934,5197,Federal Deposit Insurance Corporation,"21 Main St Ne, Menahga, MN 56464",www.communityfirstbankmn.com
+Community Resource Bank,01/01/1934,5219,Federal Reserve Board,"1605 Heritage Dr, Northfield, MN 55057",www.crb.bank
+Concorde Bank,01/01/1934,9727,Federal Deposit Insurance Corporation,"16 Sw Main Street, Blomkest, MN 56216",www.concordebanks.com
+Cornerstone State Bank,04/08/1974,21525,Federal Deposit Insurance Corporation,"401 4th St Nw, Montgomery, MN 56069",www.cornerstonestatebank.com
+CorTrust Bank National Association,01/01/1934,6063,Comptroller of the Currency,"100 E Havens Ave, Mitchell, SD 57301",www.cortrustbank.com
+Coulee Bank,03/20/1961,18361,Federal Deposit Insurance Corporation,"1516 Losey Blvd S, La Crosse, WI 54601",www.couleebank.net
+Crown Bank,05/22/2000,35480,Federal Deposit Insurance Corporation,"6600 France Ave S Ste 125, Edina, MN 55435",www.crown-bank.com
+Currie State Bank,01/01/1934,8833,Federal Deposit Insurance Corporation,"141 Mill St, Currie, MN 56123",www.curriestatebank.com
+Dacotah Bank,04/30/1955,17437,Federal Reserve Board,"308 S Main St, Aberdeen, SD 57401",www.dacotahbank.com
+Dakota Heritage Bank,02/08/1945,16231,Federal Deposit Insurance Corporation,"109 Main St, Hunter, ND 58048",www.dhb.bank
+Deerwood Bank,01/01/1934,5123,Federal Deposit Insurance Corporation,"131 6th Ave S Ste 100, Waite Park, MN 56387",deerwoodbank.com
+Drake Bank,05/01/2002,57336,Federal Deposit Insurance Corporation,"60 Plato Blvd E Ste 100, Saint Paul, MN 55107",www.drake-bank.com
+Eagle Bank,01/01/1934,8824,Federal Deposit Insurance Corporation,"2 Franklin St S, Glenwood, MN 56334",www.eaglebankmn.com
+Eagle Rock Bank,05/09/1996,34171,Federal Deposit Insurance Corporation,"3701 40th Ave Nw Ofc 300, Rochester, MN 55901",www.eaglerock.bank
+Elysian Bank,01/01/1934,10185,Federal Deposit Insurance Corporation,"121 Main St E, Elysian, MN 56028",www.elysianbank.net
+EntreBank,03/21/2022,59287,Federal Deposit Insurance Corporation,"1550 American Blvd E, Bloomington, MN 55425",www.entrebank.com
+ESB Bank,01/01/1934,10980,Federal Deposit Insurance Corporation,"115 N Highway 44/76, Caledonia, MN 55921",www.esbbanking.com
+F & M Community Bank, National Association,01/01/1934,10967,Comptroller of the Currency,"100 Saint Anthony St N, Preston, MN 55965",www.fmcommunity.com
+Falcon National Bank,07/01/2003,57603,Comptroller of the Currency,"183 Cedar Dr, Foley, MN 56329",www.falconnational.com
+Farmers & Merchants Savings Bank,01/01/1934,9298,Federal Reserve Board,"101 E Main St, Manchester, IA 52057",www.fmbankia.com
+Farmers & Merchants State Bank of New York Mills, Incorporated,01/01/1934,9340,Federal Deposit Insurance Corporation,"11 Walker Ave N, New York Mills, MN 56567",www.fmbanknym.com
+Farmers and Merchants State Bank of Alpha,01/01/1934,10571,Federal Deposit Insurance Corporation,"210 Main St N, Alpha, MN 56111",famstatebankofalpha.com
+Farmers and Merchants State Bank of Appleton,01/01/1934,8845,Federal Deposit Insurance Corporation,"239 N Miles St, Appleton, MN 56208",www.farmers-merchants.com
+Farmers and Merchants State Bank of Pierz,01/01/1934,10165,Federal Deposit Insurance Corporation,"80 Main St N, Pierz, MN 56364",www.fmpierz.com
+Farmers and Merchants State Bank of Springfield,01/01/1934,13382,Federal Deposit Insurance Corporation,"101 N Marshall Ave, Springfield, MN 56087",www.fmb-ebank.com
+Farmers State Bank of Hamel,01/01/1934,8214,Federal Deposit Insurance Corporation,"145 Hamel Rd, Hamel, MN 55340",www.fsboh.com
+Farmers State Bank of Hoffman,01/01/1934,9354,Federal Deposit Insurance Corporation,"103 W Main Ave, Hoffman, MN 56339",www.fsbhoffman.net
+Farmers State Bank of Trimont,01/01/1934,1929,Federal Deposit Insurance Corporation,"220 Main St W, Trimont, MN 56176",www.trimontbank.com
+Farmers State Bank of Underwood,01/01/1934,10174,Federal Deposit Insurance Corporation,"110 Main St S, Underwood, MN 56586",www.farmerstbank.com
+Farmers Trust and Savings Bank,04/05/1934,14195,Federal Reserve Board,"101 N Main St, Buffalo Center, IA 50424",www.ftsbbank.bank
+Fidelity Bank & Trust,05/19/1934,14382,Federal Deposit Insurance Corporation,"4250 Asbury Rd, Dubuque, IA 52002",www.bankfidelity.bank
+First Bank & Trust,01/01/1934,3973,Federal Deposit Insurance Corporation,"520 6th St, Brookings, SD 57006",www.bankeasy.com
+First Bank Blue Earth,01/01/1934,5097,Federal Reserve Board,"306 S Main St, Blue Earth, MN 56013",www.firstbankblueearth.com
+First Bank Elk River,01/01/1934,5136,Federal Deposit Insurance Corporation,"812 Main St Nw, Elk River, MN 55330",www.elkriver.bank
+First Citizens Bank,01/01/1934,4433,Federal Reserve Board,"2601 4th St Sw, Mason City, IA 50401",www.myfcb.bank
+First Farmers & Merchants Bank,01/01/1934,10168,Federal Deposit Insurance Corporation,"920 4th St S, Cannon Falls, MN 55009",www.ffmbank.com
+First Farmers & Merchants National Bank,09/07/1990,33131,Comptroller of the Currency,"114 S Park St, Fairmont, MN 56031",www.ffmbank.com
+First Farmers & Merchants National Bank,01/01/1934,5186,Comptroller of the Currency,"303 E Main St, Luverne, MN 56156",www.ffmbank.com
+First Farmers & Merchants State Bank,01/01/1934,1600,Federal Deposit Insurance Corporation,"106 W Main St, Brownsdale, MN 55918",www.ffmbank.com
+First Farmers & Merchants State Bank of Grand Meadow,10/04/1938,15621,Federal Deposit Insurance Corporation,"105 Main St N, Grand Meadow, MN 55936",www.ffmbank.com
+First Financial Bank in Winnebago,01/01/1934,5278,Federal Deposit Insurance Corporation,"1 Main St S, Winnebago, MN 56098",www.1stbago.com
+First Independence Bank,05/14/1970,20179,Federal Deposit Insurance Corporation,"7310 Woodward Ave, Detroit, MI 48202",www.firstindependence.com
+First Independent Bank,01/01/1934,1900,Federal Deposit Insurance Corporation,"300 Front St, Russell, MN 56169",www.fibmn.com
+First International Bank & Trust,01/01/1934,10248,Federal Deposit Insurance Corporation,"100 N Main St, Watford City, ND 58854",www.fibt.com
+First Interstate Bank,01/01/1934,1105,Federal Reserve Board,"401 N 31st St, Billings, MT 59101",www.firstinterstatebank.com
+First National Bank,02/15/1985,25894,Comptroller of the Currency,"141 E Main St, Oldham, SD 57051",www.firstnationalbanks.com
+First National Bank Minnesota,01/01/1934,5247,Comptroller of the Currency,"226 Nassau St, Saint Peter, MN 56082",www.fnbmn.bank
+First National Bank North,01/01/1934,5269,Comptroller of the Currency,"600 Minnesota Ave W, Walker, MN 56484",www.fnbnorth.com
+First Resource Bank,06/27/2005,58039,Federal Deposit Insurance Corporation,"7449 Village Dr, Lino Lakes, MN 55014",www.myfrbank.com
+First Security Bank,01/01/1934,9728,Federal Deposit Insurance Corporation,"316 Byron Ave N, Byron, MN 55920",www.fsbbyron.com
+First Security Bank - Canby,01/01/1934,5107,Federal Deposit Insurance Corporation,"102 Saint Olaf Ave N, Canby, MN 56220",www.firstsecuritybanks.com
+First Security Bank - Sleepy Eye,01/01/1934,5252,Federal Deposit Insurance Corporation,"100 Main St E, Sleepy Eye, MN 56085",www.firstsecuritybanks.com
+First Southeast Bank,01/01/1934,10576,Federal Deposit Insurance Corporation,"3 Main Ave N, Harmony, MN 55939",www.firstsoutheastbank.com
+First State Bank and Trust,01/01/1934,10159,Federal Deposit Insurance Corporation,"950 Highway 95 N, Bayport, MN 55003",www.fsbt.com
+First State Bank Minnesota,01/04/1934,10162,Federal Deposit Insurance Corporation,"102 W Main St, Le Roy, MN 55951",www.fsbminnesota.com
+First State Bank of Bigfork,01/01/1934,10991,Federal Deposit Insurance Corporation,"400 Main Avenue, Bigfork, MN 56628",www.fsbbigfork.com
+First State Bank of Fountain,01/01/1934,9349,Federal Deposit Insurance Corporation,"101 Main St, Fountain, MN 55935",www.firststatebankoffountain.com
+First State Bank of Le Center,01/01/1934,9330,Federal Deposit Insurance Corporation,"88 N Park Ave, Le Center, MN 56057",www.fsblecenter.com
+First State Bank of Swanville,01/01/1934,8218,Federal Deposit Insurance Corporation,"306 Degraff Ave, Swanville, MN 56382",www.fsbswanville.com
+First State Bank Southwest,01/01/1934,9770,Federal Reserve Board,"202 2nd St Se, Pipestone, MN 56164",www.firststatebanksw.com
+First Western Bank & Trust,05/11/1964,19123,Federal Reserve Board,"900 S Broadway, Minot, ND 58701",www.firstwestern.bank
+FM Bank,01/01/1934,10998,Federal Deposit Insurance Corporation,"220 Elm Ave E, Waseca, MN 56093",mybankfm.com
+Foresight Bank,01/01/1934,5229,Federal Deposit Insurance Corporation,"138 W Broadway, Plainview, MN 55964",www.foresight.bank
+Forward Bank,08/09/1989,28530,Federal Deposit Insurance Corporation,"1001 N Central Ave, Marshfield, WI 54449",www.forward.bank
+Frandsen Bank & Trust,01/01/1934,1399,Federal Reserve Board,"116 Central St W, Lonsdale, MN 55046",frandsenbank.com
+Freeport State Bank,01/01/1934,8210,Federal Deposit Insurance Corporation,"111 Main St E, Freeport, MN 56331",www.freeportstatebank.com
+Gate City Bank,08/09/1989,27774,Comptroller of the Currency,"500 2nd Ave N, Fargo, ND 58102",www.gatecity.bank
+Gateway Bank,01/20/2004,57644,Federal Deposit Insurance Corporation,"745 Market St, Mendota Heights, MN 55118",www.gateway.bank
+Glenwood State Bank (Incorporated),01/01/1934,8853,Federal Deposit Insurance Corporation,"5 E Minnesota Ave, Glenwood, MN 56334",www.glenwoodstate.bank
+Global Innovations Bank,01/01/1934,5175,Federal Deposit Insurance Corporation,"101 N Main St, Kiester, MN 56051",www.gibank.com
+Grand Marais State Bank,01/01/1934,8842,Federal Reserve Board,"211 E Highway 61, Grand Marais, MN 55604",www.grandmaraisstatebank.com
+Grand Rapids State Bank,01/01/1934,10962,Federal Reserve Board,"523 Nw 1st Ave, Grand Rapids, MN 55744",www.grsb.bank
+Grand Timber Bank,03/18/1963,18719,Federal Deposit Insurance Corporation,"204 N Maddy St, Mcgregor, MN 55760",www.grandtimberbank.com
+Granite Bank,01/01/1934,5116,Federal Deposit Insurance Corporation,"202 2nd Ave S, Cold Spring, MN 56320",www.granitebank.com
+Great Southern Bank,08/09/1989,29546,Federal Deposit Insurance Corporation,"14309 State Highway 13, Reeds Spring, MO 65737",www.greatsouthernbank.com
+Grove Bank,01/01/1934,8857,Federal Deposit Insurance Corporation,"110 Atlantic Ave W, Grove City, MN 56243",www.grovebancorp.com
+Gulf Coast Bank and Trust Company,06/08/1990,32974,Federal Deposit Insurance Corporation,"200 Saint Charles Ave, New Orleans, LA 70130",www.gulfbank.com
+Harvest Bank,01/01/1934,11415,Federal Deposit Insurance Corporation,"75 N Main St, Kimball, MN 55353",www.harvestbank.com
+Heritage Bank Minnesota,01/01/1934,8865,Federal Deposit Insurance Corporation,"181 Main St, West Concord, MN 55985",heritagebankmn.com
+Heritage Bank National Association,10/08/1964,19254,Comptroller of the Currency,"110 W South St, Spicer, MN 56288",www.heritagebankna.com
+Highland Bank,01/03/1944,16111,Federal Deposit Insurance Corporation,"2100 Ford Pkwy, Saint Paul, MN 55116",www.highland.bank
+Home State Bank,01/01/1934,9745,Federal Deposit Insurance Corporation,"1435 Us Highway 12, Litchfield, MN 55355",www.hsbofmn.com
+HomeTown Bank,08/09/1989,31028,Federal Deposit Insurance Corporation,"1600 Monroe Drive, Carver, MN 55315",www.myht.bank
+Hometown Community Bank,01/01/1934,10197,Federal Deposit Insurance Corporation,"100 E Main St, Cyrus, MN 56323",www.hcbmn.com
+Integrity Bank Plus,01/27/1938,15578,Federal Deposit Insurance Corporation,"726 Main St, Wabasso, MN 56293",www.integritybank.com
+Janesville State Bank,01/01/1934,10960,Federal Deposit Insurance Corporation,"201 N Main St, Janesville, MN 56048",www.janesvillestatebank.com
+JPMorgan Chase Bank, National Association,01/01/1934,628,Comptroller of the Currency,"1111 Polaris Pkwy, Columbus, OH 43240",www.jpmorganchase.com
+Keen Bank, National Association,01/01/1934,5270,Comptroller of the Currency,"101 State St N, Waseca, MN 56093",keen.bank
+Kensington Bank,01/01/1934,1409,Federal Deposit Insurance Corporation,"11 Central Ave N, Kensington, MN 56343",www.kensington.bank
+Key Community Bank,05/20/1998,34644,Federal Deposit Insurance Corporation,"5684 Bishop Ave, Inver Grove Heights, MN 55076",www.keycommunitybank.com
+KodaBank,01/01/1934,8386,Federal Deposit Insurance Corporation,"104 S Main St, Drayton, ND 58225",www.kodabank.com
+Lake Central Bank,01/01/1934,10989,Federal Deposit Insurance Corporation,"40 Chestnut St W, Annandale, MN 55302",www.lakecentral.bank
+Lake Country Community Bank,07/01/1952,17122,Federal Deposit Insurance Corporation,"111 Division St N, Morristown, MN 55052",lccbank.com
+Lake Elmo Bank,12/19/1936,15443,Federal Deposit Insurance Corporation,"11465 39th St N, Lake Elmo, MN 55042",www.lakeelmobank.com
+Lake Region Bank,01/01/1934,10965,Federal Deposit Insurance Corporation,"51 Main St S, New London, MN 56273",www.lakeregion.com
+Lakeview Bank,07/08/2004,57785,Federal Deposit Insurance Corporation,"9725 163rd St W, Lakeville, MN 55044",www.lakeview.bank
+Liberty Bank Minnesota,01/01/1987,26891,Federal Reserve Board,"2842 2nd St S, Saint Cloud, MN 56301",www.libertybankmn.com
+Lowry State Bank,01/01/1934,10202,Federal Deposit Insurance Corporation,"400 Florence Ave, Lowry, MN 56349",www.lowrystate.bank
+Luminate Bank,10/20/1947,16635,Federal Deposit Insurance Corporation,"2523 South Wayzata Boulevard Suite 100, Minneapolis, MN 55405",luminate.bank
+Manufacturers Bank & Trust Company,09/01/1945,16307,Federal Deposit Insurance Corporation,"245 E J St, Forest City, IA 50436",www.mbtbank.bank
+Marshall County State Bank,01/01/1934,9752,Federal Deposit Insurance Corporation,"118 E Minnesota Ave, Newfolden, MN 56738",www.mcsbnewfolden.com
+Merchants Bank, National Association,01/01/1934,8866,Comptroller of the Currency,"100 E 3rd St # 106, Winona, MN 55987",www.merchantsbank.com
+Mid-Central National Bank,08/09/1989,30943,Comptroller of the Currency,"520 Jefferson St S, Wadena, MN 56482",www.midcentralbank.com
+MidCountry Bank,08/09/1989,28865,Comptroller of the Currency,"7825 Washington Ave S Suite 120, Minneapolis, MN 55439",www.midcountrybank.com
+Midwest Bank,01/01/1934,9737,Federal Deposit Insurance Corporation,"613 Highway 10 E, Detroit Lakes, MN 56501",www.midwestbank.net
+Minnesota First Credit and Savings, Incorporated,08/07/1986,26755,Federal Deposit Insurance Corporation,"1932 Viking Dr Nw, Rochester, MN 55901",www.mnfirst.com
+MINNESOTA LAKES BANK,06/24/1982,23986,Federal Reserve Board,"710 Babcock Blvd E, Delano, MN 55328",www.mnlb.bank
+Minnesota National Bank,01/01/1934,5249,Comptroller of the Currency,"131 12th St S, Sauk Centre, MN 56378",www.mn-bank.bank
+Minnstar Bank National Association,01/29/1934,13809,Comptroller of the Currency,"202 N Main St, Lake Crystal, MN 56055",www.minnstarbank.com
+Minnwest Bank,11/28/1950,16958,Federal Deposit Insurance Corporation,"300 S Washington St, Redwood Falls, MN 56283",www.minnwestbank.com
+My Kind of Bank, National Association,01/01/1934,5162,Comptroller of the Currency,"106 Mn Highway 78 N, Ottertail, MN 56571",www.mykindofbank.com
+National Bank of Commerce,04/23/1934,14266,Comptroller of the Currency,"1127 Tower Ave, Superior, WI 54880",www.nbcbanking.com
+Neighborhood National Bank,09/26/1963,18885,Comptroller of the Currency,"45 Union St N, Mora, MN 55051",www.neighborhood.bank
+New Market Bank,01/01/1934,1931,Federal Deposit Insurance Corporation,"101 Old Town Rd, Elko New Market, MN 55054",www.newmarket.bank
+Nicolet National Bank,10/31/2000,57038,Comptroller of the Currency,"111 N Washington St, Green Bay, WI 54301",www.nicoletbank.com
+North American Banking Company,07/21/1998,34836,Federal Reserve Board,"2230 Albert St N, Roseville, MN 55113",www.nabankco.com
+North Shore Bank of Commerce,01/01/1934,8850,Federal Reserve Board,"131 W Superior St, Duluth, MN 55802",www.northshore.bank
+North Star Bank,09/14/1948,16733,Federal Deposit Insurance Corporation,"1820 Lexington Ave N, Roseville, MN 55113",www.northstarbank.com
+Northeast Bank,01/03/1948,16659,Federal Deposit Insurance Corporation,"77 Broadway St Ne, Minneapolis, MN 55413",www.nebankmn.com
+Northern State Bank,01/01/1934,15242,Federal Deposit Insurance Corporation,"321 Main St W, Ashland, WI 54806",www.nsbashland.com
+Northern State Bank of Thief River Falls,10/02/1935,15286,Federal Deposit Insurance Corporation,"201 3rd St E, Thief River Falls, MN 56701",www.nsbtrf.com
+Northern State Bank of Virginia,05/19/1966,19589,Federal Deposit Insurance Corporation,"600 Chestnut St, Virginia, MN 55792",www.nsbov.com
+Northview Bank,01/01/1934,10956,Federal Deposit Insurance Corporation,"510 Main St, Sandstone, MN 55072",www.northviewbank.com
+Northwestern Bank, National Association,01/01/1934,9746,Comptroller of the Currency,"4 Main St N, Dilworth, MN 56529",www.nwbanks.com
+Northwoods Bank of Minnesota,08/09/1989,1415,Comptroller of the Currency,"1200 First St E, Park Rapids, MN 56470",www.northwoodsbank.com
+Oakwood Bank,01/01/1934,13030,Federal Deposit Insurance Corporation,"40214 S Ekern Avenue, Pigeon Falls, WI 54760",www.oakwoodbank.net
+Odin State Bank,03/28/1934,14574,Federal Deposit Insurance Corporation,"101 E Main St, Odin, MN 56160",www.odinstatebank.com
+Old National Bank,01/01/1934,3832,Comptroller of the Currency,"1 Main St, Evansville, IN 47708",www.oldnational.com
+Park State Bank,01/01/1934,8851,Federal Deposit Insurance Corporation,"2630 W Superior St, Duluth, MN 55806",www.parkstatebank.com
+Peoples Bank,06/01/1945,16265,Federal Deposit Insurance Corporation,"1230 Valley Dr, Rock Valley, IA 51247",www.peoples-ebank.com
+Peoples State Bank of Plainview,01/01/1934,1100,Federal Reserve Board,"100 4th Ave Se, Plainview, MN 55964",www.peoplesstatebank.com
+Perennial Bank,01/01/1934,1413,Federal Deposit Insurance Corporation,"318 N 1st St, Darwin, MN 55324",www.perennialbank.com
+Pine Country Bank,01/01/1934,13652,Federal Deposit Insurance Corporation,"1201 1st Ave Ne, Little Falls, MN 56345",www.pinecountrybank.com
+Pine River State Bank,01/01/1934,10194,Federal Deposit Insurance Corporation,"103 Mill St, Pine River, MN 56474",www.pineriverstatebank.com
+Pioneer Bank,01/01/1934,5193,Federal Reserve Board,"301 Main St E, Mapleton, MN 56065",www.bankwithpioneer.com
+Platinum Bank,02/12/2007,58511,Federal Deposit Insurance Corporation,"7667 10th St N, Oakdale, MN 55128",www.platinumbankmn.com
+Portage Bank,01/01/1934,8197,Federal Deposit Insurance Corporation,"880 108th Avenue Ne, Bellevue, WA 98004",www.portage.bank
+Prairie Sun Bank,01/01/1934,8207,Federal Deposit Insurance Corporation,"240 N 2nd St, Milan, MN 56262",www.bankwithpsb.com
+Premier Bank,08/01/1974,21714,Federal Deposit Insurance Corporation,"2866 White Bear Ave N, Maplewood, MN 55109",www.premierbanks.com
+Premier Bank,02/25/1997,34384,Federal Deposit Insurance Corporation,"1004 21st Ave, Rock Valley, IA 51247",www.premierbank.bank
+Premier Bank Minnesota,10/05/1990,33204,Federal Deposit Insurance Corporation,"101 10th St E, Hastings, MN 55033",www.premierbanks.com
+Prime Security Bank,01/01/1934,10971,Federal Deposit Insurance Corporation,"201 Main St N, Karlstad, MN 56732",www.primesecurity.com
+PrinsBank,01/01/1934,10191,Federal Deposit Insurance Corporation,"508 3rd St, Prinsburg, MN 56281",www.prinsbank.com
+Produce State Bank,01/01/1934,10178,Federal Deposit Insurance Corporation,"109 Park Ave W, Hollandale, MN 56045",www.producestatebank.com
+Profinium, Inc.,01/01/1934,1905,Federal Reserve Board,"414 N 5th Ave E, Truman, MN 56088",www.profinium.com
+ProGrowth Bank,01/01/1934,8536,Federal Deposit Insurance Corporation,"703 3rd St, Nicollet, MN 56074",www.progrowth.com
+Randall State Bank,01/01/1934,10969,Federal Deposit Insurance Corporation,"307 Pacific Ave, Randall, MN 56475",www.randallstatebank.com
+Red River State Bank,05/26/1941,15820,Federal Deposit Insurance Corporation,"300 2nd Ave W, Halstad, MN 56548",www.redriverbank.com
+Reliance Bank,08/13/2007,58602,Federal Deposit Insurance Corporation,"2300 30th St Nw, Faribault, MN 55021",www.reliancebankmn.com
+Rolling Hills Bank & Trust,01/13/1936,15334,Federal Reserve Board,"1307 E 7th St, Atlantic, IA 50022",www.rollinghillsbank.com
+Root River State Bank,01/01/1934,1098,Federal Reserve Board,"18 3rd St Se, Chatfield, MN 55923",www.rootriverstatebank.com
+Rushford State Bank (Incorporated),01/01/1934,11411,Federal Deposit Insurance Corporation,"219 S Mill St, Rushford, MN 55971",www.rushfordstatebank.com
+Scale Bank,10/08/1970,20268,Federal Deposit Insurance Corporation,"7600 Parklawn Ave, Edina, MN 55435",scale.bank
+Security Bank & Trust Company,12/16/1935,15324,Federal Deposit Insurance Corporation,"735 11th St E, Glencoe, MN 55336",www.security-banks.com
+Security Bank Midwest,01/01/1934,485,Federal Deposit Insurance Corporation,"1600 Main St, Tyndall, SD 57066",www.sbmidwest.bank
+Security Bank Minnesota,01/01/1934,10984,Federal Deposit Insurance Corporation,"437 Bridge Ave, Albert Lea, MN 56007",www.securitybankmn.com
+Security Bank USA,01/01/1934,1604,Federal Deposit Insurance Corporation,"1025 Paul Bunyan Dr Nw, Bemidji, MN 56601",www.securitybankusa.com
+Security Savings Bank,04/04/1940,15734,Federal Deposit Insurance Corporation,"100 S West St, Canton, SD 57013",www.bankwithssb.com
+Security State Bank of Aitkin	01/02/1948	16656	Federal Deposit Insurance Corporation	402 Minnesota Ave N, Aitkin, MN 56431	www.ssbmn.com
+Security State Bank of Hibbing	01/01/1934	10175	Federal Deposit Insurance Corporation	701 E Howard St, Hibbing, MN 55746	www.ssbhibbing.com
+Security State Bank of Kenyon	04/21/1938	15597	Federal Deposit Insurance Corporation	602 2nd St, Kenyon, MN 55946	www.ssbkenyon.com
+Security State Bank of Marine	01/01/1934	10163	Federal Deposit Insurance Corporation	120 Judd St, Marine On St. Croix, MN 55047	www.themarinebank.com
+Security State Bank of Oklee	01/01/1934	10982	Federal Deposit Insurance Corporation	201 Main St, Oklee, MN 56742	www.ssboklee.com
+Security State Bank of Wanamingo	04/27/1961	18378	Federal Deposit Insurance Corporation	232 Main St, Wanamingo, MN 55983	www.ssbwanamingo.com
+Security State Bank of Warroad	01/01/1934	9773	Federal Deposit Insurance Corporation	502 Lake St Ne, Warroad, MN 56763	www.ssbwarroad.com
+Sentry Bank	01/01/1934	8546	Federal Deposit Insurance Corporation	400 4th Ave Ne, Saint Joseph, MN 56374	www.mysentrybank.com
+Sherburne State Bank	01/01/1934	10169	Federal Deposit Insurance Corporation	12500 Sherburne Avenue, Becker, MN 55308	www.sherburnestatebank.com
+St. Clair State Bank (Incorporated)	01/01/1934	1903	Federal Deposit Insurance Corporation	100 Main St W, Saint Clair, MN 56080	www.stclairstatebank.com
+St. Martin National Bank	11/12/1963	18937	Comptroller of the Currency	136 Maine St, Saint Martin, MN 56376	www.stmartinnationalbank.com
+Star Bank	01/01/1934	5095	Federal Deposit Insurance Corporation	100 Highway 55 E, Maple Lake, MN 55358	www.star.bank
+State Bank of Bellingham	12/08/1951	17062	Federal Deposit Insurance Corporation	201 Main Ave, Bellingham, MN 56212	www.stbankbhm.com
+State Bank of Chandler	01/01/1934	8858	Federal Deposit Insurance Corporation	342 Main Ave, Chandler, MN 56122	www.statebankofchandler.bank
+State Bank of Cold Spring	01/01/1934	12444	Federal Deposit Insurance Corporation	401 Main St, Cold Spring, MN 56320	www.statebankcoldspring.com
+State Bank of Easton	04/09/1947	16561	Federal Deposit Insurance Corporation	50 Main St, Easton, MN 56025
+State Bank of Fairmont	01/01/1934	8541	Federal Deposit Insurance Corporation	918 E Blue Earth Ave, Fairmont, MN 56031	www.sbof.com
+State Bank of Jeffers	01/01/1934	10200	Federal Deposit Insurance Corporation	104 E Whited St, Jeffers, MN 56145	statebankofjeffers.com
+State Bank of Lake Park	01/01/1934	9351	Federal Deposit Insurance Corporation	2049 2nd Street, Lake Park, MN 56554	www.statebankoflakepark.com
+State Bank of New Richland	01/01/1934	9735	Federal Deposit Insurance Corporation	103 Broadway Ave N, New Richland, MN 56072	www.sbnr.biz
+State Bank of Taunton	05/01/1950	16906	Federal Deposit Insurance Corporation	101 N Main St, Taunton, MN 56291	www.statebankoftaunton.com
+Stearns Bank National Association	01/01/1934	10988	Comptroller of the Currency	4191 2nd St S, Saint Cloud, MN 56301	www.stearnsbank.com
+Sterling State Bank	05/01/1958	17863	Federal Deposit Insurance Corporation	1419 1st Ave Sw, Austin, MN 55912	www.sterlingstatebank.com
+Sunrise Banks	National Association	07/17/1962	18561	Comptroller of the Currency	5105 S Crossing Pl, Sioux Falls, SD 57108	www.sunrisebanks.com
+The Bank of Elk River	01/01/1934	1607	Federal Deposit Insurance Corporation	630 Main St Nw, Elk River, MN 55330	www.thebankofelkriver.com
+The Citizens National Bank of Park Rapids	01/01/1934	5223	Comptroller of the Currency	300 1st St W, Park Rapids, MN 56470	www.cnbbank.com
+The First National Bank at St. James	10/31/1934	14853	Comptroller of the Currency	202 1st Ave S, Saint James, MN 56081	www.fnbstjames.com
+The First National Bank of Bagley	01/01/1934	5087	Comptroller of the Currency	31 Central St E, Bagley, MN 56621	www.fnbbagley.com
+The First National Bank of Bemidji	01/01/1934	5093	Comptroller of the Currency	1600 Paul Bunyan Dr Nw, Bemidji, MN 56601	www.fnbbemidji.com
+The First National Bank of Cokato	01/01/1934	5115	Comptroller of the Currency	365 Broadway Ave S, Cokato, MN 55321	www.fnbcokato.com
+The First National Bank of Coleraine	01/01/1934	5117	Comptroller of the Currency	600 Powell Ave, Coleraine, MN 55722	www.colerainebank.com
+The First National Bank of Fairfax	01/01/1934	5142	Comptroller of the Currency	16 1st St Se, Fairfax, MN 55332	www.fnbfx.com
+The First National Bank of Gilbert	01/01/1934	5150	Comptroller of the Currency	2 N Broadway Ave, Gilbert, MN 55741	www.gilbertbank.com
+The First National Bank of Le Center	01/01/1934	5180	Comptroller of the Currency	701 Ash St Ne, Lonsdale, MN 55046	www.fnblecenter.com
+The First National Bank of McIntosh	01/01/1934	5196	Comptroller of the Currency	260 Cleveland Ave Sw, Mcintosh, MN 56556	www.fnbmcintosh.com
+The First National Bank of Milaca	01/01/1934	5198	Comptroller of the Currency	190 2nd Ave Sw, Milaca, MN 56353	www.fnbmilaca.com
+The First National Bank of Moose Lake	01/01/1934	5214	Comptroller of the Currency	400 Elm Ave, Moose Lake, MN 55767	www.firstmooselake.com
+The First National Bank of Osakis	01/01/1934	5221	Comptroller of the Currency	211 Central Avenue, Osakis, MN 56360	www.fnbosakis.com
+The First National Bank of Proctor	01/01/1934	5232	Comptroller of the Currency	211 2nd St, Proctor, MN 55810	www.proctorbank.com
+The First State Bank of Red Wing	01/01/1934	8191	Federal Deposit Insurance Corporation	3209 S Service Dr, Red Wing, MN 55066	www.firststatebankredwing.com
+The First State Bank of Rosemount	01/01/1934	9769	Federal Deposit Insurance Corporation	3025 145th St W, Rosemount, MN 55068	www.fsbrosemount.com
+The Huntington National Bank	01/01/1934	6560	Comptroller of the Currency	17 S High St, Columbus, OH 43215	www.huntington.com
+The Miners National Bank of Eveleth	01/01/1934	5141	Comptroller of the Currency	401 Grant Ave, Eveleth, MN 55734	www.mnbeveleth.com
+The Northern State Bank of Gonvick	01/01/1934	10187	Federal Deposit Insurance Corporation	283 Main St, Gonvick, MN 56644	www.nsbgonvick.com
+The Northern Trust Company	01/01/1934	913	Federal Reserve Board	50 S La Salle St, Chicago, IL 60603	www.northerntrust.com
+The State Bank of Faribault	01/01/1934	1610	Federal Deposit Insurance Corporation	428 Central Ave N, Faribault, MN 55021	www.tsbf.com
+The Wanda State Bank	01/01/1934	1908	Federal Deposit Insurance Corporation	121 W Main St, Wanda, MN 56294	www.wandastatebank.com
+Think Mutual Bank	07/01/2007	58536	Comptroller of the Currency	5200 Members Pkwy Nw, Rochester, MN 55901	www.thinkbank.com
+Thrivent Trust Company	11/02/1998	34799	Comptroller of the Currency	4321 N Ballard Rd, Appleton, WI 54919	www.thriventtrust.com
+Tradition Capital Bank	07/01/2005	58057	Federal Deposit Insurance Corporation	100 Lake St W, Wayzata, MN 55391	www.tradition.bank
+Triumph State Bank	01/01/1934	1906	Federal Deposit Insurance Corporation	519 Main St E, Trimont, MN 56176	www.triumphbanks.com
+U.S. Bank National Association	01/01/1934	6548	Comptroller of the Currency	425 Walnut St, Cincinnati, OH 45202	www.usbank.com
+Ultima Bank Minnesota	01/01/1934	8867	Federal Deposit Insurance Corporation	9 W Minnesota Ave, Winger, MN 56592	www.ultima.bank
+UMB Bank	National Association	01/01/1934	8273	Comptroller of the Currency	1010 Grand Blvd, Kansas City, MO 64106	www.umb.com
+Union Bank and Trust Company	03/15/1976	22242	Federal Deposit Insurance Corporation	312 Central Ave Se, Minneapolis, MN 55414	www.ubtmn.com
+United Bankers' Bank	12/15/1975	22180	Federal Reserve Board	2 Meridian Xing, Ste 600, Richfield, MN 55423	www.ubb.bank
+United Community Bank	01/01/1934	8544	Federal Deposit Insurance Corporation	301 W Main St, Perham, MN 56573	www.ucbankmn.com
+United Farmers State Bank	01/01/1934	8821	Federal Deposit Insurance Corporation	15 Sw 4th St, Adams, MN 55909	www.unitedfsb.com
+United Minnesota Bank	01/01/1934	10567	Federal Deposit Insurance Corporation	105 Central Ave E, New London, MN 56273	www.umbnl.com
+United Prairie Bank	01/01/1934	10958	Federal Deposit Insurance Corporation	1141 3rd Ave, Mountain Lake, MN 56159	www.unitedprairiebank.com
+United Valley Bank	03/22/1937	15478	Federal Deposit Insurance Corporation	211 Division Ave S, Cavalier, ND 58220	www.uvbank.net
+Unity Bank	01/02/1934	8714	Federal Deposit Insurance Corporation	207 W Lincoln St, Augusta, WI 54722	www.unitybanking.com
+Valley Premier Bank	01/01/1934	11409	Federal Deposit Insurance Corporation	416 6th St, Hawley, MN 56549	www.valleypremierbank.com
+Vantage Bank	01/01/1934	9733	Federal Deposit Insurance Corporation	202 Main St, Kent, MN 56553	www.vantagebankmn.com
+Vergas State Bank	01/01/1934	9747	Federal Deposit Insurance Corporation	106 E Main St, Vergas, MN 56587	www.vergasstatebank.com
+Vermillion State Bank	01/01/1934	10214	Federal Deposit Insurance Corporation	107 Main St E, Vermillion, MN 55085	www.vermillionbank.com
+VersaBank USA National Association	01/01/1934	10160	Comptroller of the Currency	580 Main St, Holdingford, MN 56340	www.versabankusa.com
+VIKING BANK	NATIONAL ASSOCIATION	08/09/1989	32082	Comptroller of the Currency	4277 Dakota Street, Alexandria, MN 56308	www.viking.bank
+Village Bank	01/11/1993	33761	Federal Deposit Insurance Corporation	3350 Bridge St Nw, Saint Francis, MN 55070	www.villagebankonline.bank
+VisionBank	09/12/2005	58063	Federal Deposit Insurance Corporation	3059 Joppa Ave S, Saint Louis Park, MN 55416	www.bankwithvision.com
+Wadena State Bank	01/03/1934	13430	Federal Reserve Board	304 1st St Se, Wadena, MN 56482	www.wadenastatebank.com
+Welcome State Bank	01/01/1934	11417	Federal Reserve Board	111 Guide St N, Welcome, MN 56181	www.welcomestatebank.com
+Wells Fargo Bank	National Association	01/01/1934	3511	Comptroller of the Currency	3201 N 4th Ave, Sioux Falls, SD 57104	www.wellsfargo.com
+West Bank	01/01/1934	15614	Federal Deposit Insurance Corporation	3330 Westown Parkway, West Des Moines, IA 50266	www.westbankstrong.com
+Western National Bank	01/01/1934	5110	Comptroller of the Currency	210 2nd St Nw, Cass Lake, MN 56633	www.wbcasslake.com
+Western National Bank	01/01/1934	5131	Comptroller of the Currency	201 N Central Ave, Duluth, MN 55807	www.wbduluth.com
+Wilmington Trust	National Association	10/02/1995	34069	Comptroller of the Currency	1100 N Market St, Wilmington, DE 19801	www.wilmingtontrust.com
+WNB FINANCIAL	N.A.	01/01/1934	5280	Comptroller of the Currency	204 Main St, Winona, MN 55987	www.wnbfinancial.com
+Woodland Bank	01/01/1934	8863	Federal Deposit Insurance Corporation	217 Main Ave E, Deer River, MN 56636	www.woodland.bank
+Woodlands National Bank	01/01/1934	1417	Comptroller of the Currency	122 Main St E, Hinckley, MN 55037	www.woodlandsnationalbank.com
+Worthington Federal Savings Bank	FSB	08/09/1989	29426	Comptroller of the Currency	418 11th St, Worthington, MN 56187	www.worthingtonfederalsavings

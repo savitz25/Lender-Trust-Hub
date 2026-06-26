@@ -26,6 +26,10 @@ IA_SRC = ROOT / "data" / "iowa-import.txt"
 IA_PROMPT = Path(
     r"C:\Users\makei\.grok\sessions\C%3A%5CUsers%5Cmakei\019efc5b-cf82-7612-8aff-b4ae0767aaa7\prompts\prompt_7.txt"
 )
+MN_SRC = ROOT / "data" / "minnesota-import.txt"
+MN_PROMPT = Path(
+    r"C:\Users\makei\.grok\sessions\C%3A%5CUsers%5Cmakei\019efc5b-cf82-7612-8aff-b4ae0767aaa7\prompts\prompt_8.txt"
+)
 OUT_DIR = ROOT / "lib" / "fdic" / "data"
 
 STATE_META = {
@@ -43,6 +47,7 @@ STATE_META = {
     "KS": ("Kansas", "kansas"),
     "MO": ("Missouri", "missouri"),
     "IA": ("Iowa", "iowa"),
+    "MN": ("Minnesota", "minnesota"),
 }
 
 # Use anchored line markers so intro text and bank names do not false-match.
@@ -74,6 +79,38 @@ def address_state(address: str) -> str | None:
     return match.group(1) if match else None
 
 
+def normalize_input_line(line: str) -> str:
+    """Convert tab-separated rows (no quoted address) into comma-quoted CSV lines."""
+    line = line.strip().rstrip("\t")
+    if not line:
+        return line
+
+    if ',"' in line:
+        return line.replace("\t", "")
+
+    if "\t" not in line:
+        return line
+
+    parts = [p.strip() for p in line.split("\t") if p.strip()]
+    if len(parts) < 6:
+        return line.replace("\t", "")
+
+    website = parts[-1]
+    address = parts[-2]
+    regulator = parts[-3]
+    cert = parts[-4]
+    insured_since = parts[-5]
+    name = ", ".join(parts[:-5])
+
+    if not cert.isdigit() or not DATE_RE.match(insured_since):
+        return line.replace("\t", "")
+
+    return (
+        f'{name},{insured_since},{cert},{regulator},'
+        f'"{address}",{website}'
+    )
+
+
 def repair_line(line: str) -> str:
     if "Extraco Banks, National Association" in line and ",4756," in line:
         return (
@@ -89,7 +126,7 @@ def repair_line(line: str) -> str:
 
 
 def parse_line(line: str) -> dict | None:
-    line = repair_line(line.strip().rstrip("\t"))
+    line = repair_line(normalize_input_line(line))
     if not line or line.lower().startswith("bank name,"):
         return None
 
@@ -348,6 +385,35 @@ def ensure_iowa_import() -> None:
     IA_SRC.write_text(extract_iowa_lines(raw), encoding="utf-8")
 
 
+def extract_minnesota_lines(content: str) -> str:
+    if "<user_query>" in content:
+        content = content.split("<user_query>", 1)[1]
+
+    block_lines: list[str] = []
+    for raw in content.splitlines():
+        line = raw.strip().rstrip("\t")
+        if not line or line.startswith("<"):
+            continue
+        if re.match(r"^MN\s*$", line, re.I):
+            continue
+        if line.lower().startswith("bank name,fdic"):
+            continue
+        if ',"' in line:
+            block_lines.append(line.replace("\t", ""))
+        else:
+            block_lines.append(line)
+
+    return "\n".join(block_lines)
+
+
+def ensure_minnesota_import() -> None:
+    if MN_SRC.exists() or not MN_PROMPT.exists():
+        return
+    raw = MN_PROMPT.read_text(encoding="utf-8")
+    MN_SRC.parent.mkdir(parents=True, exist_ok=True)
+    MN_SRC.write_text(extract_minnesota_lines(raw), encoding="utf-8")
+
+
 def main():
     if not SRC.exists():
         prompt = Path(
@@ -386,6 +452,10 @@ def main():
     ensure_iowa_import()
     if IA_SRC.exists():
         sections["IA"] = IA_SRC.read_text(encoding="utf-8")
+
+    ensure_minnesota_import()
+    if MN_SRC.exists():
+        sections["MN"] = MN_SRC.read_text(encoding="utf-8")
 
     for code, text in sections.items():
         full_name, slug = STATE_META[code]

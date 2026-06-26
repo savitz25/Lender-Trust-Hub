@@ -25,7 +25,7 @@ export const US_STATES: StateMeta[] = [
   { code: 'MD', fullName: 'Maryland', slug: 'maryland', region: 'Northeast', hasData: false },
   { code: 'MA', fullName: 'Massachusetts', slug: 'massachusetts', region: 'Northeast', hasData: false },
   { code: 'MI', fullName: 'Michigan', slug: 'michigan', region: 'Midwest', hasData: false },
-  { code: 'MN', fullName: 'Minnesota', slug: 'minnesota', region: 'Midwest', hasData: false },
+  { code: 'MN', fullName: 'Minnesota', slug: 'minnesota', region: 'Midwest', hasData: true },
   { code: 'MS', fullName: 'Mississippi', slug: 'mississippi', region: 'Southeast', hasData: true },
   { code: 'MO', fullName: 'Missouri', slug: 'missouri', region: 'Midwest', hasData: true },
   { code: 'MT', fullName: 'Montana', slug: 'montana', region: 'West', hasData: false },

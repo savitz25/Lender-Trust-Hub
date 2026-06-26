@@ -1,0 +1,2247 @@
+{
+  "fullName": "Minnesota",
+  "abbr": "MN",
+  "banks": [
+    {
+      "name": "21st Century Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9751",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "699 N Medina St, Loretto, MN 55357",
+      "website": "https://www.21stcenturybank.com"
+    },
+    {
+      "name": "Alerus Financial, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3931",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "401 Demers Ave, Grand Forks, ND 58201",
+      "website": "https://www.alerus.com"
+    },
+    {
+      "name": "Alliance Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10973",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 E Lyon Ave, Lake City, MN 55041",
+      "website": "https://www.alliancebanks.com"
+    },
+    {
+      "name": "American Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1117",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6810 S Minnesota Ave, Sioux Falls, SD 57108",
+      "website": "https://www.abt.bank"
+    },
+    {
+      "name": "American Federal Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29140",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "215 5th St N, Fargo, ND 58102",
+      "website": "https://www.americanfederalbank.com"
+    },
+    {
+      "name": "American Heritage National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8843",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "24 2nd St S, Long Prairie, MN 56347",
+      "website": "https://www.logbank.com"
+    },
+    {
+      "name": "American National Bank of Minnesota",
+      "fdic_insured_since": "01/02/1986",
+      "fdic_cert": "26499",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "7638 Woida Rd, Baxter, MN 56425",
+      "website": "https://www.anbmn.com"
+    },
+    {
+      "name": "American State Bank of Grygla",
+      "fdic_insured_since": "04/30/1976",
+      "fdic_cert": "22263",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "102 S Main Ave, Grygla, MN 56727",
+      "website": "https://www.asbgrygla.com"
+    },
+    {
+      "name": "Americana Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8205",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 Main St W, Sleepy Eye, MN 56085",
+      "website": "https://www.americanafinancial.com"
+    },
+    {
+      "name": "Ameriprise Bank, FSB",
+      "fdic_insured_since": "09/14/2006",
+      "fdic_cert": "58303",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "901 3rd Avenue South 14th Floor, Minneapolis, MN 55402",
+      "website": "https://www.ameriprise.com"
+    },
+    {
+      "name": "Arcadian Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10561",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "601 Broadway St, Hartland, MN 56042",
+      "website": "https://www.arcadian.bank"
+    },
+    {
+      "name": "Arlington State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1391",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "230 W Main St, Arlington, MN 55307",
+      "website": "https://www.arlingtonstatebank.com"
+    },
+    {
+      "name": "Associated Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5296",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "200 N Adams St, Green Bay, WI 54301",
+      "website": "https://www.associatedbank.com"
+    },
+    {
+      "name": "B2 Bank National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5105",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "8355 Unity Dr, Virginia, MN 55792",
+      "website": "https://www.b2.bank"
+    },
+    {
+      "name": "Bank Forward",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8941",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5650 37th Ave S, Fargo, ND 58104",
+      "website": "https://www.bankforward.com"
+    },
+    {
+      "name": "Bank Midwest",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5170",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1800 Royal Ave, Spirit Lake, IA 51360",
+      "website": "https://bankmidwest.com"
+    },
+    {
+      "name": "Bank of Alma",
+      "fdic_insured_since": "06/20/1986",
+      "fdic_cert": "26689",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "211 S Main St, Alma, WI 54610",
+      "website": "https://www.bankofalma.net"
+    },
+    {
+      "name": "Bank of America, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3510",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 N Tryon St, Charlotte, NC 28202",
+      "website": "https://www.bankofamerica.com"
+    },
+    {
+      "name": "Bank of Maple Plain",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9332",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4980 Highway 12, Maple Plain, MN 55359",
+      "website": "https://www.bankofmapleplain.com"
+    },
+    {
+      "name": "BankCherokee",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8537",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "607 Smith Ave S, Saint Paul, MN 55107",
+      "website": "https://www.bankcherokee.com"
+    },
+    {
+      "name": "BankVista",
+      "fdic_insured_since": "02/15/2000",
+      "fdic_cert": "35406",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "125 Twin Rivers Ct, Sartell, MN 56377",
+      "website": "https://www.bankvista.com"
+    },
+    {
+      "name": "BANKWEST",
+      "fdic_insured_since": "06/01/1948",
+      "fdic_cert": "16704",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5921 Main St, Rockford, MN 55373",
+      "website": "https://www.bankwestmn.com"
+    },
+    {
+      "name": "Battle Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9336",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "105 S Main St, Upsala, MN 56384",
+      "website": "https://www.battlebank.com"
+    },
+    {
+      "name": "Bell Bank",
+      "fdic_insured_since": "05/06/1966",
+      "fdic_cert": "19581",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "520 Main Ave, Fargo, ND 58103",
+      "website": "https://www.bell.bank"
+    },
+    {
+      "name": "BMO Bank National Association",
+      "fdic_insured_since": "05/17/1947",
+      "fdic_cert": "16571",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "320 S Canal St, Chicago, IL 60606",
+      "website": "https://www.bmo.com"
+    },
+    {
+      "name": "Bonanza Valley State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10993",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "147 Central Ave S, Brooten, MN 56316",
+      "website": "https://www.bvsb.bank"
+    },
+    {
+      "name": "Border Bank",
+      "fdic_insured_since": "08/21/1972",
+      "fdic_cert": "20776",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4530 17th Ave S, Fargo, ND 58103",
+      "website": "https://www.border.bank"
+    },
+    {
+      "name": "Bravera Bank",
+      "fdic_insured_since": "12/01/1977",
+      "fdic_cert": "22559",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "220 1st Ave W, Dickinson, ND 58601",
+      "website": "https://www.bravera.bank"
+    },
+    {
+      "name": "Bridgewater Bank",
+      "fdic_insured_since": "11/02/2005",
+      "fdic_cert": "58210",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4450 Excelsior Blvd, Saint Louis Park, MN 55416",
+      "website": "https://www.bridgewaterbankmn.com"
+    },
+    {
+      "name": "Castle Rock Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1913",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "27925 Danville Avenue, Castle Rock, MN 55010",
+      "website": "https://www.castlerockbank.net"
+    },
+    {
+      "name": "CCFBank National Association",
+      "fdic_insured_since": "12/10/2001",
+      "fdic_cert": "57265",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "219 Fairfax St, Altoona, WI 54720",
+      "website": "https://www.ccf.us"
+    },
+    {
+      "name": "Center National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10976",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "301 N Ramsey Ave, Litchfield, MN 55355",
+      "website": "https://www.centernationalbank.com"
+    },
+    {
+      "name": "Choice Financial Group",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9423",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4501 23rd Ave S, Fargo, ND 58104",
+      "website": "https://www.bankwithchoice.com"
+    },
+    {
+      "name": "Citizens Alliance Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1402",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "55 1st St Nw, Clara City, MN 56222",
+      "website": "https://www.citizensalliancebank.com"
+    },
+    {
+      "name": "Citizens Bank & Trust Co.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10218",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 Main St S, Hutchinson, MN 55350",
+      "website": "https://www.cbhutch.com"
+    },
+    {
+      "name": "Citizens Bank Minnesota",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8200",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 N Minnesota St, New Ulm, MN 56073",
+      "website": "https://www.citizensmn.bank/"
+    },
+    {
+      "name": "Citizens Independent Bank",
+      "fdic_insured_since": "01/16/1950",
+      "fdic_cert": "16863",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5000 W 36th St, Saint Louis Park, MN 55416",
+      "website": "https://www.bankcib.com"
+    },
+    {
+      "name": "Citizens State Bank Norwood Young America",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1933",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "409 Faxon Rd N, Norwood Young America, MN 55368",
+      "website": "https://www.citizensstatebanknya.com"
+    },
+    {
+      "name": "Citizens State Bank of Roseau",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10167",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "118 Main Ave S, Roseau, MN 56751",
+      "website": "https://www.citizensros.com"
+    },
+    {
+      "name": "Commerce Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10212",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 Central Ave S, Geneva, MN 56035",
+      "website": "https://www.cbmn.bank"
+    },
+    {
+      "name": "Community Bank Mankato",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9760",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 Main St E, Vernon Center, MN 56090",
+      "website": "https://www.cbfg.net"
+    },
+    {
+      "name": "Community Bank Owatonna",
+      "fdic_insured_since": "01/13/2003",
+      "fdic_cert": "57468",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "640 W Bridge St, Owatonna, MN 55060",
+      "website": "https://www.cbowatonna.com"
+    },
+    {
+      "name": "COMMUNITY FIRST BANK",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5197",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "21 Main St Ne, Menahga, MN 56464",
+      "website": "https://www.communityfirstbankmn.com"
+    },
+    {
+      "name": "Community Resource Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5219",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1605 Heritage Dr, Northfield, MN 55057",
+      "website": "https://www.crb.bank"
+    },
+    {
+      "name": "Concorde Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9727",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "16 Sw Main Street, Blomkest, MN 56216",
+      "website": "https://www.concordebanks.com"
+    },
+    {
+      "name": "Cornerstone State Bank",
+      "fdic_insured_since": "04/08/1974",
+      "fdic_cert": "21525",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 4th St Nw, Montgomery, MN 56069",
+      "website": "https://www.cornerstonestatebank.com"
+    },
+    {
+      "name": "CorTrust Bank National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6063",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 E Havens Ave, Mitchell, SD 57301",
+      "website": "https://www.cortrustbank.com"
+    },
+    {
+      "name": "Coulee Bank",
+      "fdic_insured_since": "03/20/1961",
+      "fdic_cert": "18361",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1516 Losey Blvd S, La Crosse, WI 54601",
+      "website": "https://www.couleebank.net"
+    },
+    {
+      "name": "Crown Bank",
+      "fdic_insured_since": "05/22/2000",
+      "fdic_cert": "35480",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6600 France Ave S Ste 125, Edina, MN 55435",
+      "website": "https://www.crown-bank.com"
+    },
+    {
+      "name": "Currie State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8833",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "141 Mill St, Currie, MN 56123",
+      "website": "https://www.curriestatebank.com"
+    },
+    {
+      "name": "Dacotah Bank",
+      "fdic_insured_since": "04/30/1955",
+      "fdic_cert": "17437",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "308 S Main St, Aberdeen, SD 57401",
+      "website": "https://www.dacotahbank.com"
+    },
+    {
+      "name": "Dakota Heritage Bank",
+      "fdic_insured_since": "02/08/1945",
+      "fdic_cert": "16231",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "109 Main St, Hunter, ND 58048",
+      "website": "https://www.dhb.bank"
+    },
+    {
+      "name": "Deerwood Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5123",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "131 6th Ave S Ste 100, Waite Park, MN 56387",
+      "website": "https://deerwoodbank.com"
+    },
+    {
+      "name": "Drake Bank",
+      "fdic_insured_since": "05/01/2002",
+      "fdic_cert": "57336",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "60 Plato Blvd E Ste 100, Saint Paul, MN 55107",
+      "website": "https://www.drake-bank.com"
+    },
+    {
+      "name": "Eagle Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8824",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2 Franklin St S, Glenwood, MN 56334",
+      "website": "https://www.eaglebankmn.com"
+    },
+    {
+      "name": "Eagle Rock Bank",
+      "fdic_insured_since": "05/09/1996",
+      "fdic_cert": "34171",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3701 40th Ave Nw Ofc 300, Rochester, MN 55901",
+      "website": "https://www.eaglerock.bank"
+    },
+    {
+      "name": "Elysian Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10185",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "121 Main St E, Elysian, MN 56028",
+      "website": "https://www.elysianbank.net"
+    },
+    {
+      "name": "EntreBank",
+      "fdic_insured_since": "03/21/2022",
+      "fdic_cert": "59287",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1550 American Blvd E, Bloomington, MN 55425",
+      "website": "https://www.entrebank.com"
+    },
+    {
+      "name": "ESB Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10980",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "115 N Highway 44/76, Caledonia, MN 55921",
+      "website": "https://www.esbbanking.com"
+    },
+    {
+      "name": "F & M Community Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10967",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 Saint Anthony St N, Preston, MN 55965",
+      "website": "https://www.fmcommunity.com"
+    },
+    {
+      "name": "Falcon National Bank",
+      "fdic_insured_since": "07/01/2003",
+      "fdic_cert": "57603",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "183 Cedar Dr, Foley, MN 56329",
+      "website": "https://www.falconnational.com"
+    },
+    {
+      "name": "Farmers & Merchants Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9298",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 E Main St, Manchester, IA 52057",
+      "website": "https://www.fmbankia.com"
+    },
+    {
+      "name": "Farmers & Merchants State Bank of New York Mills, Incorporated",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9340",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "11 Walker Ave N, New York Mills, MN 56567",
+      "website": "https://www.fmbanknym.com"
+    },
+    {
+      "name": "Farmers and Merchants State Bank of Alpha",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10571",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "210 Main St N, Alpha, MN 56111",
+      "website": "https://famstatebankofalpha.com"
+    },
+    {
+      "name": "Farmers and Merchants State Bank of Appleton",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8845",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "239 N Miles St, Appleton, MN 56208",
+      "website": "https://www.farmers-merchants.com"
+    },
+    {
+      "name": "Farmers and Merchants State Bank of Pierz",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10165",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "80 Main St N, Pierz, MN 56364",
+      "website": "https://www.fmpierz.com"
+    },
+    {
+      "name": "Farmers and Merchants State Bank of Springfield",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13382",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 N Marshall Ave, Springfield, MN 56087",
+      "website": "https://www.fmb-ebank.com"
+    },
+    {
+      "name": "Farmers State Bank of Hamel",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8214",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "145 Hamel Rd, Hamel, MN 55340",
+      "website": "https://www.fsboh.com"
+    },
+    {
+      "name": "Farmers State Bank of Hoffman",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9354",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "103 W Main Ave, Hoffman, MN 56339",
+      "website": "https://www.fsbhoffman.net"
+    },
+    {
+      "name": "Farmers State Bank of Trimont",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1929",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "220 Main St W, Trimont, MN 56176",
+      "website": "https://www.trimontbank.com"
+    },
+    {
+      "name": "Farmers State Bank of Underwood",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10174",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "110 Main St S, Underwood, MN 56586",
+      "website": "https://www.farmerstbank.com"
+    },
+    {
+      "name": "Farmers Trust and Savings Bank",
+      "fdic_insured_since": "04/05/1934",
+      "fdic_cert": "14195",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 N Main St, Buffalo Center, IA 50424",
+      "website": "https://www.ftsbbank.bank"
+    },
+    {
+      "name": "Fidelity Bank & Trust",
+      "fdic_insured_since": "05/19/1934",
+      "fdic_cert": "14382",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4250 Asbury Rd, Dubuque, IA 52002",
+      "website": "https://www.bankfidelity.bank"
+    },
+    {
+      "name": "First Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3973",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "520 6th St, Brookings, SD 57006",
+      "website": "https://www.bankeasy.com"
+    },
+    {
+      "name": "First Bank Blue Earth",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5097",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "306 S Main St, Blue Earth, MN 56013",
+      "website": "https://www.firstbankblueearth.com"
+    },
+    {
+      "name": "First Bank Elk River",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5136",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "812 Main St Nw, Elk River, MN 55330",
+      "website": "https://www.elkriver.bank"
+    },
+    {
+      "name": "First Citizens Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4433",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2601 4th St Sw, Mason City, IA 50401",
+      "website": "https://www.myfcb.bank"
+    },
+    {
+      "name": "First Farmers & Merchants Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10168",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "920 4th St S, Cannon Falls, MN 55009",
+      "website": "https://www.ffmbank.com"
+    },
+    {
+      "name": "First Farmers & Merchants National Bank",
+      "fdic_insured_since": "09/07/1990",
+      "fdic_cert": "33131",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "114 S Park St, Fairmont, MN 56031",
+      "website": "https://www.ffmbank.com"
+    },
+    {
+      "name": "First Farmers & Merchants National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5186",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "303 E Main St, Luverne, MN 56156",
+      "website": "https://www.ffmbank.com"
+    },
+    {
+      "name": "First Farmers & Merchants State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1600",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "106 W Main St, Brownsdale, MN 55918",
+      "website": "https://www.ffmbank.com"
+    },
+    {
+      "name": "First Farmers & Merchants State Bank of Grand Meadow",
+      "fdic_insured_since": "10/04/1938",
+      "fdic_cert": "15621",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 Main St N, Grand Meadow, MN 55936",
+      "website": "https://www.ffmbank.com"
+    },
+    {
+      "name": "First Financial Bank in Winnebago",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5278",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 Main St S, Winnebago, MN 56098",
+      "website": "https://www.1stbago.com"
+    },
+    {
+      "name": "First Independence Bank",
+      "fdic_insured_since": "05/14/1970",
+      "fdic_cert": "20179",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7310 Woodward Ave, Detroit, MI 48202",
+      "website": "https://www.firstindependence.com"
+    },
+    {
+      "name": "First Independent Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1900",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 Front St, Russell, MN 56169",
+      "website": "https://www.fibmn.com"
+    },
+    {
+      "name": "First International Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10248",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 N Main St, Watford City, ND 58854",
+      "website": "https://www.fibt.com"
+    },
+    {
+      "name": "First Interstate Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1105",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "401 N 31st St, Billings, MT 59101",
+      "website": "https://www.firstinterstatebank.com"
+    },
+    {
+      "name": "First National Bank",
+      "fdic_insured_since": "02/15/1985",
+      "fdic_cert": "25894",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "141 E Main St, Oldham, SD 57051",
+      "website": "https://www.firstnationalbanks.com"
+    },
+    {
+      "name": "First National Bank Minnesota",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5247",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "226 Nassau St, Saint Peter, MN 56082",
+      "website": "https://www.fnbmn.bank"
+    },
+    {
+      "name": "First National Bank North",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5269",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "600 Minnesota Ave W, Walker, MN 56484",
+      "website": "https://www.fnbnorth.com"
+    },
+    {
+      "name": "First Resource Bank",
+      "fdic_insured_since": "06/27/2005",
+      "fdic_cert": "58039",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7449 Village Dr, Lino Lakes, MN 55014",
+      "website": "https://www.myfrbank.com"
+    },
+    {
+      "name": "First Security Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9728",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "316 Byron Ave N, Byron, MN 55920",
+      "website": "https://www.fsbbyron.com"
+    },
+    {
+      "name": "First Security Bank - Canby",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5107",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 Saint Olaf Ave N, Canby, MN 56220",
+      "website": "https://www.firstsecuritybanks.com"
+    },
+    {
+      "name": "First Security Bank - Sleepy Eye",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5252",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 Main St E, Sleepy Eye, MN 56085",
+      "website": "https://www.firstsecuritybanks.com"
+    },
+    {
+      "name": "First Southeast Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10576",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3 Main Ave N, Harmony, MN 55939",
+      "website": "https://www.firstsoutheastbank.com"
+    },
+    {
+      "name": "First State Bank and Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10159",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "950 Highway 95 N, Bayport, MN 55003",
+      "website": "https://www.fsbt.com"
+    },
+    {
+      "name": "First State Bank Minnesota",
+      "fdic_insured_since": "01/04/1934",
+      "fdic_cert": "10162",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 W Main St, Le Roy, MN 55951",
+      "website": "https://www.fsbminnesota.com"
+    },
+    {
+      "name": "First State Bank of Bigfork",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10991",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 Main Avenue, Bigfork, MN 56628",
+      "website": "https://www.fsbbigfork.com"
+    },
+    {
+      "name": "First State Bank of Fountain",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9349",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 Main St, Fountain, MN 55935",
+      "website": "https://www.firststatebankoffountain.com"
+    },
+    {
+      "name": "First State Bank of Le Center",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9330",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "88 N Park Ave, Le Center, MN 56057",
+      "website": "https://www.fsblecenter.com"
+    },
+    {
+      "name": "First State Bank of Swanville",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8218",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "306 Degraff Ave, Swanville, MN 56382",
+      "website": "https://www.fsbswanville.com"
+    },
+    {
+      "name": "First State Bank Southwest",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9770",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "202 2nd St Se, Pipestone, MN 56164",
+      "website": "https://www.firststatebanksw.com"
+    },
+    {
+      "name": "First Western Bank & Trust",
+      "fdic_insured_since": "05/11/1964",
+      "fdic_cert": "19123",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "900 S Broadway, Minot, ND 58701",
+      "website": "https://www.firstwestern.bank"
+    },
+    {
+      "name": "FM Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10998",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "220 Elm Ave E, Waseca, MN 56093",
+      "website": "https://mybankfm.com"
+    },
+    {
+      "name": "Foresight Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5229",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "138 W Broadway, Plainview, MN 55964",
+      "website": "https://www.foresight.bank"
+    },
+    {
+      "name": "Forward Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28530",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1001 N Central Ave, Marshfield, WI 54449",
+      "website": "https://www.forward.bank"
+    },
+    {
+      "name": "Frandsen Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1399",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "116 Central St W, Lonsdale, MN 55046",
+      "website": "https://frandsenbank.com"
+    },
+    {
+      "name": "Freeport State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8210",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 Main St E, Freeport, MN 56331",
+      "website": "https://www.freeportstatebank.com"
+    },
+    {
+      "name": "Gate City Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27774",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "500 2nd Ave N, Fargo, ND 58102",
+      "website": "https://www.gatecity.bank"
+    },
+    {
+      "name": "Gateway Bank",
+      "fdic_insured_since": "01/20/2004",
+      "fdic_cert": "57644",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "745 Market St, Mendota Heights, MN 55118",
+      "website": "https://www.gateway.bank"
+    },
+    {
+      "name": "Glenwood State Bank (Incorporated)",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8853",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5 E Minnesota Ave, Glenwood, MN 56334",
+      "website": "https://www.glenwoodstate.bank"
+    },
+    {
+      "name": "Global Innovations Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5175",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 N Main St, Kiester, MN 56051",
+      "website": "https://www.gibank.com"
+    },
+    {
+      "name": "Grand Marais State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8842",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "211 E Highway 61, Grand Marais, MN 55604",
+      "website": "https://www.grandmaraisstatebank.com"
+    },
+    {
+      "name": "Grand Rapids State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10962",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "523 Nw 1st Ave, Grand Rapids, MN 55744",
+      "website": "https://www.grsb.bank"
+    },
+    {
+      "name": "Grand Timber Bank",
+      "fdic_insured_since": "03/18/1963",
+      "fdic_cert": "18719",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "204 N Maddy St, Mcgregor, MN 55760",
+      "website": "https://www.grandtimberbank.com"
+    },
+    {
+      "name": "Granite Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5116",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 2nd Ave S, Cold Spring, MN 56320",
+      "website": "https://www.granitebank.com"
+    },
+    {
+      "name": "Great Southern Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29546",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "14309 State Highway 13, Reeds Spring, MO 65737",
+      "website": "https://www.greatsouthernbank.com"
+    },
+    {
+      "name": "Grove Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8857",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "110 Atlantic Ave W, Grove City, MN 56243",
+      "website": "https://www.grovebancorp.com"
+    },
+    {
+      "name": "Gulf Coast Bank and Trust Company",
+      "fdic_insured_since": "06/08/1990",
+      "fdic_cert": "32974",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 Saint Charles Ave, New Orleans, LA 70130",
+      "website": "https://www.gulfbank.com"
+    },
+    {
+      "name": "Harvest Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11415",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "75 N Main St, Kimball, MN 55353",
+      "website": "https://www.harvestbank.com"
+    },
+    {
+      "name": "Heritage Bank Minnesota",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8865",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "181 Main St, West Concord, MN 55985",
+      "website": "https://heritagebankmn.com"
+    },
+    {
+      "name": "Heritage Bank National Association",
+      "fdic_insured_since": "10/08/1964",
+      "fdic_cert": "19254",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "110 W South St, Spicer, MN 56288",
+      "website": "https://www.heritagebankna.com"
+    },
+    {
+      "name": "Highland Bank",
+      "fdic_insured_since": "01/03/1944",
+      "fdic_cert": "16111",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2100 Ford Pkwy, Saint Paul, MN 55116",
+      "website": "https://www.highland.bank"
+    },
+    {
+      "name": "Home State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9745",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1435 Us Highway 12, Litchfield, MN 55355",
+      "website": "https://www.hsbofmn.com"
+    },
+    {
+      "name": "HomeTown Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31028",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1600 Monroe Drive, Carver, MN 55315",
+      "website": "https://www.myht.bank"
+    },
+    {
+      "name": "Hometown Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10197",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 E Main St, Cyrus, MN 56323",
+      "website": "https://www.hcbmn.com"
+    },
+    {
+      "name": "Integrity Bank Plus",
+      "fdic_insured_since": "01/27/1938",
+      "fdic_cert": "15578",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "726 Main St, Wabasso, MN 56293",
+      "website": "https://www.integritybank.com"
+    },
+    {
+      "name": "Janesville State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10960",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 N Main St, Janesville, MN 56048",
+      "website": "https://www.janesvillestatebank.com"
+    },
+    {
+      "name": "JPMorgan Chase Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "628",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1111 Polaris Pkwy, Columbus, OH 43240",
+      "website": "https://www.jpmorganchase.com"
+    },
+    {
+      "name": "Keen Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5270",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "101 State St N, Waseca, MN 56093",
+      "website": "https://keen.bank"
+    },
+    {
+      "name": "Kensington Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1409",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "11 Central Ave N, Kensington, MN 56343",
+      "website": "https://www.kensington.bank"
+    },
+    {
+      "name": "Key Community Bank",
+      "fdic_insured_since": "05/20/1998",
+      "fdic_cert": "34644",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5684 Bishop Ave, Inver Grove Heights, MN 55076",
+      "website": "https://www.keycommunitybank.com"
+    },
+    {
+      "name": "KodaBank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8386",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "104 S Main St, Drayton, ND 58225",
+      "website": "https://www.kodabank.com"
+    },
+    {
+      "name": "Lake Central Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10989",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "40 Chestnut St W, Annandale, MN 55302",
+      "website": "https://www.lakecentral.bank"
+    },
+    {
+      "name": "Lake Country Community Bank",
+      "fdic_insured_since": "07/01/1952",
+      "fdic_cert": "17122",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 Division St N, Morristown, MN 55052",
+      "website": "https://lccbank.com"
+    },
+    {
+      "name": "Lake Elmo Bank",
+      "fdic_insured_since": "12/19/1936",
+      "fdic_cert": "15443",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "11465 39th St N, Lake Elmo, MN 55042",
+      "website": "https://www.lakeelmobank.com"
+    },
+    {
+      "name": "Lake Region Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10965",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "51 Main St S, New London, MN 56273",
+      "website": "https://www.lakeregion.com"
+    },
+    {
+      "name": "Lakeview Bank",
+      "fdic_insured_since": "07/08/2004",
+      "fdic_cert": "57785",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9725 163rd St W, Lakeville, MN 55044",
+      "website": "https://www.lakeview.bank"
+    },
+    {
+      "name": "Liberty Bank Minnesota",
+      "fdic_insured_since": "01/01/1987",
+      "fdic_cert": "26891",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2842 2nd St S, Saint Cloud, MN 56301",
+      "website": "https://www.libertybankmn.com"
+    },
+    {
+      "name": "Lowry State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10202",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 Florence Ave, Lowry, MN 56349",
+      "website": "https://www.lowrystate.bank"
+    },
+    {
+      "name": "Luminate Bank",
+      "fdic_insured_since": "10/20/1947",
+      "fdic_cert": "16635",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2523 South Wayzata Boulevard Suite 100, Minneapolis, MN 55405",
+      "website": "https://luminate.bank"
+    },
+    {
+      "name": "Manufacturers Bank & Trust Company",
+      "fdic_insured_since": "09/01/1945",
+      "fdic_cert": "16307",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "245 E J St, Forest City, IA 50436",
+      "website": "https://www.mbtbank.bank"
+    },
+    {
+      "name": "Marshall County State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9752",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "118 E Minnesota Ave, Newfolden, MN 56738",
+      "website": "https://www.mcsbnewfolden.com"
+    },
+    {
+      "name": "Merchants Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8866",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 E 3rd St # 106, Winona, MN 55987",
+      "website": "https://www.merchantsbank.com"
+    },
+    {
+      "name": "Mid-Central National Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30943",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "520 Jefferson St S, Wadena, MN 56482",
+      "website": "https://www.midcentralbank.com"
+    },
+    {
+      "name": "MidCountry Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28865",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "7825 Washington Ave S Suite 120, Minneapolis, MN 55439",
+      "website": "https://www.midcountrybank.com"
+    },
+    {
+      "name": "Midwest Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9737",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "613 Highway 10 E, Detroit Lakes, MN 56501",
+      "website": "https://www.midwestbank.net"
+    },
+    {
+      "name": "Minnesota First Credit and Savings, Incorporated",
+      "fdic_insured_since": "08/07/1986",
+      "fdic_cert": "26755",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1932 Viking Dr Nw, Rochester, MN 55901",
+      "website": "https://www.mnfirst.com"
+    },
+    {
+      "name": "MINNESOTA LAKES BANK",
+      "fdic_insured_since": "06/24/1982",
+      "fdic_cert": "23986",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "710 Babcock Blvd E, Delano, MN 55328",
+      "website": "https://www.mnlb.bank"
+    },
+    {
+      "name": "Minnesota National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5249",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "131 12th St S, Sauk Centre, MN 56378",
+      "website": "https://www.mn-bank.bank"
+    },
+    {
+      "name": "Minnstar Bank National Association",
+      "fdic_insured_since": "01/29/1934",
+      "fdic_cert": "13809",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "202 N Main St, Lake Crystal, MN 56055",
+      "website": "https://www.minnstarbank.com"
+    },
+    {
+      "name": "Minnwest Bank",
+      "fdic_insured_since": "11/28/1950",
+      "fdic_cert": "16958",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 S Washington St, Redwood Falls, MN 56283",
+      "website": "https://www.minnwestbank.com"
+    },
+    {
+      "name": "My Kind of Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5162",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "106 Mn Highway 78 N, Ottertail, MN 56571",
+      "website": "https://www.mykindofbank.com"
+    },
+    {
+      "name": "National Bank of Commerce",
+      "fdic_insured_since": "04/23/1934",
+      "fdic_cert": "14266",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1127 Tower Ave, Superior, WI 54880",
+      "website": "https://www.nbcbanking.com"
+    },
+    {
+      "name": "Neighborhood National Bank",
+      "fdic_insured_since": "09/26/1963",
+      "fdic_cert": "18885",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "45 Union St N, Mora, MN 55051",
+      "website": "https://www.neighborhood.bank"
+    },
+    {
+      "name": "New Market Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1931",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 Old Town Rd, Elko New Market, MN 55054",
+      "website": "https://www.newmarket.bank"
+    },
+    {
+      "name": "Nicolet National Bank",
+      "fdic_insured_since": "10/31/2000",
+      "fdic_cert": "57038",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "111 N Washington St, Green Bay, WI 54301",
+      "website": "https://www.nicoletbank.com"
+    },
+    {
+      "name": "North American Banking Company",
+      "fdic_insured_since": "07/21/1998",
+      "fdic_cert": "34836",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2230 Albert St N, Roseville, MN 55113",
+      "website": "https://www.nabankco.com"
+    },
+    {
+      "name": "North Shore Bank of Commerce",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8850",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "131 W Superior St, Duluth, MN 55802",
+      "website": "https://www.northshore.bank"
+    },
+    {
+      "name": "North Star Bank",
+      "fdic_insured_since": "09/14/1948",
+      "fdic_cert": "16733",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1820 Lexington Ave N, Roseville, MN 55113",
+      "website": "https://www.northstarbank.com"
+    },
+    {
+      "name": "Northeast Bank",
+      "fdic_insured_since": "01/03/1948",
+      "fdic_cert": "16659",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "77 Broadway St Ne, Minneapolis, MN 55413",
+      "website": "https://www.nebankmn.com"
+    },
+    {
+      "name": "Northern State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "15242",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "321 Main St W, Ashland, WI 54806",
+      "website": "https://www.nsbashland.com"
+    },
+    {
+      "name": "Northern State Bank of Thief River Falls",
+      "fdic_insured_since": "10/02/1935",
+      "fdic_cert": "15286",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 3rd St E, Thief River Falls, MN 56701",
+      "website": "https://www.nsbtrf.com"
+    },
+    {
+      "name": "Northern State Bank of Virginia",
+      "fdic_insured_since": "05/19/1966",
+      "fdic_cert": "19589",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "600 Chestnut St, Virginia, MN 55792",
+      "website": "https://www.nsbov.com"
+    },
+    {
+      "name": "Northview Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10956",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "510 Main St, Sandstone, MN 55072",
+      "website": "https://www.northviewbank.com"
+    },
+    {
+      "name": "Northwestern Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9746",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4 Main St N, Dilworth, MN 56529",
+      "website": "https://www.nwbanks.com"
+    },
+    {
+      "name": "Northwoods Bank of Minnesota",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "1415",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1200 First St E, Park Rapids, MN 56470",
+      "website": "https://www.northwoodsbank.com"
+    },
+    {
+      "name": "Oakwood Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13030",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "40214 S Ekern Avenue, Pigeon Falls, WI 54760",
+      "website": "https://www.oakwoodbank.net"
+    },
+    {
+      "name": "Odin State Bank",
+      "fdic_insured_since": "03/28/1934",
+      "fdic_cert": "14574",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 E Main St, Odin, MN 56160",
+      "website": "https://www.odinstatebank.com"
+    },
+    {
+      "name": "Old National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3832",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Main St, Evansville, IN 47708",
+      "website": "https://www.oldnational.com"
+    },
+    {
+      "name": "Park State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8851",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2630 W Superior St, Duluth, MN 55806",
+      "website": "https://www.parkstatebank.com"
+    },
+    {
+      "name": "Peoples Bank",
+      "fdic_insured_since": "06/01/1945",
+      "fdic_cert": "16265",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1230 Valley Dr, Rock Valley, IA 51247",
+      "website": "https://www.peoples-ebank.com"
+    },
+    {
+      "name": "Peoples State Bank of Plainview",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1100",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 4th Ave Se, Plainview, MN 55964",
+      "website": "https://www.peoplesstatebank.com"
+    },
+    {
+      "name": "Perennial Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1413",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "318 N 1st St, Darwin, MN 55324",
+      "website": "https://www.perennialbank.com"
+    },
+    {
+      "name": "Pine Country Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13652",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1201 1st Ave Ne, Little Falls, MN 56345",
+      "website": "https://www.pinecountrybank.com"
+    },
+    {
+      "name": "Pine River State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10194",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "103 Mill St, Pine River, MN 56474",
+      "website": "https://www.pineriverstatebank.com"
+    },
+    {
+      "name": "Pioneer Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5193",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "301 Main St E, Mapleton, MN 56065",
+      "website": "https://www.bankwithpioneer.com"
+    },
+    {
+      "name": "Platinum Bank",
+      "fdic_insured_since": "02/12/2007",
+      "fdic_cert": "58511",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7667 10th St N, Oakdale, MN 55128",
+      "website": "https://www.platinumbankmn.com"
+    },
+    {
+      "name": "Portage Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8197",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "880 108th Avenue Ne, Bellevue, WA 98004",
+      "website": "https://www.portage.bank"
+    },
+    {
+      "name": "Prairie Sun Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8207",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "240 N 2nd St, Milan, MN 56262",
+      "website": "https://www.bankwithpsb.com"
+    },
+    {
+      "name": "Premier Bank",
+      "fdic_insured_since": "08/01/1974",
+      "fdic_cert": "21714",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2866 White Bear Ave N, Maplewood, MN 55109",
+      "website": "https://www.premierbanks.com"
+    },
+    {
+      "name": "Premier Bank",
+      "fdic_insured_since": "02/25/1997",
+      "fdic_cert": "34384",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1004 21st Ave, Rock Valley, IA 51247",
+      "website": "https://www.premierbank.bank"
+    },
+    {
+      "name": "Premier Bank Minnesota",
+      "fdic_insured_since": "10/05/1990",
+      "fdic_cert": "33204",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 10th St E, Hastings, MN 55033",
+      "website": "https://www.premierbanks.com"
+    },
+    {
+      "name": "Prime Security Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10971",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 Main St N, Karlstad, MN 56732",
+      "website": "https://www.primesecurity.com"
+    },
+    {
+      "name": "PrinsBank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10191",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "508 3rd St, Prinsburg, MN 56281",
+      "website": "https://www.prinsbank.com"
+    },
+    {
+      "name": "Produce State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10178",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "109 Park Ave W, Hollandale, MN 56045",
+      "website": "https://www.producestatebank.com"
+    },
+    {
+      "name": "Profinium, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1905",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "414 N 5th Ave E, Truman, MN 56088",
+      "website": "https://www.profinium.com"
+    },
+    {
+      "name": "ProGrowth Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8536",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "703 3rd St, Nicollet, MN 56074",
+      "website": "https://www.progrowth.com"
+    },
+    {
+      "name": "Randall State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10969",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "307 Pacific Ave, Randall, MN 56475",
+      "website": "https://www.randallstatebank.com"
+    },
+    {
+      "name": "Red River State Bank",
+      "fdic_insured_since": "05/26/1941",
+      "fdic_cert": "15820",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 2nd Ave W, Halstad, MN 56548",
+      "website": "https://www.redriverbank.com"
+    },
+    {
+      "name": "Reliance Bank",
+      "fdic_insured_since": "08/13/2007",
+      "fdic_cert": "58602",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2300 30th St Nw, Faribault, MN 55021",
+      "website": "https://www.reliancebankmn.com"
+    },
+    {
+      "name": "Rolling Hills Bank & Trust",
+      "fdic_insured_since": "01/13/1936",
+      "fdic_cert": "15334",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1307 E 7th St, Atlantic, IA 50022",
+      "website": "https://www.rollinghillsbank.com"
+    },
+    {
+      "name": "Root River State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1098",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "18 3rd St Se, Chatfield, MN 55923",
+      "website": "https://www.rootriverstatebank.com"
+    },
+    {
+      "name": "Rushford State Bank (Incorporated)",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11411",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "219 S Mill St, Rushford, MN 55971",
+      "website": "https://www.rushfordstatebank.com"
+    },
+    {
+      "name": "Scale Bank",
+      "fdic_insured_since": "10/08/1970",
+      "fdic_cert": "20268",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7600 Parklawn Ave, Edina, MN 55435",
+      "website": "https://scale.bank"
+    },
+    {
+      "name": "Security Bank & Trust Company",
+      "fdic_insured_since": "12/16/1935",
+      "fdic_cert": "15324",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "735 11th St E, Glencoe, MN 55336",
+      "website": "https://www.security-banks.com"
+    },
+    {
+      "name": "Security Bank Midwest",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "485",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1600 Main St, Tyndall, SD 57066",
+      "website": "https://www.sbmidwest.bank"
+    },
+    {
+      "name": "Security Bank Minnesota",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10984",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "437 Bridge Ave, Albert Lea, MN 56007",
+      "website": "https://www.securitybankmn.com"
+    },
+    {
+      "name": "Security Bank USA",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1604",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1025 Paul Bunyan Dr Nw, Bemidji, MN 56601",
+      "website": "https://www.securitybankusa.com"
+    },
+    {
+      "name": "Security Savings Bank",
+      "fdic_insured_since": "04/04/1940",
+      "fdic_cert": "15734",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 S West St, Canton, SD 57013",
+      "website": "https://www.bankwithssb.com"
+    },
+    {
+      "name": "Security State Bank of Aitkin",
+      "fdic_insured_since": "01/02/1948",
+      "fdic_cert": "16656",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "402 Minnesota Ave N, Aitkin, MN 56431",
+      "website": "https://www.ssbmn.com"
+    },
+    {
+      "name": "Security State Bank of Hibbing",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10175",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "701 E Howard St, Hibbing, MN 55746",
+      "website": "https://www.ssbhibbing.com"
+    },
+    {
+      "name": "Security State Bank of Kenyon",
+      "fdic_insured_since": "04/21/1938",
+      "fdic_cert": "15597",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "602 2nd St, Kenyon, MN 55946",
+      "website": "https://www.ssbkenyon.com"
+    },
+    {
+      "name": "Security State Bank of Marine",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10163",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "120 Judd St, Marine On St. Croix, MN 55047",
+      "website": "https://www.themarinebank.com"
+    },
+    {
+      "name": "Security State Bank of Oklee",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10982",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 Main St, Oklee, MN 56742",
+      "website": "https://www.ssboklee.com"
+    },
+    {
+      "name": "Security State Bank of Wanamingo",
+      "fdic_insured_since": "04/27/1961",
+      "fdic_cert": "18378",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "232 Main St, Wanamingo, MN 55983",
+      "website": "https://www.ssbwanamingo.com"
+    },
+    {
+      "name": "Security State Bank of Warroad",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9773",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "502 Lake St Ne, Warroad, MN 56763",
+      "website": "https://www.ssbwarroad.com"
+    },
+    {
+      "name": "Sentry Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8546",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 4th Ave Ne, Saint Joseph, MN 56374",
+      "website": "https://www.mysentrybank.com"
+    },
+    {
+      "name": "Sherburne State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10169",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "12500 Sherburne Avenue, Becker, MN 55308",
+      "website": "https://www.sherburnestatebank.com"
+    },
+    {
+      "name": "St. Clair State Bank (Incorporated)",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1903",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 Main St W, Saint Clair, MN 56080",
+      "website": "https://www.stclairstatebank.com"
+    },
+    {
+      "name": "St. Martin National Bank",
+      "fdic_insured_since": "11/12/1963",
+      "fdic_cert": "18937",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "136 Maine St, Saint Martin, MN 56376",
+      "website": "https://www.stmartinnationalbank.com"
+    },
+    {
+      "name": "Star Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5095",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 Highway 55 E, Maple Lake, MN 55358",
+      "website": "https://www.star.bank"
+    },
+    {
+      "name": "State Bank of Bellingham",
+      "fdic_insured_since": "12/08/1951",
+      "fdic_cert": "17062",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 Main Ave, Bellingham, MN 56212",
+      "website": "https://www.stbankbhm.com"
+    },
+    {
+      "name": "State Bank of Chandler",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8858",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "342 Main Ave, Chandler, MN 56122",
+      "website": "https://www.statebankofchandler.bank"
+    },
+    {
+      "name": "State Bank of Cold Spring",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12444",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 Main St, Cold Spring, MN 56320",
+      "website": "https://www.statebankcoldspring.com"
+    },
+    {
+      "name": "State Bank of Fairmont",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8541",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "918 E Blue Earth Ave, Fairmont, MN 56031",
+      "website": "https://www.sbof.com"
+    },
+    {
+      "name": "State Bank of Jeffers",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10200",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "104 E Whited St, Jeffers, MN 56145",
+      "website": "https://statebankofjeffers.com"
+    },
+    {
+      "name": "State Bank of Lake Park",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9351",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2049 2nd Street, Lake Park, MN 56554",
+      "website": "https://www.statebankoflakepark.com"
+    },
+    {
+      "name": "State Bank of New Richland",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9735",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "103 Broadway Ave N, New Richland, MN 56072",
+      "website": "https://www.sbnr.biz"
+    },
+    {
+      "name": "State Bank of Taunton",
+      "fdic_insured_since": "05/01/1950",
+      "fdic_cert": "16906",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 N Main St, Taunton, MN 56291",
+      "website": "https://www.statebankoftaunton.com"
+    },
+    {
+      "name": "Stearns Bank National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10988",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4191 2nd St S, Saint Cloud, MN 56301",
+      "website": "https://www.stearnsbank.com"
+    },
+    {
+      "name": "Sterling State Bank",
+      "fdic_insured_since": "05/01/1958",
+      "fdic_cert": "17863",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1419 1st Ave Sw, Austin, MN 55912",
+      "website": "https://www.sterlingstatebank.com"
+    },
+    {
+      "name": "Sunrise Banks, National Association",
+      "fdic_insured_since": "07/17/1962",
+      "fdic_cert": "18561",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "5105 S Crossing Pl, Sioux Falls, SD 57108",
+      "website": "https://www.sunrisebanks.com"
+    },
+    {
+      "name": "The Bank of Elk River",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1607",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "630 Main St Nw, Elk River, MN 55330",
+      "website": "https://www.thebankofelkriver.com"
+    },
+    {
+      "name": "The Citizens National Bank of Park Rapids",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5223",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "300 1st St W, Park Rapids, MN 56470",
+      "website": "https://www.cnbbank.com"
+    },
+    {
+      "name": "The First National Bank at St. James",
+      "fdic_insured_since": "10/31/1934",
+      "fdic_cert": "14853",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "202 1st Ave S, Saint James, MN 56081",
+      "website": "https://www.fnbstjames.com"
+    },
+    {
+      "name": "The First National Bank of Bagley",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5087",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "31 Central St E, Bagley, MN 56621",
+      "website": "https://www.fnbbagley.com"
+    },
+    {
+      "name": "The First National Bank of Bemidji",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5093",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1600 Paul Bunyan Dr Nw, Bemidji, MN 56601",
+      "website": "https://www.fnbbemidji.com"
+    },
+    {
+      "name": "The First National Bank of Cokato",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5115",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "365 Broadway Ave S, Cokato, MN 55321",
+      "website": "https://www.fnbcokato.com"
+    },
+    {
+      "name": "The First National Bank of Coleraine",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5117",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "600 Powell Ave, Coleraine, MN 55722",
+      "website": "https://www.colerainebank.com"
+    },
+    {
+      "name": "The First National Bank of Fairfax",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5142",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "16 1st St Se, Fairfax, MN 55332",
+      "website": "https://www.fnbfx.com"
+    },
+    {
+      "name": "The First National Bank of Gilbert",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5150",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2 N Broadway Ave, Gilbert, MN 55741",
+      "website": "https://www.gilbertbank.com"
+    },
+    {
+      "name": "The First National Bank of Le Center",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5180",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "701 Ash St Ne, Lonsdale, MN 55046",
+      "website": "https://www.fnblecenter.com"
+    },
+    {
+      "name": "The First National Bank of McIntosh",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5196",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "260 Cleveland Ave Sw, Mcintosh, MN 56556",
+      "website": "https://www.fnbmcintosh.com"
+    },
+    {
+      "name": "The First National Bank of Milaca",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5198",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "190 2nd Ave Sw, Milaca, MN 56353",
+      "website": "https://www.fnbmilaca.com"
+    },
+    {
+      "name": "The First National Bank of Moose Lake",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5214",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "400 Elm Ave, Moose Lake, MN 55767",
+      "website": "https://www.firstmooselake.com"
+    },
+    {
+      "name": "The First National Bank of Osakis",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5221",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "211 Central Avenue, Osakis, MN 56360",
+      "website": "https://www.fnbosakis.com"
+    },
+    {
+      "name": "The First National Bank of Proctor",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5232",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "211 2nd St, Proctor, MN 55810",
+      "website": "https://www.proctorbank.com"
+    },
+    {
+      "name": "The First State Bank of Red Wing",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8191",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3209 S Service Dr, Red Wing, MN 55066",
+      "website": "https://www.firststatebankredwing.com"
+    },
+    {
+      "name": "The First State Bank of Rosemount",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9769",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3025 145th St W, Rosemount, MN 55068",
+      "website": "https://www.fsbrosemount.com"
+    },
+    {
+      "name": "The Huntington National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6560",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "17 S High St, Columbus, OH 43215",
+      "website": "https://www.huntington.com"
+    },
+    {
+      "name": "The Miners National Bank of Eveleth",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5141",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "401 Grant Ave, Eveleth, MN 55734",
+      "website": "https://www.mnbeveleth.com"
+    },
+    {
+      "name": "The Northern State Bank of Gonvick",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10187",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "283 Main St, Gonvick, MN 56644",
+      "website": "https://www.nsbgonvick.com"
+    },
+    {
+      "name": "The Northern Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "913",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "50 S La Salle St, Chicago, IL 60603",
+      "website": "https://www.northerntrust.com"
+    },
+    {
+      "name": "The State Bank of Faribault",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1610",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "428 Central Ave N, Faribault, MN 55021",
+      "website": "https://www.tsbf.com"
+    },
+    {
+      "name": "The Wanda State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1908",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "121 W Main St, Wanda, MN 56294",
+      "website": "https://www.wandastatebank.com"
+    },
+    {
+      "name": "Think Mutual Bank",
+      "fdic_insured_since": "07/01/2007",
+      "fdic_cert": "58536",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "5200 Members Pkwy Nw, Rochester, MN 55901",
+      "website": "https://www.thinkbank.com"
+    },
+    {
+      "name": "Thrivent Trust Company",
+      "fdic_insured_since": "11/02/1998",
+      "fdic_cert": "34799",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4321 N Ballard Rd, Appleton, WI 54919",
+      "website": "https://www.thriventtrust.com"
+    },
+    {
+      "name": "Tradition Capital Bank",
+      "fdic_insured_since": "07/01/2005",
+      "fdic_cert": "58057",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 Lake St W, Wayzata, MN 55391",
+      "website": "https://www.tradition.bank"
+    },
+    {
+      "name": "Triumph State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1906",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "519 Main St E, Trimont, MN 56176",
+      "website": "https://www.triumphbanks.com"
+    },
+    {
+      "name": "U.S. Bank National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6548",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "425 Walnut St, Cincinnati, OH 45202",
+      "website": "https://www.usbank.com"
+    },
+    {
+      "name": "Ultima Bank Minnesota",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8867",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9 W Minnesota Ave, Winger, MN 56592",
+      "website": "https://www.ultima.bank"
+    },
+    {
+      "name": "UMB Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8273",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1010 Grand Blvd, Kansas City, MO 64106",
+      "website": "https://www.umb.com"
+    },
+    {
+      "name": "Union Bank and Trust Company",
+      "fdic_insured_since": "03/15/1976",
+      "fdic_cert": "22242",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "312 Central Ave Se, Minneapolis, MN 55414",
+      "website": "https://www.ubtmn.com"
+    },
+    {
+      "name": "United Bankers' Bank",
+      "fdic_insured_since": "12/15/1975",
+      "fdic_cert": "22180",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2 Meridian Xing, Ste 600, Richfield, MN 55423",
+      "website": "https://www.ubb.bank"
+    },
+    {
+      "name": "United Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8544",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 W Main St, Perham, MN 56573",
+      "website": "https://www.ucbankmn.com"
+    },
+    {
+      "name": "United Farmers State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8821",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15 Sw 4th St, Adams, MN 55909",
+      "website": "https://www.unitedfsb.com"
+    },
+    {
+      "name": "United Minnesota Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10567",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 Central Ave E, New London, MN 56273",
+      "website": "https://www.umbnl.com"
+    },
+    {
+      "name": "United Prairie Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10958",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1141 3rd Ave, Mountain Lake, MN 56159",
+      "website": "https://www.unitedprairiebank.com"
+    },
+    {
+      "name": "United Valley Bank",
+      "fdic_insured_since": "03/22/1937",
+      "fdic_cert": "15478",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "211 Division Ave S, Cavalier, ND 58220",
+      "website": "https://www.uvbank.net"
+    },
+    {
+      "name": "Unity Bank",
+      "fdic_insured_since": "01/02/1934",
+      "fdic_cert": "8714",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "207 W Lincoln St, Augusta, WI 54722",
+      "website": "https://www.unitybanking.com"
+    },
+    {
+      "name": "Valley Premier Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11409",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "416 6th St, Hawley, MN 56549",
+      "website": "https://www.valleypremierbank.com"
+    },
+    {
+      "name": "Vantage Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9733",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 Main St, Kent, MN 56553",
+      "website": "https://www.vantagebankmn.com"
+    },
+    {
+      "name": "Vergas State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9747",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "106 E Main St, Vergas, MN 56587",
+      "website": "https://www.vergasstatebank.com"
+    },
+    {
+      "name": "Vermillion State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10214",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "107 Main St E, Vermillion, MN 55085",
+      "website": "https://www.vermillionbank.com"
+    },
+    {
+      "name": "VersaBank USA National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10160",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "580 Main St, Holdingford, MN 56340",
+      "website": "https://www.versabankusa.com"
+    },
+    {
+      "name": "VIKING BANK, NATIONAL ASSOCIATION",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32082",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4277 Dakota Street, Alexandria, MN 56308",
+      "website": "https://www.viking.bank"
+    },
+    {
+      "name": "Village Bank",
+      "fdic_insured_since": "01/11/1993",
+      "fdic_cert": "33761",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3350 Bridge St Nw, Saint Francis, MN 55070",
+      "website": "https://www.villagebankonline.bank"
+    },
+    {
+      "name": "VisionBank",
+      "fdic_insured_since": "09/12/2005",
+      "fdic_cert": "58063",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3059 Joppa Ave S, Saint Louis Park, MN 55416",
+      "website": "https://www.bankwithvision.com"
+    },
+    {
+      "name": "Wadena State Bank",
+      "fdic_insured_since": "01/03/1934",
+      "fdic_cert": "13430",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "304 1st St Se, Wadena, MN 56482",
+      "website": "https://www.wadenastatebank.com"
+    },
+    {
+      "name": "Welcome State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11417",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "111 Guide St N, Welcome, MN 56181",
+      "website": "https://www.welcomestatebank.com"
+    },
+    {
+      "name": "Wells Fargo Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3511",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3201 N 4th Ave, Sioux Falls, SD 57104",
+      "website": "https://www.wellsfargo.com"
+    },
+    {
+      "name": "West Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "15614",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3330 Westown Parkway, West Des Moines, IA 50266",
+      "website": "https://www.westbankstrong.com"
+    },
+    {
+      "name": "Western National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5110",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "210 2nd St Nw, Cass Lake, MN 56633",
+      "website": "https://www.wbcasslake.com"
+    },
+    {
+      "name": "Western National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5131",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "201 N Central Ave, Duluth, MN 55807",
+      "website": "https://www.wbduluth.com"
+    },
+    {
+      "name": "Wilmington Trust, National Association",
+      "fdic_insured_since": "10/02/1995",
+      "fdic_cert": "34069",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1100 N Market St, Wilmington, DE 19801",
+      "website": "https://www.wilmingtontrust.com"
+    },
+    {
+      "name": "WNB FINANCIAL, N.A.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5280",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "204 Main St, Winona, MN 55987",
+      "website": "https://www.wnbfinancial.com"
+    },
+    {
+      "name": "Woodland Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8863",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "217 Main Ave E, Deer River, MN 56636",
+      "website": "https://www.woodland.bank"
+    },
+    {
+      "name": "Woodlands National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1417",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "122 Main St E, Hinckley, MN 55037",
+      "website": "https://www.woodlandsnationalbank.com"
+    },
+    {
+      "name": "Worthington Federal Savings Bank, FSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29426",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "418 11th St, Worthington, MN 56187",
+      "website": "https://www.worthingtonfederalsavings"
+    }
+  ],
+  "updated": "2026-06-26"
+}
