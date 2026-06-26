@@ -3,7 +3,7 @@ import type { StateMeta } from './types';
 /** All 50 states + DC. Set hasData: true when JSON is added under lib/fdic/data/[slug].json */
 export const US_STATES: StateMeta[] = [
   { code: 'AL', fullName: 'Alabama', slug: 'alabama', region: 'Southeast', hasData: true },
-  { code: 'AK', fullName: 'Alaska', slug: 'alaska', region: 'West', hasData: false },
+  { code: 'AK', fullName: 'Alaska', slug: 'alaska', region: 'West', hasData: true },
   { code: 'AZ', fullName: 'Arizona', slug: 'arizona', region: 'West', hasData: true },
   { code: 'AR', fullName: 'Arkansas', slug: 'arkansas', region: 'South', hasData: true },
   { code: 'CA', fullName: 'California', slug: 'california', region: 'West', hasData: true },
@@ -13,7 +13,7 @@ export const US_STATES: StateMeta[] = [
   { code: 'DC', fullName: 'District of Columbia', slug: 'district-of-columbia', region: 'Northeast', hasData: true },
   { code: 'FL', fullName: 'Florida', slug: 'florida', region: 'Southeast', hasData: true },
   { code: 'GA', fullName: 'Georgia', slug: 'georgia', region: 'Southeast', hasData: true },
-  { code: 'HI', fullName: 'Hawaii', slug: 'hawaii', region: 'West', hasData: false },
+  { code: 'HI', fullName: 'Hawaii', slug: 'hawaii', region: 'West', hasData: true },
   { code: 'ID', fullName: 'Idaho', slug: 'idaho', region: 'West', hasData: true },
   { code: 'IL', fullName: 'Illinois', slug: 'illinois', region: 'Midwest', hasData: true },
   { code: 'IN', fullName: 'Indiana', slug: 'indiana', region: 'Midwest', hasData: true },

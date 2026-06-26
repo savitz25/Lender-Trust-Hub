@@ -69,16 +69,22 @@ REGIONAL_CSV_SOURCES: dict[str, tuple[Path, set[str]]] = {
     ),
     "west": (
         ROOT / "data" / "west-import.csv",
-        {"AZ", "CA", "CO", "ID", "NM", "NV", "OR", "UT", "WA", "WY"},
+        {"AZ", "CA", "CO", "NM", "UT", "WY"},
+    ),
+    "pacific": (
+        ROOT / "data" / "pacific-import.csv",
+        {"AK", "HI", "ID", "NV", "OR", "WA"},
     ),
 }
 OUT_DIR = ROOT / "lib" / "fdic" / "data"
 
 STATE_META = {
+    "AK": ("Alaska", "alaska"),
     "AZ": ("Arizona", "arizona"),
     "CA": ("California", "california"),
     "CO": ("Colorado", "colorado"),
     "GA": ("Georgia", "georgia"),
+    "HI": ("Hawaii", "hawaii"),
     "SC": ("South Carolina", "south-carolina"),
     "TN": ("Tennessee", "tennessee"),
     "NC": ("North Carolina", "north-carolina"),

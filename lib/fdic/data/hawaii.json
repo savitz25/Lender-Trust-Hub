@@ -1,0 +1,55 @@
+{
+  "fullName": "Hawaii",
+  "abbr": "HI",
+  "banks": [
+    {
+      "name": "American Savings Bank, National Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32526",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "300 N Beretania St, Honolulu, HI 96817",
+      "website": "https://www.asbhawaii.com"
+    },
+    {
+      "name": "Bank of Hawaii",
+      "fdic_insured_since": "07/10/1959",
+      "fdic_cert": "18053",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "111 S King St, Honolulu, HI 96813",
+      "website": "https://www.boh.com"
+    },
+    {
+      "name": "Central Pacific Bank",
+      "fdic_insured_since": "02/15/1954",
+      "fdic_cert": "17308",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "220 S King St, Honolulu, HI 96813",
+      "website": "https://WWW.CPB.BANK"
+    },
+    {
+      "name": "Finance Factors, Ltd.",
+      "fdic_insured_since": "06/04/1984",
+      "fdic_cert": "25158",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1164 Bishop St, Honolulu, HI 96813",
+      "website": "http://www.financefactors.com"
+    },
+    {
+      "name": "First Hawaiian Bank",
+      "fdic_insured_since": "04/13/1959",
+      "fdic_cert": "17985",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "999 Bishop St, Fl 3, Honolulu, HI 96813",
+      "website": "https://www.fhb.com"
+    },
+    {
+      "name": "Hawaii National Bank",
+      "fdic_insured_since": "09/16/1960",
+      "fdic_cert": "18296",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "45 N King St Fl 7, Honolulu, HI 96817",
+      "website": "https://www.hawaiinational.bank"
+    }
+  ],
+  "updated": "2026-06-26"
+}

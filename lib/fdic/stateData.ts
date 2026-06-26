@@ -8,6 +8,7 @@
  */
 import type { StateFDICData } from './types';
 import alabamaData from './data/alabama.json';
+import alaskaData from './data/alaska.json';
 import arizonaData from './data/arizona.json';
 import arkansasData from './data/arkansas.json';
 import californiaData from './data/california.json';
@@ -17,6 +18,7 @@ import delawareData from './data/delaware.json';
 import districtOfColumbiaData from './data/district-of-columbia.json';
 import floridaData from './data/florida.json';
 import georgiaData from './data/georgia.json';
+import hawaiiData from './data/hawaii.json';
 import idahoData from './data/idaho.json';
 import illinoisData from './data/illinois.json';
 import indianaData from './data/indiana.json';
@@ -58,6 +60,7 @@ import wisconsinData from './data/wisconsin.json';
 import wyomingData from './data/wyoming.json';
 
 export const stateData: Record<string, StateFDICData> = {
+  AK: alaskaData as StateFDICData,
   AL: alabamaData as StateFDICData,
   AR: arkansasData as StateFDICData,
   AZ: arizonaData as StateFDICData,
@@ -68,6 +71,7 @@ export const stateData: Record<string, StateFDICData> = {
   DE: delawareData as StateFDICData,
   FL: floridaData as StateFDICData,
   GA: georgiaData as StateFDICData,
+  HI: hawaiiData as StateFDICData,
   ID: idahoData as StateFDICData,
   IL: illinoisData as StateFDICData,
   IN: indianaData as StateFDICData,

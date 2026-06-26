@@ -3,12 +3,12 @@
   "abbr": "ID",
   "banks": [
     {
-      "name": "D. L. Evans Bank",
-      "fdic_insured_since": "01/01/1934",
-      "fdic_cert": "11666",
+      "name": "Idaho First Bank",
+      "fdic_insured_since": "10/03/2005",
+      "fdic_cert": "58095",
       "primary_regulator": "Federal Deposit Insurance Corporation",
-      "headquarters_address": "375 N Overland Ave, Burley, ID 83318",
-      "website": "https://dlevans.com"
+      "headquarters_address": "475 E Deinhard Ln, Mccall, ID 83638",
+      "website": "http://www.idahofirstbank.com"
     },
     {
       "name": "Northwest Bank",
@@ -17,6 +17,70 @@
       "primary_regulator": "Federal Deposit Insurance Corporation",
       "headquarters_address": "1750 W Front St, Boise, ID 83702",
       "website": "https://northwest-bank.com"
+    },
+    {
+      "name": "bankcda",
+      "fdic_insured_since": "05/17/2001",
+      "fdic_cert": "57074",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "912 Northwest Blvd, Coeur D Alene, ID 83814",
+      "website": "https://www.bankcda.bank"
+    },
+    {
+      "name": "Twin River Bank",
+      "fdic_insured_since": "11/15/1979",
+      "fdic_cert": "22993",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1507 G St, Lewiston, ID 83501",
+      "website": "http://www.twinriver.bank"
+    },
+    {
+      "name": "D. L. Evans Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11666",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "375 N Overland Ave, Burley, ID 83318",
+      "website": "https://dlevans.com"
+    },
+    {
+      "name": "Farmers Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2850",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "914 Main St, Buhl, ID 83316",
+      "website": "https://www.farmersbankidaho.com"
+    },
+    {
+      "name": "First Federal Savings Bank of Twin Falls",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28845",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "383 Shoshone St N, Twin Falls, ID 83301",
+      "website": "https://www.BankFirstFed.com"
+    },
+    {
+      "name": "Idaho Trust  Bank",
+      "fdic_insured_since": "08/30/2006",
+      "fdic_cert": "35103",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "888 W Broad St, Boise, ID 83702",
+      "website": "https://www.idahotrust.com"
+    },
+    {
+      "name": "Ireland Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1237",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "33 Bannock St, Malad City, ID 83252",
+      "website": "https://www.ireland-bank.bank"
+    },
+    {
+      "name": "The Bank of Commerce",
+      "fdic_insured_since": "08/01/1959",
+      "fdic_cert": "18059",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3113 S 25th E, Ammon, ID 83406",
+      "website": "https://www.bofc.bank"
     }
   ],
   "updated": "2026-06-26"

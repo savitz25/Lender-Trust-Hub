@@ -3,12 +3,20 @@
   "abbr": "WA",
   "banks": [
     {
-      "name": "WaFd Bank",
-      "fdic_insured_since": "08/09/1989",
-      "fdic_cert": "28088",
+      "name": "1st Security Bank of Washington",
+      "fdic_insured_since": "04/01/2004",
+      "fdic_cert": "57633",
       "primary_regulator": "Federal Deposit Insurance Corporation",
-      "headquarters_address": "425 Pike St, Seattle, WA 98101",
-      "website": "https://www.wafdbank.com"
+      "headquarters_address": "6920 220th St Sw, Ste 300, Mountlake Terrace, WA 98043",
+      "website": "https://WWW.FSBWA.com"
+    },
+    {
+      "name": "Bank of the Pacific",
+      "fdic_insured_since": "12/26/1979",
+      "fdic_cert": "23041",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 E Market St, Aberdeen, WA 98520",
+      "website": "https://www.bankofthepacific.com"
     },
     {
       "name": "Banner Bank",
@@ -17,6 +25,222 @@
       "primary_regulator": "Federal Deposit Insurance Corporation",
       "headquarters_address": "10 S 1st Ave, Walla Walla, WA 99362",
       "website": "https://www.bannerbank.com"
+    },
+    {
+      "name": "Heritage Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29012",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 5th Ave Sw, Olympia, WA 98501",
+      "website": "https://www.heritagebanknw.com"
+    },
+    {
+      "name": "Riverview Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29922",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "900 Washington St, Ste 100, Vancouver, WA 98660",
+      "website": "https://www.riverviewbank.com"
+    },
+    {
+      "name": "WaFd Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28088",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "425 Pike St, Seattle, WA 98101",
+      "website": "https://www.wafdbank.com"
+    },
+    {
+      "name": "Washington Trust Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1281",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "717 W Sprague Ave, Spokane, WA 99201",
+      "website": "https://www.watrust.com"
+    },
+    {
+      "name": "Baker-Boyer National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2987",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "7 W Main St, Walla Walla, WA 99362",
+      "website": "https://www.bakerboyer.com"
+    },
+    {
+      "name": "Cashmere Valley Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1265",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "117 Aplets Way, Cashmere, WA 98815",
+      "website": "https://www.cashmerevalleybank.com"
+    },
+    {
+      "name": "Coastal Community Bank",
+      "fdic_insured_since": "04/01/1997",
+      "fdic_cert": "34403",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "5415 Evergreen Way, Everett, WA 98203",
+      "website": "https://www.coastalbank.com"
+    },
+    {
+      "name": "Commencement Bank",
+      "fdic_insured_since": "12/11/2006",
+      "fdic_cert": "58446",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1313 Broadway, Suite 400, Tacoma, WA 98402",
+      "website": "https://www.commencementbank.com"
+    },
+    {
+      "name": "Connect Community Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28266",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 Duryea St, Raymond, WA 98577",
+      "website": "https://www.mycc.bank"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6156",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "159 Riverside Ave, Winthrop, WA 98862",
+      "website": "http://farmersstatebankwa.com"
+    },
+    {
+      "name": "First Fed Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28405",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 W 8th St, Port Angeles, WA 98362",
+      "website": "https://www.ourfirstfed.com"
+    },
+    {
+      "name": "Lamont Bank of St. John",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8681",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6 E Front St, Saint John, WA 99171",
+      "website": ""
+    },
+    {
+      "name": "Liberty Bank",
+      "fdic_insured_since": "06/11/2009",
+      "fdic_cert": "58778",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "20150 7th Ave Ne, Poulsbo, WA 98370",
+      "website": "https://www.libertybanknw.com"
+    },
+    {
+      "name": "Mountain Pacific Bank",
+      "fdic_insured_since": "07/24/2006",
+      "fdic_cert": "58341",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3732 Broadway, Everett, WA 98201",
+      "website": "https://www.mp.bank"
+    },
+    {
+      "name": "Olympia Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28599",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "421 Capitol Way S, Olympia, WA 98501",
+      "website": "https://www.olyfed.com"
+    },
+    {
+      "name": "Pacific Crest Bank",
+      "fdic_insured_since": "01/02/1998",
+      "fdic_cert": "34585",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3500 188th St Sw, Ste 575, Lynnwood, WA 98037",
+      "website": "http://www.paccrest.com/"
+    },
+    {
+      "name": "Peoples Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6158",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3100 Woburn St, Bellingham, WA 98226",
+      "website": "https://www.peoplesbank-wa.com"
+    },
+    {
+      "name": "Portage Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8197",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "880 108th Avenue Ne, Bellevue, WA 98004",
+      "website": "https://www.portage.bank"
+    },
+    {
+      "name": "RiverBank",
+      "fdic_insured_since": "05/22/2006",
+      "fdic_cert": "58322",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 E Spokane Falls Blvd, Ste 500, Spokane, WA 99202",
+      "website": "http://www.riverbankonline.com"
+    },
+    {
+      "name": "Seattle Bank",
+      "fdic_insured_since": "08/02/1999",
+      "fdic_cert": "35139",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 Union Street, Floor 29, Seattle, WA 98101",
+      "website": "https://www.seattlebank.com"
+    },
+    {
+      "name": "Sound Banking Company",
+      "fdic_insured_since": "11/01/1990",
+      "fdic_cert": "33183",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6107 Lake Grove St Sw, Lakewood, WA 98499",
+      "website": "https://www.soundbankingco.com"
+    },
+    {
+      "name": "Sound Community Bank",
+      "fdic_insured_since": "05/19/2003",
+      "fdic_cert": "57451",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2400 3rd Ave, Seattle, WA 98121",
+      "website": "http://www.soundcb.com"
+    },
+    {
+      "name": "State Bank Northwest",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2945",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "12902 E Sprague Ave, Spokane Valley, WA 99216",
+      "website": "http://www.StateBankNorthwest.com"
+    },
+    {
+      "name": "Timberland Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28453",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "624 Simpson Ave, Hoquiam, WA 98550",
+      "website": "http://www.timberlandbank.com"
+    },
+    {
+      "name": "Twin City Bank",
+      "fdic_insured_since": "04/17/2000",
+      "fdic_cert": "35261",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "729 Vandercook Way, Longview, WA 98632",
+      "website": "https://www.twincitybank.com"
+    },
+    {
+      "name": "UniBank",
+      "fdic_insured_since": "11/01/2006",
+      "fdic_cert": "58407",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "19315 Highway 99, Lynnwood, WA 98036",
+      "website": "https://www.unibankusa.com"
+    },
+    {
+      "name": "Yakima Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28116",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "118 E Yakima Ave, Yakima, WA 98901",
+      "website": "https://yakimafed.com"
     }
   ],
   "updated": "2026-06-26"

@@ -9,6 +9,118 @@
       "primary_regulator": "Federal Deposit Insurance Corporation",
       "headquarters_address": "1970 Village Center Cir, Ste 1, Las Vegas, NV 89134",
       "website": "https://www.bealbankUSA.com"
+    },
+    {
+      "name": "Credit One Bank, National Association",
+      "fdic_insured_since": "07/30/1984",
+      "fdic_cert": "25620",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "6801 S Cimarron Rd, Las Vegas, NV 89113",
+      "website": "https://WWW.CREDITONEBANK.COM"
+    },
+    {
+      "name": "Eaglemark Savings Bank",
+      "fdic_insured_since": "08/25/1997",
+      "fdic_cert": "34313",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9850 Double R Blvd, Ste 100, Reno, NV 89521",
+      "website": ""
+    },
+    {
+      "name": "Farm Bureau Bank FSB",
+      "fdic_insured_since": "07/12/1999",
+      "fdic_cert": "35157",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "10345 Professional Cir, Reno, NV 89521",
+      "website": "https://www.farmbureau.bank"
+    },
+    {
+      "name": "First Security Bank of Nevada",
+      "fdic_insured_since": "01/30/2007",
+      "fdic_cert": "58443",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9130 W Russell Rd, Ste 300, Las Vegas, NV 89148",
+      "website": "https://www.fsbnv.com"
+    },
+    {
+      "name": "GBank",
+      "fdic_insured_since": "09/24/2007",
+      "fdic_cert": "58626",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9115 W Russell Rd, Las Vegas, NV 89148",
+      "website": "http://www.g.bank"
+    },
+    {
+      "name": "GenuBank",
+      "fdic_insured_since": "06/02/2008",
+      "fdic_cert": "58806",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8488 Rozita Lee Ave, Ste 105, Las Vegas, NV 89113",
+      "website": "https://www.genubank.com"
+    },
+    {
+      "name": "Lexicon Bank",
+      "fdic_insured_since": "08/12/2019",
+      "fdic_cert": "59117",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "330 S Rampart Blvd, Ste 150, Las Vegas, NV 89145",
+      "website": "https://www.lexiconbank.com"
+    },
+    {
+      "name": "Meadows Bank",
+      "fdic_insured_since": "03/26/2008",
+      "fdic_cert": "58722",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8912 Spanish Ridge Ave, Ste 100, Las Vegas, NV 89148",
+      "website": "http://www.meadowsbank.bank"
+    },
+    {
+      "name": "Nevada Bank and Trust Company",
+      "fdic_insured_since": "06/21/1978",
+      "fdic_cert": "22669",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "210 Front Street, Caliente, NV 89008",
+      "website": "https://www.nevadabankandtrust.com"
+    },
+    {
+      "name": "The First National Bank of Ely",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2273",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "595 Aultman St, Ely, NV 89301",
+      "website": "https://www.fnbely.com"
+    },
+    {
+      "name": "Town & Country Bank",
+      "fdic_insured_since": "04/15/2002",
+      "fdic_cert": "57312",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8620 W Tropicana Ave, Las Vegas, NV 89147",
+      "website": "https://www.tcbanknv.bank"
+    },
+    {
+      "name": "Toyota Financial Savings Bank",
+      "fdic_insured_since": "08/16/2004",
+      "fdic_cert": "57542",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2485 Village View Dr, Ste 200, Henderson, NV 89074",
+      "website": "https://www.toyotabank.com"
+    },
+    {
+      "name": "Valley Bank of Nevada",
+      "fdic_insured_since": "08/01/2005",
+      "fdic_cert": "57933",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6385 Simmons St, North Las Vegas, NV 89031",
+      "website": "https://www.valleybanknv.com"
+    },
+    {
+      "name": "Wells Fargo National Bank West",
+      "fdic_insured_since": "12/01/1988",
+      "fdic_cert": "27389",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4455 Spring Mountain Rd, Las Vegas, NV 89102",
+      "website": "https://www.wellsfargo.com"
     }
   ],
   "updated": "2026-06-26"

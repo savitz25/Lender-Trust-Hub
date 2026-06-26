@@ -3,12 +3,116 @@
   "abbr": "OR",
   "banks": [
     {
+      "name": "Bank of Eastern Oregon",
+      "fdic_insured_since": "03/03/1945",
+      "fdic_cert": "16243",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "279 N Main St, Heppner, OR 97836",
+      "website": "https://www.beobank.com"
+    },
+    {
+      "name": "Citizens Bank",
+      "fdic_insured_since": "10/05/1957",
+      "fdic_cert": "17809",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "275 Sw 3rd St, Corvallis, OR 97333",
+      "website": "https://www.citizensEbank.com"
+    },
+    {
+      "name": "Clackamas County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9486",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "38975 Proctor Blvd, Sandy, OR 97055",
+      "website": "https://www.clackamascountybank.com"
+    },
+    {
       "name": "Columbia Bank",
       "fdic_insured_since": "11/09/1953",
       "fdic_cert": "17266",
       "primary_regulator": "Federal Deposit Insurance Corporation",
       "headquarters_address": "445 Se Main St, Roseburg, OR 97470",
       "website": "https://www.columbiabank.com/"
+    },
+    {
+      "name": "Evergreen Federal Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28914",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "969 Se 6th St, Grants Pass, OR 97526",
+      "website": "https://www.evergreenfederal.bank"
+    },
+    {
+      "name": "First Federal Savings and Loan Association of McMinnville",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29624",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "118 Ne 3rd St, Mcminnville, OR 97128",
+      "website": "https://www.firstfedweb.com"
+    },
+    {
+      "name": "Lewis & Clark Bank",
+      "fdic_insured_since": "12/15/2006",
+      "fdic_cert": "58428",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15960 Agnes Ave, Oregon City, OR 97045",
+      "website": "https://www.lewisandclarkbank.com"
+    },
+    {
+      "name": "Oregon Coast Bank",
+      "fdic_insured_since": "07/08/2002",
+      "fdic_cert": "57373",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "909 Se Bay Blvd, Newport, OR 97365",
+      "website": "https://oregoncoast.bank"
+    },
+    {
+      "name": "Oregon Pacific Banking Company dba Oregon Pacific Bank",
+      "fdic_insured_since": "12/17/1979",
+      "fdic_cert": "23007",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1355 Highway 101, Florence, OR 97439",
+      "website": "https://www.oregonpacificbank.com"
+    },
+    {
+      "name": "Pacific West Bank",
+      "fdic_insured_since": "11/05/2004",
+      "fdic_cert": "57872",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2040 8th Ave, West Linn, OR 97068",
+      "website": "https://www.pacificwestbank.com"
+    },
+    {
+      "name": "People's Bank of Commerce",
+      "fdic_insured_since": "03/02/1998",
+      "fdic_cert": "34685",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1528 Biddle Rd, Medford, OR 97504",
+      "website": "https://www.peoplesbank.bank"
+    },
+    {
+      "name": "Pioneer Trust Bank, National Association",
+      "fdic_insured_since": "07/01/1968",
+      "fdic_cert": "19827",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "109 Commercial St Ne, Salem, OR 97301",
+      "website": "https://WWW.PIONEERTRUSTBANK.COM"
+    },
+    {
+      "name": "Summit Bank",
+      "fdic_insured_since": "02/23/2004",
+      "fdic_cert": "57706",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "96 E Broadway, Eugene, OR 97401",
+      "website": "https://sbko.bank"
+    },
+    {
+      "name": "Willamette Valley Bank",
+      "fdic_insured_since": "10/31/2000",
+      "fdic_cert": "57033",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 High St Ne, Salem, OR 97301",
+      "website": "https://WWW.WillametteValleyBank.com"
     }
   ],
   "updated": "2026-06-26"

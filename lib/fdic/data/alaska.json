@@ -1,0 +1,47 @@
+{
+  "fullName": "Alaska",
+  "abbr": "AK",
+  "banks": [
+    {
+      "name": "Denali State Bank",
+      "fdic_insured_since": "02/03/1986",
+      "fdic_cert": "26530",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "119 N Cushman St, Fairbanks, AK 99701",
+      "website": "https://www.denalistatebank.com"
+    },
+    {
+      "name": "First Bank",
+      "fdic_insured_since": "11/23/1934",
+      "fdic_cert": "14885",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "331 Dock St, Ketchikan, AK 99901",
+      "website": "https://WWW.FIRSTBANKAK.COM"
+    },
+    {
+      "name": "First National Bank Alaska",
+      "fdic_insured_since": "04/04/1944",
+      "fdic_cert": "16130",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "360 K St, Anchorage, AK 99501",
+      "website": "http://www.fnbalaska.com"
+    },
+    {
+      "name": "Mt. McKinley Bank",
+      "fdic_insured_since": "12/03/1965",
+      "fdic_cert": "19525",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "500 4th Ave, Fairbanks, AK 99701",
+      "website": "https://www.mtmckinleybank.com"
+    },
+    {
+      "name": "Northrim Bank",
+      "fdic_insured_since": "12/04/1990",
+      "fdic_cert": "33216",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3111 C St, Anchorage, AK 99503",
+      "website": "https://www.northrim.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}
