@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<!--
+  HOW TO DEPLOY & SCALE — LenderTrustHub FDIC State Page Template
+  ==============================================================
+  1. PRODUCTION: Next.js routes at /fdic-insured-banks/[state] (preferred for SEO)
+  2. STATIC: Duplicate this file as fdic-banks-florida.html, etc.
+  3. ADD STATES: Extend stateData object below with same bank shape per state
+  4. OTHER CATEGORIES: Replace "FDIC Insured Banks" labels; keep filter/map UX
+  5. SEO: Update title, meta description, canonical, JSON-LD stateName per file
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FDIC Insured Banks in Florida 2026 | Full Verified List | LenderTrustHub</title>
+  <meta name="description" content="Complete 2026 list of FDIC-insured banks in Florida. Certificate numbers, regulators, headquarters, and official FDIC BankFind links. Free, transparent, no paid placements." />
+  <link rel="canonical" href="https://www.lendertrusthub.com/fdic-insured-banks/florida" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <style>
+    :root { --navy: #0A2540; --teal: #00A3A1; --gold: #D4AF37; }
+    .lift:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(10,37,64,.12); }
+    .state-path { cursor: pointer; transition: fill .2s; }
+    .state-path:hover { fill: #33b8b6; }
+    .state-path.selected { fill: var(--teal); }
+  </style>
+  <script type="application/ld+json" id="schema-json"></script>
+</head>
+<body class="bg-zinc-50 text-zinc-800" x-data="fdicPage()" x-init="init()">
+  <!-- Sticky Navbar -->
+  <header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/95 backdrop-blur">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4" aria-label="Main">
+      <a href="/" class="flex items-center gap-2 font-bold text-[var(--navy)]">
+        <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--navy)] text-white">LT</span>
+        LenderTrustHub
+      </a>
+      <div class="hidden gap-6 text-sm md:flex">
+        <a href="/">Home</a>
+        <a href="/local-lenders">Find Lenders</a>
+        <a href="/fdic-insured-banks" class="font-semibold text-[var(--teal)]">FDIC Banks</a>
+        <a href="/calculators">Calculators</a>
+      </div>
+      <a href="/calculators" class="rounded-xl bg-[var(--teal)] px-4 py-2 text-sm font-semibold text-white">Calculators</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-16 text-white">
+    <div class="mx-auto max-w-4xl px-4 text-center">
+      <a href="/fdic-insured-banks" class="mb-4 inline-block text-sm text-teal-200">← Back to National FDIC Hub</a>
+      <p class="mb-3 inline-flex rounded-full border border-teal-400/40 bg-teal-500/10 px-4 py-1 text-sm">Sourced from FDIC • Updated <span x-text="meta.updated"></span></p>
+      <h1 class="text-3xl font-bold md:text-5xl" x-text="`FDIC Insured Banks in ${meta.fullName} (2026) | Verified List & Insights`"></h1>
+      <p class="mt-4 text-lg text-zinc-300" x-text="heroSubline"></p>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="mx-auto max-w-7xl px-4 py-8">
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <template x-for="card in statCards" :key="card.label">
+        <div class="lift rounded-2xl border bg-white p-5 transition">
+          <p class="text-xs font-semibold uppercase text-zinc-400" x-text="card.label"></p>
+          <p class="mt-1 text-2xl font-bold text-[var(--navy)]" x-text="card.value"></p>
+          <p class="text-xs text-zinc-500" x-text="card.sub"></p>
+        </div>
+      </template>
+    </div>
+  </section>
+
+  <!-- Filters + Directory -->
+  <section class="mx-auto max-w-7xl px-4 pb-16">
+    <div class="mb-6 rounded-2xl border bg-white p-4">
+      <input type="search" x-model="search" placeholder="Search name, city, or cert..." class="mb-3 w-full rounded-xl border px-4 py-3" aria-label="Search banks" />
+      <div class="flex flex-wrap gap-2">
+        <template x-for="r in ['OCC','FED','FDIC']" :key="r">
+          <button type="button" @click="toggleReg(r)" class="rounded-full px-3 py-1 text-xs font-semibold" :class="regulators.includes(r)?'bg-[var(--navy)] text-white':'bg-zinc-100'" x-text="r"></button>
+        </template>
+        <button type="button" @click="hqOnly=!hqOnly" class="rounded-full px-3 py-1 text-xs font-semibold" :class="hqOnly?'bg-[var(--navy)] text-white':'bg-zinc-100'">HQ in FL</button>
+        <button type="button" @click="view=view==='grid'?'table':'grid'" class="rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold" x-text="view==='grid'?'Table view':'Card view'"></button>
+      </div>
+    </div>
+
+    <p class="mb-4 text-sm">Showing <strong x-text="filtered.length"></strong> of <span x-text="banks.length"></span> institutions</p>
+
+    <div x-show="view==='grid'" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <template x-for="bank in filtered.slice(0, visible)" :key="bank.fdic_cert">
+        <article class="lift flex flex-col rounded-2xl border bg-white p-5 transition">
+          <h3 class="text-lg font-semibold text-[var(--navy)]" x-text="bank.name"></h3>
+          <p class="mt-2 text-xs text-zinc-500">FDIC Insured Since: <span x-text="bank.fdic_insured_since"></span></p>
+          <p class="mt-1 text-sm">
+            <a :href="bankFind(bank.fdic_cert)" target="_blank" rel="noopener" class="font-mono text-[var(--teal)]" x-text="'#'+bank.fdic_cert"></a>
+            <button type="button" @click="copy(bank.fdic_cert)" class="ml-2 text-xs text-zinc-400">Copy</button>
+          </p>
+          <p class="mt-2 flex-1 text-sm text-zinc-600" x-text="bank.headquarters_address"></p>
+          <a :href="bank.website" target="_blank" rel="noopener" class="mt-4 rounded-xl border py-2 text-center text-sm font-semibold">Visit Website</a>
+        </article>
+      </template>
+    </div>
+
+    <div x-show="view==='table'" class="overflow-x-auto rounded-2xl border bg-white">
+      <table class="min-w-full text-sm">
+        <thead class="bg-zinc-50 text-xs uppercase text-zinc-500"><tr><th class="p-3 text-left">Name</th><th class="p-3">Cert</th><th class="p-3">Since</th><th class="p-3">Address</th></tr></thead>
+        <tbody>
+          <template x-for="bank in filtered.slice(0, visible)" :key="bank.fdic_cert">
+            <tr class="border-t"><td class="p-3" x-text="bank.name"></td><td class="p-3"><a :href="bankFind(bank.fdic_cert)" target="_blank" x-text="bank.fdic_cert" class="text-[var(--teal)]"></a></td><td class="p-3" x-text="bank.fdic_insured_since"></td><td class="p-3" x-text="bank.headquarters_address"></td></tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
+
+    <button type="button" x-show="visible < filtered.length" @click="visible += 24" class="mx-auto mt-8 block rounded-xl border px-6 py-3 font-semibold">Load More</button>
+  </section>
+
+  <footer class="bg-[var(--navy)] py-6 text-center text-xs text-zinc-400">
+    Data sourced from FDIC BankFind. Not financial advice. <a href="https://banks.data.fdic.gov/bankfind-suite/bankfind" class="text-[var(--teal)] underline">Verify at FDIC</a>
+  </footer>
+
+  <script>
+  /*
+   * EXTENSIBILITY: Add states to stateData with identical bank object shape.
+   * Load from external JSON: fetch('/lib/fdic/data/florida.json').then(r=>r.json())
+   */
+  const stateData = {
+    FL: {
+    "fullName": "Florida",
+    "abbr": "FL",
+    "updated": "2026-06-26",
+    "banks": [
+        {
+            "name": "1st Source Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "9087",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "100 N Michigan St Ste B, South Bend, IN 46601",
+            "website": "https://www.1stsource.com"
+        },
+        {
+            "name": "Amerant Bank, National Association",
+            "fdic_insured_since": "09/17/1979",
+            "fdic_cert": "22953",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "220 Alhambra Cir, Coral Gables, FL 33134",
+            "website": "https://www.amerantbank.com"
+        },
+        {
+            "name": "Amerasia Bank",
+            "fdic_insured_since": "06/20/1988",
+            "fdic_cert": "27267",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "4106 Main St, Flushing, NY 11355",
+            "website": "https://www.amerasiabankny.com"
+        },
+        {
+            "name": "American Commerce Bank, National Association",
+            "fdic_insured_since": "10/04/2004",
+            "fdic_cert": "57686",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "400 Us Highway 27 Byp, Bremen, GA 30110",
+            "website": "https://www.americancommercebank.com"
+        },
+        {
+            "name": "American Momentum Bank",
+            "fdic_insured_since": "10/25/2006",
+            "fdic_cert": "58309",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1 Momentum Blvd, College Station, TX 77845",
+            "website": "https://www.americanmomentum.bank"
+        },
+        {
+            "name": "Ameris Bank",
+            "fdic_insured_since": "10/01/1971",
+            "fdic_cert": "20504",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "3490 Piedmont Rd Ne, Atlanta, GA 30305",
+            "website": "https://www.amerisbank.com"
+        },
+        {
+            "name": "Anchor Bank",
+            "fdic_insured_since": "03/22/2005",
+            "fdic_cert": "57931",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "4500 Pga Blvd, Palm Beach Gardens, FL 33418",
+            "website": "https://www.anchorbank.com"
+        },
+        {
+            "name": "Anthem Bank & Trust",
+            "fdic_insured_since": "08/09/1989",
+            "fdic_cert": "29679",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "23910 Railroad Ave, Plaquemine, LA 70764",
+            "website": "https://www.anthembank.com"
+        },
+        {
+            "name": "Axiom Bank, National Association",
+            "fdic_insured_since": "08/09/1989",
+            "fdic_cert": "31390",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "258 Southhall Ln, Maitland, FL 32751",
+            "website": "https://www.axiombanking.com"
+        },
+        {
+            "name": "Banco do Brasil Americas",
+            "fdic_insured_since": "07/24/1986",
+            "fdic_cert": "26725",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1221 Brickell Ave Ste 2200, Miami, FL 33131",
+            "website": "https://www.bbamericas.com"
+        },
+        {
+            "name": "Banesco USA",
+            "fdic_insured_since": "01/10/2006",
+            "fdic_cert": "57815",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "3155 Nw 77 Avenue, Miami, FL 33122",
+            "website": "https://banescousa.com"
+        },
+        {
+            "name": "Bank of America, National Association",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "3510",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "100 N Tryon St, Charlotte, NC 28202",
+            "website": "https://www.bankofamerica.com"
+        },
+        {
+            "name": "Bank of Belle Glade",
+            "fdic_insured_since": "11/14/1963",
+            "fdic_cert": "18930",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "108 Se Avenue D, Belle Glade, FL 33430",
+            "website": "https://www.bankofbelleglade.com"
+        },
+        {
+            "name": "Bank of Central Florida",
+            "fdic_insured_since": "03/19/2007",
+            "fdic_cert": "58479",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "5015 S Florida Ave, Lakeland, FL 33813",
+            "website": "https://www.bankofcentralflorida.com"
+        },
+        {
+            "name": "Bank of England",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "13303",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "123 S Main St, England, AR 72046",
+            "website": "https://www.bankofengland-ar.com"
+        },
+        {
+            "name": "Bank of Pensacola",
+            "fdic_insured_since": "10/26/1973",
+            "fdic_cert": "21284",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "500 S Palafox St, Pensacola, FL 32502",
+            "website": "https://www.bankpensacola.com"
+        },
+        {
+            "name": "Bank OZK",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "110",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "18000 Cantrell Rd, Little Rock, AR 72223",
+            "website": "https://www.ozk.com"
+        },
+        {
+            "name": "BankFlorida",
+            "fdic_insured_since": "08/27/2007",
+            "fdic_cert": "58537",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "12482 Us Highway 301, Dade City, FL 33525",
+            "website": "https://www.bankflorida.com"
+        },
+        {
+            "name": "BankMiami",
+            "fdic_insured_since": "03/17/2025",
+            "fdic_cert": "59354",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1515 Sunset Dr Suite 26, Coral Gables, FL 33143",
+            "website": "https://www.bankmiami.com"
+        },
+        {
+            "name": "BankPlus",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "5903",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "202 E Jackson St, Belzoni, MS 39038",
+            "website": "https://www.bankplus.net"
+        },
+        {
+            "name": "BankUnited, National Association",
+            "fdic_insured_since": "05/21/2009",
+            "fdic_cert": "58979",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "14817 Oak Ln, Miami Lakes, FL 33016",
+            "website": "https://www.bankunited.com"
+        },
+        {
+            "name": "Barwick Banking Company",
+            "fdic_insured_since": "01/06/1976",
+            "fdic_cert": "22205",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "2020 E Main St, Barwick, GA 31720",
+            "website": "https://www.barwickbank.com"
+        },
+        {
+            "name": "BayFirst National Bank",
+            "fdic_insured_since": "02/12/1999",
+            "fdic_cert": "34997",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "700 Central Ave, Saint Petersburg, FL 33701",
+            "website": "https://www.bayfirstfinancial.com"
+        },
+        {
+            "name": "Beal Bank USA",
+            "fdic_insured_since": "08/02/2004",
+            "fdic_cert": "57833",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1970 Village Center Cir Ste 1, Las Vegas, NV 89134",
+            "website": "https://www.bealbankusa.com"
+        },
+        {
+            "name": "Belmont Bank & Trust Company",
+            "fdic_insured_since": "06/14/2006",
+            "fdic_cert": "58165",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "8250 W Belmont Ave, Chicago, IL 60634",
+            "website": "https://www.belmontbank.com"
+        },
+        {
+            "name": "BMO Bank National Association",
+            "fdic_insured_since": "05/17/1947",
+            "fdic_cert": "16571",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "320 S Canal St, Chicago, IL 60606",
+            "website": "https://www.bmo.com"
+        },
+        {
+            "name": "BNY Mellon, National Association",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "7946",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "500 Grant St, Pittsburgh, PA 15258",
+            "website": "https://www.bny.com"
+        },
+        {
+            "name": "Bradesco Bank",
+            "fdic_insured_since": "10/12/1973",
+            "fdic_cert": "21265",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "3011 Ponce De Leon Boulevard Ph1, Coral Gables, FL 33134",
+            "website": "https://www.bradescobank.com"
+        },
+        {
+            "name": "Brannen Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "5676",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "320 S Highway 41, Inverness, FL 34450",
+            "website": "https://www.brannenbanks.com"
+        },
+        {
+            "name": "Busey Bank",
+            "fdic_insured_since": "07/08/1946",
+            "fdic_cert": "16450",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "100 W University Ave, Champaign, IL 61820",
+            "website": "https://www.busey.com"
+        },
+        {
+            "name": "Capital Bank, National Association",
+            "fdic_insured_since": "12/14/1999",
+            "fdic_cert": "35278",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "2275 Research Blvd, Rockville, MD 20850",
+            "website": "https://www.capitalbankmd.com"
+        },
+        {
+            "name": "Capital City Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "9622",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "217 N Monroe St, Tallahassee, FL 32301",
+            "website": "https://www.ccbg.com"
+        },
+        {
+            "name": "CCB Community Bank",
+            "fdic_insured_since": "07/01/1947",
+            "fdic_cert": "16595",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "225 E Three Notch St, Andalusia, AL 36420",
+            "website": "https://www.bankccb.com"
+        },
+        {
+            "name": "Centennial Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "11241",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "620 Chestnut St, Conway, AR 72032",
+            "website": "https://www.my100bank.com"
+        },
+        {
+            "name": "Central Bank",
+            "fdic_insured_since": "02/26/2007",
+            "fdic_cert": "58377",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "20701 Bruce B Downs Blvd, Tampa, FL 33647",
+            "website": "https://www.centralbankfl.com"
+        },
+        {
+            "name": "Century Bank of Florida",
+            "fdic_insured_since": "09/11/2000",
+            "fdic_cert": "35558",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "716 W Fletcher Ave, Tampa, FL 33612",
+            "website": "https://www.centurybk.com"
+        },
+        {
+            "name": "CIBC Bank USA",
+            "fdic_insured_since": "02/06/1991",
+            "fdic_cert": "33306",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "120 S La Salle St, Chicago, IL 60603",
+            "website": "https://us.cibc.com"
+        },
+        {
+            "name": "CIBC National Trust Company",
+            "fdic_insured_since": "05/05/2000",
+            "fdic_cert": "91325",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "3290 Northside Pkwy Nw, Atlanta, GA 30327",
+            "website": "https://private-wealth.us.cibc.com"
+        },
+        {
+            "name": "Citibank, National Association",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "7213",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "5800 S Corporate Pl, Sioux Falls, SD 57108",
+            "website": "https://www.citibank.com"
+        },
+        {
+            "name": "Citizens Bank and Trust",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "5673",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "2 E Wall St, Frostproof, FL 33843",
+            "website": "https://www.citizens-bank.com"
+        },
+        {
+            "name": "Citizens Bank, National Association",
+            "fdic_insured_since": "05/13/2005",
+            "fdic_cert": "57957",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "1 Citizens Plz, Providence, RI 02903",
+            "website": "https://www.citizensbank.com"
+        },
+        {
+            "name": "City National Bank",
+            "fdic_insured_since": "12/04/1953",
+            "fdic_cert": "17281",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "555 S Flower St, Los Angeles, CA 90071",
+            "website": "https://www.cnb.com"
+        },
+        {
+            "name": "City National Bank of Florida",
+            "fdic_insured_since": "08/12/1970",
+            "fdic_cert": "20234",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "25 W Flagler St, Miami, FL 33130",
+            "website": "https://www.citynational.com"
+        },
+        {
+            "name": "Climate First Bank",
+            "fdic_insured_since": "06/01/2021",
+            "fdic_cert": "59257",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "182 37th Ave N, Saint Petersburg, FL 33704",
+            "website": "https://www.climatefirstbank.com"
+        },
+        {
+            "name": "Cogent Bank",
+            "fdic_insured_since": "09/10/1999",
+            "fdic_cert": "34908",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "420 S Orange Ave, Orlando, FL 32801",
+            "website": "https://www.cogentbank.net"
+        },
+        {
+            "name": "Colony Bank",
+            "fdic_insured_since": "04/15/1976",
+            "fdic_cert": "22257",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "302 S Main St, Fitzgerald, GA 31750",
+            "website": "https://colony.bank"
+        },
+        {
+            "name": "Commerce Bank",
+            "fdic_insured_since": "02/21/1984",
+            "fdic_cert": "24998",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "1000 Walnut St, Kansas City, MO 64106",
+            "website": "https://www.commercebank.com"
+        },
+        {
+            "name": "Commerce Bank & Trust",
+            "fdic_insured_since": "02/03/2003",
+            "fdic_cert": "57429",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "1201 S Orlando Ave, Winter Park, FL 32789",
+            "website": "https://www.cbt-fl.com"
+        },
+        {
+            "name": "Community Bank of Mississippi",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "8879",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1905 Community Bank Way, Flowood, MS 39232",
+            "website": "https://www.communitybank.net"
+        },
+        {
+            "name": "Community Bank of the South",
+            "fdic_insured_since": "11/29/1999",
+            "fdic_cert": "35212",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "277 N Sykes Creek Pkwy, Merritt Island, FL 32953",
+            "website": "https://www.cbos.bank"
+        },
+        {
+            "name": "ConnectOne Bank",
+            "fdic_insured_since": "01/15/2005",
+            "fdic_cert": "57919",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "301 Sylvan Ave, Englewood Cliffs, NJ 07632",
+            "website": "https://www.connectonebank.com"
+        },
+        {
+            "name": "Crescent Bank",
+            "fdic_insured_since": "08/30/1991",
+            "fdic_cert": "33492",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "2201 Veterans Memorial Blvd Suite 100, Metairie, LA 70002",
+            "website": "https://www.crescentbank.com"
+        },
+        {
+            "name": "Crews Bank & Trust",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "8021",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "106 E Main St, Wauchula, FL 33873",
+            "website": "https://www.crews.bank"
+        },
+        {
+            "name": "Cypress Bank & Trust",
+            "fdic_insured_since": "08/16/2021",
+            "fdic_cert": "35506",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "6115 N Wickham Rd, Melbourne, FL 32940",
+            "website": "https://www.cypressbanktrust.com"
+        },
+        {
+            "name": "Desjardins Bank, National Association",
+            "fdic_insured_since": "02/28/1992",
+            "fdic_cert": "33565",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "1001 E Hallandale Beach Blvd, Hallandale, FL 33009",
+            "website": "https://www.desjardinsbank.com"
+        },
+        {
+            "name": "DLP Bank",
+            "fdic_insured_since": "03/19/1957",
+            "fdic_cert": "17734",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "811 S Walnut St, Starke, FL 32091",
+            "website": "https://www.communitystatebank-fl.com"
+        },
+        {
+            "name": "Eastern National Bank",
+            "fdic_insured_since": "09/03/1969",
+            "fdic_cert": "20026",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "9700 S Dixie Hwy, Miami, FL 33156",
+            "website": "https://www.enbfl.com"
+        },
+        {
+            "name": "Echelon Bank",
+            "fdic_insured_since": "05/27/2026",
+            "fdic_cert": "59377",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1901 Ulmerton Rd, Clearwater, FL 33762",
+            "website": "https://echelon.bank"
+        },
+        {
+            "name": "Edison National Bank",
+            "fdic_insured_since": "08/29/1997",
+            "fdic_cert": "34489",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "13000 S Cleveland Ave, Fort Myers, FL 33907",
+            "website": "https://www.edisonnationalbank.com"
+        },
+        {
+            "name": "Emigrant Bank",
+            "fdic_insured_since": "09/14/2001",
+            "fdic_cert": "57083",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "201 S Biscayne Blvd Suite 1120, Miami, FL 33131",
+            "website": "https://www.emigrant.com"
+        },
+        {
+            "name": "ENCORE BANK",
+            "fdic_insured_since": "09/08/1997",
+            "fdic_cert": "34562",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "1801 Rahling Rd, Little Rock, AR 72223",
+            "website": "https://www.bankencore.com"
+        },
+        {
+            "name": "Enterprise Bank & Trust",
+            "fdic_insured_since": "05/09/1988",
+            "fdic_cert": "27237",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "150 N Meramec Ave, Clayton, MO 63105",
+            "website": "https://www.enterprisebank.com"
+        },
+        {
+            "name": "EverBank, National Association",
+            "fdic_insured_since": "10/01/1998",
+            "fdic_cert": "34775",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "301 W Bay St, Jacksonville, FL 32202",
+            "website": "https://www.everbank.com"
+        },
+        {
+            "name": "Evermore Bank",
+            "fdic_insured_since": "12/15/2022",
+            "fdic_cert": "59306",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "3696 N Federal Hwy Suite 100, Fort Lauderdale, FL 33308",
+            "website": "https://www.evermorebankfl.com"
+        },
+        {
+            "name": "FIDELITY BANK",
+            "fdic_insured_since": "08/09/1989",
+            "fdic_cert": "28316",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "353 Carondelet St, New Orleans, LA 70130",
+            "website": "https://www.bankwithfidelity.com"
+        },
+        {
+            "name": "Fifth Third Bank, National Association",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "6672",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "38 Fountain Square Plz, Cincinnati, OH 45202",
+            "website": "https://www.53.com"
+        },
+        {
+            "name": "First American Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "3657",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "700 Busse Rd, Elk Grove Village, IL 60007",
+            "website": "https://www.firstambank.com"
+        },
+        {
+            "name": "First American Trust, FSB",
+            "fdic_insured_since": "08/09/1989",
+            "fdic_cert": "26312",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "5 First American Way Fl 3, Santa Ana, CA 92707",
+            "website": "https://www.firstamtrust.com"
+        },
+        {
+            "name": "First Bank (NJ)",
+            "fdic_insured_since": "04/23/2007",
+            "fdic_cert": "58481",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "2465 Kuser Rd, Hamilton, NJ 08690",
+            "website": "https://www.myfirstbank.com"
+        },
+        {
+            "name": "First Bank (FL)",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "9620",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "300 E Sugarland Hwy, Clewiston, FL 33440",
+            "website": "https://www.first1bank.com"
+        },
+        {
+            "name": "First Colony Bank of Florida",
+            "fdic_insured_since": "01/28/2008",
+            "fdic_cert": "58644",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "711 N Orlando Ave, Maitland, FL 32751",
+            "website": "https://www.firstcolonybank.net"
+        },
+        {
+            "name": "First Federal Bank",
+            "fdic_insured_since": "08/09/1989",
+            "fdic_cert": "31313",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "4705 W Us Highway 90, Lake City, FL 32055",
+            "website": "https://www.ffbf.com"
+        },
+        {
+            "name": "First Horizon Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "4977",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "165 Madison Ave, Memphis, TN 38103",
+            "website": "https://www.firsthorizon.com"
+        },
+        {
+            "name": "First National Bank of Coffee County",
+            "fdic_insured_since": "09/23/1991",
+            "fdic_cert": "33506",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "420 Madison Ave S, Douglas, GA 31533",
+            "website": "https://www.fnbcc.com"
+        },
+        {
+            "name": "First National Bank of Decatur County",
+            "fdic_insured_since": "04/05/2004",
+            "fdic_cert": "57694",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "819 E Shotwell St, Bainbridge, GA 39819",
+            "website": "https://www.fnbdc.com"
+        },
+        {
+            "name": "First National Bank of Pasco",
+            "fdic_insured_since": "11/03/1986",
+            "fdic_cert": "26829",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "13315 Us Highway 301, Dade City, FL 33525",
+            "website": "https://www.fnbpasco.com/"
+        },
+        {
+            "name": "First National Bank of Wauchula",
+            "fdic_insured_since": "01/12/1960",
+            "fdic_cert": "18136",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "406 N 6th Ave, Wauchula, FL 33873",
+            "website": "https://www.fnbwauchula.com"
+        },
+        {
+            "name": "First National Banker's Bank",
+            "fdic_insured_since": "07/02/1984",
+            "fdic_cert": "25247",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "7813 Office Park Blvd, Baton Rouge, LA 70809",
+            "website": "https://www.bankers-bank.com"
+        },
+        {
+            "name": "First Port City Bank",
+            "fdic_insured_since": "10/07/1974",
+            "fdic_cert": "21784",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "400 W Shotwell St, Bainbridge, GA 39819",
+            "website": "https://www.firstportcity.com"
+        },
+        {
+            "name": "First Security Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "5633",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "314 N Spring St, Searcy, AR 72143",
+            "website": "https://www.fsbank.com"
+        },
+        {
+            "name": "First Southern Bank (GA)",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "10055",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "930 Memorial Dr, Waycross, GA 31501",
+            "website": "https://www.fsb-bank.bank"
+        },
+        {
+            "name": "First Southern Bank (AL)",
+            "fdic_insured_since": "08/09/1989",
+            "fdic_cert": "29332",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "201 S Court Street, Florence, AL 35630",
+            "website": "https://www.firstsouthern.com"
+        },
+        {
+            "name": "First State Bank",
+            "fdic_insured_since": "10/29/1955",
+            "fdic_cert": "17509",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1201 Simonton St, Key West, FL 33040",
+            "website": "https://keysbank.com"
+        },
+        {
+            "name": "First-Citizens Bank & Trust Company",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "11063",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "239 Fayetteville St, Raleigh, NC 27601",
+            "website": "https://www.firstcitizens.com"
+        },
+        {
+            "name": "FirstBank Puerto Rico",
+            "fdic_insured_since": "08/09/1989",
+            "fdic_cert": "30387",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1519 Ave Ponce De Leon, Santurce, PR 00909",
+            "website": "https://www.1firstbank.com"
+        },
+        {
+            "name": "Flagship Bank",
+            "fdic_insured_since": "01/23/2006",
+            "fdic_cert": "58113",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "29750 Us Highway 19 N, Clearwater, FL 33761",
+            "website": "https://www.flagshipbank.com"
+        },
+        {
+            "name": "Flagstar Bank, National Association",
+            "fdic_insured_since": "08/09/1989",
+            "fdic_cert": "32541",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "102 Duffy Ave, Hicksville, NY 11801",
+            "website": "https://www.flagstar.com"
+        },
+        {
+            "name": "Florida Capital Bank, National Association",
+            "fdic_insured_since": "08/12/1985",
+            "fdic_cert": "26323",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "10151 Deerwood Park Blvd Bldg 100 Ste 200, Jacksonville, FL 32256",
+            "website": "https://www.flcb.com"
+        },
+        {
+            "name": "FNBT BANK",
+            "fdic_insured_since": "04/09/1956",
+            "fdic_cert": "17580",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "29 Eglin Pkwy Ne, Fort Walton Beach, FL 32548",
+            "website": "https://www.fnbt.com"
+        },
+        {
+            "name": "Gala Bank",
+            "fdic_insured_since": "12/30/2024",
+            "fdic_cert": "59358",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "517 Sw 27th Ave, Ocala, FL 34471",
+            "website": "https://www.gala.bank"
+        },
+        {
+            "name": "Grove Bank & Trust",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "8018",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "2701 S Bayshore Dr, Miami, FL 33133",
+            "website": "https://www.grovebankandtrust.com"
+        },
+        {
+            "name": "Gulf Atlantic Bank",
+            "fdic_insured_since": "04/13/2020",
+            "fdic_cert": "59181",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "2222 N Roosevelt Blvd, Key West, FL 33040",
+            "website": "https://www.gulfatlanticbank.com"
+        },
+        {
+            "name": "Gulf Coast Bank and Trust Company",
+            "fdic_insured_since": "06/08/1990",
+            "fdic_cert": "32974",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "200 Saint Charles Ave, New Orleans, LA 70130",
+            "website": "https://www.gulfbank.com"
+        },
+        {
+            "name": "Gulf Coast Business Bank",
+            "fdic_insured_since": "06/06/2022",
+            "fdic_cert": "59281",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "12205 Metro Pkwy, Fort Myers, FL 33966",
+            "website": "https://www.gcbbswfl.com"
+        },
+        {
+            "name": "Gulfside Bank",
+            "fdic_insured_since": "11/13/2018",
+            "fdic_cert": "59140",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "333 N Orange Ave, Sarasota, FL 34236",
+            "website": "https://www.gulfsidebank.com"
+        },
+        {
+            "name": "Hancock Whitney Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "12441",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "2510 14th St, Gulfport, MS 39501",
+            "website": "https://www.hancockwhitney.com"
+        },
+        {
+            "name": "Helm Bank USA",
+            "fdic_insured_since": "12/08/1989",
+            "fdic_cert": "32718",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "999 Brickell Ave, Miami, FL 33131",
+            "website": "https://www.helmbankusa.com"
+        },
+        {
+            "name": "HNB First Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "2805",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "40 S Main St, Headland, AL 36345",
+            "website": "https://www.hnbfirst.com"
+        },
+        {
+            "name": "HSBC Bank USA, National Association",
+            "fdic_insured_since": "07/01/2004",
+            "fdic_cert": "57890",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "1800 Tysons Blvd Ste 560, Tysons, VA 22102",
+            "website": "https://www.about.us.hsbc.com/hsbc-in-the-usa"
+        },
+        {
+            "name": "INB, National Association",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "3664",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "322 E Capitol Ave, Springfield, IL 62701",
+            "website": "https://www.inb.com"
+        },
+        {
+            "name": "IncredibleBank",
+            "fdic_insured_since": "12/08/1967",
+            "fdic_cert": "19772",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "327 N 17th Ave, Wausau, WI 54401",
+            "website": "https://www.incrediblebank.com"
+        },
+        {
+            "name": "Independent Bank",
+            "fdic_insured_since": "04/20/1998",
+            "fdic_cert": "34728",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "5050 Poplar Avenue, Memphis, TN 38157",
+            "website": "https://www.i-bankonline.com"
+        },
+        {
+            "name": "Interamerican Bank, A FSB",
+            "fdic_insured_since": "08/09/1989",
+            "fdic_cert": "31823",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "9190 Coral Way, Miami, FL 33165",
+            "website": "https://www.interamericanbank.com"
+        },
+        {
+            "name": "Interaudi Bank",
+            "fdic_insured_since": "06/14/1983",
+            "fdic_cert": "24516",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "19 E 54th St, New York, NY 10022",
+            "website": "https://www.interaudibank.com"
+        },
+        {
+            "name": "International Finance Bank",
+            "fdic_insured_since": "11/30/1983",
+            "fdic_cert": "24823",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "777 Sw 37th Ave, Miami, FL 33135",
+            "website": "https://www.ifbbank.com"
+        },
+        {
+            "name": "Intracoastal Bank",
+            "fdic_insured_since": "06/16/2008",
+            "fdic_cert": "58692",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1290 Palm Coast Pkwy Nw, Palm Coast, FL 32137",
+            "website": "https://www.intracoastal.bank"
+        },
+        {
+            "name": "Ipava State Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "10473",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1203 S Main St, Lewistown, IL 61542",
+            "website": "https://www.ipavastatebank.com"
+        },
+        {
+            "name": "Israel Discount Bank of New York",
+            "fdic_insured_since": "07/01/1969",
+            "fdic_cert": "19977",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1114 Avenue Of The Americas, New York, NY 10036",
+            "website": "https://www.idbny.com"
+        },
+        {
+            "name": "JPMorgan Chase Bank, National Association",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "628",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "1111 Polaris Pkwy, Columbus, OH 43240",
+            "website": "https://www.jpmorganchase.com"
+        },
+        {
+            "name": "KeyBank National Association",
+            "fdic_insured_since": "01/16/1956",
+            "fdic_cert": "17534",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "127 Public Sq, Cleveland, OH 44114",
+            "website": "https://www.key.com"
+        },
+        {
+            "name": "Lafayette State Bank",
+            "fdic_insured_since": "04/02/1946",
+            "fdic_cert": "16396",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "340 W Main St, Mayo, FL 32066",
+            "website": "https://www.lafayettestate.bank"
+        },
+        {
+            "name": "Lake Forest Bank & Trust Company, National Association",
+            "fdic_insured_since": "12/26/1991",
+            "fdic_cert": "27589",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "727 N Bank Ln, Lake Forest, IL 60045",
+            "website": "https://www.lakeforestbank.com"
+        },
+        {
+            "name": "Liberty Savings Bank, F.S.B.*",
+            "fdic_insured_since": "08/09/1989",
+            "fdic_cert": "32242",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "2251 Rombach Ave, Wilmington, OH 45177",
+            "website": "https://www.libertysavingsbank.com"
+        },
+        {
+            "name": "Locality Bank",
+            "fdic_insured_since": "01/12/2022",
+            "fdic_cert": "59278",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1400 S Andrews Ave, Fort Lauderdale, FL 33316",
+            "website": "https://www.localitybank.com"
+        },
+        {
+            "name": "Madison County Community Bank",
+            "fdic_insured_since": "05/05/1999",
+            "fdic_cert": "35056",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "301 E Base St, Madison, FL 32340",
+            "website": "https://www.mccbflorida.com"
+        },
+        {
+            "name": "Magnolia Bank, Incorporated",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "8120",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "651 W Dixie Ave, Elizabethtown, KY 42701",
+            "website": "https://www.magnoliabank.com"
+        },
+        {
+            "name": "Mainstreet Community Bank of Florida",
+            "fdic_insured_since": "10/24/2003",
+            "fdic_cert": "57598",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "204 S Woodland Blvd, Deland, FL 32720",
+            "website": "https://www.bankonmainstreet.com"
+        },
+        {
+            "name": "Manufacturers and Traders Trust Company",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "588",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "1 M And T Plz, Buffalo, NY 14203",
+            "website": "https://www.mtb.com"
+        },
+        {
+            "name": "Marine Bank & Trust Company",
+            "fdic_insured_since": "07/01/1997",
+            "fdic_cert": "34233",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "571 Beachland Blvd, Vero Beach, FL 32963",
+            "website": "https://www.marinebankandtrust.com"
+        },
+        {
+            "name": "Members Trust Company",
+            "fdic_insured_since": "10/30/2003",
+            "fdic_cert": "57470",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "14055 Riveredge Dr Ste 525, Tampa, FL 33637",
+            "website": "https://www.memberstrust.com"
+        },
+        {
+            "name": "Meridian Bank",
+            "fdic_insured_since": "07/08/2004",
+            "fdic_cert": "57777",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "220 W. Lancaster Avenue, Wayne, PA 19087",
+            "website": "https://www.meridianbanker.com"
+        },
+        {
+            "name": "Metro City Bank",
+            "fdic_insured_since": "04/04/2006",
+            "fdic_cert": "58181",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "5114 Buford Hwy Ne, Doraville, GA 30340",
+            "website": "https://www.metrocitybank.bank"
+        },
+        {
+            "name": "Metropolitan Commercial Bank",
+            "fdic_insured_since": "06/21/1999",
+            "fdic_cert": "34699",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "99 Park Ave, New York, NY 10016",
+            "website": "https://www.mcbankny.com"
+        },
+        {
+            "name": "MidSouth Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "2777",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "2526 W Main St, Dothan, AL 36301",
+            "website": "https://www.bankmidsouth.com"
+        },
+        {
+            "name": "Millennium Bank",
+            "fdic_insured_since": "06/21/1999",
+            "fdic_cert": "35138",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "6392 Artesian Cir, Ooltewah, TN 37363",
+            "website": "https://www.ngnb.bank"
+        },
+        {
+            "name": "Natbank, National Association",
+            "fdic_insured_since": "12/06/1994",
+            "fdic_cert": "33959",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "4031 Oakwood Blvd, Hollywood, FL 33020",
+            "website": "https://www.natbank.com"
+        },
+        {
+            "name": "NBH Bank",
+            "fdic_insured_since": "12/10/2010",
+            "fdic_cert": "59052",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "7800 E Orchard Rd Ste 200, Greenwood Village, CO 80111",
+            "website": "https://www.nbhbank.com"
+        },
+        {
+            "name": "Newtek Bank, National Association",
+            "fdic_insured_since": "04/01/1963",
+            "fdic_cert": "18734",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "1111 Brickell Ave Suite 135, Miami, FL 33131",
+            "website": "https://www.newtekbank.com"
+        },
+        {
+            "name": "Nicolet National Bank",
+            "fdic_insured_since": "10/31/2000",
+            "fdic_cert": "57038",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "111 N Washington St, Green Bay, WI 54301",
+            "website": "https://www.nicoletbank.com"
+        },
+        {
+            "name": "Ocean Bank",
+            "fdic_insured_since": "12/09/1982",
+            "fdic_cert": "24156",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "780 Nw 42nd Ave, Miami, FL 33126",
+            "website": "https://www.oceanbank.com"
+        },
+        {
+            "name": "Old Dominion National Bank",
+            "fdic_insured_since": "07/23/2007",
+            "fdic_cert": "58504",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "852 W Main St Ste 106, Charlottesville, VA 22903",
+            "website": "https://www.odnb.bank"
+        },
+        {
+            "name": "One Florida Bank",
+            "fdic_insured_since": "10/29/2008",
+            "fdic_cert": "58811",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1601 S Orange Ave, Orlando, FL 32806",
+            "website": "https://www.onefloridabank.com"
+        },
+        {
+            "name": "OneUnited Bank",
+            "fdic_insured_since": "08/02/1982",
+            "fdic_cert": "23966",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "185 Devonshire St, Boston, MA 02110",
+            "website": "https://www.oneunited.com"
+        },
+        {
+            "name": "OptimumBank",
+            "fdic_insured_since": "11/01/2000",
+            "fdic_cert": "35430",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "2929 E Commercial Blvd, Fort Lauderdale, FL 33308",
+            "website": "https://www.optimumbank.com"
+        },
+        {
+            "name": "Origin Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "12614",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "3921 Elm St, Choudrant, LA 71227",
+            "website": "https://www.origin.bank"
+        },
+        {
+            "name": "Pacific National Bank",
+            "fdic_insured_since": "07/22/1985",
+            "fdic_cert": "26299",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "1390 Brickell Ave, Miami, FL 33131",
+            "website": "https://www.pnb.com"
+        },
+        {
+            "name": "Paradise Bank",
+            "fdic_insured_since": "07/25/2005",
+            "fdic_cert": "58030",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "3800 N Federal Hwy, Boca Raton, FL 33431",
+            "website": "https://www.paradise.bank"
+        },
+        {
+            "name": "Peoples Bank of Graceville",
+            "fdic_insured_since": "07/12/1974",
+            "fdic_cert": "21692",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "5306 Brown St, Graceville, FL 32440",
+            "website": "https://www.peoplesgraceville.com"
+        },
+        {
+            "name": "PeoplesSouth Bank",
+            "fdic_insured_since": "10/19/1973",
+            "fdic_cert": "21292",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "203 W Crawford St, Colquitt, GA 39837",
+            "website": "https://www.peoplessouth.com"
+        },
+        {
+            "name": "Pibank, National Association",
+            "fdic_insured_since": "07/02/1984",
+            "fdic_cert": "25258",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "860 Nw 42nd Ave Ste 500, Miami, FL 33126",
+            "website": "https://www.intercreditbank.com"
+        },
+        {
+            "name": "Pineland Bank",
+            "fdic_insured_since": "11/16/1939",
+            "fdic_cert": "15699",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "501 W 12th St, Alma, GA 31510",
+            "website": "https://www.pineland.bank"
+        },
+        {
+            "name": "Pinnacle Bank",
+            "fdic_insured_since": "10/27/2000",
+            "fdic_cert": "35583",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "21 Platform Way S Suite 2300, Nashville, TN 37203",
+            "website": "https://www.pnfp.com"
+        },
+        {
+            "name": "PNB Community Bank",
+            "fdic_insured_since": "06/16/1986",
+            "fdic_cert": "26687",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1020 John Sims Pkwy E, Niceville, FL 32578",
+            "website": "https://pnbcommunity.bank"
+        },
+        {
+            "name": "PNC Bank, National Association",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "6384",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "222 Delaware Ave, Wilmington, DE 19801",
+            "website": "https://www.pnc.com"
+        },
+        {
+            "name": "Popular Bank",
+            "fdic_insured_since": "01/02/1999",
+            "fdic_cert": "34967",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "85 Broad St, New York, NY 10004",
+            "website": "https://www.popularbank.com"
+        },
+        {
+            "name": "Portrait Bank",
+            "fdic_insured_since": "06/22/2026",
+            "fdic_cert": "59381",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "941 W Morse Blvd Ste 125, Winter Park, FL 32789",
+            "website": "https://Not Listed"
+        },
+        {
+            "name": "Prime Meridian Bank",
+            "fdic_insured_since": "02/04/2008",
+            "fdic_cert": "58694",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1471 Timberlane Rd, Tallahassee, FL 32312",
+            "website": "https://www.primemeridianbank.com"
+        },
+        {
+            "name": "PrimeSouth Bank",
+            "fdic_insured_since": "06/02/1934",
+            "fdic_cert": "5694",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "3473 Us Highway 84, Blackshear, GA 31516",
+            "website": "https://www.primesouth.com"
+        },
+        {
+            "name": "Raymond James Bank",
+            "fdic_insured_since": "05/06/1994",
+            "fdic_cert": "33893",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "710 Carillon Pkwy, Saint Petersburg, FL 33716",
+            "website": "https://www.raymondjamesbank.com"
+        },
+        {
+            "name": "Regions Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "12368",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "1900 5th Ave N, Birmingham, AL 35203",
+            "website": "https://www.regions.com"
+        },
+        {
+            "name": "Renasant Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "12437",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "209 Troy St, Tupelo, MS 38804",
+            "website": "https://www.renasant.com"
+        },
+        {
+            "name": "Republic Bank & Trust Company",
+            "fdic_insured_since": "01/11/1982",
+            "fdic_cert": "23627",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "601 W Market St, Louisville, KY 40202",
+            "website": "https://www.republicbank.com"
+        },
+        {
+            "name": "River Bank & Trust",
+            "fdic_insured_since": "04/03/2006",
+            "fdic_cert": "58255",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "2611 Legends Dr, Prattville, AL 36066",
+            "website": "https://www.riverbankandtrust.com"
+        },
+        {
+            "name": "Safra National Bank of New York",
+            "fdic_insured_since": "01/01/1987",
+            "fdic_cert": "26876",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "546 5th Ave, New York, NY 10036",
+            "website": "https://www.safra.com"
+        },
+        {
+            "name": "Sanibel Captiva Community Bank",
+            "fdic_insured_since": "01/21/2003",
+            "fdic_cert": "57425",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "2406 Periwinkle Way, Sanibel, FL 33957",
+            "website": "https://www.sancapbank.com"
+        },
+        {
+            "name": "Santander Bank, N.A.",
+            "fdic_insured_since": "08/09/1989",
+            "fdic_cert": "29950",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "824 N Market St Ste 100, Wilmington, DE 19801",
+            "website": "https://www.santander.com"
+        },
+        {
+            "name": "Seacoast National Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "131",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "815 S Colorado Ave, Stuart, FL 34994",
+            "website": "https://www.seacoastbank.com"
+        },
+        {
+            "name": "ServisFirst Bank",
+            "fdic_insured_since": "05/02/2005",
+            "fdic_cert": "57993",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "2500 Woodcrest Pl, Birmingham, AL 35209",
+            "website": "https://www.servisfirstbank.com"
+        },
+        {
+            "name": "SmartBank",
+            "fdic_insured_since": "01/08/2007",
+            "fdic_cert": "58463",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "2430 Teaster Ln, Pigeon Forge, TN 37863",
+            "website": "https://www.smartbank.com"
+        },
+        {
+            "name": "Southeast First National Bank",
+            "fdic_insured_since": "05/22/1968",
+            "fdic_cert": "19819",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "10144 Commerce St, Summerville, GA 30747",
+            "website": "https://www.southeastfnb.com"
+        },
+        {
+            "name": "Southeastern Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "5685",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1010 North Way, Darien, GA 31305",
+            "website": "https://www.southeasternbank.com"
+        },
+        {
+            "name": "SouthState Bank, National Association",
+            "fdic_insured_since": "02/21/1992",
+            "fdic_cert": "33555",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "1101 1st St S, Winter Haven, FL 33880",
+            "website": "https://www.southstatebank.com"
+        },
+        {
+            "name": "Stearns Bank National Association",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "10988",
+            "primary_regulator": "Comptroller of the Unified Currency",
+            "headquarters_address": "4191 2nd St S, Saint Cloud, MN 56301",
+            "website": "https://www.stearnsbank.com"
+        },
+        {
+            "name": "Sunflower Bank, National Association",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "4767",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "8117 Preston Rd Ste 220, Dallas, TX 75225",
+            "website": "https://www.sunflowerbank.com"
+        },
+        {
+            "name": "Sunrise Bank",
+            "fdic_insured_since": "08/01/2005",
+            "fdic_cert": "58029",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "109 E Church St, Orlando, FL 32801",
+            "website": "https://www.sunrise.bank"
+        },
+        {
+            "name": "Sunstate Bank",
+            "fdic_insured_since": "03/15/1999",
+            "fdic_cert": "34643",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "14095 S Dixie Hwy, Miami, FL 33176",
+            "website": "https://www.sunstatefl.com"
+        },
+        {
+            "name": "Sunwest Bank",
+            "fdic_insured_since": "04/09/1970",
+            "fdic_cert": "20164",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "10011 S Centennial Pkwy, Sandy, UT 84070",
+            "website": "https://www.sunwestbank.com"
+        },
+        {
+            "name": "Surety Bank",
+            "fdic_insured_since": "07/17/1990",
+            "fdic_cert": "33026",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "990 N Woodland Blvd, Deland, FL 32720",
+            "website": "https://www.surety.bank"
+        },
+        {
+            "name": "Synchrony Bank",
+            "fdic_insured_since": "08/01/1988",
+            "fdic_cert": "27314",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "170 W Election Rd Ste 125, Draper, UT 84020",
+            "website": "https://www.synchronybank.com"
+        },
+        {
+            "name": "TCM Bank, National Association",
+            "fdic_insured_since": "05/18/1998",
+            "fdic_cert": "34535",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "3501 E Frontage Rd, Tampa, FL 33607",
+            "website": "https://www.tcmbank.com"
+        },
+        {
+            "name": "TD Bank, National Association",
+            "fdic_insured_since": "07/01/1961",
+            "fdic_cert": "18409",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "2035 Limestone Rd, Wilmington, DE 19808",
+            "website": "https://www.td.com/us/en/personal-banking/"
+        },
+        {
+            "name": "Terrabank, National Association",
+            "fdic_insured_since": "11/21/1985",
+            "fdic_cert": "26442",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "1 Alhambra Plz Ste 700, Coral Gables, FL 33134",
+            "website": "https://www.terrabank.com"
+        },
+        {
+            "name": "The Bank of New York Mellon Trust Company, National Association",
+            "fdic_insured_since": "07/01/1981",
+            "fdic_cert": "23472",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "333 S Hope St Ste 2525, Los Angeles, CA 90071",
+            "website": "https://www.bny.com"
+        },
+        {
+            "name": "The Bank of Tampa",
+            "fdic_insured_since": "03/30/1973",
+            "fdic_cert": "21031",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "601 Bayshore Blvd Ste 100, Tampa, FL 33606",
+            "website": "https://www.bankoftampa.com"
+        },
+        {
+            "name": "The Central Trust Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "12633",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "238 Madison St, Jefferson City, MO 65101",
+            "website": "https://www.centralbank.net"
+        },
+        {
+            "name": "The Claxton Bank",
+            "fdic_insured_since": "06/14/1941",
+            "fdic_cert": "15826",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "1433 Bernie Anderson Highway, Bellville, GA 30414",
+            "website": "https://www.tcbga.bank"
+        },
+        {
+            "name": "The First National Bank of Mount Dora",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "3579",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "714 N Donnelly St, Mount Dora, FL 32757",
+            "website": "https://www.fnbmd.com"
+        },
+        {
+            "name": "The Huntington National Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "6560",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "17 S High St, Columbus, OH 43215",
+            "website": "https://www.huntington.com"
+        },
+        {
+            "name": "The Northern Trust Company",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "913",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "50 S La Salle St, Chicago, IL 60603",
+            "website": "https://www.northerntrust.com"
+        },
+        {
+            "name": "The Warrington Bank",
+            "fdic_insured_since": "03/18/1953",
+            "fdic_cert": "17193",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "4093 Barrancas Ave, Pensacola, FL 32507",
+            "website": "https://www.warringtonbank.com"
+        },
+        {
+            "name": "Third Federal Savings and Loan Association of Cleveland",
+            "fdic_insured_since": "08/09/1989",
+            "fdic_cert": "30012",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "7007 Broadway Ave, Cleveland, OH 44105",
+            "website": "https://www.thirdfederal.com"
+        },
+        {
+            "name": "Thomasville National Bank",
+            "fdic_insured_since": "10/02/1995",
+            "fdic_cert": "34068",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "301 N Broad St, Thomasville, GA 31792",
+            "website": "https://www.tnbank.com"
+        },
+        {
+            "name": "Truist Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "9846",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "214 N Tryon St, Charlotte, NC 28202",
+            "website": "https://www.truist.com"
+        },
+        {
+            "name": "TrustCo Bank",
+            "fdic_insured_since": "08/09/1989",
+            "fdic_cert": "31945",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "1 Sarnowski Dr, Glenville, NY 12302",
+            "website": "https://www.trustcobank.com"
+        },
+        {
+            "name": "Trustmark Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "4988",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "248 E Capitol St, Jackson, MS 39201",
+            "website": "https://www.trustmark.com"
+        },
+        {
+            "name": "U. S. Century Bank",
+            "fdic_insured_since": "10/28/2002",
+            "fdic_cert": "57369",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "2301 Nw 87th Ave, Doral, FL 33172",
+            "website": "https://www.uscentury.com"
+        },
+        {
+            "name": "U.S. Bank National Association",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "6548",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "425 Walnut St, Cincinnati, OH 45202",
+            "website": "https://www.usbank.com"
+        },
+        {
+            "name": "United Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "58",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "200 E Nashville Ave, Atmore, AL 36502",
+            "website": "https://www.unitedbank.com"
+        },
+        {
+            "name": "United Community Bank (SC)",
+            "fdic_insured_since": "03/01/1950",
+            "fdic_cert": "16889",
+            "primary_regulator": "Federal Reserve Board",
+            "headquarters_address": "200 E Camperdown Way, Greenville, SC 29601",
+            "website": "https://www.ucbi.com"
+        },
+        {
+            "name": "United Community Bank (IL)",
+            "fdic_insured_since": "07/12/1965",
+            "fdic_cert": "19459",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "301 N Main St, Chatham, IL 62629",
+            "website": "https://www.ucbbank.com"
+        },
+        {
+            "name": "United Fidelity Bank, fsb",
+            "fdic_insured_since": "08/09/1989",
+            "fdic_cert": "29566",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "18 Nw 4th St, Evansville, IN 47708",
+            "website": "https://www.unitedfidelity.com"
+        },
+        {
+            "name": "United Southern Bank",
+            "fdic_insured_since": "03/01/1937",
+            "fdic_cert": "15465",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "750 N Central Ave, Umatilla, FL 32784",
+            "website": "https://www.unitedsouthernbank.com"
+        },
+        {
+            "name": "Valley National Bank",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "9396",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "615 Main Ave, Passaic, NJ 07055",
+            "website": "https://www.valley.com"
+        },
+        {
+            "name": "Waterfall Bank",
+            "fdic_insured_since": "09/20/2021",
+            "fdic_cert": "59265",
+            "primary_regulator": "Federal Deposit Insurance Corporation",
+            "headquarters_address": "500 Mclennan St, Clearwater, FL 33756",
+            "website": "https://www.waterfallbank.com"
+        },
+        {
+            "name": "Wells Fargo Bank, National Association",
+            "fdic_insured_since": "01/01/1934",
+            "fdic_cert": "3511",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "3201 N 4th Ave, Sioux Falls, SD 57104",
+            "website": "https://www.wellsfargo.com"
+        },
+        {
+            "name": "Wilmington Savings Fund Society, FSB",
+            "fdic_insured_since": "02/06/1958",
+            "fdic_cert": "17838",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "500 Delaware Ave, Wilmington, DE 19801",
+            "website": "https://www.wsfsbank.com"
+        },
+        {
+            "name": "Wilmington Trust, National Association",
+            "fdic_insured_since": "10/02/1995",
+            "fdic_cert": "34069",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "1100 N Market St, Wilmington, DE 19801",
+            "website": "https://www.wilmingtontrust.com"
+        },
+        {
+            "name": "Woodforest National Bank",
+            "fdic_insured_since": "09/05/1980",
+            "fdic_cert": "23220",
+            "primary_regulator": "Comptroller of the Currency",
+            "headquarters_address": "1330 Lake Robbins Dr, The Woodlands, TX 77380",
+            "website": "https://www.woodforest.com"
+        }
+    ]
+}
+  };
+
+  function fdicPage() {
+    return {
+      code: 'FL',
+      meta: stateData.FL,
+      banks: stateData.FL.banks,
+      search: '',
+      regulators: [],
+      hqOnly: false,
+      sort: 'name',
+      view: 'grid',
+      visible: 24,
+      get filtered() {
+        let list = [...this.banks];
+        if (this.search) {
+          const q = this.search.toLowerCase();
+          list = list.filter(b => b.name.toLowerCase().includes(q) || b.headquarters_address.toLowerCase().includes(q) || b.fdic_cert.includes(q));
+        }
+        if (this.regulators.length) list = list.filter(b => this.regKey(b.primary_regulator) === this.regulators.find(r => this.regKey(b.primary_regulator)===r));
+        if (this.hqOnly) list = list.filter(b => /, FL(?:\s|$)/.test(b.headquarters_address));
+        list.sort((a,b) => a.name.localeCompare(b.name));
+        return list;
+      },
+      get heroSubline() {
+        const hq = this.banks.filter(b => /, FL(?:\s|$)/.test(b.headquarters_address)).length;
+        return `${this.banks.length} FDIC-insured institutions • ${hq} headquartered in Florida`;
+      },
+      get statCards() {
+        const hq = this.banks.filter(b => /, FL(?:\s|$)/.test(b.headquarters_address)).length;
+        return [
+          { label: 'Total Institutions', value: this.banks.length, sub: 'Serving Florida' },
+          { label: 'HQ in Florida', value: hq, sub: 'Headquartered locally' },
+          { label: 'Data Updated', value: this.meta.updated, sub: 'FDIC source' },
+          { label: 'Directory', value: 'Free', sub: 'No paid placements' },
+        ];
+      },
+      regKey(r) { return r.includes('Comptroller')?'OCC': r.includes('Federal Reserve')?'FED':'FDIC'; },
+      bankFind(cert) { return `https://banks.data.fdic.gov/bankfind-suite/bankfind?cert=${cert}`; },
+      toggleReg(r) { this.regulators = this.regulators.includes(r) ? this.regulators.filter(x=>x!==r) : [...this.regulators, r]; },
+      copy(cert) { navigator.clipboard?.writeText(cert); },
+      init() {
+        const schema = {
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: 'FDIC Insured Banks in Florida',
+          numberOfItems: this.banks.length
+        };
+        document.getElementById('schema-json').textContent = JSON.stringify(schema);
+      }
+    };
+  }
+  </script>
+</body>
+</html>

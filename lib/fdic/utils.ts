@@ -52,6 +52,10 @@ export function isHeadquarteredInState(address: string, stateAbbr: string): bool
 }
 
 export function computeStateStats(banks: FDICBank[], stateAbbr: string) {
+  return computeExtendedStateStats(banks, stateAbbr);
+}
+
+export function computeExtendedStateStats(banks: FDICBank[], stateAbbr: string) {
   const headquartered = banks.filter((b) =>
     isHeadquarteredInState(b.headquarters_address, stateAbbr)
   );
@@ -60,11 +64,26 @@ export function computeStateStats(banks: FDICBank[], stateAbbr: string) {
     .filter((x): x is { bank: FDICBank; date: Date } => x.date !== null);
   dated.sort((a, b) => a.date.getTime() - b.date.getTime());
   const oldest = dated[0]?.bank;
+  const newest = dated[dated.length - 1]?.bank;
+
+  const regulatorCounts: Record<RegulatorKey, number> = { OCC: 0, FED: 0, FDIC: 0 };
+  for (const bank of banks) {
+    regulatorCounts[getRegulatorKey(bank.primary_regulator)] += 1;
+  }
+
+  const topRegulator = (Object.entries(regulatorCounts) as [RegulatorKey, number][]).sort(
+    (a, b) => b[1] - a[1]
+  )[0];
 
   return {
     total: banks.length,
     headquartered: headquartered.length,
     oldest,
+    newest,
+    regulatorCounts,
+    topRegulator: topRegulator?.[1]
+      ? { key: topRegulator[0], count: topRegulator[1] }
+      : null,
   };
 }
 
