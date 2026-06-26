@@ -1,0 +1,879 @@
+{
+  "fullName": "Tennessee",
+  "abbr": "TN",
+  "banks": [
+    {
+      "name": "Commercial Bank",
+      "fdic_insured_since": "11/01/1976",
+      "fdic_cert": "22354",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "6710 Cumberland Gap Pkwy, Harrogate, TN 37752",
+      "website": "https://www.cbtn.com"
+    },
+    {
+      "name": "FirstBank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8663",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1221 Broadway, Ste. 1300, Nashville, TN 37203",
+      "website": "https://www.firstbankonline.com"
+    },
+    {
+      "name": "People's Bank and Trust Company of Pickett County",
+      "fdic_insured_since": "11/27/1978",
+      "fdic_cert": "22756",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "19 Courthouse Sq, Byrdstown, TN 38549",
+      "website": "https://pbt.bank"
+    },
+    {
+      "name": "Pinnacle Bank",
+      "fdic_insured_since": "10/27/2000",
+      "fdic_cert": "35583",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "21 Platform Way S, Suite 2300, Nashville, TN 37203",
+      "website": "https://www.pnfp.com"
+    },
+    {
+      "name": "Sonata Bank",
+      "fdic_insured_since": "11/27/1973",
+      "fdic_cert": "21342",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5005 Maryland Way, Suite 100, Brentwood, TN 37027",
+      "website": "https://www.sonatabank.com/"
+    },
+    {
+      "name": "Andrew Johnson Bank",
+      "fdic_insured_since": "05/12/1975",
+      "fdic_cert": "22015",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "124 N Main St, Greeneville, TN 37743",
+      "website": "https://www.andrewjohnsonbank.com"
+    },
+    {
+      "name": "Apex Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9176",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 E Main St, Camden, TN 38320",
+      "website": "https://www.apexbank.com"
+    },
+    {
+      "name": "Bank of Bartlett",
+      "fdic_insured_since": "05/19/1980",
+      "fdic_cert": "23123",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "6281 Stage Rd, Bartlett, TN 38134",
+      "website": "https://www.bankofbartlett.com"
+    },
+    {
+      "name": "Bank of Crockett",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1468",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "104 E Main St, Bells, TN 38006",
+      "website": "https://www.bankofcrockett.com"
+    },
+    {
+      "name": "Bank of Dickson",
+      "fdic_insured_since": "05/26/1954",
+      "fdic_cert": "17327",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "466 Highway 46 S, Dickson, TN 37055",
+      "website": "https://www.bankofdickson.bank"
+    },
+    {
+      "name": "Bank of Frankewing",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1484",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2324 Highway 64, Frankewing, TN 38459",
+      "website": "https://www.bankoffrankewing.com"
+    },
+    {
+      "name": "Bank of Gleason",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2379",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "203 Main St, Gleason, TN 38229",
+      "website": "https://www.bankofgleason.com"
+    },
+    {
+      "name": "Bank of Halls",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10315",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 E Main St, Halls, TN 38040",
+      "website": "https://www.bankofhalls.com"
+    },
+    {
+      "name": "Bank of Lincoln County",
+      "fdic_insured_since": "07/22/2002",
+      "fdic_cert": "57396",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "307 College St E, Fayetteville, TN 37334",
+      "website": "http://www.bolconline.com"
+    },
+    {
+      "name": "Bank of Perry County",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1713",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "33 S Main St, Lobelville, TN 37097",
+      "website": "http://thebankonthego.com"
+    },
+    {
+      "name": "Bank of Tennessee",
+      "fdic_insured_since": "05/13/1974",
+      "fdic_cert": "21573",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 E Center St, Kingsport, TN 37660",
+      "website": "https://www.bankoftennessee.com"
+    },
+    {
+      "name": "Bank3",
+      "fdic_insured_since": "06/28/1935",
+      "fdic_cert": "15205",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5210 Poplar Ave, Memphis, TN 38119",
+      "website": "https://www.bank3.com"
+    },
+    {
+      "name": "BankTennessee",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29177",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1125 W Poplar Ave, Collierville, TN 38017",
+      "website": "https://www.banktennessee.com"
+    },
+    {
+      "name": "Brighton Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9189",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7663 Highway 51 S, Brighton, TN 38011",
+      "website": "https://www.bankbrighton.com"
+    },
+    {
+      "name": "Builtwell Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10307",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "728 Broad St, Chattanooga, TN 37402",
+      "website": "https://www.builtwell.bank"
+    },
+    {
+      "name": "Carroll Bank and Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2380",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "19510 Main St W, Huntingdon, TN 38344",
+      "website": "https://www.carrollbank.com"
+    },
+    {
+      "name": "CBBC Bank",
+      "fdic_insured_since": "09/24/1973",
+      "fdic_cert": "21227",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "330 E Broadway Ave, Maryville, TN 37804",
+      "website": "https://www.cbbc.bank"
+    },
+    {
+      "name": "Centennial Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8439",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5420 Broad St S, Trezevant, TN 38258",
+      "website": "http://www.mycentennial.bank"
+    },
+    {
+      "name": "Central Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31545",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "485 Wayne Rd, Savannah, TN 38372",
+      "website": "http://www.CENTRALBANKTN.COM"
+    },
+    {
+      "name": "Citizens Bank",
+      "fdic_insured_since": "11/03/1934",
+      "fdic_cert": "14851",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 Broad St, Elizabethton, TN 37643",
+      "website": "https://www.citizensbank24.com"
+    },
+    {
+      "name": "Citizens Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "893",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "407 Main St N, Carthage, TN 37030",
+      "website": "https://www.citzcar.com"
+    },
+    {
+      "name": "Citizens Bank and Trust Company of Grainger County",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10317",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8335 Rutledge Pike, Rutledge, TN 37861",
+      "website": "https://www.cbtgrainger.com"
+    },
+    {
+      "name": "Citizens Community Bank",
+      "fdic_insured_since": "11/19/1992",
+      "fdic_cert": "33739",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1418 Dinah Shore Blvd, Winchester, TN 37398",
+      "website": "https://www.ccbank.net"
+    },
+    {
+      "name": "Citizens National Bank",
+      "fdic_insured_since": "02/05/1973",
+      "fdic_cert": "20954",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "200 Forks Of The River Pkwy, Sevierville, TN 37862",
+      "website": "https://www.cnbtn.com"
+    },
+    {
+      "name": "Citizens Savings Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10319",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2013 Jefferson St, Nashville, TN 37208",
+      "website": "https://www.bankcbn.com"
+    },
+    {
+      "name": "Citizens Tri-County Bank",
+      "fdic_insured_since": "10/02/1972",
+      "fdic_cert": "20818",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15699 Rankin Ave, Dunlap, TN 37327",
+      "website": "https://www.ctcbonline.com"
+    },
+    {
+      "name": "Coffee County Bank",
+      "fdic_insured_since": "08/15/1975",
+      "fdic_cert": "22090",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2070 Hillsboro Blvd, Manchester, TN 37355",
+      "website": "https://www.coffeecountybank.com"
+    },
+    {
+      "name": "Commercial Bank & Trust Co.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8660",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 N Poplar St, Paris, TN 38242",
+      "website": "https://cbtcnet.com"
+    },
+    {
+      "name": "Community Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31272",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "19 Natchez Trace Dr S, Lexington, TN 38351",
+      "website": "https://www.community-bank.net"
+    },
+    {
+      "name": "Decatur County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6101",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "56 N Pleasant St, Decaturville, TN 38329",
+      "website": "https://www.decaturcountybank.com"
+    },
+    {
+      "name": "Elizabethton Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29904",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "112 N Sycamore St, # 114, Elizabethton, TN 37643",
+      "website": "https://www.elizfed.com"
+    },
+    {
+      "name": "Farmers Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8661",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "29 E Main St, Parsons, TN 38363",
+      "website": "https://www.farmers-bank.com"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "01/27/1934",
+      "fdic_cert": "13775",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 W Main St, Mountain City, TN 37683",
+      "website": "https://www.fsbankmctn.com"
+    },
+    {
+      "name": "Financial Federal Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31840",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1715 Aaron Brenner Dr, Memphis, TN 38120",
+      "website": "https://www.finfedmem.com"
+    },
+    {
+      "name": "First Century Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1700",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1780 N Broad St, Tazewell, TN 37879",
+      "website": "http://www.firstcenturybank.com"
+    },
+    {
+      "name": "First Commerce Bank",
+      "fdic_insured_since": "12/02/2002",
+      "fdic_cert": "57465",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "500 N Ellington Pkwy, Lewisburg, TN 37091",
+      "website": "https://www.firstcommercebank.net"
+    },
+    {
+      "name": "First Community Bank of Tennessee",
+      "fdic_insured_since": "04/01/1988",
+      "fdic_cert": "27211",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "207 Elm St, Shelbyville, TN 37160",
+      "website": "https://www.firstcommunitybanker.com"
+    },
+    {
+      "name": "First Farmers & Commercial Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4960",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "441 Spring St, Pikeville, TN 37367",
+      "website": "https://www.ffandcb.com"
+    },
+    {
+      "name": "First Farmers and Merchants Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1487",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "816 S Garden St, Columbia, TN 38401",
+      "website": "https://www.myfirstfarmers.com"
+    },
+    {
+      "name": "First Federal Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29782",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "611 E College St, Dickson, TN 37055",
+      "website": "https://www.ffbtn.com"
+    },
+    {
+      "name": "First Freedom Bank",
+      "fdic_insured_since": "04/03/2006",
+      "fdic_cert": "58208",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1620 W Main St, Lebanon, TN 37087",
+      "website": "https://www.firstfreedombank.com"
+    },
+    {
+      "name": "First Horizon Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4977",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "165 Madison Ave, Memphis, TN 38103",
+      "website": "https://www.firsthorizon.com"
+    },
+    {
+      "name": "First National Bank of Pulaski",
+      "fdic_insured_since": "01/12/1938",
+      "fdic_cert": "15572",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "206 S 1st St, Pulaski, TN 38478",
+      "website": "https://www.fnbforyou.com"
+    },
+    {
+      "name": "First National Bank of Tennessee",
+      "fdic_insured_since": "10/25/1965",
+      "fdic_cert": "19502",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "214 E Main St, Livingston, TN 38570",
+      "website": "https://www.fnbotn.com"
+    },
+    {
+      "name": "First Peoples Bank of Tennessee",
+      "fdic_insured_since": "01/02/1975",
+      "fdic_cert": "21874",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "206 W Broadway Blvd, Jefferson City, TN 37760",
+      "website": "http://www.firstpeoplesbank.net"
+    },
+    {
+      "name": "First Vision Bank of Tennessee",
+      "fdic_insured_since": "11/28/2005",
+      "fdic_cert": "58201",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1401 N Jackson St, Tullahoma, TN 37388",
+      "website": "https://www.fvb.bank"
+    },
+    {
+      "name": "Foundation Bank",
+      "fdic_insured_since": "02/28/1934",
+      "fdic_cert": "13955",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "676 Main St N, Mc Kenzie, TN 38201",
+      "website": "https://www.foundationbank.org"
+    },
+    {
+      "name": "Greeneville Federal Bank, FSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31198",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "101 W Summer St, Greeneville, TN 37743",
+      "website": "https://www.greenevillefederalbank.com"
+    },
+    {
+      "name": "Greenfield Banking Company",
+      "fdic_insured_since": "08/17/1935",
+      "fdic_cert": "15255",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "112 N Front St, Greenfield, TN 38230",
+      "website": "https://www.greenfieldbank.com"
+    },
+    {
+      "name": "Heritage Bank & Trust",
+      "fdic_insured_since": "03/06/2006",
+      "fdic_cert": "58220",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "217 S James M Campbell Blvd, Columbia, TN 38401",
+      "website": "https://www.heritagebankandtrust.com"
+    },
+    {
+      "name": "Heritage Community Bank",
+      "fdic_insured_since": "12/03/2003",
+      "fdic_cert": "57656",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "114 W Church St, Greeneville, TN 37745",
+      "website": "https://www.hcbonline.us"
+    },
+    {
+      "name": "Highland Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31232",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "106 S Main St, Ste 103, Crossville, TN 38555",
+      "website": "https://www.highlandfederal.com"
+    },
+    {
+      "name": "Home Banking Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9196",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "795 E Poplar Ave, Selmer, TN 38375",
+      "website": "https://WWW.HOMEBANKINGCO.COM"
+    },
+    {
+      "name": "Home Federal Bank of Tennessee",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29683",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "515 Market St, Knoxville, TN 37902",
+      "website": "https://www.homefederalbanktn.com"
+    },
+    {
+      "name": "Homeland Community Bank",
+      "fdic_insured_since": "11/24/2003",
+      "fdic_cert": "57632",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "900 N Chancery St, Mcminnville, TN 37110",
+      "website": "http://www.homelandcb.com"
+    },
+    {
+      "name": "Independent Bank",
+      "fdic_insured_since": "04/20/1998",
+      "fdic_cert": "34728",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5050 Poplar Avenue, Memphis, TN 38157",
+      "website": "https://www.i-bankonline.com"
+    },
+    {
+      "name": "InsBank",
+      "fdic_insured_since": "11/20/2000",
+      "fdic_cert": "35521",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2106 Crestmoor Rd, Nashville, TN 37215",
+      "website": "https://www.insbank.com"
+    },
+    {
+      "name": "INSOUTH Bank",
+      "fdic_insured_since": "05/15/1975",
+      "fdic_cert": "22020",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "111 S Washington Ave, Brownsville, TN 38012",
+      "website": "https://www.insouth.com"
+    },
+    {
+      "name": "Lawrence Bank",
+      "fdic_insured_since": "04/15/1977",
+      "fdic_cert": "22451",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3200 West End Ave, Ste 100, Nashville, TN 37203",
+      "website": "https://www.volunteer.bank"
+    },
+    {
+      "name": "Lawrenceburg Federal Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29186",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "118 W Gaines St, Lawrenceburg, TN 38464",
+      "website": "https://lawrenceburgfederal.com"
+    },
+    {
+      "name": "Legends Bank",
+      "fdic_insured_since": "11/12/1998",
+      "fdic_cert": "34936",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "310 N 1st St, Clarksville, TN 37040",
+      "website": "https://www.legendsbank.com"
+    },
+    {
+      "name": "Lineage Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6100",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3359 Aspen Grove Dr, Franklin, TN 37067",
+      "website": "http://www.lineagebank.com"
+    },
+    {
+      "name": "Macon Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6091",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "609 Red Boiling Springs Rd, Lafayette, TN 37083",
+      "website": "https://maconbankandtrust.com"
+    },
+    {
+      "name": "Millennium Bank",
+      "fdic_insured_since": "06/21/1999",
+      "fdic_cert": "35138",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6392 Artesian Cir, Ooltewah, TN 37363",
+      "website": "https://www.ngnb.bank"
+    },
+    {
+      "name": "Mountain Valley Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1705",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "17114 Rankin Ave, Dunlap, TN 37327",
+      "website": "https://www.mtnvalleybankonline.com"
+    },
+    {
+      "name": "Newport Federal Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29089",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "170 W Broadway, Newport, TN 37821",
+      "website": "https://www.newportfederalbank.com"
+    },
+    {
+      "name": "One Bank of Tennessee",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8432",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "140 S Jefferson Ave, Cookeville, TN 38501",
+      "website": "https://onebanktn.com"
+    },
+    {
+      "name": "Paragon Bank",
+      "fdic_insured_since": "01/19/2005",
+      "fdic_cert": "57874",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5400 Poplar Ave, Memphis, TN 38119",
+      "website": "http://www.bankparagon.com"
+    },
+    {
+      "name": "Patriot Bank",
+      "fdic_insured_since": "10/09/2002",
+      "fdic_cert": "57416",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "8376 Us Highway 51 N, Millington, TN 38053",
+      "website": "https://www.patriot-bank.com"
+    },
+    {
+      "name": "Peoples Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9489",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "129 Main St, Clifton, TN 38425",
+      "website": "https://pbbanking.com"
+    },
+    {
+      "name": "Peoples Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1475",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1203 Hillsboro Blvd, Manchester, TN 37355",
+      "website": "https://www.bankwithpeoples.com"
+    },
+    {
+      "name": "Peoples Bank of East Tennessee",
+      "fdic_insured_since": "09/22/1997",
+      "fdic_cert": "34517",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4511 Highway 411, Madisonville, TN 37354",
+      "website": "https://www.PBET.bank"
+    },
+    {
+      "name": "Peoples Bank of the South",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4945",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "106 W Central Ave, La Follette, TN 37766",
+      "website": "https://www.peoplesbanksouth.com"
+    },
+    {
+      "name": "Putnam 1st Mercantile Bank",
+      "fdic_insured_since": "11/28/2005",
+      "fdic_cert": "58079",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 W Jackson St, Cookeville, TN 38501",
+      "website": "https://www.1stmerc.net"
+    },
+    {
+      "name": "RockPointBank, National Association",
+      "fdic_insured_since": "03/15/2021",
+      "fdic_cert": "59206",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "401 Chestnut St, Chattanooga, TN 37402",
+      "website": "https://www.rockpoint.bank"
+    },
+    {
+      "name": "Security Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2391",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "602 W Main St, Newbern, TN 38059",
+      "website": "https://www.bankatsecurity.com"
+    },
+    {
+      "name": "Security Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9172",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "210 W Washington St, Paris, TN 38242",
+      "website": "https://www.securitybanktn.com"
+    },
+    {
+      "name": "Security Federal Savings Bank of McMinnville",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31146",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "306 W Main St, Mcminnville, TN 37110",
+      "website": "https://www.secfed.net"
+    },
+    {
+      "name": "SmartBank",
+      "fdic_insured_since": "01/08/2007",
+      "fdic_cert": "58463",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2430 Teaster Ln, Pigeon Forge, TN 37863",
+      "website": "http://www.smartbank.com"
+    },
+    {
+      "name": "SouthEast Bank",
+      "fdic_insured_since": "04/29/2002",
+      "fdic_cert": "57348",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "12700 Kingston Pike, Farragut, TN 37934",
+      "website": "https://www.southeastbank.com"
+    },
+    {
+      "name": "Southern Bank of Tennessee",
+      "fdic_insured_since": "03/22/1999",
+      "fdic_cert": "34847",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "675 N Mount Juliet Rd, Mount Juliet, TN 37122",
+      "website": "https://www.southernbankoftn.com"
+    },
+    {
+      "name": "Studio Bank",
+      "fdic_insured_since": "06/14/2018",
+      "fdic_cert": "59112",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "124 12th Ave S, Nashville, TN 37203",
+      "website": "https://www.studiobank.com"
+    },
+    {
+      "name": "Tennessee State Bank",
+      "fdic_insured_since": "06/19/1972",
+      "fdic_cert": "20720",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2210 Parkway, Pigeon Forge, TN 37863",
+      "website": "https://www.tnstatebank.com"
+    },
+    {
+      "name": "The Bank of Fayette County",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10308",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1265 Highway 57, Piperton, TN 38017",
+      "website": "https://www.thebank1905.com"
+    },
+    {
+      "name": "The Bank of Milan",
+      "fdic_insured_since": "11/12/1993",
+      "fdic_cert": "33851",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2011 E Van Hook St, Milan, TN 38358",
+      "website": "https://www.bankofmilan.net"
+    },
+    {
+      "name": "The Farmers Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1696",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "120 Village Dr, Portland, TN 37148",
+      "website": "https://www.thefarmersbank.net"
+    },
+    {
+      "name": "The First National Bank of Middle Tennessee",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4952",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "200 E Main St, Mcminnville, TN 37110",
+      "website": "https://www.fnbmt.com"
+    },
+    {
+      "name": "The First National Bank of Oneida",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4958",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "19260 Alberta St, Oneida, TN 37841",
+      "website": "https://www.fnboneida.com"
+    },
+    {
+      "name": "The Hardin County Bank",
+      "fdic_insured_since": "03/12/1973",
+      "fdic_cert": "20993",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "235 Wayne Rd, Savannah, TN 38372",
+      "website": "https://www.hardincountybank.bank"
+    },
+    {
+      "name": "The Lauderdale County Bank",
+      "fdic_insured_since": "04/04/1979",
+      "fdic_cert": "22835",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "305 S Church St, Halls, TN 38040",
+      "website": "https://www.lauderdalecountybank.com"
+    },
+    {
+      "name": "The Peoples Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6110",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "34910 Highway 104 S, Sardis, TN 38371",
+      "website": "https://www.thepeoplesbankoftn.com"
+    },
+    {
+      "name": "Thread Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9499",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "210 E Main St, Rogersville, TN 37857",
+      "website": "https://www.thread.bank"
+    },
+    {
+      "name": "TNBANK",
+      "fdic_insured_since": "05/30/1995",
+      "fdic_cert": "34023",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 S Illinois Ave, Oak Ridge, TN 37830",
+      "website": "https://www.tnbank.bank"
+    },
+    {
+      "name": "Tower Community Bank",
+      "fdic_insured_since": "01/02/1970",
+      "fdic_cert": "20100",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4564 Main St, Jasper, TN 37347",
+      "website": "https://www.towercommunitybank.com"
+    },
+    {
+      "name": "Traditions First Bank",
+      "fdic_insured_since": "11/30/2000",
+      "fdic_cert": "57092",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5745 E Main St, Erin, TN 37061",
+      "website": "http://www.traditionsfirst.com"
+    },
+    {
+      "name": "TriStar Bank",
+      "fdic_insured_since": "01/01/2000",
+      "fdic_cert": "35417",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "719 E College St, Dickson, TN 37055",
+      "website": "https://www.tristar.bank"
+    },
+    {
+      "name": "Truxton Trust Company",
+      "fdic_insured_since": "08/30/2004",
+      "fdic_cert": "57825",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "20 Burton Hills Blvd, Suite 200, Nashville, TN 37215",
+      "website": "https://www.truxtontrust.com"
+    },
+    {
+      "name": "UBank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1693",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "155 N Campbell Station Rd, Knoxville, TN 37934",
+      "website": "https://www.ubank.bank"
+    },
+    {
+      "name": "Union Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6088",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "311 N Main St, Jamestown, TN 38556",
+      "website": "https://myunion.bank"
+    },
+    {
+      "name": "Union Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9179",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 E Main St, Livingston, TN 38570",
+      "website": "https://www,ubtconline.com"
+    },
+    {
+      "name": "Volunteer Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31694",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "108 Main St, Madisonville, TN 37354",
+      "website": "https://www.volfed.com"
+    },
+    {
+      "name": "Wayne County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9168",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "216 S High St, Waynesboro, TN 38485",
+      "website": "https://waynecountybank.com"
+    },
+    {
+      "name": "Wellworth Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1711",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 Highway 52 Byp W, Lafayette, TN 37083",
+      "website": "https://www.wellworth.bank"
+    },
+    {
+      "name": "Wilson Bank and Trust",
+      "fdic_insured_since": "05/11/1987",
+      "fdic_cert": "26962",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "623 W Main St, Lebanon, TN 37087",
+      "website": "https://www.wilsonbank.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

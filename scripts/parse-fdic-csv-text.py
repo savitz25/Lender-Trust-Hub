@@ -39,28 +39,37 @@ CSV_SOURCES = {
     "IL": ROOT / "data" / "illinois-import.csv",
     "MI": ROOT / "data" / "michigan-import.csv",
 }
-NORTHEAST_SRC = ROOT / "data" / "northeast-import.csv"
-NORTHEAST_STATE_CODES = {
-    "CT",
-    "DE",
-    "DC",
-    "IN",
-    "ME",
-    "MD",
-    "MA",
-    "NH",
-    "NJ",
-    "NY",
-    "OH",
-    "PA",
-    "RI",
-    "VT",
+REGIONAL_CSV_SOURCES: dict[str, tuple[Path, set[str]]] = {
+    "northeast": (
+        ROOT / "data" / "northeast-import.csv",
+        {
+            "CT",
+            "DE",
+            "DC",
+            "IN",
+            "ME",
+            "MD",
+            "MA",
+            "NH",
+            "NJ",
+            "NY",
+            "OH",
+            "PA",
+            "RI",
+            "VT",
+        },
+    ),
+    "kentucky-tennessee": (
+        ROOT / "data" / "kentucky-tennessee-import.csv",
+        {"KY", "TN"},
+    ),
 }
 OUT_DIR = ROOT / "lib" / "fdic" / "data"
 
 STATE_META = {
     "GA": ("Georgia", "georgia"),
     "SC": ("South Carolina", "south-carolina"),
+    "TN": ("Tennessee", "tennessee"),
     "NC": ("North Carolina", "north-carolina"),
     "VA": ("Virginia", "virginia"),
     "WV": ("West Virginia", "west-virginia"),
@@ -71,6 +80,7 @@ STATE_META = {
     "OK": ("Oklahoma", "oklahoma"),
     "AR": ("Arkansas", "arkansas"),
     "KS": ("Kansas", "kansas"),
+    "KY": ("Kentucky", "kentucky"),
     "MO": ("Missouri", "missouri"),
     "IA": ("Iowa", "iowa"),
     "MN": ("Minnesota", "minnesota"),
@@ -777,9 +787,11 @@ def main():
         out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
         print(f"{code}: {len(banks)} banks -> {out_path.name}")
 
-    if NORTHEAST_SRC.exists():
-        grouped = group_banks_by_state(parse_fdic_csv_sections(NORTHEAST_SRC))
-        for code in sorted(NORTHEAST_STATE_CODES):
+    for regional_name, (csv_path, state_codes) in REGIONAL_CSV_SOURCES.items():
+        if not csv_path.exists():
+            continue
+        grouped = group_banks_by_state(parse_fdic_csv_sections(csv_path))
+        for code in sorted(state_codes):
             banks = grouped.get(code, [])
             full_name, slug = STATE_META[code]
             payload = {
@@ -790,7 +802,7 @@ def main():
             }
             out_path = OUT_DIR / f"{slug}.json"
             out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
-            print(f"{code}: {len(banks)} banks -> {out_path.name}")
+            print(f"{code}: {len(banks)} banks -> {out_path.name} ({regional_name})")
 
     print("Done.")
 

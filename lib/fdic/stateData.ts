@@ -18,6 +18,7 @@ import illinoisData from './data/illinois.json';
 import indianaData from './data/indiana.json';
 import iowaData from './data/iowa.json';
 import kansasData from './data/kansas.json';
+import kentuckyData from './data/kentucky.json';
 import louisianaData from './data/louisiana.json';
 import maineData from './data/maine.json';
 import marylandData from './data/maryland.json';
@@ -35,6 +36,7 @@ import oklahomaData from './data/oklahoma.json';
 import pennsylvaniaData from './data/pennsylvania.json';
 import rhodeIslandData from './data/rhode-island.json';
 import southCarolinaData from './data/south-carolina.json';
+import tennesseeData from './data/tennessee.json';
 import texasData from './data/texas.json';
 import vermontData from './data/vermont.json';
 import virginiaData from './data/virginia.json';
@@ -53,6 +55,7 @@ export const stateData: Record<string, StateFDICData> = {
   IN: indianaData as StateFDICData,
   IA: iowaData as StateFDICData,
   KS: kansasData as StateFDICData,
+  KY: kentuckyData as StateFDICData,
   LA: louisianaData as StateFDICData,
   MA: massachusettsData as StateFDICData,
   MD: marylandData as StateFDICData,
@@ -70,6 +73,7 @@ export const stateData: Record<string, StateFDICData> = {
   PA: pennsylvaniaData as StateFDICData,
   RI: rhodeIslandData as StateFDICData,
   SC: southCarolinaData as StateFDICData,
+  TN: tennesseeData as StateFDICData,
   TX: texasData as StateFDICData,
   VA: virginiaData as StateFDICData,
   VT: vermontData as StateFDICData,

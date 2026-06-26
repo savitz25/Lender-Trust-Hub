@@ -1,0 +1,967 @@
+{
+  "fullName": "Kentucky",
+  "abbr": "KY",
+  "banks": [
+    {
+      "name": "1st Trust Bank, Inc.",
+      "fdic_insured_since": "12/13/2004",
+      "fdic_cert": "57869",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "44 Commerce Dr, Hazard, KY 41701",
+      "website": "https://www.1tbi.com"
+    },
+    {
+      "name": "American Bank & Trust Company, Inc.",
+      "fdic_insured_since": "07/05/2000",
+      "fdic_cert": "35568",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "531 Lovers Ln, Bowling Green, KY 42103",
+      "website": "https://www.ambanking.com"
+    },
+    {
+      "name": "Auburn Banking Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "284",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "236 Sugar Maple Drive, Auburn, KY 42206",
+      "website": "https://www.auburnbankingcompany.com"
+    },
+    {
+      "name": "Bank of Buffalo",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2733",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2441 Greensburg Rd, Buffalo, KY 42716",
+      "website": "https://www.thebankofbuffalo.com"
+    },
+    {
+      "name": "Bank of Cadiz and Trust Company",
+      "fdic_insured_since": "08/07/1970",
+      "fdic_cert": "20239",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "79 Main St, Cadiz, KY 42211",
+      "website": "https://www.bankofcadiz.com"
+    },
+    {
+      "name": "Bank of Clarkson",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13167",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 E Main St, Clarkson, KY 42726",
+      "website": "https://WWW.BANKOFCLARKSON.COM"
+    },
+    {
+      "name": "Bank of Columbia",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8775",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "144 Public Sq, Columbia, KY 42728",
+      "website": "https://www.bankcolumbia.com"
+    },
+    {
+      "name": "Bank of Edmonson County",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "296",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "109 S Main St, Brownsville, KY 42210",
+      "website": "https://www.bankofedmonson.com"
+    },
+    {
+      "name": "Bank of Hindman",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "289",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1362 Hindman Byp, Hindman, KY 41822",
+      "website": "https://www.bankofhindman.com"
+    },
+    {
+      "name": "Bank of Jamestown",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8118",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 Monument Sq, Jamestown, KY 42629",
+      "website": "https://www.bankofjamestown.com"
+    },
+    {
+      "name": "Bank of Lexington, Inc.",
+      "fdic_insured_since": "02/06/2006",
+      "fdic_cert": "58164",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "761 Corporate Dr, Lexington, KY 40503",
+      "website": "https://www.bankoflexington.net"
+    },
+    {
+      "name": "Bank of Maysville",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9315",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "20 W 2nd St, Maysville, KY 41056",
+      "website": "https://www.bankofmaysville.com"
+    },
+    {
+      "name": "Bank of the Bluegrass and Trust Company",
+      "fdic_insured_since": "07/16/1973",
+      "fdic_cert": "21161",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 E High St, Lexington, KY 40507",
+      "website": "https://www.bankofthebluegrass.com"
+    },
+    {
+      "name": "Bank of the Mountains, Inc.",
+      "fdic_insured_since": "09/15/1973",
+      "fdic_cert": "21219",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "204 Court St, West Liberty, KY 41472",
+      "website": "http://www.bankofthemountains.com"
+    },
+    {
+      "name": "Bedford Loan & Deposit Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11355",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "45 Highway 42 E, Bedford, KY 40006",
+      "website": "https://www.bedfordbank.com"
+    },
+    {
+      "name": "Blue Grass Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31090",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "600 High St, Paris, KY 40361",
+      "website": "https://bluegrassfederal.bank"
+    },
+    {
+      "name": "Carrollton Federal Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29774",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2539 Highway 227, Carrollton, KY 41008",
+      "website": "https://www.carrolltonfederal.com"
+    },
+    {
+      "name": "Central Bank & Trust Co.",
+      "fdic_insured_since": "04/30/1941",
+      "fdic_cert": "15815",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 W Vine St, Lexington, KY 40507",
+      "website": "https://www.centralbank.com"
+    },
+    {
+      "name": "Century Bank of Kentucky, Inc.",
+      "fdic_insured_since": "07/05/2000",
+      "fdic_cert": "35450",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 W Woodford St, Lawrenceburg, KY 40342",
+      "website": "http://www.centurybankky.com"
+    },
+    {
+      "name": "Citizens Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "262",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "411 Dysart Way, Mount Vernon, KY 40456",
+      "website": "https://www.citizensbankrb.com"
+    },
+    {
+      "name": "Citizens Bank & Trust Co. of Jackson",
+      "fdic_insured_since": "11/17/1962",
+      "fdic_cert": "18620",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "720 Highway 15 S, Jackson, KY 41339",
+      "website": "https://www.citizensbankjackson.bank"
+    },
+    {
+      "name": "Citizens Bank & Trust Company",
+      "fdic_insured_since": "07/22/1939",
+      "fdic_cert": "15675",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 E Main St, Campbellsville, KY 42718",
+      "website": "https://www.cbtky.com"
+    },
+    {
+      "name": "Citizens Bank and Trust of Lebanon, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2753",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "149 W Main St, Lebanon, KY 40033",
+      "website": "https://cbtoflebanon.com"
+    },
+    {
+      "name": "Citizens Bank of Cumberland County, Inc.",
+      "fdic_insured_since": "07/01/2000",
+      "fdic_cert": "35442",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "209 Keen St, Burkesville, KY 42717",
+      "website": "https://www.cbcconline.com"
+    },
+    {
+      "name": "Citizens Bank of Kentucky, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2718",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "620 Broadway St, Paintsville, KY 41240",
+      "website": "http://www.wercitizens.bank"
+    },
+    {
+      "name": "Citizens Deposit Bank of Arlington, Inc.",
+      "fdic_insured_since": "12/01/1949",
+      "fdic_cert": "16852",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 Walnut St, Arlington, KY 42021",
+      "website": "http://www.cdbky.com"
+    },
+    {
+      "name": "Citizens Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27841",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "433 Madison Ave, Covington, KY 41011",
+      "website": "https://www.citizens-federal.com"
+    },
+    {
+      "name": "Citizens Guaranty Bank",
+      "fdic_insured_since": "11/29/1972",
+      "fdic_cert": "20872",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "457 E Main St, Richmond, KY 40475",
+      "website": "https://www.cg.bank"
+    },
+    {
+      "name": "Clinton Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "304",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "220 E Clay St, Clinton, KY 42031",
+      "website": "https://WWW.CLINTONBANKKY.COM"
+    },
+    {
+      "name": "Commercial Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9310",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "550 Main St, West Liberty, KY 41472",
+      "website": "http://www.commercialbankky.bank"
+    },
+    {
+      "name": "Commonwealth Community Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8126",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "830 S Main St, Hartford, KY 42347",
+      "website": "http://www.cwcbank.com"
+    },
+    {
+      "name": "Community Financial Services Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "287",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "221 W 5th St, Benton, KY 42025",
+      "website": "http://www.yourlifeyourbank.com"
+    },
+    {
+      "name": "Community Trust Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2720",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "346 N Mayo Trl, Pikeville, KY 41501",
+      "website": "https://www.ctbi.com"
+    },
+    {
+      "name": "Cornerstone Community Bank",
+      "fdic_insured_since": "06/08/2026",
+      "fdic_cert": "59379",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1819 Frederica St, Owensboro, KY 42301",
+      "website": ""
+    },
+    {
+      "name": "Cumberland Security Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11358",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "107 S Main St, Somerset, KY 42501",
+      "website": "http://www.csbweb.com"
+    },
+    {
+      "name": "Cumberland Valley National Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2691",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 S Main St, London, KY 40741",
+      "website": "https://www.cvnb.com"
+    },
+    {
+      "name": "Eclipse Bank, Inc.",
+      "fdic_insured_since": "10/14/2005",
+      "fdic_cert": "58049",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "13903 Promenade Green Way, Louisville, KY 40245",
+      "website": "https://www.eclipsebank.com"
+    },
+    {
+      "name": "Edmonton State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9678",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "909 W Main St, Glasgow, KY 42141",
+      "website": "https://www.edmontonstatebank.com"
+    },
+    {
+      "name": "Elkton Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12162",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "30 Public Sq, Elkton, KY 42220",
+      "website": "https://elktonbankandtrust.com"
+    },
+    {
+      "name": "Farmers & Traders Bank of Campton",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "288",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "215 Mountain Parkway Spur Rd, Campton, KY 41301",
+      "website": "https://www.farmersandtradersbank.com"
+    },
+    {
+      "name": "Farmers Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12869",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 S Main St, Marion, KY 42064",
+      "website": "https://www.farmers247.com"
+    },
+    {
+      "name": "Farmers Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2765",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 W Washington St, Princeton, KY 42445",
+      "website": "https://www.yournxtbank.com"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5838",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "21 Ky 11 S, Booneville, KY 41314",
+      "website": "https://www.farmersstatebankky.com"
+    },
+    {
+      "name": "First & Farmers National Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2738",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2020 S Highway 27, Somerset, KY 42501",
+      "website": "https://www.firstandfarmers.com"
+    },
+    {
+      "name": "First & Peoples Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8122",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1001 Diederich Blvd, Russell, KY 41169",
+      "website": "https://www.firstandpeoplesbank.com"
+    },
+    {
+      "name": "First Community Bank of the Heartland, Inc.",
+      "fdic_insured_since": "09/10/1934",
+      "fdic_cert": "14735",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "114 E Jackson St, Clinton, KY 42031",
+      "website": "https://www.fcbheartland.com"
+    },
+    {
+      "name": "First Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31197",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "479 Main St, Hazard, KY 41701",
+      "website": "https://www.firstfederalhazard.com"
+    },
+    {
+      "name": "First Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31409",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "211 W Main St, Morehead, KY 40351",
+      "website": "https://www.firstfederalmorehead.com"
+    },
+    {
+      "name": "First Federal Savings Bank of Kentucky",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29937",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "216 W Main St, Frankfort, KY 40601",
+      "website": "https://ffsbky.bank"
+    },
+    {
+      "name": "First Kentucky Bank, Inc.",
+      "fdic_insured_since": "09/24/1973",
+      "fdic_cert": "21247",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "223 S 6th St, Mayfield, KY 42066",
+      "website": "https://www.firstkentucky.com"
+    },
+    {
+      "name": "FIRST NATIONAL BANK OF KENTUCKY",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2735",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "604 Highland Ave, Carrollton, KY 41008",
+      "website": "https://www.fnbkentucky.com"
+    },
+    {
+      "name": "First Southern National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2700",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "27 Public Sq, Lancaster, KY 40444",
+      "website": "https://WWW.FSNB.NET"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12149",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "240 N 1st St, Irvington, KY 40146",
+      "website": "https://www.firststatebankky.com"
+    },
+    {
+      "name": "First United Bank and Trust Company",
+      "fdic_insured_since": "03/29/1996",
+      "fdic_cert": "34150",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "162 N Main St, Madisonville, KY 42431",
+      "website": "https://www.efirstunitedbank.com"
+    },
+    {
+      "name": "FNB Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2759",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 E Broadway, Mayfield, KY 42066",
+      "website": "http://www.growwithfnb.com"
+    },
+    {
+      "name": "Forcht Bank, National Association",
+      "fdic_insured_since": "10/01/2002",
+      "fdic_cert": "57415",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2404 Sir Barton Way, Lexington, KY 40509",
+      "website": "https://www.forchtbank.com"
+    },
+    {
+      "name": "Franklin Bank & Trust Company",
+      "fdic_insured_since": "12/01/1958",
+      "fdic_cert": "17937",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "317 N Main St, Franklin, KY 42134",
+      "website": "https://www.fbtco.com"
+    },
+    {
+      "name": "Fredonia Valley Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9669",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "602 Cassidy Ave, Fredonia, KY 42411",
+      "website": "https://www.fredoniavalleybank.com"
+    },
+    {
+      "name": "Hart County Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10145",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "331 Main St, Munfordville, KY 42765",
+      "website": ""
+    },
+    {
+      "name": "Hearthside Bank Corporation",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31236",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1602 Cumberland Ave, Middlesboro, KY 40965",
+      "website": "https://www.hearthsidebank.com"
+    },
+    {
+      "name": "Heritage Bank, Inc.",
+      "fdic_insured_since": "09/04/1990",
+      "fdic_cert": "33119",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1818 Florence Pike, Burlington, KY 41005",
+      "website": "https://www.ourheritage.bank"
+    },
+    {
+      "name": "Home Savings Bank, FSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31723",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "202 Elm St, Ludlow, KY 41016",
+      "website": "https://www.homesavingsbanknky.com"
+    },
+    {
+      "name": "Hometown Bank of Corbin, Inc.",
+      "fdic_insured_since": "04/03/2000",
+      "fdic_cert": "35455",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1030 Cumberland Falls Hwy, Corbin, KY 40701",
+      "website": "https://www.ahometownbank.com"
+    },
+    {
+      "name": "Hyden Citizens Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "281",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "22023 Main St, Hyden, KY 41749",
+      "website": "http://www.hydencitizensbank.com"
+    },
+    {
+      "name": "Independence Bank of Kentucky",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8136",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2425 Frederica St, Owensboro, KY 42301",
+      "website": "https://www.1776bank.com"
+    },
+    {
+      "name": "Independent Correspondent Bankers' Bank, Inc.",
+      "fdic_insured_since": "04/12/1988",
+      "fdic_cert": "27219",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "107 Progress Dr, Frankfort, KY 40601",
+      "website": "https://www.icbb.bank"
+    },
+    {
+      "name": "Jackson County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "291",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "123 Main St N, Mc Kee, KY 40447",
+      "website": "https://www.jacksoncobank.com"
+    },
+    {
+      "name": "Kentucky Farmers Bank Corporation",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "267",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2500 Broadway St, Catlettsburg, KY 41129",
+      "website": "https://www.kfb.bank"
+    },
+    {
+      "name": "Lewisburg Banking Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "297",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "287 N Main St, Lewisburg, KY 42256",
+      "website": "https://www.lewisburgbank.com"
+    },
+    {
+      "name": "Magnolia Bank, Incorporated",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8120",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "651 W Dixie Ave, Elizabethtown, KY 42701",
+      "website": "https://www.magnoliabank.com"
+    },
+    {
+      "name": "Meade County Bank",
+      "fdic_insured_since": "06/07/1984",
+      "fdic_cert": "25173",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2175 Bypass Rd, Brandenburg, KY 40108",
+      "website": "https://www.meadecountybank.com"
+    },
+    {
+      "name": "Morgantown Bank & Trust Company, Incorporated",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "275",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 N Main St, Morgantown, KY 42261",
+      "website": "https://www.morgantownbank.com"
+    },
+    {
+      "name": "Owingsville Banking Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9672",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "49 W Main St, Owingsville, KY 40360",
+      "website": "https://www.bankobc.com; www.bankobc.net"
+    },
+    {
+      "name": "PBK BANK, INC.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9313",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "120 Frontier Blvd, Stanford, KY 40484",
+      "website": "https://www.pbkbank.com"
+    },
+    {
+      "name": "Pbt Bancorp",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8117",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "524 Main St, Hazard, KY 41701",
+      "website": "https://www.pbtb.com"
+    },
+    {
+      "name": "Peoples Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1562",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "265 Old Springfield Rd, Lebanon, KY 40033",
+      "website": "https://www.pboflebanon.com"
+    },
+    {
+      "name": "Peoples Bank of  Kentucky, Inc.",
+      "fdic_insured_since": "12/27/1950",
+      "fdic_cert": "16970",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "106 S Main Cross St, Flemingsburg, KY 41041",
+      "website": "http://www.peoplesbankofky.com"
+    },
+    {
+      "name": "Peoples Bank, Mt. Washington",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5847",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 N Bardstown Rd, Mount Washington, KY 40047",
+      "website": "https://www.peoplesbankmtw.com"
+    },
+    {
+      "name": "Peoples Exchange Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8785",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 N Main St, Winchester, KY 40391",
+      "website": "https://www.pebank.com"
+    },
+    {
+      "name": "Pinnacle Bank, Inc.",
+      "fdic_insured_since": "10/26/1976",
+      "fdic_cert": "22355",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "230 S Mayo Trl, Pikeville, KY 41501",
+      "website": "https://www.pinnaclebank.co"
+    },
+    {
+      "name": "Planters Bank, Inc.",
+      "fdic_insured_since": "09/12/1996",
+      "fdic_cert": "34254",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1312 S Main St, Hopkinsville, KY 42240",
+      "website": "https://www.plantersbankonline.com"
+    },
+    {
+      "name": "Republic Bank & Trust Company",
+      "fdic_insured_since": "01/11/1982",
+      "fdic_cert": "23627",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "601 W Market St, Louisville, KY 40202",
+      "website": "https://www.republicbank.com"
+    },
+    {
+      "name": "River City Bank, Inc.",
+      "fdic_insured_since": "06/26/1986",
+      "fdic_cert": "26703",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "500 S 6th St, Louisville, KY 40202",
+      "website": "https://www.rivercitybankky.com"
+    },
+    {
+      "name": "Security Bank and Trust Co.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8121",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 W 2nd St, Maysville, KY 41056",
+      "website": "https://securitybankandtrustmaysvilleky.net"
+    },
+    {
+      "name": "South Central Bank,  Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5854",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "208 S Broadway St, Glasgow, KY 42141",
+      "website": "https://www.southcentralbank.com"
+    },
+    {
+      "name": "Springfield State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8772",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "125 E Main St, Springfield, KY 40069",
+      "website": "https://www.springfieldstate.bank"
+    },
+    {
+      "name": "Stock Yards Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "258",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1040 E Main St, Louisville, KY 40206",
+      "website": "https://www.syb.com"
+    },
+    {
+      "name": "Taylor County Bank",
+      "fdic_insured_since": "04/06/1938",
+      "fdic_cert": "15590",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 Lebanon Ave, Campbellsville, KY 42718",
+      "website": "https://WWW.TAYLORCOUNTYBANK.COM"
+    },
+    {
+      "name": "The Casey County Bank, Inc.",
+      "fdic_insured_since": "12/20/1939",
+      "fdic_cert": "15708",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "176 N Wallace Wilkinson Blvd, Liberty, KY 42539",
+      "website": "https://www.caseybank.com"
+    },
+    {
+      "name": "The Cecilian Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8774",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "104 E Main St, Cecilia, KY 42724",
+      "website": "http://www.thececilianbank.com"
+    },
+    {
+      "name": "The Citizens Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10520",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "114 W Main St, Morehead, KY 40351",
+      "website": "https://www.tcbanytime.com"
+    },
+    {
+      "name": "The Citizens Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9306",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1522 Union City Hwy, Hickman, KY 42050",
+      "website": "https://www.citizenshickman.com"
+    },
+    {
+      "name": "The Citizens National Bank of Somerset",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2725",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "44 Public Sq, Somerset, KY 42501",
+      "website": "https://www.cnbsomerset.com"
+    },
+    {
+      "name": "The Commercial Bank of Grayson",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10137",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "208 E Main St, Grayson, KY 41143",
+      "website": "https://cbgrayson.com"
+    },
+    {
+      "name": "The Farmers Bank",
+      "fdic_insured_since": "11/30/1934",
+      "fdic_cert": "14894",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 N Main St, Nicholasville, KY 40356",
+      "website": "https://www.MyFarmersBank.net"
+    },
+    {
+      "name": "The Farmers Bank of Milton",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12163",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "41 Ferry St, Milton, KY 40045",
+      "website": "https://fbmilton.com"
+    },
+    {
+      "name": "The Farmers National Bank of Danville",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2740",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "304 W Main St, Danville, KY 40422",
+      "website": "https://www.fnbky.com"
+    },
+    {
+      "name": "The Farmers National Bank of Lebanon",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2754",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "136 W Main St, Lebanon, KY 40033",
+      "website": "https://www.farmersnational.bank"
+    },
+    {
+      "name": "The First National Bank of Brooksville",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2682",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "105 Locust St, Brooksville, KY 41004",
+      "website": "https://www.fnbfirst.com"
+    },
+    {
+      "name": "The First National Bank of Grayson",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2695",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "200 S Carol Malone Blvd, Grayson, KY 41143",
+      "website": "https://WWW.FNBGRAYSON.COM"
+    },
+    {
+      "name": "The First National Bank of Manchester",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2708",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "120 Town Branch Rd, Manchester, KY 40962",
+      "website": "https://www.fnbmbank.com"
+    },
+    {
+      "name": "The First National Bank of Russell Springs",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2767",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "36 W Steve Wariner Dr, Russell Springs, KY 42642",
+      "website": "https://www.fnbrs.com"
+    },
+    {
+      "name": "The Lincoln National Bank of Hodgenville",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2750",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "41 Lincoln Sq, Hodgenville, KY 42748",
+      "website": "http://www.mylnb.com"
+    },
+    {
+      "name": "The Monticello Banking Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "292",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "50 N Main St, Monticello, KY 42633",
+      "website": "https://mbcbank.com"
+    },
+    {
+      "name": "The Murray Bank",
+      "fdic_insured_since": "06/15/1999",
+      "fdic_cert": "35161",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "405 S 12th St, Murray, KY 42071",
+      "website": "https://www.themurraybank.com"
+    },
+    {
+      "name": "The Paducah Bank and Trust Company",
+      "fdic_insured_since": "01/24/1948",
+      "fdic_cert": "16664",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "555 Jefferson St, Paducah, KY 42001",
+      "website": "https://www.paducahbank.com"
+    },
+    {
+      "name": "The Peoples Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1566",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "23 W Main St, Taylorsville, KY 40071",
+      "website": "https://www.tpbtaylorsville.com"
+    },
+    {
+      "name": "The Peoples Bank",
+      "fdic_insured_since": "07/25/1947",
+      "fdic_cert": "16603",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "116 S Main St, Marion, KY 42064",
+      "website": "https://www.thepeoplesbank-ky.com"
+    },
+    {
+      "name": "The Sacramento Deposit Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8762",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "335 Main St, Sacramento, KY 42372",
+      "website": "https://www.sdbweb.com"
+    },
+    {
+      "name": "The Salyersville National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2723",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "43 E Maple St, Salyersville, KY 41465",
+      "website": "https://www.salyersvillebank.com"
+    },
+    {
+      "name": "Town & Country Bank and Trust Company",
+      "fdic_insured_since": "11/25/1939",
+      "fdic_cert": "15703",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 N 3rd St, Bardstown, KY 40004",
+      "website": "https://www.mytcbt.bank"
+    },
+    {
+      "name": "Traditional Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2711",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "49 W Main St, Mount Sterling, KY 40353",
+      "website": "https://www.traditionalbank.com"
+    },
+    {
+      "name": "United Citizens Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "15249",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8198 Main St, Campbellsburg, KY 40011",
+      "website": "https://www.unitedcitizensbank.com"
+    },
+    {
+      "name": "United Citizens Bank of Southern Kentucky",
+      "fdic_insured_since": "12/06/2004",
+      "fdic_cert": "57867",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "700 Jamestown St, Columbia, KY 42728",
+      "website": "https://www.ucbsky.com"
+    },
+    {
+      "name": "United Community Bank of West Kentucky, Inc.",
+      "fdic_insured_since": "12/10/2001",
+      "fdic_cert": "57301",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "500 N Morgan St, Morganfield, KY 42437",
+      "website": "https://www.ucbwest.com"
+    },
+    {
+      "name": "United Cumberland Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "303",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "47 S Main St, Whitley City, KY 42653",
+      "website": "https://www.unitedcumberland.com"
+    },
+    {
+      "name": "United Southern Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9309",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1813 E 9th St, Hopkinsville, KY 42240",
+      "website": "https://www.usbky.com"
+    },
+    {
+      "name": "West Point Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12166",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "600 W Lincoln Trail Blvd, Radcliff, KY 40160",
+      "website": "https://www.westpointbank.com"
+    },
+    {
+      "name": "Whitaker Bank",
+      "fdic_insured_since": "04/19/1990",
+      "fdic_cert": "32912",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2001 Pleasant Ridge Dr, Lexington, KY 40509",
+      "website": "https://www.whitakerbank.com"
+    },
+    {
+      "name": "Wilson & Muir Bank & Trust Company",
+      "fdic_insured_since": "09/24/1951",
+      "fdic_cert": "17040",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "107 N 3rd St, Bardstown, KY 40004",
+      "website": "https://www.wilsonmuirbank.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}
