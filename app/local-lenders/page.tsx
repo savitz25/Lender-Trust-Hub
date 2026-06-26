@@ -1,99 +1,87 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { LenderCard } from '@/components/LenderCard';
+import { JsonLd } from '@/components/directory/JsonLd';
+import { Breadcrumbs } from '@/components/directory/Breadcrumbs';
+import { NationalHubShell } from '@/components/directory/NationalHubShell';
 import { SearchBar } from '@/components/SearchBar';
-import { filterLenders, getAllCounties } from '@/lib/lenders';
-import type { LoanType, CreditTier } from '@/lib/mockData';
+import { SITE_URL, MORTGAGE_CATEGORY } from '@/lib/directory/categories';
+import { lenders } from '@/lib/mockData';
+import { US_STATES } from '@/lib/fdic/states';
+import {
+  getStateSlugsWithLenders,
+  getStateMortgageStats,
+} from '@/lib/mortgage/stateLenders';
+import {
+  buildMortgageHubDescription,
+  buildMortgageHubJsonLd,
+  buildMortgageHubTitle,
+} from '@/lib/mortgage/seo';
+
+export const revalidate = 86400;
+
+const slugsWithLenders = getStateSlugsWithLenders();
+const slugSet = new Set(slugsWithLenders);
+const stateGrid = US_STATES.filter((s) => slugSet.has(s.slug)).map((s) => ({
+  slug: s.slug,
+  fullName: s.fullName,
+  code: s.code,
+  count: getStateMortgageStats(s.slug).total,
+  region: s.region,
+}));
 
 export const metadata: Metadata = {
-  title: 'Local Lenders Directory',
-  description: 'Browse verified mortgage lenders and brokers by county. Filter by loan type, credit tier, and NMLS verification.',
+  title: buildMortgageHubTitle(),
+  description: buildMortgageHubDescription(lenders.length),
+  keywords: [
+    'mortgage lenders by state',
+    'NMLS verified mortgage brokers',
+    'local mortgage lenders',
+    'best mortgage lenders 2026',
+  ],
+  openGraph: {
+    title: buildMortgageHubTitle(),
+    description: buildMortgageHubDescription(lenders.length),
+    url: `${SITE_URL}${MORTGAGE_CATEGORY.hubPath}`,
+    locale: 'en_US',
+  },
+  alternates: {
+    canonical: `${SITE_URL}${MORTGAGE_CATEGORY.hubPath}`,
+  },
 };
 
-export default async function LocalLendersPage({
-  searchParams,
-}: {
-  searchParams: Promise<{
-    zip?: string;
-    loanType?: string;
-    creditTier?: string;
-    state?: string;
-    county?: string;
-  }>;
-}) {
-  const params = await searchParams;
-  const filtered = filterLenders({
-    zip: params.zip,
-    loanType: params.loanType as LoanType | undefined,
-    creditTier: params.creditTier as CreditTier | undefined,
-    stateSlug: params.state,
-    countySlug: params.county,
-    nmlsVerified: true,
-  });
-  const counties = getAllCounties();
+export default function LocalLendersHubPage() {
+  const jsonLd = buildMortgageHubJsonLd(lenders.length, stateGrid.length);
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="mx-auto mb-10 max-w-2xl text-center">
-        <h1 className="text-3xl font-bold text-[#0A2540] md:text-4xl">Local Lenders Directory</h1>
-        <p className="mt-3 text-zinc-600">
-          Hyper-local search by ZIP or county. All lenders NMLS verified.
-        </p>
-        <SearchBar className="mt-6" />
+    <>
+      <JsonLd data={jsonLd} />
+
+      <div className="container mx-auto px-4 pt-6">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Mortgage Lenders' }]} />
       </div>
 
-      {(params.loanType || params.creditTier || params.zip) && (
-        <div className="mb-6 flex flex-wrap gap-2 justify-center">
-          {params.zip && (
-            <span className="trust-badge">ZIP: {params.zip}</span>
-          )}
-          {params.loanType && (
-            <span className="trust-badge">Loan: {params.loanType}</span>
-          )}
-          {params.creditTier && (
-            <span className="trust-badge">Credit: {params.creditTier}</span>
-          )}
-        </div>
-      )}
-
-      <div className="mx-auto mb-12 max-w-3xl space-y-4">
-        {filtered.length > 0 ? (
-          filtered.map((lender, i) => (
-            <LenderCard
-              key={lender.id}
-              lender={lender}
-              rank={i + 1}
-              countyLabel={`${lender.county} County, ${lender.state}`}
-            />
-          ))
-        ) : (
-          <p className="text-center text-zinc-500">
-            No lenders found for your search. Try a different ZIP or browse counties below.
+      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <p className="mb-3 inline-flex rounded-full border border-teal-400/40 bg-teal-500/10 px-4 py-1.5 text-sm">
+            NMLS Verified • County-Level Data • No Paid Placements
           </p>
-        )}
-      </div>
-
-      <section>
-        <h2 className="mb-6 text-center text-2xl font-bold text-[#0A2540]">
-          Browse by County
-        </h2>
-        <div className="mx-auto grid max-w-4xl gap-3 sm:grid-cols-2 md:grid-cols-3">
-          {counties.map((c) => (
-            <Link
-              key={`${c.stateSlug}/${c.countySlug}`}
-              href={`/local-lenders/${c.stateSlug}/${c.countySlug}`}
-              className="rounded-xl border border-zinc-200 bg-white p-4 transition-colors hover:border-[#3B82F6]"
-            >
-              <div className="font-semibold text-[#0A2540]">
-                {c.county} County
-              </div>
-              <div className="text-sm text-zinc-500">
-                {c.state} · {c.lenderCount} lender{c.lenderCount !== 1 ? 's' : ''}
-              </div>
-            </Link>
-          ))}
+          <h1 className="text-3xl font-bold md:text-5xl">Find Verified Mortgage Lenders</h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
+            Hyper-local directory by state and county. Trust scores from NMLS, BBB, Google, and
+            more.
+          </p>
+          <SearchBar className="mx-auto mt-8 max-w-md" />
         </div>
       </section>
-    </div>
+
+      <NationalHubShell
+        categoryLabel={MORTGAGE_CATEGORY.label}
+        statePathPrefix={MORTGAGE_CATEGORY.hubPath}
+        title="Mortgage Lenders by State"
+        description={`${lenders.length}+ NMLS-verified lenders and brokers. Select your state for county-level listings, trust scores, and cross-links to FDIC bank data.`}
+        stateGrid={stateGrid}
+        activeVertical="mortgage"
+        availableSlugs={slugsWithLenders}
+      />
+    </>
   );
 }

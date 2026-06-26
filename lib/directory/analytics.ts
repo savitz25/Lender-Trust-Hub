@@ -16,14 +16,17 @@ export type DirectoryEvent =
   | { name: 'directory_cta_click'; category: string; state: string; target: string }
   | { name: 'directory_state_switch'; category: string; from: string; to: string };
 
+type GtagWindow = Window & { gtag?: (...args: unknown[]) => void };
+
 export function trackDirectoryEvent(event: DirectoryEvent): void {
   if (typeof window === 'undefined') return;
 
-  // GA4 example (uncomment when gtag is loaded):
-  // const w = window as Window & { gtag?: (...args: unknown[]) => void };
-  // w.gtag?.('event', event.name, { ...event });
+  const w = window as GtagWindow;
+  if (w.gtag) {
+    const { name, ...params } = event;
+    w.gtag('event', name, params);
+  }
 
-  // Vercel Analytics / custom endpoint placeholder:
   if (process.env.NODE_ENV === 'development') {
     console.debug('[LTH Analytics]', event);
   }

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { GtagProvider } from '@/components/directory/GtagProvider';
 import './globals.css';
 
 const inter = Inter({
@@ -39,8 +40,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en-US" className={inter.variable}>
       <body className="min-h-screen flex flex-col antialiased">
+        <GtagProvider />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

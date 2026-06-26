@@ -1,46 +1,50 @@
 /**
- * STEP-BY-STEP ROLLOUT GUIDE — LenderTrustHub Directory Platform
- * ==============================================================
- * This module documents the full integration path. Import ROLLOUT_GUIDE
- * in tooling or read inline comments when onboarding new verticals.
+ * MASTER ROLLOUT GUIDE — LenderTrustHub Directory Platform (Definitive)
+ * ====================================================================
  */
 
 export const ROLLOUT_GUIDE = `
-PHASE 1 — FDIC (COMPLETE)
-  ✓ 51 state JSON files in lib/fdic/data/
-  ✓ SSG routes at /fdic-insured-banks/[state]
-  ✓ National hub at /fdic-insured-banks
-  ✓ Sitemap + caching headers
-  ✓ JSON-LD: Organization, WebSite, BreadcrumbList, ItemList, FAQPage, HowTo
+IMPLEMENTATION ORDER (execute sequentially):
+  See lib/directory/implementation-order.ts → IMPLEMENTATION_ORDER array
 
-PHASE 2 — SEO & PERFORMANCE HARDENING
-  □ Submit sitemap.xml to Google Search Console
-  □ Monitor Core Web Vitals in Vercel Speed Insights
-  □ Add GA4 gtag to app/layout.tsx and wire lib/directory/analytics.ts
-  □ Internal link from every lender profile → state FDIC page
-  □ Internal link from calculators → state FDIC + mortgage pages
+PHASE 1 — FDIC (✓ COMPLETE)
+  • 51 state SSG pages at /fdic-insured-banks/[state]
+  • National hub with map + region grid + content clusters
+  • Full JSON-LD graph per page
 
-PHASE 3 — MORTGAGE VERTICAL (clone template)
-  1. Copy app/fdic-insured-banks/ → app/local-lenders/[state]/ (if not exists)
-  2. Use MORTGAGE_CATEGORY from lib/directory/categories.ts
-  3. Data shape: name, nmls, address, website, specialties
-  4. Reuse: Breadcrumbs, LeadCaptureForm, StateInsightsSection, CategoryCTAs
+PHASE 2 — MORTGAGE (✓ TEMPLATE LIVE)
+  • State pages at /local-lenders/[state]
+  • Hub at /local-lenders with NationalHubShell
+  • Clone pattern: lib/mortgage/ → lib/{vertical}/
 
-PHASE 4 — AUTO, CREDIT REPAIR, MCA
-  1. Add category config in lib/directory/categories.ts
-  2. Create lib/{vertical}/data/{state}.json
-  3. Duplicate [state]/page.tsx with new category + loader
-  4. Set relatedVerticals cross-links for internal linking mesh
+PHASE 3 — CLONE NEW VERTICAL IN <5 MINUTES
+  1. Add CATEGORY in lib/directory/categories.ts
+  2. Copy lib/mortgage/stateLenders.ts → lib/{vertical}/stateLenders.ts
+  3. Copy lib/mortgage/seo.ts → lib/{vertical}/seo.ts
+  4. Copy app/local-lenders/[state]/page.tsx → app/{hub}/[state]/page.tsx
+  5. Swap imports (MORTGAGE_CATEGORY → YOUR_CATEGORY)
+  6. Add URLs to app/sitemap.ts
+  7. npm run build
 
-PHASE 5 — STATIC GENERATION AT SCALE
-  python scripts/parse-fdic-csv-text.py  # ingest new FDIC data
-  npm run build                          # regenerates all 51 SSG pages
-  vercel --prod                          # deploy
+PHASE 4 — LAUNCH (see LAUNCH_CHECKLIST)
+  P0: GSC sitemap, robots.txt, GA4, Speed Insights
+  P1: Index top states, internal link mesh, monitoring queries
+  P2: Content clusters, vertical expansion, 98+ Lighthouse
 
-SITEMAP: Auto-generated at /sitemap.xml (app/sitemap.ts)
-CACHING: next.config.ts headers on /fdic-insured-banks/*
-HREFLANG: US-only site — lang="en" on <html>; expand if adding locales
+PERFORMANCE TARGETS:
+  • Single-state data passed from server (no 51-state client bundle)
+  • ISR revalidate=86400 on all directory pages
+  • CDN Cache-Control on /fdic-insured-banks/* and /local-lenders/*
+  • Dynamic import: USMap, FDICBanksExplorer
 
-A/B TESTING: LeadCaptureForm and hero CTAs use data-variant attributes
-for easy experimentation via your analytics platform.
+SEO AUTHORITY:
+  • CrossVerticalNav on every state page
+  • ContentClusterHub on national hubs
+  • sr-only crawler indexes + JSON-LD ItemList (100 items)
+  • Internal mesh: FDIC ↔ Mortgage ↔ Calculators per state
+
+ANALYTICS:
+  • Set NEXT_PUBLIC_GA4_ID in Vercel
+  • trackDirectoryEvent() fires to gtag automatically
+  • A/B variants via data-variant on LeadCaptureForm + PersonalizedBanner
 ` as const;

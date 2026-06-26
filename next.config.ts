@@ -17,6 +17,15 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: '/local-lenders/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, s-maxage=86400, stale-while-revalidate=604800',
+          },
+        ],
+      },
+      {
         source: '/geo/:path*',
         headers: [
           {

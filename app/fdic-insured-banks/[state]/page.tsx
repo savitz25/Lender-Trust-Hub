@@ -4,6 +4,9 @@ import { Breadcrumbs } from '@/components/directory/Breadcrumbs';
 import { JsonLd } from '@/components/directory/JsonLd';
 import { LeadCaptureForm } from '@/components/directory/LeadCaptureForm';
 import { InternalLinkHub } from '@/components/directory/InternalLinkHub';
+import { CrossVerticalNav } from '@/components/directory/CrossVerticalNav';
+import { PersonalizedBanner } from '@/components/directory/PersonalizedBanner';
+import { computeExtendedStateStats } from '@/lib/fdic/utils';
 import { FDICBanksExplorerDynamic } from '@/components/fdic/FDICBanksExplorerDynamic';
 import { StateInsightsSection } from '@/components/fdic/StateInsightsSection';
 import { STATE_BY_SLUG, US_STATES } from '@/lib/fdic/states';
@@ -89,6 +92,7 @@ export default async function FDICStatePage({
   const neighbors = US_STATES.filter(
     (s) => s.region === stateMeta.region && s.hasData && s.slug !== slug
   ).map((s) => s.slug);
+  const stats = computeExtendedStateStats(stateData.banks, stateMeta.code);
 
   return (
     <>
@@ -111,15 +115,29 @@ export default async function FDICStatePage({
         stateSlug={slug}
       />
 
-      {/* Server-rendered E-E-A-T content — fully crawlable, unique per state */}
       <div className="container mx-auto px-4 pb-12">
+        <PersonalizedBanner
+          stateName={stateMeta.fullName}
+          stateSlug={slug}
+          vertical="fdic"
+          topEntityName={stats.oldest?.name}
+          variant="fdic-state-v2"
+        />
+
         <StateInsightsSection banks={stateData.banks} stateMeta={stateMeta} />
 
         <div className="mt-10 grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <LeadCaptureForm stateName={stateMeta.fullName} variant="state-page-v2" />
           </div>
-          <InternalLinkHub stateMeta={stateMeta} neighborSlugs={neighbors} />
+          <div className="space-y-6">
+            <CrossVerticalNav
+              stateSlug={slug}
+              stateName={stateMeta.fullName}
+              activeVertical="fdic"
+            />
+            <InternalLinkHub stateMeta={stateMeta} neighborSlugs={neighbors} />
+          </div>
         </div>
       </div>
 
