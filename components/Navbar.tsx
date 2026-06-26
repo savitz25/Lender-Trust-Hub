@@ -6,9 +6,9 @@ import { Menu, X, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
-  { href: '/local-lenders', label: 'Local Lenders' },
+  { href: '/local-lenders', label: 'Find Lenders' },
+  { href: '/fdic-insured-banks', label: 'FDIC Banks' },
   { href: '/calculators', label: 'Calculators' },
-  { href: '/compare', label: 'Compare' },
   { href: '/about', label: 'Trust & Transparency' },
 ];
 

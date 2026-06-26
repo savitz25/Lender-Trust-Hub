@@ -24,7 +24,9 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/local-lenders" className="hover:text-white transition-colors">Local Lenders</Link></li>
+              <li><Link href="/fdic-insured-banks" className="hover:text-white transition-colors">FDIC Banks by State</Link></li>
               <li><Link href="/calculators" className="hover:text-white transition-colors">Calculators</Link></li>
+              <li><a href="https://www.movetrusthub.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">MoveTrustHub</a></li>
               <li><Link href="/compare" className="hover:text-white transition-colors">Compare Lenders</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About & Trust</Link></li>
             </ul>
