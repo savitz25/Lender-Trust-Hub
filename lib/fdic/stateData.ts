@@ -14,6 +14,7 @@ import louisianaData from './data/louisiana.json';
 import mississippiData from './data/mississippi.json';
 import northCarolinaData from './data/north-carolina.json';
 import southCarolinaData from './data/south-carolina.json';
+import texasData from './data/texas.json';
 import virginiaData from './data/virginia.json';
 import westVirginiaData from './data/west-virginia.json';
 
@@ -25,6 +26,7 @@ export const stateData: Record<string, StateFDICData> = {
   MS: mississippiData as StateFDICData,
   NC: northCarolinaData as StateFDICData,
   SC: southCarolinaData as StateFDICData,
+  TX: texasData as StateFDICData,
   VA: virginiaData as StateFDICData,
   WV: westVirginiaData as StateFDICData,
 };

@@ -1,0 +1,2735 @@
+{
+  "fullName": "Texas",
+  "abbr": "TX",
+  "banks": [
+    {
+      "name": "Agility Bank, National Association",
+      "fdic_insured_since": "04/18/2022",
+      "fdic_cert": "59239",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2401 N Shepherd Dr Ste 140, Houston, TX 77008",
+      "website": "https://www.agility.bank"
+    },
+    {
+      "name": "Alliance Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11569",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 Jefferson St W, Sulphur Springs, TX 75482",
+      "website": "https://www.alliancebank.com"
+    },
+    {
+      "name": "Alliance Bank Central Texas",
+      "fdic_insured_since": "03/20/1939",
+      "fdic_cert": "15657",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "191 Archway Dr, Woodway, TX 76712",
+      "website": "https://www.alliancebanktexas.com"
+    },
+    {
+      "name": "Amarillo National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "14531",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "410 S Taylor St, Amarillo, TX 79101",
+      "website": "https://www.anb.com"
+    },
+    {
+      "name": "American Bank of Commerce",
+      "fdic_insured_since": "10/11/1962",
+      "fdic_cert": "18609",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "530 E Highway 62-82, Wolfforth, TX 79382",
+      "website": "https://www.theabcbank.com"
+    },
+    {
+      "name": "American Bank, National Association",
+      "fdic_insured_since": "05/02/1974",
+      "fdic_cert": "21567",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2707 W Northwest Hwy, Dallas, TX 75220",
+      "website": "https://abdallas.bank"
+    },
+    {
+      "name": "American Bank, National Association",
+      "fdic_insured_since": "06/11/1982",
+      "fdic_cert": "23886",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "200 W State Highway 6, Waco, TX 76712",
+      "website": "https://www.am.bank"
+    },
+    {
+      "name": "American Continental Bank",
+      "fdic_insured_since": "10/06/2003",
+      "fdic_cert": "57444",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "17700 Castleton St Ste 100, City Of Industry, CA 91748",
+      "website": "https://www.americancontinentalbank.com"
+    },
+    {
+      "name": "American First National Bank",
+      "fdic_insured_since": "05/18/1998",
+      "fdic_cert": "34656",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "9999 Bellaire Blvd, Houston, TX 77036",
+      "website": "https://www.afnb.com"
+    },
+    {
+      "name": "American Momentum Bank",
+      "fdic_insured_since": "10/25/2006",
+      "fdic_cert": "58309",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 Momentum Blvd, College Station, TX 77845",
+      "website": "https://www.americanmomentum.bank"
+    },
+    {
+      "name": "American Nation Bank",
+      "fdic_insured_since": "05/02/1983",
+      "fdic_cert": "24472",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1901 N Commerce St, Ardmore, OK 73401",
+      "website": "https://www.bankanb.com"
+    },
+    {
+      "name": "American National Bank & Trust",
+      "fdic_insured_since": "11/29/1976",
+      "fdic_cert": "22373",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2732a Midwestern Pkwy, Wichita Falls, TX 76308",
+      "website": "https://www.amnat.com"
+    },
+    {
+      "name": "American State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9967",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "102 W Front, Arp, TX 75750",
+      "website": "https://www.asb.com"
+    },
+    {
+      "name": "Ameristate Bank",
+      "fdic_insured_since": "07/02/1937",
+      "fdic_cert": "15510",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "131 S Pennsylvania Ave, Atoka, OK 74525",
+      "website": "https://www.ameristatebank.com"
+    },
+    {
+      "name": "Amistad Bank",
+      "fdic_insured_since": "04/25/1986",
+      "fdic_cert": "26658",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1301 Veterans Blvd, Del Rio, TX 78840",
+      "website": "https://www.amistadbank.com"
+    },
+    {
+      "name": "Anahuac National Bank",
+      "fdic_insured_since": "12/20/1976",
+      "fdic_cert": "22381",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "801 Ross Sterling Ave, Anahuac, TX 77514",
+      "website": "https://www.anbank.net"
+    },
+    {
+      "name": "Anchor D Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4208",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "222 Main Street, Texhoma, OK 73949",
+      "website": "https://www.anchordbank.com"
+    },
+    {
+      "name": "Angelina Savings Bank, SSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32018",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1721 Tulane Dr, Lufkin, TX 75901",
+      "website": "https://www.angelinabank.com"
+    },
+    {
+      "name": "Anthem Bank & Trust",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29679",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "23910 Railroad Ave, Plaquemine, LA 70764",
+      "website": "https://www.anthembank.com"
+    },
+    {
+      "name": "Armed Forces Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4666",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "320 Kansas Ave, Fort Leavenworth, KS 66027",
+      "website": "https://afbank.com"
+    },
+    {
+      "name": "Arrowhead Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1198",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "108 W Sandstone St, Llano, TX 78643",
+      "website": "https://www.arrowheadbanktexas.com"
+    },
+    {
+      "name": "Atascosa Bank",
+      "fdic_insured_since": "09/07/1982",
+      "fdic_cert": "24064",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1525 W Oaklawn Rd, Pleasanton, TX 78064",
+      "website": "https://www.atascosabank.com"
+    },
+    {
+      "name": "Austin Bank, Texas National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3276",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "200 E Commerce St, Jacksonville, TX 75766",
+      "website": "https://www.austinbank.com"
+    },
+    {
+      "name": "Austin Capital Bank SSB",
+      "fdic_insured_since": "01/09/2006",
+      "fdic_cert": "58082",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3305 Steck Ave Ste 275, Austin, TX 78757",
+      "website": "https://www.austincapitalbank.com"
+    },
+    {
+      "name": "Austin County State Bank",
+      "fdic_insured_since": "06/26/2007",
+      "fdic_cert": "58484",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "436 S Front St, Bellville, TX 77418",
+      "website": "https://www.acsbank.com"
+    },
+    {
+      "name": "Avana Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10704",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2118 S Treadaway Blvd, Abilene, TX 79602",
+      "website": "https://www.avana.bank"
+    },
+    {
+      "name": "b1BANK",
+      "fdic_insured_since": "02/01/2006",
+      "fdic_cert": "58228",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "500 Laurel St, Baton Rouge, LA 70801",
+      "website": "https://www.b1bank.com"
+    },
+    {
+      "name": "Bandera Bank",
+      "fdic_insured_since": "04/24/1986",
+      "fdic_cert": "26653",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "207 Main Street, Bandera, TX 78003",
+      "website": "https://www.banderabank.com"
+    },
+    {
+      "name": "Bank 7",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4147",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1039 Nw 63rd St, Oklahoma City, OK 73116",
+      "website": "https://www.bank7.com"
+    },
+    {
+      "name": "Bank of America, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3510",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 N Tryon St, Charlotte, NC 28202",
+      "website": "https://www.bankofamerica.com"
+    },
+    {
+      "name": "Bank of DeSoto, National Association",
+      "fdic_insured_since": "01/27/1986",
+      "fdic_cert": "26542",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2011 N Hampton Rd, De Soto, TX 75115",
+      "website": "https://www.bankdesoto.com"
+    },
+    {
+      "name": "Bank of England",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13303",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "123 S Main St, England, AR 72046",
+      "website": "https://www.bankofengland-ar.com"
+    },
+    {
+      "name": "Bank of Hope",
+      "fdic_insured_since": "03/18/1986",
+      "fdic_cert": "26610",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3200 Wilshire Blvd Ste 1400, Los Angeles, CA 90010",
+      "website": "https://www.bankofhope.com"
+    },
+    {
+      "name": "Bank of South Texas",
+      "fdic_insured_since": "07/08/1986",
+      "fdic_cert": "26727",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1421 E Nolana Ave, Mcallen, TX 78504",
+      "website": "https://www.bankofsouthtexas.com"
+    },
+    {
+      "name": "Bank of Texas",
+      "fdic_insured_since": "08/04/1962",
+      "fdic_cert": "18576",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "306 W Wall St Ste 100, Midland, TX 79701",
+      "website": "https://www.bankoftexasonline.com"
+    },
+    {
+      "name": "Bank of the Orient",
+      "fdic_insured_since": "03/17/1971",
+      "fdic_cert": "20387",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1023 Stockton St, San Francisco, CA 94108",
+      "website": "https://www.bankorient.com"
+    },
+    {
+      "name": "Bank of the West",
+      "fdic_insured_since": "04/01/1986",
+      "fdic_cert": "26627",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "108 W Northwest Hwy, Grapevine, TX 76051",
+      "website": "https://www.bnkwest.com"
+    },
+    {
+      "name": "Bank of Whittier, National Association",
+      "fdic_insured_since": "12/20/1982",
+      "fdic_cert": "24211",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "15141 Whittier Blvd, Whittier, CA 90603",
+      "website": "https://www.whittierbank.com"
+    },
+    {
+      "name": "Bank OZK",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "110",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "18000 Cantrell Rd, Little Rock, AR 72223",
+      "website": "https://www.ozk.com"
+    },
+    {
+      "name": "Bank19",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3335",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "501 W Main St, Memphis, TX 79245",
+      "website": "https://www.firstmemphis.com"
+    },
+    {
+      "name": "BankUnited, National Association",
+      "fdic_insured_since": "05/21/2009",
+      "fdic_cert": "58979",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "14817 Oak Ln, Miami Lakes, FL 33016",
+      "website": "https://www.bankunited.com"
+    },
+    {
+      "name": "Benchmark Bank",
+      "fdic_insured_since": "08/29/1964",
+      "fdic_cert": "19215",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "5700 Legacy Dr Ste 10, Plano, TX 75024",
+      "website": "https://www.benchmarkbank.com"
+    },
+    {
+      "name": "Big Bend Banks, N.A.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3320",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "301 South Highland Avenue, Marfa, TX 79843",
+      "website": "https://www.marfanb.com"
+    },
+    {
+      "name": "Blue Sky Bank",
+      "fdic_insured_since": "12/04/1934",
+      "fdic_cert": "14899",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 E 8th St, Pawhuska, OK 74056",
+      "website": "https://www.bluesky.bank"
+    },
+    {
+      "name": "BMO Bank National Association",
+      "fdic_insured_since": "05/17/1947",
+      "fdic_cert": "16571",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "320 S Canal St, Chicago, IL 60606",
+      "website": "https://www.bmo.com"
+    },
+    {
+      "name": "BNY Mellon, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7946",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "500 Grant St, Pittsburgh, PA 15258",
+      "website": "https://www.bny.com"
+    },
+    {
+      "name": "BOC Bank",
+      "fdic_insured_since": "08/16/1984",
+      "fdic_cert": "25328",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "201 N Main St, Mclean, TX 79057",
+      "website": "https://www.bocbanking.com"
+    },
+    {
+      "name": "Bodcaw Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5624",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "307 Thomas St, Stamps, AR 71860",
+      "website": "https://www.bodcaw.bank"
+    },
+    {
+      "name": "BOKF, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4214",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Williams Ctr, Tulsa, OK 74172",
+      "website": "https://www.bokfinancial.com"
+    },
+    {
+      "name": "BOM Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1373",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "814 Washington St, Natchitoches, LA 71457",
+      "website": "https://www.bofm.com"
+    },
+    {
+      "name": "Brazos National Bank",
+      "fdic_insured_since": "08/02/1982",
+      "fdic_cert": "24038",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2300 Brazosport Blvd N, Richwood, TX 77531",
+      "website": "https://www.brazosbank.com"
+    },
+    {
+      "name": "Bridge City State Bank",
+      "fdic_insured_since": "02/27/1960",
+      "fdic_cert": "18155",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "701 W Round Bunch Rd, Bridge City, TX 77611",
+      "website": "https://www.bridgecitybank.com"
+    },
+    {
+      "name": "Broadstreet Bank S S B",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28868",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "215 W Broad St, Mineola, TX 75773",
+      "website": "https://www.broadstreet.bank"
+    },
+    {
+      "name": "Broadway National Bank",
+      "fdic_insured_since": "02/03/1941",
+      "fdic_cert": "15797",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1177 Ne Loop 410, San Antonio, TX 78209",
+      "website": "https://www.broadway.bank"
+    },
+    {
+      "name": "Busey Bank",
+      "fdic_insured_since": "07/08/1946",
+      "fdic_cert": "16450",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 W University Ave, Champaign, IL 61820",
+      "website": "https://www.busey.com"
+    },
+    {
+      "name": "Capital Bank",
+      "fdic_insured_since": "04/10/1965",
+      "fdic_cert": "19401",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "10304 East Fwy, Jacinto City, TX 77029",
+      "website": "https://www.capitalbanktx.com"
+    },
+    {
+      "name": "Capital One, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4297",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1680 Capital One Dr, Mclean, VA 22102",
+      "website": "https://www.capitalone.com"
+    },
+    {
+      "name": "Capra Bank",
+      "fdic_insured_since": "01/21/1946",
+      "fdic_cert": "16363",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "955 Washington St Suite 107, Dubuque, IA 52001",
+      "website": "https://www.caprabank.com"
+    },
+    {
+      "name": "Carmine State Bank",
+      "fdic_insured_since": "11/04/1964",
+      "fdic_cert": "19278",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "235 Centennial St, Carmine, TX 78932",
+      "website": "https://www.carminestatebank.com"
+    },
+    {
+      "name": "Castroville State Bank",
+      "fdic_insured_since": "04/02/1959",
+      "fdic_cert": "17979",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "502 Paris St, Castroville, TX 78009",
+      "website": "https://www.castrovillestatebank.com"
+    },
+    {
+      "name": "Cathay Bank",
+      "fdic_insured_since": "04/19/1962",
+      "fdic_cert": "18503",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "777 N Broadway, Los Angeles, CA 90012",
+      "website": "https://www.cathaybank.com"
+    },
+    {
+      "name": "Cattlemens Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12285",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3421 N Main St, Altus, OK 73521",
+      "website": "https://www.cattlemensbank.com"
+    },
+    {
+      "name": "Cendera Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3098",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "615 E Bells Blvd, Bells, TX 75414",
+      "website": "https://cenderabank.com"
+    },
+    {
+      "name": "Centennial Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11241",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "620 Chestnut St, Conway, AR 72032",
+      "website": "https://www.my100bank.com"
+    },
+    {
+      "name": "Central Bank",
+      "fdic_insured_since": "05/31/1956",
+      "fdic_cert": "17612",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "11201 Clay Rd, Houston, TX 77041",
+      "website": "https://www.centralbankhouston.com"
+    },
+    {
+      "name": "Central National Bank",
+      "fdic_insured_since": "01/10/1977",
+      "fdic_cert": "22396",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "8320 W Highway 84, Waco, TX 76712",
+      "website": "https://www.cnbwaco.com"
+    },
+    {
+      "name": "Chambers Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5615",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "901 Main St, Danville, AR 72833",
+      "website": "https://www.chambers.bank"
+    },
+    {
+      "name": "Charles Schwab Bank, SSB",
+      "fdic_insured_since": "04/28/2003",
+      "fdic_cert": "57450",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3000 Schwab Way, Westlake, TX 76262",
+      "website": "https://www.schwabbank.com"
+    },
+    {
+      "name": "Charles Schwab Premier Bank, SSB",
+      "fdic_insured_since": "08/30/1991",
+      "fdic_cert": "33497",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3000 Schwab Way, Westlake, TX 76262",
+      "website": ""
+    },
+    {
+      "name": "Charles Schwab Trust Bank",
+      "fdic_insured_since": "07/02/2018",
+      "fdic_cert": "59108",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3000 Schwab Way, Westlake, TX 76262",
+      "website": ""
+    },
+    {
+      "name": "Charter Bank",
+      "fdic_insured_since": "12/14/1962",
+      "fdic_cert": "18660",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "10502 Leopard St, Corpus Christi, TX 78410",
+      "website": "https://www.charterbankcc.com"
+    },
+    {
+      "name": "CIBC National Trust Company",
+      "fdic_insured_since": "05/05/2000",
+      "fdic_cert": "91325",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3290 Northside Pkwy Nw, Atlanta, GA 30327",
+      "website": "https://private-wealth.us.cibc.com"
+    },
+    {
+      "name": "Ciera Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3226",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "623 Elm St, Graham, TX 76450",
+      "website": "https://www.cierabank.com"
+    },
+    {
+      "name": "Citibank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7213",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "5800 S Corporate Pl, Sioux Falls, SD 57108",
+      "website": "https://www.citibank.com"
+    },
+    {
+      "name": "Citizens 1st Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1715",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2001 E Southeast Loop 323, Tyler, TX 75701",
+      "website": "https://www.citizens1stbank.com"
+    },
+    {
+      "name": "Citizens Bank",
+      "fdic_insured_since": "07/24/1949",
+      "fdic_cert": "16817",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 E Main St, Kilgore, TX 75662",
+      "website": "https://www.citizensbanktx.com"
+    },
+    {
+      "name": "Citizens Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3140",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4117 S Georgia St, Amarillo, TX 79110",
+      "website": "https://www.gocitizensbank.com"
+    },
+    {
+      "name": "Citizens Bank of Las Cruces",
+      "fdic_insured_since": "04/06/1970",
+      "fdic_cert": "20161",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "505 S Main St, Las Cruces, NM 88001",
+      "website": "https://www.citizenslc.com"
+    },
+    {
+      "name": "Citizens National Bank",
+      "fdic_insured_since": "09/07/1982",
+      "fdic_cert": "24085",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1320 E Loop 304, Crockett, TX 75835",
+      "website": "https://www.cnbcrockett.com"
+    },
+    {
+      "name": "Citizens National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3127",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "118 S Houston Ave, Cameron, TX 76520",
+      "website": "https://www.cnbanktexas.com"
+    },
+    {
+      "name": "Citizens National Bank at Brownwood",
+      "fdic_insured_since": "09/28/1934",
+      "fdic_cert": "14779",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Carnegie St, Brownwood, TX 76801",
+      "website": "https://www.cnb-brownwood.com"
+    },
+    {
+      "name": "Citizens National Bank of Crosbyton",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3158",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "202 W Main St, Crosbyton, TX 79322",
+      "website": "https://www.cnbcrosbyton.com"
+    },
+    {
+      "name": "Citizens National Bank of Texas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5574",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "200 N Elm St, Waxahachie, TX 75165",
+      "website": "https://www.cnboftexas.com"
+    },
+    {
+      "name": "Citizens State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11905",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 N Home St, Corrigan, TX 75939",
+      "website": "https://www.csbanktx.com"
+    },
+    {
+      "name": "Citizens State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12303",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "102 W Bluff St, Woodville, TX 75979",
+      "website": "https://www.citizensbank.net"
+    },
+    {
+      "name": "Citizens State Bank",
+      "fdic_insured_since": "08/02/1937",
+      "fdic_cert": "15519",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 S Robinson St, Miles, TX 76861",
+      "website": "https://www.citizensstatebk.com"
+    },
+    {
+      "name": "Citizens State Bank",
+      "fdic_insured_since": "06/07/1947",
+      "fdic_cert": "16581",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "224 N Main St, Anton, TX 79313",
+      "website": "https://csbanton.com"
+    },
+    {
+      "name": "Citizens State Bank",
+      "fdic_insured_since": "12/02/1948",
+      "fdic_cert": "16753",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "155 8th St, Somerville, TX 77879",
+      "website": "https://www.csbtx.bank"
+    },
+    {
+      "name": "Citizens State Bank",
+      "fdic_insured_since": "04/24/1953",
+      "fdic_cert": "17214",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "222 Main St, Sealy, TX 77474",
+      "website": "https://www.csbsealy.com"
+    },
+    {
+      "name": "Citizens State Bank of Luling",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10327",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 S Magnolia Ave, Luling, TX 78648",
+      "website": "https://www.csbsa.com"
+    },
+    {
+      "name": "City Bank",
+      "fdic_insured_since": "04/13/1984",
+      "fdic_cert": "25103",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5219 City Bank Pkwy, Lubbock, TX 79407",
+      "website": "https://www.city.bank"
+    },
+    {
+      "name": "City Bank & Trust Co.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12608",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "146 Saint Denis St, Natchitoches, LA 71457",
+      "website": "https://www.mycitybank.com"
+    },
+    {
+      "name": "City National Bank",
+      "fdic_insured_since": "02/28/1983",
+      "fdic_cert": "24367",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1465 W 2nd Ave, Corsicana, TX 75110",
+      "website": "https://www.mycnbtx.com"
+    },
+    {
+      "name": "Classic Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3126",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "102 N Houston Ave, Cameron, TX 76520",
+      "website": "https://www.classic.bank"
+    },
+    {
+      "name": "Clear Fork Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3067",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 S Main St, Albany, TX 76430",
+      "website": "https://www.clearfork.bank"
+    },
+    {
+      "name": "Coleman County State Bank",
+      "fdic_insured_since": "04/01/1937",
+      "fdic_cert": "15480",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "118 W Pecan St, Coleman, TX 76834",
+      "website": "https://www.colemanbank.com"
+    },
+    {
+      "name": "Colonial Savings, F.A.",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31361",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2626c West Fwy, Fort Worth, TX 76102",
+      "website": "https://www.gocolonial.com"
+    },
+    {
+      "name": "Columbus State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12305",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1102 Milam St, Columbus, TX 78934",
+      "website": "https://www.columbusstate.com"
+    },
+    {
+      "name": "Commerce Bank",
+      "fdic_insured_since": "03/31/1982",
+      "fdic_cert": "23772",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5800 San Dario Ave, Laredo, TX 78041",
+      "website": "https://www.ibc.com"
+    },
+    {
+      "name": "Commerce Bank",
+      "fdic_insured_since": "02/21/1984",
+      "fdic_cert": "24998",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1000 Walnut St, Kansas City, MO 64106",
+      "website": "https://www.commercebank.com"
+    },
+    {
+      "name": "Commerce Bank Texas",
+      "fdic_insured_since": "01/31/1936",
+      "fdic_cert": "15346",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "112 Fordtran St, Stockdale, TX 78160",
+      "website": "https://www.commercebanktx.com"
+    },
+    {
+      "name": "Commercial Bank of Texas, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1209",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "215 E Main St, Nacogdoches, TX 75961",
+      "website": "https://www.cbtx.com"
+    },
+    {
+      "name": "Commercial National Bank of Texarkana",
+      "fdic_insured_since": "02/05/1964",
+      "fdic_cert": "19024",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "5515 Summerhill Rd, Texarkana, TX 75503",
+      "website": "https://www.cnbtxk.com"
+    },
+    {
+      "name": "Commercial State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10330",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8045 N Interstate 45 Service Rd, Palmer, TX 75152",
+      "website": "https://www.csbpalmer.com"
+    },
+    {
+      "name": "Commonwealth Business Bank",
+      "fdic_insured_since": "03/03/2005",
+      "fdic_cert": "57873",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3435 Wilshire Blvd, Los Angeles, CA 90010",
+      "website": "https://www.cbb-bank.com"
+    },
+    {
+      "name": "Community Bank",
+      "fdic_insured_since": "10/15/1984",
+      "fdic_cert": "25752",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 Community Blvd, Longview, TX 75605",
+      "website": "https://www.cbanktexas.com"
+    },
+    {
+      "name": "Community Bank & Trust, Waco, Texas",
+      "fdic_insured_since": "05/14/1952",
+      "fdic_cert": "17108",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1800 Washington Ave, Waco, TX 76701",
+      "website": "https://www.cbtwaco.bank"
+    },
+    {
+      "name": "Community National Bank",
+      "fdic_insured_since": "01/03/1984",
+      "fdic_cert": "24897",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "500 W Illinois Ave, Midland, TX 79701",
+      "website": "https://www.cnbtx.bank"
+    },
+    {
+      "name": "Community National Bank & Trust of Texas",
+      "fdic_insured_since": "04/29/1960",
+      "fdic_cert": "18185",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "321 N 15th St, Corsicana, TX 75110",
+      "website": "https://www.mybanktx.com"
+    },
+    {
+      "name": "Cornerstone Capital Bank, SSB",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1213",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1177 West Loop S Ste 750, Houston, TX 77027",
+      "website": "https://www.cornerstonecapital.com"
+    },
+    {
+      "name": "Crossroads Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10709",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "406 W Grand Ave, Yoakum, TX 77995",
+      "website": "https://www.crbanktx.com"
+    },
+    {
+      "name": "Crowell State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10352",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 E Commerce St, Crowell, TX 79227",
+      "website": "https://www.crowellstatebank.com"
+    },
+    {
+      "name": "Cypress Bank, SSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31905",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "120 S Greer Blvd, Pittsburg, TX 75686",
+      "website": "https://www.cypressbanktx.com"
+    },
+    {
+      "name": "Dalhart Federal Savings & Loan Association, SSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29208",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "502 Denrock Ave, Dalhart, TX 79022",
+      "website": "https://www.dalhartfederal.com"
+    },
+    {
+      "name": "Dallas Capital Bank, National Association",
+      "fdic_insured_since": "06/26/1972",
+      "fdic_cert": "20727",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "14185 Dallas Pkwy, Dallas, TX 75254",
+      "website": "https://www.dallascapitalbank.com"
+    },
+    {
+      "name": "Diamond Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1527",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "319 E Main, Murfreesboro, AR 71958",
+      "website": "https://www.diamond.bank"
+    },
+    {
+      "name": "Dominion Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11934",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "17304 Preston Rd Ste 150, Dallas, TX 75252",
+      "website": "https://www.dominionbanking.com"
+    },
+    {
+      "name": "East West Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31628",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "135 N Los Robles Ave Fl 7, Pasadena, CA 91101",
+      "website": "https://www.eastwestbank.com"
+    },
+    {
+      "name": "ENCORE BANK",
+      "fdic_insured_since": "09/08/1997",
+      "fdic_cert": "34562",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1801 Rahling Rd, Little Rock, AR 72223",
+      "website": "https://www.bankencore.com"
+    },
+    {
+      "name": "Extraco Banks, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5551",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3615 S 31st St, Temple, TX 76502",
+      "website": "https://www.extracobanks.com"
+    },
+    {
+      "name": "Falcon International Bank",
+      "fdic_insured_since": "12/10/1986",
+      "fdic_cert": "26856",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7718 Mcpherson Rd Bldg F, Laredo, TX 78045",
+      "website": "https://www.falconbank.com"
+    },
+    {
+      "name": "Fannin Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5589",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "230 E 3rd St, Bonham, TX 75418",
+      "website": "https://www.fanninbank.com"
+    },
+    {
+      "name": "Farm Bureau Bank FSB",
+      "fdic_insured_since": "07/12/1999",
+      "fdic_cert": "35157",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "10345 Professional Cir, Reno, NV 89521",
+      "website": "https://www.farmbureau.bank"
+    },
+    {
+      "name": "Farmers and Merchants Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3170",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "240 S Texas St, De Leon, TX 76444",
+      "website": "https://www.fmbank-tx.com"
+    },
+    {
+      "name": "Farmers Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1291",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "200 E Main St, Magnolia, AR 71753",
+      "website": "https://www.myfarmers.bank"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13407",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "115 Shelbyville St, Center, TX 75935",
+      "website": "https://www.fsbctx.bank"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "03/14/1936",
+      "fdic_cert": "15367",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "121 S Ellis St, Groesbeck, TX 76642",
+      "website": "https://www.farmersstatebanktexas.com"
+    },
+    {
+      "name": "Fayette Savings Bank, SSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31936",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 E Travis St, La Grange, TX 78945",
+      "website": "https://www.fayettesavings.com"
+    },
+    {
+      "name": "Fidelity Bank of Texas",
+      "fdic_insured_since": "03/01/1974",
+      "fdic_cert": "21455",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1901 Lake Shore Dr, Waco, TX 76708",
+      "website": "https://www.fbot.com"
+    },
+    {
+      "name": "Fifth Third Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6672",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "38 Fountain Square Plz, Cincinnati, OH 45202",
+      "website": "https://www.53.com"
+    },
+    {
+      "name": "First American Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2240",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "303 W Main St, Artesia, NM 88210",
+      "website": "https://www.firstamericanbanknm.com"
+    },
+    {
+      "name": "First American Trust, FSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "26312",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "5 First American Way Fl 3, Santa Ana, CA 92707",
+      "website": "https://www.firstamtrust.com"
+    },
+    {
+      "name": "First Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3121",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 E 3rd St, Burkburnett, TX 76354",
+      "website": "https://www.firstbankweb.com"
+    },
+    {
+      "name": "First Capital Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3399",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "120 W 3rd St, Quanah, TX 79252",
+      "website": "https://www.fcbqt.com"
+    },
+    {
+      "name": "First Command Bank",
+      "fdic_insured_since": "04/18/1997",
+      "fdic_cert": "34415",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Firstcomm Plz, Fort Worth, TX 76109",
+      "website": "https://www.firstcommand.com"
+    },
+    {
+      "name": "First Commercial Bank, National Association",
+      "fdic_insured_since": "07/01/1983",
+      "fdic_cert": "24603",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1336 E Court St, Seguin, TX 78155",
+      "website": "https://www.1cb.com"
+    },
+    {
+      "name": "First Community Bank",
+      "fdic_insured_since": "10/01/1979",
+      "fdic_cert": "22964",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1151 W Us Highway 77, San Benito, TX 78586",
+      "website": "https://www.fcbtx.com"
+    },
+    {
+      "name": "First Community Bank",
+      "fdic_insured_since": "02/07/1983",
+      "fdic_cert": "24353",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "416 N Water St, Corpus Christi, TX 78401",
+      "website": "https://www.fcbot.com"
+    },
+    {
+      "name": "First Federal Bank Littlefield, Texas",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30291",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2313 Phelps Ave, Littlefield, TX 79339",
+      "website": "https://firstfedlfd.com"
+    },
+    {
+      "name": "First Federal Community Bank, SSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27678",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "630 Clarksville St, Paris, TX 75460",
+      "website": "https://www.ffcbank.com"
+    },
+    {
+      "name": "First Financial Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3066",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "400 Pine St, Abilene, TX 79601",
+      "website": "https://www.ffin.com/"
+    },
+    {
+      "name": "First Guaranty Bank",
+      "fdic_insured_since": "03/12/1934",
+      "fdic_cert": "14028",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 E Thomas St, Hammond, LA 70401",
+      "website": "https://www.fgb.net"
+    },
+    {
+      "name": "First Horizon Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4977",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "165 Madison Ave, Memphis, TN 38103",
+      "website": "https://www.firsthorizon.com"
+    },
+    {
+      "name": "First Liberty Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "14029",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9601 N May Ave, Oklahoma City, OK 73120",
+      "website": "https://www.myfirstliberty.com"
+    },
+    {
+      "name": "First Liberty Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3301",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1900 Sam Houston St, Liberty, TX 77575",
+      "website": "https://flb.bank"
+    },
+    {
+      "name": "First Lockhart Bank",
+      "fdic_insured_since": "01/09/1934",
+      "fdic_cert": "13599",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 S Main St, Lockhart, TX 78644",
+      "website": "https://www.firstlockhart.com"
+    },
+    {
+      "name": "First Mid Bank & Trust, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3705",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1515 Charleston Ave, Mattoon, IL 61938",
+      "website": "https://www.firstmid.com"
+    },
+    {
+      "name": "First National Bank",
+      "fdic_insured_since": "04/01/1997",
+      "fdic_cert": "34455",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "118 N Garfield Ave, Rotan, TX 79546",
+      "website": "https://www.fnbrotan.com"
+    },
+    {
+      "name": "First National Bank and Trust Company of Weatherford",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5575",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "220 Palo Pinto St, Weatherford, TX 76086",
+      "website": "https://www.go2fbt.bank"
+    },
+    {
+      "name": "First National Bank in Port Lavaca",
+      "fdic_insured_since": "11/13/1957",
+      "fdic_cert": "17811",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1101 N Us Highway 35 Byp, Port Lavaca, TX 77979",
+      "website": "https://www.fnbportlavaca.com"
+    },
+    {
+      "name": "First National Bank of Bosque County",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5564",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "418 E Avenue C, Valley Mills, TX 76689",
+      "website": ""
+    },
+    {
+      "name": "First National Bank of Burleson",
+      "fdic_insured_since": "04/20/1981",
+      "fdic_cert": "23430",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "899 Ne Alsbury Blvd, Burleson, TX 76028",
+      "website": "https://www.firstburleson.com"
+    },
+    {
+      "name": "First National Bank of Central Texas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3325",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1835 N Valley Mills Dr, Waco, TX 76710",
+      "website": "https://www.fnbct.com"
+    },
+    {
+      "name": "First National Bank of Dublin",
+      "fdic_insured_since": "05/07/1985",
+      "fdic_cert": "26228",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "825 N Patrick St, Dublin, TX 76446",
+      "website": "https://www.bankingfnb.com"
+    },
+    {
+      "name": "First National Bank of Fort Stockton",
+      "fdic_insured_since": "10/01/1958",
+      "fdic_cert": "17913",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1000 W Dickinson Blvd, Fort Stockton, TX 79735",
+      "website": "https://www.fnbfst.com"
+    },
+    {
+      "name": "First National Bank of Giddings",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3217",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "108 E Austin St, Giddings, TX 78942",
+      "website": "https://www.fnbgiddings.com"
+    },
+    {
+      "name": "First National Bank of Hereford",
+      "fdic_insured_since": "12/06/1999",
+      "fdic_cert": "34918",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "301 W 3rd St, Hereford, TX 79045",
+      "website": "https://www.fnbhereford.com"
+    },
+    {
+      "name": "First National Bank of Huntsville",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3269",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1300 11th St, Huntsville, TX 77340",
+      "website": "https://www.fnbhuntsvilletx.bank"
+    },
+    {
+      "name": "First National Bank of Lake Jackson",
+      "fdic_insured_since": "09/26/1963",
+      "fdic_cert": "18895",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "122 West Way, Lake Jackson, TX 77566",
+      "website": "https://www.fnblj.com"
+    },
+    {
+      "name": "First National Bank of Omaha",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5452",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1601 Capitol Avenue, Omaha, NE 68102",
+      "website": "https://www.fnbo.com"
+    },
+    {
+      "name": "First National Bank of South Padre Island",
+      "fdic_insured_since": "12/20/1983",
+      "fdic_cert": "24902",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "709 Park Road 100, South Padre Island, TX 78597",
+      "website": "https://www.fnbspi.com"
+    },
+    {
+      "name": "First National Bank Texas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3285",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "901 E Central Texas Expy, Killeen, TX 76541",
+      "website": "https://www.1stnb.com"
+    },
+    {
+      "name": "First Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32629",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "201 N 3rd St, Beresford, SD 57004",
+      "website": "https://firstsavingsbanks.com"
+    },
+    {
+      "name": "First Security State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11932",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "307 N 3rd St, Cranfills Gap, TX 76637",
+      "website": "https://www.fssbtexas.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1218",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 Ne Court St, Spearman, TX 79081",
+      "website": "https://www.fsbtx.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "06/28/1935",
+      "fdic_cert": "15206",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "130 E Corsicana St, Athens, TX 75751",
+      "website": "https://www.bankfsb.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "07/09/1937",
+      "fdic_cert": "15511",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "801 E California St, Gainesville, TX 76240",
+      "website": "https://www.firststate.bank"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "11/08/1947",
+      "fdic_cert": "16643",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "601 College St, Junction, TX 76849",
+      "website": "https://www.fsbjunction.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "04/26/1948",
+      "fdic_cert": "16695",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "302 North Main Street, Stratford, TX 79084",
+      "website": "https://www.firstclassbanking.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "06/20/1957",
+      "fdic_cert": "17775",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "245 W Moss St, Paint Rock, TX 76866",
+      "website": "https://www.fsbpaintrock.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "01/02/1959",
+      "fdic_cert": "17950",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 Brazosport Blvd N, Clute, TX 77531",
+      "website": "https://www.bankatfsb.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "10/08/1960",
+      "fdic_cert": "18301",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "One Commerce Park, Shallowater, TX 79363",
+      "website": "https://www.fsbshallowater.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "05/26/1983",
+      "fdic_cert": "24498",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1526 4th St, Graham, TX 76450",
+      "website": "https://www.fsbgraham.bank"
+    },
+    {
+      "name": "First State Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11559",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "110 W Panola St, Carthage, TX 75633",
+      "website": "https://www.fsbcarthage.com"
+    },
+    {
+      "name": "First State Bank of Bedias",
+      "fdic_insured_since": "03/24/1950",
+      "fdic_cert": "16895",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "22201 Highway 90 N, Bedias, TX 77831",
+      "website": "https://www.bediasbank.com"
+    },
+    {
+      "name": "First State Bank of Ben Wheeler, Texas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11904",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "14269 State Highway 64, Ben Wheeler, TX 75754",
+      "website": "https://www.fsbbenwheeler.com"
+    },
+    {
+      "name": "First State Bank of Brownsboro",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11181",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "14225 State Highway 31 E, Brownsboro, TX 75756",
+      "website": "https://www.fsbbrownsboro.com"
+    },
+    {
+      "name": "First State Bank of Burnet",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11557",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "136 E Washington St, Burnet, TX 78611",
+      "website": "https://www.fsbburnet.com"
+    },
+    {
+      "name": "First State Bank of Livingston",
+      "fdic_insured_since": "06/27/1942",
+      "fdic_cert": "15898",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "112 W Polk St, Livingston, TX 77351",
+      "website": "https://www.fsblivingston.bank"
+    },
+    {
+      "name": "First State Bank of Odem",
+      "fdic_insured_since": "11/12/1945",
+      "fdic_cert": "16334",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 Main St, Odem, TX 78370",
+      "website": "https://www.fsbodem.com"
+    },
+    {
+      "name": "First State Bank of San Diego",
+      "fdic_insured_since": "08/09/1954",
+      "fdic_cert": "17350",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "209 E Gravis St, San Diego, TX 78384",
+      "website": "https://www.fsbsandiego.com"
+    },
+    {
+      "name": "First State Bank of Texas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11922",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4039 I-10 East, Orange, TX 77630",
+      "website": "https://www.fsboftx.com"
+    },
+    {
+      "name": "First State Bank of Uvalde",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9978",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 E Nopal St, Uvalde, TX 78801",
+      "website": "https://www.fsbuvalde.bank"
+    },
+    {
+      "name": "First Texas Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11935",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "900 S Austin Ave, Georgetown, TX 78626",
+      "website": "https://www.firsttexasbank.bank"
+    },
+    {
+      "name": "First Texas Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3293",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "501 E 3rd St, Lampasas, TX 76550",
+      "website": "https://www.firsttexasbank.bank"
+    },
+    {
+      "name": "First Texas National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3197",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "124 S Main St, Floydada, TX 79235",
+      "website": "https://www.firsttexasnb.com"
+    },
+    {
+      "name": "First Texoma National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13905",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "220 W Main St, Durant, OK 74701",
+      "website": "https://www.ftnb.net"
+    },
+    {
+      "name": "First United Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12769",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 N Broadway St, Dimmitt, TX 79027",
+      "website": "https://www.firstunited.bank"
+    },
+    {
+      "name": "First United Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4239",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1400 W Main St, Durant, OK 74701",
+      "website": "https://www.firstunitedbank.com"
+    },
+    {
+      "name": "First-Citizens Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11063",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "239 Fayetteville St, Raleigh, NC 27601",
+      "website": "https://www.firstcitizens.com"
+    },
+    {
+      "name": "FirstBank Southwest",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3387",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2401 S Georgia St, Amarillo, TX 79109",
+      "website": "https://www.fbsw.com"
+    },
+    {
+      "name": "Flanagan State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11734",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 W Falcon Hwy, Flanagan, IL 61740",
+      "website": "https://www.flanaganstatebank.com"
+    },
+    {
+      "name": "Freedom Bank",
+      "fdic_insured_since": "07/12/1958",
+      "fdic_cert": "17881",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "533 N Alamo Rd, Alamo, TX 78516",
+      "website": "https://www.freedombanktexas.com"
+    },
+    {
+      "name": "Frontier Bank of Texas",
+      "fdic_insured_since": "06/11/2007",
+      "fdic_cert": "58509",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1213 Highway 290 E, Elgin, TX 78621",
+      "website": "https://www.frontierbankoftexas.com"
+    },
+    {
+      "name": "Frost Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5510",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "111 W Houston St, San Antonio, TX 78205",
+      "website": "https://www.frostbank.com"
+    },
+    {
+      "name": "FSNB, National Association",
+      "fdic_insured_since": "07/01/1946",
+      "fdic_cert": "16416",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1420 Sw Lee Blvd, Lawton, OK 73501",
+      "website": "https://www.fsnb.com"
+    },
+    {
+      "name": "Gilmer National Bank, Gilmer, Texas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3219",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "713 Us Highway 271 N, Gilmer, TX 75644",
+      "website": "https://www.gnbgilmer.com"
+    },
+    {
+      "name": "Glacier Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30788",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "49 Commons Loop, Kalispell, MT 59901",
+      "website": "https://www.glacierbank.com"
+    },
+    {
+      "name": "Global One Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11570",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1400 Blalock Rd Suite A, Houston, TX 77055",
+      "website": "https://www.globalonebank.com"
+    },
+    {
+      "name": "Golden Bank, National Association",
+      "fdic_insured_since": "05/03/1985",
+      "fdic_cert": "26223",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "9315 Bellaire Blvd, Houston, TX 77036",
+      "website": "https://goldenbank-na.com"
+    },
+    {
+      "name": "Graham Savings and Loan, SSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29206",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "745 Elm St, Graham, TX 76450",
+      "website": "https://www.grahamsl.com"
+    },
+    {
+      "name": "Grand Bank",
+      "fdic_insured_since": "07/21/1975",
+      "fdic_cert": "22065",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2642 E 21st St, Tulsa, OK 74114",
+      "website": "https://www.grandbank.com"
+    },
+    {
+      "name": "Grandview Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3230",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 E Criner St, Grandview, TX 76050",
+      "website": "https://www.grandviewbank.com"
+    },
+    {
+      "name": "Great Plains National Bank",
+      "fdic_insured_since": "07/17/1996",
+      "fdic_cert": "34207",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2017 W 3rd St, Elk City, OK 73644",
+      "website": "https://www.gpbankok.com."
+    },
+    {
+      "name": "Great Southern Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29546",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "14309 State Highway 13, Reeds Spring, MO 65737",
+      "website": "https://www.greatsouthernbank.com"
+    },
+    {
+      "name": "Greater State Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31762",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3300 N 10th St, Mcallen, TX 78501",
+      "website": "https://greaterstate.bank"
+    },
+    {
+      "name": "Guadalupe Bank",
+      "fdic_insured_since": "03/17/2008",
+      "fdic_cert": "58768",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1309 Bandera Hwy, Kerrville, TX 78028",
+      "website": "https://www.guadalupebank.com"
+    },
+    {
+      "name": "Gulf Capital Bank",
+      "fdic_insured_since": "12/18/2019",
+      "fdic_cert": "59185",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 Riverway Ste 150, Houston, TX 77056",
+      "website": "https://www.gulfcapitalbank.com"
+    },
+    {
+      "name": "Gulf Coast Bank and Trust Company",
+      "fdic_insured_since": "06/08/1990",
+      "fdic_cert": "32974",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 Saint Charles Ave, New Orleans, LA 70130",
+      "website": "https://www.gulfbank.com"
+    },
+    {
+      "name": "Hancock Whitney Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12441",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2510 14th St, Gulfport, MS 39501",
+      "website": "https://www.hancockwhitney.com"
+    },
+    {
+      "name": "Hanmi Bank",
+      "fdic_insured_since": "12/15/1982",
+      "fdic_cert": "24170",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3660 Wilshire Blvd Ste Ph-A, Los Angeles, CA 90010",
+      "website": "https://www.hanmi.com"
+    },
+    {
+      "name": "Harmony Bank",
+      "fdic_insured_since": "03/04/2005",
+      "fdic_cert": "57922",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4161 Mckinney Ave Ste 101, Dallas, TX 75204",
+      "website": "https://www.harmony.bank"
+    },
+    {
+      "name": "Haskell National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "14399",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "601 N 1st St, Haskell, TX 79521",
+      "website": "https://www.haskellnationalbank.com"
+    },
+    {
+      "name": "Henderson Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29241",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "130 N Marshall St, Henderson, TX 75652",
+      "website": "https://www.hendersonfederal.com"
+    },
+    {
+      "name": "Herring Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5568",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2201 Civic Cir, Amarillo, TX 79109",
+      "website": "https://www.herringbank.com"
+    },
+    {
+      "name": "Home Bank, National Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28094",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "503 Kaliste Saloom Rd, Lafayette, LA 70508",
+      "website": "https://www.home24bank.com"
+    },
+    {
+      "name": "HomeBank Texas",
+      "fdic_insured_since": "04/07/1952",
+      "fdic_cert": "17094",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "601 N Highway 175, Seagoville, TX 75159",
+      "website": "https://www.homebanktx.com"
+    },
+    {
+      "name": "HomeTown Bank, National Association",
+      "fdic_insured_since": "06/27/1966",
+      "fdic_cert": "19603",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1801 45th St, Galveston, TX 77550",
+      "website": "https://www.hometown.bank"
+    },
+    {
+      "name": "Horizon Bank, SSB",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3256",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "600 West 5th Street, Austin, TX 78701",
+      "website": "https://www.horizon.bank"
+    },
+    {
+      "name": "Houston Bank & Trust",
+      "fdic_insured_since": "05/22/2026",
+      "fdic_cert": "59360",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2603 Augusta Dr Ste 240, Houston, TX 77057",
+      "website": ""
+    },
+    {
+      "name": "Incommons Bank, N.A.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3342",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "301 E Commerce St, Mexia, TX 76667",
+      "website": "https://www.incommonsbank.com"
+    },
+    {
+      "name": "Independent Bank",
+      "fdic_insured_since": "04/20/1998",
+      "fdic_cert": "34728",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5050 Poplar Avenue, Memphis, TN 38157",
+      "website": "https://www.i-bankonline.com"
+    },
+    {
+      "name": "Integrity Bank SSB",
+      "fdic_insured_since": "10/11/2024",
+      "fdic_cert": "59342",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "8584 Katy Fwy Ste 101, Houston, TX 77024",
+      "website": "https://www.itx.bank"
+    },
+    {
+      "name": "InterBank",
+      "fdic_insured_since": "03/31/1988",
+      "fdic_cert": "27210",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "4921 N May Ave, Oklahoma City, OK 73112",
+      "website": "https://www.interbank.com"
+    },
+    {
+      "name": "International Bank of Commerce",
+      "fdic_insured_since": "09/02/1966",
+      "fdic_cert": "19629",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1200 San Bernardo Ave, Laredo, TX 78040",
+      "website": "https://www.ibc.com"
+    },
+    {
+      "name": "International Bank of Commerce",
+      "fdic_insured_since": "02/06/1984",
+      "fdic_cert": "24961",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "908 N Us Highway 83, Zapata, TX 78076",
+      "website": "https://www.ibc.com"
+    },
+    {
+      "name": "International Bank of Commerce",
+      "fdic_insured_since": "10/09/1984",
+      "fdic_cert": "25679",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1600 Fm 802, Brownsville, TX 78521",
+      "website": "https://www.ibc.com"
+    },
+    {
+      "name": "International Bank of Commerce",
+      "fdic_insured_since": "01/01/2017",
+      "fdic_cert": "59093",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3817 N West Expy, Oklahoma City, OK 73112",
+      "website": "https://www.ibc.com"
+    },
+    {
+      "name": "Interstate Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31043",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 S Main St, Perryton, TX 79070",
+      "website": "https://www.isbtexas.bank"
+    },
+    {
+      "name": "Investar Bank, National Association",
+      "fdic_insured_since": "06/14/2006",
+      "fdic_cert": "58316",
+      "primary_regulator": "Comptroller of the Antiquity",
+      "headquarters_address": "7244 Perkins Rd, Baton Rouge, LA 70808",
+      "website": "https://www.investarbank.com"
+    },
+    {
+      "name": "Inwood National Bank",
+      "fdic_insured_since": "04/09/1964",
+      "fdic_cert": "19080",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "7621 Inwood Rd, Dallas, TX 75209",
+      "website": "https://www.inwoodbank.com"
+    },
+    {
+      "name": "Jefferson Bank",
+      "fdic_insured_since": "08/12/1946",
+      "fdic_cert": "16470",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1900 Broadway Suite 100, San Antonio, TX 78215",
+      "website": "https://www.jeffersonbank.com"
+    },
+    {
+      "name": "Johnson City Bank",
+      "fdic_insured_since": "08/01/1944",
+      "fdic_cert": "16176",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 E Pecan Dr, Johnson City, TX 78636",
+      "website": "https://www.j-cbank.com"
+    },
+    {
+      "name": "JPMorgan Chase Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "628",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1111 Polaris Pkwy, Columbus, OH 43240",
+      "website": "https://www.jpmorganchase.com"
+    },
+    {
+      "name": "junction National Bank",
+      "fdic_insured_since": "04/01/1935",
+      "fdic_cert": "15078",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "701 Main St, Junction, TX 76849",
+      "website": "https://www.junctionnational.com"
+    },
+    {
+      "name": "Kleberg Bank, N.A.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3286",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 E Kleberg Ave, Kingsville, TX 78363",
+      "website": "https://www.klebergbank.com"
+    },
+    {
+      "name": "Kress National Bank",
+      "fdic_insured_since": "09/17/1963",
+      "fdic_cert": "18892",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "101 W 4th St, Kress, TX 79052",
+      "website": "https://www.knbkress.com"
+    },
+    {
+      "name": "Lakeside Bank",
+      "fdic_insured_since": "07/12/1974",
+      "fdic_cert": "21693",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2805 Ridge Rd, Rockwall, TX 75032",
+      "website": "https://www.lbtexas.com"
+    },
+    {
+      "name": "Lamar National Bank",
+      "fdic_insured_since": "10/26/1981",
+      "fdic_cert": "23597",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "200 S Collegiate Dr, Paris, TX 75460",
+      "website": "https://www.lamarnational.com"
+    },
+    {
+      "name": "Legacy Bank & Trust Company",
+      "fdic_insured_since": "08/17/1976",
+      "fdic_cert": "22319",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1500 N Main St, Mountain Grove, MO 65711",
+      "website": "https://www.legacybankandtrust.com"
+    },
+    {
+      "name": "Legend Bank, N.A.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3108",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "101 W Tarrant St, Bowie, TX 76230",
+      "website": "https://www.legend.bank"
+    },
+    {
+      "name": "Liberty Bank and Trust Company",
+      "fdic_insured_since": "11/16/1972",
+      "fdic_cert": "20856",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6600 Plaza Dr, New Orleans, LA 70127",
+      "website": "https://www.libertybank.net"
+    },
+    {
+      "name": "Liberty Capital Bank",
+      "fdic_insured_since": "09/15/2008",
+      "fdic_cert": "58852",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5055 Keller Springs Rd Ste 120, Addison, TX 75001",
+      "website": "https://libertycapital.bank"
+    },
+    {
+      "name": "Liberty National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11522",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "629 Sw C Ave, Lawton, OK 73501",
+      "website": "https://www.weareliberty.bank"
+    },
+    {
+      "name": "Llano National Bank",
+      "fdic_insured_since": "01/17/1983",
+      "fdic_cert": "24305",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1001 Ford St, Llano, TX 78643",
+      "website": "https://www.llanonational.bank"
+    },
+    {
+      "name": "Lone Oak Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3184",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 Ne Main St, Eldorado, TX 76936",
+      "website": "https://www.loneoakbank.com"
+    },
+    {
+      "name": "Lone Star Bank",
+      "fdic_insured_since": "08/23/2006",
+      "fdic_cert": "58324",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2600 S Gessner Rd, Houston, TX 77063",
+      "website": "https://www.lsbtexas.com"
+    },
+    {
+      "name": "Lone Star National Bank",
+      "fdic_insured_since": "01/24/1983",
+      "fdic_cert": "24347",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "206 W Ferguson St, Pharr, TX 78577",
+      "website": "https://www.lonestarnationalbank.com"
+    },
+    {
+      "name": "Lovelady State Bank",
+      "fdic_insured_since": "11/04/1974",
+      "fdic_cert": "21807",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "910 S Commerce St, Lovelady, TX 75851",
+      "website": "https://www.loveladystatebank.com"
+    },
+    {
+      "name": "MapleMark Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3182",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2431 E 61st St, Tulsa, OK 74136",
+      "website": "https://maplemarkbank.com"
+    },
+    {
+      "name": "Marion State Bank",
+      "fdic_insured_since": "02/11/1936",
+      "fdic_cert": "15355",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 W San Antonio St, Marion, TX 78124",
+      "website": "https://www.marionstatebanktx.com"
+    },
+    {
+      "name": "Mason Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3327",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "111 Westmoreland Street, Mason, TX 76856",
+      "website": "https://www.masonbank.com"
+    },
+    {
+      "name": "Maverick Bank",
+      "fdic_insured_since": "01/10/1955",
+      "fdic_cert": "17446",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 S State St, Fort Davis, TX 79734",
+      "website": "https://www.maverick.bank"
+    },
+    {
+      "name": "MCBank",
+      "fdic_insured_since": "06/20/1939",
+      "fdic_cert": "15669",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1017 Parker St, Goldthwaite, TX 76844",
+      "website": "https://www.mc.bank"
+    },
+    {
+      "name": "Members Trust Company",
+      "fdic_insured_since": "10/30/2003",
+      "fdic_cert": "57470",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "14055 Riveredge Dr Ste 525, Tampa, FL 33637",
+      "website": "https://www.memberstrust.com"
+    },
+    {
+      "name": "Menard Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3336",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "201 Ellis St, Menard, TX 76859",
+      "website": "https://www.menardbank.com"
+    },
+    {
+      "name": "Method Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2317",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2 E Broadway, Wyandotte, OK 74370",
+      "website": "https://www.method.bank"
+    },
+    {
+      "name": "Metro City Bank",
+      "fdic_insured_since": "04/04/2006",
+      "fdic_cert": "58181",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5114 Buford Hwy Ne, Doraville, GA 30340",
+      "website": "https://www.metrocitybank.bank"
+    },
+    {
+      "name": "MidFirst Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "4063",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "501 Nw Grand Blvd, Oklahoma City, OK 73118",
+      "website": "https://www.midfirst.com"
+    },
+    {
+      "name": "Monet Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32574",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6000 Legacy Dr, Plano, TX 75024",
+      "website": "https://www.monet.bank"
+    },
+    {
+      "name": "Muenster State Bank",
+      "fdic_insured_since": "07/31/1937",
+      "fdic_cert": "15523",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 North Main Street, Muenster, TX 76252",
+      "website": "https://www.muensterstate.bank"
+    },
+    {
+      "name": "National Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3289",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "141 W Colorado St, La Grange, TX 78945",
+      "website": "https://www.nbt-texas.com"
+    },
+    {
+      "name": "NBH Bank",
+      "fdic_insured_since": "12/10/2010",
+      "fdic_cert": "59052",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "7800 E Orchard Rd Ste 200, Greenwood Village, CO 80111",
+      "website": "https://www.nbhbank.com"
+    },
+    {
+      "name": "NBT Financial Bank",
+      "fdic_insured_since": "11/29/1973",
+      "fdic_cert": "21329",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2535 Ne 28th St, Fort Worth, TX 76106",
+      "website": "https://www.nbt.bank"
+    },
+    {
+      "name": "NewFirst National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3183",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "200 E Jackson St, El Campo, TX 77437",
+      "website": "https://www.newfirst.com"
+    },
+    {
+      "name": "NexBank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29209",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2515 Mckinney Ave Ste 1100, Dallas, TX 75201",
+      "website": "https://www.nexbank.com"
+    },
+    {
+      "name": "Normangee State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3368",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 Main Street, Normangee, TX 77871",
+      "website": "https://www.normangeestatebank.com"
+    },
+    {
+      "name": "North Dallas Bank & Trust Co.",
+      "fdic_insured_since": "03/20/1961",
+      "fdic_cert": "18355",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "12900 Preston Rd, Dallas, TX 75230",
+      "website": "https://www.ndbt.com"
+    },
+    {
+      "name": "One World Bank",
+      "fdic_insured_since": "04/04/2005",
+      "fdic_cert": "57901",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2449 Walnut Hill Ln, Dallas, TX 75229",
+      "website": "https://www.oneworldbank.com"
+    },
+    {
+      "name": "Open Bank",
+      "fdic_insured_since": "06/10/2005",
+      "fdic_cert": "57944",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1000 Wilshire Blvd Ste 100, Los Angeles, CA 90017",
+      "website": "https://www.myopenbank.com"
+    },
+    {
+      "name": "Origin Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12614",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3921 Elm St, Choudrant, LA 71227",
+      "website": "https://www.origin.bank"
+    },
+    {
+      "name": "Ozona Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3376",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "503 11th Street, Ozona, TX 76943",
+      "website": "https://www.ozona.bank"
+    },
+    {
+      "name": "Panhandle First Bank",
+      "fdic_insured_since": "10/12/1976",
+      "fdic_cert": "22340",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1223 N Main St, Guymon, OK 73942",
+      "website": "https://www.mypfb.bank"
+    },
+    {
+      "name": "Pavillion Bank",
+      "fdic_insured_since": "01/17/1983",
+      "fdic_cert": "24303",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1200 W Campbell Rd, Richardson, TX 75080",
+      "website": "https://www.pavillionbank.com"
+    },
+    {
+      "name": "PCB Bank",
+      "fdic_insured_since": "09/18/2003",
+      "fdic_cert": "57463",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3701 Wilshire Blvd, Los Angeles, CA 90010",
+      "website": "https://www.mypcbbank.com"
+    },
+    {
+      "name": "Pegasus Bank",
+      "fdic_insured_since": "01/24/2007",
+      "fdic_cert": "58483",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "4515 W Mockingbird Ln, Dallas, TX 75209",
+      "website": "https://www.pegasusbankdallas.com"
+    },
+    {
+      "name": "Peoples Bank",
+      "fdic_insured_since": "12/15/1988",
+      "fdic_cert": "27398",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "35 South Plz, Paris, TX 75460",
+      "website": "https://www.pbparis.com"
+    },
+    {
+      "name": "Peoples State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10345",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5850 Highway 59 S, Shepherd, TX 77371",
+      "website": "https://www.psbtexas.com"
+    },
+    {
+      "name": "Peoples State Bank",
+      "fdic_insured_since": "05/01/1943",
+      "fdic_cert": "15939",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 W Main St, Rocksprings, TX 78880",
+      "website": "https://www.psbrocksprings.com"
+    },
+    {
+      "name": "Peoples State Bank of Hallettsville",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10719",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "116 E 3rd St, Hallettsville, TX 77964",
+      "website": "https://www.psbhallettsville.com"
+    },
+    {
+      "name": "Pilgrim Bank",
+      "fdic_insured_since": "02/24/1950",
+      "fdic_cert": "16891",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "145 E Marshall St, Pittsburg, TX 75686",
+      "website": "https://www.pilgrimbank.bank"
+    },
+    {
+      "name": "Pinnacle Bank",
+      "fdic_insured_since": "08/10/1970",
+      "fdic_cert": "20231",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "250 W Lancaster Ave, Fort Worth, TX 76102",
+      "website": "https://www.pinnbanktx.com"
+    },
+    {
+      "name": "Pinnacle Bank",
+      "fdic_insured_since": "10/27/2000",
+      "fdic_cert": "35583",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "21 Platform Way S Suite 2300, Nashville, TN 37203",
+      "website": "https://www.pnfp.com"
+    },
+    {
+      "name": "Plains State Bank",
+      "fdic_insured_since": "04/06/1957",
+      "fdic_cert": "17739",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "19404 Kenswick Dr, Humble, TX 77338",
+      "website": "https://www.psbplains.com"
+    },
+    {
+      "name": "PlainsCapital Bank",
+      "fdic_insured_since": "09/15/1955",
+      "fdic_cert": "17491",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "6565 Hillcrest Ave, University Park, TX 75205",
+      "website": "https://www.plainscapital.com"
+    },
+    {
+      "name": "Planters Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8235",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "212 Catchings Ave, Indianola, MS 38751",
+      "website": "https://www.planters-bank.com"
+    },
+    {
+      "name": "PNC Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6384",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "222 Delaware Ave, Wilmington, DE 19801",
+      "website": "https://www.pnc.com"
+    },
+    {
+      "name": "Pointbank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3389",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "200 S Highway 377, Pilot Point, TX 76258",
+      "website": "https://www.pointbank.com"
+    },
+    {
+      "name": "POINTWEST BANK",
+      "fdic_insured_since": "01/09/1934",
+      "fdic_cert": "13600",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 W Oak St, West, TX 76691",
+      "website": "https://www.pointwestbank.com"
+    },
+    {
+      "name": "Preferred Bank",
+      "fdic_insured_since": "12/23/1991",
+      "fdic_cert": "33539",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "601 S Figueroa St, Los Angeles, CA 90017",
+      "website": "https://www.preferredbank.com"
+    },
+    {
+      "name": "PrimeBank of Texas",
+      "fdic_insured_since": "05/09/2003",
+      "fdic_cert": "57495",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4301 Westbank Dr Suite 100c, Austin, TX 78746",
+      "website": "https://www.prime.bank"
+    },
+    {
+      "name": "Producer Bank of Texas",
+      "fdic_insured_since": "09/29/1960",
+      "fdic_cert": "18302",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 Carr St, Powell, TX 75153",
+      "website": "https://producer.bank"
+    },
+    {
+      "name": "PromiseOne Bank",
+      "fdic_insured_since": "11/06/2008",
+      "fdic_cert": "58657",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2385 Pleasant Hill Rd, Duluth, GA 30096",
+      "website": "https://www.promiseone.bank"
+    },
+    {
+      "name": "Prosperity Bank",
+      "fdic_insured_since": "09/13/1949",
+      "fdic_cert": "16835",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1301 N Mechanic St, El Campo, TX 77437",
+      "website": "https://www.prosperitybankusa.com"
+    },
+    {
+      "name": "R Bank",
+      "fdic_insured_since": "06/22/2009",
+      "fdic_cert": "58935",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3600 E Palm Valley Blvd, Round Rock, TX 78665",
+      "website": "https://www.r.bank"
+    },
+    {
+      "name": "Regions Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12368",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1900 5th Ave N, Birmingham, AL 35203",
+      "website": "https://www.regions.com"
+    },
+    {
+      "name": "Rio Bank",
+      "fdic_insured_since": "02/11/1985",
+      "fdic_cert": "25886",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "701 E Expressway 83, Mcallen, TX 78501",
+      "website": "https://www.rio.bank"
+    },
+    {
+      "name": "Robert Lee State Bank",
+      "fdic_insured_since": "12/10/1936",
+      "fdic_cert": "15442",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "621 Austin St, Robert Lee, TX 76945",
+      "website": "https://www.robertleestatebank.com"
+    },
+    {
+      "name": "Round Top State Bank",
+      "fdic_insured_since": "01/21/1965",
+      "fdic_cert": "19358",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 N Washington St, Round Top, TX 78954",
+      "website": "https://www.roundtopstatebank.com"
+    },
+    {
+      "name": "Sabine State Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8141",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "297 Elizabeth St, Many, LA 71449",
+      "website": "https://www.sabinebank.com"
+    },
+    {
+      "name": "The First Security Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4041",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15 South Douglas Avenue, Beaver, OK 73932",
+      "website": "https://www.thefirstsecuritybank.com"
+    },
+    {
+      "name": "The First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11175",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "402 9th St, Abernathy, TX 79311",
+      "website": "https://www.fsbabernathy.net"
+    },
+    {
+      "name": "The First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12315",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "420 Walnut St, Columbus, TX 78934",
+      "website": "https://fsbcolumbus.com"
+    },
+    {
+      "name": "The First State Bank",
+      "fdic_insured_since": "05/07/1956",
+      "fdic_cert": "17588",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "206 North St., Louise, TX 77455",
+      "website": "https://www.fsblouise.com"
+    },
+    {
+      "name": "The Granger National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3232",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "201 W Davilla St, Granger, TX 76530",
+      "website": "https://www.grangernationalbank.com"
+    },
+    {
+      "name": "The Huntington National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6560",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "17 S High St, Columbus, OH 43215",
+      "website": "https://www.huntington.com"
+    },
+    {
+      "name": "The Jacksboro National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3275",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "910 N Main St, Jacksboro, TX 76458",
+      "website": "https://www.mybanktexas.com"
+    },
+    {
+      "name": "The Karnes County National Bank of Karnes City",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3279",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "311 E Calvert Ave, Karnes City, TX 78118",
+      "website": "https://www.kcnb.com"
+    },
+    {
+      "name": "The Lamesa National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3292",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "602 S 1st St, Lamesa, TX 79331",
+      "website": "https://www.lamesanb.com"
+    },
+    {
+      "name": "The Liberty National Bank in Paris",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3384",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "305 Lamar Ave, Paris, TX 75460",
+      "website": "https://www.lnbparis.com"
+    },
+    {
+      "name": "The Lytle State Bank of Lytle, Texas",
+      "fdic_insured_since": "06/10/1937",
+      "fdic_cert": "15501",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "14631 S. Fm 2790 W., Lytle, TX 78052",
+      "website": "https://www.lytlestatebank.com"
+    },
+    {
+      "name": "The MINT National Bank",
+      "fdic_insured_since": "01/05/2009",
+      "fdic_cert": "58764",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1213 Kingwood Dr, Kingwood, TX 77339",
+      "website": "https://www.themint.bank"
+    },
+    {
+      "name": "The Moody National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3210",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2302 Post Office St, Galveston, TX 77550",
+      "website": "https://www.moodybank.com"
+    },
+    {
+      "name": "The National Bank of Andrews",
+      "fdic_insured_since": "05/18/1956",
+      "fdic_cert": "17603",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1501 N Main St, Andrews, TX 79714",
+      "website": "https://www.nbabankonline.com"
+    },
+    {
+      "name": "The Northern Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "913",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "50 S La Salle St, Chicago, IL 60603",
+      "website": "https://www.northerntrust.com"
+    },
+    {
+      "name": "The Pecos County State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13006",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "500 N Main St, Fort Stockton, TX 79735",
+      "website": "https://www.pcsbank.net"
+    },
+    {
+      "name": "The Perryton National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3388",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "825 S Main St, Perryton, TX 79070",
+      "website": "https://www.perrytonbank.com"
+    },
+    {
+      "name": "The State National Bank of Big Spring",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3103",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "901 S Main St, Big Spring, TX 79720",
+      "website": "https://www.statenational.bank"
+    },
+    {
+      "name": "The Waggoner National Bank of Vernon",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5569",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1818 Texas St, Vernon, TX 76384",
+      "website": "https://www.wnbvernon.com"
+    },
+    {
+      "name": "Third Coast Bank",
+      "fdic_insured_since": "02/25/2008",
+      "fdic_cert": "58716",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "20202 Highway 59 N Ste 190, Humble, TX 77338",
+      "website": "https://www.thirdcoast.bank"
+    },
+    {
+      "name": "TIB National Association",
+      "fdic_insured_since": "01/21/1982",
+      "fdic_cert": "23647",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "11701 Luna Rd, Farmers Branch, TX 75234",
+      "website": "https://www.tib.bank"
+    },
+    {
+      "name": "Titan Bank, N.A.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3225",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1701 E Hubbard St, Mineral Wells, TX 76067",
+      "website": "https://www.titanbank.com"
+    },
+    {
+      "name": "Tolleson Private Bank",
+      "fdic_insured_since": "02/03/2003",
+      "fdic_cert": "57522",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5550 Preston Rd Ste B, Dallas, TX 75205",
+      "website": "https://www.tollesonwealth.com"
+    },
+    {
+      "name": "Transpecos Banks, SSB",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11178",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "217 W 3rd St, Pecos, TX 79772",
+      "website": "https://www.transpecos.bank"
+    },
+    {
+      "name": "Trinity Bank, N.A.",
+      "fdic_insured_since": "05/28/2003",
+      "fdic_cert": "57543",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3500 W Vickery Blvd, Fort Worth, TX 76107",
+      "website": "https://www.trinitybk.com"
+    },
+    {
+      "name": "Trinity Capital Bank of Texas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13000",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "815 W Ennis Ave, Ennis, TX 75119",
+      "website": "https://www.tcbtexas.com"
+    },
+    {
+      "name": "Truist Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9846",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "214 N Tryon St, Charlotte, NC 28202",
+      "website": "https://www.truist.com"
+    },
+    {
+      "name": "Trustmark Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4988",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "248 E Capitol St, Jackson, MS 39201",
+      "website": "https://www.trustmark.com"
+    },
+    {
+      "name": "TrustTexas Bank, SSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28515",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "121 E Courthouse St, Cuero, TX 77995",
+      "website": "https://www.trustcobank.com"
+    },
+    {
+      "name": "Union State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5602",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15 20th St N, Pell City, AL 35125",
+      "website": "https://www.unionstate.net"
+    },
+    {
+      "name": "United Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "58",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 E Nashville Ave, Atmore, AL 36502",
+      "website": "https://www.unitedbank.com"
+    },
+    {
+      "name": "United Community Bank",
+      "fdic_insured_since": "03/01/1950",
+      "fdic_cert": "16889",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "200 E Camperdown Way, Greenville, SC 29601",
+      "website": "https://www.ucbi.com"
+    },
+    {
+      "name": "Valley National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9396",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "615 Main Ave, Passaic, NJ 07055",
+      "website": "https://www.valley.com"
+    },
+    {
+      "name": "Valley State Bank",
+      "fdic_insured_since": "04/01/1985",
+      "fdic_cert": "26021",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15565 Highway 43, Russellville, AL 35653",
+      "website": "https://www.valleystate.com"
+    },
+    {
+      "name": "West Alabama Bank & Trust",
+      "fdic_insured_since": "07/29/1944",
+      "fdic_cert": "16175",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "509 1st Ave W, Reform, AL 35481",
+      "website": "https://www.wabt.com"
+    },
+    {
+      "name": "Uwharrie Bank",
+      "fdic_insured_since": "01/26/1984",
+      "fdic_cert": "24919",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "167 N 2nd St, Albemarle, NC 28001",
+      "website": "https://www.uwharrie.com"
+    },
+    {
+      "name": "West Union Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2452",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "212 Main St, West Union, WV 26456",
+      "website": "https://www.westunionbank.com"
+    },
+    {
+      "name": "Whitesville State Bank",
+      "fdic_insured_since": "07/08/1946",
+      "fdic_cert": "16453",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "38609 Coal River Rd, Whitesville, WV 25209",
+      "website": "https://www.whitesvillesb.com"
+    },
+    {
+      "name": "Williamstown Bank, Inc.",
+      "fdic_insured_since": "09/15/1934",
+      "fdic_cert": "14744",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "435 Highland Ave, Williamstown, WV 26187",
+      "website": "https://www.williamstownbank.com"
+    },
+    {
+      "name": "Wells Fargo Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3511",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3201 N 4th Ave, Sioux Falls, SD 57104",
+      "website": "https://www.wellsfargo.com"
+    },
+    {
+      "name": "Woodforest National Bank",
+      "fdic_insured_since": "09/05/1980",
+      "fdic_cert": "23220",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1330 Lake Robbins Dr, The Woodlands, TX 77380",
+      "website": "https://www.woodforest.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

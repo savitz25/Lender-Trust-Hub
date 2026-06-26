@@ -45,7 +45,7 @@ export const US_STATES: StateMeta[] = [
   { code: 'SC', fullName: 'South Carolina', slug: 'south-carolina', region: 'Southeast', hasData: true },
   { code: 'SD', fullName: 'South Dakota', slug: 'south-dakota', region: 'Midwest', hasData: false },
   { code: 'TN', fullName: 'Tennessee', slug: 'tennessee', region: 'Southeast', hasData: false },
-  { code: 'TX', fullName: 'Texas', slug: 'texas', region: 'South', hasData: false },
+  { code: 'TX', fullName: 'Texas', slug: 'texas', region: 'South', hasData: true },
   { code: 'UT', fullName: 'Utah', slug: 'utah', region: 'West', hasData: false },
   { code: 'VT', fullName: 'Vermont', slug: 'vermont', region: 'Northeast', hasData: false },
   { code: 'VA', fullName: 'Virginia', slug: 'virginia', region: 'Southeast', hasData: true },

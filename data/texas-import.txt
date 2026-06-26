@@ -1,0 +1,441 @@
+Agility Bank, National Association,04/18/2022,59239,Comptroller of the Currency,"2401 N Shepherd Dr Ste 140, Houston, TX 77008",www.agility.bank
+Alliance Bank,01/01/1934,11569,Federal Deposit Insurance Corporation,"100 Jefferson St W, Sulphur Springs, TX 75482",www.alliancebank.com
+Alliance Bank Central Texas,03/20/1939,15657,Federal Deposit Insurance Corporation,"191 Archway Dr, Woodway, TX 76712",www.alliancebanktexas.com
+Amarillo National Bank,01/01/1934,14531,Comptroller of the Currency,"410 S Taylor St, Amarillo, TX 79101",www.anb.com
+American Bank of Commerce,10/11/1962,18609,Federal Deposit Insurance Corporation,"530 E Highway 62-82, Wolfforth, TX 79382",www.theabcbank.com
+American Bank, National Association,05/02/1974,21567,Comptroller of the Currency,"2707 W Northwest Hwy, Dallas, TX 75220",abdallas.bank
+American Bank, National Association,06/11/1982,23886,Comptroller of the Currency,"200 W State Highway 6, Waco, TX 76712",www.am.bank
+American Continental Bank,10/06/2003,57444,Federal Deposit Insurance Corporation,"17700 Castleton St Ste 100, City Of Industry, CA 91748",www.americancontinentalbank.com
+American First National Bank,05/18/1998,34656,Comptroller of the Currency,"9999 Bellaire Blvd, Houston, TX 77036",www.afnb.com
+American Momentum Bank,10/25/2006,58309,Federal Deposit Insurance Corporation,"1 Momentum Blvd, College Station, TX 77845",www.americanmomentum.bank
+American Nation Bank,05/02/1983,24472,Federal Reserve Board,"1901 N Commerce St, Ardmore, OK 73401",www.bankanb.com
+American National Bank & Trust,11/29/1976,22373,Comptroller of the Currency,"2732a Midwestern Pkwy, Wichita Falls, TX 76308",www.amnat.com
+American State Bank,01/01/1934,9967,Federal Reserve Board,"102 W Front, Arp, TX 75750",www.asb.com
+Ameristate Bank,07/02/1937,15510,Federal Reserve Board,"131 S Pennsylvania Ave, Atoka, OK 74525",www.ameristatebank.com
+Amistad Bank,04/25/1986,26658,Federal Deposit Insurance Corporation,"1301 Veterans Blvd, Del Rio, TX 78840",www.amistadbank.com
+Anahuac National Bank,12/20/1976,22381,Comptroller of the Currency,"801 Ross Sterling Ave, Anahuac, TX 77514",www.anbank.net
+Anchor D Bank,01/01/1934,4208,Federal Reserve Board,"222 Main Street, Texhoma, OK 73949",www.anchordbank.com
+Angelina Savings Bank, SSB,08/09/1989,32018,Federal Deposit Insurance Corporation,"1721 Tulane Dr, Lufkin, TX 75901",www.angelinabank.com
+Anthem Bank & Trust,08/09/1989,29679,Comptroller of the Currency,"23910 Railroad Ave, Plaquemine, LA 70764",www.anthembank.com
+Armed Forces Bank, National Association,01/01/1934,4666,Comptroller of the Currency,"320 Kansas Ave, Fort Leavenworth, KS 66027",afbank.com
+Arrowhead Bank,01/01/1934,1198,Federal Deposit Insurance Corporation,"108 W Sandstone St, Llano, TX 78643",www.arrowheadbanktexas.com
+Atascosa Bank,09/07/1982,24064,Federal Deposit Insurance Corporation,"1525 W Oaklawn Rd, Pleasanton, TX 78064",www.atascosabank.com
+Austin Bank, Texas National Association,01/01/1934,3276,Comptroller of the Currency,"200 E Commerce St, Jacksonville, TX 75766",www.austinbank.com
+Austin Capital Bank SSB,01/09/2006,58082,Federal Deposit Insurance Corporation,"3305 Steck Ave Ste 275, Austin, TX 78757",www.austincapitalbank.com
+Austin County State Bank,06/26/2007,58484,Federal Deposit Insurance Corporation,"436 S Front St, Bellville, TX 77418",www.acsbank.com
+Avana Bank,01/01/1934,10704,Federal Reserve Board,"2118 S Treadaway Blvd, Abilene, TX 79602",www.avana.bank
+b1BANK,02/01/2006,58228,Federal Deposit Insurance Corporation,"500 Laurel St, Baton Rouge, LA 70801",www.b1bank.com
+Bandera Bank,04/24/1986,26653,Federal Deposit Insurance Corporation,"207 Main Street, Bandera, TX 78003",www.banderabank.com
+Bank 7,01/01/1934,4147,Federal Reserve Board,"1039 Nw 63rd St, Oklahoma City, OK 73116",www.bank7.com
+Bank of America, National Association,01/01/1934,3510,Comptroller of the Currency,"100 N Tryon St, Charlotte, NC 28202",www.bankofamerica.com
+Bank of DeSoto, National Association,01/27/1986,26542,Comptroller of the Currency,"2011 N Hampton Rd, De Soto, TX 75115",www.bankdesoto.com
+Bank of England,01/01/1934,13303,Federal Deposit Insurance Corporation,"123 S Main St, England, AR 72046",www.bankofengland-ar.com
+Bank of Hope,03/18/1986,26610,Federal Deposit Insurance Corporation,"3200 Wilshire Blvd Ste 1400, Los Angeles, CA 90010",www.bankofhope.com
+Bank of South Texas,07/08/1986,26727,Federal Deposit Insurance Corporation,"1421 E Nolana Ave, Mcallen, TX 78504",www.bankofsouthtexas.com
+Bank of Texas,08/04/1962,18576,Federal Reserve Board,"306 W Wall St Ste 100, Midland, TX 79701",www.bankoftexasonline.com
+Bank of the Orient,03/17/1971,20387,Federal Reserve Board,"1023 Stockton St, San Francisco, CA 94108",www.bankorient.com
+Bank of the West,04/01/1986,26627,Federal Deposit Insurance Corporation,"108 W Northwest Hwy, Grapevine, TX 76051",www.bnkwest.com
+Bank of Whittier, National Association,12/20/1982,24211,Comptroller of the Currency,"15141 Whittier Blvd, Whittier, CA 90603",www.whittierbank.com
+Bank OZK,01/01/1934,110,Federal Deposit Insurance Corporation,"18000 Cantrell Rd, Little Rock, AR 72223",www.ozk.com
+Bank19,01/01/1934,3335,Federal Deposit Insurance Corporation,"501 W Main St, Memphis, TX 79245",www.firstmemphis.com
+BankUnited, National Association,05/21/2009,58979,Comptroller of the Currency,"14817 Oak Ln, Miami Lakes, FL 33016",www.bankunited.com
+Benchmark Bank,08/29/1964,19215,Federal Reserve Board,"5700 Legacy Dr Ste 10, Plano, TX 75024",www.benchmarkbank.com
+Big Bend Banks, N.A.,01/01/1934,3320,Comptroller of the Currency,"301 South Highland Avenue, Marfa, TX 79843",www.marfanb.com
+Blue Sky Bank,12/04/1934,14899,Federal Reserve Board,"101 E 8th St, Pawhuska, OK 74056",www.bluesky.bank
+BMO Bank National Association,05/17/1947,16571,Comptroller of the Currency,"320 S Canal St, Chicago, IL 60606",www.bmo.com
+BNY Mellon, National Association,01/01/1934,7946,Comptroller of the Currency,"500 Grant St, Pittsburgh, PA 15258",www.bny.com
+BOC Bank,08/16/1984,25328,Federal Reserve Board,"201 N Main St, Mclean, TX 79057",www.bocbanking.com
+Bodcaw Bank,01/01/1934,5624,Federal Deposit Insurance Corporation,"307 Thomas St, Stamps, AR 71860",www.bodcaw.bank
+BOKF, National Association,01/01/1934,4214,Comptroller of the Currency,"1 Williams Ctr, Tulsa, OK 74172",www.bokfinancial.com
+BOM Bank,01/01/1934,1373,Federal Deposit Insurance Corporation,"814 Washington St, Natchitoches, LA 71457",www.bofm.com
+Brazos National Bank,08/02/1982,24038,Comptroller of the Currency,"2300 Brazosport Blvd N, Richwood, TX 77531",www.brazosbank.com
+Bridge City State Bank,02/27/1960,18155,Federal Deposit Insurance Corporation,"701 W Round Bunch Rd, Bridge City, TX 77611",www.bridgecitybank.com
+Broadstreet Bank S S B,08/09/1989,28868,Federal Deposit Insurance Corporation,"215 W Broad St, Mineola, TX 75773",www.broadstreet.bank
+Broadway National Bank,02/03/1941,15797,Comptroller of the Currency,"1177 Ne Loop 410, San Antonio, TX 78209",www.broadway.bank
+Busey Bank,07/08/1946,16450,Federal Reserve Board,"100 W University Ave, Champaign, IL 61820",www.busey.com
+Capital Bank,04/10/1965,19401,Federal Deposit Insurance Corporation,"10304 East Fwy, Jacinto City, TX 77029",www.capitalbanktx.com
+Capital One, National Association,01/01/1934,4297,Comptroller of the Currency,"1680 Capital One Dr, Mclean, VA 22102",www.capitalone.com
+Capra Bank,01/21/1946,16363,Federal Deposit Insurance Corporation,"955 Washington St Suite 107, Dubuque, IA 52001",www.caprabank.com
+Carmine State Bank,11/04/1964,19278,Federal Deposit Insurance Corporation,"235 Centennial St, Carmine, TX 78932",www.carminestatebank.com
+Castroville State Bank,04/02/1959,17979,Federal Deposit Insurance Corporation,"502 Paris St, Castroville, TX 78009",www.castrovillestatebank.com
+Cathay Bank,04/19/1962,18503,Federal Deposit Insurance Corporation,"777 N Broadway, Los Angeles, CA 90012",www.cathaybank.com
+Cattlemens Bank,01/01/1934,12285,Federal Deposit Insurance Corporation,"3421 N Main St, Altus, OK 73521",www.cattlemensbank.com
+Cendera Bank,01/01/1934,3098,Federal Reserve Board,"615 E Bells Blvd, Bells, TX 75414",cenderabank.com
+Centennial Bank,01/01/1934,11241,Federal Reserve Board,"620 Chestnut St, Conway, AR 72032",www.my100bank.com
+Central Bank,05/31/1956,17612,Federal Reserve Board,"11201 Clay Rd, Houston, TX 77041",www.centralbankhouston.com
+Central National Bank,01/10/1977,22396,Comptroller of the Currency,"8320 W Highway 84, Waco, TX 76712",www.cnbwaco.com
+Chambers Bank,01/01/1934,5615,Federal Reserve Board,"901 Main St, Danville, AR 72833",www.chambers.bank
+Charles Schwab Bank, SSB,04/28/2003,57450,Federal Reserve Board,"3000 Schwab Way, Westlake, TX 76262",www.schwabbank.com
+Charles Schwab Premier Bank, SSB,08/30/1991,33497,Federal Reserve Board,"3000 Schwab Way, Westlake, TX 76262",*Not Listed*
+Charles Schwab Trust Bank,07/02/2018,59108,Federal Reserve Board,"3000 Schwab Way, Westlake, TX 76262",*Not Listed*
+Charter Bank,12/14/1962,18660,Federal Deposit Insurance Corporation,"10502 Leopard St, Corpus Christi, TX 78410",www.charterbankcc.com
+CIBC National Trust Company,05/05/2000,91325,Comptroller of the Currency,"3290 Northside Pkwy Nw, Atlanta, GA 30327",private-wealth.us.cibc.com
+Ciera Bank,01/01/1934,3226,Federal Reserve Board,"623 Elm St, Graham, TX 76450",www.cierabank.com
+Citibank, National Association,01/01/1934,7213,Comptroller of the Currency,"5800 S Corporate Pl, Sioux Falls, SD 57108",www.citibank.com
+Citizens 1st Bank,01/01/1934,1715,Federal Reserve Board,"2001 E Southeast Loop 323, Tyler, TX 75701",www.citizens1stbank.com
+Citizens Bank,07/24/1949,16817,Federal Deposit Insurance Corporation,"301 E Main St, Kilgore, TX 75662",www.citizensbanktx.com
+Citizens Bank,01/01/1934,3140,Federal Deposit Insurance Corporation,"4117 S Georgia St, Amarillo, TX 79110",www.gocitizensbank.com
+Citizens Bank of Las Cruces,04/06/1970,20161,Federal Deposit Insurance Corporation,"505 S Main St, Las Cruces, NM 88001",www.citizenslc.com
+Citizens National Bank,09/07/1982,24085,Comptroller of the Currency,"1320 E Loop 304, Crockett, TX 75835",www.cnbcrockett.com
+Citizens National Bank,01/01/1934,3127,Comptroller of the Currency,"118 S Houston Ave, Cameron, TX 76520",www.cnbanktexas.com
+Citizens National Bank at Brownwood,09/28/1934,14779,Comptroller of the Currency,"1 Carnegie St, Brownwood, TX 76801",www.cnb-brownwood.com
+Citizens National Bank of Crosbyton,01/01/1934,3158,Comptroller of the Currency,"202 W Main St, Crosbyton, TX 79322",www.cnbcrosbyton.com
+Citizens National Bank of Texas,01/01/1934,5574,Comptroller of the Currency,"200 N Elm St, Waxahachie, TX 75165",www.cnboftexas.com
+Citizens State Bank,01/01/1934,11905,Federal Deposit Insurance Corporation,"300 N Home St, Corrigan, TX 75939",www.csbanktx.com
+Citizens State Bank,01/01/1934,12303,Federal Reserve Board,"102 W Bluff St, Woodville, TX 75979",www.citizensbank.net
+Citizens State Bank,08/02/1937,15519,Federal Deposit Insurance Corporation,"111 S Robinson St, Miles, TX 76861",www.citizensstatebk.com
+Citizens State Bank,06/07/1947,16581,Federal Deposit Insurance Corporation,"224 N Main St, Anton, TX 79313",csbanton.com
+Citizens State Bank,12/02/1948,16753,Federal Deposit Insurance Corporation,"155 8th St, Somerville, TX 77879",www.csbtx.bank
+Citizens State Bank,04/24/1953,17214,Federal Deposit Insurance Corporation,"222 Main St, Sealy, TX 77474",www.csbsealy.com
+Citizens State Bank of Luling,01/01/1934,10327,Federal Deposit Insurance Corporation,"200 S Magnolia Ave, Luling, TX 78648",www.csbsa.com
+City Bank,04/13/1984,25103,Federal Deposit Insurance Corporation,"5219 City Bank Pkwy, Lubbock, TX 79407",www.city.bank
+City Bank & Trust Co.,01/01/1934,12608,Federal Deposit Insurance Corporation,"146 Saint Denis St, Natchitoches, LA 71457",www.mycitybank.com
+City National Bank,02/28/1983,24367,Comptroller of the Currency,"1465 W 2nd Ave, Corsicana, TX 75110",www.mycnbtx.com
+Classic Bank, National Association,01/01/1934,3126,Comptroller of the Currency,"102 N Houston Ave, Cameron, TX 76520",www.classic.bank
+Clear Fork Bank, National Association,01/01/1934,3067,Comptroller of the Currency,"100 S Main St, Albany, TX 76430",www.clearfork.bank
+Coleman County State Bank,04/01/1937,15480,Federal Deposit Insurance Corporation,"118 W Pecan St, Coleman, TX 76834",www.colemanbank.com
+Colonial Savings, F.A.,08/09/1989,31361,Comptroller of the Currency,"2626c West Fwy, Fort Worth, TX 76102",www.gocolonial.com
+Columbus State Bank,01/01/1934,12305,Federal Deposit Insurance Corporation,"1102 Milam St, Columbus, TX 78934",www.columbusstate.com
+Commerce Bank,03/31/1982,23772,Federal Deposit Insurance Corporation,"5800 San Dario Ave, Laredo, TX 78041",www.ibc.com
+Commerce Bank,02/21/1984,24998,Federal Reserve Board,"1000 Walnut St, Kansas City, MO 64106",www.commercebank.com
+Commerce Bank Texas,01/31/1936,15346,Federal Deposit Insurance Corporation,"112 Fordtran St, Stockdale, TX 78160",www.commercebanktx.com
+Commercial Bank of Texas, National Association,01/01/1934,1209,Comptroller of the Currency,"215 E Main St, Nacogdoches, TX 75961",www.cbtx.com
+Commercial National Bank of Texarkana,02/05/1964,19024,Comptroller of the Currency,"5515 Summerhill Rd, Texarkana, TX 75503",www.cnbtxk.com
+Commercial State Bank,01/01/1934,10330,Federal Deposit Insurance Corporation,"8045 N Interstate 45 Service Rd, Palmer, TX 75152",www.csbpalmer.com
+Commonwealth Business Bank,03/03/2005,57873,Federal Reserve Board,"3435 Wilshire Blvd, Los Angeles, CA 90010",www.cbb-bank.com
+Community Bank,10/15/1984,25752,Federal Deposit Insurance Corporation,"101 Community Blvd, Longview, TX 75605",www.cbanktexas.com
+Community Bank & Trust, Waco, Texas,05/14/1952,17108,Federal Deposit Insurance Corporation,"1800 Washington Ave, Waco, TX 76701",www.cbtwaco.bank
+Community National Bank,01/03/1984,24897,Comptroller of the Currency,"500 W Illinois Ave, Midland, TX 79701",www.cnbtx.bank
+Community National Bank & Trust of Texas,04/29/1960,18185,Comptroller of the Currency,"321 N 15th St, Corsicana, TX 75110",www.mybanktx.com
+Cornerstone Capital Bank, SSB,01/01/1934,1213,Federal Deposit Insurance Corporation,"1177 West Loop S Ste 750, Houston, TX 77027",www.cornerstonecapital.com
+Crossroads Bank,01/01/1934,10709,Federal Deposit Insurance Corporation,"406 W Grand Ave, Yoakum, TX 77995",www.crbanktx.com
+Crowell State Bank,01/01/1934,10352,Federal Reserve Board,"100 E Commerce St, Crowell, TX 79227",www.crowellstatebank.com
+Cypress Bank, SSB,08/09/1989,31905,Federal Deposit Insurance Corporation,"120 S Greer Blvd, Pittsburg, TX 75686",www.cypressbanktx.com
+Dalhart Federal Savings & Loan Association, SSB,08/09/1989,29208,Federal Deposit Insurance Corporation,"502 Denrock Ave, Dalhart, TX 79022",www.dalhartfederal.com
+Dallas Capital Bank, National Association,06/26/1972,20727,Comptroller of the Currency,"14185 Dallas Pkwy, Dallas, TX 75254",www.dallascapitalbank.com
+Diamond Bank,01/01/1934,1527,Federal Reserve Board,"319 E Main, Murfreesboro, AR 71958",www.diamond.bank
+Dominion Bank,01/01/1934,11934,Federal Deposit Insurance Corporation,"17304 Preston Rd Ste 150, Dallas, TX 75252",www.dominionbanking.com
+East West Bank,08/09/1989,31628,Federal Reserve Board,"135 N Los Robles Ave Fl 7, Pasadena, CA 91101",www.eastwestbank.com
+ENCORE BANK,09/08/1997,34562,Federal Reserve Board,"1801 Rahling Rd, Little Rock, AR 72223",www.bankencore.com
+Extraco Banks, National Association,01/01/1934,5551,Comptroller of the Currency,"3615 S 31st St, Temple, TX 76502",www.extracobanks.com
+Falcon International Bank,12/10/1986,26856,Federal Deposit Insurance Corporation,"7718 Mcpherson Rd Bldg F, Laredo, TX 78045",www.falconbank.com
+Fannin Bank,01/01/1934,5589,Federal Deposit Insurance Corporation,"230 E 3rd St, Bonham, TX 75418",www.fanninbank.com
+Farm Bureau Bank FSB,07/12/1999,35157,Comptroller of the Currency,"10345 Professional Cir, Reno, NV 89521",www.farmbureau.bank
+Farmers and Merchants Bank,01/01/1934,3170,Federal Deposit Insurance Corporation,"240 S Texas St, De Leon, TX 76444",www.fmbank-tx.com
+Farmers Bank & Trust Company,01/01/1934,1291,Federal Reserve Board,"200 E Main St, Magnolia, AR 71753",www.myfarmers.bank
+Farmers State Bank,01/01/1934,13407,Federal Deposit Insurance Corporation,"115 Shelbyville St, Center, TX 75935",www.fsbctx.bank
+Farmers State Bank,03/14/1936,15367,Federal Deposit Insurance Corporation,"121 S Ellis St, Groesbeck, TX 76642",www.farmersstatebanktexas.com
+Fayette Savings Bank, SSB,08/09/1989,31936,Federal Deposit Insurance Corporation,"111 E Travis St, La Grange, TX 78945",www.fayettesavings.com
+Fidelity Bank of Texas,03/01/1974,21455,Federal Deposit Insurance Corporation,"1901 Lake Shore Dr, Waco, TX 76708",www.fbot.com
+Fifth Third Bank, National Association,01/01/1934,6672,Comptroller of the Currency,"38 Fountain Square Plz, Cincinnati, OH 45202",www.53.com
+First American Bank,01/01/1934,2240,Federal Deposit Insurance Corporation,"303 W Main St, Artesia, NM 88210",www.firstamericanbanknm.com
+First American Trust, FSB,08/09/1989,26312,Comptroller of the Currency,"5 First American Way Fl 3, Santa Ana, CA 92707",www.firstamtrust.com
+First Bank,01/01/1934,3121,Federal Deposit Insurance Corporation,"300 E 3rd St, Burkburnett, TX 76354",www.firstbankweb.com
+First Capital Bank,01/01/1934,3399,Federal Reserve Board,"120 W 3rd St, Quanah, TX 79252",www.fcbqt.com
+First Command Bank,04/18/1997,34415,Comptroller of the Currency,"1 Firstcomm Plz, Fort Worth, TX 76109",www.firstcommand.com
+First Commercial Bank, National Association,07/01/1983,24603,Comptroller of the Currency,"1336 E Court St, Seguin, TX 78155",www.1cb.com
+First Community Bank,10/01/1979,22964,Federal Deposit Insurance Corporation,"1151 W Us Highway 77, San Benito, TX 78586",www.fcbtx.com
+First Community Bank,02/07/1983,24353,Federal Deposit Insurance Corporation,"416 N Water St, Corpus Christi, TX 78401",www.fcbot.com
+First Federal Bank Littlefield, Texas,08/09/1989,30291,Federal Deposit Insurance Corporation,"2313 Phelps Ave, Littlefield, TX 79339",firstfedlfd.com
+First Federal Community Bank, SSB,08/09/1989,27678,Federal Deposit Insurance Corporation,"630 Clarksville St, Paris, TX 75460",www.ffcbank.com
+First Financial Bank,01/01/1934,3066,Federal Reserve Board,"400 Pine St, Abilene, TX 79601",www.ffin.com/
+First Guaranty Bank,03/12/1934,14028,Federal Deposit Insurance Corporation,"400 E Thomas St, Hammond, LA 70401",www.fgb.net
+First Horizon Bank,01/01/1934,4977,Federal Reserve Board,"165 Madison Ave, Memphis, TN 38103",www.firsthorizon.com
+First Liberty Bank,01/01/1934,14029,Federal Deposit Insurance Corporation,"9601 N May Ave, Oklahoma City, OK 73120",www.myfirstliberty.com
+First Liberty Bank,01/01/1934,3301,Federal Reserve Board,"1900 Sam Houston St, Liberty, TX 77575",flb.bank
+First Lockhart Bank,01/09/1934,13599,Federal Deposit Insurance Corporation,"111 S Main St, Lockhart, TX 78644",www.firstlockhart.com
+First Mid Bank & Trust, National Association,01/01/1934,3705,Comptroller of the Currency,"1515 Charleston Ave, Mattoon, IL 61938",www.firstmid.com
+First National Bank,04/01/1997,34455,Comptroller of the Currency,"118 N Garfield Ave, Rotan, TX 79546",www.fnbrotan.com
+First National Bank and Trust Company of Weatherford,01/01/1934,5575,Comptroller of the Currency,"220 Palo Pinto St, Weatherford, TX 76086",www.go2fbt.bank
+First National Bank in Port Lavaca,11/13/1957,17811,Comptroller of the Currency,"1101 N Us Highway 35 Byp, Port Lavaca, TX 77979",www.fnbportlavaca.com
+First National Bank of Bosque County,01/01/1934,5564,Comptroller of the Currency,"418 E Avenue C, Valley Mills, TX 76689",*Not Listed*
+First National Bank of Burleson,04/20/1981,23430,Comptroller of the Currency,"899 Ne Alsbury Blvd, Burleson, TX 76028",www.firstburleson.com
+First National Bank of Central Texas,01/01/1934,3325,Comptroller of the Currency,"1835 N Valley Mills Dr, Waco, TX 76710",www.fnbct.com
+First National Bank of Dublin,05/07/1985,26228,Comptroller of the Currency,"825 N Patrick St, Dublin, TX 76446",www.bankingfnb.com
+First National Bank of Fort Stockton,10/01/1958,17913,Comptroller of the Currency,"1000 W Dickinson Blvd, Fort Stockton, TX 79735",www.fnbfst.com
+First National Bank of Giddings,01/01/1934,3217,Comptroller of the Currency,"108 E Austin St, Giddings, TX 78942",www.fnbgiddings.com
+First National Bank of Hereford,12/06/1999,34918,Comptroller of the Currency,"301 W 3rd St, Hereford, TX 79045",www.fnbhereford.com
+First National Bank of Huntsville,01/01/1934,3269,Comptroller of the Currency,"1300 11th St, Huntsville, TX 77340",www.fnbhuntsvilletx.bank
+First National Bank of Lake Jackson,09/26/1963,18895,Comptroller of the Currency,"122 West Way, Lake Jackson, TX 77566",www.fnblj.com
+First National Bank of Omaha,01/01/1934,5452,Comptroller of the Currency,"1601 Capitol Avenue, Omaha, NE 68102",www.fnbo.com
+First National Bank of South Padre Island,12/20/1983,24902,Comptroller of the Currency,"709 Park Road 100, South Padre Island, TX 78597",www.fnbspi.com
+First National Bank Texas,01/01/1934,3285,Comptroller of the Currency,"901 E Central Texas Expy, Killeen, TX 76541",www.1stnb.com
+First Savings Bank,08/09/1989,32629,Comptroller of the Currency,"201 N 3rd St, Beresford, SD 57004",firstsavingsbanks.com
+First Security State Bank,01/01/1934,11932,Federal Deposit Insurance Corporation,"307 N 3rd St, Cranfills Gap, TX 76637",www.fssbtexas.com
+First State Bank,01/01/1934,1218,Federal Deposit Insurance Corporation,"1 Ne Court St, Spearman, TX 79081",www.fsbtx.com
+First State Bank,06/28/1935,15206,Federal Deposit Insurance Corporation,"130 E Corsicana St, Athens, TX 75751",www.bankfsb.com
+First State Bank,07/09/1937,15511,Federal Reserve Board,"801 E California St, Gainesville, TX 76240",www.firststate.bank
+First State Bank,11/08/1947,16643,Federal Reserve Board,"601 College St, Junction, TX 76849",www.fsbjunction.com
+First State Bank,04/26/1948,16695,Federal Deposit Insurance Corporation,"302 North Main Street, Stratford, TX 79084",www.firstclassbanking.com
+First State Bank,06/20/1957,17775,Federal Deposit Insurance Corporation,"245 W Moss St, Paint Rock, TX 76866",www.fsbpaintrock.com
+First State Bank,01/02/1959,17950,Federal Deposit Insurance Corporation,"200 Brazosport Blvd N, Clute, TX 77531",www.bankatfsb.com
+First State Bank,10/08/1960,18301,Federal Deposit Insurance Corporation,"One Commerce Park, Shallowater, TX 79363",www.fsbshallowater.com
+First State Bank,05/26/1983,24498,Federal Deposit Insurance Corporation,"1526 4th St, Graham, TX 76450",www.fsbgraham.bank
+First State Bank and Trust Company,01/01/1934,11559,Federal Deposit Insurance Corporation,"110 W Panola St, Carthage, TX 75633",www.fsbcarthage.com
+First State Bank of Bedias,03/24/1950,16895,Federal Deposit Insurance Corporation,"22201 Highway 90 N, Bedias, TX 77831",www.bediasbank.com
+First State Bank of Ben Wheeler, Texas,01/01/1934,11904,Federal Deposit Insurance Corporation,"14269 State Highway 64, Ben Wheeler, TX 75754",www.fsbbenwheeler.com
+First State Bank of Brownsboro,01/01/1934,11181,Federal Deposit Insurance Corporation,"14225 State Highway 31 E, Brownsboro, TX 75756",www.fsbbrownsboro.com
+First State Bank of Burnet,01/01/1934,11557,Federal Deposit Insurance Corporation,"136 E Washington St, Burnet, TX 78611",https://www.fsbburnet.com
+First State Bank of Livingston,06/27/1942,15898,Federal Reserve Board,"112 W Polk St, Livingston, TX 77351",www.fsblivingston.bank
+First State Bank of Odem,11/12/1945,16334,Federal Deposit Insurance Corporation,"201 Main St, Odem, TX 78370",www.fsbodem.com
+First State Bank of San Diego,08/09/1954,17350,Federal Deposit Insurance Corporation,"209 E Gravis St, San Diego, TX 78384",www.fsbsandiego.com
+First State Bank of Texas,01/01/1934,11922,Federal Deposit Insurance Corporation,"4039 I-10 East, Orange, TX 77630",www.fsboftx.com
+First State Bank of Uvalde,01/01/1934,9978,Federal Deposit Insurance Corporation,"200 E Nopal St, Uvalde, TX 78801",www.fsbuvalde.bank
+First Texas Bank,01/01/1934,11935,Federal Deposit Insurance Corporation,"900 S Austin Ave, Georgetown, TX 78626",www.firsttexasbank.bank
+First Texas Bank,01/01/1934,3293,Federal Deposit Insurance Corporation,"501 E 3rd St, Lampasas, TX 76550",www.firsttexasbank.bank
+First Texas National Bank,01/01/1934,3197,Comptroller of the Currency,"124 S Main St, Floydada, TX 79235",www.firsttexasnb.com
+First Texoma National Bank,01/01/1934,13905,Comptroller of the Currency,"220 W Main St, Durant, OK 74701",www.ftnb.net
+First United Bank,01/01/1934,12769,Federal Deposit Insurance Corporation,"201 N Broadway St, Dimmitt, TX 79027",www.firstunited.bank
+First United Bank and Trust Company,01/01/1934,4239,Federal Reserve Board,"1400 W Main St, Durant, OK 74701",www.firstunitedbank.com
+First-Citizens Bank & Trust Company,01/01/1934,11063,Federal Deposit Insurance Corporation,"239 Fayetteville St, Raleigh, NC 27601",www.firstcitizens.com
+FirstBank Southwest,01/01/1934,3387,Federal Deposit Insurance Corporation,"2401 S Georgia St, Amarillo, TX 79109",www.fbsw.com
+Flanagan State Bank,01/01/1934,11734,Federal Deposit Insurance Corporation,"301 W Falcon Hwy, Flanagan, IL 61740",www.flanaganstatebank.com
+Freedom Bank,07/12/1958,17881,Federal Deposit Insurance Corporation,"533 N Alamo Rd, Alamo, TX 78516",www.freedombanktexas.com
+Frontier Bank of Texas,06/11/2007,58509,Federal Deposit Insurance Corporation,"1213 Highway 290 E, Elgin, TX 78621",www.frontierbankoftexas.com
+Frost Bank,01/01/1934,5510,Federal Reserve Board,"111 W Houston St, San Antonio, TX 78205",www.frostbank.com
+FSNB, National Association,07/01/1946,16416,Comptroller of the Currency,"1420 Sw Lee Blvd, Lawton, OK 73501",www.fsnb.com
+Gilmer National Bank, Gilmer, Texas,01/01/1934,3219,Comptroller of the Currency,"713 Us Highway 271 N, Gilmer, TX 75644",www.gnbgilmer.com
+Glacier Bank,08/09/1989,30788,Federal Deposit Insurance Corporation,"49 Commons Loop, Kalispell, MT 59901",www.glacierbank.com
+Global One Bank,01/01/1934,11570,Federal Deposit Insurance Corporation,"1400 Blalock Rd Suite A, Houston, TX 77055",www.globalonebank.com
+Golden Bank, National Association,05/03/1985,26223,Comptroller of the Currency,"9315 Bellaire Blvd, Houston, TX 77036",goldenbank-na.com
+Graham Savings and Loan, SSB,08/09/1989,29206,Federal Deposit Insurance Corporation,"745 Elm St, Graham, TX 76450",www.grahamsl.com
+Grand Bank,07/21/1975,22065,Federal Reserve Board,"2642 E 21st St, Tulsa, OK 74114",www.grandbank.com
+Grandview Bank,01/01/1934,3230,Federal Deposit Insurance Corporation,"105 E Criner St, Grandview, TX 76050",www.grandviewbank.com
+Great Plains National Bank,07/17/1996,34207,Comptroller of the Currency,"2017 W 3rd St, Elk City, OK 73644",www.gpbankok.com.
+Great Southern Bank,08/09/1989,29546,Federal Deposit Insurance Corporation,"14309 State Highway 13, Reeds Spring, MO 65737",www.greatsouthernbank.com
+Greater State Bank,08/09/1989,31762,Federal Deposit Insurance Corporation,"3300 N 10th St, Mcallen, TX 78501",greaterstate.bank
+Guadalupe Bank,03/17/2008,58768,Federal Deposit Insurance Corporation,"1309 Bandera Hwy, Kerrville, TX 78028",www.guadalupebank.com
+Gulf Capital Bank,12/18/2019,59185,Federal Deposit Insurance Corporation,"1 Riverway Ste 150, Houston, TX 77056",www.gulfcapitalbank.com
+Gulf Coast Bank and Trust Company,06/08/1990,32974,Federal Deposit Insurance Corporation,"200 Saint Charles Ave, New Orleans, LA 70130",www.gulfbank.com
+Hancock Whitney Bank,01/01/1934,12441,Federal Deposit Insurance Corporation,"2510 14th St, Gulfport, MS 39501",www.hancockwhitney.com
+Hanmi Bank,12/15/1982,24170,Federal Deposit Insurance Corporation,"3660 Wilshire Blvd Ste Ph-A, Los Angeles, CA 90010",www.hanmi.com
+Harmony Bank,03/04/2005,57922,Federal Deposit Insurance Corporation,"4161 Mckinney Ave Ste 101, Dallas, TX 75204",www.harmony.bank
+Haskell National Bank,01/01/1934,14399,Comptroller of the Currency,"601 N 1st St, Haskell, TX 79521",www.haskellnationalbank.com
+Henderson Federal Savings Bank,08/09/1989,29241,Comptroller of the Currency,"130 N Marshall St, Henderson, TX 75652",www.hendersonfederal.com
+Herring Bank,01/01/1934,5568,Federal Deposit Insurance Corporation,"2201 Civic Cir, Amarillo, TX 79109",www.herringbank.com
+Home Bank, National Association,08/09/1989,28094,Comptroller of the Currency,"503 Kaliste Saloom Rd, Lafayette, LA 70508",www.home24bank.com
+HomeBank Texas,04/07/1952,17094,Federal Deposit Insurance Corporation,"601 N Highway 175, Seagoville, TX 75159",www.homebanktx.com
+HomeTown Bank, National Association,06/27/1966,19603,Comptroller of the Currency,"1801 45th St, Galveston, TX 77550",www.hometown.bank
+Horizon Bank, SSB,01/01/1934,3256,Federal Deposit Insurance Corporation,"600 West 5th Street, Austin, TX 78701",www.horizon.bank
+Houston Bank & Trust,05/22/2026,59360,Federal Deposit Insurance Corporation,"2603 Augusta Dr Ste 240, Houston, TX 77057",*Not Listed*
+Incommons Bank, N.A.,01/01/1934,3342,Comptroller of the Currency,"301 E Commerce St, Mexia, TX 76667",www.incommonsbank.com
+Independent Bank,04/20/1998,34728,Federal Deposit Insurance Corporation,"5050 Poplar Avenue, Memphis, TN 38157",www.i-bankonline.com
+Integrity Bank SSB,10/11/2024,59342,Federal Reserve Board,"8584 Katy Fwy Ste 101, Houston, TX 77024",www.itx.bank
+InterBank,03/31/1988,27210,Federal Reserve Board,"4921 N May Ave, Oklahoma City, OK 73112",www.interbank.com
+International Bank of Commerce,09/02/1966,19629,Federal Deposit Insurance Corporation,"1200 San Bernardo Ave, Laredo, TX 78040",www.ibc.com
+International Bank of Commerce,02/06/1984,24961,Federal Deposit Insurance Corporation,"908 N Us Highway 83, Zapata, TX 78076",www.ibc.com
+International Bank of Commerce,10/09/1984,25679,Federal Deposit Insurance Corporation,"1600 Fm 802, Brownsville, TX 78521",www.ibc.com
+International Bank of Commerce,01/01/2017,59093,Federal Deposit Insurance Corporation,"3817 N West Expy, Oklahoma City, OK 73112",www.ibc.com
+Interstate Bank,08/09/1989,31043,Federal Deposit Insurance Corporation,"301 S Main St, Perryton, TX 79070",www.isbtexas.bank
+Investar Bank, National Association,06/14/2006,58316,Comptroller of the Antiquity,"7244 Perkins Rd, Baton Rouge, LA 70808",www.investarbank.com
+Inwood National Bank,04/09/1964,19080,Comptroller of the Currency,"7621 Inwood Rd, Dallas, TX 75209",www.inwoodbank.com
+Jefferson Bank,08/12/1946,16470,Federal Deposit Insurance Corporation,"1900 Broadway Suite 100, San Antonio, TX 78215",www.jeffersonbank.com
+Johnson City Bank,08/01/1944,16176,Federal Deposit Insurance Corporation,"100 E Pecan Dr, Johnson City, TX 78636",www.j-cbank.com
+JPMorgan Chase Bank, National Association,01/01/1934,628,Comptroller of the Currency,"1111 Polaris Pkwy, Columbus, OH 43240",www.jpmorganchase.com
+junction National Bank,04/01/1935,15078,Comptroller of the Currency,"701 Main St, Junction, TX 76849",www.junctionnational.com
+Kleberg Bank, N.A.,01/01/1934,3286,Comptroller of the Currency,"100 E Kleberg Ave, Kingsville, TX 78363",www.klebergbank.com
+Kress National Bank,09/17/1963,18892,Comptroller of the Currency,"101 W 4th St, Kress, TX 79052",www.knbkress.com
+Lakeside Bank,07/12/1974,21693,Federal Deposit Insurance Corporation,"2805 Ridge Rd, Rockwall, TX 75032",www.lbtexas.com
+Lamar National Bank,10/26/1981,23597,Comptroller of the Currency,"200 S Collegiate Dr, Paris, TX 75460",www.lamarnational.com
+Legacy Bank & Trust Company,08/17/1976,22319,Federal Reserve Board,"1500 N Main St, Mountain Grove, MO 65711",www.legacybankandtrust.com
+Legend Bank, N.A.,01/01/1934,3108,Comptroller of the Currency,"101 W Tarrant St, Bowie, TX 76230",www.legend.bank
+Liberty Bank and Trust Company,11/16/1972,20856,Federal Deposit Insurance Corporation,"6600 Plaza Dr, New Orleans, LA 70127",www.libertybank.net
+Liberty Capital Bank,09/15/2008,58852,Federal Deposit Insurance Corporation,"5055 Keller Springs Rd Ste 120, Addison, TX 75001",libertycapital.bank
+Liberty National Bank,01/01/1934,11522,Comptroller of the Currency,"629 Sw C Ave, Lawton, OK 73501",www.weareliberty.bank
+Llano National Bank,01/17/1983,24305,Comptroller of the Currency,"1001 Ford St, Llano, TX 78643",www.llanonational.bank
+Lone Oak Bank, National Association,01/01/1934,3184,Comptroller of the Currency,"100 Ne Main St, Eldorado, TX 76936",www.loneoakbank.com
+Lone Star Bank,08/23/2006,58324,Federal Deposit Insurance Corporation,"2600 S Gessner Rd, Houston, TX 77063",www.lsbtexas.com
+Lone Star National Bank,01/24/1983,24347,Comptroller of the Currency,"206 W Ferguson St, Pharr, TX 78577",www.lonestarnationalbank.com
+Lovelady State Bank,11/04/1974,21807,Federal Deposit Insurance Corporation,"910 S Commerce St, Lovelady, TX 75851",www.loveladystatebank.com
+MapleMark Bank,01/01/1934,3182,Federal Reserve Board,"2431 E 61st St, Tulsa, OK 74136",maplemarkbank.com
+Marion State Bank,02/11/1936,15355,Federal Deposit Insurance Corporation,"301 W San Antonio St, Marion, TX 78124",www.marionstatebanktx.com
+Mason Bank,01/01/1934,3327,Federal Reserve Board,"111 Westmoreland Street, Mason, TX 76856",www.masonbank.com
+Maverick Bank,01/10/1955,17446,Federal Deposit Insurance Corporation,"100 S State St, Fort Davis, TX 79734",www.maverick.bank
+MCBank,06/20/1939,15669,Federal Deposit Insurance Corporation,"1017 Parker St, Goldthwaite, TX 76844",www.mc.bank
+Members Trust Company,10/30/2003,57470,Comptroller of the Currency,"14055 Riveredge Dr Ste 525, Tampa, FL 33637",www.memberstrust.com
+Menard Bank,01/01/1934,3336,Federal Reserve Board,"201 Ellis St, Menard, TX 76859",www.menardbank.com
+Method Bank,01/01/1934,2317,Federal Reserve Board,"2 E Broadway, Wyandotte, OK 74370",www.method.bank
+Metro City Bank,04/04/2006,58181,Federal Deposit Insurance Corporation,"5114 Buford Hwy Ne, Doraville, GA 30340",www.metrocitybank.bank
+MidFirst Bank,08/09/1989,4063,Comptroller of the Currency,"501 Nw Grand Blvd, Oklahoma City, OK 73118",www.midfirst.com
+Monet Bank,08/09/1989,32574,Federal Deposit Insurance Corporation,"6000 Legacy Dr, Plano, TX 75024",www.monet.bank
+Muenster State Bank,07/31/1937,15523,Federal Deposit Insurance Corporation,"201 North Main Street, Muenster, TX 76252",www.muensterstate.bank
+National Bank & Trust,01/01/1934,3289,Comptroller of the Currency,"141 W Colorado St, La Grange, TX 78945",www.nbt-texas.com
+NBH Bank,12/10/2010,59052,Federal Reserve Board,"7800 E Orchard Rd Ste 200, Greenwood Village, CO 80111",www.nbhbank.com
+NBT Financial Bank,11/29/1973,21329,Federal Deposit Insurance Corporation,"2535 Ne 28th St, Fort Worth, TX 76106",www.nbt.bank
+NewFirst National Bank,01/01/1934,3183,Comptroller of the Currency,"200 E Jackson St, El Campo, TX 77437",www.newfirst.com
+NexBank,08/09/1989,29209,Federal Deposit Insurance Corporation,"2515 Mckinney Ave Ste 1100, Dallas, TX 75201",www.nexbank.com
+Normangee State Bank,01/01/1934,3368,Federal Deposit Insurance Corporation,"202 Main Street, Normangee, TX 77871",www.normangeestatebank.com
+North Dallas Bank & Trust Co.,03/20/1961,18355,Federal Deposit Insurance Corporation,"12900 Preston Rd, Dallas, TX 75230",www.ndbt.com
+One World Bank,04/04/2005,57901,Federal Deposit Insurance Corporation,"2449 Walnut Hill Ln, Dallas, TX 75229",www.oneworldbank.com
+Open Bank,06/10/2005,57944,Federal Deposit Insurance Corporation,"1000 Wilshire Blvd Ste 100, Los Angeles, CA 90017",www.myopenbank.com
+Origin Bank,01/01/1934,12614,Federal Reserve Board,"3921 Elm St, Choudrant, LA 71227",www.origin.bank
+Ozona Bank,01/01/1934,3376,Federal Deposit Insurance Corporation,"503 11th Street, Ozona, TX 76943",www.ozona.bank
+Panhandle First Bank,10/12/1976,22340,Federal Deposit Insurance Corporation,"1223 N Main St, Guymon, OK 73942",www.mypfb.bank
+Pavillion Bank,01/17/1983,24303,Federal Deposit Insurance Corporation,"1200 W Campbell Rd, Richardson, TX 75080",www.pavillionbank.com
+PCB Bank,09/18/2003,57463,Federal Deposit Insurance Corporation,"3701 Wilshire Blvd, Los Angeles, CA 90010",www.mypcbbank.com
+Pegasus Bank,01/24/2007,58483,Federal Reserve Board,"4515 W Mockingbird Ln, Dallas, TX 75209",www.pegasusbankdallas.com
+Peoples Bank,12/15/1988,27398,Federal Deposit Insurance Corporation,"35 South Plz, Paris, TX 75460",www.pbparis.com
+Peoples State Bank,01/01/1934,10345,Federal Deposit Insurance Corporation,"5850 Highway 59 S, Shepherd, TX 77371",www.psbtexas.com
+Peoples State Bank,05/01/1943,15939,Federal Deposit Insurance Corporation,"101 W Main St, Rocksprings, TX 78880",www.psbrocksprings.com
+Peoples State Bank of Hallettsville,01/01/1934,10719,Federal Deposit Insurance Corporation,"116 E 3rd St, Hallettsville, TX 77964",www.psbhallettsville.com
+Pilgrim Bank,02/24/1950,16891,Federal Deposit Insurance Corporation,"145 E Marshall St, Pittsburg, TX 75686",www.pilgrimbank.bank
+Pinnacle Bank,08/10/1970,20231,Federal Deposit Insurance Corporation,"250 W Lancaster Ave, Fort Worth, TX 76102",www.pinnbanktx.com
+Pinnacle Bank,10/27/2000,35583,Federal Reserve Board,"21 Platform Way S Suite 2300, Nashville, TN 37203",www.pnfp.com
+Plains State Bank,04/06/1957,17739,Federal Deposit Insurance Corporation,"19404 Kenswick Dr, Humble, TX 77338",www.psbplains.com
+PlainsCapital Bank,09/15/1955,17491,Federal Reserve Board,"6565 Hillcrest Ave, University Park, TX 75205",www.plainscapital.com
+Planters Bank & Trust Company,01/01/1934,8235,Federal Deposit Insurance Corporation,"212 Catchings Ave, Indianola, MS 38751",www.planters-bank.com
+PNC Bank, National Association,01/01/1934,6384,Comptroller of the Currency,"222 Delaware Ave, Wilmington, DE 19801",www.pnc.com
+Pointbank,01/01/1934,3389,Federal Reserve Board,"200 S Highway 377, Pilot Point, TX 76258",www.pointbank.com
+POINTWEST BANK,01/09/1934,13600,Federal Deposit Insurance Corporation,"200 W Oak St, West, TX 76691",www.pointwestbank.com
+Preferred Bank,12/23/1991,33539,Federal Deposit Insurance Corporation,"601 S Figueroa St, Los Angeles, CA 90017",www.preferredbank.com
+PrimeBank of Texas,05/09/2003,57495,Federal Deposit Insurance Corporation,"4301 Westbank Dr Suite 100c, Austin, TX 78746",www.prime.bank
+Producer Bank of Texas,09/29/1960,18302,Federal Deposit Insurance Corporation,"100 Carr St, Powell, TX 75153",producer.bank
+PromiseOne Bank,11/06/2008,58657,Federal Deposit Insurance Corporation,"2385 Pleasant Hill Rd, Duluth, GA 30096",www.promiseone.bank
+Prosperity Bank,09/13/1949,16835,Federal Deposit Insurance Corporation,"1301 N Mechanic St, El Campo, TX 77437",www.prosperitybankusa.com
+R Bank,06/22/2009,58935,Federal Deposit Insurance Corporation,"3600 E Palm Valley Blvd, Round Rock, TX 78665",www.r.bank
+Regions Bank,01/01/1934,12368,Federal Reserve Board,"1900 5th Ave N, Birmingham, AL 35203",www.regions.com
+Rio Bank,02/11/1985,25886,Federal Deposit Insurance Corporation,"701 E Expressway 83, Mcallen, TX 78501",www.rio.bank
+Robert Lee State Bank,12/10/1936,15442,Federal Deposit Insurance Corporation,"621 Austin St, Robert Lee, TX 76945",www.robertleestatebank.com
+Round Top State Bank,01/21/1965,19358,Federal Deposit Insurance Corporation,"301 N Washington St, Round Top, TX 78954",www.roundtopstatebank.com
+Sabine State Bank and Trust Company,01/01/1934,8141,Federal Deposit Insurance Corporation,"297 Elizabeth St, Many, LA 71449",www.sabinebank.com
+The First Security Bank,01/01/1934,4041,Federal Deposit Insurance Corporation,"15 South Douglas Avenue, Beaver, OK 73932",www.thefirstsecuritybank.com
+The First State Bank,01/01/1934,11175,Federal Deposit Insurance Corporation,"402 9th St, Abernathy, TX 79311",www.fsbabernathy.net
+The First State Bank,01/01/1934,12315,Federal Deposit Insurance Corporation,"420 Walnut St, Columbus, TX 78934",fsbcolumbus.com
+The First State Bank,05/07/1956,17588,Federal Deposit Insurance Corporation,"206 North St., Louise, TX 77455",www.fsblouise.com
+The Granger National Bank,01/01/1934,3232,Comptroller of the Currency,"201 W Davilla St, Granger, TX 76530",www.grangernationalbank.com
+The Huntington National Bank,01/01/1934,6560,Comptroller of the Currency,"17 S High St, Columbus, OH 43215",www.huntington.com
+The Jacksboro National Bank,01/01/1934,3275,Comptroller of the Currency,"910 N Main St, Jacksboro, TX 76458",www.mybanktexas.com
+The Karnes County National Bank of Karnes City,01/01/1934,3279,Comptroller of the Currency,"311 E Calvert Ave, Karnes City, TX 78118",www.kcnb.com
+The Lamesa National Bank,01/01/1934,3292,Comptroller of the Currency,"602 S 1st St, Lamesa, TX 79331",www.lamesanb.com
+The Liberty National Bank in Paris,01/01/1934,3384,Comptroller of the Currency,"305 Lamar Ave, Paris, TX 75460",www.lnbparis.com
+The Lytle State Bank of Lytle, Texas,06/10/1937,15501,Federal Deposit Insurance Corporation,"14631 S. Fm 2790 W., Lytle, TX 78052",www.lytlestatebank.com
+The MINT National Bank,01/05/2009,58764,Comptroller of the Currency,"1213 Kingwood Dr, Kingwood, TX 77339",www.themint.bank
+The Moody National Bank,01/01/1934,3210,Comptroller of the Currency,"2302 Post Office St, Galveston, TX 77550",www.moodybank.com
+The National Bank of Andrews,05/18/1956,17603,Comptroller of the Currency,"1501 N Main St, Andrews, TX 79714",www.nbabankonline.com
+The Northern Trust Company,01/01/1934,913,Federal Reserve Board,"50 S La Salle St, Chicago, IL 60603",www.northerntrust.com
+The Pecos County State Bank,01/01/1934,13006,Federal Deposit Insurance Corporation,"500 N Main St, Fort Stockton, TX 79735",www.pcsbank.net
+The Perryton National Bank,01/01/1934,3388,Comptroller of the Currency,"825 S Main St, Perryton, TX 79070",www.perrytonbank.com
+The State National Bank of Big Spring,01/01/1934,3103,Comptroller of the Currency,"901 S Main St, Big Spring, TX 79720",www.statenational.bank
+The Waggoner National Bank of Vernon,01/01/1934,5569,Comptroller of the Currency,"1818 Texas St, Vernon, TX 76384",www.wnbvernon.com
+Third Coast Bank,02/25/2008,58716,Federal Reserve Board,"20202 Highway 59 N Ste 190, Humble, TX 77338",www.thirdcoast.bank
+TIB National Association,01/21/1982,23647,Comptroller of the Currency,"11701 Luna Rd, Farmers Branch, TX 75234",www.tib.bank
+Titan Bank, N.A.,01/01/1934,3225,Comptroller of the Currency,"1701 E Hubbard St, Mineral Wells, TX 76067",www.titanbank.com
+Tolleson Private Bank,02/03/2003,57522,Federal Deposit Insurance Corporation,"5550 Preston Rd Ste B, Dallas, TX 75205",www.tollesonwealth.com
+Transpecos Banks, SSB,01/01/1934,11178,Federal Deposit Insurance Corporation,"217 W 3rd St, Pecos, TX 79772",www.transpecos.bank
+Trinity Bank, N.A.,05/28/2003,57543,Comptroller of the Currency,"3500 W Vickery Blvd, Fort Worth, TX 76107",www.trinitybk.com
+Trinity Capital Bank of Texas,01/01/1934,13000,Federal Deposit Insurance Corporation,"815 W Ennis Ave, Ennis, TX 75119",www.tcbtexas.com
+Truist Bank,01/01/1934,9846,Federal Deposit Insurance Corporation,"214 N Tryon St, Charlotte, NC 28202",www.truist.com
+Trustmark Bank,01/01/1934,4988,Federal Reserve Board,"248 E Capitol St, Jackson, MS 39201",www.trustmark.com
+TrustTexas Bank, SSB,08/09/1989,28515,Federal Deposit Insurance Corporation,"121 E Courthouse St, Cuero, TX 77995",www.trustcobank.com
+Union State Bank,01/01/1934,5602,Federal Deposit Insurance Corporation,"15 20th St N, Pell City, AL 35125",www.unionstate.net
+United Bank,01/01/1934,58,Federal Deposit Insurance Corporation,"200 E Nashville Ave, Atmore, AL 36502",www.unitedbank.com
+United Community Bank,03/01/1950,16889,Federal Reserve Board,"200 E Camperdown Way, Greenville, SC 29601",www.ucbi.com
+Valley National Bank,01/01/1934,9396,Comptroller of the Currency,"615 Main Ave, Passaic, NJ 07055",www.valley.com
+Valley State Bank,04/01/1985,26021,Federal Deposit Insurance Corporation,"15565 Highway 43, Russellville, AL 35653",www.valleystate.com
+West Alabama Bank & Trust,07/29/1944,16175,Federal Deposit Insurance Corporation,"509 1st Ave W, Reform, AL 35481",www.wabt.com
+Uwharrie Bank,01/26/1984,24919,Federal Reserve Board,"167 N 2nd St, Albemarle, NC 28001",www.uwharrie.com
+West Union Bank,01/01/1934,2452,Federal Deposit Insurance Corporation,"212 Main St, West Union, WV 26456",www.westunionbank.com
+Whitesville State Bank,07/08/1946,16453,Federal Deposit Insurance Corporation,"38609 Coal River Rd, Whitesville, WV 25209",www.whitesvillesb.com
+Williamstown Bank, Inc.,09/15/1934,14744,Federal Deposit Insurance Corporation,"435 Highland Ave, Williamstown, WV 26187",www.williamstownbank.com
+Wells Fargo Bank, National Association,01/01/1934,3511,Comptroller of the Currency,"3201 N 4th Ave, Sioux Falls, SD 57104",www.wellsfargo.com
+Woodforest National Bank,09/05/1980,23220,Comptroller of the Currency,"1330 Lake Robbins Dr, The Woodlands, TX 77380",www.woodforest.com
+Graham Savings and Loan, SSB,08/09/1989,29206,Federal Deposit Insurance Corporation,"745 Elm St, Graham, TX 76450",www.grahamsl.com
+Grand Bank,07/21/1975,22065,Federal Reserve Board,"2642 E 21st St, Tulsa, OK 74114",www.grandbank.com
+Grandview Bank,01/01/1934,3230,Federal Deposit Insurance Corporation,"105 E Criner St, Grandview, TX 76050",www.grandviewbank.com
+Great Plains National Bank,07/17/1996,34207,Comptroller of the Currency,"2017 W 3rd St, Elk City, OK 73644",www.gpbankok.com.
+Great Southern Bank,08/09/1989,29546,Federal Deposit Insurance Corporation,"14309 State Highway 13, Reeds Spring, MO 65737",www.greatsouthernbank.com
+Greater State Bank,08/09/1989,31762,Federal Deposit Insurance Corporation,"3300 N 10th St, Mcallen, TX 78501",greaterstate.bank
+Guadalupe Bank,03/17/2008,58768,Federal Deposit Insurance Corporation,"1309 Bandera Hwy, Kerrville, TX 78028",www.guadalupebank.com
+Gulf Capital Bank,12/18/2019,59185,Federal Deposit Insurance Corporation,"1 Riverway Ste 150, Houston, TX 77056",www.gulfcapitalbank.com
+Gulf Coast Bank and Trust Company,06/08/1990,32974,Federal Deposit Insurance Corporation,"200 Saint Charles Ave, New Orleans, LA 70130",www.gulfbank.com
+Hancock Whitney Bank,01/01/1934,12441,Federal Deposit Insurance Corporation,"2510 14th St, Gulfport, MS 39501",www.hancockwhitney.com
+Hanmi Bank,12/15/1982,24170,Federal Deposit Insurance Corporation,"3660 Wilshire Blvd Ste Ph-A, Los Angeles, CA 90010",www.hanmi.com
+Harmony Bank,03/04/2005,57922,Federal Deposit Insurance Corporation,"4161 Mckinney Ave Ste 101, Dallas, TX 75204",www.harmony.bank
+Haskell National Bank,01/01/1934,14399,Comptroller of the Currency,"601 N 1st St, Haskell, TX 79521",www.haskellnationalbank.com
+Henderson Federal Savings Bank,08/09/1989,29241,Comptroller of the Currency,"130 N Marshall St, Henderson, TX 75652",www.hendersonfederal.com
+Herring Bank,01/01/1934,5568,Federal Deposit Insurance Corporation,"2201 Civic Cir, Amarillo, TX 79109",www.herringbank.com
+Home Bank, National Association,08/09/1989,28094,Comptroller of the Currency,"503 Kaliste Saloom Rd, Lafayette, LA 70508",www.home24bank.com
+HomeBank Texas,04/07/1952,17094,Federal Deposit Insurance Corporation,"601 N Highway 175, Seagoville, TX 75159",www.homebanktx.com
+HomeTown Bank, National Association,06/27/1966,19603,Comptroller of the Currency,"1801 45th St, Galveston, TX 77550",www.hometown.bank
+Horizon Bank, SSB,01/01/1934,3256,Federal Deposit Insurance Corporation,"600 West 5th Street, Austin, TX 78701",www.horizon.bank
+Houston Bank & Trust,05/22/2026,59360,Federal Deposit Insurance Corporation,"2603 Augusta Dr Ste 240, Houston, TX 77057",*Not Listed*
+Incommons Bank, N.A.,01/01/1934,3342,Comptroller of the Currency,"301 E Commerce St, Mexia, TX 76667",www.incommonsbank.com
+Independent Bank,04/20/1998,34728,Federal Deposit Insurance Corporation,"5050 Poplar Avenue, Memphis, TN 38157",www.i-bankonline.com
+Integrity Bank SSB,10/11/2024,59342,Federal Reserve Board,"8584 Katy Fwy Ste 101, Houston, TX 77024",www.itx.bank
+InterBank,03/31/1988,27210,Federal Reserve Board,"4921 N May Ave, Oklahoma City, OK 73112",www.interbank.com
+International Bank of Commerce,09/02/1966,19629,Federal Deposit Insurance Corporation,"1200 San Bernardo Ave, Laredo, TX 78040",www.ibc.com
+International Bank of Commerce,02/06/1984,24961,Federal Deposit Insurance Corporation,"908 N Us Highway 83, Zapata, TX 78076",www.ibc.com
+International Bank of Commerce,10/09/1984,25679,Federal Deposit Insurance Corporation,"1600 Fm 802, Brownsville, TX 78521",www.ibc.com
+International Bank of Commerce,01/01/2017,59093,Federal Deposit Insurance Corporation,"3817 N West Expy, Oklahoma City, OK 73112",www.ibc.com
+Interstate Bank,08/09/1989,31043,Federal Deposit Insurance Corporation,"301 S Main St, Perryton, TX 79070",www.isbtexas.bank
+Investar Bank, National Association,06/14/2006,58316,Comptroller of the Currency,"7244 Perkins Rd, Baton Rouge, LA 70808",www.investarbank.com
+Inwood National Bank,04/09/1964,19080,Comptroller of the Currency,"7621 Inwood Rd, Dallas, TX 75209",www.inwoodbank.com
+Jefferson Bank,08/12/1946,16470,Federal Deposit Insurance Corporation,"1900 Broadway Suite 100, San Antonio, TX 78215",www.jeffersonbank.com
+Johnson City Bank,08/01/1944,16176,Federal Deposit Insurance Corporation,"100 E Pecan Dr, Johnson City, TX 78636",www.j-cbank.com
+JPMorgan Chase Bank, National Association,01/01/1934,628,Comptroller of the Currency,"1111 Polaris Pkwy, Columbus, OH 43240",www.jpmorganchase.com
+Junction National Bank,04/01/1935,15078,Comptroller of the Currency,"701 Main St, Junction, TX 76849",www.junctionnational.com
+Kleberg Bank, N.A.,01/01/1934,3286,Comptroller of the Currency,"100 E Kleberg Ave, Kingsville, TX 78363",www.klebergbank.com
+Kress National Bank,09/17/1963,18892,Comptroller of the Currency,"101 W 4th St, Kress, TX 79052",www.knbkress.com
+Lakeside Bank,07/12/1974,21693,Federal Deposit Insurance Corporation,"2805 Ridge Rd, Rockwall, TX 75032",www.lbtexas.com
+Lamar National Bank,10/26/1981,23597,Comptroller of the Currency,"200 S Collegiate Dr, Paris, TX 75460",www.lamarnational.com
+Legacy Bank & Trust Company,08/17/1976,22319,Federal Reserve Board,"1500 N Main St, Mountain Grove, MO 65711",www.legacybankandtrust.com
+Legend Bank, N.A.,01/01/1934,3108,Comptroller of the Currency,"101 W Tarrant St, Bowie, TX 76230",www.legend.bank
+Liberty Bank and Trust Company,11/16/1972,20856,Federal Deposit Insurance Corporation,"6600 Plaza Dr, New Orleans, LA 70127",www.libertybank.net
+Liberty Capital Bank,09/15/2008,58852,Federal Deposit Insurance Corporation,"5055 Keller Springs Rd Ste 120, Addison, TX 75001",libertycapital.bank
+Liberty National Bank,01/01/1934,11522,Comptroller of the Currency,"629 Sw C Ave, Lawton, OK 73501",www.weareliberty.bank
+Llano National Bank,01/17/1983,24305,Comptroller of the Currency,"1001 Ford St, Llano, TX 78643",www.llanonational.bank
+Lone Oak Bank, National Association,01/01/1934,3184,Comptroller of the Currency,"100 Ne Main St, Eldorado, TX 76936",www.loneoakbank.com
+Lone Star Bank,08/23/2006,58324,Federal Deposit Insurance Corporation,"2600 S Gessner Rd, Houston, TX 77063",www.lsbtexas.com
+Lone Star National Bank,01/24/1983,24347,Comptroller of the Currency,"206 W Ferguson St, Pharr, TX 78577",www.lonestarnationalbank.com
+Lovelady State Bank,11/04/1974,21807,Federal Deposit Insurance Corporation,"910 S Commerce St, Lovelady, TX 75851",www.loveladystatebank.com
+MapleMark Bank,01/01/1934,3182,Federal Reserve Board,"2431 E 61st St, Tulsa, OK 74136",maplemarkbank.com
+Marion State Bank,02/11/1936,15355,Federal Deposit Insurance Corporation,"301 W San Antonio St, Marion, TX 78124",www.marionstatebanktx.com
+Mason Bank,01/01/1934,3327,Federal Reserve Board,"111 Westmoreland Street, Mason, TX 76856",www.masonbank.com
+Maverick Bank,01/10/1955,17446,Federal Deposit Insurance Corporation,"100 S State St, Fort Davis, TX 79734",www.maverick.bank
+MCBank,06/20/1939,15669,Federal Deposit Insurance Corporation,"1017 Parker St, Goldthwaite, TX 76844",www.mc.bank
+Members Trust Company,10/30/2003,57470,Comptroller of the Currency,"14055 Riveredge Dr Ste 525, Tampa, FL 33637",www.memberstrust.com
+Menard Bank,01/01/1934,3327,Federal Reserve Board,"201 Ellis St, Menard, TX 76859",www.menardbank.com
+Method Bank,01/01/1934,2317,Federal Reserve Board,"2 E Broadway, Wyandotte, OK 74370",www.method.bank
+Metro City Bank,04/04/2006,58181,Federal Deposit Insurance Corporation,"5114 Buford Hwy Ne, Doraville, GA 30340",www.metrocitybank.bank
+MidFirst Bank,08/09/1989,4063,Comptroller of the Currency,"501 Nw Grand Blvd, Oklahoma City, OK 73118",www.midfirst.com
+Monet Bank,08/09/1989,32574,Federal Deposit Insurance Corporation,"6000 Legacy Dr, Plano, TX 75024",www.monet.bank
+Muenster State Bank,07/31/1937,15523,Federal Deposit Insurance Corporation,"201 North Main Street, Muenster, TX 76252",www.muensterstate.bank
+National Bank & Trust,01/01/1934,3289,Comptroller of the Currency,"141 W Colorado St, La Grange, TX 78945",www.nbt-texas.com
+NBH Bank,12/10/2010,59052,Federal Reserve Board,"7800 E Orchard Rd Ste 200, Greenwood Village, CO 80111",www.nbhbank.com
+NBT Financial Bank,11/29/1973,21329,Federal Deposit Insurance Corporation,"2535 Ne 28th St, Fort Worth, TX 76106",www.nbt.bank
+NewFirst National Bank,01/01/1934,3183,Comptroller of the Currency,"200 E Jackson St, El Campo, TX 77437",www.newfirst.com
+NexBank,08/09/1989,29209,Federal Deposit Insurance Corporation,"2515 Mckinney Ave Ste 1100, Dallas, TX 75201",www.nexbank.com
+Normangee State Bank,01/01/1934,3368,Federal Deposit Insurance Corporation,"202 Main Street, Normangee, TX 77871",www.normangeestatebank.com
+North Dallas Bank & Trust Co.,03/20/1961,18355,Federal Deposit Insurance Corporation,"12900 Preston Rd, Dallas, TX 75230",www.ndbt.com
+One World Bank,04/04/2005,57901,Federal Deposit Insurance Corporation,"2449 Walnut Hill Ln, Dallas, TX 75229",www.oneworldbank.com
+Open Bank,06/10/2005,57944,Federal Deposit Insurance Corporation,"1000 Wilshire Blvd Ste 100, Los Angeles, CA 90017",www.myopenbank.com
+Origin Bank,01/01/1934,12614,Federal Reserve Board,"3921 Elm St, Choudrant, LA 71227",www.origin.bank
+Ozona Bank,01/01/1934,3376,Federal Deposit Insurance Corporation,"503 11th Street, Ozona, TX 76943",www.ozona.bank
+Panhandle First Bank,10/12/1976,22340,Federal Deposit Insurance Corporation,"1223 N Main St, Guymon, OK 73942",www.mypfb.bank
+Pavillion Bank,01/17/1983,24303,Federal Deposit Insurance Corporation,"1200 W Campbell Rd, Richardson, TX 75080",www.pavillionbank.com
+PCB Bank,09/18/2003,57463,Federal Deposit Insurance Corporation,"3701 Wilshire Blvd, Los Angeles, CA 90010",www.mypcbbank.com
+Pegasus Bank,01/24/2007,58483,Federal Reserve Board,"4515 W Mockingbird Ln, Dallas, TX 75209",www.pegasusbankdallas.com
+Peoples Bank,12/15/1988,27398,Federal Deposit Insurance Corporation,"35 South Plz, Paris, TX 75460",www.pbparis.com
+Peoples State Bank,01/01/1934,10345,Federal Deposit Insurance Corporation,"5850 Highway 59 S, Shepherd, TX 77371",www.psbtexas.com
+Peoples State Bank,05/01/1943,15939,Federal Deposit Insurance Corporation,"101 W Main St, Rocksprings, TX 78880",www.psbrocksprings.com
+Peoples State Bank of Hallettsville,01/01/1934,10719,Federal Deposit Insurance Corporation,"116 E 3rd St, Hallettsville, TX 77964",www.psbhallettsville.com
+Pilgrim Bank,02/24/1950,16891,Federal Deposit Insurance Corporation,"145 E Marshall St, Pittsburg, TX 75686",www.pilgrimbank.bank
+Pinnacle Bank,08/10/1970,20231,Federal Deposit Insurance Corporation,"250 W Lancaster Ave, Fort Worth, TX 76102",www.pinnbanktx.com
+Pinnacle Bank,10/27/2000,35583,Federal Reserve Board,"21 Platform Way S Suite 2300, Nashville, TN 37203",www.pnfp.com
+Plains State Bank,04/06/1957,17739,Federal Deposit Insurance Corporation,"19404 Kenswick Dr, Humble, TX 77338",www.psbplains.com
+PlainsCapital Bank,09/15/1955,17491,Federal Reserve Board,"6565 Hillcrest Ave, University Park, TX 75205",www.plainscapital.com
+Planters Bank & Trust Company,01/01/1934,8235,Federal Deposit Insurance Corporation,"212 Catchings Ave, Indianola, MS 38751",www.planters-bank.com
+PNC Bank, National Association,01/01/1934,6384,Comptroller of the Currency,"222 Delaware Ave, Wilmington, DE 19801",www.pnc.com
+Pointbank,01/01/1934,3389,Federal Reserve Board,"200 S Highway 377, Pilot Point, TX 76258",www.pointbank.com
+POINTWEST BANK,01/09/1934,13600,Federal Deposit Insurance Corporation,"200 W Oak St, West, TX 76691",www.pointwestbank.com
+Preferred Bank,12/23/1991,33539,Federal Deposit Insurance Corporation,"601 S Figueroa St, Los Angeles, CA 90017",www.preferredbank.com
+PrimeBank of Texas,05/09/2003,57495,Federal Deposit Insurance Corporation,"4301 Westbank Dr Suite 100c, Austin, TX 78746",www.prime.bank
+Producer Bank of Texas,09/29/1960,18302,Federal Deposit Insurance Corporation,"100 Carr St, Powell, TX 75153",producer.bank
+PromiseOne Bank,11/06/2008,58657,Federal Deposit Insurance Corporation,"2385 Pleasant Hill Rd, Duluth, GA 30096",www.promiseone.bank
+Prosperity Bank,09/13/1949,16835,Federal Deposit Insurance Corporation,"1301 N Mechanic St, El Campo, TX 77437",www.prosperitybankusa.com
+R Bank,06/22/2009,58935,Federal Deposit Insurance Corporation,"3600 E Palm Valley Blvd, Round Rock, TX 78665",www.r.bank
+Regions Bank,01/01/1934,12368,Federal Reserve Board,"1900 5th Ave N, Birmingham, AL 35203",www.regions.com
+Rio Bank,02/11/1985,25886,Federal Deposit Insurance Corporation,"701 E Expressway 83, Mcallen, TX 78501",www.rio.bank
+Robert Lee State Bank,12/10/1936,15442,Federal Deposit Insurance Corporation,"621 Austin St, Robert Lee, TX 76945",www.robertleestatebank.com
+Round Top State Bank,01/21/1965,19358,Federal Deposit Insurance Corporation,"301 N Washington St, Round Top, TX 78954",www.roundtopstatebank.com
+Sabine State Bank and Trust Company,01/01/1934,8141,Federal Deposit Insurance Corporation,"297 Elizabeth St, Many, LA 71449",www.sabinebank.com
