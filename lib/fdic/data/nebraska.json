@@ -1,0 +1,1119 @@
+{
+  "fullName": "Nebraska",
+  "abbr": "NE",
+  "banks": [
+    {
+      "name": "Elkhorn Valley Bank & Trust",
+      "fdic_insured_since": "03/18/1947",
+      "fdic_cert": "16553",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "404 S 25th St, Norfolk, NE 68701",
+      "website": "https://www.evb.bank"
+    },
+    {
+      "name": "Farmers and Merchants State Bank, Bloomfield, Nebraska",
+      "fdic_insured_since": "01/17/1934",
+      "fdic_cert": "13662",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "103 N Broadway St, Bloomfield, NE 68718",
+      "website": "https://www.fandmstatebank.com"
+    },
+    {
+      "name": "First National Bank of Omaha",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5452",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1601 Capitol Avenue, Omaha, NE 68102",
+      "website": "https://www.fnbo.com"
+    },
+    {
+      "name": "Legends West Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5425",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "302 Main St, Lewellen, NE 69147",
+      "website": "https://www.legendswest.bank"
+    },
+    {
+      "name": "Security First Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5415",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5505 Red Rock Ln, Lincoln, NE 68516",
+      "website": "http://www.security1stbank.com"
+    },
+    {
+      "name": "Access Bank",
+      "fdic_insured_since": "12/10/2007",
+      "fdic_cert": "58727",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8712 W Dodge Rd, Omaha, NE 68114",
+      "website": "https://WWW.ACCESSBANK.COM"
+    },
+    {
+      "name": "Adams Bank & Trust",
+      "fdic_insured_since": "02/26/1962",
+      "fdic_cert": "18489",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "315 N Spruce St, Ogallala, NE 69153",
+      "website": "http://www.abtbank.com"
+    },
+    {
+      "name": "Adams County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "14311",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 N Smith Ave, Kenesaw, NE 68956",
+      "website": "https://www.adamscountybank.net"
+    },
+    {
+      "name": "Adams State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9812",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "649 Main St, Adams, NE 68301",
+      "website": "https://www.adamsstate.com"
+    },
+    {
+      "name": "American Exchange Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10647",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "151 N 4th St, Elmwood, NE 68349",
+      "website": "https://www.aebank.com"
+    },
+    {
+      "name": "American Interstate Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1439",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3331 N 204th St, Elkhorn, NE 68022",
+      "website": "https://www.americaninterstatebank.com"
+    },
+    {
+      "name": "Arbor Bank",
+      "fdic_insured_since": "07/01/1991",
+      "fdic_cert": "33450",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "911 Central Ave, Nebraska City, NE 68410",
+      "website": "http://www.arborbanking.com"
+    },
+    {
+      "name": "Auburn State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11477",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1212 J St, Auburn, NE 68305",
+      "website": "https://www.auburnstatebank.com"
+    },
+    {
+      "name": "Bank of Clarks",
+      "fdic_insured_since": "11/24/1950",
+      "fdic_cert": "16953",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 N Green St, Clarks, NE 68628",
+      "website": "https://bankofclarks.net"
+    },
+    {
+      "name": "Bank of Dixon County",
+      "fdic_insured_since": "12/10/1934",
+      "fdic_cert": "14912",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "117 E 3rd St, Ponca, NE 68770",
+      "website": "https://www.bankofdc.com"
+    },
+    {
+      "name": "Bank of Elgin",
+      "fdic_insured_since": "05/11/1944",
+      "fdic_cert": "16154",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 N 2nd St, Elgin, NE 68636",
+      "website": "https://www.bankofelgin.com"
+    },
+    {
+      "name": "Bank of Hartington",
+      "fdic_insured_since": "02/28/1934",
+      "fdic_cert": "13962",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "229 N Broadway Ave, Hartington, NE 68739",
+      "website": "https://www.bankofhartington.com"
+    },
+    {
+      "name": "Bank of Lindsay",
+      "fdic_insured_since": "04/06/1964",
+      "fdic_cert": "19087",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 Pine St, Lindsay, NE 68644",
+      "website": "https://www.bankoflindsay.com"
+    },
+    {
+      "name": "Bank of Mead",
+      "fdic_insured_since": "01/13/1934",
+      "fdic_cert": "13611",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "322 S Vine St, Mead, NE 68041",
+      "website": "https://WWW.BANKOFMEAD.COM"
+    },
+    {
+      "name": "Bank of Prague",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12745",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "316 W Center Ave, Prague, NE 68050",
+      "website": "https://www.bankofprague1.com"
+    },
+    {
+      "name": "Bank of the Valley",
+      "fdic_insured_since": "05/11/1984",
+      "fdic_cert": "25291",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "404 State St, Bellwood, NE 68624",
+      "website": "https://www.bankofthevalley.com"
+    },
+    {
+      "name": "BankFirst",
+      "fdic_insured_since": "02/09/1970",
+      "fdic_cert": "20130",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 N 13th St, Norfolk, NE 68701",
+      "website": "https://mybankfirst.bank"
+    },
+    {
+      "name": "Banner Capital Bank",
+      "fdic_insured_since": "10/10/1964",
+      "fdic_cert": "19274",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "205 State St, Harrisburg, NE 69345",
+      "website": "https://www.bcbank.net"
+    },
+    {
+      "name": "Battle Creek State Bank",
+      "fdic_insured_since": "10/24/1945",
+      "fdic_cert": "16330",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "202 W Main St, Battle Creek, NE 68715",
+      "website": "http://www.battlecreekstatebank.com"
+    },
+    {
+      "name": "Boelus State Bank",
+      "fdic_insured_since": "01/01/1958",
+      "fdic_cert": "17825",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "523 Delaware St, Boelus, NE 68820",
+      "website": "https://boelusbank.com"
+    },
+    {
+      "name": "Bruning Bank",
+      "fdic_insured_since": "04/05/1963",
+      "fdic_cert": "18748",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "104 E Main St, Bruning, NE 68322",
+      "website": "https://www.bruningbank.com"
+    },
+    {
+      "name": "Brunswick State Bank",
+      "fdic_insured_since": "01/18/1934",
+      "fdic_cert": "13692",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "226 2nd St, Brunswick, NE 68720",
+      "website": "https://www.brunswickstatebank.com"
+    },
+    {
+      "name": "Cattle Bank and Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5472",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "104 S 5th St, Seward, NE 68434",
+      "website": "https://WWW.CATTLEBANK.COM"
+    },
+    {
+      "name": "Cedar Rapids State Bank",
+      "fdic_insured_since": "06/26/1963",
+      "fdic_cert": "18820",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "213 W Main St, Cedar Rapids, NE 68627",
+      "website": "http://www.cedarrapidsstatebank.com"
+    },
+    {
+      "name": "Cedar Security Bank",
+      "fdic_insured_since": "09/04/1984",
+      "fdic_cert": "25591",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "117 Main St, Fordyce, NE 68736",
+      "website": "https://onlinebanking.cedarsecurity.com/"
+    },
+    {
+      "name": "CerescoBank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1993",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "130 Elm St, Ceresco, NE 68017",
+      "website": "https://WWW.CERESCOBANK.COM"
+    },
+    {
+      "name": "Chambers State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13251",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "104 E Main St, Chambers, NE 68725",
+      "website": "https://www,chambersbank.com"
+    },
+    {
+      "name": "CHARTER WEST BANK",
+      "fdic_insured_since": "04/01/1985",
+      "fdic_cert": "26185",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "201 S Main St, West Point, NE 68788",
+      "website": "https://www.charterwest.com"
+    },
+    {
+      "name": "Citizens Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5469",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "721 7th St, Saint Paul, NE 68873",
+      "website": "https://www.bankwithcitizens.com"
+    },
+    {
+      "name": "Citizens State Bank",
+      "fdic_insured_since": "03/14/1963",
+      "fdic_cert": "18724",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "209 3rd St, Carleton, NE 68326",
+      "website": "https://www.carletonbank.com"
+    },
+    {
+      "name": "Citizens State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5495",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "921 Avenue E, Wisner, NE 68791",
+      "website": "https://www.citstatebank.com"
+    },
+    {
+      "name": "City Bank & Trust Co.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5396",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2929 Pine Lake Rd, Lincoln, NE 68516",
+      "website": "https://www.citybankandtrust.com"
+    },
+    {
+      "name": "Clarkson Bank",
+      "fdic_insured_since": "07/18/1934",
+      "fdic_cert": "14581",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "243 Pine St, Clarkson, NE 68629",
+      "website": "https://www.clarksonbank.com"
+    },
+    {
+      "name": "Columbus Bank and Trust Company",
+      "fdic_insured_since": "02/02/1935",
+      "fdic_cert": "15010",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2501 13th St, Columbus, NE 68601",
+      "website": "https://www.colbank.com"
+    },
+    {
+      "name": "Commercial Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12246",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 S Main St, Nelson, NE 68961",
+      "website": "https://www.gotocb.net"
+    },
+    {
+      "name": "Commercial State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13819",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "519 E Broadway St, Wausa, NE 68786",
+      "website": "https://wausabank.com"
+    },
+    {
+      "name": "Commercial State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1986",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "20 Circle Dr, Republican City, NE 68971",
+      "website": ""
+    },
+    {
+      "name": "Core Bank",
+      "fdic_insured_since": "12/27/1996",
+      "fdic_cert": "34363",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "17807 Burke St, Omaha, NE 68118",
+      "website": "https://www.corebank.com"
+    },
+    {
+      "name": "Corn Growers State Bank",
+      "fdic_insured_since": "01/11/1950",
+      "fdic_cert": "16868",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "333 Nebraska St, Murdock, NE 68407",
+      "website": "https://corngrowersbank.com"
+    },
+    {
+      "name": "Cornerstone Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5496",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "529 N Lincoln Ave, York, NE 68467",
+      "website": "https://www.cornerstoneconnect.com"
+    },
+    {
+      "name": "Cornhusker Bank",
+      "fdic_insured_since": "04/18/1934",
+      "fdic_cert": "14264",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "8310 O St, Lincoln, NE 68510",
+      "website": "https://www.cornhusker.bank"
+    },
+    {
+      "name": "Countryside Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1438",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "379 Main St, Unadilla, NE 68454",
+      "website": "https://www.countrysidebank.com"
+    },
+    {
+      "name": "Custer Federal State Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28543",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "341 S 10th Ave, Broken Bow, NE 68822",
+      "website": "https://custerfederal.com"
+    },
+    {
+      "name": "Dayspring Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13622",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "914 Lake Ave, Gothenburg, NE 69138",
+      "website": "https://dayspring.bank"
+    },
+    {
+      "name": "Dundee Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10643",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5015 Underwood Ave, Omaha, NE 68132",
+      "website": "https://www.dundeebank.com"
+    },
+    {
+      "name": "Enterprise Bank",
+      "fdic_insured_since": "04/10/1991",
+      "fdic_cert": "33380",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "525 N 132nd Street, Omaha, NE 68154",
+      "website": "https://www.ENTERPRISE.BANK"
+    },
+    {
+      "name": "Equitable Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31485",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "113 N Locust St, Grand Island, NE 68801",
+      "website": "https://www.equitableonline.com"
+    },
+    {
+      "name": "Exchange Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1435",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3110 2nd Ave, Kearney, NE 68847",
+      "website": "https://www.eb-us.com"
+    },
+    {
+      "name": "F&M Bank",
+      "fdic_insured_since": "12/04/1934",
+      "fdic_cert": "14922",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "204 N Main St, West Point, NE 68788",
+      "website": "https://www.fmbankne.bank"
+    },
+    {
+      "name": "F&M Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5401",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1701 Stone St, Falls City, NE 68355",
+      "website": "https://www.fmbankfc.bank"
+    },
+    {
+      "name": "Farmers and Merchants Bank",
+      "fdic_insured_since": "04/24/1934",
+      "fdic_cert": "14275",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "501 Main St, Milligan, NE 68406",
+      "website": "https://www.fmbmilligan.com"
+    },
+    {
+      "name": "Farmers and Merchants Bank",
+      "fdic_insured_since": "07/05/1949",
+      "fdic_cert": "16810",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "617 1st St, Milford, NE 68405",
+      "website": "https://www.bankfmb.com"
+    },
+    {
+      "name": "Farmers and Merchants Bank of Ashland",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5377",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1501 Silver St, Ashland, NE 68003",
+      "website": "https://www.fmnb.com"
+    },
+    {
+      "name": "First Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5438",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "315 E 4th St, Minden, NE 68959",
+      "website": "https://www.firstofminden.com"
+    },
+    {
+      "name": "First Bank and Trust of Fullerton",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5405",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "230 Broadway St, Fullerton, NE 68638",
+      "website": "http://www.fbtfullerton.com"
+    },
+    {
+      "name": "First Bank of Utica",
+      "fdic_insured_since": "04/16/1934",
+      "fdic_cert": "14281",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "785 D St, Utica, NE 68456",
+      "website": ""
+    },
+    {
+      "name": "First Central Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10637",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "623 Patterson St, Cambridge, NE 69022",
+      "website": "http://www.firstcentral.com"
+    },
+    {
+      "name": "First Central Bank McCook",
+      "fdic_insured_since": "01/04/1999",
+      "fdic_cert": "34995",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "904 N Highway 83, Mccook, NE 69001",
+      "website": "http://www.firstcentral.com"
+    },
+    {
+      "name": "First Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5384",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "201 Main St, Beemer, NE 68716",
+      "website": "https://www.firstbeemer.com"
+    },
+    {
+      "name": "First National Bank in Ord",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5460",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1411 M St, Ord, NE 68862",
+      "website": "https://www.fnbord.com"
+    },
+    {
+      "name": "First Nebraska Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12248",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "330 N Spruce St, Valley, NE 68064",
+      "website": "https://www.firstnebraska.bank"
+    },
+    {
+      "name": "First Northeast Bank of Nebraska",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5432",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "440 Main St, Lyons, NE 68038",
+      "website": "http://www.fnb-ne.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12244",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "222 Main St, Farnam, NE 69029",
+      "website": "https://www.1ststatebank4me.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "03/14/1936",
+      "fdic_cert": "15364",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 E Broadway St, Randolph, NE 68771",
+      "website": "http://www.fsbrandolph.bank"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "11/05/1945",
+      "fdic_cert": "16333",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "211 Commercial St, Loomis, NE 68958",
+      "website": "https://www.fsbloomis.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8604",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 Main St, Hordville, NE 68846",
+      "website": "https://FSBHORDVILLE.COM"
+    },
+    {
+      "name": "First State Bank Nebraska",
+      "fdic_insured_since": "02/10/1934",
+      "fdic_cert": "13868",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2701 Grainger Pkwy, Lincoln, NE 68516",
+      "website": "http://www.1fsb.bank"
+    },
+    {
+      "name": "First Tri County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8333",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 Main St, Swanton, NE 68445",
+      "website": "https://www.ftcb1.com"
+    },
+    {
+      "name": "First Westroads Bank, Inc.",
+      "fdic_insured_since": "08/15/1967",
+      "fdic_cert": "19742",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "15750 W Dodge Rd, Omaha, NE 68118",
+      "website": "https://www.FIRSTWESTROADS.BANK"
+    },
+    {
+      "name": "FirstBank of Nebraska",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5486",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "201 E 5th St, Wahoo, NE 68066",
+      "website": "https://www.firstbankne.com"
+    },
+    {
+      "name": "FirsTier Bank",
+      "fdic_insured_since": "07/15/1955",
+      "fdic_cert": "17478",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "115 S Walnut St, Kimball, NE 69145",
+      "website": "https://www.firstierbanks.com"
+    },
+    {
+      "name": "Five Points Bank",
+      "fdic_insured_since": "09/10/1971",
+      "fdic_cert": "20488",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2015 N Broadwell Ave, Grand Island, NE 68803",
+      "website": "https://www.5pointsbank.com"
+    },
+    {
+      "name": "Five Points Bank of Hastings",
+      "fdic_insured_since": "05/02/1934",
+      "fdic_cert": "14312",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2815 Osborne Dr W, Hastings, NE 68901",
+      "website": "https://www.5pointsbank.com"
+    },
+    {
+      "name": "Flatwater Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10639",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "900 Lake Ave, Gothenburg, NE 69138",
+      "website": "https://www.flatwater.bank"
+    },
+    {
+      "name": "Foundation One Bank",
+      "fdic_insured_since": "04/25/1963",
+      "fdic_cert": "18761",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "23804 Cedar Dr, Waterloo, NE 68069",
+      "website": "https://www.foundationonebank.com"
+    },
+    {
+      "name": "Generations Bank",
+      "fdic_insured_since": "03/21/1934",
+      "fdic_cert": "14096",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "139 S Exeter Ave, Exeter, NE 68351",
+      "website": "https://generations.bank"
+    },
+    {
+      "name": "Genoa Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5408",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "502 Willard Ave, Genoa, NE 68640",
+      "website": "https://www.genoacb.com"
+    },
+    {
+      "name": "Great Plains State Bank",
+      "fdic_insured_since": "03/13/1934",
+      "fdic_cert": "14058",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "140 Main St, Petersburg, NE 68652",
+      "website": "https://www.gpsbanks.com"
+    },
+    {
+      "name": "Heartland Bank",
+      "fdic_insured_since": "03/28/1963",
+      "fdic_cert": "18740",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "896 G St, Geneva, NE 68361",
+      "website": "https://www.myheartland.bank"
+    },
+    {
+      "name": "Henderson State Bank",
+      "fdic_insured_since": "06/17/1953",
+      "fdic_cert": "17229",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1040 N Main St, Henderson, NE 68371",
+      "website": "https://www.hendersonstate.bank"
+    },
+    {
+      "name": "Heritage Bank",
+      "fdic_insured_since": "09/24/1952",
+      "fdic_cert": "17145",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "110 E 9th St, Wood River, NE 68883",
+      "website": "https://www.bankonheritage.com"
+    },
+    {
+      "name": "Hershey Bank",
+      "fdic_insured_since": "03/27/1968",
+      "fdic_cert": "19809",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 S Lincoln Ave, Hershey, NE 69143",
+      "website": "https://WWW.HERSHEYBANK.COM"
+    },
+    {
+      "name": "Home Federal Savings and Loan Association of Grand Island",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29476",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "221 S Locust St, Grand Island, NE 68801",
+      "website": "https://www.homefederalne.bank"
+    },
+    {
+      "name": "Homestead Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11482",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "915 Meridian Ave, Cozad, NE 69130",
+      "website": "https://www.homestead.bank"
+    },
+    {
+      "name": "Horizon Bank",
+      "fdic_insured_since": "05/07/1934",
+      "fdic_cert": "14327",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "10841 N 142nd St, Waverly, NE 68462",
+      "website": "https://www.horizonbankne.com"
+    },
+    {
+      "name": "I3 Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8595",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "12212 N 156th St, Bennington, NE 68007",
+      "website": "https://www.i3.bank"
+    },
+    {
+      "name": "JONES BANK",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5473",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "203 S 6th St, Seward, NE 68434",
+      "website": "https://www.jonesbank.com"
+    },
+    {
+      "name": "Lincoln FSB of Nebraska",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29692",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "8400 Maddox Dr, Lincoln, NE 68520",
+      "website": "https://www.lincolnfed.com"
+    },
+    {
+      "name": "Madison County Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31999",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "111 W 3rd St, Madison, NE 68748",
+      "website": "https://www.madisoncountybank.com"
+    },
+    {
+      "name": "Midwest Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13255",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "114 W Main St, Pierce, NE 68767",
+      "website": "https://www.midwest.bank"
+    },
+    {
+      "name": "Minden Exchange Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5439",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "448 N Minden Ave, Minden, NE 68959",
+      "website": "https://www.mindenexchange.com"
+    },
+    {
+      "name": "MNB BANK",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5434",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "220 Norris Ave, Mccook, NE 69001",
+      "website": "https://www.mnb.bank"
+    },
+    {
+      "name": "Nebraska Bank",
+      "fdic_insured_since": "01/07/1944",
+      "fdic_cert": "16116",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "355 2nd St, Dodge, NE 68633",
+      "website": "https://www.ne.bank"
+    },
+    {
+      "name": "Nebraska Bank of Commerce",
+      "fdic_insured_since": "12/03/2007",
+      "fdic_cert": "58724",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6000 Village Dr, Ste 100, Lincoln, NE 68516",
+      "website": "https://www.thenbcbank.com"
+    },
+    {
+      "name": "Nebraska State Bank",
+      "fdic_insured_since": "01/19/1934",
+      "fdic_cert": "13696",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 Prairie St, Bristow, NE 68719",
+      "website": ""
+    },
+    {
+      "name": "Nebraska State Bank",
+      "fdic_insured_since": "12/09/1946",
+      "fdic_cert": "16516",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 N Fourth St, Lynch, NE 68746",
+      "website": ""
+    },
+    {
+      "name": "Nebraska State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9819",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "218 Main St, Oshkosh, NE 69154",
+      "website": "https://www.fsa-loans.com"
+    },
+    {
+      "name": "Nebraska State Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8322",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "945 S D St, Broken Bow, NE 68822",
+      "website": "https://www.nesb.bank"
+    },
+    {
+      "name": "Nebraskaland Bank",
+      "fdic_insured_since": "05/14/1998",
+      "fdic_cert": "34811",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1400 S Dewey St, North Platte, NE 69101",
+      "website": "https://www.nebraskalandbank.com"
+    },
+    {
+      "name": "Pathway Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1992",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "306 S High St, Cairo, NE 68824",
+      "website": "https://www.pathwaybank.com"
+    },
+    {
+      "name": "Pinnacle Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10634",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1401 N St, Lincoln, NE 68508",
+      "website": "https://www.pinnbank.com"
+    },
+    {
+      "name": "Platte Valley Bank",
+      "fdic_insured_since": "07/22/1996",
+      "fdic_cert": "34211",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1212 Circle Dr, Scottsbluff, NE 69361",
+      "website": "https://www.pvbank.com"
+    },
+    {
+      "name": "Platte Valley Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9818",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "606 Main St, North Bend, NE 68649",
+      "website": "https://www.pvbonline.com"
+    },
+    {
+      "name": "Premier Bank National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12493",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "16802 Burke St, Omaha, NE 68118",
+      "website": "https://www.premierbankne.com"
+    },
+    {
+      "name": "Riverstone Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10641",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "600 S 4th St, Eagle, NE 68347",
+      "website": "https://WWW.BANKRIVSERSTONE.COM"
+    },
+    {
+      "name": "RVR Bank",
+      "fdic_insured_since": "07/30/1956",
+      "fdic_cert": "17639",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1005 E 23rd St, Fremont, NE 68025",
+      "website": "https://www.rvr.bank"
+    },
+    {
+      "name": "Sandhills State Bank",
+      "fdic_insured_since": "02/14/1934",
+      "fdic_cert": "13892",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "203 S Dewey St, North Platte, NE 69101",
+      "website": "https://sandhills.bank"
+    },
+    {
+      "name": "Scribner Bank",
+      "fdic_insured_since": "03/09/1934",
+      "fdic_cert": "14026",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 Main St, Scribner, NE 68057",
+      "website": "https://www.scribnerbank.com"
+    },
+    {
+      "name": "Security Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5424",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "202 E 2nd St, Laurel, NE 68745",
+      "website": "https://WWW.MYSECURITY.BANK"
+    },
+    {
+      "name": "Security National Bank of Omaha",
+      "fdic_insured_since": "09/01/1964",
+      "fdic_cert": "19213",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1120 S 101st St, Omaha, NE 68124",
+      "website": "https://www.securitynational.bank"
+    },
+    {
+      "name": "Sidney Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29379",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1045 10th Ave, Sidney, NE 69162",
+      "website": "https://www.sidneyfederal.com"
+    },
+    {
+      "name": "Siouxland Bank",
+      "fdic_insured_since": "12/01/1980",
+      "fdic_cert": "23270",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1001 W 29th St, South Sioux City, NE 68776",
+      "website": "https://WWW.SIOUXLANDBANK.COM"
+    },
+    {
+      "name": "South Central State Bank",
+      "fdic_insured_since": "07/01/1948",
+      "fdic_cert": "16707",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "673 Broad St, Campbell, NE 68932",
+      "website": "http://www.southcentralstatebank.com"
+    },
+    {
+      "name": "Stanton State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5478",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "924 Ivy St, Stanton, NE 68779",
+      "website": "https://www.stantonstatebank.com"
+    },
+    {
+      "name": "State Bank of Scotia",
+      "fdic_insured_since": "04/01/1934",
+      "fdic_cert": "14069",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "104 S Main St, Scotia, NE 68875",
+      "website": "https://StateBankofScotia.Bank"
+    },
+    {
+      "name": "State Bank of Table Rock",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9822",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "402 Houston Street, Table Rock, NE 68447",
+      "website": "https://www.tablerockbank.com"
+    },
+    {
+      "name": "State Nebraska Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5490",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "122 Main St, Wayne, NE 68787",
+      "website": "https://www.statenebank.com"
+    },
+    {
+      "name": "Tecumseh Federal Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30395",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "160 N 4th St, Tecumseh, NE 68450",
+      "website": "https://www.tecfedbank.com"
+    },
+    {
+      "name": "Thayer County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11475",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "402 Lincoln Ave, Hebron, NE 68370",
+      "website": "http://www.thayercountybank.com"
+    },
+    {
+      "name": "The Bank of Steinauer",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10635",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "215 Main St, Steinauer, NE 68441",
+      "website": "https://www.bankofsteinauer.com"
+    },
+    {
+      "name": "The First National Bank of Gordon",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5410",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "134 N Main St, Gordon, NE 69343",
+      "website": "https://www.fnbgordon.com"
+    },
+    {
+      "name": "The First National Bank of Johnson",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5422",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "125 Main St, Johnson, NE 68378",
+      "website": "https://www.fnbjohnson.com"
+    },
+    {
+      "name": "The Tri-County Bank",
+      "fdic_insured_since": "11/17/1945",
+      "fdic_cert": "16339",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "106 N Main St, Stuart, NE 68780",
+      "website": "https://www.tricountybank.com"
+    },
+    {
+      "name": "Town & Country Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1434",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "423 Grand Ave, Ravenna, NE 68869",
+      "website": "https://www.tcbank.bank"
+    },
+    {
+      "name": "Union Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13421",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3643 S 48th St, Lincoln, NE 68506",
+      "website": "https://www.ubt.com"
+    },
+    {
+      "name": "United Republic Bank",
+      "fdic_insured_since": "12/11/2006",
+      "fdic_cert": "58359",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 N 181st St, Elkhorn, NE 68022",
+      "website": "https://www.unitedrepublic.bank"
+    },
+    {
+      "name": "Wahoo State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1163",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "164 E 5th St, Wahoo, NE 68066",
+      "website": "https://www.wahoostatebank.com"
+    },
+    {
+      "name": "Washington County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12241",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1523 Washington St, Blair, NE 68008",
+      "website": "https://www.washingtoncountybank.com"
+    },
+    {
+      "name": "Waypoint Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5394",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "747 Meridian Ave, Cozad, NE 69130",
+      "website": "https://www.waypointbank.com"
+    },
+    {
+      "name": "West Gate Bank",
+      "fdic_insured_since": "09/03/1968",
+      "fdic_cert": "19850",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6003 Old Cheney Rd, Ste 100, Lincoln, NE 68516",
+      "website": "https://my.westgate.bank"
+    },
+    {
+      "name": "West Plains Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5369",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "200 N Main St, Ainsworth, NE 69210",
+      "website": "https://www.westplainsbk.com"
+    },
+    {
+      "name": "Western National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4778",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "523 Thayer Ave, Chester, NE 68327",
+      "website": "https://www.mywnb.com"
+    },
+    {
+      "name": "Western Nebraska Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1983",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 Center Ave, Curtis, NE 69025",
+      "website": "https://www.westernnebraskabank.com"
+    },
+    {
+      "name": "York State Bank",
+      "fdic_insured_since": "07/15/1943",
+      "fdic_cert": "16079",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "700 N Lincoln Ave, York, NE 68467",
+      "website": "https://www.yorkstatebank.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

@@ -1,0 +1,487 @@
+{
+  "fullName": "North Dakota",
+  "abbr": "ND",
+  "banks": [
+    {
+      "name": "Alerus Financial, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3931",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "401 Demers Ave, Grand Forks, ND 58201",
+      "website": "http://www.alerus.com"
+    },
+    {
+      "name": "American Federal Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29140",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "215 5th St N, Fargo, ND 58102",
+      "website": "https://www.americanfederalbank.com"
+    },
+    {
+      "name": "American State Bank & Trust Company of Williston",
+      "fdic_insured_since": "12/18/1936",
+      "fdic_cert": "15444",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "223 Main St, Williston, ND 58801",
+      "website": "https://www.asbt.bank"
+    },
+    {
+      "name": "Aspire Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3934",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5195 45th St S, Fargo, ND 58104",
+      "website": "https://aspirebanks.com"
+    },
+    {
+      "name": "Bank Forward",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8941",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5650 37th Ave S, Fargo, ND 58104",
+      "website": "https://WWW.BANKFORWARD.COM"
+    },
+    {
+      "name": "Bank of Hazelton",
+      "fdic_insured_since": "12/01/1957",
+      "fdic_cert": "17813",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "363 Main St, Hazelton, ND 58544",
+      "website": "https://www.bankofhazelton.net"
+    },
+    {
+      "name": "BankNorth",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8387",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "340 Main St, Arthur, ND 58006",
+      "website": "https://banknorth.bank"
+    },
+    {
+      "name": "Bell Bank",
+      "fdic_insured_since": "05/06/1966",
+      "fdic_cert": "19581",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "520 Main Ave, Fargo, ND 58103",
+      "website": "https://www.bell.bank"
+    },
+    {
+      "name": "Border Bank",
+      "fdic_insured_since": "08/21/1972",
+      "fdic_cert": "20776",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4530 17th Ave S, Fargo, ND 58103",
+      "website": "https://www.border.bank"
+    },
+    {
+      "name": "Bravera Bank",
+      "fdic_insured_since": "12/01/1977",
+      "fdic_cert": "22559",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "220 1st Ave W, Dickinson, ND 58601",
+      "website": "https://www.bravera.bank"
+    },
+    {
+      "name": "Choice Financial Group",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9423",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4501 23rd Ave S, Fargo, ND 58104",
+      "website": "https://HTTP://WWW.BANKWITHCHOICE.COM"
+    },
+    {
+      "name": "Citizens State Bank of Lankin",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9422",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 Main Street, Lankin, ND 58250",
+      "website": "http://www.csb100.com"
+    },
+    {
+      "name": "Commercial Bank of Mott",
+      "fdic_insured_since": "06/13/1940",
+      "fdic_cert": "15741",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "325 Brown Ave, Mott, ND 58646",
+      "website": "http://www.cbmott.com"
+    },
+    {
+      "name": "Cornerstone Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13198",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2280 45th St S, Fargo, ND 58104",
+      "website": "https://www.cornerstone.bank"
+    },
+    {
+      "name": "Dakota Community Bank & Trust, National Association",
+      "fdic_insured_since": "03/11/1940",
+      "fdic_cert": "15728",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "609 Main St, Hebron, ND 58638",
+      "website": "https://www.dakotacommunitybank.com"
+    },
+    {
+      "name": "Dakota Heritage Bank",
+      "fdic_insured_since": "02/08/1945",
+      "fdic_cert": "16231",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "109 Main St, Hunter, ND 58048",
+      "website": "https://www.dhb.bank"
+    },
+    {
+      "name": "Dakota Western Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8637",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "202 S Main St, Bowman, ND 58623",
+      "website": "https://www.dwb.bank"
+    },
+    {
+      "name": "Farmers & Merchants Bank of North Dakota",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8640",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 Main St N, Tolna, ND 58380",
+      "website": "http://www.fmbnd.com"
+    },
+    {
+      "name": "Farmers and Merchants State Bank",
+      "fdic_insured_since": "08/12/1974",
+      "fdic_cert": "21728",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "816 3rd St, Langdon, ND 58249",
+      "website": "http://www.fmbanklangdon.com"
+    },
+    {
+      "name": "First International Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10248",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 N Main St, Watford City, ND 58854",
+      "website": "https://www.fibt.com"
+    },
+    {
+      "name": "First National Bank and Trust Co. of Bottineau",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3902",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "424 Main St, Bottineau, ND 58318",
+      "website": "https://www.firstbottineau.com"
+    },
+    {
+      "name": "First Security Bank - West",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10253",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 E Main St, Beulah, ND 58523",
+      "website": "https://www.firstsecuritybanks.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "15539",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "423 Broadway, Buxton, ND 58218",
+      "website": "http://www.firststatebanks.com"
+    },
+    {
+      "name": "First State Bank & Trust",
+      "fdic_insured_since": "11/02/1934",
+      "fdic_cert": "14801",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "22 4th St E, Williston, ND 58801",
+      "website": "https://www.fsbtnd.bank"
+    },
+    {
+      "name": "First State Bank of Golva",
+      "fdic_insured_since": "04/01/1934",
+      "fdic_cert": "10243",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "410 Terrell Ave, Golva, ND 58632",
+      "website": "https://fsbofgolva.com"
+    },
+    {
+      "name": "First State Bank of Harvey",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8383",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "700 Lincoln Ave, Harvey, ND 58341",
+      "website": "https://www.firstharvey.com"
+    },
+    {
+      "name": "First United Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "15472",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "503 Briggs Ave S, Park River, ND 58270",
+      "website": "https://www.firstunitedonline.com"
+    },
+    {
+      "name": "First Western Bank & Trust",
+      "fdic_insured_since": "05/11/1964",
+      "fdic_cert": "19123",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "900 S Broadway, Minot, ND 58701",
+      "website": "https://www.firstwestern.bank"
+    },
+    {
+      "name": "Gate City Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27774",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "500 2nd Ave N, Fargo, ND 58102",
+      "website": "https://www.gatecity.bank"
+    },
+    {
+      "name": "Grant County State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9417",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 N Main St, Carson, ND 58529",
+      "website": "https://www.grantcountystatebank.com"
+    },
+    {
+      "name": "Heartland State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3919",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 Main St, Edgeley, ND 58433",
+      "website": "https://www.heartlandstatebank.com"
+    },
+    {
+      "name": "Horizon Financial Bank",
+      "fdic_insured_since": "05/02/1938",
+      "fdic_cert": "15598",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "416 Main St, Munich, ND 58352",
+      "website": "http://www.HorizonFinancialBank.com"
+    },
+    {
+      "name": "Kindred State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8946",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "411 Elm St, Kindred, ND 58051",
+      "website": "http://www.kindredstatebank.com"
+    },
+    {
+      "name": "Kirkwood Bank & Trust Co.",
+      "fdic_insured_since": "02/18/1975",
+      "fdic_cert": "21928",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2911 N 14th St, Ste 101, Bismarck, ND 58503",
+      "website": "https://www.kirkwoodbank.com"
+    },
+    {
+      "name": "KodaBank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8386",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "104 S Main St, Drayton, ND 58225",
+      "website": "https://www.kodabank.com"
+    },
+    {
+      "name": "Liberty State Bank",
+      "fdic_insured_since": "04/17/1952",
+      "fdic_cert": "17096",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 Main St, Powers Lake, ND 58773",
+      "website": "https://www.libertystateplnd.com"
+    },
+    {
+      "name": "Lincoln State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8390",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "302 Main Ave S, Hankinson, ND 58041",
+      "website": "https://www.lsbhank.com"
+    },
+    {
+      "name": "McIntosh County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13794",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "204 W Main St, Ashley, ND 58413",
+      "website": "https://www.makeitmcb.com"
+    },
+    {
+      "name": "Merchants Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8943",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "210 S Main Ave, Rugby, ND 58368",
+      "website": "https://www.merchantsbankrugby.com"
+    },
+    {
+      "name": "Peoples State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13196",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "110 Main St, Westhope, ND 58793",
+      "website": ""
+    },
+    {
+      "name": "Peoples State Bank of Velva",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10250",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 Main St N, Velva, ND 58790",
+      "website": "https://www.psbvelva.com"
+    },
+    {
+      "name": "Peoples State Bank, Fairmount, N. D.",
+      "fdic_insured_since": "01/02/1953",
+      "fdic_cert": "17174",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 Main Ave, Fairmount, ND 58030",
+      "website": "https://www.peoples-state.com"
+    },
+    {
+      "name": "Rolette State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9120",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "209 Main Street, Rolette, ND 58366",
+      "website": "https://www.rolettestatebank.com"
+    },
+    {
+      "name": "Security First Bank of North Dakota",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11519",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "700 Ash Ave, New Salem, ND 58563",
+      "website": "https://www.securityfirstbank.bank"
+    },
+    {
+      "name": "Starion Bank",
+      "fdic_insured_since": "01/01/1993",
+      "fdic_cert": "33758",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "333 N 4th St, Bismarck, ND 58501",
+      "website": "https://WWW.STARIONBANK.COM"
+    },
+    {
+      "name": "State Bank & Trust of Kenmare",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2057",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4 2nd St Nw, Kenmare, ND 58746",
+      "website": "https://www.sbtk.com"
+    },
+    {
+      "name": "State Bank of Bottineau",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9121",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 11th St E, Bottineau, ND 58318",
+      "website": "http://www.statebankofbottineau.com"
+    },
+    {
+      "name": "State Bank of Lakota",
+      "fdic_insured_since": "09/16/1946",
+      "fdic_cert": "16477",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "125 Main St N, Lakota, ND 58344",
+      "website": "https://www.statebankoflakota.com"
+    },
+    {
+      "name": "Stock Growers Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8942",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "331 Main St S, Forman, ND 58032",
+      "website": "https://www.stockgrowers.bank"
+    },
+    {
+      "name": "Strasburg State Bank",
+      "fdic_insured_since": "11/12/1958",
+      "fdic_cert": "17922",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "720 Main St, Strasburg, ND 58573",
+      "website": "https://www.strasburgstatebank.com"
+    },
+    {
+      "name": "The Bank of Tioga",
+      "fdic_insured_since": "12/07/1953",
+      "fdic_cert": "17280",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7 N Main St, Tioga, ND 58852",
+      "website": "https://www.thebankoftioga.com"
+    },
+    {
+      "name": "The Citizens State Bank at Mohall",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8632",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 Main St W, Mohall, ND 58761",
+      "website": "https://www.csbmsl.com"
+    },
+    {
+      "name": "The Goose River Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10236",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "44 Main St W, Mayville, ND 58257",
+      "website": "https://www.gooseriverbank.com"
+    },
+    {
+      "name": "The Union Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9420",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1700 Highway 49 N, Beulah, ND 58523",
+      "website": "https://www.theunionbank.com"
+    },
+    {
+      "name": "TruCommunity Bank",
+      "fdic_insured_since": "11/19/1935",
+      "fdic_cert": "15306",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 N Main St, Garrison, ND 58540",
+      "website": "https://www.trucommunity.bank"
+    },
+    {
+      "name": "Turtle Mountain State Bank",
+      "fdic_insured_since": "12/03/2007",
+      "fdic_cert": "58586",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "908 Chief Little Shell Street, Belcourt, ND 58316",
+      "website": "http://www.tmstatebank.com"
+    },
+    {
+      "name": "Union State Bank of Hazen",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13195",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "209 Central Ave N, Hazen, ND 58545",
+      "website": "https://www.betterstate.com"
+    },
+    {
+      "name": "Unison Bank",
+      "fdic_insured_since": "03/15/1965",
+      "fdic_cert": "19396",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 1st Ave S, Jamestown, ND 58401",
+      "website": "https://www.unisonbank.com"
+    },
+    {
+      "name": "United Valley Bank",
+      "fdic_insured_since": "03/22/1937",
+      "fdic_cert": "15478",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "211 Division Ave S, Cavalier, ND 58220",
+      "website": "https://www.uvbank.net"
+    },
+    {
+      "name": "Western State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9123",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "110 4th St Se, Devils Lake, ND 58301",
+      "website": "https://www.westernbanks.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

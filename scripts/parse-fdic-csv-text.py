@@ -63,6 +63,10 @@ REGIONAL_CSV_SOURCES: dict[str, tuple[Path, set[str]]] = {
         ROOT / "data" / "kentucky-tennessee-import.csv",
         {"KY", "TN"},
     ),
+    "plains": (
+        ROOT / "data" / "plains-import.csv",
+        {"MT", "NE", "ND", "SD"},
+    ),
 }
 OUT_DIR = ROOT / "lib" / "fdic" / "data"
 
@@ -84,6 +88,10 @@ STATE_META = {
     "MO": ("Missouri", "missouri"),
     "IA": ("Iowa", "iowa"),
     "MN": ("Minnesota", "minnesota"),
+    "MT": ("Montana", "montana"),
+    "NE": ("Nebraska", "nebraska"),
+    "ND": ("North Dakota", "north-dakota"),
+    "SD": ("South Dakota", "south-dakota"),
     "WI": ("Wisconsin", "wisconsin"),
     "IL": ("Illinois", "illinois"),
     "IN": ("Indiana", "indiana"),

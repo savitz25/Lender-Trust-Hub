@@ -1,0 +1,455 @@
+{
+  "fullName": "South Dakota",
+  "abbr": "SD",
+  "banks": [
+    {
+      "name": "American Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1117",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6810 S Minnesota Ave, Sioux Falls, SD 57108",
+      "website": "https://www.abt.bank"
+    },
+    {
+      "name": "Dacotah Bank",
+      "fdic_insured_since": "04/30/1955",
+      "fdic_cert": "17437",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "308 S Main St, Aberdeen, SD 57401",
+      "website": "https://www.dacotahbank.com"
+    },
+    {
+      "name": "Wells Fargo Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3511",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3201 N 4th Ave, Sioux Falls, SD 57104",
+      "website": "https://www.wellsfargo.com"
+    },
+    {
+      "name": "1st Financial Bank USA",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1673",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "331 Dakota Dunes Blvd, Dakota Dunes, SD 57049",
+      "website": "https://www.1fbusa.com"
+    },
+    {
+      "name": "Andes State Bank",
+      "fdic_insured_since": "02/05/1962",
+      "fdic_cert": "18483",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "213 Main St, Lake Andes, SD 57356",
+      "website": "https://www.andesstatebank.com"
+    },
+    {
+      "name": "BankStar Financial",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "496",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "124 Elk St, Elkton, SD 57026",
+      "website": "https://www.ebankstar.bank"
+    },
+    {
+      "name": "BankWest, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4009",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "420 S Pierre St, Pierre, SD 57501",
+      "website": "https://www.bankwest-sd.com"
+    },
+    {
+      "name": "Black Hills Community Bank, N.A.",
+      "fdic_insured_since": "11/27/2007",
+      "fdic_cert": "58723",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "840 Mount Rushmore Rd, Rapid City, SD 57701",
+      "website": "http://www.BHCBANK.COM"
+    },
+    {
+      "name": "Bryant State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6064",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "124 Main St W, Bryant, SD 57221",
+      "website": "https://www.bryantstatebank.com"
+    },
+    {
+      "name": "Campbell County Bank, Inc.",
+      "fdic_insured_since": "06/13/1944",
+      "fdic_cert": "16161",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "110 Main St N, Herreid, SD 57632",
+      "website": "http://campbellcountybank.com"
+    },
+    {
+      "name": "Citibank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7213",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "5800 S Corporate Pl, Sioux Falls, SD 57108",
+      "website": "https://www.citibank.com"
+    },
+    {
+      "name": "Citizens State Bank, of Arlington",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1118",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "128 S Main St, Arlington, SD 57212",
+      "website": "https://www.csbarlington.com"
+    },
+    {
+      "name": "Commercial State Bank, of Wagner",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9932",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "204 S Main Ave, Wagner, SD 57380",
+      "website": "https://www.commercialstate.com"
+    },
+    {
+      "name": "Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1687",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "118 Main St N, Avon, SD 57315",
+      "website": "http://www.communitybankavon.com"
+    },
+    {
+      "name": "CorTrust Bank National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6063",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 E Havens Ave, Mitchell, SD 57301",
+      "website": "https://www.cortrustbank.com"
+    },
+    {
+      "name": "DNB NATIONAL BANK",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3977",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "305 4th St W, Clear Lake, SD 57226",
+      "website": "https://www.dnbanks.com"
+    },
+    {
+      "name": "Farmers and Merchants State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "501",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 S Main St, Plankinton, SD 57368",
+      "website": "https://www.fmsbonline.com"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1686",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "103 W Main St, Parkston, SD 57366",
+      "website": "http://www.fsbparkston.com"
+    },
+    {
+      "name": "Farmers State Bank of Canton",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11133",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "220 E 5th St, Canton, SD 57013",
+      "website": "https://www.cantonfarmersstatebank.com"
+    },
+    {
+      "name": "First Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3973",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "520 6th St, Brookings, SD 57006",
+      "website": "https://www.bankeasy.com"
+    },
+    {
+      "name": "First Dakota National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4028",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "225 Cedar St, Yankton, SD 57078",
+      "website": "https://www.firstdakota.com"
+    },
+    {
+      "name": "First Fidelity Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1122",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "745 Main St, Burke, SD 57523",
+      "website": "https://www.ffb-sd.com"
+    },
+    {
+      "name": "First National Bank",
+      "fdic_insured_since": "08/24/1934",
+      "fdic_cert": "14712",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "307 E Hustan Ave, Fort Pierre, SD 57532",
+      "website": "https://www.firstnationalbanks.com"
+    },
+    {
+      "name": "First National Bank",
+      "fdic_insured_since": "02/15/1985",
+      "fdic_cert": "25894",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "141 E Main St, Oldham, SD 57051",
+      "website": "https://www.firstnationalbanks.com"
+    },
+    {
+      "name": "First National Bank in Philip",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3999",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "103 E Oak Street, Philip, SD 57567",
+      "website": "https://www.fnbphilip.com"
+    },
+    {
+      "name": "First PREMIER Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6085",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "500 S Minnesota Ave, Sioux Falls, SD 57104",
+      "website": "https://www.firstpremier.com"
+    },
+    {
+      "name": "First Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32629",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "201 N 3rd St, Beresford, SD 57004",
+      "website": "https://firstsavingsbanks.com"
+    },
+    {
+      "name": "First State Bank of Roscoe",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9005",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 North Mitchell Street, Roscoe, SD 57471",
+      "website": ""
+    },
+    {
+      "name": "First Western Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31972",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "402 Main St, Rapid City, SD 57701",
+      "website": "https://www.fwfsb.com"
+    },
+    {
+      "name": "Frontier Bank",
+      "fdic_insured_since": "06/24/1994",
+      "fdic_cert": "33922",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "101 S Phillips Ave, Sioux Falls, SD 57104",
+      "website": "https://www.frontierbank.com"
+    },
+    {
+      "name": "Great Plains Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "505",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "702 7th St, Eureka, SD 57437",
+      "website": "https://www.greatplainsbank.com"
+    },
+    {
+      "name": "Heartland State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9007",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "302 E 7th Ave, Redfield, SD 57469",
+      "website": "https://www.hsbsd.com"
+    },
+    {
+      "name": "Ipswich State Bank",
+      "fdic_insured_since": "04/13/1938",
+      "fdic_cert": "15593",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 First Avenue, Ipswich, SD 57451",
+      "website": "https://www.isbipswich.com"
+    },
+    {
+      "name": "Merchants State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1125",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "305 S Main St, Freeman, SD 57029",
+      "website": "https://www.msb-sd.com"
+    },
+    {
+      "name": "One American Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6078",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "549 Broadway St, Centerville, SD 57014",
+      "website": "https://www.oneamericanbank.com"
+    },
+    {
+      "name": "Pathward, National Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30776",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "5501 S Broadband Ln, Sioux Falls, SD 57108",
+      "website": "http://www.pathward.com"
+    },
+    {
+      "name": "Pioneer Bank & Trust",
+      "fdic_insured_since": "12/04/1937",
+      "fdic_cert": "15562",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "700 State St, Belle Fourche, SD 57717",
+      "website": "https://www.pioneerbankandtrust.com"
+    },
+    {
+      "name": "Plains Commerce Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1678",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3905 W 49th St, Sioux Falls, SD 57106",
+      "website": "https://www.plainscommerce.com"
+    },
+    {
+      "name": "Quoin Financial Bank",
+      "fdic_insured_since": "11/14/1938",
+      "fdic_cert": "15629",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 N Broadway Ave, Miller, SD 57362",
+      "website": "https://www.quoinbank.com"
+    },
+    {
+      "name": "Reliabank Dakota",
+      "fdic_insured_since": "01/02/1945",
+      "fdic_cert": "16221",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "211 Main St N, Estelline, SD 57234",
+      "website": "https://www.reliabank.com"
+    },
+    {
+      "name": "Richland State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1675",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "602 1st St, Bruce, SD 57220",
+      "website": "https://www.richlandstate.org"
+    },
+    {
+      "name": "Rivers Edge Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9935",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "211 N Broadway Ave, Marion, SD 57043",
+      "website": "https://www.riversedge.bank"
+    },
+    {
+      "name": "Security Bank Midwest",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "485",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1600 Main St, Tyndall, SD 57066",
+      "website": "https://www.sbmidwest.bank"
+    },
+    {
+      "name": "Security National Bank of South Dakota",
+      "fdic_insured_since": "05/01/1997",
+      "fdic_cert": "34394",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "325 Dakota Dunes Blvd, Dakota Dunes, SD 57049",
+      "website": "http://www.snbsd.com"
+    },
+    {
+      "name": "Security Savings Bank",
+      "fdic_insured_since": "04/04/1940",
+      "fdic_cert": "15734",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 S West St, Canton, SD 57013",
+      "website": "https://www.bankwithssb.com"
+    },
+    {
+      "name": "Security State Bank",
+      "fdic_insured_since": "07/01/1946",
+      "fdic_cert": "16448",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "450 Main St, Alexandria, SD 57311",
+      "website": "https://www.bankwithsecurity.com"
+    },
+    {
+      "name": "State Bank of Eagle Butte",
+      "fdic_insured_since": "02/01/1960",
+      "fdic_cert": "18145",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "305 S Main St, Eagle Butte, SD 57625",
+      "website": "https://www.statebankofeaglebutte.com"
+    },
+    {
+      "name": "Sunrise Bank Dakota",
+      "fdic_insured_since": "09/08/1941",
+      "fdic_cert": "15847",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 S Main St, Onida, SD 57564",
+      "website": "http://www.mysunrisebank.com"
+    },
+    {
+      "name": "Sunrise Banks, National Association",
+      "fdic_insured_since": "07/17/1962",
+      "fdic_cert": "18561",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "5105 S Crossing Pl, Sioux Falls, SD 57108",
+      "website": "https://www.sunrisebanks.com"
+    },
+    {
+      "name": "The Bancorp Bank, National Association",
+      "fdic_insured_since": "07/28/2000",
+      "fdic_cert": "35444",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "345 N Reid Pl, Sioux Falls, SD 57103",
+      "website": "https://www.thebancorp.com"
+    },
+    {
+      "name": "The Farmers and Merchants State Bank",
+      "fdic_insured_since": "03/06/1934",
+      "fdic_cert": "13999",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "550 Main St, Scotland, SD 57059",
+      "website": "http://wwwfmsbscotland.com"
+    },
+    {
+      "name": "The Farmers State Bank of Turton",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6084",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "123 E Center St, Turton, SD 57477",
+      "website": "https://www.fsbturtonsd.com"
+    },
+    {
+      "name": "The First National Bank in Sioux Falls",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4016",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 S Phillips Ave, Sioux Falls, SD 57104",
+      "website": "https://www.fnbsf.com"
+    },
+    {
+      "name": "The First National Bank of Frederick",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3985",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "314 Main St, Frederick, SD 57441",
+      "website": "https://www.fnbfredericksd.com"
+    },
+    {
+      "name": "The Security State Bank",
+      "fdic_insured_since": "07/01/1940",
+      "fdic_cert": "15749",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "117 N 3rd St, Emery, SD 57332",
+      "website": "https://www.thesecuritystatebank.com"
+    },
+    {
+      "name": "Western Dakota Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "492",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "803 Main Street, Timber Lake, SD 57656",
+      "website": "https://www.westerndakotabank.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

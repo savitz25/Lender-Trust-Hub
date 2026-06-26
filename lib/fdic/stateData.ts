@@ -27,15 +27,19 @@ import michiganData from './data/michigan.json';
 import mississippiData from './data/mississippi.json';
 import minnesotaData from './data/minnesota.json';
 import missouriData from './data/missouri.json';
+import montanaData from './data/montana.json';
+import nebraskaData from './data/nebraska.json';
 import newHampshireData from './data/new-hampshire.json';
 import newJerseyData from './data/new-jersey.json';
 import newYorkData from './data/new-york.json';
 import northCarolinaData from './data/north-carolina.json';
+import northDakotaData from './data/north-dakota.json';
 import ohioData from './data/ohio.json';
 import oklahomaData from './data/oklahoma.json';
 import pennsylvaniaData from './data/pennsylvania.json';
 import rhodeIslandData from './data/rhode-island.json';
 import southCarolinaData from './data/south-carolina.json';
+import southDakotaData from './data/south-dakota.json';
 import tennesseeData from './data/tennessee.json';
 import texasData from './data/texas.json';
 import vermontData from './data/vermont.json';
@@ -64,7 +68,10 @@ export const stateData: Record<string, StateFDICData> = {
   MS: mississippiData as StateFDICData,
   MN: minnesotaData as StateFDICData,
   MO: missouriData as StateFDICData,
+  MT: montanaData as StateFDICData,
   NC: northCarolinaData as StateFDICData,
+  ND: northDakotaData as StateFDICData,
+  NE: nebraskaData as StateFDICData,
   NH: newHampshireData as StateFDICData,
   NJ: newJerseyData as StateFDICData,
   NY: newYorkData as StateFDICData,
@@ -73,6 +80,7 @@ export const stateData: Record<string, StateFDICData> = {
   PA: pennsylvaniaData as StateFDICData,
   RI: rhodeIslandData as StateFDICData,
   SC: southCarolinaData as StateFDICData,
+  SD: southDakotaData as StateFDICData,
   TN: tennesseeData as StateFDICData,
   TX: texasData as StateFDICData,
   VA: virginiaData as StateFDICData,

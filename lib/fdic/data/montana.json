@@ -1,0 +1,295 @@
+{
+  "fullName": "Montana",
+  "abbr": "MT",
+  "banks": [
+    {
+      "name": "First Interstate Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1105",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "401 N 31st St, Billings, MT 59101",
+      "website": "https://www.firstinterstatebank.com"
+    },
+    {
+      "name": "Davidson Trust Co.",
+      "fdic_insured_since": "01/01/2001",
+      "fdic_cert": "35510",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "8 3rd St N Ste 200, Great Falls, MT 59401",
+      "website": ""
+    },
+    {
+      "name": "American Bank",
+      "fdic_insured_since": "11/25/1970",
+      "fdic_cert": "20311",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1632 W Main St, Bozeman, MT 59715",
+      "website": "https://www.americanbankmontana.com"
+    },
+    {
+      "name": "Ascent Bank",
+      "fdic_insured_since": "04/13/1970",
+      "fdic_cert": "20162",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1721 11th Ave, Helena, MT 59601",
+      "website": "https://www.ascentbank.com"
+    },
+    {
+      "name": "Bank of Bozeman",
+      "fdic_insured_since": "04/15/2005",
+      "fdic_cert": "57952",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "875 Harmon Stream Blvd, Bozeman, MT 59718",
+      "website": "https://www.bankofbozeman.com"
+    },
+    {
+      "name": "Bank of Bridger, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2224",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "101 S Main St, Bridger, MT 59014",
+      "website": "https://www.bankofbridger.com"
+    },
+    {
+      "name": "Bank of Montana",
+      "fdic_insured_since": "11/26/2007",
+      "fdic_cert": "58482",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "125 Bank St, Missoula, MT 59802",
+      "website": "https://www.bankofmontana.com"
+    },
+    {
+      "name": "Bank of The Rockies",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2205",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2000 Prospect Ave, Helena, MT 59601",
+      "website": "https://www.botr.bank"
+    },
+    {
+      "name": "Belt Valley Bank",
+      "fdic_insured_since": "03/14/1936",
+      "fdic_cert": "15362",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "111 Castner St, Belt, MT 59412",
+      "website": "https://www.beltvalleybank.com"
+    },
+    {
+      "name": "Citizens Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1972",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "130 Mcleod St, Big Timber, MT 59011",
+      "website": "https://www.ctznsbank.com"
+    },
+    {
+      "name": "Eagle Bank",
+      "fdic_insured_since": "07/25/2006",
+      "fdic_cert": "58282",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "80 Heritage Ln, Polson, MT 59860",
+      "website": "https://www.eaglebankmt.com"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "342",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "103 Main St, Victor, MT 59875",
+      "website": "https://www.farmersebank.com"
+    },
+    {
+      "name": "First Citizens Bank of Butte",
+      "fdic_insured_since": "07/27/1977",
+      "fdic_cert": "22502",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3220 Harrison Ave, Butte, MT 59701",
+      "website": "https://www.fcbob.com"
+    },
+    {
+      "name": "First Montana Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "363",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "201 N Higgins Ave, Missoula, MT 59802",
+      "website": "https://www.firstmontanabank.com"
+    },
+    {
+      "name": "First Security Bank of Deer Lodge",
+      "fdic_insured_since": "04/10/1972",
+      "fdic_cert": "20657",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "311 Milwaukee Ave, Deer Lodge, MT 59722",
+      "website": "https://www.1stsecuritydl.com"
+    },
+    {
+      "name": "First Security Bank of Roundup",
+      "fdic_insured_since": "09/03/1971",
+      "fdic_cert": "20479",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 Main St, Roundup, MT 59072",
+      "website": "https://www.1stsecurityroundup.com"
+    },
+    {
+      "name": "First State Bank of Forsyth",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8317",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "880 Main St, Forsyth, MT 59327",
+      "website": "https://www.firststatebankforsyth.com"
+    },
+    {
+      "name": "Freedom Bank",
+      "fdic_insured_since": "04/12/2005",
+      "fdic_cert": "58010",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "530 9th St W, Columbia Falls, MT 59912",
+      "website": "https://www.freedombankmt.com"
+    },
+    {
+      "name": "Garfield County Bank",
+      "fdic_insured_since": "03/14/1960",
+      "fdic_cert": "18164",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "444 Main St, Jordan, MT 59337",
+      "website": "https://www.garfieldcountybank.com"
+    },
+    {
+      "name": "Glacier Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30788",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "49 Commons Loop, Kalispell, MT 59901",
+      "website": "https://www.glacierbank.com"
+    },
+    {
+      "name": "Independence Bank",
+      "fdic_insured_since": "03/12/1973",
+      "fdic_cert": "20989",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "435 3rd St, Havre, MT 59501",
+      "website": "https://www.ibyourbank.com"
+    },
+    {
+      "name": "Little Horn State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11821",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "835 N Center Ave, Hardin, MT 59034",
+      "website": "https://www.littlehornstatebank.com"
+    },
+    {
+      "name": "Madison Valley Bank",
+      "fdic_insured_since": "01/13/1966",
+      "fdic_cert": "19544",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "213 E Main St, Ennis, MT 59729",
+      "website": "https://www.madisonvalleybank.com"
+    },
+    {
+      "name": "Manhattan Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11823",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "124 S Broadway St, Manhattan, MT 59741",
+      "website": "https://www.manhattanbank.bank"
+    },
+    {
+      "name": "Opportunity Bank of Montana",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30182",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1400 Prospect Ave, Helena, MT 59601",
+      "website": "https://www.opportunitybank.com"
+    },
+    {
+      "name": "Peoples Bank of Deer Lodge",
+      "fdic_insured_since": "04/09/1987",
+      "fdic_cert": "26941",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "430 Main St, Deer Lodge, MT 59722",
+      "website": "https://www.pbdl.net"
+    },
+    {
+      "name": "Pioneer State Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29517",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 N Main St, Deer Lodge, MT 59722",
+      "website": "https://www.pioneerfed.com"
+    },
+    {
+      "name": "Stockman Bank of Montana",
+      "fdic_insured_since": "09/18/1944",
+      "fdic_cert": "16191",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "700 Main St, Miles City, MT 59301",
+      "website": "https://www.stockmanbank.com"
+    },
+    {
+      "name": "The Bank of Baker",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "352",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "116 S Main St, Baker, MT 59313",
+      "website": "https://www.bankofbaker.com"
+    },
+    {
+      "name": "The First State Bank of Malta",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1982",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1 S 1st St E, Malta, MT 59538",
+      "website": "https://www.fsbmalta.com"
+    },
+    {
+      "name": "The First State Bank of Shelby",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11013",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "320 Main St, Shelby, MT 59474",
+      "website": "https://www.fsbshelby.com"
+    },
+    {
+      "name": "The Yellowstone Bank",
+      "fdic_insured_since": "03/16/1934",
+      "fdic_cert": "1978",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "12 1st Ave, Laurel, MT 59044",
+      "website": "https://yellowstonebank.com"
+    },
+    {
+      "name": "Three Rivers Bank of Montana",
+      "fdic_insured_since": "05/01/1974",
+      "fdic_cert": "21557",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "233 E Idaho St, Kalispell, MT 59901",
+      "website": "https://WWW.THREERIVERSBANKMONTANA.COM"
+    },
+    {
+      "name": "TrailWest Bank",
+      "fdic_insured_since": "05/17/1982",
+      "fdic_cert": "23806",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "11300 Us Highway 93 S, Ste D, Lolo, MT 59847",
+      "website": "https://www.trailwest.bank"
+    },
+    {
+      "name": "Valley Bank of Kalispell",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1980",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "41 3rd St W, Kalispell, MT 59901",
+      "website": "https://www.valleybankmt.com"
+    },
+    {
+      "name": "Valley Bank of Ronan",
+      "fdic_insured_since": "02/21/1984",
+      "fdic_cert": "24966",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "63659 Us Highway 93, Ronan, MT 59864",
+      "website": "https://www.valleybankronan.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}
