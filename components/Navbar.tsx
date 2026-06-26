@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X, Shield, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { FDIC_CATEGORY, MORTGAGE_CATEGORY } from '@/lib/directory/categories';
+import { FDIC_CATEGORY, MORTGAGE_CATEGORY, AUTO_CATEGORY } from '@/lib/directory/categories';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -64,7 +64,14 @@ export default function Navbar() {
                 >
                   Mortgage Lenders
                 </Link>
-                <span className="block px-4 py-2 text-xs text-zinc-400">Auto · Credit · MCA soon</span>
+                <Link
+                  href={AUTO_CATEGORY.hubPath}
+                  className="block px-4 py-2 text-sm hover:bg-zinc-50"
+                  onClick={() => setDirectoriesOpen(false)}
+                >
+                  Auto Loan Companies
+                </Link>
+                <span className="block px-4 py-2 text-xs text-zinc-400">Credit Repair · MCA soon</span>
               </div>
             )}
           </div>

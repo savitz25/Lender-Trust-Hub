@@ -1,6 +1,7 @@
 /**
  * LAUNCH & GROWTH CHECKLIST — prioritized for organic dominance.
  * Import LAUNCH_CHECKLIST in admin tooling or track manually.
+ * Full 30-day plan: lib/directory/growth-plan.ts → GROWTH_PLAN_30_DAY
  */
 
 export type ChecklistPriority = 'P0' | 'P1' | 'P2';
@@ -43,62 +44,92 @@ export const LAUNCH_CHECKLIST: LaunchChecklistItem[] = [
     action: 'Create GA4 stream → add env var in Vercel → redeploy',
     done: false,
   },
+  {
+    priority: 'P0',
+    category: 'Indexing',
+    task: 'Request indexing for all 3 national hubs',
+    action: 'GSC URL Inspection → /fdic-insured-banks, /local-lenders, /auto-loan-companies',
+    done: false,
+  },
+
   // P1 — Week 1 growth
   {
     priority: 'P1',
-    category: 'SEO',
-    task: 'Request indexing for top 10 state pages',
-    action: 'GSC URL Inspection → fdic-insured-banks/florida, texas, california, etc.',
+    category: 'Indexing',
+    task: 'Request indexing for top 10 state pages (all verticals)',
+    action: 'GSC URL Inspection → FL, TX, CA, NY, IL across FDIC + mortgage + auto',
     done: false,
   },
   {
     priority: 'P1',
     category: 'Internal Links',
-    task: 'Link every lender profile → state FDIC + mortgage pages',
-    action: 'Add Related Resources block in app/lenders/[slug]/page.tsx',
-    done: false,
+    task: 'Link every lender profile → FDIC + mortgage + auto state pages',
+    action: 'RelatedDirectoryLinks in app/lenders/[slug]/page.tsx',
+    done: true,
   },
   {
     priority: 'P1',
     category: 'Content',
     task: 'Seed monitoring queries in GSC',
-    action: 'Track: "FDIC insured banks [state]", "mortgage lenders [state] 2026"',
+    action: 'Track: "FDIC insured banks [state]", "mortgage lenders [state] 2026", "auto loan companies [state]"',
     done: false,
   },
   {
     priority: 'P1',
     category: 'Conversion',
     task: 'A/B test LeadCaptureForm variants',
-    action: 'Compare data-variant="state-page-v2" vs "hero-compact" in GA4',
+    action: 'Compare data-variant="state-page-v2" vs "hero-compact" vs "sidebar-minimal" in GA4',
     done: false,
   },
+  {
+    priority: 'P1',
+    category: 'Vertical',
+    task: 'Auto loan vertical live at /auto-loan-companies',
+    action: 'Verify hub + state pages build; submit auto URLs to GSC',
+    done: true,
+  },
+
   // P2 — Month 1 authority
   {
     priority: 'P2',
     category: 'Content Clusters',
-    task: 'Publish calculator → directory cross-links',
-    action: 'Each calculator page links to relevant state FDIC + mortgage hubs',
+    task: 'Hub keyword sections + ContentClusterHub live',
+    action: 'HUB_KEYWORD_SECTIONS on FDIC, mortgage, auto hubs',
+    done: true,
+  },
+  {
+    priority: 'P2',
+    category: 'Vertical Expansion',
+    task: 'Stage credit repair vertical',
+    action: 'Follow VERTICAL_CLONE_GUIDE.creditRepair in growth-plan.ts',
     done: false,
   },
   {
     priority: 'P2',
     category: 'Vertical Expansion',
-    task: 'Launch auto loan state pages',
-    action: 'Clone lib/mortgage/ → lib/auto/ using AUTO_CATEGORY config',
+    task: 'Stage MCA vertical',
+    action: 'Follow VERTICAL_CLONE_GUIDE.mca in growth-plan.ts',
     done: false,
   },
   {
     priority: 'P2',
     category: 'E-E-A-T',
-    task: 'Add author/byline to educational sections',
-    action: 'LenderTrustHub Editorial Team + last-reviewed date on insights',
-    done: false,
+    task: 'Editorial bylines on insights sections',
+    action: 'EditorialByline component on state insights + auto listings',
+    done: true,
   },
   {
     priority: 'P2',
     category: 'Performance',
-    task: 'Target 98+ Lighthouse on FDIC state pages',
-    action: 'Vercel Speed Insights → fix LCP/CLS regressions; keep client bundle lean',
+    task: 'Target 98+ Lighthouse on directory pages',
+    action: 'Preconnect GA4; ISR + CDN headers; lean client bundles',
+    done: false,
+  },
+  {
+    priority: 'P2',
+    category: 'Growth',
+    task: 'Execute 30-day growth plan',
+    action: 'Import GROWTH_PLAN_30_DAY from lib/directory/growth-plan.ts',
     done: false,
   },
 ];
@@ -110,6 +141,19 @@ export const MONITORING_QUERIES = [
   'best FDIC banks in {state}',
   'mortgage lenders in {state}',
   'NMLS verified mortgage brokers {state}',
+  'auto loan companies in {state}',
+  'best auto loan rates {state} 2026',
+  'car loan lenders near me {state}',
   'how to verify FDIC insurance',
   'FDIC insurance limit 2026',
+  'credit repair companies {state}',
+  'merchant cash advance companies {state}',
+] as const;
+
+/** GA4 custom events to verify in Realtime */
+export const GA4_EVENTS_TO_MONITOR = [
+  'directory_lead_submit',
+  'directory_cta_click',
+  'directory_search',
+  'directory_state_switch',
 ] as const;

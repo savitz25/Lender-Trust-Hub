@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { DirectoryHubMap } from '@/components/directory/DirectoryHubMap';
 import { CrossVerticalNav } from '@/components/directory/CrossVerticalNav';
 import { ContentClusterHub } from '@/components/directory/ContentClusterHub';
+import { HUB_KEYWORD_SECTIONS } from '@/lib/directory/content-clusters';
 import { US_STATES } from '@/lib/fdic/states';
 
 const REGIONS = [...new Set(US_STATES.map((s) => s.region))];
@@ -14,9 +15,11 @@ export interface StateGridItem {
   region: string;
 }
 
+type HubVertical = 'fdic' | 'mortgage' | 'auto';
+
 /**
- * National hub shell — map + region grid + cross-vertical nav.
- * Used by FDIC and mortgage hubs (and future verticals).
+ * National hub shell — map + region grid + cross-vertical nav + keyword sections.
+ * Used by FDIC, mortgage, and auto hubs (and future verticals).
  */
 export function NationalHubShell({
   categoryLabel,
@@ -34,13 +37,15 @@ export function NationalHubShell({
   description: string;
   stateGrid: StateGridItem[];
   defaultStateCode?: string;
-  activeVertical: 'fdic' | 'mortgage';
+  activeVertical: HubVertical;
   availableSlugs?: string[];
 }) {
   const gridByRegion = REGIONS.map((region) => ({
     region,
     states: stateGrid.filter((s) => s.region === region),
   })).filter((g) => g.states.length > 0);
+
+  const keywordSection = HUB_KEYWORD_SECTIONS[activeVertical];
 
   return (
     <>
@@ -64,6 +69,30 @@ export function NationalHubShell({
             </div>
             <CrossVerticalNav activeVertical={activeVertical} />
           </div>
+        </div>
+      </section>
+
+      {/* Keyword-optimized topical cluster section */}
+      <section className="border-b border-zinc-200 bg-zinc-50 py-10">
+        <div className="container mx-auto max-w-3xl px-4">
+          <h2 className="text-xl font-bold text-[#0A2540]">{keywordSection.title}</h2>
+          {keywordSection.paragraphs.map((p) => (
+            <p key={p.slice(0, 40)} className="mt-3 text-sm leading-relaxed text-zinc-600">
+              {p}
+            </p>
+          ))}
+          <nav aria-label="Related directories" className="mt-5 flex flex-wrap gap-3">
+            {keywordSection.internalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                prefetch
+                className="rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-[#0A2540] hover:border-[#00A3A1]"
+              >
+                {link.label} →
+              </Link>
+            ))}
+          </nav>
         </div>
       </section>
 
@@ -101,7 +130,7 @@ export function NationalHubShell({
         </div>
       </section>
 
-      <ContentClusterHub />
+      <ContentClusterHub hubVertical={activeVertical} />
     </>
   );
 }

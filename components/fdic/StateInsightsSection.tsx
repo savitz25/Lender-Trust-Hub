@@ -3,6 +3,7 @@ import { Home, Building2, Shield, TrendingUp, Users } from 'lucide-react';
 import type { StateMeta } from '@/lib/fdic/types';
 import { generateStateInsights } from '@/lib/fdic/insights';
 import type { FDICBank } from '@/lib/fdic/types';
+import { EditorialByline } from '@/components/directory/EditorialByline';
 
 const ICONS = {
   home: Home,
@@ -30,6 +31,7 @@ export function StateInsightsSection({
           Data-driven recommendations based on official FDIC records — not paid placements or
           sponsored rankings.
         </p>
+        <EditorialByline topic="FDIC banking insights" />
       </div>
 
       {/* Best For cards */}

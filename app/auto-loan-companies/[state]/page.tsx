@@ -6,35 +6,32 @@ import { JsonLd } from '@/components/directory/JsonLd';
 import { CrossVerticalNav } from '@/components/directory/CrossVerticalNav';
 import { LeadCaptureForm } from '@/components/directory/LeadCaptureForm';
 import { PersonalizedBanner } from '@/components/directory/PersonalizedBanner';
-import { LenderCard } from '@/components/LenderCard';
+import { EditorialByline } from '@/components/directory/EditorialByline';
+import { AutoProviderCard } from '@/components/auto/AutoProviderCard';
 import { SearchBar } from '@/components/SearchBar';
 import { STATE_BY_SLUG } from '@/lib/fdic/states';
-import { FDIC_CATEGORY, AUTO_CATEGORY } from '@/lib/directory/categories';
+import { FDIC_CATEGORY, MORTGAGE_CATEGORY } from '@/lib/directory/categories';
 import {
-  getLendersByStateSlug,
-  getStateMortgageStats,
-  getStateSlugsWithLenders,
-  MORTGAGE_DATA_UPDATED,
-} from '@/lib/mortgage/stateLenders';
+  getProvidersByStateSlug,
+  getStateSlugsWithAutoProviders,
+  getStateAutoStats,
+  AUTO_DATA_UPDATED,
+} from '@/lib/auto/stateProviders';
 import {
-  buildMortgageStateDescription,
-  buildMortgageStateJsonLd,
-  buildMortgageStateTitle,
-  mortgageStateUrl,
-} from '@/lib/mortgage/seo';
+  buildAutoStateDescription,
+  buildAutoStateJsonLd,
+  buildAutoStateTitle,
+  autoStateUrl,
+} from '@/lib/auto/seo';
 
 /**
- * MORTGAGE STATE PAGE TEMPLATE
- * ===========================
- * Clone this file for auto/credit/MCA verticals:
- *   1. Swap lib/mortgage/ → lib/{vertical}/
- *   2. Swap MORTGAGE_CATEGORY → AUTO_CATEGORY in imports
- *   3. Swap LenderCard → vertical-specific card component
+ * AUTO LOAN STATE PAGE — cloned from mortgage template.
+ * Clone again for credit-repair and MCA using VERTICAL_CLONE_GUIDE.
  */
 export const revalidate = 86400;
 
 export function generateStaticParams() {
-  return getStateSlugsWithLenders().map((state) => ({ state }));
+  return getStateSlugsWithAutoProviders().map((state) => ({ state }));
 }
 
 export async function generateMetadata({
@@ -44,33 +41,33 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { state: slug } = await params;
   const stateMeta = STATE_BY_SLUG.get(slug);
-  if (!stateMeta) return { title: 'Mortgage Lenders | LenderTrustHub' };
+  if (!stateMeta) return { title: 'Auto Loan Companies | LenderTrustHub' };
 
-  const lenders = getLendersByStateSlug(slug);
-  const stats = getStateMortgageStats(slug);
-  const title = buildMortgageStateTitle(stateMeta.fullName, stats.total);
-  const description = buildMortgageStateDescription(
+  const stats = getStateAutoStats(slug);
+  const title = buildAutoStateTitle(stateMeta.fullName, stats.total);
+  const description = buildAutoStateDescription(
     stateMeta.fullName,
     stats.total,
-    stats.verified
+    stats.verified,
+    stats.avgAprLow
   );
 
   return {
     title,
     description,
     keywords: [
-      `mortgage lenders in ${stateMeta.fullName}`,
-      `mortgage brokers ${stateMeta.fullName} 2026`,
-      `best mortgage lenders ${stateMeta.fullName}`,
-      'NMLS verified mortgage',
+      `auto loan companies in ${stateMeta.fullName}`,
+      `car loan rates ${stateMeta.fullName} 2026`,
+      `best auto lenders ${stateMeta.fullName}`,
+      'auto finance directory',
     ],
-    openGraph: { title, description, url: mortgageStateUrl(slug), locale: 'en_US' },
-    alternates: { canonical: mortgageStateUrl(slug) },
+    openGraph: { title, description, url: autoStateUrl(slug), locale: 'en_US' },
+    alternates: { canonical: autoStateUrl(slug) },
     robots: { index: true, follow: true },
   };
 }
 
-export default async function MortgageStatePage({
+export default async function AutoLoanStatePage({
   params,
 }: {
   params: Promise<{ state: string }>;
@@ -79,11 +76,11 @@ export default async function MortgageStatePage({
   const stateMeta = STATE_BY_SLUG.get(slug);
   if (!stateMeta) notFound();
 
-  const stateLenders = getLendersByStateSlug(slug);
-  const stats = getStateMortgageStats(slug);
-  const jsonLd = buildMortgageStateJsonLd(stateMeta, stateLenders);
+  const providers = getProvidersByStateSlug(slug);
+  const stats = getStateAutoStats(slug);
+  const jsonLd = buildAutoStateJsonLd(stateMeta, providers);
 
-  if (stateLenders.length === 0) notFound();
+  if (providers.length === 0) notFound();
 
   return (
     <>
@@ -93,7 +90,7 @@ export default async function MortgageStatePage({
         <Breadcrumbs
           items={[
             { label: 'Home', href: '/' },
-            { label: 'Mortgage Lenders', href: '/local-lenders' },
+            { label: 'Auto Loan Companies', href: '/auto-loan-companies' },
             { label: stateMeta.fullName },
           ]}
         />
@@ -102,14 +99,14 @@ export default async function MortgageStatePage({
       <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-teal-400/40 bg-teal-500/10 px-4 py-1.5 text-sm">
-            NMLS Verified • Updated {MORTGAGE_DATA_UPDATED} • No Paid Placements
+            Verified Lenders • Updated {AUTO_DATA_UPDATED} • No Paid Placements
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">
-            Mortgage Lenders in {stateMeta.fullName} (2026)
+            Auto Loan Companies in {stateMeta.fullName} (2026)
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
-            {stats.total} lenders & brokers • {stats.verified} NMLS verified • Avg trust score{' '}
-            {stats.avgTrustScore}
+            {stats.total} lenders • {stats.verified} verified • APRs from {stats.avgAprLow}%+ • Avg
+            trust score {stats.avgTrustScore}
           </p>
           <div className="mt-6">
             <SearchBar className="mx-auto max-w-md" />
@@ -119,19 +116,19 @@ export default async function MortgageStatePage({
 
       <div className="container mx-auto px-4 py-10">
         <div className="grid gap-8 lg:grid-cols-3">
-          <div className="lg:col-span-2 space-y-6">
+          <div className="space-y-6 lg:col-span-2">
             <PersonalizedBanner
               stateName={stateMeta.fullName}
               stateSlug={slug}
-              vertical="mortgage"
-              topEntityName={stats.topLender?.name}
-              variant="mortgage-state-v1"
+              vertical="auto"
+              topEntityName={stats.topProvider?.name}
+              variant="auto-state-v1"
             />
 
             <div className="grid gap-4 sm:grid-cols-3">
               {[
                 { label: 'Total Lenders', value: stats.total },
-                { label: 'NMLS Verified', value: stats.verified },
+                { label: 'Verified', value: stats.verified },
                 { label: 'Avg Trust Score', value: stats.avgTrustScore },
               ].map((card) => (
                 <div key={card.label} className="rounded-2xl border bg-white p-5 shadow-sm">
@@ -141,43 +138,21 @@ export default async function MortgageStatePage({
               ))}
             </div>
 
-            <div className="space-y-4">
-              {stateLenders.map((lender, i) => (
-                <LenderCard
-                  key={lender.id}
-                  lender={lender}
-                  rank={i + 1}
-                  countyLabel={`${lender.county} County`}
-                />
-              ))}
-            </div>
-
-            {stats.topCounties.length > 0 && (
-              <section>
-                <h2 className="mb-4 text-xl font-bold text-[#0A2540]">
-                  Browse by County in {stateMeta.fullName}
-                </h2>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {stats.topCounties.map((c) => (
-                    <Link
-                      key={c.countySlug}
-                      href={`/local-lenders/${slug}/${c.countySlug}`}
-                      prefetch
-                      className="rounded-xl border border-zinc-200 bg-white p-4 hover:border-[#00A3A1]"
-                    >
-                      <span className="font-semibold text-[#0A2540]">{c.county} County</span>
-                      <span className="mt-1 block text-xs text-zinc-500">
-                        {c.count} lender{c.count !== 1 ? 's' : ''}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              </section>
-            )}
+            <section aria-labelledby="auto-list-heading">
+              <h2 id="auto-list-heading" className="mb-2 text-xl font-bold text-[#0A2540]">
+                Top Auto Loan Companies in {stateMeta.fullName}
+              </h2>
+              <EditorialByline topic="Auto lending directory" />
+              <div className="mt-4 space-y-4">
+                {providers.map((provider, i) => (
+                  <AutoProviderCard key={provider.id} provider={provider} rank={i + 1} />
+                ))}
+              </div>
+            </section>
 
             <LeadCaptureForm
               stateName={stateMeta.fullName}
-              categoryId="mortgage"
+              categoryId="auto"
               variant="state-page-v2"
             />
           </div>
@@ -186,7 +161,7 @@ export default async function MortgageStatePage({
             <CrossVerticalNav
               stateSlug={slug}
               stateName={stateMeta.fullName}
-              activeVertical="mortgage"
+              activeVertical="auto"
             />
             <aside className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5 text-sm">
               <h2 className="font-semibold text-[#0A2540]">Also in {stateMeta.fullName}</h2>
@@ -202,11 +177,11 @@ export default async function MortgageStatePage({
                 </li>
                 <li>
                   <Link
-                    href={AUTO_CATEGORY.statePath(slug)}
+                    href={MORTGAGE_CATEGORY.statePath(slug)}
                     prefetch
                     className="text-[#00A3A1] hover:underline"
                   >
-                    Auto Loan Companies in {stateMeta.fullName} →
+                    Mortgage Lenders in {stateMeta.fullName} →
                   </Link>
                 </li>
                 <li>
@@ -216,11 +191,6 @@ export default async function MortgageStatePage({
                 </li>
               </ul>
             </aside>
-            <LeadCaptureForm
-              stateName={stateMeta.fullName}
-              categoryId="mortgage"
-              variant="sidebar-minimal"
-            />
           </div>
         </div>
       </div>

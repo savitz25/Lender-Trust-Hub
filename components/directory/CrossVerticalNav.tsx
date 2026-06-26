@@ -1,8 +1,20 @@
 import Link from 'next/link';
-import { ArrowRight, Building2, Landmark, Calculator } from 'lucide-react';
-import { DIRECTORY_CATEGORIES, FDIC_CATEGORY, MORTGAGE_CATEGORY } from '@/lib/directory/categories';
+import { ArrowRight, Building2, Landmark, Calculator, Car } from 'lucide-react';
+import {
+  DIRECTORY_CATEGORIES,
+  FDIC_CATEGORY,
+  MORTGAGE_CATEGORY,
+  AUTO_CATEGORY,
+} from '@/lib/directory/categories';
 
-const ICONS = { fdic: Landmark, mortgage: Building2, calculators: Calculator } as const;
+const ICONS = {
+  fdic: Landmark,
+  mortgage: Building2,
+  auto: Car,
+  calculators: Calculator,
+} as const;
+
+type ActiveVertical = 'fdic' | 'mortgage' | 'auto';
 
 /**
  * Cross-vertical navigation — critical for internal linking authority.
@@ -15,31 +27,49 @@ export function CrossVerticalNav({
 }: {
   stateSlug?: string;
   stateName?: string;
-  activeVertical?: 'fdic' | 'mortgage';
+  activeVertical?: ActiveVertical;
 }) {
-  const items = [
+  const items: {
+    id: ActiveVertical | 'calculators';
+    label: string;
+    href: string;
+    icon: typeof ICONS[keyof typeof ICONS];
+    description: string;
+  }[] = [
     {
-      id: 'fdic' as const,
+      id: 'fdic',
       label: stateName ? `FDIC Banks in ${stateName}` : 'FDIC Insured Banks',
       href: stateSlug ? FDIC_CATEGORY.statePath(stateSlug) : FDIC_CATEGORY.hubPath,
       icon: ICONS.fdic,
       description: 'Verified deposit institutions',
     },
     {
-      id: 'mortgage' as const,
+      id: 'mortgage',
       label: stateName ? `Mortgage Lenders in ${stateName}` : 'Mortgage Lenders',
       href: stateSlug ? MORTGAGE_CATEGORY.statePath(stateSlug) : MORTGAGE_CATEGORY.hubPath,
       icon: ICONS.mortgage,
       description: 'NMLS verified brokers & lenders',
     },
     {
-      id: 'calculators' as const,
+      id: 'auto',
+      label: stateName ? `Auto Loans in ${stateName}` : 'Auto Loan Companies',
+      href: stateSlug ? AUTO_CATEGORY.statePath(stateSlug) : AUTO_CATEGORY.hubPath,
+      icon: ICONS.auto,
+      description: 'Compare APR ranges & trust scores',
+    },
+    {
+      id: 'calculators',
       label: 'Mortgage Calculators',
       href: '/calculators',
       icon: ICONS.calculators,
       description: 'Free payment & affordability tools',
     },
   ];
+
+  const comingSoon = [
+    DIRECTORY_CATEGORIES['credit-repair'].labelShort,
+    DIRECTORY_CATEGORIES.mca.labelShort,
+  ].join(' · ');
 
   return (
     <nav aria-label="Directory categories" className="rounded-2xl border border-zinc-200 bg-white p-4">
@@ -76,9 +106,7 @@ export function CrossVerticalNav({
           );
         })}
       </ul>
-      <p className="mt-3 text-[10px] text-zinc-400">
-        Also coming: {DIRECTORY_CATEGORIES.auto.labelShort}, Credit Repair, MCA
-      </p>
+      <p className="mt-3 text-[10px] text-zinc-400">Also coming: {comingSoon}</p>
     </nav>
   );
 }

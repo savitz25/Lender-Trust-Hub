@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FDIC_CATEGORY } from '@/lib/directory/categories';
+import { FDIC_CATEGORY, MORTGAGE_CATEGORY, AUTO_CATEGORY } from '@/lib/directory/categories';
 import { statePagePath } from '@/lib/fdic/seo';
 import type { StateMeta } from '@/lib/fdic/types';
 
@@ -30,10 +30,18 @@ export function InternalLinkHub({
         </li>
         <li>
           <Link
-            href={`/local-lenders/${stateMeta.slug}`}
+            href={MORTGAGE_CATEGORY.statePath(stateMeta.slug)}
             className="text-[#0A2540] hover:text-[#00A3A1]"
           >
             Mortgage lenders in {stateMeta.fullName}
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={AUTO_CATEGORY.statePath(stateMeta.slug)}
+            className="text-[#0A2540] hover:text-[#00A3A1]"
+          >
+            Auto loan companies in {stateMeta.fullName}
           </Link>
         </li>
         <li>

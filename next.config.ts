@@ -26,6 +26,15 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: '/auto-loan-companies/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, s-maxage=86400, stale-while-revalidate=604800',
+          },
+        ],
+      },
+      {
         source: '/geo/:path*',
         headers: [
           {

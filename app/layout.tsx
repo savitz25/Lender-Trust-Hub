@@ -39,8 +39,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA4_ID;
+
   return (
     <html lang="en-US" className={inter.variable}>
+      <head>
+        {gaId && (
+          <>
+            <link rel="preconnect" href="https://www.googletagmanager.com" />
+            <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+          </>
+        )}
+      </head>
       <body className="min-h-screen flex flex-col antialiased">
         <GtagProvider />
         <Navbar />

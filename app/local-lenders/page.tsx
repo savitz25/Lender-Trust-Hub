@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import { Breadcrumbs } from '@/components/directory/Breadcrumbs';
 import { NationalHubShell } from '@/components/directory/NationalHubShell';
+import { HubCTAStrip } from '@/components/directory/HubCTAStrip';
+import { LeadCaptureForm } from '@/components/directory/LeadCaptureForm';
 import { SearchBar } from '@/components/SearchBar';
 import { SITE_URL, MORTGAGE_CATEGORY } from '@/lib/directory/categories';
 import { lenders } from '@/lib/mockData';
@@ -82,6 +84,14 @@ export default function LocalLendersHubPage() {
         activeVertical="mortgage"
         availableSlugs={slugsWithLenders}
       />
+
+      <section className="border-t border-zinc-200 bg-zinc-50 py-12">
+        <div className="container mx-auto max-w-2xl px-4">
+          <LeadCaptureForm stateName="your state" categoryId="mortgage" variant="hero-compact" />
+        </div>
+      </section>
+
+      <HubCTAStrip />
     </>
   );
 }

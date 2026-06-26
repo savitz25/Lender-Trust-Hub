@@ -5,6 +5,7 @@ import { Star, ShieldCheck, ChevronRight, Phone, ExternalLink } from 'lucide-rea
 import { getLenderBySlug, lenders } from '@/lib/lenders';
 import { Badge } from '@/components/ui/badge';
 import { MatchLenderButton } from '@/components/MatchLenderButton';
+import { RelatedDirectoryLinks } from '@/components/directory/RelatedDirectoryLinks';
 
 export function generateStaticParams() {
   return lenders.map((l) => ({ slug: l.slug }));
@@ -151,6 +152,8 @@ export default async function LenderProfilePage({
             />
           </div>
         </div>
+
+        <RelatedDirectoryLinks stateSlug={lender.stateSlug} stateName={lender.state} />
 
         <p className="mt-6 text-center text-xs text-zinc-400">
           Data aggregated from NMLS, CFPB, BBB, Google, and Trustpilot for informational

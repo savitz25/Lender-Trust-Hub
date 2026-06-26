@@ -6,6 +6,7 @@ import { Breadcrumbs } from '@/components/directory/Breadcrumbs';
 import { SITE_URL, FDIC_CATEGORY } from '@/lib/directory/categories';
 import { stateData, getStateData, DEFAULT_STATE_CODE, DATA_UPDATED } from '@/lib/fdic/stateData';
 import { US_STATES, STATE_BY_CODE } from '@/lib/fdic/states';
+import { HubCTAStrip } from '@/components/directory/HubCTAStrip';
 import { buildHubDescription, buildHubJsonLd, buildHubTitle } from '@/lib/fdic/seo';
 
 const totalBanks = Object.values(stateData).reduce((sum, s) => sum + s.banks.length, 0);
@@ -74,6 +75,8 @@ export default function FDICInsuredBanksPage() {
         defaultStateCode={DEFAULT_STATE_CODE}
         activeVertical="fdic"
       />
+
+      <HubCTAStrip />
 
       <section className="border-t border-zinc-200 bg-[#0A2540] py-6 text-center text-xs text-zinc-400">
         Data last updated from FDIC {DATA_UPDATED}. Not financial advice.{' '}
