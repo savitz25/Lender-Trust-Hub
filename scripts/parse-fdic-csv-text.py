@@ -39,6 +39,21 @@ CSV_SOURCES = {
     "IL": ROOT / "data" / "illinois-import.csv",
     "MI": ROOT / "data" / "michigan-import.csv",
 }
+NORTHEAST_SRC = ROOT / "data" / "northeast-import.csv"
+NORTHEAST_STATE_CODES = {
+    "CT",
+    "DE",
+    "DC",
+    "ME",
+    "MD",
+    "MA",
+    "NH",
+    "NJ",
+    "NY",
+    "PA",
+    "RI",
+    "VT",
+}
 OUT_DIR = ROOT / "lib" / "fdic" / "data"
 
 STATE_META = {
@@ -60,6 +75,18 @@ STATE_META = {
     "WI": ("Wisconsin", "wisconsin"),
     "IL": ("Illinois", "illinois"),
     "MI": ("Michigan", "michigan"),
+    "CT": ("Connecticut", "connecticut"),
+    "DE": ("Delaware", "delaware"),
+    "DC": ("District of Columbia", "district-of-columbia"),
+    "ME": ("Maine", "maine"),
+    "MD": ("Maryland", "maryland"),
+    "MA": ("Massachusetts", "massachusetts"),
+    "NH": ("New Hampshire", "new-hampshire"),
+    "NJ": ("New Jersey", "new-jersey"),
+    "NY": ("New York", "new-york"),
+    "PA": ("Pennsylvania", "pennsylvania"),
+    "RI": ("Rhode Island", "rhode-island"),
+    "VT": ("Vermont", "vermont"),
 }
 
 BULK_MIN_COLS = 133
@@ -78,6 +105,13 @@ REGULATOR_MAP = {
     "OCC": "Comptroller of the Currency",
     "FDIC": "Federal Deposit Insurance Corporation",
     "FED": "Federal Reserve Board",
+}
+
+VALID_STALP = {
+    "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID",
+    "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO",
+    "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA",
+    "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY",
 }
 
 # Use anchored line markers so intro text and bank names do not false-match.
@@ -294,6 +328,70 @@ def parse_fdic_csv(path: Path) -> list[dict]:
             banks.append(bank)
 
     return banks
+
+
+def extract_fdic_csv_sections(content: str) -> list[tuple[list[str], list[list[str]]]]:
+    """Split a pasted FDIC export that may contain repeated header rows."""
+    sections: list[tuple[list[str], list[list[str]]]] = []
+    current_header: list[str] | None = None
+    current_rows: list[list[str]] = []
+
+    for line in content.splitlines():
+        if line.startswith("ACTIVE,ADDRESS"):
+            if current_header is not None:
+                sections.append((current_header, current_rows))
+            current_header = next(csv.reader([line]))
+            current_rows = []
+            continue
+        if current_header is None or not line.strip():
+            continue
+        current_rows.append(next(csv.reader([line])))
+
+    if current_header is not None:
+        sections.append((current_header, current_rows))
+
+    return sections
+
+
+def normalize_csv_row(fields: list[str], row: list[str]) -> dict:
+    if len(row) < len(fields):
+        row = row + [""] * (len(fields) - len(row))
+    elif len(row) > len(fields):
+        row = row[: len(fields)]
+    return dict(zip(fields, row))
+
+
+def parse_fdic_csv_sections(path: Path) -> list[dict]:
+    """Parse multi-section FDIC CSV exports with varying header layouts."""
+    content = path.read_text(encoding="utf-8")
+    banks = []
+    seen_certs = set()
+
+    for fields, rows in extract_fdic_csv_sections(content):
+        for row in rows:
+            bank = parse_fdic_csv_row(normalize_csv_row(fields, row))
+            if not bank:
+                continue
+            stalp = normalize_csv_row(fields, row).get("STALP", "").strip()
+            if stalp not in VALID_STALP:
+                continue
+            if bank["fdic_cert"] in seen_certs:
+                continue
+            seen_certs.add(bank["fdic_cert"])
+            bank["stalp"] = stalp
+            banks.append(bank)
+
+    return banks
+
+
+def group_banks_by_state(banks: list[dict]) -> dict[str, list[dict]]:
+    grouped: dict[str, list[dict]] = {}
+    for bank in banks:
+        code = bank.pop("stalp", None)
+        if not code:
+            continue
+        grouped.setdefault(code, []).append(bank)
+    return grouped
 
 
 def parse_bulk_section(text: str) -> list[dict]:
@@ -674,6 +772,21 @@ def main():
         out_path = OUT_DIR / f"{slug}.json"
         out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
         print(f"{code}: {len(banks)} banks -> {out_path.name}")
+
+    if NORTHEAST_SRC.exists():
+        grouped = group_banks_by_state(parse_fdic_csv_sections(NORTHEAST_SRC))
+        for code in sorted(NORTHEAST_STATE_CODES):
+            banks = grouped.get(code, [])
+            full_name, slug = STATE_META[code]
+            payload = {
+                "fullName": full_name,
+                "abbr": code,
+                "banks": banks,
+                "updated": updated,
+            }
+            out_path = OUT_DIR / f"{slug}.json"
+            out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+            print(f"{code}: {len(banks)} banks -> {out_path.name}")
 
     print("Done.")
 

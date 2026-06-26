@@ -1,0 +1,951 @@
+{
+  "fullName": "New York",
+  "abbr": "NY",
+  "banks": [
+    {
+      "name": "Community Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6989",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "45-49 Court Street, Canton, NY 13617",
+      "website": "https://www.cbna.com"
+    },
+    {
+      "name": "Flagstar Bank, National Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32541",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "102 Duffy Ave, Hicksville, NY 11801",
+      "website": "https://www.flagstar.com"
+    },
+    {
+      "name": "Abacus Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32257",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "6 Bowery, New York, NY 10013",
+      "website": "https://www.abacusbank.com"
+    },
+    {
+      "name": "Chemung Canal Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "597",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1 Chemung Canal Plz, Elmira, NY 14901",
+      "website": "https://WWW.CHEMUNGCANAL.COM"
+    },
+    {
+      "name": "Manufacturers and Traders Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "588",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1 M And T Plz, Buffalo, NY 14203",
+      "website": "https://www.mtb.com"
+    },
+    {
+      "name": "NBT Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7230",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "52 S Broad St, Norwich, NY 13815",
+      "website": "https://www.nbtbank.com"
+    },
+    {
+      "name": "The Bank of New York Mellon",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "639",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "240 E Greenwich St, New York, NY 10007",
+      "website": "https://www.bny.com"
+    },
+    {
+      "name": "Tompkins Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "609",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "118 E Seneca St, Ithaca, NY 14850",
+      "website": "https://www.tompkinsbank.com"
+    },
+    {
+      "name": "Woori America Bank",
+      "fdic_insured_since": "01/27/1984",
+      "fdic_cert": "24920",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "330 5th Ave, New York, NY 10001",
+      "website": "https://www.wooriamericabank.com"
+    },
+    {
+      "name": "Alma Bank",
+      "fdic_insured_since": "09/12/2007",
+      "fdic_cert": "58424",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2831 31st St, Astoria, NY 11102",
+      "website": "https://www.almabank.com"
+    },
+    {
+      "name": "Apple Bank",
+      "fdic_insured_since": "07/01/1943",
+      "fdic_cert": "16068",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "122 E 42nd St, New York, NY 10168",
+      "website": "https://www.applebank.com"
+    },
+    {
+      "name": "Dime Commercial Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6976",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "898 Veterans Memorial Hwy, Hauppauge, NY 11788",
+      "website": "https://www.dime.com"
+    },
+    {
+      "name": "Goldman Sachs Bank USA",
+      "fdic_insured_since": "11/28/2008",
+      "fdic_cert": "33124",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "200 West St, New York, NY 10282",
+      "website": "https://www.marcus.com"
+    },
+    {
+      "name": "Habib American Bank",
+      "fdic_insured_since": "04/16/1984",
+      "fdic_cert": "25093",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "150 East 45th Street, New York, NY 10017",
+      "website": "https://www.hab.bank"
+    },
+    {
+      "name": "Hanover Community Bank",
+      "fdic_insured_since": "01/21/2009",
+      "fdic_cert": "58675",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2131 Jericho Tpke, Garden City Park, NY 11040",
+      "website": "https://www.hanoverbank.com"
+    },
+    {
+      "name": "Israel Discount Bank of New York",
+      "fdic_insured_since": "07/01/1969",
+      "fdic_cert": "19977",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1114 Avenue Of The Americas, New York, NY 10036",
+      "website": "https://www.idbny.com"
+    },
+    {
+      "name": "Metropolitan Commercial Bank",
+      "fdic_insured_since": "06/21/1999",
+      "fdic_cert": "34699",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "99 Park Ave, New York, NY 10016",
+      "website": "https://www.mcbankny.com"
+    },
+    {
+      "name": "Modern Bank, National Association",
+      "fdic_insured_since": "01/01/1977",
+      "fdic_cert": "22398",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "410 Park Ave, New York, NY 10022",
+      "website": "https://www.modernbank.com"
+    },
+    {
+      "name": "NewBank",
+      "fdic_insured_since": "09/29/2006",
+      "fdic_cert": "58203",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "14601 Northern Blvd, Flushing, NY 11354",
+      "website": "http://www.newbankusa.com"
+    },
+    {
+      "name": "Northfield Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28710",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4142 Hylan Blvd, Staten Island, NY 10308",
+      "website": "https://www.enorthfield.com"
+    },
+    {
+      "name": "Ponce Bank, National Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31189",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2244 Westchester Ave, Bronx, NY 10462",
+      "website": "https://www.poncebank.com"
+    },
+    {
+      "name": "Popular Bank",
+      "fdic_insured_since": "01/02/1999",
+      "fdic_cert": "34967",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "85 Broad St, New York, NY 10004",
+      "website": "https://www.popularbank.com"
+    },
+    {
+      "name": "Shinhan Bank America",
+      "fdic_insured_since": "10/18/1990",
+      "fdic_cert": "33188",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "475 Park Ave S, New York, NY 10016",
+      "website": "https://www.shbamerica.com"
+    },
+    {
+      "name": "TrustCo Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31945",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Sarnowski Dr, Glenville, NY 12302",
+      "website": "https://www.trustcobank.com"
+    },
+    {
+      "name": "Adirondack Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28380",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "185 Genesee St, Utica, NY 13501",
+      "website": "https://www.adirondackbank.com"
+    },
+    {
+      "name": "Alden State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9831",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "13216 Broadway St, Alden, NY 14004",
+      "website": "https://www.aldenstate.com"
+    },
+    {
+      "name": "Alpine Capital Bank",
+      "fdic_insured_since": "03/01/2000",
+      "fdic_cert": "35377",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "680 5th Ave, Fl 7, New York, NY 10019",
+      "website": "https://www.alpinecapitalbank.com"
+    },
+    {
+      "name": "Amalgamated Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "622",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "275 7th Ave, New York, NY 10001",
+      "website": "http://AMALGAMATEDBANK.COM"
+    },
+    {
+      "name": "Amerasia Bank",
+      "fdic_insured_since": "06/20/1988",
+      "fdic_cert": "27267",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4106 Main St, Flushing, NY 11355",
+      "website": "https://www.amerasiabankny.com"
+    },
+    {
+      "name": "American Community Bank",
+      "fdic_insured_since": "01/10/2000",
+      "fdic_cert": "35033",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 Glen St, Glen Cove, NY 11542",
+      "website": "https://www.acbalways.com"
+    },
+    {
+      "name": "Arrow Bank National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7074",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "250 Glen St, Glens Falls, NY 12801",
+      "website": "https://www.arrowbank.com"
+    },
+    {
+      "name": "Ballston Spa National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6959",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "87 Front St, Ballston Spa, NY 12020",
+      "website": "https://ww.bsnb.com"
+    },
+    {
+      "name": "Bank Hapoalim B.M.",
+      "fdic_insured_since": "11/25/1974",
+      "fdic_cert": "33686",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1120 Avenue Of The Americas, New York, NY 10036",
+      "website": ""
+    },
+    {
+      "name": "Bank of Baroda",
+      "fdic_insured_since": "02/22/1979",
+      "fdic_cert": "33681",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 Park Ave, New York, NY 10016",
+      "website": ""
+    },
+    {
+      "name": "Bank of Cattaraugus",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9406",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "24 Main St, Cattaraugus, NY 14719",
+      "website": "https://www.BankofCattaraugus.com"
+    },
+    {
+      "name": "Bank of China",
+      "fdic_insured_since": "09/26/1985",
+      "fdic_cert": "33652",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4235 Main St, Flushing, NY 11355",
+      "website": ""
+    },
+    {
+      "name": "Bank of China",
+      "fdic_insured_since": "11/16/1981",
+      "fdic_cert": "33653",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1045 Avenue Of The Americas, New York, NY 10018",
+      "website": ""
+    },
+    {
+      "name": "Bank of Holland",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1464",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "12 S Main St, Holland, NY 14080",
+      "website": "https://www.bankofhollandny.com"
+    },
+    {
+      "name": "Bank of India",
+      "fdic_insured_since": "12/02/1980",
+      "fdic_cert": "33648",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "277 Park Ave, New York, NY 10017",
+      "website": ""
+    },
+    {
+      "name": "Bank of Millbrook",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "618",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3263 Franklin Ave, Millbrook, NY 12545",
+      "website": "https://WWW.BANKOFMILLBROOK.COM"
+    },
+    {
+      "name": "Bank of Richmondville",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12956",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "857 E Main St, Cobleskill, NY 12043",
+      "website": "https://www.bankrich.com"
+    },
+    {
+      "name": "Bank of Utica",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13397",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "222 Genesee St, Utica, NY 13502",
+      "website": "http://www.bankofutica.com"
+    },
+    {
+      "name": "Bessemer Trust Company, National Association",
+      "fdic_insured_since": "12/20/1974",
+      "fdic_cert": "21868",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1271 Avenue Of The Americas, New York, NY 10020",
+      "website": "http://www.bessemertrust.com"
+    },
+    {
+      "name": "BTG Pactual Bank, National Association",
+      "fdic_insured_since": "06/05/2000",
+      "fdic_cert": "35154",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "499 Park Ave, New York, NY 10022",
+      "website": "https://www.btgpactual.us"
+    },
+    {
+      "name": "Carthage Savings and Loan, National Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28942",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "313 State St, Carthage, NY 13619",
+      "website": "https://carthagesavings.com"
+    },
+    {
+      "name": "Carver Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30394",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "75 W 125th St, New York, NY 10027",
+      "website": "http://www.Carverbank.com"
+    },
+    {
+      "name": "Cattaraugus County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12959",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "116 Main St, # 20, Little Valley, NY 14755",
+      "website": "https://www.countonccb.com"
+    },
+    {
+      "name": "Cayuga Lake National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6954",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "165 Cayuga St, Union Springs, NY 13160",
+      "website": "https://www.cayugalakenationalbank.com"
+    },
+    {
+      "name": "Champlain National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7356",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "7558 Us Route 9, Elizabethtown, NY 12932",
+      "website": "http://www.champlainbank.com"
+    },
+    {
+      "name": "Community Federal Savings Bank",
+      "fdic_insured_since": "07/16/2001",
+      "fdic_cert": "57129",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "8916 Jamaica Ave, Woodhaven, NY 11421",
+      "website": "https://www.cfsb.com"
+    },
+    {
+      "name": "Cross County Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30260",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7921 Metropolitan Ave, Middle Village, NY 11379",
+      "website": "https://www.crosscounty.com"
+    },
+    {
+      "name": "Deutsche Bank Trust Company Americas",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "623",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1 Columbus Cir, New York, NY 10019",
+      "website": "http://www.db.com"
+    },
+    {
+      "name": "Eastbank, National Association",
+      "fdic_insured_since": "11/26/1984",
+      "fdic_cert": "25749",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "183 Centre St, New York, NY 10013",
+      "website": "https://www.eastbank-na.com"
+    },
+    {
+      "name": "Emigrant Mercantile Bank",
+      "fdic_insured_since": "07/09/2004",
+      "fdic_cert": "57834",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6 E 43rd St, New York, NY 10017",
+      "website": ""
+    },
+    {
+      "name": "Empire State Bank",
+      "fdic_insured_since": "06/28/2004",
+      "fdic_cert": "57672",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1441 South Ave, Staten Island, NY 10314",
+      "website": "http://www.esbna.com"
+    },
+    {
+      "name": "Esquire Bank, National Association",
+      "fdic_insured_since": "10/12/2006",
+      "fdic_cert": "58140",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 Jericho Quadrangle, Jericho, NY 11753",
+      "website": "https://www.esquirebank.com"
+    },
+    {
+      "name": "First Central Savings Bank",
+      "fdic_insured_since": "04/05/1999",
+      "fdic_cert": "34969",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "70 Glen St, Glen Cove, NY 11542",
+      "website": "http://FIRSTCENTRALSAVINGS.COM"
+    },
+    {
+      "name": "First Federal Savings of Middletown",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28712",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "22 James St, Middletown, NY 10940",
+      "website": "https://www.firstfederalmiddletown.com"
+    },
+    {
+      "name": "First National Bank of Scotia",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11501",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "201 Mohawk Ave, Scotia, NY 12302",
+      "website": "https://www.firstscotia.com"
+    },
+    {
+      "name": "Five Star Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "659",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 Chestnut St, Rochester, NY 14604",
+      "website": "https://www.five-starbank.com"
+    },
+    {
+      "name": "French-American Banking Corporation (NYIC)",
+      "fdic_insured_since": "12/31/9999",
+      "fdic_cert": "90846",
+      "primary_regulator": "STATE",
+      "headquarters_address": "120 Broadway, New York City, NY 10005",
+      "website": ""
+    },
+    {
+      "name": "Fulton Savings Bank",
+      "fdic_insured_since": "07/01/1943",
+      "fdic_cert": "15966",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "75 S 1st St, Fulton, NY 13069",
+      "website": "https://www.fultonsavings.com"
+    },
+    {
+      "name": "Geddes Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30397",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2208 W Genesee St, Syracuse, NY 13219",
+      "website": "https://www.geddesfederal.com"
+    },
+    {
+      "name": "Generations Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "16040",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "19 Cayuga St, Seneca Falls, NY 13148",
+      "website": "https://www.mygenbank.com"
+    },
+    {
+      "name": "Genesee Regional Bank",
+      "fdic_insured_since": "08/12/1985",
+      "fdic_cert": "26333",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1850 Winton Rd S, Rochester, NY 14618",
+      "website": "https://www.grbbank.com"
+    },
+    {
+      "name": "Global Bank",
+      "fdic_insured_since": "03/12/2007",
+      "fdic_cert": "58263",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8 Catherine St, New York, NY 10038",
+      "website": "http://www.globalbankny.com"
+    },
+    {
+      "name": "Gouverneur Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30976",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "42 Church St, Gouverneur, NY 13642",
+      "website": "https://www.gouverneurbank.com"
+    },
+    {
+      "name": "Grasshopper Bank, N.A.",
+      "fdic_insured_since": "05/13/2019",
+      "fdic_cert": "59113",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "261 5th Ave, Ste 610, New York, NY 10016",
+      "website": "https://www.grasshopper.bank"
+    },
+    {
+      "name": "Greene County Commercial Bank",
+      "fdic_insured_since": "05/20/2004",
+      "fdic_cert": "57710",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "425 Main St, Catskill, NY 12414",
+      "website": "https://www.tbogc.com"
+    },
+    {
+      "name": "GS&L Municipal Bank",
+      "fdic_insured_since": "09/16/2022",
+      "fdic_cert": "59312",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "42 Church St, Gouverneur, NY 13642",
+      "website": ""
+    },
+    {
+      "name": "Industrial and Commercial Bank of China USA, National Association",
+      "fdic_insured_since": "02/14/1983",
+      "fdic_cert": "24387",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1185 Avenue Of The Americas, New York, NY 10036",
+      "website": "https://www.icbc-us.com"
+    },
+    {
+      "name": "Interaudi Bank",
+      "fdic_insured_since": "06/14/1983",
+      "fdic_cert": "24516",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "19 E 54th St, New York, NY 10022",
+      "website": "https://www.interaudibank.com"
+    },
+    {
+      "name": "Jeff Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7123",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4864 State Route 52, Jeffersonville, NY 12748",
+      "website": "https://www.jeff.bank"
+    },
+    {
+      "name": "Lake Shore Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30530",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "128 E 4th St, Dunkirk, NY 14048",
+      "website": "https://www.mylsbank.com"
+    },
+    {
+      "name": "Maple City Savings Bank, FSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28585",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "145 Main St, Hornell, NY 14843",
+      "website": "https://www.maplecitysavings.com"
+    },
+    {
+      "name": "Maspeth Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30303",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "5618 69th St, Maspeth, NY 11378",
+      "website": "https://www.maspethfederal.com"
+    },
+    {
+      "name": "Massena Savings and Loan",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30429",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "255 Main St, Massena, NY 13662",
+      "website": "https://www.massenasavingsloan.com"
+    },
+    {
+      "name": "Metropolitan Bank and Trust Company",
+      "fdic_insured_since": "06/01/1983",
+      "fdic_cert": "33656",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "10 E 53rd St, New York, NY 10022",
+      "website": ""
+    },
+    {
+      "name": "Mizuho Bank (USA)",
+      "fdic_insured_since": "11/29/1974",
+      "fdic_cert": "21843",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1271 Avenue Of The Americas, New York, NY 10020",
+      "website": ""
+    },
+    {
+      "name": "Morgan Stanley Private Bank, National Association",
+      "fdic_insured_since": "08/12/1996",
+      "fdic_cert": "34221",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2000 Westchester Ave, Purchase, NY 10577",
+      "website": "https://www.etrade.com"
+    },
+    {
+      "name": "NorthEast Community Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29147",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "325 Hamilton Ave, White Plains, NY 10601",
+      "website": "https://www.necommunitybank.com"
+    },
+    {
+      "name": "Orange Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12944",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "212 Dolson Ave, Middletown, NY 10940",
+      "website": "https://www.orangebanktrust.com"
+    },
+    {
+      "name": "Pathfinder Bank",
+      "fdic_insured_since": "10/25/2002",
+      "fdic_cert": "57497",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "214 W 1st St, Oswego, NY 13126",
+      "website": "http://www.PATHFINDERBANK.com"
+    },
+    {
+      "name": "Piermont Bank",
+      "fdic_insured_since": "07/01/2019",
+      "fdic_cert": "59154",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4 Bryant Park, 3rd Floor, New York, NY 10018",
+      "website": "https://www.piermontbank.com"
+    },
+    {
+      "name": "Pioneer Bank, National Association",
+      "fdic_insured_since": "07/01/1972",
+      "fdic_cert": "20741",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "652 Albany Shaker Rd, Albany, NY 12211",
+      "website": "https://www.pioneerny.com"
+    },
+    {
+      "name": "Quontic Bank",
+      "fdic_insured_since": "03/14/2005",
+      "fdic_cert": "57807",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3105 Broadway, 2nd Floor, Astoria, NY 11106",
+      "website": "http://www.quontic.com"
+    },
+    {
+      "name": "Rhinebeck Bank",
+      "fdic_insured_since": "07/01/1943",
+      "fdic_cert": "16032",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6414 Montgomery St, Rhinebeck, NY 12572",
+      "website": "https://www.rhinebeckbank.com"
+    },
+    {
+      "name": "Ridgewood Savings Bank",
+      "fdic_insured_since": "07/01/1943",
+      "fdic_cert": "16026",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7102 Forest Ave, Ridgewood, NY 11385",
+      "website": "https://www.ridgewoodbank.com"
+    },
+    {
+      "name": "Rondout Savings Bank",
+      "fdic_insured_since": "07/01/1943",
+      "fdic_cert": "15969",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 Broadway, Kingston, NY 12401",
+      "website": "https://www.rondoutbank.com"
+    },
+    {
+      "name": "Safra National Bank of New York",
+      "fdic_insured_since": "01/01/1987",
+      "fdic_cert": "26876",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "546 5th Ave, New York, NY 10036",
+      "website": "https://www.safra.com"
+    },
+    {
+      "name": "Savannah Bank National Association",
+      "fdic_insured_since": "07/21/1934",
+      "fdic_cert": "14619",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1565 N Main St, Savannah, NY 13146",
+      "website": "http://www.savannahbankny.com"
+    },
+    {
+      "name": "Sawyer Savings Bank",
+      "fdic_insured_since": "07/01/1943",
+      "fdic_cert": "16039",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "87 Market St, Saugerties, NY 12477",
+      "website": "https://www.SawyerSavings.bank"
+    },
+    {
+      "name": "Seneca Savings Bank, National Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29496",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "35 Oswego St, Baldwinsville, NY 13027",
+      "website": "https://senecasavings.com"
+    },
+    {
+      "name": "Solvay Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13297",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1537 Milton Ave, Solvay, NY 13209",
+      "website": "https://www.solvaybank.com"
+    },
+    {
+      "name": "Spring Bank",
+      "fdic_insured_since": "10/26/2007",
+      "fdic_cert": "58668",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "69 E 167th St, Bronx, NY 10452",
+      "website": "https://www.spring.bank"
+    },
+    {
+      "name": "State Bank of India",
+      "fdic_insured_since": "12/08/1971",
+      "fdic_cert": "33682",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "460 Park Ave, New York, NY 10022",
+      "website": ""
+    },
+    {
+      "name": "Sunnyside Federal Savings and Loan Association of Irvington",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28805",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "56 Main St, Irvington, NY 10533",
+      "website": "https://www.sunnysidefederal.com"
+    },
+    {
+      "name": "The Adirondack Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "660",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "473 Broadway, Saratoga Springs, NY 12866",
+      "website": "https://adirondacktrust.com"
+    },
+    {
+      "name": "The Bank of East Asia Ltd.",
+      "fdic_insured_since": "12/31/9999",
+      "fdic_cert": "26028",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "540 Madison Ave, New York, NY 10022",
+      "website": ""
+    },
+    {
+      "name": "The Bank of East Asia Ltd.",
+      "fdic_insured_since": "03/27/1989",
+      "fdic_cert": "33646",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "540 Madison Ave, New York, NY 10022",
+      "website": ""
+    },
+    {
+      "name": "The Bank of Greene County",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "21591",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "425 Main St, Catskill, NY 12414",
+      "website": "https://www.tbogc.com"
+    },
+    {
+      "name": "The Berkshire Bank",
+      "fdic_insured_since": "05/08/1989",
+      "fdic_cert": "27503",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4 E 39th St, New York, NY 10016",
+      "website": "http://www.berkbank.com"
+    },
+    {
+      "name": "The Canandaigua National Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6985",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "72 S Main St, Canandaigua, NY 14424",
+      "website": "https://www.cnbank.com"
+    },
+    {
+      "name": "The Citizens National Bank of Hammond",
+      "fdic_insured_since": "10/15/1934",
+      "fdic_cert": "14820",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "19 Main St, Hammond, NY 13646",
+      "website": ""
+    },
+    {
+      "name": "The Delaware National Bank of Delhi",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7025",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "124 Main St, Delhi, NY 13753",
+      "website": "https://www.dnbd.bank"
+    },
+    {
+      "name": "The First National Bank of Dryden",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7031",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "7 West Main Street, Dryden, NY 13053",
+      "website": "https://www.drydenbank.com"
+    },
+    {
+      "name": "The First National Bank of Groton",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7085",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "159 Main St, # 163, Groton, NY 13073",
+      "website": "https://www.grotonbank.com"
+    },
+    {
+      "name": "The Lyons National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7151",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "35 William St, Lyons, NY 14489",
+      "website": "https://www.bankwithlnb.com"
+    },
+    {
+      "name": "The North Country Savings Bank",
+      "fdic_insured_since": "07/01/1943",
+      "fdic_cert": "16030",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "127 Main St, Canton, NY 13617",
+      "website": "https://northcountrysavings.bank"
+    },
+    {
+      "name": "The Putnam County National Bank of Carmel",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6990",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "43 Gleneida Ave, Carmel, NY 10512",
+      "website": "https://www.pcnb.biz"
+    },
+    {
+      "name": "The Upstate National Bank",
+      "fdic_insured_since": "01/24/1934",
+      "fdic_cert": "13748",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "729 Proctor Ave, Ogdensburg, NY 13669",
+      "website": "https://www.upstatebank.com"
+    },
+    {
+      "name": "Tioga State Bank National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9410",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 N Main St, Spencer, NY 14883",
+      "website": "https://www.tiogabank.com"
+    },
+    {
+      "name": "Ulster Savings Bank",
+      "fdic_insured_since": "07/01/1943",
+      "fdic_cert": "15970",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "180 Schwenk Dr, Kingston, NY 12401",
+      "website": "https://www.ulstersavings.com"
+    },
+    {
+      "name": "United Orient Bank",
+      "fdic_insured_since": "04/09/1981",
+      "fdic_cert": "23373",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "10 Chatham Sq, New York, NY 10038",
+      "website": ""
+    },
+    {
+      "name": "Walden Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "15987",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "15 Scotts Corner Dr, Montgomery, NY 12549",
+      "website": "https://www.waldensavings.bank"
+    },
+    {
+      "name": "Wallkill Valley Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28870",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "23 Wallkill Ave, Wallkill, NY 12589",
+      "website": "https://www.wallkill.com"
+    },
+    {
+      "name": "Watertown Savings Bank",
+      "fdic_insured_since": "07/01/1943",
+      "fdic_cert": "15990",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 Clinton St, Watertown, NY 13601",
+      "website": "https://www.watersavingsbank.com"
+    },
+    {
+      "name": "WSB Municipal Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7274",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 Clinton St, Watertown, NY 13601",
+      "website": "https://www.watertownsavingsbank.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

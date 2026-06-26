@@ -1,0 +1,407 @@
+{
+  "fullName": "New Jersey",
+  "abbr": "NJ",
+  "banks": [
+    {
+      "name": "First Bank",
+      "fdic_insured_since": "04/23/2007",
+      "fdic_cert": "58481",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2465 Kuser Rd, Hamilton, NJ 8690",
+      "website": "https://www.myfirstbank.com"
+    },
+    {
+      "name": "OceanFirst Bank, National Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28359",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "975 Hooper Ave, Toms River, NJ 8753",
+      "website": "https://www.oceanfirst.com"
+    },
+    {
+      "name": "Parke Bank",
+      "fdic_insured_since": "01/28/1999",
+      "fdic_cert": "34888",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "601 Delsea Dr, Sewell, NJ 8080",
+      "website": "https://www.parkebank.com"
+    },
+    {
+      "name": "Provident Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12010",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "239 Washington St, Jersey City, NJ 7302",
+      "website": "http://www.provident.Bank"
+    },
+    {
+      "name": "The Bank of Princeton",
+      "fdic_insured_since": "04/23/2007",
+      "fdic_cert": "58513",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "183 Bayard Ln, Princeton, NJ 8540",
+      "website": "https://WWW.THEBANKOFPRINCETON.COM"
+    },
+    {
+      "name": "Unity Bank",
+      "fdic_insured_since": "09/13/1991",
+      "fdic_cert": "33503",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "64 Old Highway 22, Clinton, NJ 8809",
+      "website": "https://www.unitybank.com"
+    },
+    {
+      "name": "Cross River Bank",
+      "fdic_insured_since": "06/23/2008",
+      "fdic_cert": "58410",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2115 Linwood Ave, Fort Lee, NJ 7024",
+      "website": "http://www.crossriverbank.com"
+    },
+    {
+      "name": "1st Bank of Sea Isle City",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30367",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4301 Landis Ave, Sea Isle City, NJ 8243",
+      "website": "https://www.1stbankseaisle.com"
+    },
+    {
+      "name": "Amboy Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6423",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3590 Us Highway 9, Old Bridge, NJ 8857",
+      "website": "https://www.amboybank.com"
+    },
+    {
+      "name": "Ascendia Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28729",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "175 Rock Rd, Glen Rock, NJ 7452",
+      "website": "https://www.ascendiabank.com"
+    },
+    {
+      "name": "BCB Community Bank",
+      "fdic_insured_since": "11/01/2000",
+      "fdic_cert": "35541",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "860 Broadway, Bayonne, NJ 7002",
+      "website": "https://www.bcb.bank"
+    },
+    {
+      "name": "Bessemer Trust Company",
+      "fdic_insured_since": "08/14/1969",
+      "fdic_cert": "20015",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 Woodbridge Center Dr, Woodbridge, NJ 7095",
+      "website": "http://www.bessemertrust.com"
+    },
+    {
+      "name": "Blue Foundry Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30052",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "19 Park Ave, Rutherford, NJ 7070",
+      "website": "https://bluefoundrybank.com"
+    },
+    {
+      "name": "Bogota Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29941",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "819 Teaneck Rd, Teaneck, NJ 7666",
+      "website": "http://www.bogotasavingsbank.com"
+    },
+    {
+      "name": "Cenlar FSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30996",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "425 Phillips Blvd, Ewing, NJ 8618",
+      "website": "https://www.cenlar.com"
+    },
+    {
+      "name": "Century Savings Bank",
+      "fdic_insured_since": "10/05/1953",
+      "fdic_cert": "30428",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1376 W Sherman Ave, Vineland, NJ 8360",
+      "website": "https://www.centurysb.com"
+    },
+    {
+      "name": "Columbia Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28834",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "19-01 Route 208, Fair Lawn, NJ 7410",
+      "website": "https://www.columbiabankonline.com"
+    },
+    {
+      "name": "ConnectOne Bank",
+      "fdic_insured_since": "01/15/2005",
+      "fdic_cert": "57919",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 Sylvan Ave, Englewood Cliffs, NJ 7632",
+      "website": "https://www.connectonebank.com"
+    },
+    {
+      "name": "Crest Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28818",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3301 Pacific Ave, Wildwood, NJ 8260",
+      "website": "https://www.crestsavings.bank"
+    },
+    {
+      "name": "Crown Bank",
+      "fdic_insured_since": "04/13/1998",
+      "fdic_cert": "34259",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 Westminster Ave, Elizabeth, NJ 7208",
+      "website": "https://www.crownbank.net"
+    },
+    {
+      "name": "First Commerce Bank",
+      "fdic_insured_since": "01/30/2006",
+      "fdic_cert": "58054",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 River Ave, Lakewood, NJ 8701",
+      "website": "http://www.firstcommercebk.com"
+    },
+    {
+      "name": "First Hope Bank, A National Banking Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6354",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1301 Hope Bridgeville Rd., Hope, NJ 7844",
+      "website": "https://www.firsthope.bank"
+    },
+    {
+      "name": "Five Rivers Bank",
+      "fdic_insured_since": "05/12/2025",
+      "fdic_cert": "59345",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "81 E State Rt 4, Suite 301, Paramus, NJ 7652",
+      "website": "https://www.fiveriversbank.com"
+    },
+    {
+      "name": "Franklin Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30402",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1179 Route 40, Pilesgrove, NJ 8098",
+      "website": "https://www.franklinbnk.com"
+    },
+    {
+      "name": "Freedom Bank",
+      "fdic_insured_since": "04/17/2008",
+      "fdic_cert": "58712",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "99 W Essex St, Maywood, NJ 7607",
+      "website": "http://www.freedombanknj.com"
+    },
+    {
+      "name": "GSL Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28708",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6823 Bergenline Ave, Guttenberg, NJ 7093",
+      "website": "https://www.gslsavingsbank.com"
+    },
+    {
+      "name": "Haddon Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28222",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 White Horse Pike, Haddon Heights, NJ 8035",
+      "website": "https://haddonsavings.com"
+    },
+    {
+      "name": "Hana Bank USA, National Association",
+      "fdic_insured_since": "09/16/1986",
+      "fdic_cert": "26790",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "201 Main St, Fort Lee, NJ 7024",
+      "website": "https://www.hanabank.us"
+    },
+    {
+      "name": "Haven Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30039",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "621 Washington St, Hoboken, NJ 7030",
+      "website": "https://www.havenbank.com"
+    },
+    {
+      "name": "Kearny Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28765",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "614 Kearny Ave, Kearny, NJ 7032",
+      "website": "https://www.kearnybank.com"
+    },
+    {
+      "name": "Liberty Bank of New Jersey",
+      "fdic_insured_since": "01/21/2026",
+      "fdic_cert": "59369",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "725 Bloomfield Ave, Verona, NJ 7044",
+      "website": "https://www.libertybanknj.com"
+    },
+    {
+      "name": "Lusitania Savings Bank",
+      "fdic_insured_since": "09/01/1995",
+      "fdic_cert": "34058",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "107 Pulaski St, Newark, NJ 7105",
+      "website": "https://www.lusitaniabank.com"
+    },
+    {
+      "name": "Magyar Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30704",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 Somerset St, New Brunswick, NJ 8901",
+      "website": "https://www.magbank.com"
+    },
+    {
+      "name": "Manasquan Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30470",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2221 Landmark Pl, Manasquan, NJ 8736",
+      "website": "https://www.manasquanbank.com"
+    },
+    {
+      "name": "Millville Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30183",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 Albertson St, Millville, NJ 8332",
+      "website": "https://www.millvillesavings.com"
+    },
+    {
+      "name": "Monroe Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30103",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "114 S Main St, Williamstown, NJ 8094",
+      "website": "https://www.monroesavings.com"
+    },
+    {
+      "name": "New Millennium Bank",
+      "fdic_insured_since": "07/19/1999",
+      "fdic_cert": "35151",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "222 Bridge Plz S, Fort Lee, NJ 7024",
+      "website": "https://WWW.NMBONLINE.COM"
+    },
+    {
+      "name": "Newfield National Bank",
+      "fdic_insured_since": "07/31/1934",
+      "fdic_cert": "14646",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "18 S West Blvd, # 24, Newfield, NJ 8344",
+      "website": "https://www.newfieldnationalbank.bank"
+    },
+    {
+      "name": "Peapack Private Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11035",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "500 Hills Drive Suite 300, Bedminster, NJ 7921",
+      "website": "https://www.peapackprivate.com"
+    },
+    {
+      "name": "Schuyler Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30072",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "24 Davis Ave, Kearny, NJ 7032",
+      "website": "https://www.schuylersavings.com"
+    },
+    {
+      "name": "Somerset Regal Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28778",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "220 W Union Ave, Bound Brook, NJ 8805",
+      "website": "https://www.somersetregalbank.com"
+    },
+    {
+      "name": "Spencer Savings Bank, SLA",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30076",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "611 River Dr, Elmwood Park, NJ 7407",
+      "website": "https://www.spencersavings.com"
+    },
+    {
+      "name": "Sturdy Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28788",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9417 3rd Ave, Stone Harbor, NJ 8247",
+      "website": "https://www.sturdyonline.com"
+    },
+    {
+      "name": "Sumitomo Mitsui Trust Bank (U.S.A.) Limited",
+      "fdic_insured_since": "09/21/1987",
+      "fdic_cert": "27054",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 River St, Hoboken, NJ 7030",
+      "website": ""
+    },
+    {
+      "name": "The First National Bank of Absecon",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6442",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "106 New Jersey Ave, Absecon, NJ 8201",
+      "website": "http://www.fnbabsecon.com"
+    },
+    {
+      "name": "The First National Bank of Elmer",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6464",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "10 S Main St, Elmer, NJ 8318",
+      "website": "http://www.elmerbank.com"
+    },
+    {
+      "name": "The Pennsville National Bank",
+      "fdic_insured_since": "06/23/1969",
+      "fdic_cert": "19978",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "170 S Broadway, Pennsville, NJ 8070",
+      "website": "https://www.pennsvillenb.com"
+    },
+    {
+      "name": "Union County Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12013",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "320 N Broad St, Elizabeth, NJ 7208",
+      "website": "https://www.unioncountysavings.com"
+    },
+    {
+      "name": "United Roosevelt Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29170",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "11-15 Cooke Ave, Carteret, NJ 7008",
+      "website": "https://ursb.bank"
+    },
+    {
+      "name": "Valley National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9396",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "615 Main Ave, Passaic, NJ 7055",
+      "website": "https://www.valley.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

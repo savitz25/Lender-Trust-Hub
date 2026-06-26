@@ -1,0 +1,23 @@
+{
+  "fullName": "District of Columbia",
+  "abbr": "DC",
+  "banks": [
+    {
+      "name": "Industrial Bank",
+      "fdic_insured_since": "08/18/1934",
+      "fdic_cert": "14679",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4812 Georgia Ave Nw, Washington, DC 20011",
+      "website": "https://www.industrial-bank.com"
+    },
+    {
+      "name": "The National Capital Bank of Washington",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2093",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "316 Pennsylvania Ave Se, Washington, DC 20003",
+      "website": "https://www.nationalcapitalbank.bank"
+    }
+  ],
+  "updated": "2026-06-26"
+}

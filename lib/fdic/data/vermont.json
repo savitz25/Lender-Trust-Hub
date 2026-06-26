@@ -1,0 +1,103 @@
+{
+  "fullName": "Vermont",
+  "abbr": "VT",
+  "banks": [
+    {
+      "name": "Business Bank, The",
+      "fdic_insured_since": "08/02/2022",
+      "fdic_cert": "59298",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "30 Kimball Ave, Suite 201, S Burlington, VT 5403",
+      "website": "https://www.thebusinessbank.com"
+    },
+    {
+      "name": "Community National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6271",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4811 U.S. Route 5, Derby, VT 5855",
+      "website": "https://www.communitynationalbank.com"
+    },
+    {
+      "name": "Ledyard National Bank",
+      "fdic_insured_since": "05/22/1991",
+      "fdic_cert": "33418",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "320 Main St, Norwich, VT 5055",
+      "website": "https://www.ledyard.bank"
+    },
+    {
+      "name": "Northfield Savings Bank",
+      "fdic_insured_since": "03/31/1934",
+      "fdic_cert": "14140",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "33 S Main St, Northfield, VT 5663",
+      "website": "https://www.nsbvt.com"
+    },
+    {
+      "name": "Passumpsic Savings Bank",
+      "fdic_insured_since": "03/31/1934",
+      "fdic_cert": "14134",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "497 Railroad St, Saint Johnsbury, VT 5819",
+      "website": "http://www.passumpsicbank.com"
+    },
+    {
+      "name": "Peoples Trust Company of St. Albans",
+      "fdic_insured_since": "04/02/1934",
+      "fdic_cert": "14168",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "25 Kingman St, Saint Albans, VT 5478",
+      "website": "http://www.ptcvt.com"
+    },
+    {
+      "name": "The Bank of Bennington",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30350",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "155 North St, Bennington, VT 5201",
+      "website": "https://www.thebankofbennington.com"
+    },
+    {
+      "name": "The Brattleboro Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28837",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "221 Main St, Brattleboro, VT 5301",
+      "website": "https://www.brattbank.com"
+    },
+    {
+      "name": "The First National Bank of Orwell",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6280",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "441 Main St, Orwell, VT 5760",
+      "website": "https://www.fnborwell.com"
+    },
+    {
+      "name": "The National Bank of Middlebury",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6275",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "30 Main St, Middlebury, VT 5753",
+      "website": "https://www.nbmvt.com"
+    },
+    {
+      "name": "Union Bank",
+      "fdic_insured_since": "03/31/1934",
+      "fdic_cert": "14158",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "20 Main St, Morrisville, VT 5661",
+      "website": "https://www.ublocal.com"
+    },
+    {
+      "name": "Wells River Savings Bank",
+      "fdic_insured_since": "03/31/1934",
+      "fdic_cert": "14136",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "34 Main St N, Wells River, VT 5081",
+      "website": "https://www.wellsriversavings.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

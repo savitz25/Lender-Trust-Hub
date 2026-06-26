@@ -1,0 +1,231 @@
+{
+  "fullName": "Maryland",
+  "abbr": "MD",
+  "banks": [
+    {
+      "name": "Middletown Valley Bank",
+      "fdic_insured_since": "03/08/1934",
+      "fdic_cert": "14017",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "803 E Main St, Middletown, MD 21769",
+      "website": "https://www.mvbbank.com"
+    },
+    {
+      "name": "Arundel Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28780",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "655 Crain Hwy S, Glen Burnie, MD 21061",
+      "website": "https://www.arundelfederal.com"
+    },
+    {
+      "name": "Bank of Ocean City",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5867",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "10005 Golf Course Rd, Ocean City, MD 21842",
+      "website": "https://www.bankofoceancity.com"
+    },
+    {
+      "name": "BayVanguard Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32527",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7114 N Point Rd, Baltimore, MD 21219",
+      "website": "https://www.bayvanguard.com"
+    },
+    {
+      "name": "Calvin B. Taylor Banking Company of Berlin, Maryland",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5874",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "24 N Main St, Berlin, MD 21811",
+      "website": "https://www.taylorbank.com"
+    },
+    {
+      "name": "Capital Bank, National Association",
+      "fdic_insured_since": "12/14/1999",
+      "fdic_cert": "35278",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2275 Research Blvd, Rockville, MD 20850",
+      "website": "http://www.capitalbankmd.com"
+    },
+    {
+      "name": "CFG Bank",
+      "fdic_insured_since": "12/01/1997",
+      "fdic_cert": "34294",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "11 W Ridgely Rd, Lutherville, MD 21093",
+      "website": "https://www.cfg.bank"
+    },
+    {
+      "name": "EagleBank",
+      "fdic_insured_since": "07/20/1998",
+      "fdic_cert": "34742",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "7500 Old Georgetown Rd, Bethesda, MD 20814",
+      "website": "https://www.eaglebankcorp.com"
+    },
+    {
+      "name": "Eastern Savings Bank, FSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32360",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "11350 Mccormick Rd, Hunt Valley, MD 21031",
+      "website": "https://www.easternsavingsbank.com"
+    },
+    {
+      "name": "Farmers and Merchants Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1895",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15226 Hanover Pike, Upperco, MD 21155",
+      "website": "https://www.fmb1919.bank"
+    },
+    {
+      "name": "First Shore Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30680",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "106 S Division St, Salisbury, MD 21801",
+      "website": "https://www.firstshorefederal.com"
+    },
+    {
+      "name": "First United Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4857",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "19 S 2nd St, Oakland, MD 21550",
+      "website": "https://www.mybank.com"
+    },
+    {
+      "name": "Forbright Bank",
+      "fdic_insured_since": "10/17/2003",
+      "fdic_cert": "57614",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7963 Tuckerman Ln, Potomac, MD 20854",
+      "website": "https://WWW.FORBRIGHTBANK.COM"
+    },
+    {
+      "name": "Harford Bank",
+      "fdic_insured_since": "05/01/1964",
+      "fdic_cert": "19101",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8 W Bel Air Ave, Aberdeen, MD 21001",
+      "website": "https://www.harfordbank.com"
+    },
+    {
+      "name": "Hebron Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8811",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 N Main St, Hebron, MD 21830",
+      "website": "https://www.hebronsavingsbank.com"
+    },
+    {
+      "name": "Homewood Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31267",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3228 Eastern Ave, Baltimore, MD 21224",
+      "website": "https://www.homewoodfsb.com"
+    },
+    {
+      "name": "Jarrettsville Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31083",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3706 Norrisville Rd, Jarrettsville, MD 21084",
+      "website": "https://www.jarrettsvillefederal.com"
+    },
+    {
+      "name": "Presidential Bank, FSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32363",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4520 East West Hwy, Bethesda, MD 20814",
+      "website": "https://www.presidential.com"
+    },
+    {
+      "name": "Rosedale Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29613",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "9616 Belair Rd, Nottingham, MD 21236",
+      "website": "https://www.rosedale.bank"
+    },
+    {
+      "name": "Shore United Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4832",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "18 E Dover St, Easton, MD 21601",
+      "website": "https://shoreunitedbank.com"
+    },
+    {
+      "name": "The Bank of Glen Burnie",
+      "fdic_insured_since": "08/17/1949",
+      "fdic_cert": "16820",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 Crain Hwy S, Glen Burnie, MD 21061",
+      "website": "https://www.thebankofglenburnie.com"
+    },
+    {
+      "name": "The Chesapeake Bank & Trust Co.",
+      "fdic_insured_since": "12/15/1986",
+      "fdic_cert": "26847",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "245 High St, Chestertown, MD 21620",
+      "website": "https://www.chesapeaketrust.com"
+    },
+    {
+      "name": "The Farmers Bank of Willards",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5885",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7484 Market St, Willards, MD 21874",
+      "website": "https://www.fbwbank.com"
+    },
+    {
+      "name": "The Glen Burnie Mutual Savings Bank",
+      "fdic_insured_since": "08/08/1989",
+      "fdic_cert": "27567",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 Crain Hwy S, Glen Burnie, MD 21061",
+      "website": ""
+    },
+    {
+      "name": "The Harbor Bank of Maryland",
+      "fdic_insured_since": "09/13/1982",
+      "fdic_cert": "24015",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "25 W Fayette St, Baltimore, MD 21201",
+      "website": "https://HTTPS://WWW.THEHARBORBANK.COM"
+    },
+    {
+      "name": "The Peoples Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12885",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 Spring Ave, Chestertown, MD 21620",
+      "website": "https://www.pbkc.com"
+    },
+    {
+      "name": "The Queenstown Bank of Maryland",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8816",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7101 Main St, Queenstown, MD 21658",
+      "website": "https://wwww.queenstownbank.com"
+    },
+    {
+      "name": "Woodsboro Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5873",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5 N Main St, Woodsboro, MD 21798",
+      "website": "http://www.woodsborobank.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

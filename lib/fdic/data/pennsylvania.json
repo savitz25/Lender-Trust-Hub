@@ -1,0 +1,887 @@
+{
+  "fullName": "Pennsylvania",
+  "abbr": "PA",
+  "banks": [
+    {
+      "name": "Northwest Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28178",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 Liberty St, Warren, PA 16365",
+      "website": "https://WWW.NORTHWEST.COM"
+    },
+    {
+      "name": "BNY Mellon, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7946",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "500 Grant St, Pittsburgh, PA 15258",
+      "website": "https://www.bny.com"
+    },
+    {
+      "name": "CNB Bank",
+      "fdic_insured_since": "02/09/1934",
+      "fdic_cert": "13876",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1 S 2nd St, Clearfield, PA 16830",
+      "website": "https://www.cnbbank.bank"
+    },
+    {
+      "name": "Dollar Bank, Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32245",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "340 4th Ave, Pittsburgh, PA 15222",
+      "website": "https://www.dollar.bank"
+    },
+    {
+      "name": "First Commonwealth Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7468",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "654 Philadelphia St, Indiana, PA 15701",
+      "website": "https://www.fcbanking.com"
+    },
+    {
+      "name": "First National Bank of Pennsylvania",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7888",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "166 Main St, Greenville, PA 16125",
+      "website": "https://www.fnb-online.com"
+    },
+    {
+      "name": "S&T Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11124",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "800 Philadelphia St, Indiana, PA 15701",
+      "website": "http://www.stbank.com"
+    },
+    {
+      "name": "1st Summit Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8426",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "125 Donald Ln, Johnstown, PA 15904",
+      "website": "https://www.1stsummit.bank"
+    },
+    {
+      "name": "ACNB Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7506",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "16 Lincoln Sq, Gettysburg, PA 17325",
+      "website": "http://www.acnb.com"
+    },
+    {
+      "name": "Altoona First Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27711",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "203 N Logan Blvd, Altoona, PA 16602",
+      "website": "https://www.altoonabank.com"
+    },
+    {
+      "name": "Ambler Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28701",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "155 E Butler Ave, Ambler, PA 19002",
+      "website": "https://www.amblersav.com"
+    },
+    {
+      "name": "American Bank",
+      "fdic_insured_since": "06/02/1997",
+      "fdic_cert": "34422",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "4029 W Tilghman St, Allentown, PA 18104",
+      "website": "https://www.ambk.com"
+    },
+    {
+      "name": "Ameriserv Financial Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7542",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "216 Franklin St, Johnstown, PA 15901",
+      "website": "https://AmeriServ.com"
+    },
+    {
+      "name": "Apollo Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6051",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "201 N Warren Ave, Apollo, PA 15613",
+      "website": "http://www.apollotrust.com"
+    },
+    {
+      "name": "Armstrong County Building and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29471",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "935 5th Ave, Ford City, PA 16226",
+      "website": "https://www.acbla.com"
+    },
+    {
+      "name": "Asian Bank",
+      "fdic_insured_since": "06/09/1999",
+      "fdic_cert": "34759",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1023 Race St, Philadelphia, PA 19107",
+      "website": "http://www.theasianbank.com"
+    },
+    {
+      "name": "Atlantic Community Bankers Bank",
+      "fdic_insured_since": "11/21/1983",
+      "fdic_cert": "24829",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "225 Grandview Avenue Suite 401, Camp Hill, PA 17011",
+      "website": "http://www.acbb.com"
+    },
+    {
+      "name": "Bank of Bird-in-Hand",
+      "fdic_insured_since": "11/29/2013",
+      "fdic_cert": "59074",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "309 N Ronks Rd, Bird In Hand, PA 17505",
+      "website": "https://www.bihbank.com"
+    },
+    {
+      "name": "Brentwood Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27943",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "411 Mcmurray Rd, Ste 200, Bethel Park, PA 15102",
+      "website": "https://www.brentwoodbank.com"
+    },
+    {
+      "name": "Central Penn Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10685",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "250 E Chestnut St, Mifflinburg, PA 17844",
+      "website": "https://www.centralpennbank.com"
+    },
+    {
+      "name": "CFSBANK",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29672",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 Mckean Ave, Charleroi, PA 15022",
+      "website": "https://www.cfsbank.bank"
+    },
+    {
+      "name": "Citizens & Northern Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7799",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "90 Main St, Wellsboro, PA 16901",
+      "website": "https://www.cnbankpa.com"
+    },
+    {
+      "name": "Citizens Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31184",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "500 S State St, Clarks Summit, PA 18411",
+      "website": "https://citizens-savings.com"
+    },
+    {
+      "name": "Clarion County Community Bank",
+      "fdic_insured_since": "01/07/2004",
+      "fdic_cert": "57624",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "333 Main St, Clarion, PA 16214",
+      "website": "http://www.clarionbank.com"
+    },
+    {
+      "name": "Commercial Bank and Trust of PA",
+      "fdic_insured_since": "05/04/1934",
+      "fdic_cert": "14333",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "900 Ligonier St, Latrobe, PA 15650",
+      "website": "https://WWW.cbthebank.com"
+    },
+    {
+      "name": "Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7848",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 N Market St, Carmichaels, PA 15320",
+      "website": "https://www.cb.bank"
+    },
+    {
+      "name": "Community State Bank of Orbisonia",
+      "fdic_insured_since": "01/11/1951",
+      "fdic_cert": "16976",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "478 Ridgley St, Orbisonia, PA 17243",
+      "website": "https://www.communitystate.bank"
+    },
+    {
+      "name": "Compass Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29430",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 Westinghouse Ave, Wilmerding, PA 15148",
+      "website": "https://www.compassbank.us"
+    },
+    {
+      "name": "County Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29231",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "10 Powhattan Ave, Essington, PA 19029",
+      "website": "https://www.countysavingsbank.com"
+    },
+    {
+      "name": "Customers Bank",
+      "fdic_insured_since": "06/26/1997",
+      "fdic_cert": "34444",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "40 General Warren Blvd, Suite 200, Malvern, PA 19355",
+      "website": "https://www.customersbank.com"
+    },
+    {
+      "name": "Elderton State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12985",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "143 N Main St, Elderton, PA 15736",
+      "website": "https://www.eldertonbank.com"
+    },
+    {
+      "name": "Embassy Bank for the Lehigh Valley",
+      "fdic_insured_since": "11/06/2001",
+      "fdic_cert": "57228",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 Gateway Dr, Bethlehem, PA 18017",
+      "website": "https://www.embassybank.com"
+    },
+    {
+      "name": "Enterprise Bank",
+      "fdic_insured_since": "10/23/1998",
+      "fdic_cert": "34786",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4091 Mount Royal Blvd, Allison Park, PA 15101",
+      "website": "https://www.enterprisebankpgh.com"
+    },
+    {
+      "name": "Farmers and Merchants Trust Company of Chambersburg",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8405",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "20 S Main St, Chambersburg, PA 17201",
+      "website": "https://fmtrust.bank"
+    },
+    {
+      "name": "Farmers Building and Savings Bank",
+      "fdic_insured_since": "12/09/1997",
+      "fdic_cert": "34711",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "290 W Park St, Rochester, PA 15074",
+      "website": ""
+    },
+    {
+      "name": "First Citizens Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7593",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "15 S Main St, Mansfield, PA 16933",
+      "website": "https://www.firstcitizensbank.com"
+    },
+    {
+      "name": "First Federal Savings and Loan Association of Greene Co",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28706",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "25 E High St, Waynesburg, PA 15370",
+      "website": "https://www.ffgc.bank"
+    },
+    {
+      "name": "First Keystone Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7404",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 W Front St, Berwick, PA 18603",
+      "website": "https://www.fkc.bank"
+    },
+    {
+      "name": "First National Bank and Trust Company of Newtown",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7658",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "40 S State St, Newtown, PA 18940",
+      "website": "https://WWW.FNBN.COM"
+    },
+    {
+      "name": "First Northern Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7675",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "4th Street And Lafayette Avenue, Palmerton, PA 18071",
+      "website": "https://www.1stnorthern.bank"
+    },
+    {
+      "name": "First Resource Bank",
+      "fdic_insured_since": "05/02/2005",
+      "fdic_cert": "57967",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "800 N Pottstown Pike, Exton, PA 19341",
+      "website": "https://www.firstresourcebank.com"
+    },
+    {
+      "name": "First United National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7886",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "19535 Route 208, Fryburg, PA 16326",
+      "website": "https://www.fun-bank.com"
+    },
+    {
+      "name": "Firstrust Savings Bank",
+      "fdic_insured_since": "03/19/1986",
+      "fdic_cert": "26647",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15 E Ridge Pike, Conshohocken, PA 19428",
+      "website": "https://www.firstrust.com"
+    },
+    {
+      "name": "Fleetwood Bank",
+      "fdic_insured_since": "01/04/1934",
+      "fdic_cert": "13561",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2 W Main St, Fleetwood, PA 19522",
+      "website": "https://fleetwoodbank.com"
+    },
+    {
+      "name": "Fulton Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7551",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Penn Sq, Lancaster, PA 17602",
+      "website": "https://www.fultonbank.com"
+    },
+    {
+      "name": "Greenville Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30637",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "233 Main St, Greenville, PA 16125",
+      "website": "https://www.greenvillesavings.com"
+    },
+    {
+      "name": "Hamlin Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11113",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "333 W Main St, Smethport, PA 16749",
+      "website": "https://www.hamlinbank.com"
+    },
+    {
+      "name": "Harleysville Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31461",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "271 Main St, Harleysville, PA 19438",
+      "website": "https://www.harleysvillebank.com"
+    },
+    {
+      "name": "Hatboro Federal Savings, FA",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30155",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "221 S York Rd, Hatboro, PA 19040",
+      "website": "https://www.hatborofed.com"
+    },
+    {
+      "name": "Hometown Bank of Pennsylvania",
+      "fdic_insured_since": "04/09/2007",
+      "fdic_cert": "58470",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "638 E Pitt St, Bedford, PA 15522",
+      "website": "https://hometownbankpa.com"
+    },
+    {
+      "name": "Huntingdon Savings Bank",
+      "fdic_insured_since": "11/01/1998",
+      "fdic_cert": "30031",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "423 Penn St, Huntingdon, PA 16652",
+      "website": ""
+    },
+    {
+      "name": "Hyperion Bank",
+      "fdic_insured_since": "11/20/2006",
+      "fdic_cert": "58371",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "199 W Girard Ave, Philadelphia, PA 19123",
+      "website": "https://www.hyperionbank.com"
+    },
+    {
+      "name": "InFirst Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27763",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "935 Philadelphia St, Indiana, PA 15701",
+      "website": "https://www.infirstbank.bank"
+    },
+    {
+      "name": "Investment Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30121",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "900 S 16th St, Altoona, PA 16602",
+      "website": "https://www.investmentsb.bank"
+    },
+    {
+      "name": "Iron Workers Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28908",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3333 Concord Rd, Aston, PA 19014",
+      "website": "https://www.iwsb.com"
+    },
+    {
+      "name": "Jim Thorpe Neighborhood Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7599",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "12 Broadway, Jim Thorpe, PA 18229",
+      "website": "https://www.jtnb.com"
+    },
+    {
+      "name": "Jonestown Bank and Trust Company, of Jonestown, Pennsylvania",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10677",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2 W Market St, Jonestown, PA 17038",
+      "website": "https://www.jbt.bank"
+    },
+    {
+      "name": "Journey Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "686",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1199 Lightstreet Rd, Bloomsburg, PA 17815",
+      "website": "https://www.journeybank.com"
+    },
+    {
+      "name": "Kish Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "14969",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4255 E Main St, Belleville, PA 17004",
+      "website": "https://www.mykish.com"
+    },
+    {
+      "name": "Marion Center Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7909",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1271 Indian Springs Rd, Indiana, PA 15701",
+      "website": "http://www.marioncenterbank.com"
+    },
+    {
+      "name": "Marquette Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30544",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "920 Peach St, Erie, PA 16501",
+      "website": "https://www.marquettesavings.com"
+    },
+    {
+      "name": "Mauch Chunk Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2359",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1111 North St, Jim Thorpe, PA 18229",
+      "website": "https://www.mct.bank"
+    },
+    {
+      "name": "MCS Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28186",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 Commerce Dr, Milroy, PA 17063",
+      "website": "https://WWW.MCS.BANK"
+    },
+    {
+      "name": "Mercer County State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "445",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3279 South Main Street, Sandy Lake, PA 16145",
+      "website": "https://www.mcsbank.bank"
+    },
+    {
+      "name": "Meridian Bank",
+      "fdic_insured_since": "07/08/2004",
+      "fdic_cert": "57777",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "220 W. Lancaster Avenue, Wayne, PA 19087",
+      "website": "https://www.meridianbanker.com"
+    },
+    {
+      "name": "Mid Penn Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9889",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "349 Union St, Millersburg, PA 17061",
+      "website": "https://www.midpennbank.com"
+    },
+    {
+      "name": "Milton Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28637",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "80 Broadway St, Milton, PA 17847",
+      "website": "https://www.miltonsavingsbank.com"
+    },
+    {
+      "name": "New Tripoli Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7659",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "6748 Madison St, New Tripoli, PA 18066",
+      "website": "http://www.newtripolibank.net"
+    },
+    {
+      "name": "NEXTIER BANK, NATIONAL ASSOCIATION",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7900",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "222 Market St, Kittanning, PA 16201",
+      "website": "https://www.nextierbank.com"
+    },
+    {
+      "name": "Orrstown Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "713",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "4750 Lindle Rd, Harrisburg, PA 17111",
+      "website": "https://www.orrstown.com"
+    },
+    {
+      "name": "Penn Community Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30401",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3969 Durham Rd, Doylestown, PA 18902",
+      "website": "https://www.penncommunitybank.com"
+    },
+    {
+      "name": "PennCrest Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30119",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1201 12th St, Altoona, PA 16601",
+      "website": "https://www.PennCrest.BANK"
+    },
+    {
+      "name": "Pennian Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7613",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2 N Main St, Mifflintown, PA 17059",
+      "website": "https://www.pennian.bank"
+    },
+    {
+      "name": "Peoples Security Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7514",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 S Blakely St, Dunmore, PA 18512",
+      "website": "https://www.psbt.com"
+    },
+    {
+      "name": "Phoenixville Federal Bank and Trust",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29995",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "564 Nutt Rd, Phoenixville, PA 19460",
+      "website": "https://www.phoenixfed.com"
+    },
+    {
+      "name": "Port Richmond Savings",
+      "fdic_insured_since": "11/21/1988",
+      "fdic_cert": "27385",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2522 E Allegheny Ave, Philadelphia, PA 19134",
+      "website": "https://www.prsbank.com"
+    },
+    {
+      "name": "PS Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "444",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "42621 Route 6, Wyalusing, PA 18853",
+      "website": "https://psbanking.com"
+    },
+    {
+      "name": "QNB Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7714",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15 N 3rd St, Quakertown, PA 18951",
+      "website": "https://www.qnbbank.com"
+    },
+    {
+      "name": "Quaint Oak Bank",
+      "fdic_insured_since": "01/01/2000",
+      "fdic_cert": "35497",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "501 Knowles Ave, Southampton, PA 18966",
+      "website": "https://www.quaintoak.com"
+    },
+    {
+      "name": "Reliance Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30117",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1300 11th Avenue, Altoona, PA 16601",
+      "website": "https://www.reliancebank.bank"
+    },
+    {
+      "name": "Second Federal Savings and Loan Association of Philadelphia",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29627",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1727 Chestnut St, Philadelphia, PA 19103",
+      "website": "https://www.secondfed.com"
+    },
+    {
+      "name": "SEI Private Trust Company",
+      "fdic_insured_since": "01/02/2001",
+      "fdic_cert": "35388",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Freedom Valley Dr, Oaks, PA 19456",
+      "website": "https://www.seic.com"
+    },
+    {
+      "name": "Sewickley Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30154",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "531 Broad St, Sewickley, PA 15143",
+      "website": "https://www.sewickleysavingsbank.com"
+    },
+    {
+      "name": "Sharon Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28793",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "900 W Sproul Rd, Springfield, PA 19064",
+      "website": "https://www.sharonbank.com"
+    },
+    {
+      "name": "Slovenian Savings and Loan Association of Canonsburg",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27686",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "130 Boone Ave, Strabane, PA 15363",
+      "website": "https://www.sloveniansavingsandloan.com"
+    },
+    {
+      "name": "Slovenian Savings and Loan Association of Franklin-Conemaugh",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31994",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "361 1st St, Conemaugh, PA 15909",
+      "website": "https://sloveniansavings.com"
+    },
+    {
+      "name": "Somerset Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11112",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "151 W Main St, Somerset, PA 15501",
+      "website": "https://somersettrust.com"
+    },
+    {
+      "name": "SSB Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30431",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8700 Perry Hwy, Pittsburgh, PA 15237",
+      "website": "https://www.ssbpgh.com"
+    },
+    {
+      "name": "The Bank of Landisburg",
+      "fdic_insured_since": "04/17/1992",
+      "fdic_cert": "90384",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 N Carlisle St, Landisburg, PA 17040",
+      "website": "http://www.bankoflandisburg.com"
+    },
+    {
+      "name": "The Dime Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9888",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "820 Church St, # 822, Honesdale, PA 18431",
+      "website": "https://www.thedime.bank"
+    },
+    {
+      "name": "The Ephrata National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7493",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "31 E Main St, Ephrata, PA 17522",
+      "website": "http://www.epnb.com"
+    },
+    {
+      "name": "The Fidelity Deposit and Discount Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11868",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 N Blakely St, Dunmore, PA 18512",
+      "website": "http://www.bankatfidelity.com"
+    },
+    {
+      "name": "The Haverford Trust Company",
+      "fdic_insured_since": "04/01/1987",
+      "fdic_cert": "26189",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3 Radnor Corporate Ctr, Ste 450, Radnor, PA 19087",
+      "website": "https://www.haverfordquality.com"
+    },
+    {
+      "name": "The Honesdale National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7526",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "733 Main St, Honesdale, PA 18431",
+      "website": "https://www.hnbbank.bank"
+    },
+    {
+      "name": "The Juniata Valley Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7614",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 S Main St, Mifflintown, PA 17059",
+      "website": "https://www.jvbonline.com"
+    },
+    {
+      "name": "The National Bank of Malvern",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7590",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2 W King St, Malvern, PA 19355",
+      "website": "http://www.natbankmal.com"
+    },
+    {
+      "name": "The Neffs National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7646",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "5629 Route 873, Neffs, PA 18065",
+      "website": "http://www.neffsnatl.com"
+    },
+    {
+      "name": "The Philadelphia Trust Company",
+      "fdic_insured_since": "04/01/1999",
+      "fdic_cert": "35075",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1760 Market St Fl 2, Philadelphia, PA 19103",
+      "website": "https://www.philadelphiatrust.com"
+    },
+    {
+      "name": "The Turbotville National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7789",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4710 State Route 54, Turbotville, PA 17772",
+      "website": "https://www.ttnb.com"
+    },
+    {
+      "name": "Tioga-Franklin Savings Bank",
+      "fdic_insured_since": "07/01/2000",
+      "fdic_cert": "33802",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "320 E Girard Ave, Philadelphia, PA 19125",
+      "website": "https://www.tiogafranklin.com"
+    },
+    {
+      "name": "TriState Capital Bank",
+      "fdic_insured_since": "01/22/2007",
+      "fdic_cert": "58457",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1 Oxford Ctr, Fl 27, Pittsburgh, PA 15219",
+      "website": "http://www.tscbank.com"
+    },
+    {
+      "name": "UNB Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7631",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 N Oak St, Mount Carmel, PA 17851",
+      "website": "http://www.unb.bank"
+    },
+    {
+      "name": "United Bank of Philadelphia",
+      "fdic_insured_since": "03/23/1992",
+      "fdic_cert": "33568",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1501 N Broad St, Philadelphia, PA 19122",
+      "website": "http://www.ubphila.com"
+    },
+    {
+      "name": "United Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28836",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1510 Packer Ave, Philadelphia, PA 19145",
+      "website": "https://HTTPS://WWW.UNITEDSAVINGSBANK.COM"
+    },
+    {
+      "name": "Univest  Bank and Trust Co.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7759",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "790 Route 113, Souderton, PA 18964",
+      "website": "http://www.univest.net"
+    },
+    {
+      "name": "Washington Financial Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29520",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "77 S Main St, Washington, PA 15301",
+      "website": "https://www.washfin.bank"
+    },
+    {
+      "name": "Wayne Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "698",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "717 Main St, Honesdale, PA 18431",
+      "website": "https://Wayne.Bank"
+    },
+    {
+      "name": "West View Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27760",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9001 Perry Hwy, Pittsburgh, PA 15237",
+      "website": "https://www.wvsbank.com"
+    },
+    {
+      "name": "Westmoreland Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30551",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "322 Main St, Latrobe, PA 15650",
+      "website": "https://www.wfsavings.com"
+    },
+    {
+      "name": "Woodlands Bank",
+      "fdic_insured_since": "10/10/1990",
+      "fdic_cert": "33136",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2450 E 3rd St, Williamsport, PA 17701",
+      "website": "https://www.woodlandsbank.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

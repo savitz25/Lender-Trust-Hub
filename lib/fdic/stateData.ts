@@ -9,20 +9,32 @@
 import type { StateFDICData } from './types';
 import alabamaData from './data/alabama.json';
 import arkansasData from './data/arkansas.json';
+import connecticutData from './data/connecticut.json';
+import delawareData from './data/delaware.json';
+import districtOfColumbiaData from './data/district-of-columbia.json';
 import floridaData from './data/florida.json';
 import georgiaData from './data/georgia.json';
 import illinoisData from './data/illinois.json';
 import iowaData from './data/iowa.json';
 import kansasData from './data/kansas.json';
 import louisianaData from './data/louisiana.json';
+import maineData from './data/maine.json';
+import marylandData from './data/maryland.json';
+import massachusettsData from './data/massachusetts.json';
 import michiganData from './data/michigan.json';
 import mississippiData from './data/mississippi.json';
 import minnesotaData from './data/minnesota.json';
 import missouriData from './data/missouri.json';
+import newHampshireData from './data/new-hampshire.json';
+import newJerseyData from './data/new-jersey.json';
+import newYorkData from './data/new-york.json';
 import northCarolinaData from './data/north-carolina.json';
 import oklahomaData from './data/oklahoma.json';
+import pennsylvaniaData from './data/pennsylvania.json';
+import rhodeIslandData from './data/rhode-island.json';
 import southCarolinaData from './data/south-carolina.json';
 import texasData from './data/texas.json';
+import vermontData from './data/vermont.json';
 import virginiaData from './data/virginia.json';
 import westVirginiaData from './data/west-virginia.json';
 import wisconsinData from './data/wisconsin.json';
@@ -30,21 +42,33 @@ import wisconsinData from './data/wisconsin.json';
 export const stateData: Record<string, StateFDICData> = {
   AL: alabamaData as StateFDICData,
   AR: arkansasData as StateFDICData,
+  CT: connecticutData as StateFDICData,
+  DC: districtOfColumbiaData as StateFDICData,
+  DE: delawareData as StateFDICData,
   FL: floridaData as StateFDICData,
   GA: georgiaData as StateFDICData,
   IL: illinoisData as StateFDICData,
   IA: iowaData as StateFDICData,
   KS: kansasData as StateFDICData,
   LA: louisianaData as StateFDICData,
+  MA: massachusettsData as StateFDICData,
+  MD: marylandData as StateFDICData,
+  ME: maineData as StateFDICData,
   MI: michiganData as StateFDICData,
   MS: mississippiData as StateFDICData,
   MN: minnesotaData as StateFDICData,
   MO: missouriData as StateFDICData,
   NC: northCarolinaData as StateFDICData,
+  NH: newHampshireData as StateFDICData,
+  NJ: newJerseyData as StateFDICData,
+  NY: newYorkData as StateFDICData,
   OK: oklahomaData as StateFDICData,
+  PA: pennsylvaniaData as StateFDICData,
+  RI: rhodeIslandData as StateFDICData,
   SC: southCarolinaData as StateFDICData,
   TX: texasData as StateFDICData,
   VA: virginiaData as StateFDICData,
+  VT: vermontData as StateFDICData,
   WI: wisconsinData as StateFDICData,
   WV: westVirginiaData as StateFDICData,
 };

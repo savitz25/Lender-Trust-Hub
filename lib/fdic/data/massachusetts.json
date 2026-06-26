@@ -1,0 +1,727 @@
+{
+  "fullName": "Massachusetts",
+  "abbr": "MA",
+  "banks": [
+    {
+      "name": "State Street Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "14",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "One Congress Street, Suite 1, Boston, MA 2114",
+      "website": "https://www.statestreet.com"
+    },
+    {
+      "name": "42 North Private Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27015",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "250 Royall Street, Canton, MA 2021",
+      "website": "https://www.42northprivate.com"
+    },
+    {
+      "name": "Beacon Bank and Trust",
+      "fdic_insured_since": "09/03/1957",
+      "fdic_cert": "17798",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2 Harvard St, Brookline, MA 2445",
+      "website": "https://www.beaconbank.com"
+    },
+    {
+      "name": "Bankhometown",
+      "fdic_insured_since": "02/03/1986",
+      "fdic_cert": "26523",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "31 Sutton Ave, Oxford, MA 1540",
+      "website": "https://www.bankhometown.com"
+    },
+    {
+      "name": "PeoplesBank",
+      "fdic_insured_since": "07/01/1985",
+      "fdic_cert": "90213",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "330 Whitney Ave, Holyoke, MA 1040",
+      "website": "https://www.bankatpeoples.com"
+    },
+    {
+      "name": "Westfield Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "90300",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "141 Elm St, Westfield, MA 1085",
+      "website": "https://www.westfieldbank.com"
+    },
+    {
+      "name": "Adams Community Bank",
+      "fdic_insured_since": "07/24/1985",
+      "fdic_cert": "90140",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2 Center St, Adams, MA 1220",
+      "website": "https://www.adamscommunity.com"
+    },
+    {
+      "name": "Avidia Bank",
+      "fdic_insured_since": "11/27/1985",
+      "fdic_cert": "90215",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "42 Main St, Hudson, MA 1749",
+      "website": "https://www.avidiabank.com"
+    },
+    {
+      "name": "Bank of Easton",
+      "fdic_insured_since": "02/04/1986",
+      "fdic_cert": "26554",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "275 Washington St, North Easton, MA 2356",
+      "website": "https://www.bankofeaston.com"
+    },
+    {
+      "name": "Bankesb",
+      "fdic_insured_since": "09/05/1985",
+      "fdic_cert": "90188",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "36 Main St, Easthampton, MA 1027",
+      "website": "http://www.bankesb.com"
+    },
+    {
+      "name": "BankGloucester",
+      "fdic_insured_since": "02/10/1986",
+      "fdic_cert": "26536",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "160 Main St, Gloucester, MA 1930",
+      "website": "https://bankgloucester.com"
+    },
+    {
+      "name": "Bay State Savings Bank",
+      "fdic_insured_since": "11/20/1985",
+      "fdic_cert": "90311",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "28 Franklin St, Worcester, MA 1608",
+      "website": "https://baystatesavingsbank.com"
+    },
+    {
+      "name": "BayCoast Bank",
+      "fdic_insured_since": "06/18/1985",
+      "fdic_cert": "90196",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "330 Swansea Mall Dr, Swansea, MA 2777",
+      "website": "https://www.baycoast.bank"
+    },
+    {
+      "name": "Bluestone Bank",
+      "fdic_insured_since": "06/20/1985",
+      "fdic_cert": "90169",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "756 Orchard St, Raynham, MA 2767",
+      "website": "https://www.bluestone.bank"
+    },
+    {
+      "name": "Bristol County Savings Bank",
+      "fdic_insured_since": "01/02/1982",
+      "fdic_cert": "23622",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "35 Broadway, Taunton, MA 2780",
+      "website": "https://www.bristolcountysavings.com"
+    },
+    {
+      "name": "Cambridge Savings Bank",
+      "fdic_insured_since": "07/02/1958",
+      "fdic_cert": "17870",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1374 Massachusetts Ave, Cambridge, MA 2138",
+      "website": "https://www.cambridgesavings.com"
+    },
+    {
+      "name": "Canton Co-operative Bank",
+      "fdic_insured_since": "12/05/1985",
+      "fdic_cert": "26450",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "671 Washington St, Canton, MA 2021",
+      "website": "https://www.cantoncoopbank.com"
+    },
+    {
+      "name": "Cape & Coast Bank",
+      "fdic_insured_since": "01/22/1986",
+      "fdic_cert": "26517",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "121 Main St, Yarmouth Port, MA 2675",
+      "website": "https://www.capeandcoastbank.com"
+    },
+    {
+      "name": "Cape Ann Savings Bank",
+      "fdic_insured_since": "10/22/1985",
+      "fdic_cert": "90203",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "109 Main St, Gloucester, MA 1930",
+      "website": "https://capeannsavings.bank"
+    },
+    {
+      "name": "Charles River Bank",
+      "fdic_insured_since": "03/25/1986",
+      "fdic_cert": "26602",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "70 Main St, Medway, MA 2053",
+      "website": "https://www.charlesriverbank.com"
+    },
+    {
+      "name": "Clinton Savings Bank",
+      "fdic_insured_since": "11/20/1985",
+      "fdic_cert": "90181",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 Church St, Clinton, MA 1510",
+      "website": "https://www.clintonsavings.com"
+    },
+    {
+      "name": "Coastal Heritage Bank",
+      "fdic_insured_since": "03/11/1986",
+      "fdic_cert": "26591",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "195 Washington St, Weymouth, MA 2188",
+      "website": "https://www.coastalheritagebank.com"
+    },
+    {
+      "name": "Commonwealth Co-operative Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29842",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1172 River St, Hyde Park, MA 2136",
+      "website": "https://www.commonwealthcoop.com"
+    },
+    {
+      "name": "Cornerstone Bank",
+      "fdic_insured_since": "07/08/1985",
+      "fdic_cert": "90282",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "176 Main St, Spencer, MA 1562",
+      "website": "https://www.cornerstonebank.com"
+    },
+    {
+      "name": "Country Bank for Savings",
+      "fdic_insured_since": "08/16/1982",
+      "fdic_cert": "23992",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "155 West St, Ware, MA 1082",
+      "website": "https://www.countrybank.com"
+    },
+    {
+      "name": "Dean Co-operative Bank",
+      "fdic_insured_since": "05/11/1988",
+      "fdic_cert": "27269",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "21 Main St, Franklin, MA 2038",
+      "website": "https://www.deanbank.com"
+    },
+    {
+      "name": "Dedham Institution for Savings",
+      "fdic_insured_since": "01/02/1982",
+      "fdic_cert": "23620",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "55 Elm St, Dedham, MA 2026",
+      "website": "https://www.dedhamsavings.com"
+    },
+    {
+      "name": "Eagle Bank",
+      "fdic_insured_since": "07/01/1985",
+      "fdic_cert": "90191",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "350 Broadway, Everett, MA 2149",
+      "website": "https://www.bankeagle.com"
+    },
+    {
+      "name": "East Cambridge Savings Bank",
+      "fdic_insured_since": "06/18/1985",
+      "fdic_cert": "90173",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "292 Cambridge St, Cambridge, MA 2141",
+      "website": "https://www.ecsb.com"
+    },
+    {
+      "name": "Eastern Bank",
+      "fdic_insured_since": "10/19/1989",
+      "fdic_cert": "32773",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "125 High St, Boston, MA 2110",
+      "website": "https://www.easternbank.com"
+    },
+    {
+      "name": "Everett Co-operative Bank",
+      "fdic_insured_since": "11/26/1985",
+      "fdic_cert": "26444",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "419 Broadway, Everett, MA 2149",
+      "website": "https://www.everettbank.com"
+    },
+    {
+      "name": "Fall River Five Cents Savings Bank",
+      "fdic_insured_since": "01/02/1981",
+      "fdic_cert": "23286",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "79 N Main St, Fall River, MA 2720",
+      "website": "http://www.bankfive.com"
+    },
+    {
+      "name": "Fidelity Co-operative Bank",
+      "fdic_insured_since": "12/06/1985",
+      "fdic_cert": "26451",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9 Leominster Connector, Leominster, MA 1453",
+      "website": "https://www.fidelitybankonline.com"
+    },
+    {
+      "name": "Florence Bank",
+      "fdic_insured_since": "01/02/1981",
+      "fdic_cert": "23293",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "85 Main St, Florence, MA 1062",
+      "website": "https://www.florencebank.com"
+    },
+    {
+      "name": "Greenfield Co-operative Bank",
+      "fdic_insured_since": "10/22/1985",
+      "fdic_cert": "26397",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "63 Federal St, Greenfield, MA 1301",
+      "website": "https://www.greenfieldcoopbank.com"
+    },
+    {
+      "name": "Greenfield Savings Bank",
+      "fdic_insured_since": "11/04/1985",
+      "fdic_cert": "90206",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 Main St, Greenfield, MA 1301",
+      "website": "https://greenfieldsavings.com"
+    },
+    {
+      "name": "Haverhill Bank",
+      "fdic_insured_since": "10/24/1985",
+      "fdic_cert": "26411",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "180 Merrimack St, Haverhill, MA 1830",
+      "website": "https://www.haverhillbank.com"
+    },
+    {
+      "name": "Hingham Institution for Savings",
+      "fdic_insured_since": "07/01/1985",
+      "fdic_cert": "90211",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "55 Main St, Hingham, MA 2043",
+      "website": "https://www.hinghamsavings.com"
+    },
+    {
+      "name": "Institution for Savings in Newburyport and Its Vicinity",
+      "fdic_insured_since": "08/13/1985",
+      "fdic_cert": "90250",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "93 State St, Newburyport, MA 1950",
+      "website": "https://www.institutionforsavings.com"
+    },
+    {
+      "name": "Leader Bank, National Association",
+      "fdic_insured_since": "05/08/2002",
+      "fdic_cert": "57134",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "141 Massachusetts Ave, Arlington, MA 2474",
+      "website": "https://www.leaderbank.com/"
+    },
+    {
+      "name": "Lee Bank",
+      "fdic_insured_since": "07/01/1992",
+      "fdic_cert": "33645",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "75 Park St, Lee, MA 1238",
+      "website": "https://WWW.LEEBANK.COM"
+    },
+    {
+      "name": "Main Street Bank",
+      "fdic_insured_since": "11/15/1985",
+      "fdic_cert": "90235",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "81 Granger Blvd, Marlborough, MA 1752",
+      "website": "https://www.bankmainstreet.com"
+    },
+    {
+      "name": "Marblehead Bank",
+      "fdic_insured_since": "09/17/1985",
+      "fdic_cert": "90234",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "21 Atlantic Ave, Marblehead, MA 1945",
+      "website": "https://www.marblebank.com"
+    },
+    {
+      "name": "Martha's Vineyard Bank",
+      "fdic_insured_since": "11/04/1985",
+      "fdic_cert": "90190",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "78 Main St, Edgartown, MA 2539",
+      "website": "https://www.mvbank.com"
+    },
+    {
+      "name": "Mechanics Cooperative Bank",
+      "fdic_insured_since": "04/17/1986",
+      "fdic_cert": "26634",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "316 Broadway, Taunton, MA 2780",
+      "website": "https://www.mechanics.bank"
+    },
+    {
+      "name": "Methuen Co-operative Bank",
+      "fdic_insured_since": "01/23/1986",
+      "fdic_cert": "26512",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "243 Broadway, Methuen, MA 1844",
+      "website": "https://WWW.METHUENCOOP.COM"
+    },
+    {
+      "name": "Middlesex Federal Savings, F.A.",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28368",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 College Ave, Somerville, MA 2144",
+      "website": "https://www.middlesexfederal.com"
+    },
+    {
+      "name": "Middlesex Savings Bank",
+      "fdic_insured_since": "11/08/1985",
+      "fdic_cert": "90183",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6 Main St, Natick, MA 1760",
+      "website": "https://www.middlesexbank.com"
+    },
+    {
+      "name": "Milford Federal Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29835",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "246 Main St, Milford, MA 1757",
+      "website": "https://www.milfordfederal.com"
+    },
+    {
+      "name": "Millbury National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2616",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "18 Main St, Millbury, MA 1527",
+      "website": "https://www.mnbonline.com"
+    },
+    {
+      "name": "Monson Savings Bank",
+      "fdic_insured_since": "07/01/1985",
+      "fdic_cert": "90245",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "146 Main St, Monson, MA 1057",
+      "website": "https://www.monsonsavings.bank"
+    },
+    {
+      "name": "MountainOne Bank",
+      "fdic_insured_since": "07/19/1985",
+      "fdic_cert": "90253",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "93 Main St, North Adams, MA 1247",
+      "website": "https://www.mountainone.com"
+    },
+    {
+      "name": "MutualOne Bank",
+      "fdic_insured_since": "10/11/1985",
+      "fdic_cert": "26395",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "828 Concord St, Framingham, MA 1701",
+      "website": "https://www.mutualone.com"
+    },
+    {
+      "name": "Needham Bank",
+      "fdic_insured_since": "01/13/1986",
+      "fdic_cert": "26483",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1063 Great Plain Ave, Needham, MA 2492",
+      "website": "https://www.needhambank.com"
+    },
+    {
+      "name": "New Valley Bank & Trust",
+      "fdic_insured_since": "05/30/2019",
+      "fdic_cert": "59143",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 Monarch Pl, Ste 100, Springfield, MA 1144",
+      "website": "https://www.banknewvalley.com"
+    },
+    {
+      "name": "Newburyport Five Cents Savings Bank",
+      "fdic_insured_since": "07/01/1985",
+      "fdic_cert": "90251",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "63 State St, Newburyport, MA 1950",
+      "website": "https://www.newburyportbank.com"
+    },
+    {
+      "name": "North Brookfield Savings Bank",
+      "fdic_insured_since": "11/08/1985",
+      "fdic_cert": "90258",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "9 Gilbert St, North Brookfield, MA 1535",
+      "website": "https://www.northbrookfieldsavingsbank.com"
+    },
+    {
+      "name": "North Cambridge Co-operative Bank",
+      "fdic_insured_since": "02/05/1986",
+      "fdic_cert": "26567",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2360 Massachusetts Ave, Cambridge, MA 2140",
+      "website": "https://WWW.ASKNCCB.COM"
+    },
+    {
+      "name": "North Easton Savings Bank",
+      "fdic_insured_since": "09/06/1985",
+      "fdic_cert": "90259",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "20 Eastman St, South Easton, MA 2375",
+      "website": "https://www.northeastonsavingsbank.com"
+    },
+    {
+      "name": "Northern Bank & Trust Company",
+      "fdic_insured_since": "06/23/1960",
+      "fdic_cert": "18266",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "275 Mishawum Rd, Woburn, MA 1801",
+      "website": "https://www.nbtc.com"
+    },
+    {
+      "name": "OneLocal Bank",
+      "fdic_insured_since": "02/13/1986",
+      "fdic_cert": "26555",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "11 Central St, Norwood, MA 2062",
+      "website": "https://www.onelocalbank.com/"
+    },
+    {
+      "name": "OneUnited Bank",
+      "fdic_insured_since": "08/02/1982",
+      "fdic_cert": "23966",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "185 Devonshire St, Boston, MA 2110",
+      "website": "https://www.oneunited.com"
+    },
+    {
+      "name": "Pentucket  Bank",
+      "fdic_insured_since": "10/08/1985",
+      "fdic_cert": "90208",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 Merrimack St, Haverhill, MA 1830",
+      "website": "https://www.pentucketbank.com"
+    },
+    {
+      "name": "Reading Co-operative Bank",
+      "fdic_insured_since": "03/27/1986",
+      "fdic_cert": "26620",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "180 Haven St, Reading, MA 1867",
+      "website": "https://www.readingcoop.com"
+    },
+    {
+      "name": "Rockland Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9712",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "288 Union St, Rockland, MA 2370",
+      "website": "http://www.rocklandtrust.com"
+    },
+    {
+      "name": "Rollstone Bank & Trust",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "17797",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "780 Main St, Fitchburg, MA 1420",
+      "website": "http://www.rollstonebank.com"
+    },
+    {
+      "name": "Salem Five Cents Savings Bank",
+      "fdic_insured_since": "01/02/1981",
+      "fdic_cert": "23296",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "71 Washington St, Salem, MA 1970",
+      "website": "http://www.salemfive.com"
+    },
+    {
+      "name": "Savers Co-operative Bank",
+      "fdic_insured_since": "11/26/1985",
+      "fdic_cert": "26455",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "270 Main St, Southbridge, MA 1550",
+      "website": "http://www.saversbank.com"
+    },
+    {
+      "name": "Seamen's Bank",
+      "fdic_insured_since": "07/01/1985",
+      "fdic_cert": "90268",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "221 Commercial St, Provincetown, MA 2657",
+      "website": "https://seamensbank.com"
+    },
+    {
+      "name": "South Shore Bank",
+      "fdic_insured_since": "11/19/1985",
+      "fdic_cert": "90303",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1530 Main St, South Weymouth, MA 2190",
+      "website": "https://www.southshorebank.com"
+    },
+    {
+      "name": "StonehamBank,  A Co-operative Bank",
+      "fdic_insured_since": "02/14/1986",
+      "fdic_cert": "26559",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "80 Montvale Ave, Stoneham, MA 2180",
+      "website": "https://stonehambank.com"
+    },
+    {
+      "name": "Stoughton Co-operative Bank",
+      "fdic_insured_since": "01/21/1986",
+      "fdic_cert": "26513",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "950 Park St, Stoughton, MA 2072",
+      "website": "https://www.stoughtoncoop.bank"
+    },
+    {
+      "name": "The Bank of Canton",
+      "fdic_insured_since": "10/11/1985",
+      "fdic_cert": "90175",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "490 Turnpike St, Canton, MA 2021",
+      "website": "https://www.thebankofcanton.com"
+    },
+    {
+      "name": "The Cape Cod Five Cents Savings Bank",
+      "fdic_insured_since": "01/02/1981",
+      "fdic_cert": "23287",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1500 Iyannough Rd, Hyannis, MA 2601",
+      "website": "https://www.capecodfive.com"
+    },
+    {
+      "name": "The Cooperative Bank",
+      "fdic_insured_since": "03/18/1987",
+      "fdic_cert": "26922",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "40 Belgrade Ave, Roslindale, MA 2131",
+      "website": "http://www.thecooperativebank.com"
+    },
+    {
+      "name": "The Lowell Five Cent Savings Bank",
+      "fdic_insured_since": "07/01/1985",
+      "fdic_cert": "90227",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "30 International Pl, Tewksbury, MA 1876",
+      "website": "https://www.lowellfive.com"
+    },
+    {
+      "name": "The National Grand Bank of Marblehead",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2608",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "91 Pleasant St, Marblehead, MA 1945",
+      "website": "https://ngbank.com"
+    },
+    {
+      "name": "The Pittsfield Co-operative Bank",
+      "fdic_insured_since": "10/08/1985",
+      "fdic_cert": "26393",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "70 South St, Pittsfield, MA 1201",
+      "website": "https://www.pittsfield-coop.com"
+    },
+    {
+      "name": "The Savings Bank",
+      "fdic_insured_since": "08/05/1985",
+      "fdic_cert": "90291",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "357 Main St, Wakefield, MA 1880",
+      "website": "https://www.tsbdirect.bank"
+    },
+    {
+      "name": "The Village Bank",
+      "fdic_insured_since": "08/12/1985",
+      "fdic_cert": "26336",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "320 Needham St, Ste 200, Newton, MA 2464",
+      "website": "https://www.village-bank.com"
+    },
+    {
+      "name": "TruNorth Bank",
+      "fdic_insured_since": "01/10/1986",
+      "fdic_cert": "26484",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "248 Andover St, Peabody, MA 1960",
+      "website": "https://www.trunorthbank.com"
+    },
+    {
+      "name": "UniBank for Savings",
+      "fdic_insured_since": "09/10/1985",
+      "fdic_cert": "90290",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "49 Church St, Whitinsville, MA 1588",
+      "website": "https://www.unibank.com"
+    },
+    {
+      "name": "Walpole Co-operative Bank",
+      "fdic_insured_since": "01/13/1986",
+      "fdic_cert": "26487",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "982 Main St, Walpole, MA 2081",
+      "website": "https://www.walpolecoop.com"
+    },
+    {
+      "name": "Washington Savings Bank",
+      "fdic_insured_since": "10/10/1985",
+      "fdic_cert": "90229",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "30 Middlesex St, Lowell, MA 1852",
+      "website": "https://www.washingtonsavings.com"
+    },
+    {
+      "name": "Watertown Savings Bank",
+      "fdic_insured_since": "01/02/1981",
+      "fdic_cert": "23298",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "60 Main St, Watertown, MA 2472",
+      "website": "https://www.watertownsavings.com"
+    },
+    {
+      "name": "Webster Five Cents Savings Bank",
+      "fdic_insured_since": "08/02/1985",
+      "fdic_cert": "90297",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "136 Thompson Rd, Webster, MA 1570",
+      "website": "https://www.web5.com"
+    },
+    {
+      "name": "Winchester Co-operative Bank",
+      "fdic_insured_since": "04/22/1988",
+      "fdic_cert": "27238",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "19 Church St, Winchester, MA 1890",
+      "website": "https://www.wcbonline.com"
+    },
+    {
+      "name": "Winchester Savings Bank",
+      "fdic_insured_since": "03/14/1986",
+      "fdic_cert": "90308",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "661 Main St, Winchester, MA 1890",
+      "website": "https://www.winchestersavings.com"
+    },
+    {
+      "name": "Winter Hill Bank, FSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28213",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "342 Broadway, Somerville, MA 2145",
+      "website": "https://www.winterhillbank.com"
+    },
+    {
+      "name": "Wrentham Co-operative Bank",
+      "fdic_insured_since": "03/03/1986",
+      "fdic_cert": "26576",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 South St, Wrentham, MA 2093",
+      "website": "https://www.wrenthamcoop.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

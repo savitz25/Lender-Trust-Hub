@@ -1,0 +1,47 @@
+{
+  "fullName": "Rhode Island",
+  "abbr": "RI",
+  "banks": [
+    {
+      "name": "Citizens Bank, National Association",
+      "fdic_insured_since": "05/13/2005",
+      "fdic_cert": "57957",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Citizens Plz, Providence, RI 2903",
+      "website": "https://www.citizensbank.com"
+    },
+    {
+      "name": "Centreville Bank",
+      "fdic_insured_since": "05/24/1957",
+      "fdic_cert": "17764",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1218 Main St, West Warwick, RI 2893",
+      "website": "http://www.centrevillebank.com"
+    },
+    {
+      "name": "The Washington Trust Company, of Westerly",
+      "fdic_insured_since": "01/02/1982",
+      "fdic_cert": "23623",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "23 Broad St, Westerly, RI 2891",
+      "website": "https://www.washtrust.com"
+    },
+    {
+      "name": "BankNewport",
+      "fdic_insured_since": "01/02/1960",
+      "fdic_cert": "18129",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "184 John Clarke Rd, Middletown, RI 2842",
+      "website": "https://www.banknewport.com"
+    },
+    {
+      "name": "Shoreham Bank",
+      "fdic_insured_since": "12/30/1994",
+      "fdic_cert": "27417",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Shoreham Way, Warwick, RI 2886",
+      "website": "https://www.shoreham.bank"
+    }
+  ],
+  "updated": "2026-06-26"
+}

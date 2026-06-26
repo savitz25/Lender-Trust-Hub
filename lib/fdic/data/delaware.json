@@ -1,0 +1,135 @@
+{
+  "fullName": "Delaware",
+  "abbr": "DE",
+  "banks": [
+    {
+      "name": "PNC Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6384",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "222 Delaware Ave, Wilmington, DE 19801",
+      "website": "https://www.pnc.com"
+    },
+    {
+      "name": "Santander Bank, N.A.",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29950",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "824 N Market St, Ste 100, Wilmington, DE 19801",
+      "website": "https://www.santander.com"
+    },
+    {
+      "name": "TD Bank, National Association",
+      "fdic_insured_since": "07/01/1961",
+      "fdic_cert": "18409",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2035 Limestone Rd, Wilmington, DE 19808",
+      "website": "https://www.td.com/us/en/personal-banking/"
+    },
+    {
+      "name": "Wilmington Savings Fund Society, FSB",
+      "fdic_insured_since": "02/06/1958",
+      "fdic_cert": "17838",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "500 Delaware Ave, Wilmington, DE 19801",
+      "website": "https://www.wsfsbank.com"
+    },
+    {
+      "name": "Wilmington Trust, National Association",
+      "fdic_insured_since": "10/02/1995",
+      "fdic_cert": "34069",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1100 N Market St, Wilmington, DE 19801",
+      "website": "http://www.wilmingtontrust.com"
+    },
+    {
+      "name": "Applied Bank",
+      "fdic_insured_since": "07/01/1996",
+      "fdic_cert": "34193",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2200 Concord Pike, Wilmington, DE 19803",
+      "website": "https://www.appliedbank.com"
+    },
+    {
+      "name": "Artisans' Bank",
+      "fdic_insured_since": "07/03/1952",
+      "fdic_cert": "17123",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2961 Centerville Rd, Wilmington, DE 19808",
+      "website": "https://www.artisansbank.com"
+    },
+    {
+      "name": "Barclays Bank Delaware",
+      "fdic_insured_since": "05/23/2001",
+      "fdic_cert": "57203",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "125 S West St, Wilmington, DE 19801",
+      "website": "https://www.barclaysus.com/deposits"
+    },
+    {
+      "name": "BNY Mellon Trust of Delaware",
+      "fdic_insured_since": "12/31/1983",
+      "fdic_cert": "24867",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "103 Bellevue Parkway, Wilmington, DE 19809",
+      "website": "https://www.bny.com"
+    },
+    {
+      "name": "Comenity Bank",
+      "fdic_insured_since": "05/01/1989",
+      "fdic_cert": "27499",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 Righter Pkwy, Ste 100, Wilmington, DE 19803",
+      "website": "https://savings.breadfinancial.com"
+    },
+    {
+      "name": "Community Bank Delaware",
+      "fdic_insured_since": "05/30/2006",
+      "fdic_cert": "58311",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "16982 Kings Hwy, Lewes, DE 19958",
+      "website": "https://www.communitybankdelaware.com"
+    },
+    {
+      "name": "County Bank",
+      "fdic_insured_since": "07/09/1990",
+      "fdic_cert": "33009",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "19927 Shuttle Rd, Rehoboth Beach, DE 19971",
+      "website": "http://WWW.COUNTYBANKDEL.COM"
+    },
+    {
+      "name": "Deutsche Bank Trust Company Delaware",
+      "fdic_insured_since": "10/07/1985",
+      "fdic_cert": "26392",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 Continental Dr, Ste 102, Newark, DE 19713",
+      "website": "http://www.db.com"
+    },
+    {
+      "name": "HSBC Trust Company (Delaware), National Association",
+      "fdic_insured_since": "11/24/2006",
+      "fdic_cert": "58188",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "300 Delaware Ave Ste 1401, Wilmington, DE 19801",
+      "website": "http://www.hsbc.com"
+    },
+    {
+      "name": "Stifel Trust Company Delaware, National Association",
+      "fdic_insured_since": "04/30/2020",
+      "fdic_cert": "59043",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4001 Kennett Pike, Greenville, DE 19807",
+      "website": ""
+    },
+    {
+      "name": "TD Bank USA, National Association",
+      "fdic_insured_since": "10/13/1994",
+      "fdic_cert": "33947",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2035 Limestone Rd, Wilmington, DE 19808",
+      "website": "https://www.td.com/us/en/personal-banking/"
+    }
+  ],
+  "updated": "2026-06-26"
+}
