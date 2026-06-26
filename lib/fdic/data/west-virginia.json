@@ -1,0 +1,535 @@
+{
+  "fullName": "West Virginia",
+  "abbr": "WV",
+  "banks": [
+    {
+      "name": "Burke & Herbert Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11578",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 S Fairfax St, Alexandria, VA 22314",
+      "website": "https://www.burkeandherbertbank.com"
+    },
+    {
+      "name": "Calhoun County Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9024",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "443 High St, Grantsville, WV 26147",
+      "website": "https://www.calhounbanks.com"
+    },
+    {
+      "name": "Capon Valley Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9998",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2 W Main St, Wardensville, WV 26851",
+      "website": "https://www.caponvalleybank.com"
+    },
+    {
+      "name": "Citizens Bank of Morgantown, Inc.",
+      "fdic_insured_since": "09/20/1979",
+      "fdic_cert": "22954",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "265 High St, Morgantown, WV 26505",
+      "website": "https://www.citizensbankwv.com"
+    },
+    {
+      "name": "Citizens Bank of West Virginia, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6760",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "211 3rd St # 213, Elkins, WV 26241",
+      "website": "https://www.citizenswv.com"
+    },
+    {
+      "name": "City National Bank of West Virginia",
+      "fdic_insured_since": "04/01/1957",
+      "fdic_cert": "17735",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3601 Maccorkle Ave Se, Charleston, WV 25304",
+      "website": "https://www.bankatcity.com"
+    },
+    {
+      "name": "Clay County Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2444",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "150 Main St, Clay, WV 25043",
+      "website": "https://www.claycounty.bank"
+    },
+    {
+      "name": "Clear Mountain Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2443",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "160 Morgantown St, Bruceton Mills, WV 26525",
+      "website": "https://www.clearmountain.bank"
+    },
+    {
+      "name": "CNB Bank, Inc.",
+      "fdic_insured_since": "06/18/1934",
+      "fdic_cert": "14507",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 S Washington St, Berkeley Springs, WV 25411",
+      "website": "https://www.cnb.bank"
+    },
+    {
+      "name": "Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7848",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 N Market St, Carmichaels, PA 15320",
+      "website": "https://www.cb.bank"
+    },
+    {
+      "name": "Community Bank of Parkersburg",
+      "fdic_insured_since": "03/01/1967",
+      "fdic_cert": "19681",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "631 Juliana St, Parkersburg, WV 26101",
+      "website": "https://www.communitybankpkbg.com"
+    },
+    {
+      "name": "Community Trust Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2720",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "346 N Mayo Trl, Pikeville, KY 41501",
+      "website": "https://www.ctbi.com"
+    },
+    {
+      "name": "Davis Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2453",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "227 Davis Ave, Elkins, WV 26241",
+      "website": "https://www.davistrust.com"
+    },
+    {
+      "name": "Fifth Third Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6672",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "38 Fountain Square Plz, Cincinnati, OH 45202",
+      "website": "https://www.53.com"
+    },
+    {
+      "name": "First Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13012",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "29 College Dr, Bluefield, VA 24605",
+      "website": "https://www.firstcommunitybank.com"
+    },
+    {
+      "name": "First Exchange Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13020",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 Heritage Way, White Hall, WV 26554",
+      "website": "https://www.firstexchangebank.com"
+    },
+    {
+      "name": "First Federal Savings & Loan Association of Ravenswood",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29490",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "712 Washington St, Ravenswood, WV 26164",
+      "website": ""
+    },
+    {
+      "name": "First Guaranty Bank",
+      "fdic_insured_since": "03/12/1934",
+      "fdic_cert": "14028",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 E Thomas St, Hammond, LA 70401",
+      "website": "https://www.fgb.net"
+    },
+    {
+      "name": "First Mutual Bank, FSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29617",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "605 Washington Blvd, Belpre, OH 45714",
+      "website": "https://www.firstmutual.bank"
+    },
+    {
+      "name": "First National Bank of Pennsylvania",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7888",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "166 Main St, Greenville, PA 16125",
+      "website": "https://www.fnb-online.com"
+    },
+    {
+      "name": "First Neighborhood Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6800",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "216 Market St, Spencer, WV 25276",
+      "website": "https://www.firstneighborhoodbank.com"
+    },
+    {
+      "name": "First Sentinel Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31928",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "315 Railroad Ave, Richlands, VA 24641",
+      "website": "https://www.firstsentinelbank.com"
+    },
+    {
+      "name": "First United Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4857",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "19 S 2nd St, Oakland, MD 21550",
+      "website": "https://www.mybank.com"
+    },
+    {
+      "name": "First-Citizens Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11063",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "239 Fayetteville St, Raleigh, NC 27601",
+      "website": "https://www.firstcitizens.com"
+    },
+    {
+      "name": "FNB Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6794",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 N High St, Romney, WV 26757",
+      "website": "https://www.fnbtoday.com"
+    },
+    {
+      "name": "Freedom Bank, Inc.",
+      "fdic_insured_since": "05/10/1939",
+      "fdic_cert": "15664",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "20 N Crim Ave, Belington, WV 26250",
+      "website": "https://www.freedombankwv.com"
+    },
+    {
+      "name": "Guaranty Bank Inc.",
+      "fdic_insured_since": "05/17/1976",
+      "fdic_cert": "22273",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "10 Commerce Dr, Williamson, WV 25661",
+      "website": "https://www.guarantybank.us"
+    },
+    {
+      "name": "Hancock County Savings Bank, F.S.B.",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29035",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "351 Carolina Ave, Chester, WV 26034",
+      "website": "https://www.hcsbank.com"
+    },
+    {
+      "name": "Home National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6680",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "502 Elm St, Racine, OH 45771",
+      "website": "https://www.homenatlbank.com"
+    },
+    {
+      "name": "Huntington Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27884",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1049 5th Ave, Huntington, WV 25701",
+      "website": "https://www.huntingtonfederal.com"
+    },
+    {
+      "name": "Jefferson Security Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9997",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 E Washington St, Shepherdstown, WV 25443",
+      "website": "https://www.jsb.bank"
+    },
+    {
+      "name": "JPMorgan Chase Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "628",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1111 Polaris Pkwy, Columbus, OH 43240",
+      "website": "https://www.jpmorganchase.com"
+    },
+    {
+      "name": "Logan Bank & Trust Company",
+      "fdic_insured_since": "11/24/1964",
+      "fdic_cert": "19285",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "43 Washington Ave, Logan, WV 25601",
+      "website": "https://www.lbandt.com"
+    },
+    {
+      "name": "Main Street Bank Corp.",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29847",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "151 N Market St, Wooster, OH 44691",
+      "website": "https://www.mymainstreetbank.bank"
+    },
+    {
+      "name": "Manufacturers and Traders Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "588",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1 M And T Plz, Buffalo, NY 14203",
+      "website": "https://www.mtb.com"
+    },
+    {
+      "name": "MCNB Bank and Trust Co.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6803",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "75 Wyoming St, Welch, WV 24801",
+      "website": "https://www.mcnbbanks.com"
+    },
+    {
+      "name": "Mountain Valley Bank, N.A.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6786",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "317 Davis Ave, Elkins, WV 26241",
+      "website": "https://www.mountainvalleybank.com"
+    },
+    {
+      "name": "MVB Bank, Inc",
+      "fdic_insured_since": "01/04/1999",
+      "fdic_cert": "34603",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 Virginia Ave, Fairmont, WV 26554",
+      "website": "https://www.mvbbanking.com"
+    },
+    {
+      "name": "New Peoples Bank, Inc.",
+      "fdic_insured_since": "10/28/1998",
+      "fdic_cert": "34890",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "53 Commerce Dr, Honaker, VA 24260",
+      "website": "https://www.newpeoples.bank"
+    },
+    {
+      "name": "Pendleton Community Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6176",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "128 N Main St, Franklin, WV 26807",
+      "website": "https://yourbank.bank"
+    },
+    {
+      "name": "Peoples Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6544",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "138 Putnam St, Marietta, OH 45750",
+      "website": "https://www.peoplesbancorp.com/"
+    },
+    {
+      "name": "Pioneer Community Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2448",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5229 Coal Heritage Road, Iaeger, WV 24844",
+      "website": "https://www.pioneercommunitybank.com"
+    },
+    {
+      "name": "PNC Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6384",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "222 Delaware Ave, Wilmington, DE 19801",
+      "website": "https://www.pnc.com"
+    },
+    {
+      "name": "Potomac Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9023",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 E Washington St, Charles Town, WV 25414",
+      "website": "https://www.potomac.bank"
+    },
+    {
+      "name": "Putnam County Bank",
+      "fdic_insured_since": "07/01/1935",
+      "fdic_cert": "15243",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2761 Main St, Hurricane, WV 25526",
+      "website": "https://www.pcbwv.bank"
+    },
+    {
+      "name": "The Bank of Monroe",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6180",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "39 Main St, Union, WV 24983",
+      "website": "https://www.mybankofmonroe.com"
+    },
+    {
+      "name": "The Bank of Romney",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "845",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "95 E Main St, Romney, WV 26757",
+      "website": "https://www.bankofromney.net"
+    },
+    {
+      "name": "The Citizens Bank of Weston",
+      "fdic_insured_since": "02/02/1967",
+      "fdic_cert": "19674",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 Main Ave, Weston, WV 26452",
+      "website": "https://www.citzensbankweston.com"
+    },
+    {
+      "name": "The Farmers Bank and Savings Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "769",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "640 E Main St, Pomeroy, OH 45769",
+      "website": "https://www.fbsc.com"
+    },
+    {
+      "name": "The Fayette County National Bank of Fayetteville",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6762",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "101 N Court St, Fayetteville, WV 25840",
+      "website": "https://www.fcnbonline.com"
+    },
+    {
+      "name": "The First National Bank of Peterstown",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6787",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "380 Market Street, Peterstown, WV 24963",
+      "website": "https://www.fnbp.com"
+    },
+    {
+      "name": "The First National Bank of Williamson",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6805",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "68 E 2nd Ave, Williamson, WV 25661",
+      "website": "https://www.yourfnbonline.com"
+    },
+    {
+      "name": "The Grant County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11953",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3 N Main St, Petersburg, WV 26847",
+      "website": "https://www.grantcountybank.com"
+    },
+    {
+      "name": "The Harrison County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9030",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "80 E Main St, Lost Creek, WV 26385",
+      "website": "https://www.hcbwv.com"
+    },
+    {
+      "name": "The Huntington National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6560",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "17 S High St, Columbus, OH 43215",
+      "website": "https://www.huntington.com"
+    },
+    {
+      "name": "The Ohio Valley Bank Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "384",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "420 3rd Ave, Gallipolis, OH 45631",
+      "website": "https://www.ovbc.com"
+    },
+    {
+      "name": "The Pleasants County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "847",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "215 Washington St, Saint Marys, WV 26170",
+      "website": "https://www.pcbsm.com"
+    },
+    {
+      "name": "The Poca Valley Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11952",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7033 Charleston Rd, Walton, WV 25286",
+      "website": "https://www.pocavalleybank.com"
+    },
+    {
+      "name": "Truist Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9846",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "214 N Tryon St, Charlotte, NC 28202",
+      "website": "https://www.truist.com"
+    },
+    {
+      "name": "Unified Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9463",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 S 4th St, Martins Ferry, OH 43935",
+      "website": "https://www.unifiedbank.com"
+    },
+    {
+      "name": "United Bank",
+      "fdic_insured_since": "05/10/1979",
+      "fdic_cert": "22858",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "11185 Fairfax Blvd, Fairfax, VA 22030",
+      "website": "https://www.bankwithunited.com"
+    },
+    {
+      "name": "WesBanco Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "803",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 Bank Plz, Wheeling, WV 26003",
+      "website": "https://www.wesbanco.com"
+    },
+    {
+      "name": "West Union Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2452",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "212 Main St, West Union, WV 26456",
+      "website": "https://www.westunionbank.com"
+    },
+    {
+      "name": "Whitesville State Bank",
+      "fdic_insured_since": "07/08/1946",
+      "fdic_cert": "16453",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "38609 Coal River Rd, Whitesville, WV 25209",
+      "website": "https://www.whitesvillesb.com"
+    },
+    {
+      "name": "Williamstown Bank, Inc.",
+      "fdic_insured_since": "09/15/1934",
+      "fdic_cert": "14744",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "435 Highland Ave, Williamstown, WV 26187",
+      "website": "https://www.williamstownbank.com"
+    },
+    {
+      "name": "Woodforest National Bank",
+      "fdic_insured_since": "09/05/1980",
+      "fdic_cert": "23220",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1330 Lake Robbins Dr, The Woodlands, TX 77380",
+      "website": "https://www.woodforest.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

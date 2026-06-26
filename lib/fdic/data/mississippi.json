@@ -1,0 +1,79 @@
+{
+  "fullName": "Mississippi",
+  "abbr": "MS",
+  "banks": [
+    {
+      "name": "BankFirst Financial Services",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8870",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "900 Main St, Columbus, MS 39701",
+      "website": "https://www.bankfirstfs.com"
+    },
+    {
+      "name": "BankPlus",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5903",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "202 E Jackson St, Belzoni, MS 39038",
+      "website": "https://www.bankplus.net"
+    },
+    {
+      "name": "Century Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11448",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4282 Main St, Lucedale, MS 39452",
+      "website": "https://centurybank.net"
+    },
+    {
+      "name": "Community Bank of Mississippi",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8879",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1905 Community Bank Way, Flowood, MS 39232",
+      "website": "https://www.communitybank.net"
+    },
+    {
+      "name": "Hancock Whitney Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12441",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2510 14th St, Gulfport, MS 39501",
+      "website": "https://www.hancockwhitney.com"
+    },
+    {
+      "name": "Merchants & Marine Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12203",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3118 Pascagoula St, Pascagoula, MS 39567",
+      "website": "https://www.mandmbank.com"
+    },
+    {
+      "name": "Renasant Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12437",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "209 Troy St, Tupelo, MS 38804",
+      "website": "https://www.renasant.com"
+    },
+    {
+      "name": "Story Bank DBA Story Financial Partners",
+      "fdic_insured_since": "10/12/2000",
+      "fdic_cert": "57069",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4450 Old Canton Rd Ste 101, Jackson, MS 39211",
+      "website": "https://www.story.bank"
+    },
+    {
+      "name": "Trustmark Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4988",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "248 E Capitol St, Jackson, MS 39201",
+      "website": "https://www.trustmark.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

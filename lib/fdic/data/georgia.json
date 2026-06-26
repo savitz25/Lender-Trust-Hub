@@ -1,0 +1,623 @@
+{
+  "fullName": "Georgia",
+  "abbr": "GA",
+  "banks": [
+    {
+      "name": "AB&T",
+      "fdic_insured_since": "04/28/1999",
+      "fdic_cert": "35029",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2815 Meredyth Dr, Albany, GA 31707",
+      "website": "https://www.abtgold.com"
+    },
+    {
+      "name": "Affinity Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29510",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3175 Highway 278, Covington, GA 30014",
+      "website": "https://www.newtonfederal.com"
+    },
+    {
+      "name": "Altamaha Bank & Trust Company",
+      "fdic_insured_since": "05/19/1966",
+      "fdic_cert": "19590",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "206 Jackson St, Vidalia, GA 30474",
+      "website": "https://www.altamaha.bank"
+    },
+    {
+      "name": "American Commerce Bank",
+      "fdic_insured_since": "10/04/2004",
+      "fdic_cert": "57686",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "400 Us Highway 27 Byp, Bremen, GA 30110",
+      "website": "https://www.americancommercebank.com"
+    },
+    {
+      "name": "American Pride Bank",
+      "fdic_insured_since": "12/12/2007",
+      "fdic_cert": "58584",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4740 Log Cabin Dr, Macon, GA 31204",
+      "website": "https://www.americanpridebank.com"
+    },
+    {
+      "name": "Ameris Bank",
+      "fdic_insured_since": "10/01/1971",
+      "fdic_cert": "20504",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3490 Piedmont Rd Ne, Atlanta, GA 30305",
+      "website": "https://www.amerisbank.com"
+    },
+    {
+      "name": "Apex Banking Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10074",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "35 Jesse Mae Thurmond Conn, Cleveland, GA 30528",
+      "website": "https://www.apexga.bank"
+    },
+    {
+      "name": "Bank of Alapaha",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "155",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "245 Ne Railroad St, Alapaha, GA 31622",
+      "website": "https://www.bankofalapaha.com"
+    },
+    {
+      "name": "Bank of Camilla",
+      "fdic_insured_since": "03/06/1953",
+      "fdic_cert": "17190",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "50 E Broad St, Camilla, GA 31730",
+      "website": "https://www.bankofcamilla.net"
+    },
+    {
+      "name": "Bank of Dade",
+      "fdic_insured_since": "01/12/1956",
+      "fdic_cert": "17543",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "12634 N Main St, Trenton, GA 30752",
+      "website": "https://www.bankofdade.com"
+    },
+    {
+      "name": "Bank of Dawson",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "876",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "209 N Main St, Dawson, GA 39842",
+      "website": "https://www.bankofdawson.com"
+    },
+    {
+      "name": "Bank of Dudley",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9068",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1448 2nd St, Dudley, GA 31022",
+      "website": "https://www.bankofdudley.com"
+    },
+    {
+      "name": "Bank of Hancock County",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10057",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "12855 Broad St, Sparta, GA 31087",
+      "website": "https://www.bankofhancock.com"
+    },
+    {
+      "name": "Bank of Hazlehurst",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "149",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "22 S Tallahassee St, Hazlehurst, GA 31539",
+      "website": "https://www.bankofhazlehurst.com"
+    },
+    {
+      "name": "Bank of Madison",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "148",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "133 N Main St, Madison, GA 30650",
+      "website": "https://www.bankofmadisonga.com"
+    },
+    {
+      "name": "Bank of Monticello",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2145",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "141 E Greene St, Monticello, GA 31064",
+      "website": "https://www.bankofmonticelloga.com"
+    },
+    {
+      "name": "Bank of Newington",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5704",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "224 Walton St, Newington, GA 30446",
+      "website": "https://www.bankofnewington.com"
+    },
+    {
+      "name": "BankSouth",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "16418",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "6340 Lake Oconee Pkwy, Greensboro, GA 30642",
+      "website": "https://www.banksouth.com"
+    },
+    {
+      "name": "Barwick Banking Company",
+      "fdic_insured_since": "01/06/1976",
+      "fdic_cert": "22205",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2020 E Main St, Barwick, GA 31720",
+      "website": "https://www.barwickbank.com"
+    },
+    {
+      "name": "Carver State Bank",
+      "fdic_insured_since": "06/04/1947",
+      "fdic_cert": "16584",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "701 Martin Luther King Jr Blvd, Savannah, GA 31401",
+      "website": "https://www.carverstatebank.com"
+    },
+    {
+      "name": "Century Bank and Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "147",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "141 S Wayne St, Milledgeville, GA 31061",
+      "website": "https://www.century.bank"
+    },
+    {
+      "name": "CIBC National Trust Company",
+      "fdic_insured_since": "05/05/2000",
+      "fdic_cert": "91325",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3290 Northside Pkwy Nw, Atlanta, GA 30327",
+      "website": "https://private-wealth.us.cibc.com"
+    },
+    {
+      "name": "Citizens Bank of Americus",
+      "fdic_insured_since": "03/19/1937",
+      "fdic_cert": "15477",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "119 N Lee St, Americus, GA 31709",
+      "website": "https://www.cbkamericus.com"
+    },
+    {
+      "name": "Citizens Bank of the South",
+      "fdic_insured_since": "05/03/1965",
+      "fdic_cert": "19420",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "132 S Harris St, Sandersville, GA 31082",
+      "website": "https://www.cbots.com"
+    },
+    {
+      "name": "Citizens Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12079",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "120 W Main St, Hahira, GA 31632",
+      "website": "https://www.ccbga.bank"
+    },
+    {
+      "name": "Citizens Trust Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8033",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "965 Martin Luther King Jr Dr Nw, Atlanta, GA 30314",
+      "website": "https://www.ctbconnect.com"
+    },
+    {
+      "name": "Classic City Bank",
+      "fdic_insured_since": "11/09/2020",
+      "fdic_cert": "59219",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2365 W Broad St, Athens, GA 30606",
+      "website": "https://www.classiccitybank.com"
+    },
+    {
+      "name": "Colony Bank",
+      "fdic_insured_since": "04/15/1976",
+      "fdic_cert": "22257",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "302 S Main St, Fitzgerald, GA 31750",
+      "website": "https://colony.bank"
+    },
+    {
+      "name": "Commercial Banking Company",
+      "fdic_insured_since": "11/15/1995",
+      "fdic_cert": "16246",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3462 N Valdosta Rd, Valdosta, GA 31602",
+      "website": "https://www.cbcbank.com"
+    },
+    {
+      "name": "Community Bank of Georgia",
+      "fdic_insured_since": "05/11/2004",
+      "fdic_cert": "57579",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "700 W Parker St, Baxley, GA 31513",
+      "website": "https://www.communitybankga.com"
+    },
+    {
+      "name": "Community Bank of Pickens County",
+      "fdic_insured_since": "10/02/2000",
+      "fdic_cert": "35513",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15 Sammy Mcghee Blvd, Jasper, GA 30143",
+      "website": "https://www.cbopc.com"
+    },
+    {
+      "name": "Community Banking Company",
+      "fdic_insured_since": "04/19/1996",
+      "fdic_cert": "34160",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 W Roanoke Dr, Fitzgerald, GA 31750",
+      "website": "https://www.communitybankingcompany.com"
+    },
+    {
+      "name": "Craft Bank",
+      "fdic_insured_since": "10/15/2020",
+      "fdic_cert": "59209",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1575 Northside Dr Nw, Atlanta, GA 30318",
+      "website": "https://www.craft.bank"
+    },
+    {
+      "name": "Douglas National Bank",
+      "fdic_insured_since": "11/19/2001",
+      "fdic_cert": "57230",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "211 Ward St E, Douglas, GA 31533",
+      "website": "https://www.dnbdouglas.com"
+    },
+    {
+      "name": "Durden Banking Company",
+      "fdic_insured_since": "01/15/1936",
+      "fdic_cert": "15336",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 N Railroad Ave, Twin City, GA 30471",
+      "website": "https://www.durdenbc.com"
+    },
+    {
+      "name": "Embassy National Bank",
+      "fdic_insured_since": "03/05/2007",
+      "fdic_cert": "58413",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1817 N Brown Rd, Lawrenceville, GA 30043",
+      "website": "https://www.embassynationalbank.com"
+    },
+    {
+      "name": "Exchange Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "160",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "250 W Hancock St, Milledgeville, GA 31061",
+      "website": "https://www.exch.bank"
+    },
+    {
+      "name": "F & M Bank and Trust Company",
+      "fdic_insured_since": "06/15/1950",
+      "fdic_cert": "16916",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "142 W Main St, Manchester, GA 31816",
+      "website": "https://www.fmbankandtrust.com"
+    },
+    {
+      "name": "F&M Bank",
+      "fdic_insured_since": "03/14/1950",
+      "fdic_cert": "16897",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "911 E Robert Toombs Ave, Washington, GA 30673",
+      "website": "https://www.fmbanknow.com"
+    },
+    {
+      "name": "Family Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29357",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "134 Hand Ave W, Pelham, GA 31779",
+      "website": "https://www.familybank.com"
+    },
+    {
+      "name": "Farmers & Merchants Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9069",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 S Madison Ave, Eatonton, GA 31024",
+      "website": "https://www.ibankfmb.com"
+    },
+    {
+      "name": "Farmers and Merchants Bank",
+      "fdic_insured_since": "06/18/1946",
+      "fdic_cert": "16440",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "104 N Main St, Sylvania, GA 30467",
+      "website": "https://www.fmbanksylvania.com"
+    },
+    {
+      "name": "Farmers and Merchants Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5716",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4 N Carter St, Lakeland, GA 31635",
+      "website": "https://www.fmb.net"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "06/19/1967",
+      "fdic_cert": "19720",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1620 Veterans Blvd, Dublin, GA 31021",
+      "website": "https://www.farmersstate-online.net"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "879",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "115 N Washington St, Lincolnton, GA 30817",
+      "website": "https://farmersstateonline.com"
+    },
+    {
+      "name": "First American Bank and Trust Company",
+      "fdic_insured_since": "11/01/1949",
+      "fdic_cert": "16858",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 College Ave, Athens, GA 30601",
+      "website": "https://www.fabt.bank"
+    },
+    {
+      "name": "First Bank of Coastal Georgia",
+      "fdic_insured_since": "02/10/1938",
+      "fdic_cert": "15580",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "250 W Bacon St, Pembroke, GA 31321",
+      "website": "https://www.firstbankofcg.com"
+    },
+    {
+      "name": "First Bank of Pike",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9070",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15 Jackson St, Zebulon, GA 30295",
+      "website": "https://www.firstbankofpike.com"
+    },
+    {
+      "name": "First Century Bank",
+      "fdic_insured_since": "03/25/2002",
+      "fdic_cert": "57123",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1731 N Elm St, Commerce, GA 30529",
+      "website": "https://www.myfirstcenturybank.com"
+    },
+    {
+      "name": "First City Bank",
+      "fdic_insured_since": "07/02/1945",
+      "fdic_cert": "16281",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "21 N Main St, Alpharetta, GA 30009",
+      "website": "https://www.bankoflumbercity.com"
+    },
+    {
+      "name": "First National Bank of Coffee County",
+      "fdic_insured_since": "09/23/1991",
+      "fdic_cert": "33506",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "420 Madison Ave S, Douglas, GA 31533",
+      "website": "https://www.fnbcc.com"
+    },
+    {
+      "name": "First National Bank of Decatur County",
+      "fdic_insured_since": "04/05/2004",
+      "fdic_cert": "57694",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "819 E Shotwell St, Bainbridge, GA 39819",
+      "website": "https://www.fnbdc.com"
+    },
+    {
+      "name": "First National Bank of Griffin",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "169",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "318 S Hill St, Griffin, GA 30224",
+      "website": "https://www.fnbgriffin.com"
+    },
+    {
+      "name": "First National Community Bank",
+      "fdic_insured_since": "08/18/1975",
+      "fdic_cert": "22092",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "701 N 3rd Ave, Chatsworth, GA 30705",
+      "website": "https://www.fncbank.com"
+    },
+    {
+      "name": "First Peoples Bank",
+      "fdic_insured_since": "07/09/1990",
+      "fdic_cert": "33010",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 Chipley St, Pine Mountain, GA 31822",
+      "website": "https://www.firstpeoplesbank.com"
+    },
+    {
+      "name": "First Port City Bank",
+      "fdic_insured_since": "10/07/1974",
+      "fdic_cert": "21784",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 W Shotwell St, Bainbridge, GA 39819",
+      "website": "https://www.firstportcity.com"
+    },
+    {
+      "name": "First Southern Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10055",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "930 Memorial Dr, Waycross, GA 31501",
+      "website": "https://www.fsb-bank.bank"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "07/06/1964",
+      "fdic_cert": "19163",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 E Broad St, Wrens, GA 30833",
+      "website": "https://www.firstate.net"
+    },
+    {
+      "name": "First State Bank of Blakely",
+      "fdic_insured_since": "05/28/1937",
+      "fdic_cert": "15496",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2213 S Main St, Blakely, GA 39823",
+      "website": "https://fsbanks.com"
+    },
+    {
+      "name": "First State Bank of Randolph County",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2157",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "81 Court St, Cuthbert, GA 39840",
+      "website": ""
+    },
+    {
+      "name": "Flint Community Bank",
+      "fdic_insured_since": "02/03/2006",
+      "fdic_cert": "58074",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2910 Meredyth Dr, Albany, GA 31721",
+      "website": "https://www.flint.bank"
+    },
+    {
+      "name": "FNB SOUTH",
+      "fdic_insured_since": "05/01/1951",
+      "fdic_cert": "17011",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "423 W 12th St, Alma, GA 31510",
+      "website": "https://www.fnbsouth.net"
+    },
+    {
+      "name": "Georgia Banking Company",
+      "fdic_insured_since": "11/01/2001",
+      "fdic_cert": "57071",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1776 Peachtree St Nw, Atlanta, GA 30309",
+      "website": "https://www.georgiabanking.com"
+    },
+    {
+      "name": "Georgia Community Bank",
+      "fdic_insured_since": "08/31/1999",
+      "fdic_cert": "35320",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "704 N Westover Blvd, Albany, GA 31707",
+      "website": "https://www.gcb.bank"
+    },
+    {
+      "name": "Georgia First Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "889",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1202 Second St, Soperton, GA 30457",
+      "website": "https://georgiafirst.bank"
+    },
+    {
+      "name": "Glennville Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9244",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 E Barnard St, Glennville, GA 30427",
+      "website": "https://www.glennvillebank.com"
+    },
+    {
+      "name": "Great Oaks Bank",
+      "fdic_insured_since": "04/01/1949",
+      "fdic_cert": "16780",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "42 Town Center Dr, Richmond Hill, GA 31324",
+      "website": "https://www.greatoaks.bank"
+    },
+    {
+      "name": "Guardian Bank",
+      "fdic_insured_since": "05/01/2001",
+      "fdic_cert": "57127",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "701 Wildwood Plantation Dr, Valdosta, GA 31602",
+      "website": "https://www.guardian.bank"
+    },
+    {
+      "name": "Legacy State Bank",
+      "fdic_insured_since": "03/15/2005",
+      "fdic_cert": "57882",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3825 Harrison Rd, Loganville, GA 30052",
+      "website": "https://www.legacystatebank.com"
+    },
+    {
+      "name": "Metro City Bank",
+      "fdic_insured_since": "04/04/2006",
+      "fdic_cert": "58181",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5114 Buford Hwy Ne, Doraville, GA 30340",
+      "website": "https://www.metrocitybank.bank"
+    },
+    {
+      "name": "PeoplesSouth Bank",
+      "fdic_insured_since": "10/19/1973",
+      "fdic_cert": "21292",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "203 W Crawford St, Colquitt, GA 39837",
+      "website": "https://www.peoplessouth.com"
+    },
+    {
+      "name": "Pineland Bank",
+      "fdic_insured_since": "11/16/1939",
+      "fdic_cert": "15699",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "501 W 12th St, Alma, GA 31510",
+      "website": "https://www.pineland.bank"
+    },
+    {
+      "name": "PrimeSouth Bank",
+      "fdic_insured_since": "06/02/1934",
+      "fdic_cert": "5694",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3473 Us Highway 84, Blackshear, GA 31516",
+      "website": "https://www.primesouth.com"
+    },
+    {
+      "name": "Southeast First National Bank",
+      "fdic_insured_since": "05/22/1968",
+      "fdic_cert": "19819",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "10144 Commerce St, Summerville, GA 30747",
+      "website": "https://www.southeastfnb.com"
+    },
+    {
+      "name": "Southeastern Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5685",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1010 North Way, Darien, GA 31305",
+      "website": "https://www.southeasternbank.com"
+    },
+    {
+      "name": "The Claxton Bank",
+      "fdic_insured_since": "06/14/1941",
+      "fdic_cert": "15826",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1433 Bernie Anderson Highway, Bellville, GA 30414",
+      "website": "https://www.tcbga.bank"
+    },
+    {
+      "name": "Thomasville National Bank",
+      "fdic_insured_since": "10/02/1995",
+      "fdic_cert": "34068",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "301 N Broad St, Thomasville, GA 31792",
+      "website": "https://www.tnbank.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

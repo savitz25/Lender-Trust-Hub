@@ -7,14 +7,30 @@
  * 3. Add entry to stateData and set hasData: true in lib/fdic/states.ts
  */
 import type { StateFDICData } from './types';
+import alabamaData from './data/alabama.json';
 import floridaData from './data/florida.json';
+import georgiaData from './data/georgia.json';
+import louisianaData from './data/louisiana.json';
+import mississippiData from './data/mississippi.json';
+import northCarolinaData from './data/north-carolina.json';
+import southCarolinaData from './data/south-carolina.json';
+import virginiaData from './data/virginia.json';
+import westVirginiaData from './data/west-virginia.json';
 
 export const stateData: Record<string, StateFDICData> = {
+  AL: alabamaData as StateFDICData,
   FL: floridaData as StateFDICData,
+  GA: georgiaData as StateFDICData,
+  LA: louisianaData as StateFDICData,
+  MS: mississippiData as StateFDICData,
+  NC: northCarolinaData as StateFDICData,
+  SC: southCarolinaData as StateFDICData,
+  VA: virginiaData as StateFDICData,
+  WV: westVirginiaData as StateFDICData,
 };
 
 export const DEFAULT_STATE_CODE = 'FL';
-export const DATA_UPDATED = floridaData.updated;
+export const DATA_UPDATED = '2026-06-26';
 
 export function getStateData(code: string): StateFDICData | null {
   return stateData[code] ?? null;

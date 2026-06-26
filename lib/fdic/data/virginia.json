@@ -1,0 +1,855 @@
+{
+  "fullName": "Virginia",
+  "abbr": "VA",
+  "banks": [
+    {
+      "name": "AMG National Trust Bank",
+      "fdic_insured_since": "02/01/2008",
+      "fdic_cert": "57295",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1155 Canyon Blvd Ste 310, Boulder, CO 80302",
+      "website": "https://www.amgnational.com"
+    },
+    {
+      "name": "Armed Forces Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4666",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "320 Kansas Ave, Fort Leavenworth, KS 66027",
+      "website": "https://afbank.com"
+    },
+    {
+      "name": "Atlantic Union Bank",
+      "fdic_insured_since": "11/04/1997",
+      "fdic_cert": "34589",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1051 E Cary St Ste 103, Richmond City, VA 23219",
+      "website": "https://www.atlanticunionbank.com"
+    },
+    {
+      "name": "Bank of America, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3510",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 N Tryon St, Charlotte, NC 28202",
+      "website": "https://www.bankofamerica.com"
+    },
+    {
+      "name": "Bank of Botetourt",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6137",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "19747 Main St, Buchanan, VA 24066",
+      "website": "https://www.bankofbotetourt.com"
+    },
+    {
+      "name": "Bank Of Clarke",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6123",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2 E Main St, Berryville, VA 22611",
+      "website": "https://www.bankofclarke.bank"
+    },
+    {
+      "name": "Bank of England",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13303",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "123 S Main St, England, AR 72046",
+      "website": "https://www.bankofengland-ar.com"
+    },
+    {
+      "name": "Bank of the James",
+      "fdic_insured_since": "07/22/1999",
+      "fdic_cert": "35207",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "828 Main St, Lynchburg, VA 24504",
+      "website": "https://www.bankofthejames.bank"
+    },
+    {
+      "name": "Benchmark Community Bank",
+      "fdic_insured_since": "09/08/1971",
+      "fdic_cert": "20484",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 S Broad St, Kenbridge, VA 23944",
+      "website": "https://www.bcbforlife.bank"
+    },
+    {
+      "name": "Blue Ridge Bank, National Association",
+      "fdic_insured_since": "07/24/2000",
+      "fdic_cert": "35274",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 E Market St, Martinsville, VA 24112",
+      "website": "https://www.mybrb.com"
+    },
+    {
+      "name": "Burke & Herbert Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11578",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 S Fairfax St, Alexandria, VA 22314",
+      "website": "https://www.burkeandherbertbank.com"
+    },
+    {
+      "name": "Calvin B. Taylor Banking Company of Berlin, Maryland",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5874",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "24 N Main St, Berlin, MD 21811",
+      "website": "https://www.taylorbank.com"
+    },
+    {
+      "name": "Capital Bank, National Association",
+      "fdic_insured_since": "12/14/1999",
+      "fdic_cert": "35278",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2275 Research Blvd, Rockville, MD 20850",
+      "website": "https://www.capitalbankmd.com"
+    },
+    {
+      "name": "Capital One, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4297",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1680 Capital One Dr, Mclean, VA 22102",
+      "website": "https://www.capitalone.com"
+    },
+    {
+      "name": "Capon Valley Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9998",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2 W Main St, Wardensville, WV 26851",
+      "website": "https://www.caponvalleybank.com"
+    },
+    {
+      "name": "Carter Bank & Trust",
+      "fdic_insured_since": "12/30/2006",
+      "fdic_cert": "58596",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "4 Commonwealth Blvd E, Martinsville, VA 24112",
+      "website": "https://www.carterbank.com"
+    },
+    {
+      "name": "Chain Bridge Bank, National Association",
+      "fdic_insured_since": "08/06/2007",
+      "fdic_cert": "58595",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1445a Laughlin Ave, Mclean, VA 22101",
+      "website": "https://www.chainbridgebank.com"
+    },
+    {
+      "name": "Chesapeake Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6862",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "97 N Main St, Kilmarnock, VA 22482",
+      "website": "https://www.ches.bank"
+    },
+    {
+      "name": "Citibank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7213",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "5800 S Corporate Pl, Sioux Falls, SD 57108",
+      "website": "https://www.citibank.com"
+    },
+    {
+      "name": "Citizens and Farmers Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10363",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "415 14th Street, West Point, VA 23181",
+      "website": "https://www.cffc.com"
+    },
+    {
+      "name": "Citizens Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "823",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "126 S Main St, Blackstone, VA 23824",
+      "website": "https://www.cbtva.com"
+    },
+    {
+      "name": "Citizens Bank, National Association",
+      "fdic_insured_since": "05/13/2005",
+      "fdic_cert": "57957",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Citizens Plz, Providence, RI 02903",
+      "website": "https://www.citizensbank.com"
+    },
+    {
+      "name": "City National Bank",
+      "fdic_insured_since": "12/04/1953",
+      "fdic_cert": "17281",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "555 S Flower St, Los Angeles, CA 90071",
+      "website": "https://www.cnb.com"
+    },
+    {
+      "name": "City National Bank of West Virginia",
+      "fdic_insured_since": "04/01/1957",
+      "fdic_cert": "17735",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3601 Maccorkle Ave Se, Charleston, WV 25304",
+      "website": "https://www.bankatcity.com"
+    },
+    {
+      "name": "CNB Bank",
+      "fdic_insured_since": "02/09/1934",
+      "fdic_cert": "13876",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1 S 2nd St, Clearfield, PA 16830",
+      "website": "https://www.cnbbank.bank"
+    },
+    {
+      "name": "Community Bankers' Bank",
+      "fdic_insured_since": "01/02/1987",
+      "fdic_cert": "26871",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2601 Promenade Pkwy, Midlothian, VA 23113",
+      "website": "https://cbbonline.com"
+    },
+    {
+      "name": "CornerStone Bank",
+      "fdic_insured_since": "02/17/2009",
+      "fdic_cert": "58859",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "54 S Main St, Lexington, VA 24450",
+      "website": "https://www.cornerstonebankva.com"
+    },
+    {
+      "name": "Dollar Bank, Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32245",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "340 4th Ave, Pittsburgh, PA 15222",
+      "website": "https://www.dollar.bank"
+    },
+    {
+      "name": "EagleBank",
+      "fdic_insured_since": "07/20/1998",
+      "fdic_cert": "34742",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "7500 Old Georgetown Rd, Bethesda, MD 20814",
+      "website": "https://www.eaglebankcorp.com"
+    },
+    {
+      "name": "Farmers & Merchants Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8668",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "165 New Market Rd, Timberville, VA 22853",
+      "website": "https://www.fmbankva.com"
+    },
+    {
+      "name": "Farmers & Merchants Bank of Craig County",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9986",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "189 Main St, New Castle, VA 24127",
+      "website": "https://www.fmbankcraig.com"
+    },
+    {
+      "name": "Farmers and Miners Bank",
+      "fdic_insured_since": "07/02/1979",
+      "fdic_cert": "22888",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "41526 W Morgan Ave, Pennington Gap, VA 24277",
+      "website": "https://www.farmersandminersbank.com"
+    },
+    {
+      "name": "First Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6917",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "112 W King St, Strasburg, VA 22657",
+      "website": "https://www.fbvirginia.com"
+    },
+    {
+      "name": "First Carolina Bank",
+      "fdic_insured_since": "11/29/2000",
+      "fdic_cert": "35530",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "171 N Winstead Ave, Rocky Mount, NC 27804",
+      "website": "https://www.firstcarolinabank.com"
+    },
+    {
+      "name": "First Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13012",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "29 College Dr, Bluefield, VA 24605",
+      "website": "https://www.firstcommunitybank.com"
+    },
+    {
+      "name": "First Horizon Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4977",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "165 Madison Ave, Memphis, TN 38103",
+      "website": "https://www.firsthorizon.com"
+    },
+    {
+      "name": "First National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6811",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "622 Broad St, Altavista, VA 24517",
+      "website": "https://www.1stnatbk.com"
+    },
+    {
+      "name": "First National Bank of Pennsylvania",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7888",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "166 Main St, Greenville, PA 16125",
+      "website": "https://www.fnb-online.com"
+    },
+    {
+      "name": "First Sentinel Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31928",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "315 Railroad Ave, Richlands, VA 24641",
+      "website": "https://www.firstsentinelbank.com"
+    },
+    {
+      "name": "First US Bank",
+      "fdic_insured_since": "01/21/1952",
+      "fdic_cert": "17077",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3291 Highway 280 E, Birmingham, AL 35243",
+      "website": "https://www.firstusbank.com"
+    },
+    {
+      "name": "First-Citizens Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11063",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "239 Fayetteville St, Raleigh, NC 27601",
+      "website": "https://www.firstcitizens.com"
+    },
+    {
+      "name": "FNB Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6794",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 N High St, Romney, WV 26757",
+      "website": "https://www.fnbtoday.com"
+    },
+    {
+      "name": "Fulton Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "7551",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Penn Sq, Lancaster, PA 17602",
+      "website": "https://www.fultonbank.com"
+    },
+    {
+      "name": "FVCbank",
+      "fdic_insured_since": "11/27/2007",
+      "fdic_cert": "58696",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "11325 Random Hills Rd, Fairfax, VA 22030",
+      "website": "https://www.fvcbank.com"
+    },
+    {
+      "name": "Hanmi Bank",
+      "fdic_insured_since": "12/15/1982",
+      "fdic_cert": "24170",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3660 Wilshire Blvd Ste Ph-A, Los Angeles, CA 90010",
+      "website": "https://www.hanmi.com"
+    },
+    {
+      "name": "Heritage Community Bank",
+      "fdic_insured_since": "12/03/2003",
+      "fdic_cert": "57656",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "114 W Church St, Greeneville, TN 37745",
+      "website": "https://www.hcbonline.us"
+    },
+    {
+      "name": "Highlands Community Bank",
+      "fdic_insured_since": "09/16/2002",
+      "fdic_cert": "57420",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "307 Thacker Ave, Covington, VA 24426",
+      "website": "https://www.hc.bank"
+    },
+    {
+      "name": "HomeTrust Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27677",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "10 Woodfin St, Asheville, NC 28801",
+      "website": "https://www.htb.com"
+    },
+    {
+      "name": "HSBC Bank USA, National Association",
+      "fdic_insured_since": "07/01/2004",
+      "fdic_cert": "57890",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1800 Tysons Blvd Ste 560, Tysons, VA 22102",
+      "website": "https://www.about.us.hsbc.com/hsbc-in-the-usa"
+    },
+    {
+      "name": "Integrity Bank for Business",
+      "fdic_insured_since": "05/03/2021",
+      "fdic_cert": "59262",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2901 S Lynnhaven Rd, Virginia Beach, VA 23452",
+      "website": "https://www.integritybankva.com"
+    },
+    {
+      "name": "John Marshall Bank",
+      "fdic_insured_since": "04/17/2006",
+      "fdic_cert": "58243",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1943 Isaac Newton Sq E Ste 100, Reston, VA 20190",
+      "website": "https://www.johnmarshallbank.com"
+    },
+    {
+      "name": "JPMorgan Chase Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "628",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1111 Polaris Pkwy, Columbus, OH 43240",
+      "website": "https://www.jpmorganchase.com"
+    },
+    {
+      "name": "Lee Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11582",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "41371 W Morgan Ave, Pennington Gap, VA 24277",
+      "website": "https://www.leebank24.com"
+    },
+    {
+      "name": "Legacy Bank",
+      "fdic_insured_since": "01/21/1964",
+      "fdic_cert": "19011",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "20957 Riverside Dr, Grundy, VA 24614",
+      "website": "https://www.mylegacybank.net"
+    },
+    {
+      "name": "Locus Bank, Inc.",
+      "fdic_insured_since": "08/20/2008",
+      "fdic_cert": "58658",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "7814 Carousel Ln, Richmond, VA 23294",
+      "website": "https://locusimpact.org"
+    },
+    {
+      "name": "MainStreet Bank",
+      "fdic_insured_since": "05/26/2004",
+      "fdic_cert": "57742",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "10089 Fairfax Blvd, Fairfax, VA 22030",
+      "website": "https://www.mstreetbank.com"
+    },
+    {
+      "name": "Manufacturers and Traders Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "588",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1 M And T Plz, Buffalo, NY 14203",
+      "website": "https://www.mtb.com"
+    },
+    {
+      "name": "Martinsville First Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29685",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "25 W Church St, Martinsville, VA 24112",
+      "website": "https://www.martinsvillefirst.bank"
+    },
+    {
+      "name": "MCNB Bank and Trust Co.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6803",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "75 Wyoming St, Welch, WV 24801",
+      "website": "https://www.mcnbbanks.com"
+    },
+    {
+      "name": "Members Trust Company",
+      "fdic_insured_since": "10/30/2003",
+      "fdic_cert": "57470",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "14055 Riveredge Dr Ste 525, Tampa, FL 33637",
+      "website": "https://www.memberstrust.com"
+    },
+    {
+      "name": "Metro City Bank",
+      "fdic_insured_since": "04/04/2006",
+      "fdic_cert": "58181",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5114 Buford Hwy Ne, Doraville, GA 30340",
+      "website": "https://www.metrocitybank.bank"
+    },
+    {
+      "name": "Miners Exchange Bank",
+      "fdic_insured_since": "07/08/1982",
+      "fdic_cert": "23989",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "483 Front St W, Coeburn, VA 24230",
+      "website": "https://www.mymeb.com"
+    },
+    {
+      "name": "Movement Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9502",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1296 Piney Forest Road, Danville, VA 24540",
+      "website": "https://www.movementbank.com"
+    },
+    {
+      "name": "MVB Bank, Inc",
+      "fdic_insured_since": "01/04/1999",
+      "fdic_cert": "34603",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 Virginia Ave, Fairmont, WV 26554",
+      "website": "https://www.mvbbanking.com"
+    },
+    {
+      "name": "New Horizon Bank, National Association",
+      "fdic_insured_since": "10/07/2009",
+      "fdic_cert": "58857",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1870 Stoneridge Commerce Dr, Powhatan, VA 23139",
+      "website": "https://www.newhorizonbank.com"
+    },
+    {
+      "name": "New Peoples Bank, Inc.",
+      "fdic_insured_since": "10/28/1998",
+      "fdic_cert": "34890",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "53 Commerce Dr, Honaker, VA 24260",
+      "website": "https://www.newpeoples.bank"
+    },
+    {
+      "name": "Oak View National Bank",
+      "fdic_insured_since": "06/08/2009",
+      "fdic_cert": "58827",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "340 Waterloo Street, Warrenton, VA 20186",
+      "website": "https://www.oakviewbank.com"
+    },
+    {
+      "name": "Old Dominion National Bank",
+      "fdic_insured_since": "07/23/2007",
+      "fdic_cert": "58504",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "852 W Main St Ste 106, Charlottesville, VA 22903",
+      "website": "https://www.odnb.bank"
+    },
+    {
+      "name": "Pendleton Community Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6176",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "128 N Main St, Franklin, WV 26807",
+      "website": "https://yourbank.bank"
+    },
+    {
+      "name": "Peoples Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6544",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "138 Putnam St, Marietta, OH 45750",
+      "website": "https://www.peoplesbancorp.com/"
+    },
+    {
+      "name": "Pinnacle Bank",
+      "fdic_insured_since": "10/27/2000",
+      "fdic_cert": "35583",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "21 Platform Way S Suite 2300, Nashville, TN 37203",
+      "website": "https://www.pnfp.com"
+    },
+    {
+      "name": "Pioneer Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6913",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "252 E Main St, Stanley, VA 22851",
+      "website": "https://www.pioneerbks.com"
+    },
+    {
+      "name": "PNC Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6384",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "222 Delaware Ave, Wilmington, DE 19801",
+      "website": "https://www.pnc.com"
+    },
+    {
+      "name": "Potomac Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9023",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 E Washington St, Charles Town, WV 25414",
+      "website": "https://www.potomac.bank"
+    },
+    {
+      "name": "Powell Valley National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6863",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "33785 Main Street, Jonesville, VA 24263",
+      "website": "https://www.powellvalleybank.com"
+    },
+    {
+      "name": "Presidential Bank, FSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32363",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4520 East West Hwy, Bethesda, MD 20814",
+      "website": "https://www.presidential.com"
+    },
+    {
+      "name": "Primis Bank",
+      "fdic_insured_since": "04/14/2005",
+      "fdic_cert": "57968",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1665 Tappahannock Blvd, Tappahannock, VA 22560",
+      "website": "https://www.primisbank.com"
+    },
+    {
+      "name": "PromiseOne Bank",
+      "fdic_insured_since": "11/06/2008",
+      "fdic_cert": "58657",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2385 Pleasant Hill Rd, Duluth, GA 30096",
+      "website": "https://www.promiseone.bank"
+    },
+    {
+      "name": "Select Bank",
+      "fdic_insured_since": "06/04/2007",
+      "fdic_cert": "58563",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "211 Gristmill Dr, Forest, VA 24551",
+      "website": "https://myselectbank.com"
+    },
+    {
+      "name": "ServisFirst Bank",
+      "fdic_insured_since": "05/02/2005",
+      "fdic_cert": "57993",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2500 Woodcrest Pl, Birmingham, AL 35209",
+      "website": "https://www.servisfirstbank.com"
+    },
+    {
+      "name": "Shore United Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4832",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "18 E Dover St, Easton, MD 21601",
+      "website": "https://shoreunitedbank.com"
+    },
+    {
+      "name": "SKYLINE NATIONAL BANK",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6861",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "113 W Main St, Independence, VA 24348",
+      "website": "https://www.skylinenationalbank.bank"
+    },
+    {
+      "name": "Somerset Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11112",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "151 W Main St, Somerset, PA 15501",
+      "website": "https://somersettrust.com"
+    },
+    {
+      "name": "Southern Bank and Trust Company",
+      "fdic_insured_since": "03/02/1936",
+      "fdic_cert": "15359",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 N Center St, Mount Olive, NC 28365",
+      "website": "https://www.southernbank.com"
+    },
+    {
+      "name": "SouthState Bank, National Association",
+      "fdic_insured_since": "02/21/1992",
+      "fdic_cert": "33555",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1101 1st St S, Winter Haven, FL 33880",
+      "website": "https://www.southstatebank.com"
+    },
+    {
+      "name": "TD Bank, National Association",
+      "fdic_insured_since": "07/01/1961",
+      "fdic_cert": "18409",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2035 Limestone Rd, Wilmington, DE 19808",
+      "website": "https://www.td.com/us/en/personal-banking/"
+    },
+    {
+      "name": "The Bank of Charlotte County",
+      "fdic_insured_since": "06/20/1934",
+      "fdic_cert": "14491",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 Berkley Street, Phenix, VA 23959",
+      "website": "https://www.bankofcharlotte.com"
+    },
+    {
+      "name": "The Bank of Marion",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9507",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "102 W Main St, Marion, VA 24354",
+      "website": "https://www.bankofmarionva.com"
+    },
+    {
+      "name": "The Bank of Southside Virginia",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11580",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "17208 Halligan Park Rd, Carson, VA 23830",
+      "website": "https://www.bsvnet.com"
+    },
+    {
+      "name": "The Blue Grass Valley Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8672",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2583 Blue Grass Valley Rd, Blue Grass, VA 24413",
+      "website": "https://www.bluegrassvalleybank.com"
+    },
+    {
+      "name": "The Farmers Bank of Appomattox",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6813",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "223 Main St, Appomattox, VA 24522",
+      "website": "https://www.thefarmersbankva.com"
+    },
+    {
+      "name": "The Fidelity Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11507",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 S Main St, Fuquay Varina, NC 27526",
+      "website": "https://www.fidelitybanknc.com"
+    },
+    {
+      "name": "The First Bank and Trust Company",
+      "fdic_insured_since": "08/03/1979",
+      "fdic_cert": "22918",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "359 W Main St, Lebanon, VA 24266",
+      "website": "https://www.firstbank.com"
+    },
+    {
+      "name": "The First National Bank of Peterstown",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6787",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "380 Market Street, Peterstown, WV 24963",
+      "website": "https://www.fnbp.com"
+    },
+    {
+      "name": "The Freedom Bank of Virginia",
+      "fdic_insured_since": "07/23/2001",
+      "fdic_cert": "57184",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "10555 Main St, Fairfax, VA 22030",
+      "website": "https://freedom.bank"
+    },
+    {
+      "name": "The National Bank of Blacksburg",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6821",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 S Main St, Blacksburg, VA 24060",
+      "website": "https://www.nbbank.com"
+    },
+    {
+      "name": "The National Capital Bank of Washington",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2093",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "316 Pennsylvania Ave Se, Washington, DC 20003",
+      "website": "https://www.nationalcapitalbank.bank"
+    },
+    {
+      "name": "TowneBank",
+      "fdic_insured_since": "04/08/1999",
+      "fdic_cert": "35095",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5716 High St W, Portsmouth, VA 23703",
+      "website": "https://www.townebank.com"
+    },
+    {
+      "name": "Truist Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9846",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "214 N Tryon St, Charlotte, NC 28202",
+      "website": "https://www.truist.com"
+    },
+    {
+      "name": "TruPoint Bank",
+      "fdic_insured_since": "01/02/1975",
+      "fdic_cert": "21883",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "20089 Riverside Dr, Grundy, VA 24614",
+      "website": "https://www.trupointbank.com"
+    },
+    {
+      "name": "Trustar Bank",
+      "fdic_insured_since": "07/08/2019",
+      "fdic_cert": "59183",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "748 Walker Rd, Great Falls, VA 22066",
+      "website": "https://www.trustarbank.com"
+    },
+    {
+      "name": "United Bank",
+      "fdic_insured_since": "05/10/1979",
+      "fdic_cert": "22858",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "11185 Fairfax Blvd, Fairfax, VA 22030",
+      "website": "https://www.bankwithunited.com"
+    },
+    {
+      "name": "Virginia National Bank",
+      "fdic_insured_since": "07/29/1998",
+      "fdic_cert": "34755",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "222 E Main St, Charlottesville, VA 22902",
+      "website": "https://www.vnb.com"
+    },
+    {
+      "name": "Wells Fargo Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3511",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3201 N 4th Ave, Sioux Falls, SD 57104",
+      "website": "https://www.wellsfargo.com"
+    },
+    {
+      "name": "Woodforest National Bank",
+      "fdic_insured_since": "09/05/1980",
+      "fdic_cert": "23220",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1330 Lake Robbins Dr, The Woodlands, TX 77380",
+      "website": "https://www.woodforest.com"
+    },
+    {
+      "name": "Woori America Bank",
+      "fdic_insured_since": "01/27/1984",
+      "fdic_cert": "24920",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "330 5th Ave, New York, NY 10001",
+      "website": "https://www.wooriamericabank.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

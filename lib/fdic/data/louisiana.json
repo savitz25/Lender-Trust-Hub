@@ -1,0 +1,975 @@
+{
+  "fullName": "Louisiana",
+  "abbr": "LA",
+  "banks": [
+    {
+      "name": "Abbeville Building & Loan (A State-Chartered Savings Bank)",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30332",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1212 Charity St, Abbeville, LA 70510",
+      "website": "https://www.abbemae.com"
+    },
+    {
+      "name": "Sicily Island State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12722",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 Newman St, Sicily Island, LA 71368",
+      "website": "https://www.sibank.net"
+    },
+    {
+      "name": "Simmesport State Bank",
+      "fdic_insured_since": "05/01/1956",
+      "fdic_cert": "17587",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "16495 Highway 1, Simmesport, LA 71369",
+      "website": "https://www.simmesportstatebank.net"
+    },
+    {
+      "name": "South Lafourche Bank & Trust Company",
+      "fdic_insured_since": "10/13/1967",
+      "fdic_cert": "19755",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "13226 W Main St, Larose, LA 70373",
+      "website": "https://www.slbank.com"
+    },
+    {
+      "name": "South Louisiana Bank",
+      "fdic_insured_since": "06/30/1980",
+      "fdic_cert": "23144",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1362 W Tunnel Blvd, Houma, LA 70360",
+      "website": "https://www.ayeee.com"
+    },
+    {
+      "name": "Southern Heritage Bank",
+      "fdic_insured_since": "05/25/1972",
+      "fdic_cert": "20698",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "701 Fourth St, Jonesville, LA 71343",
+      "website": "https://www.shbnet.com"
+    },
+    {
+      "name": "St. Landry Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8534",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "132 E Landry St, Opelousas, LA 70570",
+      "website": "https://www.stlandrybank.com"
+    },
+    {
+      "name": "State Bank & Trust Company",
+      "fdic_insured_since": "01/16/1953",
+      "fdic_cert": "17169",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "176 Washington Street, Golden Meadow, LA 70357",
+      "website": "https://www.sbtcajun.com"
+    },
+    {
+      "name": "Synergy Bank",
+      "fdic_insured_since": "03/10/1999",
+      "fdic_cert": "34978",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "210 Synergy Center Blvd, Houma, LA 70360",
+      "website": "https://www.synergybank.com"
+    },
+    {
+      "name": "Tensas State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8533",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "307 Verona Street, Newellton, LA 71357",
+      "website": "https://www.tensas.com"
+    },
+    {
+      "name": "The Bank",
+      "fdic_insured_since": "02/26/1997",
+      "fdic_cert": "34409",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1304 N Cutting Ave, Jennings, LA 70546",
+      "website": "https://www.thebank.bank"
+    },
+    {
+      "name": "The Bank of Commerce",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1374",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "32460 Bowie St, White Castle, LA 70788",
+      "website": "https://www.bkofcommerce.com"
+    },
+    {
+      "name": "The Evangeline Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12611",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "497 W Main St, Ville Platte, LA 70586",
+      "website": "https://www.therealbank.com"
+    },
+    {
+      "name": "The First National Bank of Jeanerette",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4290",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1331 Main St, Jeanerette, LA 70544",
+      "website": "https://www.yourfnb.com"
+    },
+    {
+      "name": "The Huntington National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6560",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "17 S High St, Columbus, OH 43215",
+      "website": "https://www.huntington.com"
+    },
+    {
+      "name": "The Mer Rouge State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "314",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 Davenport Ave, Mer Rouge, LA 71261",
+      "website": "https://www.merrougebank.com"
+    },
+    {
+      "name": "United Community Bank",
+      "fdic_insured_since": "06/20/1964",
+      "fdic_cert": "19143",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4626 Highway 1, Raceland, LA 70394",
+      "website": "https://www.ucbanking.com"
+    },
+    {
+      "name": "United Mississippi Bank",
+      "fdic_insured_since": "05/14/1973",
+      "fdic_cert": "21083",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "75 Melrose Montebello Pkwy, Natchez, MS 39120",
+      "website": "https://www.unitedmsbk.com"
+    },
+    {
+      "name": "Vermilion Bank & Trust Company",
+      "fdic_insured_since": "03/08/1958",
+      "fdic_cert": "17841",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "420 N Cushing Ave, Kaplan, LA 70548",
+      "website": "https://www.vermilionbank.com"
+    },
+    {
+      "name": "Washington State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9326",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "103 North Main Street, Washington, LA 70589",
+      "website": "https://www.wsbankla.com"
+    },
+    {
+      "name": "Winnsboro State Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10533",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3875 Front St, Winnsboro, LA 71295",
+      "website": "https://www.winnsborobank.com"
+    },
+    {
+      "name": "Woodforest National Bank",
+      "fdic_insured_since": "09/05/1980",
+      "fdic_cert": "23220",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1330 Lake Robbins Dr, The Woodlands, TX 77380",
+      "website": "https://www.woodforest.com"
+    },
+    {
+      "name": "American Bank",
+      "fdic_insured_since": "09/14/1964",
+      "fdic_cert": "19234",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1819 N Columbia St, Covington, LA 70433",
+      "website": "https://www.americanbankusa.com"
+    },
+    {
+      "name": "American Bank & Trust Company",
+      "fdic_insured_since": "09/22/1958",
+      "fdic_cert": "17906",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "307 E Landry St, Opelousas, LA 70570",
+      "website": "https://www.americanbankandtrust.net"
+    },
+    {
+      "name": "Anthem Bank & Trust",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29679",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "23910 Railroad Ave, Plaquemine, LA 70764",
+      "website": "https://www.anthembank.com"
+    },
+    {
+      "name": "b1BANK",
+      "fdic_insured_since": "02/01/2006",
+      "fdic_cert": "58228",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "500 Laurel St, Baton Rouge, LA 70801",
+      "website": "https://www.b1bank.com"
+    },
+    {
+      "name": "Bank of Abbeville & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11782",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "123 Concord St, Abbeville, LA 70510",
+      "website": "https://www.bankofabbeville.com"
+    },
+    {
+      "name": "Bank of Commerce & Trust Co.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10523",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "326 N Avenue G, Crowley, LA 70526",
+      "website": "https://www.bankofcommerceandtrust.com"
+    },
+    {
+      "name": "Bank of Coushatta",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8531",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1525 Ringgold Ave, Coushatta, LA 71019",
+      "website": "https://www.mybcbank.com"
+    },
+    {
+      "name": "Bank of England",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13303",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "123 S Main St, England, AR 72046",
+      "website": "https://www.bankofengland-ar.com"
+    },
+    {
+      "name": "Bank of Erath",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8532",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 W Edward St, Erath, LA 70533",
+      "website": "https://www.bankoferath.com"
+    },
+    {
+      "name": "Bank of Gueydan",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8144",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "111 Main St, Gueydan, LA 70542",
+      "website": "https://bankofgueydan.com/"
+    },
+    {
+      "name": "Bank of Louisiana",
+      "fdic_insured_since": "07/01/1958",
+      "fdic_cert": "17878",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 Saint Charles Ave, New Orleans, LA 70130",
+      "website": "https://www.bankoflouisiana.com"
+    },
+    {
+      "name": "Bank of Oak Ridge",
+      "fdic_insured_since": "04/11/1974",
+      "fdic_cert": "21529",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 N Oak St, Oak Ridge, LA 71264",
+      "website": "https://www.bankofoakridge.bank"
+    },
+    {
+      "name": "Bank of St. Francisville",
+      "fdic_insured_since": "10/30/1978",
+      "fdic_cert": "22739",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5700 Commerce St, Saint Francisville, LA 70775",
+      "website": "https://www.bsf.net"
+    },
+    {
+      "name": "Bank of Sunset and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11788",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "863 Napoleon Ave, Sunset, LA 70584",
+      "website": "https://www.bankofsunset.com"
+    },
+    {
+      "name": "Bank of Winnfield & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9323",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 W Main St, Winnfield, LA 71483",
+      "website": "https://www.bankofwinnfield.com"
+    },
+    {
+      "name": "Bank of Zachary",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "306",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4743 Main St, Zachary, LA 70791",
+      "website": "https://www.bankofzachary.com"
+    },
+    {
+      "name": "BankPlus",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5903",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "202 E Jackson St, Belzoni, MS 39038",
+      "website": "https://www.bankplus.net"
+    },
+    {
+      "name": "Basile State Bank",
+      "fdic_insured_since": "07/02/1956",
+      "fdic_cert": "17621",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3031 Stagg Ave, Basile, LA 70515",
+      "website": "https://www.basilebank.com"
+    },
+    {
+      "name": "Beauregard Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30339",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "122 Jefferson Ave, Deridder, LA 70634",
+      "website": "https://www.beauregardfederal.com"
+    },
+    {
+      "name": "BOM Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1373",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "814 Washington St, Natchitoches, LA 71457",
+      "website": "https://www.bofm.com"
+    },
+    {
+      "name": "Bonvenu Bank, National Association",
+      "fdic_insured_since": "10/07/1985",
+      "fdic_cert": "26381",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2711 E Texas St, Bossier City, LA 71111",
+      "website": "https://bonvenubank.com"
+    },
+    {
+      "name": "Caldwell Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11785",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6471 Highway 165, Columbia, LA 71418",
+      "website": "https://caldwellbankandtrust.com"
+    },
+    {
+      "name": "Capital One, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4297",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1680 Capital One Dr, Mclean, VA 22102",
+      "website": "https://www.capitalone.com"
+    },
+    {
+      "name": "Catalyst Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29804",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "235 N Court St, Opelousas, LA 70570",
+      "website": "https://www.catalystbank.com"
+    },
+    {
+      "name": "Century Next Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29700",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "505 N Vienna St, Ruston, LA 71270",
+      "website": "https://www.cnext.bank"
+    },
+    {
+      "name": "Citizens Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1376",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "57910 Main St, Plaquemine, LA 70764",
+      "website": "https://www.citizensbankandtrust.com"
+    },
+    {
+      "name": "Citizens Bank & Trust Company",
+      "fdic_insured_since": "05/10/1946",
+      "fdic_cert": "16417",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "222 N New Hampshire St, Covington, LA 70433",
+      "website": "https://www.cbtbanking.com"
+    },
+    {
+      "name": "Citizens Bank & Trust Company of Vivian, Louisiana",
+      "fdic_insured_since": "09/14/1967",
+      "fdic_cert": "19744",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "120 W Arkansas Ave, Vivian, LA 71082",
+      "website": "https://www.cbtofvivian.com"
+    },
+    {
+      "name": "Citizens Progressive Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10531",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3540 Front St, Winnsboro, LA 71295",
+      "website": "https://cpbonline.com"
+    },
+    {
+      "name": "Citizens Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30270",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1725 Sullivan Dr, Bogalusa, LA 70427",
+      "website": "https://www.citizenssb.com"
+    },
+    {
+      "name": "City Bank & Trust Co.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12608",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "146 Saint Denis St, Natchitoches, LA 71457",
+      "website": "https://www.mycitybank.com"
+    },
+    {
+      "name": "CLB The Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10532",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 Mound St, Jonesville, LA 71343",
+      "website": "https://www.clbbank.com"
+    },
+    {
+      "name": "Colfax Banking Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8140",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "625 8th St, Colfax, LA 71417",
+      "website": "https://www.colfaxbanking.com"
+    },
+    {
+      "name": "Commercial Capital Bank",
+      "fdic_insured_since": "02/22/1999",
+      "fdic_cert": "34784",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "311 Broadway St, Delhi, LA 71232",
+      "website": "https://www.comcapbank.com"
+    },
+    {
+      "name": "Community Bank of Louisiana",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13951",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "118 Jefferson St, Mansfield, LA 71052",
+      "website": "https://www.communitybankofla.bank"
+    },
+    {
+      "name": "Community First Bank",
+      "fdic_insured_since": "05/10/1999",
+      "fdic_cert": "35020",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1101 E Admiral Doyle Dr, New Iberia, LA 70560",
+      "website": "https://www.cfirstbank.com"
+    },
+    {
+      "name": "Concordia Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8527",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "904 Carter St, Vidalia, LA 71373",
+      "website": "https://www.concordiabank.com"
+    },
+    {
+      "name": "Cottonport Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8798",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "942 Bryan St, Cottonport, LA 71327",
+      "website": "https://www.cottonportbank.com"
+    },
+    {
+      "name": "Crescent Bank",
+      "fdic_insured_since": "08/30/1991",
+      "fdic_cert": "33492",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2201 Veterans Memorial Blvd Suite 100, Metairie, LA 70002",
+      "website": "https://www.crescentbank.com"
+    },
+    {
+      "name": "Currency Bank",
+      "fdic_insured_since": "08/02/1999",
+      "fdic_cert": "35019",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7054 Jefferson Hwy Suite 100, Baton Rouge, LA 70806",
+      "website": "https://www.currency.bank"
+    },
+    {
+      "name": "Delta Bank",
+      "fdic_insured_since": "01/10/1986",
+      "fdic_cert": "26564",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1617 Carter St, Vidalia, LA 71373",
+      "website": "https://www.deltabk.com"
+    },
+    {
+      "name": "Eureka Homestead",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29268",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1922 Veterans Memorial Blvd, Metairie, LA 70005",
+      "website": "https://www.eurekahomestead.com"
+    },
+    {
+      "name": "Exchange Bank and Trust Company, Natchitoches, Louisiana",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10528",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "700 Front St, Natchitoches, LA 71457",
+      "website": "https://www.exchange-bank.com"
+    },
+    {
+      "name": "Farmers State Bank & Trust Co.",
+      "fdic_insured_since": "01/03/1944",
+      "fdic_cert": "16114",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "110 W Plaquemine St, Church Point, LA 70525",
+      "website": "https://www.farmers24.com"
+    },
+    {
+      "name": "Feliciana Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1380",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "10926 Plank Rd, Clinton, LA 70722",
+      "website": "https://www.felicianabank.com"
+    },
+    {
+      "name": "FIDELITY BANK",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28316",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "353 Carondelet St, New Orleans, LA 70130",
+      "website": "https://www.bankwithfidelity.com"
+    },
+    {
+      "name": "Fifth District Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27697",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4000 General Degaulle Dr, New Orleans, LA 70114",
+      "website": "https://www.fifthdistrict.com"
+    },
+    {
+      "name": "First American Bank and Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8149",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2785 Highway 20, Vacherie, LA 70090",
+      "website": "https://www.fabt.com"
+    },
+    {
+      "name": "First American Trust, FSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "26312",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "5 First American Way Fl 3, Santa Ana, CA 92707",
+      "website": "https://www.firstamtrust.com"
+    },
+    {
+      "name": "First Federal Bank of Louisiana",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30441",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1135 Lake Shore Dr, Lake Charles, LA 70601",
+      "website": "https://www.ffbla.bank"
+    },
+    {
+      "name": "First Guaranty Bank",
+      "fdic_insured_since": "03/12/1934",
+      "fdic_cert": "14028",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 E Thomas St, Hammond, LA 70401",
+      "website": "https://www.fgb.net"
+    },
+    {
+      "name": "First Horizon Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4977",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "165 Madison Ave, Memphis, TN 38103",
+      "website": "https://www.firsthorizon.com"
+    },
+    {
+      "name": "First National Bank in DeRidder",
+      "fdic_insured_since": "06/02/1934",
+      "fdic_cert": "14427",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1003 N Pine St, Deridder, LA 70634",
+      "website": "https://www.bankfnbd.com"
+    },
+    {
+      "name": "First National Bank of Louisiana",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4288",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "128 N Parkerson Ave, Crowley, LA 70526",
+      "website": "https://www.fnb-la.com"
+    },
+    {
+      "name": "First National Bank USA",
+      "fdic_insured_since": "06/23/1975",
+      "fdic_cert": "22046",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "13386 Highway 90, Boutte, LA 70039",
+      "website": "https://www.fnbusa.com"
+    },
+    {
+      "name": "First National Banker's Bank",
+      "fdic_insured_since": "07/02/1984",
+      "fdic_cert": "25247",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "7813 Office Park Blvd, Baton Rouge, LA 70809",
+      "website": "https://www.bankers-bank.com"
+    },
+    {
+      "name": "Franklin State Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11792",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "802 Prairie St, Winnsboro, LA 71295",
+      "website": "https://www.fsbnet.com"
+    },
+    {
+      "name": "FSNB, National Association",
+      "fdic_insured_since": "07/01/1946",
+      "fdic_cert": "16416",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1420 Sw Lee Blvd, Lawton, OK 73501",
+      "website": "https://www.fsnb.com"
+    },
+    {
+      "name": "Gateway First Bank",
+      "fdic_insured_since": "05/03/1935",
+      "fdic_cert": "15118",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "244 S Gateway Pl, Jenks, OK 74037",
+      "website": "https://www.gatewayfirst.com"
+    },
+    {
+      "name": "Gibsland Bank & Trust Company",
+      "fdic_insured_since": "04/15/1948",
+      "fdic_cert": "16689",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1246 S 3rd St, Gibsland, LA 71028",
+      "website": "https://www.gbt.bank"
+    },
+    {
+      "name": "Guaranty Bank & Trust Company of Delhi, Louisiana",
+      "fdic_insured_since": "10/15/1966",
+      "fdic_cert": "19638",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "120 Oak St, Delhi, LA 71232",
+      "website": "https://www.gbankla.com"
+    },
+    {
+      "name": "Guaranty Bank and Trust Company",
+      "fdic_insured_since": "06/29/1957",
+      "fdic_cert": "17767",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "175 New Roads St, New Roads, LA 70760",
+      "website": "https://guaranty-bnk.com"
+    },
+    {
+      "name": "Gulf Coast Bank",
+      "fdic_insured_since": "02/01/1971",
+      "fdic_cert": "20353",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "221 S State St, Abbeville, LA 70510",
+      "website": "https://www.gcbank.com"
+    },
+    {
+      "name": "Gulf Coast Bank and Trust Company",
+      "fdic_insured_since": "06/08/1990",
+      "fdic_cert": "32974",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 Saint Charles Ave, New Orleans, LA 70130",
+      "website": "https://www.gulfbank.com"
+    },
+    {
+      "name": "Hancock Whitney Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12441",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2510 14th St, Gulfport, MS 39501",
+      "website": "https://www.hancockwhitney.com"
+    },
+    {
+      "name": "Heritage Bank of St Tammany",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29577",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "205 N Columbia St, Covington, LA 70433",
+      "website": "https://www.heritagebank.org"
+    },
+    {
+      "name": "Hibernia Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27752",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "325 Carondelet St, New Orleans, LA 70130",
+      "website": "https://www.hibernia.bank"
+    },
+    {
+      "name": "Hodge Bank & Trust Company",
+      "fdic_insured_since": "01/26/1965",
+      "fdic_cert": "19354",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4619 Quitman Hwy, Hodge, LA 71247",
+      "website": "https://www.hodgebank.net"
+    },
+    {
+      "name": "Home Bank, National Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28094",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "503 Kaliste Saloom Rd, Lafayette, LA 70508",
+      "website": "https://www.home24bank.com"
+    },
+    {
+      "name": "Home Federal Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27654",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "222 Florida St, Shreveport, LA 71105",
+      "website": "https://www.hfb.bank"
+    },
+    {
+      "name": "Homeland Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32459",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "7840 Highway 165, Columbia, LA 71418",
+      "website": "https://www.homelandbank.com"
+    },
+    {
+      "name": "Investar Bank, National Association",
+      "fdic_insured_since": "06/14/2006",
+      "fdic_cert": "58316",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "7244 Perkins Rd, Baton Rouge, LA 70808",
+      "website": "https://www.investarbank.com"
+    },
+    {
+      "name": "Jackson Parish Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8799",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 Jimmie Davis Blvd, Jonesboro, LA 71251",
+      "website": "https://www.jacksonparishbank.com"
+    },
+    {
+      "name": "JD Bank",
+      "fdic_insured_since": "03/12/1947",
+      "fdic_cert": "16546",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "507 N Main St, Jennings, LA 70546",
+      "website": "https://www.jdbank.com"
+    },
+    {
+      "name": "Jonesboro State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9325",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "109 Jimmie Davis Blvd, Jonesboro, LA 71251",
+      "website": "https://www.jonesborostatebank.com"
+    },
+    {
+      "name": "JPMorgan Chase Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "628",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1111 Polaris Pkwy, Columbus, OH 43240",
+      "website": "https://www.jpmorganchase.com"
+    },
+    {
+      "name": "Lakeside Bank",
+      "fdic_insured_since": "07/26/2010",
+      "fdic_cert": "58961",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4735 Nelson Rd, Lake Charles, LA 70605",
+      "website": "https://mylksb.bank"
+    },
+    {
+      "name": "Landmark Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "307",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "12225 Saint Helena St, Clinton, LA 70722",
+      "website": "https://landmarkbankla.com"
+    },
+    {
+      "name": "Liberty Bank and Trust Company",
+      "fdic_insured_since": "11/16/1972",
+      "fdic_cert": "20856",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6600 Plaza Dr, New Orleans, LA 70127",
+      "website": "https://www.libertybank.net"
+    },
+    {
+      "name": "Louisiana National Bank",
+      "fdic_insured_since": "03/20/1935",
+      "fdic_cert": "15059",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2001 N Trenton St, Ruston, LA 71270",
+      "website": "https://www.ln.bank"
+    },
+    {
+      "name": "M C Bank & Trust Company",
+      "fdic_insured_since": "01/20/1955",
+      "fdic_cert": "17388",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1204 Greenwood St, Morgan City, LA 70380",
+      "website": "https://www.mcbt.com"
+    },
+    {
+      "name": "Marion State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9320",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "345 Main St, Marion, LA 71260",
+      "website": "https://www.marionstate.bank"
+    },
+    {
+      "name": "Merchants & Farmers Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9319",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "501 S 5th St, Leesville, LA 71446",
+      "website": "https://www.merchantsandfarmers.com"
+    },
+    {
+      "name": "Merchants & Marine Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12203",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3118 Pascagoula St, Pascagoula, MS 39567",
+      "website": "https://www.mandmbank.com"
+    },
+    {
+      "name": "Metairie Bank & Trust Company",
+      "fdic_insured_since": "02/15/1947",
+      "fdic_cert": "16539",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3344 Metairie Rd, Metairie, LA 70001",
+      "website": "https://www.metairiebank.com"
+    },
+    {
+      "name": "Mutual Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27716",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2900 Clearview Pkwy, Metairie, LA 70006",
+      "website": "https://www.mutualsavings.com"
+    },
+    {
+      "name": "Origin Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12614",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3921 Elm St, Choudrant, LA 71227",
+      "website": "https://www.origin.bank"
+    },
+    {
+      "name": "Patterson State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12609",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1130 Highway 90, Patterson, LA 70392",
+      "website": "https://www.pattersonstatebank.com"
+    },
+    {
+      "name": "Peoples Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9328",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6689 Highway 34, Chatham, LA 71226",
+      "website": "https://www.thepeoplesbankla.com"
+    },
+    {
+      "name": "Planters Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8235",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "212 Catchings Ave, Indianola, MS 38751",
+      "website": "https://www.planters-bank.com"
+    },
+    {
+      "name": "Plaquemine Bank & Trust Company",
+      "fdic_insured_since": "04/01/1968",
+      "fdic_cert": "19800",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "24025 Eden St, Plaquemine, LA 70764",
+      "website": "https://www.plaqbank.com"
+    },
+    {
+      "name": "Progressive National Bank",
+      "fdic_insured_since": "03/28/1983",
+      "fdic_cert": "24443",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "300 Washington Ave, Mansfield, LA 71052",
+      "website": "https://www.progressivenational.com"
+    },
+    {
+      "name": "Rayne Building and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30447",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 N Adams Ave, Rayne, LA 70578",
+      "website": "https://www.raynebuildingloan.com"
+    },
+    {
+      "name": "Rayne State Bank & Trust Company",
+      "fdic_insured_since": "07/01/1943",
+      "fdic_cert": "16075",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 S Adams Ave, Rayne, LA 70578",
+      "website": "https://www.bankonnet.bank"
+    },
+    {
+      "name": "Red River Bank",
+      "fdic_insured_since": "01/14/1999",
+      "fdic_cert": "34980",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1412 Centre Ct, Alexandria, LA 71301",
+      "website": "https://www.redriverbank.net"
+    },
+    {
+      "name": "Regions Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12368",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1900 5th Ave N, Birmingham, AL 35203",
+      "website": "https://www.regions.com"
+    },
+    {
+      "name": "Renasant Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12437",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "209 Troy St, Tupelo, MS 38804",
+      "website": "https://www.renasant.com"
+    },
+    {
+      "name": "Resource Bank",
+      "fdic_insured_since": "07/20/1998",
+      "fdic_cert": "34803",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "70533 Highway 21, Covington, LA 70433",
+      "website": "https://www.resource.bank"
+    },
+    {
+      "name": "Sabine State Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8141",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "297 Elizabeth St, Many, LA 71449",
+      "website": "https://www.sabinebank.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}
