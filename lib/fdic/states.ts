@@ -15,7 +15,7 @@ export const US_STATES: StateMeta[] = [
   { code: 'GA', fullName: 'Georgia', slug: 'georgia', region: 'Southeast', hasData: true },
   { code: 'HI', fullName: 'Hawaii', slug: 'hawaii', region: 'West', hasData: false },
   { code: 'ID', fullName: 'Idaho', slug: 'idaho', region: 'West', hasData: false },
-  { code: 'IL', fullName: 'Illinois', slug: 'illinois', region: 'Midwest', hasData: false },
+  { code: 'IL', fullName: 'Illinois', slug: 'illinois', region: 'Midwest', hasData: true },
   { code: 'IN', fullName: 'Indiana', slug: 'indiana', region: 'Midwest', hasData: false },
   { code: 'IA', fullName: 'Iowa', slug: 'iowa', region: 'Midwest', hasData: true },
   { code: 'KS', fullName: 'Kansas', slug: 'kansas', region: 'Midwest', hasData: true },

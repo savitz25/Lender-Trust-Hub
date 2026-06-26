@@ -11,6 +11,7 @@ import alabamaData from './data/alabama.json';
 import arkansasData from './data/arkansas.json';
 import floridaData from './data/florida.json';
 import georgiaData from './data/georgia.json';
+import illinoisData from './data/illinois.json';
 import iowaData from './data/iowa.json';
 import kansasData from './data/kansas.json';
 import louisianaData from './data/louisiana.json';
@@ -30,6 +31,7 @@ export const stateData: Record<string, StateFDICData> = {
   AR: arkansasData as StateFDICData,
   FL: floridaData as StateFDICData,
   GA: georgiaData as StateFDICData,
+  IL: illinoisData as StateFDICData,
   IA: iowaData as StateFDICData,
   KS: kansasData as StateFDICData,
   LA: louisianaData as StateFDICData,

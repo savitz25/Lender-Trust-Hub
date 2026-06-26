@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Parse tab-separated FDIC bank lists from pasted text into lib/fdic/data/*.json"""
+import csv
 import json
 import re
 from datetime import datetime
@@ -34,6 +35,7 @@ WI_SRC = ROOT / "data" / "wisconsin-import.txt"
 WI_PROMPT = Path(
     r"C:\Users\makei\.grok\sessions\C%3A%5CUsers%5Cmakei\019efc5b-cf82-7612-8aff-b4ae0767aaa7\prompts\prompt_9.txt"
 )
+IL_SRC = ROOT / "data" / "illinois-import.csv"
 OUT_DIR = ROOT / "lib" / "fdic" / "data"
 
 STATE_META = {
@@ -53,6 +55,7 @@ STATE_META = {
     "IA": ("Iowa", "iowa"),
     "MN": ("Minnesota", "minnesota"),
     "WI": ("Wisconsin", "wisconsin"),
+    "IL": ("Illinois", "illinois"),
 }
 
 BULK_MIN_COLS = 133
@@ -233,6 +236,60 @@ def parse_bulk_line(line: str) -> dict | None:
         "headquarters_address": ", ".join(address_parts),
         "website": normalize_website(parts[BULK_COL_WEBSITE].strip()),
     }
+
+
+def build_csv_address(row: dict) -> str:
+    street = (row.get("ADDRESS") or "").strip()
+    suite = (row.get("ADDRESS2") or "").strip()
+    city = (row.get("CITY") or "").strip()
+    state = (row.get("STALP") or "").strip()
+    zip_code = (row.get("ZIP") or "").strip()
+
+    address_parts = [p for p in (street, suite, city) if p]
+    if state and zip_code:
+        address_parts.append(f"{state} {zip_code}")
+    elif state:
+        address_parts.append(state)
+
+    return ", ".join(address_parts)
+
+
+def parse_fdic_csv_row(row: dict) -> dict | None:
+    cert = (row.get("CERT") or "").strip()
+    name = (row.get("NAME") or "").strip()
+    insured_since = (row.get("INSDATE") or "").strip()
+    regulator_code = (row.get("REGAGNT") or "").strip().upper()
+
+    if not cert.isdigit() or not name or not BULK_DATE_RE.match(insured_since):
+        return None
+
+    regulator = REGULATOR_MAP.get(regulator_code, regulator_code)
+
+    return {
+        "name": name,
+        "fdic_insured_since": normalize_bulk_date(insured_since),
+        "fdic_cert": cert,
+        "primary_regulator": regulator,
+        "headquarters_address": build_csv_address(row),
+        "website": normalize_website((row.get("WEBADDR") or "").strip()),
+    }
+
+
+def parse_fdic_csv(path: Path) -> list[dict]:
+    banks = []
+    seen_certs = set()
+
+    with path.open(encoding="utf-8", newline="") as handle:
+        for row in csv.DictReader(handle):
+            bank = parse_fdic_csv_row(row)
+            if not bank:
+                continue
+            if bank["fdic_cert"] in seen_certs:
+                continue
+            seen_certs.add(bank["fdic_cert"])
+            banks.append(bank)
+
+    return banks
 
 
 def parse_bulk_section(text: str) -> list[dict]:
@@ -589,6 +646,20 @@ def main():
     for code, text in bulk_sections.items():
         full_name, slug = STATE_META[code]
         banks = parse_bulk_section(text)
+        payload = {
+            "fullName": full_name,
+            "abbr": code,
+            "banks": banks,
+            "updated": updated,
+        }
+        out_path = OUT_DIR / f"{slug}.json"
+        out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+        print(f"{code}: {len(banks)} banks -> {out_path.name}")
+
+    if IL_SRC.exists():
+        code = "IL"
+        full_name, slug = STATE_META[code]
+        banks = parse_fdic_csv(IL_SRC)
         payload = {
             "fullName": full_name,
             "abbr": code,
