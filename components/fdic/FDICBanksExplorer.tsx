@@ -10,7 +10,6 @@ import {
   Shuffle,
   Building2,
   Shield,
-  Calculator,
   ArrowRight,
   Sparkles,
   LayoutGrid,
@@ -23,6 +22,11 @@ import { BankTable } from '@/components/fdic/BankTable';
 import { StateStatsBar } from '@/components/fdic/StateStatsBar';
 import { FDICFAQ } from '@/components/fdic/FDICFAQ';
 import { BankMatchPanel } from '@/components/fdic/BankMatchPanel';
+import { StateSelectorBar } from '@/components/fdic/StateSelectorBar';
+import { ShareBookmarkBar } from '@/components/fdic/ShareBookmarkBar';
+import { BankComparison } from '@/components/fdic/BankComparison';
+import { StateEducationSections } from '@/components/fdic/StateEducationSections';
+import { CategoryCTAs } from '@/components/fdic/CategoryCTAs';
 import { US_STATES } from '@/lib/fdic/states';
 import { getStateData, getAvailableStateCodes } from '@/lib/fdic/stateData';
 import type { FDICBank, RegulatorKey } from '@/lib/fdic/types';
@@ -34,7 +38,7 @@ import {
   isHeadquarteredInState,
   parseInsuredDate,
 } from '@/lib/fdic/utils';
-import { statePagePath } from '@/lib/fdic/seo';
+import { statePagePath, statePageUrl } from '@/lib/fdic/seo';
 import { Button } from '@/components/ui/button';
 
 const PAGE_SIZE = 24;
@@ -42,6 +46,7 @@ const REGULATORS: RegulatorKey[] = ['OCC', 'FED', 'FDIC'];
 
 type SortKey = 'name' | 'oldest' | 'newest' | 'cert';
 type ViewMode = 'grid' | 'table';
+type YearFilter = 'all' | 'before1990' | 'before2000' | 'after2010';
 
 function celebrate() {
   if (typeof document === 'undefined') return;
@@ -76,8 +81,9 @@ export function FDICBanksExplorer({
   const [selectedCode, setSelectedCode] = useState(defaultStateCode);
   const [search, setSearch] = useState('');
   const [regulators, setRegulators] = useState<Set<RegulatorKey>>(new Set());
-  const [before2000, setBefore2000] = useState(false);
+  const [yearFilter, setYearFilter] = useState<YearFilter>('all');
   const [hqOnly, setHqOnly] = useState(false);
+  const [compareCerts, setCompareCerts] = useState<string[]>([]);
   const [sort, setSort] = useState<SortKey>('name');
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
   const [visible, setVisible] = useState(PAGE_SIZE);
@@ -100,8 +106,9 @@ export function FDICBanksExplorer({
       setSelectedCode(code);
       setSearch('');
       setRegulators(new Set());
-      setBefore2000(false);
+      setYearFilter('all');
       setHqOnly(false);
+      setCompareCerts([]);
       setSort('name');
       setVisible(PAGE_SIZE);
       if (withCelebration || (!celebrated && getStateData(code))) {
@@ -131,10 +138,15 @@ export function FDICBanksExplorer({
       list = list.filter((b) => regulators.has(getRegulatorKey(b.primary_regulator)));
     }
 
-    if (before2000) {
+    if (yearFilter !== 'all') {
       list = list.filter((b) => {
         const d = parseInsuredDate(b.fdic_insured_since);
-        return d && d.getFullYear() < 2000;
+        if (!d) return false;
+        const year = d.getFullYear();
+        if (yearFilter === 'before1990') return year < 1990;
+        if (yearFilter === 'before2000') return year < 2000;
+        if (yearFilter === 'after2010') return year >= 2010;
+        return true;
       });
     }
 
@@ -151,7 +163,7 @@ export function FDICBanksExplorer({
     });
 
     return list;
-  }, [stateData, search, regulators, before2000, hqOnly, sort, selectedCode]);
+  }, [stateData, search, regulators, yearFilter, hqOnly, sort, selectedCode]);
 
   const stats = stateData ? computeExtendedStateStats(stateData.banks, selectedCode) : null;
 
@@ -177,10 +189,18 @@ export function FDICBanksExplorer({
   function resetFilters() {
     setSearch('');
     setRegulators(new Set());
-    setBefore2000(false);
+    setYearFilter('all');
     setHqOnly(false);
     setSort('name');
     setVisible(PAGE_SIZE);
+  }
+
+  function toggleCompare(cert: string) {
+    setCompareCerts((prev) => {
+      if (prev.includes(cert)) return prev.filter((c) => c !== cert);
+      if (prev.length >= 3) return prev;
+      return [...prev, cert];
+    });
   }
 
   function surpriseMe() {
@@ -266,6 +286,48 @@ export function FDICBanksExplorer({
         </div>
       </section>
 
+      {statePageMode && (
+        <section className="container mx-auto px-4 py-8">
+          <div className="mb-6">
+            <StateSelectorBar currentState={stateMeta} showGrid />
+          </div>
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm">
+              <div className="mb-3 flex items-center justify-between">
+                <h2 className="text-lg font-semibold text-[#0A2540]">Explore Other States</h2>
+                <button
+                  type="button"
+                  onClick={surpriseMe}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-[#D4AF37]/15 px-3 py-1.5 text-xs font-semibold text-amber-800 transition hover:bg-[#D4AF37]/25"
+                >
+                  <Shuffle className="h-3.5 w-3.5" aria-hidden="true" />
+                  Surprise Me
+                </button>
+              </div>
+              <USMap
+                selectedCode={selectedCode}
+                availableCodes={availableCodes}
+                onSelect={(code) => navigateToState(code, true)}
+              />
+            </div>
+            <div className="flex flex-col justify-center gap-4">
+              {statePageMode && stats && (
+                <ShareBookmarkBar
+                  title={`FDIC Insured Banks in ${stateMeta.fullName} 2026`}
+                  url={statePageUrl(stateMeta.slug)}
+                  stateName={stateMeta.fullName}
+                />
+              )}
+              <p className="text-sm leading-relaxed text-zinc-600">
+                Click any state on the map or use the grid above to instantly switch directories.
+                All data is sourced from official FDIC records with direct BankFind verification
+                links.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
       {!statePageMode && (
         <section className="container mx-auto px-4 py-12">
           <div className="grid gap-8 lg:grid-cols-2">
@@ -317,7 +379,10 @@ export function FDICBanksExplorer({
         </section>
       )}
 
-      <section ref={listRef} className="border-t border-zinc-200 bg-zinc-50 py-12">
+      <section
+        ref={listRef}
+        className={`border-t border-zinc-200 bg-zinc-50 py-12 ${compareCerts.length > 0 ? 'pb-36' : ''}`}
+      >
         <div className="container mx-auto px-4">
           <AnimatePresence mode="wait">
             <motion.div
@@ -410,16 +475,29 @@ export function FDICBanksExplorer({
                               {r}
                             </button>
                           ))}
-                          <button
-                            type="button"
-                            onClick={() => setBefore2000(!before2000)}
-                            className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                              before2000 ? 'bg-[#0A2540] text-white' : 'bg-zinc-100 text-zinc-600'
-                            }`}
-                            aria-pressed={before2000}
-                          >
-                            Before 2000
-                          </button>
+                          {(
+                            [
+                              ['before1990', 'Before 1990'],
+                              ['before2000', 'Before 2000'],
+                              ['after2010', 'After 2010'],
+                            ] as const
+                          ).map(([key, label]) => (
+                            <button
+                              key={key}
+                              type="button"
+                              onClick={() =>
+                                setYearFilter((prev) => (prev === key ? 'all' : key))
+                              }
+                              className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                                yearFilter === key
+                                  ? 'bg-[#0A2540] text-white'
+                                  : 'bg-zinc-100 text-zinc-600'
+                              }`}
+                              aria-pressed={yearFilter === key}
+                            >
+                              {label}
+                            </button>
+                          ))}
                           <button
                             type="button"
                             onClick={() => setHqOnly(!hqOnly)}
@@ -465,6 +543,10 @@ export function FDICBanksExplorer({
                                   bank={bank}
                                   stateAbbr={selectedCode}
                                   stateName={stateMeta.fullName}
+                                  compareMode
+                                  isCompared={compareCerts.includes(bank.fdic_cert)}
+                                  compareDisabled={compareCerts.length >= 3}
+                                  onCompareToggle={toggleCompare}
                                 />
                               ))}
                             </div>
@@ -508,7 +590,7 @@ export function FDICBanksExplorer({
                         stateAbbr={selectedCode}
                         stateName={stateMeta.fullName}
                         onApplyHqOnly={() => setHqOnly(true)}
-                        onApplyLegacy={() => setBefore2000(true)}
+                        onApplyLegacy={() => setYearFilter('before2000')}
                         onApplyRegulator={(reg) => setRegulators(new Set([reg]))}
                         onReset={resetFilters}
                       />
@@ -533,58 +615,8 @@ export function FDICBanksExplorer({
                     </div>
                   </div>
 
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <details className="rounded-2xl border border-zinc-200 bg-white p-5" open>
-                      <summary className="cursor-pointer font-semibold text-[#0A2540]">
-                        What FDIC Insurance Means for You
-                      </summary>
-                      <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-                        FDIC insurance protects depositors at member banks up to $250,000 per
-                        depositor, per insured bank, for each account ownership category. If an
-                        FDIC-insured bank fails, your covered deposits are protected by the full
-                        faith and credit of the United States government.
-                      </p>
-                    </details>
-                    <details className="rounded-2xl border border-zinc-200 bg-white p-5">
-                      <summary className="cursor-pointer font-semibold text-[#0A2540]">
-                        How We Verify These Banks
-                      </summary>
-                      <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-                        Every institution is sourced from the official FDIC BankFind database. We
-                        display certificate numbers, insurance dates, regulators, and headquarters
-                        with one-click verification links. LenderTrustHub does not accept paid
-                        placements.
-                      </p>
-                    </details>
-                  </div>
-
-                  <div className="mt-8 grid gap-3 sm:grid-cols-3">
-                    <Link
-                      href="/calculators"
-                      className="rounded-xl border border-zinc-200 bg-white p-4 transition hover:border-[#00A3A1]"
-                    >
-                      <Calculator className="mb-2 h-6 w-6 text-[#00A3A1]" aria-hidden="true" />
-                      <p className="text-sm font-semibold text-[#0A2540]">Mortgage Calculators</p>
-                    </Link>
-                    <Link
-                      href={`/local-lenders/${stateMeta.slug}`}
-                      className="rounded-xl border border-zinc-200 bg-white p-4 transition hover:border-[#00A3A1]"
-                    >
-                      <Building2 className="mb-2 h-6 w-6 text-[#00A3A1]" aria-hidden="true" />
-                      <p className="text-sm font-semibold text-[#0A2540]">
-                        Mortgage Lenders in {stateMeta.fullName}
-                      </p>
-                    </Link>
-                    <a
-                      href="https://www.movetrusthub.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-xl border border-zinc-200 bg-white p-4 transition hover:border-[#00A3A1]"
-                    >
-                      <Shield className="mb-2 h-6 w-6 text-[#00A3A1]" aria-hidden="true" />
-                      <p className="text-sm font-semibold text-[#0A2540]">MoveTrustHub</p>
-                    </a>
-                  </div>
+                  <StateEducationSections stateMeta={stateMeta} />
+                  <CategoryCTAs stateMeta={stateMeta} />
 
                   <FDICFAQ
                     stateMeta={stateMeta}
@@ -597,6 +629,16 @@ export function FDICBanksExplorer({
           </AnimatePresence>
         </div>
       </section>
+      {stateData && compareCerts.length > 0 && (
+        <BankComparison
+          banks={stateData.banks}
+          selectedCerts={compareCerts}
+          stateAbbr={selectedCode}
+          stateName={stateMeta.fullName}
+          onRemove={(cert) => toggleCompare(cert)}
+          onClear={() => setCompareCerts([])}
+        />
+      )}
     </div>
   );
 }

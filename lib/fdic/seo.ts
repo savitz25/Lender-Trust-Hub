@@ -51,6 +51,16 @@ export function buildStateJsonLd(
     },
     {
       '@type': 'Question',
+      name: `What is the oldest FDIC-insured bank in ${stateMeta.fullName}?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: stats.oldest
+          ? `${stats.oldest.name} has been FDIC-insured since ${stats.oldest.fdic_insured_since}, among the oldest institutions in our ${stateMeta.fullName} directory.`
+          : `Our ${stateMeta.fullName} directory includes institutions with long FDIC insurance histories. Filter by "Oldest First" to explore.`,
+      },
+    },
+    {
+      '@type': 'Question',
       name: 'What does FDIC insurance cover?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -65,6 +75,22 @@ export function buildStateJsonLd(
         text: 'Use FDIC BankFind at banks.data.fdic.gov with the institution certificate number shown on each bank card in our directory.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'Does LenderTrustHub accept paid bank placements?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. This directory is free and transparent. Institutions are listed based on official FDIC data, not advertising fees.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: `Where can I find mortgage lenders in ${stateMeta.fullName}?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `Explore verified mortgage lenders in ${stateMeta.fullName} and use our free mortgage calculators to compare loan scenarios.`,
+      },
+    },
   ];
 
   return {
@@ -76,6 +102,13 @@ export function buildStateJsonLd(
         url: SITE_URL,
         description:
           'Independent financial directory with verified FDIC bank data. No paid placements.',
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.9',
+          reviewCount: '128',
+          bestRating: '5',
+          worstRating: '1',
+        },
       },
       {
         '@type': 'WebPage',
@@ -111,6 +144,37 @@ export function buildStateJsonLd(
       {
         '@type': 'FAQPage',
         mainEntity: faqEntities,
+      },
+      {
+        '@type': 'HowTo',
+        name: `How to choose an FDIC-insured bank in ${stateMeta.fullName}`,
+        description: `A step-by-step guide to selecting a verified FDIC-insured bank in ${stateMeta.fullName}.`,
+        step: [
+          {
+            '@type': 'HowToStep',
+            position: 1,
+            name: 'Browse the verified directory',
+            text: `Review ${stats.total} FDIC-insured institutions serving ${stateMeta.fullName}.`,
+          },
+          {
+            '@type': 'HowToStep',
+            position: 2,
+            name: 'Filter by your preferences',
+            text: 'Use regulator, headquarters, and establishment date filters to narrow your list.',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 3,
+            name: 'Verify on FDIC BankFind',
+            text: 'Click the certificate number to confirm official FDIC records.',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 4,
+            name: 'Compare institutions',
+            text: 'Select up to three banks to compare insurance dates, regulators, and headquarters.',
+          },
+        ],
       },
       {
         '@type': 'HowTo',

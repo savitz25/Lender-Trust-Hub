@@ -15,10 +15,18 @@ export function BankCard({
   bank,
   stateAbbr,
   stateName,
+  compareMode = false,
+  isCompared = false,
+  compareDisabled = false,
+  onCompareToggle,
 }: {
   bank: FDICBank;
   stateAbbr: string;
   stateName: string;
+  compareMode?: boolean;
+  isCompared?: boolean;
+  compareDisabled?: boolean;
+  onCompareToggle?: (cert: string) => void;
 }) {
   const [copied, setCopied] = useState(false);
   const regKey = getRegulatorKey(bank.primary_regulator);
@@ -36,13 +44,32 @@ export function BankCard({
   }
 
   return (
-    <article className="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition-all hover:border-[#00A3A1]/50 hover:shadow-md">
+    <article
+      className={`group flex flex-col rounded-2xl border bg-white p-5 shadow-sm transition-all hover:border-[#00A3A1]/50 hover:shadow-md ${
+        isCompared ? 'border-[#00A3A1] ring-2 ring-[#00A3A1]/20' : 'border-zinc-200'
+      }`}
+    >
       <div className="mb-3 flex items-start justify-between gap-2">
         <h3 className="text-lg font-semibold leading-tight text-[#0A2540]">{bank.name}</h3>
-        <span className="trust-badge shrink-0 text-[10px]">
-          <ShieldCheck className="h-3 w-3" aria-hidden="true" />
-          Verified
-        </span>
+        <div className="flex shrink-0 items-center gap-2">
+          {compareMode && onCompareToggle && (
+            <label className="flex cursor-pointer items-center gap-1 text-[10px] font-semibold text-zinc-500">
+              <input
+                type="checkbox"
+                checked={isCompared}
+                disabled={compareDisabled && !isCompared}
+                onChange={() => onCompareToggle(bank.fdic_cert)}
+                className="rounded border-zinc-300 text-[#00A3A1] focus:ring-[#00A3A1]"
+                aria-label={`Compare ${bank.name}`}
+              />
+              Compare
+            </label>
+          )}
+          <span className="trust-badge text-[10px]">
+            <ShieldCheck className="h-3 w-3" aria-hidden="true" />
+            Verified
+          </span>
+        </div>
       </div>
 
       <div className="mb-3 flex flex-wrap gap-2">
