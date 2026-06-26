@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Submit THIS file to Google Search Console: sitemap_index.xml -->
+  <sitemap>
+    <loc>https://www.lendertrusthub.com/sitemaps/fdic-banks.xml</loc>
+    <lastmod>2026-06-26</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.lendertrusthub.com/sitemaps/mortgage-lenders.xml</loc>
+    <lastmod>2026-06-26</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.lendertrusthub.com/sitemaps/auto-loans.xml</loc>
+    <lastmod>2026-06-26</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.lendertrusthub.com/sitemaps/credit-repair.xml</loc>
+    <lastmod>2026-06-26</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.lendertrusthub.com/sitemaps/mca.xml</loc>
+    <lastmod>2026-06-26</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.lendertrusthub.com/sitemaps/calculators.xml</loc>
+    <lastmod>2026-06-26</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.lendertrusthub.com/sitemaps/lender-profiles.xml</loc>
+    <lastmod>2026-06-26</lastmod>
+  </sitemap>
+</sitemapindex>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Merchant Cash Advance Companies (hub TBD) -->
+  <url>
+    <loc>https://www.lendertrusthub.com/mca-companies</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- ADD NEW MCA STATE BELOW when /mca-companies/[state] goes live -->
+</urlset>
