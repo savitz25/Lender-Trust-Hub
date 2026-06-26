@@ -1,0 +1,519 @@
+{
+  "fullName": "Colorado",
+  "abbr": "CO",
+  "banks": [
+    {
+      "name": "AMG National Trust Bank",
+      "fdic_insured_since": "02/01/2008",
+      "fdic_cert": "57295",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1155 Canyon Blvd, Ste 310, Boulder, CO 80302",
+      "website": "https://www.amgnational.com"
+    },
+    {
+      "name": "ANB Bank",
+      "fdic_insured_since": "09/01/1964",
+      "fdic_cert": "19220",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3033 E 1st Ave, Denver, CO 80206",
+      "website": "https://ANBBANK.COM"
+    },
+    {
+      "name": "First Western Trust Bank",
+      "fdic_insured_since": "03/17/2004",
+      "fdic_cert": "57607",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1900 16th St, Denver, CO 80202",
+      "website": "https://www.myfw.com"
+    },
+    {
+      "name": "NBH Bank",
+      "fdic_insured_since": "12/10/2010",
+      "fdic_cert": "59052",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "7800 E Orchard Rd, Ste 200, Greenwood Village, CO 80111",
+      "website": "https://www.nbhbank.com"
+    },
+    {
+      "name": "Points West Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3031",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1291 Main St, Windsor, CO 80550",
+      "website": "https://www.pwcbank.com"
+    },
+    {
+      "name": "5Star Bank",
+      "fdic_insured_since": "11/05/1985",
+      "fdic_cert": "91005",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "104 S Cascade Ave, Ste 102, Colorado Springs, CO 80903",
+      "website": "https://www.5star.bank"
+    },
+    {
+      "name": "Alamosa State Bank",
+      "fdic_insured_since": "02/23/1934",
+      "fdic_cert": "13947",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2225 Main St, Alamosa, CO 81101",
+      "website": "https://www.alamosastatebank.com"
+    },
+    {
+      "name": "Alpine Bank",
+      "fdic_insured_since": "04/01/1980",
+      "fdic_cert": "23091",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2200 Grand Ave, Glenwood Springs, CO 81601",
+      "website": "https://www.alpinebank.com"
+    },
+    {
+      "name": "Bank of Colorado",
+      "fdic_insured_since": "01/26/1951",
+      "fdic_cert": "16980",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1609 E Harmony Rd, Fort Collins, CO 80525",
+      "website": "https://www.bankofcolorado.com"
+    },
+    {
+      "name": "Bank of Estes Park",
+      "fdic_insured_since": "01/18/1965",
+      "fdic_cert": "19351",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "255 Park Ln, Estes Park, CO 80517",
+      "website": "https://www.bankofestespark.com"
+    },
+    {
+      "name": "Bankers' Bank of the West",
+      "fdic_insured_since": "10/01/1980",
+      "fdic_cert": "23210",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1099 18th St, Ste 2700, Denver, CO 80202",
+      "website": "https://www.bbwest.com"
+    },
+    {
+      "name": "Century Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28860",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "233 E Main St, Trinidad, CO 81082",
+      "website": "https://www.centurysavings.com"
+    },
+    {
+      "name": "Champion Bank",
+      "fdic_insured_since": "06/17/2002",
+      "fdic_cert": "57031",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "16790 Centre Ct, Parker, CO 80134",
+      "website": "http://www.thechampionbank.com"
+    },
+    {
+      "name": "Colorado Federal Savings Bank",
+      "fdic_insured_since": "06/29/1990",
+      "fdic_cert": "33111",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "8400 E Prentice Ave, Ste 840, Greenwood Village, CO 80111",
+      "website": "https://www.coloradofederalbank.com"
+    },
+    {
+      "name": "Community State Bank",
+      "fdic_insured_since": "07/15/2008",
+      "fdic_cert": "58732",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "717 N Main St, Lamar, CO 81052",
+      "website": "http://www.csb-lamar.com"
+    },
+    {
+      "name": "Del Norte Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29066",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "705 Grand Ave, Del Norte, CO 81132",
+      "website": "https://www.truelocalbank.com"
+    },
+    {
+      "name": "Equitable Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30707",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "221 N 3rd St, Sterling, CO 80751",
+      "website": "https://www.equitable-savings.com"
+    },
+    {
+      "name": "Evergreen National Bank",
+      "fdic_insured_since": "04/15/1981",
+      "fdic_cert": "23404",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "28145 Colorado Highway 74, Evergreen, CO 80439",
+      "website": "https://WWW.ENBCOLORADO.COM"
+    },
+    {
+      "name": "Farmers Bank",
+      "fdic_insured_since": "12/28/2001",
+      "fdic_cert": "57335",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "119 1st St, Ault, CO 80610",
+      "website": "https://www.farmersbank-weld.com"
+    },
+    {
+      "name": "Farmers State Bank of Calhan",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1780",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1500 8th St, Calhan, CO 80808",
+      "website": "https://www.yourfsb.com"
+    },
+    {
+      "name": "First American State Bank",
+      "fdic_insured_since": "07/10/1995",
+      "fdic_cert": "34040",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "8390 E Crescent Pkwy, Ste 100, Greenwood Village, CO 80111",
+      "website": "http://www.fasbank.com"
+    },
+    {
+      "name": "First FarmBank",
+      "fdic_insured_since": "02/12/2007",
+      "fdic_cert": "58508",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2939 65th Ave, Greeley, CO 80634",
+      "website": "https://www.firstfarmbank.com"
+    },
+    {
+      "name": "First National Bank Colorado",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3034",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "535 Bent Ave, Las Animas, CO 81054",
+      "website": "https://www.firstnationalbankcolorado.com"
+    },
+    {
+      "name": "First National Bank, Cortez",
+      "fdic_insured_since": "05/31/1958",
+      "fdic_cert": "17872",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2258 E Main St, Cortez, CO 81321",
+      "website": "https://www.fnbcortez.com"
+    },
+    {
+      "name": "First Pioneer National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3063",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "145 W 4th St, Wray, CO 80758",
+      "website": "https://www.fpnb.bank"
+    },
+    {
+      "name": "First Southwest Bank",
+      "fdic_insured_since": "07/09/2004",
+      "fdic_cert": "57741",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "600 E 2nd Ave, Durango, CO 81301",
+      "website": "https://www.fswb.bank"
+    },
+    {
+      "name": "FirstBank",
+      "fdic_insured_since": "02/27/1963",
+      "fdic_cert": "18714",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "10403 W Colfax Ave, Lakewood, CO 80215",
+      "website": "https://www.efirstbank.com/"
+    },
+    {
+      "name": "FlatIrons Bank",
+      "fdic_insured_since": "12/22/2001",
+      "fdic_cert": "57280",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1095 Canyon Blvd, Ste 100, Boulder, CO 80302",
+      "website": "https://www.flatirons.bank"
+    },
+    {
+      "name": "FMS Bank",
+      "fdic_insured_since": "04/12/1982",
+      "fdic_cert": "23764",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "520 Sherman St, Fort Morgan, CO 80701",
+      "website": "https://www.fmsbank.com"
+    },
+    {
+      "name": "Fortis Bank",
+      "fdic_insured_since": "05/13/1997",
+      "fdic_cert": "34401",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7001 E Belleview Ave, Ste 850, Denver, CO 80237",
+      "website": "https://www.fortisbankus.com"
+    },
+    {
+      "name": "Fowler State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12372",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 Main St, Fowler, CO 81039",
+      "website": "https://www.fowlerstate.bank"
+    },
+    {
+      "name": "Frontier Bank",
+      "fdic_insured_since": "08/25/1934",
+      "fdic_cert": "14730",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 S Main St, Lamar, CO 81052",
+      "website": "http://www.frontierbankco.com"
+    },
+    {
+      "name": "Gunnison Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30388",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "303 N Main St, Gunnison, CO 81230",
+      "website": "https://www.gunnisonsl.com"
+    },
+    {
+      "name": "High Country Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29783",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "7360 W Us Highway 50, Salida, CO 81201",
+      "website": "https://www.highcountrybank.net"
+    },
+    {
+      "name": "High Plains Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3017",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "329 Main Ave, Flagler, CO 80815",
+      "website": "https://www.highplainsbank.com"
+    },
+    {
+      "name": "Home Loan State Bank",
+      "fdic_insured_since": "09/28/1987",
+      "fdic_cert": "90040",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "205 N 4th St, Grand Junction, CO 81501",
+      "website": "https://www.hlsb.com"
+    },
+    {
+      "name": "Integrity Bank & Trust",
+      "fdic_insured_since": "08/11/2003",
+      "fdic_cert": "57587",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1275 Village Ridge Pt, Monument, CO 80132",
+      "website": "https://www.integritybankandtrust.com"
+    },
+    {
+      "name": "McClave State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11261",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 E 1st St, Mcclave, CO 81057",
+      "website": "http://www.mcclavebank.com"
+    },
+    {
+      "name": "Mountain Valley Bank",
+      "fdic_insured_since": "02/21/1955",
+      "fdic_cert": "17411",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "461 Main St, Walden, CO 80480",
+      "website": "http://www.bankmvb.com"
+    },
+    {
+      "name": "Native American Bank, National Association",
+      "fdic_insured_since": "07/27/1987",
+      "fdic_cert": "27026",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "201 N Broadway, Denver, CO 80203",
+      "website": "https://www.nativeamericanbank.com"
+    },
+    {
+      "name": "North Valley Bank",
+      "fdic_insured_since": "02/25/1963",
+      "fdic_cert": "18710",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9001 Washington St, Thornton, CO 80229",
+      "website": "https://www.nvbank.bank"
+    },
+    {
+      "name": "Park State Bank & Trust",
+      "fdic_insured_since": "03/01/1965",
+      "fdic_cert": "19381",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "710 W Us Highway 24, Woodland Park, CO 80863",
+      "website": "https://www.psbtrust.bank"
+    },
+    {
+      "name": "PB&T Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12594",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 W 5th St, Pueblo, CO 81003",
+      "website": "https://www.pbandt.bank"
+    },
+    {
+      "name": "Pikes Peak National Bank",
+      "fdic_insured_since": "07/01/1957",
+      "fdic_cert": "17782",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2401 W Colorado Ave, Colorado Springs, CO 80904",
+      "website": "http://www.ppnb.com"
+    },
+    {
+      "name": "Redstone Bank",
+      "fdic_insured_since": "07/02/2008",
+      "fdic_cert": "58826",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15765 E Arapahoe Rd, Centennial, CO 80016",
+      "website": "https://www.redstone.bank"
+    },
+    {
+      "name": "RG Bank, A Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28315",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "901 1st Ave, Monte Vista, CO 81144",
+      "website": "https://www.rgbank.bank"
+    },
+    {
+      "name": "Rocky Mountain Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3019",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 E Main St, Florence, CO 81226",
+      "website": "https://www.rmbt.com"
+    },
+    {
+      "name": "San Luis Valley Federal Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28208",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "401 Edison Ave, Alamosa, CO 81101",
+      "website": "https://www.slvfed.bank"
+    },
+    {
+      "name": "Solera National Bank",
+      "fdic_insured_since": "09/10/2007",
+      "fdic_cert": "58534",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "319 S Sheridan Blvd, Lakewood, CO 80226",
+      "website": "https://www.solerabank.com"
+    },
+    {
+      "name": "Stockmens Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8321",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "25 N Cascade Ave, Colorado Springs, CO 80903",
+      "website": "https://www.thestockmensbank.com"
+    },
+    {
+      "name": "The Citizens State Bank of Ouray",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1779",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "600 Main St, Ouray, CO 81427",
+      "website": "https://www.csbcolorado.com"
+    },
+    {
+      "name": "The Colorado Bank and Trust Company of La Junta",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1141",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "301 Colorado Ave, La Junta, CO 81050",
+      "website": "https://wwww.colobank.com"
+    },
+    {
+      "name": "The Dolores State Bank",
+      "fdic_insured_since": "01/05/1959",
+      "fdic_cert": "17959",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 S 6th St, Dolores, CO 81323",
+      "website": "https://mydsb.com"
+    },
+    {
+      "name": "The Eastern Colorado Bank",
+      "fdic_insured_since": "03/01/1944",
+      "fdic_cert": "16125",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "10 S 1st St E, Cheyenne Wells, CO 80810",
+      "website": "https://www.yourfriendlybank.com"
+    },
+    {
+      "name": "The Farmers State Bank of Brush",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10407",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 Clayton St, Brush, CO 80723",
+      "website": "https://www.fsbbrushakron.com"
+    },
+    {
+      "name": "The First National Bank in Trinidad",
+      "fdic_insured_since": "07/13/1934",
+      "fdic_cert": "14584",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 E Main St, Trinidad, CO 81082",
+      "website": "http://www.FNBTRINIDAD.COM"
+    },
+    {
+      "name": "The First National Bank of Fleming",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3018",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "201 N Logan Ave, Fleming, CO 80728",
+      "website": "https://www.fnbfleming.com"
+    },
+    {
+      "name": "The Gunnison Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11259",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "232 W Tomichi Ave, Gunnison, CO 81230",
+      "website": "https://www.gunnisonbank.com"
+    },
+    {
+      "name": "Timberline Bank",
+      "fdic_insured_since": "10/25/2004",
+      "fdic_cert": "57857",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "649 Market St, Grand Junction, CO 81505",
+      "website": "https://www.timberlinebank.com"
+    },
+    {
+      "name": "Transact Bank, National Association",
+      "fdic_insured_since": "02/27/1934",
+      "fdic_cert": "13986",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "700 17th St, Ste 100, Denver, CO 80202",
+      "website": "https://www.transactbank.com"
+    },
+    {
+      "name": "Verus Bank of Commerce",
+      "fdic_insured_since": "06/27/2005",
+      "fdic_cert": "58025",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3700 S College Ave, Ste 102, Fort Collins, CO 80525",
+      "website": "https://www.verusboc.com"
+    },
+    {
+      "name": "Wray State Bank",
+      "fdic_insured_since": "04/11/1977",
+      "fdic_cert": "22447",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 Clay St, Wray, CO 80758",
+      "website": "http://www.wraystatebank.com"
+    },
+    {
+      "name": "Yampa Valley Bank",
+      "fdic_insured_since": "03/27/2000",
+      "fdic_cert": "35407",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "600 S Lincoln Ave, Steamboat Springs, CO 80487",
+      "website": "https://www.yampavalleybank.com"
+    },
+    {
+      "name": "Young Americans Bank",
+      "fdic_insured_since": "08/03/1987",
+      "fdic_cert": "27010",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3550 E 1st Ave, Denver, CO 80206",
+      "website": "https://www.yacenter.org"
+    }
+  ],
+  "updated": "2026-06-26"
+}

@@ -1,0 +1,343 @@
+{
+  "fullName": "Utah",
+  "abbr": "UT",
+  "banks": [
+    {
+      "name": "Zions Bancorporation, N.A.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2270",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 S Main St, Salt Lake City, UT 84133",
+      "website": "https://www.zionsbancorporation.com"
+    },
+    {
+      "name": "Grand Valley Bank",
+      "fdic_insured_since": "12/13/1983",
+      "fdic_cert": "24922",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "191 E Gateway Dr, Heber City, UT 84032",
+      "website": "https://www.grandvalleybank.com"
+    },
+    {
+      "name": "Sunwest Bank",
+      "fdic_insured_since": "04/09/1970",
+      "fdic_cert": "20164",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "10011 S Centennial Pkwy, Sandy, UT 84070",
+      "website": "https://www.sunwestbank.com"
+    },
+    {
+      "name": "Ally Bank",
+      "fdic_insured_since": "08/02/2004",
+      "fdic_cert": "57803",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "200 W Civic Center Dr, Sandy, UT 84070",
+      "website": "https://www.ally.com"
+    },
+    {
+      "name": "American Express National  Bank",
+      "fdic_insured_since": "03/20/1989",
+      "fdic_cert": "27471",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "115 W Towne Ridge Pkwy, Sandy, UT 84070",
+      "website": "https://www.americanexpress.com"
+    },
+    {
+      "name": "Bank of Utah",
+      "fdic_insured_since": "12/01/1952",
+      "fdic_cert": "17159",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2605 Washington Blvd, Ogden, UT 84401",
+      "website": "https://www.bankofutah.com"
+    },
+    {
+      "name": "BMW Bank of North America",
+      "fdic_insured_since": "11/12/1999",
+      "fdic_cert": "35141",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2855 East Cottonwood Parkway, Suite 200, Salt Lake City, UT 84121",
+      "website": "http://www.bmwusa.com"
+    },
+    {
+      "name": "Brighton Bank",
+      "fdic_insured_since": "01/03/1978",
+      "fdic_cert": "22578",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7101 S Highland Dr, Salt Lake City, UT 84121",
+      "website": "https://www.brightonbank.com"
+    },
+    {
+      "name": "Cache Valley Bank",
+      "fdic_insured_since": "10/02/1975",
+      "fdic_cert": "22134",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 N Main St, Logan, UT 84321",
+      "website": "https://cachevalleybank.com"
+    },
+    {
+      "name": "Capital Community Bank",
+      "fdic_insured_since": "07/29/1993",
+      "fdic_cert": "33823",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3280 N University Ave, Provo, UT 84604",
+      "website": "https://www.ccbank.com"
+    },
+    {
+      "name": "Celtic Bank",
+      "fdic_insured_since": "03/01/2001",
+      "fdic_cert": "57056",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "268 S State St, Ste 300, Salt Lake City, UT 84111",
+      "website": "http://www.celticbank.com"
+    },
+    {
+      "name": "Central Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9204",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "75 N University Ave, Provo, UT 84601",
+      "website": "https://www.cbutah.com"
+    },
+    {
+      "name": "Comenity Capital Bank",
+      "fdic_insured_since": "12/01/2003",
+      "fdic_cert": "57570",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "12921 S Vista Station Blvd, Draper, UT 84020",
+      "website": "https://Savings.Breadfinancial.com"
+    },
+    {
+      "name": "Continental Bank",
+      "fdic_insured_since": "11/03/2003",
+      "fdic_cert": "57571",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15 W South Temple, Ste 300, Salt Lake City, UT 84101",
+      "website": "http://www.cbankus.com"
+    },
+    {
+      "name": "FinWise Bank",
+      "fdic_insured_since": "07/25/2000",
+      "fdic_cert": "35323",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "756 E Winchester St, Murray, UT 84107",
+      "website": "https://www.finwise.bank"
+    },
+    {
+      "name": "First Electronic Bank",
+      "fdic_insured_since": "10/05/2000",
+      "fdic_cert": "35533",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2150 S 1300 E, Ste 400, Salt Lake City, UT 84106",
+      "website": "https://www.firstelectronic.com"
+    },
+    {
+      "name": "First Utah Bank",
+      "fdic_insured_since": "10/19/1978",
+      "fdic_cert": "22738",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3826 S 2300 E, Salt Lake City, UT 84109",
+      "website": "https://www.firstutahbank.com"
+    },
+    {
+      "name": "Green Dot Bank DBA Bonneville Bank",
+      "fdic_insured_since": "05/15/1978",
+      "fdic_cert": "22653",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1675 N 200 W, Provo, UT 84604",
+      "website": "https://www.bonnevillebank.com"
+    },
+    {
+      "name": "Home Savings Bank",
+      "fdic_insured_since": "10/03/1986",
+      "fdic_cert": "26798",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3539 S Main St, Salt Lake City, UT 84115",
+      "website": "http://www.hsbutah.com"
+    },
+    {
+      "name": "LendingClub Bank, National Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32551",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2701 N Thanksgiving Way, Lehi, UT 84043",
+      "website": "https://www.lendingclub.com"
+    },
+    {
+      "name": "Liberty Bank, Inc.",
+      "fdic_insured_since": "10/20/1986",
+      "fdic_cert": "26816",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "79 S Main St, Suite 400, Salt Lake City, UT 84111",
+      "website": "https://www.libertybankofutah.com"
+    },
+    {
+      "name": "Medallion Bank",
+      "fdic_insured_since": "12/22/2003",
+      "fdic_cert": "57449",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1100 E 6600 S, Ste 510, Salt Lake City, UT 84121",
+      "website": "https://www.medallionbank.com"
+    },
+    {
+      "name": "Merrick Bank",
+      "fdic_insured_since": "09/22/1997",
+      "fdic_cert": "34519",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "10705 S Jordan Gtwy, Ste 200, South Jordan, UT 84095",
+      "website": "http://www.merrickbank.com"
+    },
+    {
+      "name": "Milestone Bank",
+      "fdic_insured_since": "01/26/2006",
+      "fdic_cert": "58148",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "310 South Main St., Suite 900, Salt Lake City, UT 84101",
+      "website": "https://www.milestonebank.com"
+    },
+    {
+      "name": "Morgan Stanley Bank, National Association",
+      "fdic_insured_since": "05/25/1990",
+      "fdic_cert": "32992",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "201 S Main St, Fl 5, Salt Lake City, UT 84111",
+      "website": ""
+    },
+    {
+      "name": "Nelnet Bank",
+      "fdic_insured_since": "11/02/2020",
+      "fdic_cert": "59205",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "13907 S Minuteman Dr, Draper, UT 84020",
+      "website": "https://www.nelnetbank.com"
+    },
+    {
+      "name": "Optum Bank, Inc.",
+      "fdic_insured_since": "07/21/2003",
+      "fdic_cert": "57408",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "12921 S Vista Station Blvd, Draper, UT 84020",
+      "website": "https://www.optumbank.com"
+    },
+    {
+      "name": "Prime Alliance Bank",
+      "fdic_insured_since": "12/08/2004",
+      "fdic_cert": "57920",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1868 S 500 W, Woods Cross, UT 84010",
+      "website": "https://www.primealliance.bank"
+    },
+    {
+      "name": "Redemption Bank",
+      "fdic_insured_since": "02/20/1974",
+      "fdic_cert": "21448",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2020 E Murray Holladay Road, Salt Lake City, UT 84117",
+      "website": "https://www.redemptionbank.com"
+    },
+    {
+      "name": "Sallie Mae Bank",
+      "fdic_insured_since": "11/28/2005",
+      "fdic_cert": "58177",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "175 S West Temple, Salt Lake City, UT 84101",
+      "website": "https://www.salliemae.com"
+    },
+    {
+      "name": "SoFi Bank, National Association",
+      "fdic_insured_since": "12/29/1986",
+      "fdic_cert": "26881",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2750 E Cottonwood Pkwy, Cottonwood Heights, UT 84121",
+      "website": "https://www.sofi.com"
+    },
+    {
+      "name": "Square Financial Services, Inc.",
+      "fdic_insured_since": "03/01/2021",
+      "fdic_cert": "59177",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3165 E Millrock Dr, Salt Lake City, UT 84121",
+      "website": "https://www.squareup.com/us/en/banking"
+    },
+    {
+      "name": "State Bank of Southern Utah",
+      "fdic_insured_since": "02/02/1959",
+      "fdic_cert": "17964",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "377 N Main St, Cedar City, UT 84721",
+      "website": "http://www.sbsu.com"
+    },
+    {
+      "name": "Synchrony Bank",
+      "fdic_insured_since": "08/01/1988",
+      "fdic_cert": "27314",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "170 W Election Rd, Ste 125, Draper, UT 84020",
+      "website": "https://www.synchronybank.com"
+    },
+    {
+      "name": "The Pitney Bowes Bank, Inc.",
+      "fdic_insured_since": "01/16/1998",
+      "fdic_cert": "34599",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "215 S State St, Salt Lake City, UT 84111",
+      "website": ""
+    },
+    {
+      "name": "Thrivent Bank",
+      "fdic_insured_since": "06/01/2025",
+      "fdic_cert": "59286",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2855 E Cottonwood Pkwy, Suite 100, Salt Lake City, UT 84121",
+      "website": "https://www.thriventbank.com"
+    },
+    {
+      "name": "Transportation Alliance Bank, Inc. d/b/a TAB Bank",
+      "fdic_insured_since": "10/01/1998",
+      "fdic_cert": "34781",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4185 Harrison Blvd, Ste 200, Ogden, UT 84403",
+      "website": "https://www.TABBANK.COM"
+    },
+    {
+      "name": "UBS Bank USA, National Association",
+      "fdic_insured_since": "09/15/2003",
+      "fdic_cert": "57565",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "95 S State St, Salt Lake City, UT 84111",
+      "website": "http://www.ubs.com/cefs/en/ubs-bank-usa/ubs-bank-usa.html"
+    },
+    {
+      "name": "Utah Independent Bank",
+      "fdic_insured_since": "08/29/1977",
+      "fdic_cert": "22514",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "55 S State St, Salina, UT 84654",
+      "website": "https://www.uib.bank"
+    },
+    {
+      "name": "Varo Bank, National Association",
+      "fdic_insured_since": "08/01/2020",
+      "fdic_cert": "59190",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "11781 S Lone Peak Pkwy, Suite 100, Draper, UT 84020",
+      "website": "https://www.varomoney.com"
+    },
+    {
+      "name": "WebBank",
+      "fdic_insured_since": "05/15/1997",
+      "fdic_cert": "34404",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "215 S State St, Ste 1000, Salt Lake City, UT 84111",
+      "website": "https://www.webbank.com"
+    },
+    {
+      "name": "WEX Bank",
+      "fdic_insured_since": "06/01/1998",
+      "fdic_cert": "34697",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 E Sego Lily Dr, Sandy, UT 84070",
+      "website": "https://www.wexinc.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

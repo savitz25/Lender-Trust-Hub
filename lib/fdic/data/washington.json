@@ -1,0 +1,23 @@
+{
+  "fullName": "Washington",
+  "abbr": "WA",
+  "banks": [
+    {
+      "name": "WaFd Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28088",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "425 Pike St, Seattle, WA 98101",
+      "website": "https://www.wafdbank.com"
+    },
+    {
+      "name": "Banner Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28489",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "10 S 1st Ave, Walla Walla, WA 99362",
+      "website": "https://www.bannerbank.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

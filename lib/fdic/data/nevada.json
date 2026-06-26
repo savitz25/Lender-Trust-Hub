@@ -1,0 +1,15 @@
+{
+  "fullName": "Nevada",
+  "abbr": "NV",
+  "banks": [
+    {
+      "name": "Beal Bank USA",
+      "fdic_insured_since": "08/02/2004",
+      "fdic_cert": "57833",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1970 Village Center Cir, Ste 1, Las Vegas, NV 89134",
+      "website": "https://www.bealbankUSA.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

@@ -67,10 +67,17 @@ REGIONAL_CSV_SOURCES: dict[str, tuple[Path, set[str]]] = {
         ROOT / "data" / "plains-import.csv",
         {"MT", "NE", "ND", "SD"},
     ),
+    "west": (
+        ROOT / "data" / "west-import.csv",
+        {"AZ", "CA", "CO", "ID", "NM", "NV", "OR", "UT", "WA", "WY"},
+    ),
 }
 OUT_DIR = ROOT / "lib" / "fdic" / "data"
 
 STATE_META = {
+    "AZ": ("Arizona", "arizona"),
+    "CA": ("California", "california"),
+    "CO": ("Colorado", "colorado"),
     "GA": ("Georgia", "georgia"),
     "SC": ("South Carolina", "south-carolina"),
     "TN": ("Tennessee", "tennessee"),
@@ -81,12 +88,14 @@ STATE_META = {
     "MS": ("Mississippi", "mississippi"),
     "LA": ("Louisiana", "louisiana"),
     "TX": ("Texas", "texas"),
+    "UT": ("Utah", "utah"),
     "OK": ("Oklahoma", "oklahoma"),
     "AR": ("Arkansas", "arkansas"),
     "KS": ("Kansas", "kansas"),
     "KY": ("Kentucky", "kentucky"),
     "MO": ("Missouri", "missouri"),
     "IA": ("Iowa", "iowa"),
+    "ID": ("Idaho", "idaho"),
     "MN": ("Minnesota", "minnesota"),
     "MT": ("Montana", "montana"),
     "NE": ("Nebraska", "nebraska"),
@@ -96,7 +105,10 @@ STATE_META = {
     "IL": ("Illinois", "illinois"),
     "IN": ("Indiana", "indiana"),
     "MI": ("Michigan", "michigan"),
+    "NM": ("New Mexico", "new-mexico"),
+    "NV": ("Nevada", "nevada"),
     "OH": ("Ohio", "ohio"),
+    "OR": ("Oregon", "oregon"),
     "CT": ("Connecticut", "connecticut"),
     "DE": ("Delaware", "delaware"),
     "DC": ("District of Columbia", "district-of-columbia"),
@@ -109,6 +121,8 @@ STATE_META = {
     "PA": ("Pennsylvania", "pennsylvania"),
     "RI": ("Rhode Island", "rhode-island"),
     "VT": ("Vermont", "vermont"),
+    "WA": ("Washington", "washington"),
+    "WY": ("Wyoming", "wyoming"),
 }
 
 BULK_MIN_COLS = 133

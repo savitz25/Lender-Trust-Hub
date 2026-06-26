@@ -1,0 +1,943 @@
+{
+  "fullName": "California",
+  "abbr": "CA",
+  "banks": [
+    {
+      "name": "Banc of California",
+      "fdic_insured_since": "08/26/1982",
+      "fdic_cert": "24045",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "11611 San Vicente Blvd, Ste 500, Los Angeles, CA 90049",
+      "website": "https://www.bancofcal.com"
+    },
+    {
+      "name": "Open Bank",
+      "fdic_insured_since": "06/10/2005",
+      "fdic_cert": "57944",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1000 Wilshire Blvd, Ste 100, Los Angeles, CA 90017",
+      "website": "https://www.myopenbank.com"
+    },
+    {
+      "name": "United Business Bank",
+      "fdic_insured_since": "07/20/2004",
+      "fdic_cert": "57716",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "500 Ygnacio Valley Rd, Walnut Creek, CA 94596",
+      "website": "http://www.unitedbusinessbank.com"
+    },
+    {
+      "name": "First American Trust, FSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "26312",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "5 First American Way, Fl 3, Santa Ana, CA 92707",
+      "website": "https://www.firstamtrust.com"
+    },
+    {
+      "name": "Axos Bank",
+      "fdic_insured_since": "07/04/2000",
+      "fdic_cert": "35546",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4350 La Jolla Village Dr, Ste 140, San Diego, CA 92122",
+      "website": "https://www.axosbank.com"
+    },
+    {
+      "name": "Mechanics Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1768",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1111 Civic Dr, Walnut Creek, CA 94596",
+      "website": "https://www.mechanicsbank.com"
+    },
+    {
+      "name": "Altos Bank",
+      "fdic_insured_since": "11/25/2024",
+      "fdic_cert": "59339",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "467 1st St, Suite 300, Los Altos, CA 94022",
+      "website": "https://www.altosbank.com"
+    },
+    {
+      "name": "American Business Bank",
+      "fdic_insured_since": "09/28/1998",
+      "fdic_cert": "34788",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 S Hope St, Ste 300, Los Angeles, CA 90071",
+      "website": "https://WWW.AMERICANBB.BANK"
+    },
+    {
+      "name": "American Continental Bank",
+      "fdic_insured_since": "10/06/2003",
+      "fdic_cert": "57444",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "17700 Castleton St, Ste 100, City Of Industry, CA 91748",
+      "website": "http://www.americancontinentalbank.com"
+    },
+    {
+      "name": "American Plus Bank, N.A.",
+      "fdic_insured_since": "08/08/2007",
+      "fdic_cert": "58469",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "630 W Duarte Rd, Arcadia, CA 91007",
+      "website": "https://www.bankaplus.com"
+    },
+    {
+      "name": "American Riviera Bank",
+      "fdic_insured_since": "07/18/2006",
+      "fdic_cert": "58281",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1033 Anacapa St, Santa Barbara, CA 93101",
+      "website": "https://www.americanriviera.bank"
+    },
+    {
+      "name": "Asian Pacific National Bank",
+      "fdic_insured_since": "07/25/1990",
+      "fdic_cert": "33013",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "333 W Valley Blvd, San Gabriel, CA 91776",
+      "website": "https://www.asianpacificbank.com"
+    },
+    {
+      "name": "Avidbank",
+      "fdic_insured_since": "10/01/2003",
+      "fdic_cert": "57510",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1732 N 1st St, Fl 6, San Jose, CA 95112",
+      "website": "https://www.avidbank.com"
+    },
+    {
+      "name": "BAC Community Bank",
+      "fdic_insured_since": "05/21/1965",
+      "fdic_cert": "19434",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "517 East Weber  Avenue, Stockton, CA 95202",
+      "website": "https://www.bankbac.com"
+    },
+    {
+      "name": "Balboa Thrift and Loan Association",
+      "fdic_insured_since": "07/03/1986",
+      "fdic_cert": "26704",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "865 Amena Ct, Chula Vista, CA 91910",
+      "website": "http://www.balboathrift.com"
+    },
+    {
+      "name": "Bank Irvine",
+      "fdic_insured_since": "10/18/2022",
+      "fdic_cert": "59296",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6201 Oak Canyon, Suite 150, Irvine, CA 92618",
+      "website": "https://www.bankirvine.com"
+    },
+    {
+      "name": "Bank of America California, National Association",
+      "fdic_insured_since": "05/18/1984",
+      "fdic_cert": "25178",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "555 California St, San Francisco, CA 94104",
+      "website": "https://www.bankofamerica.com"
+    },
+    {
+      "name": "Bank of Hope",
+      "fdic_insured_since": "03/18/1986",
+      "fdic_cert": "26610",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3200 Wilshire Blvd, Ste 1400, Los Angeles, CA 90010",
+      "website": "https://www.bankofhope.com"
+    },
+    {
+      "name": "Bank of Marin",
+      "fdic_insured_since": "01/23/1990",
+      "fdic_cert": "32779",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "504 Redwood Blvd, Novato, CA 94947",
+      "website": "https://www.bankofmarin.com"
+    },
+    {
+      "name": "Bank of San Francisco",
+      "fdic_insured_since": "08/01/2005",
+      "fdic_cert": "58069",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "345 California St, Ste 1600, San Francisco, CA 94104",
+      "website": "https://www.bankbsf.com"
+    },
+    {
+      "name": "Bank of Stockton",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1536",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 E Miner Ave, Stockton, CA 95202",
+      "website": "https://www.bankofstockton.com"
+    },
+    {
+      "name": "Bank of the Orient",
+      "fdic_insured_since": "03/17/1971",
+      "fdic_cert": "20387",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1023 Stockton St, San Francisco, CA 94108",
+      "website": "https://www.bankorient.com"
+    },
+    {
+      "name": "Bank of the Sierra",
+      "fdic_insured_since": "01/19/1978",
+      "fdic_cert": "22597",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "90 N Main St, Porterville, CA 93257",
+      "website": "https://www.bankofthesierra.com"
+    },
+    {
+      "name": "Bank of Whittier, National Association",
+      "fdic_insured_since": "12/20/1982",
+      "fdic_cert": "24211",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "15141 Whittier Blvd, Whittier, CA 90603",
+      "website": "http://www.whittierbank.com"
+    },
+    {
+      "name": "Beach Cities Commercial Bank",
+      "fdic_insured_since": "06/12/2023",
+      "fdic_cert": "59290",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 Progress, Suite 150, Irvine, CA 92618",
+      "website": "https://www.beachcitiescb.com"
+    },
+    {
+      "name": "BEACON BUSINESS BANK, NATIONAL ASSOCIATION",
+      "fdic_insured_since": "08/21/1984",
+      "fdic_cert": "25644",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "425 California St, Suite 2000, San Francisco, CA 94104",
+      "website": "https://Beaconbusinessbank.com"
+    },
+    {
+      "name": "Beneficial State Bank",
+      "fdic_insured_since": "06/27/2007",
+      "fdic_cert": "58490",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2100 Franklin St, Oakland, CA 94612",
+      "website": "https://www.beneficialstatebank.com"
+    },
+    {
+      "name": "C3bank, National Association",
+      "fdic_insured_since": "06/01/1984",
+      "fdic_cert": "25249",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "850 S Coast Highway 101, Encinitas, CA 92024",
+      "website": "https://www.C3bank.com"
+    },
+    {
+      "name": "California Bank of Commerce, National Association",
+      "fdic_insured_since": "12/18/2001",
+      "fdic_cert": "57044",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "12265 El Camino Real, Ste 210, San Diego, CA 92130",
+      "website": "https://www.californiabankofcommerce.com"
+    },
+    {
+      "name": "California Business Bank",
+      "fdic_insured_since": "11/01/2005",
+      "fdic_cert": "58037",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3200 El Camino Real, Ste 220, Irvine, CA 92602",
+      "website": "http://www.californiabusinessbank.com"
+    },
+    {
+      "name": "California International Bank, N.A.",
+      "fdic_insured_since": "11/30/2005",
+      "fdic_cert": "57974",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "15606 Brookhurst St, Westminster, CA 92683",
+      "website": "https://www.cali.bank"
+    },
+    {
+      "name": "California Pacific Bank",
+      "fdic_insured_since": "10/16/1980",
+      "fdic_cert": "23242",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "24301 Southland Dr, Suite 501, Hayward, CA 94545",
+      "website": "https://www.calpacificbank.com"
+    },
+    {
+      "name": "CalPrivate Bank",
+      "fdic_insured_since": "12/18/2006",
+      "fdic_cert": "58291",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9404 Genesee Ave, Ste 100, La Jolla, CA 92037",
+      "website": "https://www.calprivate.bank"
+    },
+    {
+      "name": "Capital Bank and Trust Company",
+      "fdic_insured_since": "07/01/2000",
+      "fdic_cert": "35164",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "6455 Irvine Center Dr, Irvine, CA 92618",
+      "website": "https://www.americanfunds.com"
+    },
+    {
+      "name": "Cathay Bank",
+      "fdic_insured_since": "04/19/1962",
+      "fdic_cert": "18503",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "777 N Broadway, Los Angeles, CA 90012",
+      "website": "https://www.cathaybank.com"
+    },
+    {
+      "name": "Chino Commercial Bank, N.A.",
+      "fdic_insured_since": "09/01/2000",
+      "fdic_cert": "35366",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "14245 Pipeline Ave, Chino, CA 91710",
+      "website": "https://www.chinocommercialbank.com"
+    },
+    {
+      "name": "Citizens Business Bank, National Association",
+      "fdic_insured_since": "08/09/1974",
+      "fdic_cert": "21716",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "701 N Haven Ave, Ontario, CA 91764",
+      "website": "http://www.cbbank.com"
+    },
+    {
+      "name": "City National Bank",
+      "fdic_insured_since": "12/04/1953",
+      "fdic_cert": "17281",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "555 S Flower St, Los Angeles, CA 90071",
+      "website": "https://www.cnb.com"
+    },
+    {
+      "name": "Column National Association",
+      "fdic_insured_since": "03/28/2006",
+      "fdic_cert": "58224",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1717 Mangrove Ave, Ste 100, Chico, CA 95926",
+      "website": "https://column.com/"
+    },
+    {
+      "name": "Commerce West Bank",
+      "fdic_insured_since": "09/24/2001",
+      "fdic_cert": "57176",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2445 Mccabe Way, Irvine, CA 92614",
+      "website": "https://www.cwbk.com"
+    },
+    {
+      "name": "Commercial Bank of California",
+      "fdic_insured_since": "05/15/2003",
+      "fdic_cert": "57417",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "19752 Macarthur Blvd, Irvine, CA 92612",
+      "website": "http://www.cbcal.com"
+    },
+    {
+      "name": "Commonwealth Business Bank",
+      "fdic_insured_since": "03/03/2005",
+      "fdic_cert": "57873",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3435 Wilshire Blvd, Los Angeles, CA 90010",
+      "website": "https://www.cbb-bank.com"
+    },
+    {
+      "name": "Community Bank of Santa Maria",
+      "fdic_insured_since": "03/01/2001",
+      "fdic_cert": "57073",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2739 Santa Maria Way, Santa Maria, CA 93455",
+      "website": "https://www.yourcbsm.com"
+    },
+    {
+      "name": "Community Commerce Bank",
+      "fdic_insured_since": "09/10/1985",
+      "fdic_cert": "26363",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "358 W Foothill Blvd, Claremont, CA 91711",
+      "website": "https://www.ccombank.com"
+    },
+    {
+      "name": "Community West Bank",
+      "fdic_insured_since": "01/10/1980",
+      "fdic_cert": "23030",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7100 N Financial Dr, Ste 101, Fresno, CA 93720",
+      "website": "https://www.communitywestbank.com"
+    },
+    {
+      "name": "CTBC Bank Corp. (USA)",
+      "fdic_insured_since": "04/27/1965",
+      "fdic_cert": "19416",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "801 S Figueroa St, Ste 2300, Los Angeles, CA 90017",
+      "website": "http://www.ctbcbankusa.com"
+    },
+    {
+      "name": "East West Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31628",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "135 N Los Robles Ave, Fl 7, Pasadena, CA 91101",
+      "website": "https://www.eastwestbank.com"
+    },
+    {
+      "name": "Eastern International Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32277",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "688 New High St, Los Angeles, CA 90012",
+      "website": "https://www.eibankca.com"
+    },
+    {
+      "name": "El Dorado Savings Bank, F.S.B.",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30953",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4040 El Dorado Rd, Placerville, CA 95667",
+      "website": "http://www.eldoradosavingsbank.com"
+    },
+    {
+      "name": "Endeavor Bank",
+      "fdic_insured_since": "01/22/2018",
+      "fdic_cert": "59099",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "750 B St, Ste 3110, San Diego, CA 92101",
+      "website": "https://www.endeavor.bank"
+    },
+    {
+      "name": "EverTrust Bank",
+      "fdic_insured_since": "05/03/1995",
+      "fdic_cert": "34010",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "13191 Crossroads Pkwy N, Ste 505, City Of Industry, CA 91746",
+      "website": "http://www.evertrustbank.com"
+    },
+    {
+      "name": "Exchange Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8468",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "545 4th St, Santa Rosa, CA 95401",
+      "website": "https://www.exchangebank.com"
+    },
+    {
+      "name": "Farmers & Merchants Bank of Central California",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1331",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "121 W Pine St, Lodi, CA 95240",
+      "website": "https://www.fmbonline.com"
+    },
+    {
+      "name": "Farmers and Merchants Bank of Long Beach",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1225",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "302 Pine Ave, Long Beach, CA 90802",
+      "website": "https://www.fmb.com"
+    },
+    {
+      "name": "FFB Bank",
+      "fdic_insured_since": "12/23/2005",
+      "fdic_cert": "58090",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7690 N Palm Ave, Ste 101, Fresno, CA 93711",
+      "website": "https://www.FFB.bank"
+    },
+    {
+      "name": "First Commercial Bank (USA)",
+      "fdic_insured_since": "05/20/1997",
+      "fdic_cert": "34496",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 E Main St, Alhambra, CA 91801",
+      "website": "https://bankfcb.com"
+    },
+    {
+      "name": "First Credit Bank",
+      "fdic_insured_since": "02/18/1983",
+      "fdic_cert": "24332",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9255 W Sunset Blvd, Los Angeles, CA 90069",
+      "website": ""
+    },
+    {
+      "name": "First Federal Savings and Loan Association of San Rafael",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31406",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "998 4th St, San Rafael, CA 94901",
+      "website": "https://www.ffsavings.com"
+    },
+    {
+      "name": "First General Bank",
+      "fdic_insured_since": "10/13/2005",
+      "fdic_cert": "58060",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "19036 Colima Rd, Rowland Heights, CA 91748",
+      "website": "http://www.firstgeneralbank.com"
+    },
+    {
+      "name": "First Northern Bank of Dixon",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3440",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "195 N 1st St, Dixon, CA 95620",
+      "website": "https://www.thatsmybank.com"
+    },
+    {
+      "name": "First Pacific Bank",
+      "fdic_insured_since": "09/18/2006",
+      "fdic_cert": "58218",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "16011 Whittier Blvd, Whittier, CA 90603",
+      "website": "https://www.firstpacbank.com"
+    },
+    {
+      "name": "Five Star Bank",
+      "fdic_insured_since": "12/20/1999",
+      "fdic_cert": "35361",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2240 Douglas Blvd, Roseville, CA 95661",
+      "website": "https://www.fivestarbank.com"
+    },
+    {
+      "name": "Fremont Bank",
+      "fdic_insured_since": "09/03/1964",
+      "fdic_cert": "19222",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "39150 Fremont Blvd, Fremont, CA 94538",
+      "website": "https://www.fremontbank.com"
+    },
+    {
+      "name": "Gateway Bank, F.S.B.",
+      "fdic_insured_since": "06/08/1990",
+      "fdic_cert": "33103",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "388 9th St, Ste 109, Oakland, CA 94607",
+      "website": "https://www.gatewayfsb.com"
+    },
+    {
+      "name": "GBC International Bank",
+      "fdic_insured_since": "11/15/1976",
+      "fdic_cert": "22366",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "333 S Grand Ave, Ste 3500, Los Angeles, CA 90071",
+      "website": "http://www.gbcib.com"
+    },
+    {
+      "name": "Genesis Bank",
+      "fdic_insured_since": "08/02/2021",
+      "fdic_cert": "59245",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4675 Macarthur Ct, Ste 1600, Newport Beach, CA 92660",
+      "website": "https://www.mygenesisbank.com"
+    },
+    {
+      "name": "Golden State Bank",
+      "fdic_insured_since": "12/01/2003",
+      "fdic_cert": "57585",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "500 N Brand Blvd, Ste 2300, Glendale, CA 91203",
+      "website": "https://www.goldenstatebank.com"
+    },
+    {
+      "name": "Golden Valley Bank",
+      "fdic_insured_since": "04/24/2006",
+      "fdic_cert": "58278",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "190 Cohasset Rd, Ste 170, Chico, CA 95926",
+      "website": "https://www.goldenvalley.bank"
+    },
+    {
+      "name": "Hanmi Bank",
+      "fdic_insured_since": "12/15/1982",
+      "fdic_cert": "24170",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3660 Wilshire Blvd Ste Ph-A, Los Angeles, CA 90010",
+      "website": "https://www.hanmi.com"
+    },
+    {
+      "name": "Hatch Bank",
+      "fdic_insured_since": "12/17/1984",
+      "fdic_cert": "25803",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1001 W San Marcos Blvd, San Marcos, CA 92078",
+      "website": "https://www.hatchbank.com"
+    },
+    {
+      "name": "HCN Bank",
+      "fdic_insured_since": "06/03/1974",
+      "fdic_cert": "21606",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3715 Sunnyside Dr, Riverside, CA 92506",
+      "website": "http://www.hcnbank.com"
+    },
+    {
+      "name": "Home Bank of California",
+      "fdic_insured_since": "06/03/1985",
+      "fdic_cert": "26271",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4493 Ruffin Rd, San Diego, CA 92123",
+      "website": "https://www.hbc.bank"
+    },
+    {
+      "name": "Icon Business Bank",
+      "fdic_insured_since": "08/22/2023",
+      "fdic_cert": "59314",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3390 University Ave, Suite 400, Riverside, CA 92501",
+      "website": "https://www.iconbusinessbank.com"
+    },
+    {
+      "name": "Infinity Bank",
+      "fdic_insured_since": "02/01/2018",
+      "fdic_cert": "59098",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6 Hutton Centre Dr, Ste 100, Santa Ana, CA 92707",
+      "website": "https://www.infinity.bank"
+    },
+    {
+      "name": "Legacy Bank",
+      "fdic_insured_since": "06/10/2022",
+      "fdic_cert": "59204",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "41391 Kalmia St, Ste 100, Murrieta, CA 92562",
+      "website": "https://www.legacybankca.com"
+    },
+    {
+      "name": "Liberty Bank, National Association",
+      "fdic_insured_since": "05/23/2001",
+      "fdic_cert": "35331",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2 Park Plz, Ste 550, Irvine, CA 92614",
+      "website": "https://www.libertybk.com"
+    },
+    {
+      "name": "Malaga Bank F.S.B.",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32282",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2514 Via Tejon, Palos Verdes Peninsula, CA 90274",
+      "website": "https://www.malagabank.com"
+    },
+    {
+      "name": "Mega Bank",
+      "fdic_insured_since": "02/05/2008",
+      "fdic_cert": "58401",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "245 W Valley Blvd, San Gabriel, CA 91776",
+      "website": "https://www.megabankusa.com"
+    },
+    {
+      "name": "Metropolitan Bank",
+      "fdic_insured_since": "12/17/1984",
+      "fdic_cert": "25869",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "250 E 18th St, Oakland, CA 94606",
+      "website": "https://www.met.bank"
+    },
+    {
+      "name": "Mission Bank",
+      "fdic_insured_since": "10/07/1998",
+      "fdic_cert": "34805",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1301 17th St, Bakersfield, CA 93301",
+      "website": "https://www.missionbank.bank"
+    },
+    {
+      "name": "Mission National Bank",
+      "fdic_insured_since": "02/16/1982",
+      "fdic_cert": "23749",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3060 16th St, San Francisco, CA 94103",
+      "website": "https://www.mnbsf.com"
+    },
+    {
+      "name": "Mission Valley Bank",
+      "fdic_insured_since": "07/12/2001",
+      "fdic_cert": "57101",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8823 Sunland Blvd, Sun Valley, CA 91352",
+      "website": "https://www.missionvalleybank.com"
+    },
+    {
+      "name": "Mizrahi Tefahot Bank, Ltd.",
+      "fdic_insured_since": "08/18/1981",
+      "fdic_cert": "33661",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "633 W 5th St, Los Angeles, CA 90071",
+      "website": ""
+    },
+    {
+      "name": "Montecito Bank & Trust",
+      "fdic_insured_since": "03/17/1975",
+      "fdic_cert": "21956",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1000 State St, Santa Barbara, CA 93101",
+      "website": "https://www.montecito.bank"
+    },
+    {
+      "name": "Monterey County Bank",
+      "fdic_insured_since": "05/05/1977",
+      "fdic_cert": "22460",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "601 Munras Ave, Monterey, CA 93940",
+      "website": "http://montereycountybank.com"
+    },
+    {
+      "name": "Murphy Bank",
+      "fdic_insured_since": "10/29/1984",
+      "fdic_cert": "25726",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5180 N Palm Ave, Fresno, CA 93704",
+      "website": "https://www.murphybank.com"
+    },
+    {
+      "name": "Nano Banc",
+      "fdic_insured_since": "09/17/2007",
+      "fdic_cert": "58590",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "7755 Irvine Center Dr Fl 3, Irvine, CA 92618",
+      "website": "https://www.nanobanc.com"
+    },
+    {
+      "name": "Neighborhood National Bank",
+      "fdic_insured_since": "09/19/1997",
+      "fdic_cert": "34548",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2987 Jamacha Rd, Ste 2b, El Cajon, CA 92019",
+      "website": "http://www.mynnb.com"
+    },
+    {
+      "name": "New OMNI Bank, National Association",
+      "fdic_insured_since": "02/12/1980",
+      "fdic_cert": "23086",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "10 S 1st St, Alhambra, CA 91801",
+      "website": "https://WWW.NEWOMNIBANK.COM"
+    },
+    {
+      "name": "Oak Valley Community Bank",
+      "fdic_insured_since": "05/28/1991",
+      "fdic_cert": "33457",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "125 N 3rd Ave, Oakdale, CA 95361",
+      "website": "https://www.ovcb.com"
+    },
+    {
+      "name": "Pacific Alliance Bank",
+      "fdic_insured_since": "12/27/2006",
+      "fdic_cert": "58234",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "641 W Las Tunas Dr, San Gabriel, CA 91776",
+      "website": "https://www.pacificalliancebank.com"
+    },
+    {
+      "name": "Pacific Coast Bankers' Bank",
+      "fdic_insured_since": "01/02/1997",
+      "fdic_cert": "34252",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1255 Treat Blvd, Ste 240, Walnut Creek, CA 94597",
+      "website": "https://pcbb.com"
+    },
+    {
+      "name": "Pacific Valley Bank",
+      "fdic_insured_since": "09/14/2004",
+      "fdic_cert": "57740",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "150 Main St, Ste 210, Salinas, CA 93901",
+      "website": "https://www.pacificvalleybank.com"
+    },
+    {
+      "name": "Partners Bank of California",
+      "fdic_insured_since": "11/16/2007",
+      "fdic_cert": "58588",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "27201 Puerta Real, Mission Viejo, CA 92691",
+      "website": "https://www.partnersbankca.com"
+    },
+    {
+      "name": "PCB Bank",
+      "fdic_insured_since": "09/18/2003",
+      "fdic_cert": "57463",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3701 Wilshire Blvd, Los Angeles, CA 90010",
+      "website": "https://www.mypcbbank.com"
+    },
+    {
+      "name": "Pinnacle Bank",
+      "fdic_insured_since": "07/17/2006",
+      "fdic_cert": "58297",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7597 Monterey St, Gilroy, CA 95020",
+      "website": "http://www.pinnacle.bank"
+    },
+    {
+      "name": "Plumas Bank",
+      "fdic_insured_since": "12/13/1980",
+      "fdic_cert": "23275",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "336 Main St, Quincy, CA 95971",
+      "website": "http://www.plumasbank.com"
+    },
+    {
+      "name": "Poppy Bank",
+      "fdic_insured_since": "01/28/2005",
+      "fdic_cert": "57903",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 Santa Rosa Avenue, Suite 320, Santa Rosa, CA 95404",
+      "website": "http://www.poppy.bank"
+    },
+    {
+      "name": "Preferred Bank",
+      "fdic_insured_since": "12/23/1991",
+      "fdic_cert": "33539",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "601 S Figueroa St, Los Angeles, CA 90017",
+      "website": "https://www.preferredbank.com"
+    },
+    {
+      "name": "Provident Savings Bank, F.S.B.",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30879",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "6570 Magnolia Ave, Riverside, CA 92506",
+      "website": "https://www.myprovident.com"
+    },
+    {
+      "name": "Redwood Capital Bank",
+      "fdic_insured_since": "03/01/2004",
+      "fdic_cert": "57610",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "402 G St, Eureka, CA 95501",
+      "website": "http://www.rdwo.com"
+    },
+    {
+      "name": "River City Bank",
+      "fdic_insured_since": "12/16/1963",
+      "fdic_cert": "18983",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2480 Natomas Park Dr, Sacramento, CA 95833",
+      "website": "http://www.rivercitybank.com"
+    },
+    {
+      "name": "River Valley Community Bank",
+      "fdic_insured_since": "06/26/2006",
+      "fdic_cert": "58276",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1629 Colusa Hwy, Yuba City, CA 95993",
+      "website": "https://www.myrvcb.com"
+    },
+    {
+      "name": "Royal Business Bank",
+      "fdic_insured_since": "11/18/2008",
+      "fdic_cert": "58816",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1055 Wilshire Blvd, Ste 1200, Los Angeles, CA 90017",
+      "website": "https://www.royalbusinessbankusa.com"
+    },
+    {
+      "name": "Savings Bank of Mendocino County",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8011",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 N School St, Ukiah, CA 95482",
+      "website": "https://WWW.SAVINGSBANK.COM"
+    },
+    {
+      "name": "SMBC MANUBANK",
+      "fdic_insured_since": "10/29/1962",
+      "fdic_cert": "18618",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "515 South Figueroa Street, Ground Floor, Los Angeles, CA 90071",
+      "website": "https://www.smbcmanubank.com"
+    },
+    {
+      "name": "State Bank of India (California)",
+      "fdic_insured_since": "09/03/1982",
+      "fdic_cert": "23998",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "707 Wilshire Blvd, Ste 2900, Los Angeles, CA 90017",
+      "website": "https://www.sbical.com"
+    },
+    {
+      "name": "Summit Bank",
+      "fdic_insured_since": "07/01/1982",
+      "fdic_cert": "23864",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2969 Broadway, Oakland, CA 94611",
+      "website": "https://www.summitbanking.com"
+    },
+    {
+      "name": "Summit State Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32203",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "500 Bicentennial Way, Santa Rosa, CA 95403",
+      "website": "http://www.summitstatebank.com"
+    },
+    {
+      "name": "The Bank of New York Mellon Trust Company, National Association",
+      "fdic_insured_since": "07/01/1981",
+      "fdic_cert": "23472",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "333 S Hope St, Ste 2525, Los Angeles, CA 90071",
+      "website": "https://www.bny.com"
+    },
+    {
+      "name": "Tri Counties Bank",
+      "fdic_insured_since": "03/11/1975",
+      "fdic_cert": "21943",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "63 Constitution Dr, Chico, CA 95973",
+      "website": "https://www.tcbk.com"
+    },
+    {
+      "name": "Tustin Community Bank",
+      "fdic_insured_since": "02/16/1990",
+      "fdic_cert": "32908",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "13891 Newport Avenue, Suites 100 & 130, Tustin, CA 92780",
+      "website": "https://www.tustin.bank"
+    },
+    {
+      "name": "United Pacific Bank",
+      "fdic_insured_since": "05/11/1982",
+      "fdic_cert": "23805",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1630 S Azusa Ave, City Of Industry, CA 91748",
+      "website": "https://www.upbnet.com"
+    },
+    {
+      "name": "Universal Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30722",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3455 S Nogales St, 2nd Floor, West Covina, CA 91792",
+      "website": "https://www.universalbank.com"
+    },
+    {
+      "name": "US Metro Bank",
+      "fdic_insured_since": "09/15/2006",
+      "fdic_cert": "58310",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9866 Garden Grove Blvd, Garden Grove, CA 92844",
+      "website": "http://WWW.USMETROBANK.COM"
+    },
+    {
+      "name": "West Coast Community Bank",
+      "fdic_insured_since": "02/03/2004",
+      "fdic_cert": "57591",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "75 River St, Santa Cruz, CA 95060",
+      "website": "https://www.wccb.com"
+    },
+    {
+      "name": "Westamerica Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3430",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1108 5th Ave, San Rafael, CA 94901",
+      "website": "https://www.westamerica.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

@@ -1,0 +1,23 @@
+{
+  "fullName": "Idaho",
+  "abbr": "ID",
+  "banks": [
+    {
+      "name": "D. L. Evans Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11666",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "375 N Overland Ave, Burley, ID 83318",
+      "website": "https://dlevans.com"
+    },
+    {
+      "name": "Northwest Bank",
+      "fdic_insured_since": "03/31/2008",
+      "fdic_cert": "58752",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1750 W Front St, Boise, ID 83702",
+      "website": "https://northwest-bank.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

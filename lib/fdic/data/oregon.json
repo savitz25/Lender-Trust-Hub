@@ -1,0 +1,15 @@
+{
+  "fullName": "Oregon",
+  "abbr": "OR",
+  "banks": [
+    {
+      "name": "Columbia Bank",
+      "fdic_insured_since": "11/09/1953",
+      "fdic_cert": "17266",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "445 Se Main St, Roseburg, OR 97470",
+      "website": "https://www.columbiabank.com/"
+    }
+  ],
+  "updated": "2026-06-26"
+}

@@ -1,0 +1,199 @@
+{
+  "fullName": "Wyoming",
+  "abbr": "WY",
+  "banks": [
+    {
+      "name": "Bank of Commerce",
+      "fdic_insured_since": "04/20/1978",
+      "fdic_cert": "22639",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "221 3rd St, Rawlins, WY 82301",
+      "website": "https://WWW.BOCRAWLINS.COM"
+    },
+    {
+      "name": "Bank Of Jackson Hole Trust",
+      "fdic_insured_since": "06/01/1982",
+      "fdic_cert": "23826",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "990 W Broadway, 2nd Floor, Jackson, WY 83001",
+      "website": "https://www.bankofjacksonholetrust.com"
+    },
+    {
+      "name": "Bank of Star Valley",
+      "fdic_insured_since": "03/25/1996",
+      "fdic_cert": "34148",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "384 S Washington St, Afton, WY 83110",
+      "website": "https://www.bosv.com"
+    },
+    {
+      "name": "Big Horn Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29637",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "33 N 6th St, Greybull, WY 82426",
+      "website": "https://www.bighornfederal.com"
+    },
+    {
+      "name": "Buffalo Federal Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29696",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "106 Fort St, Buffalo, WY 82834",
+      "website": "https://www.buffalofed.bank"
+    },
+    {
+      "name": "Central Bank and Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "529",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "285 Main St, Lander, WY 82520",
+      "website": "https://www.centralbanktrust.com"
+    },
+    {
+      "name": "Cowboy State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8725",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "515 Us Highway 14, Ranchester, WY 82839",
+      "website": "http://www.cowboystatebank.com"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "526",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "103 E 2nd St, Pine Bluffs, WY 82082",
+      "website": "https://www.farmersstatebankwyoming.com"
+    },
+    {
+      "name": "First Federal Bank & Trust",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29537",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "671 Illinois St, Sheridan, WY 82801",
+      "website": "https://www.efirstfederal.bank"
+    },
+    {
+      "name": "First National Bank of Gillette",
+      "fdic_insured_since": "09/10/1963",
+      "fdic_cert": "18880",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "319 S Gillette Ave, Gillette, WY 82716",
+      "website": "https://www.fnbgillette.com"
+    },
+    {
+      "name": "First Northern Bank of Wyoming",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2208",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "141 S Main St, Buffalo, WY 82834",
+      "website": "https://fnbofwyo.com"
+    },
+    {
+      "name": "Hilltop National Bank",
+      "fdic_insured_since": "07/27/1964",
+      "fdic_cert": "19184",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "300 Country Club Rd, Casper, WY 82609",
+      "website": "https://WWW.HILLTOP.BANK"
+    },
+    {
+      "name": "Jonah Bank of Wyoming",
+      "fdic_insured_since": "07/31/2006",
+      "fdic_cert": "58396",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "777 W 1st St, Casper, WY 82601",
+      "website": "https://www.jonah.bank"
+    },
+    {
+      "name": "Pinnacle Bank - Wyoming",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2232",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1702 Sheridan Ave, Cody, WY 82414",
+      "website": "https://www.wypinnbank.com"
+    },
+    {
+      "name": "Platte Valley Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5442",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2201 Main St, Torrington, WY 82240",
+      "website": "https://www.pvbank.com"
+    },
+    {
+      "name": "RNB STATE BANK",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2228",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "220 5th St, Rawlins, WY 82301",
+      "website": "https://www.rnbonline.com"
+    },
+    {
+      "name": "RSNB Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2229",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "200 2nd St, Rock Springs, WY 82901",
+      "website": "https://WWW.RSNB.COM"
+    },
+    {
+      "name": "Security State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12592",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "201 S 4th St, Basin, WY 82410",
+      "website": "https://www.ssbwyo.bank"
+    },
+    {
+      "name": "State Bank",
+      "fdic_insured_since": "08/18/1997",
+      "fdic_cert": "34441",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "30 Shoshone Ave, Green River, WY 82935",
+      "website": "https://statebankwy.com"
+    },
+    {
+      "name": "Summit National Bank",
+      "fdic_insured_since": "02/28/1984",
+      "fdic_cert": "25054",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "133 Main St, Hulett, WY 82720",
+      "website": "http://www.summitnb.com"
+    },
+    {
+      "name": "Sundance State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1169",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "123 N 2nd St, Sundance, WY 82729",
+      "website": "https://www.sundancestate.bank"
+    },
+    {
+      "name": "Tanager Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1167",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "260 W Broadway Ave, Jackson, WY 83001",
+      "website": "https://www.uintabank.com"
+    },
+    {
+      "name": "The Converse County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12591",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "332 E Walnut St, Douglas, WY 82633",
+      "website": "https://www.conversecountybank.com"
+    },
+    {
+      "name": "Wyoming Community Bank",
+      "fdic_insured_since": "06/14/1999",
+      "fdic_cert": "35220",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1700 N Federal Blvd, Riverton, WY 82501",
+      "website": "http://www.wyomingcommunity.bank"
+    }
+  ],
+  "updated": "2026-06-26"
+}

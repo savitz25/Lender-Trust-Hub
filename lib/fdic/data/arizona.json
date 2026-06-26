@@ -1,0 +1,103 @@
+{
+  "fullName": "Arizona",
+  "abbr": "AZ",
+  "banks": [
+    {
+      "name": "Western Alliance Bank",
+      "fdic_insured_since": "02/03/2003",
+      "fdic_cert": "57512",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1 E Washington St, Phoenix, AZ 85004",
+      "website": "https://www.westernalliancebancorporation.com"
+    },
+    {
+      "name": "Southwest Heritage Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29087",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "8777 E Hartford Dr, Ste 100, Scottsdale, AZ 85255",
+      "website": "https://www.swhbank.com"
+    },
+    {
+      "name": "BNC National Bank",
+      "fdic_insured_since": "07/09/2001",
+      "fdic_cert": "57197",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "20175 N 67th Ave, Glendale, AZ 85308",
+      "website": "https://www.bncbank.com"
+    },
+    {
+      "name": "Gainey Business Bank",
+      "fdic_insured_since": "06/08/2022",
+      "fdic_cert": "59273",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8501 N Scottsdale Rd, Ste 120, Scottsdale, AZ 85253",
+      "website": "https://www.gaineybusinessbank.com"
+    },
+    {
+      "name": "Gateway Commercial Bank",
+      "fdic_insured_since": "12/03/2007",
+      "fdic_cert": "58678",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6860 E Warner Rd, Mesa, AZ 85212",
+      "website": "https://www.gcbaz.com"
+    },
+    {
+      "name": "Goldwater Bank, N.A.",
+      "fdic_insured_since": "04/02/2007",
+      "fdic_cert": "58405",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2525 E Camelback Rd, Phoenix, AZ 85016",
+      "website": "https://www.goldwaterbank.com"
+    },
+    {
+      "name": "Integro Bank",
+      "fdic_insured_since": "06/21/2022",
+      "fdic_cert": "59283",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "16215 N 28th Ave, Phoenix, AZ 85053",
+      "website": "https://www.integrobank.com"
+    },
+    {
+      "name": "Mission Bank",
+      "fdic_insured_since": "04/30/2001",
+      "fdic_cert": "57137",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2439 Hualapai Mountain Rd, Kingman, AZ 86401",
+      "website": "http://missionbankaz.com"
+    },
+    {
+      "name": "Scottsdale Community Bank",
+      "fdic_insured_since": "01/10/2022",
+      "fdic_cert": "59203",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8767 E Via De Ventura, Scottsdale, AZ 85258",
+      "website": "https://www.scottsdalecommunitybank.com"
+    },
+    {
+      "name": "USAA Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32188",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Norterra Dr, Phoenix, AZ 85085",
+      "website": "https://www.usaa.com"
+    },
+    {
+      "name": "West Valley National Bank",
+      "fdic_insured_since": "12/22/2006",
+      "fdic_cert": "58426",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "2440 N Litchfield Rd, Goodyear, AZ 85395",
+      "website": "https://www.wvnb.net"
+    },
+    {
+      "name": "Zenith Bank & Trust",
+      "fdic_insured_since": "10/02/2023",
+      "fdic_cert": "59318",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4900 N Scottsdale Rd, Suite 1500, Scottsdale, AZ 85251",
+      "website": "https://www.zenithprivate.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

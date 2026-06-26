@@ -1,0 +1,239 @@
+{
+  "fullName": "New Mexico",
+  "abbr": "NM",
+  "banks": [
+    {
+      "name": "Four Corners Community Bank",
+      "fdic_insured_since": "03/01/2000",
+      "fdic_cert": "35441",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "500 W Main St, Ste 101, Farmington, NM 87401",
+      "website": "https://www.thebankforme.com"
+    },
+    {
+      "name": "InBank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11492",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 S 2nd St, Raton, NM 87740",
+      "website": "https://www.inbank.com"
+    },
+    {
+      "name": "American Heritage Bank",
+      "fdic_insured_since": "12/05/2000",
+      "fdic_cert": "57025",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3300 N Prince St, Clovis, NM 88101",
+      "website": "https://www.ahbnm.com"
+    },
+    {
+      "name": "Bank of the Southwest",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2247",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "226 N Main St, Roswell, NM 88201",
+      "website": "https://www.bankofsw.com"
+    },
+    {
+      "name": "Centinel Bank of Taos",
+      "fdic_insured_since": "03/01/1969",
+      "fdic_cert": "19904",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "512 Paseo Del Pueblo Sur, Taos, NM 87571",
+      "website": "https://www.centinelbank.com"
+    },
+    {
+      "name": "Century Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28362",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 S Federal Pl, Santa Fe, NM 87501",
+      "website": "https://www.mycenturybank.com/"
+    },
+    {
+      "name": "Citizens Bank of Las Cruces",
+      "fdic_insured_since": "04/06/1970",
+      "fdic_cert": "20161",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "505 S Main St, Las Cruces, NM 88001",
+      "website": "https://www.citizenslc.com"
+    },
+    {
+      "name": "CNB Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2241",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 W Stevens St, Carlsbad, NM 88220",
+      "website": "http://www.ourcnb.bank"
+    },
+    {
+      "name": "Community 1st Bank Las Vegas",
+      "fdic_insured_since": "11/23/1949",
+      "fdic_cert": "16854",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "600 Douglas Ave, Las Vegas, NM 87701",
+      "website": "https://www.cfblv.com"
+    },
+    {
+      "name": "DSRM National Bank",
+      "fdic_insured_since": "10/01/1996",
+      "fdic_cert": "34331",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "5600 Wyoming Blvd Ne, Ste 275, Albuquerque, NM 87109",
+      "website": ""
+    },
+    {
+      "name": "First American Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2240",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "303 W Main St, Artesia, NM 88210",
+      "website": "https://www.firstamericanbanknm.com"
+    },
+    {
+      "name": "First National Bank",
+      "fdic_insured_since": "08/23/1956",
+      "fdic_cert": "17643",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "414 10th St, Alamogordo, NM 88310",
+      "website": "https://www.fnb4u.com"
+    },
+    {
+      "name": "First New Mexico Bank",
+      "fdic_insured_since": "04/30/1962",
+      "fdic_cert": "18514",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 S Gold Ave, Deming, NM 88030",
+      "website": "https://www.firstnewmexicobank.com"
+    },
+    {
+      "name": "First New Mexico Bank of Silver City",
+      "fdic_insured_since": "01/04/1984",
+      "fdic_cert": "24865",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1928 Highway 180 E, Silver City, NM 88061",
+      "website": "https://fnmbsc.com"
+    },
+    {
+      "name": "First New Mexico Bank, Las Cruces",
+      "fdic_insured_since": "01/14/2008",
+      "fdic_cert": "58745",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3000 E Lohman Ave, Las Cruces, NM 88011",
+      "website": "https://www.firstnewmexicobanklc.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "07/01/1947",
+      "fdic_cert": "16600",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "103 Manzanares Ave E, Socorro, NM 87801",
+      "website": "https://www.Socorrobanking.com"
+    },
+    {
+      "name": "Lea County State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12259",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1017 N Turner St, Hobbs, NM 88240",
+      "website": "https://www.onlinelcsb.com"
+    },
+    {
+      "name": "Main Bank",
+      "fdic_insured_since": "08/05/1975",
+      "fdic_cert": "22086",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7300 Menaul Blvd Ne, Albuquerque, NM 87110",
+      "website": "http://www.main.bank"
+    },
+    {
+      "name": "Pioneer Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27872",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3000 N Main St, Roswell, NM 88201",
+      "website": "https://www.pioneer.bank"
+    },
+    {
+      "name": "Southwest Capital Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12258",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1410 Central Ave Sw, Albuquerque, NM 87104",
+      "website": "https://www.southwestcapital.com"
+    },
+    {
+      "name": "The Bank of Clovis",
+      "fdic_insured_since": "10/16/2000",
+      "fdic_cert": "57022",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 N Main St, Clovis, NM 88101",
+      "website": "https://www.bankofclovis.Bank"
+    },
+    {
+      "name": "The Citizens Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1164",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "500 W Broadway, Farmington, NM 87401",
+      "website": "https://www.cbnm.com"
+    },
+    {
+      "name": "The Citizens Bank of Clovis",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11491",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "421 Pile St, Clovis, NM 88101",
+      "website": "https://www.cbcnm.bank"
+    },
+    {
+      "name": "The James Polk Stone Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2244",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "109 E 2nd St, Portales, NM 88130",
+      "website": "https://www.jpstone.com"
+    },
+    {
+      "name": "Tucumcari Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29059",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "301 S 1st St, Tucumcari, NM 88401",
+      "website": "https://www.tucfed.com"
+    },
+    {
+      "name": "Valley Bank of Commerce",
+      "fdic_insured_since": "02/01/1978",
+      "fdic_cert": "22600",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "217 W 2nd St, Roswell, NM 88201",
+      "website": "https://valleybankofcommerce.com"
+    },
+    {
+      "name": "Western Bank",
+      "fdic_insured_since": "08/02/1948",
+      "fdic_cert": "16720",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "320 W Texas Ave, Artesia, NM 88210",
+      "website": "https://www.wbartesia.com"
+    },
+    {
+      "name": "Western Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "2249",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "140 E Motel Dr, Lordsburg, NM 88045",
+      "website": "https://www.bootheelbank.com"
+    },
+    {
+      "name": "Western Commerce Bank",
+      "fdic_insured_since": "06/03/1961",
+      "fdic_cert": "18389",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "127 S Canyon St, Carlsbad, NM 88220",
+      "website": "http://www.wcb.net"
+    }
+  ],
+  "updated": "2026-06-26"
+}
