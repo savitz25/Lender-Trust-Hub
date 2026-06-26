@@ -15,6 +15,7 @@ import districtOfColumbiaData from './data/district-of-columbia.json';
 import floridaData from './data/florida.json';
 import georgiaData from './data/georgia.json';
 import illinoisData from './data/illinois.json';
+import indianaData from './data/indiana.json';
 import iowaData from './data/iowa.json';
 import kansasData from './data/kansas.json';
 import louisianaData from './data/louisiana.json';
@@ -29,6 +30,7 @@ import newHampshireData from './data/new-hampshire.json';
 import newJerseyData from './data/new-jersey.json';
 import newYorkData from './data/new-york.json';
 import northCarolinaData from './data/north-carolina.json';
+import ohioData from './data/ohio.json';
 import oklahomaData from './data/oklahoma.json';
 import pennsylvaniaData from './data/pennsylvania.json';
 import rhodeIslandData from './data/rhode-island.json';
@@ -48,6 +50,7 @@ export const stateData: Record<string, StateFDICData> = {
   FL: floridaData as StateFDICData,
   GA: georgiaData as StateFDICData,
   IL: illinoisData as StateFDICData,
+  IN: indianaData as StateFDICData,
   IA: iowaData as StateFDICData,
   KS: kansasData as StateFDICData,
   LA: louisianaData as StateFDICData,
@@ -62,6 +65,7 @@ export const stateData: Record<string, StateFDICData> = {
   NH: newHampshireData as StateFDICData,
   NJ: newJerseyData as StateFDICData,
   NY: newYorkData as StateFDICData,
+  OH: ohioData as StateFDICData,
   OK: oklahomaData as StateFDICData,
   PA: pennsylvaniaData as StateFDICData,
   RI: rhodeIslandData as StateFDICData,

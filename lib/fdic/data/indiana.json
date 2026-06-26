@@ -1,0 +1,719 @@
+{
+  "fullName": "Indiana",
+  "abbr": "IN",
+  "banks": [
+    {
+      "name": "1st Source Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9087",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 N Michigan St Ste B, South Bend, IN 46601",
+      "website": "https://www.1stsource.com"
+    },
+    {
+      "name": "Alliance Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "197",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 W Montgomery St., Francesville, IN 47946",
+      "website": "https://www.myalliancebank.com"
+    },
+    {
+      "name": "American Community Bank of Indiana",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29878",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7880 Wicker Ave, Saint John, IN 46373",
+      "website": "https://www.acbanker.com"
+    },
+    {
+      "name": "Bank of Wolcott",
+      "fdic_insured_since": "10/16/1944",
+      "fdic_cert": "16201",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 N Range St, Wolcott, IN 47995",
+      "website": "http://www.bankofwolcott.com"
+    },
+    {
+      "name": "Bath State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8035",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3095 Bath Road, Bath, IN 47010",
+      "website": "https://www.bathstatebank.com"
+    },
+    {
+      "name": "Bedford Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29024",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1030 15th St, Bedford, IN 47421",
+      "website": "https://www.bedfed.com"
+    },
+    {
+      "name": "Boonville Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30128",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "123 N 3rd St, Boonville, IN 47601",
+      "website": "https://www.boonville.bank"
+    },
+    {
+      "name": "Centier Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12854",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1500 119th St, Whiting, IN 46394",
+      "website": "https://www.centier.com"
+    },
+    {
+      "name": "CentreBank",
+      "fdic_insured_since": "08/07/1937",
+      "fdic_cert": "15532",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "126 N Main St, Veedersburg, IN 47987",
+      "website": "https://www.centrebank.net"
+    },
+    {
+      "name": "Citizens Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9647",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "33 N Indiana St, Mooresville, IN 46158",
+      "website": "https://www.citizens-banking.com"
+    },
+    {
+      "name": "Citizens State Bank of New Castle, Indiana",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13107",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1238 Broad St, New Castle, IN 47362",
+      "website": "https://www.mycsbin.com"
+    },
+    {
+      "name": "Community First Bank of Indiana",
+      "fdic_insured_since": "02/03/2003",
+      "fdic_cert": "57511",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 W Sycamore St, Kokomo, IN 46901",
+      "website": "https://www.cfbindiana.com"
+    },
+    {
+      "name": "Community State Bank",
+      "fdic_insured_since": "11/20/1934",
+      "fdic_cert": "14883",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "802 E Albion St, Avilla, IN 46710",
+      "website": "https://www.csbbankonline.bank"
+    },
+    {
+      "name": "Community State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1839",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 N Chicago St, Royal Center, IN 46978",
+      "website": "https://www.csbnetbank.com"
+    },
+    {
+      "name": "Community State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8067",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "244 W Main St, Brook, IN 47922",
+      "website": "https://www.communitystatebank.com"
+    },
+    {
+      "name": "Crossroads Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29839",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1205 N Cass St, Wabash, IN 46992",
+      "website": "https://www.crossroadsbanking.com"
+    },
+    {
+      "name": "DeMotte State Bank",
+      "fdic_insured_since": "03/02/1942",
+      "fdic_cert": "15883",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "210 S Halleck St, Demotte, IN 46310",
+      "website": "http://www.netdsb.com"
+    },
+    {
+      "name": "Everence Trust Company",
+      "fdic_insured_since": "06/01/2001",
+      "fdic_cert": "57109",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1110 N Main St, Goshen, IN 46528",
+      "website": "https://www.everence.com"
+    },
+    {
+      "name": "Farmers and Mechanics Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28478",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "225 E Main St, Bloomfield, IN 47424",
+      "website": "http://www.farmersandmechanicsfederal.com"
+    },
+    {
+      "name": "Farmers and Merchants Bank",
+      "fdic_insured_since": "01/31/1934",
+      "fdic_cert": "13801",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6464 Merchants Dr, Laotto, IN 46763",
+      "website": "https://www.fmfbank.com"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "07/16/1934",
+      "fdic_cert": "14578",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "220 S Detroit St, Lagrange, IN 46761",
+      "website": "https://www.farmersstatebank.com"
+    },
+    {
+      "name": "FCN Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4319",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "501 Main St, Brookville, IN 47012",
+      "website": "https://www.fcnbank.com"
+    },
+    {
+      "name": "First Bank of Berne",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9288",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "222 Heritage Trl, Berne, IN 46711",
+      "website": "https://www.firstbankofberne.com"
+    },
+    {
+      "name": "First Bank Richmond",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28533",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "20 N 9th St, Richmond, IN 47374",
+      "website": "https://www.firstbankrichmond.com"
+    },
+    {
+      "name": "First Farmers Bank & Trust Co.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12839",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "123 N Jefferson St, Converse, IN 46919",
+      "website": "https://www.ffbt.com"
+    },
+    {
+      "name": "First Federal Savings and Loan Association of Greensburg",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30058",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "212 N Franklin St, Greensburg, IN 47240",
+      "website": "https://www.ffsg.net"
+    },
+    {
+      "name": "First Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29056",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5001 Davis Lant Dr, Evansville, IN 47715",
+      "website": "https://www.firstfedsavings.bank"
+    },
+    {
+      "name": "First Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29690",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "648 N Jefferson St, Huntington, IN 46750",
+      "website": "https://www.firstfedindiana.bank"
+    },
+    {
+      "name": "First Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31516",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "301 E 9th St, Rochester, IN 46975",
+      "website": "https://www.firstfederalbanking.com"
+    },
+    {
+      "name": "First Federal Savings Bank of Angola",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28769",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "212 E Maumee St, Angola, IN 46703",
+      "website": "https://www.ffsbangola.com"
+    },
+    {
+      "name": "First Federal Savings Bank of Washington",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29710",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "439 S State Road 57, Washington, IN 47501",
+      "website": "https://WWW.FIRSTFEDERALWASHINGTON.COM"
+    },
+    {
+      "name": "First Financial Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4382",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 First Financial Plz, Terre Haute, IN 47807",
+      "website": "https://www.first-online.bank"
+    },
+    {
+      "name": "First Harrison Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31223",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "220 Federal Dr Nw, Corydon, IN 47112",
+      "website": "https://www.firstharrison.com"
+    },
+    {
+      "name": "First Internet Bank of Indiana",
+      "fdic_insured_since": "12/28/1998",
+      "fdic_cert": "34607",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8701 E 116th St, Fishers, IN 46038",
+      "website": "https://www.firstib.com"
+    },
+    {
+      "name": "First Merchants Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4365",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 E Jackson St, Muncie, IN 47305",
+      "website": "http://www.firstmerchants.com"
+    },
+    {
+      "name": "First National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4324",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "302 S Main St, Cloverdale, IN 46120",
+      "website": "http://www.fnb-bank.com"
+    },
+    {
+      "name": "First State Bank of Middlebury",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8745",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 South Main Street, Middlebury, IN 46540",
+      "website": "https://www.Bfirst.bank"
+    },
+    {
+      "name": "First State Bank of Porter",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12836",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "230 Lincoln St, Porter, IN 46304",
+      "website": "http://www.porterstatebank.com"
+    },
+    {
+      "name": "Fowler State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1821",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 E 5th St, Fowler, IN 47944",
+      "website": "https://WWW.FOWLERSTATEBANK.COM"
+    },
+    {
+      "name": "Freedom Bank",
+      "fdic_insured_since": "11/22/1999",
+      "fdic_cert": "35221",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1405 N Main St, Huntingburg, IN 47542",
+      "website": "https://WWW.THATSFREEDOM.BANK"
+    },
+    {
+      "name": "Generations Community Bank",
+      "fdic_insured_since": "03/09/2026",
+      "fdic_cert": "59365",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2110 N Illinois St, Indianapolis, IN 46202",
+      "website": "https://www.mygc.bank"
+    },
+    {
+      "name": "German American Bank",
+      "fdic_insured_since": "01/18/1955",
+      "fdic_cert": "17393",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "711 Main St, Jasper, IN 47546",
+      "website": "https://www.germanamerican.com"
+    },
+    {
+      "name": "Grant County State Bank",
+      "fdic_insured_since": "10/02/1939",
+      "fdic_cert": "15687",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 N Washington St, Swayzee, IN 46986",
+      "website": "https://www.grantcostatebank.com"
+    },
+    {
+      "name": "Greenfield Banking Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "15632",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1920 N State St, Greenfield, IN 46140",
+      "website": "https://www.gbcbank.com"
+    },
+    {
+      "name": "Hendricks County Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13111",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1 E Main St, Brownsburg, IN 46112",
+      "website": "https://www.hendrickscountybank.com"
+    },
+    {
+      "name": "Home Bank SB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29881",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "59 W Washington St, Martinsville, IN 46151",
+      "website": "https://www.homebanksb.com"
+    },
+    {
+      "name": "Hoosier Heartland State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "15566",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1661 S Us Highway 231, Crawfordsville, IN 47933",
+      "website": "http://www.myhhsb.com"
+    },
+    {
+      "name": "Horizon Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4360",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "515 Franklin St, Michigan City, IN 46360",
+      "website": "https://www.horizonbank.com"
+    },
+    {
+      "name": "Jackson County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13109",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "125 S Chestnut St, Seymour, IN 47274",
+      "website": "https://jcbank.com"
+    },
+    {
+      "name": "Kentland Bank",
+      "fdic_insured_since": "02/06/1934",
+      "fdic_cert": "13843",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 N 4th St, Kentland, IN 47951",
+      "website": "https://www.kentlandbank.com"
+    },
+    {
+      "name": "Kentland Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28722",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "116 N 3rd St, Kentland, IN 47951",
+      "website": ""
+    },
+    {
+      "name": "Lake City Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13102",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "202 E Center St, Warsaw, IN 46580",
+      "website": "https://www.lakecitybank.com"
+    },
+    {
+      "name": "LNB Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4398",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "215 N Main St, Lynnville, IN 47619",
+      "website": "https://www.lnbbanking.com"
+    },
+    {
+      "name": "Logansport Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29907",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "723 E Broadway, Logansport, IN 46947",
+      "website": "https://www.logansportsavings.bank"
+    },
+    {
+      "name": "Merchants Bank of Indiana",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8056",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "410 Monon Blvd, Carmel, IN 46032",
+      "website": "https://www.bankmerchants.com"
+    },
+    {
+      "name": "Mutual Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27742",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "80 E Jefferson St, Franklin, IN 46131",
+      "website": "https://www.mymsb.bank"
+    },
+    {
+      "name": "Old National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3832",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Main St, Evansville, IN 47708",
+      "website": "https://www.oldnational.com"
+    },
+    {
+      "name": "Owen County State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13112",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 W Morgan St, Spencer, IN 47460",
+      "website": "https://www.ocsbank.com"
+    },
+    {
+      "name": "Peoples Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29523",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9204 Columbia Ave, Munster, IN 46321",
+      "website": "http://www.ibankpeoples.com"
+    },
+    {
+      "name": "Peoples Community Bank SB of Monticello, Indiana",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30065",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "126 Constitution Plz, Monticello, IN 47960",
+      "website": "https://www.peoplesmonticello.com"
+    },
+    {
+      "name": "Peoples Trust and Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13113",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "132 S 3rd St, Boonville, IN 47601",
+      "website": "https://www.peoplestrust.bank"
+    },
+    {
+      "name": "Scottsburg Building and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29910",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "306 W Mcclain Ave, Scottsburg, IN 47170",
+      "website": "https://www.sblaonline.com"
+    },
+    {
+      "name": "Security Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28894",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "314 4th St, Logansport, IN 46947",
+      "website": "https://www.secfedbank.com"
+    },
+    {
+      "name": "Spencer County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5786",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "55 N L J Koch Blvd, Santa Claus, IN 47579",
+      "website": "https://www.spencercountybank.com"
+    },
+    {
+      "name": "Springs Valley Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4419",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8482 W State Road 56, French Lick, IN 47432",
+      "website": "https://www.svbt.bank"
+    },
+    {
+      "name": "STAR Financial Bank",
+      "fdic_insured_since": "05/02/1988",
+      "fdic_cert": "27235",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "215 W. Main Street, Fort Wayne, IN 46802",
+      "website": "https://www.starfinancial.com"
+    },
+    {
+      "name": "State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1833",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "900 E 56th St, Brownsburg, IN 46112",
+      "website": "https://www.statebank1910.bank"
+    },
+    {
+      "name": "The Bippus State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1847",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "150 Hauenstein Rd, Huntington, IN 46750",
+      "website": "https://www.bippusbank.com"
+    },
+    {
+      "name": "The Campbell & Fetter Bank",
+      "fdic_insured_since": "01/03/1949",
+      "fdic_cert": "16757",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "126 S Orchard St, Kendallville, IN 46755",
+      "website": "https://www.campbellfetterbank.com"
+    },
+    {
+      "name": "The Fairmount State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1829",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 N Main St, Fairmount, IN 46928",
+      "website": "https://www.fairmountstatebank.com"
+    },
+    {
+      "name": "The Farmers and Merchants Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1843",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "302 S Old Us Highway 41, Boswell, IN 47921",
+      "website": "https://www.fmbank.org"
+    },
+    {
+      "name": "The Farmers Bank, Frankfort, Indiana",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12828",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9 E Clinton St, Frankfort, IN 46041",
+      "website": "https://www.thefarmersbank.com"
+    },
+    {
+      "name": "The First National Bank of Monterey",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4364",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "6222 E Main St, Monterey, IN 46960",
+      "website": "https://www.fnbmonterey.com"
+    },
+    {
+      "name": "The Fountain Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5768",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "615 3rd St, Covington, IN 47932",
+      "website": "http://www.fountaintrust.com"
+    },
+    {
+      "name": "The Friendship State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13130",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "5908 E Main Street, Friendship, IN 47021",
+      "website": "https://www.friendshipstatebank.com"
+    },
+    {
+      "name": "The Garrett State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8074",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "120 W King St, Garrett, IN 46738",
+      "website": "https://www.garrettstatebank.com"
+    },
+    {
+      "name": "The Home National Bank of Thorntown",
+      "fdic_insured_since": "04/06/1934",
+      "fdic_cert": "14225",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "117 E Main St, Thorntown, IN 46071",
+      "website": "https://www.thehomenationalbank.com"
+    },
+    {
+      "name": "The Hometown Savings Bank",
+      "fdic_insured_since": "03/28/1957",
+      "fdic_cert": "17736",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "533 Ohio St, Terre Haute, IN 47807",
+      "website": "http://www.thsb.com"
+    },
+    {
+      "name": "The Napoleon State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10101",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "8912 N Us Highway 421, Napoleon, IN 47034",
+      "website": "https://www.napoleonstatebank.com"
+    },
+    {
+      "name": "The National Bank of Indianapolis",
+      "fdic_insured_since": "12/08/1993",
+      "fdic_cert": "33860",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "107 N Pennsylvania St, Indianapolis, IN 46204",
+      "website": "https://www.nbofi.com"
+    },
+    {
+      "name": "The New Washington State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13305",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "402 E Main St, New Washington, IN 47162",
+      "website": "https://www.newwashbank.com"
+    },
+    {
+      "name": "The North Salem State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8063",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7 N Broadway St, North Salem, IN 46165",
+      "website": "https://www.nssb.bank"
+    },
+    {
+      "name": "The Peoples Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5779",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 N Main St, Brownstown, IN 47220",
+      "website": "http://www.banktpb.com"
+    },
+    {
+      "name": "The Peoples State Bank",
+      "fdic_insured_since": "03/26/1934",
+      "fdic_cert": "14113",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "601 E Temperance St, Ellettsville, IN 47429",
+      "website": "https://www.psbanywhere.com"
+    },
+    {
+      "name": "The Riddell National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4318",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 E National Ave, Brazil, IN 47834",
+      "website": "http://www.riddellonline.com"
+    },
+    {
+      "name": "Tri-County Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "210",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "18 E Washington St, Roachdale, IN 46172",
+      "website": "https://tcbnow.bank"
+    },
+    {
+      "name": "Union Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29933",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "730 N Central Ave, Connersville, IN 47331",
+      "website": "http://www.uslabank.com"
+    },
+    {
+      "name": "United Fidelity Bank, fsb",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29566",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "18 Nw 4th St, Evansville, IN 47708",
+      "website": "https://www.unitedfidelity.com"
+    },
+    {
+      "name": "Wayne Bank and Trust Co.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1849",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "500 S A St, Richmond, IN 47374",
+      "website": "http://www.waynebankonline.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}
