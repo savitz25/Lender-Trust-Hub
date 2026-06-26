@@ -1,0 +1,356 @@
+Alerus Financial, National Association,01/01/1934,3931,Comptroller of the Currency,"401 Demers Ave, Grand Forks, ND 58201",www.alerus.com
+American Bank and Trust Company, National Association,01/05/1999,34955,Comptroller of the Currency,"4301 E 53rd St, Davenport, IA 52807",www.goambank.com
+American Bank, National Association,01/01/1934,5800,Comptroller of the Currency,"234 5th Ave Sw, Le Mars, IA 51031",www.am-bank.com
+American State Bank,01/01/1934,228,Federal Deposit Insurance Corporation,"525 N Main Ave, Sioux Center, IA 51250",www.ambankiowa.com
+American State Bank,04/23/1987,26944,Federal Reserve Board,"1000 Jeffreys Dr, Osceola, IA 50213",www.americanstatebank.com
+American Trust and Savings Bank,01/01/1934,10120,Federal Deposit Insurance Corporation,"309 Mckinley Ave, Lowden, IA 52255",www.atsb-lowden.com
+Arbor Bank,07/01/1991,33450,Federal Deposit Insurance Corporation,"911 Central Ave, Nebraska City, NE 68410",www.arborbanking.com
+Ashton State Bank,01/01/1934,11343,Federal Deposit Insurance Corporation,"317 3rd St, Ashton, IA 51232",www.ashtonstatebank.com
+Associated Bank, National Association,01/01/1934,5296,Comptroller of the Currency,"200 N Adams St, Green Bay, WI 54301",www.associatedbank.com
+Atkins Savings Bank & Trust,01/01/1934,9096,Federal Deposit Insurance Corporation,"97 Main Ave, Atkins, IA 52206",www.atkinssavingsbank.com
+Audubon State Bank,01/01/1934,5814,Federal Deposit Insurance Corporation,"307 Broadway St, Audubon, IA 50025",www.audubonstatebank.com
+Availa Bank,01/01/1934,11771,Federal Deposit Insurance Corporation,"126 W 6th St, Carroll, IA 51401",www.availa.bank
+BANK,04/25/1934,14291,Federal Reserve Board,"409 Highway 61 S, Wapello, IA 52653",www.bank.bank
+Bank 1st,01/31/1934,13816,Federal Reserve Board,"115 N Vine St, West Union, IA 52175",www.bank1stia.com
+Bank Iowa,06/28/1934,14521,Federal Reserve Board,"1225 Jordan Creek Pkwy Ste 200, West Des Moines, IA 50266",www.bankiowa.bank
+Bank Midwest,01/01/1934,5170,Federal Reserve Board,"1800 Royal Ave, Spirit Lake, IA 51360",bankmidwest.com
+Bank of America, National Association,01/01/1934,3510,Comptroller of the Currency,"100 N Tryon St, Charlotte, NC 28202",www.bankofamerica.com
+Bank Plus,03/01/1947,16547,Federal Deposit Insurance Corporation,"1202 Central Ave, Estherville, IA 51334",www.bankplusiowa.com
+Bankers Trust Company,01/01/1934,953,Federal Deposit Insurance Corporation,"453 7th St, Des Moines, IA 50309",www.bankerstrust.com
+BankFirst,02/09/1970,20130,Federal Deposit Insurance Corporation,"100 N 13th St, Norfolk, NE 68701",mybankfirst.bank
+BankIowa,12/11/1953,17282,Federal Deposit Insurance Corporation,"7045 C Ave Ne, Cedar Rapids, IA 52402",www.bankiowa.com
+BankOrion,01/01/1934,11739,Federal Deposit Insurance Corporation,"1114 4th St, Orion, IL 61273",www.bankorion.com
+Bellevue State Bank,05/31/1944,14415,Federal Deposit Insurance Corporation,"200 S 2nd St, Bellevue, IA 52031",www.bellevuestatebank.com
+Benton County State Bank,01/29/1934,13774,Federal Deposit Insurance Corporation,"212 Locust St Ne, Blairstown, IA 52209",www.bentoncountystatebank.com
+Blackhawk Bank & Trust,06/28/1961,18402,Federal Deposit Insurance Corporation,"301 4th St W, Milan, IL 61264",www.choosethechief.com
+Blue Grass Savings Bank,01/01/1934,13753,Federal Deposit Insurance Corporation,"104 E Mayne St, Blue Grass, IA 52726",www.bluegrassbank.com
+BMO Bank National Association,05/17/1947,16571,Comptroller of the Currency,"320 S Canal St, Chicago, IL 60606",www.bmo.com
+Boone Bank & Trust Co.,01/16/1992,33552,Federal Deposit Insurance Corporation,"716 8th St, Boone, IA 50036",www.boonebankiowa.com
+Breda Savings Bank,01/01/1934,5792,Federal Deposit Insurance Corporation,"105 Main St, Breda, IA 51436",www.bredasavingsbank.com
+Bridge Community Bank,01/01/1934,12717,Federal Deposit Insurance Corporation,"302 Highway 1 S, Mount Vernon, IA 52314",www.bridge.bank
+BTC Bank,01/01/1934,10618,Federal Deposit Insurance Corporation,"3606 Miller St, Bethany, MO 64424",btcbank.bank
+Capra Bank,01/21/1946,16363,Federal Deposit Insurance Corporation,"955 Washington St Suite 107, Dubuque, IA 52001",www.caprabank.com
+CBI Bank & Trust,01/01/1934,1552,Federal Reserve Board,"301 Iowa Ave, Muscatine, IA 52761",www.cbibt.bank
+Cedar Rapids Bank and Trust Company,09/14/2001,57244,Federal Reserve Board,"500 1st Ave Ne Ste 100, Cedar Rapids, IA 52401",www.crbt.bank
+Cedar Valley Bank & Trust,08/22/1934,14694,Federal Deposit Insurance Corporation,"321 Main St, La Porte City, IA 50651",www.cedarvalleybank.com
+Central Bank,01/01/1934,15555,Federal Reserve Board,"600 Lake Ave, Storm Lake, IA 50588",www.mycentral.bank
+Central State Bank,01/01/1934,10903,Federal Deposit Insurance Corporation,"109 Main St W, State Center, IA 50247",www.centralstatebankia.com
+Central State Bank,01/01/1934,1550,Federal Reserve Board,"805 22nd Ave, Coralville, IA 52241",centralstate.bank
+Charter Bank,06/15/1998,34686,Federal Deposit Insurance Corporation,"5526 Nw 86th St, Johnston, IA 50131",www.charterbanker.com
+Chelsea Savings Bank,10/19/1936,15427,Federal Deposit Insurance Corporation,"601 13th St, Belle Plaine, IA 52208",www.chelseasavingsbank.com
+Cherokee State Bank,01/01/1934,951,Federal Deposit Insurance Corporation,"212 W Willow St, Cherokee, IA 51012",www.cherokeestatebank.com
+Citizens First Bank,03/14/2000,35477,Federal Deposit Insurance Corporation,"1442 Lincoln Way, Clinton, IA 52732",www.gocfb.bank
+Citizens Savings Bank,01/01/1934,10125,Federal Deposit Insurance Corporation,"215 E Main St, Anamosa, IA 52205",www.citizensbankia.com
+Citizens Savings Bank,01/01/1934,12128,Federal Deposit Insurance Corporation,"101 Church St, Spillville, IA 52168",www.bankingwithcsb.com
+Citizens Savings Bank,10/03/1934,14785,Federal Deposit Insurance Corporation,"2414 S 2nd St, Marshalltown, IA 50158",www.citizenssavingsbank.com
+Citizens State Bank,01/01/1934,11759,Federal Deposit Insurance Corporation,"114 W Main St, Wyoming, IA 52362",www.csbwyoming.com
+Citizens State Bank,03/15/1961,18356,Federal Deposit Insurance Corporation,"808 3rd Ave, Sheldon, IA 51201",www.csbsheldon.com
+Citizens State Bank,01/01/1934,9047,Federal Deposit Insurance Corporation,"117 W 1st St, Monticello, IA 52310",www.mycsb.bank
+City State Bank,05/25/1934,14410,Federal Deposit Insurance Corporation,"801 Main St, Norwalk, IA 50211",www.citystatebank.com
+Clear Lake Bank and Trust Company,11/10/1939,15690,Federal Reserve Board,"322 Main Ave, Clear Lake, IA 50428",www.clearlakebank.bank
+Commercial Savings Bank,01/01/1934,231,Federal Reserve Board,"325 W Us Highway 30, Carroll, IA 51401",www.csbcarroll.com
+Community Bank,08/09/1934,14649,Federal Deposit Insurance Corporation,"601 Iowa Ave, Dunlap, IA 51529",www.communitybankiowa.com
+Community Bank and Trust Company,08/11/1980,23189,Federal Deposit Insurance Corporation,"2609 2nd Ave, Muscatine, IA 52761",www.commbk.net
+Community Bank of Oelwein,10/01/1998,34857,Federal Deposit Insurance Corporation,"150 1st St Se, Oelwein, IA 50662",www.bankoelwein.com
+Community Savings Bank,08/03/1934,14633,Federal Deposit Insurance Corporation,"101 E Union St, Edgewood, IA 52042",www.communitysavings.bank
+Community State Bank,02/15/1956,17551,Federal Deposit Insurance Corporation,"207 S Main St, Paton, IA 50217",www.csbpaton.com
+Community State Bank,07/15/1960,18272,Federal Reserve Board,"2750 Ne 36th St, Ankeny, IA 50021",www.bankcsb.com
+Community State Bank,01/01/1934,230,Federal Deposit Insurance Corporation,"1812 Highway Blvd, Spencer, IA 51301",www.ecommunitybank.org
+Connection Bank,01/01/1934,955,Federal Reserve Board,"636 Avenue G, Fort Madison, IA 52627",www.myconnectionbank.com
+Cornerstone Bank,08/09/1989,30067,Federal Reserve Board,"123 E Main St, Clarinda, IA 51632",www.cornerstonebankia.com
+Corydon State Bank,01/13/1934,13616,Federal Deposit Insurance Corporation,"201 W Jackson St, Corydon, IA 50060",*Not Listed*
+Crawford County Trust and Savings Bank,01/01/1934,8511,Federal Deposit Insurance Corporation,"21 N Main St, Denison, IA 51442",www.crawfordcountybank.com
+CUSB Bank,10/03/1961,18443,Federal Reserve Board,"111 N Elm St, Cresco, IA 52136",www.cusb.com
+Danville State Savings Bank,10/01/1934,14772,Federal Deposit Insurance Corporation,"102 S Walnut St, New London, IA 52645",www.danvillebank.com
+Decorah Bank & Trust Company,06/28/1935,15200,Federal Deposit Insurance Corporation,"202 E Water St, Decorah, IA 52101",www.decorah.bank
+Defiance State Bank,06/08/1955,17450,Federal Deposit Insurance Corporation,"201 Main Ave, Defiance, IA 51527",defiancestatebank.com
+Denver Savings Bank,01/01/1934,12857,Federal Deposit Insurance Corporation,"121 S State St, Denver, IA 50622",www.bankdsb.com
+DeWitt Bank & Trust Co.,08/27/1934,14705,Federal Deposit Insurance Corporation,"815 6th Ave, Dewitt, IA 52742",www.dewittbank.com
+Dysart State Bank,05/31/1955,17441,Federal Deposit Insurance Corporation,"301 Main St, Dysart, IA 52224",www.dysartstatebank.com
+Earlham Savings Bank,01/01/1934,5796,Federal Deposit Insurance Corporation,"7300 Lake Dr, West Des Moines, IA 50266",www.earlhambank.com
+Exchange State Bank,01/01/1934,10132,Federal Deposit Insurance Corporation,"823 Wheeler St, Ames, IA 50010",www.esb1.com
+F&M Bank,12/04/1934,14922,Federal Deposit Insurance Corporation,"204 N Main St, West Point, NE 68788",www.fmbankne.bank
+Fairfax State Savings Bank,01/01/1934,8083,Federal Deposit Insurance Corporation,"409 Vanderbilt St, Fairfax, IA 2228",www.thebankhere.com
+Farmers & Merchants Bank & Trust,01/24/1934,13737,Federal Deposit Insurance Corporation,"221 Jefferson St, Burlington, IA 52601",www.fmbanktrust.bank
+Farmers & Merchants Savings Bank,01/01/1934,9298,Federal Reserve Board,"101 E Main St, Manchester, IA 52057",www.fmbankia.com
+Farmers and Merchants Savings Bank,01/01/1934,10492,Federal Deposit Insurance Corporation,"2235 Mormon Trek Blvd, Iowa City, IA 52246",www.fmbankonline.com
+Farmers and Merchants State Bank,08/11/1938,15610,Federal Deposit Insurance Corporation,"101 W Jefferson St, Winterset, IA 50273",www.fmstate.bank
+Farmers Bank of Northern Missouri,01/01/1934,4539,Federal Reserve Board,"1604 Main St, Unionville, MO 63565",www.onlinefarmersbank.com
+Farmers Savings Bank,01/01/1934,10500,Federal Deposit Insurance Corporation,"3542 168th St, Wever, IA 52658",www.fsbwever.com
+Farmers Savings Bank,10/16/1934,14807,Federal Deposit Insurance Corporation,"205 Main St, Colesburg, IA 52035",www.farmerssavingsbank.com
+Farmers Savings Bank,08/04/1960,18284,Federal Deposit Insurance Corporation,"10 Highway Avenue Northwest, Fostoria, IA 51340",www.fsbfostoria.com
+Farmers Savings Bank,06/01/1961,18394,Federal Deposit Insurance Corporation,"205 W Main St, Marshalltown, IA 50158",www.fsb-iowa.com
+Farmers Savings Bank & Trust,01/01/1934,10122,Federal Deposit Insurance Corporation,"611 2nd St, Traer, IA 50675",www.fsb-traer.com
+Farmers State Bank,01/01/1934,12855,Federal Deposit Insurance Corporation,"131 Tower Park Dr, Waterloo, IA 50701",www.fsb1879.com
+Farmers State Bank,04/09/1934,14209,Federal Deposit Insurance Corporation,"1240 8th Ave, Marion, IA 52302",www.myfsbonline.com
+Farmers State Bank,01/01/1934,5797,Federal Deposit Insurance Corporation,"99 7th St N, Northwood, IA 50459",www.fsbbanks.com
+Farmers State Bank,01/01/1934,8760,Federal Deposit Insurance Corporation,"501 E State St, Algona, IA 50511",www.fsbiowa.com
+Farmers State Bank,01/01/1934,9106,Federal Deposit Insurance Corporation,"201 Main St, Yale, IA 50277",www.yalebankiowa.com
+Farmers State Bank,01/01/1934,9295,Federal Reserve Board,"401 Main St, Lake View, IA 51450",www.fsblv.com
+Farmers Trust & Savings Bank,05/01/1934,14392,Federal Deposit Insurance Corporation,"510 Elm St, Williamsburg, IA 52361",www.ftsbia.com
+Farmers Trust & Savings Bank,01/01/1934,8510,Federal Deposit Insurance Corporation,"122 Main St, Earling, IA 51530",www.ftnsbank.net
+Farmers Trust and Savings Bank,01/01/1934,12858,Federal Deposit Insurance Corporation,"125 W 4th St, Spencer, IA 51301",www.farmerstrust.bank
+Farmers Trust and Savings Bank,04/05/1934,14195,Federal Reserve Board,"101 N Main St, Buffalo Center, IA 50424",www.ftsbbank.bank
+Federation Bank,04/18/1934,14352,Federal Deposit Insurance Corporation,"300 S Iowa Ave, Washington, IA 52353",www.federationbankia.com
+Fidelity Bank,01/01/1934,5753,Federal Deposit Insurance Corporation,"302 Main St, Savanna, IL 61074",www.fidelity-bank.com
+Fidelity Bank & Trust,05/19/1934,14382,Federal Deposit Insurance Corporation,"4250 Asbury Rd, Dubuque, IA 52002",www.bankfidelity.bank
+First Bank,01/01/1934,4519,Federal Reserve Board,"316 E Bremer Ave, Waverly, IA 50677",www.firstiowa.bank
+First Bank Hampton,01/01/1934,4464,Federal Reserve Board,"211 1st Ave Nw, Hampton, IA 50441",www.fbh.bank
+First Central State Bank,06/12/1967,19716,Federal Deposit Insurance Corporation,"914 6th Ave, Dewitt, IA 52742",www.firstcentralsb.bank
+First Citizens Bank,01/01/1934,4433,Federal Reserve Board,"2601 4th St Sw, Mason City, IA 50401",www.myfcb.bank
+First Community Bank,12/04/1934,14904,Federal Deposit Insurance Corporation,"119 S Fulton St, Newell, IA 50568",www.fcb4u.com
+First Heritage Bank,01/01/1934,4457,Federal Reserve Board,"801 S Fremont St, Shenandoah, IA 51601",www.fhbshen.com
+First Interstate Bank,01/01/1934,1105,Federal Reserve Board,"401 N 31st St, Billings, MT 59101",www.firstinterstatebank.com
+First Iowa State Bank,12/15/1934,14930,Federal Reserve Board,"19 Benton Ave E, Albia, IA 52531",www.1stiowa.bank
+First Mid Bank & Trust, National Association,01/01/1934,3705,Comptroller of the Currency,"1515 Charleston Ave, Mattoon, IL 61938",www.firstmid.com
+First National Bank,02/15/1985,25894,Comptroller of the Currency,"141 E Main St, Oldham, SD 57051",www.firstnationalbanks.com
+First National Bank of Omaha,01/01/1934,5452,Comptroller of the Currency,"1601 Capitol Avenue, Omaha, NE 68102",www.fnbo.com
+First National Bank, Ames, Iowa,01/01/1934,1545,Comptroller of the Currency,"405 5th St, Ames, IA 50010",www.fnbames.com
+First Security Bank,01/01/1934,251,Federal Deposit Insurance Corporation,"401 Main St, Mapleton, IA 51034",www.firstsecuritybanks.com
+First Security Bank and Trust Company,01/01/1934,1852,Federal Deposit Insurance Corporation,"809 Clark St, Charles City, IA 50616",www.1stsecurity.bank
+First Security State Bank,04/23/1962,18508,Federal Deposit Insurance Corporation,"3600 Lafayette Rd, Evansdale, IA 50707",www.fssbonline.com
+First State Bank,12/16/1935,15321,Federal Deposit Insurance Corporation,"505 2nd St, Webster City, IA 50595",www.fsbwc.com
+First State Bank,07/31/1944,16177,Federal Deposit Insurance Corporation,"215 N Division St, Stuart, IA 50250",www.stuartbank.com
+First State Bank,01/01/1934,5791,Federal Deposit Insurance Corporation,"304 E Main St, Belmond, IA 50421",www.fsbbelmond.com
+First State Bank,02/21/2005,57910,Federal Deposit Insurance Corporation,"401 Main St, Nashua, IA 50658",www.fsb-nashua.com
+First State Bank,01/01/1934,5821,Federal Deposit Insurance Corporation,"413 East St, Lynnville, IA 50153",www.fsbankia.com
+First State Bank,01/01/1934,8522,Federal Deposit Insurance Corporation,"183 Main Ave N, Britt, IA 50423",fsb-britt.com
+First Trust and Savings Bank,01/01/1934,8752,Federal Deposit Insurance Corporation,"123 S Main St, Wheatland, IA 52777",www.firsttrust.bank
+First Whitney Bank and Trust,01/01/1934,254,Federal Deposit Insurance Corporation,"223 Chestnut St, Atlantic, IA 50022",www.firstwhitneybank.com
+Flanagan State Bank,01/01/1934,11734,Federal Deposit Insurance Corporation,"301 W Falcon Hwy, Flanagan, IL 61740",www.flanaganstatebank.com
+FNB Bank,01/01/1934,954,Federal Reserve Board,"311 5th Street, Fontanelle, IA 50846",www.fnbfontanelle.com
+FNNB Bank,01/01/1934,4482,Federal Reserve Board,"100 N 2nd Ave W, Newton, IA 50208",www.fnnbbank.com
+Fortress Bank,01/01/1934,9632,Federal Deposit Insurance Corporation,"9000 N Knoxville Ave, Peoria, IL 61615",www.bankfortress.com
+Freedom Financial Bank,02/22/1999,35031,Federal Reserve Board,"1255 Jordan Creek Pkwy, West Des Moines, IA 50266",www.freedomfinancialbank.com
+FreedomBank,01/01/1934,11767,Federal Deposit Insurance Corporation,"210 S Main St, Elkader, IA 52043",www.freedombnk.com
+Frontier Bank,06/24/1994,33922,Comptroller of the Currency,"101 S Phillips Ave, Sioux Falls, SD 57104",www.frontierbank.com
+Glenwood State Bank,01/01/1934,956,Federal Reserve Board,"32 N Walnut St, Glenwood, IA 51534",www.glenwoodstatebank.com
+GNB Bank,03/16/1934,14079,Federal Reserve Board,"529 G Ave, Grundy Center, IA 50638",www.gnbbank.com
+Great Southern Bank,08/09/1989,29546,Federal Deposit Insurance Corporation,"14309 State Highway 13, Reeds Spring, MO 65737",www.greatsouthernbank.com
+Green Belt Bank & Trust,07/31/1986,26760,Federal Deposit Insurance Corporation,"616 Washington Ave, Iowa Falls, IA 50126",www.greenbeltbank.com
+Grinnell State Bank,01/01/1934,11347,Federal Deposit Insurance Corporation,"814 4th Ave, Grinnell, IA 50112",www.grinnell.bank
+Guthrie County State Bank,01/01/1934,226,Federal Deposit Insurance Corporation,"505 E Main St, Panora, IA 50216",www.gcsbank.com
+Hardin County Savings Bank,01/01/1934,5817,Federal Deposit Insurance Corporation,"1202 Edgington Ave, Eldora, IA 50627",www.hardincsb.com
+Heartland Bank,10/16/1934,14809,Federal Deposit Insurance Corporation,"615 6th Ave, Somers, IA 50586",www.heartlandbanks.bank
+Heartland Bank and Trust Company,02/22/1971,20369,Federal Deposit Insurance Corporation,"401 N Hershey Rd, Bloomington, IL 61704",www.hbtbank.com
+Heritage Bank,12/07/1961,18463,Federal Deposit Insurance Corporation,"695 Marion Blvd, Marion, IA 52302",www.heritagemarion.bank
+Hiawatha Bank and Trust Company,09/15/1997,34488,Federal Deposit Insurance Corporation,"777 N Center Point Rd, Hiawatha, IA 52233",www.hiawathabank.com
+Hills Bank and Trust Company,08/01/1934,14650,Federal Deposit Insurance Corporation,"131 Main St, Hills, IA 52235",www.hillsbank.com
+Home State Bank,11/10/1934,14867,Federal Deposit Insurance Corporation,"115 W State St, Jefferson, IA 50129",www.hsbankiowa.com
+Houghton State Bank,07/28/1936,15405,Federal Deposit Insurance Corporation,"116 E Coolbaugh St, Red Oak, IA 51566",www.houghtonstatebank.com
+Iowa Falls State Bank,12/06/1953,15311,Federal Deposit Insurance Corporation,"601 Washington Ave, Iowa Falls, IA 50126",www.ifsbank.com
+Iowa State Bank,01/01/1934,10497,Federal Deposit Insurance Corporation,"500 Audubon St, Sac City, IA 50583",www.myisb.bank
+Iowa State Bank,02/20/1934,13953,Federal Reserve Board,"1101 Main St, Hull, IA 51239",www.iowastate.bank
+Iowa State Bank,04/14/1941,15808,Federal Deposit Insurance Corporation,"627 E Locust St, Des Moines, IA 50309",www.iowastatebanks.com
+Iowa State Bank,05/27/1943,15947,Federal Deposit Insurance Corporation,"100 N Main St, Clarksville, IA 50619",www.iowastatebank.com
+Iowa State Bank,01/01/1934,950,Federal Deposit Insurance Corporation,"5 E Call St, Algona, IA 50511",www.bankisb.com
+Iowa State Bank and Trust Company of Fairfield, Iowa,05/25/1934,14413,Federal Reserve Board,"55 S 4th St, Fairfield, IA 52556",www.myiowastatebank.com
+Iowa State Savings Bank,01/01/1934,8751,Federal Deposit Insurance Corporation,"401 W Adams St, Creston, IA 50801",www.issbbank.com
+Iowa Trust & Savings Bank,06/07/1961,18400,Federal Deposit Insurance Corporation,"2101 10th St, Emmetsburg, IA 50536",www.iowatrustbank.com
+Iowa Trust and Savings Bank,01/01/1934,1547,Federal Deposit Insurance Corporation,"200 N 10th St, Centerville, IA 52544",www.iowatrust.bank
+ITS Bank,01/01/2000,34619,Federal Deposit Insurance Corporation,"6700 Pioneer Pkwy, Johnston, IA 50131",*Not Listed*
+JPMorgan Chase Bank, National Association,01/01/1934,628,Comptroller of the Currency,"1111 Polaris Pkwy, Columbus, OH 43240",www.jpmorganchase.com
+Kerndt Brothers Savings Bank,01/01/1934,8761,Federal Deposit Insurance Corporation,"370 Main St, Lansing, IA 52151",www.kerndtbrothers.com
+Keystone Savings Bank,04/30/1959,17993,Federal Deposit Insurance Corporation,"330 Western Avenue, Marengo, IA 52301",www.keystonesavings.bank
+Leighton State Bank,01/01/1934,10118,Federal Deposit Insurance Corporation,"900 Washington St, Pella, IA 50219",www.leightonbank.com
+Liberty National Bank,03/17/2003,57505,Comptroller of the Currency,"4425 Singing Hills Blvd, Sioux City, IA 51106",www.libertynational.bank
+Liberty Trust & Savings Bank,01/01/1934,10121,Federal Deposit Insurance Corporation,"502 8th Ave, Durant, IA 52747",www.mylibertytrust.com
+Lincoln Savings Bank,03/26/1934,14207,Federal Deposit Insurance Corporation,"508 Main St, Reinbeck, IA 50669",www.mylsb.com
+Logan State Bank,01/01/1934,4476,Federal Reserve Board,"323 E 7th St, Logan, IA 51546",www.loganstatebank.com
+Luana Savings Bank,01/01/1934,253,Federal Deposit Insurance Corporation,"100 Harvest Dr, Luana, IA 52156",www.luanasavingsbank.com
+Malvern Bank,04/10/1934,14230,Federal Deposit Insurance Corporation,"404 Main St, Malvern, IA 51551",www.malvern.bank
+Manufacturers Bank & Trust Company,09/01/1945,16307,Federal Deposit Insurance Corporation,"245 E J St, Forest City, IA 50436",www.mbtbank.bank
+Maquoketa State Bank,09/02/1958,17903,Federal Reserve Board,"203 N Main St, Maquoketa, IA 52060",www.maquoketasb.bank
+Marion County State Bank,09/21/1935,15272,Federal Deposit Insurance Corporation,"800 Main St, Pella, IA 50219",www.marioncountybank.com
+Maxwell State Bank,02/01/1943,15930,Federal Deposit Insurance Corporation,"122 Main St, Maxwell, IA 50161",www.maxwellstate.com
+Maynard Savings Bank,01/13/1934,13736,Federal Deposit Insurance Corporation,"310 Main St W, Maynard, IA 50655",www.maynardsavingsbank.com
+Mediapolis Savings Bank,09/16/1940,15772,Federal Deposit Insurance Corporation,"605 Main St, Mediapolis, IA 52637",www.gomsb.bank
+Midstates Bank, National Association,01/01/1934,4465,Comptroller of the Currency,"1851 Madison Ave Ste 732, Council Bluffs, IA 51503",www.midstatesbank.com
+Midwest Heritage Bank, FSB,02/09/1995,4432,Comptroller of the Currency,"3580 Ep True Pkwy Ste 100, West Des Moines, IA 50265",www.midwestheritage.com
+Montezuma State Bank,01/01/1934,1860,Federal Deposit Insurance Corporation,"101 S 4th St, Montezuma, IA 50171",www.montestatebank.com
+Mount Vernon Bank and Trust Company,01/01/1934,10494,Federal Deposit Insurance Corporation,"206 1st St Sw, Mount Vernon, IA 52314",www.mountvernonbank.com
+New Albin Savings Bank,01/01/1934,8506,Federal Deposit Insurance Corporation,"118 Main St Ne, New Albin, IA 52160",www.newalbinsavingsbank.com
+Nicolet National Bank,10/31/2000,57038,Comptroller of the Currency,"111 N Washington St, Green Bay, WI 54301",www.nicoletbank.com
+Northeast Security Bank,05/11/1961,18384,Federal Deposit Insurance Corporation,"1150 W 1st St, Sumner, IA 50674",www.banknsb.com
+NorthStar Bank,04/01/1997,34407,Federal Deposit Insurance Corporation,"2202 Central Ave, Estherville, IA 51334",www.northstarbankiowa.com
+Northwest Bank,08/09/1989,32647,Federal Deposit Insurance Corporation,"705 Grand Ave, Spencer, IA 51301",www.nw.bank
+NSB Bank,01/01/1934,8094,Federal Deposit Insurance Corporation,"2650 4th St Sw, Mason City, IA 50401",www.nsbbank.com
+Ohnward Bank & Trust,01/01/1934,10111,Federal Deposit Insurance Corporation,"332 1st Ave W, Cascade, IA 52033",www.ohnwardbank.bank
+Old National Bank,01/01/1934,3832,Comptroller of the Currency,"1 Main St, Evansville, IN 47708",www.oldnational.com
+Palo Savings Bank,03/03/1934,13990,Federal Deposit Insurance Corporation,"2801 Hollenbeck Rd, Palo, IA 52324",www.palosavingsbank.com
+PCSB Bank,06/28/1934,14522,Federal Deposit Insurance Corporation,"120 E Washington St, Clarinda, IA 51632",www.wearepcsb.com
+Peoples Bank,08/22/1934,14692,Federal Reserve Board,"12701 University Ave, Clive, IA 50325",www.mypeoples.bank
+Peoples Bank,06/01/1945,16265,Federal Deposit Insurance Corporation,"1230 Valley Dr, Rock Valley, IA 51247",www.peoples-ebank.com
+Peoples Savings Bank,10/01/1934,14868,Federal Deposit Insurance Corporation,"414 N Adams St, Wellsburg, IA 50680",www.bankpsb.com
+Peoples Savings Bank,11/20/1998,34973,Federal Deposit Insurance Corporation,"400 E Iowa Ave, Indianola, IA 50125",www.mybankpsb.com
+Peoples State Bank,01/01/1934,12814,Federal Deposit Insurance Corporation,"301 E Blackhawk Ave, Prairie Du Chien, WI 53821",www.peoplesfinancial.com
+Pilot Grove Savings Bank,01/01/1934,9100,Federal Deposit Insurance Corporation,"1341 Pilot Grove Rd, Pilot Grove, IA 52648",www.pilotgrovesavingsbank.com
+Pinnacle Bank,01/01/1934,252,Federal Reserve Board,"2206 S Center St, Marshalltown, IA 50158",www.bankpinnacle.us
+Pioneer Bank,01/06/1966,19540,Federal Deposit Insurance Corporation,"202 1st St, Sergeant Bluff, IA 51054",www.pioneerbanks.com
+Pocahontas State Bank,01/01/1934,234,Federal Deposit Insurance Corporation,"233 N Main St, Pocahontas, IA 50574",www.pocahontasstatebank.net
+Premier Bank,02/25/1997,34384,Federal Deposit Insurance Corporation,"1004 21st Ave, Rock Valley, IA 51247",www.premierbank.bank
+Premier Bank,10/13/1998,34849,Federal Reserve Board,"2625 Nw Arterial, Dubuque, IA 52002",www.premierbanking.com
+Primebank,01/01/1934,8101,Federal Reserve Board,"37 1st Ave Nw, Le Mars, IA 51031",www.primebank.bank
+Principal Bank,02/12/1998,34507,Comptroller of the Currency,"750 Park Street, Des Moines, IA 50309",www.principal.com/bank
+Quad City Bank and Trust Company,01/07/1994,33867,Federal Reserve Board,"2118 Middle Rd, Bettendorf, IA 52722",www.qcbt.com
+Raccoon Valley Bank,01/01/1934,245,Federal Deposit Insurance Corporation,"1202 2nd St, Perry, IA 50220",www.raccoonvalleybank.com
+Readlyn Savings Bank,01/01/1934,9300,Federal Deposit Insurance Corporation,"141 Main St, Readlyn, IA 50668",www.readlynsavingsbank.com
+Regions Bank,01/01/1934,12368,Federal Reserve Board,"1900 5th Ave N, Birmingham, AL 35203",www.regions.com
+Reliance State Bank,01/01/1934,9299,Federal Deposit Insurance Corporation,"606 Broad St, Story City, IA 50248",www.rsbiowa.com
+Rivers Edge Bank,01/01/1934,9935,Federal Deposit Insurance Corporation,"211 N Broadway Ave, Marion, SD 57043",www.riversedge.bank
+Alerus Financial, National Association,01/01/1934,3931,Comptroller of the Currency,"401 Demers Ave, Grand Forks, ND 58201",www.alerus.com
+American Bank and Trust Company, National Association,01/05/1999,34955,Comptroller of the Currency,"4301 E 53rd St, Davenport, IA 52807",www.goambank.com
+American Bank, National Association,01/01/1934,5800,Comptroller of the Currency,"234 5th Ave Sw, Le Mars, IA 51031",www.am-bank.com
+American State Bank,01/01/1934,228,Federal Deposit Insurance Corporation,"525 N Main Ave, Sioux Center, IA 51250",www.ambankiowa.com
+American State Bank,04/23/1987,26944,Federal Reserve Board,"1000 Jeffreys Dr, Osceola, IA 50213",www.americanstatebank.com
+American Trust and Savings Bank,01/01/1934,10120,Federal Deposit Insurance Corporation,"309 Mckinley Ave, Lowden, IA 52255",www.atsb-lowden.com
+Arbor Bank,07/01/1991,33450,Federal Deposit Insurance Corporation,"911 Central Ave, Nebraska City, NE 68410",www.arborbanking.com
+Ashton State Bank,01/01/1934,11343,Federal Deposit Insurance Corporation,"317 3rd St, Ashton, IA 51232",www.ashtonstatebank.com
+Associated Bank, National Association,01/01/1934,5296,Comptroller of the Currency,"200 N Adams St, Green Bay, WI 54301",www.associatedbank.com
+Atkins Savings Bank & Trust,01/01/1934,9096,Federal Deposit Insurance Corporation,"97 Main Ave, Atkins, IA 52206",www.atkinssavingsbank.com
+Audubon State Bank,01/01/1934,5814,Federal Deposit Insurance Corporation,"307 Broadway St, Audubon, IA 50025",www.audubonstatebank.com
+Availa Bank,01/01/1934,11771,Federal Deposit Insurance Corporation,"126 W 6th St, Carroll, IA 51401",www.availa.bank
+BANK,04/25/1934,14291,Federal Reserve Board,"409 Highway 61 S, Wapello, IA 52653",www.bank.bank
+Bank 1st,01/31/1934,13816,Federal Reserve Board,"115 N Vine St, West Union, IA 52175",www.bank1stia.com
+Bank Iowa,06/28/1934,14521,Federal Reserve Board,"1225 Jordan Creek Pkwy Ste 200, West Des Moines, IA 50266",www.bankiowa.bank
+Bank Midwest,01/01/1934,5170,Federal Reserve Board,"1800 Royal Ave, Spirit Lake, IA 51360",bankmidwest.com
+Bank Plus,03/01/1947,16547,Federal Deposit Insurance Corporation,"1202 Central Ave, Estherville, IA 51334",www.bankplusiowa.com
+Bankers Trust Company,01/01/1934,953,Federal Deposit Insurance Corporation,"453 7th St, Des Moines, IA 50309",www.bankerstrust.com
+BankFirst,02/09/1970,20130,Federal Deposit Insurance Corporation,"100 N 13th St, Norfolk, NE 68701",mybankfirst.bank
+BankIowa,12/11/1953,17282,Federal Deposit Insurance Corporation,"7045 C Ave Ne, Cedar Rapids, IA 52402",www.bankiowa.com
+BankOrion,01/01/1934,11739,Federal Deposit Insurance Corporation,"1114 4th St, Orion, IL 61273",www.bankorion.com
+Bellevue State Bank,05/31/1934,14415,Federal Deposit Insurance Corporation,"200 S 2nd St, Bellevue, IA 52031",www.bellevuestatebank.com
+Benton County State Bank,01/29/1934,13774,Federal Deposit Insurance Corporation,"212 Locust St Ne, Blairstown, IA 52209",www.bentoncountystatebank.com
+Blackhawk Bank & Trust,06/28/1961,18402,Federal Deposit Insurance Corporation,"301 4th St W, Milan, IL 61264",www.choosethechief.com
+Blue Grass Savings Bank,01/01/1934,13753,Federal Deposit Insurance Corporation,"104 E Mayne St, Blue Grass, IA 52726",www.bluegrassbank.com
+Boone Bank & Trust Co.,01/16/1992,33552,Federal Deposit Insurance Corporation,"716 8th St, Boone, IA 50036",www.boonebankiowa.com
+Breda Savings Bank,01/01/1934,5792,Federal Deposit Insurance Corporation,"105 Main St, Breda, IA 51436",www.bredasavingsbank.com
+Bridge Community Bank,01/01/1934,12717,Federal Deposit Insurance Corporation,"302 Highway 1 S, Mount Vernon, IA 52314",www.bridge.bank
+Capra Bank,01/21/1946,16363,Federal Deposit Insurance Corporation,"955 Washington St Suite 107, Dubuque, IA 52001",www.caprabank.com
+CBI Bank & Trust,01/01/1934,1552,Federal Reserve Board,"301 Iowa Ave, Muscatine, IA 52761",www.cbibt.bank
+Cedar Rapids Bank and Trust Company,09/14/2001,57244,Federal Reserve Board,"500 1st Ave Ne Ste 100, Cedar Rapids, IA 52401",www.crbt.bank
+Cedar Valley Bank & Trust,08/22/1934,14694,Federal Deposit Insurance Corporation,"321 Main St, La Porte City, IA 50651",www.cedarvalleybank.com
+Central Bank,01/01/1934,15555,Federal Reserve Board,"600 Lake Ave, Storm Lake, IA 50588",www.mycentral.bank
+Central State Bank,01/01/1934,10903,Federal Deposit Insurance Corporation,"109 Main St W, State Center, IA 50247",www.centralstatebankia.com
+Central State Bank,01/01/1934,1550,Federal Reserve Board,"805 22nd Ave, Coralville, IA 52241",centralstate.bank
+Charter Bank,06/15/1998,34686,Federal Deposit Insurance Corporation,"5526 Nw 86th St, Johnston, IA 50131",www.charterbanker.com
+Chelsea Savings Bank,10/19/1936,15427,Federal Deposit Insurance Corporation,"601 13th St, Belle Plaine, IA 52208",www.chelseasavingsbank.com
+Cherokee State Bank,01/01/1934,951,Federal Deposit Insurance Corporation,"808 3rd Ave, Sheldon, IA 51201",www.csbshel.com",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.mypeoples.bank",www.csbsheldon.com
+Citizens First Bank,03/14/2000,35477,Federal Deposit Insurance Corporation,"1442 Lincoln Way, Clinton, IA 52732",www.gocfb.bank
+Citizens Savings Bank,01/01/1934,10125,Federal Deposit Insurance Corporation,"215 E Main St, Anamosa, IA 52205",www.citizensbankia.com
+Citizens Savings Bank,01/01/1934,12128,Federal Deposit Insurance Corporation,"101 Church St, Spillville, IA 52168",www.bankingwithcsb.com
+Citizens Savings Bank,10/03/1934,14785,Federal Deposit Insurance Corporation,"2414 S 2nd St, Marshalltown, IA 50158",www.citizenssavingsbank.com
+Citizens State Bank,01/01/1934,11759,Federal Deposit Insurance Corporation,"114 W Main St, Wyoming, IA 52362",www.csbwyoming.com
+Citizens State Bank,03/15/1961,18356,Federal Deposit Insurance Corporation,"808 3rd Ave, Sheldon, IA 51201",www.csbsheldon.com
+Citizens State Bank,01/01/1934,9047,Federal Deposit Insurance Corporation,"117 W 1st St, Monticello, IA 52310",www.mycsb.bank
+City State Bank,05/25/1934,14410,Federal Deposit Insurance Corporation,"801 Main St, Norwalk, IA 50211",www.citystatebank.com
+Clear Lake Bank and Trust Company,11/10/1939,15690,Federal Reserve Board,"322 Main Ave, Clear Lake, IA 50428",www.clearlakebank.bank
+Commercial Savings Bank,01/01/1934,231,Federal Reserve Board,"325 W Us Highway 30, Carroll, IA 51401",www.csbcarroll.com
+Community Bank,08/09/1934,14649,Federal Deposit Insurance Corporation,"601 Iowa Ave, Dunlap, IA 51529",www.communitybankiowa.com
+Community Bank and Trust Company,08/11/1980,23189,Federal Deposit Insurance Corporation,"2609 2nd Ave, Muscatine, IA 52761",www.commbk.net
+Community Bank of Oelwein,10/01/1998,34857,Federal Deposit Insurance Corporation,"150 1st St Se, Oelwein, IA 50662",www.bankoelwein.com
+Community Savings Bank,08/03/1934,14633,Federal Deposit Insurance Corporation,"101 E Union St, Edgewood, IA 52042",www.communitysavings.bank
+Community State Bank,02/15/1956,17551,Federal Deposit Insurance Corporation,"207 S Main St, Paton, IA 50217",www.csbpaton.com
+Community State Bank,07/15/1960,18272,Federal Reserve Board,"2750 Ne 36th St, Ankeny, IA 50021",www.bankcsb.com
+Community State Bank,01/01/1934,230,Federal Deposit Insurance Corporation,"1812 Highway Blvd, Spencer, IA 51301",www.ecommunitybank.org
+Connection Bank,01/01/1934,955,Federal Reserve Board,"636 Avenue G, Fort Madison, IA 52627",www.myconnectionbank.com
+Cornerstone Bank,08/09/1989,30067,Federal Reserve Board,"123 E Main St, Clarinda, IA 51632",www.cornerstonebankia.com
+Crawford County Trust and Savings Bank,01/01/1934,8511,Federal Deposit Insurance Corporation,"21 N Main St, Denison, IA 51442",www.crawfordcountybank.com
+CUSB Bank,10/03/1961,18443,Federal Reserve Board,"111 N Elm St, Cresco, IA 52136",www.cusb.com
+Danville State Savings Bank,10/01/1934,14772,Federal Deposit Insurance Corporation,"102 S Walnut St, New London, IA 52645",www.danvillebank.com
+Decorah Bank & Trust Company,06/28/1935,15200,Federal Deposit Insurance Corporation,"202 E Water St, Decorah, IA 52101",www.decorah.bank
+Defiance State Bank,06/08/1955,17450,Federal Deposit Insurance Corporation,"201 Main Ave, Defiance, IA 51527",defiancestatebank.com
+Denver Savings Bank,01/01/1934,12857,Federal Deposit Insurance Corporation,"121 S State St, Denver, IA 50622",www.bankdsb.com
+DeWitt Bank & Trust Co.,08/27/1934,14705,Federal Deposit Insurance Corporation,"815 6th Ave, Dewitt, IA 52742",www.dewittbank.com
+Dysart State Bank,05/31/1955,17441,Federal Deposit Insurance Corporation,"301 Main St, Dysart, IA 2224",www.dysartstatebank.com
+Earlham Savings Bank,01/01/1934,5796,Federal Deposit Insurance Corporation,"7300 Lake Dr, West Des Moines, IA 50266",www.earlhambank.com
+Exchange State Bank,01/01/1934,10132,Federal Deposit Insurance Corporation,"823 Wheeler St, Ames, IA 50010",www.esb1.com
+Fairfax State Savings Bank,01/01/1934,8083,Federal Deposit Insurance Corporation,"409 Vanderbilt St, Fairfax, IA 52228",www.thebankhere.com
+Farmers & Merchants Bank & Trust,01/24/1934,13737,Federal Deposit Insurance Corporation,"221 Jefferson St, Burlington, IA 52601",www.fmbanktrust.bank
+Farmers & Merchants Savings Bank,01/01/1934,9298,Federal Reserve Board,"101 E Main St, Manchester, IA 52057",www.fmbankia.com
+Farmers and Merchants Savings Bank,01/01/1934,10492,Federal Deposit Insurance Corporation,"2235 Mormon Trek Blvd, Iowa City, IA 52246",www.fmbankonline.com
+Farmers and Merchants State Bank,08/11/1938,15610,Federal Deposit Insurance Corporation,"101 W Jefferson St, Winterset, IA 50273",www.fmstate.bank
+Farmers Savings Bank,01/01/1934,10500,Federal Deposit Insurance Corporation,"3542 168th St, Wever, IA 52658",www.fsbwever.com
+Farmers Savings Bank,10/16/1934,14807,Federal Deposit Insurance Corporation,"205 Main St, Colesburg, IA 52035",www.farmerssavingsbank.com
+Farmers Savings Bank,08/04/1960,18284,Federal Deposit Insurance Corporation,"10 Highway Avenue Northwest, Fostoria, IA 51340",www.fsbfostoria.com
+Farmers Savings Bank,06/01/1961,18394,Federal Deposit Insurance Corporation,"205 W Main St, Marshalltown, IA 50158",www.fsb-iowa.com
+Farmers Savings Bank & Trust,01/01/1934,10122,Federal Deposit Insurance Corporation,"611 2nd St, Traer, IA 50675",www.fsb-traer.com
+Farmers State Bank,01/01/1934,12855,Federal Deposit Insurance Corporation,"131 Tower Park Dr, Waterloo, IA 50701",www.fsb1879.com
+Farmers State Bank,04/09/1934,14209,Federal Deposit Insurance Corporation,"1240 8th Ave, Marion, IA 52302",www.myfsbonline.com
+Farmers State Bank,01/01/1934,5797,Federal Deposit Insurance Corporation,"99 7th St N, Northwood, IA 50459",www.fsbbanks.com
+Farmers State Bank,01/01/1934,8760,Federal Deposit Insurance Corporation,"501 E State St, Algona, IA 50511",www.fsbiowa.com
+Farmers State Bank,01/01/1934,9106,Federal Deposit Insurance Corporation,"201 Main St, Yale, IA 50277",www.yalebankiowa.com
+Farmers State Bank,01/01/1934,9295,Federal Reserve Board,"401 Main St, Lake View, IA 51450",www.fsblv.com
+Farmers Trust & Savings Bank,05/01/1934,14392,Federal Deposit Insurance Corporation,"510 Elm St, Williamsburg, IA 52361",www.ftsbia.com
+Farmers Trust & Savings Bank,01/01/1934,8510,Federal Deposit Insurance Corporation,"122 Main St, Earling, IA 51530",www.ftnsbank.net
+Farmers Trust and Savings Bank,01/01/1934,12858,Federal Deposit Insurance Corporation,"125 W 4th St, Spencer, IA 51301",www.farmerstrust.bank
+Farmers Trust and Savings Bank,04/05/1934,14195,Federal Reserve Board,"101 N Main St, Buffalo Center, IA 50424",www.ftsbbank.bank
+Federation Bank,04/18/1934,14352,Federal Deposit Insurance Corporation,"300 S Iowa Ave, Washington, IA 52353",www.federationbankia.com
+Fidelity Bank,01/01/1934,5753,Federal Deposit Insurance Corporation,"302 Main St, Savanna, IL 61074",www.fidelity-bank.com
+Fidelity Bank & Trust,05/19/1934,14382,Federal Deposit Insurance Corporation,"4250 Asbury Rd, Dubuque, IA 52002",www.bankfidelity.bank
+First Bank,01/01/1934,4519,Federal Reserve Board,"316 E Bremer Ave, Waverly, IA 50677",www.firstiowa.bank
+First Bank Hampton,01/01/1934,4464,Federal Reserve Board,"211 1st Ave Nw, Hampton, IA 50441",www.fbh.bank
+First Central State Bank,06/12/1967,19716,Federal Deposit Insurance Corporation,"914 6th Ave, Dewitt, IA 52742",www.firstcentralsb.bank
+First Citizens Bank,01/01/1934,4433,Federal Reserve Board,"2601 4th St Sw, Mason City, IA 50401",www.myfcb.bank
+Rolling Hills Bank & Trust,01/13/1936,15334,Federal Reserve Board,"1307 E 7th St, Atlantic, IA 50022",www.rollinghillsbank.com
+Sanborn Savings Bank,01/01/1934,11352,Federal Deposit Insurance Corporation,"219 Main St, Sanborn, IA 51248",www.sanbornbank.com
+Savings Bank,01/29/1934,13735,Federal Deposit Insurance Corporation,"185 S Green Ave, Primghar, IA 51245",www.savingsbankia.com
+Security National Bank of Omaha,09/01/1964,19213,Comptroller of the Currency,"1120 S 101st St, Omaha, NE 68124",www.securitynational.bank
+Security Savings Bank,04/06/1934,14208,Federal Reserve Board,"1015 Market St, Gowrie, IA 50543",www.securitysavingsbank.com
+Security Savings Bank,04/04/1940,15734,Federal Deposit Insurance Corporation,"100 S West St, Canton, SD 57013",www.bankwithssb.com
+Security State Bank,08/15/1941,15839,Federal Deposit Insurance Corporation,"1 E State St, Algona, IA 50511",bankssb.com
+Security State Bank,10/26/1961,18448,Federal Deposit Insurance Corporation,"207 Isabella St, Radcliffe, IA 50230",www.ssbiowa.com
+Security State Bank,01/01/1934,235,Federal Deposit Insurance Corporation,"109 W 2nd St, Sutherland, IA 51058",mysecuritystate.com
+Security Trust & Savings Bank,01/01/1934,968,Federal Reserve Board,"601 Lake Street, Storm Lake, IA 50588",www.securitybanksl.com
+Sibley State Bank,01/01/1934,11764,Federal Deposit Insurance Corporation,"803 4th Ave, Sibley, IA 51249",www.sibleystatebank.com
+Sloan State Bank,01/01/1934,8507,Federal Deposit Insurance Corporation,"302 4th St, Sloan, IA 51055",www.sloanstatebank.com
+Solon State Bank,01/01/1934,232,Federal Deposit Insurance Corporation,"126 S Market St, Solon, IA 52333",www.solonstatebank.com
+South Ottumwa Savings Bank,01/01/1934,9099,Federal Deposit Insurance Corporation,"320 Church St, Ottumwa, IA 52501",www.sosb-ia.com
+South Story Bank & Trust,09/01/1954,17348,Federal Deposit Insurance Corporation,"501 Linn St, Slater, IA 50244",www.southstorybank.com
+St. Ansgar State Bank,09/01/1953,17259,Federal Reserve Board,"237 W 4th St, Saint Ansgar, IA 50472",www.stansgarbank.com
+State Bank,05/01/1944,16151,Federal Reserve Board,"728 Grand Ave, Spencer, IA 51301",www.statebankspencer.com
+State Bank & Trust Co.,02/25/1939,15651,Federal Deposit Insurance Corporation,"1025 6th St, Nevada, IA 50201",www.banksbt.com
+State Bank of Schaller,02/24/1934,13931,Federal Deposit Insurance Corporation,"100 W 2nd St, Schaller, IA 51053",www.statebankofschaller.com
+State Central Bank,01/01/1934,5820,Federal Deposit Insurance Corporation,"612 1st St, Bonaparte, IA 52620",www.statecentralbank.com
+State Savings Bank,09/29/1934,14773,Federal Deposit Insurance Corporation,"612 Central Ave, Bedford, IA 50833",www.statesavings.bank
+State Savings Bank,01/01/1934,248,Federal Deposit Insurance Corporation,"4800 George Mills Civic Pkwy Ste 100, West Des Moines, IA 50265",www.ssb.bank
+Sterling Federal Bank, F.S.B.,08/09/1989,27664,Comptroller of the Currency,"110 E 4th St, Sterling, IL 61081",www.sterlingfederal.com
+Success Bank,01/01/1934,10127,Federal Deposit Insurance Corporation,"109 N Madison St, Bloomfield, IA 52537",www.success.bank
+TBK BANK, SSB,07/15/1981,23498,Federal Deposit Insurance Corporation,"12700 Park Central Dr Ste 1700, Dallas, TX 75251",www.tbkbank.com
+Templeton Savings Bank,01/01/1934,969,Federal Reserve Board,"103 S Main St, Templeton, IA 51463",www.templetonsavingsbank.com
+The Citizens First National Bank of Storm Lake,01/01/1934,4511,Comptroller of the Currency,"East 5th And Lake Avenue, Storm Lake, IA 50588",www.citizensfnb.com
+The Clinton National Bank,01/01/1934,4439,Comptroller of the Currency,"235 6th Ave S, Clinton, IA 52732",www.clintonnational.com
+The Exchange State Bank,09/22/1943,16094,Federal Deposit Insurance Corporation,"253 Broadway St, Springville, IA 52336",www.exchangestatebank.net
+The Farmers State Bank,01/01/1934,8503,Federal Deposit Insurance Corporation,"106 E Cedar St, Marcus, IA 51035",www.fsbmarcus.com
+The First National Bank of Manning,01/01/1934,4477,Comptroller of the Currency,"401 Main St, Manning, IA 51455",www.fnbmanning.com
+The First National Bank of Primghar,01/01/1934,4494,Comptroller of the Currency,"108 S Hayes Ave, Primghar, IA 51245",www.fnbprimghar.com
+The Home Trust & Savings Bank,01/01/1934,963,Federal Reserve Board,"628 Main St, Osage, IA 50461",www.hometrustbank.com
+The Libertyville Savings Bank,01/15/1934,13712,Federal Deposit Insurance Corporation,"2000 W Jefferson Ave, Fairfield, IA 52556",www.lsbia.bank
+The Security National Bank of Sioux City, Iowa,01/01/1934,4506,Comptroller of the Currency,"601 Pierce St, Sioux City, IA 51101",www.snbonline.com
+The Shelby County State Bank,01/01/1934,1553,Federal Deposit Insurance Corporation,"508 Court St, Harlan, IA 51537",www.scsbnet.com
+The State Bank,01/20/1934,13715,Federal Deposit Insurance Corporation,"1902 Hill Ave, Spirit Lake, IA 51360",www.statebankspiritlake.com
+The State Bank of Toledo,01/01/1934,4514,Federal Deposit Insurance Corporation,"100 E High St, Toledo, IA 52342",www.banktoledo.com
+The Watkins Savings Bank,09/01/1959,18071,Federal Deposit Insurance Corporation,"202 1st St, Watkins, IA 52354",watkinsbank.com
+Time Bank,07/03/1995,34038,Federal Deposit Insurance Corporation,"626 W Talcott Rd, Park Ridge, IL 60068",www.time.bank
+Tri-Valley Bank,01/01/1934,12417,Federal Deposit Insurance Corporation,"104 S Main St, Randolph, IA 51649",www.tri-valleycenters.com
+TruBank,07/11/1984,25267,Federal Deposit Insurance Corporation,"1401 N Jefferson Way, Indianola, IA 50125",www.trubank.bank
+TS Bank,10/16/1934,14812,Federal Deposit Insurance Corporation,"15 E Main St, Treynor, IA 51575",www.tsbank.com
+Twin Cedars Bank,01/01/1934,1556,Federal Deposit Insurance Corporation,"402 Merrill St, Bussey, IA 50044",www.twincedars.bank
+U.S. Bank National Association,01/01/1934,6548,Comptroller of the Currency,"425 Walnut St, Cincinnati, OH 45202",www.usbank.com
+UMB Bank, National Association,01/01/1934,8273,Comptroller of the Currency,"1010 Grand Blvd, Kansas City, MO 64106",www.umb.com
+Union State Bank,01/11/1935,14982,Federal Deposit Insurance Corporation,"611 W Highway 92, Winterset, IA 50273",www.usbiowa.com
+Union State Bank,01/01/1934,8499,Federal Deposit Insurance Corporation,"214 S 1st St, Greenfield, IA 50849",www.usbgfd.com
+United Bank & Trust Co.,06/21/2002,57391,Federal Deposit Insurance Corporation,"2101 S Center St, Marshalltown, IA 50158",www.bankubt.com
+United Bank and Trust Company,01/01/1934,14247,Federal Deposit Insurance Corporation,"400 Central Ave E, Hampton, IA 50441",www.ubtc.net
+United Bank of Iowa,01/01/1934,958,Federal Deposit Insurance Corporation,"501 2nd St, Ida Grove, IA 51445",www.unitedbk.bank
+United Community Bank,11/01/1934,13656,Federal Deposit Insurance Corporation,"1000 Okoboji Ave, Milford, IA 51351",www.unitedcommunitybank.com
+VISIONBANK OF IOWA,01/01/1934,11763,Federal Reserve Board,"104 Chestnut St, Ames, IA 50010",www.visionbank.com
+Washington County Bank,01/01/1934,12241,Federal Deposit Insurance Corporation,"1523 Washington St, Blair, NE 68008",www.washingtoncountybank.com
+Washington State Bank,01/01/1934,214,Federal Reserve Board,"121 S Marion Ave, Washington, IA 52353",www.washsb.com
+Waukon State Bank,01/01/1934,1857,Federal Reserve Board,"22 W Main St, Waukon, IA 52172",www.waukonstatebank.bank
+WCF Financial Bank,08/09/1989,28989,Federal Deposit Insurance Corporation,"401 Fair Meadow Dr, Webster City, IA 50595",www.wcfbank.com
+Wells Fargo Bank, National Association,01/01/1934,3511,Comptroller of the Currency,"3201 N 4th Ave, Sioux Falls, SD 57104",www.wellsfargo.com
+West Bank,01/01/1934,15614,Federal Deposit Insurance Corporation,"3330 Westown Parkway, West Des Moines, IA 50266",www.westbankstrong.com
+West Iowa Bank,01/01/1934,9105,Federal Deposit Insurance Corporation,"319 S Broadway Ave, West Bend, IA 50597",www.westiowabank.com
+Westside State Bank,05/03/1962,18518,Federal Deposit Insurance Corporation,"401 1st St, Westside, IA 51467",www.westsidestate.bank
+White State Bank,01/01/1934,8519,Federal Deposit Insurance Corporation,"209 Ives Street, South English, IA 52335",www.whitestatebank.com

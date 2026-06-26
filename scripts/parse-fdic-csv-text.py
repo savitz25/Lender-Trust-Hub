@@ -22,6 +22,10 @@ MO_SRC = ROOT / "data" / "missouri-import.txt"
 KS_MO_PROMPT = Path(
     r"C:\Users\makei\.grok\sessions\C%3A%5CUsers%5Cmakei\019efc5b-cf82-7612-8aff-b4ae0767aaa7\prompts\prompt_6.txt"
 )
+IA_SRC = ROOT / "data" / "iowa-import.txt"
+IA_PROMPT = Path(
+    r"C:\Users\makei\.grok\sessions\C%3A%5CUsers%5Cmakei\019efc5b-cf82-7612-8aff-b4ae0767aaa7\prompts\prompt_7.txt"
+)
 OUT_DIR = ROOT / "lib" / "fdic" / "data"
 
 STATE_META = {
@@ -38,6 +42,7 @@ STATE_META = {
     "AR": ("Arkansas", "arkansas"),
     "KS": ("Kansas", "kansas"),
     "MO": ("Missouri", "missouri"),
+    "IA": ("Iowa", "iowa"),
 }
 
 # Use anchored line markers so intro text and bank names do not false-match.
@@ -317,6 +322,32 @@ def ensure_ks_mo_imports() -> None:
         MO_SRC.write_text(extract_missouri_lines(raw), encoding="utf-8")
 
 
+def extract_iowa_lines(content: str) -> str:
+    if "<user_query>" in content:
+        content = content.split("<user_query>", 1)[1]
+
+    block_lines: list[str] = []
+    for raw in content.splitlines():
+        line = raw.strip().rstrip("\t").replace("\t", "")
+        if not line or line.startswith("<"):
+            continue
+        if re.match(r"^iowa\s*$", line, re.I):
+            continue
+        if line.lower().startswith("bank name,fdic"):
+            continue
+        block_lines.append(line)
+
+    return "\n".join(block_lines)
+
+
+def ensure_iowa_import() -> None:
+    if IA_SRC.exists() or not IA_PROMPT.exists():
+        return
+    raw = IA_PROMPT.read_text(encoding="utf-8")
+    IA_SRC.parent.mkdir(parents=True, exist_ok=True)
+    IA_SRC.write_text(extract_iowa_lines(raw), encoding="utf-8")
+
+
 def main():
     if not SRC.exists():
         prompt = Path(
@@ -351,6 +382,10 @@ def main():
         sections["KS"] = KS_SRC.read_text(encoding="utf-8")
     if MO_SRC.exists():
         sections["MO"] = MO_SRC.read_text(encoding="utf-8")
+
+    ensure_iowa_import()
+    if IA_SRC.exists():
+        sections["IA"] = IA_SRC.read_text(encoding="utf-8")
 
     for code, text in sections.items():
         full_name, slug = STATE_META[code]

@@ -1,0 +1,2103 @@
+{
+  "fullName": "Iowa",
+  "abbr": "IA",
+  "banks": [
+    {
+      "name": "Alerus Financial, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3931",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "401 Demers Ave, Grand Forks, ND 58201",
+      "website": "https://www.alerus.com"
+    },
+    {
+      "name": "American Bank and Trust Company, National Association",
+      "fdic_insured_since": "01/05/1999",
+      "fdic_cert": "34955",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4301 E 53rd St, Davenport, IA 52807",
+      "website": "https://www.goambank.com"
+    },
+    {
+      "name": "American Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5800",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "234 5th Ave Sw, Le Mars, IA 51031",
+      "website": "https://www.am-bank.com"
+    },
+    {
+      "name": "American State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "228",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "525 N Main Ave, Sioux Center, IA 51250",
+      "website": "https://www.ambankiowa.com"
+    },
+    {
+      "name": "American State Bank",
+      "fdic_insured_since": "04/23/1987",
+      "fdic_cert": "26944",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1000 Jeffreys Dr, Osceola, IA 50213",
+      "website": "https://www.americanstatebank.com"
+    },
+    {
+      "name": "American Trust and Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10120",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "309 Mckinley Ave, Lowden, IA 52255",
+      "website": "https://www.atsb-lowden.com"
+    },
+    {
+      "name": "Arbor Bank",
+      "fdic_insured_since": "07/01/1991",
+      "fdic_cert": "33450",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "911 Central Ave, Nebraska City, NE 68410",
+      "website": "https://www.arborbanking.com"
+    },
+    {
+      "name": "Ashton State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11343",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "317 3rd St, Ashton, IA 51232",
+      "website": "https://www.ashtonstatebank.com"
+    },
+    {
+      "name": "Associated Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5296",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "200 N Adams St, Green Bay, WI 54301",
+      "website": "https://www.associatedbank.com"
+    },
+    {
+      "name": "Atkins Savings Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9096",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "97 Main Ave, Atkins, IA 52206",
+      "website": "https://www.atkinssavingsbank.com"
+    },
+    {
+      "name": "Audubon State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5814",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "307 Broadway St, Audubon, IA 50025",
+      "website": "https://www.audubonstatebank.com"
+    },
+    {
+      "name": "Availa Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11771",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "126 W 6th St, Carroll, IA 51401",
+      "website": "https://www.availa.bank"
+    },
+    {
+      "name": "BANK",
+      "fdic_insured_since": "04/25/1934",
+      "fdic_cert": "14291",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "409 Highway 61 S, Wapello, IA 52653",
+      "website": "https://www.bank.bank"
+    },
+    {
+      "name": "Bank 1st",
+      "fdic_insured_since": "01/31/1934",
+      "fdic_cert": "13816",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "115 N Vine St, West Union, IA 52175",
+      "website": "https://www.bank1stia.com"
+    },
+    {
+      "name": "Bank Iowa",
+      "fdic_insured_since": "06/28/1934",
+      "fdic_cert": "14521",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1225 Jordan Creek Pkwy Ste 200, West Des Moines, IA 50266",
+      "website": "https://www.bankiowa.bank"
+    },
+    {
+      "name": "Bank Midwest",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5170",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1800 Royal Ave, Spirit Lake, IA 51360",
+      "website": "https://bankmidwest.com"
+    },
+    {
+      "name": "Bank of America, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3510",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 N Tryon St, Charlotte, NC 28202",
+      "website": "https://www.bankofamerica.com"
+    },
+    {
+      "name": "Bank Plus",
+      "fdic_insured_since": "03/01/1947",
+      "fdic_cert": "16547",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1202 Central Ave, Estherville, IA 51334",
+      "website": "https://www.bankplusiowa.com"
+    },
+    {
+      "name": "Bankers Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "953",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "453 7th St, Des Moines, IA 50309",
+      "website": "https://www.bankerstrust.com"
+    },
+    {
+      "name": "BankFirst",
+      "fdic_insured_since": "02/09/1970",
+      "fdic_cert": "20130",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 N 13th St, Norfolk, NE 68701",
+      "website": "https://mybankfirst.bank"
+    },
+    {
+      "name": "BankIowa",
+      "fdic_insured_since": "12/11/1953",
+      "fdic_cert": "17282",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7045 C Ave Ne, Cedar Rapids, IA 52402",
+      "website": "https://www.bankiowa.com"
+    },
+    {
+      "name": "BankOrion",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11739",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1114 4th St, Orion, IL 61273",
+      "website": "https://www.bankorion.com"
+    },
+    {
+      "name": "Bellevue State Bank",
+      "fdic_insured_since": "05/31/1944",
+      "fdic_cert": "14415",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 S 2nd St, Bellevue, IA 52031",
+      "website": "https://www.bellevuestatebank.com"
+    },
+    {
+      "name": "Benton County State Bank",
+      "fdic_insured_since": "01/29/1934",
+      "fdic_cert": "13774",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "212 Locust St Ne, Blairstown, IA 52209",
+      "website": "https://www.bentoncountystatebank.com"
+    },
+    {
+      "name": "Blackhawk Bank & Trust",
+      "fdic_insured_since": "06/28/1961",
+      "fdic_cert": "18402",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 4th St W, Milan, IL 61264",
+      "website": "https://www.choosethechief.com"
+    },
+    {
+      "name": "Blue Grass Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13753",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "104 E Mayne St, Blue Grass, IA 52726",
+      "website": "https://www.bluegrassbank.com"
+    },
+    {
+      "name": "BMO Bank National Association",
+      "fdic_insured_since": "05/17/1947",
+      "fdic_cert": "16571",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "320 S Canal St, Chicago, IL 60606",
+      "website": "https://www.bmo.com"
+    },
+    {
+      "name": "Boone Bank & Trust Co.",
+      "fdic_insured_since": "01/16/1992",
+      "fdic_cert": "33552",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "716 8th St, Boone, IA 50036",
+      "website": "https://www.boonebankiowa.com"
+    },
+    {
+      "name": "Breda Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5792",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 Main St, Breda, IA 51436",
+      "website": "https://www.bredasavingsbank.com"
+    },
+    {
+      "name": "Bridge Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12717",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "302 Highway 1 S, Mount Vernon, IA 52314",
+      "website": "https://www.bridge.bank"
+    },
+    {
+      "name": "BTC Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10618",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3606 Miller St, Bethany, MO 64424",
+      "website": "https://btcbank.bank"
+    },
+    {
+      "name": "Capra Bank",
+      "fdic_insured_since": "01/21/1946",
+      "fdic_cert": "16363",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "955 Washington St Suite 107, Dubuque, IA 52001",
+      "website": "https://www.caprabank.com"
+    },
+    {
+      "name": "CBI Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1552",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "301 Iowa Ave, Muscatine, IA 52761",
+      "website": "https://www.cbibt.bank"
+    },
+    {
+      "name": "Cedar Rapids Bank and Trust Company",
+      "fdic_insured_since": "09/14/2001",
+      "fdic_cert": "57244",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "500 1st Ave Ne Ste 100, Cedar Rapids, IA 52401",
+      "website": "https://www.crbt.bank"
+    },
+    {
+      "name": "Cedar Valley Bank & Trust",
+      "fdic_insured_since": "08/22/1934",
+      "fdic_cert": "14694",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "321 Main St, La Porte City, IA 50651",
+      "website": "https://www.cedarvalleybank.com"
+    },
+    {
+      "name": "Central Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "15555",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "600 Lake Ave, Storm Lake, IA 50588",
+      "website": "https://www.mycentral.bank"
+    },
+    {
+      "name": "Central State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10903",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "109 Main St W, State Center, IA 50247",
+      "website": "https://www.centralstatebankia.com"
+    },
+    {
+      "name": "Central State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1550",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "805 22nd Ave, Coralville, IA 52241",
+      "website": "https://centralstate.bank"
+    },
+    {
+      "name": "Charter Bank",
+      "fdic_insured_since": "06/15/1998",
+      "fdic_cert": "34686",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5526 Nw 86th St, Johnston, IA 50131",
+      "website": "https://www.charterbanker.com"
+    },
+    {
+      "name": "Chelsea Savings Bank",
+      "fdic_insured_since": "10/19/1936",
+      "fdic_cert": "15427",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "601 13th St, Belle Plaine, IA 52208",
+      "website": "https://www.chelseasavingsbank.com"
+    },
+    {
+      "name": "Cherokee State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "951",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "212 W Willow St, Cherokee, IA 51012",
+      "website": "https://www.cherokeestatebank.com"
+    },
+    {
+      "name": "Citizens First Bank",
+      "fdic_insured_since": "03/14/2000",
+      "fdic_cert": "35477",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1442 Lincoln Way, Clinton, IA 52732",
+      "website": "https://www.gocfb.bank"
+    },
+    {
+      "name": "Citizens Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10125",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "215 E Main St, Anamosa, IA 52205",
+      "website": "https://www.citizensbankia.com"
+    },
+    {
+      "name": "Citizens Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12128",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 Church St, Spillville, IA 52168",
+      "website": "https://www.bankingwithcsb.com"
+    },
+    {
+      "name": "Citizens Savings Bank",
+      "fdic_insured_since": "10/03/1934",
+      "fdic_cert": "14785",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2414 S 2nd St, Marshalltown, IA 50158",
+      "website": "https://www.citizenssavingsbank.com"
+    },
+    {
+      "name": "Citizens State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11759",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "114 W Main St, Wyoming, IA 52362",
+      "website": "https://www.csbwyoming.com"
+    },
+    {
+      "name": "Citizens State Bank",
+      "fdic_insured_since": "03/15/1961",
+      "fdic_cert": "18356",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "808 3rd Ave, Sheldon, IA 51201",
+      "website": "https://www.csbsheldon.com"
+    },
+    {
+      "name": "Citizens State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9047",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "117 W 1st St, Monticello, IA 52310",
+      "website": "https://www.mycsb.bank"
+    },
+    {
+      "name": "City State Bank",
+      "fdic_insured_since": "05/25/1934",
+      "fdic_cert": "14410",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "801 Main St, Norwalk, IA 50211",
+      "website": "https://www.citystatebank.com"
+    },
+    {
+      "name": "Clear Lake Bank and Trust Company",
+      "fdic_insured_since": "11/10/1939",
+      "fdic_cert": "15690",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "322 Main Ave, Clear Lake, IA 50428",
+      "website": "https://www.clearlakebank.bank"
+    },
+    {
+      "name": "Commercial Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "231",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "325 W Us Highway 30, Carroll, IA 51401",
+      "website": "https://www.csbcarroll.com"
+    },
+    {
+      "name": "Community Bank",
+      "fdic_insured_since": "08/09/1934",
+      "fdic_cert": "14649",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "601 Iowa Ave, Dunlap, IA 51529",
+      "website": "https://www.communitybankiowa.com"
+    },
+    {
+      "name": "Community Bank and Trust Company",
+      "fdic_insured_since": "08/11/1980",
+      "fdic_cert": "23189",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2609 2nd Ave, Muscatine, IA 52761",
+      "website": "https://www.commbk.net"
+    },
+    {
+      "name": "Community Bank of Oelwein",
+      "fdic_insured_since": "10/01/1998",
+      "fdic_cert": "34857",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "150 1st St Se, Oelwein, IA 50662",
+      "website": "https://www.bankoelwein.com"
+    },
+    {
+      "name": "Community Savings Bank",
+      "fdic_insured_since": "08/03/1934",
+      "fdic_cert": "14633",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 E Union St, Edgewood, IA 52042",
+      "website": "https://www.communitysavings.bank"
+    },
+    {
+      "name": "Community State Bank",
+      "fdic_insured_since": "02/15/1956",
+      "fdic_cert": "17551",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "207 S Main St, Paton, IA 50217",
+      "website": "https://www.csbpaton.com"
+    },
+    {
+      "name": "Community State Bank",
+      "fdic_insured_since": "07/15/1960",
+      "fdic_cert": "18272",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2750 Ne 36th St, Ankeny, IA 50021",
+      "website": "https://www.bankcsb.com"
+    },
+    {
+      "name": "Community State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "230",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1812 Highway Blvd, Spencer, IA 51301",
+      "website": "https://www.ecommunitybank.org"
+    },
+    {
+      "name": "Connection Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "955",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "636 Avenue G, Fort Madison, IA 52627",
+      "website": "https://www.myconnectionbank.com"
+    },
+    {
+      "name": "Cornerstone Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30067",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "123 E Main St, Clarinda, IA 51632",
+      "website": "https://www.cornerstonebankia.com"
+    },
+    {
+      "name": "Corydon State Bank",
+      "fdic_insured_since": "01/13/1934",
+      "fdic_cert": "13616",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 W Jackson St, Corydon, IA 50060",
+      "website": ""
+    },
+    {
+      "name": "Crawford County Trust and Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8511",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "21 N Main St, Denison, IA 51442",
+      "website": "https://www.crawfordcountybank.com"
+    },
+    {
+      "name": "CUSB Bank",
+      "fdic_insured_since": "10/03/1961",
+      "fdic_cert": "18443",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "111 N Elm St, Cresco, IA 52136",
+      "website": "https://www.cusb.com"
+    },
+    {
+      "name": "Danville State Savings Bank",
+      "fdic_insured_since": "10/01/1934",
+      "fdic_cert": "14772",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 S Walnut St, New London, IA 52645",
+      "website": "https://www.danvillebank.com"
+    },
+    {
+      "name": "Decorah Bank & Trust Company",
+      "fdic_insured_since": "06/28/1935",
+      "fdic_cert": "15200",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 E Water St, Decorah, IA 52101",
+      "website": "https://www.decorah.bank"
+    },
+    {
+      "name": "Defiance State Bank",
+      "fdic_insured_since": "06/08/1955",
+      "fdic_cert": "17450",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 Main Ave, Defiance, IA 51527",
+      "website": "https://defiancestatebank.com"
+    },
+    {
+      "name": "Denver Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12857",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "121 S State St, Denver, IA 50622",
+      "website": "https://www.bankdsb.com"
+    },
+    {
+      "name": "DeWitt Bank & Trust Co.",
+      "fdic_insured_since": "08/27/1934",
+      "fdic_cert": "14705",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "815 6th Ave, Dewitt, IA 52742",
+      "website": "https://www.dewittbank.com"
+    },
+    {
+      "name": "Dysart State Bank",
+      "fdic_insured_since": "05/31/1955",
+      "fdic_cert": "17441",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 Main St, Dysart, IA 52224",
+      "website": "https://www.dysartstatebank.com"
+    },
+    {
+      "name": "Earlham Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5796",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7300 Lake Dr, West Des Moines, IA 50266",
+      "website": "https://www.earlhambank.com"
+    },
+    {
+      "name": "Exchange State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10132",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "823 Wheeler St, Ames, IA 50010",
+      "website": "https://www.esb1.com"
+    },
+    {
+      "name": "F&M Bank",
+      "fdic_insured_since": "12/04/1934",
+      "fdic_cert": "14922",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "204 N Main St, West Point, NE 68788",
+      "website": "https://www.fmbankne.bank"
+    },
+    {
+      "name": "Fairfax State Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8083",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "409 Vanderbilt St, Fairfax, IA 2228",
+      "website": "https://www.thebankhere.com"
+    },
+    {
+      "name": "Farmers & Merchants Bank & Trust",
+      "fdic_insured_since": "01/24/1934",
+      "fdic_cert": "13737",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "221 Jefferson St, Burlington, IA 52601",
+      "website": "https://www.fmbanktrust.bank"
+    },
+    {
+      "name": "Farmers & Merchants Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9298",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 E Main St, Manchester, IA 52057",
+      "website": "https://www.fmbankia.com"
+    },
+    {
+      "name": "Farmers and Merchants Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10492",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2235 Mormon Trek Blvd, Iowa City, IA 52246",
+      "website": "https://www.fmbankonline.com"
+    },
+    {
+      "name": "Farmers and Merchants State Bank",
+      "fdic_insured_since": "08/11/1938",
+      "fdic_cert": "15610",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 W Jefferson St, Winterset, IA 50273",
+      "website": "https://www.fmstate.bank"
+    },
+    {
+      "name": "Farmers Bank of Northern Missouri",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4539",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1604 Main St, Unionville, MO 63565",
+      "website": "https://www.onlinefarmersbank.com"
+    },
+    {
+      "name": "Farmers Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10500",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3542 168th St, Wever, IA 52658",
+      "website": "https://www.fsbwever.com"
+    },
+    {
+      "name": "Farmers Savings Bank",
+      "fdic_insured_since": "10/16/1934",
+      "fdic_cert": "14807",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "205 Main St, Colesburg, IA 52035",
+      "website": "https://www.farmerssavingsbank.com"
+    },
+    {
+      "name": "Farmers Savings Bank",
+      "fdic_insured_since": "08/04/1960",
+      "fdic_cert": "18284",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "10 Highway Avenue Northwest, Fostoria, IA 51340",
+      "website": "https://www.fsbfostoria.com"
+    },
+    {
+      "name": "Farmers Savings Bank",
+      "fdic_insured_since": "06/01/1961",
+      "fdic_cert": "18394",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "205 W Main St, Marshalltown, IA 50158",
+      "website": "https://www.fsb-iowa.com"
+    },
+    {
+      "name": "Farmers Savings Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10122",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "611 2nd St, Traer, IA 50675",
+      "website": "https://www.fsb-traer.com"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12855",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "131 Tower Park Dr, Waterloo, IA 50701",
+      "website": "https://www.fsb1879.com"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "04/09/1934",
+      "fdic_cert": "14209",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1240 8th Ave, Marion, IA 52302",
+      "website": "https://www.myfsbonline.com"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5797",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "99 7th St N, Northwood, IA 50459",
+      "website": "https://www.fsbbanks.com"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8760",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "501 E State St, Algona, IA 50511",
+      "website": "https://www.fsbiowa.com"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9106",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 Main St, Yale, IA 50277",
+      "website": "https://www.yalebankiowa.com"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9295",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "401 Main St, Lake View, IA 51450",
+      "website": "https://www.fsblv.com"
+    },
+    {
+      "name": "Farmers Trust & Savings Bank",
+      "fdic_insured_since": "05/01/1934",
+      "fdic_cert": "14392",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "510 Elm St, Williamsburg, IA 52361",
+      "website": "https://www.ftsbia.com"
+    },
+    {
+      "name": "Farmers Trust & Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8510",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "122 Main St, Earling, IA 51530",
+      "website": "https://www.ftnsbank.net"
+    },
+    {
+      "name": "Farmers Trust and Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12858",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "125 W 4th St, Spencer, IA 51301",
+      "website": "https://www.farmerstrust.bank"
+    },
+    {
+      "name": "Farmers Trust and Savings Bank",
+      "fdic_insured_since": "04/05/1934",
+      "fdic_cert": "14195",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 N Main St, Buffalo Center, IA 50424",
+      "website": "https://www.ftsbbank.bank"
+    },
+    {
+      "name": "Federation Bank",
+      "fdic_insured_since": "04/18/1934",
+      "fdic_cert": "14352",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "300 S Iowa Ave, Washington, IA 52353",
+      "website": "https://www.federationbankia.com"
+    },
+    {
+      "name": "Fidelity Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5753",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "302 Main St, Savanna, IL 61074",
+      "website": "https://www.fidelity-bank.com"
+    },
+    {
+      "name": "Fidelity Bank & Trust",
+      "fdic_insured_since": "05/19/1934",
+      "fdic_cert": "14382",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4250 Asbury Rd, Dubuque, IA 52002",
+      "website": "https://www.bankfidelity.bank"
+    },
+    {
+      "name": "First Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4519",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "316 E Bremer Ave, Waverly, IA 50677",
+      "website": "https://www.firstiowa.bank"
+    },
+    {
+      "name": "First Bank Hampton",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4464",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "211 1st Ave Nw, Hampton, IA 50441",
+      "website": "https://www.fbh.bank"
+    },
+    {
+      "name": "First Central State Bank",
+      "fdic_insured_since": "06/12/1967",
+      "fdic_cert": "19716",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "914 6th Ave, Dewitt, IA 52742",
+      "website": "https://www.firstcentralsb.bank"
+    },
+    {
+      "name": "First Citizens Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4433",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2601 4th St Sw, Mason City, IA 50401",
+      "website": "https://www.myfcb.bank"
+    },
+    {
+      "name": "First Community Bank",
+      "fdic_insured_since": "12/04/1934",
+      "fdic_cert": "14904",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "119 S Fulton St, Newell, IA 50568",
+      "website": "https://www.fcb4u.com"
+    },
+    {
+      "name": "First Heritage Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4457",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "801 S Fremont St, Shenandoah, IA 51601",
+      "website": "https://www.fhbshen.com"
+    },
+    {
+      "name": "First Interstate Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1105",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "401 N 31st St, Billings, MT 59101",
+      "website": "https://www.firstinterstatebank.com"
+    },
+    {
+      "name": "First Iowa State Bank",
+      "fdic_insured_since": "12/15/1934",
+      "fdic_cert": "14930",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "19 Benton Ave E, Albia, IA 52531",
+      "website": "https://www.1stiowa.bank"
+    },
+    {
+      "name": "First Mid Bank & Trust, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3705",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1515 Charleston Ave, Mattoon, IL 61938",
+      "website": "https://www.firstmid.com"
+    },
+    {
+      "name": "First National Bank",
+      "fdic_insured_since": "02/15/1985",
+      "fdic_cert": "25894",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "141 E Main St, Oldham, SD 57051",
+      "website": "https://www.firstnationalbanks.com"
+    },
+    {
+      "name": "First National Bank of Omaha",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5452",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1601 Capitol Avenue, Omaha, NE 68102",
+      "website": "https://www.fnbo.com"
+    },
+    {
+      "name": "First National Bank, Ames, Iowa",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1545",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "405 5th St, Ames, IA 50010",
+      "website": "https://www.fnbames.com"
+    },
+    {
+      "name": "First Security Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "251",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 Main St, Mapleton, IA 51034",
+      "website": "https://www.firstsecuritybanks.com"
+    },
+    {
+      "name": "First Security Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1852",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "809 Clark St, Charles City, IA 50616",
+      "website": "https://www.1stsecurity.bank"
+    },
+    {
+      "name": "First Security State Bank",
+      "fdic_insured_since": "04/23/1962",
+      "fdic_cert": "18508",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3600 Lafayette Rd, Evansdale, IA 50707",
+      "website": "https://www.fssbonline.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "12/16/1935",
+      "fdic_cert": "15321",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "505 2nd St, Webster City, IA 50595",
+      "website": "https://www.fsbwc.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "07/31/1944",
+      "fdic_cert": "16177",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "215 N Division St, Stuart, IA 50250",
+      "website": "https://www.stuartbank.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5791",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "304 E Main St, Belmond, IA 50421",
+      "website": "https://www.fsbbelmond.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "02/21/2005",
+      "fdic_cert": "57910",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 Main St, Nashua, IA 50658",
+      "website": "https://www.fsb-nashua.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5821",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "413 East St, Lynnville, IA 50153",
+      "website": "https://www.fsbankia.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8522",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "183 Main Ave N, Britt, IA 50423",
+      "website": "https://fsb-britt.com"
+    },
+    {
+      "name": "First Trust and Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8752",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "123 S Main St, Wheatland, IA 52777",
+      "website": "https://www.firsttrust.bank"
+    },
+    {
+      "name": "First Whitney Bank and Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "254",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "223 Chestnut St, Atlantic, IA 50022",
+      "website": "https://www.firstwhitneybank.com"
+    },
+    {
+      "name": "Flanagan State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11734",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 W Falcon Hwy, Flanagan, IL 61740",
+      "website": "https://www.flanaganstatebank.com"
+    },
+    {
+      "name": "FNB Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "954",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "311 5th Street, Fontanelle, IA 50846",
+      "website": "https://www.fnbfontanelle.com"
+    },
+    {
+      "name": "FNNB Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4482",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 N 2nd Ave W, Newton, IA 50208",
+      "website": "https://www.fnnbbank.com"
+    },
+    {
+      "name": "Fortress Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9632",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9000 N Knoxville Ave, Peoria, IL 61615",
+      "website": "https://www.bankfortress.com"
+    },
+    {
+      "name": "Freedom Financial Bank",
+      "fdic_insured_since": "02/22/1999",
+      "fdic_cert": "35031",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1255 Jordan Creek Pkwy, West Des Moines, IA 50266",
+      "website": "https://www.freedomfinancialbank.com"
+    },
+    {
+      "name": "FreedomBank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11767",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "210 S Main St, Elkader, IA 52043",
+      "website": "https://www.freedombnk.com"
+    },
+    {
+      "name": "Frontier Bank",
+      "fdic_insured_since": "06/24/1994",
+      "fdic_cert": "33922",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "101 S Phillips Ave, Sioux Falls, SD 57104",
+      "website": "https://www.frontierbank.com"
+    },
+    {
+      "name": "Glenwood State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "956",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "32 N Walnut St, Glenwood, IA 51534",
+      "website": "https://www.glenwoodstatebank.com"
+    },
+    {
+      "name": "GNB Bank",
+      "fdic_insured_since": "03/16/1934",
+      "fdic_cert": "14079",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "529 G Ave, Grundy Center, IA 50638",
+      "website": "https://www.gnbbank.com"
+    },
+    {
+      "name": "Great Southern Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29546",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "14309 State Highway 13, Reeds Spring, MO 65737",
+      "website": "https://www.greatsouthernbank.com"
+    },
+    {
+      "name": "Green Belt Bank & Trust",
+      "fdic_insured_since": "07/31/1986",
+      "fdic_cert": "26760",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "616 Washington Ave, Iowa Falls, IA 50126",
+      "website": "https://www.greenbeltbank.com"
+    },
+    {
+      "name": "Grinnell State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11347",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "814 4th Ave, Grinnell, IA 50112",
+      "website": "https://www.grinnell.bank"
+    },
+    {
+      "name": "Guthrie County State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "226",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "505 E Main St, Panora, IA 50216",
+      "website": "https://www.gcsbank.com"
+    },
+    {
+      "name": "Hardin County Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5817",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1202 Edgington Ave, Eldora, IA 50627",
+      "website": "https://www.hardincsb.com"
+    },
+    {
+      "name": "Heartland Bank",
+      "fdic_insured_since": "10/16/1934",
+      "fdic_cert": "14809",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "615 6th Ave, Somers, IA 50586",
+      "website": "https://www.heartlandbanks.bank"
+    },
+    {
+      "name": "Heartland Bank and Trust Company",
+      "fdic_insured_since": "02/22/1971",
+      "fdic_cert": "20369",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 N Hershey Rd, Bloomington, IL 61704",
+      "website": "https://www.hbtbank.com"
+    },
+    {
+      "name": "Heritage Bank",
+      "fdic_insured_since": "12/07/1961",
+      "fdic_cert": "18463",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "695 Marion Blvd, Marion, IA 52302",
+      "website": "https://www.heritagemarion.bank"
+    },
+    {
+      "name": "Hiawatha Bank and Trust Company",
+      "fdic_insured_since": "09/15/1997",
+      "fdic_cert": "34488",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "777 N Center Point Rd, Hiawatha, IA 52233",
+      "website": "https://www.hiawathabank.com"
+    },
+    {
+      "name": "Hills Bank and Trust Company",
+      "fdic_insured_since": "08/01/1934",
+      "fdic_cert": "14650",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "131 Main St, Hills, IA 52235",
+      "website": "https://www.hillsbank.com"
+    },
+    {
+      "name": "Home State Bank",
+      "fdic_insured_since": "11/10/1934",
+      "fdic_cert": "14867",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "115 W State St, Jefferson, IA 50129",
+      "website": "https://www.hsbankiowa.com"
+    },
+    {
+      "name": "Houghton State Bank",
+      "fdic_insured_since": "07/28/1936",
+      "fdic_cert": "15405",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "116 E Coolbaugh St, Red Oak, IA 51566",
+      "website": "https://www.houghtonstatebank.com"
+    },
+    {
+      "name": "Iowa Falls State Bank",
+      "fdic_insured_since": "12/06/1953",
+      "fdic_cert": "15311",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "601 Washington Ave, Iowa Falls, IA 50126",
+      "website": "https://www.ifsbank.com"
+    },
+    {
+      "name": "Iowa State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10497",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "500 Audubon St, Sac City, IA 50583",
+      "website": "https://www.myisb.bank"
+    },
+    {
+      "name": "Iowa State Bank",
+      "fdic_insured_since": "02/20/1934",
+      "fdic_cert": "13953",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1101 Main St, Hull, IA 51239",
+      "website": "https://www.iowastate.bank"
+    },
+    {
+      "name": "Iowa State Bank",
+      "fdic_insured_since": "04/14/1941",
+      "fdic_cert": "15808",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "627 E Locust St, Des Moines, IA 50309",
+      "website": "https://www.iowastatebanks.com"
+    },
+    {
+      "name": "Iowa State Bank",
+      "fdic_insured_since": "05/27/1943",
+      "fdic_cert": "15947",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 N Main St, Clarksville, IA 50619",
+      "website": "https://www.iowastatebank.com"
+    },
+    {
+      "name": "Iowa State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "950",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5 E Call St, Algona, IA 50511",
+      "website": "https://www.bankisb.com"
+    },
+    {
+      "name": "Iowa State Bank and Trust Company of Fairfield, Iowa",
+      "fdic_insured_since": "05/25/1934",
+      "fdic_cert": "14413",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "55 S 4th St, Fairfield, IA 52556",
+      "website": "https://www.myiowastatebank.com"
+    },
+    {
+      "name": "Iowa State Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8751",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 W Adams St, Creston, IA 50801",
+      "website": "https://www.issbbank.com"
+    },
+    {
+      "name": "Iowa Trust & Savings Bank",
+      "fdic_insured_since": "06/07/1961",
+      "fdic_cert": "18400",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2101 10th St, Emmetsburg, IA 50536",
+      "website": "https://www.iowatrustbank.com"
+    },
+    {
+      "name": "Iowa Trust and Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1547",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 N 10th St, Centerville, IA 52544",
+      "website": "https://www.iowatrust.bank"
+    },
+    {
+      "name": "ITS Bank",
+      "fdic_insured_since": "01/01/2000",
+      "fdic_cert": "34619",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6700 Pioneer Pkwy, Johnston, IA 50131",
+      "website": ""
+    },
+    {
+      "name": "JPMorgan Chase Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "628",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1111 Polaris Pkwy, Columbus, OH 43240",
+      "website": "https://www.jpmorganchase.com"
+    },
+    {
+      "name": "Kerndt Brothers Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8761",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "370 Main St, Lansing, IA 52151",
+      "website": "https://www.kerndtbrothers.com"
+    },
+    {
+      "name": "Keystone Savings Bank",
+      "fdic_insured_since": "04/30/1959",
+      "fdic_cert": "17993",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "330 Western Avenue, Marengo, IA 52301",
+      "website": "https://www.keystonesavings.bank"
+    },
+    {
+      "name": "Leighton State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10118",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "900 Washington St, Pella, IA 50219",
+      "website": "https://www.leightonbank.com"
+    },
+    {
+      "name": "Liberty National Bank",
+      "fdic_insured_since": "03/17/2003",
+      "fdic_cert": "57505",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "4425 Singing Hills Blvd, Sioux City, IA 51106",
+      "website": "https://www.libertynational.bank"
+    },
+    {
+      "name": "Liberty Trust & Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10121",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "502 8th Ave, Durant, IA 52747",
+      "website": "https://www.mylibertytrust.com"
+    },
+    {
+      "name": "Lincoln Savings Bank",
+      "fdic_insured_since": "03/26/1934",
+      "fdic_cert": "14207",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "508 Main St, Reinbeck, IA 50669",
+      "website": "https://www.mylsb.com"
+    },
+    {
+      "name": "Logan State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4476",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "323 E 7th St, Logan, IA 51546",
+      "website": "https://www.loganstatebank.com"
+    },
+    {
+      "name": "Luana Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "253",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 Harvest Dr, Luana, IA 52156",
+      "website": "https://www.luanasavingsbank.com"
+    },
+    {
+      "name": "Malvern Bank",
+      "fdic_insured_since": "04/10/1934",
+      "fdic_cert": "14230",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "404 Main St, Malvern, IA 51551",
+      "website": "https://www.malvern.bank"
+    },
+    {
+      "name": "Manufacturers Bank & Trust Company",
+      "fdic_insured_since": "09/01/1945",
+      "fdic_cert": "16307",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "245 E J St, Forest City, IA 50436",
+      "website": "https://www.mbtbank.bank"
+    },
+    {
+      "name": "Maquoketa State Bank",
+      "fdic_insured_since": "09/02/1958",
+      "fdic_cert": "17903",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "203 N Main St, Maquoketa, IA 52060",
+      "website": "https://www.maquoketasb.bank"
+    },
+    {
+      "name": "Marion County State Bank",
+      "fdic_insured_since": "09/21/1935",
+      "fdic_cert": "15272",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "800 Main St, Pella, IA 50219",
+      "website": "https://www.marioncountybank.com"
+    },
+    {
+      "name": "Maxwell State Bank",
+      "fdic_insured_since": "02/01/1943",
+      "fdic_cert": "15930",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "122 Main St, Maxwell, IA 50161",
+      "website": "https://www.maxwellstate.com"
+    },
+    {
+      "name": "Maynard Savings Bank",
+      "fdic_insured_since": "01/13/1934",
+      "fdic_cert": "13736",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "310 Main St W, Maynard, IA 50655",
+      "website": "https://www.maynardsavingsbank.com"
+    },
+    {
+      "name": "Mediapolis Savings Bank",
+      "fdic_insured_since": "09/16/1940",
+      "fdic_cert": "15772",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "605 Main St, Mediapolis, IA 52637",
+      "website": "https://www.gomsb.bank"
+    },
+    {
+      "name": "Midstates Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4465",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1851 Madison Ave Ste 732, Council Bluffs, IA 51503",
+      "website": "https://www.midstatesbank.com"
+    },
+    {
+      "name": "Midwest Heritage Bank, FSB",
+      "fdic_insured_since": "02/09/1995",
+      "fdic_cert": "4432",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3580 Ep True Pkwy Ste 100, West Des Moines, IA 50265",
+      "website": "https://www.midwestheritage.com"
+    },
+    {
+      "name": "Montezuma State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1860",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 S 4th St, Montezuma, IA 50171",
+      "website": "https://www.montestatebank.com"
+    },
+    {
+      "name": "Mount Vernon Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10494",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "206 1st St Sw, Mount Vernon, IA 52314",
+      "website": "https://www.mountvernonbank.com"
+    },
+    {
+      "name": "New Albin Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8506",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "118 Main St Ne, New Albin, IA 52160",
+      "website": "https://www.newalbinsavingsbank.com"
+    },
+    {
+      "name": "Nicolet National Bank",
+      "fdic_insured_since": "10/31/2000",
+      "fdic_cert": "57038",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "111 N Washington St, Green Bay, WI 54301",
+      "website": "https://www.nicoletbank.com"
+    },
+    {
+      "name": "Northeast Security Bank",
+      "fdic_insured_since": "05/11/1961",
+      "fdic_cert": "18384",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1150 W 1st St, Sumner, IA 50674",
+      "website": "https://www.banknsb.com"
+    },
+    {
+      "name": "NorthStar Bank",
+      "fdic_insured_since": "04/01/1997",
+      "fdic_cert": "34407",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2202 Central Ave, Estherville, IA 51334",
+      "website": "https://www.northstarbankiowa.com"
+    },
+    {
+      "name": "Northwest Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32647",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "705 Grand Ave, Spencer, IA 51301",
+      "website": "https://www.nw.bank"
+    },
+    {
+      "name": "NSB Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8094",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2650 4th St Sw, Mason City, IA 50401",
+      "website": "https://www.nsbbank.com"
+    },
+    {
+      "name": "Ohnward Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10111",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "332 1st Ave W, Cascade, IA 52033",
+      "website": "https://www.ohnwardbank.bank"
+    },
+    {
+      "name": "Old National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3832",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Main St, Evansville, IN 47708",
+      "website": "https://www.oldnational.com"
+    },
+    {
+      "name": "Palo Savings Bank",
+      "fdic_insured_since": "03/03/1934",
+      "fdic_cert": "13990",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2801 Hollenbeck Rd, Palo, IA 52324",
+      "website": "https://www.palosavingsbank.com"
+    },
+    {
+      "name": "PCSB Bank",
+      "fdic_insured_since": "06/28/1934",
+      "fdic_cert": "14522",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "120 E Washington St, Clarinda, IA 51632",
+      "website": "https://www.wearepcsb.com"
+    },
+    {
+      "name": "Peoples Bank",
+      "fdic_insured_since": "08/22/1934",
+      "fdic_cert": "14692",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "12701 University Ave, Clive, IA 50325",
+      "website": "https://www.mypeoples.bank"
+    },
+    {
+      "name": "Peoples Bank",
+      "fdic_insured_since": "06/01/1945",
+      "fdic_cert": "16265",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1230 Valley Dr, Rock Valley, IA 51247",
+      "website": "https://www.peoples-ebank.com"
+    },
+    {
+      "name": "Peoples Savings Bank",
+      "fdic_insured_since": "10/01/1934",
+      "fdic_cert": "14868",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "414 N Adams St, Wellsburg, IA 50680",
+      "website": "https://www.bankpsb.com"
+    },
+    {
+      "name": "Peoples Savings Bank",
+      "fdic_insured_since": "11/20/1998",
+      "fdic_cert": "34973",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 E Iowa Ave, Indianola, IA 50125",
+      "website": "https://www.mybankpsb.com"
+    },
+    {
+      "name": "Peoples State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12814",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "301 E Blackhawk Ave, Prairie Du Chien, WI 53821",
+      "website": "https://www.peoplesfinancial.com"
+    },
+    {
+      "name": "Pilot Grove Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9100",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1341 Pilot Grove Rd, Pilot Grove, IA 52648",
+      "website": "https://www.pilotgrovesavingsbank.com"
+    },
+    {
+      "name": "Pinnacle Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "252",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2206 S Center St, Marshalltown, IA 50158",
+      "website": "https://www.bankpinnacle.us"
+    },
+    {
+      "name": "Pioneer Bank",
+      "fdic_insured_since": "01/06/1966",
+      "fdic_cert": "19540",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 1st St, Sergeant Bluff, IA 51054",
+      "website": "https://www.pioneerbanks.com"
+    },
+    {
+      "name": "Pocahontas State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "234",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "233 N Main St, Pocahontas, IA 50574",
+      "website": "https://www.pocahontasstatebank.net"
+    },
+    {
+      "name": "Premier Bank",
+      "fdic_insured_since": "02/25/1997",
+      "fdic_cert": "34384",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1004 21st Ave, Rock Valley, IA 51247",
+      "website": "https://www.premierbank.bank"
+    },
+    {
+      "name": "Premier Bank",
+      "fdic_insured_since": "10/13/1998",
+      "fdic_cert": "34849",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2625 Nw Arterial, Dubuque, IA 52002",
+      "website": "https://www.premierbanking.com"
+    },
+    {
+      "name": "Primebank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8101",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "37 1st Ave Nw, Le Mars, IA 51031",
+      "website": "https://www.primebank.bank"
+    },
+    {
+      "name": "Principal Bank",
+      "fdic_insured_since": "02/12/1998",
+      "fdic_cert": "34507",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "750 Park Street, Des Moines, IA 50309",
+      "website": "https://www.principal.com/bank"
+    },
+    {
+      "name": "Quad City Bank and Trust Company",
+      "fdic_insured_since": "01/07/1994",
+      "fdic_cert": "33867",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "2118 Middle Rd, Bettendorf, IA 52722",
+      "website": "https://www.qcbt.com"
+    },
+    {
+      "name": "Raccoon Valley Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "245",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1202 2nd St, Perry, IA 50220",
+      "website": "https://www.raccoonvalleybank.com"
+    },
+    {
+      "name": "Readlyn Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9300",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "141 Main St, Readlyn, IA 50668",
+      "website": "https://www.readlynsavingsbank.com"
+    },
+    {
+      "name": "Regions Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12368",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1900 5th Ave N, Birmingham, AL 35203",
+      "website": "https://www.regions.com"
+    },
+    {
+      "name": "Reliance State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9299",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "606 Broad St, Story City, IA 50248",
+      "website": "https://www.rsbiowa.com"
+    },
+    {
+      "name": "Rivers Edge Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9935",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "211 N Broadway Ave, Marion, SD 57043",
+      "website": "https://www.riversedge.bank"
+    },
+    {
+      "name": "Rolling Hills Bank & Trust",
+      "fdic_insured_since": "01/13/1936",
+      "fdic_cert": "15334",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1307 E 7th St, Atlantic, IA 50022",
+      "website": "https://www.rollinghillsbank.com"
+    },
+    {
+      "name": "Sanborn Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11352",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "219 Main St, Sanborn, IA 51248",
+      "website": "https://www.sanbornbank.com"
+    },
+    {
+      "name": "Savings Bank",
+      "fdic_insured_since": "01/29/1934",
+      "fdic_cert": "13735",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "185 S Green Ave, Primghar, IA 51245",
+      "website": "https://www.savingsbankia.com"
+    },
+    {
+      "name": "Security National Bank of Omaha",
+      "fdic_insured_since": "09/01/1964",
+      "fdic_cert": "19213",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1120 S 101st St, Omaha, NE 68124",
+      "website": "https://www.securitynational.bank"
+    },
+    {
+      "name": "Security Savings Bank",
+      "fdic_insured_since": "04/06/1934",
+      "fdic_cert": "14208",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1015 Market St, Gowrie, IA 50543",
+      "website": "https://www.securitysavingsbank.com"
+    },
+    {
+      "name": "Security Savings Bank",
+      "fdic_insured_since": "04/04/1940",
+      "fdic_cert": "15734",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 S West St, Canton, SD 57013",
+      "website": "https://www.bankwithssb.com"
+    },
+    {
+      "name": "Security State Bank",
+      "fdic_insured_since": "08/15/1941",
+      "fdic_cert": "15839",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 E State St, Algona, IA 50511",
+      "website": "https://bankssb.com"
+    },
+    {
+      "name": "Security State Bank",
+      "fdic_insured_since": "10/26/1961",
+      "fdic_cert": "18448",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "207 Isabella St, Radcliffe, IA 50230",
+      "website": "https://www.ssbiowa.com"
+    },
+    {
+      "name": "Security State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "235",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "109 W 2nd St, Sutherland, IA 51058",
+      "website": "https://mysecuritystate.com"
+    },
+    {
+      "name": "Security Trust & Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "968",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "601 Lake Street, Storm Lake, IA 50588",
+      "website": "https://www.securitybanksl.com"
+    },
+    {
+      "name": "Sibley State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11764",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "803 4th Ave, Sibley, IA 51249",
+      "website": "https://www.sibleystatebank.com"
+    },
+    {
+      "name": "Sloan State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8507",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "302 4th St, Sloan, IA 51055",
+      "website": "https://www.sloanstatebank.com"
+    },
+    {
+      "name": "Solon State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "232",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "126 S Market St, Solon, IA 52333",
+      "website": "https://www.solonstatebank.com"
+    },
+    {
+      "name": "South Ottumwa Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9099",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "320 Church St, Ottumwa, IA 52501",
+      "website": "https://www.sosb-ia.com"
+    },
+    {
+      "name": "South Story Bank & Trust",
+      "fdic_insured_since": "09/01/1954",
+      "fdic_cert": "17348",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "501 Linn St, Slater, IA 50244",
+      "website": "https://www.southstorybank.com"
+    },
+    {
+      "name": "St. Ansgar State Bank",
+      "fdic_insured_since": "09/01/1953",
+      "fdic_cert": "17259",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "237 W 4th St, Saint Ansgar, IA 50472",
+      "website": "https://www.stansgarbank.com"
+    },
+    {
+      "name": "State Bank",
+      "fdic_insured_since": "05/01/1944",
+      "fdic_cert": "16151",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "728 Grand Ave, Spencer, IA 51301",
+      "website": "https://www.statebankspencer.com"
+    },
+    {
+      "name": "State Bank & Trust Co.",
+      "fdic_insured_since": "02/25/1939",
+      "fdic_cert": "15651",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1025 6th St, Nevada, IA 50201",
+      "website": "https://www.banksbt.com"
+    },
+    {
+      "name": "State Bank of Schaller",
+      "fdic_insured_since": "02/24/1934",
+      "fdic_cert": "13931",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 W 2nd St, Schaller, IA 51053",
+      "website": "https://www.statebankofschaller.com"
+    },
+    {
+      "name": "State Central Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5820",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "612 1st St, Bonaparte, IA 52620",
+      "website": "https://www.statecentralbank.com"
+    },
+    {
+      "name": "State Savings Bank",
+      "fdic_insured_since": "09/29/1934",
+      "fdic_cert": "14773",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "612 Central Ave, Bedford, IA 50833",
+      "website": "https://www.statesavings.bank"
+    },
+    {
+      "name": "State Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "248",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4800 George Mills Civic Pkwy Ste 100, West Des Moines, IA 50265",
+      "website": "https://www.ssb.bank"
+    },
+    {
+      "name": "Sterling Federal Bank, F.S.B.",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27664",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "110 E 4th St, Sterling, IL 61081",
+      "website": "https://www.sterlingfederal.com"
+    },
+    {
+      "name": "Success Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10127",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "109 N Madison St, Bloomfield, IA 52537",
+      "website": "https://www.success.bank"
+    },
+    {
+      "name": "TBK BANK, SSB",
+      "fdic_insured_since": "07/15/1981",
+      "fdic_cert": "23498",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "12700 Park Central Dr Ste 1700, Dallas, TX 75251",
+      "website": "https://www.tbkbank.com"
+    },
+    {
+      "name": "Templeton Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "969",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "103 S Main St, Templeton, IA 51463",
+      "website": "https://www.templetonsavingsbank.com"
+    },
+    {
+      "name": "The Citizens First National Bank of Storm Lake",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4511",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "East 5th And Lake Avenue, Storm Lake, IA 50588",
+      "website": "https://www.citizensfnb.com"
+    },
+    {
+      "name": "The Clinton National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4439",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "235 6th Ave S, Clinton, IA 52732",
+      "website": "https://www.clintonnational.com"
+    },
+    {
+      "name": "The Exchange State Bank",
+      "fdic_insured_since": "09/22/1943",
+      "fdic_cert": "16094",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "253 Broadway St, Springville, IA 52336",
+      "website": "https://www.exchangestatebank.net"
+    },
+    {
+      "name": "The Farmers State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8503",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "106 E Cedar St, Marcus, IA 51035",
+      "website": "https://www.fsbmarcus.com"
+    },
+    {
+      "name": "The First National Bank of Manning",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4477",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "401 Main St, Manning, IA 51455",
+      "website": "https://www.fnbmanning.com"
+    },
+    {
+      "name": "The First National Bank of Primghar",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4494",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "108 S Hayes Ave, Primghar, IA 51245",
+      "website": "https://www.fnbprimghar.com"
+    },
+    {
+      "name": "The Home Trust & Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "963",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "628 Main St, Osage, IA 50461",
+      "website": "https://www.hometrustbank.com"
+    },
+    {
+      "name": "The Libertyville Savings Bank",
+      "fdic_insured_since": "01/15/1934",
+      "fdic_cert": "13712",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2000 W Jefferson Ave, Fairfield, IA 52556",
+      "website": "https://www.lsbia.bank"
+    },
+    {
+      "name": "The Security National Bank of Sioux City, Iowa",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4506",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "601 Pierce St, Sioux City, IA 51101",
+      "website": "https://www.snbonline.com"
+    },
+    {
+      "name": "The Shelby County State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1553",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "508 Court St, Harlan, IA 51537",
+      "website": "https://www.scsbnet.com"
+    },
+    {
+      "name": "The State Bank",
+      "fdic_insured_since": "01/20/1934",
+      "fdic_cert": "13715",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1902 Hill Ave, Spirit Lake, IA 51360",
+      "website": "https://www.statebankspiritlake.com"
+    },
+    {
+      "name": "The State Bank of Toledo",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4514",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 E High St, Toledo, IA 52342",
+      "website": "https://www.banktoledo.com"
+    },
+    {
+      "name": "The Watkins Savings Bank",
+      "fdic_insured_since": "09/01/1959",
+      "fdic_cert": "18071",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 1st St, Watkins, IA 52354",
+      "website": "https://watkinsbank.com"
+    },
+    {
+      "name": "Time Bank",
+      "fdic_insured_since": "07/03/1995",
+      "fdic_cert": "34038",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "626 W Talcott Rd, Park Ridge, IL 60068",
+      "website": "https://www.time.bank"
+    },
+    {
+      "name": "Tri-Valley Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12417",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "104 S Main St, Randolph, IA 51649",
+      "website": "https://www.tri-valleycenters.com"
+    },
+    {
+      "name": "TruBank",
+      "fdic_insured_since": "07/11/1984",
+      "fdic_cert": "25267",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1401 N Jefferson Way, Indianola, IA 50125",
+      "website": "https://www.trubank.bank"
+    },
+    {
+      "name": "TS Bank",
+      "fdic_insured_since": "10/16/1934",
+      "fdic_cert": "14812",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "15 E Main St, Treynor, IA 51575",
+      "website": "https://www.tsbank.com"
+    },
+    {
+      "name": "Twin Cedars Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1556",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "402 Merrill St, Bussey, IA 50044",
+      "website": "https://www.twincedars.bank"
+    },
+    {
+      "name": "U.S. Bank National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6548",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "425 Walnut St, Cincinnati, OH 45202",
+      "website": "https://www.usbank.com"
+    },
+    {
+      "name": "UMB Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8273",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1010 Grand Blvd, Kansas City, MO 64106",
+      "website": "https://www.umb.com"
+    },
+    {
+      "name": "Union State Bank",
+      "fdic_insured_since": "01/11/1935",
+      "fdic_cert": "14982",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "611 W Highway 92, Winterset, IA 50273",
+      "website": "https://www.usbiowa.com"
+    },
+    {
+      "name": "Union State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8499",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "214 S 1st St, Greenfield, IA 50849",
+      "website": "https://www.usbgfd.com"
+    },
+    {
+      "name": "United Bank & Trust Co.",
+      "fdic_insured_since": "06/21/2002",
+      "fdic_cert": "57391",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2101 S Center St, Marshalltown, IA 50158",
+      "website": "https://www.bankubt.com"
+    },
+    {
+      "name": "United Bank and Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "14247",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "400 Central Ave E, Hampton, IA 50441",
+      "website": "https://www.ubtc.net"
+    },
+    {
+      "name": "United Bank of Iowa",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "958",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "501 2nd St, Ida Grove, IA 51445",
+      "website": "https://www.unitedbk.bank"
+    },
+    {
+      "name": "United Community Bank",
+      "fdic_insured_since": "11/01/1934",
+      "fdic_cert": "13656",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1000 Okoboji Ave, Milford, IA 51351",
+      "website": "https://www.unitedcommunitybank.com"
+    },
+    {
+      "name": "VISIONBANK OF IOWA",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11763",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "104 Chestnut St, Ames, IA 50010",
+      "website": "https://www.visionbank.com"
+    },
+    {
+      "name": "Washington County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12241",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1523 Washington St, Blair, NE 68008",
+      "website": "https://www.washingtoncountybank.com"
+    },
+    {
+      "name": "Washington State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "214",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "121 S Marion Ave, Washington, IA 52353",
+      "website": "https://www.washsb.com"
+    },
+    {
+      "name": "Waukon State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1857",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "22 W Main St, Waukon, IA 52172",
+      "website": "https://www.waukonstatebank.bank"
+    },
+    {
+      "name": "WCF Financial Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28989",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 Fair Meadow Dr, Webster City, IA 50595",
+      "website": "https://www.wcfbank.com"
+    },
+    {
+      "name": "Wells Fargo Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3511",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3201 N 4th Ave, Sioux Falls, SD 57104",
+      "website": "https://www.wellsfargo.com"
+    },
+    {
+      "name": "West Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "15614",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3330 Westown Parkway, West Des Moines, IA 50266",
+      "website": "https://www.westbankstrong.com"
+    },
+    {
+      "name": "West Iowa Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9105",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "319 S Broadway Ave, West Bend, IA 50597",
+      "website": "https://www.westiowabank.com"
+    },
+    {
+      "name": "Westside State Bank",
+      "fdic_insured_since": "05/03/1962",
+      "fdic_cert": "18518",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "401 1st St, Westside, IA 51467",
+      "website": "https://www.westsidestate.bank"
+    },
+    {
+      "name": "White State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8519",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "209 Ives Street, South English, IA 52335",
+      "website": "https://www.whitestatebank.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}
