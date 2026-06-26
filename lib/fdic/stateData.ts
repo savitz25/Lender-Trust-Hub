@@ -15,6 +15,7 @@ import illinoisData from './data/illinois.json';
 import iowaData from './data/iowa.json';
 import kansasData from './data/kansas.json';
 import louisianaData from './data/louisiana.json';
+import michiganData from './data/michigan.json';
 import mississippiData from './data/mississippi.json';
 import minnesotaData from './data/minnesota.json';
 import missouriData from './data/missouri.json';
@@ -35,6 +36,7 @@ export const stateData: Record<string, StateFDICData> = {
   IA: iowaData as StateFDICData,
   KS: kansasData as StateFDICData,
   LA: louisianaData as StateFDICData,
+  MI: michiganData as StateFDICData,
   MS: mississippiData as StateFDICData,
   MN: minnesotaData as StateFDICData,
   MO: missouriData as StateFDICData,

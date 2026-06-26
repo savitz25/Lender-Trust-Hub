@@ -1,0 +1,807 @@
+{
+  "fullName": "Michigan",
+  "abbr": "MI",
+  "banks": [
+    {
+      "name": "1st Source Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9087",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "100 N Michigan St Ste B, South Bend, IN 46601",
+      "website": "https://www.1stsource.com"
+    },
+    {
+      "name": "1st State Bank",
+      "fdic_insured_since": "04/12/2004",
+      "fdic_cert": "57626",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "4800 Fashion Square Blvd, Saginaw, MI 48604",
+      "website": "https://www.1ststate.bank"
+    },
+    {
+      "name": "Alden State Bank",
+      "fdic_insured_since": "06/22/1956",
+      "fdic_cert": "17622",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "10564 Coy St, Alden, MI 49612",
+      "website": "https://www.alden.bank"
+    },
+    {
+      "name": "Bank Michigan",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1008",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "417 S Main St, Brooklyn, MI 49230",
+      "website": "http://www.bankmichigan.bank"
+    },
+    {
+      "name": "Bank of America, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3510",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "100 N Tryon St, Charlotte, NC 28202",
+      "website": "https://www.bankofamerica.com"
+    },
+    {
+      "name": "Bank of Ann Arbor",
+      "fdic_insured_since": "01/16/1996",
+      "fdic_cert": "34120",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "125 S 5th Ave, Ann Arbor, MI 48104",
+      "website": "https://www.bankofannarbor.com"
+    },
+    {
+      "name": "Bank of England",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13303",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "123 S Main St, England, AR 72046",
+      "website": "https://www.bankofengland-ar.com"
+    },
+    {
+      "name": "Bay Port State Bank",
+      "fdic_insured_since": "03/03/1938",
+      "fdic_cert": "15585",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9840 Main St, Bay Port, MI 48720",
+      "website": "https://www.bayportstatebank.com"
+    },
+    {
+      "name": "Baybank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1092",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "104 S 10th St, Gladstone, MI 49837",
+      "website": "http://baybank.us"
+    },
+    {
+      "name": "Blissfield State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "976",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "204 E Jefferson St, Blissfield, MI 49228",
+      "website": "https://www.blissfieldstate.com"
+    },
+    {
+      "name": "Capitol National Bank",
+      "fdic_insured_since": "11/22/1982",
+      "fdic_cert": "24199",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "200 N Washington Sq, Lansing, MI 48933",
+      "website": "https://www.capitolnational.com"
+    },
+    {
+      "name": "Central Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1095",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "511 Bingham Ave, Sault Sainte Marie, MI 49783",
+      "website": "https://www.centralsavingsbank.com"
+    },
+    {
+      "name": "Century Bank and Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5015",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 W Chicago St, Coldwater, MI 49036",
+      "website": "https://www.centurybankandtrust.com"
+    },
+    {
+      "name": "Charlevoix State Bank",
+      "fdic_insured_since": "08/16/1994",
+      "fdic_cert": "33926",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "111 State St, Charlevoix, MI 49720",
+      "website": "https://www.charlevoixstatebank.com"
+    },
+    {
+      "name": "Chelsea State Bank",
+      "fdic_insured_since": "03/07/1934",
+      "fdic_cert": "14009",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1010 S Main St, Chelsea, MI 48118",
+      "website": "https://www.chelseastate.bank"
+    },
+    {
+      "name": "ChoiceOne Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1014",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "109 E Division St, Sparta, MI 49345",
+      "website": "https://WWW.CHOICEONE.BANK"
+    },
+    {
+      "name": "CIBC Bank USA",
+      "fdic_insured_since": "02/06/1991",
+      "fdic_cert": "33306",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "120 S La Salle St, Chicago, IL 60603",
+      "website": "https://us.cibc.com"
+    },
+    {
+      "name": "Citizens Bank, National Association",
+      "fdic_insured_since": "05/13/2005",
+      "fdic_cert": "57957",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Citizens Plz, Providence, RI 2903",
+      "website": "https://www.citizensbank.com"
+    },
+    {
+      "name": "Citizens National Bank of Cheboygan",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5018",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "303 N Main St, Cheboygan, MI 49721",
+      "website": "https://www.cnbismybank.com"
+    },
+    {
+      "name": "Citizens State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8183",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "32500 Woodward Ave, Royal Oak, MI 48073",
+      "website": "https://www.micsb.com"
+    },
+    {
+      "name": "Commercial Bank",
+      "fdic_insured_since": "08/29/1962",
+      "fdic_cert": "18584",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 N Pine River St, Ithaca, MI 48847",
+      "website": "https://www.commercial-bank.com"
+    },
+    {
+      "name": "Community Unity Bank",
+      "fdic_insured_since": "06/26/2023",
+      "fdic_cert": "59305",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "34040 Woodward Ave, Birmingham, MI 48009",
+      "website": "https://www.communityunity.bank"
+    },
+    {
+      "name": "County National Bank",
+      "fdic_insured_since": "03/19/1934",
+      "fdic_cert": "14073",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 S Howell St, Hillsdale, MI 49242",
+      "website": "https://WWW.CNBB.BANK"
+    },
+    {
+      "name": "Dearborn Federal Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29874",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "22315 Michigan Ave, Dearborn, MI 48124",
+      "website": "https://www.mydfsb.com"
+    },
+    {
+      "name": "Eastern Michigan Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "982",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "65 N Howard Ave, Croswell, MI 48422",
+      "website": "https://www.emb.bank"
+    },
+    {
+      "name": "Eaton Community Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29846",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "236 S Cochran Ave, Charlotte, MI 48813",
+      "website": "https://www.eaton.bank"
+    },
+    {
+      "name": "Farmers State Bank",
+      "fdic_insured_since": "07/16/1934",
+      "fdic_cert": "14578",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "220 S Detroit St, Lagrange, IN 46761",
+      "website": "https://www.farmersstatebank.com"
+    },
+    {
+      "name": "Fifth Third Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6672",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "38 Fountain Square Plz, Cincinnati, OH 45202",
+      "website": "https://www.53.com"
+    },
+    {
+      "name": "First Bank, Upper Michigan",
+      "fdic_insured_since": "04/23/1934",
+      "fdic_cert": "14276",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1400 Delta Ave, Gladstone, MI 49837",
+      "website": "https://www.first-bank.com"
+    },
+    {
+      "name": "First Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13179",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "200 E Main St, Harbor Springs, MI 49740",
+      "website": "https://www.firstcb.com"
+    },
+    {
+      "name": "First Financial Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6600",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "255 E 5th St, Cincinnati, OH 45202",
+      "website": "https://www.bankatfirst.com"
+    },
+    {
+      "name": "First Independence Bank",
+      "fdic_insured_since": "05/14/1970",
+      "fdic_cert": "20179",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "7310 Woodward Ave, Detroit, MI 48202",
+      "website": "https://www.firstindependence.com"
+    },
+    {
+      "name": "First Merchants Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4365",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 E Jackson St, Muncie, IN 47305",
+      "website": "http://www.firstmerchants.com"
+    },
+    {
+      "name": "First National Bank & Trust Co.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5062",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "233 S Stephenson Ave, Iron Mountain, MI 49801",
+      "website": "https://www.fnbimk.com"
+    },
+    {
+      "name": "First National Bank of America",
+      "fdic_insured_since": "05/06/1955",
+      "fdic_cert": "17438",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "241 E Saginaw St, East Lansing, MI 48823",
+      "website": "https://www.fnba.com"
+    },
+    {
+      "name": "First National Bank of Michigan",
+      "fdic_insured_since": "04/12/2006",
+      "fdic_cert": "58259",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "348 W Michigan Ave, Kalamazoo, MI 49007",
+      "website": "https://www.fnbmichigan.bank"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "02/21/1935",
+      "fdic_cert": "15032",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "16100 E 9 Mile Rd, Eastpointe, MI 48021",
+      "website": "https://www.fsb.bank"
+    },
+    {
+      "name": "First State Bank of Michigan",
+      "fdic_insured_since": "01/02/1934",
+      "fdic_cert": "12893",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "124 S Phelps St, Decatur, MI 49045",
+      "website": "https://www.fsbdecatur.com"
+    },
+    {
+      "name": "Flagstar Bank, National Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "32541",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "102 Duffy Ave, Hicksville, NY 11801",
+      "website": "https://www.flagstar.com"
+    },
+    {
+      "name": "G. W. Jones Exchange Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "999",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "115 W Main St, Marcellus, MI 49067",
+      "website": "https://www.gwjonesbank.com"
+    },
+    {
+      "name": "Gogebic Range Bank",
+      "fdic_insured_since": "05/20/2002",
+      "fdic_cert": "57192",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "155 E Cloverland Dr, Ironwood, MI 49938",
+      "website": "https://gogebicrangebank.com"
+    },
+    {
+      "name": "Grand River Bank",
+      "fdic_insured_since": "04/30/2009",
+      "fdic_cert": "58789",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "4471 Wilson Ave Sw, Grandville, MI 49418",
+      "website": "https://www.grandriverbank.com"
+    },
+    {
+      "name": "Grasshopper Bank, N.A.",
+      "fdic_insured_since": "05/13/2019",
+      "fdic_cert": "59113",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "261 5th Ave, Ste 610, New York, NY 10016",
+      "website": "https://www.grasshopper.bank"
+    },
+    {
+      "name": "Highpoint Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11407",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "150 W Court St, Hastings, MI 49058",
+      "website": "https://WWW.HIGHPOINTCOMMUNITYBANK.COM"
+    },
+    {
+      "name": "Homestead Savings Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28667",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "415 S Superior St, Albion, MI 49224",
+      "website": "https://www.hsbank.bank"
+    },
+    {
+      "name": "Honor  Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8165",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2254 Henry St, Honor, MI 49640",
+      "website": "https://www.myhonorbank.com"
+    },
+    {
+      "name": "Horizon Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4360",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "515 Franklin St, Michigan City, IN 46360",
+      "website": "https://www.horizonbank.com"
+    },
+    {
+      "name": "Huron Community Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11810",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "301 Newman St, East Tawas, MI 48730",
+      "website": "https://www.bankhcb.com"
+    },
+    {
+      "name": "Huron State Bank",
+      "fdic_insured_since": "05/12/1980",
+      "fdic_cert": "23126",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "200 E Erie St, Rogers City, MI 49779",
+      "website": "http://www.huronstatebank.com"
+    },
+    {
+      "name": "Huron Valley State Bank",
+      "fdic_insured_since": "08/15/2005",
+      "fdic_cert": "57990",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "130 S Milford Rd, Milford, MI 48381",
+      "website": "https://www.hvsb.com"
+    },
+    {
+      "name": "IncredibleBank",
+      "fdic_insured_since": "12/08/1967",
+      "fdic_cert": "19772",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "327 N 17th Ave, Wausau, WI 54401",
+      "website": "https://www.incrediblebank.com"
+    },
+    {
+      "name": "Independent Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "27811",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "4200 E Beltline Ave Ne, Grand Rapids, MI 49525",
+      "website": "https://www.independentbank.com"
+    },
+    {
+      "name": "Isabella Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1005",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "139 E Broadway St, Mount Pleasant, MI 48858",
+      "website": "https://www.isabellabank.com"
+    },
+    {
+      "name": "JPMorgan Chase Bank, Dearborn",
+      "fdic_insured_since": "09/16/1974",
+      "fdic_cert": "21761",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "18800 Hubbard Dr, Dearborn, MI 48126",
+      "website": ""
+    },
+    {
+      "name": "JPMorgan Chase Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "628",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1111 Polaris Pkwy, Columbus, OH 43240",
+      "website": "https://www.jpmorganchase.com"
+    },
+    {
+      "name": "Kalamazoo County State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5892",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "223 N Grand St, Schoolcraft, MI 49087",
+      "website": "https://www.kcsbank.com"
+    },
+    {
+      "name": "KeyBank National Association",
+      "fdic_insured_since": "01/16/1956",
+      "fdic_cert": "17534",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "127 Public Sq, Cleveland, OH 44114",
+      "website": "https://www.key.com"
+    },
+    {
+      "name": "Lake-Osceola State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8172",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "790 Michigan Ave, Baldwin, MI 49304",
+      "website": "https://www.losb.com"
+    },
+    {
+      "name": "Liberty Bank and Trust Company",
+      "fdic_insured_since": "11/16/1972",
+      "fdic_cert": "20856",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6600 Plaza Dr, New Orleans, LA 70127",
+      "website": "https://www.libertybank.net"
+    },
+    {
+      "name": "Macatawa Bank, National Association",
+      "fdic_insured_since": "11/25/1997",
+      "fdic_cert": "34618",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "10753 Macatawa Dr, Holland, MI 49424",
+      "website": "https://www.macatawabank.com"
+    },
+    {
+      "name": "Mayville State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12899",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "37 E Ohmer Rd, Mayville, MI 48744",
+      "website": "https://www.mayvillestatebank.com"
+    },
+    {
+      "name": "Mercantile Bank",
+      "fdic_insured_since": "12/15/1997",
+      "fdic_cert": "34598",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "310 Leonard St Nw, Grand Rapids, MI 49504",
+      "website": "https://www.mercbank.com"
+    },
+    {
+      "name": "Mi Bank",
+      "fdic_insured_since": "04/15/2019",
+      "fdic_cert": "59138",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3707 W Maple Rd, Bloomfield Township, MI 48301",
+      "website": "https://www.mi.bank"
+    },
+    {
+      "name": "Nicolet National Bank",
+      "fdic_insured_since": "10/31/2000",
+      "fdic_cert": "57038",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "111 N Washington St, Green Bay, WI 54301",
+      "website": "https://www.nicoletbank.com"
+    },
+    {
+      "name": "Northern Interstate Bank, N. A.",
+      "fdic_insured_since": "01/29/1934",
+      "fdic_cert": "13784",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "501 W Us Highway 2, Norway, MI 49870",
+      "website": "https://www.banknib.com"
+    },
+    {
+      "name": "Northpointe Bank",
+      "fdic_insured_since": "05/21/1999",
+      "fdic_cert": "34953",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3333 Deposit Dr Ne, Grand Rapids, MI 49546",
+      "website": "https://www.northpointe.com"
+    },
+    {
+      "name": "Northstar Bank",
+      "fdic_insured_since": "02/01/2001",
+      "fdic_cert": "57097",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "833 S Van Dyke Rd, Bad Axe, MI 48413",
+      "website": "https://WWW.NORTHSTARATHOME.COM"
+    },
+    {
+      "name": "Old National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3832",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1 Main St, Evansville, IN 47708",
+      "website": "https://www.oldnational.com"
+    },
+    {
+      "name": "Oxford Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9719",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "60 S Washington St, Oxford, MI 48371",
+      "website": "https://www.oxfordbank.com"
+    },
+    {
+      "name": "Peoples State Bank of Munising",
+      "fdic_insured_since": "05/29/1935",
+      "fdic_cert": "15165",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 E Superior St, Munising, MI 49862",
+      "website": "https://www.psbup.com"
+    },
+    {
+      "name": "PNC Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6384",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "222 Delaware Ave, Wilmington, DE 19801",
+      "website": "https://www.pnc.com"
+    },
+    {
+      "name": "Range Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5072",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "100 N Front St, Marquette, MI 49855",
+      "website": "https://www.rangebank.com"
+    },
+    {
+      "name": "Sidney State Bank",
+      "fdic_insured_since": "06/15/1953",
+      "fdic_cert": "17232",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3016 W Sidney Rd, Sidney, MI 48885",
+      "website": "https://www.sidneybank.com"
+    },
+    {
+      "name": "Southern Michigan Bank & Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5019",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "45 W Pearl St, Coldwater, MI 49036",
+      "website": "https://www.smb-t.com"
+    },
+    {
+      "name": "State Savings Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8162",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "703 Main St, Frankfort, MI 49635",
+      "website": "https://www.ssbankmi.com"
+    },
+    {
+      "name": "Sturgis Bank & Trust Company",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28593",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "113 E Chicago Rd, Sturgis, MI 49091",
+      "website": "https://www.sturgis.bank"
+    },
+    {
+      "name": "Superior National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5058",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "235 Quincy St, Hancock, MI 49930",
+      "website": "https://www.snb-t.com"
+    },
+    {
+      "name": "The Dart Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5033",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "368 S Park St, Mason, MI 48854",
+      "website": "https://www.dart.bank"
+    },
+    {
+      "name": "The Farmers & Merchants State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5969",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "307 N Defiance St, Archbold, OH 43502",
+      "website": "https://www.fm.bank"
+    },
+    {
+      "name": "The First National Bank of St. Ignace",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5074",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "132 N State St, St. Ignace, MI 49781",
+      "website": "https://www.fnbsi.com"
+    },
+    {
+      "name": "The First National Bank of Wakefield",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5076",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "401 Sunday Lake St, Wakefield, MI 49968",
+      "website": "http://www.fnbwakefieldmi.com/"
+    },
+    {
+      "name": "The Huntington National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6560",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "17 S High St, Columbus, OH 43215",
+      "website": "https://www.huntington.com"
+    },
+    {
+      "name": "The Miners State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10928",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "312 W Genesee St, Iron River, MI 49935",
+      "website": "https://www.theminersstatebank.com"
+    },
+    {
+      "name": "The Northern Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "913",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "50 S La Salle St, Chicago, IL 60603",
+      "website": "https://www.northerntrust.com"
+    },
+    {
+      "name": "The Port Austin State Bank",
+      "fdic_insured_since": "01/22/1935",
+      "fdic_cert": "14999",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "62 E State St, Port Austin, MI 48467",
+      "website": "https://www.portaustinbank.com"
+    },
+    {
+      "name": "The Shelby State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10157",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "242 N Michigan Ave, Shelby, MI 49455",
+      "website": "https://www.shelbybank.com"
+    },
+    {
+      "name": "The State Savings Bank of Manistique",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13249",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 S Cedar St, Manistique, MI 49854",
+      "website": "https://www.statesavingsbank.com"
+    },
+    {
+      "name": "The Stephenson National Bank and Trust",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5306",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1818 Hall Ave, Marinette, WI 54143",
+      "website": "http://www.snbt.com"
+    },
+    {
+      "name": "Thumb Bank and Trust",
+      "fdic_insured_since": "06/14/1934",
+      "fdic_cert": "14513",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "7254 Michigan Ave, Pigeon, MI 48755",
+      "website": "https://WWW.THUMB.BANK"
+    },
+    {
+      "name": "Tri-County Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "977",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "4190 Main St, Brown City, MI 48416",
+      "website": "https://www.tri-countybank.bank"
+    },
+    {
+      "name": "Union Bank",
+      "fdic_insured_since": "09/04/1934",
+      "fdic_cert": "14722",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "670 Cascade West Pkwy Se, Grand Rapids, MI 49546",
+      "website": "https://www.ubmich.com"
+    },
+    {
+      "name": "United Bank of Michigan",
+      "fdic_insured_since": "01/02/1934",
+      "fdic_cert": "11807",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "900 East Paris Ave Se, Grand Rapids, MI 49546",
+      "website": "http://www.unitedbank4u.com"
+    },
+    {
+      "name": "University Bank",
+      "fdic_insured_since": "07/23/1934",
+      "fdic_cert": "14587",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "2015 Washtenaw Ave, Ann Arbor, MI 48104",
+      "website": "https://www.university-bank.com"
+    },
+    {
+      "name": "Upper Peninsula State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1090",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "430 N Lincoln Rd, Escanaba, MI 49829",
+      "website": "http://www.upstatebank.net"
+    },
+    {
+      "name": "Waterford Bank, N.A.",
+      "fdic_insured_since": "08/29/2007",
+      "fdic_cert": "58433",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3900 N Mccord Rd, Toledo, OH 43617",
+      "website": "https://www.waterfordbankna.com"
+    },
+    {
+      "name": "Wells Fargo Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3511",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3201 N 4th Ave, Sioux Falls, SD 57104",
+      "website": "https://www.wellsfargo.com"
+    },
+    {
+      "name": "WesBanco Bank, Inc.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "803",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1 Bank Plz, Wheeling, WV 26003",
+      "website": "https://www.wesbanco.com"
+    },
+    {
+      "name": "West Michigan Community Bank",
+      "fdic_insured_since": "07/21/1976",
+      "fdic_cert": "22308",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3467 Kelly St, Hudsonville, MI 49426",
+      "website": "https://www.wmcb.bank"
+    },
+    {
+      "name": "West Shore Bank",
+      "fdic_insured_since": "10/06/1934",
+      "fdic_cert": "14929",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 W Loomis St, Ludington, MI 49431",
+      "website": "https://www.westshorebank.com"
+    },
+    {
+      "name": "Wilmington Trust, National Association",
+      "fdic_insured_since": "10/02/1995",
+      "fdic_cert": "34069",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1100 N Market St, Wilmington, DE 19801",
+      "website": "http://www.wilmingtontrust.com"
+    }
+  ],
+  "updated": "2026-06-26"
+}

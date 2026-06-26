@@ -35,7 +35,10 @@ WI_SRC = ROOT / "data" / "wisconsin-import.txt"
 WI_PROMPT = Path(
     r"C:\Users\makei\.grok\sessions\C%3A%5CUsers%5Cmakei\019efc5b-cf82-7612-8aff-b4ae0767aaa7\prompts\prompt_9.txt"
 )
-IL_SRC = ROOT / "data" / "illinois-import.csv"
+CSV_SOURCES = {
+    "IL": ROOT / "data" / "illinois-import.csv",
+    "MI": ROOT / "data" / "michigan-import.csv",
+}
 OUT_DIR = ROOT / "lib" / "fdic" / "data"
 
 STATE_META = {
@@ -56,6 +59,7 @@ STATE_META = {
     "MN": ("Minnesota", "minnesota"),
     "WI": ("Wisconsin", "wisconsin"),
     "IL": ("Illinois", "illinois"),
+    "MI": ("Michigan", "michigan"),
 }
 
 BULK_MIN_COLS = 133
@@ -656,10 +660,11 @@ def main():
         out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
         print(f"{code}: {len(banks)} banks -> {out_path.name}")
 
-    if IL_SRC.exists():
-        code = "IL"
+    for code, csv_path in CSV_SOURCES.items():
+        if not csv_path.exists():
+            continue
         full_name, slug = STATE_META[code]
-        banks = parse_fdic_csv(IL_SRC)
+        banks = parse_fdic_csv(csv_path)
         payload = {
             "fullName": full_name,
             "abbr": code,
