@@ -1,0 +1,87 @@
+Bank Name,FDIC Insured Since,FDIC Cert #,Primary Regulator,Headquarters Address,Primary Website
+Amory First Savings And Loan Bank, Ssb,08/09/1989,28949,Federal Reserve Board,"213 2nd Ave N, Amory, MS 38821",www.amoryfederal.com
+Bank of Anguilla,01/01/1934,8243,Federal Deposit Insurance Corporation,"130 Holland St, Anguilla, MS 38721",www.bankofanguilla.com
+Bank of Brookhaven,01/31/2000,35439,Federal Deposit Insurance Corporation,"411 Brookway Blvd, Brookhaven, MS 39601",www.bankofbrookhaven.com
+Bank of Commerce,01/01/1934,9359,Federal Deposit Insurance Corporation,"310 Howard St, Greenwood, MS 38930",www.bankcom.com
+Bank of England,01/01/1934,13303,Federal Deposit Insurance Corporation,"123 S Main St, England, AR 72046",www.bankofengland-ar.com
+Bank of Franklin,01/01/1934,10594,Federal Deposit Insurance Corporation,"9 Main St E, Meadville, MS 39653",www.bankoffranklin.com
+Bank of Holly Springs,01/01/1934,8232,Federal Deposit Insurance Corporation,"114 S Memphis St, Holly Springs, MS 38635",www.bankofhollysprings.com
+Bank of Kilmichael,01/01/1934,9775,Federal Reserve Board,"120 N Depot Ave, Kilmichael, MS 39747",www.bankofkilmichael.com
+Bank of Wiggins,01/01/1934,8250,Federal Deposit Insurance Corporation,"109 Pine Ave W, Wiggins, MS 39577",www.bankofwiggins.com
+Bank of Winona,01/01/1934,12207,Federal Reserve Board,"312 N Applegate St, Winona, MS 38967",www.bankofwinona.com
+Bank of Yazoo City,01/01/1934,11431,Federal Deposit Insurance Corporation,"104 N Main St, Yazoo City, MS 39194",www.bankofyazoo.com
+Bank OZK,01/01/1934,110,Federal Deposit Insurance Corporation,"18000 Cantrell Rd, Little Rock, AR 72223",www.ozk.com
+Bank3,06/28/1935,15205,Federal Deposit Insurance Corporation,"5210 Poplar Ave, Memphis, TN 38119",www.bank3.com
+BankFirst Financial Services,01/01/1934,8870,Federal Reserve Board,"900 Main St, Columbus, MS 39701",www.bankfirstfs.com
+BankOkolona,01/01/1934,5902,Federal Reserve Board,"227 W Main St, Okolona, MS 38860",www.bankokolona.com
+BankPlus,01/01/1934,5903,Federal Reserve Board,"202 E Jackson St, Belzoni, MS 39038",www.bankplus.net
+BNA Bank,06/03/1965,19448,Federal Deposit Insurance Corporation,"205 W Bankhead St, New Albany, MS 38652",www.bna.bank
+CB&S Bank, Inc.,12/06/1935,15310,Federal Deposit Insurance Corporation,"201 Jackson Ave S, Russellville, AL 35653",www.cbsbank.com
+Century Bank,01/01/1934,11448,Federal Deposit Insurance Corporation,"4282 Main St, Lucedale, MS 39452",centurybank.net
+Citizens Bank,01/01/1934,324,Federal Deposit Insurance Corporation,"814 Main St, Columbia, MS 39429",www.citizensbk.com
+Citizens Bank & Trust Co.,01/01/1934,9777,Federal Deposit Insurance Corporation,"239 E Main St, Marks, MS 38646",www.cbt-co.com
+Commerce Bank,01/19/1999,34938,Federal Reserve Board,"700 Taylor St, Corinth, MS 38834",www.commerce-bank.com
+Commercial Bank & Trust Co.,01/01/1934,8660,Federal Deposit Insurance Corporation,"101 N Poplar St, Paris, TN 38242",cbtcnet.com
+Community Bank of Mississippi,01/01/1934,8879,Federal Deposit Insurance Corporation,"1905 Community Bank Way, Flowood, MS 39232",www.communitybank.net
+Community Spirit Bank,01/01/1934,50,Federal Deposit Insurance Corporation,"200 4th Ave Sw, Red Bay, AL 35582",www.communityspirit.bank
+Concordia Bank & Trust Company,01/01/1934,8527,Federal Deposit Insurance Corporation,"904 Carter St, Vidalia, LA 71373",www.concordiabank.com
+Copiah Bank,01/01/1934,8231,Federal Reserve Board,"101 Caldwell Dr, Hazlehurst, MS 39083",www.copiahbank.com
+Covington County Bank,05/01/1975,21998,Federal Deposit Insurance Corporation,"102 S Dogwood Ave, Collins, MS 39428",www.covcobank.com
+Delta Bank,01/10/1986,26564,Federal Deposit Insurance Corporation,"1617 Carter St, Vidalia, LA 71373",www.deltabk.com
+Farmers and Merchants Bank,03/10/1941,15801,Federal Reserve Board,"111 W Clayton St, Baldwyn, MS 38824",www.fmbms.com
+FIDELITY BANK,08/09/1989,28316,Federal Deposit Insurance Corporation,"353 Carondelet St, New Orleans, LA 70130",www.bankwithfidelity.com
+First Bank,01/01/1934,5907,Federal Deposit Insurance Corporation,"105 S Broadway St, Mccomb, MS 39648",www.firstbankms.com
+First Choice Bank,01/01/1934,5006,Federal Reserve Board,"19 S Main St, Pontotoc, MS 38863",www.firstchoice.bank
+First Federal Savings and Loan Association,08/09/1989,30812,Comptroller of the Currency,"903 Jackson Ave, Pascagoula, MS 39567",www.firstwithus.com
+First Financial Bank,08/09/1989,28905,Federal Reserve Board,"300 East Peach Street, El Dorado, AR 71730",www.ffb1.com
+First Horizon Bank,01/01/1934,4977,Federal Reserve Board,"165 Madison Ave, Memphis, TN 38103",www.firsthorizon.com
+First National Bank of Clarksdale,04/01/1964,19070,Comptroller of the Currency,"402 E 2nd St, Clarksdale, MS 38614",www.fnbclarksdale.com
+First National Banker's Bank,07/02/1984,25247,Comptroller of the Currency,"7813 Office Park Blvd, Baton Rouge, LA 70809",www.bankers-bank.com
+First Security Bank,07/01/1952,17120,Federal Deposit Insurance Corporation,"295 Highway 6 W, Batesville, MS 38606",www.firstsecuritybk.com
+First Southern Bank,08/09/1989,29332,Federal Deposit Insurance Corporation,"201 S Court Street, Florence, AL 35630",www.firstsouthern.com
+First Southern Bank,08/09/1989,31158,Federal Deposit Insurance Corporation,"1075 Highway 98 Byp, Columbia, MS 39429",www.fsb-ms.com
+First State Bank,05/01/1939,15663,Federal Deposit Insurance Corporation,"708 Azalea Dr, Waynesboro, MS 39367",www.firststatebnk.com
+FNB Oxford Bank,01/01/1934,5005,Federal Reserve Board,"101 Courthouse Sq, Oxford, MS 38655",www.fnboxford.com
+FNB Picayune Bank,07/31/1947,16612,Federal Reserve Board,"121 E Canal St, Picayune, MS 39466",www.fnbop.com
+FSNB, National Association,07/01/1946,16416,Comptroller of the Currency,"1420 Sw Lee Blvd, Lawton, OK 73501",www.fsnb.com
+Genesis Bank,05/06/1941,15817,Federal Deposit Insurance Corporation,"202 Main St, Benoit, MS 38725",*Not Listed*
+Grand Bank for Savings, FSB,08/09/1989,31864,Comptroller of the Currency,"204 Westover Dr, Hattiesburg, MS 39402",www.grand.bank
+Great Southern Bank,01/01/1934,8552,Federal Reserve Board,"218 22nd Ave S, Meridian, MS 39301",www.greatsouthern.bank
+Guaranty Bank and Trust Company,05/17/1943,15953,Federal Deposit Insurance Corporation,"210 N Hayden St, Belzoni, MS 39038",www.gbtonline.com
+Gulf Coast Bank and Trust Company,06/08/1990,32974,Federal Deposit Insurance Corporation,"200 Saint Charles Ave, New Orleans, LA 70130",www.gulfbank.com
+Hancock Whitney Bank,01/01/1934,12441,Federal Deposit Insurance Corporation,"2510 14th St, Gulfport, MS 39501",www.hancockwhitney.com
+Home Bank, National Association,08/09/1989,28094,Comptroller of the Currency,"503 Kaliste Saloom Rd, Lafayette, LA 70508",www.home24bank.com
+Home Banking Company,01/01/1934,9196,Federal Deposit Insurance Corporation,"795 E Poplar Ave, Selmer, TN 38375",www.homebankingco.com
+JPMorgan Chase Bank, National Association,01/01/1934,628,Comptroller of the Currency,"1111 Polaris Pkwy, Columbus, OH 43240",www.jpmorganchase.com
+Liberty Bank and Trust Company,11/16/1972,20856,Federal Deposit Insurance Corporation,"6600 Plaza Dr, New Orleans, LA 70127",www.libertybank.net
+Merchants & Marine Bank,01/01/1934,12203,Federal Deposit Insurance Corporation,"3118 Pascagoula St, Pascagoula, MS 39567",www.mandmbank.com
+Merchants and Planters Bank,01/01/1934,327,Federal Deposit Insurance Corporation,"308 Raymond Sq, Raymond, MS 39154",www.mpbank.net
+Origin Bank,01/01/1934,12614,Federal Reserve Board,"3921 Elm St, Choudrant, LA 71227",www.origin.bank
+Paragon Bank,01/19/2005,57874,Federal Deposit Insurance Corporation,"5400 Poplar Ave, Memphis, TN 38119",www.bankparagon.com
+Peoples Bank,01/01/1934,9366,Federal Deposit Insurance Corporation,"160 E Maud Ave, Mendenhall, MS 39114",www.peoplesbank-ms.com
+Pike National Bank,09/30/1985,26379,Comptroller of the Currency,"350 Rawls Dr, Mccomb, MS 39648",www.pnb-ms.net
+Pinnacle Bank,10/27/2000,35583,Federal Reserve Board,"21 Platform Way S Suite 2300, Nashville, TN 37203",www.pnfp.com
+Planters Bank & Trust Company,01/01/1934,8235,Federal Deposit Insurance Corporation,"212 Catchings Ave, Indianola, MS 38751",www.planters-bank.com
+PriorityOne Bank,01/27/1975,21906,Federal Reserve Board,"220 Main Ave N, Magee, MS 39111",www.priorityonebank.com
+Regions Bank,01/01/1934,12368,Federal Reserve Board,"1900 5th Ave N, Birmingham, AL 35203",www.regions.com
+Renasant Bank,01/01/1934,12437,Federal Reserve Board,"209 Troy St, Tupelo, MS 38804",www.renasant.com
+Richton Bank & Trust Company,01/01/1934,11817,Federal Reserve Board,"114 South Front Street, Richton, MS 39476",www.richtonbank.com
+RiverHills Bank,01/01/1934,8234,Federal Deposit Insurance Corporation,"1400 Highway 61 N, Vicksburg, MS 39183",www.riverhillsbank.com
+Southern Bancorp Bank,01/01/1934,1528,Federal Reserve Board,"601 Main St, Arkadelphia, AR 71923",www.banksouthern.com
+Story Bank DBA Story Financial Partners,10/12/2000,57069,Federal Deposit Insurance Corporation,"4450 Old Canton Rd Ste 101, Jackson, MS 39211",www.story.bank
+The Bank of Forest,01/01/1934,898,Federal Deposit Insurance Corporation,"211 W Third St, Forest, MS 39074",www.bkforest.com
+The Bank of Vernon,01/01/1934,51,Federal Deposit Insurance Corporation,"44825 Highway 17, Vernon, AL 35592",www.bankofvernon.bank
+The Citizens Bank of Philadelphia, Mississippi,01/01/1934,12204,Federal Deposit Insurance Corporation,"521 W Main St, Philadelphia, MS 39350",www.thecitizensbankphila.com
+The Citizens National Bank of Meridian,01/01/1934,4993,Comptroller of the Currency,"512 22nd Ave, Meridian, MS 39301",www.yourcnb.com
+The Cleveland State Bank,01/01/1934,12201,Federal Deposit Insurance Corporation,"110 Commerce Ave, Cleveland, MS 38732",www.clevelandstatebank.com
+The Commercial Bank,01/01/1934,9356,Federal Deposit Insurance Corporation,"175 Hopper Ave, De Kalb, MS 39328",www.commercialbankms.com
+The Huntington National Bank,01/01/1934,6560,Comptroller of the Currency,"17 S High St, Columbus, OH 43215",www.huntington.com
+The Jefferson Bank,01/01/1934,11445,Federal Deposit Insurance Corporation,"3008 E Reed Rd, Greenville, MS 38703",www.thejeffersonbank.com
+The Peoples Bank,12/18/1941,15871,Federal Deposit Insurance Corporation,"305 E Jefferson St, Ripley, MS 38663",www.peoplesripley.com
+The Peoples Bank, Biloxi, Mississippi,01/01/1934,340,Federal Deposit Insurance Corporation,"152 Lameuse St, Biloxi, MS 39530",www.thepeoples.com
+Truist Bank,01/01/1934,9846,Federal Deposit Insurance Corporation,"214 N Tryon St, Charlotte, NC 28202",www.truist.com
+Trustmark Bank,01/01/1934,4988,Federal Reserve Board,"248 E Capitol St, Jackson, MS 39201",www.trustmark.com
+United Mississippi Bank,05/14/1973,21083,Federal Deposit Insurance Corporation,"75 Melrose Montebello Pkwy, Natchez, MS 39120",www.unitedmsbk.com
+Unity Bank of Mississippi,01/01/1934,11446,Federal Deposit Insurance Corporation,"650 Highway 7 S, Holly Springs, MS 38635",unityms.bank
+Wells Fargo Bank, National Association,01/01/1934,3511,Comptroller of the Currency,"3201 N 4th Ave, Sioux Falls, SD 57104",www.wellsfargo.com
+Woodforest National Bank,09/05/1980,23220,Comptroller of the Currency,"1330 Lake Robbins Dr, The Woodlands, TX 77380",www.woodforest.com

@@ -3,12 +3,124 @@
   "abbr": "MS",
   "banks": [
     {
+      "name": "Amory First Savings And Loan Bank, Ssb",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28949",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "213 2nd Ave N, Amory, MS 38821",
+      "website": "https://www.amoryfederal.com"
+    },
+    {
+      "name": "Bank of Anguilla",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8243",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "130 Holland St, Anguilla, MS 38721",
+      "website": "https://www.bankofanguilla.com"
+    },
+    {
+      "name": "Bank of Brookhaven",
+      "fdic_insured_since": "01/31/2000",
+      "fdic_cert": "35439",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "411 Brookway Blvd, Brookhaven, MS 39601",
+      "website": "https://www.bankofbrookhaven.com"
+    },
+    {
+      "name": "Bank of Commerce",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9359",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "310 Howard St, Greenwood, MS 38930",
+      "website": "https://www.bankcom.com"
+    },
+    {
+      "name": "Bank of England",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "13303",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "123 S Main St, England, AR 72046",
+      "website": "https://www.bankofengland-ar.com"
+    },
+    {
+      "name": "Bank of Franklin",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "10594",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "9 Main St E, Meadville, MS 39653",
+      "website": "https://www.bankoffranklin.com"
+    },
+    {
+      "name": "Bank of Holly Springs",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8232",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "114 S Memphis St, Holly Springs, MS 38635",
+      "website": "https://www.bankofhollysprings.com"
+    },
+    {
+      "name": "Bank of Kilmichael",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9775",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "120 N Depot Ave, Kilmichael, MS 39747",
+      "website": "https://www.bankofkilmichael.com"
+    },
+    {
+      "name": "Bank of Wiggins",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8250",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "109 Pine Ave W, Wiggins, MS 39577",
+      "website": "https://www.bankofwiggins.com"
+    },
+    {
+      "name": "Bank of Winona",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12207",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "312 N Applegate St, Winona, MS 38967",
+      "website": "https://www.bankofwinona.com"
+    },
+    {
+      "name": "Bank of Yazoo City",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11431",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "104 N Main St, Yazoo City, MS 39194",
+      "website": "https://www.bankofyazoo.com"
+    },
+    {
+      "name": "Bank OZK",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "110",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "18000 Cantrell Rd, Little Rock, AR 72223",
+      "website": "https://www.ozk.com"
+    },
+    {
+      "name": "Bank3",
+      "fdic_insured_since": "06/28/1935",
+      "fdic_cert": "15205",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5210 Poplar Ave, Memphis, TN 38119",
+      "website": "https://www.bank3.com"
+    },
+    {
       "name": "BankFirst Financial Services",
       "fdic_insured_since": "01/01/1934",
       "fdic_cert": "8870",
       "primary_regulator": "Federal Reserve Board",
       "headquarters_address": "900 Main St, Columbus, MS 39701",
       "website": "https://www.bankfirstfs.com"
+    },
+    {
+      "name": "BankOkolona",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5902",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "227 W Main St, Okolona, MS 38860",
+      "website": "https://www.bankokolona.com"
     },
     {
       "name": "BankPlus",
@@ -19,12 +131,60 @@
       "website": "https://www.bankplus.net"
     },
     {
+      "name": "BNA Bank",
+      "fdic_insured_since": "06/03/1965",
+      "fdic_cert": "19448",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "205 W Bankhead St, New Albany, MS 38652",
+      "website": "https://www.bna.bank"
+    },
+    {
+      "name": "CB&S Bank, Inc.",
+      "fdic_insured_since": "12/06/1935",
+      "fdic_cert": "15310",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 Jackson Ave S, Russellville, AL 35653",
+      "website": "https://www.cbsbank.com"
+    },
+    {
       "name": "Century Bank",
       "fdic_insured_since": "01/01/1934",
       "fdic_cert": "11448",
       "primary_regulator": "Federal Deposit Insurance Corporation",
       "headquarters_address": "4282 Main St, Lucedale, MS 39452",
       "website": "https://centurybank.net"
+    },
+    {
+      "name": "Citizens Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "324",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "814 Main St, Columbia, MS 39429",
+      "website": "https://www.citizensbk.com"
+    },
+    {
+      "name": "Citizens Bank & Trust Co.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9777",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "239 E Main St, Marks, MS 38646",
+      "website": "https://www.cbt-co.com"
+    },
+    {
+      "name": "Commerce Bank",
+      "fdic_insured_since": "01/19/1999",
+      "fdic_cert": "34938",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "700 Taylor St, Corinth, MS 38834",
+      "website": "https://www.commerce-bank.com"
+    },
+    {
+      "name": "Commercial Bank & Trust Co.",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8660",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "101 N Poplar St, Paris, TN 38242",
+      "website": "https://cbtcnet.com"
     },
     {
       "name": "Community Bank of Mississippi",
@@ -35,12 +195,252 @@
       "website": "https://www.communitybank.net"
     },
     {
+      "name": "Community Spirit Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "50",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 4th Ave Sw, Red Bay, AL 35582",
+      "website": "https://www.communityspirit.bank"
+    },
+    {
+      "name": "Concordia Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8527",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "904 Carter St, Vidalia, LA 71373",
+      "website": "https://www.concordiabank.com"
+    },
+    {
+      "name": "Copiah Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8231",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 Caldwell Dr, Hazlehurst, MS 39083",
+      "website": "https://www.copiahbank.com"
+    },
+    {
+      "name": "Covington County Bank",
+      "fdic_insured_since": "05/01/1975",
+      "fdic_cert": "21998",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "102 S Dogwood Ave, Collins, MS 39428",
+      "website": "https://www.covcobank.com"
+    },
+    {
+      "name": "Delta Bank",
+      "fdic_insured_since": "01/10/1986",
+      "fdic_cert": "26564",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1617 Carter St, Vidalia, LA 71373",
+      "website": "https://www.deltabk.com"
+    },
+    {
+      "name": "Farmers and Merchants Bank",
+      "fdic_insured_since": "03/10/1941",
+      "fdic_cert": "15801",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "111 W Clayton St, Baldwyn, MS 38824",
+      "website": "https://www.fmbms.com"
+    },
+    {
+      "name": "FIDELITY BANK",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28316",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "353 Carondelet St, New Orleans, LA 70130",
+      "website": "https://www.bankwithfidelity.com"
+    },
+    {
+      "name": "First Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5907",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "105 S Broadway St, Mccomb, MS 39648",
+      "website": "https://www.firstbankms.com"
+    },
+    {
+      "name": "First Choice Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5006",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "19 S Main St, Pontotoc, MS 38863",
+      "website": "https://www.firstchoice.bank"
+    },
+    {
+      "name": "First Federal Savings and Loan Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "30812",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "903 Jackson Ave, Pascagoula, MS 39567",
+      "website": "https://www.firstwithus.com"
+    },
+    {
+      "name": "First Financial Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28905",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "300 East Peach Street, El Dorado, AR 71730",
+      "website": "https://www.ffb1.com"
+    },
+    {
+      "name": "First Horizon Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4977",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "165 Madison Ave, Memphis, TN 38103",
+      "website": "https://www.firsthorizon.com"
+    },
+    {
+      "name": "First National Bank of Clarksdale",
+      "fdic_insured_since": "04/01/1964",
+      "fdic_cert": "19070",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "402 E 2nd St, Clarksdale, MS 38614",
+      "website": "https://www.fnbclarksdale.com"
+    },
+    {
+      "name": "First National Banker's Bank",
+      "fdic_insured_since": "07/02/1984",
+      "fdic_cert": "25247",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "7813 Office Park Blvd, Baton Rouge, LA 70809",
+      "website": "https://www.bankers-bank.com"
+    },
+    {
+      "name": "First Security Bank",
+      "fdic_insured_since": "07/01/1952",
+      "fdic_cert": "17120",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "295 Highway 6 W, Batesville, MS 38606",
+      "website": "https://www.firstsecuritybk.com"
+    },
+    {
+      "name": "First Southern Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "29332",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "201 S Court Street, Florence, AL 35630",
+      "website": "https://www.firstsouthern.com"
+    },
+    {
+      "name": "First Southern Bank",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31158",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1075 Highway 98 Byp, Columbia, MS 39429",
+      "website": "https://www.fsb-ms.com"
+    },
+    {
+      "name": "First State Bank",
+      "fdic_insured_since": "05/01/1939",
+      "fdic_cert": "15663",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "708 Azalea Dr, Waynesboro, MS 39367",
+      "website": "https://www.firststatebnk.com"
+    },
+    {
+      "name": "FNB Oxford Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "5005",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "101 Courthouse Sq, Oxford, MS 38655",
+      "website": "https://www.fnboxford.com"
+    },
+    {
+      "name": "FNB Picayune Bank",
+      "fdic_insured_since": "07/31/1947",
+      "fdic_cert": "16612",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "121 E Canal St, Picayune, MS 39466",
+      "website": "https://www.fnbop.com"
+    },
+    {
+      "name": "FSNB, National Association",
+      "fdic_insured_since": "07/01/1946",
+      "fdic_cert": "16416",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1420 Sw Lee Blvd, Lawton, OK 73501",
+      "website": "https://www.fsnb.com"
+    },
+    {
+      "name": "Genesis Bank",
+      "fdic_insured_since": "05/06/1941",
+      "fdic_cert": "15817",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "202 Main St, Benoit, MS 38725",
+      "website": ""
+    },
+    {
+      "name": "Grand Bank for Savings, FSB",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "31864",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "204 Westover Dr, Hattiesburg, MS 39402",
+      "website": "https://www.grand.bank"
+    },
+    {
+      "name": "Great Southern Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8552",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "218 22nd Ave S, Meridian, MS 39301",
+      "website": "https://www.greatsouthern.bank"
+    },
+    {
+      "name": "Guaranty Bank and Trust Company",
+      "fdic_insured_since": "05/17/1943",
+      "fdic_cert": "15953",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "210 N Hayden St, Belzoni, MS 39038",
+      "website": "https://www.gbtonline.com"
+    },
+    {
+      "name": "Gulf Coast Bank and Trust Company",
+      "fdic_insured_since": "06/08/1990",
+      "fdic_cert": "32974",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "200 Saint Charles Ave, New Orleans, LA 70130",
+      "website": "https://www.gulfbank.com"
+    },
+    {
       "name": "Hancock Whitney Bank",
       "fdic_insured_since": "01/01/1934",
       "fdic_cert": "12441",
       "primary_regulator": "Federal Deposit Insurance Corporation",
       "headquarters_address": "2510 14th St, Gulfport, MS 39501",
       "website": "https://www.hancockwhitney.com"
+    },
+    {
+      "name": "Home Bank, National Association",
+      "fdic_insured_since": "08/09/1989",
+      "fdic_cert": "28094",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "503 Kaliste Saloom Rd, Lafayette, LA 70508",
+      "website": "https://www.home24bank.com"
+    },
+    {
+      "name": "Home Banking Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9196",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "795 E Poplar Ave, Selmer, TN 38375",
+      "website": "https://www.homebankingco.com"
+    },
+    {
+      "name": "JPMorgan Chase Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "628",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1111 Polaris Pkwy, Columbus, OH 43240",
+      "website": "https://www.jpmorganchase.com"
+    },
+    {
+      "name": "Liberty Bank and Trust Company",
+      "fdic_insured_since": "11/16/1972",
+      "fdic_cert": "20856",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "6600 Plaza Dr, New Orleans, LA 70127",
+      "website": "https://www.libertybank.net"
     },
     {
       "name": "Merchants & Marine Bank",
@@ -51,12 +451,108 @@
       "website": "https://www.mandmbank.com"
     },
     {
+      "name": "Merchants and Planters Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "327",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "308 Raymond Sq, Raymond, MS 39154",
+      "website": "https://www.mpbank.net"
+    },
+    {
+      "name": "Origin Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12614",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "3921 Elm St, Choudrant, LA 71227",
+      "website": "https://www.origin.bank"
+    },
+    {
+      "name": "Paragon Bank",
+      "fdic_insured_since": "01/19/2005",
+      "fdic_cert": "57874",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "5400 Poplar Ave, Memphis, TN 38119",
+      "website": "https://www.bankparagon.com"
+    },
+    {
+      "name": "Peoples Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9366",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "160 E Maud Ave, Mendenhall, MS 39114",
+      "website": "https://www.peoplesbank-ms.com"
+    },
+    {
+      "name": "Pike National Bank",
+      "fdic_insured_since": "09/30/1985",
+      "fdic_cert": "26379",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "350 Rawls Dr, Mccomb, MS 39648",
+      "website": "https://www.pnb-ms.net"
+    },
+    {
+      "name": "Pinnacle Bank",
+      "fdic_insured_since": "10/27/2000",
+      "fdic_cert": "35583",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "21 Platform Way S Suite 2300, Nashville, TN 37203",
+      "website": "https://www.pnfp.com"
+    },
+    {
+      "name": "Planters Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8235",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "212 Catchings Ave, Indianola, MS 38751",
+      "website": "https://www.planters-bank.com"
+    },
+    {
+      "name": "PriorityOne Bank",
+      "fdic_insured_since": "01/27/1975",
+      "fdic_cert": "21906",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "220 Main Ave N, Magee, MS 39111",
+      "website": "https://www.priorityonebank.com"
+    },
+    {
+      "name": "Regions Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12368",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "1900 5th Ave N, Birmingham, AL 35203",
+      "website": "https://www.regions.com"
+    },
+    {
       "name": "Renasant Bank",
       "fdic_insured_since": "01/01/1934",
       "fdic_cert": "12437",
       "primary_regulator": "Federal Reserve Board",
       "headquarters_address": "209 Troy St, Tupelo, MS 38804",
       "website": "https://www.renasant.com"
+    },
+    {
+      "name": "Richton Bank & Trust Company",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11817",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "114 South Front Street, Richton, MS 39476",
+      "website": "https://www.richtonbank.com"
+    },
+    {
+      "name": "RiverHills Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "8234",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "1400 Highway 61 N, Vicksburg, MS 39183",
+      "website": "https://www.riverhillsbank.com"
+    },
+    {
+      "name": "Southern Bancorp Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "1528",
+      "primary_regulator": "Federal Reserve Board",
+      "headquarters_address": "601 Main St, Arkadelphia, AR 71923",
+      "website": "https://www.banksouthern.com"
     },
     {
       "name": "Story Bank DBA Story Financial Partners",
@@ -67,12 +563,132 @@
       "website": "https://www.story.bank"
     },
     {
+      "name": "The Bank of Forest",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "898",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "211 W Third St, Forest, MS 39074",
+      "website": "https://www.bkforest.com"
+    },
+    {
+      "name": "The Bank of Vernon",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "51",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "44825 Highway 17, Vernon, AL 35592",
+      "website": "https://www.bankofvernon.bank"
+    },
+    {
+      "name": "The Citizens Bank of Philadelphia, Mississippi",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12204",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "521 W Main St, Philadelphia, MS 39350",
+      "website": "https://www.thecitizensbankphila.com"
+    },
+    {
+      "name": "The Citizens National Bank of Meridian",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "4993",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "512 22nd Ave, Meridian, MS 39301",
+      "website": "https://www.yourcnb.com"
+    },
+    {
+      "name": "The Cleveland State Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "12201",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "110 Commerce Ave, Cleveland, MS 38732",
+      "website": "https://www.clevelandstatebank.com"
+    },
+    {
+      "name": "The Commercial Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9356",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "175 Hopper Ave, De Kalb, MS 39328",
+      "website": "https://www.commercialbankms.com"
+    },
+    {
+      "name": "The Huntington National Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "6560",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "17 S High St, Columbus, OH 43215",
+      "website": "https://www.huntington.com"
+    },
+    {
+      "name": "The Jefferson Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11445",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "3008 E Reed Rd, Greenville, MS 38703",
+      "website": "https://www.thejeffersonbank.com"
+    },
+    {
+      "name": "The Peoples Bank",
+      "fdic_insured_since": "12/18/1941",
+      "fdic_cert": "15871",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "305 E Jefferson St, Ripley, MS 38663",
+      "website": "https://www.peoplesripley.com"
+    },
+    {
+      "name": "The Peoples Bank, Biloxi, Mississippi",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "340",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "152 Lameuse St, Biloxi, MS 39530",
+      "website": "https://www.thepeoples.com"
+    },
+    {
+      "name": "Truist Bank",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "9846",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "214 N Tryon St, Charlotte, NC 28202",
+      "website": "https://www.truist.com"
+    },
+    {
       "name": "Trustmark Bank",
       "fdic_insured_since": "01/01/1934",
       "fdic_cert": "4988",
       "primary_regulator": "Federal Reserve Board",
       "headquarters_address": "248 E Capitol St, Jackson, MS 39201",
       "website": "https://www.trustmark.com"
+    },
+    {
+      "name": "United Mississippi Bank",
+      "fdic_insured_since": "05/14/1973",
+      "fdic_cert": "21083",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "75 Melrose Montebello Pkwy, Natchez, MS 39120",
+      "website": "https://www.unitedmsbk.com"
+    },
+    {
+      "name": "Unity Bank of Mississippi",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "11446",
+      "primary_regulator": "Federal Deposit Insurance Corporation",
+      "headquarters_address": "650 Highway 7 S, Holly Springs, MS 38635",
+      "website": "https://unityms.bank"
+    },
+    {
+      "name": "Wells Fargo Bank, National Association",
+      "fdic_insured_since": "01/01/1934",
+      "fdic_cert": "3511",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "3201 N 4th Ave, Sioux Falls, SD 57104",
+      "website": "https://www.wellsfargo.com"
+    },
+    {
+      "name": "Woodforest National Bank",
+      "fdic_insured_since": "09/05/1980",
+      "fdic_cert": "23220",
+      "primary_regulator": "Comptroller of the Currency",
+      "headquarters_address": "1330 Lake Robbins Dr, The Woodlands, TX 77380",
+      "website": "https://www.woodforest.com"
     }
   ],
   "updated": "2026-06-26"

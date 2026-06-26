@@ -5,8 +5,10 @@ import re
 from datetime import datetime
 from pathlib import Path
 
-SRC = Path(__file__).resolve().parent.parent / "data" / "fdic-import-raw.txt"
-OUT_DIR = Path(__file__).resolve().parent.parent / "lib" / "fdic" / "data"
+ROOT = Path(__file__).resolve().parent.parent
+SRC = ROOT / "data" / "fdic-import-raw.txt"
+MS_SRC = ROOT / "data" / "mississippi-import.txt"
+OUT_DIR = ROOT / "lib" / "fdic" / "data"
 
 STATE_META = {
     "GA": ("Georgia", "georgia"),
@@ -157,10 +159,12 @@ def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     updated = datetime.now().strftime("%Y-%m-%d")
 
+    if MS_SRC.exists():
+        sections["MS"] = MS_SRC.read_text(encoding="utf-8")
+
     for code, text in sections.items():
         full_name, slug = STATE_META[code]
-        filter_state = "MS" if code == "MS" else None
-        banks = parse_section(text, filter_state=filter_state)
+        banks = parse_section(text)
         payload = {
             "fullName": full_name,
             "abbr": code,
