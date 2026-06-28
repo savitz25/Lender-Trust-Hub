@@ -206,29 +206,25 @@ def main() -> None:
     index_xml = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-        "  <!-- Submit THIS file to Google Search Console: sitemap_index.xml -->\n"
+        "  <!-- Master sitemap index — lists all category sitemaps -->\n"
         f"{index_entries}\n"
         "</sitemapindex>\n"
     )
-    index_path = ROOT / "sitemap_index.xml"
-    index_path.write_text(index_xml, encoding="utf-8")
-    print(f"  sitemap_index.xml: {len(child_sitemaps)} child sitemaps")
+    # Write to both paths: GSC commonly expects /sitemap.xml
+    for name in ("sitemap_index.xml", "sitemap.xml"):
+        (ROOT / name).write_text(index_xml, encoding="utf-8")
+    print(f"  sitemap_index.xml + sitemap.xml: {len(child_sitemaps)} child sitemaps")
 
-    # robots.txt
+    # robots.txt — list both so crawlers find the index regardless of URL
     robots = (
         "User-agent: *\n"
         "Allow: /\n"
         "\n"
+        f"Sitemap: {BASE}/sitemap.xml\n"
         f"Sitemap: {BASE}/sitemap_index.xml\n"
     )
     (ROOT / "robots.txt").write_text(robots, encoding="utf-8")
     print("  robots.txt updated")
-
-    # Remove legacy monolithic sitemap if present
-    legacy = ROOT / "sitemap.xml"
-    if legacy.exists():
-        legacy.unlink()
-        print("  Removed legacy public/sitemap.xml (use sitemap_index.xml)")
 
     print("Done.")
 
