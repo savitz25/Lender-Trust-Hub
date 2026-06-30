@@ -24,7 +24,7 @@ export default function Navbar() {
       aria-label="Main navigation"
       className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/95 backdrop-blur"
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:h-20">
+      <div className="container mx-auto flex min-h-16 items-center justify-between gap-3 px-4 py-1 md:min-h-20">
         <BrandLogo priority />
 
         <div className="hidden items-center gap-5 text-sm md:flex">
