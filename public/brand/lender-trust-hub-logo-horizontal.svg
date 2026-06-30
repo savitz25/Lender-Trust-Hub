@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Lender Trust Hub — horizontal logo (responsive SVG wrapper)
-     Primary web asset: use with <img> or BrandLogo component for srcset support -->
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  viewBox="0 0 1200 323" role="img" aria-label="Lender Trust Hub">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" role="img" aria-label="Lender Trust Hub">
   <title>Lender Trust Hub</title>
-  <image width="1200" height="323" preserveAspectRatio="xMidYMid meet"
-    xlink:href="/brand/lender-trust-hub-logo-horizontal.png"/>
+  <!-- Vector wordmark fallback — emblem uses transparent PNG for fidelity -->
+  <image href="/brand/lender-trust-hub-icon.png" x="0" y="4" width="56" height="56" preserveAspectRatio="xMidYMid meet"/>
+  <text x="68" y="28" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" fill="#0A2540">Lender</text>
+  <text x="68" y="50" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" fill="#0A2540">Trust Hub</text>
 </svg>

@@ -1,16 +1,22 @@
-# Optimize Lender Trust Hub logo assets from source PNG
+# Lender Trust Hub — production logo pipeline (true transparency, no checkerboard)
 # Usage: powershell -ExecutionPolicy Bypass -File scripts/optimize-logo.ps1
 
 $ErrorActionPreference = "Stop"
 Add-Type -AssemblyName System.Drawing
 
 $src = "C:\Users\Michael.Savitsky\logos\LenderTH.png"
+if (-not (Test-Path $src)) {
+    $src = Join-Path $PSScriptRoot "..\LenderTH.png"
+}
 $outDir = Join-Path $PSScriptRoot "..\public\brand"
 New-Item -ItemType Directory -Force -Path $outDir | Out-Null
 
-function Save-Png($bitmap, $path) {
-    $bitmap.Save($path, [System.Drawing.Imaging.ImageFormat]::Png)
-    Write-Host "  $path ($($bitmap.Width)x$($bitmap.Height))"
+function New-TransparentBitmap([int]$width, [int]$height) {
+    $bmp = New-Object System.Drawing.Bitmap $width, $height, ([System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+    $g = [System.Drawing.Graphics]::FromImage($bmp)
+    $g.Clear([System.Drawing.Color]::FromArgb(0, 0, 0, 0))
+    $g.Dispose()
+    return $bmp
 }
 
 function New-Graphics($bmp) {
@@ -23,40 +29,58 @@ function New-Graphics($bmp) {
     return $g
 }
 
-function Resize-Bitmap($source, $width) {
-    $ratio = $width / $source.Width
-    $height = [int]($source.Height * $ratio)
-    $bmp = New-Object System.Drawing.Bitmap $width, $height
+function Save-Png($bitmap, $path) {
+    $bitmap.Save($path, [System.Drawing.Imaging.ImageFormat]::Png)
+    Write-Host "  $path ($($bitmap.Width)x$($bitmap.Height))"
+}
+
+function To-ArgbBitmap($image) {
+    if ($image.PixelFormat -eq [System.Drawing.Imaging.PixelFormat]::Format32bppArgb) {
+        return $image
+    }
+    $bmp = New-TransparentBitmap $image.Width $image.Height
     $g = New-Graphics $bmp
-    $g.DrawImage($source, 0, 0, $width, $height)
+    $g.DrawImage($image, 0, 0, $image.Width, $image.Height)
     $g.Dispose()
+    return $bmp
+}
+
+function Resize-Bitmap($source, $width) {
+    $src = To-ArgbBitmap $source
+    $ratio = $width / $src.Width
+    $height = [int]($src.Height * $ratio)
+    $bmp = New-TransparentBitmap $width $height
+    $g = New-Graphics $bmp
+    $g.DrawImage($src, 0, 0, $width, $height)
+    $g.Dispose()
+    if ($src -ne $source) { $src.Dispose() }
     return $bmp
 }
 
 function Crop-Bitmap($source, $x, $y, $w, $h) {
     $rect = New-Object System.Drawing.Rectangle $x, $y, $w, $h
-    return $source.Clone($rect, $source.PixelFormat)
+    $cropped = $source.Clone($rect, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+    return $cropped
 }
 
 function Trim-Transparent($bitmap) {
-    $w = $bitmap.Width
-    $h = $bitmap.Height
+    $bmp = To-ArgbBitmap $bitmap
+    $w = $bmp.Width; $h = $bmp.Height
     $minX = $w; $minY = $h; $maxX = 0; $maxY = 0
-    $bmpData = $bitmap.LockBits(
+    $data = $bmp.LockBits(
         (New-Object System.Drawing.Rectangle 0, 0, $w, $h),
         [System.Drawing.Imaging.ImageLockMode]::ReadOnly,
         [System.Drawing.Imaging.PixelFormat]::Format32bppArgb
     )
-    $stride = $bmpData.Stride
+    $stride = $data.Stride
     $bytes = New-Object byte[] ($stride * $h)
-    [System.Runtime.InteropServices.Marshal]::Copy($bmpData.Scan0, $bytes, 0, $bytes.Length)
-    $bitmap.UnlockBits($bmpData)
+    [System.Runtime.InteropServices.Marshal]::Copy($data.Scan0, $bytes, 0, $bytes.Length)
+    $bmp.UnlockBits($data)
 
     for ($y = 0; $y -lt $h; $y++) {
         for ($x = 0; $x -lt $w; $x++) {
             $i = $y * $stride + $x * 4
-            $alpha = $bytes[$i + 3]
-            if ($alpha -gt 16) {
+            if ($bytes[$i + 3] -gt 20) {
                 if ($x -lt $minX) { $minX = $x }
                 if ($y -lt $minY) { $minY = $y }
                 if ($x -gt $maxX) { $maxX = $x }
@@ -64,43 +88,103 @@ function Trim-Transparent($bitmap) {
             }
         }
     }
-
-    if ($maxX -le $minX) { return $bitmap }
-    $tw = $maxX - $minX + 1
-    $th = $maxY - $minY + 1
-    return Crop-Bitmap $bitmap $minX $minY $tw $th
+    if ($maxX -le $minX) { return $bmp }
+    return Crop-Bitmap $bmp $minX $minY ($maxX - $minX + 1) ($maxY - $minY + 1)
 }
 
-$original = [System.Drawing.Image]::FromFile($src)
-$w = $original.Width
-$h = $original.Height
+# Remove baked-in checkerboard / gray-white preview pixels (not brand navy)
+function Remove-CheckerboardArtifacts($bitmap) {
+    $bmp = To-ArgbBitmap $bitmap
+    $w = $bmp.Width; $h = $bmp.Height
+    $data = $bmp.LockBits(
+        (New-Object System.Drawing.Rectangle 0, 0, $w, $h),
+        [System.Drawing.Imaging.ImageLockMode]::ReadWrite,
+        [System.Drawing.Imaging.PixelFormat]::Format32bppArgb
+    )
+    $stride = $data.Stride
+    $bytes = New-Object byte[] ($stride * $h)
+    [System.Runtime.InteropServices.Marshal]::Copy($data.Scan0, $bytes, 0, $bytes.Length)
 
-# ── Stacked (primary / mobile) ─────────────────────────────────────────────
-Save-Png $original (Join-Path $outDir "lender-trust-hub-logo-stacked@2x.png")
-$stacked1200 = Resize-Bitmap $original 1200
-Save-Png $stacked1200 (Join-Path $outDir "lender-trust-hub-logo-stacked.png")
-$stacked600 = Resize-Bitmap $original 600
-Save-Png $stacked600 (Join-Path $outDir "lender-trust-hub-logo-stacked-sm.png")
+    for ($y = 0; $y -lt $h; $y++) {
+        for ($x = 0; $x -lt $w; $x++) {
+            $i = $y * $stride + $x * 4
+            $b = $bytes[$i]; $g = $bytes[$i + 1]; $r = $bytes[$i + 2]; $a = $bytes[$i + 3]
+            if ($a -lt 10) { continue }
+            # Keep brand navy/teal pixels (blue-dominant or dark)
+            $isBrandBlue = ($b -gt $r + 8) -and ($r -lt 80)
+            $isDark = ($r -lt 90) -and ($g -lt 90) -and ($b -lt 120)
+            if ($isBrandBlue -or $isDark) { continue }
+            # Neutral light gray / white checkerboard cells
+            $isNeutral = ([Math]::Abs($r - $g) -lt 12) -and ([Math]::Abs($g - $b) -lt 12)
+            $isLight = ($r -gt 160) -and ($g -gt 160) -and ($b -gt 160)
+            if ($isNeutral -and $isLight) {
+                $bytes[$i] = 0; $bytes[$i + 1] = 0; $bytes[$i + 2] = 0; $bytes[$i + 3] = 0
+            }
+        }
+    }
 
-# ── Icon only (emblem) ───────────────────────────────────────────────────────
-$iconRaw = Crop-Bitmap $original ([int]($w * 0.08)) ([int]($h * 0.02)) ([int]($w * 0.84)) ([int]($h * 0.58))
-$icon = Trim-Transparent $iconRaw
+    [System.Runtime.InteropServices.Marshal]::Copy($bytes, 0, $data.Scan0, $bytes.Length)
+    $bmp.UnlockBits($data)
+    return $bmp
+}
+
 function Pad-Square($bitmap, $size) {
-    $side = [Math]::Max($bitmap.Width, $bitmap.Height)
-    $scale = ($size * 0.88) / $side
-    $nw = [int]($bitmap.Width * $scale)
-    $nh = [int]($bitmap.Height * $scale)
-    $scaled = Resize-Bitmap $bitmap $nw
-    $square = New-Object System.Drawing.Bitmap $size, $size
+    $bmp = Trim-Transparent $bitmap
+    $side = [Math]::Max($bmp.Width, $bmp.Height)
+    $scale = ($size * 0.86) / $side
+    $nw = [int]($bmp.Width * $scale)
+    $nh = [int]($bmp.Height * $scale)
+    $scaled = Resize-Bitmap $bmp $nw
+    $square = New-TransparentBitmap $size $size
     $g = New-Graphics $square
-    $g.Clear([System.Drawing.Color]::Transparent)
-    $x = [int](($size - $nw) / 2)
-    $y = [int](($size - $nh) / 2)
-    $g.DrawImage($scaled, $x, $y, $nw, $nh)
+    $g.DrawImage($scaled, [int](($size - $nw) / 2), [int](($size - $nh) / 2), $nw, $nh)
     $g.Dispose()
     $scaled.Dispose()
-    return $square
+    return (Remove-CheckerboardArtifacts $square)
 }
+
+function Compose-Horizontal($icon, $text, [int]$iconHeight) {
+    $icon = Trim-Transparent $icon
+    $text = Trim-Transparent $text
+    $iconScale = $iconHeight / $icon.Height
+    $iconW = [int]($icon.Width * $iconScale)
+    $iconResized = Resize-Bitmap $icon $iconW
+
+    $textHeight = [int]($iconHeight * 0.78)
+    $textScale = $textHeight / $text.Height
+    $textW = [int]($text.Width * $textScale)
+    $textResized = Resize-Bitmap $text $textW
+
+    $gap = [int]($iconHeight * 0.12)
+    $pad = [int]($iconHeight * 0.06)
+    $cw = $pad + $iconW + $gap + $textW + $pad
+    $ch = $iconHeight + ($pad * 2)
+    $canvas = New-TransparentBitmap $cw $ch
+    $g = New-Graphics $canvas
+    $g.DrawImage($iconResized, $pad, $pad, $iconW, $iconHeight)
+    $textY = [int]($pad + ($iconHeight - $textHeight) / 2)
+    $g.DrawImage($textResized, $pad + $iconW + $gap, $textY, $textW, $textHeight)
+    $g.Dispose()
+    $iconResized.Dispose(); $textResized.Dispose()
+    return (Remove-CheckerboardArtifacts $canvas)
+}
+
+# ── Load source ──────────────────────────────────────────────────────────────
+$original = To-ArgbBitmap ([System.Drawing.Image]::FromFile($src))
+$w = $original.Width; $h = $original.Height
+Write-Host "Source: $w x $h"
+
+# ── Stacked (compact / favicon base) ─────────────────────────────────────────
+$stackedClean = Remove-CheckerboardArtifacts $original
+Save-Png $stackedClean (Join-Path $outDir "lender-trust-hub-logo-stacked@2x.png")
+$stacked1200 = Remove-CheckerboardArtifacts (Resize-Bitmap $stackedClean 1200)
+Save-Png $stacked1200 (Join-Path $outDir "lender-trust-hub-logo-stacked.png")
+$stacked600 = Remove-CheckerboardArtifacts (Resize-Bitmap $stackedClean 600)
+Save-Png $stacked600 (Join-Path $outDir "lender-trust-hub-logo-stacked-sm.png")
+
+# ── Icon emblem ────────────────────────────────────────────────────────────────
+$iconRaw = Crop-Bitmap $original ([int]($w * 0.10)) ([int]($h * 0.04)) ([int]($w * 0.80)) ([int]($h * 0.56))
+$icon = Remove-CheckerboardArtifacts (Trim-Transparent $iconRaw)
 
 $icon512 = Pad-Square $icon 512
 Save-Png $icon512 (Join-Path $outDir "lender-trust-hub-icon.png")
@@ -109,52 +193,35 @@ Save-Png $icon192 (Join-Path $outDir "lender-trust-hub-icon-192.png")
 $icon32 = Pad-Square $icon 32
 Save-Png $icon32 (Join-Path $outDir "lender-trust-hub-favicon-32.png")
 
-# ── Wordmark only ────────────────────────────────────────────────────────────
-$textRaw = Crop-Bitmap $original ([int]($w * 0.05)) ([int]($h * 0.64)) ([int]($w * 0.90)) ([int]($h * 0.32))
-$text = Trim-Transparent $textRaw
+# ── Wordmark crop ──────────────────────────────────────────────────────────────
+$textRaw = Crop-Bitmap $original ([int]($w * 0.08)) ([int]($h * 0.63)) ([int]($w * 0.84)) ([int]($h * 0.30))
+$text = Remove-CheckerboardArtifacts (Trim-Transparent $textRaw)
 
-# ── Horizontal: trimmed icon + wordmark ────────────────────────────────────────
-$iconTargetH = 220
-$iconScale = $iconTargetH / $icon.Height
-$iconW = [int]($icon.Width * $iconScale)
-$iconH = Resize-Bitmap $icon $iconW
-
-$textTargetH = [int]($iconTargetH * 0.82)
-$textScale = $textTargetH / $text.Height
-$textW = [int]($text.Width * $textScale)
-$textScaled = Resize-Bitmap $text $textW
-
-$gap = 28
-$padX = 12
-$canvasW = $padX + $iconW + $gap + $textW + $padX
-$canvasH = $iconTargetH + 16
-$horizontal = New-Object System.Drawing.Bitmap $canvasW, $canvasH
-$hg = New-Graphics $horizontal
-$hg.Clear([System.Drawing.Color]::Transparent)
-
-$iconY = [int](($canvasH - $iconTargetH) / 2)
-$textY = [int](($canvasH - $textTargetH) / 2)
-$hg.DrawImage($iconH, $padX, $iconY, $iconW, $iconTargetH)
-$hg.DrawImage($textScaled, $padX + $iconW + $gap, $textY, $textW, $textTargetH)
-$hg.Dispose()
-
+# ── Horizontal nav logo ────────────────────────────────────────────────────────
+$horizontal = Compose-Horizontal $icon $text 240
 $horizontal1200 = Resize-Bitmap $horizontal 1200
+$horizontal1200 = Remove-CheckerboardArtifacts $horizontal1200
 Save-Png $horizontal1200 (Join-Path $outDir "lender-trust-hub-logo-horizontal.png")
 $horizontal600 = Resize-Bitmap $horizontal 600
+$horizontal600 = Remove-CheckerboardArtifacts $horizontal600
 Save-Png $horizontal600 (Join-Path $outDir "lender-trust-hub-logo-horizontal-sm.png")
 
-# Next.js app icons
+# Wordmark-only strip (optional nav fallback — pure text, no composite)
+$wordmark1200 = Resize-Bitmap $text 900
+Save-Png (Remove-CheckerboardArtifacts $wordmark1200) (Join-Path $outDir "lender-trust-hub-wordmark.png")
+
+# Next.js metadata icons
 $icon512.Save((Join-Path $PSScriptRoot "..\app\icon.png"), [System.Drawing.Imaging.ImageFormat]::Png)
 $icon192.Save((Join-Path $PSScriptRoot "..\app\apple-icon.png"), [System.Drawing.Imaging.ImageFormat]::Png)
 Write-Host "  app/icon.png + app/apple-icon.png"
 
 # Cleanup
 $original.Dispose()
-$stacked1200.Dispose(); $stacked600.Dispose()
+$stackedClean.Dispose(); $stacked1200.Dispose(); $stacked600.Dispose()
 $iconRaw.Dispose(); $icon.Dispose()
 $icon512.Dispose(); $icon192.Dispose(); $icon32.Dispose()
 $textRaw.Dispose(); $text.Dispose()
-$iconH.Dispose(); $textScaled.Dispose()
 $horizontal.Dispose(); $horizontal1200.Dispose(); $horizontal600.Dispose()
+$wordmark1200.Dispose()
 
-Write-Host "Logo optimization complete."
+Write-Host "Done - all assets use Format32bppArgb with checkerboard stripped."
