@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Shield, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { BrandLogo } from '@/components/BrandLogo';
 import { Button } from '@/components/ui/button';
 import { FDIC_CATEGORY, MORTGAGE_CATEGORY, AUTO_CATEGORY } from '@/lib/directory/categories';
 
@@ -24,19 +25,7 @@ export default function Navbar() {
       className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/95 backdrop-blur"
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:h-20">
-        <Link href="/" className="group flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0A2540] text-white">
-            <Shield className="h-5 w-5" aria-hidden="true" />
-          </div>
-          <div>
-            <div className="text-lg font-bold tracking-tight text-[#0A2540] transition-colors group-hover:text-[#00A3A1]">
-              Lender Trust Hub
-            </div>
-            <div className="hidden text-[10px] font-medium tracking-wider text-zinc-500 sm:block">
-              VERIFIED LENDING DIRECTORIES
-            </div>
-          </div>
-        </Link>
+        <BrandLogo priority />
 
         <div className="hidden items-center gap-5 text-sm md:flex">
           <div className="relative">

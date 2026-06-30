@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Shield } from 'lucide-react';
+import { BrandLogoStacked } from '@/components/BrandLogo';
 
 export default function Footer() {
   return (
@@ -7,9 +7,8 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 md:grid-cols-4">
           <div className="md:col-span-2">
-            <div className="mb-4 flex items-center gap-2">
-              <Shield className="h-6 w-6 text-[#14B8A6]" aria-hidden="true" />
-              <span className="text-lg font-bold text-white">Lender Trust Hub</span>
+            <div className="mb-4">
+              <BrandLogoStacked className="brightness-0 invert opacity-95" />
             </div>
             <p className="max-w-md text-sm leading-relaxed">
               Independent, data-obsessed directory of mortgage lenders and brokers.

@@ -62,7 +62,7 @@ function buildOrganizationSchema() {
     '@id': `${SITE_URL}/#organization`,
     name: 'Lender Trust Hub',
     url: SITE_URL,
-    logo: `${SITE_URL}/favicon.ico`,
+    logo: `${SITE_URL}/brand/lender-trust-hub-icon.png`,
     description:
       'Independent financial directory with verified FDIC bank data. No paid placements.',
     sameAs: ['https://www.movetrusthub.com'],

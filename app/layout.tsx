@@ -31,6 +31,11 @@ export const metadata: Metadata = {
     description: 'Discover honest lenders in your county — transparent data, confident choices.',
     siteName: 'Lender Trust Hub',
     type: 'website',
+    images: [{ url: '/brand/lender-trust-hub-logo-stacked.png', width: 1200, height: 1200 }],
+  },
+  icons: {
+    icon: [{ url: '/brand/lender-trust-hub-favicon-32.png', sizes: '32x32', type: 'image/png' }],
+    apple: [{ url: '/brand/lender-trust-hub-icon-192.png', sizes: '192x192', type: 'image/png' }],
   },
 };
 
