@@ -161,6 +161,18 @@ export default async function MortgageStatePage({
               </div>
             )}
 
+            {slug === 'arizona' && (
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <Link href="/local-lenders/arizona/west-valley-boomtowns"
+                  className="block rounded-2xl border border-orange-500/40 bg-orange-50 p-5 hover:bg-orange-100/80">
+                  <span className="font-semibold text-[#0A2540]">West Valley Boomtowns Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Buckeye &amp; Goodyear — 12 verified lenders, 37%+ growth &amp; master-planned communities.
+                  </span>
+                </Link>
+              </div>
+            )}
+
             {slug === 'tennessee' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link href="/local-lenders/tennessee/greater-nashville-metro"

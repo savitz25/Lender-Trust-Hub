@@ -47,6 +47,7 @@ export async function generateMetadata({
   const isKnox = state === 'tennessee' && county === 'knox';
   const isBlount = state === 'tennessee' && county === 'blount';
   const isSevier = state === 'tennessee' && county === 'sevier';
+  const isMaricopa = state === 'arizona' && county === 'maricopa';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -102,7 +103,9 @@ export async function generateMetadata({
                                                         ? `Best Mortgage Lenders in Blount County, TN — Maryville & East TN (2026)`
                                                         : isSevier
                                                           ? `Best Mortgage Lenders in Sevier County, TN — Gatlinburg & Smokies (2026)`
-                                                          : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                          : isMaricopa
+                                                            ? `Best Mortgage Lenders in Maricopa County, AZ — West Valley Boomtowns (2026)`
+                                                            : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -157,7 +160,9 @@ export async function generateMetadata({
                                                         ? `Compare 12 NMLS-verified Blount County mortgage lenders. Maryville retirees, CrossCountry professionals, VA programs, and mountain lifestyle financing.`
                                                         : isSevier
                                                           ? `Compare 12 NMLS-verified Sevier County mortgage lenders. Gatlinburg vacation rentals, PierPoint fast closings, and tourism-driven investor financing.`
-                                                          : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                          : isMaricopa
+                                                            ? `Compare 12 NMLS-verified West Valley mortgage lenders. Barrett Financial, Verrado/Tartesso new construction, DHI builder financing, and Buckeye/Goodyear boomtown growth.`
+                                                            : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

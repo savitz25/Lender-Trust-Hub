@@ -3,6 +3,7 @@ import { GEORGIA_LENDERS } from '@/lib/mortgage/georgiaLenders';
 import { SOUTH_CAROLINA_LENDERS } from '@/lib/mortgage/southCarolinaLenders';
 import { NORTH_CAROLINA_LENDERS } from '@/lib/mortgage/northCarolinaLenders';
 import { TENNESSEE_LENDERS } from '@/lib/mortgage/tennesseeLenders';
+import { ARIZONA_LENDERS } from '@/lib/mortgage/arizonaLenders';
 
 export type LoanType = 'Conventional' | 'FHA' | 'VA' | 'USDA' | 'Jumbo' | 'ARM' | 'Refinance';
 export type CreditTier = 'Excellent' | 'Good' | 'Fair' | 'Rebuilding';
@@ -105,6 +106,10 @@ export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; c
   '37862': { state: 'Tennessee', stateSlug: 'tennessee', county: 'Sevier', countySlug: 'sevier' },
   '37738': { state: 'Tennessee', stateSlug: 'tennessee', county: 'Sevier', countySlug: 'sevier' },
   '85001': { state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa' },
+  '85326': { state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa' },
+  '85396': { state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa' },
+  '85338': { state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa' },
+  '85395': { state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa' },
   '98101': { state: 'Washington', stateSlug: 'washington', county: 'King', countySlug: 'king' },
   '80201': { state: 'Colorado', stateSlug: 'colorado', county: 'Denver', countySlug: 'denver' },
 };
@@ -159,16 +164,6 @@ const NATIONAL_LENDERS: Lender[] = [
     googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 29, onTimeCloseRate: 95,
     shortDescription: 'Fulton County new-build specialist with builder partnerships across metro Atlanta.',
     phone: '(404) 555-0701',
-  },
-  {
-    id: '9', slug: 'desert-sun-mortgage', name: 'Desert Sun Mortgage', nmlsId: '1748293', type: 'Lender',
-    city: 'Phoenix', state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa',
-    zipCodes: ['85001', '85004', '85016'], rating: 4.6, reviewCount: 1789, trustScore: 87, countyExperienceScore: 88,
-    nationalVolumeRank: 44, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'], specialties: ['Cash-Out Refi', 'Investment'],
-    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 9, bbbRating: 'A',
-    googleRating: 4.5, trustpilotRating: 4.4, avgCloseDays: 33, onTimeCloseRate: 92,
-    shortDescription: 'Maricopa County refinance leader with competitive cash-out options.',
-    phone: '(602) 555-0801',
   },
   {
     id: '10', slug: 'cascade-home-lending', name: 'Cascade Home Lending', nmlsId: '1928471', type: 'Credit Union',
@@ -262,4 +257,4 @@ const NATIONAL_LENDERS: Lender[] = [
   },
 ];
 
-export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS, ...TENNESSEE_LENDERS];
+export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS, ...TENNESSEE_LENDERS, ...ARIZONA_LENDERS];
