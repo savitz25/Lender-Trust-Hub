@@ -376,6 +376,39 @@ export default async function MortgageStatePage({
               </div>
             )}
 
+            {slug === 'illinois' && (
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <Link href="/local-lenders/illinois/rockford-national-standout"
+                  className="block rounded-2xl border border-orange-500/40 bg-orange-50 p-5 hover:bg-orange-100/80">
+                  <span className="font-semibold text-[#0A2540]">Rockford Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Winnebago County — 12 verified lenders, Zillow #1 US market.
+                  </span>
+                </Link>
+                <Link href="/local-lenders/illinois/highly-competitive-chicago-suburbs"
+                  className="block rounded-2xl border border-sky-500/40 bg-sky-50 p-5 hover:bg-sky-100/80">
+                  <span className="font-semibold text-[#0A2540]">Chicago Suburbs Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    DuPage, Cook &amp; Lake — 12 verified lenders, 102.2% sale-to-list.
+                  </span>
+                </Link>
+                <Link href="/local-lenders/illinois/chicago-proper-urban-resurgence"
+                  className="block rounded-2xl border border-violet-500/40 bg-violet-50 p-5 hover:bg-violet-100/80">
+                  <span className="font-semibold text-[#0A2540]">Chicago Proper Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Lincoln Park &amp; Logan Square — 12 verified lenders, urban resurgence.
+                  </span>
+                </Link>
+                <Link href="/local-lenders/illinois/central-illinois-affordability-gems"
+                  className="block rounded-2xl border border-lime-500/40 bg-lime-50 p-5 hover:bg-lime-100/80">
+                  <span className="font-semibold text-[#0A2540]">Central IL Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Peoria &amp; Normal — 12 verified lenders, affordability gems.
+                  </span>
+                </Link>
+              </div>
+            )}
+
             {slug === 'pennsylvania' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link href="/local-lenders/pennsylvania/philadelphia-metro-area-collar-counties"

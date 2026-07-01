@@ -92,6 +92,12 @@ export async function generateMetadata({
   const isDauphin = state === 'pennsylvania' && county === 'dauphin';
   const isLehigh = state === 'pennsylvania' && county === 'lehigh';
   const isYork = state === 'pennsylvania' && county === 'york';
+  const isWinnebago = state === 'illinois' && county === 'winnebago';
+  const isDupage = state === 'illinois' && county === 'dupage';
+  const isCook = state === 'illinois' && county === 'cook';
+  const isLake = state === 'illinois' && county === 'lake';
+  const isPeoria = state === 'illinois' && county === 'peoria';
+  const isMcLean = state === 'illinois' && county === 'mclean';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -237,7 +243,19 @@ export async function generateMetadata({
                                                                                                                                                     ? `Best Mortgage Lenders in Lehigh County, PA — Lehigh Valley Corridor (2026)`
                                                                                                                                                     : isYork
                                                                                                                                                       ? `Best Mortgage Lenders in York County, PA — Wrightsville Hot Market (2026)`
-                                                                                                                                                      : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                                                                                                      : isWinnebago
+                                                                                                                                                        ? `Best Mortgage Lenders in Winnebago County, IL — Rockford National Standout (2026)`
+                                                                                                                                                        : isDupage
+                                                                                                                                                          ? `Best Mortgage Lenders in DuPage County, IL — Chicago Suburbs (2026)`
+                                                                                                                                                          : isCook
+                                                                                                                                                            ? `Best Mortgage Lenders in Cook County, IL — Chicago Metro Hubs (2026)`
+                                                                                                                                                            : isLake
+                                                                                                                                                              ? `Best Mortgage Lenders in Lake County, IL — Chicago Suburbs (2026)`
+                                                                                                                                                              : isPeoria
+                                                                                                                                                                ? `Best Mortgage Lenders in Peoria County, IL — Central IL Affordability (2026)`
+                                                                                                                                                                : isMcLean
+                                                                                                                                                                  ? `Best Mortgage Lenders in McLean County, IL — Normal College Town (2026)`
+                                                                                                                                                                  : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -382,7 +400,19 @@ export async function generateMetadata({
                                                                                                                                                     ? `Compare 12 NMLS-verified Lehigh mortgage lenders. Allentown/Bethlehem 22–31 day pending, NYC/Philly commuter appeal, and lean inventory equilibrium.`
                                                                                                                                                     : isYork
                                                                                                                                                       ? `Compare 12 NMLS-verified York mortgage lenders. Wrightsville #12 national hot market, suburban/rural charm, Baltimore/Harrisburg commuting, and square footage value.`
-                                                                                                                                                      : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                                                                                                      : isWinnebago
+                                                                                                                                                        ? `Compare 12 NMLS-verified Rockford mortgage lenders. Zillow #1 US market, 11-day median contracts, 60%+ out-of-town views, and nearly 50% above-list sales.`
+                                                                                                                                                        : isDupage
+                                                                                                                                                          ? `Compare 12+ NMLS-verified DuPage mortgage lenders. Wheaton 102.2% sale-to-list, Glen Ellyn school districts, 60%+ above-list sales, and collar county bidding wars.`
+                                                                                                                                                          : isCook
+                                                                                                                                                            ? `Compare 20+ NMLS-verified Cook County mortgage lenders. Chicago Proper urban resurgence, collar suburb competition, 48-hour bidding wars, and rent-vs-own flip economics.`
+                                                                                                                                                            : isLake
+                                                                                                                                                              ? `Compare 12 NMLS-verified Lake County mortgage lenders. Chicago suburb supplements, top-school district demand, and competitive collar county financing.`
+                                                                                                                                                              : isPeoria
+                                                                                                                                                                ? `Compare 12 NMLS-verified Peoria mortgage lenders. Top midsize investment city, 20–26 day DOM, exceptional rent-to-price ratios, and fast-moving inventory.`
+                                                                                                                                                                : isMcLean
+                                                                                                                                                                  ? `Compare 12 NMLS-verified McLean mortgage lenders. Normal #1 college town, revitalized uptown, ISU rental demand, and Central IL affordability.`
+                                                                                                                                                                  : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 
