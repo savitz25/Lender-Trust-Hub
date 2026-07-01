@@ -134,6 +134,142 @@ export const ARIZONA_LENDERS: Lender[] = [
     shortDescription: 'Arizona regional lender — investor and first-time buyer expertise in Buckeye and Goodyear boomtown dynamics.',
     website: 'https://novahomeloans.com', phone: '(623) 555-8012',
   },
+
+  // ── Maricopa County (Southeast Valley — Queen Creek) ──────────────────────────
+  {
+    id: 'az-13', slug: 'sun-american-mortgage-queen-creek', name: 'Sun American Mortgage', nmlsId: '127772', type: 'Lender',
+    city: 'Queen Creek', state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa',
+    zipCodes: ['85142', '85143', '85140'], rating: 4.9, reviewCount: 980, trustScore: 95, countyExperienceScore: 96,
+    nationalVolumeRank: 42, loanTypes: ['Conventional', 'FHA', 'VA', 'USDA', 'Jumbo', 'Refinance'],
+    specialties: ['Arizona-Based Since 1989', 'New-Construction', 'Family Suburban Financing'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 27, onTimeCloseRate: 96,
+    shortDescription: 'Arizona-headquartered lender — deep Southeast Valley expertise for Queen Creek master-planned and family suburban growth.',
+    website: 'https://sunamerican.com', phone: '(480) 555-8101',
+  },
+  {
+    id: 'az-14', slug: 'guild-mortgage-east-valley', name: 'Guild Mortgage (East Valley Branches)', nmlsId: '3274', type: 'Lender',
+    city: 'Queen Creek', state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa',
+    zipCodes: ['85142', '85143', '85140'], rating: 4.8, reviewCount: 510, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 20, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['East Valley Presence', 'Pinal Border Reach', 'Construction-to-Permanent'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 30, onTimeCloseRate: 94,
+    shortDescription: 'Guild East Valley teams — comprehensive financing for Queen Creek and San Tan Valley family relocations.',
+    website: 'https://guildmortgage.com', phone: '(480) 555-8102',
+  },
+  {
+    id: 'az-15', slug: 'new-american-funding-east-valley', name: 'New American Funding (East Valley)', nmlsId: '6606', type: 'Lender',
+    city: 'Queen Creek', state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa',
+    zipCodes: ['85142', '85143', '85140'], rating: 4.9, reviewCount: 445, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 24, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['New-Construction', 'Family Relocations', 'High-Volume Service'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 28, onTimeCloseRate: 95,
+    shortDescription: 'NAF East Valley — excellent ratings for new-construction and family relocations in 50%+ growth corridors.',
+    website: 'https://newamericanfunding.com', phone: '(480) 555-8103',
+  },
+  {
+    id: 'az-18', slug: 'pierpoint-mortgage-east-valley', name: 'PierPoint Mortgage (East Valley)', nmlsId: '112844', type: 'Broker',
+    city: 'Queen Creek', state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa',
+    zipCodes: ['85142', '85140', '85143'], rating: 4.9, reviewCount: 188, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 58, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['First-Time Buyers', 'Fast Closings', '50%+ Growth Areas'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 25, onTimeCloseRate: 96,
+    shortDescription: 'Wholesale broker — transparency and speed for Queen Creek and San Tan Valley master-planned communities.',
+    website: 'https://pierpointmortgage.com', phone: '(480) 555-8105',
+  },
+  {
+    id: 'az-19', slug: 'silverton-mortgage-queen-creek', name: 'Silverton Mortgage — Queen Creek', nmlsId: '1561', type: 'Lender',
+    city: 'Queen Creek', state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa',
+    zipCodes: ['85142', '85143', '85140'], rating: 4.8, reviewCount: 160, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 52, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['New Schools Corridor', 'Retail Local Expertise', 'Commercial Development'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 29, onTimeCloseRate: 95,
+    shortDescription: 'Silverton Queen Creek retail lending — professional service for new schools and commercial development growth.',
+    website: 'https://silvertonmortgage.com', phone: '(480) 555-8106',
+  },
+  {
+    id: 'az-22', slug: 'lennar-mortgage-queen-creek', name: 'Lennar Mortgage (Queen Creek)', nmlsId: '1058', type: 'Lender',
+    city: 'Queen Creek', state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa',
+    zipCodes: ['85142', '85143', '85140'], rating: 4.8, reviewCount: 520, trustScore: 92, countyExperienceScore: 95,
+    nationalVolumeRank: 16, loanTypes: ['Conventional', 'FHA', 'VA', 'USDA', 'Refinance'],
+    specialties: ['Queen Creek Marketplace', 'Master-Planned Communities', 'Builder Partnerships'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 28, onTimeCloseRate: 95,
+    shortDescription: 'New-construction specialist for premium Queen Creek suburban communities and marketplace-area new-build demand.',
+    website: 'https://lennarmortgage.com', phone: '(480) 555-8109',
+  },
+  {
+    id: 'az-24', slug: 'bank-of-america-mortgage-east-valley', name: 'Bank of America Mortgage (East Valley)', nmlsId: '399802', type: 'Bank',
+    city: 'Queen Creek', state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa',
+    zipCodes: ['85142', '85140', '85143'], rating: 4.6, reviewCount: 620, trustScore: 88, countyExperienceScore: 90,
+    nationalVolumeRank: 5, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Relocation Financing', 'Infrastructure Corridor', 'Full-Service Banking'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 18, bbbRating: 'A',
+    googleRating: 4.6, trustpilotRating: 4.4, avgCloseDays: 35, onTimeCloseRate: 90,
+    shortDescription: 'Full-service bank mortgages for tech and infrastructure corridor movers in Queen Creek and San Tan Valley.',
+    website: 'https://bankofamerica.com/mortgage', phone: '(480) 555-8111',
+  },
+
+  // ── Pinal County (San Tan Valley / Maricopa border spillover) ─────────────────
+  {
+    id: 'az-16', slug: 'crosscountry-mortgage-southeast-valley', name: 'CrossCountry Mortgage (Southeast Valley)', nmlsId: '3029', type: 'Lender',
+    city: 'San Tan Valley', state: 'Arizona', stateSlug: 'arizona', county: 'Pinal', countySlug: 'pinal',
+    zipCodes: ['85140', '85142', '85143'], rating: 4.8, reviewCount: 380, trustScore: 91, countyExperienceScore: 93,
+    nationalVolumeRank: 22, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Maricopa/Pinal Border', 'Tech & Infrastructure Buyers', 'Broad Product Menu'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 6, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 30, onTimeCloseRate: 93,
+    shortDescription: 'CrossCountry Southeast Valley — experienced support for booming East Valley corridors along the Pinal border.',
+    website: 'https://crosscountrymortgage.com', phone: '(480) 555-8104',
+  },
+  {
+    id: 'az-17', slug: 'veterans-united-san-tan-valley', name: 'Veterans United Home Loans (San Tan Valley)', nmlsId: '1907', type: 'Lender',
+    city: 'San Tan Valley', state: 'Arizona', stateSlug: 'arizona', county: 'Pinal', countySlug: 'pinal',
+    zipCodes: ['85140', '85142', '85143'], rating: 4.9, reviewCount: 1400, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 8, loanTypes: ['VA', 'Refinance'],
+    specialties: ['VA Loans', 'Move-Up Family Programs', 'Accessible East Valley Amenities'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 15, bbbRating: 'A',
+    googleRating: 4.9, trustpilotRating: 4.7, avgCloseDays: 32, onTimeCloseRate: 94,
+    shortDescription: 'VA and family relocation lending — tailored for move-up buyers seeking East Valley lifestyle at accessible prices.',
+    website: 'https://veteransunited.com', phone: '(480) 555-8107',
+  },
+  {
+    id: 'az-20', slug: 'oneaz-credit-union-east-valley', name: 'OneAZ Credit Union', nmlsId: '439822', type: 'Credit Union',
+    city: 'San Tan Valley', state: 'Arizona', stateSlug: 'arizona', county: 'Pinal', countySlug: 'pinal',
+    zipCodes: ['85140', '85142', '85143'], rating: 4.9, reviewCount: 540, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 70, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Member Rates', 'Affordable New-Home Options', 'Border Spillover Zones'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.7, avgCloseDays: 31, onTimeCloseRate: 94,
+    shortDescription: 'Arizona credit union with member rates and affordable new-home programs in high-transaction Pinal/Maricopa spillover.',
+    website: 'https://oneazcu.com', phone: '(844) 663-2928',
+  },
+  {
+    id: 'az-21', slug: 'anchor-home-mortgage-san-tan-valley', name: 'Anchor Home Mortgage (San Tan Valley)', nmlsId: '136890', type: 'Broker',
+    city: 'San Tan Valley', state: 'Arizona', stateSlug: 'arizona', county: 'Pinal', countySlug: 'pinal',
+    zipCodes: ['85140', '85142', '85143'], rating: 4.9, reviewCount: 175, trustScore: 94, countyExperienceScore: 95,
+    nationalVolumeRank: 56, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Border Buyers', 'Affordable New-Construction', 'Personalized Brokerage'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 27, onTimeCloseRate: 96,
+    shortDescription: 'Personalized San Tan Valley brokerage — strong focus on slightly more affordable new-construction border options.',
+    website: 'https://anchorhomemortgage.com', phone: '(480) 555-8110',
+  },
+  {
+    id: 'az-23', slug: 'nova-home-loans-east-valley', name: 'Nova Home Loans (East Valley)', nmlsId: '3089', type: 'Lender',
+    city: 'Queen Creek', state: 'Arizona', stateSlug: 'arizona', county: 'Pinal', countySlug: 'pinal',
+    zipCodes: ['85140', '85142', '85143'], rating: 4.8, reviewCount: 360, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 38, loanTypes: ['Conventional', 'FHA', 'VA', 'USDA', 'Refinance'],
+    specialties: ['Investor Financing', 'Family Growth Border', '50%+ Population Surge'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 3, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 29, onTimeCloseRate: 94,
+    shortDescription: 'Arizona regional lender — investor and family financing expertise in Queen Creek/San Tan Valley border dynamics.',
+    website: 'https://novahomeloans.com', phone: '(480) 555-8112',
+  },
 ];
 
 export const WEST_VALLEY_LENDER_SLUGS = [
@@ -151,8 +287,42 @@ export const WEST_VALLEY_LENDER_SLUGS = [
   'nova-home-loans-west-valley',
 ] as const;
 
+export const SOUTHEAST_VALLEY_LENDER_SLUGS = [
+  'sun-american-mortgage-queen-creek',
+  'guild-mortgage-east-valley',
+  'new-american-funding-east-valley',
+  'crosscountry-mortgage-southeast-valley',
+  'pierpoint-mortgage-east-valley',
+  'silverton-mortgage-queen-creek',
+  'veterans-united-san-tan-valley',
+  'oneaz-credit-union-east-valley',
+  'lennar-mortgage-queen-creek',
+  'anchor-home-mortgage-san-tan-valley',
+  'bank-of-america-mortgage-east-valley',
+  'nova-home-loans-east-valley',
+] as const;
+
+const MARICOPA_SOUTHEAST_SUPPLEMENTS = [
+  'crosscountry-mortgage-southeast-valley',
+  'veterans-united-san-tan-valley',
+  'oneaz-credit-union-east-valley',
+  'anchor-home-mortgage-san-tan-valley',
+  'nova-home-loans-east-valley',
+];
+
+const PINAL_SOUTHEAST_SUPPLEMENTS = [
+  'sun-american-mortgage-queen-creek',
+  'guild-mortgage-east-valley',
+  'new-american-funding-east-valley',
+  'pierpoint-mortgage-east-valley',
+  'silverton-mortgage-queen-creek',
+  'lennar-mortgage-queen-creek',
+  'bank-of-america-mortgage-east-valley',
+];
+
 export const ARIZONA_COUNTY_SUPPLEMENTS: Record<string, string[]> = {
-  maricopa: [],
+  maricopa: MARICOPA_SOUTHEAST_SUPPLEMENTS,
+  pinal: PINAL_SOUTHEAST_SUPPLEMENTS,
 };
 
 export const WEST_VALLEY_HUB_AREAS = [
@@ -160,4 +330,11 @@ export const WEST_VALLEY_HUB_AREAS = [
   { name: 'Goodyear', slug: 'maricopa', highlight: 'Healthcare, logistics, $430K median' },
   { name: 'Avondale', slug: 'maricopa', highlight: 'Loop 303 corridor — coming soon' },
   { name: 'Surprise', slug: 'maricopa', highlight: 'Northwest growth belt — coming soon' },
+] as const;
+
+export const SOUTHEAST_VALLEY_HUB_AREAS = [
+  { name: 'Queen Creek', slug: 'maricopa', highlight: 'Marketplace, new schools, 50%+ growth' },
+  { name: 'San Tan Valley', slug: 'pinal', highlight: 'Affordable spillover, family amenities' },
+  { name: 'Florence', slug: 'pinal', highlight: 'Pinal corridor — coming soon' },
+  { name: 'Casa Grande', slug: 'pinal', highlight: 'I-10 growth belt — coming soon' },
 ] as const;

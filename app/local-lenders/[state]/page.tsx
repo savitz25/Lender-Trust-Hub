@@ -170,6 +170,13 @@ export default async function MortgageStatePage({
                     Buckeye &amp; Goodyear — 12 verified lenders, 37%+ growth &amp; master-planned communities.
                   </span>
                 </Link>
+                <Link href="/local-lenders/arizona/southeast-valley-pinal-border"
+                  className="block rounded-2xl border border-teal-500/40 bg-teal-50 p-5 hover:bg-teal-100/80">
+                  <span className="font-semibold text-[#0A2540]">Southeast Valley &amp; Pinal Border Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Queen Creek &amp; San Tan Valley — 12 verified lenders, 50%+ family growth.
+                  </span>
+                </Link>
               </div>
             )}
 

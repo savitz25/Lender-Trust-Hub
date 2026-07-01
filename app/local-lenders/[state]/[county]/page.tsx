@@ -48,6 +48,7 @@ export async function generateMetadata({
   const isBlount = state === 'tennessee' && county === 'blount';
   const isSevier = state === 'tennessee' && county === 'sevier';
   const isMaricopa = state === 'arizona' && county === 'maricopa';
+  const isPinal = state === 'arizona' && county === 'pinal';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -104,8 +105,10 @@ export async function generateMetadata({
                                                         : isSevier
                                                           ? `Best Mortgage Lenders in Sevier County, TN — Gatlinburg & Smokies (2026)`
                                                           : isMaricopa
-                                                            ? `Best Mortgage Lenders in Maricopa County, AZ — West Valley Boomtowns (2026)`
-                                                            : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                            ? `Best Mortgage Lenders in Maricopa County, AZ — Phoenix Metro Hubs (2026)`
+                                                            : isPinal
+                                                              ? `Best Mortgage Lenders in Pinal County, AZ — San Tan Valley & Southeast Border (2026)`
+                                                              : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -161,8 +164,10 @@ export async function generateMetadata({
                                                         : isSevier
                                                           ? `Compare 12 NMLS-verified Sevier County mortgage lenders. Gatlinburg vacation rentals, PierPoint fast closings, and tourism-driven investor financing.`
                                                           : isMaricopa
-                                                            ? `Compare 12 NMLS-verified West Valley mortgage lenders. Barrett Financial, Verrado/Tartesso new construction, DHI builder financing, and Buckeye/Goodyear boomtown growth.`
-                                                            : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                            ? `Compare 24 NMLS-verified Maricopa mortgage lenders. West Valley boomtowns, Queen Creek new construction, Sun American, Lennar, and Southeast Valley family growth.`
+                                                            : isPinal
+                                                              ? `Compare 12 NMLS-verified Pinal County mortgage lenders. San Tan Valley spillover, Veterans United move-up programs, OneAZ member rates, and Queen Creek border supplements.`
+                                                              : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 
