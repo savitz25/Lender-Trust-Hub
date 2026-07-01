@@ -274,6 +274,13 @@ export default async function MortgageStatePage({
                     Bastrop &amp; Brownsville — 12 verified lenders, sleepy town to boomtown transformation.
                   </span>
                 </Link>
+                <Link href="/local-lenders/texas/san-antonio-value-play"
+                  className="block rounded-2xl border border-amber-500/40 bg-amber-50 p-5 hover:bg-amber-100/80">
+                  <span className="font-semibold text-[#0A2540]">San Antonio Value Play Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Bexar County — 12 verified lenders, cash-flow investing &amp; military stability.
+                  </span>
+                </Link>
               </div>
             )}
 

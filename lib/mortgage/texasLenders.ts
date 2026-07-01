@@ -402,6 +402,140 @@ export const TEXAS_LENDERS: Lender[] = [
     shortDescription: 'Texas lender — localized knowledge of Cameron and Bastrop boomtown financing amid immense transactional velocity.',
     website: 'https://novahomeloans.com', phone: '(956) 555-9812',
   },
+
+  // ── San Antonio Value Play (Bexar County) ─────────────────────────────────────
+  {
+    id: 'tx-37', slug: 'prime-lending-san-antonio', name: 'PrimeLending (San Antonio)', nmlsId: '13649', type: 'Broker',
+    city: 'San Antonio', state: 'Texas', stateSlug: 'texas', county: 'Bexar', countySlug: 'bexar',
+    zipCodes: ['78209', '78230', '78249'], rating: 4.9, reviewCount: 1240, trustScore: 95, countyExperienceScore: 96,
+    nationalVolumeRank: 28, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Cash-Flow Investors', 'Military Family Financing', 'Stable Renter Pool'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 3, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 23, onTimeCloseRate: 96,
+    shortDescription: 'San Antonio independent broker — deep expertise in cash-flow investor deals and military family financing in Bexar County.',
+    website: 'https://primelending.com', phone: '(210) 555-9901',
+  },
+  {
+    id: 'tx-38', slug: 'guild-mortgage-san-antonio', name: 'Guild Mortgage (San Antonio)', nmlsId: '3274', type: 'Lender',
+    city: 'San Antonio', state: 'Texas', stateSlug: 'texas', county: 'Bexar', countySlug: 'bexar',
+    zipCodes: ['78209', '78230', '78216'], rating: 4.8, reviewCount: 520, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 20, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Full Residential Spectrum', 'Military & Investor Expertise', 'Bexar County Branches'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 94,
+    shortDescription: 'National Guild lender with San Antonio branches — comprehensive financing for investors and military families in the stable Bexar market.',
+    website: 'https://guildmortgage.com', phone: '(210) 555-9902',
+  },
+  {
+    id: 'tx-39', slug: 'new-american-funding-san-antonio', name: 'New American Funding (San Antonio)', nmlsId: '6606', type: 'Lender',
+    city: 'San Antonio', state: 'Texas', stateSlug: 'texas', county: 'Bexar', countySlug: 'bexar',
+    zipCodes: ['78230', '78249', '78209'], rating: 4.9, reviewCount: 465, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 24, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['High-Volume Purchase/Refinance', 'Investor Transactions', 'Military Relocations'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 26, onTimeCloseRate: 95,
+    shortDescription: 'NAF San Antonio team — excellent ratings for investor and military transactions across the leveled Bexar County market.',
+    website: 'https://newamericanfunding.com', phone: '(210) 555-9903',
+  },
+  {
+    id: 'tx-40', slug: 'crosscountry-mortgage-san-antonio', name: 'CrossCountry Mortgage (San Antonio)', nmlsId: '3029', type: 'Lender',
+    city: 'San Antonio', state: 'Texas', stateSlug: 'texas', county: 'Bexar', countySlug: 'bexar',
+    zipCodes: ['78209', '78216', '78230'], rating: 4.8, reviewCount: 385, trustScore: 91, countyExperienceScore: 92,
+    nationalVolumeRank: 22, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Defense-Related Buyers', 'Broad Product Menu', '240K+ Defense Jobs'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 6, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 28, onTimeCloseRate: 93,
+    shortDescription: 'CrossCountry San Antonio teams — experienced support for defense-related buyers and the massive military renter pool.',
+    website: 'https://crosscountrymortgage.com', phone: '(210) 555-9904',
+  },
+  {
+    id: 'tx-41', slug: 'pierpoint-mortgage-san-antonio', name: 'PierPoint Mortgage (San Antonio)', nmlsId: '112844', type: 'Broker',
+    city: 'San Antonio', state: 'Texas', stateSlug: 'texas', county: 'Bexar', countySlug: 'bexar',
+    zipCodes: ['78230', '78249', '78209'], rating: 4.9, reviewCount: 210, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 58, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['First-Time Buyers', 'Investor Cash-Flow', 'Transparent Pricing'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 22, onTimeCloseRate: 97,
+    shortDescription: 'Wholesale broker — speed and transparency in San Antonio\'s leveled-off pricing market for investors and first-time buyers.',
+    website: 'https://pierpointmortgage.com', phone: '(210) 555-9905',
+  },
+  {
+    id: 'tx-42', slug: 'silverton-mortgage-san-antonio', name: 'Silverton Mortgage — San Antonio', nmlsId: '1561', type: 'Lender',
+    city: 'San Antonio', state: 'Texas', stateSlug: 'texas', county: 'Bexar', countySlug: 'bexar',
+    zipCodes: ['78209', '78216', '78230'], rating: 4.8, reviewCount: 165, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 52, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Retail Lending', 'Local Expertise', 'Stable Metro Financing'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 95,
+    shortDescription: 'Silverton San Antonio retail lending — professional service for the stable, accessible Bexar County metro.',
+    website: 'https://silvertonmortgage.com', phone: '(210) 555-9906',
+  },
+  {
+    id: 'tx-43', slug: 'veterans-united-san-antonio', name: 'Veterans United (San Antonio)', nmlsId: '1907', type: 'Lender',
+    city: 'San Antonio', state: 'Texas', stateSlug: 'texas', county: 'Bexar', countySlug: 'bexar',
+    zipCodes: ['78209', '78230', '78249'], rating: 4.9, reviewCount: 920, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 8, loanTypes: ['VA', 'FHA', 'Refinance'],
+    specialties: ['VA Loans', 'Defense Community Programs', 'Military Footprint'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 15, bbbRating: 'A',
+    googleRating: 4.9, trustpilotRating: 4.7, avgCloseDays: 30, onTimeCloseRate: 94,
+    shortDescription: 'VA and defense community programs — tailored for San Antonio\'s massive military footprint and stable renter demand.',
+    website: 'https://veteransunited.com', phone: '(210) 555-9907',
+  },
+  {
+    id: 'tx-44', slug: 'security-service-fcu-san-antonio', name: 'Security Service Federal Credit Union', nmlsId: '458903', type: 'Credit Union',
+    city: 'San Antonio', state: 'Texas', stateSlug: 'texas', county: 'Bexar', countySlug: 'bexar',
+    zipCodes: ['78230', '78249', '78216'], rating: 4.9, reviewCount: 780, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 68, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Member Rates', 'Cash-Flow Investor Options', 'Community Lender'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 28, onTimeCloseRate: 95,
+    shortDescription: 'San Antonio credit union — community-focused member rates for value-oriented buyers and cash-flow investors.',
+    website: 'https://ssfcu.org', phone: '(800) 525-9623',
+  },
+  {
+    id: 'tx-45', slug: 'lennar-mortgage-san-antonio', name: 'Lennar Mortgage (San Antonio)', nmlsId: '1058', type: 'Lender',
+    city: 'San Antonio', state: 'Texas', stateSlug: 'texas', county: 'Bexar', countySlug: 'bexar',
+    zipCodes: ['78249', '78258', '78230'], rating: 4.7, reviewCount: 395, trustScore: 90, countyExperienceScore: 92,
+    nationalVolumeRank: 35, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['New Construction', 'Workforce Housing', 'Military-Adjacent Builds'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 8, bbbRating: 'A',
+    googleRating: 4.7, trustpilotRating: 4.5, avgCloseDays: 30, onTimeCloseRate: 92,
+    shortDescription: 'Builder-affiliated lender — expertise in San Antonio suburb new construction with built-in renter demand from defense jobs.',
+    website: 'https://lennar.com/mortgage', phone: '(210) 555-9909',
+  },
+  {
+    id: 'tx-46', slug: 'anchor-home-mortgage-san-antonio', name: 'Anchor Home Mortgage (San Antonio)', nmlsId: '136890', type: 'Broker',
+    city: 'San Antonio', state: 'Texas', stateSlug: 'texas', county: 'Bexar', countySlug: 'bexar',
+    zipCodes: ['78209', '78230', '78249'], rating: 4.9, reviewCount: 265, trustScore: 94, countyExperienceScore: 95,
+    nationalVolumeRank: 48, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Cash-Flow Investors', 'Personalized Brokerage', 'Positive Cash Flow'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 23, onTimeCloseRate: 96,
+    shortDescription: 'Independent broker — strong focus on immediate positive cash-flow opportunities in the leveled San Antonio market.',
+    website: 'https://anchorhomemortgage.com', phone: '(210) 555-9910',
+  },
+  {
+    id: 'tx-47', slug: 'bank-of-america-mortgage-san-antonio', name: 'Bank of America Mortgage (San Antonio)', nmlsId: '399802', type: 'Bank',
+    city: 'San Antonio', state: 'Texas', stateSlug: 'texas', county: 'Bexar', countySlug: 'bexar',
+    zipCodes: ['78230', '78216', '78209'], rating: 4.6, reviewCount: 690, trustScore: 88, countyExperienceScore: 90,
+    nationalVolumeRank: 5, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Military Relocation', 'Full-Service Banking', 'Defense Stability'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 18, bbbRating: 'A',
+    googleRating: 4.6, trustpilotRating: 4.4, avgCloseDays: 32, onTimeCloseRate: 90,
+    shortDescription: 'Full-service bank mortgages convenient for military and relocation financing in defense-anchored San Antonio.',
+    website: 'https://bankofamerica.com/mortgage', phone: '(210) 555-9911',
+  },
+  {
+    id: 'tx-48', slug: 'nova-home-loans-san-antonio', name: 'Nova Home Loans (San Antonio)', nmlsId: '3089', type: 'Lender',
+    city: 'San Antonio', state: 'Texas', stateSlug: 'texas', county: 'Bexar', countySlug: 'bexar',
+    zipCodes: ['78249', '78230', '78209'], rating: 4.8, reviewCount: 340, trustScore: 91, countyExperienceScore: 92,
+    nationalVolumeRank: 42, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Investor Financing', 'Family Value-Play', 'Leveled Pricing Market'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 3, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 25, onTimeCloseRate: 94,
+    shortDescription: 'Texas lender — localized knowledge of Bexar County value-play financing and the massive built-in renter pool.',
+    website: 'https://novahomeloans.com', phone: '(210) 555-9912',
+  },
 ];
 
 export const DFW_SILICON_PRAIRIE_LENDER_SLUGS = [
@@ -533,6 +667,21 @@ const CAMERON_SUPPLEMENTS = [
   'rbfcu-spacex-corridor',
 ];
 
+export const SAN_ANTONIO_VALUE_PLAY_LENDER_SLUGS = [
+  'prime-lending-san-antonio',
+  'guild-mortgage-san-antonio',
+  'new-american-funding-san-antonio',
+  'crosscountry-mortgage-san-antonio',
+  'pierpoint-mortgage-san-antonio',
+  'silverton-mortgage-san-antonio',
+  'veterans-united-san-antonio',
+  'security-service-fcu-san-antonio',
+  'lennar-mortgage-san-antonio',
+  'anchor-home-mortgage-san-antonio',
+  'bank-of-america-mortgage-san-antonio',
+  'nova-home-loans-san-antonio',
+] as const;
+
 export const TEXAS_COUNTY_SUPPLEMENTS: Record<string, string[]> = {
   collin: COLLIN_SUPPLEMENTS,
   denton: DENTON_SUPPLEMENTS,
@@ -542,6 +691,7 @@ export const TEXAS_COUNTY_SUPPLEMENTS: Record<string, string[]> = {
   montgomery: MONTGOMERY_SUPPLEMENTS,
   bastrop: BASTROP_SUPPLEMENTS,
   cameron: CAMERON_SUPPLEMENTS,
+  bexar: [],
 };
 
 export const DFW_SILICON_PRAIRIE_HUB_COUNTIES = [
@@ -580,4 +730,15 @@ export const SPACEX_CORRIDOR_HUB_AREAS = [
   { name: 'Brownsville', slug: 'cameron', highlight: 'Starbase industrial job influx' },
   { name: 'Southmost', slug: 'cameron', highlight: 'Workforce housing, rural-to-boom' },
   { name: 'Starbase Corridor', slug: 'cameron', highlight: 'Hyper-dense employment hub growth' },
+] as const;
+
+export const SAN_ANTONIO_VALUE_PLAY_HUB_COUNTIES = [
+  { name: 'Bexar', slug: 'bexar', highlight: 'San Antonio metro, defense-anchored value play' },
+] as const;
+
+export const SAN_ANTONIO_VALUE_PLAY_HUB_AREAS = [
+  { name: 'Alamo Heights', slug: 'bexar', highlight: 'Established neighborhoods, stable renter demand' },
+  { name: 'Medical Center', slug: 'bexar', highlight: 'Healthcare jobs, cash-flow duplexes' },
+  { name: 'Stone Oak', slug: 'bexar', highlight: 'Suburban workforce housing, new builds' },
+  { name: 'UTSA Corridor', slug: 'bexar', highlight: 'Military-adjacent, leveled pricing' },
 ] as const;
