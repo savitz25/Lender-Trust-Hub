@@ -50,6 +50,7 @@ export async function generateMetadata({
   const isMaricopa = state === 'arizona' && county === 'maricopa';
   const isPinal = state === 'arizona' && county === 'pinal';
   const isSantaClara = state === 'california' && county === 'santa-clara';
+  const isRiverside = state === 'california' && county === 'riverside';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -111,7 +112,9 @@ export async function generateMetadata({
                                                               ? `Best Mortgage Lenders in Pinal County, AZ — San Tan Valley & Southeast Border (2026)`
                                                               : isSantaClara
                                                                 ? `Best Mortgage Lenders in Santa Clara County, CA — Silicon Valley Spine (2026)`
-                                                                : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                : isRiverside
+                                                                  ? `Best Mortgage Lenders in Riverside County, CA — Inland Empire Affordability Magnets (2026)`
+                                                                  : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -172,7 +175,9 @@ export async function generateMetadata({
                                                               ? `Compare 12 NMLS-verified Pinal County mortgage lenders. San Tan Valley spillover, Veterans United move-up programs, OneAZ member rates, and Queen Creek border supplements.`
                                                               : isSantaClara
                                                                 ? `Compare 12 NMLS-verified Santa Clara mortgage lenders. Jumbo and RSU financing, Guild and NAF branches, PierPoint fast closings, and ultra-competitive San Jose/Cupertino offer dynamics.`
-                                                                : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                : isRiverside
+                                                                  ? `Compare 12 NMLS-verified Riverside mortgage lenders. Logistics relocations, Lennar new construction, Altura member rates, and $625K–$710K affordability magnet financing.`
+                                                                  : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

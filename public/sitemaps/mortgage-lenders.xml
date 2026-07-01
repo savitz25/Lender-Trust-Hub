@@ -57,6 +57,18 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://www.lendertrusthub.com/local-lenders/california/inland-empire-affordability-magnets</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lendertrusthub.com/local-lenders/california/riverside</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://www.lendertrusthub.com/local-lenders/colorado</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>

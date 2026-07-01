@@ -118,6 +118,10 @@ export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; c
   '95113': { state: 'California', stateSlug: 'california', county: 'Santa Clara', countySlug: 'santa-clara' },
   '95014': { state: 'California', stateSlug: 'california', county: 'Santa Clara', countySlug: 'santa-clara' },
   '95050': { state: 'California', stateSlug: 'california', county: 'Santa Clara', countySlug: 'santa-clara' },
+  '92501': { state: 'California', stateSlug: 'california', county: 'Riverside', countySlug: 'riverside' },
+  '92503': { state: 'California', stateSlug: 'california', county: 'Riverside', countySlug: 'riverside' },
+  '92551': { state: 'California', stateSlug: 'california', county: 'Riverside', countySlug: 'riverside' },
+  '92553': { state: 'California', stateSlug: 'california', county: 'Riverside', countySlug: 'riverside' },
   '98101': { state: 'Washington', stateSlug: 'washington', county: 'King', countySlug: 'king' },
   '80201': { state: 'Colorado', stateSlug: 'colorado', county: 'Denver', countySlug: 'denver' },
 };

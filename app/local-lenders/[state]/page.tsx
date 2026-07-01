@@ -208,6 +208,13 @@ export default async function MortgageStatePage({
                     San Jose &amp; Cupertino — 12 verified lenders, jumbo &amp; ultra-competitive tech corridor.
                   </span>
                 </Link>
+                <Link href="/local-lenders/california/inland-empire-affordability-magnets"
+                  className="block rounded-2xl border border-amber-500/40 bg-amber-50 p-5 hover:bg-amber-100/80">
+                  <span className="font-semibold text-[#0A2540]">Inland Empire Affordability Magnets Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Riverside &amp; Moreno Valley — 12 verified lenders, SoCal affordability safety valve.
+                  </span>
+                </Link>
               </div>
             )}
 
