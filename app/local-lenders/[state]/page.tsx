@@ -161,6 +161,26 @@ export default async function MortgageStatePage({
               </div>
             )}
 
+            {slug === 'north-carolina' && (
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <Link href="/local-lenders/north-carolina/charlotte-metro"
+                  className="block rounded-2xl border border-blue-500/40 bg-blue-50 p-5 hover:bg-blue-100/80">
+                  <span className="font-semibold text-[#0A2540]">Charlotte Metro Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">Mecklenburg — 5 verified lenders, corporate relocations.</span>
+                </Link>
+                <Link href="/local-lenders/north-carolina/research-triangle"
+                  className="block rounded-2xl border border-teal-500/40 bg-teal-50 p-5 hover:bg-teal-100/80">
+                  <span className="font-semibold text-[#0A2540]">Research Triangle Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">Wake &amp; Durham — 5 verified lenders, tech &amp; RTP.</span>
+                </Link>
+                <Link href="/local-lenders/north-carolina/piedmont-triad"
+                  className="block rounded-2xl border border-amber-500/40 bg-amber-50 p-5 hover:bg-amber-100/80">
+                  <span className="font-semibold text-[#0A2540]">Piedmont Triad Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">Guilford &amp; Forsyth — affordable equity markets.</span>
+                </Link>
+              </div>
+            )}
+
             {slug === 'south-carolina' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link
