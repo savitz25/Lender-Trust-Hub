@@ -83,6 +83,15 @@ export async function generateMetadata({
   const isKings = state === 'new-york' && county === 'kings';
   const isQueens = state === 'new-york' && county === 'queens';
   const isNewYorkCounty = state === 'new-york' && county === 'new-york-county';
+  const isPhiladelphia = state === 'pennsylvania' && county === 'philadelphia';
+  const isPaMontgomery = state === 'pennsylvania' && county === 'montgomery';
+  const isChester = state === 'pennsylvania' && county === 'chester';
+  const isBucks = state === 'pennsylvania' && county === 'bucks';
+  const isAllegheny = state === 'pennsylvania' && county === 'allegheny';
+  const isBeaver = state === 'pennsylvania' && county === 'beaver';
+  const isDauphin = state === 'pennsylvania' && county === 'dauphin';
+  const isLehigh = state === 'pennsylvania' && county === 'lehigh';
+  const isYork = state === 'pennsylvania' && county === 'york';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -210,7 +219,25 @@ export async function generateMetadata({
                                                                                                                                   ? `Best Mortgage Lenders in Queens County, NY — NYC Boroughs Growth Corridors (2026)`
                                                                                                                                   : isNewYorkCounty
                                                                                                                                     ? `Best Mortgage Lenders in New York County, NY — Manhattan NYC Boroughs (2026)`
-                                                                                                                                    : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                                                                                    : isPhiladelphia
+                                                                                                                                      ? `Best Mortgage Lenders in Philadelphia County, PA — Metro Crown Jewel (2026)`
+                                                                                                                                      : isPaMontgomery
+                                                                                                                                        ? `Best Mortgage Lenders in Montgomery County, PA — Philadelphia Collar Counties (2026)`
+                                                                                                                                        : isChester
+                                                                                                                                          ? `Best Mortgage Lenders in Chester County, PA — Philadelphia Collar Counties (2026)`
+                                                                                                                                          : isBucks
+                                                                                                                                            ? `Best Mortgage Lenders in Bucks County, PA — Philadelphia Collar Counties (2026)`
+                                                                                                                                            : isAllegheny
+                                                                                                                                              ? `Best Mortgage Lenders in Allegheny County, PA — Greater Pittsburgh (2026)`
+                                                                                                                                              : isBeaver
+                                                                                                                                                ? `Best Mortgage Lenders in Beaver County, PA — Baden Hot Suburb (2026)`
+                                                                                                                                                : isDauphin
+                                                                                                                                                  ? `Best Mortgage Lenders in Dauphin County, PA — Harrisburg Affordability Haven (2026)`
+                                                                                                                                                  : isLehigh
+                                                                                                                                                    ? `Best Mortgage Lenders in Lehigh County, PA — Lehigh Valley Corridor (2026)`
+                                                                                                                                                    : isYork
+                                                                                                                                                      ? `Best Mortgage Lenders in York County, PA — Wrightsville Hot Market (2026)`
+                                                                                                                                                      : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -337,7 +364,25 @@ export async function generateMetadata({
                                                                                                                                   ? `Compare 12 NMLS-verified Queens mortgage lenders. Astoria, LIC, and Flushing growth, modern condos, multi-family investors, and aggressive appreciation.`
                                                                                                                                   : isNewYorkCounty
                                                                                                                                     ? `Compare 12 NMLS-verified Manhattan mortgage lenders. Luxury co-op resurgence, condo financing, urban professionals, and lean-inventory competition.`
-                                                                                                                                    : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                                                                                    : isPhiladelphia
+                                                                                                                                      ? `Compare 12+ NMLS-verified Philadelphia mortgage lenders. #6 hottest US market, 41%+ above-asking sales, move-in-ready demand, and collar county spillover.`
+                                                                                                                                      : isPaMontgomery
+                                                                                                                                        ? `Compare 12 NMLS-verified Montgomery mortgage lenders. Collar county bidding wars, NYC/DC relocators, move-in-ready suburban demand, and Philadelphia Metro competition.`
+                                                                                                                                        : isChester
+                                                                                                                                          ? `Compare 12 NMLS-verified Chester mortgage lenders. Turn-key suburban homes, intense bidding wars, Philadelphia Metro affordability, and collar county hotspots.`
+                                                                                                                                          : isBucks
+                                                                                                                                            ? `Compare 12 NMLS-verified Bucks mortgage lenders. NYC/DC affordability safety valve, suburban bidding wars, and Philadelphia Metro collar county demand.`
+                                                                                                                                            : isAllegheny
+                                                                                                                                              ? `Compare 12 NMLS-verified Allegheny mortgage lenders. Pittsburgh stability, remote worker influx, 8–14 day pending, and Greater Pittsburgh surge.`
+                                                                                                                                              : isBeaver
+                                                                                                                                                ? `Compare 12 NMLS-verified Beaver mortgage lenders. Baden #3 hottest suburb nationally, tight inventory, rapid pending, and Western PA affordability.`
+                                                                                                                                                : isDauphin
+                                                                                                                                                  ? `Compare 12 NMLS-verified Dauphin mortgage lenders. Harrisburg 16% YoY appreciation, 31-day sales, government hub demand, and Central PA affordability.`
+                                                                                                                                                  : isLehigh
+                                                                                                                                                    ? `Compare 12 NMLS-verified Lehigh mortgage lenders. Allentown/Bethlehem 22–31 day pending, NYC/Philly commuter appeal, and lean inventory equilibrium.`
+                                                                                                                                                    : isYork
+                                                                                                                                                      ? `Compare 12 NMLS-verified York mortgage lenders. Wrightsville #12 national hot market, suburban/rural charm, Baltimore/Harrisburg commuting, and square footage value.`
+                                                                                                                                                      : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

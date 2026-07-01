@@ -376,6 +376,32 @@ export default async function MortgageStatePage({
               </div>
             )}
 
+            {slug === 'pennsylvania' && (
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <Link href="/local-lenders/pennsylvania/philadelphia-metro-area-collar-counties"
+                  className="block rounded-2xl border border-teal-500/40 bg-teal-50 p-5 hover:bg-teal-100/80">
+                  <span className="font-semibold text-[#0A2540]">Philadelphia Metro Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Philly &amp; collar counties — 12 verified lenders, #6 hottest US market.
+                  </span>
+                </Link>
+                <Link href="/local-lenders/pennsylvania/greater-pittsburgh-key-suburbs"
+                  className="block rounded-2xl border border-yellow-500/40 bg-yellow-50 p-5 hover:bg-yellow-100/80">
+                  <span className="font-semibold text-[#0A2540]">Greater Pittsburgh Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Pittsburgh &amp; Baden — 12 verified lenders, #3 hottest suburb nationally.
+                  </span>
+                </Link>
+                <Link href="/local-lenders/pennsylvania/central-eastern-pa-affordability-havens"
+                  className="block rounded-2xl border border-lime-500/40 bg-lime-50 p-5 hover:bg-lime-100/80">
+                  <span className="font-semibold text-[#0A2540]">Central/Eastern PA Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Harrisburg, Lehigh &amp; York — 12 verified lenders, affordability havens.
+                  </span>
+                </Link>
+              </div>
+            )}
+
             {slug === 'district-of-columbia' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link href="/local-lenders/district-of-columbia/upper-northwest-value-surge"

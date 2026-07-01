@@ -12,6 +12,7 @@ import { WASHINGTON_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/washingtonLenders'
 import { DC_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/districtOfColumbiaLenders';
 import { MASSACHUSETTS_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/massachusettsLenders';
 import { NEW_YORK_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/newYorkLenders';
+import { PENNSYLVANIA_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/pennsylvaniaLenders';
 
 export { lenders };
 export type { Lender, LoanType, CreditTier };
@@ -104,6 +105,7 @@ const STATE_COUNTY_SUPPLEMENTS: Record<string, Record<string, string[]>> = {
   'district-of-columbia': DC_COUNTY_SUPPLEMENTS,
   massachusetts: MASSACHUSETTS_COUNTY_SUPPLEMENTS,
   'new-york': NEW_YORK_COUNTY_SUPPLEMENTS,
+  pennsylvania: PENNSYLVANIA_COUNTY_SUPPLEMENTS,
 };
 
 export function getLendersByCounty(stateSlug: string, countySlug: string): Lender[] {

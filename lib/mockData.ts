@@ -11,6 +11,7 @@ import { WASHINGTON_LENDERS } from '@/lib/mortgage/washingtonLenders';
 import { DISTRICT_OF_COLUMBIA_LENDERS } from '@/lib/mortgage/districtOfColumbiaLenders';
 import { MASSACHUSETTS_LENDERS } from '@/lib/mortgage/massachusettsLenders';
 import { NEW_YORK_LENDERS } from '@/lib/mortgage/newYorkLenders';
+import { PENNSYLVANIA_LENDERS } from '@/lib/mortgage/pennsylvaniaLenders';
 
 export type LoanType = 'Conventional' | 'FHA' | 'VA' | 'USDA' | 'Jumbo' | 'ARM' | 'Refinance';
 export type CreditTier = 'Excellent' | 'Good' | 'Fair' | 'Rebuilding';
@@ -229,6 +230,17 @@ export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; c
   '11354': { state: 'New York', stateSlug: 'new-york', county: 'Queens', countySlug: 'queens' },
   '10014': { state: 'New York', stateSlug: 'new-york', county: 'New York', countySlug: 'new-york-county' },
   '10021': { state: 'New York', stateSlug: 'new-york', county: 'New York', countySlug: 'new-york-county' },
+  '19102': { state: 'Pennsylvania', stateSlug: 'pennsylvania', county: 'Philadelphia', countySlug: 'philadelphia' },
+  '19103': { state: 'Pennsylvania', stateSlug: 'pennsylvania', county: 'Philadelphia', countySlug: 'philadelphia' },
+  '19107': { state: 'Pennsylvania', stateSlug: 'pennsylvania', county: 'Philadelphia', countySlug: 'philadelphia' },
+  '19406': { state: 'Pennsylvania', stateSlug: 'pennsylvania', county: 'Montgomery', countySlug: 'montgomery' },
+  '19380': { state: 'Pennsylvania', stateSlug: 'pennsylvania', county: 'Chester', countySlug: 'chester' },
+  '18940': { state: 'Pennsylvania', stateSlug: 'pennsylvania', county: 'Bucks', countySlug: 'bucks' },
+  '15222': { state: 'Pennsylvania', stateSlug: 'pennsylvania', county: 'Allegheny', countySlug: 'allegheny' },
+  '15005': { state: 'Pennsylvania', stateSlug: 'pennsylvania', county: 'Beaver', countySlug: 'beaver' },
+  '17101': { state: 'Pennsylvania', stateSlug: 'pennsylvania', county: 'Dauphin', countySlug: 'dauphin' },
+  '18101': { state: 'Pennsylvania', stateSlug: 'pennsylvania', county: 'Lehigh', countySlug: 'lehigh' },
+  '17368': { state: 'Pennsylvania', stateSlug: 'pennsylvania', county: 'York', countySlug: 'york' },
   '80201': { state: 'Colorado', stateSlug: 'colorado', county: 'Denver', countySlug: 'denver' },
   '80516': { state: 'Colorado', stateSlug: 'colorado', county: 'Adams', countySlug: 'adams' },
   '80026': { state: 'Colorado', stateSlug: 'colorado', county: 'Boulder', countySlug: 'boulder' },
@@ -388,4 +400,4 @@ const NATIONAL_LENDERS: Lender[] = [
   },
 ];
 
-export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS, ...TENNESSEE_LENDERS, ...ARIZONA_LENDERS, ...CALIFORNIA_LENDERS, ...COLORADO_LENDERS, ...TEXAS_LENDERS, ...WASHINGTON_LENDERS, ...DISTRICT_OF_COLUMBIA_LENDERS, ...MASSACHUSETTS_LENDERS, ...NEW_YORK_LENDERS];
+export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS, ...TENNESSEE_LENDERS, ...ARIZONA_LENDERS, ...CALIFORNIA_LENDERS, ...COLORADO_LENDERS, ...TEXAS_LENDERS, ...WASHINGTON_LENDERS, ...DISTRICT_OF_COLUMBIA_LENDERS, ...MASSACHUSETTS_LENDERS, ...NEW_YORK_LENDERS, ...PENNSYLVANIA_LENDERS];
