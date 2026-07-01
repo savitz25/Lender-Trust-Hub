@@ -59,6 +59,9 @@ export async function generateMetadata({
   const isElPaso = state === 'colorado' && county === 'el-paso';
   const isJefferson = state === 'colorado' && county === 'jefferson';
   const isRoutt = state === 'colorado' && county === 'routt';
+  const isCollin = state === 'texas' && county === 'collin';
+  const isDenton = state === 'texas' && county === 'denton';
+  const isGrayson = state === 'texas' && county === 'grayson';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -138,7 +141,13 @@ export async function generateMetadata({
                                                                                 ? `Best Mortgage Lenders in Jefferson County, CO — Foothills & Mountain Towns (2026)`
                                                                                 : isRoutt
                                                                                   ? `Best Mortgage Lenders in Routt County, CO — Steamboat Springs Mountain Towns (2026)`
-                                                                                  : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                                  : isCollin
+                                                                                    ? `Best Mortgage Lenders in Collin County, TX — DFW Silicon Prairie (2026)`
+                                                                                    : isDenton
+                                                                                      ? `Best Mortgage Lenders in Denton County, TX — DFW Silicon Prairie (2026)`
+                                                                                      : isGrayson
+                                                                                        ? `Best Mortgage Lenders in Grayson County, TX — Sherman-Denison Silicon Prairie (2026)`
+                                                                                        : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -217,7 +226,13 @@ export async function generateMetadata({
                                                                                 ? `Compare 12 NMLS-verified Jefferson mortgage lenders. Evergreen luxury acreage, Golden foothills, Bellco member rates, Lennar mountain modern builds, and Denver commuter pipeline.`
                                                                                 : isRoutt
                                                                                   ? `Compare 12 NMLS-verified Routt mortgage lenders. Steamboat Springs resort financing, Alpine Bank second homes, CrossCountry cash buyers, and turnkey mountain modern demand.`
-                                                                                  : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                                  : isCollin
+                                                                                    ? `Compare 12 NMLS-verified Collin mortgage lenders. Frisco and McKinney corporate relocations, Supreme Lending broker, Lennar new construction, and Silicon Prairie suburban boom.`
+                                                                                    : isDenton
+                                                                                      ? `Compare 12 NMLS-verified Denton mortgage lenders. Prosper master-planned growth, Texans Credit Union member rates, and north DFW infrastructure expansion.`
+                                                                                      : isGrayson
+                                                                                        ? `Compare 12 NMLS-verified Grayson mortgage lenders. Sherman-Denison Texas Instruments workforce housing, CrossCountry manufacturing corridor, and equity-gain financing.`
+                                                                                        : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

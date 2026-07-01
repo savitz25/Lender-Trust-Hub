@@ -6,6 +6,7 @@ import { TENNESSEE_LENDERS } from '@/lib/mortgage/tennesseeLenders';
 import { ARIZONA_LENDERS } from '@/lib/mortgage/arizonaLenders';
 import { CALIFORNIA_LENDERS } from '@/lib/mortgage/californiaLenders';
 import { COLORADO_LENDERS } from '@/lib/mortgage/coloradoLenders';
+import { TEXAS_LENDERS } from '@/lib/mortgage/texasLenders';
 
 export type LoanType = 'Conventional' | 'FHA' | 'VA' | 'USDA' | 'Jumbo' | 'ARM' | 'Refinance';
 export type CreditTier = 'Excellent' | 'Good' | 'Fair' | 'Rebuilding';
@@ -77,6 +78,11 @@ export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; c
   '90210': { state: 'California', stateSlug: 'california', county: 'Los Angeles', countySlug: 'los-angeles' },
   '10001': { state: 'New York', stateSlug: 'new-york', county: 'New York', countySlug: 'new-york' },
   '77001': { state: 'Texas', stateSlug: 'texas', county: 'Harris', countySlug: 'harris' },
+  '75034': { state: 'Texas', stateSlug: 'texas', county: 'Collin', countySlug: 'collin' },
+  '75070': { state: 'Texas', stateSlug: 'texas', county: 'Collin', countySlug: 'collin' },
+  '75078': { state: 'Texas', stateSlug: 'texas', county: 'Denton', countySlug: 'denton' },
+  '75090': { state: 'Texas', stateSlug: 'texas', county: 'Grayson', countySlug: 'grayson' },
+  '75020': { state: 'Texas', stateSlug: 'texas', county: 'Grayson', countySlug: 'grayson' },
   '60601': { state: 'Illinois', stateSlug: 'illinois', county: 'Cook', countySlug: 'cook' },
   '30301': { state: 'Georgia', stateSlug: 'georgia', county: 'Fulton', countySlug: 'fulton' },
   '30041': { state: 'Georgia', stateSlug: 'georgia', county: 'Forsyth', countySlug: 'forsyth' },
@@ -288,4 +294,4 @@ const NATIONAL_LENDERS: Lender[] = [
   },
 ];
 
-export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS, ...TENNESSEE_LENDERS, ...ARIZONA_LENDERS, ...CALIFORNIA_LENDERS, ...COLORADO_LENDERS];
+export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS, ...TENNESSEE_LENDERS, ...ARIZONA_LENDERS, ...CALIFORNIA_LENDERS, ...COLORADO_LENDERS, ...TEXAS_LENDERS];

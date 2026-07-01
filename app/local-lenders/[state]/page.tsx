@@ -251,6 +251,18 @@ export default async function MortgageStatePage({
               </div>
             )}
 
+            {slug === 'texas' && (
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <Link href="/local-lenders/texas/dfw-suburbs-silicon-prairie"
+                  className="block rounded-2xl border border-red-500/40 bg-red-50 p-5 hover:bg-red-100/80">
+                  <span className="font-semibold text-[#0A2540]">DFW Suburbs &amp; Silicon Prairie Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Frisco, McKinney, Prosper &amp; Sherman — 12 verified lenders, corporate relocation boom.
+                  </span>
+                </Link>
+              </div>
+            )}
+
             {slug === 'north-carolina' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link href="/local-lenders/north-carolina/charlotte-metro"
