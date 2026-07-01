@@ -27,6 +27,9 @@ export async function generateMetadata({
   const isForsyth = state === 'georgia' && county === 'forsyth';
   const isHenry = state === 'georgia' && county === 'henry';
   const isChatham = state === 'georgia' && county === 'chatham';
+  const isRichmond = state === 'georgia' && county === 'richmond';
+  const isMuscogee = state === 'georgia' && county === 'muscogee';
+  const isColumbia = state === 'georgia' && county === 'columbia';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -42,7 +45,13 @@ export async function generateMetadata({
                 ? `Best Mortgage Lenders in Henry County, GA — Metro Atlanta Outer Ring (2026)`
                 : isChatham
                   ? `Best Mortgage Lenders in Chatham County, GA — Coastal Savannah (2026)`
-                  : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                  : isRichmond
+                    ? `Best Mortgage Lenders in Richmond County, GA — Augusta & CSRA (2026)`
+                    : isMuscogee
+                      ? `Best Mortgage Lenders in Muscogee County, GA — Columbus & Fort Moore (2026)`
+                      : isColumbia
+                        ? `Best Mortgage Lenders in Columbia County, GA — Evans & Grovetown (2026)`
+                        : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -57,7 +66,13 @@ export async function generateMetadata({
                 ? `Compare 3 NMLS-verified Metro Atlanta outer-ring mortgage lenders. McDonough first-time buyer teams, Georgia DPA programs, USDA financing, and independent wholesale brokers.`
                 : isChatham
                   ? `Compare 2 NMLS-verified Coastal Savannah mortgage lenders. Port relocations, VA/military, flood zone expertise, and Pooler new-construction financing in Chatham County.`
-                  : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                  : isRichmond
+                    ? `Compare 3 NMLS-verified Augusta mortgage lenders. Fort Eisenhower military and cyber relocations, zero-down VA, and CSRA new-construction financing in Richmond County.`
+                    : isMuscogee
+                      ? `Compare 2 NMLS-verified Columbus mortgage lenders. Fort Moore VA specialists, first-time buyer programs, and single-close renovation loans in Muscogee County.`
+                      : isColumbia
+                        ? `Compare 3 NMLS-verified CSRA mortgage lenders serving Evans and Grovetown. Augusta-area VA, new construction, and Fort Eisenhower relocation expertise in Columbia County.`
+                        : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

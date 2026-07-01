@@ -171,6 +171,65 @@ export const GEORGIA_LENDERS: Lender[] = [
     shortDescription: 'Savannah UHM team — builder-integrated financing for Pooler, Rincon, and high-velocity coastal suburban submarkets.',
     website: 'https://uhm.com/branches/savannah-ga', phone: '(912) 704-3305',
   },
+
+  // ── Richmond County (Augusta / CSRA) ─────────────────────────────────────────
+  {
+    id: 'ga-16', slug: 'banksouth-mortgage-augusta', name: 'BankSouth Mortgage — Augusta Team', nmlsId: '1125367', type: 'Lender',
+    city: 'Evans', state: 'Georgia', stateSlug: 'georgia', county: 'Richmond', countySlug: 'richmond',
+    zipCodes: ['30809', '30907', '30901'], rating: 4.9, reviewCount: 320, trustScore: 96, countyExperienceScore: 97,
+    nationalVolumeRank: 45, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Fort Eisenhower', 'Cybersecurity Transferees', 'In-House Underwriting'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 27, onTimeCloseRate: 96,
+    shortDescription: 'Georgia-headquartered lender embedded in the CSRA — VA, bank statement, and fast military/cyber relocations at Fort Eisenhower.',
+    website: 'https://banksouthmortgage.com/locations/augusta-mortgage-lender', phone: '(706) 434-8583',
+  },
+  {
+    id: 'ga-17', slug: 'fairway-mortgage-augusta-sheppard', name: 'Fairway Independent Mortgage — Augusta (Sheppard Team)', nmlsId: '2909', type: 'Lender',
+    city: 'Augusta', state: 'Georgia', stateSlug: 'georgia', county: 'Richmond', countySlug: 'richmond',
+    zipCodes: ['30907', '30809', '30813'], rating: 4.9, reviewCount: 285, trustScore: 95, countyExperienceScore: 96,
+    nationalVolumeRank: 28, loanTypes: ['Conventional', 'FHA', 'VA', 'USDA', 'Refinance'],
+    specialties: ['Zero-Down VA', 'New Construction', 'Grovetown Subdivisions'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 28, onTimeCloseRate: 95,
+    shortDescription: 'Augusta Fairway branch — high-volume VA loans and new-construction rate-lock protection near Fort Eisenhower.',
+    website: 'https://fairway.com/lo/ashlee-sheppard-1874003', phone: '(706) 294-8031',
+  },
+  {
+    id: 'ga-18', slug: 'silverton-mortgage-augusta', name: 'Silverton Mortgage — Augusta Branch', nmlsId: '1732246', type: 'Lender',
+    city: 'Augusta', state: 'Georgia', stateSlug: 'georgia', county: 'Richmond', countySlug: 'richmond',
+    zipCodes: ['30907', '30809', '30901'], rating: 4.8, reviewCount: 165, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 52, loanTypes: ['Conventional', 'FHA', 'VA', 'USDA', 'Refinance'],
+    specialties: ['Evans & Martinez', 'Corporate Transferees', '20-Year Local Leadership'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 30, onTimeCloseRate: 94,
+    shortDescription: 'Augusta Silverton branch since 2016 — community-centered conventional and FHA for Evans, Martinez, and CSRA families.',
+    website: 'https://silvertonmortgage.com/augusta', phone: '(706) 555-3100',
+  },
+
+  // ── Muscogee County (Columbus / Fort Moore) ────────────────────────────────────
+  {
+    id: 'ga-19', slug: 'interlinc-mortgage-columbus-smith', name: 'InterLinc Mortgage — Columbus (Smith Team)', nmlsId: '649483', type: 'Lender',
+    city: 'Columbus', state: 'Georgia', stateSlug: 'georgia', county: 'Muscogee', countySlug: 'muscogee',
+    zipCodes: ['31909', '31904', '31907'], rating: 4.9, reviewCount: 198, trustScore: 95, countyExperienceScore: 96,
+    nationalVolumeRank: 48, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['First-Time Buyers', 'Appraisal Gap Protection', 'Harris County Growth'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 26, onTimeCloseRate: 96,
+    shortDescription: 'Columbus InterLinc team led by Jerry Smith — first-time buyer expertise in double-digit growth $180K–$280K market.',
+    website: 'https://interlincmortgage.com/smith-jerry', phone: '(706) 594-1306',
+  },
+  {
+    id: 'ga-20', slug: 'primelending-columbus', name: 'PrimeLending — Columbus Team', nmlsId: '1921', type: 'Lender',
+    city: 'Columbus', state: 'Georgia', stateSlug: 'georgia', county: 'Muscogee', countySlug: 'muscogee',
+    zipCodes: ['31904', '31909', '31907'], rating: 4.9, reviewCount: 340, trustScore: 94, countyExperienceScore: 95,
+    nationalVolumeRank: 32, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Fort Moore VA', 'Single-Close Renovation', 'BAH Matching'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A',
+    googleRating: 4.9, trustpilotRating: 4.7, avgCloseDays: 28, onTimeCloseRate: 95,
+    shortDescription: 'Columbus PrimeLending — VA for Fort Moore personnel, single-close renovation loans, and historic home revitalization.',
+    website: 'https://lo.primelending.com/columbusga', phone: '(706) 786-5570',
+  },
 ];
 
 /** Cross-county lenders shown on county pages */
@@ -179,6 +238,9 @@ export const GEORGIA_COUNTY_SUPPLEMENTS: Record<string, string[]> = {
   fulton: [],
   henry: [],
   chatham: [],
+  columbia: ['banksouth-mortgage-augusta', 'fairway-mortgage-augusta-sheppard', 'silverton-mortgage-augusta'],
+  richmond: [],
+  muscogee: [],
 };
 
 export const NORTH_ATLANTA_HUB_COUNTIES = [
@@ -197,4 +259,10 @@ export const COASTAL_SAVANNAH_HUB_COUNTIES = [
   { name: 'Chatham', slug: 'chatham', highlight: 'Savannah, Pooler, port & industrial relocations' },
   { name: 'Effingham', slug: 'effingham', highlight: 'Rincon, Guyton suburban growth — coming soon' },
   { name: 'Bryan', slug: 'bryan', highlight: 'Richmond Hill, coastal exurbs — coming soon' },
+] as const;
+
+export const MIDDLE_GEORGIA_HUB_COUNTIES = [
+  { name: 'Richmond', slug: 'richmond', highlight: 'Augusta, Fort Eisenhower, cyber corridor' },
+  { name: 'Muscogee', slug: 'muscogee', highlight: 'Columbus, Fort Moore, renovation loans' },
+  { name: 'Columbia', slug: 'columbia', highlight: 'Evans, Grovetown, CSRA suburbs' },
 ] as const;

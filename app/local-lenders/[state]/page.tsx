@@ -149,6 +149,15 @@ export default async function MortgageStatePage({
                     Chatham County — 2 verified lenders, Pooler &amp; port relocations.
                   </span>
                 </Link>
+                <Link
+                  href="/local-lenders/georgia/middle-georgia"
+                  className="block rounded-2xl border border-[#8B5CF6]/40 bg-violet-50 p-5 hover:bg-violet-100/80"
+                >
+                  <span className="font-semibold text-[#0A2540]">Middle Georgia Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Augusta &amp; Columbus — 5 verified lenders, Fort Eisenhower &amp; Fort Moore VA.
+                  </span>
+                </Link>
               </div>
             )}
 
