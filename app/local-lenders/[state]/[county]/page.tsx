@@ -30,6 +30,12 @@ export async function generateMetadata({
   const isRichmond = state === 'georgia' && county === 'richmond';
   const isMuscogee = state === 'georgia' && county === 'muscogee';
   const isColumbia = state === 'georgia' && county === 'columbia';
+  const isHorry = state === 'south-carolina' && county === 'horry';
+  const isGreenville = state === 'south-carolina' && county === 'greenville';
+  const isSpartanburg = state === 'south-carolina' && county === 'spartanburg';
+  const isCharleston = state === 'south-carolina' && county === 'charleston';
+  const isBerkeley = state === 'south-carolina' && county === 'berkeley';
+  const isDorchester = state === 'south-carolina' && county === 'dorchester';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -51,7 +57,19 @@ export async function generateMetadata({
                       ? `Best Mortgage Lenders in Muscogee County, GA — Columbus & Fort Moore (2026)`
                       : isColumbia
                         ? `Best Mortgage Lenders in Columbia County, GA — Evans & Grovetown (2026)`
-                        : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                        : isHorry
+                          ? `Best Mortgage Lenders in Horry County, SC — Grand Strand & Myrtle Beach (2026)`
+                          : isGreenville
+                            ? `Best Mortgage Lenders in Greenville County, SC — Upstate SC (2026)`
+                            : isSpartanburg
+                              ? `Best Mortgage Lenders in Spartanburg County, SC — Upstate USDA (2026)`
+                              : isCharleston
+                                ? `Best Mortgage Lenders in Charleston County, SC — Lowcountry (2026)`
+                                : isBerkeley
+                                  ? `Best Mortgage Lenders in Berkeley County, SC — Summerville & Lowcountry (2026)`
+                                  : isDorchester
+                                    ? `Best Mortgage Lenders in Dorchester County, SC — Charleston Metro (2026)`
+                                    : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -72,7 +90,19 @@ export async function generateMetadata({
                       ? `Compare 2 NMLS-verified Columbus mortgage lenders. Fort Moore VA specialists, first-time buyer programs, and single-close renovation loans in Muscogee County.`
                       : isColumbia
                         ? `Compare 3 NMLS-verified CSRA mortgage lenders serving Evans and Grovetown. Augusta-area VA, new construction, and Fort Eisenhower relocation expertise in Columbia County.`
-                        : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                        : isHorry
+                          ? `Compare 5 NMLS-verified Grand Strand mortgage lenders. Myrtle Beach retiree relocations, condo financing, manufactured homes, FHA/VA, and 7-day upfront underwriting in Horry County.`
+                          : isGreenville
+                            ? `Compare 4 NMLS-verified Upstate SC mortgage lenders. Greenville renovation loans, BMW/Michelin relocations, Fairway VA programs, and Movement upfront underwriting.`
+                            : isSpartanburg
+                              ? `Compare 5 NMLS-verified Spartanburg mortgage lenders. USDA zero-down programs, Greenville corridor supplements, and industrial subdivision financing in Upstate SC.`
+                              : isCharleston
+                                ? `Compare 5 NMLS-verified Lowcountry mortgage lenders. Charleston luxury condos, Boeing/Volvo relocations, jumbo financing, and rapid coastal resale closings.`
+                                : isBerkeley
+                                  ? `Compare 5 NMLS-verified Lowcountry mortgage lenders serving Summerville and Berkeley County. Charleston metro corporate relocations and coastal flood underwriting.`
+                                  : isDorchester
+                                    ? `Compare 5 NMLS-verified Charleston metro mortgage lenders serving Dorchester County. Integrated realty financing and competitive suburban resale programs.`
+                                    : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

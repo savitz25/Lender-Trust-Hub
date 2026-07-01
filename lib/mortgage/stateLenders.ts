@@ -59,4 +59,4 @@ export function resolveStateMeta(stateSlug: string) {
   return US_STATES.find((s) => s.slug === stateSlug);
 }
 
-export const MORTGAGE_DATA_UPDATED = '2026-06-30';
+export const MORTGAGE_DATA_UPDATED = '2026-07-01';

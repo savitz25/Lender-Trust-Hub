@@ -1,6 +1,7 @@
 import { lenders, ZIP_TO_COUNTY, type Lender, type LoanType, type CreditTier } from './mockData';
 import { FLORIDA_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/floridaLenders';
 import { GEORGIA_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/georgiaLenders';
+import { SOUTH_CAROLINA_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/southCarolinaLenders';
 
 export { lenders };
 export type { Lender, LoanType, CreditTier };
@@ -82,6 +83,7 @@ export function filterLenders(filters: LenderFilters): Lender[] {
 const STATE_COUNTY_SUPPLEMENTS: Record<string, Record<string, string[]>> = {
   florida: FLORIDA_COUNTY_SUPPLEMENTS,
   georgia: GEORGIA_COUNTY_SUPPLEMENTS,
+  'south-carolina': SOUTH_CAROLINA_COUNTY_SUPPLEMENTS,
 };
 
 export function getLendersByCounty(stateSlug: string, countySlug: string): Lender[] {

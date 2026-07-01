@@ -161,6 +161,38 @@ export default async function MortgageStatePage({
               </div>
             )}
 
+            {slug === 'south-carolina' && (
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <Link
+                  href="/local-lenders/south-carolina/grand-strand"
+                  className="block rounded-2xl border border-cyan-500/40 bg-cyan-50 p-5 hover:bg-cyan-100/80"
+                >
+                  <span className="font-semibold text-[#0A2540]">Grand Strand Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Horry County — 5 verified lenders, Myrtle Beach &amp; retiree condos.
+                  </span>
+                </Link>
+                <Link
+                  href="/local-lenders/south-carolina/upstate"
+                  className="block rounded-2xl border border-emerald-500/40 bg-emerald-50 p-5 hover:bg-emerald-100/80"
+                >
+                  <span className="font-semibold text-[#0A2540]">Upstate SC Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Greenville &amp; Spartanburg — 5 verified lenders, manufacturing &amp; USDA.
+                  </span>
+                </Link>
+                <Link
+                  href="/local-lenders/south-carolina/lowcountry"
+                  className="block rounded-2xl border border-indigo-500/40 bg-indigo-50 p-5 hover:bg-indigo-100/80"
+                >
+                  <span className="font-semibold text-[#0A2540]">Lowcountry Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Charleston metro — 5 verified lenders, luxury condos &amp; corporate relocations.
+                  </span>
+                </Link>
+              </div>
+            )}
+
             {slug === 'florida' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link
