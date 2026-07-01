@@ -24,6 +24,7 @@ export async function generateMetadata({
   const isHillsborough = state === 'florida' && county === 'hillsborough';
   const isDuval = state === 'florida' && county === 'duval';
   const isBay = state === 'florida' && county === 'bay';
+  const isForsyth = state === 'georgia' && county === 'forsyth';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -33,7 +34,9 @@ export async function generateMetadata({
           ? `Best Mortgage Lenders in Duval County, FL — Jacksonville (2026)`
           : isBay
             ? `Best Mortgage Lenders in Bay County, FL — Panama City & PCB (2026)`
-            : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+            : isForsyth
+              ? `Best Mortgage Lenders in Forsyth County, GA — North Atlanta Suburbs (2026)`
+              : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -42,7 +45,9 @@ export async function generateMetadata({
           ? `Compare 10 NMLS-verified Jacksonville mortgage lenders. NAS Jax VA specialists, award-winning local brokers, Navy Federal, and national lenders with Northeast FL branches.`
           : isBay
             ? `Compare 10 NMLS-verified Panhandle mortgage lenders. Blissful Mortgage PCB, Eglin VA specialists, military credit unions, and Emerald Coast beach financing in Bay County.`
-            : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+            : isForsyth
+              ? `Compare 11 NMLS-verified North Atlanta mortgage lenders. Johns Creek brokers, Alpharetta Avalon experts, Cumming new construction, and Forsyth school-district financing.`
+              : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

@@ -1,5 +1,6 @@
 import { lenders, ZIP_TO_COUNTY, type Lender, type LoanType, type CreditTier } from './mockData';
 import { FLORIDA_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/floridaLenders';
+import { GEORGIA_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/georgiaLenders';
 
 export { lenders };
 export type { Lender, LoanType, CreditTier };
@@ -78,11 +79,16 @@ export function filterLenders(filters: LenderFilters): Lender[] {
   });
 }
 
+const STATE_COUNTY_SUPPLEMENTS: Record<string, Record<string, string[]>> = {
+  florida: FLORIDA_COUNTY_SUPPLEMENTS,
+  georgia: GEORGIA_COUNTY_SUPPLEMENTS,
+};
+
 export function getLendersByCounty(stateSlug: string, countySlug: string): Lender[] {
   const primary = filterLenders({ stateSlug, countySlug });
-  if (stateSlug !== 'florida') return primary;
+  const supplementSlugs = STATE_COUNTY_SUPPLEMENTS[stateSlug]?.[countySlug] ?? [];
+  if (supplementSlugs.length === 0) return primary;
 
-  const supplementSlugs = FLORIDA_COUNTY_SUPPLEMENTS[countySlug] ?? [];
   const seen = new Set(primary.map((l) => l.slug));
   const supplemental = supplementSlugs
     .map((slug) => lenders.find((l) => l.slug === slug))

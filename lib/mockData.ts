@@ -1,4 +1,5 @@
 import { FLORIDA_LENDERS } from '@/lib/mortgage/floridaLenders';
+import { GEORGIA_LENDERS } from '@/lib/mortgage/georgiaLenders';
 
 export type LoanType = 'Conventional' | 'FHA' | 'VA' | 'USDA' | 'Jumbo' | 'ARM' | 'Refinance';
 export type CreditTier = 'Excellent' | 'Good' | 'Fair' | 'Rebuilding';
@@ -72,6 +73,10 @@ export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; c
   '77001': { state: 'Texas', stateSlug: 'texas', county: 'Harris', countySlug: 'harris' },
   '60601': { state: 'Illinois', stateSlug: 'illinois', county: 'Cook', countySlug: 'cook' },
   '30301': { state: 'Georgia', stateSlug: 'georgia', county: 'Fulton', countySlug: 'fulton' },
+  '30041': { state: 'Georgia', stateSlug: 'georgia', county: 'Forsyth', countySlug: 'forsyth' },
+  '30004': { state: 'Georgia', stateSlug: 'georgia', county: 'Forsyth', countySlug: 'forsyth' },
+  '30097': { state: 'Georgia', stateSlug: 'georgia', county: 'Forsyth', countySlug: 'forsyth' },
+  '30024': { state: 'Georgia', stateSlug: 'georgia', county: 'Forsyth', countySlug: 'forsyth' },
   '85001': { state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa' },
   '98101': { state: 'Washington', stateSlug: 'washington', county: 'King', countySlug: 'king' },
   '80201': { state: 'Colorado', stateSlug: 'colorado', county: 'Denver', countySlug: 'denver' },
@@ -240,4 +245,4 @@ const NATIONAL_LENDERS: Lender[] = [
   },
 ];
 
-export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS];
+export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS];

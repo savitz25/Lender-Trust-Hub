@@ -120,6 +120,20 @@ export default async function MortgageStatePage({
       <div className="container mx-auto px-4 py-10">
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-6">
+            {slug === 'georgia' && (
+              <div className="grid gap-3 sm:grid-cols-2">
+                <Link
+                  href="/local-lenders/georgia/north-atlanta"
+                  className="block rounded-2xl border border-[#14B8A6]/40 bg-teal-50 p-5 hover:bg-teal-100/80"
+                >
+                  <span className="font-semibold text-[#0A2540]">North Atlanta Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Forsyth County — 10 verified lenders, Alpharetta, Johns Creek &amp; Cumming.
+                  </span>
+                </Link>
+              </div>
+            )}
+
             {slug === 'florida' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link
