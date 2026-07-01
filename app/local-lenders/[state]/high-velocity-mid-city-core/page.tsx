@@ -10,7 +10,7 @@ import { getLenderBySlug } from '@/lib/lenders';
 export const metadata: Metadata = {
   title: 'Mid-City DC Mortgage Lenders — Logan Circle & Thomas Circle, Zip 20005 (2026)',
   description:
-    'NMLS-verified mortgage lenders in DC Zip 20005. High-velocity Logan Circle and Thomas Circle condo and loft financing, walkable urban core, young professional buyers, fast closings, and mid-city appreciation corridors.',
+    'NMLS-verified mortgage lenders in DC Zip 20005. Historic rowhome and premium condo financing, Logan Circle and Thomas Circle, 14th Street corridor, ironclad demand, capped inventory, and nearly 13% price jumps.',
   alternates: { canonical: 'https://www.lendertrusthub.com/local-lenders/district-of-columbia/high-velocity-mid-city-core' },
 };
 
@@ -39,8 +39,8 @@ export default function HighVelocityMidCityCoreHubPage() {
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — Mid-City Core DC</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
-            Logan Circle and Thomas Circle lenders for high-velocity condo and loft transactions,
-            walkable urban living, and fast-closing mid-city core demand in Zip 20005.
+            Logan Circle and Thomas Circle lenders for renovated historic rowhomes and premium condos,
+            14th Street corridor lifestyle, and quick premium sales in capped-inventory Zip 20005.
           </p>
           <div className="mt-6"><SearchBar className="mx-auto max-w-md" /></div>
         </div>
@@ -63,11 +63,11 @@ export default function HighVelocityMidCityCoreHubPage() {
             <section className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6">
               <h2 className="text-xl font-bold text-[#0A2540]">Why Mid-City Core Is Different</h2>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-zinc-700">
-                <li>High-velocity transaction pace demands fast-closing brokers and lenders</li>
-                <li>Logan Circle and Thomas Circle anchor walkable condo and loft urban core demand</li>
-                <li>Zip 20005 captures young professionals and corporate relocations near downtown</li>
-                <li>Urban infill and loft conversions drive consistent mid-city appreciation</li>
-                <li>Condo-heavy product mix requires lenders experienced with HOA and mid-rise financing</li>
+                <li>Ironclad demand for renovated historic rowhomes and premium turn-key condos</li>
+                <li>Logan Circle and Thomas Circle anchor walkable, nightlife-adjacent urban core living</li>
+                <li>14th Street corridor draws high-earning young professionals, lobbyists, and tech transplants</li>
+                <li>Structurally capped inventory drives nearly 13% price jumps and quick premium sales</li>
+                <li>Zip 20005 lenders must handle fast closings on limited mid-city stock</li>
               </ul>
             </section>
             <section>
