@@ -8,9 +8,9 @@ import { UPPER_NORTHWEST_VALUE_SURGE_HUB_AREAS, UPPER_NORTHWEST_VALUE_SURGE_LEND
 import { getLenderBySlug } from '@/lib/lenders';
 
 export const metadata: Metadata = {
-  title: 'Upper Northwest DC Mortgage Lenders — Takoma & Brightwood Value Surge, Zip 20012 (2026)',
+  title: 'Upper Northwest DC Mortgage Lenders — Takoma, Brightwood & Colonial Village, Zip 20012 (2026)',
   description:
-    'NMLS-verified mortgage lenders in DC Ward 3 North. Takoma and Brightwood single-family value plays, Metro access with yards and mature trees, 17–23% appreciation, and massive discount vs. Georgetown or Spring Valley.',
+    'NMLS-verified mortgage lenders in DC Ward 3 North. Takoma, Brightwood, and Colonial Village single-family value plays, Metro access with yards and mature trees, 17–23% appreciation, and massive discount vs. Georgetown or Spring Valley.',
   alternates: { canonical: 'https://www.lendertrusthub.com/local-lenders/district-of-columbia/upper-northwest-value-surge' },
 };
 
@@ -39,7 +39,7 @@ export default function UpperNorthwestValueSurgeHubPage() {
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — Upper Northwest DC</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
-            Takoma and Brightwood lenders for standalone single-family value plays with Metro access,
+            Takoma, Brightwood, and Colonial Village lenders for standalone single-family value plays with Metro access,
             yards, and mature trees — at a massive discount to Georgetown or Spring Valley.
           </p>
           <div className="mt-6"><SearchBar className="mx-auto max-w-md" /></div>

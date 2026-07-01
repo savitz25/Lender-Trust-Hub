@@ -316,7 +316,7 @@ export default async function MortgageStatePage({
                   className="block rounded-2xl border border-rose-500/40 bg-rose-50 p-5 hover:bg-rose-100/80">
                   <span className="font-semibold text-[#0A2540]">Upper Northwest Value Surge Hub →</span>
                   <span className="mt-1 block text-sm text-zinc-600">
-                    Takoma &amp; Brightwood — 12 verified lenders, Zip 20012 single-family value plays.
+                    Takoma, Brightwood &amp; Colonial Village — 12 verified lenders, Zip 20012 value surge.
                   </span>
                 </Link>
                 <Link href="/local-lenders/district-of-columbia/high-velocity-mid-city-core"
