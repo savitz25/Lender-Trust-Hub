@@ -453,6 +453,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.lendertrusthub.com/local-lenders/new-york/nyc-boroughs-brooklyn-queens-manhattan</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.lendertrusthub.com/local-lenders/new-york/upstate-powerhouses-buffalo-albany</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -490,6 +496,24 @@
   </url>
   <url>
     <loc>https://www.lendertrusthub.com/local-lenders/new-york/putnam</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.lendertrusthub.com/local-lenders/new-york/kings</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.lendertrusthub.com/local-lenders/new-york/queens</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.lendertrusthub.com/local-lenders/new-york/new-york-county</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>

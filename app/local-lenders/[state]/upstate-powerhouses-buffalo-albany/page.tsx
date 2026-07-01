@@ -122,6 +122,7 @@ export default function UpstatePowerhousesBuffaloAlbanyHubPage() {
             <div className="rounded-2xl border border-zinc-200 bg-white p-5 text-sm">
               <h2 className="font-semibold text-[#0A2540]">Also Explore</h2>
               <ul className="mt-3 space-y-2">
+                <li><Link href="/local-lenders/new-york/nyc-boroughs-brooklyn-queens-manhattan" className="text-[#14B8A6] hover:underline">NYC Boroughs Hub →</Link></li>
                 <li><Link href="/local-lenders/new-york/nyc-suburbs-westchester-putnam" className="text-[#14B8A6] hover:underline">NYC Suburbs Hub →</Link></li>
                 <li><Link href="/local-lenders/massachusetts/worcester-undisputed-growth-leader" className="text-[#14B8A6] hover:underline">Worcester Growth Hub →</Link></li>
                 <li><Link href="/local-lenders/massachusetts/gateway-cities-suburban-alternatives" className="text-[#14B8A6] hover:underline">Gateway Cities Hub →</Link></li>

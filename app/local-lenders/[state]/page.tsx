@@ -351,7 +351,14 @@ export default async function MortgageStatePage({
             )}
 
             {slug === 'new-york' && (
-              <div className="grid gap-3 sm:grid-cols-2">
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <Link href="/local-lenders/new-york/nyc-boroughs-brooklyn-queens-manhattan"
+                  className="block rounded-2xl border border-sky-500/40 bg-sky-50 p-5 hover:bg-sky-100/80">
+                  <span className="font-semibold text-[#0A2540]">NYC Boroughs Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Brooklyn, Queens &amp; Manhattan — 12 verified lenders, multi-family &amp; co-op expertise.
+                  </span>
+                </Link>
                 <Link href="/local-lenders/new-york/upstate-powerhouses-buffalo-albany"
                   className="block rounded-2xl border border-orange-500/40 bg-orange-50 p-5 hover:bg-orange-100/80">
                   <span className="font-semibold text-[#0A2540]">Upstate Powerhouses Hub →</span>

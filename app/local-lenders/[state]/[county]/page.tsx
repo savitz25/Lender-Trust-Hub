@@ -80,6 +80,9 @@ export async function generateMetadata({
   const isAlbany = state === 'new-york' && county === 'albany';
   const isWestchester = state === 'new-york' && county === 'westchester';
   const isPutnam = state === 'new-york' && county === 'putnam';
+  const isKings = state === 'new-york' && county === 'kings';
+  const isQueens = state === 'new-york' && county === 'queens';
+  const isNewYorkCounty = state === 'new-york' && county === 'new-york-county';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -201,7 +204,13 @@ export async function generateMetadata({
                                                                                                                             ? `Best Mortgage Lenders in Westchester County, NY — NYC Suburbs Tri-State Surge (2026)`
                                                                                                                             : isPutnam
                                                                                                                               ? `Best Mortgage Lenders in Putnam County, NY — NYC Suburbs Affordability Alternative (2026)`
-                                                                                                                              : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                                                                              : isKings
+                                                                                                                                ? `Best Mortgage Lenders in Kings County, NY — Brooklyn NYC Boroughs (2026)`
+                                                                                                                                : isQueens
+                                                                                                                                  ? `Best Mortgage Lenders in Queens County, NY — NYC Boroughs Growth Corridors (2026)`
+                                                                                                                                  : isNewYorkCounty
+                                                                                                                                    ? `Best Mortgage Lenders in New York County, NY — Manhattan NYC Boroughs (2026)`
+                                                                                                                                    : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -322,7 +331,13 @@ export async function generateMetadata({
                                                                                                                             ? `Compare 16 NMLS-verified Westchester mortgage lenders. White Plains and New Rochelle over-asking sales, 102%+ sale-to-list, Tri-State surge, and Manhattan/Brooklyn relocation.`
                                                                                                                             : isPutnam
                                                                                                                               ? `Compare 16 NMLS-verified Putnam mortgage lenders. 11%+ YoY price gains, NYC suburb affordability alternative, limited inventory, and Tri-State commuter demand.`
-                                                                                                                              : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                                                                              : isKings
+                                                                                                                                ? `Compare 12 NMLS-verified Kings (Brooklyn) mortgage lenders. Southern Brooklyn multi-family rental plays, waterfront rowhomes, lean inventory, and borough bidding wars.`
+                                                                                                                                : isQueens
+                                                                                                                                  ? `Compare 12 NMLS-verified Queens mortgage lenders. Astoria, LIC, and Flushing growth, modern condos, multi-family investors, and aggressive appreciation.`
+                                                                                                                                  : isNewYorkCounty
+                                                                                                                                    ? `Compare 12 NMLS-verified Manhattan mortgage lenders. Luxury co-op resurgence, condo financing, urban professionals, and lean-inventory competition.`
+                                                                                                                                    : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 
