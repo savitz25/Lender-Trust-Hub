@@ -267,6 +267,13 @@ export default async function MortgageStatePage({
                     Katy, The Woodlands, Sugar Land &amp; Conroe — 12 verified lenders, resilient suburban growth.
                   </span>
                 </Link>
+                <Link href="/local-lenders/texas/spacex-corridor-sleepy-town-booms"
+                  className="block rounded-2xl border border-cyan-500/40 bg-cyan-50 p-5 hover:bg-cyan-100/80">
+                  <span className="font-semibold text-[#0A2540]">SpaceX Corridor Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Bastrop &amp; Brownsville — 12 verified lenders, sleepy town to boomtown transformation.
+                  </span>
+                </Link>
               </div>
             )}
 

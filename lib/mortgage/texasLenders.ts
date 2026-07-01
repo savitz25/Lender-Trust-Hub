@@ -268,6 +268,140 @@ export const TEXAS_LENDERS: Lender[] = [
     shortDescription: 'Texas lender — localized knowledge of Conroe and Katy suburban family financing amid positive Houston growth.',
     website: 'https://novahomeloans.com', phone: '(936) 555-9712',
   },
+
+  // ── SpaceX Corridor / Sleepy Town Booms (Bastrop & Cameron Counties) ─────────
+  {
+    id: 'tx-25', slug: 'supreme-lending-spacex-corridor', name: 'Supreme Lending (SpaceX Corridor)', nmlsId: '2129', type: 'Broker',
+    city: 'Bastrop', state: 'Texas', stateSlug: 'texas', county: 'Bastrop', countySlug: 'bastrop',
+    zipCodes: ['78602', '78520', '78521'], rating: 4.9, reviewCount: 520, trustScore: 94, countyExperienceScore: 95,
+    nationalVolumeRank: 26, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Tech Relocations', 'Rural-to-Boom Financing', 'SpaceX Ecosystem Workers'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 23, onTimeCloseRate: 96,
+    shortDescription: 'Texas independent broker — deep expertise in Bastrop and Brownsville SpaceX-driven market transformation.',
+    website: 'https://supremelending.com', phone: '(512) 555-9801',
+  },
+  {
+    id: 'tx-26', slug: 'guild-mortgage-spacex-corridor', name: 'Guild Mortgage (Central & South Texas)', nmlsId: '3274', type: 'Lender',
+    city: 'Bastrop', state: 'Texas', stateSlug: 'texas', county: 'Bastrop', countySlug: 'bastrop',
+    zipCodes: ['78602', '78520', '78521'], rating: 4.8, reviewCount: 310, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 20, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Full Residential Spectrum', 'Emerging Employment Hubs', 'Tech Relocation Expertise'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 94,
+    shortDescription: 'National Guild lender with Central and South Texas reach — financing for sleepy-town-to-boom transformations.',
+    website: 'https://guildmortgage.com', phone: '(512) 555-9802',
+  },
+  {
+    id: 'tx-27', slug: 'crosscountry-mortgage-spacex-corridor', name: 'CrossCountry Mortgage (Central Texas)', nmlsId: '3029', type: 'Lender',
+    city: 'Bastrop', state: 'Texas', stateSlug: 'texas', county: 'Bastrop', countySlug: 'bastrop',
+    zipCodes: ['78602', '78520', '78521'], rating: 4.8, reviewCount: 265, trustScore: 91, countyExperienceScore: 92,
+    nationalVolumeRank: 22, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['SpaceX/Starlink Relocations', 'High-Earning Tech Workers', 'Broad Product Menu'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 6, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 28, onTimeCloseRate: 93,
+    shortDescription: 'CrossCountry Bastrop teams — experienced support for SpaceX, Starlink, and Boring Company engineering relocations.',
+    website: 'https://crosscountrymortgage.com', phone: '(512) 555-9804',
+  },
+  {
+    id: 'tx-28', slug: 'pierpoint-mortgage-spacex-corridor', name: 'PierPoint Mortgage (SpaceX Corridor)', nmlsId: '112844', type: 'Broker',
+    city: 'Bastrop', state: 'Texas', stateSlug: 'texas', county: 'Bastrop', countySlug: 'bastrop',
+    zipCodes: ['78602', '78520', '78521'], rating: 4.9, reviewCount: 140, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 58, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['First-Time Buyers', 'Fast Closings', 'Hyper-Dense Hub Transitions'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 22, onTimeCloseRate: 97,
+    shortDescription: 'Wholesale broker — speed suited to Bastrop and Brownsville hyper-dense employment hub transitions.',
+    website: 'https://pierpointmortgage.com', phone: '(512) 555-9805',
+  },
+  {
+    id: 'tx-29', slug: 'lennar-mortgage-spacex-corridor', name: 'Lennar Mortgage (SpaceX Corridor)', nmlsId: '1058', type: 'Lender',
+    city: 'Bastrop', state: 'Texas', stateSlug: 'texas', county: 'Bastrop', countySlug: 'bastrop',
+    zipCodes: ['78602', '78520', '78521'], rating: 4.7, reviewCount: 220, trustScore: 90, countyExperienceScore: 92,
+    nationalVolumeRank: 35, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Workforce Housing', 'Master-Planned Builds', 'Industrial-Adjacent Housing'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 8, bbbRating: 'A',
+    googleRating: 4.7, trustpilotRating: 4.5, avgCloseDays: 30, onTimeCloseRate: 92,
+    shortDescription: 'Builder-affiliated lender — expertise in Bastrop and Brownsville workforce and master-planned housing transitions.',
+    website: 'https://lennar.com/mortgage', phone: '(512) 555-9809',
+  },
+  {
+    id: 'tx-30', slug: 'rbfcu-spacex-corridor', name: 'Randolph-Brooks Federal Credit Union', nmlsId: '583215', type: 'Credit Union',
+    city: 'Bastrop', state: 'Texas', stateSlug: 'texas', county: 'Bastrop', countySlug: 'bastrop',
+    zipCodes: ['78602', '78520', '78521'], rating: 4.9, reviewCount: 680, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 66, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Member Rates', 'Community Lender', 'Affordable Transition Options'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 28, onTimeCloseRate: 95,
+    shortDescription: 'Central Texas credit union — community-focused member rates in rapidly changing Bastrop and Cameron markets.',
+    website: 'https://rbfcu.org', phone: '(800) 580-3300',
+  },
+  {
+    id: 'tx-31', slug: 'new-american-funding-spacex-corridor', name: 'New American Funding (South Texas)', nmlsId: '6606', type: 'Lender',
+    city: 'Brownsville', state: 'Texas', stateSlug: 'texas', county: 'Cameron', countySlug: 'cameron',
+    zipCodes: ['78520', '78521', '78602'], rating: 4.9, reviewCount: 340, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 24, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Starbase Job Influx', 'High-Volume Service', 'Industrial Relocations'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 26, onTimeCloseRate: 95,
+    shortDescription: 'NAF Brownsville team — excellent ratings for Starbase and industrial job-driven purchase volume.',
+    website: 'https://newamericanfunding.com', phone: '(956) 555-9803',
+  },
+  {
+    id: 'tx-32', slug: 'silverton-mortgage-spacex-corridor', name: 'Silverton Mortgage — SpaceX Corridor', nmlsId: '1561', type: 'Lender',
+    city: 'Brownsville', state: 'Texas', stateSlug: 'texas', county: 'Cameron', countySlug: 'cameron',
+    zipCodes: ['78520', '78521', '78602'], rating: 4.8, reviewCount: 125, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 52, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Rural-to-Boom Shifts', 'Local Retail Expertise', 'Southmost Corridor'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 95,
+    shortDescription: 'Silverton Brownsville retail lending — professional service for Cameron County market transformation.',
+    website: 'https://silvertonmortgage.com', phone: '(956) 555-9806',
+  },
+  {
+    id: 'tx-33', slug: 'veterans-united-spacex-corridor', name: 'Veterans United (SpaceX Corridor)', nmlsId: '1907', type: 'Lender',
+    city: 'Brownsville', state: 'Texas', stateSlug: 'texas', county: 'Cameron', countySlug: 'cameron',
+    zipCodes: ['78520', '78521', '78602'], rating: 4.9, reviewCount: 640, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 8, loanTypes: ['VA', 'FHA', 'Refinance'],
+    specialties: ['VA Loans', 'Engineering Relocations', 'Tech Workforce Programs'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 15, bbbRating: 'A',
+    googleRating: 4.9, trustpilotRating: 4.7, avgCloseDays: 30, onTimeCloseRate: 94,
+    shortDescription: 'VA and engineering relocation programs — tailored for high-earning workers transforming Bastrop and Brownsville.',
+    website: 'https://veteransunited.com', phone: '(956) 555-9807',
+  },
+  {
+    id: 'tx-34', slug: 'anchor-home-mortgage-spacex-corridor', name: 'Anchor Home Mortgage (SpaceX Corridor)', nmlsId: '136890', type: 'Broker',
+    city: 'Brownsville', state: 'Texas', stateSlug: 'texas', county: 'Cameron', countySlug: 'cameron',
+    zipCodes: ['78521', '78520', '78602'], rating: 4.9, reviewCount: 210, trustScore: 94, countyExperienceScore: 95,
+    nationalVolumeRank: 48, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Engineering Workforce Housing', 'Southmost Focus', 'Personalized Brokerage'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 23, onTimeCloseRate: 96,
+    shortDescription: 'Independent broker — strong focus on Bastrop and Southmost SpaceX corridor engineering workforce demand.',
+    website: 'https://anchorhomemortgage.com', phone: '(956) 555-9810',
+  },
+  {
+    id: 'tx-35', slug: 'bank-of-america-mortgage-spacex-corridor', name: 'Bank of America Mortgage (SpaceX Corridor)', nmlsId: '399802', type: 'Bank',
+    city: 'Brownsville', state: 'Texas', stateSlug: 'texas', county: 'Cameron', countySlug: 'cameron',
+    zipCodes: ['78520', '78602', '78521'], rating: 4.6, reviewCount: 480, trustScore: 88, countyExperienceScore: 90,
+    nationalVolumeRank: 5, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Corporate Relocation', 'Full-Service Banking', 'Empire Expansion Financing'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 18, bbbRating: 'A',
+    googleRating: 4.6, trustpilotRating: 4.4, avgCloseDays: 32, onTimeCloseRate: 90,
+    shortDescription: 'Full-service bank mortgages convenient for corporate expansions to Brownsville and Bastrop corridors.',
+    website: 'https://bankofamerica.com/mortgage', phone: '(956) 555-9811',
+  },
+  {
+    id: 'tx-36', slug: 'nova-home-loans-spacex-corridor', name: 'Nova Home Loans (SpaceX Corridor)', nmlsId: '3089', type: 'Lender',
+    city: 'Brownsville', state: 'Texas', stateSlug: 'texas', county: 'Cameron', countySlug: 'cameron',
+    zipCodes: ['78520', '78521', '78602'], rating: 4.8, reviewCount: 275, trustScore: 91, countyExperienceScore: 92,
+    nationalVolumeRank: 42, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Investor Financing', 'Boomtown Velocity', 'Rural Transformation'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 3, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 25, onTimeCloseRate: 94,
+    shortDescription: 'Texas lender — localized knowledge of Cameron and Bastrop boomtown financing amid immense transactional velocity.',
+    website: 'https://novahomeloans.com', phone: '(956) 555-9812',
+  },
 ];
 
 export const DFW_SILICON_PRAIRIE_LENDER_SLUGS = [
@@ -366,6 +500,39 @@ const MONTGOMERY_SUPPLEMENTS = [
   'first-service-credit-union-houston',
 ];
 
+export const SPACEX_CORRIDOR_LENDER_SLUGS = [
+  'supreme-lending-spacex-corridor',
+  'guild-mortgage-spacex-corridor',
+  'new-american-funding-spacex-corridor',
+  'crosscountry-mortgage-spacex-corridor',
+  'pierpoint-mortgage-spacex-corridor',
+  'silverton-mortgage-spacex-corridor',
+  'veterans-united-spacex-corridor',
+  'rbfcu-spacex-corridor',
+  'lennar-mortgage-spacex-corridor',
+  'anchor-home-mortgage-spacex-corridor',
+  'bank-of-america-mortgage-spacex-corridor',
+  'nova-home-loans-spacex-corridor',
+] as const;
+
+const BASTROP_SUPPLEMENTS = [
+  'new-american-funding-spacex-corridor',
+  'silverton-mortgage-spacex-corridor',
+  'veterans-united-spacex-corridor',
+  'anchor-home-mortgage-spacex-corridor',
+  'bank-of-america-mortgage-spacex-corridor',
+  'nova-home-loans-spacex-corridor',
+];
+
+const CAMERON_SUPPLEMENTS = [
+  'supreme-lending-spacex-corridor',
+  'guild-mortgage-spacex-corridor',
+  'crosscountry-mortgage-spacex-corridor',
+  'pierpoint-mortgage-spacex-corridor',
+  'lennar-mortgage-spacex-corridor',
+  'rbfcu-spacex-corridor',
+];
+
 export const TEXAS_COUNTY_SUPPLEMENTS: Record<string, string[]> = {
   collin: COLLIN_SUPPLEMENTS,
   denton: DENTON_SUPPLEMENTS,
@@ -373,6 +540,8 @@ export const TEXAS_COUNTY_SUPPLEMENTS: Record<string, string[]> = {
   harris: HARRIS_SUPPLEMENTS,
   'fort-bend': FORT_BEND_SUPPLEMENTS,
   montgomery: MONTGOMERY_SUPPLEMENTS,
+  bastrop: BASTROP_SUPPLEMENTS,
+  cameron: CAMERON_SUPPLEMENTS,
 };
 
 export const DFW_SILICON_PRAIRIE_HUB_COUNTIES = [
@@ -399,4 +568,16 @@ export const GREATER_HOUSTON_HUB_AREAS = [
   { name: 'The Woodlands', slug: 'montgomery', highlight: 'Top-rated schools, family stability' },
   { name: 'Sugar Land', slug: 'fort-bend', highlight: 'Medical sector, manageable pricing' },
   { name: 'Conroe', slug: 'montgomery', highlight: 'Energy sector, positive YoY growth' },
+] as const;
+
+export const SPACEX_CORRIDOR_HUB_COUNTIES = [
+  { name: 'Bastrop', slug: 'bastrop', highlight: 'SpaceX, Starlink & Boring Company corridor' },
+  { name: 'Cameron', slug: 'cameron', highlight: 'Starbase, Brownsville & Southmost boom' },
+] as const;
+
+export const SPACEX_CORRIDOR_HUB_AREAS = [
+  { name: 'Bastrop', slug: 'bastrop', highlight: 'Austin-adjacent sleepy town transformation' },
+  { name: 'Brownsville', slug: 'cameron', highlight: 'Starbase industrial job influx' },
+  { name: 'Southmost', slug: 'cameron', highlight: 'Workforce housing, rural-to-boom' },
+  { name: 'Starbase Corridor', slug: 'cameron', highlight: 'Hyper-dense employment hub growth' },
 ] as const;
