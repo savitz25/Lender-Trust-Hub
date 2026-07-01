@@ -2,7 +2,7 @@ import 'server-only';
 
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
-import type { LeadCategory } from '@/types/supabase';
+import type { Json, LeadCategory } from '@/types/supabase';
 
 export interface SubmitLeadInput {
   email: string;
@@ -11,7 +11,7 @@ export interface SubmitLeadInput {
   intent: string;
   source?: string;
   variant?: string;
-  calculatorPayload?: Record<string, unknown>;
+  calculatorPayload?: Json;
 }
 
 export async function submitLead(input: SubmitLeadInput): Promise<{ ok: boolean; id?: string; error?: string }> {
