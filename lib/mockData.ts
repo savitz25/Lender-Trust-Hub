@@ -1,3 +1,5 @@
+import { FLORIDA_LENDERS } from '@/lib/mortgage/floridaLenders';
+
 export type LoanType = 'Conventional' | 'FHA' | 'VA' | 'USDA' | 'Jumbo' | 'ARM' | 'Refinance';
 export type CreditTier = 'Excellent' | 'Good' | 'Fair' | 'Rebuilding';
 export type LenderType = 'Lender' | 'Broker' | 'Credit Union' | 'Bank';
@@ -43,7 +45,14 @@ export const TRUST_STATS = {
 
 export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; county: string; countySlug: string }> = {
   '33301': { state: 'Florida', stateSlug: 'florida', county: 'Broward', countySlug: 'broward' },
+  '33330': { state: 'Florida', stateSlug: 'florida', county: 'Broward', countySlug: 'broward' },
+  '33331': { state: 'Florida', stateSlug: 'florida', county: 'Broward', countySlug: 'broward' },
   '33101': { state: 'Florida', stateSlug: 'florida', county: 'Miami-Dade', countySlug: 'miami-dade' },
+  '33130': { state: 'Florida', stateSlug: 'florida', county: 'Miami-Dade', countySlug: 'miami-dade' },
+  '33431': { state: 'Florida', stateSlug: 'florida', county: 'Palm Beach', countySlug: 'palm-beach' },
+  '32801': { state: 'Florida', stateSlug: 'florida', county: 'Orange', countySlug: 'orange' },
+  '33602': { state: 'Florida', stateSlug: 'florida', county: 'Hillsborough', countySlug: 'hillsborough' },
+  '32202': { state: 'Florida', stateSlug: 'florida', county: 'Duval', countySlug: 'duval' },
   '90210': { state: 'California', stateSlug: 'california', county: 'Los Angeles', countySlug: 'los-angeles' },
   '10001': { state: 'New York', stateSlug: 'new-york', county: 'New York', countySlug: 'new-york' },
   '77001': { state: 'Texas', stateSlug: 'texas', county: 'Harris', countySlug: 'harris' },
@@ -54,37 +63,7 @@ export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; c
   '80201': { state: 'Colorado', stateSlug: 'colorado', county: 'Denver', countySlug: 'denver' },
 };
 
-export const lenders: Lender[] = [
-  {
-    id: '1', slug: 'summit-home-lending', name: 'Summit Home Lending', nmlsId: '1847293', type: 'Lender',
-    city: 'Fort Lauderdale', state: 'Florida', stateSlug: 'florida', county: 'Broward', countySlug: 'broward',
-    zipCodes: ['33301', '33304', '33308'], rating: 4.9, reviewCount: 1247, trustScore: 96, countyExperienceScore: 94,
-    nationalVolumeRank: 42, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'], specialties: ['First-Time Buyers', 'Self-Employed'],
-    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A+',
-    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 28, onTimeCloseRate: 97,
-    shortDescription: 'Broward County specialist with transparent rates and fast closings for first-time and move-up buyers.',
-    website: 'https://example.com', phone: '(954) 555-0101',
-  },
-  {
-    id: '2', slug: 'coastal-mortgage-partners', name: 'Coastal Mortgage Partners', nmlsId: '2103847', type: 'Broker',
-    city: 'Hollywood', state: 'Florida', stateSlug: 'florida', county: 'Broward', countySlug: 'broward',
-    zipCodes: ['33019', '33020', '33301'], rating: 4.7, reviewCount: 892, trustScore: 91, countyExperienceScore: 89,
-    nationalVolumeRank: 78, loanTypes: ['Conventional', 'Jumbo', 'ARM'], specialties: ['Luxury Homes', 'Investment Properties'],
-    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A',
-    googleRating: 4.6, trustpilotRating: 4.5, avgCloseDays: 32, onTimeCloseRate: 94,
-    shortDescription: 'Independent broker comparing 40+ lenders for Broward jumbo and waterfront purchases.',
-    phone: '(954) 555-0102',
-  },
-  {
-    id: '3', slug: 'evergreen-lending-group', name: 'Evergreen Lending Group', nmlsId: '1562038', type: 'Lender',
-    city: 'Miami', state: 'Florida', stateSlug: 'florida', county: 'Miami-Dade', countySlug: 'miami-dade',
-    zipCodes: ['33101', '33130', '33139'], rating: 4.8, reviewCount: 2103, trustScore: 93, countyExperienceScore: 97,
-    nationalVolumeRank: 31, loanTypes: ['Conventional', 'FHA', 'VA', 'USDA'], specialties: ['Bilingual Services', 'FHA 203k'],
-    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 6, bbbRating: 'A+',
-    googleRating: 4.7, trustpilotRating: 4.6, avgCloseDays: 30, onTimeCloseRate: 95,
-    shortDescription: 'Miami-Dade leader in FHA and renovation loans with bilingual loan officers.',
-    phone: '(305) 555-0201',
-  },
+const NATIONAL_LENDERS: Lender[] = [
   {
     id: '4', slug: 'pacific-trust-mortgage', name: 'Pacific Trust Mortgage', nmlsId: '1984721', type: 'Lender',
     city: 'Los Angeles', state: 'California', stateSlug: 'california', county: 'Los Angeles', countySlug: 'los-angeles',
@@ -166,26 +145,6 @@ export const lenders: Lender[] = [
     phone: '(303) 555-1001',
   },
   {
-    id: '12', slug: 'harbor-bay-lending', name: 'Harbor Bay Lending', nmlsId: '1839204', type: 'Broker',
-    city: 'Pompano Beach', state: 'Florida', stateSlug: 'florida', county: 'Broward', countySlug: 'broward',
-    zipCodes: ['33062', '33064', '33301'], rating: 4.5, reviewCount: 634, trustScore: 85, countyExperienceScore: 87,
-    nationalVolumeRank: 102, loanTypes: ['Conventional', 'FHA', 'USDA'], specialties: ['Credit Repair Path', 'FHA'],
-    creditTiers: ['Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 8, bbbRating: 'A-',
-    googleRating: 4.4, trustpilotRating: 4.3, avgCloseDays: 36, onTimeCloseRate: 88,
-    shortDescription: 'Broward broker helping credit-challenged buyers find FHA-friendly lenders.',
-    phone: '(954) 555-1101',
-  },
-  {
-    id: '13', slug: 'sunshine-state-mortgage', name: 'Sunshine State Mortgage', nmlsId: '2156783', type: 'Lender',
-    city: 'Coral Springs', state: 'Florida', stateSlug: 'florida', county: 'Broward', countySlug: 'broward',
-    zipCodes: ['33065', '33067', '33301'], rating: 4.8, reviewCount: 1456, trustScore: 92, countyExperienceScore: 93,
-    nationalVolumeRank: 48, loanTypes: ['Conventional', 'VA', 'Refinance'], specialties: ['Veterans', 'IRRRL'],
-    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 3, bbbRating: 'A+',
-    googleRating: 4.7, trustpilotRating: 4.6, avgCloseDays: 25, onTimeCloseRate: 97,
-    shortDescription: 'Broward VA streamline refinance specialist with military family focus.',
-    phone: '(954) 555-1201',
-  },
-  {
     id: '14', slug: 'golden-gate-home-loans', name: 'Golden Gate Home Loans', nmlsId: '1765432', type: 'Lender',
     city: 'San Francisco', state: 'California', stateSlug: 'california', county: 'San Francisco', countySlug: 'san-francisco',
     zipCodes: ['94102', '94107', '94110'], rating: 4.4, reviewCount: 892, trustScore: 84, countyExperienceScore: 91,
@@ -256,16 +215,6 @@ export const lenders: Lender[] = [
     phone: '(413) 555-1901',
   },
   {
-    id: '21', slug: 'tampa-bay-trust-lending', name: 'Tampa Bay Trust Lending', nmlsId: '2183947', type: 'Lender',
-    city: 'Tampa', state: 'Florida', stateSlug: 'florida', county: 'Hillsborough', countySlug: 'hillsborough',
-    zipCodes: ['33602', '33606', '33609'], rating: 4.8, reviewCount: 1876, trustScore: 92, countyExperienceScore: 90,
-    nationalVolumeRank: 46, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'], specialties: ['Flood Zone Properties', 'Insurance Coordination'],
-    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A',
-    googleRating: 4.7, trustpilotRating: 4.6, avgCloseDays: 29, onTimeCloseRate: 94,
-    shortDescription: 'Hillsborough County lender navigating Florida flood insurance requirements.',
-    phone: '(813) 555-2001',
-  },
-  {
     id: '22', slug: 'nashville-home-mortgage', name: 'Nashville Home Mortgage', nmlsId: '1857293', type: 'Lender',
     city: 'Nashville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Davidson', countySlug: 'davidson',
     zipCodes: ['37201', '37203', '37206'], rating: 4.9, reviewCount: 1345, trustScore: 93, countyExperienceScore: 91,
@@ -276,3 +225,5 @@ export const lenders: Lender[] = [
     phone: '(615) 555-2101',
   },
 ];
+
+export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS];

@@ -1,4 +1,5 @@
 import { lenders, ZIP_TO_COUNTY, type Lender, type LoanType, type CreditTier } from './mockData';
+import { FLORIDA_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/floridaLenders';
 
 export { lenders };
 export type { Lender, LoanType, CreditTier };
@@ -78,7 +79,20 @@ export function filterLenders(filters: LenderFilters): Lender[] {
 }
 
 export function getLendersByCounty(stateSlug: string, countySlug: string): Lender[] {
-  return filterLenders({ stateSlug, countySlug });
+  const primary = filterLenders({ stateSlug, countySlug });
+  if (stateSlug !== 'florida') return primary;
+
+  const supplementSlugs = FLORIDA_COUNTY_SUPPLEMENTS[countySlug] ?? [];
+  const seen = new Set(primary.map((l) => l.slug));
+  const supplemental = supplementSlugs
+    .map((slug) => lenders.find((l) => l.slug === slug))
+    .filter((l): l is Lender => !!l && !seen.has(l.slug));
+
+  return [...primary, ...supplemental].sort((a, b) => {
+    const countyDiff = b.countyExperienceScore - a.countyExperienceScore;
+    if (countyDiff !== 0) return countyDiff;
+    return b.trustScore - a.trustScore;
+  });
 }
 
 export function getFeaturedLenders(limit = 6): Lender[] {
