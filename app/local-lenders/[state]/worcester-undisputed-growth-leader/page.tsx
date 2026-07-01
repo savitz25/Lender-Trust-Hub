@@ -102,6 +102,7 @@ export default function WorcesterUndisputedGrowthLeaderHubPage() {
             <div className="rounded-2xl border border-zinc-200 bg-white p-5 text-sm">
               <h2 className="font-semibold text-[#0A2540]">Also Explore</h2>
               <ul className="mt-3 space-y-2">
+                <li><Link href="/local-lenders/massachusetts/transit-oriented-urban-hotspots-somerville-cambridge" className="text-[#14B8A6] hover:underline">Cambridge &amp; Somerville Hub →</Link></li>
                 <li><Link href="/local-lenders/district-of-columbia/upper-northwest-value-surge" className="text-[#14B8A6] hover:underline">Upper Northwest Value Surge Hub →</Link></li>
                 <li><Link href="/local-lenders/district-of-columbia/high-velocity-mid-city-core" className="text-[#14B8A6] hover:underline">Mid-City Core Hub →</Link></li>
                 <li><Link href="/local-lenders/colorado/colorado-springs-stability-volume" className="text-[#14B8A6] hover:underline">Colorado Springs Hub →</Link></li>

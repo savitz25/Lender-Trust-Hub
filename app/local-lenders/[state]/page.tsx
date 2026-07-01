@@ -319,6 +319,13 @@ export default async function MortgageStatePage({
                     Worcester County — 12 verified lenders, Zoom Town &amp; life sciences growth leader.
                   </span>
                 </Link>
+                <Link href="/local-lenders/massachusetts/transit-oriented-urban-hotspots-somerville-cambridge"
+                  className="block rounded-2xl border border-sky-500/40 bg-sky-50 p-5 hover:bg-sky-100/80">
+                  <span className="font-semibold text-[#0A2540]">Cambridge &amp; Somerville Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Middlesex County — 12 verified lenders, Green Line &amp; tech/biotech urban hotspots.
+                  </span>
+                </Link>
               </div>
             )}
 

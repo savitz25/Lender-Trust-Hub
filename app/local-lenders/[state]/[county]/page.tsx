@@ -73,6 +73,7 @@ export async function generateMetadata({
   const isClark = state === 'washington' && county === 'clark';
   const isDistrictOfColumbia = state === 'district-of-columbia' && county === 'district-of-columbia';
   const isWorcester = state === 'massachusetts' && county === 'worcester';
+  const isMiddlesex = state === 'massachusetts' && county === 'middlesex';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -180,7 +181,9 @@ export async function generateMetadata({
                                                                                                               ? `Best Mortgage Lenders in Washington, DC — Metro Hubs (2026)`
                                                                                                               : isWorcester
                                                                                                                 ? `Best Mortgage Lenders in Worcester County, MA — Undisputed Growth Leader (2026)`
-                                                                                                                : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                                                                : isMiddlesex
+                                                                                                                  ? `Best Mortgage Lenders in Middlesex County, MA — Cambridge & Somerville Transit Hotspots (2026)`
+                                                                                                                  : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -287,7 +290,9 @@ export async function generateMetadata({
                                                                                                               ? `Compare 36 NMLS-verified DC mortgage lenders. Upper Northwest value plays, Mid-City historic rowhomes, Brookland first-time buyer entry, Navy Yard waterfront condos, and DCU member rates.`
                                                                                                               : isWorcester
                                                                                                                 ? `Compare 12 NMLS-verified Worcester mortgage lenders. Zoom Town growth leader, life sciences relocations, Polar Park revitalization, DCU member rates, and commuter rail affordability.`
-                                                                                                                : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                                                                : isMiddlesex
+                                                                                                                  ? `Compare 12 NMLS-verified Middlesex mortgage lenders. Green Line extension demand, tech/biotech professionals, $930K+ Somerville and $1M+ Cambridge medians, and transit-oriented urban financing.`
+                                                                                                                  : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 
