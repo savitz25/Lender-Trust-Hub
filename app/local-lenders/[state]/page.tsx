@@ -293,6 +293,13 @@ export default async function MortgageStatePage({
                     Lynnwood &amp; Everett — 12 verified lenders, light rail &amp; Boeing aerospace corridor.
                   </span>
                 </Link>
+                <Link href="/local-lenders/washington/south-sound-tacoma-puyallup"
+                  className="block rounded-2xl border border-sky-500/40 bg-sky-50 p-5 hover:bg-sky-100/80">
+                  <span className="font-semibold text-[#0A2540]">South Sound Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Tacoma &amp; Puyallup — 12 verified lenders, Sounder rail &amp; JBLM safety valve.
+                  </span>
+                </Link>
               </div>
             )}
 

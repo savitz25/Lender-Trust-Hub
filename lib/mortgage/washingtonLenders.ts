@@ -134,6 +134,140 @@ export const WASHINGTON_LENDERS: Lender[] = [
     shortDescription: 'Washington lender — localized knowledge of Snohomish light rail effect and steady north corridor family demand.',
     website: 'https://novahomeloans.com', phone: '(425) 555-9712',
   },
+
+  // ── South Sound (Pierce County — Tacoma & Puyallup) ──────────────────────────
+  {
+    id: 'wa-13', slug: 'heritage-home-mortgage-south-sound', name: 'Heritage Home Mortgage (South Sound)', nmlsId: '124684', type: 'Broker',
+    city: 'Tacoma', state: 'Washington', stateSlug: 'washington', county: 'Pierce', countySlug: 'pierce',
+    zipCodes: ['98403', '98405', '98373'], rating: 4.9, reviewCount: 760, trustScore: 95, countyExperienceScore: 96,
+    nationalVolumeRank: 36, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Commuter-Rail Financing', 'Family Suburban Buyers', 'Affordability Safety Valve'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 23, onTimeCloseRate: 96,
+    shortDescription: 'South Sound independent broker — deep expertise in Sounder commuter and family suburban financing across Pierce County.',
+    website: 'https://heritagehomemortgage.com', phone: '(253) 555-9801',
+  },
+  {
+    id: 'wa-14', slug: 'guild-mortgage-south-sound', name: 'Guild Mortgage (South Sound)', nmlsId: '3274', type: 'Lender',
+    city: 'Tacoma', state: 'Washington', stateSlug: 'washington', county: 'Pierce', countySlug: 'pierce',
+    zipCodes: ['98403', '98374', '98405'], rating: 4.8, reviewCount: 470, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 20, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Full Residential Spectrum', 'Commuter & Military Expertise', 'Pierce County Branches'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 94,
+    shortDescription: 'National Guild lender with Tacoma and Puyallup branches — comprehensive financing for historic districts and suburban growth.',
+    website: 'https://guildmortgage.com', phone: '(253) 555-9802',
+  },
+  {
+    id: 'wa-15', slug: 'new-american-funding-tacoma', name: 'New American Funding (Tacoma)', nmlsId: '6606', type: 'Lender',
+    city: 'Tacoma', state: 'Washington', stateSlug: 'washington', county: 'Pierce', countySlug: 'pierce',
+    zipCodes: ['98403', '98406', '98373'], rating: 4.9, reviewCount: 405, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 24, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['High-Volume Purchase/Refinance', 'North End/Proctor Demand', 'Puyallup Growth'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 26, onTimeCloseRate: 95,
+    shortDescription: 'NAF Tacoma team — excellent ratings for North End/Proctor and Puyallup purchase demand in the safety-valve market.',
+    website: 'https://newamericanfunding.com', phone: '(253) 555-9803',
+  },
+  {
+    id: 'wa-16', slug: 'crosscountry-mortgage-south-sound', name: 'CrossCountry Mortgage (South Sound)', nmlsId: '3029', type: 'Lender',
+    city: 'Puyallup', state: 'Washington', stateSlug: 'washington', county: 'Pierce', countySlug: 'pierce',
+    zipCodes: ['98373', '98405', '98403'], rating: 4.8, reviewCount: 355, trustScore: 91, countyExperienceScore: 92,
+    nationalVolumeRank: 22, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['JBLM Military Families', 'Sounder Train Corridor', 'Broad Product Menu'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 6, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 28, onTimeCloseRate: 93,
+    shortDescription: 'CrossCountry Puyallup-Tacoma teams — experienced support for JBLM families and Sounder train commuter corridor buyers.',
+    website: 'https://crosscountrymortgage.com', phone: '(253) 555-9804',
+  },
+  {
+    id: 'wa-17', slug: 'pierpoint-mortgage-south-sound', name: 'PierPoint Mortgage (South Sound)', nmlsId: '112844', type: 'Broker',
+    city: 'Tacoma', state: 'Washington', stateSlug: 'washington', county: 'Pierce', countySlug: 'pierce',
+    zipCodes: ['98403', '98374', '98405'], rating: 4.9, reviewCount: 185, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 58, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['First-Time Buyers', 'Fast Closings', 'Competitive Mid-Sized Market'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 22, onTimeCloseRate: 97,
+    shortDescription: 'Wholesale broker — speed suited to Tacoma and Puyallup\'s competitive mid-sized city purchase market.',
+    website: 'https://pierpointmortgage.com', phone: '(253) 555-9805',
+  },
+  {
+    id: 'wa-18', slug: 'silverton-mortgage-south-sound', name: 'Silverton Mortgage — South Sound', nmlsId: '1561', type: 'Lender',
+    city: 'Tacoma', state: 'Washington', stateSlug: 'washington', county: 'Pierce', countySlug: 'pierce',
+    zipCodes: ['98405', '98403', '98373'], rating: 4.8, reviewCount: 148, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 52, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Retail Lending', 'Historic Charm & New Subdivisions', 'Local Expertise'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 95,
+    shortDescription: 'Silverton Tacoma retail lending — professional service for historic charm districts and newer Puyallup subdivisions.',
+    website: 'https://silvertonmortgage.com', phone: '(253) 555-9806',
+  },
+  {
+    id: 'wa-19', slug: 'veterans-united-south-sound', name: 'Veterans United (South Sound)', nmlsId: '1907', type: 'Lender',
+    city: 'Tacoma', state: 'Washington', stateSlug: 'washington', county: 'Pierce', countySlug: 'pierce',
+    zipCodes: ['98418', '98405', '98373'], rating: 4.9, reviewCount: 840, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 8, loanTypes: ['VA', 'FHA', 'Refinance'],
+    specialties: ['VA Loans', 'JBLM Proximity', 'Defense Community Programs'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 15, bbbRating: 'A',
+    googleRating: 4.9, trustpilotRating: 4.7, avgCloseDays: 30, onTimeCloseRate: 94,
+    shortDescription: 'VA and defense community programs — tailored for Joint Base Lewis-McChord proximity and military families in Pierce County.',
+    website: 'https://veteransunited.com', phone: '(253) 555-9807',
+  },
+  {
+    id: 'wa-20', slug: 'sound-credit-union-south-sound', name: 'Sound Credit Union', nmlsId: '402075', type: 'Credit Union',
+    city: 'Tacoma', state: 'Washington', stateSlug: 'washington', county: 'Pierce', countySlug: 'pierce',
+    zipCodes: ['98403', '98374', '98405'], rating: 4.9, reviewCount: 920, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 70, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Member Rates', 'Affordable Commuter Options', 'Community Lender'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 28, onTimeCloseRate: 95,
+    shortDescription: 'Pierce County credit union — community-focused member rates in the high-value affordability safety-valve market.',
+    website: 'https://soundcu.com', phone: '(800) 556-9400',
+  },
+  {
+    id: 'wa-21', slug: 'lennar-mortgage-south-sound', name: 'Lennar Mortgage (South Sound)', nmlsId: '1058', type: 'Lender',
+    city: 'Puyallup', state: 'Washington', stateSlug: 'washington', county: 'Pierce', countySlug: 'pierce',
+    zipCodes: ['98374', '98373', '98403'], rating: 4.7, reviewCount: 365, trustScore: 90, countyExperienceScore: 92,
+    nationalVolumeRank: 35, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Master-Planned Communities', 'Puyallup Suburban Growth', 'New Construction'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 8, bbbRating: 'A',
+    googleRating: 4.7, trustpilotRating: 4.5, avgCloseDays: 30, onTimeCloseRate: 92,
+    shortDescription: 'Builder-affiliated lender — expertise in Puyallup master-planned community financing and suburban powerhouse growth.',
+    website: 'https://lennar.com/mortgage', phone: '(253) 555-9809',
+  },
+  {
+    id: 'wa-22', slug: 'anchor-home-mortgage-south-sound', name: 'Anchor Home Mortgage (South Sound)', nmlsId: '136890', type: 'Broker',
+    city: 'Tacoma', state: 'Washington', stateSlug: 'washington', county: 'Pierce', countySlug: 'pierce',
+    zipCodes: ['98403', '98373', '98405'], rating: 4.9, reviewCount: 255, trustScore: 94, countyExperienceScore: 95,
+    nationalVolumeRank: 48, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['North End/Proctor Buyers', 'Personalized Brokerage', '$564K Median Affordability'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 23, onTimeCloseRate: 96,
+    shortDescription: 'Independent broker — strong focus on Tacoma North End and Puyallup buyers at roughly $300K below King County medians.',
+    website: 'https://anchorhomemortgage.com', phone: '(253) 555-9810',
+  },
+  {
+    id: 'wa-23', slug: 'bank-of-america-mortgage-south-sound', name: 'Bank of America Mortgage (South Sound)', nmlsId: '399802', type: 'Bank',
+    city: 'Tacoma', state: 'Washington', stateSlug: 'washington', county: 'Pierce', countySlug: 'pierce',
+    zipCodes: ['98405', '98373', '98403'], rating: 4.6, reviewCount: 580, trustScore: 88, countyExperienceScore: 90,
+    nationalVolumeRank: 5, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Seattle Commuter Relocation', 'Military Families', 'Full-Service Banking'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 18, bbbRating: 'A',
+    googleRating: 4.6, trustpilotRating: 4.4, avgCloseDays: 32, onTimeCloseRate: 90,
+    shortDescription: 'Full-service bank mortgages convenient for Seattle commuters and military families relocating to Tacoma and Puyallup.',
+    website: 'https://bankofamerica.com/mortgage', phone: '(253) 555-9811',
+  },
+  {
+    id: 'wa-24', slug: 'nova-home-loans-south-sound', name: 'Nova Home Loans (South Sound)', nmlsId: '3089', type: 'Lender',
+    city: 'Puyallup', state: 'Washington', stateSlug: 'washington', county: 'Pierce', countySlug: 'pierce',
+    zipCodes: ['98374', '98403', '98373'], rating: 4.8, reviewCount: 295, trustScore: 91, countyExperienceScore: 92,
+    nationalVolumeRank: 42, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Investor Financing', 'Historic Charm & Schools', 'Sounder Rail Access'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 3, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 25, onTimeCloseRate: 94,
+    shortDescription: 'Washington lender — localized knowledge of Pierce County commuter corridor, historic charm, and steady South Sound demand.',
+    website: 'https://novahomeloans.com', phone: '(253) 555-9812',
+  },
 ];
 
 export const SNOHOMISH_TRANSIT_CORRIDOR_LENDER_SLUGS = [
@@ -151,8 +285,24 @@ export const SNOHOMISH_TRANSIT_CORRIDOR_LENDER_SLUGS = [
   'nova-home-loans-snohomish',
 ] as const;
 
+export const SOUTH_SOUND_TACOMA_PUYALLUP_LENDER_SLUGS = [
+  'heritage-home-mortgage-south-sound',
+  'guild-mortgage-south-sound',
+  'new-american-funding-tacoma',
+  'crosscountry-mortgage-south-sound',
+  'pierpoint-mortgage-south-sound',
+  'silverton-mortgage-south-sound',
+  'veterans-united-south-sound',
+  'sound-credit-union-south-sound',
+  'lennar-mortgage-south-sound',
+  'anchor-home-mortgage-south-sound',
+  'bank-of-america-mortgage-south-sound',
+  'nova-home-loans-south-sound',
+] as const;
+
 export const WASHINGTON_COUNTY_SUPPLEMENTS: Record<string, string[]> = {
   snohomish: [],
+  pierce: [],
 };
 
 export const SNOHOMISH_TRANSIT_CORRIDOR_HUB_COUNTIES = [
@@ -164,4 +314,15 @@ export const SNOHOMISH_TRANSIT_CORRIDOR_HUB_AREAS = [
   { name: 'Everett', slug: 'snohomish', highlight: 'Boeing aerospace hub, water views & single-family' },
   { name: 'Mountlake Terrace', slug: 'snohomish', highlight: 'Light rail effect, below-Seattle pricing' },
   { name: 'Mukilteo', slug: 'snohomish', highlight: 'Ferry corridor, steady commuter demand' },
+] as const;
+
+export const SOUTH_SOUND_TACOMA_PUYALLUP_HUB_COUNTIES = [
+  { name: 'Pierce', slug: 'pierce', highlight: 'Tacoma & Puyallup affordability safety valve' },
+] as const;
+
+export const SOUTH_SOUND_TACOMA_PUYALLUP_HUB_AREAS = [
+  { name: 'Tacoma North End', slug: 'pierce', highlight: 'Proctor historic charm, $564K median pricing' },
+  { name: 'Puyallup', slug: 'pierce', highlight: 'Master-planned growth, excellent schools' },
+  { name: 'Lakewood', slug: 'pierce', highlight: 'JBLM proximity, military family demand' },
+  { name: 'Sounder Corridor', slug: 'pierce', highlight: 'Seattle commuter rail, King County safety valve' },
 ] as const;
