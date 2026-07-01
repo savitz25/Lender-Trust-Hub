@@ -442,6 +442,39 @@ export default async function MortgageStatePage({
               </div>
             )}
 
+            {slug === 'new-jersey' && (
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <Link href="/local-lenders/new-jersey/national-superstars-suburban-velocity"
+                  className="block rounded-2xl border border-amber-500/40 bg-amber-50 p-5 hover:bg-amber-100/80">
+                  <span className="font-semibold text-[#0A2540]">National Superstars Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Marlton &amp; Wayne — 12 verified lenders, #2 and #5 hottest US ZIPs.
+                  </span>
+                </Link>
+                <Link href="/local-lenders/new-jersey/south-jersey-shore-surge"
+                  className="block rounded-2xl border border-sky-500/40 bg-sky-50 p-5 hover:bg-sky-100/80">
+                  <span className="font-semibold text-[#0A2540]">South Jersey Shore Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Wildwood &amp; Ocean City — 12 verified lenders, 54–60% YoY shore surge.
+                  </span>
+                </Link>
+                <Link href="/local-lenders/new-jersey/sweet-spot-commuter-towns"
+                  className="block rounded-2xl border border-indigo-500/40 bg-indigo-50 p-5 hover:bg-indigo-100/80">
+                  <span className="font-semibold text-[#0A2540]">Sweet Spot Commuter Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Cranford &amp; Montclair — 12 verified lenders, 95%+ above-ask sales.
+                  </span>
+                </Link>
+                <Link href="/local-lenders/new-jersey/hudson-river-gold-coast"
+                  className="block rounded-2xl border border-rose-500/40 bg-rose-50 p-5 hover:bg-rose-100/80">
+                  <span className="font-semibold text-[#0A2540]">Hudson Gold Coast Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Jersey City &amp; Hoboken — 12 verified lenders, 22.6% luxury growth.
+                  </span>
+                </Link>
+              </div>
+            )}
+
             {slug === 'pennsylvania' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link href="/local-lenders/pennsylvania/philadelphia-metro-area-collar-counties"

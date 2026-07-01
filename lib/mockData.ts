@@ -14,6 +14,7 @@ import { NEW_YORK_LENDERS } from '@/lib/mortgage/newYorkLenders';
 import { PENNSYLVANIA_LENDERS } from '@/lib/mortgage/pennsylvaniaLenders';
 import { ILLINOIS_LENDERS } from '@/lib/mortgage/illinoisLenders';
 import { MICHIGAN_LENDERS } from '@/lib/mortgage/michiganLenders';
+import { NEW_JERSEY_LENDERS } from '@/lib/mortgage/newJerseyLenders';
 
 export type LoanType = 'Conventional' | 'FHA' | 'VA' | 'USDA' | 'Jumbo' | 'ARM' | 'Refinance';
 export type CreditTier = 'Excellent' | 'Good' | 'Fair' | 'Rebuilding';
@@ -282,6 +283,19 @@ export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; c
   '80401': { state: 'Colorado', stateSlug: 'colorado', county: 'Jefferson', countySlug: 'jefferson' },
   '80433': { state: 'Colorado', stateSlug: 'colorado', county: 'Jefferson', countySlug: 'jefferson' },
   '80487': { state: 'Colorado', stateSlug: 'colorado', county: 'Routt', countySlug: 'routt' },
+  '08053': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Burlington', countySlug: 'burlington' },
+  '07470': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Passaic', countySlug: 'passaic' },
+  '08260': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Cape May', countySlug: 'cape-may' },
+  '08226': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Cape May', countySlug: 'cape-may' },
+  '08406': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Cape May', countySlug: 'cape-may' },
+  '07016': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Union', countySlug: 'union' },
+  '07065': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Union', countySlug: 'union' },
+  '08817': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Middlesex', countySlug: 'middlesex' },
+  '08901': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Middlesex', countySlug: 'middlesex' },
+  '07042': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Essex', countySlug: 'essex' },
+  '07040': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Essex', countySlug: 'essex' },
+  '07302': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Hudson', countySlug: 'hudson' },
+  '07030': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Hudson', countySlug: 'hudson' },
 };
 
 const NATIONAL_LENDERS: Lender[] = [
@@ -427,4 +441,4 @@ const NATIONAL_LENDERS: Lender[] = [
   },
 ];
 
-export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS, ...TENNESSEE_LENDERS, ...ARIZONA_LENDERS, ...CALIFORNIA_LENDERS, ...COLORADO_LENDERS, ...TEXAS_LENDERS, ...WASHINGTON_LENDERS, ...DISTRICT_OF_COLUMBIA_LENDERS, ...MASSACHUSETTS_LENDERS, ...NEW_YORK_LENDERS, ...PENNSYLVANIA_LENDERS, ...ILLINOIS_LENDERS, ...MICHIGAN_LENDERS];
+export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS, ...TENNESSEE_LENDERS, ...ARIZONA_LENDERS, ...CALIFORNIA_LENDERS, ...COLORADO_LENDERS, ...TEXAS_LENDERS, ...WASHINGTON_LENDERS, ...DISTRICT_OF_COLUMBIA_LENDERS, ...MASSACHUSETTS_LENDERS, ...NEW_YORK_LENDERS, ...PENNSYLVANIA_LENDERS, ...ILLINOIS_LENDERS, ...MICHIGAN_LENDERS, ...NEW_JERSEY_LENDERS];

@@ -104,6 +104,13 @@ export async function generateMetadata({
   const isKent = state === 'michigan' && county === 'kent';
   const isWashtenaw = state === 'michigan' && county === 'washtenaw';
   const isKalamazoo = state === 'michigan' && county === 'kalamazoo';
+  const isNjBurlington = state === 'new-jersey' && county === 'burlington';
+  const isNjPassaic = state === 'new-jersey' && county === 'passaic';
+  const isCapeMay = state === 'new-jersey' && county === 'cape-may';
+  const isNjUnion = state === 'new-jersey' && county === 'union';
+  const isNjMiddlesex = state === 'new-jersey' && county === 'middlesex';
+  const isNjEssex = state === 'new-jersey' && county === 'essex';
+  const isNjHudson = state === 'new-jersey' && county === 'hudson';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -273,7 +280,21 @@ export async function generateMetadata({
                                                                                                                                                                             ? `Best Mortgage Lenders in Washtenaw County, MI — Ann Arbor College Town (2026)`
                                                                                                                                                                             : isKalamazoo
                                                                                                                                                                               ? `Best Mortgage Lenders in Kalamazoo County, MI — College-Town Demand (2026)`
-                                                                                                                                                                              : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                                                                                                                              : isNjBurlington
+                                                                                                                                                                                ? `Best Mortgage Lenders in Burlington County, NJ — Marlton National Superstar (2026)`
+                                                                                                                                                                                : isNjPassaic
+                                                                                                                                                                                  ? `Best Mortgage Lenders in Passaic County, NJ — Wayne National Superstar (2026)`
+                                                                                                                                                                                  : isCapeMay
+                                                                                                                                                                                    ? `Best Mortgage Lenders in Cape May County, NJ — South Jersey Shore Surge (2026)`
+                                                                                                                                                                                    : isNjUnion
+                                                                                                                                                                                      ? `Best Mortgage Lenders in Union County, NJ — Cranford & Rahway Commuter Sweet Spots (2026)`
+                                                                                                                                                                                      : isNjMiddlesex
+                                                                                                                                                                                        ? `Best Mortgage Lenders in Middlesex County, NJ — Edison & New Brunswick Helix Growth (2026)`
+                                                                                                                                                                                        : isNjEssex
+                                                                                                                                                                                          ? `Best Mortgage Lenders in Essex County, NJ — Montclair & Maplewood Elite Schools (2026)`
+                                                                                                                                                                                          : isNjHudson
+                                                                                                                                                                                            ? `Best Mortgage Lenders in Hudson County, NJ — Jersey City & Hoboken Gold Coast (2026)`
+                                                                                                                                                                                            : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -442,7 +463,21 @@ export async function generateMetadata({
                                                                                                                                                                             ? `Compare 12+ NMLS-verified Washtenaw mortgage lenders. Ann Arbor $549K median, medical/tech professionals, insulated Tree Town, college-town supplements.`
                                                                                                                                                                             : isKalamazoo
                                                                                                                                                                               ? `Compare 12 NMLS-verified Kalamazoo mortgage lenders. $245K median affordability, out-of-state buyer surge, steady appreciation, university-town supplements.`
-                                                                                                                                                                              : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                                                                                                                              : isNjBurlington
+                                                                                                                                                                                ? `Compare 12+ NMLS-verified Burlington mortgage lenders. Marlton Realtor.com #2 hottest US ZIP, 17–19 day contracts, I-295 Philly commuter corridor, Passaic supplements.`
+                                                                                                                                                                                : isNjPassaic
+                                                                                                                                                                                  ? `Compare 12+ NMLS-verified Passaic mortgage lenders. Wayne #5 nationally, top schools, Manhattan transit, severe under-supply, Burlington supplements.`
+                                                                                                                                                                                  : isCapeMay
+                                                                                                                                                                                    ? `Compare 12 NMLS-verified Cape May mortgage lenders. Wildwood 54–60% YoY spike, Ocean City $1.4M+ medians, Ventnor luxury battlegrounds, vacation-rental investors.`
+                                                                                                                                                                                    : isNjUnion
+                                                                                                                                                                                      ? `Compare 12+ NMLS-verified Union mortgage lenders. Cranford 13-day sales, Rahway $525K value play, 95%+ above-ask, Middlesex/Essex supplements.`
+                                                                                                                                                                                      : isNjMiddlesex
+                                                                                                                                                                                        ? `Compare 12+ NMLS-verified Middlesex mortgage lenders. Edison $605K+ Helix bio-tech surge, New Brunswick multi-family demand, Union/Essex supplements.`
+                                                                                                                                                                                        : isNjEssex
+                                                                                                                                                                                          ? `Compare 12+ NMLS-verified Essex mortgage lenders. Montclair 11-day pending, 105%+ sale-to-list, elite schools, Union/Middlesex supplements.`
+                                                                                                                                                                                          : isNjHudson
+                                                                                                                                                                                            ? `Compare 12 NMLS-verified Hudson mortgage lenders. Hoboken 22.6% luxury growth, Jersey City high-density absorption, return-to-office Gold Coast demand.`
+                                                                                                                                                                                            : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 
