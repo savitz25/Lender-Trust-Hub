@@ -166,6 +166,8 @@ export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; c
   '98663': { state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark' },
   '98664': { state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark' },
   '20001': { state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia' },
+  '20005': { state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia' },
+  '20009': { state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia' },
   '20012': { state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia' },
   '20011': { state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia' },
   '20017': { state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia' },

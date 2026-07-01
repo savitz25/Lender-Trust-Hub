@@ -319,6 +319,13 @@ export default async function MortgageStatePage({
                     Takoma &amp; Brightwood — 12 verified lenders, Zip 20012 single-family value plays.
                   </span>
                 </Link>
+                <Link href="/local-lenders/district-of-columbia/high-velocity-mid-city-core"
+                  className="block rounded-2xl border border-violet-500/40 bg-violet-50 p-5 hover:bg-violet-100/80">
+                  <span className="font-semibold text-[#0A2540]">Mid-City Core Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Logan Circle &amp; Thomas Circle — 12 verified lenders, Zip 20005 urban velocity.
+                  </span>
+                </Link>
               </div>
             )}
 

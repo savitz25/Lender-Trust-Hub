@@ -176,7 +176,7 @@ export async function generateMetadata({
                                                                                                           : isClark
                                                                                                             ? `Best Mortgage Lenders in Clark County, WA — Portland Border (2026)`
                                                                                                             : isDistrictOfColumbia
-                                                                                                              ? `Best Mortgage Lenders in DC — Upper Northwest Value Surge (2026)`
+                                                                                                              ? `Best Mortgage Lenders in Washington, DC — Metro Hubs (2026)`
                                                                                                               : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
@@ -281,7 +281,7 @@ export async function generateMetadata({
                                                                                                           : isClark
                                                                                                             ? `Compare 12 NMLS-verified Clark mortgage lenders. Columbia River tax-advantage relocations, iQ Credit Union cross-border rates, Lennar waterfront revitalization, and Portland spillover volume.`
                                                                                                             : isDistrictOfColumbia
-                                                                                                              ? `Compare 12 NMLS-verified DC mortgage lenders. Ward 3 Home single-family value plays, Veterans United first-time programs, Andrews FCU member rates, and Takoma/Brightwood 17–23% gains.`
+                                                                                                              ? `Compare 24 NMLS-verified DC mortgage lenders. Upper Northwest single-family value plays, Mid-City Logan Circle condo velocity, PenFed and Andrews FCU member rates, and fast-closing urban core specialists.`
                                                                                                               : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
