@@ -187,14 +187,23 @@ export default function MortgagePaymentPITI() {
                   </tr>
                 </thead>
                 <tbody>
-                  {(tableMode === 'yearly' ? yearlySummary(computed.adj.schedule) : computed.adj.schedule.slice(0, 120)).map((r) => (
-                    <tr key={'year' in r ? r.year : r.month} className="border-t dark:border-zinc-800">
-                      <td className="p-2">{'year' in r ? r.year : r.month}</td>
-                      <td className="p-2 text-right">{formatCurrency(r.principal)}</td>
-                      <td className="p-2 text-right">{formatCurrency(r.interest)}</td>
-                      <td className="p-2 text-right">{formatCurrency('endBalance' in r ? r.endBalance : r.balance)}</td>
-                    </tr>
-                  ))}
+                  {tableMode === 'yearly'
+                    ? yearlySummary(computed.adj.schedule).map((r) => (
+                        <tr key={r.year} className="border-t dark:border-zinc-800">
+                          <td className="p-2">{r.year}</td>
+                          <td className="p-2 text-right">{formatCurrency(r.principal)}</td>
+                          <td className="p-2 text-right">{formatCurrency(r.interest)}</td>
+                          <td className="p-2 text-right">{formatCurrency(r.endBalance)}</td>
+                        </tr>
+                      ))
+                    : computed.adj.schedule.slice(0, 120).map((r) => (
+                        <tr key={r.month} className="border-t dark:border-zinc-800">
+                          <td className="p-2">{r.month}</td>
+                          <td className="p-2 text-right">{formatCurrency(r.principal)}</td>
+                          <td className="p-2 text-right">{formatCurrency(r.interest)}</td>
+                          <td className="p-2 text-right">{formatCurrency(r.balance)}</td>
+                        </tr>
+                      ))}
                 </tbody>
               </table>
             </div>
