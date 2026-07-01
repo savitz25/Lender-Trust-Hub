@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { BrandLogo } from '@/components/BrandLogo';
+import { SearchBar } from '@/components/SearchBar';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { FDIC_CATEGORY, MORTGAGE_CATEGORY, AUTO_CATEGORY } from '@/lib/directory/categories';
 
@@ -22,12 +24,17 @@ export default function Navbar() {
   return (
     <nav
       aria-label="Main navigation"
-      className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/95 backdrop-blur"
+      className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/95 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/95"
     >
       <div className="container mx-auto flex min-h-16 items-center justify-between gap-3 px-4 py-1 md:min-h-20">
         <BrandLogo priority />
 
-        <div className="hidden items-center gap-5 text-sm md:flex">
+        <div className="hidden max-w-xs flex-1 lg:block xl:max-w-sm">
+          <SearchBar className="[&_input]:h-10 [&_input]:text-sm [&_button]:hidden" />
+        </div>
+
+        <div className="hidden items-center gap-4 text-sm md:flex">
+          <ThemeToggle />
           <div className="relative">
             <button
               type="button"
@@ -80,19 +87,23 @@ export default function Navbar() {
           </Link>
         </div>
 
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle />
         <button
           type="button"
-          className="rounded-lg p-2 text-[#0A2540] md:hidden"
+          className="rounded-lg p-2 text-[#0A2540] dark:text-zinc-200"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
+        </div>
       </div>
 
       {isOpen && (
-        <div className="border-t border-zinc-200 bg-white px-4 py-4 md:hidden">
+        <div className="border-t border-zinc-200 bg-white px-4 py-4 dark:border-zinc-800 dark:bg-zinc-950 md:hidden">
+          <SearchBar className="mb-4" />
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <Link

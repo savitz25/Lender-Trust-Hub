@@ -29,6 +29,11 @@ export interface LenderFilters {
   stateSlug?: string;
   countySlug?: string;
   zip?: string;
+  /** Passed from calculator tools for personalized directory matching */
+  estimatedLoan?: number;
+  estimatedRate?: number;
+  estimatedPayment?: number;
+  ltv?: number;
 }
 
 export function getLenderBySlug(slug: string): Lender | undefined {
@@ -166,6 +171,10 @@ export function buildMatchUrl(filters: LenderFilters): string {
   if (filters.zip) params.set('zip', filters.zip);
   if (filters.stateSlug) params.set('state', filters.stateSlug);
   if (filters.countySlug) params.set('county', filters.countySlug);
+  if (filters.estimatedLoan) params.set('loan', String(Math.round(filters.estimatedLoan)));
+  if (filters.estimatedRate) params.set('rate', String(filters.estimatedRate));
+  if (filters.estimatedPayment) params.set('payment', String(Math.round(filters.estimatedPayment)));
+  if (filters.ltv) params.set('ltv', String(Math.round(filters.ltv)));
   const qs = params.toString();
   return qs ? `/local-lenders?${qs}` : '/local-lenders';
 }

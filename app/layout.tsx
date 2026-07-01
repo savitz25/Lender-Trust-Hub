@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { ThemeProvider } from '@/components/ThemeProvider';
 import { GtagProvider } from '@/components/directory/GtagProvider';
 import './globals.css';
 
@@ -47,7 +48,7 @@ export default function RootLayout({
   const gaId = process.env.NEXT_PUBLIC_GA4_ID;
 
   return (
-    <html lang="en-US" className={inter.variable}>
+    <html lang="en-US" className={inter.variable} suppressHydrationWarning>
       <head>
         {gaId && (
           <>
@@ -56,11 +57,13 @@ export default function RootLayout({
           </>
         )}
       </head>
-      <body className="min-h-screen flex flex-col antialiased">
-        <GtagProvider />
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body className="min-h-screen flex flex-col antialiased bg-[#fafafa] text-[#0F172A] dark:bg-zinc-950 dark:text-zinc-100">
+        <ThemeProvider>
+          <GtagProvider />
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

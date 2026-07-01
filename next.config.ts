@@ -1,6 +1,12 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      { source: '/calculators-hub', destination: '/calculators', permanent: true },
+      { source: '/calculators-hub/:path*', destination: '/calculators', permanent: true },
+    ];
+  },
   /**
    * PERFORMANCE: Long-cache static FDIC pages (SSG) at the CDN edge.
    * HTML revalidates via ISR (revalidate export on state pages).
@@ -50,7 +56,7 @@ const nextConfig: NextConfig = {
    * Code splitting: heavy client components use next/dynamic in page files.
    */
   experimental: {
-    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    optimizePackageImports: ['lucide-react', 'framer-motion', 'recharts'],
   },
 };
 

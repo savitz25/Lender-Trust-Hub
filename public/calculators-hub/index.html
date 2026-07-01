@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free mortgage calculators from Lender Trust Hub — payment, affordability, refinance, amortization, rent vs buy, HELOC, and more. Transparent tools. Trusted guidance.">
+  <meta name="keywords" content="mortgage calculator, home affordability, refinance calculator, amortization, rent vs buy, HELOC calculator, down payment planner">
+  <meta name="author" content="Lender Trust Hub">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.lendertrusthub.com/calculators-hub/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lender Trust Hub">
+  <meta property="og:title" content="Mortgage Calculators Hub | Lender Trust Hub">
+  <meta property="og:description" content="Transparent Tools. Trusted Guidance. Confident Decisions. Nine free, interactive mortgage and home-finance calculators.">
+  <meta property="og:url" content="https://www.lendertrusthub.com/calculators-hub/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mortgage Calculators Hub | Lender Trust Hub">
+  <meta name="twitter:description" content="Free interactive mortgage calculators — payment, affordability, refinance, and more.">
+
+  <title>Mortgage Calculators Hub | Lender Trust Hub</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0F172A',
+            teal: { DEFAULT: '#059669', light: '#10B981' },
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-teal focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
+    Skip to calculators
+  </a>
+
+  <header class="site-nav" role="banner">
+    <div class="nav-inner">
+      <a href="https://www.lendertrusthub.com" class="brand" aria-label="Lender Trust Hub home">
+        <div class="brand-mark" aria-hidden="true">LTH</div>
+        <div>
+          <div class="brand-name">Lender Trust Hub</div>
+          <div class="brand-tag">Verified Lending Directories</div>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#hub" aria-current="page">Calculators</a>
+        <a href="/local-lenders">Lender Directory</a>
+        <a href="https://www.consumerfinance.gov/owning-a-home/" target="_blank" rel="noopener noreferrer">Resources</a>
+        <a href="/about">About</a>
+        <a href="/local-lenders" class="btn-primary">Find Trusted Local Lenders</a>
+      </nav>
+      <a href="/local-lenders" class="btn-primary md:hidden" style="font-size:0.8125rem;padding:0.5rem 0.875rem;">Find Lenders</a>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Transparent Tools · Trusted Guidance</p>
+      <h1 id="hero-heading">Confident Mortgage &amp; Home-Finance Decisions</h1>
+      <p>Nine free, interactive calculators with real-time results, charts, and export options. No sign-up required — built for clarity, not sales pressure.</p>
+      <div class="hero-actions">
+        <button type="button" id="explore-btn" class="btn-primary">Explore Calculators</button>
+        <a href="/local-lenders" class="btn-secondary">Browse Lender Directory</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-bar" role="status">
+    <strong>Free</strong> &nbsp;·&nbsp; No sign-up required &nbsp;·&nbsp; Educational tools &nbsp;·&nbsp; Connect with vetted lenders
+  </div>
+
+  <main id="main-content" class="main-wrap flex-1" role="main">
+    <div id="back-bar" class="back-bar hidden">
+      <button type="button" id="back-btn" class="back-btn" aria-label="Back to all calculators">
+        ← Back to All Calculators
+      </button>
+    </div>
+    <!-- Hub grid injected by app.js -->
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Lender Trust Hub</div>
+          <p class="footer-text">
+            Independent directory of mortgage lenders and brokers. Zero paid placements.
+            Multi-source verification from NMLS, CFPB, BBB, and public records.
+          </p>
+        </div>
+        <div>
+          <h2 class="footer-heading">Explore</h2>
+          <ul class="footer-links">
+            <li><a href="#hub">All Calculators</a></li>
+            <li><a href="/local-lenders">Local Lenders</a></li>
+            <li><a href="/fdic-insured-banks">FDIC Banks</a></li>
+            <li><a href="https://www.movetrusthub.com" target="_blank" rel="noopener noreferrer">MoveTrustHub</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Resources</h2>
+          <ul class="footer-links">
+            <li><a href="https://www.consumerfinance.gov/owning-a-home/" target="_blank" rel="noopener noreferrer">CFPB — Owning a Home</a></li>
+            <li><a href="https://www.hud.gov/topics/buying_a_home" target="_blank" rel="noopener noreferrer">HUD — Buying a Home</a></li>
+            <li><a href="https://www.ffiec.gov/npws/" target="_blank" rel="noopener noreferrer">FFIEC Rate Spread</a></li>
+            <li><a href="/about">Trust &amp; Transparency</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-disclaimer" id="site-disclaimer">
+        These tools provide estimates for educational purposes only. Actual rates, fees, terms, and approvals vary by lender, credit profile, property, and market conditions. Always consult a licensed mortgage professional. Lender Trust Hub is not a lender, broker, or financial advisor.
+      </p>
+      <p class="footer-copy">© <span id="year"></span> LenderTrustHub.com — Trusted Local Lenders · Verified County Insights</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/utils.js"></script>
+  <script src="js/mortgage-payment.js"></script>
+  <script src="js/affordability.js"></script>
+  <script src="js/refinance.js"></script>
+  <script src="js/amortization.js"></script>
+  <script src="js/loan-compare.js"></script>
+  <script src="js/rent-vs-buy.js"></script>
+  <script src="js/heloc.js"></script>
+  <script src="js/down-payment.js"></script>
+  <script src="js/rental-property.js"></script>
+  <script src="js/app.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Lender Trust Hub Calculators",
+    "url": "https://www.lendertrusthub.com/calculators-hub/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "provider": {
+      "@type": "Organization",
+      "name": "Lender Trust Hub",
+      "url": "https://www.lendertrusthub.com"
+    }
+  }
+  </script>
+</body>
+</html>

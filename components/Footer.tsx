@@ -43,7 +43,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-zinc-500">
+        <p className="mt-8 text-xs leading-relaxed text-zinc-500">
+          Calculator estimates are for educational purposes only. Actual rates, fees, terms, and approvals vary.
+          Lender Trust Hub is not a lender or broker. Zero paid placements — ever.
+        </p>
+        <div className="mt-6 border-t border-white/10 pt-6 text-center text-xs text-zinc-500">
           © {new Date().getFullYear()} LenderTrustHub.com — Trusted Local Lenders • Verified County Insights • National Expertise
         </div>
       </div>
