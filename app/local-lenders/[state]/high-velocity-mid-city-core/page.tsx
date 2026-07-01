@@ -35,7 +35,7 @@ export default function HighVelocityMidCityCoreHubPage() {
       <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-violet-400/40 bg-violet-500/10 px-4 py-1.5 text-sm">
-            NMLS Verified · High-Velocity Urban · Logan Circle &amp; Thomas Circle
+            NMLS Verified · High-Velocity Urban · Zip 20005 · Logan Circle &amp; Thomas Circle
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — Mid-City Core DC</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">

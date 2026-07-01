@@ -137,14 +137,14 @@ export const DISTRICT_OF_COLUMBIA_LENDERS: Lender[] = [
 
   // ── High-Velocity Mid-City Core (Logan Circle & Thomas Circle — Zip 20005) ───
   {
-    id: 'dc-13', slug: 'mid-city-urban-mortgage-dc', name: 'Mid-City Urban Mortgage (DC)', nmlsId: '287451', type: 'Broker',
+    id: 'dc-13', slug: 'mid-city-urban-mortgage-dc', name: 'Mid-City Independent Mortgage (Logan/Thomas Circle)', nmlsId: '287451', type: 'Broker',
     city: 'Washington', state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia',
     zipCodes: ['20005', '20001', '20009'], rating: 4.9, reviewCount: 710, trustScore: 95, countyExperienceScore: 96,
     nationalVolumeRank: 30, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
-    specialties: ['Historic Rowhome Financing', 'Premium Condo Programs', 'Walkable Urban Core'],
+    specialties: ['Historic Rowhome Financing', 'Premium Condo Programs', 'Walkable Urban Core Dynamics'],
     creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A+',
     googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 21, onTimeCloseRate: 97,
-    shortDescription: 'DC mid-city independent broker — deep expertise in historic rowhome and premium condo financing in Logan Circle and Thomas Circle.',
+    shortDescription: 'Local Mid-City independent — strong knowledge of walkable urban core dynamics and historic rowhome financing in Zip 20005.',
     website: 'https://midcityurbanmortgage.com', phone: '(202) 555-1301',
   },
   {
@@ -152,10 +152,10 @@ export const DISTRICT_OF_COLUMBIA_LENDERS: Lender[] = [
     city: 'Washington', state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia',
     zipCodes: ['20005', '20001', '20009'], rating: 4.8, reviewCount: 445, trustScore: 92, countyExperienceScore: 93,
     nationalVolumeRank: 20, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
-    specialties: ['Full Residential Spectrum', 'Zip 20005 Operations', 'Urban Core Expertise'],
+    specialties: ['Zip 20005 Focus', 'Full Residential Spectrum', 'Urban Core Expertise'],
     creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A',
     googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 26, onTimeCloseRate: 94,
-    shortDescription: 'National Guild lender with DC central presence — comprehensive financing for renovated historic rowhomes and premium condos.',
+    shortDescription: 'National Guild lender with DC central presence — comprehensive Logan Circle and Thomas Circle financing for historic rowhomes and premium condos.',
     website: 'https://guildmortgage.com', phone: '(202) 555-1302',
   },
   {
@@ -174,10 +174,10 @@ export const DISTRICT_OF_COLUMBIA_LENDERS: Lender[] = [
     city: 'Washington', state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia',
     zipCodes: ['20005', '20001', '20009'], rating: 4.8, reviewCount: 345, trustScore: 91, countyExperienceScore: 92,
     nationalVolumeRank: 22, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
-    specialties: ['Young Professional Buyers', '14th Street Corridor', 'Broad Product Menu'],
+    specialties: ['Thomas Circle / Logan', '14th Street Corridor Lifestyle', 'Young Professional Buyers'],
     creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 6, bbbRating: 'A',
     googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 93,
-    shortDescription: 'CrossCountry DC teams — experienced support for 14th Street corridor lifestyle and young professional mid-city buyers.',
+    shortDescription: 'CrossCountry DC teams — experienced support for Thomas Circle and Logan Circle 14th Street corridor lifestyle buyers.',
     website: 'https://crosscountrymortgage.com', phone: '(202) 555-1304',
   },
   {
@@ -185,10 +185,10 @@ export const DISTRICT_OF_COLUMBIA_LENDERS: Lender[] = [
     city: 'Washington', state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia',
     zipCodes: ['20005', '20009', '20001'], rating: 4.9, reviewCount: 190, trustScore: 93, countyExperienceScore: 94,
     nationalVolumeRank: 58, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
-    specialties: ['Renovated Historic Homes', 'Fast Closings', 'Capped Inventory Pace'],
+    specialties: ['Zip 20005 Focus', 'Renovated Historic Homes', 'Fast Closings'],
     creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
     googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 20, onTimeCloseRate: 97,
-    shortDescription: 'Wholesale broker — speed suited to ironclad demand and renovated historic homes in capped-inventory Zip 20005.',
+    shortDescription: 'Wholesale broker — speed suited to ironclad demand, capped inventory, and renovated historic homes in Zip 20005.',
     website: 'https://pierpointmortgage.com', phone: '(202) 555-1305',
   },
   {
@@ -203,7 +203,7 @@ export const DISTRICT_OF_COLUMBIA_LENDERS: Lender[] = [
     website: 'https://silvertonmortgage.com', phone: '(202) 555-1306',
   },
   {
-    id: 'dc-19', slug: 'relocation-mortgage-dc-mid-city', name: 'Capitol Relocation Mortgage (DC)', nmlsId: '662381', type: 'Broker',
+    id: 'dc-19', slug: 'relocation-mortgage-dc-mid-city', name: 'Capitol Relocation Mortgage (Young Professional Specialists)', nmlsId: '662381', type: 'Broker',
     city: 'Washington', state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia',
     zipCodes: ['20005', '20001', '20009'], rating: 4.9, reviewCount: 540, trustScore: 93, countyExperienceScore: 94,
     nationalVolumeRank: 44, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
@@ -258,7 +258,7 @@ export const DISTRICT_OF_COLUMBIA_LENDERS: Lender[] = [
     website: 'https://bankofamerica.com/mortgage', phone: '(202) 555-1311',
   },
   {
-    id: 'dc-24', slug: 'nova-home-loans-dc-mid-city', name: 'Nova Home Loans (DC Mid-City)', nmlsId: '3089', type: 'Lender',
+    id: 'dc-24', slug: 'nova-home-loans-dc-mid-city', name: 'Nova Home Loans (Mid-City Independents)', nmlsId: '3089', type: 'Lender',
     city: 'Washington', state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia',
     zipCodes: ['20005', '20009', '20001'], rating: 4.8, reviewCount: 290, trustScore: 91, countyExperienceScore: 92,
     nationalVolumeRank: 42, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
