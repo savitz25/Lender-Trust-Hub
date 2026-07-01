@@ -57,6 +57,8 @@ export async function generateMetadata({
   const isBoulder = state === 'colorado' && county === 'boulder';
   const isDouglas = state === 'colorado' && county === 'douglas';
   const isElPaso = state === 'colorado' && county === 'el-paso';
+  const isJefferson = state === 'colorado' && county === 'jefferson';
+  const isRoutt = state === 'colorado' && county === 'routt';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -132,7 +134,11 @@ export async function generateMetadata({
                                                                             ? `Best Mortgage Lenders in Douglas County, CO — Denver Metro Outer Rings (2026)`
                                                                             : isElPaso
                                                                               ? `Best Mortgage Lenders in El Paso County, CO — Colorado Springs Stability & Volume (2026)`
-                                                                              : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                              : isJefferson
+                                                                                ? `Best Mortgage Lenders in Jefferson County, CO — Foothills & Mountain Towns (2026)`
+                                                                                : isRoutt
+                                                                                  ? `Best Mortgage Lenders in Routt County, CO — Steamboat Springs Mountain Towns (2026)`
+                                                                                  : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -207,7 +213,11 @@ export async function generateMetadata({
                                                                             ? `Compare 12 NMLS-verified Douglas mortgage lenders. Parker and Centennial family suburbs, NAF new-build volume, and bidding-war-free outer-ring financing.`
                                                                             : isElPaso
                                                                               ? `Compare 12 NMLS-verified El Paso mortgage lenders. Veterans United military programs, Ent Credit Union, Falcon new construction, and Denver affordability safety valve.`
-                                                                              : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                              : isJefferson
+                                                                                ? `Compare 12 NMLS-verified Jefferson mortgage lenders. Evergreen luxury acreage, Golden foothills, Bellco member rates, Lennar mountain modern builds, and Denver commuter pipeline.`
+                                                                                : isRoutt
+                                                                                  ? `Compare 12 NMLS-verified Routt mortgage lenders. Steamboat Springs resort financing, Alpine Bank second homes, CrossCountry cash buyers, and turnkey mountain modern demand.`
+                                                                                  : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

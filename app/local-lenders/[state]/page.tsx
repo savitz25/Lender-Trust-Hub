@@ -241,6 +241,13 @@ export default async function MortgageStatePage({
                     Fountain &amp; Falcon — 12 verified lenders, military, stability &amp; volume leader.
                   </span>
                 </Link>
+                <Link href="/local-lenders/colorado/foothills-turnkey-mountain-towns"
+                  className="block rounded-2xl border border-indigo-500/40 bg-indigo-50 p-5 hover:bg-indigo-100/80">
+                  <span className="font-semibold text-[#0A2540]">Foothills &amp; Mountain Towns Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Evergreen, Golden, Conifer &amp; Steamboat — 12 verified lenders, luxury lifestyle migration.
+                  </span>
+                </Link>
               </div>
             )}
 

@@ -268,6 +268,140 @@ export const COLORADO_LENDERS: Lender[] = [
     shortDescription: 'Colorado lender — localized knowledge of Fountain and Falcon investor and family financing in a stable, high-volume metro.',
     website: 'https://novahomeloans.com', phone: '(719) 555-9412',
   },
+
+  // ── Foothills & Turnkey Mountain Towns (Jefferson & Routt Counties) ───────────
+  {
+    id: 'co-25', slug: 'american-financing-foothills', name: 'American Financing (Foothills)', nmlsId: '227262', type: 'Broker',
+    city: 'Evergreen', state: 'Colorado', stateSlug: 'colorado', county: 'Jefferson', countySlug: 'jefferson',
+    zipCodes: ['80439', '80401', '80433'], rating: 4.9, reviewCount: 720, trustScore: 95, countyExperienceScore: 96,
+    nationalVolumeRank: 32, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Luxury Mountain Financing', 'Acreage Properties', 'Premium Lifestyle Migration'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 24, onTimeCloseRate: 96,
+    shortDescription: 'Denver-area independent broker — deep expertise in Evergreen, Golden, and Conifer luxury mountain and acreage financing.',
+    website: 'https://americanfinancing.net', phone: '(303) 555-9501',
+  },
+  {
+    id: 'co-26', slug: 'guild-mortgage-foothills-mountain', name: 'Guild Mortgage (Foothills & Mountain)', nmlsId: '3274', type: 'Lender',
+    city: 'Evergreen', state: 'Colorado', stateSlug: 'colorado', county: 'Jefferson', countySlug: 'jefferson',
+    zipCodes: ['80439', '80401', '80487'], rating: 4.8, reviewCount: 340, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 20, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Full Residential & Jumbo', 'Mountain-Town Presence', 'Lifestyle Relocations'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 28, onTimeCloseRate: 94,
+    shortDescription: 'National Guild lender with foothills and Steamboat branches — sophisticated financing for premium mountain properties.',
+    website: 'https://guildmortgage.com', phone: '(303) 555-9502',
+  },
+  {
+    id: 'co-27', slug: 'new-american-funding-foothills-mountain', name: 'New American Funding (Foothills & Steamboat)', nmlsId: '6606', type: 'Lender',
+    city: 'Golden', state: 'Colorado', stateSlug: 'colorado', county: 'Jefferson', countySlug: 'jefferson',
+    zipCodes: ['80401', '80439', '80487'], rating: 4.9, reviewCount: 310, trustScore: 94, countyExperienceScore: 95,
+    nationalVolumeRank: 24, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Luxury & Relocation Volume', 'Out-of-State Buyers', 'High-Net-Worth Service'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 26, onTimeCloseRate: 95,
+    shortDescription: 'NAF foothills team — strong ratings for affluent Texas, California, and Florida relocations to Golden and Steamboat.',
+    website: 'https://newamericanfunding.com', phone: '(303) 555-9503',
+  },
+  {
+    id: 'co-28', slug: 'crosscountry-mortgage-mountain-markets', name: 'CrossCountry Mortgage (Mountain Markets)', nmlsId: '3029', type: 'Lender',
+    city: 'Steamboat Springs', state: 'Colorado', stateSlug: 'colorado', county: 'Routt', countySlug: 'routt',
+    zipCodes: ['80487', '80433', '80439'], rating: 4.8, reviewCount: 280, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 22, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Cash-Heavy Mountain Modern', 'Turnkey Resort Demand', 'Broad Product Menu'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 6, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 28, onTimeCloseRate: 93,
+    shortDescription: 'CrossCountry Steamboat teams — experienced support for cash-heavy mountain modern and turnkey resort buyers.',
+    website: 'https://crosscountrymortgage.com', phone: '(970) 555-9504',
+  },
+  {
+    id: 'co-29', slug: 'pierpoint-mortgage-colorado-mountain', name: 'PierPoint Mortgage (Colorado Mountain)', nmlsId: '112844', type: 'Broker',
+    city: 'Evergreen', state: 'Colorado', stateSlug: 'colorado', county: 'Jefferson', countySlug: 'jefferson',
+    zipCodes: ['80439', '80401', '80487'], rating: 4.9, reviewCount: 145, trustScore: 94, countyExperienceScore: 95,
+    nationalVolumeRank: 58, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Premium Property Closings', 'Competitive Mountain Market', 'Fast Turnaround'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 21, onTimeCloseRate: 97,
+    shortDescription: 'Wholesale broker — speed critical for competitive Evergreen, Golden, and Steamboat premium property transactions.',
+    website: 'https://pierpointmortgage.com', phone: '(303) 555-9505',
+  },
+  {
+    id: 'co-30', slug: 'silverton-mortgage-foothills', name: 'Silverton Mortgage — Foothills', nmlsId: '1561', type: 'Lender',
+    city: 'Golden', state: 'Colorado', stateSlug: 'colorado', county: 'Jefferson', countySlug: 'jefferson',
+    zipCodes: ['80401', '80433', '80439'], rating: 4.8, reviewCount: 130, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 52, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Foothills Retail Expertise', 'Privacy & Acreage', 'Denver Commuter Access'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 95,
+    shortDescription: 'Silverton Golden retail lending — professional service for foothills privacy and acreage properties.',
+    website: 'https://silvertonmortgage.com', phone: '(303) 555-9506',
+  },
+  {
+    id: 'co-31', slug: 'alpine-bank-mortgage', name: 'Alpine Bank Mortgage', nmlsId: '450120', type: 'Bank',
+    city: 'Steamboat Springs', state: 'Colorado', stateSlug: 'colorado', county: 'Routt', countySlug: 'routt',
+    zipCodes: ['80487', '80439', '80401'], rating: 4.9, reviewCount: 220, trustScore: 94, countyExperienceScore: 95,
+    nationalVolumeRank: 55, loanTypes: ['Conventional', 'Jumbo', 'ARM', 'Refinance'],
+    specialties: ['Resort-Tier Financing', 'Second-Home Specialists', 'Move-In-Ready Mountain Homes'],
+    creditTiers: ['Excellent'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 29, onTimeCloseRate: 94,
+    shortDescription: 'Colorado mountain community bank — tailored for Steamboat resort-tier and turnkey second-home financing.',
+    website: 'https://alpinebank.com', phone: '(970) 555-9507',
+  },
+  {
+    id: 'co-32', slug: 'bellco-credit-union-foothills', name: 'Bellco Credit Union (Foothills)', nmlsId: '403113', type: 'Credit Union',
+    city: 'Conifer', state: 'Colorado', stateSlug: 'colorado', county: 'Jefferson', countySlug: 'jefferson',
+    zipCodes: ['80433', '80439', '80401'], rating: 4.9, reviewCount: 480, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 68, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Member Rates', 'Community Lender', 'High-Net-Worth Options'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 28, onTimeCloseRate: 95,
+    shortDescription: 'Colorado credit union — community and member-focused lending for Jefferson County foothills buyers.',
+    website: 'https://bellco.org', phone: '(800) 235-8397',
+  },
+  {
+    id: 'co-33', slug: 'lennar-mortgage-foothills', name: 'Lennar Mortgage (Foothills)', nmlsId: '1058', type: 'Lender',
+    city: 'Conifer', state: 'Colorado', stateSlug: 'colorado', county: 'Jefferson', countySlug: 'jefferson',
+    zipCodes: ['80433', '80439', '80401'], rating: 4.7, reviewCount: 195, trustScore: 90, countyExperienceScore: 92,
+    nationalVolumeRank: 35, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Mountain Modern Builds', 'Acreage Construction', 'Foothills Privacy'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 8, bbbRating: 'A',
+    googleRating: 4.7, trustpilotRating: 4.5, avgCloseDays: 31, onTimeCloseRate: 92,
+    shortDescription: 'Builder-affiliated lender — expertise in Evergreen and Conifer mountain modern and acreage new construction.',
+    website: 'https://lennar.com/mortgage', phone: '(303) 555-9509',
+  },
+  {
+    id: 'co-34', slug: 'anchor-home-mortgage-steamboat', name: 'Anchor Home Mortgage (Steamboat)', nmlsId: '136890', type: 'Broker',
+    city: 'Steamboat Springs', state: 'Colorado', stateSlug: 'colorado', county: 'Routt', countySlug: 'routt',
+    zipCodes: ['80487', '80401', '80439'], rating: 4.9, reviewCount: 240, trustScore: 95, countyExperienceScore: 96,
+    nationalVolumeRank: 48, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Affluent Relocators', 'Commuter Pipeline', 'Resort Lifestyle'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 23, onTimeCloseRate: 96,
+    shortDescription: 'Independent broker — strong focus on Golden commuter pipeline and Steamboat resort lifestyle relocations.',
+    website: 'https://anchorhomemortgage.com', phone: '(970) 555-9510',
+  },
+  {
+    id: 'co-35', slug: 'bank-of-america-mortgage-foothills-mountain', name: 'Bank of America Mortgage (Foothills & Mountain)', nmlsId: '399802', type: 'Bank',
+    city: 'Evergreen', state: 'Colorado', stateSlug: 'colorado', county: 'Jefferson', countySlug: 'jefferson',
+    zipCodes: ['80439', '80487', '80401'], rating: 4.6, reviewCount: 520, trustScore: 89, countyExperienceScore: 91,
+    nationalVolumeRank: 5, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['High-Value Financing', 'Out-of-State Relocations', 'Full-Service Wealth Banking'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 18, bbbRating: 'A',
+    googleRating: 4.6, trustpilotRating: 4.4, avgCloseDays: 33, onTimeCloseRate: 90,
+    shortDescription: 'Full-service bank mortgages for Texas, California, and Florida relocations to Evergreen and Steamboat premium markets.',
+    website: 'https://bankofamerica.com/mortgage', phone: '(303) 555-9511',
+  },
+  {
+    id: 'co-36', slug: 'nova-home-loans-foothills-mountain', name: 'Nova Home Loans (Foothills & Mountain)', nmlsId: '3089', type: 'Lender',
+    city: 'Steamboat Springs', state: 'Colorado', stateSlug: 'colorado', county: 'Routt', countySlug: 'routt',
+    zipCodes: ['80487', '80433', '80439'], rating: 4.8, reviewCount: 295, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 42, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Luxury Primary Residences', 'Investor Financing', 'Explosive Price Growth Markets'],
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 3, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 25, onTimeCloseRate: 94,
+    shortDescription: 'Colorado lender — localized knowledge of Conifer, Golden, and Steamboat luxury and investor financing amid lifestyle migration.',
+    website: 'https://novahomeloans.com', phone: '(970) 555-9512',
+  },
 ];
 
 export const DENVER_OUTER_RINGS_LENDER_SLUGS = [
@@ -333,11 +467,46 @@ export const COLORADO_SPRINGS_LENDER_SLUGS = [
   'nova-home-loans-colorado-springs',
 ] as const;
 
+export const FOOTHILLS_MOUNTAIN_LENDER_SLUGS = [
+  'american-financing-foothills',
+  'guild-mortgage-foothills-mountain',
+  'new-american-funding-foothills-mountain',
+  'crosscountry-mortgage-mountain-markets',
+  'pierpoint-mortgage-colorado-mountain',
+  'silverton-mortgage-foothills',
+  'alpine-bank-mortgage',
+  'bellco-credit-union-foothills',
+  'lennar-mortgage-foothills',
+  'anchor-home-mortgage-steamboat',
+  'bank-of-america-mortgage-foothills-mountain',
+  'nova-home-loans-foothills-mountain',
+] as const;
+
+const JEFFERSON_SUPPLEMENTS = [
+  'crosscountry-mortgage-mountain-markets',
+  'alpine-bank-mortgage',
+  'anchor-home-mortgage-steamboat',
+  'nova-home-loans-foothills-mountain',
+];
+
+const ROUTT_SUPPLEMENTS = [
+  'american-financing-foothills',
+  'guild-mortgage-foothills-mountain',
+  'new-american-funding-foothills-mountain',
+  'pierpoint-mortgage-colorado-mountain',
+  'silverton-mortgage-foothills',
+  'bellco-credit-union-foothills',
+  'lennar-mortgage-foothills',
+  'bank-of-america-mortgage-foothills-mountain',
+];
+
 export const COLORADO_COUNTY_SUPPLEMENTS: Record<string, string[]> = {
   adams: ADAMS_SUPPLEMENTS,
   boulder: BOULDER_SUPPLEMENTS,
   douglas: DOUGLAS_SUPPLEMENTS,
   'el-paso': [],
+  jefferson: JEFFERSON_SUPPLEMENTS,
+  routt: ROUTT_SUPPLEMENTS,
 };
 
 export const DENVER_OUTER_RINGS_HUB_COUNTIES = [
@@ -359,4 +528,16 @@ export const COLORADO_SPRINGS_HUB_AREAS = [
   { name: 'Fountain', slug: 'el-paso', highlight: 'Military community, Fort Carson corridor' },
   { name: 'Falcon', slug: 'el-paso', highlight: 'Master-planned new construction' },
   { name: 'Northeast COS', slug: 'el-paso', highlight: 'Denver safety valve, steady volume' },
+] as const;
+
+export const FOOTHILLS_MOUNTAIN_HUB_COUNTIES = [
+  { name: 'Jefferson', slug: 'jefferson', highlight: 'Evergreen, Golden & Conifer foothills' },
+  { name: 'Routt', slug: 'routt', highlight: 'Steamboat Springs turnkey resort market' },
+] as const;
+
+export const FOOTHILLS_MOUNTAIN_HUB_AREAS = [
+  { name: 'Evergreen', slug: 'jefferson', highlight: 'Luxury foothills, Denver commuter access' },
+  { name: 'Golden', slug: 'jefferson', highlight: 'Tech corridor foothills, acreage privacy' },
+  { name: 'Conifer', slug: 'jefferson', highlight: 'Mountain modern & acreage builds' },
+  { name: 'Steamboat Springs', slug: 'routt', highlight: 'Turnkey resort, out-of-state demand' },
 ] as const;
