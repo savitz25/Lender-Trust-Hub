@@ -103,6 +103,7 @@ export default function UpperNorthwestValueSurgeHubPage() {
               <h2 className="font-semibold text-[#0A2540]">Also Explore</h2>
               <ul className="mt-3 space-y-2">
                 <li><Link href="/local-lenders/district-of-columbia/high-velocity-mid-city-core" className="text-[#14B8A6] hover:underline">Mid-City Core Hub →</Link></li>
+                <li><Link href="/local-lenders/district-of-columbia/first-time-buyer-waterfront-hubs" className="text-[#14B8A6] hover:underline">First-Time Buyer &amp; Waterfront Hubs →</Link></li>
                 <li><Link href="/local-lenders/washington/snohomish-transit-corridor" className="text-[#14B8A6] hover:underline">Snohomish Transit Corridor Hub →</Link></li>
                 <li><Link href="/local-lenders/washington/southwest-washington-portland-border" className="text-[#14B8A6] hover:underline">Portland Border Hub →</Link></li>
                 <li><Link href="/local-lenders/colorado/colorado-springs-stability-volume" className="text-[#14B8A6] hover:underline">Colorado Springs Hub →</Link></li>

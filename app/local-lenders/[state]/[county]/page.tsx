@@ -281,7 +281,7 @@ export async function generateMetadata({
                                                                                                           : isClark
                                                                                                             ? `Compare 12 NMLS-verified Clark mortgage lenders. Columbia River tax-advantage relocations, iQ Credit Union cross-border rates, Lennar waterfront revitalization, and Portland spillover volume.`
                                                                                                             : isDistrictOfColumbia
-                                                                                                              ? `Compare 24 NMLS-verified DC mortgage lenders. Upper Northwest single-family value plays, Mid-City historic rowhome and premium condo financing, PenFed member rates, and 14th Street corridor specialists.`
+                                                                                                              ? `Compare 36 NMLS-verified DC mortgage lenders. Upper Northwest value plays, Mid-City historic rowhomes, Brookland first-time buyer entry, Navy Yard waterfront condos, and DCU member rates.`
                                                                                                               : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }

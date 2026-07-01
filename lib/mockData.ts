@@ -171,6 +171,8 @@ export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; c
   '20012': { state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia' },
   '20011': { state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia' },
   '20017': { state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia' },
+  '20003': { state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia' },
+  '20018': { state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia' },
   '80201': { state: 'Colorado', stateSlug: 'colorado', county: 'Denver', countySlug: 'denver' },
   '80516': { state: 'Colorado', stateSlug: 'colorado', county: 'Adams', countySlug: 'adams' },
   '80026': { state: 'Colorado', stateSlug: 'colorado', county: 'Boulder', countySlug: 'boulder' },

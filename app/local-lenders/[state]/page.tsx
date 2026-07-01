@@ -326,6 +326,13 @@ export default async function MortgageStatePage({
                     Logan Circle &amp; Thomas Circle — 12 verified lenders, historic rowhomes &amp; premium condos.
                   </span>
                 </Link>
+                <Link href="/local-lenders/district-of-columbia/first-time-buyer-waterfront-hubs"
+                  className="block rounded-2xl border border-cyan-500/40 bg-cyan-50 p-5 hover:bg-cyan-100/80">
+                  <span className="font-semibold text-[#0A2540]">First-Time Buyer &amp; Waterfront Hubs →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Brookland &amp; Navy Yard — 12 verified lenders, Little Rome &amp; riverfront condos.
+                  </span>
+                </Link>
               </div>
             )}
 
