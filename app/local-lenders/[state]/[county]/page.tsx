@@ -62,6 +62,9 @@ export async function generateMetadata({
   const isCollin = state === 'texas' && county === 'collin';
   const isDenton = state === 'texas' && county === 'denton';
   const isGrayson = state === 'texas' && county === 'grayson';
+  const isHarris = state === 'texas' && county === 'harris';
+  const isFortBend = state === 'texas' && county === 'fort-bend';
+  const isMontgomery = state === 'texas' && county === 'montgomery';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -147,7 +150,13 @@ export async function generateMetadata({
                                                                                       ? `Best Mortgage Lenders in Denton County, TX — DFW Silicon Prairie (2026)`
                                                                                       : isGrayson
                                                                                         ? `Best Mortgage Lenders in Grayson County, TX — Sherman-Denison Silicon Prairie (2026)`
-                                                                                        : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                                        : isHarris
+                                                                                          ? `Best Mortgage Lenders in Harris County, TX — Greater Houston Metro (2026)`
+                                                                                          : isFortBend
+                                                                                            ? `Best Mortgage Lenders in Fort Bend County, TX — Greater Houston Metro (2026)`
+                                                                                            : isMontgomery
+                                                                                              ? `Best Mortgage Lenders in Montgomery County, TX — Greater Houston Metro (2026)`
+                                                                                              : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -232,7 +241,13 @@ export async function generateMetadata({
                                                                                       ? `Compare 12 NMLS-verified Denton mortgage lenders. Prosper master-planned growth, Texans Credit Union member rates, and north DFW infrastructure expansion.`
                                                                                       : isGrayson
                                                                                         ? `Compare 12 NMLS-verified Grayson mortgage lenders. Sherman-Denison Texas Instruments workforce housing, CrossCountry manufacturing corridor, and equity-gain financing.`
-                                                                                        : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                                        : isHarris
+                                                                                          ? `Compare 12 NMLS-verified Harris mortgage lenders. Katy master-planned communities, MFS broker, Lennar new construction, and resilient Houston suburban financing.`
+                                                                                          : isFortBend
+                                                                                            ? `Compare 12 NMLS-verified Fort Bend mortgage lenders. Sugar Land medical sector, CrossCountry school districts, First Service member rates, and family stability.`
+                                                                                            : isMontgomery
+                                                                                              ? `Compare 12 NMLS-verified Montgomery mortgage lenders. The Woodlands top schools, Conroe energy sector, Veterans United programs, and positive YoY growth.`
+                                                                                              : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

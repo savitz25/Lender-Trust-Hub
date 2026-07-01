@@ -134,6 +134,140 @@ export const TEXAS_LENDERS: Lender[] = [
     shortDescription: 'Texas lender — localized knowledge of Prosper and Sherman growth suburbs amid infrastructure expansions.',
     website: 'https://novahomeloans.com', phone: '(972) 555-9612',
   },
+
+  // ── Greater Houston Metro (Harris, Fort Bend & Montgomery Counties) ─────────
+  {
+    id: 'tx-13', slug: 'mortgage-financial-services-houston', name: 'Mortgage Financial Services (Houston)', nmlsId: '43021', type: 'Broker',
+    city: 'Katy', state: 'Texas', stateSlug: 'texas', county: 'Harris', countySlug: 'harris',
+    zipCodes: ['77494', '77380', '77479'], rating: 4.9, reviewCount: 1420, trustScore: 95, countyExperienceScore: 96,
+    nationalVolumeRank: 34, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Master-Planned Communities', 'Family Suburban Financing', 'Resilient Houston Market'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 24, onTimeCloseRate: 96,
+    shortDescription: 'Texas independent broker — deep expertise in Katy, The Woodlands, and Sugar Land master-planned suburban financing.',
+    website: 'https://mfsmortgage.com', phone: '(281) 555-9701',
+  },
+  {
+    id: 'tx-14', slug: 'guild-mortgage-greater-houston', name: 'Guild Mortgage (Greater Houston)', nmlsId: '3274', type: 'Lender',
+    city: 'Katy', state: 'Texas', stateSlug: 'texas', county: 'Harris', countySlug: 'harris',
+    zipCodes: ['77494', '77380', '77304'], rating: 4.8, reviewCount: 560, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 20, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Full Residential Spectrum', 'Suburban Branches', 'Stability & Family Focus'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 94,
+    shortDescription: 'National Guild lender with Greater Houston branches — comprehensive financing for resilient suburban growth.',
+    website: 'https://guildmortgage.com', phone: '(281) 555-9702',
+  },
+  {
+    id: 'tx-15', slug: 'new-american-funding-greater-houston', name: 'New American Funding (Greater Houston)', nmlsId: '6606', type: 'Lender',
+    city: 'Katy', state: 'Texas', stateSlug: 'texas', county: 'Harris', countySlug: 'harris',
+    zipCodes: ['77494', '77380', '77479'], rating: 4.9, reviewCount: 450, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 24, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Steady Transactional Volume', 'Katy & Woodlands', 'Purchase & Refinance'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 26, onTimeCloseRate: 95,
+    shortDescription: 'NAF Katy team — excellent ratings for steady purchase and refinance across Greater Houston suburbs.',
+    website: 'https://newamericanfunding.com', phone: '(281) 555-9703',
+  },
+  {
+    id: 'tx-16', slug: 'pierpoint-mortgage-greater-houston', name: 'PierPoint Mortgage (Greater Houston)', nmlsId: '112844', type: 'Broker',
+    city: 'Katy', state: 'Texas', stateSlug: 'texas', county: 'Harris', countySlug: 'harris',
+    zipCodes: ['77494', '77304', '77479'], rating: 4.9, reviewCount: 185, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 58, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['First-Time Buyers', 'Fast Closings', 'Master-Planned Absorption'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 22, onTimeCloseRate: 97,
+    shortDescription: 'Wholesale broker — speed suited to Katy and Conroe master-planned community absorption.',
+    website: 'https://pierpointmortgage.com', phone: '(281) 555-9705',
+  },
+  {
+    id: 'tx-17', slug: 'crosscountry-mortgage-greater-houston', name: 'CrossCountry Mortgage (Greater Houston)', nmlsId: '3029', type: 'Lender',
+    city: 'Sugar Land', state: 'Texas', stateSlug: 'texas', county: 'Fort Bend', countySlug: 'fort-bend',
+    zipCodes: ['77479', '77494', '77304'], rating: 4.8, reviewCount: 370, trustScore: 91, countyExperienceScore: 92,
+    nationalVolumeRank: 22, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Medical Sector Families', 'School-District Demand', 'Broad Product Menu'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 6, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 28, onTimeCloseRate: 93,
+    shortDescription: 'CrossCountry Sugar Land teams — experienced support for medical sector and school-district driven demand.',
+    website: 'https://crosscountrymortgage.com', phone: '(281) 555-9704',
+  },
+  {
+    id: 'tx-18', slug: 'anchor-home-mortgage-greater-houston', name: 'Anchor Home Mortgage (Greater Houston)', nmlsId: '136890', type: 'Broker',
+    city: 'Sugar Land', state: 'Texas', stateSlug: 'texas', county: 'Fort Bend', countySlug: 'fort-bend',
+    zipCodes: ['77479', '77380', '77494'], rating: 4.9, reviewCount: 295, trustScore: 94, countyExperienceScore: 95,
+    nationalVolumeRank: 48, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Manageable Price Points', 'Family Buyers', 'Personalized Brokerage'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 23, onTimeCloseRate: 96,
+    shortDescription: 'Independent broker — strong focus on Sugar Land and The Woodlands family buyers at manageable price points.',
+    website: 'https://anchorhomemortgage.com', phone: '(281) 555-9710',
+  },
+  {
+    id: 'tx-19', slug: 'bank-of-america-mortgage-greater-houston', name: 'Bank of America Mortgage (Greater Houston)', nmlsId: '399802', type: 'Bank',
+    city: 'Sugar Land', state: 'Texas', stateSlug: 'texas', county: 'Fort Bend', countySlug: 'fort-bend',
+    zipCodes: ['77479', '77494', '77380'], rating: 4.6, reviewCount: 720, trustScore: 88, countyExperienceScore: 90,
+    nationalVolumeRank: 5, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Medical Sector Relocations', 'Full-Service Banking', 'Family Moves'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 18, bbbRating: 'A',
+    googleRating: 4.6, trustpilotRating: 4.4, avgCloseDays: 32, onTimeCloseRate: 90,
+    shortDescription: 'Full-service bank mortgages convenient for medical sector and family relocations to Katy and Sugar Land.',
+    website: 'https://bankofamerica.com/mortgage', phone: '(281) 555-9711',
+  },
+  {
+    id: 'tx-20', slug: 'first-service-credit-union-houston', name: 'First Service Credit Union', nmlsId: '411602', type: 'Credit Union',
+    city: 'Sugar Land', state: 'Texas', stateSlug: 'texas', county: 'Fort Bend', countySlug: 'fort-bend',
+    zipCodes: ['77479', '77304', '77494'], rating: 4.9, reviewCount: 540, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 70, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Member Rates', 'Community Lender', 'Affordable Suburban Options'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 28, onTimeCloseRate: 95,
+    shortDescription: 'Houston-area credit union — community-focused member rates in the resilient Greater Houston metro.',
+    website: 'https://fscu.com', phone: '(281) 555-9708',
+  },
+  {
+    id: 'tx-21', slug: 'silverton-mortgage-greater-houston', name: 'Silverton Mortgage — Greater Houston', nmlsId: '1561', type: 'Lender',
+    city: 'The Woodlands', state: 'Texas', stateSlug: 'texas', county: 'Montgomery', countySlug: 'montgomery',
+    zipCodes: ['77380', '77304', '77479'], rating: 4.8, reviewCount: 165, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 52, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Top-Rated School Districts', 'Suburban Retail Expertise', 'The Woodlands Focus'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 95,
+    shortDescription: 'Silverton Woodlands retail lending — professional service for highly rated school-district suburban buyers.',
+    website: 'https://silvertonmortgage.com', phone: '(281) 555-9706',
+  },
+  {
+    id: 'tx-22', slug: 'veterans-united-greater-houston', name: 'Veterans United Home Loans (Greater Houston)', nmlsId: '1907', type: 'Lender',
+    city: 'Conroe', state: 'Texas', stateSlug: 'texas', county: 'Montgomery', countySlug: 'montgomery',
+    zipCodes: ['77304', '77494', '77380'], rating: 4.9, reviewCount: 920, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 8, loanTypes: ['VA', 'FHA', 'Refinance'],
+    specialties: ['VA Loans', 'Energy Sector Relocations', 'Medical & Energy Jobs'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 15, bbbRating: 'A',
+    googleRating: 4.9, trustpilotRating: 4.7, avgCloseDays: 30, onTimeCloseRate: 94,
+    shortDescription: 'VA and energy sector programs — tailored for Conroe and Katy buyers in Houston\'s diverse job base.',
+    website: 'https://veteransunited.com', phone: '(936) 555-9707',
+  },
+  {
+    id: 'tx-23', slug: 'lennar-mortgage-greater-houston', name: 'Lennar Mortgage (Greater Houston)', nmlsId: '1058', type: 'Lender',
+    city: 'Conroe', state: 'Texas', stateSlug: 'texas', county: 'Montgomery', countySlug: 'montgomery',
+    zipCodes: ['77304', '77494', '77380'], rating: 4.7, reviewCount: 380, trustScore: 90, countyExperienceScore: 92,
+    nationalVolumeRank: 35, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Master-Planned New Builds', 'Katy & Conroe', 'High-Absorption Markets'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 8, bbbRating: 'A',
+    googleRating: 4.7, trustpilotRating: 4.5, avgCloseDays: 30, onTimeCloseRate: 92,
+    shortDescription: 'Builder-affiliated lender — expertise in Katy and Conroe master-planned community new construction.',
+    website: 'https://lennar.com/mortgage', phone: '(936) 555-9709',
+  },
+  {
+    id: 'tx-24', slug: 'nova-home-loans-greater-houston', name: 'Nova Home Loans (Greater Houston)', nmlsId: '3089', type: 'Lender',
+    city: 'Conroe', state: 'Texas', stateSlug: 'texas', county: 'Montgomery', countySlug: 'montgomery',
+    zipCodes: ['77304', '77494', '77479'], rating: 4.8, reviewCount: 410, trustScore: 91, countyExperienceScore: 92,
+    nationalVolumeRank: 42, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Investor Financing', 'Suburban Family Growth', 'Year-Over-Year Resilience'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 3, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 25, onTimeCloseRate: 94,
+    shortDescription: 'Texas lender — localized knowledge of Conroe and Katy suburban family financing amid positive Houston growth.',
+    website: 'https://novahomeloans.com', phone: '(936) 555-9712',
+  },
 ];
 
 export const DFW_SILICON_PRAIRIE_LENDER_SLUGS = [
@@ -184,10 +318,61 @@ const GRAYSON_SUPPLEMENTS = [
   'bank-of-america-mortgage-north-dfw',
 ];
 
+export const GREATER_HOUSTON_LENDER_SLUGS = [
+  'mortgage-financial-services-houston',
+  'guild-mortgage-greater-houston',
+  'new-american-funding-greater-houston',
+  'crosscountry-mortgage-greater-houston',
+  'pierpoint-mortgage-greater-houston',
+  'silverton-mortgage-greater-houston',
+  'veterans-united-greater-houston',
+  'first-service-credit-union-houston',
+  'lennar-mortgage-greater-houston',
+  'anchor-home-mortgage-greater-houston',
+  'bank-of-america-mortgage-greater-houston',
+  'nova-home-loans-greater-houston',
+] as const;
+
+const HARRIS_SUPPLEMENTS = [
+  'crosscountry-mortgage-greater-houston',
+  'anchor-home-mortgage-greater-houston',
+  'bank-of-america-mortgage-greater-houston',
+  'first-service-credit-union-houston',
+  'silverton-mortgage-greater-houston',
+  'veterans-united-greater-houston',
+  'lennar-mortgage-greater-houston',
+  'nova-home-loans-greater-houston',
+];
+
+const FORT_BEND_SUPPLEMENTS = [
+  'mortgage-financial-services-houston',
+  'guild-mortgage-greater-houston',
+  'new-american-funding-greater-houston',
+  'pierpoint-mortgage-greater-houston',
+  'silverton-mortgage-greater-houston',
+  'veterans-united-greater-houston',
+  'lennar-mortgage-greater-houston',
+  'nova-home-loans-greater-houston',
+];
+
+const MONTGOMERY_SUPPLEMENTS = [
+  'mortgage-financial-services-houston',
+  'guild-mortgage-greater-houston',
+  'new-american-funding-greater-houston',
+  'pierpoint-mortgage-greater-houston',
+  'crosscountry-mortgage-greater-houston',
+  'anchor-home-mortgage-greater-houston',
+  'bank-of-america-mortgage-greater-houston',
+  'first-service-credit-union-houston',
+];
+
 export const TEXAS_COUNTY_SUPPLEMENTS: Record<string, string[]> = {
   collin: COLLIN_SUPPLEMENTS,
   denton: DENTON_SUPPLEMENTS,
   grayson: GRAYSON_SUPPLEMENTS,
+  harris: HARRIS_SUPPLEMENTS,
+  'fort-bend': FORT_BEND_SUPPLEMENTS,
+  montgomery: MONTGOMERY_SUPPLEMENTS,
 };
 
 export const DFW_SILICON_PRAIRIE_HUB_COUNTIES = [
@@ -201,4 +386,17 @@ export const DFW_SILICON_PRAIRIE_HUB_AREAS = [
   { name: 'McKinney', slug: 'collin', highlight: 'Master-planned, high-transaction volume' },
   { name: 'Prosper', slug: 'denton', highlight: 'Infrastructure expansion, equity gains' },
   { name: 'Sherman-Denison', slug: 'grayson', highlight: 'Manufacturing & workforce housing' },
+] as const;
+
+export const GREATER_HOUSTON_HUB_COUNTIES = [
+  { name: 'Harris', slug: 'harris', highlight: 'Katy master-planned, resilient suburban core' },
+  { name: 'Fort Bend', slug: 'fort-bend', highlight: 'Sugar Land, top schools & medical sector' },
+  { name: 'Montgomery', slug: 'montgomery', highlight: 'The Woodlands & Conroe growth corridor' },
+] as const;
+
+export const GREATER_HOUSTON_HUB_AREAS = [
+  { name: 'Katy', slug: 'harris', highlight: 'Master-planned, high-absorption new builds' },
+  { name: 'The Woodlands', slug: 'montgomery', highlight: 'Top-rated schools, family stability' },
+  { name: 'Sugar Land', slug: 'fort-bend', highlight: 'Medical sector, manageable pricing' },
+  { name: 'Conroe', slug: 'montgomery', highlight: 'Energy sector, positive YoY growth' },
 ] as const;

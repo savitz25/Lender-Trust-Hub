@@ -260,6 +260,13 @@ export default async function MortgageStatePage({
                     Frisco, McKinney, Prosper &amp; Sherman — 12 verified lenders, corporate relocation boom.
                   </span>
                 </Link>
+                <Link href="/local-lenders/texas/greater-houston-metro"
+                  className="block rounded-2xl border border-orange-500/40 bg-orange-50 p-5 hover:bg-orange-100/80">
+                  <span className="font-semibold text-[#0A2540]">Greater Houston Metro Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Katy, The Woodlands, Sugar Land &amp; Conroe — 12 verified lenders, resilient suburban growth.
+                  </span>
+                </Link>
               </div>
             )}
 
