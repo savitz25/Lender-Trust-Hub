@@ -147,6 +147,11 @@ export default function CentralFloridaHubPage() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/local-lenders/florida/jacksonville" className="text-[#14B8A6] hover:underline">
+                    Jacksonville Hub →
+                  </Link>
+                </li>
+                <li>
                   <Link href="/calculators" className="text-[#14B8A6] hover:underline">
                     Mortgage Calculators →
                   </Link>

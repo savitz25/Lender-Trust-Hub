@@ -179,4 +179,4 @@ Ultra-fast closings and experienced local origination. High-volume Tampa market 
 
 NMLS Consumer Access · CFPB search · No paid placement. Verify at [nmlsconsumeraccess.org](https://www.nmlsconsumeraccess.org).
 
-**[Tampa Bay Hub](/local-lenders/florida/tampa-bay)** · **[Central Florida Hub](/local-lenders/florida/central-florida)** · **[South Florida Hub](/local-lenders/florida/south-florida)**
+**[Tampa Bay Hub](/local-lenders/florida/tampa-bay)** · **[Jacksonville Hub](/local-lenders/florida/jacksonville)** · **[Central Florida Hub](/local-lenders/florida/central-florida)** · **[South Florida Hub](/local-lenders/florida/south-florida)**
