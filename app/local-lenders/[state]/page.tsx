@@ -199,6 +199,18 @@ export default async function MortgageStatePage({
               </div>
             )}
 
+            {slug === 'california' && (
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <Link href="/local-lenders/california/silicon-valley-spine"
+                  className="block rounded-2xl border border-sky-500/40 bg-sky-50 p-5 hover:bg-sky-100/80">
+                  <span className="font-semibold text-[#0A2540]">Silicon Valley Spine Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    San Jose &amp; Cupertino — 12 verified lenders, jumbo &amp; ultra-competitive tech corridor.
+                  </span>
+                </Link>
+              </div>
+            )}
+
             {slug === 'north-carolina' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link href="/local-lenders/north-carolina/charlotte-metro"

@@ -49,6 +49,7 @@ export async function generateMetadata({
   const isSevier = state === 'tennessee' && county === 'sevier';
   const isMaricopa = state === 'arizona' && county === 'maricopa';
   const isPinal = state === 'arizona' && county === 'pinal';
+  const isSantaClara = state === 'california' && county === 'santa-clara';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -108,7 +109,9 @@ export async function generateMetadata({
                                                             ? `Best Mortgage Lenders in Maricopa County, AZ — Phoenix Metro Hubs (2026)`
                                                             : isPinal
                                                               ? `Best Mortgage Lenders in Pinal County, AZ — San Tan Valley & Southeast Border (2026)`
-                                                              : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                              : isSantaClara
+                                                                ? `Best Mortgage Lenders in Santa Clara County, CA — Silicon Valley Spine (2026)`
+                                                                : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -167,7 +170,9 @@ export async function generateMetadata({
                                                             ? `Compare 24 NMLS-verified Maricopa mortgage lenders. West Valley boomtowns, Queen Creek new construction, Sun American, Lennar, and Southeast Valley family growth.`
                                                             : isPinal
                                                               ? `Compare 12 NMLS-verified Pinal County mortgage lenders. San Tan Valley spillover, Veterans United move-up programs, OneAZ member rates, and Queen Creek border supplements.`
-                                                              : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                              : isSantaClara
+                                                                ? `Compare 12 NMLS-verified Santa Clara mortgage lenders. Jumbo and RSU financing, Guild and NAF branches, PierPoint fast closings, and ultra-competitive San Jose/Cupertino offer dynamics.`
+                                                                : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

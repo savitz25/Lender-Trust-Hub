@@ -4,6 +4,7 @@ import { SOUTH_CAROLINA_LENDERS } from '@/lib/mortgage/southCarolinaLenders';
 import { NORTH_CAROLINA_LENDERS } from '@/lib/mortgage/northCarolinaLenders';
 import { TENNESSEE_LENDERS } from '@/lib/mortgage/tennesseeLenders';
 import { ARIZONA_LENDERS } from '@/lib/mortgage/arizonaLenders';
+import { CALIFORNIA_LENDERS } from '@/lib/mortgage/californiaLenders';
 
 export type LoanType = 'Conventional' | 'FHA' | 'VA' | 'USDA' | 'Jumbo' | 'ARM' | 'Refinance';
 export type CreditTier = 'Excellent' | 'Good' | 'Fair' | 'Rebuilding';
@@ -113,6 +114,10 @@ export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; c
   '85142': { state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa' },
   '85143': { state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa' },
   '85140': { state: 'Arizona', stateSlug: 'arizona', county: 'Pinal', countySlug: 'pinal' },
+  '95110': { state: 'California', stateSlug: 'california', county: 'Santa Clara', countySlug: 'santa-clara' },
+  '95113': { state: 'California', stateSlug: 'california', county: 'Santa Clara', countySlug: 'santa-clara' },
+  '95014': { state: 'California', stateSlug: 'california', county: 'Santa Clara', countySlug: 'santa-clara' },
+  '95050': { state: 'California', stateSlug: 'california', county: 'Santa Clara', countySlug: 'santa-clara' },
   '98101': { state: 'Washington', stateSlug: 'washington', county: 'King', countySlug: 'king' },
   '80201': { state: 'Colorado', stateSlug: 'colorado', county: 'Denver', countySlug: 'denver' },
 };
@@ -260,4 +265,4 @@ const NATIONAL_LENDERS: Lender[] = [
   },
 ];
 
-export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS, ...TENNESSEE_LENDERS, ...ARIZONA_LENDERS];
+export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS, ...TENNESSEE_LENDERS, ...ARIZONA_LENDERS, ...CALIFORNIA_LENDERS];

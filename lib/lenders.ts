@@ -5,6 +5,7 @@ import { SOUTH_CAROLINA_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/southCarolinaL
 import { NORTH_CAROLINA_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/northCarolinaLenders';
 import { TENNESSEE_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/tennesseeLenders';
 import { ARIZONA_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/arizonaLenders';
+import { CALIFORNIA_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/californiaLenders';
 
 export { lenders };
 export type { Lender, LoanType, CreditTier };
@@ -90,6 +91,7 @@ const STATE_COUNTY_SUPPLEMENTS: Record<string, Record<string, string[]>> = {
   'north-carolina': NORTH_CAROLINA_COUNTY_SUPPLEMENTS,
   tennessee: TENNESSEE_COUNTY_SUPPLEMENTS,
   arizona: ARIZONA_COUNTY_SUPPLEMENTS,
+  california: CALIFORNIA_COUNTY_SUPPLEMENTS,
 };
 
 export function getLendersByCounty(stateSlug: string, countySlug: string): Lender[] {
