@@ -215,6 +215,13 @@ export default async function MortgageStatePage({
                     Riverside &amp; Moreno Valley — 12 verified lenders, SoCal affordability safety valve.
                   </span>
                 </Link>
+                <Link href="/local-lenders/california/central-valley-alternatives"
+                  className="block rounded-2xl border border-emerald-500/40 bg-emerald-50 p-5 hover:bg-emerald-100/80">
+                  <span className="font-semibold text-[#0A2540]">Central Valley Alternatives Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Clovis &amp; Bakersfield — 12 verified lenders, remote workers &amp; cash-flow investing.
+                  </span>
+                </Link>
               </div>
             )}
 

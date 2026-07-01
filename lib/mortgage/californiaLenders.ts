@@ -268,6 +268,140 @@ export const CALIFORNIA_LENDERS: Lender[] = [
     shortDescription: 'California lender — localized knowledge of Inland Empire investor and family financing amid logistics growth.',
     website: 'https://novahomeloans.com', phone: '(951) 555-9112',
   },
+
+  // ── Central Valley Alternatives (Fresno/Clovis & Kern/Bakersfield) ───────────
+  {
+    id: 'ca-25', slug: 'american-pacific-mortgage-central-valley', name: 'American Pacific Mortgage (Central Valley)', nmlsId: '1850', type: 'Broker',
+    city: 'Clovis', state: 'California', stateSlug: 'california', county: 'Fresno', countySlug: 'fresno',
+    zipCodes: ['93611', '93612', '93720'], rating: 4.9, reviewCount: 890, trustScore: 94, countyExperienceScore: 95,
+    nationalVolumeRank: 28, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Affordable Family Financing', 'Cash-Flow Investors', 'Suburban Clovis Market'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 24, onTimeCloseRate: 96,
+    shortDescription: 'California independent broker — deep Central Valley expertise for affordable family and positive cash-flow investor financing in Clovis.',
+    website: 'https://apmortgage.com', phone: '(559) 555-9201',
+  },
+  {
+    id: 'ca-26', slug: 'guild-mortgage-central-valley', name: 'Guild Mortgage (Central Valley)', nmlsId: '3274', type: 'Lender',
+    city: 'Clovis', state: 'California', stateSlug: 'california', county: 'Fresno', countySlug: 'fresno',
+    zipCodes: ['93611', '93619', '93710'], rating: 4.8, reviewCount: 420, trustScore: 91, countyExperienceScore: 92,
+    nationalVolumeRank: 20, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Full Residential Spectrum', 'Remote Worker Relocations', 'Central Valley Branches'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 94,
+    shortDescription: 'National Guild lender with Central Valley branches — comprehensive financing for Clovis suburban buyers and coastal migrants.',
+    website: 'https://guildmortgage.com', phone: '(559) 555-9202',
+  },
+  {
+    id: 'ca-27', slug: 'new-american-funding-clovis', name: 'New American Funding (Clovis)', nmlsId: '6606', type: 'Lender',
+    city: 'Clovis', state: 'California', stateSlug: 'california', county: 'Fresno', countySlug: 'fresno',
+    zipCodes: ['93611', '93612', '93720'], rating: 4.9, reviewCount: 380, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 24, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Remote Worker Volume', 'First-Time Buyers', 'Purchase & Refinance'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 26, onTimeCloseRate: 95,
+    shortDescription: 'NAF Clovis team — excellent ratings for remote worker and first-time buyer volume in elite-school suburbs.',
+    website: 'https://newamericanfunding.com', phone: '(559) 555-9203',
+  },
+  {
+    id: 'ca-28', slug: 'pierpoint-mortgage-central-valley', name: 'PierPoint Mortgage (Central Valley)', nmlsId: '112844', type: 'Broker',
+    city: 'Clovis', state: 'California', stateSlug: 'california', county: 'Fresno', countySlug: 'fresno',
+    zipCodes: ['93611', '93619', '93710'], rating: 4.9, reviewCount: 165, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 58, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['$400K–$430K Medians', 'First-Time Buyers', 'Fast Closings'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 22, onTimeCloseRate: 97,
+    shortDescription: 'Wholesale broker — speed and transparency for Central Valley\'s $400K–$430K median purchase market.',
+    website: 'https://pierpointmortgage.com', phone: '(559) 555-9205',
+  },
+  {
+    id: 'ca-29', slug: 'eecu-fresno', name: 'Educational Employees Credit Union (EECU)', nmlsId: '402788', type: 'Credit Union',
+    city: 'Fresno', state: 'California', stateSlug: 'california', county: 'Fresno', countySlug: 'fresno',
+    zipCodes: ['93710', '93611', '93612'], rating: 4.9, reviewCount: 520, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 74, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Member Rates', 'Community Lender', 'Cash-Flow Investor Options'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 28, onTimeCloseRate: 95,
+    shortDescription: 'Fresno-area credit union — community-focused member rates for qualified buyers and investor cash-flow properties.',
+    website: 'https://eecu.org', phone: '(800) 538-3328',
+  },
+  {
+    id: 'ca-30', slug: 'lennar-mortgage-clovis', name: 'Lennar Mortgage (Clovis)', nmlsId: '1058', type: 'Lender',
+    city: 'Clovis', state: 'California', stateSlug: 'california', county: 'Fresno', countySlug: 'fresno',
+    zipCodes: ['93619', '93611', '93720'], rating: 4.7, reviewCount: 310, trustScore: 89, countyExperienceScore: 91,
+    nationalVolumeRank: 35, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Master-Planned Suburbs', 'Family Suburban Financing', 'Elite School Districts'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 8, bbbRating: 'A',
+    googleRating: 4.7, trustpilotRating: 4.5, avgCloseDays: 31, onTimeCloseRate: 92,
+    shortDescription: 'Builder-affiliated lender — expertise in Clovis master-planned communities and premium low-crime suburban layouts.',
+    website: 'https://lennar.com/mortgage', phone: '(559) 555-9209',
+  },
+  {
+    id: 'ca-31', slug: 'crosscountry-mortgage-central-valley', name: 'CrossCountry Mortgage (Central Valley)', nmlsId: '3029', type: 'Lender',
+    city: 'Bakersfield', state: 'California', stateSlug: 'california', county: 'Kern', countySlug: 'kern',
+    zipCodes: ['93301', '93309', '93311'], rating: 4.8, reviewCount: 340, trustScore: 90, countyExperienceScore: 91,
+    nationalVolumeRank: 22, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Bay Area/LA Relocators', 'Cost-of-Living Migration', 'Broad Product Menu'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 6, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 28, onTimeCloseRate: 93,
+    shortDescription: 'CrossCountry Bakersfield teams — experienced support for coastal California cost-of-living migration.',
+    website: 'https://crosscountrymortgage.com', phone: '(661) 555-9204',
+  },
+  {
+    id: 'ca-32', slug: 'silverton-mortgage-bakersfield', name: 'Silverton Mortgage — Bakersfield', nmlsId: '1561', type: 'Lender',
+    city: 'Bakersfield', state: 'California', stateSlug: 'california', county: 'Kern', countySlug: 'kern',
+    zipCodes: ['93301', '93309', '93311'], rating: 4.8, reviewCount: 155, trustScore: 91, countyExperienceScore: 92,
+    nationalVolumeRank: 52, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Agricultural Heartland', 'Local Retail Expertise', 'Affordability Focus'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 95,
+    shortDescription: 'Silverton Bakersfield retail lending — professional service for agricultural heartland and affordability buyers.',
+    website: 'https://silvertonmortgage.com', phone: '(661) 555-9206',
+  },
+  {
+    id: 'ca-33', slug: 'veterans-united-central-valley', name: 'Veterans United Home Loans (Central Valley)', nmlsId: '1907', type: 'Lender',
+    city: 'Bakersfield', state: 'California', stateSlug: 'california', county: 'Kern', countySlug: 'kern',
+    zipCodes: ['93301', '93311', '93611'], rating: 4.9, reviewCount: 860, trustScore: 91, countyExperienceScore: 92,
+    nationalVolumeRank: 8, loanTypes: ['VA', 'FHA', 'Refinance'],
+    specialties: ['VA Loans', 'Remote Worker Programs', 'Veterans & Military'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 15, bbbRating: 'A',
+    googleRating: 4.9, trustpilotRating: 4.7, avgCloseDays: 30, onTimeCloseRate: 94,
+    shortDescription: 'VA and remote relocation programs — tailored for veterans and tech remote workers in the Central Valley.',
+    website: 'https://veteransunited.com', phone: '(661) 555-9207',
+  },
+  {
+    id: 'ca-34', slug: 'anchor-home-mortgage-bakersfield', name: 'Anchor Home Mortgage (Bakersfield)', nmlsId: '136890', type: 'Broker',
+    city: 'Bakersfield', state: 'California', stateSlug: 'california', county: 'Kern', countySlug: 'kern',
+    zipCodes: ['93301', '93309', '93311'], rating: 4.9, reviewCount: 275, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 48, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Affordability Focus', 'Investor Cash Flow', 'Personalized Brokerage'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 23, onTimeCloseRate: 96,
+    shortDescription: 'Independent broker — strong focus on Central Valley affordability and positive cash-flow investor deals.',
+    website: 'https://anchorhomemortgage.com', phone: '(661) 555-9210',
+  },
+  {
+    id: 'ca-35', slug: 'bank-of-america-mortgage-central-valley', name: 'Bank of America Mortgage (Central Valley)', nmlsId: '399802', type: 'Bank',
+    city: 'Clovis', state: 'California', stateSlug: 'california', county: 'Fresno', countySlug: 'fresno',
+    zipCodes: ['93611', '93301', '93710'], rating: 4.6, reviewCount: 640, trustScore: 87, countyExperienceScore: 89,
+    nationalVolumeRank: 5, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Relocation Financing', 'Full-Service Banking', 'Bay Area/LA Migrants'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 18, bbbRating: 'A',
+    googleRating: 4.6, trustpilotRating: 4.4, avgCloseDays: 32, onTimeCloseRate: 90,
+    shortDescription: 'Full-service bank mortgages convenient for Bay Area and LA relocators seeking Central Valley affordability.',
+    website: 'https://bankofamerica.com/mortgage', phone: '(559) 555-9211',
+  },
+  {
+    id: 'ca-36', slug: 'nova-home-loans-central-valley', name: 'Nova Home Loans (Central Valley)', nmlsId: '3089', type: 'Lender',
+    city: 'Bakersfield', state: 'California', stateSlug: 'california', county: 'Kern', countySlug: 'kern',
+    zipCodes: ['93301', '93309', '93611'], rating: 4.8, reviewCount: 390, trustScore: 91, countyExperienceScore: 92,
+    nationalVolumeRank: 42, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Investor Financing', 'First-Time Buyers', 'Traditional Suburban Appeal'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 3, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 25, onTimeCloseRate: 94,
+    shortDescription: 'California lender — localized knowledge of Central Valley investor and first-time buyer financing at half state median prices.',
+    website: 'https://novahomeloans.com', phone: '(661) 555-9212',
+  },
 ];
 
 export const SILICON_VALLEY_LENDER_SLUGS = [
@@ -300,9 +434,44 @@ export const INLAND_EMPIRE_LENDER_SLUGS = [
   'nova-home-loans-inland-empire',
 ] as const;
 
+export const CENTRAL_VALLEY_LENDER_SLUGS = [
+  'american-pacific-mortgage-central-valley',
+  'guild-mortgage-central-valley',
+  'new-american-funding-clovis',
+  'pierpoint-mortgage-central-valley',
+  'eecu-fresno',
+  'lennar-mortgage-clovis',
+  'crosscountry-mortgage-central-valley',
+  'silverton-mortgage-bakersfield',
+  'veterans-united-central-valley',
+  'anchor-home-mortgage-bakersfield',
+  'bank-of-america-mortgage-central-valley',
+  'nova-home-loans-central-valley',
+] as const;
+
+const FRESNO_SUPPLEMENTS = [
+  'crosscountry-mortgage-central-valley',
+  'silverton-mortgage-bakersfield',
+  'veterans-united-central-valley',
+  'anchor-home-mortgage-bakersfield',
+  'nova-home-loans-central-valley',
+];
+
+const KERN_SUPPLEMENTS = [
+  'american-pacific-mortgage-central-valley',
+  'guild-mortgage-central-valley',
+  'new-american-funding-clovis',
+  'pierpoint-mortgage-central-valley',
+  'eecu-fresno',
+  'lennar-mortgage-clovis',
+  'bank-of-america-mortgage-central-valley',
+];
+
 export const CALIFORNIA_COUNTY_SUPPLEMENTS: Record<string, string[]> = {
   'santa-clara': [],
   'riverside': [],
+  'fresno': FRESNO_SUPPLEMENTS,
+  'kern': KERN_SUPPLEMENTS,
 };
 
 export const SILICON_VALLEY_HUB_AREAS = [
@@ -317,4 +486,9 @@ export const INLAND_EMPIRE_HUB_AREAS = [
   { name: 'Moreno Valley', slug: 'riverside', highlight: 'Distribution boom, master-planned growth' },
   { name: 'Corona', slug: 'riverside', highlight: 'Family housing corridor — coming soon' },
   { name: 'Temecula', slug: 'riverside', highlight: 'Wine country suburbs — coming soon' },
+] as const;
+
+export const CENTRAL_VALLEY_HUB_COUNTIES = [
+  { name: 'Fresno', slug: 'fresno', highlight: 'Clovis suburbs, elite schools, $400K–$430K medians' },
+  { name: 'Kern', slug: 'kern', highlight: 'Bakersfield affordability, ag heartland, cash flow' },
 ] as const;

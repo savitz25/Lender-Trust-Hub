@@ -51,6 +51,8 @@ export async function generateMetadata({
   const isPinal = state === 'arizona' && county === 'pinal';
   const isSantaClara = state === 'california' && county === 'santa-clara';
   const isRiverside = state === 'california' && county === 'riverside';
+  const isFresno = state === 'california' && county === 'fresno';
+  const isKern = state === 'california' && county === 'kern';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -114,7 +116,11 @@ export async function generateMetadata({
                                                                 ? `Best Mortgage Lenders in Santa Clara County, CA — Silicon Valley Spine (2026)`
                                                                 : isRiverside
                                                                   ? `Best Mortgage Lenders in Riverside County, CA — Inland Empire Affordability Magnets (2026)`
-                                                                  : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                  : isFresno
+                                                                    ? `Best Mortgage Lenders in Fresno County, CA — Central Valley Alternatives (2026)`
+                                                                    : isKern
+                                                                      ? `Best Mortgage Lenders in Kern County, CA — Central Valley Alternatives (2026)`
+                                                                      : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -177,7 +183,11 @@ export async function generateMetadata({
                                                                 ? `Compare 12 NMLS-verified Santa Clara mortgage lenders. Jumbo and RSU financing, Guild and NAF branches, PierPoint fast closings, and ultra-competitive San Jose/Cupertino offer dynamics.`
                                                                 : isRiverside
                                                                   ? `Compare 12 NMLS-verified Riverside mortgage lenders. Logistics relocations, Lennar new construction, Altura member rates, and $625K–$710K affordability magnet financing.`
-                                                                  : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                  : isFresno
+                                                                    ? `Compare 12 NMLS-verified Fresno mortgage lenders. Clovis elite-school suburbs, Lennar new construction, EECU member rates, and $400K–$430K remote worker financing.`
+                                                                    : isKern
+                                                                      ? `Compare 12 NMLS-verified Kern mortgage lenders. Bakersfield affordability, positive cash-flow investors, Veterans United programs, and coastal migration support.`
+                                                                      : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

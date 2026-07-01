@@ -122,6 +122,11 @@ export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; c
   '92503': { state: 'California', stateSlug: 'california', county: 'Riverside', countySlug: 'riverside' },
   '92551': { state: 'California', stateSlug: 'california', county: 'Riverside', countySlug: 'riverside' },
   '92553': { state: 'California', stateSlug: 'california', county: 'Riverside', countySlug: 'riverside' },
+  '93611': { state: 'California', stateSlug: 'california', county: 'Fresno', countySlug: 'fresno' },
+  '93612': { state: 'California', stateSlug: 'california', county: 'Fresno', countySlug: 'fresno' },
+  '93710': { state: 'California', stateSlug: 'california', county: 'Fresno', countySlug: 'fresno' },
+  '93301': { state: 'California', stateSlug: 'california', county: 'Kern', countySlug: 'kern' },
+  '93309': { state: 'California', stateSlug: 'california', county: 'Kern', countySlug: 'kern' },
   '98101': { state: 'Washington', stateSlug: 'washington', county: 'King', countySlug: 'king' },
   '80201': { state: 'Colorado', stateSlug: 'colorado', county: 'Denver', countySlug: 'denver' },
 };
