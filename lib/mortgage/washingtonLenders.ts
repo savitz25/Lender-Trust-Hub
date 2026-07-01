@@ -268,6 +268,140 @@ export const WASHINGTON_LENDERS: Lender[] = [
     shortDescription: 'Washington lender — localized knowledge of Pierce County commuter corridor, historic charm, and steady South Sound demand.',
     website: 'https://novahomeloans.com', phone: '(253) 555-9812',
   },
+
+  // ── Southwest Washington / Portland Border (Clark County — Vancouver) ─────────
+  {
+    id: 'wa-25', slug: 'columbia-river-mortgage-vancouver', name: 'Columbia River Mortgage (Vancouver)', nmlsId: '178942', type: 'Broker',
+    city: 'Vancouver', state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark',
+    zipCodes: ['98660', '98661', '98662'], rating: 4.9, reviewCount: 680, trustScore: 95, countyExperienceScore: 96,
+    nationalVolumeRank: 34, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Tax-Advantage Relocation', 'Waterfront Financing', 'Portland-Border Dynamics'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 23, onTimeCloseRate: 96,
+    shortDescription: 'Vancouver independent broker — deep expertise in tax-advantage relocation and waterfront financing across the Portland border.',
+    website: 'https://columbiarivermortgage.com', phone: '(360) 555-9901',
+  },
+  {
+    id: 'wa-26', slug: 'guild-mortgage-vancouver', name: 'Guild Mortgage (Vancouver)', nmlsId: '3274', type: 'Lender',
+    city: 'Vancouver', state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark',
+    zipCodes: ['98660', '98663', '98661'], rating: 4.8, reviewCount: 455, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 20, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Full Residential Spectrum', 'Tax-Advantage Relocation', 'Clark County Branches'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 94,
+    shortDescription: 'National Guild lender with Vancouver branches — comprehensive financing for tax-haven lifestyle migration across the Columbia River.',
+    website: 'https://guildmortgage.com', phone: '(360) 555-9902',
+  },
+  {
+    id: 'wa-27', slug: 'new-american-funding-vancouver', name: 'New American Funding (Vancouver)', nmlsId: '6606', type: 'Lender',
+    city: 'Vancouver', state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark',
+    zipCodes: ['98662', '98660', '98664'], rating: 4.9, reviewCount: 395, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 24, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['High-Volume Purchase/Refinance', 'Remote Worker Relocations', 'Retiree Moves'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 26, onTimeCloseRate: 95,
+    shortDescription: 'NAF Vancouver team — excellent ratings for remote worker and retiree relocations in the Portland-border tax corridor.',
+    website: 'https://newamericanfunding.com', phone: '(360) 555-9903',
+  },
+  {
+    id: 'wa-28', slug: 'crosscountry-mortgage-southwest-wa', name: 'CrossCountry Mortgage (Southwest WA)', nmlsId: '3029', type: 'Lender',
+    city: 'Vancouver', state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark',
+    zipCodes: ['98660', '98661', '98663'], rating: 4.8, reviewCount: 340, trustScore: 91, countyExperienceScore: 92,
+    nationalVolumeRank: 22, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Cross-River Commuters', 'Waterfront Revitalization', 'Tax Advantage Products'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 6, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 28, onTimeCloseRate: 93,
+    shortDescription: 'CrossCountry Vancouver teams — experienced support for waterfront revitalization and tax-advantaged cross-river relocations.',
+    website: 'https://crosscountrymortgage.com', phone: '(360) 555-9904',
+  },
+  {
+    id: 'wa-29', slug: 'pierpoint-mortgage-northwest', name: 'PierPoint Mortgage (Northwest)', nmlsId: '112844', type: 'Broker',
+    city: 'Vancouver', state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark',
+    zipCodes: ['98662', '98660', '98661'], rating: 4.9, reviewCount: 175, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 58, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['First-Time Buyers', 'Fast Closings', 'Portland Spillover Volume'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 22, onTimeCloseRate: 97,
+    shortDescription: 'Wholesale broker — speed suited to Vancouver\'s high transactional volume from Portland cost-of-living spillover.',
+    website: 'https://pierpointmortgage.com', phone: '(360) 555-9905',
+  },
+  {
+    id: 'wa-30', slug: 'silverton-mortgage-vancouver', name: 'Silverton Mortgage — Vancouver', nmlsId: '1561', type: 'Lender',
+    city: 'Vancouver', state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark',
+    zipCodes: ['98660', '98663', '98662'], rating: 4.8, reviewCount: 142, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 52, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Retail Lending', 'Lifestyle Migration Buyers', 'Local Expertise'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 95,
+    shortDescription: 'Silverton Vancouver retail lending — professional service for lifestyle migration buyers in the tax-haven corridor.',
+    website: 'https://silvertonmortgage.com', phone: '(360) 555-9906',
+  },
+  {
+    id: 'wa-31', slug: 'veterans-united-vancouver', name: 'Veterans United (Vancouver)', nmlsId: '1907', type: 'Lender',
+    city: 'Vancouver', state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark',
+    zipCodes: ['98661', '98660', '98664'], rating: 4.9, reviewCount: 680, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 8, loanTypes: ['VA', 'FHA', 'Refinance'],
+    specialties: ['VA Loans', 'Retirement Relocation', 'Tax-Savings Programs'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 15, bbbRating: 'A',
+    googleRating: 4.9, trustpilotRating: 4.7, avgCloseDays: 30, onTimeCloseRate: 94,
+    shortDescription: 'VA and retirement relocation programs — tailored for families and retirees seeking Washington tax advantages near Portland.',
+    website: 'https://veteransunited.com', phone: '(360) 555-9907',
+  },
+  {
+    id: 'wa-32', slug: 'iq-credit-union-vancouver', name: 'iQ Credit Union', nmlsId: '411617', type: 'Credit Union',
+    city: 'Vancouver', state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark',
+    zipCodes: ['98660', '98662', '98663'], rating: 4.9, reviewCount: 850, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 65, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Member Rates', 'Cross-Border Financing', 'Community Lender'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 28, onTimeCloseRate: 95,
+    shortDescription: 'Clark County credit union — community-focused member rates for cross-border buyers in the Portland tax-haven corridor.',
+    website: 'https://iqcu.com', phone: '(800) 233-2328',
+  },
+  {
+    id: 'wa-33', slug: 'lennar-mortgage-vancouver', name: 'Lennar Mortgage (Vancouver)', nmlsId: '1058', type: 'Lender',
+    city: 'Vancouver', state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark',
+    zipCodes: ['98660', '98661', '98664'], rating: 4.7, reviewCount: 340, trustScore: 90, countyExperienceScore: 92,
+    nationalVolumeRank: 35, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Waterfront Properties', 'Urban Infill', 'Downtown Revitalization'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 8, bbbRating: 'A',
+    googleRating: 4.7, trustpilotRating: 4.5, avgCloseDays: 30, onTimeCloseRate: 92,
+    shortDescription: 'Builder-affiliated lender — expertise in downtown Vancouver waterfront and urban-infill revitalization projects.',
+    website: 'https://lennar.com/mortgage', phone: '(360) 555-9909',
+  },
+  {
+    id: 'wa-34', slug: 'anchor-home-mortgage-vancouver', name: 'Anchor Home Mortgage (Vancouver)', nmlsId: '136890', type: 'Broker',
+    city: 'Vancouver', state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark',
+    zipCodes: ['98660', '98662', '98661'], rating: 4.9, reviewCount: 235, trustScore: 94, countyExperienceScore: 95,
+    nationalVolumeRank: 48, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Portland-Border Buyers', 'No Income Tax Advantage', 'Personalized Brokerage'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 23, onTimeCloseRate: 96,
+    shortDescription: 'Independent broker — strong focus on no-income-tax and no-sales-tax financial advantages for Portland-border relocations.',
+    website: 'https://anchorhomemortgage.com', phone: '(360) 555-9910',
+  },
+  {
+    id: 'wa-35', slug: 'bank-of-america-mortgage-vancouver', name: 'Bank of America Mortgage (Vancouver)', nmlsId: '399802', type: 'Bank',
+    city: 'Vancouver', state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark',
+    zipCodes: ['98660', '98663', '98662'], rating: 4.6, reviewCount: 540, trustScore: 88, countyExperienceScore: 90,
+    nationalVolumeRank: 5, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Remote Worker Relocation', 'Cross-River Commuters', 'Full-Service Banking'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 18, bbbRating: 'A',
+    googleRating: 4.6, trustpilotRating: 4.4, avgCloseDays: 32, onTimeCloseRate: 90,
+    shortDescription: 'Full-service bank mortgages convenient for remote workers and cross-river commuters relocating to Vancouver.',
+    website: 'https://bankofamerica.com/mortgage', phone: '(360) 555-9911',
+  },
+  {
+    id: 'wa-36', slug: 'nova-home-loans-vancouver', name: 'Nova Home Loans (Vancouver)', nmlsId: '3089', type: 'Lender',
+    city: 'Vancouver', state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark',
+    zipCodes: ['98664', '98660', '98661'], rating: 4.8, reviewCount: 280, trustScore: 91, countyExperienceScore: 92,
+    nationalVolumeRank: 42, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Investor Financing', 'Border Boom Market', 'Lifestyle Appeal'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 3, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 25, onTimeCloseRate: 94,
+    shortDescription: 'Washington lender — localized knowledge of Clark County border boom, high transactional volume, and Columbia River lifestyle appeal.',
+    website: 'https://novahomeloans.com', phone: '(360) 555-9912',
+  },
 ];
 
 export const SNOHOMISH_TRANSIT_CORRIDOR_LENDER_SLUGS = [
@@ -300,9 +434,25 @@ export const SOUTH_SOUND_TACOMA_PUYALLUP_LENDER_SLUGS = [
   'nova-home-loans-south-sound',
 ] as const;
 
+export const SOUTHWEST_WA_PORTLAND_BORDER_LENDER_SLUGS = [
+  'columbia-river-mortgage-vancouver',
+  'guild-mortgage-vancouver',
+  'new-american-funding-vancouver',
+  'crosscountry-mortgage-southwest-wa',
+  'pierpoint-mortgage-northwest',
+  'silverton-mortgage-vancouver',
+  'veterans-united-vancouver',
+  'iq-credit-union-vancouver',
+  'lennar-mortgage-vancouver',
+  'anchor-home-mortgage-vancouver',
+  'bank-of-america-mortgage-vancouver',
+  'nova-home-loans-vancouver',
+] as const;
+
 export const WASHINGTON_COUNTY_SUPPLEMENTS: Record<string, string[]> = {
   snohomish: [],
   pierce: [],
+  clark: [],
 };
 
 export const SNOHOMISH_TRANSIT_CORRIDOR_HUB_COUNTIES = [
@@ -325,4 +475,15 @@ export const SOUTH_SOUND_TACOMA_PUYALLUP_HUB_AREAS = [
   { name: 'Puyallup', slug: 'pierce', highlight: 'Master-planned growth, excellent schools' },
   { name: 'Lakewood', slug: 'pierce', highlight: 'JBLM proximity, military family demand' },
   { name: 'Sounder Corridor', slug: 'pierce', highlight: 'Seattle commuter rail, King County safety valve' },
+] as const;
+
+export const SOUTHWEST_WA_PORTLAND_BORDER_HUB_COUNTIES = [
+  { name: 'Clark', slug: 'clark', highlight: 'Vancouver Portland-border tax-haven corridor' },
+] as const;
+
+export const SOUTHWEST_WA_PORTLAND_BORDER_HUB_AREAS = [
+  { name: 'Downtown Vancouver', slug: 'clark', highlight: 'Waterfront revitalization, urban infill' },
+  { name: 'Fisher\'s Landing', slug: 'clark', highlight: 'Portland spillover, high transaction volume' },
+  { name: 'Hazel Dell', slug: 'clark', highlight: 'Family relocations, tax-advantage appeal' },
+  { name: 'Columbia River', slug: 'clark', highlight: 'Cross-river lifestyle, no income tax' },
 ] as const;

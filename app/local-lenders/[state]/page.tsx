@@ -300,6 +300,13 @@ export default async function MortgageStatePage({
                     Tacoma &amp; Puyallup — 12 verified lenders, Sounder rail &amp; JBLM safety valve.
                   </span>
                 </Link>
+                <Link href="/local-lenders/washington/southwest-washington-portland-border"
+                  className="block rounded-2xl border border-indigo-500/40 bg-indigo-50 p-5 hover:bg-indigo-100/80">
+                  <span className="font-semibold text-[#0A2540]">Portland Border Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Vancouver — 12 verified lenders, tax-haven &amp; waterfront revitalization.
+                  </span>
+                </Link>
               </div>
             )}
 
