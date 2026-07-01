@@ -138,6 +138,144 @@ export const TENNESSEE_LENDERS: Lender[] = [
     shortDescription: 'Volume-driven Murfreesboro lending — strong local knowledge of affordability-belt spillover and investor activity.',
     website: 'https://supremelending.com', phone: '(615) 555-6012',
   },
+
+  // ── Knox County (Knoxville / Farragut / East TN Metro) ───────────────────────
+  {
+    id: 'tn-13', slug: 'mortgage-investors-group-knoxville', name: 'Mortgage Investors Group', nmlsId: '34391', type: 'Lender',
+    city: 'Knoxville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Knox', countySlug: 'knox',
+    zipCodes: ['37902', '37934', '37919'], rating: 4.9, reviewCount: 1850, trustScore: 96, countyExperienceScore: 97,
+    nationalVolumeRank: 35, loanTypes: ['Conventional', 'FHA', 'VA', 'USDA', 'Jumbo', 'Refinance'],
+    specialties: ['Knoxville HQ Since 1989', 'Mountain & Lake Properties', 'Tight-Inventory Market'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 27, onTimeCloseRate: 96,
+    shortDescription: 'Knoxville-headquartered lender — deep East TN expertise for mountain, lake, and tight-inventory purchase markets.',
+    website: 'https://migonline.com', phone: '(800) 489-8910',
+  },
+  {
+    id: 'tn-14', slug: 'guild-mortgage-knoxville', name: 'Guild Mortgage (Knoxville Branches)', nmlsId: '3274', type: 'Lender',
+    city: 'Knoxville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Knox', countySlug: 'knox',
+    zipCodes: ['37902', '37804', '37934'], rating: 4.8, reviewCount: 420, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 20, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['East Tennessee Offices', 'Full Residential', '5%+ Appreciation Markets'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 30, onTimeCloseRate: 94,
+    shortDescription: 'Guild Knoxville teams — comprehensive financing for retirees, remote workers, and appreciating Farragut suburbs.',
+    website: 'https://guildmortgage.com', phone: '(865) 555-7001',
+  },
+  {
+    id: 'tn-15', slug: 'new-american-funding-knoxville', name: 'New American Funding (Knoxville)', nmlsId: '6606', type: 'Lender',
+    city: 'Knoxville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Knox', countySlug: 'knox',
+    zipCodes: ['37902', '37862', '37934'], rating: 4.9, reviewCount: 380, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 24, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['High-Volume Service', 'Investor Financing', 'Sevier County Reach'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 28, onTimeCloseRate: 95,
+    shortDescription: 'NAF Knoxville — competitive options for vacation rental investors and appreciation plays in Sevier and Knox.',
+    website: 'https://newamericanfunding.com', phone: '(865) 555-7002',
+  },
+  {
+    id: 'tn-18', slug: 'silverton-mortgage-knoxville-east', name: 'Silverton Mortgage — East Tennessee', nmlsId: '1561', type: 'Lender',
+    city: 'Knoxville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Knox', countySlug: 'knox',
+    zipCodes: ['37902', '37934', '37804'], rating: 4.8, reviewCount: 165, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 52, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Smoky Mountains Region', 'Retail Local Expertise', 'Maryville TN Roots'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 29, onTimeCloseRate: 95,
+    shortDescription: 'Silverton East TN retail lending — professional support for Knoxville and Smoky Mountains region buyers.',
+    website: 'https://silvertonmortgage.com', phone: '(865) 555-7006',
+  },
+  {
+    id: 'tn-19', slug: 'ktvaecu-knoxville', name: 'Knoxville TVA Employees Credit Union', nmlsId: '167911', type: 'Credit Union',
+    city: 'Knoxville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Knox', countySlug: 'knox',
+    zipCodes: ['37902', '37804', '37862'], rating: 4.9, reviewCount: 410, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 68, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Member Rates', 'In-House Servicing', 'Affordable Mountain Living'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.7, avgCloseDays: 31, onTimeCloseRate: 94,
+    shortDescription: 'Knoxville-area credit union with member rates — community-focused options across Knox and Blount counties.',
+    website: 'https://tvacreditunion.com', phone: '(865) 544-5409',
+  },
+  {
+    id: 'tn-21', slug: 'anchor-home-mortgage-farragut', name: 'Anchor Home Mortgage (Farragut)', nmlsId: '136890', type: 'Broker',
+    city: 'Farragut', state: 'Tennessee', stateSlug: 'tennessee', county: 'Knox', countySlug: 'knox',
+    zipCodes: ['37934', '37902', '37804'], rating: 4.9, reviewCount: 185, trustScore: 94, countyExperienceScore: 95,
+    nationalVolumeRank: 56, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Farragut Corridor', 'Luxury Suburban', '24% Price Surge Markets'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 27, onTimeCloseRate: 96,
+    shortDescription: 'Personalized brokerage for Farragut luxury suburban and high-appreciation family financing.',
+    website: 'https://anchorhomemortgage.com', phone: '(865) 555-7010',
+  },
+  {
+    id: 'tn-22', slug: 'bank-of-america-mortgage-knoxville', name: 'Bank of America Mortgage (Knoxville)', nmlsId: '399802', type: 'Bank',
+    city: 'Knoxville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Knox', countySlug: 'knox',
+    zipCodes: ['37902', '37934', '37862'], rating: 4.6, reviewCount: 520, trustScore: 88, countyExperienceScore: 90,
+    nationalVolumeRank: 5, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Relocation Packages', 'Full-Service Banking', 'Out-of-State Movers'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 18, bbbRating: 'A',
+    googleRating: 4.6, trustpilotRating: 4.4, avgCloseDays: 35, onTimeCloseRate: 90,
+    shortDescription: 'Full-service bank mortgages convenient for high-earning out-of-state relocations to Knoxville metro.',
+    website: 'https://bankofamerica.com/mortgage', phone: '(865) 555-7011',
+  },
+
+  // ── Blount County (Maryville / retirees / mountain lifestyle) ──────────────────
+  {
+    id: 'tn-16', slug: 'crosscountry-mortgage-knoxville', name: 'CrossCountry Mortgage (Knoxville)', nmlsId: '3029', type: 'Lender',
+    city: 'Maryville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Blount', countySlug: 'blount',
+    zipCodes: ['37804', '37902', '37934'], rating: 4.8, reviewCount: 310, trustScore: 91, countyExperienceScore: 93,
+    nationalVolumeRank: 22, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Maryville Suburbs', 'Retirees & Remote Workers', 'Broad Product Menu'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 6, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 30, onTimeCloseRate: 93,
+    shortDescription: 'CrossCountry Maryville teams — broad products for retirees and remote workers in rapid-appreciation suburbs.',
+    website: 'https://crosscountrymortgage.com', phone: '(865) 555-7004',
+  },
+  {
+    id: 'tn-17', slug: 'veterans-united-knoxville-east', name: 'Veterans United Home Loans (East TN)', nmlsId: '1907', type: 'Lender',
+    city: 'Maryville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Blount', countySlug: 'blount',
+    zipCodes: ['37804', '37862', '37902'], rating: 4.9, reviewCount: 1100, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 8, loanTypes: ['VA', 'Refinance'],
+    specialties: ['VA Loans', 'Retirement Relocations', 'Second-Home Programs'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 15, bbbRating: 'A',
+    googleRating: 4.9, trustpilotRating: 4.7, avgCloseDays: 32, onTimeCloseRate: 94,
+    shortDescription: 'VA and military-adjacent lending tailored for retiree influx and second-home buyers in Blount and Sevier.',
+    website: 'https://veteransunited.com', phone: '(865) 555-7007',
+  },
+  {
+    id: 'tn-24', slug: 'bank-of-tennessee-east', name: 'Bank of Tennessee (East TN)', nmlsId: '463203', type: 'Bank',
+    city: 'Maryville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Blount', countySlug: 'blount',
+    zipCodes: ['37804', '37862', '37738'], rating: 4.8, reviewCount: 195, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 58, loanTypes: ['Conventional', 'FHA', 'VA', 'USDA', 'Refinance'],
+    specialties: ['Mountain Lifestyle', '5%+ Appreciation', 'Localized East TN Knowledge'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 30, onTimeCloseRate: 94,
+    shortDescription: 'Regional East TN bank — mountain lifestyle and tight-supply market specialists in Blount and Sevier corridors.',
+    website: 'https://bankoftennessee.com', phone: '(866) 378-9500',
+  },
+
+  // ── Sevier County (Gatlinburg / Pigeon Forge / vacation rental) ────────────────
+  {
+    id: 'tn-20', slug: 'pierpoint-mortgage-east-tennessee', name: 'PierPoint Mortgage (East TN)', nmlsId: '112844', type: 'Broker',
+    city: 'Sevierville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Sevier', countySlug: 'sevier',
+    zipCodes: ['37862', '37738', '37902'], rating: 4.9, reviewCount: 175, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 58, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Fast Closings', 'Wholesale Access', 'Low-Inventory Competition'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 25, onTimeCloseRate: 96,
+    shortDescription: 'Wholesale broker with transparent fees — speed suited to low-inventory, high-competition East TN offers.',
+    website: 'https://pierpointmortgage.com', phone: '(865) 555-7005',
+  },
+  {
+    id: 'tn-23', slug: 'bank-of-england-mortgage-smokies', name: 'Bank of England Mortgage — Smokies', nmlsId: '418481', type: 'Lender',
+    city: 'Sevierville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Sevier', countySlug: 'sevier',
+    zipCodes: ['37862', '37738', '37804'], rating: 4.8, reviewCount: 220, trustScore: 92, countyExperienceScore: 94,
+    nationalVolumeRank: 45, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Vacation Rental Financing', 'Short-Term Rental Investors', 'Gatlinburg & Pigeon Forge'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 28, onTimeCloseRate: 95,
+    shortDescription: 'Investor and short-term rental financing expertise for tourism-driven Gatlinburg and Pigeon Forge properties.',
+    website: 'https://boemortgage.com', phone: '(865) 555-7009',
+  },
 ];
 
 export const GREATER_NASHVILLE_LENDER_SLUGS = [
@@ -188,10 +326,61 @@ const RUTHERFORD_SUPPLEMENTS = [
   'anchor-home-mortgage-nashville',
 ];
 
+export const KNOXVILLE_EAST_TN_LENDER_SLUGS = [
+  'mortgage-investors-group-knoxville',
+  'guild-mortgage-knoxville',
+  'new-american-funding-knoxville',
+  'crosscountry-mortgage-knoxville',
+  'pierpoint-mortgage-east-tennessee',
+  'silverton-mortgage-knoxville-east',
+  'veterans-united-knoxville-east',
+  'ktvaecu-knoxville',
+  'bank-of-england-mortgage-smokies',
+  'anchor-home-mortgage-farragut',
+  'bank-of-america-mortgage-knoxville',
+  'bank-of-tennessee-east',
+] as const;
+
+const KNOX_SUPPLEMENTS = [
+  'crosscountry-mortgage-knoxville',
+  'veterans-united-knoxville-east',
+  'pierpoint-mortgage-east-tennessee',
+  'bank-of-england-mortgage-smokies',
+  'bank-of-tennessee-east',
+];
+
+const BLOUNT_SUPPLEMENTS = [
+  'mortgage-investors-group-knoxville',
+  'guild-mortgage-knoxville',
+  'new-american-funding-knoxville',
+  'silverton-mortgage-knoxville-east',
+  'ktvaecu-knoxville',
+  'anchor-home-mortgage-farragut',
+  'bank-of-america-mortgage-knoxville',
+  'pierpoint-mortgage-east-tennessee',
+  'bank-of-england-mortgage-smokies',
+];
+
+const SEVIER_SUPPLEMENTS = [
+  'mortgage-investors-group-knoxville',
+  'guild-mortgage-knoxville',
+  'new-american-funding-knoxville',
+  'crosscountry-mortgage-knoxville',
+  'silverton-mortgage-knoxville-east',
+  'veterans-united-knoxville-east',
+  'ktvaecu-knoxville',
+  'anchor-home-mortgage-farragut',
+  'bank-of-america-mortgage-knoxville',
+  'bank-of-tennessee-east',
+];
+
 export const TENNESSEE_COUNTY_SUPPLEMENTS: Record<string, string[]> = {
   davidson: DAVIDSON_SUPPLEMENTS,
   williamson: WILLIAMSON_SUPPLEMENTS,
   rutherford: RUTHERFORD_SUPPLEMENTS,
+  knox: KNOX_SUPPLEMENTS,
+  blount: BLOUNT_SUPPLEMENTS,
+  sevier: SEVIER_SUPPLEMENTS,
 };
 
 export const GREATER_NASHVILLE_HUB_COUNTIES = [
@@ -199,4 +388,11 @@ export const GREATER_NASHVILLE_HUB_COUNTIES = [
   { name: 'Williamson', slug: 'williamson', highlight: 'Franklin, Brentwood luxury, top schools' },
   { name: 'Rutherford', slug: 'rutherford', highlight: 'Murfreesboro, high-transaction suburbs' },
   { name: 'Sumner', slug: 'sumner', highlight: 'Hendersonville, Gallatin — coming soon' },
+] as const;
+
+export const KNOXVILLE_EAST_TN_HUB_COUNTIES = [
+  { name: 'Knox', slug: 'knox', highlight: 'Knoxville, Farragut, 24% appreciation corridor' },
+  { name: 'Blount', slug: 'blount', highlight: 'Maryville, retirees, mountain lifestyle' },
+  { name: 'Sevier', slug: 'sevier', highlight: 'Gatlinburg, Pigeon Forge, vacation rentals' },
+  { name: 'Anderson', slug: 'anderson', highlight: 'Oak Ridge — coming soon' },
 ] as const;

@@ -170,6 +170,13 @@ export default async function MortgageStatePage({
                     Davidson, Williamson &amp; Rutherford — 12 verified lenders, corporate relocations.
                   </span>
                 </Link>
+                <Link href="/local-lenders/tennessee/knoxville-east-tennessee"
+                  className="block rounded-2xl border border-emerald-500/40 bg-emerald-50 p-5 hover:bg-emerald-100/80">
+                  <span className="font-semibold text-[#0A2540]">Knoxville &amp; East Tennessee Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Knox, Blount &amp; Sevier — 12 verified lenders, Smokies &amp; vacation rentals.
+                  </span>
+                </Link>
               </div>
             )}
 

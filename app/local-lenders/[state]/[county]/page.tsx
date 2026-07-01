@@ -44,6 +44,9 @@ export async function generateMetadata({
   const isDavidson = state === 'tennessee' && county === 'davidson';
   const isWilliamson = state === 'tennessee' && county === 'williamson';
   const isRutherford = state === 'tennessee' && county === 'rutherford';
+  const isKnox = state === 'tennessee' && county === 'knox';
+  const isBlount = state === 'tennessee' && county === 'blount';
+  const isSevier = state === 'tennessee' && county === 'sevier';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -93,7 +96,13 @@ export async function generateMetadata({
                                                   ? `Best Mortgage Lenders in Williamson County, TN — Franklin & Brentwood (2026)`
                                                   : isRutherford
                                                     ? `Best Mortgage Lenders in Rutherford County, TN — Murfreesboro (2026)`
-                                                    : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                    : isKnox
+                                                      ? `Best Mortgage Lenders in Knox County, TN — Knoxville & Farragut (2026)`
+                                                      : isBlount
+                                                        ? `Best Mortgage Lenders in Blount County, TN — Maryville & East TN (2026)`
+                                                        : isSevier
+                                                          ? `Best Mortgage Lenders in Sevier County, TN — Gatlinburg & Smokies (2026)`
+                                                          : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -142,7 +151,13 @@ export async function generateMetadata({
                                                   ? `Compare 12 NMLS-verified Williamson County mortgage lenders. Franklin/Brentwood luxury, CrossCountry professionals, credit union rates, and new-construction financing.`
                                                   : isRutherford
                                                     ? `Compare 12 NMLS-verified Rutherford County mortgage lenders. Murfreesboro fast closings, suburban volume, VA programs, and affordability-belt spillover.`
-                                                    : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                    : isKnox
+                                                      ? `Compare 12 NMLS-verified Knoxville mortgage lenders. Mortgage Investors Group, Farragut appreciation, Guild and NAF branches, and tight-inventory expertise.`
+                                                      : isBlount
+                                                        ? `Compare 12 NMLS-verified Blount County mortgage lenders. Maryville retirees, CrossCountry professionals, VA programs, and mountain lifestyle financing.`
+                                                        : isSevier
+                                                          ? `Compare 12 NMLS-verified Sevier County mortgage lenders. Gatlinburg vacation rentals, PierPoint fast closings, and tourism-driven investor financing.`
+                                                          : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 
