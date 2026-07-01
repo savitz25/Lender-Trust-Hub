@@ -98,6 +98,8 @@ export async function generateMetadata({
   const isLake = state === 'illinois' && county === 'lake';
   const isPeoria = state === 'illinois' && county === 'peoria';
   const isMcLean = state === 'illinois' && county === 'mclean';
+  const isWayne = state === 'michigan' && county === 'wayne';
+  const isLivingston = state === 'michigan' && county === 'livingston';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -255,7 +257,11 @@ export async function generateMetadata({
                                                                                                                                                                 ? `Best Mortgage Lenders in Peoria County, IL — Central IL Affordability (2026)`
                                                                                                                                                                 : isMcLean
                                                                                                                                                                   ? `Best Mortgage Lenders in McLean County, IL — Normal College Town (2026)`
-                                                                                                                                                                  : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                                                                                                                  : isWayne
+                                                                                                                                                                    ? `Best Mortgage Lenders in Wayne County, MI — Greater Detroit Value Pockets (2026)`
+                                                                                                                                                                    : isLivingston
+                                                                                                                                                                      ? `Best Mortgage Lenders in Livingston County, MI — Howell Hot Market (2026)`
+                                                                                                                                                                      : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -412,7 +418,11 @@ export async function generateMetadata({
                                                                                                                                                                 ? `Compare 12 NMLS-verified Peoria mortgage lenders. Top midsize investment city, 20–26 day DOM, exceptional rent-to-price ratios, and fast-moving inventory.`
                                                                                                                                                                 : isMcLean
                                                                                                                                                                   ? `Compare 12 NMLS-verified McLean mortgage lenders. Normal #1 college town, revitalized uptown, ISU rental demand, and Central IL affordability.`
-                                                                                                                                                                  : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                                                                                                                  : isWayne
+                                                                                                                                                                    ? `Compare 12+ NMLS-verified Wayne County mortgage lenders. Dearborn Zillow top 5 city, Lincoln Park Redfin top 10, 40% over-asking, MSHDA programs, and entry-level value pockets.`
+                                                                                                                                                                    : isLivingston
+                                                                                                                                                                      ? `Compare 12 NMLS-verified Livingston mortgage lenders. Howell Redfin top 10 market, high-end bidding wars, page view surge, and Greater Detroit supplements.`
+                                                                                                                                                                      : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

@@ -376,6 +376,18 @@ export default async function MortgageStatePage({
               </div>
             )}
 
+            {slug === 'michigan' && (
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <Link href="/local-lenders/michigan/greater-detroits-value-pockets"
+                  className="block rounded-2xl border border-amber-500/40 bg-amber-50 p-5 hover:bg-amber-100/80">
+                  <span className="font-semibold text-[#0A2540]">Greater Detroit Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Dearborn, Lincoln Park &amp; Howell — 12 verified lenders, national value pockets.
+                  </span>
+                </Link>
+              </div>
+            )}
+
             {slug === 'illinois' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link href="/local-lenders/illinois/rockford-national-standout"

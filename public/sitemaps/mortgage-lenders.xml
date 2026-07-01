@@ -508,9 +508,27 @@
   </url>
   <url>
     <loc>https://www.lendertrusthub.com/local-lenders/michigan</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lendertrusthub.com/local-lenders/michigan/greater-detroits-value-pockets</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.lendertrusthub.com/local-lenders/michigan/wayne</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.lendertrusthub.com/local-lenders/michigan/livingston</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.lendertrusthub.com/local-lenders/new-york/nyc-boroughs-brooklyn-queens-manhattan</loc>

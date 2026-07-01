@@ -14,6 +14,7 @@ import { MASSACHUSETTS_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/massachusettsLe
 import { NEW_YORK_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/newYorkLenders';
 import { PENNSYLVANIA_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/pennsylvaniaLenders';
 import { ILLINOIS_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/illinoisLenders';
+import { MICHIGAN_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/michiganLenders';
 
 export { lenders };
 export type { Lender, LoanType, CreditTier };
@@ -108,6 +109,7 @@ const STATE_COUNTY_SUPPLEMENTS: Record<string, Record<string, string[]>> = {
   'new-york': NEW_YORK_COUNTY_SUPPLEMENTS,
   pennsylvania: PENNSYLVANIA_COUNTY_SUPPLEMENTS,
   illinois: ILLINOIS_COUNTY_SUPPLEMENTS,
+  michigan: MICHIGAN_COUNTY_SUPPLEMENTS,
 };
 
 export function getLendersByCounty(stateSlug: string, countySlug: string): Lender[] {
