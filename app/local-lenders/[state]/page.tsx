@@ -385,6 +385,27 @@ export default async function MortgageStatePage({
                     Dearborn, Lincoln Park &amp; Howell — 12 verified lenders, national value pockets.
                   </span>
                 </Link>
+                <Link href="/local-lenders/michigan/lansing-multi-family-investor-magnet"
+                  className="block rounded-2xl border border-emerald-500/40 bg-emerald-50 p-5 hover:bg-emerald-100/80">
+                  <span className="font-semibold text-[#0A2540]">Lansing Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Lansing &amp; East Lansing — 12 verified lenders, multi-family investor magnet.
+                  </span>
+                </Link>
+                <Link href="/local-lenders/michigan/grand-rapids-fast-moving-core"
+                  className="block rounded-2xl border border-rose-500/40 bg-rose-50 p-5 hover:bg-rose-100/80">
+                  <span className="font-semibold text-[#0A2540]">Grand Rapids Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Kent County — 12 verified lenders, 6-day average DOM powerhouse.
+                  </span>
+                </Link>
+                <Link href="/local-lenders/michigan/ann-arbor-kalamazoo-college-town-demand"
+                  className="block rounded-2xl border border-indigo-500/40 bg-indigo-50 p-5 hover:bg-indigo-100/80">
+                  <span className="font-semibold text-[#0A2540]">Ann Arbor &amp; Kalamazoo Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Washtenaw &amp; Kalamazoo — 12 verified lenders, college-town stability.
+                  </span>
+                </Link>
               </div>
             )}
 

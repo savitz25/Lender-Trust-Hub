@@ -100,6 +100,10 @@ export async function generateMetadata({
   const isMcLean = state === 'illinois' && county === 'mclean';
   const isWayne = state === 'michigan' && county === 'wayne';
   const isLivingston = state === 'michigan' && county === 'livingston';
+  const isIngham = state === 'michigan' && county === 'ingham';
+  const isKent = state === 'michigan' && county === 'kent';
+  const isWashtenaw = state === 'michigan' && county === 'washtenaw';
+  const isKalamazoo = state === 'michigan' && county === 'kalamazoo';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -261,7 +265,15 @@ export async function generateMetadata({
                                                                                                                                                                     ? `Best Mortgage Lenders in Wayne County, MI — Greater Detroit Value Pockets (2026)`
                                                                                                                                                                     : isLivingston
                                                                                                                                                                       ? `Best Mortgage Lenders in Livingston County, MI — Howell Hot Market (2026)`
-                                                                                                                                                                      : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                                                                                                                      : isIngham
+                                                                                                                                                                        ? `Best Mortgage Lenders in Ingham County, MI — Lansing Investor Magnet (2026)`
+                                                                                                                                                                        : isKent
+                                                                                                                                                                          ? `Best Mortgage Lenders in Kent County, MI — Grand Rapids Fast-Moving Core (2026)`
+                                                                                                                                                                          : isWashtenaw
+                                                                                                                                                                            ? `Best Mortgage Lenders in Washtenaw County, MI — Ann Arbor College Town (2026)`
+                                                                                                                                                                            : isKalamazoo
+                                                                                                                                                                              ? `Best Mortgage Lenders in Kalamazoo County, MI — College-Town Demand (2026)`
+                                                                                                                                                                              : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -422,7 +434,15 @@ export async function generateMetadata({
                                                                                                                                                                     ? `Compare 12+ NMLS-verified Wayne County mortgage lenders. Dearborn Zillow top 5 city, Lincoln Park Redfin top 10, 40% over-asking, MSHDA programs, and entry-level value pockets.`
                                                                                                                                                                     : isLivingston
                                                                                                                                                                       ? `Compare 12 NMLS-verified Livingston mortgage lenders. Howell Redfin top 10 market, high-end bidding wars, page view surge, and Greater Detroit supplements.`
-                                                                                                                                                                      : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                                                                                                                      : isIngham
+                                                                                                                                                                        ? `Compare 12 NMLS-verified Lansing mortgage lenders. Multi-family investor magnet, ~6% vacancy, $145K–$160K cap rates, WSJ/Realtor.com emerging market.`
+                                                                                                                                                                        : isKent
+                                                                                                                                                                          ? `Compare 12 NMLS-verified Grand Rapids mortgage lenders. 6-day average DOM, under-15-day suburbs, inventory crunch, healthcare/manufacturing demand.`
+                                                                                                                                                                          : isWashtenaw
+                                                                                                                                                                            ? `Compare 12+ NMLS-verified Washtenaw mortgage lenders. Ann Arbor $549K median, medical/tech professionals, insulated Tree Town, college-town supplements.`
+                                                                                                                                                                            : isKalamazoo
+                                                                                                                                                                              ? `Compare 12 NMLS-verified Kalamazoo mortgage lenders. $245K median affordability, out-of-state buyer surge, steady appreciation, university-town supplements.`
+                                                                                                                                                                              : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 
