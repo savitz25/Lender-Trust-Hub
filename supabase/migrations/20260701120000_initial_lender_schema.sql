@@ -1,0 +1,1 @@
+-- See supabase/schema.sql — paste full contents in Supabase SQL Editor for initial setup.

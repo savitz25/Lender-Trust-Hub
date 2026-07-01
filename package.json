@@ -8,11 +8,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "validate:env": "tsx scripts/validate-env.ts",
+    "validate:env:strict": "tsx scripts/validate-env.ts --strict",
+    "seed": "tsx scripts/seed-lenders.ts",
+    "supabase:types": "supabase gen types typescript --linked > types/supabase.ts"
   },
   "dependencies": {
     "@radix-ui/react-slider": "^1.4.1",
+    "@supabase/ssr": "^0.12.0",
     "@supabase/supabase-js": "^2.108.2",
+    "server-only": "^0.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.41.0",
@@ -33,6 +39,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
     "tailwindcss": "^4",
+    "tsx": "^4.19.3",
     "typescript": "^5"
   }
 }

@@ -60,19 +60,40 @@ export function LeadCaptureForm({
 }) {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const copy = COPY[categoryId];
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!email.trim()) return;
+    if (!email.trim() || submitting) return;
+    setSubmitting(true);
+
     trackDirectoryEvent({
       name: 'directory_lead_submit',
       category: categoryId,
       state: stateName,
       intent: copy.intent,
     });
+
+    try {
+      await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email.trim(),
+          category: categoryId,
+          stateName,
+          intent: copy.intent,
+          source: 'lead_capture_form',
+          variant,
+        }),
+      });
+    } catch {
+      /* Non-blocking — user still sees success; logs in Supabase when available */
+    }
+
     setSubmitted(true);
-    // Integrate: Mailchimp, ConvertKit, or Workers API endpoint
+    setSubmitting(false);
   }
 
   if (submitted) {
