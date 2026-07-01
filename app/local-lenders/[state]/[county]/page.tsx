@@ -76,6 +76,10 @@ export async function generateMetadata({
   const isMiddlesex = state === 'massachusetts' && county === 'middlesex';
   const isSuffolk = state === 'massachusetts' && county === 'suffolk';
   const isEssex = state === 'massachusetts' && county === 'essex';
+  const isErie = state === 'new-york' && county === 'erie';
+  const isAlbany = state === 'new-york' && county === 'albany';
+  const isWestchester = state === 'new-york' && county === 'westchester';
+  const isPutnam = state === 'new-york' && county === 'putnam';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -189,7 +193,15 @@ export async function generateMetadata({
                                                                                                                     ? `Best Mortgage Lenders in Suffolk County, MA — Boston Neighborhoods & Gateway Cities (2026)`
                                                                                                                     : isEssex
                                                                                                                       ? `Best Mortgage Lenders in Essex County, MA — Gateway Cities & North Shore (2026)`
-                                                                                                                      : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                                                                      : isErie
+                                                                                                                        ? `Best Mortgage Lenders in Erie County, NY — Buffalo Upstate Powerhouse (2026)`
+                                                                                                                        : isAlbany
+                                                                                                                          ? `Best Mortgage Lenders in Albany County, NY — Capital District Powerhouse (2026)`
+                                                                                                                          : isWestchester
+                                                                                                                            ? `Best Mortgage Lenders in Westchester County, NY — NYC Suburbs Tri-State Surge (2026)`
+                                                                                                                            : isPutnam
+                                                                                                                              ? `Best Mortgage Lenders in Putnam County, NY — NYC Suburbs Affordability Alternative (2026)`
+                                                                                                                              : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -302,7 +314,15 @@ export async function generateMetadata({
                                                                                                                     ? `Compare 24+ NMLS-verified Suffolk mortgage lenders. East Boston waterfront, Dorchester/Jamaica Plain rental yields, Revere Blue Line gateway financing, and high-competition neighborhood demand.`
                                                                                                                     : isEssex
                                                                                                                       ? `Compare 12 NMLS-verified Essex mortgage lenders. Lynn gateway city demand, North Shore commuter transit, Boston spillover affordability, and sharp competitiveness.`
-                                                                                                                      : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                                                                      : isErie
+                                                                                                                        ? `Compare 12 NMLS-verified Erie mortgage lenders. Buffalo top-hot market, 65% above-asking sales, climate refuge appeal, healthcare/education hub, and $227K–$277K affordability.`
+                                                                                                                        : isAlbany
+                                                                                                                          ? `Compare 12 NMLS-verified Albany mortgage lenders. Capital District supply-demand imbalance, low DOM, government-sector steady activity, and Upstate powerhouse demand.`
+                                                                                                                          : isWestchester
+                                                                                                                            ? `Compare 16 NMLS-verified Westchester mortgage lenders. White Plains and New Rochelle over-asking sales, 102%+ sale-to-list, Tri-State surge, and Manhattan/Brooklyn relocation.`
+                                                                                                                            : isPutnam
+                                                                                                                              ? `Compare 16 NMLS-verified Putnam mortgage lenders. 11%+ YoY price gains, NYC suburb affordability alternative, limited inventory, and Tri-State commuter demand.`
+                                                                                                                              : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

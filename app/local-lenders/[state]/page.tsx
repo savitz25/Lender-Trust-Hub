@@ -350,6 +350,25 @@ export default async function MortgageStatePage({
               </div>
             )}
 
+            {slug === 'new-york' && (
+              <div className="grid gap-3 sm:grid-cols-2">
+                <Link href="/local-lenders/new-york/upstate-powerhouses-buffalo-albany"
+                  className="block rounded-2xl border border-orange-500/40 bg-orange-50 p-5 hover:bg-orange-100/80">
+                  <span className="font-semibold text-[#0A2540]">Upstate Powerhouses Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Buffalo &amp; Albany — 24 verified lenders, bidding wars &amp; Capital District demand.
+                  </span>
+                </Link>
+                <Link href="/local-lenders/new-york/nyc-suburbs-westchester-putnam"
+                  className="block rounded-2xl border border-rose-500/40 bg-rose-50 p-5 hover:bg-rose-100/80">
+                  <span className="font-semibold text-[#0A2540]">NYC Suburbs Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Westchester &amp; Putnam — 12 verified lenders, Tri-State surge &amp; over-asking sales.
+                  </span>
+                </Link>
+              </div>
+            )}
+
             {slug === 'district-of-columbia' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link href="/local-lenders/district-of-columbia/upper-northwest-value-surge"
