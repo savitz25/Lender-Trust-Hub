@@ -68,6 +68,7 @@ export async function generateMetadata({
   const isBastrop = state === 'texas' && county === 'bastrop';
   const isCameron = state === 'texas' && county === 'cameron';
   const isBexar = state === 'texas' && county === 'bexar';
+  const isSnohomish = state === 'washington' && county === 'snohomish';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -165,7 +166,9 @@ export async function generateMetadata({
                                                                                                     ? `Best Mortgage Lenders in Cameron County, TX — Starbase & Southmost (2026)`
                                                                                                     : isBexar
                                                                                                       ? `Best Mortgage Lenders in Bexar County, TX — San Antonio Value Play (2026)`
-                                                                                                      : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                                                      : isSnohomish
+                                                                                                        ? `Best Mortgage Lenders in Snohomish County, WA — Transit Corridor (2026)`
+                                                                                                        : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -262,7 +265,9 @@ export async function generateMetadata({
                                                                                                     ? `Compare 12 NMLS-verified Cameron mortgage lenders. Brownsville Starbase demand, NAF industrial influx, Anchor engineering housing, and Southmost boomtown velocity.`
                                                                                                     : isBexar
                                                                                                       ? `Compare 12 NMLS-verified Bexar mortgage lenders. PrimeLending cash-flow investors, Veterans United military programs, Security Service member rates, and leveled San Antonio value plays.`
-                                                                                                      : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                                                      : isSnohomish
+                                                                                                        ? `Compare 12 NMLS-verified Snohomish mortgage lenders. Summit Mortgage light rail commuters, BECU aerospace member rates, Lennar transit-oriented builds, and below-Seattle single-family options.`
+                                                                                                        : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

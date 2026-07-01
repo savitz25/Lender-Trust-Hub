@@ -284,6 +284,18 @@ export default async function MortgageStatePage({
               </div>
             )}
 
+            {slug === 'washington' && (
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <Link href="/local-lenders/washington/snohomish-transit-corridor"
+                  className="block rounded-2xl border border-emerald-500/40 bg-emerald-50 p-5 hover:bg-emerald-100/80">
+                  <span className="font-semibold text-[#0A2540]">Snohomish Transit Corridor Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Lynnwood &amp; Everett — 12 verified lenders, light rail &amp; Boeing aerospace corridor.
+                  </span>
+                </Link>
+              </div>
+            )}
+
             {slug === 'north-carolina' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link href="/local-lenders/north-carolina/charlotte-metro"
