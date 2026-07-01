@@ -135,6 +135,10 @@ export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; c
   '80027': { state: 'Colorado', stateSlug: 'colorado', county: 'Boulder', countySlug: 'boulder' },
   '80134': { state: 'Colorado', stateSlug: 'colorado', county: 'Douglas', countySlug: 'douglas' },
   '80112': { state: 'Colorado', stateSlug: 'colorado', county: 'Douglas', countySlug: 'douglas' },
+  '80903': { state: 'Colorado', stateSlug: 'colorado', county: 'El Paso', countySlug: 'el-paso' },
+  '80920': { state: 'Colorado', stateSlug: 'colorado', county: 'El Paso', countySlug: 'el-paso' },
+  '80817': { state: 'Colorado', stateSlug: 'colorado', county: 'El Paso', countySlug: 'el-paso' },
+  '80831': { state: 'Colorado', stateSlug: 'colorado', county: 'El Paso', countySlug: 'el-paso' },
 };
 
 const NATIONAL_LENDERS: Lender[] = [

@@ -234,6 +234,13 @@ export default async function MortgageStatePage({
                     Erie, Parker, Centennial, Lafayette &amp; Louisville — 12 verified lenders, master-planned growth.
                   </span>
                 </Link>
+                <Link href="/local-lenders/colorado/colorado-springs-stability-volume"
+                  className="block rounded-2xl border border-teal-500/40 bg-teal-50 p-5 hover:bg-teal-100/80">
+                  <span className="font-semibold text-[#0A2540]">Colorado Springs Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Fountain &amp; Falcon — 12 verified lenders, military, stability &amp; volume leader.
+                  </span>
+                </Link>
               </div>
             )}
 
