@@ -39,7 +39,7 @@ export function CalculatorHub({ defaultCalc }: { defaultCalc?: CalcId }) {
 
   const openCalc = useCallback((id: CalcId) => {
     setActive(id);
-    trackCalcEvent('calc_launch', { calcId: id });
+    trackCalcEvent('calc_launch', { calc_id: id });
     history.pushState({ calc: id }, '', `#${id}`);
     document.getElementById('calc-active')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, []);

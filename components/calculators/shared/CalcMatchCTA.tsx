@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { CheckCircle2, Sparkles } from 'lucide-react';
 import { MatchLenderButton } from '@/components/MatchLenderButton';
+import { trackCalcEvent } from '@/lib/analytics/calculators';
 import { buildCalcMatchFilters, personalizeMessage, type CalcMatchProfile } from '@/lib/calculators/match-profile';
 import { LeadCaptureForm } from '@/components/directory/LeadCaptureForm';
 
@@ -30,7 +31,17 @@ export function CalcMatchCTA({
           filters={filters}
           label={label}
           className="flex-1"
-          onNavigate={() => setMatched(true)}
+          onNavigate={() => {
+            setMatched(true);
+            trackCalcEvent('calc_match_click', {
+              loan_amount: profile.estimatedLoan,
+              rate: profile.estimatedRate,
+              loan_type: profile.loanType,
+              payment: profile.estimatedPayment,
+              ltv: profile.ltv,
+              source: 'calc_cta',
+            });
+          }}
         />
         {matched && (
           <span className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600" role="status">

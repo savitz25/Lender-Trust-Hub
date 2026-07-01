@@ -5,6 +5,7 @@ import { NationalHubShell } from '@/components/directory/NationalHubShell';
 import { HubCTAStrip } from '@/components/directory/HubCTAStrip';
 import { LeadCaptureForm } from '@/components/directory/LeadCaptureForm';
 import { SearchBar } from '@/components/SearchBar';
+import { PersonalizedLenderBannerBoundary } from '@/components/PersonalizedLenderBannerBoundary';
 import { SITE_URL, MORTGAGE_CATEGORY } from '@/lib/directory/categories';
 import { lenders } from '@/lib/mockData';
 import { US_STATES } from '@/lib/fdic/states';
@@ -75,6 +76,13 @@ export default function LocalLendersHubPage() {
         </div>
       </section>
 
+      {/* Phase 1: shows when users arrive from calculators (?loan=, ?rate=, ?loanType=) */}
+      <PersonalizedLenderBannerBoundary
+        variant="default"
+        experimentKey="personalized-banner-v1"
+      />
+
+      <div id="lender-directory">
       <NationalHubShell
         categoryLabel={MORTGAGE_CATEGORY.label}
         statePathPrefix={MORTGAGE_CATEGORY.hubPath}
@@ -84,6 +92,7 @@ export default function LocalLendersHubPage() {
         activeVertical="mortgage"
         availableSlugs={slugsWithLenders}
       />
+      </div>
 
       <section className="border-t border-zinc-200 bg-zinc-50 py-12">
         <div className="container mx-auto max-w-2xl px-4">
