@@ -310,6 +310,18 @@ export default async function MortgageStatePage({
               </div>
             )}
 
+            {slug === 'massachusetts' && (
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <Link href="/local-lenders/massachusetts/worcester-undisputed-growth-leader"
+                  className="block rounded-2xl border border-lime-500/40 bg-lime-50 p-5 hover:bg-lime-100/80">
+                  <span className="font-semibold text-[#0A2540]">Worcester Growth Leader Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Worcester &amp; Shrewsbury — 12 verified lenders, Central Mass undisputed growth leader.
+                  </span>
+                </Link>
+              </div>
+            )}
+
             {slug === 'district-of-columbia' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link href="/local-lenders/district-of-columbia/upper-northwest-value-surge"

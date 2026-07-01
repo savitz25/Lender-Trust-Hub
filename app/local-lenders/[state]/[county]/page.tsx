@@ -72,6 +72,7 @@ export async function generateMetadata({
   const isPierce = state === 'washington' && county === 'pierce';
   const isClark = state === 'washington' && county === 'clark';
   const isDistrictOfColumbia = state === 'district-of-columbia' && county === 'district-of-columbia';
+  const isWorcester = state === 'massachusetts' && county === 'worcester';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -177,7 +178,9 @@ export async function generateMetadata({
                                                                                                             ? `Best Mortgage Lenders in Clark County, WA — Portland Border (2026)`
                                                                                                             : isDistrictOfColumbia
                                                                                                               ? `Best Mortgage Lenders in Washington, DC — Metro Hubs (2026)`
-                                                                                                              : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                                                              : isWorcester
+                                                                                                                ? `Best Mortgage Lenders in Worcester County, MA — Undisputed Growth Leader (2026)`
+                                                                                                                : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -282,7 +285,9 @@ export async function generateMetadata({
                                                                                                             ? `Compare 12 NMLS-verified Clark mortgage lenders. Columbia River tax-advantage relocations, iQ Credit Union cross-border rates, Lennar waterfront revitalization, and Portland spillover volume.`
                                                                                                             : isDistrictOfColumbia
                                                                                                               ? `Compare 36 NMLS-verified DC mortgage lenders. Upper Northwest value plays, Mid-City historic rowhomes, Brookland first-time buyer entry, Navy Yard waterfront condos, and DCU member rates.`
-                                                                                                              : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                                                              : isWorcester
+                                                                                                                ? `Compare 12 NMLS-verified Worcester mortgage lenders. Central Mass growth leader, Boston spillover financing, DCU member rates, biotech relocations, and three-decker value plays.`
+                                                                                                                : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 
