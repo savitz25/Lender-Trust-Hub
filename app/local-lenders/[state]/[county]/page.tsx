@@ -74,6 +74,8 @@ export async function generateMetadata({
   const isDistrictOfColumbia = state === 'district-of-columbia' && county === 'district-of-columbia';
   const isWorcester = state === 'massachusetts' && county === 'worcester';
   const isMiddlesex = state === 'massachusetts' && county === 'middlesex';
+  const isSuffolk = state === 'massachusetts' && county === 'suffolk';
+  const isEssex = state === 'massachusetts' && county === 'essex';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -182,8 +184,12 @@ export async function generateMetadata({
                                                                                                               : isWorcester
                                                                                                                 ? `Best Mortgage Lenders in Worcester County, MA — Undisputed Growth Leader (2026)`
                                                                                                                 : isMiddlesex
-                                                                                                                  ? `Best Mortgage Lenders in Middlesex County, MA — Cambridge & Somerville Transit Hotspots (2026)`
-                                                                                                                  : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                                                                  ? `Best Mortgage Lenders in Middlesex County, MA — Cambridge, Somerville & MetroWest Hubs (2026)`
+                                                                                                                  : isSuffolk
+                                                                                                                    ? `Best Mortgage Lenders in Suffolk County, MA — Boston Neighborhoods & Gateway Cities (2026)`
+                                                                                                                    : isEssex
+                                                                                                                      ? `Best Mortgage Lenders in Essex County, MA — Gateway Cities & North Shore (2026)`
+                                                                                                                      : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -291,8 +297,12 @@ export async function generateMetadata({
                                                                                                               : isWorcester
                                                                                                                 ? `Compare 12 NMLS-verified Worcester mortgage lenders. Zoom Town growth leader, life sciences relocations, Polar Park revitalization, DCU member rates, and commuter rail affordability.`
                                                                                                                 : isMiddlesex
-                                                                                                                  ? `Compare 12 NMLS-verified Middlesex mortgage lenders. Green Line extension demand, tech/biotech professionals, $930K+ Somerville and $1M+ Cambridge medians, and transit-oriented urban financing.`
-                                                                                                                  : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                                                                  ? `Compare 36+ NMLS-verified Middlesex mortgage lenders. Cambridge/Somerville transit hotspots, MetroWest hybrid-work suburbs, Lowell/Malden gateway cities, Green Line demand, and top-tier school districts.`
+                                                                                                                  : isSuffolk
+                                                                                                                    ? `Compare 24+ NMLS-verified Suffolk mortgage lenders. East Boston waterfront, Dorchester/Jamaica Plain rental yields, Revere Blue Line gateway financing, and high-competition neighborhood demand.`
+                                                                                                                    : isEssex
+                                                                                                                      ? `Compare 12 NMLS-verified Essex mortgage lenders. Lynn gateway city demand, North Shore commuter transit, Boston spillover affordability, and sharp competitiveness.`
+                                                                                                                      : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

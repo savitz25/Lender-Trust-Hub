@@ -326,6 +326,27 @@ export default async function MortgageStatePage({
                     Middlesex County — 12 verified lenders, Green Line &amp; tech/biotech urban hotspots.
                   </span>
                 </Link>
+                <Link href="/local-lenders/massachusetts/high-demand-boston-neighborhoods"
+                  className="block rounded-2xl border border-amber-500/40 bg-amber-50 p-5 hover:bg-amber-100/80">
+                  <span className="font-semibold text-[#0A2540]">Boston Neighborhoods Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    East Boston, Dorchester &amp; JP — 12 verified lenders, waterfront &amp; rental yields.
+                  </span>
+                </Link>
+                <Link href="/local-lenders/massachusetts/gateway-cities-suburban-alternatives"
+                  className="block rounded-2xl border border-emerald-500/40 bg-emerald-50 p-5 hover:bg-emerald-100/80">
+                  <span className="font-semibold text-[#0A2540]">Gateway Cities Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Lowell, Lynn, Revere &amp; Malden — 12 verified lenders, Boston spillover affordability.
+                  </span>
+                </Link>
+                <Link href="/local-lenders/massachusetts/metrowest-bread-and-butter-markets"
+                  className="block rounded-2xl border border-violet-500/40 bg-violet-50 p-5 hover:bg-violet-100/80">
+                  <span className="font-semibold text-[#0A2540]">MetroWest Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Framingham, Hudson &amp; Natick — 12 verified lenders, hybrid-work suburban balance.
+                  </span>
+                </Link>
               </div>
             )}
 
