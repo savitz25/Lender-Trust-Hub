@@ -121,7 +121,7 @@ export default async function MortgageStatePage({
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-6">
             {slug === 'florida' && (
-              <div className="grid gap-3 sm:grid-cols-2">
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link
                   href="/local-lenders/florida/south-florida"
                   className="block rounded-2xl border border-[#14B8A6]/40 bg-teal-50 p-5 hover:bg-teal-100/80"
@@ -138,6 +138,15 @@ export default async function MortgageStatePage({
                   <span className="font-semibold text-[#0A2540]">Central Florida Hub →</span>
                   <span className="mt-1 block text-sm text-zinc-600">
                     Orange County &amp; Orlando metro — 9 verified lenders.
+                  </span>
+                </Link>
+                <Link
+                  href="/local-lenders/florida/tampa-bay"
+                  className="block rounded-2xl border border-[#F59E0B]/40 bg-amber-50 p-5 hover:bg-amber-100/80"
+                >
+                  <span className="font-semibold text-[#0A2540]">Tampa Bay Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Hillsborough County — 10 verified lenders, MacDill VA.
                   </span>
                 </Link>
               </div>

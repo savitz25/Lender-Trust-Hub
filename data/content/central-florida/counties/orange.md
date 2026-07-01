@@ -149,4 +149,4 @@ Purchase, refinance, deep Orange County market knowledge.
 
 NMLS Consumer Access · CFPB search · No paid placement. Verify at [nmlsconsumeraccess.org](https://www.nmlsconsumeraccess.org).
 
-**[Central Florida Hub](/local-lenders/florida/central-florida)** · **[South Florida Hub](/local-lenders/florida/south-florida)**
+**[Central Florida Hub](/local-lenders/florida/central-florida)** · **[Tampa Bay Hub](/local-lenders/florida/tampa-bay)** · **[South Florida Hub](/local-lenders/florida/south-florida)**

@@ -21,13 +21,18 @@ export async function generateMetadata({
   const stateName = titleCase(state);
   const countyName = titleCase(county);
   const isOrange = state === 'florida' && county === 'orange';
+  const isHillsborough = state === 'florida' && county === 'hillsborough';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
-      : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+      : isHillsborough
+        ? `Best Mortgage Lenders in Hillsborough County, FL — Tampa Bay (2026)`
+        : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
-      : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+      : isHillsborough
+        ? `Compare 10 NMLS-verified Tampa Bay mortgage lenders. MacDill VA specialists, Wesley Chapel brokers, fast closings, and national lenders with local Tampa branches.`
+        : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 
