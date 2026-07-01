@@ -225,6 +225,18 @@ export default async function MortgageStatePage({
               </div>
             )}
 
+            {slug === 'colorado' && (
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <Link href="/local-lenders/colorado/denver-metro-outer-rings-north-suburbs"
+                  className="block rounded-2xl border border-violet-500/40 bg-violet-50 p-5 hover:bg-violet-100/80">
+                  <span className="font-semibold text-[#0A2540]">Denver Metro Outer Rings &amp; North Suburbs Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Erie, Parker, Centennial, Lafayette &amp; Louisville — 12 verified lenders, master-planned growth.
+                  </span>
+                </Link>
+              </div>
+            )}
+
             {slug === 'north-carolina' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link href="/local-lenders/north-carolina/charlotte-metro"

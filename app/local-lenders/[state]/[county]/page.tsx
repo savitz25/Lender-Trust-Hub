@@ -53,6 +53,9 @@ export async function generateMetadata({
   const isRiverside = state === 'california' && county === 'riverside';
   const isFresno = state === 'california' && county === 'fresno';
   const isKern = state === 'california' && county === 'kern';
+  const isAdams = state === 'colorado' && county === 'adams';
+  const isBoulder = state === 'colorado' && county === 'boulder';
+  const isDouglas = state === 'colorado' && county === 'douglas';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -120,7 +123,13 @@ export async function generateMetadata({
                                                                     ? `Best Mortgage Lenders in Fresno County, CA — Central Valley Alternatives (2026)`
                                                                     : isKern
                                                                       ? `Best Mortgage Lenders in Kern County, CA — Central Valley Alternatives (2026)`
-                                                                      : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                                                      : isAdams
+                                                                        ? `Best Mortgage Lenders in Adams County, CO — Denver Metro Outer Rings (2026)`
+                                                                        : isBoulder
+                                                                          ? `Best Mortgage Lenders in Boulder County, CO — Denver Metro North Suburbs (2026)`
+                                                                          : isDouglas
+                                                                            ? `Best Mortgage Lenders in Douglas County, CO — Denver Metro Outer Rings (2026)`
+                                                                            : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -187,7 +196,13 @@ export async function generateMetadata({
                                                                     ? `Compare 12 NMLS-verified Fresno mortgage lenders. Clovis elite-school suburbs, Lennar new construction, EECU member rates, and $400K–$430K remote worker financing.`
                                                                     : isKern
                                                                       ? `Compare 12 NMLS-verified Kern mortgage lenders. Bakersfield affordability, positive cash-flow investors, Veterans United programs, and coastal migration support.`
-                                                                      : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                      : isAdams
+                                                                        ? `Compare 12 NMLS-verified Adams mortgage lenders. Erie master-planned new construction, American Financing broker, Lennar builder loans, and north suburban growth.`
+                                                                        : isBoulder
+                                                                          ? `Compare 12 NMLS-verified Boulder mortgage lenders. Lafayette and Louisville top schools, Elevations member rates, CrossCountry tech-corridor relocations.`
+                                                                          : isDouglas
+                                                                            ? `Compare 12 NMLS-verified Douglas mortgage lenders. Parker and Centennial family suburbs, NAF new-build volume, and bidding-war-free outer-ring financing.`
+                                                                            : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

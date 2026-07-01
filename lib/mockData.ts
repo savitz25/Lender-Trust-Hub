@@ -5,6 +5,7 @@ import { NORTH_CAROLINA_LENDERS } from '@/lib/mortgage/northCarolinaLenders';
 import { TENNESSEE_LENDERS } from '@/lib/mortgage/tennesseeLenders';
 import { ARIZONA_LENDERS } from '@/lib/mortgage/arizonaLenders';
 import { CALIFORNIA_LENDERS } from '@/lib/mortgage/californiaLenders';
+import { COLORADO_LENDERS } from '@/lib/mortgage/coloradoLenders';
 
 export type LoanType = 'Conventional' | 'FHA' | 'VA' | 'USDA' | 'Jumbo' | 'ARM' | 'Refinance';
 export type CreditTier = 'Excellent' | 'Good' | 'Fair' | 'Rebuilding';
@@ -129,6 +130,11 @@ export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; c
   '93309': { state: 'California', stateSlug: 'california', county: 'Kern', countySlug: 'kern' },
   '98101': { state: 'Washington', stateSlug: 'washington', county: 'King', countySlug: 'king' },
   '80201': { state: 'Colorado', stateSlug: 'colorado', county: 'Denver', countySlug: 'denver' },
+  '80516': { state: 'Colorado', stateSlug: 'colorado', county: 'Adams', countySlug: 'adams' },
+  '80026': { state: 'Colorado', stateSlug: 'colorado', county: 'Boulder', countySlug: 'boulder' },
+  '80027': { state: 'Colorado', stateSlug: 'colorado', county: 'Boulder', countySlug: 'boulder' },
+  '80134': { state: 'Colorado', stateSlug: 'colorado', county: 'Douglas', countySlug: 'douglas' },
+  '80112': { state: 'Colorado', stateSlug: 'colorado', county: 'Douglas', countySlug: 'douglas' },
 };
 
 const NATIONAL_LENDERS: Lender[] = [
@@ -274,4 +280,4 @@ const NATIONAL_LENDERS: Lender[] = [
   },
 ];
 
-export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS, ...TENNESSEE_LENDERS, ...ARIZONA_LENDERS, ...CALIFORNIA_LENDERS];
+export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS, ...TENNESSEE_LENDERS, ...ARIZONA_LENDERS, ...CALIFORNIA_LENDERS, ...COLORADO_LENDERS];
