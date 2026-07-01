@@ -152,6 +152,11 @@ export default function TampaBayHubPage() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/local-lenders/florida/panhandle" className="text-[#14B8A6] hover:underline">
+                    Florida Panhandle Hub →
+                  </Link>
+                </li>
+                <li>
                   <Link href="/calculators" className="text-[#14B8A6] hover:underline">
                     Mortgage Calculators →
                   </Link>

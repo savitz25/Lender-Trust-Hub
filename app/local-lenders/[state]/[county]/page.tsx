@@ -23,6 +23,7 @@ export async function generateMetadata({
   const isOrange = state === 'florida' && county === 'orange';
   const isHillsborough = state === 'florida' && county === 'hillsborough';
   const isDuval = state === 'florida' && county === 'duval';
+  const isBay = state === 'florida' && county === 'bay';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -30,14 +31,18 @@ export async function generateMetadata({
         ? `Best Mortgage Lenders in Hillsborough County, FL — Tampa Bay (2026)`
         : isDuval
           ? `Best Mortgage Lenders in Duval County, FL — Jacksonville (2026)`
-          : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+          : isBay
+            ? `Best Mortgage Lenders in Bay County, FL — Panama City & PCB (2026)`
+            : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
         ? `Compare 10 NMLS-verified Tampa Bay mortgage lenders. MacDill VA specialists, Wesley Chapel brokers, fast closings, and national lenders with local Tampa branches.`
         : isDuval
           ? `Compare 10 NMLS-verified Jacksonville mortgage lenders. NAS Jax VA specialists, award-winning local brokers, Navy Federal, and national lenders with Northeast FL branches.`
-          : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+          : isBay
+            ? `Compare 10 NMLS-verified Panhandle mortgage lenders. Blissful Mortgage PCB, Eglin VA specialists, military credit unions, and Emerald Coast beach financing in Bay County.`
+            : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

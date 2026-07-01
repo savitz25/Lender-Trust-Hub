@@ -179,4 +179,4 @@ Independent Jacksonville brokerage with 205+ excellent reviews. Personalized pur
 
 NMLS Consumer Access · CFPB search · No paid placement. Verify at [nmlsconsumeraccess.org](https://www.nmlsconsumeraccess.org).
 
-**[Jacksonville Hub](/local-lenders/florida/jacksonville)** · **[Tampa Bay Hub](/local-lenders/florida/tampa-bay)** · **[South Florida Hub](/local-lenders/florida/south-florida)**
+**[Jacksonville Hub](/local-lenders/florida/jacksonville)** · **[Florida Panhandle Hub](/local-lenders/florida/panhandle)** · **[Tampa Bay Hub](/local-lenders/florida/tampa-bay)** · **[South Florida Hub](/local-lenders/florida/south-florida)**

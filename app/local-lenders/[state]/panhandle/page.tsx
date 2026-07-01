@@ -4,14 +4,14 @@ import { Breadcrumbs } from '@/components/directory/Breadcrumbs';
 import { LeadCaptureForm } from '@/components/directory/LeadCaptureForm';
 import { SearchBar } from '@/components/SearchBar';
 import { LenderCard } from '@/components/LenderCard';
-import { JACKSONVILLE_HUB_COUNTIES } from '@/lib/mortgage/floridaLenders';
+import { PANHANDLE_HUB_COUNTIES } from '@/lib/mortgage/floridaLenders';
 import { getLendersByCounty } from '@/lib/lenders';
 
 export const metadata: Metadata = {
-  title: 'Jacksonville Mortgage Lenders — Duval County & Northeast FL (2026)',
+  title: 'Florida Panhandle Mortgage Lenders — Bay County & Emerald Coast (2026)',
   description:
-    'NMLS-verified mortgage lenders in Jacksonville. Award-winning local brokers, VA specialists near NAS Jax and Mayport, Navy Federal, and national lenders with local branches.',
-  alternates: { canonical: 'https://www.lendertrusthub.com/local-lenders/florida/jacksonville' },
+    'NMLS-verified mortgage lenders in the Florida Panhandle. Panama City brokers, Eglin VA specialists, Navy communities, credit unions, and Emerald Coast beach financing.',
+  alternates: { canonical: 'https://www.lendertrusthub.com/local-lenders/florida/panhandle' },
 };
 
 const CALCULATORS = [
@@ -21,8 +21,8 @@ const CALCULATORS = [
   { href: '/calculators/va', label: 'VA Loan' },
 ];
 
-export default function JacksonvilleHubPage() {
-  const duvalLenders = getLendersByCounty('florida', 'duval');
+export default function PanhandleHubPage() {
+  const bayLenders = getLendersByCounty('florida', 'bay');
 
   return (
     <>
@@ -32,7 +32,7 @@ export default function JacksonvilleHubPage() {
             { label: 'Home', href: '/' },
             { label: 'Mortgage Lenders', href: '/local-lenders' },
             { label: 'Florida', href: '/local-lenders/florida' },
-            { label: 'Jacksonville Hub' },
+            { label: 'Florida Panhandle Hub' },
           ]}
         />
       </div>
@@ -40,14 +40,14 @@ export default function JacksonvilleHubPage() {
       <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-teal-400/40 bg-teal-500/10 px-4 py-1.5 text-sm">
-            NMLS Verified · Zero Paid Placements · Duval County Focus
+            NMLS Verified · Zero Paid Placements · Bay County Focus
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">
-            Trusted Mortgage Lenders in Jacksonville
+            Trusted Mortgage Lenders in the Florida Panhandle
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
-            Northeast Florida lenders with NAS Jacksonville and Mayport VA expertise, award-winning
-            local brokers, and affordable First Coast purchase and refinance options.
+            Emerald Coast lenders with Eglin and NAS Pensacola VA expertise, Panama City Beach
+            brokers, military credit unions, and retirement and second-home financing.
           </p>
           <div className="mt-6">
             <SearchBar className="mx-auto max-w-md" />
@@ -59,14 +59,14 @@ export default function JacksonvilleHubPage() {
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-8">
             <section>
-              <h2 className="mb-4 text-2xl font-bold text-[#0A2540]">Duval County — Start Here</h2>
+              <h2 className="mb-4 text-2xl font-bold text-[#0A2540]">Bay County — Start Here</h2>
               <div className="grid gap-3 sm:grid-cols-2">
-                {JACKSONVILLE_HUB_COUNTIES.map((c) => (
+                {PANHANDLE_HUB_COUNTIES.map((c) => (
                   <Link
                     key={c.slug}
                     href={
-                      c.slug === 'duval'
-                        ? '/local-lenders/florida/duval'
+                      c.slug === 'bay'
+                        ? '/local-lenders/florida/bay'
                         : `/local-lenders/florida/${c.slug}`
                     }
                     className="rounded-xl border border-zinc-200 bg-white p-4 hover:border-[#14B8A6]"
@@ -79,33 +79,33 @@ export default function JacksonvilleHubPage() {
             </section>
 
             <section className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6">
-              <h2 className="text-xl font-bold text-[#0A2540]">Why Jacksonville Is Different</h2>
+              <h2 className="text-xl font-bold text-[#0A2540]">Why the Panhandle Is Different</h2>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-zinc-700">
-                <li>NAS Jacksonville and Naval Station Mayport drive strong military and VA lending volume</li>
-                <li>Relative affordability vs. South Florida — different insurance and flood profiles</li>
-                <li>St. Johns, Clay, and Nassau suburban growth needs Northeast FL branch access</li>
-                <li>Physician and professional programs matter for local hospital and logistics workforce</li>
-                <li>Navy Federal membership is a common path for active-duty and veteran families</li>
+                <li>NAS Pensacola, Eglin AFB, and Hurlburt Field drive heavy VA and military lending volume</li>
+                <li>Panama City Beach and 30A bring second-home, tourism, and investor financing needs</li>
+                <li>Hurricane and wind coverage shape insurance math differently than inland Florida metros</li>
+                <li>Retirement and relocation buyers value local credit unions and long-tenured brokers</li>
+                <li>Escambia, Okaloosa, and Walton reach expanding beyond Bay County core</li>
               </ul>
             </section>
 
             <section>
               <h2 className="mb-4 text-2xl font-bold text-[#0A2540]">
-                Top Verified Lenders in Duval County
+                Top Verified Lenders in Bay County
               </h2>
               <div className="space-y-4">
-                {duvalLenders.slice(0, 6).map((lender, i) => (
+                {bayLenders.slice(0, 6).map((lender, i) => (
                   <LenderCard
                     key={lender.id}
                     lender={lender}
                     rank={i + 1}
-                    countyLabel="Duval County"
+                    countyLabel="Bay County"
                   />
                 ))}
               </div>
               <p className="mt-4 text-sm">
-                <Link href="/local-lenders/florida/duval" className="text-[#3B82F6] hover:underline">
-                  View all {duvalLenders.length} Duval County lenders →
+                <Link href="/local-lenders/florida/bay" className="text-[#3B82F6] hover:underline">
+                  View all {bayLenders.length} Bay County lenders →
                 </Link>
               </p>
             </section>
@@ -126,7 +126,7 @@ export default function JacksonvilleHubPage() {
             </section>
 
             <LeadCaptureForm
-              stateName="Jacksonville"
+              stateName="Florida Panhandle"
               categoryId="mortgage"
               variant="state-page-v2"
             />
@@ -137,18 +137,13 @@ export default function JacksonvilleHubPage() {
               <h2 className="font-semibold text-[#0A2540]">Also Explore</h2>
               <ul className="mt-3 space-y-2">
                 <li>
+                  <Link href="/local-lenders/florida/jacksonville" className="text-[#14B8A6] hover:underline">
+                    Jacksonville Hub →
+                  </Link>
+                </li>
+                <li>
                   <Link href="/local-lenders/florida/tampa-bay" className="text-[#14B8A6] hover:underline">
                     Tampa Bay Hub →
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/local-lenders/florida/panhandle" className="text-[#14B8A6] hover:underline">
-                    Florida Panhandle Hub →
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/local-lenders/florida/south-florida" className="text-[#14B8A6] hover:underline">
-                    South Florida Hub →
                   </Link>
                 </li>
                 <li>
@@ -159,7 +154,7 @@ export default function JacksonvilleHubPage() {
               </ul>
             </div>
             <LeadCaptureForm
-              stateName="Jacksonville"
+              stateName="Florida Panhandle"
               categoryId="mortgage"
               variant="sidebar-minimal"
             />
