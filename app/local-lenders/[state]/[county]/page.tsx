@@ -41,6 +41,9 @@ export async function generateMetadata({
   const isNcDurham = state === 'north-carolina' && county === 'durham';
   const isGuilford = state === 'north-carolina' && county === 'guilford';
   const isNcForsyth = state === 'north-carolina' && county === 'forsyth';
+  const isDavidson = state === 'tennessee' && county === 'davidson';
+  const isWilliamson = state === 'tennessee' && county === 'williamson';
+  const isRutherford = state === 'tennessee' && county === 'rutherford';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -84,7 +87,13 @@ export async function generateMetadata({
                                             ? `Best Mortgage Lenders in Guilford County, NC — Piedmont Triad (2026)`
                                             : isNcForsyth
                                               ? `Best Mortgage Lenders in Forsyth County, NC — Winston-Salem (2026)`
-                                              : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+                                              : isDavidson
+                                                ? `Best Mortgage Lenders in Davidson County, TN — Greater Nashville (2026)`
+                                                : isWilliamson
+                                                  ? `Best Mortgage Lenders in Williamson County, TN — Franklin & Brentwood (2026)`
+                                                  : isRutherford
+                                                    ? `Best Mortgage Lenders in Rutherford County, TN — Murfreesboro (2026)`
+                                                    : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -127,7 +136,13 @@ export async function generateMetadata({
                                             ? `Compare 4 NMLS-verified Piedmont Triad mortgage lenders. Affordable Greensboro entry, Helms Mortgage broker, and equity-building $283K–$315K markets.`
                                             : isNcForsyth
                                               ? `Compare 5 NMLS-verified Forsyth County mortgage lenders. Winston-Salem Silverton branch plus Guilford Triad supplements for first-time buyers.`
-                                              : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                              : isDavidson
+                                                ? `Compare 12 NMLS-verified Greater Nashville mortgage lenders. Churchill Mortgage, corporate relocations, Guild and NAF branches, and VA specialists in Davidson County.`
+                                                : isWilliamson
+                                                  ? `Compare 12 NMLS-verified Williamson County mortgage lenders. Franklin/Brentwood luxury, CrossCountry professionals, credit union rates, and new-construction financing.`
+                                                  : isRutherford
+                                                    ? `Compare 12 NMLS-verified Rutherford County mortgage lenders. Murfreesboro fast closings, suburban volume, VA programs, and affordability-belt spillover.`
+                                                    : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

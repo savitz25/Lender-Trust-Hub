@@ -2,6 +2,7 @@ import { FLORIDA_LENDERS } from '@/lib/mortgage/floridaLenders';
 import { GEORGIA_LENDERS } from '@/lib/mortgage/georgiaLenders';
 import { SOUTH_CAROLINA_LENDERS } from '@/lib/mortgage/southCarolinaLenders';
 import { NORTH_CAROLINA_LENDERS } from '@/lib/mortgage/northCarolinaLenders';
+import { TENNESSEE_LENDERS } from '@/lib/mortgage/tennesseeLenders';
 
 export type LoanType = 'Conventional' | 'FHA' | 'VA' | 'USDA' | 'Jumbo' | 'ARM' | 'Refinance';
 export type CreditTier = 'Excellent' | 'Good' | 'Fair' | 'Rebuilding';
@@ -93,6 +94,11 @@ export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; c
   '27601': { state: 'North Carolina', stateSlug: 'north-carolina', county: 'Wake', countySlug: 'wake' },
   '27401': { state: 'North Carolina', stateSlug: 'north-carolina', county: 'Guilford', countySlug: 'guilford' },
   '27101': { state: 'North Carolina', stateSlug: 'north-carolina', county: 'Forsyth', countySlug: 'forsyth' },
+  '37201': { state: 'Tennessee', stateSlug: 'tennessee', county: 'Davidson', countySlug: 'davidson' },
+  '37203': { state: 'Tennessee', stateSlug: 'tennessee', county: 'Davidson', countySlug: 'davidson' },
+  '37027': { state: 'Tennessee', stateSlug: 'tennessee', county: 'Williamson', countySlug: 'williamson' },
+  '37064': { state: 'Tennessee', stateSlug: 'tennessee', county: 'Williamson', countySlug: 'williamson' },
+  '37129': { state: 'Tennessee', stateSlug: 'tennessee', county: 'Rutherford', countySlug: 'rutherford' },
   '85001': { state: 'Arizona', stateSlug: 'arizona', county: 'Maricopa', countySlug: 'maricopa' },
   '98101': { state: 'Washington', stateSlug: 'washington', county: 'King', countySlug: 'king' },
   '80201': { state: 'Colorado', stateSlug: 'colorado', county: 'Denver', countySlug: 'denver' },
@@ -249,16 +255,6 @@ const NATIONAL_LENDERS: Lender[] = [
     shortDescription: 'Western Massachusetts broker with MassHousing program expertise.',
     phone: '(413) 555-1901',
   },
-  {
-    id: '22', slug: 'nashville-home-mortgage', name: 'Nashville Home Mortgage', nmlsId: '1857293', type: 'Lender',
-    city: 'Nashville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Davidson', countySlug: 'davidson',
-    zipCodes: ['37201', '37203', '37206'], rating: 4.9, reviewCount: 1345, trustScore: 93, countyExperienceScore: 91,
-    nationalVolumeRank: 58, loanTypes: ['Conventional', 'FHA', 'Jumbo'], specialties: ['Music City Relocation', 'New Construction'],
-    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 3, bbbRating: 'A+',
-    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 96,
-    shortDescription: 'Davidson County leader in Music City relocations and new-build financing.',
-    phone: '(615) 555-2101',
-  },
 ];
 
-export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS];
+export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS, ...TENNESSEE_LENDERS];

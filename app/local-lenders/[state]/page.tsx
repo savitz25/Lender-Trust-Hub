@@ -161,6 +161,18 @@ export default async function MortgageStatePage({
               </div>
             )}
 
+            {slug === 'tennessee' && (
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <Link href="/local-lenders/tennessee/greater-nashville-metro"
+                  className="block rounded-2xl border border-amber-500/40 bg-amber-50 p-5 hover:bg-amber-100/80">
+                  <span className="font-semibold text-[#0A2540]">Greater Nashville Metro Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Davidson, Williamson &amp; Rutherford — 12 verified lenders, corporate relocations.
+                  </span>
+                </Link>
+              </div>
+            )}
+
             {slug === 'north-carolina' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link href="/local-lenders/north-carolina/charlotte-metro"

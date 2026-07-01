@@ -1,0 +1,202 @@
+import type { Lender } from '@/lib/mockData';
+
+export const TENNESSEE_LENDERS: Lender[] = [
+  // ── Davidson County (Nashville / Music City) ─────────────────────────────────
+  {
+    id: 'tn-01', slug: 'churchill-mortgage-nashville', name: 'Churchill Mortgage', nmlsId: '1591', type: 'Lender',
+    city: 'Brentwood', state: 'Tennessee', stateSlug: 'tennessee', county: 'Davidson', countySlug: 'davidson',
+    zipCodes: ['37201', '37203', '37027'], rating: 4.9, reviewCount: 2100, trustScore: 95, countyExperienceScore: 96,
+    nationalVolumeRank: 28, loanTypes: ['Conventional', 'FHA', 'VA', 'USDA', 'Jumbo', 'Refinance'],
+    specialties: ['Corporate Relocations', 'Music City Growth', 'TN-Headquartered Lender'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 28, onTimeCloseRate: 96,
+    shortDescription: 'Brentwood-headquartered lender — strategy-first financing for high-earning Nashville corporate relocations and urban purchase.',
+    website: 'https://churchillmortgage.com', phone: '(615) 370-8888',
+  },
+  {
+    id: 'tn-02', slug: 'guild-mortgage-nashville', name: 'Guild Mortgage (Nashville Branches)', nmlsId: '3274', type: 'Lender',
+    city: 'Nashville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Davidson', countySlug: 'davidson',
+    zipCodes: ['37201', '37206', '37027'], rating: 4.8, reviewCount: 680, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 20, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Multiple Metro Branches', 'Full-Spectrum Lending', 'Williamson Reach'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 30, onTimeCloseRate: 94,
+    shortDescription: 'National Guild lender with strong Greater Nashville presence for corporate relocations and luxury Williamson buyers.',
+    website: 'https://guildmortgage.com', phone: '(615) 555-6001',
+  },
+  {
+    id: 'tn-03', slug: 'new-american-funding-nashville', name: 'New American Funding (Nashville)', nmlsId: '6606', type: 'Lender',
+    city: 'Nashville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Davidson', countySlug: 'davidson',
+    zipCodes: ['37201', '37064', '37027'], rating: 4.9, reviewCount: 520, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 24, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Franklin & Brentwood', 'High-Volume Service', 'Purchase & Refinance'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 4, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 28, onTimeCloseRate: 95,
+    shortDescription: 'High-volume NAF Nashville team — excellent ratings for competitive Williamson luxury and Davidson urban transactions.',
+    website: 'https://newamericanfunding.com', phone: '(615) 555-6002',
+  },
+  {
+    id: 'tn-06', slug: 'silverton-mortgage-nashville', name: 'Silverton Mortgage — Nashville', nmlsId: '1794151', type: 'Lender',
+    city: 'Brentwood', state: 'Tennessee', stateSlug: 'tennessee', county: 'Davidson', countySlug: 'davidson',
+    zipCodes: ['37201', '37027', '37215'], rating: 4.8, reviewCount: 185, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 52, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Retail Local Expertise', 'Brentwood Branch', 'Professional Service'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 29, onTimeCloseRate: 95,
+    shortDescription: 'Silverton Brentwood branch — retail lending with local expertise for Music City growth and Davidson relocations.',
+    website: 'https://silvertonmortgage.com/nashville', phone: '(615) 545-5641',
+  },
+  {
+    id: 'tn-07', slug: 'bank-of-america-mortgage-nashville', name: 'Bank of America Mortgage (Nashville)', nmlsId: '399802', type: 'Bank',
+    city: 'Nashville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Davidson', countySlug: 'davidson',
+    zipCodes: ['37201', '37064', '37027'], rating: 4.6, reviewCount: 890, trustScore: 88, countyExperienceScore: 90,
+    nationalVolumeRank: 5, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Banking-Integrated Mortgages', 'Corporate Relocation Packages', 'Full-Service Banking'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 18, bbbRating: 'A',
+    googleRating: 4.6, trustpilotRating: 4.4, avgCloseDays: 35, onTimeCloseRate: 90,
+    shortDescription: 'Full-service bank mortgages convenient for corporate relocation packages across Davidson and Williamson.',
+    website: 'https://bankofamerica.com/mortgage', phone: '(615) 555-6007',
+  },
+  {
+    id: 'tn-08', slug: 'veterans-united-nashville', name: 'Veterans United Home Loans (Nashville)', nmlsId: '1907', type: 'Lender',
+    city: 'Nashville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Davidson', countySlug: 'davidson',
+    zipCodes: ['37201', '37129', '37027'], rating: 4.9, reviewCount: 2400, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 8, loanTypes: ['VA', 'Refinance'],
+    specialties: ['VA Loans', 'Fort Campbell Corridor', 'Military Relocations'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 15, bbbRating: 'A',
+    googleRating: 4.9, trustpilotRating: 4.7, avgCloseDays: 32, onTimeCloseRate: 94,
+    shortDescription: 'Leading VA lender supporting Fort Campbell-adjacent veteran influx and military relocations in Greater Nashville.',
+    website: 'https://veteransunited.com', phone: '(615) 555-6008',
+  },
+  {
+    id: 'tn-11', slug: 'anchor-home-mortgage-nashville', name: 'Anchor Home Mortgage (Nashville)', nmlsId: '136890', type: 'Broker',
+    city: 'Nashville', state: 'Tennessee', stateSlug: 'tennessee', county: 'Davidson', countySlug: 'davidson',
+    zipCodes: ['37201', '37064', '37027'], rating: 4.9, reviewCount: 210, trustScore: 94, countyExperienceScore: 95,
+    nationalVolumeRank: 56, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Luxury & Family Markets', 'Brentwood/Franklin High-End', 'Personalized Brokerage'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 27, onTimeCloseRate: 96,
+    shortDescription: 'Personalized brokerage for luxury and family markets — Brentwood and Franklin high-end segment expertise.',
+    website: 'https://anchorhomemortgage.com', phone: '(615) 555-6011',
+  },
+
+  // ── Williamson County (Franklin / Brentwood) ─────────────────────────────────
+  {
+    id: 'tn-04', slug: 'crosscountry-mortgage-nashville', name: 'CrossCountry Mortgage (Greater Nashville)', nmlsId: '3029', type: 'Lender',
+    city: 'Franklin', state: 'Tennessee', stateSlug: 'tennessee', county: 'Williamson', countySlug: 'williamson',
+    zipCodes: ['37064', '37027', '37201'], rating: 4.8, reviewCount: 445, trustScore: 91, countyExperienceScore: 93,
+    nationalVolumeRank: 22, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Franklin & Brentwood', 'Tech/Healthcare Professionals', 'High-Income Relocations'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 6, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 30, onTimeCloseRate: 93,
+    shortDescription: 'CrossCountry Franklin/Brentwood teams — experienced lending for tech and healthcare professional relocations.',
+    website: 'https://crosscountrymortgage.com', phone: '(615) 555-6004',
+  },
+  {
+    id: 'tn-09', slug: 'ascend-federal-credit-union', name: 'Ascend Federal Credit Union', nmlsId: '402436', type: 'Credit Union',
+    city: 'Franklin', state: 'Tennessee', stateSlug: 'tennessee', county: 'Williamson', countySlug: 'williamson',
+    zipCodes: ['37064', '37027', '37129'], rating: 4.8, reviewCount: 320, trustScore: 91, countyExperienceScore: 92,
+    nationalVolumeRank: 72, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Member Rates', 'Community-Focused', 'Entry-Level Buyers'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 1, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.6, avgCloseDays: 32, onTimeCloseRate: 93,
+    shortDescription: 'Nashville-area credit union with member rates and affordable options for Williamson and Rutherford entry buyers.',
+    website: 'https://ascend.org', phone: '(800) 342-3086',
+  },
+  {
+    id: 'tn-10', slug: 'landmark-home-lending-nashville', name: 'Landmark Home Lending (Nashville)', nmlsId: '1056937', type: 'Lender',
+    city: 'Franklin', state: 'Tennessee', stateSlug: 'tennessee', county: 'Williamson', countySlug: 'williamson',
+    zipCodes: ['37064', '37129', '37027'], rating: 4.9, reviewCount: 275, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 48, loanTypes: ['Conventional', 'FHA', 'VA', 'USDA', 'Refinance'],
+    specialties: ['New-Home Financing', 'Builder Partnerships', 'Expanding Suburbs'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 28, onTimeCloseRate: 95,
+    shortDescription: 'TN-based new-construction specialist — tailored financing for high new-home demand in Williamson and Rutherford.',
+    website: 'https://landmarkhomelending.com', phone: '(615) 555-6010',
+  },
+
+  // ── Rutherford County (Murfreesboro / high-transaction suburbs) ───────────────
+  {
+    id: 'tn-05', slug: 'pierpoint-mortgage-nashville', name: 'PierPoint Mortgage (Nashville Metro)', nmlsId: '112844', type: 'Broker',
+    city: 'Murfreesboro', state: 'Tennessee', stateSlug: 'tennessee', county: 'Rutherford', countySlug: 'rutherford',
+    zipCodes: ['37129', '37130', '37201'], rating: 4.9, reviewCount: 195, trustScore: 93, countyExperienceScore: 94,
+    nationalVolumeRank: 58, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['First-Time Buyers', 'Fast Closings', 'Wholesale Access'],
+    creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 25, onTimeCloseRate: 96,
+    shortDescription: 'Wholesale broker with transparent fees — speed and transparency for high-transaction Murfreesboro suburbs.',
+    website: 'https://pierpointmortgage.com', phone: '(615) 555-6005',
+  },
+  {
+    id: 'tn-12', slug: 'supreme-lending-murfreesboro', name: 'Supreme Lending — Murfreesboro', nmlsId: '2129', type: 'Lender',
+    city: 'Murfreesboro', state: 'Tennessee', stateSlug: 'tennessee', county: 'Rutherford', countySlug: 'rutherford',
+    zipCodes: ['37129', '37130', '37128'], rating: 4.8, reviewCount: 240, trustScore: 92, countyExperienceScore: 93,
+    nationalVolumeRank: 40, loanTypes: ['Conventional', 'FHA', 'VA', 'USDA', 'Refinance'],
+    specialties: ['Suburban Volume', 'Investor Financing', 'Affordability-Belt Spillover'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 3, bbbRating: 'A',
+    googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 29, onTimeCloseRate: 94,
+    shortDescription: 'Volume-driven Murfreesboro lending — strong local knowledge of affordability-belt spillover and investor activity.',
+    website: 'https://supremelending.com', phone: '(615) 555-6012',
+  },
+];
+
+export const GREATER_NASHVILLE_LENDER_SLUGS = [
+  'churchill-mortgage-nashville',
+  'guild-mortgage-nashville',
+  'new-american-funding-nashville',
+  'crosscountry-mortgage-nashville',
+  'pierpoint-mortgage-nashville',
+  'silverton-mortgage-nashville',
+  'bank-of-america-mortgage-nashville',
+  'veterans-united-nashville',
+  'ascend-federal-credit-union',
+  'landmark-home-lending-nashville',
+  'anchor-home-mortgage-nashville',
+  'supreme-lending-murfreesboro',
+] as const;
+
+const DAVIDSON_SUPPLEMENTS = [
+  'crosscountry-mortgage-nashville',
+  'pierpoint-mortgage-nashville',
+  'ascend-federal-credit-union',
+  'landmark-home-lending-nashville',
+  'supreme-lending-murfreesboro',
+];
+
+const WILLIAMSON_SUPPLEMENTS = [
+  'churchill-mortgage-nashville',
+  'guild-mortgage-nashville',
+  'new-american-funding-nashville',
+  'silverton-mortgage-nashville',
+  'bank-of-america-mortgage-nashville',
+  'veterans-united-nashville',
+  'anchor-home-mortgage-nashville',
+  'pierpoint-mortgage-nashville',
+  'supreme-lending-murfreesboro',
+];
+
+const RUTHERFORD_SUPPLEMENTS = [
+  'churchill-mortgage-nashville',
+  'guild-mortgage-nashville',
+  'new-american-funding-nashville',
+  'crosscountry-mortgage-nashville',
+  'silverton-mortgage-nashville',
+  'bank-of-america-mortgage-nashville',
+  'veterans-united-nashville',
+  'ascend-federal-credit-union',
+  'landmark-home-lending-nashville',
+  'anchor-home-mortgage-nashville',
+];
+
+export const TENNESSEE_COUNTY_SUPPLEMENTS: Record<string, string[]> = {
+  davidson: DAVIDSON_SUPPLEMENTS,
+  williamson: WILLIAMSON_SUPPLEMENTS,
+  rutherford: RUTHERFORD_SUPPLEMENTS,
+};
+
+export const GREATER_NASHVILLE_HUB_COUNTIES = [
+  { name: 'Davidson', slug: 'davidson', highlight: 'Nashville, corporate relocations, no state income tax' },
+  { name: 'Williamson', slug: 'williamson', highlight: 'Franklin, Brentwood luxury, top schools' },
+  { name: 'Rutherford', slug: 'rutherford', highlight: 'Murfreesboro, high-transaction suburbs' },
+  { name: 'Sumner', slug: 'sumner', highlight: 'Hendersonville, Gallatin — coming soon' },
+] as const;
