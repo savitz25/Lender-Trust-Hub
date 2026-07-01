@@ -180,16 +180,16 @@ Save-Png $stackedClean (Join-Path $outDir "lender-trust-hub-logo-stacked@2x.png"
 Save-Png (Remove-CheckerboardArtifacts (Resize-Bitmap $stackedClean 1200)) (Join-Path $outDir "lender-trust-hub-logo-stacked.png")
 Save-Png (Remove-CheckerboardArtifacts (Resize-Bitmap $stackedClean 600)) (Join-Path $outDir "lender-trust-hub-logo-stacked-sm.png")
 
-# Icon — TALLER crop (0.62 vs 0.56) captures full circle bottom arcs
-$iconRaw = Crop-Bitmap $original ([int]($w * 0.08)) ([int]($h * 0.02)) ([int]($w * 0.84)) ([int]($h * 0.62))
+# Icon — crop full emblem including bottom swoosh arcs
+$iconRaw = Crop-Bitmap $original ([int]($w * 0.06)) ([int]($h * 0.01)) ([int]($w * 0.88)) ([int]($h * 0.66))
 $icon = Remove-CheckerboardArtifacts (Trim-Transparent $iconRaw)
-$icon = Add-Padding $icon 0.06 0.10 0.06 0.06
+$icon = Add-Padding $icon 0.08 0.14 0.08 0.08
 
-$icon512 = Pad-Square $icon 512 0.72
+$icon512 = Pad-Square $icon 512 0.64
 Save-Png $icon512 (Join-Path $outDir "lender-trust-hub-icon.png")
-$icon192 = Pad-Square $icon 192 0.72
+$icon192 = Pad-Square $icon 192 0.64
 Save-Png $icon192 (Join-Path $outDir "lender-trust-hub-icon-192.png")
-$icon32 = Pad-Square $icon 32 0.72
+$icon32 = Pad-Square $icon 32 0.64
 Save-Png $icon32 (Join-Path $outDir "lender-trust-hub-favicon-32.png")
 
 # Wordmark — full two-line text block
