@@ -316,7 +316,7 @@ export default async function MortgageStatePage({
                   className="block rounded-2xl border border-lime-500/40 bg-lime-50 p-5 hover:bg-lime-100/80">
                   <span className="font-semibold text-[#0A2540]">Worcester Growth Leader Hub →</span>
                   <span className="mt-1 block text-sm text-zinc-600">
-                    Worcester &amp; Shrewsbury — 12 verified lenders, Central Mass undisputed growth leader.
+                    Worcester County — 12 verified lenders, Zoom Town &amp; life sciences growth leader.
                   </span>
                 </Link>
               </div>

@@ -10,7 +10,7 @@ import { getLenderBySlug } from '@/lib/lenders';
 export const metadata: Metadata = {
   title: 'Worcester MA Mortgage Lenders — Undisputed Growth Leader, Zip 01608 (2026)',
   description:
-    'NMLS-verified mortgage lenders in Worcester County. Central Mass undisputed growth leader, biotech and Boston spillover financing, three-decker and single-family value plays, and massive discount vs. Metro Boston.',
+    'NMLS-verified mortgage lenders in Worcester County. Zoom Town growth leader, life sciences and remote worker financing, Polar Park revitalization, commuter rail access, and relative affordability vs. Greater Boston.',
   alternates: { canonical: 'https://www.lendertrusthub.com/local-lenders/massachusetts/worcester-undisputed-growth-leader' },
 };
 
@@ -39,8 +39,8 @@ export default function WorcesterUndisputedGrowthLeaderHubPage() {
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — Worcester MA</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
-            Worcester and Shrewsbury lenders for Central Mass&apos;s undisputed growth leader — biotech and life sciences demand,
-            Boston spillover affordability, and quick transactions at a massive discount to Metro Boston.
+            Worcester County lenders for the undisputed growth leader — Zoom Town remote workers, life sciences professionals,
+            Polar Park revitalization, and commuter rail access at relative affordability vs. Greater Boston.
           </p>
           <div className="mt-6"><SearchBar className="mx-auto max-w-md" /></div>
         </div>
@@ -63,11 +63,11 @@ export default function WorcesterUndisputedGrowthLeaderHubPage() {
             <section className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6">
               <h2 className="text-xl font-bold text-[#0A2540]">Why Worcester Is Different</h2>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-zinc-700">
-                <li>Undisputed Central Mass growth leader with biotech and life sciences momentum</li>
-                <li>Boston spillover transplants seeking three-deckers and single-family at Metro Boston discount</li>
-                <li>UMass Medical and healthcare employment anchor steady purchase demand</li>
-                <li>Canal District revitalization and urban core turn-key inventory moving quickly</li>
-                <li>Shrewsbury and I-495 corridor suburbs capture family growth at relative affordability</li>
+                <li>One of the country&apos;s hottest markets — undisputed Central Mass growth leader</li>
+                <li>Zoom Town effect draws remote workers and life sciences professionals seeking affordability</li>
+                <li>Downtown revitalization and Polar Park anchor investor and first-time buyer demand</li>
+                <li>Improved commuter rail access connects Worcester to Greater Boston employment centers</li>
+                <li>Exceptionally fast-moving market rewards lenders who can close quickly on limited inventory</li>
               </ul>
             </section>
             <section>

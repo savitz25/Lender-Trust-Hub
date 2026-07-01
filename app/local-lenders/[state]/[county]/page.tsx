@@ -286,7 +286,7 @@ export async function generateMetadata({
                                                                                                             : isDistrictOfColumbia
                                                                                                               ? `Compare 36 NMLS-verified DC mortgage lenders. Upper Northwest value plays, Mid-City historic rowhomes, Brookland first-time buyer entry, Navy Yard waterfront condos, and DCU member rates.`
                                                                                                               : isWorcester
-                                                                                                                ? `Compare 12 NMLS-verified Worcester mortgage lenders. Central Mass growth leader, Boston spillover financing, DCU member rates, biotech relocations, and three-decker value plays.`
+                                                                                                                ? `Compare 12 NMLS-verified Worcester mortgage lenders. Zoom Town growth leader, life sciences relocations, Polar Park revitalization, DCU member rates, and commuter rail affordability.`
                                                                                                                 : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
