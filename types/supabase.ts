@@ -15,7 +15,7 @@ export type Json =
 export type LeadCategory = 'fdic' | 'mortgage' | 'auto' | 'credit-repair' | 'mca';
 export type LeadStatus = 'new' | 'contacted' | 'matched' | 'closed' | 'spam';
 
-export interface Database {
+export type Database = {
   public: {
     Tables: {
       lenders: {
@@ -62,6 +62,7 @@ export interface Database {
           county_slug: string;
         };
         Update: Partial<Database['public']['Tables']['lenders']['Row']>;
+        Relationships: [];
       };
       counties: {
         Row: {
@@ -84,6 +85,7 @@ export interface Database {
           region?: string | null;
         };
         Update: Partial<Database['public']['Tables']['counties']['Row']>;
+        Relationships: [];
       };
       reviews: {
         Row: {
@@ -112,6 +114,7 @@ export interface Database {
           location?: string | null;
         };
         Update: Partial<Database['public']['Tables']['reviews']['Row']>;
+        Relationships: [];
       };
       testimonials: {
         Row: {
@@ -134,6 +137,7 @@ export interface Database {
           sort_order?: number;
         };
         Update: Partial<Database['public']['Tables']['testimonials']['Row']>;
+        Relationships: [];
       };
       lead_submissions: {
         Row: {
@@ -159,6 +163,7 @@ export interface Database {
           status?: LeadStatus;
         };
         Update: Partial<Database['public']['Tables']['lead_submissions']['Row']>;
+        Relationships: [];
       };
       saved_calculator_scenarios: {
         Row: {
@@ -181,10 +186,20 @@ export interface Database {
           share_token?: string | null;
         };
         Update: Partial<Database['public']['Tables']['saved_calculator_scenarios']['Row']>;
+        Relationships: [];
       };
     };
-    Views: Record<string, never>;
-    Functions: Record<string, never>;
-    Enums: Record<string, never>;
+    Views: {
+      [_ in never]: never;
+    };
+    Functions: {
+      [_ in never]: never;
+    };
+    Enums: {
+      [_ in never]: never;
+    };
+    CompositeTypes: {
+      [_ in never]: never;
+    };
   };
-}
+};
