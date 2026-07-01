@@ -25,6 +25,8 @@ export async function generateMetadata({
   const isDuval = state === 'florida' && county === 'duval';
   const isBay = state === 'florida' && county === 'bay';
   const isForsyth = state === 'georgia' && county === 'forsyth';
+  const isHenry = state === 'georgia' && county === 'henry';
+  const isChatham = state === 'georgia' && county === 'chatham';
   return {
     title: isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
@@ -36,7 +38,11 @@ export async function generateMetadata({
             ? `Best Mortgage Lenders in Bay County, FL — Panama City & PCB (2026)`
             : isForsyth
               ? `Best Mortgage Lenders in Forsyth County, GA — North Atlanta Suburbs (2026)`
-              : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+              : isHenry
+                ? `Best Mortgage Lenders in Henry County, GA — Metro Atlanta Outer Ring (2026)`
+                : isChatham
+                  ? `Best Mortgage Lenders in Chatham County, GA — Coastal Savannah (2026)`
+                  : `Mortgage Lenders in ${countyName} County, ${stateName}`,
     description: isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
@@ -47,7 +53,11 @@ export async function generateMetadata({
             ? `Compare 10 NMLS-verified Panhandle mortgage lenders. Blissful Mortgage PCB, Eglin VA specialists, military credit unions, and Emerald Coast beach financing in Bay County.`
             : isForsyth
               ? `Compare 11 NMLS-verified North Atlanta mortgage lenders. Johns Creek brokers, Alpharetta Avalon experts, Cumming new construction, and Forsyth school-district financing.`
-              : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+              : isHenry
+                ? `Compare 3 NMLS-verified Metro Atlanta outer-ring mortgage lenders. McDonough first-time buyer teams, Georgia DPA programs, USDA financing, and independent wholesale brokers.`
+                : isChatham
+                  ? `Compare 2 NMLS-verified Coastal Savannah mortgage lenders. Port relocations, VA/military, flood zone expertise, and Pooler new-construction financing in Chatham County.`
+                  : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

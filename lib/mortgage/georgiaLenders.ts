@@ -112,16 +112,89 @@ export const GEORGIA_LENDERS: Lender[] = [
     shortDescription: 'Alpharetta independent broker — personalized service for tech professionals and families in Johns Creek and Alpharetta.',
     website: 'https://theanchorteam.com', phone: '(678) 679-7000',
   },
+
+  // ── Henry County (Metro Atlanta Outer Ring) ──────────────────────────────────
+  {
+    id: 'ga-11', slug: 'guild-mortgage-mcdonough', name: 'Guild Mortgage — McDonough Team', nmlsId: '280', type: 'Lender',
+    city: 'McDonough', state: 'Georgia', stateSlug: 'georgia', county: 'Henry', countySlug: 'henry',
+    zipCodes: ['30253', '30281', '30252'], rating: 4.9, reviewCount: 385, trustScore: 94, countyExperienceScore: 96,
+    nationalVolumeRank: 20, loanTypes: ['Conventional', 'FHA', 'VA', 'USDA', 'Refinance'],
+    specialties: ['First-Time Buyers', 'Down Payment Assistance', 'Henry County DPA'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A',
+    googleRating: 4.9, trustpilotRating: 4.7, avgCloseDays: 28, onTimeCloseRate: 95,
+    shortDescription: 'McDonough Guild branch — FHA/VA, Georgia DPA programs, and first-time buyer expertise on Atlanta\'s southern outer ring.',
+    website: 'https://branches.guildmortgage.com/ga/mcdonough', phone: '(770) 847-9510',
+  },
+  {
+    id: 'ga-12', slug: 'union-home-mortgage-reeves-team', name: 'Union Home Mortgage — Reeves Team', nmlsId: '2472878', type: 'Lender',
+    city: 'McDonough', state: 'Georgia', stateSlug: 'georgia', county: 'Henry', countySlug: 'henry',
+    zipCodes: ['30253', '30281', '30052'], rating: 4.9, reviewCount: 210, trustScore: 93, countyExperienceScore: 95,
+    nationalVolumeRank: 38, loanTypes: ['Conventional', 'FHA', 'VA', 'USDA', 'Refinance'],
+    specialties: ['Paulding & Henry Outer Ring', 'New Construction', 'Digital-First Apps'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 27, onTimeCloseRate: 96,
+    shortDescription: 'McDonough UHM branch — affordable purchase, USDA outer-ring programs, and builder contract rate-lock expertise.',
+    website: 'https://uhm.com/branches/mcdonough', phone: '(770) 284-8741',
+  },
+  {
+    id: 'ga-13', slug: 'absolute-mortgage-lending', name: 'Absolute Mortgage Lending, LLC', nmlsId: '2241759', type: 'Broker',
+    city: 'Atlanta', state: 'Georgia', stateSlug: 'georgia', county: 'Henry', countySlug: 'henry',
+    zipCodes: ['30253', '30309', '30214'], rating: 4.9, reviewCount: 175, trustScore: 95, countyExperienceScore: 94,
+    nationalVolumeRank: 62, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['25+ Years Experience', 'Wholesale Broker', 'Low-Down Conventional'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 26, onTimeCloseRate: 96,
+    shortDescription: 'Independent Atlanta broker with 25+ years — shops wholesale channels for affordable outer-ring and South Fulton purchases.',
+    website: 'https://amlgrp.com', phone: '(404) 795-5046',
+  },
+
+  // ── Chatham County (Coastal Savannah) ────────────────────────────────────────
+  {
+    id: 'ga-14', slug: 'guild-mortgage-savannah', name: 'Guild Mortgage — Savannah Core', nmlsId: '438', type: 'Lender',
+    city: 'Savannah', state: 'Georgia', stateSlug: 'georgia', county: 'Chatham', countySlug: 'chatham',
+    zipCodes: ['31406', '31405', '31322'], rating: 4.9, reviewCount: 445, trustScore: 96, countyExperienceScore: 97,
+    nationalVolumeRank: 20, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
+    specialties: ['Savannah Native Leadership', 'Port Relocation', 'Flood Zone Expertise'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 29, onTimeCloseRate: 95,
+    shortDescription: 'Savannah Guild branch led by coastal natives — VA/military, flood insurance navigation, and Hyundai Metaplant relocations.',
+    website: 'https://branches.guildmortgage.com/ga/savannah/tonja-hathaway', phone: '(912) 352-7446',
+  },
+  {
+    id: 'ga-15', slug: 'union-home-mortgage-coastal', name: 'Union Home Mortgage — Coastal Team', nmlsId: '2312703', type: 'Lender',
+    city: 'Savannah', state: 'Georgia', stateSlug: 'georgia', county: 'Chatham', countySlug: 'chatham',
+    zipCodes: ['31405', '31322', '31326'], rating: 4.9, reviewCount: 198, trustScore: 94, countyExperienceScore: 96,
+    nationalVolumeRank: 38, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Pooler & Rincon', 'New Construction', 'Port Worker Logistics'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 28, onTimeCloseRate: 96,
+    shortDescription: 'Savannah UHM team — builder-integrated financing for Pooler, Rincon, and high-velocity coastal suburban submarkets.',
+    website: 'https://uhm.com/branches/savannah-ga', phone: '(912) 704-3305',
+  },
 ];
 
-/** Cross-county lenders shown on Forsyth and Fulton county pages */
+/** Cross-county lenders shown on county pages */
 export const GEORGIA_COUNTY_SUPPLEMENTS: Record<string, string[]> = {
   forsyth: ['peach-state-home-loans'],
   fulton: [],
+  henry: [],
+  chatham: [],
 };
 
 export const NORTH_ATLANTA_HUB_COUNTIES = [
   { name: 'Forsyth', slug: 'forsyth', highlight: 'Cumming, schools, new construction growth' },
   { name: 'Fulton', slug: 'fulton', highlight: 'Alpharetta, Johns Creek, Suwanee border' },
   { name: 'Gwinnett', slug: 'gwinnett', highlight: 'Suwanee, Duluth reach — coming soon' },
+] as const;
+
+export const METRO_OUTER_RING_HUB_COUNTIES = [
+  { name: 'Henry', slug: 'henry', highlight: 'McDonough, affordable starter homes, DPA programs' },
+  { name: 'Clayton', slug: 'clayton', highlight: 'South metro growth — coming soon' },
+  { name: 'Paulding', slug: 'paulding', highlight: 'Loganville corridor, USDA eligible — coming soon' },
+] as const;
+
+export const COASTAL_SAVANNAH_HUB_COUNTIES = [
+  { name: 'Chatham', slug: 'chatham', highlight: 'Savannah, Pooler, port & industrial relocations' },
+  { name: 'Effingham', slug: 'effingham', highlight: 'Rincon, Guyton suburban growth — coming soon' },
+  { name: 'Bryan', slug: 'bryan', highlight: 'Richmond Hill, coastal exurbs — coming soon' },
 ] as const;

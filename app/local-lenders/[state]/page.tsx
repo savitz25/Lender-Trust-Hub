@@ -121,7 +121,7 @@ export default async function MortgageStatePage({
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-6">
             {slug === 'georgia' && (
-              <div className="grid gap-3 sm:grid-cols-2">
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link
                   href="/local-lenders/georgia/north-atlanta"
                   className="block rounded-2xl border border-[#14B8A6]/40 bg-teal-50 p-5 hover:bg-teal-100/80"
@@ -129,6 +129,24 @@ export default async function MortgageStatePage({
                   <span className="font-semibold text-[#0A2540]">North Atlanta Hub →</span>
                   <span className="mt-1 block text-sm text-zinc-600">
                     Forsyth County — 10 verified lenders, Alpharetta, Johns Creek &amp; Cumming.
+                  </span>
+                </Link>
+                <Link
+                  href="/local-lenders/georgia/metro-outer-ring"
+                  className="block rounded-2xl border border-[#F59E0B]/40 bg-amber-50 p-5 hover:bg-amber-100/80"
+                >
+                  <span className="font-semibold text-[#0A2540]">Metro Outer Ring Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Henry County — 3 verified lenders, McDonough DPA &amp; first-time buyers.
+                  </span>
+                </Link>
+                <Link
+                  href="/local-lenders/georgia/coastal-savannah"
+                  className="block rounded-2xl border border-[#3B82F6]/40 bg-blue-50 p-5 hover:bg-blue-100/80"
+                >
+                  <span className="font-semibold text-[#0A2540]">Coastal Savannah Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Chatham County — 2 verified lenders, Pooler &amp; port relocations.
                   </span>
                 </Link>
               </div>
