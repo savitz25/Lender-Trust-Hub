@@ -121,15 +121,26 @@ export default async function MortgageStatePage({
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-6">
             {slug === 'florida' && (
-              <Link
-                href="/local-lenders/florida/south-florida"
-                className="block rounded-2xl border border-[#14B8A6]/40 bg-teal-50 p-5 hover:bg-teal-100/80"
-              >
-                <span className="font-semibold text-[#0A2540]">South Florida Hub →</span>
-                <span className="mt-1 block text-sm text-zinc-600">
-                  Miami-Dade, Broward, Palm Beach &amp; verified NMLS brokers from our June 2026 research.
-                </span>
-              </Link>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <Link
+                  href="/local-lenders/florida/south-florida"
+                  className="block rounded-2xl border border-[#14B8A6]/40 bg-teal-50 p-5 hover:bg-teal-100/80"
+                >
+                  <span className="font-semibold text-[#0A2540]">South Florida Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Miami-Dade, Broward, Palm Beach lenders.
+                  </span>
+                </Link>
+                <Link
+                  href="/local-lenders/florida/central-florida"
+                  className="block rounded-2xl border border-[#3B82F6]/40 bg-blue-50 p-5 hover:bg-blue-100/80"
+                >
+                  <span className="font-semibold text-[#0A2540]">Central Florida Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Orange County &amp; Orlando metro — 9 verified lenders.
+                  </span>
+                </Link>
+              </div>
             )}
 
             <PersonalizedBanner

@@ -20,9 +20,14 @@ export async function generateMetadata({
   const { state, county } = await params;
   const stateName = titleCase(state);
   const countyName = titleCase(county);
+  const isOrange = state === 'florida' && county === 'orange';
   return {
-    title: `Mortgage Lenders in ${countyName} County, ${stateName}`,
-    description: `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+    title: isOrange
+      ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
+      : `Mortgage Lenders in ${countyName} County, ${stateName}`,
+    description: isOrange
+      ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
+      : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
   };
 }
 

@@ -1,10 +1,8 @@
 ---
 slug: orange
 route: /local-lenders/florida/orange
-county: Orange
-title: "Mortgage Lenders in Orange County (Orlando), Florida (2026)"
-updated: 2026-06-30
-tier: starter-outline
+redirect: /data/content/central-florida/counties/orange.md
+note: Full Orange County content moved to central-florida hub (June 2026)
 ---
 
 <!-- COMPONENT: HeroSection -->
