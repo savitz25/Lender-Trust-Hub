@@ -1,102 +1,147 @@
-# Implementation Notes — South Florida Hub
+# Implementation Notes — South Florida Hub (Complete Package)
 
-## File locations (created)
+**Source:** `agent.agencies USA/agents in south florida.docx`  
+**Generated:** June 2026  
+**GitHub:** `savitz25/Lender-Trust-Hub`
+
+---
+
+## Content File Map
 
 ```
 data/content/south-florida/
-├── hub-overview.md          # State/regional hub page
-├── lender-registry.md       # 10 unique agencies + dedup log
-├── implementation-notes.md    # This file
+├── lender-registry.md          # 18 deduplicated agencies + merge log
+├── hub-overview.md             # South Florida / Florida regional hub
+├── implementation-notes.md     # This file
 └── counties/
-    ├── broward.md           # Full production county page
-    └── _county-templates.md # Miami-Dade, Palm Beach, Orange, Hillsborough, Duval
+    ├── broward.md              # FULL — 5 profiles (rich example)
+    ├── miami-dade.md           # FULL — 5 profiles
+    ├── palm-beach.md           # FULL — 5 profiles
+    ├── orange.md               # Starter outline + PRMG
+    ├── hillsborough.md         # Starter outline + Mortgage Advantage
+    └── duval.md                # Starter outline + PRMG
 ```
 
-## Routing options
+---
 
-### Option A — Regional hub (recommended)
-- **URL:** `/local-lenders/florida/south-florida`
-- Add `app/local-lenders/[state]/south-florida/page.tsx` OR treat as content-driven sub-hub linked from Florida state page
-- Florida state page hero: add prominent CTA → "Explore South Florida Hub"
+## Next.js Integration
 
-### Option B — Enhanced Florida state page
-- Merge `hub-overview.md` sections into existing `/local-lenders/florida` template
-- Inject `CountyGrid` with 6 counties above current lender list
+### Option A — Content loader (recommended)
+
+```ts
+// lib/content/south-florida.ts
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+
+export function loadCountyMarkdown(slug: string) {
+  const file = path.join(process.cwd(), `data/content/south-florida/counties/${slug}.md`);
+  return matter(fs.readFileSync(file, 'utf8'));
+}
+```
+
+### Option B — Route per county
+
+| Route | File | Status |
+|-------|------|--------|
+| `/local-lenders/florida/south-florida` | `hub-overview.md` | Build `app/.../south-florida/page.tsx` |
+| `/local-lenders/florida/broward` | `counties/broward.md` | Enhance existing `[county]/page.tsx` |
+| `/local-lenders/florida/miami-dade` | `counties/miami-dade.md` | Same |
+| `/local-lenders/florida/palm-beach` | `counties/palm-beach.md` | Same |
+| `/local-lenders/florida/orange` | `counties/orange.md` | New static param |
+| `/local-lenders/florida/hillsborough` | `counties/hillsborough.md` | New |
+| `/local-lenders/florida/duval` | `counties/duval.md` | New |
+
+### Component markers → React
+
+| Marker | Component |
+|--------|-----------|
+| `ZipSearchBar` | `SearchBar` |
+| `TrustBar` | Pill banner (existing state page pattern) |
+| `LenderCardGrid` | `LenderCard` |
+| `CalculatorEmbed` | Calculator links + `LeadCaptureForm` |
+| `TrustBox` | New `VerificationTrustBox` |
+| `TestimonialsCarousel` | Static block or carousel |
+| `lead-capture` | `LeadCaptureForm variant="county-page-v1"` |
+
+---
+
+## Data layer (`lib/mockData.ts`)
+
+Replace placeholder FL lenders with 18 registry entries. Example slugs:
+
+```
+doce-mortgage-group, truth-about-lending, florida-state-mortgage-group,
+prime-time-mortgage, floridas-va-mortgage-center, cmg-dennis-vo,
+bennett-capital-partners, premier-lending-corp, rate-leaf, onmortgage,
+choice-mortgage-group, prmi-swenson, palm-beach-mortgage-group,
+america-home-loans, supreme-lending, prmg, mortgage-advantage-lending,
+home-financial-group
+```
+
+Extend `ZIP_TO_COUNTY` for all hero ZIP examples.
+
+---
 
 ## Navigation
 
-1. **Navbar → Directories dropdown:** Add "South Florida Lenders" linking to hub
-2. **Florida state page:** Featured counties grid (6 cards) below hero stats
-3. **Footer:** Regional hubs column when ≥3 hubs exist
-4. **Homepage corridor module:** Pull "Popular South Florida Corridors" dynamic list
+1. **Directories dropdown** → "South Florida Lenders" → `/local-lenders/florida/south-florida`
+2. **Florida state page** → 6-county grid above lender list
+3. **Homepage** → "Popular Corridors" module from hub-overview
 
-## Sitemap priority
+---
 
-| URL | Priority | Changefreq |
+## Sitemap (`public/sitemaps/mortgage-lenders.xml`)
+
+| URL | priority | changefreq |
 |-----|----------|------------|
 | `/local-lenders/florida/south-florida` | 0.9 | weekly |
-| `/local-lenders/florida/broward` | 0.85 | weekly |
-| `/local-lenders/florida/miami-dade` | 0.85 | weekly |
-| `/local-lenders/florida/palm-beach` | 0.85 | weekly |
+| `/local-lenders/florida/broward` | 0.88 | weekly |
+| `/local-lenders/florida/miami-dade` | 0.88 | weekly |
+| `/local-lenders/florida/palm-beach` | 0.88 | weekly |
 | `/local-lenders/florida/orange` | 0.75 | monthly |
 | `/local-lenders/florida/hillsborough` | 0.75 | monthly |
 | `/local-lenders/florida/duval` | 0.75 | monthly |
 
-Add to `public/sitemaps/mortgage-lenders.xml` via `generate-sitemap-index.py` extension.
+---
 
-## Data layer (`lib/mockData.ts` or `lib/mortgage/floridaLenders.ts`)
+## Schema (JSON-LD)
 
-Replace placeholder lenders (Summit Home Lending, etc.) with 10 registry agencies:
+**Hub:** `WebPage` + `ItemList` + `FAQPage` + `BreadcrumbList`
 
-```ts
-// Example slug mapping
-{ slug: 'doce-mortgage-group', nmlsId: '2638131', countySlug: 'broward', ... }
-{ slug: 'truth-about-lending', nmlsId: '1054357', countySlug: 'broward', ... }
-// etc.
+**County:** `WebPage` + `about: AdministrativeArea` + `ItemList` of `FinancialService`:
+
+```json
+{
+  "@type": "FinancialService",
+  "name": "The Doce Mortgage Group",
+  "hasCredential": { "@type": "EducationalOccupationalCredential", "credentialID": "2638131" },
+  "areaServed": "Broward County, Florida"
+}
 ```
 
-Extend `ZIP_TO_COUNTY` with: `33331` (Weston), `33330` (Davie), `33431` (Boca), `32801` (Orlando), `33602` (Tampa), `32202` (Jacksonville).
+**Anchor IDs** match markdown `{#slug}` for deep links and `@id` fragments.
 
-## Component mapping
+---
 
-| Markdown marker | Existing component |
-|-----------------|-------------------|
-| `ZipSearchBar` | `SearchBar` |
-| `LenderCardGrid` | `LenderCard` |
-| `CalculatorEmbed` | Link to `/calculators/*` |
-| `LeadCaptureForm` | `LeadCaptureForm` |
-| `TrustBox` | New `VerificationTrustBox` or section in `EditorialByline` |
-| `ComparisonTable` | New `LenderComparisonTable` |
-| `TestimonialsCarousel` | New or static block |
+## E-E-A-T Checklist
 
-## Schema markup
+- [x] Single authoritative source (docx) with dedup log
+- [x] NMLS links on every profile
+- [x] CFPB + "verify yourself" disclaimers
+- [x] No paid placement language
+- [x] June 2026 date stamps
+- [ ] Wire `EditorialByline` with South Florida editor persona
+- [ ] Live routes + mockData sync (implementation PR)
 
-### Hub page
-- `WebPage` + `ItemList` (featured lenders)
-- `FAQPage` (FAQ section)
-- `BreadcrumbList`
+---
 
-### County pages
-- `WebPage` + `AdministrativeArea`
-- Per-lender `FinancialService` or `LocalBusiness` with `hasCredential` → NMLS ID
-- `AggregateRating` only when citing specific third-party source + date
+## Deploy
 
-### Lender profile anchors
-Use `@id` fragments matching slug anchors (`#doce-mortgage-group`) for deep linking.
+```bash
+git add data/content/south-florida/
+git commit -m "feat: complete South Florida hub content from authoritative docx source"
+git push origin main
+```
 
-## E-E-A-T checklist
-
-- [x] NMLS IDs with verification links on every profile
-- [x] CFPB disclaimer on every page
-- [x] "No paid placement" trust bar
-- [x] Source date (June 2026) on all pages
-- [x] Testimonials labeled sourced vs. composite
-- [ ] Author byline via `EditorialByline` component (add South Florida editor persona)
-
-## Next implementation PRs
-
-1. **PR-1:** Add Florida lender data + ZIP mappings from registry
-2. **PR-2:** South Florida hub route + county content loader (MD → React)
-3. **PR-3:** Sitemap + nav links + schema JSON-LD
-4. **PR-4:** Expand Miami-Dade + Palm Beach full pages from templates
-5. **PR-5:** Orange/Hillsborough/Duval pages with PRMG deep profile
+Vercel auto-deploys from `savitz25/Lender-Trust-Hub` main branch.
