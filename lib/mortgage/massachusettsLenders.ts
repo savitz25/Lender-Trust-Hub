@@ -3,7 +3,7 @@ import type { Lender } from '@/lib/mockData';
 export const MASSACHUSETTS_LENDERS: Lender[] = [
   // ── Undisputed Growth Leader (Worcester — Zip 01608) ─────────────────────────
   {
-    id: 'ma-01', slug: 'central-mass-independent-mortgage-worcester', name: 'Worcester Independent Mortgage (Worcester County)', nmlsId: '284719', type: 'Broker',
+    id: 'ma-01', slug: 'central-mass-independent-mortgage-worcester', name: 'Local Worcester Independent Mortgage', nmlsId: '284719', type: 'Broker',
     city: 'Worcester', state: 'Massachusetts', stateSlug: 'massachusetts', county: 'Worcester', countySlug: 'worcester',
     zipCodes: ['01608', '01609', '01610'], rating: 4.9, reviewCount: 640, trustScore: 95, countyExperienceScore: 96,
     nationalVolumeRank: 36, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
@@ -18,7 +18,7 @@ export const MASSACHUSETTS_LENDERS: Lender[] = [
     city: 'Worcester', state: 'Massachusetts', stateSlug: 'massachusetts', county: 'Worcester', countySlug: 'worcester',
     zipCodes: ['01608', '01602', '01604'], rating: 4.8, reviewCount: 410, trustScore: 92, countyExperienceScore: 93,
     nationalVolumeRank: 20, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
-    specialties: ['Worcester County Focus', 'Full Residential Spectrum', 'First-Time & Investor Growth'],
+    specialties: ['Full Residential Spectrum', 'First-Time & Investor Growth', 'Worcester County Operations'],
     creditTiers: ['Excellent', 'Good', 'Fair'], nmlsVerified: true, cfpbComplaints: 5, bbbRating: 'A',
     googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 27, onTimeCloseRate: 94,
     shortDescription: 'National Guild lender with Worcester branches — comprehensive financing for first-time buyers and investors in one of the country\'s hottest markets.',
@@ -69,7 +69,7 @@ export const MASSACHUSETTS_LENDERS: Lender[] = [
     website: 'https://silvertonmortgage.com', phone: '(508) 555-2106',
   },
   {
-    id: 'ma-07', slug: 'young-professional-investor-mortgage-worcester', name: 'Central MA Young Professional Mortgage (Worcester)', nmlsId: '518392', type: 'Broker',
+    id: 'ma-07', slug: 'young-professional-investor-mortgage-worcester', name: 'Young Professional & Investor Specialists (Worcester)', nmlsId: '518392', type: 'Broker',
     city: 'Worcester', state: 'Massachusetts', stateSlug: 'massachusetts', county: 'Worcester', countySlug: 'worcester',
     zipCodes: ['01608', '01609', '01610'], rating: 4.9, reviewCount: 480, trustScore: 93, countyExperienceScore: 94,
     nationalVolumeRank: 42, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
@@ -91,7 +91,7 @@ export const MASSACHUSETTS_LENDERS: Lender[] = [
     website: 'https://dcu.org', phone: '(800) 328-8797',
   },
   {
-    id: 'ma-09', slug: 'downtown-new-construction-mortgage-worcester', name: 'Downtown New Construction Mortgage (Worcester)', nmlsId: '367284', type: 'Broker',
+    id: 'ma-09', slug: 'downtown-new-construction-mortgage-worcester', name: 'New Construction & Downtown Specialists (Worcester)', nmlsId: '367284', type: 'Broker',
     city: 'Worcester', state: 'Massachusetts', stateSlug: 'massachusetts', county: 'Worcester', countySlug: 'worcester',
     zipCodes: ['01608', '01609', '01610'], rating: 4.9, reviewCount: 295, trustScore: 94, countyExperienceScore: 95,
     nationalVolumeRank: 40, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
