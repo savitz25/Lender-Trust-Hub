@@ -8,6 +8,7 @@ import { CALIFORNIA_LENDERS } from '@/lib/mortgage/californiaLenders';
 import { COLORADO_LENDERS } from '@/lib/mortgage/coloradoLenders';
 import { TEXAS_LENDERS } from '@/lib/mortgage/texasLenders';
 import { WASHINGTON_LENDERS } from '@/lib/mortgage/washingtonLenders';
+import { DISTRICT_OF_COLUMBIA_LENDERS } from '@/lib/mortgage/districtOfColumbiaLenders';
 
 export type LoanType = 'Conventional' | 'FHA' | 'VA' | 'USDA' | 'Jumbo' | 'ARM' | 'Refinance';
 export type CreditTier = 'Excellent' | 'Good' | 'Fair' | 'Rebuilding';
@@ -164,6 +165,10 @@ export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; c
   '98662': { state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark' },
   '98663': { state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark' },
   '98664': { state: 'Washington', stateSlug: 'washington', county: 'Clark', countySlug: 'clark' },
+  '20001': { state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia' },
+  '20012': { state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia' },
+  '20011': { state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia' },
+  '20017': { state: 'District of Columbia', stateSlug: 'district-of-columbia', county: 'District of Columbia', countySlug: 'district-of-columbia' },
   '80201': { state: 'Colorado', stateSlug: 'colorado', county: 'Denver', countySlug: 'denver' },
   '80516': { state: 'Colorado', stateSlug: 'colorado', county: 'Adams', countySlug: 'adams' },
   '80026': { state: 'Colorado', stateSlug: 'colorado', county: 'Boulder', countySlug: 'boulder' },
@@ -323,4 +328,4 @@ const NATIONAL_LENDERS: Lender[] = [
   },
 ];
 
-export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS, ...TENNESSEE_LENDERS, ...ARIZONA_LENDERS, ...CALIFORNIA_LENDERS, ...COLORADO_LENDERS, ...TEXAS_LENDERS, ...WASHINGTON_LENDERS];
+export const lenders: Lender[] = [...NATIONAL_LENDERS, ...FLORIDA_LENDERS, ...GEORGIA_LENDERS, ...SOUTH_CAROLINA_LENDERS, ...NORTH_CAROLINA_LENDERS, ...TENNESSEE_LENDERS, ...ARIZONA_LENDERS, ...CALIFORNIA_LENDERS, ...COLORADO_LENDERS, ...TEXAS_LENDERS, ...WASHINGTON_LENDERS, ...DISTRICT_OF_COLUMBIA_LENDERS];

@@ -310,6 +310,18 @@ export default async function MortgageStatePage({
               </div>
             )}
 
+            {slug === 'district-of-columbia' && (
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <Link href="/local-lenders/district-of-columbia/upper-northwest-value-surge"
+                  className="block rounded-2xl border border-rose-500/40 bg-rose-50 p-5 hover:bg-rose-100/80">
+                  <span className="font-semibold text-[#0A2540]">Upper Northwest Value Surge Hub →</span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    Takoma &amp; Brightwood — 12 verified lenders, Zip 20012 single-family value plays.
+                  </span>
+                </Link>
+              </div>
+            )}
+
             {slug === 'north-carolina' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link href="/local-lenders/north-carolina/charlotte-metro"

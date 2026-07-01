@@ -9,6 +9,7 @@ import { CALIFORNIA_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/californiaLenders'
 import { COLORADO_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/coloradoLenders';
 import { TEXAS_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/texasLenders';
 import { WASHINGTON_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/washingtonLenders';
+import { DC_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/districtOfColumbiaLenders';
 
 export { lenders };
 export type { Lender, LoanType, CreditTier };
@@ -98,6 +99,7 @@ const STATE_COUNTY_SUPPLEMENTS: Record<string, Record<string, string[]>> = {
   colorado: COLORADO_COUNTY_SUPPLEMENTS,
   texas: TEXAS_COUNTY_SUPPLEMENTS,
   washington: WASHINGTON_COUNTY_SUPPLEMENTS,
+  'district-of-columbia': DC_COUNTY_SUPPLEMENTS,
 };
 
 export function getLendersByCounty(stateSlug: string, countySlug: string): Lender[] {
