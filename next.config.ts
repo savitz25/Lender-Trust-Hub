@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: '/:path*',
+        destination: 'https://www.movetrusthub.com/lender/:path*',
+        permanent: true,
+      },
       { source: '/calculators-hub', destination: '/calculators', permanent: true },
       { source: '/calculators-hub/:path*', destination: '/calculators', permanent: true },
     ];
