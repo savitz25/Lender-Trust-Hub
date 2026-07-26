@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getAdminSecret } from '@/lib/supabase/config';
-import { ADMIN_COOKIE } from '@/lib/supabase/middleware';
+import { ADMIN_COOKIE, getAdminSecret } from '@/lib/admin-auth';
 
 export async function POST(request: Request) {
   const secret = getAdminSecret();
