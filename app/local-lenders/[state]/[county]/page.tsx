@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
-import { LenderCard } from '@/components/LenderCard';
 import { SearchBar } from '@/components/SearchBar';
+import { LenderDirectoryLoader } from '@/components/directory/LenderDirectoryLoader';
 import { getLendersByCounty } from '@/lib/lenders';
 
 function titleCase(slug: string): string {
@@ -518,28 +518,25 @@ export default async function CountyLendersPage({
         <SearchBar className="mt-6 max-w-xl" />
       </div>
 
-      <div className="mx-auto max-w-3xl space-y-4">
-        {lenders.length > 0 ? (
-          lenders.map((lender, i) => (
-            <LenderCard
-              key={lender.id}
-              lender={lender}
-              rank={i + 1}
-              countyLabel={countyLabel}
-            />
-          ))
-        ) : (
-          <div className="rounded-2xl border border-zinc-200 bg-white p-8 text-center">
-            <p className="text-zinc-600">
-              We&apos;re expanding coverage in {countyLabel}. Check back soon or{' '}
-              <Link href="/local-lenders" className="text-[#3B82F6] underline">
-                browse all counties
-              </Link>
-              .
-            </p>
-          </div>
-        )}
-      </div>
+      {lenders.length > 0 ? (
+        <LenderDirectoryLoader
+          lenders={lenders}
+          countyLabel={countyLabel}
+          profileReturnPath={`/local-lenders/${state}/${county}`}
+          showRank
+          emptyMessage={`We're expanding coverage in ${countyLabel}. Try clearing filters or browse all counties.`}
+        />
+      ) : (
+        <div className="rounded-2xl border border-zinc-200 bg-white p-8 text-center">
+          <p className="text-zinc-600">
+            We&apos;re expanding coverage in {countyLabel}. Check back soon or{' '}
+            <Link href="/local-lenders" className="text-[#3B82F6] underline">
+              browse all counties
+            </Link>
+            .
+          </p>
+        </div>
+      )}
     </div>
   );
-}
+}

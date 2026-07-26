@@ -6,8 +6,9 @@ import { HubCTAStrip } from '@/components/directory/HubCTAStrip';
 import { LeadCaptureForm } from '@/components/directory/LeadCaptureForm';
 import { SearchBar } from '@/components/SearchBar';
 import { PersonalizedLenderBannerBoundary } from '@/components/PersonalizedLenderBannerBoundary';
+import { LenderDirectoryLoader } from '@/components/directory/LenderDirectoryLoader';
 import { SITE_URL, MORTGAGE_CATEGORY } from '@/lib/directory/categories';
-import { lenders } from '@/lib/mockData';
+import { lenders, type LoanType } from '@/lib/mockData';
 import { US_STATES } from '@/lib/fdic/states';
 import {
   getStateSlugsWithLenders,
@@ -18,6 +19,7 @@ import {
   buildMortgageHubJsonLd,
   buildMortgageHubTitle,
 } from '@/lib/mortgage/seo';
+import type { LenderSortOption } from '@/lib/directory/filter-lenders';
 
 export const revalidate = 86400;
 
@@ -51,8 +53,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function LocalLendersHubPage() {
+type PageProps = {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
+
+function firstParam(v: string | string[] | undefined): string {
+  if (Array.isArray(v)) return v[0] ?? '';
+  return v ?? '';
+}
+
+export default async function LocalLendersHubPage({ searchParams }: PageProps) {
+  const params = await searchParams;
   const jsonLd = buildMortgageHubJsonLd(lenders.length, stateGrid.length);
+
+  const initialSearch = firstParam(params.q) || firstParam(params.search) || firstParam(params.zip);
+  const loanTypeRaw = firstParam(params.loanType) as LoanType | '';
+  const sortRaw = (firstParam(params.sort) || 'trust') as LenderSortOption;
+  const minRating = Number(firstParam(params.minRating)) || 0;
 
   return (
     <>
@@ -69,29 +86,64 @@ export default function LocalLendersHubPage() {
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Find Verified Mortgage Lenders</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
-            Hyper-local directory by state and county. Trust scores from NMLS, BBB, Google, and
-            more.
+            Compare NMLS-verified lenders in a 3-column directory — filter by loan type, trust score,
+            and location. Zero paid placements.
           </p>
           <SearchBar className="mx-auto mt-8 max-w-md" />
         </div>
       </section>
 
-      {/* Phase 1: shows when users arrive from calculators (?loan=, ?rate=, ?loanType=) */}
       <PersonalizedLenderBannerBoundary
         variant="default"
         experimentKey="personalized-banner-v1"
       />
 
-      <div id="lender-directory">
-      <NationalHubShell
-        categoryLabel={MORTGAGE_CATEGORY.label}
-        statePathPrefix={MORTGAGE_CATEGORY.hubPath}
-        title="Mortgage Lenders by State"
-        description={`${lenders.length}+ NMLS-verified lenders and brokers. Select your state for county-level listings, trust scores, and cross-links to FDIC bank data.`}
-        stateGrid={stateGrid}
-        activeVertical="mortgage"
-        availableSlugs={slugsWithLenders}
-      />
+      {/* Primary directory grid — same progressive UX as MoveTrustHub /companies */}
+      <section
+        id="lender-directory"
+        className="border-b border-zinc-200 bg-white py-10"
+        aria-labelledby="lender-directory-heading"
+      >
+        <div className="container mx-auto px-4">
+          <div className="mb-8">
+            <div className="text-xs font-semibold uppercase tracking-[2px] text-[#3B82F6]">
+              Comprehensive Directory
+            </div>
+            <h2
+              id="lender-directory-heading"
+              className="mt-1 text-3xl font-semibold tracking-tight text-[#0A2540] md:text-4xl"
+            >
+              Compare Verified Mortgage Lenders
+            </h2>
+            <p className="mt-2 max-w-2xl text-zinc-600">
+              {lenders.length.toLocaleString()}+ NMLS-verified lenders and brokers. Sorted by trust
+              score with county experience, loan types, and verification badges. Independent
+              directory — no lead fees for ranking.
+            </p>
+          </div>
+
+          <LenderDirectoryLoader
+            lenders={lenders}
+            profileReturnPath="/local-lenders"
+            initialSearch={initialSearch}
+            initialSort={sortRaw}
+            initialLoanType={loanTypeRaw}
+            initialMinRating={minRating}
+            showSearch
+          />
+        </div>
+      </section>
+
+      <div id="browse-by-state">
+        <NationalHubShell
+          categoryLabel={MORTGAGE_CATEGORY.label}
+          statePathPrefix={MORTGAGE_CATEGORY.hubPath}
+          title="Mortgage Lenders by State"
+          description={`Browse county-level listings across ${stateGrid.length} states. Pair with our FDIC bank directory for deposit safety.`}
+          stateGrid={stateGrid}
+          activeVertical="mortgage"
+          availableSlugs={slugsWithLenders}
+        />
       </div>
 
       <section className="border-t border-zinc-200 bg-zinc-50 py-12">
