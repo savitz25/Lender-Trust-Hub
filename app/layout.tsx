@@ -13,12 +13,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.lendertrusthub.com'),
   title: {
     default: 'Lender Trust Hub • Trusted Local Lenders • Verified County Insights',
     template: '%s | Lender Trust Hub',
   },
   description:
     'Independent directory of mortgage lenders & brokers. NMLS verified • County-level experience • Fun financial calculators. Zero paid placements.',
+  applicationName: 'Lender Trust Hub',
   keywords: [
     'mortgage lenders',
     'local lenders',
@@ -27,10 +29,14 @@ export const metadata: Metadata = {
     'county lenders',
     'mortgage broker directory',
   ],
+  alternates: {
+    canonical: 'https://www.lendertrusthub.com',
+  },
   openGraph: {
     title: 'Lender Trust Hub',
     description: 'Discover honest lenders in your county — transparent data, confident choices.',
     siteName: 'Lender Trust Hub',
+    url: 'https://www.lendertrusthub.com',
     type: 'website',
     images: [{ url: '/brand/lender-trust-hub-logo-stacked.png', width: 1200, height: 1200 }],
   },

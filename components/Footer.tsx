@@ -25,9 +25,9 @@ export default function Footer() {
               <li><Link href="/local-lenders" className="hover:text-white transition-colors">Local Lenders</Link></li>
               <li><Link href="/fdic-insured-banks" className="hover:text-white transition-colors">FDIC Banks by State</Link></li>
               <li><Link href="/calculators" className="hover:text-white transition-colors">Calculators</Link></li>
-              <li><a href="https://www.movetrusthub.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">MoveTrustHub</a></li>
               <li><Link href="/compare" className="hover:text-white transition-colors">Compare Lenders</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About & Trust</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -36,9 +36,10 @@ export default function Footer() {
               Legal
             </h4>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
               <li><span className="text-zinc-400">No paid placements</span></li>
               <li><span className="text-zinc-400">Not a lender or broker</span></li>
-              <li><span className="text-zinc-400">Data for informational use</span></li>
             </ul>
           </div>
         </div>
@@ -46,6 +47,18 @@ export default function Footer() {
         <p className="mt-8 text-xs leading-relaxed text-zinc-500">
           Calculator estimates are for educational purposes only. Actual rates, fees, terms, and approvals vary.
           Lender Trust Hub is not a lender or broker. Zero paid placements — ever.
+        </p>
+        <p className="mt-3 text-center text-[11px] text-zinc-500">
+          Independent research directory. Sister consumer directory:{' '}
+          <a
+            href="https://www.movetrusthub.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2 hover:text-zinc-300"
+          >
+            Move Trust Hub
+          </a>
+          .
         </p>
         <div className="mt-6 border-t border-white/10 pt-6 text-center text-xs text-zinc-500">
           © {new Date().getFullYear()} LenderTrustHub.com — Trusted Local Lenders • Verified County Insights • National Expertise

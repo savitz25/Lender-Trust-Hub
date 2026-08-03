@@ -1,8 +1,23 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
-      "destination": "https://www.movetrusthub.com/lender/:path*",
+      "source": "/calculators-hub",
+      "destination": "/calculators",
+      "permanent": true
+    },
+    {
+      "source": "/calculators-hub/:path*",
+      "destination": "/calculators",
+      "permanent": true
+    },
+    {
+      "source": "/lender",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lender/:path*",
+      "destination": "/:path*",
       "permanent": true
     }
   ]

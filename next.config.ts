@@ -11,20 +11,15 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
+    // Standalone Lender Trust Hub — do NOT redirect apex traffic to MoveTrustHub.
     return [
-      {
-        source: '/:path*',
-        destination: 'https://www.movetrusthub.com/lender/:path*',
-        permanent: true,
-      },
       { source: '/calculators-hub', destination: '/calculators', permanent: true },
       { source: '/calculators-hub/:path*', destination: '/calculators', permanent: true },
+      // Legacy monorepo path bookmarks (if anyone hits /lender/* on this host)
+      { source: '/lender', destination: '/', permanent: true },
+      { source: '/lender/:path*', destination: '/:path*', permanent: true },
     ];
   },
-  /**
-   * PERFORMANCE: Long-cache static FDIC pages (SSG) at the CDN edge.
-   * HTML revalidates via ISR (revalidate export on state pages).
-   */
   async headers() {
     return [
       {
@@ -65,10 +60,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  /**
-   * Prefetch state page links on hover (Next.js Link default) for instant navigation.
-   * Code splitting: heavy client components use next/dynamic in page files.
-   */
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion', 'recharts'],
   },
