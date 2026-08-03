@@ -1,8 +1,18 @@
 # Lender Trust Hub
 
-**LenderTrustHub.com** — Independent directory of mortgage lenders and brokers. Sister platform to [MoveTrustHub.com](https://movetrusthub.com), rethemed for mortgage lending.
+**https://www.lendertrusthub.com** — Standalone independent directory of mortgage lenders and brokers.
 
 > **Tagline:** Trusted Local Lenders • Verified County Insights • National Expertise
+
+This repository is the **production source of truth** for the apex site. It is not served under MoveTrustHub’s `/lender` path.
+
+| Item | Value |
+|------|--------|
+| Production URL | https://www.lendertrusthub.com |
+| GitHub | https://github.com/savitz25/Lender-Trust-Hub |
+| Vercel project | `lender-trust-hub` |
+
+Optional sister directory (footer only): [Move Trust Hub](https://www.movetrusthub.com).
 
 ## Brand Vision
 
