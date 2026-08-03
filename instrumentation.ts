@@ -6,10 +6,10 @@ export async function register() {
   if (process.env.NEXT_RUNTIME === 'nodejs') {
     const { validateEnv } = await import('@/lib/env');
     try {
-      validateEnv({ strict: process.env.VERCEL === '1' });
+      // Never throw on Vercel boot — missing Supabase must not take down static pages.
+      validateEnv({ strict: false });
     } catch (err) {
       console.error('[LTH] Environment validation failed:', err);
-      if (process.env.VERCEL === '1') throw err;
     }
   }
 }

@@ -9,17 +9,17 @@ export type EnvCheckResult = {
   warnings: string[];
 };
 
-const PUBLIC_REQUIRED = [
-  'NEXT_PUBLIC_SUPABASE_URL',
-  'NEXT_PUBLIC_SUPABASE_ANON_KEY',
-] as const;
+// Mock-data directory can boot without Supabase. Treat DB keys as optional so a
+// misconfigured Vercel env never blank-404s the entire marketing site.
+const PUBLIC_REQUIRED = [] as const;
 
-const SERVER_REQUIRED_PROD = [
-  'SUPABASE_SERVICE_ROLE_KEY',
-  'ADMIN_SECRET',
-] as const;
+const SERVER_REQUIRED_PROD = [] as const;
 
 const OPTIONAL = [
+  'NEXT_PUBLIC_SUPABASE_URL',
+  'NEXT_PUBLIC_SUPABASE_ANON_KEY',
+  'SUPABASE_SERVICE_ROLE_KEY',
+  'ADMIN_SECRET',
   'NEXT_PUBLIC_GA4_ID',
   'NEXT_PUBLIC_SITE_URL',
 ] as const;
