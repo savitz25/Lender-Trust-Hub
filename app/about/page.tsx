@@ -86,10 +86,15 @@ export default function AboutPage() {
       </section>
 
       <section className="container mx-auto px-4 py-16 text-center">
-        <h2 className="mb-4 text-2xl font-bold text-[#0A2540]">County Coverage</h2>
+        <h2 className="mb-4 text-2xl font-bold text-[#0A2540]">County coverage</h2>
         <p className="mx-auto mb-8 max-w-xl text-zinc-600">
-          We map lender experience to {TRUST_STATS.countiesCovered.toLocaleString()} U.S.
-          counties, surfacing local expertise scores alongside national volume rankings.
+          Coverage is <strong className="font-semibold text-[#0A2540]">expanding by state and
+          county</strong>. We do not claim every U.S. county has verified lenders in our directory.
+          Full methodology (Trust Scores, close estimates, sources) is on{' '}
+          <a href="/methodology" className="font-medium text-[#3B82F6] hover:underline">
+            /methodology
+          </a>
+          .
         </p>
         <div className="mx-auto max-w-lg rounded-2xl border border-zinc-200 bg-white p-8">
           <div className="grid grid-cols-3 gap-4 text-center">
@@ -97,21 +102,24 @@ export default function AboutPage() {
               <div className="text-2xl font-bold text-[#14B8A6]">
                 {TRUST_STATS.verifiedLenders.toLocaleString()}+
               </div>
-              <div className="text-xs text-zinc-500">Lenders</div>
+              <div className="text-xs text-zinc-500">Listings*</div>
             </div>
             <div>
               <div className="text-2xl font-bold text-[#3B82F6]">
                 {(TRUST_STATS.totalReviews / 1_000_000).toFixed(1)}M
               </div>
-              <div className="text-xs text-zinc-500">Reviews</div>
+              <div className="text-xs text-zinc-500">Review signals*</div>
             </div>
             <div>
               <div className="text-2xl font-bold text-[#0A2540]">
-                {TRUST_STATS.countiesCovered.toLocaleString()}
+                {TRUST_STATS.countiesCoveredLabel}
               </div>
-              <div className="text-xs text-zinc-500">Counties</div>
+              <div className="text-xs text-zinc-500">Coverage</div>
             </div>
           </div>
+          <p className="mt-4 text-[11px] text-zinc-500">
+            *Research directory signals — not complete national census.
+          </p>
         </div>
       </section>
     </div>

@@ -117,10 +117,16 @@ export function LenderCard({
             <dd className="tabular-nums">{lender.countyExperienceScore}/100</dd>
           </div>
           <div>
-            <dt className="font-medium text-[#0A2540]">Avg Close</dt>
-            <dd className="tabular-nums">{lender.avgCloseDays} days</dd>
+            <dt className="font-medium text-[#0A2540]">Close est.*</dt>
+            <dd className="tabular-nums">~{lender.avgCloseDays} days</dd>
           </div>
         </dl>
+        <p className="mt-2 text-[10px] leading-snug text-zinc-400">
+          *Editorial estimate — not an NMLS/CFPB field.{' '}
+          <Link href="/methodology#close-metrics" className="text-[#3B82F6] hover:underline">
+            Methodology
+          </Link>
+        </p>
       </div>
 
       <div className="mt-auto flex flex-wrap items-center gap-2 border-t border-zinc-100 bg-zinc-50/60 px-5 py-3.5">

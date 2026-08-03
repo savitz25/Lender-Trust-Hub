@@ -13,7 +13,7 @@ export const LENDER_SORT_OPTIONS: { value: LenderSortOption; label: string }[] =
   { value: 'county-experience', label: 'County Experience (High → Low)' },
   { value: 'rating', label: 'Customer Rating' },
   { value: 'reviews', label: 'Number of Reviews' },
-  { value: 'close-days', label: 'Fastest Avg Close' },
+  { value: 'close-days', label: 'Fastest close est. (editorial)' },
   { value: 'name', label: 'Name (A → Z)' },
 ];
 

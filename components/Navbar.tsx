@@ -14,6 +14,7 @@ const navLinks = [
   { href: MORTGAGE_CATEGORY.hubPath, label: 'Mortgage Lenders' },
   { href: FDIC_CATEGORY.hubPath, label: 'FDIC Banks' },
   { href: '/calculators', label: 'Calculators' },
+  { href: '/methodology', label: 'Methodology' },
   { href: '/about', label: 'Trust & Transparency' },
 ];
 

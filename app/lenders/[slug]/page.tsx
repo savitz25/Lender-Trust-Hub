@@ -82,19 +82,67 @@ export default async function LenderProfilePage({
 
           <p className="mb-6 text-zinc-600 leading-relaxed">{lender.shortDescription}</p>
 
-          <div className="mb-6 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+          <div className="mb-2 grid gap-4 sm:grid-cols-2">
             {[
-              { label: 'Trust Score', value: `${lender.trustScore}/100` },
-              { label: 'County Experience', value: `${lender.countyExperienceScore}/100` },
-              { label: 'Avg Close Time', value: `${lender.avgCloseDays} days` },
-              { label: 'On-Time Close', value: `${lender.onTimeCloseRate}%` },
+              {
+                label: 'Trust Score',
+                value: `${lender.trustScore}/100`,
+                note: 'Research composite — not a credit decision',
+              },
+              {
+                label: 'County Experience',
+                value: `${lender.countyExperienceScore}/100`,
+                note: 'Relative market orientation',
+              },
             ].map((stat) => (
               <div key={stat.label} className="rounded-xl bg-zinc-50 p-4 text-center">
+                <div className="text-xl font-bold text-[#0A2540]">{stat.value}</div>
+                <div className="text-xs text-zinc-500">{stat.label}</div>
+                <div className="mt-1 text-[10px] text-zinc-400">{stat.note}</div>
+              </div>
+            ))}
+          </div>
+          <div className="mb-6 grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                label: 'Close estimate (editorial)*',
+                value: `~${lender.avgCloseDays} days`,
+              },
+              {
+                label: 'On-time close (editorial)*',
+                value: `${lender.onTimeCloseRate}%`,
+              },
+            ].map((stat) => (
+              <div key={stat.label} className="rounded-xl border border-dashed border-zinc-200 bg-white p-4 text-center">
                 <div className="text-xl font-bold text-[#0A2540]">{stat.value}</div>
                 <div className="text-xs text-zinc-500">{stat.label}</div>
               </div>
             ))}
           </div>
+          <p className="mb-6 text-xs text-zinc-500">
+            *Close metrics are editorial/seed estimates — not NMLS or CFPB official fields.{' '}
+            <Link href="/methodology#close-metrics" className="font-medium text-[#3B82F6] hover:underline">
+              Methodology
+            </Link>
+            {' · '}
+            <a
+              href="https://www.asktrusthub.com/methodology"
+              className="font-medium text-[#3B82F6] hover:underline"
+              rel="noopener noreferrer"
+            >
+              Ask Standard
+            </a>
+            . Re-verify NMLS #{lender.nmlsId} on{' '}
+            <a
+              href="https://www.nmlsconsumeraccess.org/"
+              className="font-medium text-[#3B82F6] hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              NMLS Consumer Access
+            </a>
+            .
+          </p>
 
           <div className="mb-6">
             <h2 className="mb-2 font-semibold text-[#0A2540]">Loan Types</h2>

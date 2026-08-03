@@ -83,7 +83,7 @@ export default function ComparePage() {
                 { label: 'Trust Score', get: (l: Lender) => `${l.trustScore}/100` },
                 { label: 'County Experience', get: (l: Lender) => `${l.countyExperienceScore}/100` },
                 { label: 'Rating', get: (l: Lender) => `${l.rating} (${l.reviewCount.toLocaleString()} reviews)` },
-                { label: 'Avg Close', get: (l: Lender) => `${l.avgCloseDays} days` },
+                { label: 'Close est.*', get: (l: Lender) => `~${l.avgCloseDays}d` },
                 { label: 'On-Time Close', get: (l: Lender) => `${l.onTimeCloseRate}%` },
                 { label: 'CFPB Complaints', get: (l: Lender) => String(l.cfpbComplaints) },
                 { label: 'BBB', get: (l: Lender) => l.bbbRating },

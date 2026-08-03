@@ -16,36 +16,41 @@ export default function HomePage() {
           <div className="mx-auto max-w-4xl text-center">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-semibold text-emerald-700">
               <Shield className="h-4 w-4" aria-hidden="true" />
-              NMLS VERIFIED • ZERO PAID PLACEMENTS • COUNTY INSIGHTS
+              INDEPENDENT NMLS DIRECTORY · ZERO PAID PLACEMENTS
             </div>
 
             <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-[#0A2540] md:text-6xl">
-              Discover Honest Lenders
+              Research NMLS-verified lenders
               <br />
-              <span className="text-[#3B82F6]">in Your County</span>
+              <span className="text-[#3B82F6]">before you apply</span>
             </h1>
 
             <p className="mx-auto mb-8 max-w-2xl text-lg text-zinc-600 md:text-xl">
-              Transparent data, confident choices. Compare verified local mortgage lenders
-              and brokers backed by NMLS licensing, CFPB complaints, BBB ratings, and
-              real reviews.
+              Independent mortgage research directory. Cross-check licensing context, public risk
+              signals, and county market orientation — then confirm every ID on NMLS Consumer Access.
+              We do not originate loans or sell ranking position.
             </p>
 
             <SearchBar className="mx-auto mb-6 max-w-xl" />
 
             <p className="mb-8 text-sm text-zinc-500">
-              Trusted Local Lenders • Verified County Insights • National Expertise
+              Expanding state &amp; county coverage · Educational calculators · Not a lender
             </p>
 
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link href="/calculators">
+              <Link href="/local-lenders">
                 <Button size="lg" variant="trust" className="gap-2">
-                  Try Free Calculators <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                  Browse lenders <ArrowRight className="h-5 w-5" aria-hidden="true" />
                 </Button>
               </Link>
-              <Link href="/about">
+              <Link href="/calculators">
+                <Button size="lg" variant="outline" className="gap-2">
+                  Educational calculators
+                </Button>
+              </Link>
+              <Link href="/methodology">
                 <Button size="lg" variant="outline">
-                  How We Verify Lenders
+                  Methodology
                 </Button>
               </Link>
             </div>
@@ -60,24 +65,26 @@ export default function HomePage() {
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#3B82F6]">
             How It Works
           </p>
-          <h2 className="text-3xl font-bold text-[#0A2540]">Your Path to the Right Lender</h2>
+          <h2 className="text-3xl font-bold text-[#0A2540]">
+            Research first — then re-check NMLS
+          </h2>
         </div>
         <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
           {[
             {
               step: '01',
-              title: 'Search Your County',
-              desc: 'Enter your ZIP code to auto-detect your county and see ranked local lenders with county-specific experience scores.',
+              title: 'Search your market',
+              desc: 'Enter a ZIP or browse state/county pages for mortgage lenders in markets we cover. Coverage is expanding — not every U.S. county is listed.',
             },
             {
               step: '02',
-              title: 'Compare & Verify',
-              desc: 'Review NMLS licensing, CFPB complaints, BBB ratings, Google/Trustpilot reviews, and local loan performance metrics.',
+              title: 'Compare public signals',
+              desc: 'Review NMLS identifiers, Trust Scores as research aids, CFPB pattern signals where used, and attributed reputation — not paid rankings.',
             },
             {
               step: '03',
-              title: 'Connect with Confidence',
-              desc: 'Use our calculators to understand your numbers, then match with lenders that fit your loan type and credit profile.',
+              title: 'Verify and decide',
+              desc: 'Re-confirm licenses on NMLS Consumer Access, use educational calculators for payment math, and compare written Loan Estimates yourself.',
             },
           ].map((item) => (
             <div
