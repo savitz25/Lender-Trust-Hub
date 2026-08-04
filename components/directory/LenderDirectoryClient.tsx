@@ -24,6 +24,11 @@ import {
   LENDER_DIRECTORY_PAGE_SIZE,
 } from '@/lib/directory/page-size';
 import type { Lender, LoanType } from '@/lib/mockData';
+import {
+  EmptyCoveragePanel,
+  NMLS_CONSUMER_ACCESS_URL,
+  CFPB_HOME_URL,
+} from '@/components/research/empty-coverage-panel';
 
 const RESULTS_MIN_HEIGHT = 'min-h-[480px] md:min-h-[520px]';
 
@@ -45,6 +50,9 @@ export interface LenderDirectoryClientProps {
   /** Show rank numbers on cards (useful on small county lists). */
   showRank?: boolean;
   emptyMessage?: string;
+  /** unmapped = thin/no inventory for place; filtered = filters removed all matches */
+  emptyVariant?: 'unmapped' | 'filtered';
+  emptyPlaceLabel?: string;
 }
 
 export function LenderDirectoryClient({
@@ -58,7 +66,9 @@ export function LenderDirectoryClient({
   initialMinRating = 0,
   showSearch = true,
   showRank = false,
-  emptyMessage = 'No lenders match your criteria. Try clearing filters or browsing by state.',
+  emptyMessage,
+  emptyVariant = 'filtered',
+  emptyPlaceLabel,
 }: LenderDirectoryClientProps) {
   const [searchInput, setSearchInput] = useState(initialSearch);
   const [debouncedSearch, setDebouncedSearch] = useState(initialSearch);
@@ -317,14 +327,48 @@ export function LenderDirectoryClient({
 
       <div className={`relative ${RESULTS_MIN_HEIGHT}`}>
         {totalMatches === 0 ? (
-          <div className="rounded-2xl border border-zinc-200 bg-white p-10 text-center">
-            <p className="text-zinc-600">{emptyMessage}</p>
+          <EmptyCoveragePanel
+            variant={
+              emptyVariant === 'unmapped' && activeFilterCount === 0 ? 'unmapped' : 'filtered'
+            }
+            title={
+              emptyVariant === 'unmapped' && activeFilterCount === 0
+                ? emptyPlaceLabel
+                  ? `We haven’t listed lenders in ${emptyPlaceLabel} yet`
+                  : 'We haven’t listed lenders in this market yet'
+                : 'No matches for your filters'
+            }
+            description={
+              emptyMessage ||
+              (emptyVariant === 'unmapped' && activeFilterCount === 0
+                ? 'This market is not fully mapped in our research directory. Re-check any company on NMLS Consumer Access — empty here is not a verdict on every licensed lender.'
+                : 'No lenders match your current filters. Clear filters or browse by state. We do not pad results with unrelated national spam.')
+            }
+            placeLabel={emptyPlaceLabel}
+            primarySources={[
+              {
+                href: NMLS_CONSUMER_ACCESS_URL,
+                label: 'NMLS Consumer Access',
+                external: true,
+              },
+              {
+                href: CFPB_HOME_URL,
+                label: 'CFPB owning a home',
+                external: true,
+              },
+            ]}
+            widenLinks={[
+              { href: '/local-lenders', label: 'Browse all states' },
+              { href: '/calculators', label: 'Educational calculators' },
+              { href: '/methodology', label: 'Methodology' },
+            ]}
+          >
             {activeFilterCount > 0 ? (
               <Button type="button" variant="outline" className="mt-4" onClick={clearAllFilters}>
                 Clear filters
               </Button>
             ) : null}
-          </div>
+          </EmptyCoveragePanel>
         ) : (
           /* Responsive grid: 1 / 2 / 3 columns — matches movers directory */
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">

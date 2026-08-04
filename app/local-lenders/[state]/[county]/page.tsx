@@ -4,6 +4,11 @@ import { ChevronRight } from 'lucide-react';
 import { SearchBar } from '@/components/SearchBar';
 import { LenderDirectoryLoader } from '@/components/directory/LenderDirectoryLoader';
 import { getLendersByCounty } from '@/lib/lenders';
+import {
+  EmptyCoveragePanel,
+  NMLS_CONSUMER_ACCESS_URL,
+  CFPB_HOME_URL,
+} from '@/components/research/empty-coverage-panel';
 
 function titleCase(slug: string): string {
   return slug
@@ -524,18 +529,34 @@ export default async function CountyLendersPage({
           countyLabel={countyLabel}
           profileReturnPath={`/local-lenders/${state}/${county}`}
           showRank
-          emptyMessage={`We're expanding coverage in ${countyLabel}. Try clearing filters or browse all counties.`}
+          emptyVariant="filtered"
+          emptyPlaceLabel={countyLabel}
+          emptyMessage={`No lenders match your filters in ${countyLabel}. Clear filters or browse other markets.`}
         />
       ) : (
-        <div className="rounded-2xl border border-zinc-200 bg-white p-8 text-center">
-          <p className="text-zinc-600">
-            We&apos;re expanding coverage in {countyLabel}. Check back soon or{' '}
-            <Link href="/local-lenders" className="text-[#3B82F6] underline">
-              browse all counties
-            </Link>
-            .
-          </p>
-        </div>
+        <EmptyCoveragePanel
+          variant="unmapped"
+          title={`We haven’t listed lenders in ${countyLabel} yet`}
+          description="This county is not fully mapped in our research directory. Re-check any company on NMLS Consumer Access — empty here is not a verdict on every licensed lender."
+          placeLabel={countyLabel}
+          primarySources={[
+            {
+              href: NMLS_CONSUMER_ACCESS_URL,
+              label: 'NMLS Consumer Access',
+              external: true,
+            },
+            {
+              href: CFPB_HOME_URL,
+              label: 'CFPB owning a home',
+              external: true,
+            },
+          ]}
+          widenLinks={[
+            { href: '/local-lenders', label: 'Browse all states' },
+            { href: `/local-lenders/${state}`, label: 'State directory' },
+            { href: '/calculators', label: 'Educational calculators' },
+          ]}
+        />
       )}
     </div>
   );
