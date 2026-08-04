@@ -20,6 +20,8 @@ import {
   buildMortgageHubTitle,
 } from '@/lib/mortgage/seo';
 import type { LenderSortOption } from '@/lib/directory/filter-lenders';
+import { NetworkHandoff } from '@/components/network/network-handoff';
+import { NetworkBelongingLine } from '@/components/network/network-belonging-line';
 
 export const revalidate = 86400;
 
@@ -85,6 +87,7 @@ export default async function LocalLendersHubPage({ searchParams }: PageProps) {
             NMLS Verified • County-Level Data • No Paid Placements
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Find Verified Mortgage Lenders</h1>
+          <NetworkBelongingLine className="mt-3 text-zinc-300 [&_a]:text-white/90" />
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
             Compare NMLS-verified lenders in a 3-column directory — filter by loan type, trust score,
             and location. Zero paid placements.
@@ -145,6 +148,12 @@ export default async function LocalLendersHubPage({ searchParams }: PageProps) {
           availableSlugs={slugsWithLenders}
         />
       </div>
+
+      <section className="border-t border-zinc-200 bg-white py-10">
+        <div className="container mx-auto max-w-2xl px-4">
+          <NetworkHandoff context="lender-directory" variant="card" />
+        </div>
+      </section>
 
       <section className="border-t border-zinc-200 bg-zinc-50 py-12">
         <div className="container mx-auto max-w-2xl px-4">

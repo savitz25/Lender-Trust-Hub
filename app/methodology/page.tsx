@@ -9,6 +9,7 @@ import {
   RefreshCw,
 } from 'lucide-react';
 import { ASK_TRUST_HUB } from '@/lib/network/ask-trust-hub';
+import { TrustMark } from '@/components/network/trust-mark';
 
 export const metadata: Metadata = {
   title: 'Methodology — How Lender Trust Hub Researches Mortgage Lenders',
@@ -63,6 +64,9 @@ export default function MethodologyPage() {
         How we apply The Ask Trust Hub Standard to mortgage research: NMLS context, scores, sources,
         updates, and hard limits. Independently operated · No paid placements · Not a lender.
       </p>
+      <div className="mt-4">
+        <TrustMark />
+      </div>
 
       <aside className="mt-8 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-4 text-sm sm:px-5">
         <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500">

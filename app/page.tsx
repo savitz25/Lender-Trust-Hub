@@ -3,6 +3,7 @@ import { Shield, ArrowRight, CheckCircle } from 'lucide-react';
 import { SearchBar } from '@/components/SearchBar';
 import { TrustBar } from '@/components/TrustBar';
 import { HomeTabs } from '@/components/HomeTabs';
+import { NetworkBelongingLine } from '@/components/network/network-belonging-line';
 import { getFeaturedLenders } from '@/lib/lenders';
 import { Button } from '@/components/ui/button';
 
@@ -18,6 +19,7 @@ export default function HomePage() {
               <Shield className="h-4 w-4" aria-hidden="true" />
               INDEPENDENT NMLS DIRECTORY · ZERO PAID PLACEMENTS
             </div>
+            <NetworkBelongingLine className="mb-4" />
 
             <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-[#0A2540] md:text-6xl">
               Research NMLS-verified lenders

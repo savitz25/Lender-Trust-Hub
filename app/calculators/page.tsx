@@ -4,6 +4,8 @@ import { CalculatorHub } from '@/components/CalculatorHub';
 import { JsonLd } from '@/components/directory/JsonLd';
 import { TrustBar } from '@/components/TrustBar';
 import { SearchBar } from '@/components/SearchBar';
+import { NetworkBelongingLine } from '@/components/network/network-belonging-line';
+import { NetworkHandoff } from '@/components/network/network-handoff';
 import { calculatorsPageSchema } from '@/lib/seo/calculators';
 import { CALC_DISCLAIMER } from '@/lib/calculators/registry';
 
@@ -51,6 +53,7 @@ export default function CalculatorsPage() {
             <h1 className="text-3xl font-extrabold tracking-tight text-[#0F172A] dark:text-white md:text-5xl">
               Mortgage &amp; Home-Finance Calculators
             </h1>
+            <NetworkBelongingLine className="mt-3" />
             <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
               Nine professional calculators with live charts, export options, and intelligent{' '}
               <strong className="font-semibold text-[#0F172A] dark:text-white">Match Me to Lenders</strong>{' '}
@@ -69,6 +72,9 @@ export default function CalculatorsPage() {
 
       <div className="container mx-auto px-4 py-10 md:py-14">
         <CalculatorHub />
+        <div className="mx-auto mt-10 max-w-2xl">
+          <NetworkHandoff context="lender-calculator" variant="card" />
+        </div>
       </div>
 
       <TrustBar />

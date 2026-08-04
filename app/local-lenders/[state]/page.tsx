@@ -22,6 +22,7 @@ import {
   buildMortgageStateTitle,
   mortgageStateUrl,
 } from '@/lib/mortgage/seo';
+import { NetworkHandoff } from '@/components/network/network-handoff';
 
 /**
  * MORTGAGE STATE PAGE TEMPLATE
@@ -731,6 +732,18 @@ export default async function MortgageStatePage({
               variant="sidebar-minimal"
             />
           </div>
+        </div>
+
+        <div className="mt-10 max-w-2xl">
+          <NetworkHandoff
+            context="lender-directory"
+            geography={{
+              state: stateMeta.fullName,
+              stateCode: stateMeta.code,
+              stateSlug: slug,
+            }}
+            variant="card"
+          />
         </div>
       </div>
     </>
