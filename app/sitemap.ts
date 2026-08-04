@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/calculators',
     '/compare',
     '/local-lenders',
+    '/my-lending',
     '/fdic-insured-banks',
     '/auto-loan-companies',
   ];

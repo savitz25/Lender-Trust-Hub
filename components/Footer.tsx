@@ -32,6 +32,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
+                <Link href="/my-lending" className="transition-colors hover:text-white">
+                  My Lending
+                </Link>
+              </li>
+              <li>
                 <Link href="/local-lenders" className="transition-colors hover:text-white">
                   Local Lenders
                 </Link>

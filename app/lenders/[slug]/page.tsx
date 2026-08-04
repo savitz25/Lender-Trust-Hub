@@ -5,6 +5,7 @@ import { Star, ShieldCheck, ChevronRight, Phone, ExternalLink } from 'lucide-rea
 import { getLenderBySlug, lenders } from '@/lib/lenders';
 import { Badge } from '@/components/ui/badge';
 import { MatchLenderButton } from '@/components/MatchLenderButton';
+import { SaveLenderButton } from '@/components/my-lending/save-lender-button';
 import { RelatedDirectoryLinks } from '@/components/directory/RelatedDirectoryLinks';
 import { TrustMark } from '@/components/network/trust-mark';
 import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
@@ -169,7 +170,13 @@ export default async function LenderProfilePage({
             <div><strong>Credit Tiers Served:</strong> {lender.creditTiers.join(', ')}</div>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap items-start gap-3">
+            <SaveLenderButton
+              lenderSlug={lender.slug}
+              lenderName={lender.name}
+              nmlsId={lender.nmlsId}
+              loanTypes={lender.loanTypes}
+            />
             {lender.phone && (
               <a
                 href={`tel:${lender.phone.replace(/\D/g, '')}`}

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Bookmark } from 'lucide-react';
 import { BrandLogo } from '@/components/BrandLogo';
 import { SearchBar } from '@/components/SearchBar';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -81,6 +81,12 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <Link href="/my-lending">
+            <Button size="sm" variant="outline" className="gap-1.5">
+              <Bookmark className="h-3.5 w-3.5 text-teal-700" aria-hidden />
+              My Lending
+            </Button>
+          </Link>
           <Link href="/calculators">
             <Button size="sm" variant="trust">
               Try Calculators
@@ -116,6 +122,14 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/my-lending"
+              className="flex items-center gap-2 font-medium text-teal-800"
+              onClick={() => setIsOpen(false)}
+            >
+              <Bookmark className="h-4 w-4" aria-hidden />
+              My Lending
+            </Link>
             <Link href="/calculators" onClick={() => setIsOpen(false)}>
               <Button variant="trust" className="w-full">
                 Try Calculators
