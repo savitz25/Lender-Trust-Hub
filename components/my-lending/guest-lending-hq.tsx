@@ -91,7 +91,8 @@ export function GuestLendingHq() {
   }, []);
 
   useEffect(() => {
-    ensureActivePlan({ label: 'My financing research' });
+    // D.4: do not auto-create a plan on empty HQ (after delete last plan).
+    // Setup / Save still call ensureActivePlan when the user acts.
     refresh();
     setHydrated(true);
     const onStore = () => refresh();
@@ -119,7 +120,12 @@ export function GuestLendingHq() {
       setError('Select at least one loan focus.');
       return;
     }
-    const active = ensureActivePlan();
+    const active =
+      getActivePlan() ??
+      ensureActivePlan({
+        label: label.trim() || 'My financing research',
+        loanFocus: focus,
+      });
     upsertPlan({
       id: active.id,
       label: label.trim() || 'My financing research',
@@ -148,6 +154,53 @@ export function GuestLendingHq() {
     return (
       <div className="animate-pulse rounded-2xl border border-zinc-200 bg-zinc-50 p-10 text-center text-sm text-zinc-500">
         Loading Lending HQ...
+      </div>
+    );
+  }
+
+  // D.4: empty library after delete last plan
+  if (!plan && openPlans.length === 0) {
+    return (
+      <div className="space-y-6">
+        <div className="rounded-2xl border border-dashed border-zinc-200 bg-white px-5 py-12 text-center shadow-sm">
+          <Building2 className="mx-auto h-10 w-10 text-zinc-300" aria-hidden />
+          <p className="mt-3 font-medium text-[#0A2540]">No financing plans yet</p>
+          <p className="mx-auto mt-1 max-w-md text-sm text-zinc-600">
+            Start guided setup to create a research plan. Shortlist and calculator snapshots attach
+            to the active plan.
+          </p>
+          <div className="mt-5 flex flex-wrap justify-center gap-2">
+            <Link href="/my-lending/setup">
+              <Button variant="trust">Guided setup</Button>
+            </Link>
+            <Link href="/my-lending/plans">
+              <Button variant="outline">All plans</Button>
+            </Link>
+            <Link href="/local-lenders">
+              <Button variant="outline">Browse lenders</Button>
+            </Link>
+          </div>
+        </div>
+        <div className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-4 text-sm text-zinc-600">
+          <p className="flex items-start gap-2">
+            <Shield className="mt-0.5 h-4 w-4 shrink-0 text-teal-700" aria-hidden />
+            <span>
+              Research only · Not an endorsement · Verify licenses on{' '}
+              <a
+                href="https://www.nmlsconsumeraccess.org/"
+                className="font-medium text-[#059669] underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NMLS Consumer Access
+              </a>
+              .
+            </span>
+          </p>
+          <div className="mt-2">
+            <TrustMark />
+          </div>
+        </div>
       </div>
     );
   }

@@ -38,13 +38,33 @@ Creating a plan **does not** archive siblings (Phase A did).
 
 Guest local only. Future sign-in must **not** wipe multi-plan local state.
 
+## D.4 Empty / edge states
+
+| Case | Behavior |
+|------|----------|
+| Zero plans | Library CTA → Setup; HQ does **not** auto-spawn a plan |
+| Archive active | `activePlanId` → most recently updated non-archived |
+| Delete last plan | Clean empty HQ until Setup / Save creates one |
+
+## Acceptance
+
+- [x] ≥2 non-archived plans; switch via library  
+- [x] Shortlist plan-scoped (A ≠ B)  
+- [x] Cap 3 per plan  
+- [x] Rename / archive / delete (confirm)  
+- [x] Report active or `?planId=`  
+- [x] Guest refresh keeps all plans  
+- [x] HQ + `/my-lending/plans` linked  
+- [x] Docs + SHA  
+
 ## Human tests
 
-1. Setup plan A → shortlist 2  
-2. Setup → **Create as new** plan B → shortlist 1  
-3. Library shows both; Open A → 2; Open B → 1  
-4. Rename / archive / delete (confirm)  
-5. Report `?planId=` + hard refresh  
+1. Plan A → shortlist 2  
+2. New Plan B → shortlist 1  
+3. Switch A → 2 / B → 1  
+4. Rename B; archive A; delete a duplicate  
+5. Report for active plan  
+6. Hard refresh → both plans remain  
 
 ## Files
 
