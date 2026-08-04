@@ -65,7 +65,17 @@ Footer: same asset, inverted for navy footer.
 - Homepage **How it works**: light zinc/mint band, white step cards, green step numbers  
 - Directory/state hubs, About, Hub CTA strip, FDIC intros: light wash  
 - **Footer** may stay navy (network-style) — not a mid-page band  
-- Theme default: **light** (not OS dark by default)
+
+### Header / network bar (urgent)
+
+| Surface | Rule |
+|---------|------|
+| Ask Network bar | Always `bg-zinc-50` + navy/slate text — **no** `dark:bg-zinc-900` |
+| Main Navbar | Always **solid white** — **no** `dark:bg-zinc-950` |
+| Theme | **Light-only**; `ThemeProvider` strips `html.dark`; no OS dark inversion of chrome |
+| ThemeToggle | Disabled (returns null) |
+
+Root cause of black header: OS/system dark mode + `dark:` Tailwind classes on nav.
 
 ## Human check
 

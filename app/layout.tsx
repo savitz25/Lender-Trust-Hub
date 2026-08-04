@@ -63,8 +63,9 @@ export default function RootLayout({
   const gaId = process.env.NEXT_PUBLIC_GA4_ID;
 
   return (
-    <html lang="en-US" className={inter.variable} suppressHydrationWarning>
+    <html lang="en-US" className={inter.variable} suppressHydrationWarning style={{ colorScheme: 'light' }}>
       <head>
+        <meta name="color-scheme" content="light" />
         {gaId && (
           <>
             <link rel="preconnect" href="https://www.googletagmanager.com" />
@@ -73,7 +74,7 @@ export default function RootLayout({
         )}
       </head>
       <body
-        className="min-h-screen flex flex-col antialiased bg-[#fafafa] text-[#0F172A] dark:bg-zinc-950 dark:text-zinc-100"
+        className="flex min-h-screen flex-col bg-[#fafafa] text-[#0F172A] antialiased"
         data-network-standard={ASK_NETWORK_STANDARD_VERSION}
       >
         {/* network-standard: {ASK_NETWORK_STANDARD_VERSION} */}

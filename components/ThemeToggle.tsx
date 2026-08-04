@@ -1,18 +1,9 @@
 'use client';
 
-import { Moon, Sun } from 'lucide-react';
-import { useTheme } from '@/components/ThemeProvider';
-
+/**
+ * Dark toggle removed — Trust Hub marketing chrome is light-only.
+ * Kept as empty export so any leftover imports do not break the build.
+ */
 export function ThemeToggle() {
-  const { resolved, setTheme } = useTheme();
-  return (
-    <button
-      type="button"
-      onClick={() => setTheme(resolved === 'dark' ? 'light' : 'dark')}
-      className="rounded-lg p-2 text-zinc-600 hover:bg-zinc-100 dark:text-zinc-600 dark:hover:bg-zinc-800"
-      aria-label={resolved === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-    >
-      {resolved === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-    </button>
-  );
+  return null;
 }

@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import { Menu, X, ChevronDown, Bookmark } from 'lucide-react';
 import { BrandLogo } from '@/components/BrandLogo';
 import { SearchBar } from '@/components/SearchBar';
-import { ThemeToggle } from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { FDIC_CATEGORY, MORTGAGE_CATEGORY, AUTO_CATEGORY } from '@/lib/directory/categories';
 import { guestSavedCount } from '@/lib/my-lending/storage';
@@ -19,6 +18,10 @@ const navLinks = [
   { href: '/about', label: 'Trust & Transparency' },
 ];
 
+/**
+ * Main header — always light white chrome (Insurance/Move parity).
+ * No dark: variants; no inverted black nav.
+ */
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [directoriesOpen, setDirectoriesOpen] = useState(false);
@@ -38,22 +41,21 @@ export default function Navbar() {
   return (
     <nav
       aria-label="Main navigation"
-      className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/95 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/95"
+      className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white"
     >
       <div className="container mx-auto flex min-h-16 items-center justify-between gap-3 px-4 py-1 md:min-h-20">
         <BrandLogo priority />
 
         <div className="hidden max-w-xs flex-1 lg:block xl:max-w-sm">
-          <SearchBar className="[&_input]:h-10 [&_input]:text-sm [&_button]:hidden" />
+          <SearchBar className="[&_input]:h-10 [&_input]:border-zinc-200 [&_input]:bg-white [&_input]:text-sm [&_button]:hidden" />
         </div>
 
         <div className="hidden items-center gap-4 text-sm md:flex">
-          <ThemeToggle />
           <div className="relative">
             <button
               type="button"
               onClick={() => setDirectoriesOpen(!directoriesOpen)}
-              className="inline-flex items-center gap-1 font-medium text-zinc-600 hover:text-[#0A2540]"
+              className="inline-flex items-center gap-1 font-medium text-zinc-600 hover:text-[#0A2540] hover:text-emerald-800"
               aria-expanded={directoriesOpen}
             >
               Directories <ChevronDown className="h-4 w-4" />
@@ -62,21 +64,21 @@ export default function Navbar() {
               <div className="absolute left-0 top-full z-50 mt-2 w-56 rounded-xl border border-zinc-200 bg-white py-2 shadow-lg">
                 <Link
                   href={FDIC_CATEGORY.hubPath}
-                  className="block px-4 py-2 text-sm hover:bg-zinc-50"
+                  className="block px-4 py-2 text-sm text-zinc-700 hover:bg-emerald-50 hover:text-emerald-900"
                   onClick={() => setDirectoriesOpen(false)}
                 >
                   FDIC Insured Banks
                 </Link>
                 <Link
                   href={MORTGAGE_CATEGORY.hubPath}
-                  className="block px-4 py-2 text-sm hover:bg-zinc-50"
+                  className="block px-4 py-2 text-sm text-zinc-700 hover:bg-emerald-50 hover:text-emerald-900"
                   onClick={() => setDirectoriesOpen(false)}
                 >
                   Mortgage Lenders
                 </Link>
                 <Link
                   href={AUTO_CATEGORY.hubPath}
-                  className="block px-4 py-2 text-sm hover:bg-zinc-50"
+                  className="block px-4 py-2 text-sm text-zinc-700 hover:bg-emerald-50 hover:text-emerald-900"
                   onClick={() => setDirectoriesOpen(false)}
                 >
                   Auto Loan Companies
@@ -89,13 +91,13 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-medium text-zinc-600 transition-colors hover:text-[#0A2540]"
+              className="font-medium text-zinc-600 transition-colors hover:text-emerald-800"
             >
               {link.label}
             </Link>
           ))}
           <Link href="/my-lending">
-            <Button size="sm" variant="outline" className="gap-1.5">
+            <Button size="sm" variant="outline" className="gap-1.5 border-zinc-200 bg-white">
               <Bookmark className="h-3.5 w-3.5 text-emerald-700" aria-hidden />
               My Lending
               {badgeCount > 0 ? (
@@ -113,21 +115,20 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-1 md:hidden">
-          <ThemeToggle />
-        <button
-          type="button"
-          className="rounded-lg p-2 text-[#0A2540] dark:text-zinc-200"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-expanded={isOpen}
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
-        >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+          <button
+            type="button"
+            className="rounded-lg p-2 text-[#0A2540]"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
       </div>
 
       {isOpen && (
-        <div className="border-t border-zinc-200 bg-white px-4 py-4 dark:border-zinc-800 dark:bg-zinc-950 md:hidden">
+        <div className="border-t border-zinc-200 bg-white px-4 py-4 md:hidden">
           <SearchBar className="mb-4" />
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
@@ -142,7 +143,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/my-lending"
-              className="flex items-center gap-2 font-medium text-teal-800"
+              className="flex items-center gap-2 font-medium text-emerald-800"
               onClick={() => setIsOpen(false)}
             >
               <Bookmark className="h-4 w-4" aria-hidden />

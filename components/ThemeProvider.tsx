@@ -2,44 +2,42 @@
 
 import { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'light' | 'dark' | 'system';
+/**
+ * Trust Hub marketing chrome is always light (Insurance/Move parity).
+ * We intentionally do NOT honor OS dark mode or invert the site header.
+ */
+type Theme = 'light';
 
 const ThemeContext = createContext<{
   theme: Theme;
-  resolved: 'light' | 'dark';
+  resolved: 'light';
   setTheme: (t: Theme) => void;
-}>({ theme: 'system', resolved: 'light', setTheme: () => {} });
+}>({ theme: 'light', resolved: 'light', setTheme: () => {} });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  // Default light — Trust Hub marketing chrome matches Insurance/Move (not OS dark bands).
-  const [theme, setThemeState] = useState<Theme>('light');
-  const [resolved, setResolved] = useState<'light' | 'dark'>('light');
+  const [theme] = useState<Theme>('light');
 
   useEffect(() => {
-    const stored = localStorage.getItem('lth-theme') as Theme | null;
-    // Prefer explicit light for brand consistency; only honor stored dark if user set it
-    if (stored === 'dark' || stored === 'light' || stored === 'system') setThemeState(stored);
+    // Force light: remove any previous dark class / theme preference for chrome
+    document.documentElement.classList.remove('dark');
+    document.documentElement.style.colorScheme = 'light';
+    try {
+      localStorage.setItem('lth-theme', 'light');
+    } catch {
+      /* ignore */
+    }
   }, []);
 
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-    const apply = () => {
-      const dark = theme === 'dark' || (theme === 'system' && mq.matches);
-      setResolved(dark ? 'dark' : 'light');
-      document.documentElement.classList.toggle('dark', dark);
-    };
-    apply();
-    mq.addEventListener('change', apply);
-    return () => mq.removeEventListener('change', apply);
-  }, [theme]);
-
-  const setTheme = (t: Theme) => {
-    setThemeState(t);
-    localStorage.setItem('lth-theme', t);
-  };
-
   return (
-    <ThemeContext.Provider value={{ theme, resolved, setTheme }}>
+    <ThemeContext.Provider
+      value={{
+        theme,
+        resolved: 'light',
+        setTheme: () => {
+          /* light-only — ignore dark requests for brand consistency */
+        },
+      }}
+    >
       {children}
     </ThemeContext.Provider>
   );
