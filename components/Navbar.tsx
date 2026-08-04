@@ -1,13 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Menu, X, ChevronDown, Bookmark } from 'lucide-react';
 import { BrandLogo } from '@/components/BrandLogo';
 import { SearchBar } from '@/components/SearchBar';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { FDIC_CATEGORY, MORTGAGE_CATEGORY, AUTO_CATEGORY } from '@/lib/directory/categories';
+import { guestSavedCount } from '@/lib/my-lending/storage';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -21,6 +22,18 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [directoriesOpen, setDirectoriesOpen] = useState(false);
+  const [badgeCount, setBadgeCount] = useState(0);
+
+  useEffect(() => {
+    const sync = () => setBadgeCount(guestSavedCount());
+    sync();
+    window.addEventListener('lth-my-lending-store', sync);
+    window.addEventListener('storage', sync);
+    return () => {
+      window.removeEventListener('lth-my-lending-store', sync);
+      window.removeEventListener('storage', sync);
+    };
+  }, []);
 
   return (
     <nav
@@ -85,6 +98,11 @@ export default function Navbar() {
             <Button size="sm" variant="outline" className="gap-1.5">
               <Bookmark className="h-3.5 w-3.5 text-emerald-700" aria-hidden />
               My Lending
+              {badgeCount > 0 ? (
+                <span className="rounded-full bg-[#059669] px-1.5 py-0.5 text-[10px] font-semibold text-white">
+                  {badgeCount}
+                </span>
+              ) : null}
             </Button>
           </Link>
           <Link href="/calculators">
@@ -129,6 +147,11 @@ export default function Navbar() {
             >
               <Bookmark className="h-4 w-4" aria-hidden />
               My Lending
+              {badgeCount > 0 ? (
+                <span className="rounded-full bg-[#059669] px-1.5 py-0.5 text-[10px] font-semibold text-white">
+                  {badgeCount}
+                </span>
+              ) : null}
             </Link>
             <Link href="/calculators" onClick={() => setIsOpen(false)}>
               <Button variant="trust" className="w-full">

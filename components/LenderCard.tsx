@@ -3,6 +3,7 @@ import { Star, ShieldCheck, ExternalLink, MapPin } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { SaveLenderButton } from '@/components/my-lending/save-lender-button';
 import type { Lender } from '@/lib/mockData';
 
 export function LenderCard({
@@ -130,8 +131,15 @@ export function LenderCard({
       </div>
 
       <div className="mt-auto flex flex-wrap items-center gap-2 border-t border-zinc-100 bg-zinc-50/60 px-5 py-3.5">
+        <SaveLenderButton
+          lenderSlug={lender.slug}
+          lenderName={lender.name}
+          nmlsId={lender.nmlsId}
+          loanTypes={lender.loanTypes}
+          size="sm"
+        />
         <Link href={profileHref} className="min-w-0 flex-1 sm:flex-none">
-          <Button size="sm" variant="default" className="w-full sm:w-auto">
+          <Button size="sm" variant="outline" className="w-full sm:w-auto">
             View Profile
           </Button>
         </Link>
@@ -148,11 +156,6 @@ export function LenderCard({
             </Button>
           </a>
         ) : null}
-        <Link href="/compare" className="ml-auto hidden sm:inline-flex">
-          <Button size="sm" variant="ghost">
-            Compare
-          </Button>
-        </Link>
       </div>
     </Card>
   );

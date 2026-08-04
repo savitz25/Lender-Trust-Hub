@@ -22,19 +22,26 @@ import {
 import {
   ensureActivePlan,
   getActivePlan,
+  getHistory,
   getLastSaveError,
   getLendersForPlan,
+  getResearching,
+  getShortlisted,
   loadMyLendingStore,
   removeSavedLender,
+  SHORTLIST_CAP,
+  shortlistReplacing,
+  shortlistWithDemoteOldest,
   updateSavedLenderStatus,
   upsertPlan,
 } from '@/lib/my-lending/storage';
+import { ShortlistFullPanel } from '@/components/my-lending/shortlist-full-panel';
 import { TrustMark } from '@/components/network/trust-mark';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 /**
- * Phase A guest-first Lending HQ - durable plan + saved lenders in localStorage.
+ * Phase B guest-first Lending HQ — shortlist cap 3 + status buckets.
  * Research only; no lead-gen.
  */
 export function GuestLendingHq() {
@@ -48,6 +55,12 @@ export function GuestLendingHq() {
   const [focus, setFocus] = useState<string[]>([]);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [fullPanel, setFullPanel] = useState<{
+    shortlisted: SavedLender[];
+    pendingId: string;
+    pendingName: string;
+  } | null>(null);
+  const [historyOpen, setHistoryOpen] = useState(false);
 
   const refresh = useCallback(() => {
     const store = loadMyLendingStore();
@@ -258,118 +271,159 @@ export function GuestLendingHq() {
         ) : null}
         {plan ? (
           <p className="mt-3 text-xs text-zinc-500">
-            {lenders.length} saved lender{lenders.length === 1 ? '' : 's'} · Updated{' '}
-            {new Date(plan.updatedAt).toLocaleString()}
+            Shortlist {getShortlisted(lenders).length}/{SHORTLIST_CAP} · {lenders.length} saved
+            total · Updated {new Date(plan.updatedAt).toLocaleString()}
           </p>
         ) : null}
       </section>
 
-      <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-6">
-        <h2 className="flex items-center gap-2 text-lg font-semibold text-[#0A2540]">
-          <Bookmark className="h-5 w-5 text-teal-700" aria-hidden />
-          Saved lenders ({lenders.length})
-        </h2>
-        <p className="mt-1 text-sm text-zinc-600">
-          Track research status. Verify NMLS on Consumer Access before you apply.
-        </p>
+      <LenderBucket
+        title={`Shortlist (${getShortlisted(lenders).length}/${SHORTLIST_CAP})`}
+        hint="Top candidates — max 3. Promote carefully. Research only."
+        items={getShortlisted(lenders)}
+        empty="No shortlisted lenders yet. Save from a profile or directory card."
+        planId={plan?.id}
+        onStatus={(id, status, name) => {
+          const res = updateSavedLenderStatus(id, status);
+          if (res && !res.ok && res.reason === 'shortlist_full' && res.shortlisted) {
+            setFullPanel({ shortlisted: res.shortlisted, pendingId: id, pendingName: name });
+          } else {
+            refresh();
+          }
+        }}
+        onRemove={(slug) => {
+          removeSavedLender(slug, plan?.id);
+          refresh();
+        }}
+      />
 
-        {lenders.length === 0 ? (
-          <div className="mt-6 rounded-xl border border-dashed border-zinc-200 bg-zinc-50 px-4 py-10 text-center">
-            <Building2 className="mx-auto h-8 w-8 text-zinc-600" aria-hidden />
-            <p className="mt-2 font-medium text-zinc-800">No saved lenders yet</p>
-            <p className="mt-1 text-sm text-zinc-600">
-              Open a lender profile and choose <strong>Save to My Lending</strong>, or browse the
-              directory and educational calculators.
-            </p>
-            <div className="mt-4 flex flex-wrap justify-center gap-2">
-              <Link href="/local-lenders">
-                <Button variant="trust">Browse local lenders</Button>
-              </Link>
-              <Link href="/calculators">
-                <Button variant="outline">Calculators</Button>
-              </Link>
-            </div>
+      <LenderBucket
+        title={`Still researching (${getResearching(lenders).length})`}
+        hint="Directory saves can land here when shortlist is full."
+        items={getResearching(lenders)}
+        empty="Nothing in researching."
+        planId={plan?.id}
+        onStatus={(id, status, name) => {
+          const res = updateSavedLenderStatus(id, status);
+          if (res && !res.ok && res.reason === 'shortlist_full' && res.shortlisted) {
+            setFullPanel({ shortlisted: res.shortlisted, pendingId: id, pendingName: name });
+          } else {
+            refresh();
+          }
+        }}
+        onRemove={(slug) => {
+          removeSavedLender(slug, plan?.id);
+          refresh();
+        }}
+      />
+
+      <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-6">
+        <button
+          type="button"
+          className="flex w-full items-center justify-between text-left"
+          onClick={() => setHistoryOpen((v) => !v)}
+          aria-expanded={historyOpen}
+        >
+          <h2 className="text-lg font-semibold text-[#0A2540]">
+            Reached out / done ({getHistory(lenders).length})
+          </h2>
+          <span className="text-xs font-medium text-zinc-500">
+            {historyOpen ? 'Hide' : 'Show'}
+          </span>
+        </button>
+        {historyOpen ? (
+          <div className="mt-4">
+            {getHistory(lenders).length === 0 ? (
+              <p className="text-sm text-zinc-500">No history yet.</p>
+            ) : (
+              <LenderList
+                items={getHistory(lenders)}
+                planId={plan?.id}
+                onStatus={(id, status, name) => {
+                  const res = updateSavedLenderStatus(id, status);
+                  if (res && !res.ok && res.reason === 'shortlist_full' && res.shortlisted) {
+                    setFullPanel({
+                      shortlisted: res.shortlisted,
+                      pendingId: id,
+                      pendingName: name,
+                    });
+                  } else {
+                    refresh();
+                  }
+                }}
+                onRemove={(slug) => {
+                  removeSavedLender(slug, plan?.id);
+                  refresh();
+                }}
+              />
+            )}
           </div>
-        ) : (
-          <ul className="mt-4 space-y-3">
-            {lenders.map((l) => (
-              <li
-                key={l.id}
-                className="flex flex-col gap-3 rounded-xl border border-zinc-100 bg-zinc-50/50 p-4 sm:flex-row sm:items-center sm:justify-between"
-              >
-                <div className="min-w-0">
-                  <Link
-                    href={l.profilePath || `/lenders/${l.lenderSlug}`}
-                    className="font-semibold text-[#0A2540] hover:text-[#059669] hover:underline"
-                  >
-                    {l.lenderName}
-                  </Link>
-                  <p className="mt-0.5 flex flex-wrap items-center gap-x-2 text-xs text-zinc-500">
-                    {l.nmlsId || l.licenseSummary ? (
-                      <span>{l.licenseSummary || `NMLS #${l.nmlsId}`}</span>
-                    ) : null}
-                    {l.loanTypes?.length ? (
-                      <span className="inline-flex items-center gap-1">
-                        <MapPin className="h-3 w-3" aria-hidden />
-                        {l.loanTypes.slice(0, 4).join(', ')}
-                      </span>
-                    ) : null}
-                  </p>
-                  <span
-                    className={cn(
-                      'mt-2 inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide',
-                      l.status === 'shortlisted' && 'bg-teal-100 text-teal-900',
-                      l.status === 'researching' && 'bg-sky-100 text-sky-900',
-                      l.status === 'reached_out' && 'bg-amber-100 text-amber-900',
-                      l.status === 'done' && 'bg-zinc-200 text-zinc-700'
-                    )}
-                  >
-                    {LENDER_STATUS_OPTIONS.find((s) => s.id === l.status)?.label ?? l.status}
-                  </span>
-                </div>
-                <div className="flex flex-wrap items-center gap-2">
-                  <label className="sr-only" htmlFor={`status-${l.id}`}>
-                    Status for {l.lenderName}
-                  </label>
-                  <select
-                    id={`status-${l.id}`}
-                    value={l.status}
-                    onChange={(e) => {
-                      updateSavedLenderStatus(l.id, e.target.value as LenderResearchStatus);
-                      refresh();
-                    }}
-                    className="h-10 rounded-lg border border-zinc-200 bg-white px-2 text-sm"
-                  >
-                    {LENDER_STATUS_OPTIONS.map((s) => (
-                      <option key={s.id} value={s.id}>
-                        {s.label}
-                      </option>
-                    ))}
-                  </select>
-                  <Link href={l.profilePath || `/lenders/${l.lenderSlug}`}>
-                    <Button type="button" variant="outline" size="sm">
-                      Profile <ExternalLink className="h-3.5 w-3.5" aria-hidden />
-                    </Button>
-                  </Link>
-                  <Button
-                    type="button"
-                    variant="ghost"
-                    size="sm"
-                    className="text-rose-700 hover:bg-rose-50"
-                    onClick={() => {
-                      removeSavedLender(l.lenderSlug, plan?.id);
-                      refresh();
-                    }}
-                  >
-                    <Trash2 className="h-4 w-4" aria-hidden />
-                    <span className="sr-only">Remove</span>
-                  </Button>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
+        ) : null}
       </section>
+
+      {lenders.length === 0 ? (
+        <div className="rounded-xl border border-dashed border-zinc-200 bg-zinc-50 px-4 py-10 text-center">
+          <Building2 className="mx-auto h-8 w-8 text-zinc-400" aria-hidden />
+          <p className="mt-2 font-medium text-zinc-800">No saved lenders yet</p>
+          <p className="mt-1 text-sm text-zinc-600">
+            Save from a lender profile or directory card (shortlist max {SHORTLIST_CAP}).
+          </p>
+          <div className="mt-4 flex flex-wrap justify-center gap-2">
+            <Link href="/local-lenders">
+              <Button variant="trust">Browse local lenders</Button>
+            </Link>
+            <Link href="/calculators">
+              <Button variant="outline">Calculators</Button>
+            </Link>
+          </div>
+        </div>
+      ) : null}
+
+      {fullPanel ? (
+        <ShortlistFullPanel
+          shortlisted={fullPanel.shortlisted}
+          incomingName={fullPanel.pendingName}
+          onCancel={() => setFullPanel(null)}
+          onDemoteOldest={() => {
+            const p = lenders.find((x) => x.id === fullPanel.pendingId);
+            if (p) {
+              shortlistWithDemoteOldest({
+                lenderSlug: p.lenderSlug,
+                lenderName: p.lenderName,
+                profilePath: p.profilePath,
+                nmlsId: p.nmlsId,
+                loanTypes: p.loanTypes,
+                status: 'shortlisted',
+              });
+            }
+            setFullPanel(null);
+            refresh();
+          }}
+          onReplace={(slug) => {
+            const p = lenders.find((x) => x.id === fullPanel.pendingId);
+            if (p) {
+              shortlistReplacing(
+                {
+                  lenderSlug: p.lenderSlug,
+                  lenderName: p.lenderName,
+                  profilePath: p.profilePath,
+                  nmlsId: p.nmlsId,
+                  loanTypes: p.loanTypes,
+                  status: 'shortlisted',
+                },
+                slug
+              );
+            }
+            setFullPanel(null);
+            refresh();
+          }}
+          onSaveAsResearching={() => {
+            updateSavedLenderStatus(fullPanel.pendingId, 'researching');
+            setFullPanel(null);
+            refresh();
+          }}
+        />
+      ) : null}
 
       <div className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-4 text-sm text-zinc-600">
         <p className="flex items-start gap-2">
@@ -392,5 +446,117 @@ export function GuestLendingHq() {
         </div>
       </div>
     </div>
+  );
+}
+
+function LenderBucket({
+  title,
+  hint,
+  items,
+  empty,
+  planId,
+  onStatus,
+  onRemove,
+}: {
+  title: string;
+  hint: string;
+  items: SavedLender[];
+  empty: string;
+  planId?: string;
+  onStatus: (id: string, status: LenderResearchStatus, name: string) => void;
+  onRemove: (slug: string) => void;
+}) {
+  return (
+    <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-6">
+      <h2 className="flex items-center gap-2 text-lg font-semibold text-[#0A2540]">
+        <Bookmark className="h-5 w-5 text-emerald-700" aria-hidden />
+        {title}
+      </h2>
+      <p className="mt-1 text-sm text-zinc-600">{hint}</p>
+      {items.length === 0 ? (
+        <p className="mt-4 text-sm text-zinc-500">{empty}</p>
+      ) : (
+        <div className="mt-4">
+          <LenderList items={items} planId={planId} onStatus={onStatus} onRemove={onRemove} />
+        </div>
+      )}
+    </section>
+  );
+}
+
+function LenderList({
+  items,
+  planId,
+  onStatus,
+  onRemove,
+}: {
+  items: SavedLender[];
+  planId?: string;
+  onStatus: (id: string, status: LenderResearchStatus, name: string) => void;
+  onRemove: (slug: string) => void;
+}) {
+  return (
+    <ul className="space-y-3">
+      {items.map((l) => (
+        <li
+          key={l.id}
+          className="flex flex-col gap-3 rounded-xl border border-zinc-100 bg-zinc-50/50 p-4 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div className="min-w-0">
+            <Link
+              href={l.profilePath || `/lenders/${l.lenderSlug}`}
+              className="font-semibold text-[#0A2540] hover:text-[#059669] hover:underline"
+            >
+              {l.lenderName}
+            </Link>
+            <p className="mt-0.5 flex flex-wrap items-center gap-x-2 text-xs text-zinc-500">
+              {l.nmlsId || l.licenseSummary ? (
+                <span>{l.licenseSummary || `NMLS #${l.nmlsId}`}</span>
+              ) : null}
+              {l.loanTypes?.length ? (
+                <span className="inline-flex items-center gap-1">
+                  <MapPin className="h-3 w-3" aria-hidden />
+                  {l.loanTypes.slice(0, 4).join(', ')}
+                </span>
+              ) : null}
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            <label className="sr-only" htmlFor={`status-${l.id}`}>
+              Status for {l.lenderName}
+            </label>
+            <select
+              id={`status-${l.id}`}
+              value={l.status}
+              onChange={(e) =>
+                onStatus(l.id, e.target.value as LenderResearchStatus, l.lenderName)
+              }
+              className="h-10 rounded-lg border border-zinc-200 bg-white px-2 text-sm"
+            >
+              {LENDER_STATUS_OPTIONS.map((s) => (
+                <option key={s.id} value={s.id}>
+                  {s.label}
+                </option>
+              ))}
+            </select>
+            <Link href={l.profilePath || `/lenders/${l.lenderSlug}`}>
+              <Button type="button" variant="outline" size="sm">
+                Profile <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+              </Button>
+            </Link>
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              className="text-rose-700 hover:bg-rose-50"
+              onClick={() => onRemove(l.lenderSlug)}
+            >
+              <Trash2 className="h-4 w-4" aria-hidden />
+              <span className="sr-only">Remove</span>
+            </Button>
+          </div>
+        </li>
+      ))}
+    </ul>
   );
 }

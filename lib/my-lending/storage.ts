@@ -14,6 +14,23 @@ import {
   newId,
   nowIso,
 } from '@/lib/my-lending/types';
+import {
+  gateShortlistAdd,
+  getHistory,
+  getResearching,
+  getShortlisted,
+  lendersOnPlan,
+  SHORTLIST_CAP,
+  countShortlisted as countShortlistedList,
+} from '@/lib/my-lending/shortlist-rules';
+
+export {
+  SHORTLIST_CAP,
+  getShortlisted,
+  getResearching,
+  getHistory,
+  lendersOnPlan,
+} from '@/lib/my-lending/shortlist-rules';
 
 const MAX_SAVED_LENDERS = 50;
 const MAX_PLANS = 20;
@@ -260,11 +277,56 @@ export type UpsertSavedLenderInput = {
   loanTypes?: string[];
   status?: LenderResearchStatus;
   notes?: string;
+  /**
+   * When shortlist is full and desired status is shortlisted:
+   * - block (default): return shortlist_full without writing shortlisted status
+   * - demote_oldest: oldest shortlisted → researching, then shortlist this one
+   * - replace_slug: demote specific slug → researching, then shortlist this one
+   */
+  shortlistPolicy?: 'block' | 'demote_oldest' | 'replace_slug';
+  replaceShortlistedSlug?: string;
 };
 
 export type UpsertSavedLenderResult =
   | { ok: true; lender: SavedLender; alreadySaved: boolean; created: boolean }
-  | { ok: false; error: string };
+  | {
+      ok: false;
+      error: string;
+      reason?: 'shortlist_full';
+      shortlisted?: SavedLender[];
+    };
+
+export function countShortlisted(planId?: string): number {
+  const state = loadState();
+  const plan = planId
+    ? state.plans.find((p) => p.id === planId)
+    : getActivePlan(state);
+  if (!plan) return 0;
+  return countShortlistedList(lendersOnPlan(plan, state.savedLenders));
+}
+
+export function canShortlist(planId?: string, lenderSlug?: string): boolean {
+  const state = loadState();
+  const plan = planId
+    ? state.plans.find((p) => p.id === planId)
+    : getActivePlan(state);
+  if (!plan) return true;
+  const onPlan = lendersOnPlan(plan, state.savedLenders);
+  if (lenderSlug && getShortlisted(onPlan).some((l) => l.lenderSlug === lenderSlug)) {
+    return true;
+  }
+  return countShortlistedList(onPlan) < SHORTLIST_CAP;
+}
+
+/** Prefer shortlist when under cap; Phase B entry point for Save controls. */
+export function shortlistLender(
+  input: UpsertSavedLenderInput
+): UpsertSavedLenderResult {
+  return upsertSavedLender({
+    ...input,
+    status: input.status ?? 'shortlisted',
+  });
+}
 
 export function upsertSavedLender(
   input: UpsertSavedLenderInput
@@ -288,8 +350,52 @@ export function upsertSavedLender(
       (l.planId === plan!.id || !l.planId || plan!.savedLenderIds.includes(l.id))
   );
   const ts = nowIso();
-  const desiredStatus: LenderResearchStatus =
+  let desiredStatus: LenderResearchStatus =
     input.status ?? (existing ? existing.status : 'shortlisted');
+
+  let planLenders = lendersOnPlan(plan, state.savedLenders);
+  const gate = gateShortlistAdd(planLenders, input.lenderSlug, desiredStatus);
+
+  if (!gate.ok) {
+    const policy = input.shortlistPolicy ?? 'block';
+    if (policy === 'block') {
+      return {
+        ok: false,
+        error: gate.message,
+        reason: 'shortlist_full',
+        shortlisted: gate.shortlisted,
+      };
+    }
+    if (policy === 'demote_oldest') {
+      const oldest = [...getShortlisted(planLenders)].sort((a, b) =>
+        a.updatedAt > b.updatedAt ? 1 : -1
+      )[0];
+      if (oldest) {
+        state.savedLenders = state.savedLenders.map((l) =>
+          l.id === oldest.id
+            ? { ...l, status: 'researching' as const, updatedAt: ts }
+            : l
+        );
+      }
+    } else if (policy === 'replace_slug' && input.replaceShortlistedSlug) {
+      state.savedLenders = state.savedLenders.map((l) =>
+        l.lenderSlug === input.replaceShortlistedSlug &&
+        (l.planId === plan!.id || plan!.savedLenderIds.includes(l.id))
+          ? { ...l, status: 'researching' as const, updatedAt: ts }
+          : l
+      );
+    }
+    planLenders = lendersOnPlan(plan, state.savedLenders);
+    const gate2 = gateShortlistAdd(planLenders, input.lenderSlug, desiredStatus);
+    if (!gate2.ok) {
+      return {
+        ok: false,
+        error: gate2.message,
+        reason: 'shortlist_full',
+        shortlisted: gate2.shortlisted,
+      };
+    }
+  }
 
   if (existing) {
     const updated: SavedLender = {
@@ -341,6 +447,32 @@ export function upsertSavedLender(
   const result = saveState(state);
   if (!result.ok) return { ok: false, error: result.error };
   return { ok: true, lender: saved, alreadySaved: false, created: true };
+}
+
+export function shortlistWithDemoteOldest(
+  input: UpsertSavedLenderInput
+): UpsertSavedLenderResult {
+  return upsertSavedLender({
+    ...input,
+    status: 'shortlisted',
+    shortlistPolicy: 'demote_oldest',
+  });
+}
+
+export function shortlistReplacing(
+  input: UpsertSavedLenderInput,
+  replaceShortlistedSlug: string
+): UpsertSavedLenderResult {
+  return upsertSavedLender({
+    ...input,
+    status: 'shortlisted',
+    shortlistPolicy: 'replace_slug',
+    replaceShortlistedSlug,
+  });
+}
+
+export function saveAsResearching(input: UpsertSavedLenderInput): UpsertSavedLenderResult {
+  return upsertSavedLender({ ...input, status: 'researching', shortlistPolicy: 'block' });
 }
 
 export function removeSavedLender(lenderSlug: string, planId?: string): void {
@@ -396,9 +528,19 @@ export function isLenderSaved(lenderSlug: string, state?: MyLendingState): boole
 }
 
 export function guestSavedCount(): number {
-  const plan = getActivePlan();
-  if (!plan) return loadState().savedLenders.length;
-  return getLendersForPlan(plan.id).length;
+  return countShortlisted();
+}
+
+export function getSavedLenderOnActivePlan(
+  lenderSlug: string
+): SavedLender | null {
+  const state = loadState();
+  const plan = getActivePlan(state);
+  if (!plan) return null;
+  return (
+    lendersOnPlan(plan, state.savedLenders).find((l) => l.lenderSlug === lenderSlug) ??
+    null
+  );
 }
 
 export const loadMyLendingStore = loadState;
