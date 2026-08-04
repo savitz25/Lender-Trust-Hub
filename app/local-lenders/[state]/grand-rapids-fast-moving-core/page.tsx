@@ -32,13 +32,13 @@ export default function GrandRapidsFastMovingCoreHubPage() {
           { label: 'Michigan', href: '/local-lenders/michigan' }, { label: 'Grand Rapids Hub' },
         ]} />
       </div>
-      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
+      <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-rose-400/40 bg-rose-500/10 px-4 py-1.5 text-sm">
             NMLS Verified · Grand Rapids · Fast-Moving Core
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — Grand Rapids</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
             Kent County lenders for West Michigan&apos;s consistent powerhouse — 6-day average contracts,
             severe inventory crunch, and demand from healthcare and manufacturing professionals.
           </p>

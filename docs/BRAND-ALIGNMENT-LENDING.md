@@ -55,6 +55,18 @@ Footer: same asset, inverted for navy footer.
 - Independence / NMLS messaging  
 - Goal chips + ZIP search layout  
 
+## Light surfaces only (marketing)
+
+| Do not use mid-page | Use instead |
+|---------------------|-------------|
+| `bg-black` / `slate-950` / full navy hero bands | `.lth-hero-wash`, `bg-zinc-50`, white cards |
+| White text on near-black marketing sections | Navy headings + slate body |
+
+- Homepage **How it works**: light zinc/mint band, white step cards, green step numbers  
+- Directory/state hubs, About, Hub CTA strip, FDIC intros: light wash  
+- **Footer** may stay navy (network-style) — not a mid-page band  
+- Theme default: **light** (not OS dark by default)
+
 ## Human check
 
-Open Insurance and Lender in two tabs: logo family (triangle) + primary button green should read as one network, different chapter.
+Open Insurance and Lender in two tabs: logo family (triangle) + primary button green + **light page chrome** should read as one network, different chapter.

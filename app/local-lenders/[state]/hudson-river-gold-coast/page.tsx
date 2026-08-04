@@ -32,13 +32,13 @@ export default function HudsonRiverGoldCoastHubPage() {
           { label: 'New Jersey', href: '/local-lenders/new-jersey' }, { label: 'Hudson Gold Coast Hub' },
         ]} />
       </div>
-      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
+      <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-rose-400/40 bg-rose-500/10 px-4 py-1.5 text-sm">
             NMLS Verified · Jersey City &amp; Hoboken · Gold Coast
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — Hudson River Gold Coast</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
             Hudson County lenders for the Manhattan-adjacent waterfront powerhouse — return-to-office mandates,
             luxury appreciation, and rapid absorption of high-density residential developments.
           </p>

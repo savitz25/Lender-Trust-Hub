@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div>
-      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0A2540]/90 py-16 text-white">
+      <section className="lth-hero-wash border-b border-zinc-200 py-16 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <Shield className="mx-auto mb-4 h-12 w-12 text-[#14B8A6]" aria-hidden="true" />
           <h1 className="text-3xl font-bold md:text-5xl">Trust & Transparency</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
             Independent, data-obsessed, consumer-empowering. We deliver verified local
             expertise backed by national scale — with zero paid placements.
           </p>

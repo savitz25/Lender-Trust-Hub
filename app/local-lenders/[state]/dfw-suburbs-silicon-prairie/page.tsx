@@ -32,13 +32,13 @@ export default function DfwSuburbsSiliconPrairieHubPage() {
           { label: 'Texas', href: '/local-lenders/texas' }, { label: 'DFW Suburbs & Silicon Prairie Hub' },
         ]} />
       </div>
-      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
+      <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-red-400/40 bg-red-500/10 px-4 py-1.5 text-sm">
             NMLS Verified · Corporate Relocations · Collin, Denton &amp; Grayson Focus
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — DFW Suburbs &amp; Silicon Prairie</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
             Frisco, McKinney, Prosper, and Sherman-Denison lenders for the endless wave of corporate relocations,
             Texas Instruments manufacturing corridor, and master-planned suburban transactional boom.
           </p>

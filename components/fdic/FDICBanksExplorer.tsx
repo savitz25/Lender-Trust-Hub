@@ -226,35 +226,35 @@ export function FDICBanksExplorer({
         }
       `}</style>
 
-      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] via-[#0A2540] to-[#0d3a5c] py-14 text-white md:py-20">
+      <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540] md:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
             {statePageMode && (
               <Link
                 href="/fdic-insured-banks"
-                className="mb-6 inline-flex items-center gap-2 text-sm text-[#7ee8e6] hover:text-white"
+                className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-emerald-800 hover:text-emerald-950"
               >
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 Back to National FDIC Hub
               </Link>
             )}
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#00A3A1]/40 bg-[#00A3A1]/10 px-4 py-1.5 text-sm font-medium text-[#7ee8e6]">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-sm font-medium text-emerald-800">
               <Shield className="h-4 w-4" aria-hidden="true" />
-              Sourced directly from FDIC data • 100% Free & Transparent
+              Sourced directly from FDIC data · Free research directory
             </div>
-            <h1 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl">
+            <h1 className="mb-4 text-3xl font-bold tracking-tight text-[#0A2540] md:text-5xl">
               {statePageMode && stateData ? (
                 <>
                   FDIC Insured Banks in {stateMeta.fullName} ({currentYear})
-                  <span className="mt-2 block text-xl font-medium text-[#7ee8e6] md:text-2xl">
-                    Verified List & Insights
+                  <span className="mt-2 block text-xl font-medium text-emerald-800 md:text-2xl">
+                    Verified list & insights
                   </span>
                 </>
               ) : (
                 'Find Every FDIC-Insured Bank in Any State'
               )}
             </h1>
-            <p className="mx-auto mb-6 max-w-2xl text-lg text-zinc-300">
+            <p className="mx-auto mb-6 max-w-2xl text-lg text-zinc-600">
               {statePageMode && stats ? (
                 <>
                   {stats.total} FDIC-insured institutions • {stats.headquartered} headquartered in{' '}
@@ -576,7 +576,7 @@ export function FDICBanksExplorer({
                         </>
                       ) : (
                         <div className="rounded-2xl border border-dashed border-zinc-300 bg-white p-12 text-center">
-                          <Building2 className="mx-auto mb-4 h-12 w-12 text-zinc-300" aria-hidden="true" />
+                          <Building2 className="mx-auto mb-4 h-12 w-12 text-zinc-600" aria-hidden="true" />
                           <h3 className="text-lg font-semibold text-[#0A2540]">No banks match your filters</h3>
                           <button
                             type="button"

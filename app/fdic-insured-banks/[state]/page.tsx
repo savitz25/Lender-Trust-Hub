@@ -153,7 +153,7 @@ export default async function FDICStatePage({
         </ul>
       </section>
 
-      <section className="border-t border-zinc-200 bg-[#0A2540] py-6 text-center text-xs text-zinc-400">
+      <section className="border-t border-zinc-200 bg-zinc-50 py-6 text-center text-xs text-zinc-500">
         Data last updated from FDIC {DATA_UPDATED}. This directory is for informational purposes
         only. Not financial advice. Verify all data at{' '}
         <a

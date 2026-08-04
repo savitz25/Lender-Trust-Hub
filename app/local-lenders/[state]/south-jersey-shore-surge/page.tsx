@@ -32,13 +32,13 @@ export default function SouthJerseyShoreSurgeHubPage() {
           { label: 'New Jersey', href: '/local-lenders/new-jersey' }, { label: 'South Jersey Shore Hub' },
         ]} />
       </div>
-      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
+      <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-sky-400/40 bg-sky-500/10 px-4 py-1.5 text-sm">
             NMLS Verified · Cape May County · Shore Surge
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — South Jersey Shore</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
             Cape May County lenders for the state&apos;s highest year-over-year appreciation — luxury buyers,
             vacation-rental investors, and unprecedented coastal growth along the southern shoreline.
           </p>

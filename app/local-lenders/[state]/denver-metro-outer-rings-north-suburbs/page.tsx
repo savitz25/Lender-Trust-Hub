@@ -32,13 +32,13 @@ export default function DenverMetroOuterRingsNorthSuburbsHubPage() {
           { label: 'Colorado', href: '/local-lenders/colorado' }, { label: 'Denver Metro Outer Rings & North Suburbs Hub' },
         ]} />
       </div>
-      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
+      <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-violet-400/40 bg-violet-500/10 px-4 py-1.5 text-sm">
             NMLS Verified · Master-Planned &amp; Schools · Adams, Boulder &amp; Douglas Focus
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — Denver Metro Outer Rings &amp; North Suburbs</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
             Erie, Parker, Centennial, Lafayette, and Louisville lenders for master-planned new construction,
             top-tier school districts, and family-friendly suburbs beyond Denver urban-core bidding wars.
           </p>

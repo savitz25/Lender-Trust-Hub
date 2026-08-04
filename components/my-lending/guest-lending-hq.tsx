@@ -275,7 +275,7 @@ export function GuestLendingHq() {
 
         {lenders.length === 0 ? (
           <div className="mt-6 rounded-xl border border-dashed border-zinc-200 bg-zinc-50 px-4 py-10 text-center">
-            <Building2 className="mx-auto h-8 w-8 text-zinc-300" aria-hidden />
+            <Building2 className="mx-auto h-8 w-8 text-zinc-600" aria-hidden />
             <p className="mt-2 font-medium text-zinc-800">No saved lenders yet</p>
             <p className="mt-1 text-sm text-zinc-600">
               Open a lender profile and choose <strong>Save to My Lending</strong>, or browse the

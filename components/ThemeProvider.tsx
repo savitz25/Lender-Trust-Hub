@@ -11,12 +11,14 @@ const ThemeContext = createContext<{
 }>({ theme: 'system', resolved: 'light', setTheme: () => {} });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('system');
+  // Default light — Trust Hub marketing chrome matches Insurance/Move (not OS dark bands).
+  const [theme, setThemeState] = useState<Theme>('light');
   const [resolved, setResolved] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
     const stored = localStorage.getItem('lth-theme') as Theme | null;
-    if (stored) setThemeState(stored);
+    // Prefer explicit light for brand consistency; only honor stored dark if user set it
+    if (stored === 'dark' || stored === 'light' || stored === 'system') setThemeState(stored);
   }, []);
 
   useEffect(() => {

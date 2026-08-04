@@ -66,7 +66,7 @@ export default function CalculatorsPage() {
         </div>
       </section>
 
-      <div className="border-b border-zinc-200 bg-[#0F172A] py-2 text-center text-xs text-zinc-300">
+      <div className="border-b border-zinc-200 bg-[#0F172A] py-2 text-center text-xs text-zinc-600">
         <strong className="text-white">Free</strong> · No sign-up · Educational tools · NMLS-verified lender matching
       </div>
 

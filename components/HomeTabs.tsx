@@ -28,8 +28,8 @@ export function HomeTabs({ lenders }: { lenders: Lender[] }) {
             onClick={() => setTab(t)}
             className={`rounded-xl px-6 py-3 text-sm font-semibold capitalize transition-colors ${
               tab === t
-                ? 'bg-[#0A2540] text-white'
-                : 'bg-white text-zinc-600 border border-zinc-200'
+                ? 'bg-[#059669] text-white'
+                : 'border border-zinc-200 bg-white text-zinc-600 hover:border-emerald-300'
             }`}
           >
             {t}

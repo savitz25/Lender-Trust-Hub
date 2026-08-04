@@ -62,13 +62,13 @@ export default function AutoLoanCompaniesHubPage() {
         <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Auto Loan Companies' }]} />
       </div>
 
-      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
+      <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-teal-400/40 bg-teal-500/10 px-4 py-1.5 text-sm">
             Verified Lenders • APR Transparency • No Paid Placements
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Find Verified Auto Loan Companies</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
             Compare auto loan companies by state. Trust scores, APR ranges, and loan types for new,
             used, refinance, and bad credit financing.
           </p>

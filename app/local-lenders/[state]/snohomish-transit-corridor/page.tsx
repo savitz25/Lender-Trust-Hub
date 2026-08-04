@@ -32,13 +32,13 @@ export default function SnohomishTransitCorridorHubPage() {
           { label: 'Washington', href: '/local-lenders/washington' }, { label: 'Snohomish Transit Corridor Hub' },
         ]} />
       </div>
-      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
+      <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-emerald-400/40 bg-emerald-500/10 px-4 py-1.5 text-sm">
             NMLS Verified · Light Rail &amp; Aerospace · Snohomish County Focus
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — Snohomish Transit Corridor</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
             Lynnwood and Everett lenders for light rail commuters, Boeing and aerospace professionals,
             and single-family buyers seeking options below Seattle medians in the north Sound corridor.
           </p>

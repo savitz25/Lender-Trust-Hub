@@ -32,13 +32,13 @@ export default function MetrowestBreadAndButterHubPage() {
           { label: 'Massachusetts', href: '/local-lenders/massachusetts' }, { label: 'MetroWest Hub' },
         ]} />
       </div>
-      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
+      <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-violet-400/40 bg-violet-500/10 px-4 py-1.5 text-sm">
             NMLS Verified · Bread &amp; Butter Suburbs · Framingham / Hudson / Natick
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — MetroWest MA</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
             Framingham, Hudson, and Natick lenders for competitive single-family suburbs — top-tier schools,
             manageable hybrid commutes, and the permanent hybrid-work reality for Boston professionals.
           </p>

@@ -188,27 +188,21 @@ export function LeadCaptureForm({
     );
   }
 
-  // default + state-page-v2 — full dark gradient card
-  const isV2 = variant === 'state-page-v2';
-
+  // Light Trust Hub card (no dark mid-page band)
   return (
     <section
       aria-labelledby="lead-capture-heading"
-      className={`rounded-2xl border text-white md:p-8 ${
-        isV2
-          ? 'border-[#00A3A1]/20 bg-gradient-to-br from-[#0A2540] via-[#0d3a5c] to-[#0A2540] p-6 ring-1 ring-[#00A3A1]/10'
-          : 'border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] p-6'
-      }`}
+      className="rounded-2xl border border-zinc-200 bg-white p-6 text-[#0A2540] shadow-sm md:p-8"
       data-variant={variant}
       data-category={categoryId}
     >
       <div className="flex items-start gap-3">
-        <Mail className="mt-1 h-6 w-6 shrink-0 text-[#7ee8e6]" aria-hidden="true" />
+        <Mail className="mt-1 h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />
         <div className="flex-1">
           <h2 id="lead-capture-heading" className="text-lg font-bold md:text-xl">
             {copy.headline(stateName)}
           </h2>
-          <p className="mt-2 text-sm text-zinc-300">{copy.sub(stateName)}</p>
+          <p className="mt-2 text-sm text-zinc-600">{copy.sub(stateName)}</p>
           <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-3 sm:flex-row">
             <label htmlFor="lead-email" className="sr-only">
               Email address
@@ -220,12 +214,12 @@ export function LeadCaptureForm({
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@email.com"
-              className="flex-1 rounded-xl border-0 px-4 py-3 text-[#0A2540] focus:ring-2 focus:ring-[#00A3A1]"
+              className="flex-1 rounded-xl border border-zinc-200 px-4 py-3 text-[#0A2540] focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
               autoComplete="email"
             />
             <button
               type="submit"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#00A3A1] px-5 py-3 text-sm font-semibold hover:bg-[#008f8d]"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#059669] px-5 py-3 text-sm font-semibold text-white hover:bg-[#047857]"
             >
               {copy.cta} <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </button>

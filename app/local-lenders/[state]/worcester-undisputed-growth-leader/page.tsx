@@ -32,13 +32,13 @@ export default function WorcesterUndisputedGrowthLeaderHubPage() {
           { label: 'Massachusetts', href: '/local-lenders/massachusetts' }, { label: 'Worcester Growth Hub' },
         ]} />
       </div>
-      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
+      <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-lime-400/40 bg-lime-500/10 px-4 py-1.5 text-sm">
             NMLS Verified · Undisputed Growth Leader · Worcester / Zip 01608
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — Worcester MA</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
             Worcester County lenders for the undisputed growth leader — Zoom Town remote workers, life sciences professionals,
             Polar Park revitalization, and commuter rail access at relative affordability vs. Greater Boston.
           </p>

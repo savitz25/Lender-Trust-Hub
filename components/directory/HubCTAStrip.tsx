@@ -29,18 +29,18 @@ const CTAS = [
   },
 ] as const;
 
-/** Conversion strip — place above footer on national hubs */
+/** Conversion strip — light Trust Hub surface (no black mid-page band) */
 export function HubCTAStrip() {
   return (
     <section
       aria-labelledby="hub-cta-heading"
-      className="border-t border-zinc-200 bg-gradient-to-r from-[#0A2540] to-[#0d3a5c] py-10 text-white"
+      className="lth-hero-wash border-t border-zinc-200 py-10 text-[#0A2540]"
     >
       <div className="container mx-auto px-4">
         <h2 id="hub-cta-heading" className="text-center text-xl font-bold md:text-2xl">
-          Explore Every Lending Vertical
+          Explore every lending vertical
         </h2>
-        <p className="mx-auto mt-2 max-w-xl text-center text-sm text-zinc-300">
+        <p className="mx-auto mt-2 max-w-xl text-center text-sm text-zinc-600">
           One trusted platform — banks, mortgages, auto loans, and free calculators.
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -49,17 +49,17 @@ export function HubCTAStrip() {
               key={cta.href}
               href={cta.href}
               prefetch
-              className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4 transition hover:border-[#00A3A1]/50 hover:bg-white/10"
+              className="group flex items-center justify-between rounded-2xl border border-zinc-200 bg-white px-5 py-4 shadow-sm transition hover:border-emerald-300 hover:shadow-md"
             >
               <div className="flex items-center gap-3">
-                <cta.icon className="h-5 w-5 text-[#7ee8e6]" aria-hidden="true" />
+                <cta.icon className="h-5 w-5 text-emerald-700" aria-hidden="true" />
                 <div>
-                  <p className="font-semibold">{cta.label}</p>
-                  <p className="text-xs text-zinc-400">{cta.copy}</p>
+                  <p className="font-semibold text-[#0A2540]">{cta.label}</p>
+                  <p className="text-xs text-zinc-500">{cta.copy}</p>
                 </div>
               </div>
               <ArrowRight
-                className="h-4 w-4 text-zinc-500 transition group-hover:text-[#7ee8e6]"
+                className="h-4 w-4 text-zinc-400 transition group-hover:text-emerald-700"
                 aria-hidden="true"
               />
             </Link>

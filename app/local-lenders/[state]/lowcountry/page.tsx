@@ -30,13 +30,13 @@ export default function LowcountryHubPage() {
         />
       </div>
 
-      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
+      <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-indigo-400/40 bg-indigo-500/10 px-4 py-1.5 text-sm">
             NMLS Verified · Zero Paid Placements · Charleston Metro Focus
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — Lowcountry</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
             Charleston, Mt. Pleasant, and Summerville lenders for luxury condos, corporate relocations,
             flood underwriting, and competitive coastal resale speed.
           </p>

@@ -32,13 +32,13 @@ export default function FirstTimeBuyerWaterfrontHubsPage() {
           { label: 'District of Columbia', href: '/local-lenders/district-of-columbia' }, { label: 'First-Time Buyer & Waterfront Hubs' },
         ]} />
       </div>
-      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
+      <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-cyan-400/40 bg-cyan-500/10 px-4 py-1.5 text-sm">
             NMLS Verified · First-Time Buyers · Brookland &amp; Navy Yard
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — Brookland &amp; Navy Yard</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
             Brookland and Navy Yard lenders for first-time buyer entry points, tree-lined Little Rome rowhouses,
             and sleek waterfront condos with luxury amenities near Nationals Park.
           </p>

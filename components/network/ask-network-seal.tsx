@@ -22,13 +22,13 @@ export function AskNetworkSeal() {
           Ask Trust Hub network
         </a>
       </p>
-      <p className="mt-1.5 text-xs font-medium leading-relaxed text-zinc-300">
+      <p className="mt-1.5 text-xs font-medium leading-relaxed text-zinc-600">
         {ASK_NETWORK_OWNERSHIP_SHORT}
       </p>
       <p className="mt-1 text-xs leading-relaxed">
         <a
           href={ASK_TRUST_HUB.promiseUrl}
-          className="underline underline-offset-2 hover:text-zinc-300"
+          className="underline underline-offset-2 hover:text-zinc-600"
           rel="noopener noreferrer"
         >
           Independence policy
@@ -36,13 +36,13 @@ export function AskNetworkSeal() {
         {' · '}
         <a
           href={ASK_TRUST_HUB.revenueUrl}
-          className="underline underline-offset-2 hover:text-zinc-300"
+          className="underline underline-offset-2 hover:text-zinc-600"
           rel="noopener noreferrer"
         >
           How we make money
         </a>
         {' · '}
-        <a href="/methodology" className="underline underline-offset-2 hover:text-zinc-300">
+        <a href="/methodology" className="underline underline-offset-2 hover:text-zinc-600">
           Hub methodology
         </a>
       </p>
@@ -52,7 +52,7 @@ export function AskNetworkSeal() {
       <p className="mt-2 text-xs">
         <a
           href={`mailto:${LENDER_CONTACT_EMAIL}`}
-          className="underline underline-offset-2 hover:text-zinc-300"
+          className="underline underline-offset-2 hover:text-zinc-600"
         >
           {LENDER_CONTACT_EMAIL}
         </a>
@@ -64,7 +64,7 @@ export function AskNetworkSeal() {
         <li>
           <a
             href={ASK_TRUST_HUB.url}
-            className="underline-offset-2 hover:underline hover:text-zinc-300"
+            className="underline-offset-2 hover:underline hover:text-zinc-600"
             rel="noopener noreferrer"
           >
             Ask Trust Hub
@@ -77,14 +77,14 @@ export function AskNetworkSeal() {
               ·
             </span>
             {hub.id === 'lender' ? (
-              <span className="text-zinc-300">
+              <span className="text-zinc-600">
                 {hub.proseName}
                 <span className="ml-1 opacity-70">(you are here)</span>
               </span>
             ) : (
               <a
                 href={hub.url}
-                className="underline-offset-2 hover:underline hover:text-zinc-300"
+                className="underline-offset-2 hover:underline hover:text-zinc-600"
                 rel="noopener noreferrer"
               >
                 {hub.proseName}

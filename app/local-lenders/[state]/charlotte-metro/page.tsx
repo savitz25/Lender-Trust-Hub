@@ -25,13 +25,13 @@ export default function CharlotteMetroHubPage() {
           { label: 'North Carolina', href: '/local-lenders/north-carolina' }, { label: 'Charlotte Metro Hub' },
         ]} />
       </div>
-      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
+      <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-blue-400/40 bg-blue-500/10 px-4 py-1.5 text-sm">
             NMLS Verified · Mecklenburg County Focus
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — Charlotte Metro</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
             Charlotte, Huntersville, Concord, and Gastonia lenders for banking/tech relocations,
             $425K median suburban growth, and high-velocity purchase markets.
           </p>

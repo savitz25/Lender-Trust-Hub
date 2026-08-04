@@ -32,13 +32,13 @@ export default function UpperNorthwestValueSurgeHubPage() {
           { label: 'District of Columbia', href: '/local-lenders/district-of-columbia' }, { label: 'Upper Northwest Hub' },
         ]} />
       </div>
-      <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">
+      <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-rose-400/40 bg-rose-500/10 px-4 py-1.5 text-sm">
             NMLS Verified · Single-Family Value · Ward 3 North / Zip 20012
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — Upper Northwest DC</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
             Takoma, Brightwood, and Colonial Village lenders for standalone single-family value plays with Metro access,
             yards, and mature trees — at a massive discount to Georgetown or Spring Valley.
           </p>
