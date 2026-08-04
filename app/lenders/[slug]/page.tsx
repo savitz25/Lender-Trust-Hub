@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { MatchLenderButton } from '@/components/MatchLenderButton';
 import { RelatedDirectoryLinks } from '@/components/directory/RelatedDirectoryLinks';
 import { TrustMark } from '@/components/network/trust-mark';
+import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
 
 export function generateStaticParams() {
   return lenders.map((l) => ({ slug: l.slug }));
@@ -196,6 +197,19 @@ export default async function LenderProfilePage({
               }}
             />
           </div>
+        </div>
+
+        <div className="mt-8">
+          <BeforeYouReachOut
+            summaryLines={[
+              lender.name,
+              `NMLS #${lender.nmlsId}`,
+              `${lender.city}, ${lender.state}`,
+              `Profile: https://www.lendertrusthub.com/lenders/${lender.slug}`,
+              'Re-verify on NMLS Consumer Access before applying',
+            ]}
+            mailtoSubject={`${lender.name} — Lender Trust Hub research notes`}
+          />
         </div>
 
         <RelatedDirectoryLinks stateSlug={lender.stateSlug} stateName={lender.state} />
