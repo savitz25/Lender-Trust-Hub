@@ -3,6 +3,7 @@ import {
   LENDER_CONTACT_EMAIL,
   NETWORK_HUBS,
 } from '@/lib/network/ask-trust-hub';
+import { TrustMark } from '@/components/network/trust-mark';
 
 /**
  * Footer network seal — Ask parent + hubs (you are here on Lender).
@@ -40,16 +41,11 @@ export function AskNetworkSeal() {
         </a>
         {' · '}
         <a href="/methodology" className="underline underline-offset-2 hover:text-zinc-300">
-          Methodology
+          Hub methodology
         </a>
-        {' · '}
-        <a
-          href={ASK_TRUST_HUB.methodologyUrl}
-          className="underline underline-offset-2 hover:text-zinc-300"
-          rel="noopener noreferrer"
-        >
-          Ask Standard
-        </a>
+      </p>
+      <p className="mt-2 flex flex-wrap items-center justify-center gap-2">
+        <TrustMark className="border-white/25 bg-white/10 text-white/85 hover:border-white/40 hover:text-white" />
       </p>
       <p className="mt-2 text-xs">
         <a

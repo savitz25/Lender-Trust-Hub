@@ -6,6 +6,7 @@ import { getLenderBySlug, lenders } from '@/lib/lenders';
 import { Badge } from '@/components/ui/badge';
 import { MatchLenderButton } from '@/components/MatchLenderButton';
 import { RelatedDirectoryLinks } from '@/components/directory/RelatedDirectoryLinks';
+import { TrustMark } from '@/components/network/trust-mark';
 
 export function generateStaticParams() {
   return lenders.map((l) => ({ slug: l.slug }));
@@ -119,20 +120,13 @@ export default async function LenderProfilePage({
               </div>
             ))}
           </div>
-          <p className="mb-6 text-xs text-zinc-500">
+          <p className="mb-3 text-xs text-zinc-500">
             *Close metrics are editorial/seed estimates — not NMLS or CFPB official fields.{' '}
             <Link href="/methodology#close-metrics" className="font-medium text-[#3B82F6] hover:underline">
-              Methodology
+              Hub methodology
             </Link>
-            {' · '}
-            <a
-              href="https://www.asktrusthub.com/methodology"
-              className="font-medium text-[#3B82F6] hover:underline"
-              rel="noopener noreferrer"
-            >
-              Ask Standard
-            </a>
-            . Re-verify NMLS #{lender.nmlsId} on{' '}
+            . Research listing only — not an endorsement of this lender. Re-verify NMLS #
+            {lender.nmlsId} on{' '}
             <a
               href="https://www.nmlsconsumeraccess.org/"
               className="font-medium text-[#3B82F6] hover:underline"
@@ -143,6 +137,9 @@ export default async function LenderProfilePage({
             </a>
             .
           </p>
+          <div className="mb-6">
+            <TrustMark />
+          </div>
 
           <div className="mb-6">
             <h2 className="mb-2 font-semibold text-[#0A2540]">Loan Types</h2>
