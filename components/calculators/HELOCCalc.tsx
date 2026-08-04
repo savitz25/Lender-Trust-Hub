@@ -24,8 +24,29 @@ export default function HELOCCalc() {
  }, [s]);
 
  return (
- <CalcShell title="HELOC / Home Equity Calculator" subtitle="Borrowing power and payment scenarios."
- matchProfile={{ estimatedLoan: d.draw, estimatedRate: Number(s.rate), specialty: 'HELOC' }}>
+ <CalcShell
+ title="HELOC / Home Equity Calculator"
+ subtitle="Borrowing power and payment scenarios."
+ matchProfile={{ estimatedLoan: d.draw, estimatedRate: Number(s.rate), specialty: 'HELOC' }}
+ snapshot={{
+ toolId: 'heloc',
+ title: 'HELOC / home equity',
+ summary: `Max borrow ${formatCurrency(d.maxBorrow)} · Draw ${formatCurrency(d.draw)} · IO ${formatCurrency(d.io)}/mo`,
+ href: '/calculators#heloc',
+ inputs: {
+ homeValue: Number(s.homeValue),
+ mortgageBal: Number(s.mortgageBal),
+ drawAmount: Number(s.drawAmount),
+ rate: Number(s.rate),
+ },
+ outputs: {
+ maxBorrow: d.maxBorrow,
+ draw: d.draw,
+ interestOnly: d.io,
+ amort: d.amort,
+ },
+ }}
+ >
  <div className="grid gap-6 lg:grid-cols-2">
  <div className="space-y-4">
  <CalcSlider label="Home Value" value={Number(s.homeValue)} min={50000} max={3000000} step={10000} onChange={(v) => update({ homeValue: v })} format={formatCurrency} />

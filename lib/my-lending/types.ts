@@ -28,6 +28,19 @@ export type PlanLocation = {
   label?: string;
 };
 
+/** Phase C — calculator result saved onto a plan (educational only). */
+export type CalculatorSnapshot = {
+  id: string;
+  planId: string;
+  toolId: string;
+  title: string;
+  summary: string;
+  inputs: Record<string, unknown>;
+  outputs: Record<string, unknown>;
+  href?: string;
+  savedAt: string;
+};
+
 /** Financing research plan. Phase A uses one active plan; array shape ready for Phase D. */
 export type FinancePlan = {
   id: string;
@@ -39,6 +52,8 @@ export type FinancePlan = {
   createdAt: string;
   updatedAt: string;
   savedLenderIds: string[];
+  /** Phase C calculator saves (default []) */
+  calculatorSnapshots?: CalculatorSnapshot[];
 };
 
 /** Lender shortlist item — research only, not a lead. */
@@ -74,6 +89,14 @@ export const LOAN_FOCUS_OPTIONS: { id: LoanFocus; label: string }[] = [
   { id: 'heloc', label: 'HELOC' },
   { id: 'other', label: 'Other' },
 ];
+
+/** Extra chips used only in guided setup UI */
+export const SETUP_SITUATION_OPTIONS = [
+  { id: 'first_home', label: 'First-time homebuyer' },
+  { id: 'rate_shop', label: 'Shopping rates / refinance' },
+  { id: 'relocating', label: 'Relocating' },
+  { id: 'investment', label: 'Investment property research' },
+] as const;
 
 export const LENDER_STATUS_OPTIONS: {
   id: LenderResearchStatus;

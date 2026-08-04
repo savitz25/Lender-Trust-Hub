@@ -5,6 +5,7 @@
  */
 
 import {
+  type CalculatorSnapshot,
   type FinancePlan,
   type LenderResearchStatus,
   type MyLendingState,
@@ -84,6 +85,9 @@ function normalizeState(raw: unknown): MyLendingState | null {
       createdAt: p.createdAt || nowIso(),
       updatedAt: p.updatedAt || p.createdAt || nowIso(),
       savedLenderIds: Array.isArray(p.savedLenderIds) ? p.savedLenderIds : [],
+      calculatorSnapshots: Array.isArray(p.calculatorSnapshots)
+        ? p.calculatorSnapshots
+        : [],
     })),
     savedLenders: (Array.isArray(parsed.savedLenders) ? parsed.savedLenders : [])
       .map(normalizeLender)
@@ -221,6 +225,7 @@ export function upsertPlan(input: UpsertPlanInput): FinancePlan {
     createdAt: ts,
     updatedAt: ts,
     savedLenderIds: [],
+    calculatorSnapshots: [],
   };
   state.plans = [plan, ...state.plans].slice(0, MAX_PLANS);
   state.activePlanId = plan.id;
@@ -541,6 +546,84 @@ export function getSavedLenderOnActivePlan(
     lendersOnPlan(plan, state.savedLenders).find((l) => l.lenderSlug === lenderSlug) ??
     null
   );
+}
+
+// ── Phase C: calculator snapshots ───────────────────────────────────────────
+
+export type AddCalculatorSnapshotInput = {
+  toolId: string;
+  title: string;
+  summary: string;
+  inputs?: Record<string, unknown>;
+  outputs?: Record<string, unknown>;
+  href?: string;
+  planId?: string;
+};
+
+/** Attach educational calculator result to active plan (replaces same toolId). */
+export function addCalculatorSnapshot(
+  input: AddCalculatorSnapshotInput
+): CalculatorSnapshot | null {
+  const state = loadState();
+  let plan =
+    (input.planId
+      ? state.plans.find((p) => p.id === input.planId)
+      : getActivePlan(state)) ?? null;
+  if (!plan) {
+    plan = ensureActivePlan({ label: 'My financing research' });
+    Object.assign(state, loadState());
+    plan = getActivePlan(state)!;
+  }
+  const snap: CalculatorSnapshot = {
+    id: newId(),
+    planId: plan.id,
+    toolId: input.toolId.trim() || 'calculator',
+    title: input.title.trim() || 'Calculator result',
+    summary: input.summary.trim() || 'Saved research estimate',
+    inputs: input.inputs ?? {},
+    outputs: input.outputs ?? {},
+    href: input.href || '/calculators',
+    savedAt: nowIso(),
+  };
+  const existing = plan.calculatorSnapshots ?? [];
+  const nextSnaps = [
+    snap,
+    ...existing.filter((s) => s.toolId !== snap.toolId),
+  ].slice(0, 12);
+  const nextPlan: FinancePlan = {
+    ...plan,
+    calculatorSnapshots: nextSnaps,
+    updatedAt: nowIso(),
+  };
+  state.plans = state.plans.map((p) => (p.id === plan!.id ? nextPlan : p));
+  state.activePlanId = plan.id;
+  const result = saveState(state);
+  if (!result.ok) return null;
+  return snap;
+}
+
+export function getCalculatorSnapshots(planId?: string): CalculatorSnapshot[] {
+  const plan = planId
+    ? loadState().plans.find((p) => p.id === planId)
+    : getActivePlan();
+  return plan?.calculatorSnapshots ?? [];
+}
+
+export function removeCalculatorSnapshot(snapshotId: string, planId?: string): void {
+  const state = loadState();
+  const plan = planId
+    ? state.plans.find((p) => p.id === planId)
+    : getActivePlan(state);
+  if (!plan) return;
+  const nextPlan: FinancePlan = {
+    ...plan,
+    calculatorSnapshots: (plan.calculatorSnapshots ?? []).filter(
+      (s) => s.id !== snapshotId
+    ),
+    updatedAt: nowIso(),
+  };
+  state.plans = state.plans.map((p) => (p.id === plan!.id ? nextPlan : p));
+  saveState(state);
 }
 
 export const loadMyLendingStore = loadState;

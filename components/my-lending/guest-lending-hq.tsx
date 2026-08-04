@@ -5,15 +5,19 @@ import Link from 'next/link';
 import {
   Bookmark,
   Building2,
+  Calculator,
   ExternalLink,
+  FileText,
   MapPin,
   Plus,
+  Settings2,
   Shield,
   Trash2,
 } from 'lucide-react';
 import {
   LOAN_FOCUS_OPTIONS,
   LENDER_STATUS_OPTIONS,
+  type CalculatorSnapshot,
   type FinancePlan,
   type LoanFocus,
   type LenderResearchStatus,
@@ -22,6 +26,7 @@ import {
 import {
   ensureActivePlan,
   getActivePlan,
+  getCalculatorSnapshots,
   getHistory,
   getLastSaveError,
   getLendersForPlan,
@@ -47,6 +52,7 @@ import { cn } from '@/lib/utils';
 export function GuestLendingHq() {
   const [plan, setPlan] = useState<FinancePlan | null>(null);
   const [lenders, setLenders] = useState<SavedLender[]>([]);
+  const [snapshots, setSnapshots] = useState<CalculatorSnapshot[]>([]);
   const [hydrated, setHydrated] = useState(false);
   const [label, setLabel] = useState('');
   const [zip, setZip] = useState('');
@@ -68,6 +74,7 @@ export function GuestLendingHq() {
     setPlan(active);
     if (active) {
       setLenders(getLendersForPlan(active.id, store));
+      setSnapshots(getCalculatorSnapshots(active.id));
       setLabel(active.label);
       setZip(active.location?.zip ?? '');
       setStateCode(active.location?.state ?? '');
@@ -75,6 +82,7 @@ export function GuestLendingHq() {
       setFocus(active.loanFocus ?? []);
     } else {
       setLenders([]);
+      setSnapshots([]);
     }
   }, []);
 
@@ -142,6 +150,27 @@ export function GuestLendingHq() {
 
   return (
     <div className="space-y-6">
+      <nav aria-label="My Lending sections" className="flex flex-wrap gap-2">
+        <Link href="/my-lending/setup">
+          <Button size="sm" variant="outline" className="gap-1.5">
+            <Settings2 className="h-3.5 w-3.5" aria-hidden />
+            Setup
+          </Button>
+        </Link>
+        <Link href="/my-lending/report">
+          <Button size="sm" variant="outline" className="gap-1.5">
+            <FileText className="h-3.5 w-3.5" aria-hidden />
+            Report
+          </Button>
+        </Link>
+        <Link href="/calculators">
+          <Button size="sm" variant="outline" className="gap-1.5">
+            <Calculator className="h-3.5 w-3.5" aria-hidden />
+            Calculators
+          </Button>
+        </Link>
+      </nav>
+
       <section className="rounded-2xl border border-teal-100 bg-white p-5 shadow-sm sm:p-6">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
           Active plan
@@ -272,10 +301,53 @@ export function GuestLendingHq() {
         {plan ? (
           <p className="mt-3 text-xs text-zinc-500">
             Shortlist {getShortlisted(lenders).length}/{SHORTLIST_CAP} · {lenders.length} saved
-            total · Updated {new Date(plan.updatedAt).toLocaleString()}
+            total · {snapshots.length} calculator snapshot
+            {snapshots.length === 1 ? '' : 's'} · Updated{' '}
+            {new Date(plan.updatedAt).toLocaleString()}
           </p>
         ) : null}
       </section>
+
+      {snapshots.length > 0 ? (
+        <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-6">
+          <h2 className="flex items-center gap-2 text-lg font-semibold text-[#0A2540]">
+            <Calculator className="h-5 w-5 text-emerald-700" aria-hidden />
+            Calculator snapshots ({snapshots.length})
+          </h2>
+          <p className="mt-1 text-sm text-zinc-600">
+            Educational estimates only — not a Loan Estimate or offer.
+          </p>
+          <ul className="mt-4 space-y-2">
+            {snapshots.slice(0, 5).map((s) => (
+              <li
+                key={s.id}
+                className="flex flex-col gap-1 rounded-lg border border-zinc-100 bg-zinc-50/80 px-3 py-2 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <div className="min-w-0">
+                  <p className="font-medium text-[#0A2540]">{s.title}</p>
+                  <p className="text-xs text-zinc-500">{s.summary}</p>
+                </div>
+                {s.href ? (
+                  <Link href={s.href}>
+                    <Button size="sm" variant="outline">
+                      Open tool
+                    </Button>
+                  </Link>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-sm">
+            <Link href="/my-lending/report" className="font-medium text-emerald-800 underline">
+              Include on report
+            </Link>
+            {' · '}
+            <Link href="/calculators" className="font-medium text-emerald-800 underline">
+              Run another calculator
+            </Link>
+          </p>
+        </section>
+      ) : null}
 
       <LenderBucket
         title={`Shortlist (${getShortlisted(lenders).length}/${SHORTLIST_CAP})`}

@@ -84,6 +84,24 @@ export default function MortgagePaymentPITI() {
  ltv: computed.ltv,
  loanType: computed.ltv > 95 ? 'FHA' : computed.loan > 766550 ? 'Jumbo' : 'Conventional',
  }}
+ snapshot={{
+ toolId: 'piti',
+ title: 'Mortgage payment (PITI)',
+ summary: `Est. PITI ${formatCurrency(computed.piti)}/mo · Loan ${formatCurrency(computed.loan)} · ${Number(s.rate)}% · ${Number(s.term)} yr`,
+ href: '/calculators#payment',
+ inputs: {
+ homePrice: Number(s.homePrice),
+ downPct: Number(s.downPct),
+ rate: Number(s.rate),
+ term: Number(s.term),
+ },
+ outputs: {
+ loan: computed.loan,
+ piti: computed.piti,
+ pi: computed.pi,
+ ltv: computed.ltv,
+ },
+ }}
  onPreset={() => update(FL_PRESET)}
  presetLabel="FL First-Time Buyer"
  actions={
