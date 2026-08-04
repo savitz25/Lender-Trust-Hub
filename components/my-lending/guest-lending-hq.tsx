@@ -8,6 +8,8 @@ import {
   Calculator,
   ExternalLink,
   FileText,
+  LogIn,
+  LogOut,
   MapPin,
   Plus,
   Settings2,
@@ -43,6 +45,7 @@ import {
   upsertPlan,
 } from '@/lib/my-lending/storage';
 import { ShortlistFullPanel } from '@/components/my-lending/shortlist-full-panel';
+import { useMyLendingOptional } from '@/components/my-lending/my-lending-provider';
 import { TrustMark } from '@/components/network/trust-mark';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -52,6 +55,7 @@ import { cn } from '@/lib/utils';
  * Research only; no lead-gen.
  */
 export function GuestLendingHq() {
+  const ml = useMyLendingOptional();
   const [plan, setPlan] = useState<FinancePlan | null>(null);
   const [lenders, setLenders] = useState<SavedLender[]>([]);
   const [snapshots, setSnapshots] = useState<CalculatorSnapshot[]>([]);
@@ -158,10 +162,54 @@ export function GuestLendingHq() {
     );
   }
 
+  const accountStrip = ml?.user ? (
+    <div className="flex flex-col gap-3 rounded-2xl border border-emerald-100 bg-white px-4 py-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <p className="text-sm text-zinc-600">
+          Signed in as{' '}
+          <span className="font-medium text-[#0A2540]">{ml.user.email}</span>
+        </p>
+        <p className="mt-1 text-xs text-zinc-500">
+          Research workspace only — tools still work without signing in. Guest plans on this device
+          stay when you sign out. Cloud plan sync is not enabled yet (local is source of truth).
+        </p>
+      </div>
+      <Button
+        variant="outline"
+        size="sm"
+        className="gap-2"
+        onClick={() => void ml.signOutLocal()}
+      >
+        <LogOut className="h-4 w-4" />
+        Sign out
+      </Button>
+    </div>
+  ) : (
+    <div className="flex flex-col gap-3 rounded-2xl border border-emerald-200 bg-emerald-50/40 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <p className="text-sm font-medium text-[#0A2540]">Sign in (optional)</p>
+        <p className="mt-1 text-sm text-zinc-600">
+          Tools work without an account. Sign in to use the same Ask Trust Hub identity across Move,
+          Insurance, and Lending.
+        </p>
+      </div>
+      <Button
+        size="sm"
+        variant="trust"
+        className="gap-2"
+        onClick={() => ml?.openAuth({ redirectPath: '/my-lending' })}
+      >
+        <LogIn className="h-4 w-4" />
+        Sign in
+      </Button>
+    </div>
+  );
+
   // D.4: empty library after delete last plan
   if (!plan && openPlans.length === 0) {
     return (
       <div className="space-y-6">
+        {accountStrip}
         <div className="rounded-2xl border border-dashed border-zinc-200 bg-white px-5 py-12 text-center shadow-sm">
           <Building2 className="mx-auto h-10 w-10 text-zinc-300" aria-hidden />
           <p className="mt-3 font-medium text-[#0A2540]">No financing plans yet</p>
@@ -207,6 +255,8 @@ export function GuestLendingHq() {
 
   return (
     <div className="space-y-6">
+      {accountStrip}
+
       <nav aria-label="My Lending sections" className="flex flex-wrap gap-2">
         <Link href="/my-lending/plans">
           <Button size="sm" variant="outline" className="gap-1.5">

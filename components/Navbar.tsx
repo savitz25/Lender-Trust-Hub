@@ -2,10 +2,11 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Menu, X, ChevronDown, Bookmark } from 'lucide-react';
+import { Menu, X, ChevronDown, Bookmark, LogIn, LogOut } from 'lucide-react';
 import { BrandLogo } from '@/components/BrandLogo';
 import { SearchBar } from '@/components/SearchBar';
 import { Button } from '@/components/ui/button';
+import { useMyLendingOptional } from '@/components/my-lending/my-lending-provider';
 import { FDIC_CATEGORY, MORTGAGE_CATEGORY, AUTO_CATEGORY } from '@/lib/directory/categories';
 import { guestSavedCount } from '@/lib/my-lending/storage';
 
@@ -26,6 +27,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [directoriesOpen, setDirectoriesOpen] = useState(false);
   const [badgeCount, setBadgeCount] = useState(0);
+  const ml = useMyLendingOptional();
 
   useEffect(() => {
     const sync = () => setBadgeCount(guestSavedCount());
@@ -37,6 +39,11 @@ export default function Navbar() {
       window.removeEventListener('storage', sync);
     };
   }, []);
+
+  async function handleSignOut() {
+    await ml?.signOutLocal();
+    setIsOpen(false);
+  }
 
   return (
     <nav
@@ -107,6 +114,17 @@ export default function Navbar() {
               ) : null}
             </Button>
           </Link>
+          {!ml?.user ? (
+            <Button
+              size="sm"
+              variant="ghost"
+              className="gap-1.5"
+              onClick={() => ml?.openAuth({ redirectPath: '/my-lending' })}
+            >
+              <LogIn className="h-4 w-4" />
+              <span className="hidden sm:inline">Sign in</span>
+            </Button>
+          ) : null}
           <Link href="/calculators">
             <Button size="sm" variant="trust">
               Try Calculators
@@ -154,6 +172,28 @@ export default function Navbar() {
                 </span>
               ) : null}
             </Link>
+            {ml?.user ? (
+              <button
+                type="button"
+                className="flex w-full items-center gap-2 text-left font-medium text-zinc-700"
+                onClick={() => void handleSignOut()}
+              >
+                <LogOut className="h-4 w-4" />
+                Sign out
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="flex w-full items-center gap-2 text-left font-medium text-zinc-700"
+                onClick={() => {
+                  ml?.openAuth({ redirectPath: '/my-lending' });
+                  setIsOpen(false);
+                }}
+              >
+                <LogIn className="h-4 w-4" />
+                Sign in
+              </button>
+            )}
             <Link href="/calculators" onClick={() => setIsOpen(false)}>
               <Button variant="trust" className="w-full">
                 Try Calculators

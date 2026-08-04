@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { AskNetworkBar } from '@/components/network/ask-network-bar';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { GtagProvider } from '@/components/directory/GtagProvider';
+import { MyLendingShell } from '@/components/my-lending/my-lending-shell';
 import { ASK_NETWORK_STANDARD_VERSION } from '@/lib/network/standard-version';
 import './globals.css';
 
@@ -79,11 +80,13 @@ export default function RootLayout({
       >
         {/* network-standard: {ASK_NETWORK_STANDARD_VERSION} */}
         <ThemeProvider>
-          <GtagProvider />
-          <AskNetworkBar />
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <MyLendingShell>
+            <GtagProvider />
+            <AskNetworkBar />
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </MyLendingShell>
         </ThemeProvider>
       </body>
     </html>

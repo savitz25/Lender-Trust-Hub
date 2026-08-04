@@ -1,0 +1,119 @@
+# Network identity — Lender Trust Hub
+
+**Goal:** One **Ask Trust Hub** account across Move, Insurance, and Lending.  
+**Move is source of truth** for auth UX (magic link default + optional password + Google + Facebook).
+
+**Production host:** `https://www.lendertrusthub.com`  
+**Repo:** Lender-Trust-Hub (production only)
+
+---
+
+## Shared identity (required for same `auth.users` id)
+
+Insurance and Lending Vercel projects must use the **same Supabase Auth project** as Move:
+
+| Env | Purpose |
+|-----|---------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Shared project URL (must match Move) |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Shared anon key |
+| `NEXT_PUBLIC_SITE_URL` | `https://www.lendertrusthub.com` (this host’s origin for redirects) |
+| `SUPABASE_SERVICE_ROLE_KEY` | Optional server-only (not required for OTP/OAuth session) |
+
+Do **not** hardcode secrets in git.
+
+---
+
+## Auth routes (this repo)
+
+| Path | Role |
+|------|------|
+| `POST /api/auth/magic-link` | Email OTP magic link (`signInWithOtp`) |
+| `GET /api/auth/google` | Start Google OAuth |
+| `GET /api/auth/facebook` | Start Facebook OAuth |
+| `GET /auth/callback` | OAuth / code exchange → session cookie |
+| `GET /auth/confirm` | Email OTP `token_hash` verify (Resend-style links) |
+
+Post-login default: `/my-lending?auth=success`  
+Errors: `/my-lending?auth=error`
+
+---
+
+## Client surface
+
+| Piece | Location |
+|-------|----------|
+| Provider + session | `components/my-lending/my-lending-provider.tsx` |
+| Auth modal (magic → Google → Facebook) | `components/my-lending/auth-modal.tsx` |
+| Social buttons | `components/my-lending/social-sign-in-buttons.tsx` |
+| Shell (layout) | `components/my-lending/my-lending-shell.tsx` |
+| Header Sign in | `components/Navbar.tsx` |
+| HQ identity strip | `components/my-lending/guest-lending-hq.tsx` |
+| Constants / redirect sanitize | `lib/my-lending/auth-constants.ts` |
+| Magic link helper | `lib/my-lending/request-magic-link.ts` |
+| Browser client | `lib/supabase/client.ts` → `createBrowserSupabaseClient()` |
+
+**Guest-first:** directories, calculators, and chapter HQ work without sign-in.  
+**Sign-out** does not clear `lth:my-lending:v1` (local multi-plan library).  
+**Cloud plan tables:** Phase 4 — not implemented; local remains source of truth.
+
+---
+
+## Ops checklist (human — consoles)
+
+### Supabase Auth → URL configuration
+
+Add redirect URLs for **all three** production origins (shared project):
+
+- `https://www.movetrusthub.com/auth/callback`
+- `https://www.insurancetrusthub.com/auth/callback`
+- `https://www.lendertrusthub.com/auth/callback`
+- (optional) same paths for preview deploy origins
+- If using confirm links: `…/auth/confirm` for each origin
+
+Site URL may remain Move’s production URL; redirect allow-list must include Insurance + Lending.
+
+### Google Cloud OAuth
+
+Authorized JavaScript origins + redirect URIs for all three `www` domains (and Supabase callback host if using provider-hosted flow).
+
+### Facebook Login
+
+Valid OAuth redirect URIs for all three domains / Supabase Facebook redirect.
+
+### Vercel (Lender)
+
+- `NEXT_PUBLIC_SUPABASE_URL` = **same value as Move**
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` = **same as Move**
+- `NEXT_PUBLIC_SITE_URL` = `https://www.lendertrusthub.com`
+
+---
+
+## Phase 4 (out of scope here)
+
+- Unified cloud tables for lending plans  
+- Cross-subdomain SSO cookie tricks  
+- Account deletion / data export  
+
+---
+
+## Move reference (audit)
+
+| Item | Move (movetrusthub.com) |
+|------|-------------------------|
+| Magic link API | `app/api/auth/magic-link` |
+| Google / Facebook | `app/api/auth/google`, `…/facebook` |
+| Callback / confirm | `app/auth/callback`, `app/auth/confirm` |
+| UX order | Magic link default; optional password; Google; Facebook |
+| Env | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` |
+
+See also Move `docs/SUPABASE_AUTH_EMAILS.md` for email templates and Site URL notes.
+
+---
+
+## Human tests
+
+1. Guest uses `/my-lending` without account — plans persist in localStorage.  
+2. Sign in (magic link or Google) → HQ shows email; same Supabase user id as Move when env is shared.  
+3. Sign out → plans still on device.  
+4. Core research pages have **no** login wall.  
+5. Facebook smoke-test when app review allows.

@@ -22,7 +22,8 @@ export default function MyLendingPage() {
         </h1>
         <p className="mt-3 max-w-2xl text-base leading-relaxed text-zinc-600">
           Guest-saved on this device. Build a plan, shortlist NMLS-listed lenders, track research
-          status - then verify on primary sources before you apply.
+          status - then verify on primary sources before you apply. Optional sign-in uses the same
+          Ask Trust Hub account as Move and Insurance (magic link, Google, or Facebook).
         </p>
         <p className="mt-2 text-xs text-zinc-500">
           Research only · Not an endorsement · NMLS verification on primary sources · Part of the
