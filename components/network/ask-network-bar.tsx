@@ -43,7 +43,7 @@ export function AskNetworkBar() {
             link.active ? (
               <span
                 key={link.id}
-                className="rounded-md bg-white px-2.5 py-1 font-semibold text-[#0A2540] shadow-sm ring-1 ring-zinc-200 dark:bg-zinc-800 dark:text-white dark:ring-zinc-700"
+                className="rounded-md bg-emerald-50 px-2.5 py-1 font-semibold text-emerald-900 shadow-sm ring-1 ring-emerald-200 dark:bg-zinc-800 dark:text-white dark:ring-emerald-800"
                 aria-current="page"
               >
                 {link.label}

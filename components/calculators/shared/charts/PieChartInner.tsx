@@ -3,7 +3,7 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { formatCurrency } from '@/lib/utils';
 
-const DEFAULT_COLORS = ['#0F172A', '#3B82F6', '#059669', '#F59E0B', '#94A3B8'];
+const DEFAULT_COLORS = ['#0F172A', '#059669', '#059669', '#F59E0B', '#94A3B8'];
 
 export function PieChartInner({
   data,

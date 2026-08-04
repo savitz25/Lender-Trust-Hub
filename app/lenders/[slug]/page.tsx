@@ -43,12 +43,12 @@ export default async function LenderProfilePage({
     <div className="container mx-auto px-4 py-12">
       <nav aria-label="Breadcrumb" className="mb-6 text-sm text-zinc-500">
         <ol className="flex flex-wrap items-center gap-1">
-          <li><Link href="/" className="hover:text-[#3B82F6]">Home</Link></li>
+          <li><Link href="/" className="hover:text-[#059669]">Home</Link></li>
           <ChevronRight className="h-4 w-4" aria-hidden="true" />
           <li>
             <Link
               href={`/local-lenders/${lender.stateSlug}/${lender.countySlug}`}
-              className="hover:text-[#3B82F6]"
+              className="hover:text-[#059669]"
             >
               {countyLabel}
             </Link>
@@ -124,14 +124,14 @@ export default async function LenderProfilePage({
           </div>
           <p className="mb-3 text-xs text-zinc-500">
             *Close metrics are editorial/seed estimates — not NMLS or CFPB official fields.{' '}
-            <Link href="/methodology#close-metrics" className="font-medium text-[#3B82F6] hover:underline">
+            <Link href="/methodology#close-metrics" className="font-medium text-[#059669] hover:underline">
               Hub methodology
             </Link>
             . Research listing only — not an endorsement of this lender. Re-verify NMLS #
             {lender.nmlsId} on{' '}
             <a
               href="https://www.nmlsconsumeraccess.org/"
-              className="font-medium text-[#3B82F6] hover:underline"
+              className="font-medium text-[#059669] hover:underline"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -44,28 +44,28 @@ export default function AffordabilityFinder() {
           <div>
             <div className="mb-2 flex justify-between text-sm">
               <span className="font-medium">Annual Income</span>
-              <span className="font-bold text-[#3B82F6]">{formatCurrency(income)}</span>
+              <span className="font-bold text-[#059669]">{formatCurrency(income)}</span>
             </div>
             <Slider value={[income]} min={30000} max={300000} step={5000} onValueChange={(v) => setIncome(v[0])} aria-label="Annual income" />
           </div>
           <div>
             <div className="mb-2 flex justify-between text-sm">
               <span className="font-medium">Monthly Debt</span>
-              <span className="font-bold text-[#3B82F6]">{formatCurrency(monthlyDebt)}</span>
+              <span className="font-bold text-[#059669]">{formatCurrency(monthlyDebt)}</span>
             </div>
             <Slider value={[monthlyDebt]} min={0} max={3000} step={50} onValueChange={(v) => setMonthlyDebt(v[0])} aria-label="Monthly debt payments" />
           </div>
           <div>
             <div className="mb-2 flex justify-between text-sm">
               <span className="font-medium">Down Payment</span>
-              <span className="font-bold text-[#3B82F6]">{formatCurrency(downPayment)}</span>
+              <span className="font-bold text-[#059669]">{formatCurrency(downPayment)}</span>
             </div>
             <Slider value={[downPayment]} min={0} max={200000} step={5000} onValueChange={(v) => setDownPayment(v[0])} aria-label="Down payment" />
           </div>
           <div>
             <div className="mb-2 flex justify-between text-sm">
               <span className="font-medium">Interest Rate</span>
-              <span className="font-bold text-[#3B82F6]">{rate.toFixed(2)}%</span>
+              <span className="font-bold text-[#059669]">{rate.toFixed(2)}%</span>
             </div>
             <Slider value={[rate]} min={3} max={10} step={0.125} onValueChange={(v) => setRate(v[0])} aria-label="Interest rate" />
           </div>
@@ -75,7 +75,7 @@ export default function AffordabilityFinder() {
           <motion.div
             animate={{ scale: houseScale }}
             transition={{ type: 'spring', stiffness: 200 }}
-            className="text-[#3B82F6]"
+            className="text-[#059669]"
             aria-hidden="true"
           >
             <Home className="h-24 w-24" strokeWidth={1.5} />

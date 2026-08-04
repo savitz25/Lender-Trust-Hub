@@ -112,7 +112,7 @@ export default function CoastalSavannahHubPage() {
                   <Link
                     key={c.href}
                     href={c.href}
-                    className="rounded-xl border border-zinc-200 bg-white p-4 text-sm font-medium hover:border-[#3B82F6]"
+                    className="rounded-xl border border-zinc-200 bg-white p-4 text-sm font-medium hover:border-[#059669]"
                   >
                     {c.label} →
                   </Link>

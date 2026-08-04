@@ -104,7 +104,7 @@ export default function TampaBayHubPage() {
                 ))}
               </div>
               <p className="mt-4 text-sm">
-                <Link href="/local-lenders/florida/hillsborough" className="text-[#3B82F6] hover:underline">
+                <Link href="/local-lenders/florida/hillsborough" className="text-[#059669] hover:underline">
                   View all {hillsboroughLenders.length} Hillsborough County lenders →
                 </Link>
               </p>
@@ -117,7 +117,7 @@ export default function TampaBayHubPage() {
                   <Link
                     key={c.href}
                     href={c.href}
-                    className="rounded-xl border border-zinc-200 bg-white p-4 text-sm font-medium hover:border-[#3B82F6]"
+                    className="rounded-xl border border-zinc-200 bg-white p-4 text-sm font-medium hover:border-[#059669]"
                   >
                     {c.label} →
                   </Link>

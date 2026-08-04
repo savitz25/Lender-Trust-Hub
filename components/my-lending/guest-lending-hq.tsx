@@ -300,7 +300,7 @@ export function GuestLendingHq() {
                 <div className="min-w-0">
                   <Link
                     href={l.profilePath || `/lenders/${l.lenderSlug}`}
-                    className="font-semibold text-[#0A2540] hover:text-[#3B82F6] hover:underline"
+                    className="font-semibold text-[#0A2540] hover:text-[#059669] hover:underline"
                   >
                     {l.lenderName}
                   </Link>
@@ -378,7 +378,7 @@ export function GuestLendingHq() {
             Research only · Not an endorsement · Not a lender or broker · Verify licenses on{' '}
             <a
               href="https://www.nmlsconsumeraccess.org/"
-              className="font-medium text-[#3B82F6] underline"
+              className="font-medium text-[#059669] underline"
               target="_blank"
               rel="noopener noreferrer"
             >

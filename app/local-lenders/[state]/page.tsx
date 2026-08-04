@@ -143,7 +143,7 @@ export default async function MortgageStatePage({
                 </Link>
                 <Link
                   href="/local-lenders/georgia/coastal-savannah"
-                  className="block rounded-2xl border border-[#3B82F6]/40 bg-blue-50 p-5 hover:bg-blue-100/80"
+                  className="block rounded-2xl border border-emerald-300 bg-blue-50 p-5 hover:bg-blue-100/80"
                 >
                   <span className="font-semibold text-[#0A2540]">Coastal Savannah Hub →</span>
                   <span className="mt-1 block text-sm text-zinc-600">
@@ -593,7 +593,7 @@ export default async function MortgageStatePage({
                 </Link>
                 <Link
                   href="/local-lenders/florida/central-florida"
-                  className="block rounded-2xl border border-[#3B82F6]/40 bg-blue-50 p-5 hover:bg-blue-100/80"
+                  className="block rounded-2xl border border-emerald-300 bg-blue-50 p-5 hover:bg-blue-100/80"
                 >
                   <span className="font-semibold text-[#0A2540]">Central Florida Hub →</span>
                   <span className="mt-1 block text-sm text-zinc-600">

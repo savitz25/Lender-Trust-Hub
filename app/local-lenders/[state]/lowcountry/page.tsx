@@ -79,7 +79,7 @@ export default function LowcountryHubPage() {
                 ))}
               </div>
               <p className="mt-4 text-sm">
-                <Link href="/local-lenders/south-carolina/berkeley" className="text-[#3B82F6] hover:underline">
+                <Link href="/local-lenders/south-carolina/berkeley" className="text-[#059669] hover:underline">
                   Berkeley &amp; Dorchester counties — same 5 lenders via CSRA supplements →
                 </Link>
               </p>

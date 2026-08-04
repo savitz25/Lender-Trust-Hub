@@ -50,7 +50,7 @@ type YearFilter = 'all' | 'before1990' | 'before2000' | 'after2010';
 
 function celebrate() {
   if (typeof document === 'undefined') return;
-  const colors = ['#00A3A1', '#0A2540', '#D4AF37', '#3B82F6'];
+  const colors = ['#00A3A1', '#0A2540', '#D4AF37', '#059669'];
   for (let i = 0; i < 40; i++) {
     const el = document.createElement('div');
     el.style.cssText = `

@@ -83,7 +83,7 @@ export default function Navbar() {
           ))}
           <Link href="/my-lending">
             <Button size="sm" variant="outline" className="gap-1.5">
-              <Bookmark className="h-3.5 w-3.5 text-teal-700" aria-hidden />
+              <Bookmark className="h-3.5 w-3.5 text-emerald-700" aria-hidden />
               My Lending
             </Button>
           </Link>

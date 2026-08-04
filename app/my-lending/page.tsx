@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 
 export default function MyLendingPage() {
   return (
-    <div className="border-b border-zinc-200/80 bg-gradient-to-b from-white via-zinc-50 to-teal-50/20">
+    <div className="lth-hero-wash border-b border-zinc-200/80">
       <div className="container mx-auto max-w-3xl px-4 py-10 md:py-14">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-700">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-800">
           My Lending
         </p>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[#0A2540] md:text-4xl">
@@ -32,19 +32,19 @@ export default function MyLendingPage() {
           <TrustMark />
         </div>
         <p className="mt-3 text-sm text-zinc-500">
-          <Link href="/local-lenders" className="font-medium text-[#3B82F6] hover:underline">
+          <Link href="/local-lenders" className="font-medium text-[#059669] hover:underline">
             Local lenders
           </Link>
           {' · '}
-          <Link href="/calculators" className="font-medium text-[#3B82F6] hover:underline">
+          <Link href="/calculators" className="font-medium text-[#059669] hover:underline">
             Calculators
           </Link>
           {' · '}
-          <Link href="/compare" className="font-medium text-[#3B82F6] hover:underline">
+          <Link href="/compare" className="font-medium text-[#059669] hover:underline">
             Compare
           </Link>
           {' · '}
-          <Link href="/about" className="font-medium text-[#3B82F6] hover:underline">
+          <Link href="/about" className="font-medium text-[#059669] hover:underline">
             About
           </Link>
         </p>

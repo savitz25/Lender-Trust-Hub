@@ -97,7 +97,7 @@ export default function SouthFloridaHubPage() {
                 ))}
               </div>
               <p className="mt-4 text-sm text-zinc-500">
-                <Link href="/local-lenders/florida" className="text-[#3B82F6] hover:underline">
+                <Link href="/local-lenders/florida" className="text-[#059669] hover:underline">
                   View all Florida lenders →
                 </Link>
               </p>
@@ -110,7 +110,7 @@ export default function SouthFloridaHubPage() {
                   <Link
                     key={c.href}
                     href={c.href}
-                    className="rounded-xl border border-zinc-200 bg-white p-4 text-sm font-medium text-[#0A2540] hover:border-[#3B82F6]"
+                    className="rounded-xl border border-zinc-200 bg-white p-4 text-sm font-medium text-[#0A2540] hover:border-[#059669]"
                   >
                     {c.label} →
                   </Link>
@@ -132,7 +132,7 @@ export default function SouthFloridaHubPage() {
                 Verify at{' '}
                 <a
                   href="https://www.nmlsconsumeraccess.org"
-                  className="text-[#3B82F6] hover:underline"
+                  className="text-[#059669] hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

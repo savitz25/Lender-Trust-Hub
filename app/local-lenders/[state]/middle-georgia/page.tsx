@@ -101,7 +101,7 @@ export default function MiddleGeorgiaHubPage() {
                 ))}
               </div>
               <p className="mt-4 text-sm">
-                <Link href="/local-lenders/georgia/richmond" className="text-[#3B82F6] hover:underline">
+                <Link href="/local-lenders/georgia/richmond" className="text-[#059669] hover:underline">
                   View all {richmondLenders.length} Richmond County lenders →
                 </Link>
               </p>
@@ -122,7 +122,7 @@ export default function MiddleGeorgiaHubPage() {
                 ))}
               </div>
               <p className="mt-4 text-sm">
-                <Link href="/local-lenders/georgia/muscogee" className="text-[#3B82F6] hover:underline">
+                <Link href="/local-lenders/georgia/muscogee" className="text-[#059669] hover:underline">
                   View all {muscogeeLenders.length} Muscogee County lenders →
                 </Link>
               </p>
@@ -135,7 +135,7 @@ export default function MiddleGeorgiaHubPage() {
                   <Link
                     key={c.href}
                     href={c.href}
-                    className="rounded-xl border border-zinc-200 bg-white p-4 text-sm font-medium hover:border-[#3B82F6]"
+                    className="rounded-xl border border-zinc-200 bg-white p-4 text-sm font-medium hover:border-[#059669]"
                   >
                     {c.label} →
                   </Link>

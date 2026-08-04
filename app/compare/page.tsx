@@ -39,7 +39,7 @@ export default function ComparePage() {
             key={lender.id}
             className={`flex cursor-pointer items-center gap-4 rounded-xl border p-4 transition-colors ${
               selected.includes(lender.id)
-                ? 'border-[#3B82F6] bg-[#3B82F6]/5'
+                ? 'border-[#059669] bg-emerald-50'
                 : 'border-zinc-200 bg-white hover:border-zinc-300'
             }`}
           >

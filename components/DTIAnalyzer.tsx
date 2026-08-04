@@ -9,7 +9,7 @@ import { formatCurrency } from '@/lib/utils';
 
 function getDtiStatus(dti: number) {
   if (dti <= 28) return { label: 'Excellent', color: '#14B8A6', tip: 'You have strong borrowing power. Lenders will compete for your business.' };
-  if (dti <= 36) return { label: 'Good', color: '#3B82F6', tip: 'You\'re within conventional guidelines. Most lenders will approve you.' };
+  if (dti <= 36) return { label: 'Good', color: '#059669', tip: 'You\'re within conventional guidelines. Most lenders will approve you.' };
   if (dti <= 43) return { label: 'Moderate', color: '#F59E0B', tip: 'Consider FHA or specialized programs. Pay down debt to improve options.' };
   return { label: 'High Risk', color: '#EF4444', tip: 'Focus on debt reduction. FHA and credit-rebuilding lenders may help.' };
 }
@@ -39,7 +39,7 @@ export default function DTIAnalyzer() {
           <div>
             <div className="mb-2 flex justify-between text-sm">
               <span>Annual Income</span>
-              <span className="font-bold text-[#3B82F6]">{formatCurrency(income)}</span>
+              <span className="font-bold text-[#059669]">{formatCurrency(income)}</span>
             </div>
             <Slider value={[income]} min={30000} max={250000} step={5000} onValueChange={(v) => setIncome(v[0])} aria-label="Annual income" />
           </div>

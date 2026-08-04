@@ -92,11 +92,11 @@ export default function DfwSuburbsSiliconPrairieHubPage() {
                 ))}
               </div>
               <p className="mt-4 text-sm">
-                <Link href="/local-lenders/texas/collin" className="text-[#3B82F6] hover:underline">Collin County →</Link>
+                <Link href="/local-lenders/texas/collin" className="text-[#059669] hover:underline">Collin County →</Link>
                 {' · '}
-                <Link href="/local-lenders/texas/denton" className="text-[#3B82F6] hover:underline">Denton County →</Link>
+                <Link href="/local-lenders/texas/denton" className="text-[#059669] hover:underline">Denton County →</Link>
                 {' · '}
-                <Link href="/local-lenders/texas/grayson" className="text-[#3B82F6] hover:underline">Grayson County →</Link>
+                <Link href="/local-lenders/texas/grayson" className="text-[#059669] hover:underline">Grayson County →</Link>
               </p>
             </section>
             <section>
@@ -104,7 +104,7 @@ export default function DfwSuburbsSiliconPrairieHubPage() {
               <div className="grid gap-3 sm:grid-cols-2">
                 {CALCULATORS.map((c) => (
                   <Link key={c.href} href={c.href}
-                    className="rounded-xl border border-zinc-200 bg-white p-4 text-sm font-medium hover:border-[#3B82F6]">
+                    className="rounded-xl border border-zinc-200 bg-white p-4 text-sm font-medium hover:border-[#059669]">
                     {c.label} →
                   </Link>
                 ))}

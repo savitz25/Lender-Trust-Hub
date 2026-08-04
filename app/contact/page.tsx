@@ -24,12 +24,12 @@ export default function ContactPage() {
 
       <div className="mt-10 rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
         <div className="flex items-start gap-3">
-          <Mail className="mt-0.5 h-5 w-5 text-[#3B82F6]" aria-hidden />
+          <Mail className="mt-0.5 h-5 w-5 text-[#059669]" aria-hidden />
           <div>
             <p className="text-sm font-semibold text-[#0A2540]">Email</p>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="mt-1 inline-block text-[#3B82F6] hover:underline"
+              className="mt-1 inline-block text-[#059669] hover:underline"
             >
               {CONTACT_EMAIL}
             </a>

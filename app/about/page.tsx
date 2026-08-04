@@ -76,7 +76,7 @@ export default function AboutPage() {
                 key={item.title}
                 className="rounded-2xl border border-zinc-200 bg-white p-6"
               >
-                <item.icon className="mb-3 h-8 w-8 text-[#3B82F6]" aria-hidden="true" />
+                <item.icon className="mb-3 h-8 w-8 text-[#059669]" aria-hidden="true" />
                 <h3 className="mb-2 font-semibold text-[#0A2540]">{item.title}</h3>
                 <p className="text-sm text-zinc-600">{item.desc}</p>
               </div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
           Coverage is <strong className="font-semibold text-[#0A2540]">expanding by state and
           county</strong>. We do not claim every U.S. county has verified lenders in our directory.
           Full methodology (Trust Scores, close estimates, sources) is on{' '}
-          <a href="/methodology" className="font-medium text-[#3B82F6] hover:underline">
+          <a href="/methodology" className="font-medium text-[#059669] hover:underline">
             /methodology
           </a>
           .
@@ -105,7 +105,7 @@ export default function AboutPage() {
               <div className="text-xs text-zinc-500">Listings*</div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-[#3B82F6]">
+              <div className="text-2xl font-bold text-[#059669]">
                 {(TRUST_STATS.totalReviews / 1_000_000).toFixed(1)}M
               </div>
               <div className="text-xs text-zinc-500">Review signals*</div>

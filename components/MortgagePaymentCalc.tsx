@@ -25,7 +25,7 @@ function calcMonthlyPayment(principal: number, annualRate: number, years: number
   return (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
 }
 
-const COLORS = ['#3B82F6', '#14B8A6'];
+const COLORS = ['#059669', '#14B8A6'];
 
 export default function MortgagePaymentCalc() {
   const [amount, setAmount] = useState(350000);
@@ -72,7 +72,7 @@ export default function MortgagePaymentCalc() {
           <div>
             <div className="mb-2 flex justify-between text-sm">
               <span className="font-medium text-[#0A2540]">Loan Amount</span>
-              <span className="font-bold text-[#3B82F6]">{formatCurrency(amount)}</span>
+              <span className="font-bold text-[#059669]">{formatCurrency(amount)}</span>
             </div>
             <Slider
               value={[amount]}
@@ -86,7 +86,7 @@ export default function MortgagePaymentCalc() {
           <div>
             <div className="mb-2 flex justify-between text-sm">
               <span className="font-medium text-[#0A2540]">Interest Rate</span>
-              <span className="font-bold text-[#3B82F6]">{rate.toFixed(2)}%</span>
+              <span className="font-bold text-[#059669]">{rate.toFixed(2)}%</span>
             </div>
             <Slider
               value={[rate]}
@@ -100,7 +100,7 @@ export default function MortgagePaymentCalc() {
           <div>
             <div className="mb-2 flex justify-between text-sm">
               <span className="font-medium text-[#0A2540]">Loan Term</span>
-              <span className="font-bold text-[#3B82F6]">{term} years</span>
+              <span className="font-bold text-[#059669]">{term} years</span>
             </div>
             <Slider
               value={[term]}
@@ -150,7 +150,7 @@ export default function MortgagePaymentCalc() {
                 <XAxis dataKey="year" tick={{ fontSize: 11 }} />
                 <YAxis tickFormatter={(v) => `$${(v / 1000).toFixed(0)}k`} tick={{ fontSize: 11 }} />
                 <Tooltip formatter={(v) => formatCurrency(Number(v))} />
-                <Line type="monotone" dataKey="balance" stroke="#3B82F6" strokeWidth={2} dot={false} />
+                <Line type="monotone" dataKey="balance" stroke="#059669" strokeWidth={2} dot={false} />
               </LineChart>
             </ResponsiveContainer>
           </div>

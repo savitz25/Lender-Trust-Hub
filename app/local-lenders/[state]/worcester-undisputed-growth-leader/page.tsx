@@ -80,7 +80,7 @@ export default function WorcesterUndisputedGrowthLeaderHubPage() {
                 ))}
               </div>
               <p className="mt-4 text-sm">
-                <Link href="/local-lenders/massachusetts/worcester" className="text-[#3B82F6] hover:underline">
+                <Link href="/local-lenders/massachusetts/worcester" className="text-[#059669] hover:underline">
                   View all Worcester County lenders →
                 </Link>
               </p>
@@ -90,7 +90,7 @@ export default function WorcesterUndisputedGrowthLeaderHubPage() {
               <div className="grid gap-3 sm:grid-cols-2">
                 {CALCULATORS.map((c) => (
                   <Link key={c.href} href={c.href}
-                    className="rounded-xl border border-zinc-200 bg-white p-4 text-sm font-medium hover:border-[#3B82F6]">
+                    className="rounded-xl border border-zinc-200 bg-white p-4 text-sm font-medium hover:border-[#059669]">
                     {c.label} →
                   </Link>
                 ))}

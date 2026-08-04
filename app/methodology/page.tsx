@@ -82,7 +82,7 @@ export default function MethodologyPage() {
         <p className="mt-2">
           <a
             href={ASK_TRUST_HUB.methodologyUrl}
-            className="font-semibold text-[#3B82F6] underline-offset-2 hover:underline"
+            className="font-semibold text-[#059669] underline-offset-2 hover:underline"
             rel="noopener noreferrer"
           >
             Read the Ask Trust Hub Standard
@@ -108,7 +108,7 @@ export default function MethodologyPage() {
 
       <section className="mt-12">
         <h2 className="flex items-center gap-2 text-2xl font-semibold text-[#0A2540]">
-          <Scale className="h-5 w-5 text-[#3B82F6]" aria-hidden />
+          <Scale className="h-5 w-5 text-[#059669]" aria-hidden />
           Pipeline on this hub
         </h2>
         <ol className="mt-6 space-y-4">
@@ -117,11 +117,11 @@ export default function MethodologyPage() {
               key={step.verb}
               className="flex gap-4 rounded-xl border border-zinc-200 bg-white p-5 shadow-sm"
             >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#3B82F6] text-sm font-bold text-white">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#059669] text-sm font-bold text-white">
                 {i + 1}
               </span>
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-wider text-[#3B82F6]">
+                <p className="text-[11px] font-bold uppercase tracking-wider text-[#059669]">
                   {step.verb}
                 </p>
                 <h3 className="mt-0.5 font-semibold text-[#0A2540]">{step.title}</h3>
@@ -175,7 +175,7 @@ export default function MethodologyPage() {
 
       <section className="mt-12">
         <h2 className="flex items-center gap-2 text-2xl font-semibold text-[#0A2540]">
-          <Database className="h-5 w-5 text-[#3B82F6]" aria-hidden />
+          <Database className="h-5 w-5 text-[#059669]" aria-hidden />
           Data sources
         </h2>
         <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-600">
@@ -184,7 +184,7 @@ export default function MethodologyPage() {
             registry (
             <a
               href="https://www.nmlsconsumeraccess.org/"
-              className="text-[#3B82F6] hover:underline"
+              className="text-[#059669] hover:underline"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -213,7 +213,7 @@ export default function MethodologyPage() {
 
       <section className="mt-12">
         <h2 className="flex items-center gap-2 text-2xl font-semibold text-[#0A2540]">
-          <RefreshCw className="h-5 w-5 text-[#3B82F6]" aria-hidden />
+          <RefreshCw className="h-5 w-5 text-[#059669]" aria-hidden />
           Coverage
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">

@@ -172,7 +172,7 @@ export function LenderDirectoryClient({
                 value={searchInput}
                 onChange={(e) => setSearchInput(e.target.value)}
                 placeholder="Search by ZIP, lender name, city, or loan type…"
-                className="h-11 w-full rounded-xl border border-zinc-200 bg-white pl-10 pr-3 text-sm text-[#0A2540] placeholder:text-zinc-400 focus:border-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/20"
+                className="h-11 w-full rounded-xl border border-zinc-200 bg-white pl-10 pr-3 text-sm text-[#0A2540] placeholder:text-zinc-400 focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[#059669]/20"
                 autoComplete="off"
               />
             </label>
@@ -184,7 +184,7 @@ export function LenderDirectoryClient({
               <select
                 value={sort}
                 onChange={(e) => setSort(e.target.value as LenderSortOption)}
-                className="h-11 rounded-xl border border-zinc-200 bg-white px-3 text-sm text-[#0A2540] focus:border-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/20"
+                className="h-11 rounded-xl border border-zinc-200 bg-white px-3 text-sm text-[#0A2540] focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[#059669]/20"
                 aria-label="Sort lenders"
               >
                 {LENDER_SORT_OPTIONS.map((opt) => (
@@ -230,8 +230,8 @@ export function LenderDirectoryClient({
                   onClick={() => setLoanType('')}
                   className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
                     !loanType
-                      ? 'border-[#3B82F6] bg-[#3B82F6] text-white'
-                      : 'border-zinc-200 bg-white text-zinc-700 hover:border-[#3B82F6]/40'
+                      ? 'border-[#059669] bg-[#059669] text-white'
+                      : 'border-zinc-200 bg-white text-zinc-700 hover:border-emerald-300'
                   }`}
                 >
                   Any
@@ -243,8 +243,8 @@ export function LenderDirectoryClient({
                     onClick={() => setLoanType(type === loanType ? '' : type)}
                     className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
                       loanType === type
-                        ? 'border-[#3B82F6] bg-[#3B82F6] text-white'
-                        : 'border-zinc-200 bg-white text-zinc-700 hover:border-[#3B82F6]/40'
+                        ? 'border-[#059669] bg-[#059669] text-white'
+                        : 'border-zinc-200 bg-white text-zinc-700 hover:border-emerald-300'
                     }`}
                   >
                     {type}
@@ -259,7 +259,7 @@ export function LenderDirectoryClient({
                 <select
                   value={minRating || ''}
                   onChange={(e) => setMinRating(e.target.value ? Number(e.target.value) : 0)}
-                  className="h-9 rounded-lg border border-zinc-200 bg-white px-3 text-sm focus:border-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/20"
+                  className="h-9 rounded-lg border border-zinc-200 bg-white px-3 text-sm focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[#059669]/20"
                 >
                   <option value="">Any</option>
                   <option value="4.5">4.5+ stars</option>
@@ -273,7 +273,7 @@ export function LenderDirectoryClient({
                   type="checkbox"
                   checked={nmlsVerifiedOnly}
                   onChange={(e) => setNmlsVerifiedOnly(e.target.checked)}
-                  className="h-4 w-4 rounded border-zinc-300 text-[#3B82F6] focus:ring-[#3B82F6]/30"
+                  className="h-4 w-4 rounded border-zinc-300 text-[#059669] focus:ring-[#059669]/30"
                 />
                 NMLS verified only
               </label>
@@ -283,7 +283,7 @@ export function LenderDirectoryClient({
                   type="checkbox"
                   checked={bbbAPlusOnly}
                   onChange={(e) => setBbbAPlusOnly(e.target.checked)}
-                  className="h-4 w-4 rounded border-zinc-300 text-[#3B82F6] focus:ring-[#3B82F6]/30"
+                  className="h-4 w-4 rounded border-zinc-300 text-[#059669] focus:ring-[#059669]/30"
                 />
                 BBB A+ only
               </label>

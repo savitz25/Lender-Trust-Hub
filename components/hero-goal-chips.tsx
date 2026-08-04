@@ -41,7 +41,7 @@ export function HeroGoalChips() {
             <Link
               href={goal.href}
               title={goal.detail}
-              className="inline-flex min-h-11 items-center rounded-full border border-zinc-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#0A2540] shadow-sm transition-colors hover:border-[#3B82F6]/40 hover:bg-[#3B82F6]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6] focus-visible:ring-offset-2"
+              className="inline-flex min-h-11 items-center rounded-full border border-zinc-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#0A2540] shadow-sm transition-colors hover:border-emerald-300 hover:bg-emerald-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#059669] focus-visible:ring-offset-2"
             >
               {goal.label}
             </Link>

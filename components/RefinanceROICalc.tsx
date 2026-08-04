@@ -57,7 +57,7 @@ export default function RefinanceROICalc() {
           <div>
             <div className="mb-2 flex justify-between text-sm">
               <span>Loan Balance</span>
-              <span className="font-bold text-[#3B82F6]">{formatCurrency(balance)}</span>
+              <span className="font-bold text-[#059669]">{formatCurrency(balance)}</span>
             </div>
             <Slider value={[balance]} min={50000} max={750000} step={10000} onValueChange={(v) => setBalance(v[0])} aria-label="Loan balance" />
           </div>
@@ -80,7 +80,7 @@ export default function RefinanceROICalc() {
           <div>
             <div className="mb-2 flex justify-between text-sm">
               <span>Closing Costs</span>
-              <span className="font-bold text-[#3B82F6]">{formatCurrency(closingCosts)}</span>
+              <span className="font-bold text-[#059669]">{formatCurrency(closingCosts)}</span>
             </div>
             <Slider value={[closingCosts]} min={1000} max={10000} step={250} onValueChange={(v) => setClosingCosts(v[0])} aria-label="Closing costs" />
           </div>
@@ -95,9 +95,9 @@ export default function RefinanceROICalc() {
             <p className="text-xs text-zinc-500">New</p>
             <p className="text-xl font-bold text-[#14B8A6]">{formatCurrency(newPayment)}/mo</p>
           </div>
-          <div className="rounded-xl bg-[#3B82F6]/10 p-4 text-center">
+          <div className="rounded-xl bg-[#059669]/10 p-4 text-center">
             <p className="text-xs text-zinc-500">Monthly Savings</p>
-            <p className="text-xl font-bold text-[#3B82F6]">{formatCurrency(monthlySavings)}</p>
+            <p className="text-xl font-bold text-[#059669]">{formatCurrency(monthlySavings)}</p>
           </div>
         </div>
 

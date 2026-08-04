@@ -59,21 +59,21 @@ export default function ClosingCostsEstimator() {
           <div>
             <div className="mb-2 flex justify-between text-sm">
               <span>Home Price</span>
-              <span className="font-bold text-[#3B82F6]">{formatCurrency(homePrice)}</span>
+              <span className="font-bold text-[#059669]">{formatCurrency(homePrice)}</span>
             </div>
             <Slider value={[homePrice]} min={100000} max={1500000} step={10000} onValueChange={(v) => setHomePrice(v[0])} aria-label="Home price" />
           </div>
           <div>
             <div className="mb-2 flex justify-between text-sm">
               <span>Down Payment</span>
-              <span className="font-bold text-[#3B82F6]">{downPercent}%</span>
+              <span className="font-bold text-[#059669]">{downPercent}%</span>
             </div>
             <Slider value={[downPercent]} min={0} max={30} step={1} onValueChange={(v) => setDownPercent(v[0])} aria-label="Down payment percentage" />
           </div>
           <div>
             <div className="mb-2 flex justify-between text-sm">
               <span>Discount Points</span>
-              <span className="font-bold text-[#3B82F6]">{points}%</span>
+              <span className="font-bold text-[#059669]">{points}%</span>
             </div>
             <Slider value={[points]} min={0} max={3} step={0.25} onValueChange={(v) => setPoints(v[0])} aria-label="Discount points" />
           </div>

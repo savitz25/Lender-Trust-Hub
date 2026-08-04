@@ -33,7 +33,7 @@ export function LenderCard({
     <Card
       id={`lender-${lender.id}`}
       aria-label={`${rank != null ? `#${rank} ` : ''}${lender.name} — mortgage ${lender.type.toLowerCase()}${countyLabel ? ` in ${countyLabel}` : ''}`}
-      className="group flex h-full flex-col overflow-hidden transition-colors hover:border-[#3B82F6]/40"
+      className="group flex h-full flex-col overflow-hidden transition-colors hover:border-emerald-300"
     >
       <div className="flex flex-1 flex-col p-5">
         <div className="space-y-1.5">
@@ -49,7 +49,7 @@ export function LenderCard({
             <div className="min-w-0 flex-1">
               <Link
                 href={profileHref}
-                className="block text-xl font-semibold tracking-tight text-[#0A2540] transition-colors group-hover:text-[#3B82F6]"
+                className="block text-xl font-semibold tracking-tight text-[#0A2540] transition-colors group-hover:text-[#059669]"
               >
                 {lender.name}
               </Link>
@@ -123,7 +123,7 @@ export function LenderCard({
         </dl>
         <p className="mt-2 text-[10px] leading-snug text-zinc-400">
           *Editorial estimate — not an NMLS/CFPB field.{' '}
-          <Link href="/methodology#close-metrics" className="text-[#3B82F6] hover:underline">
+          <Link href="/methodology#close-metrics" className="text-[#059669] hover:underline">
             Methodology
           </Link>
         </p>

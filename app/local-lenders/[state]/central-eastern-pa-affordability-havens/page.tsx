@@ -80,13 +80,13 @@ export default function CentralEasternPaAffordabilityHavensHubPage() {
                 ))}
               </div>
               <p className="mt-4 flex flex-wrap gap-4 text-sm">
-                <Link href="/local-lenders/pennsylvania/dauphin" className="text-[#3B82F6] hover:underline">
+                <Link href="/local-lenders/pennsylvania/dauphin" className="text-[#059669] hover:underline">
                   View all Dauphin County lenders →
                 </Link>
-                <Link href="/local-lenders/pennsylvania/lehigh" className="text-[#3B82F6] hover:underline">
+                <Link href="/local-lenders/pennsylvania/lehigh" className="text-[#059669] hover:underline">
                   View all Lehigh County lenders →
                 </Link>
-                <Link href="/local-lenders/pennsylvania/york" className="text-[#3B82F6] hover:underline">
+                <Link href="/local-lenders/pennsylvania/york" className="text-[#059669] hover:underline">
                   View all York County lenders →
                 </Link>
               </p>
@@ -96,7 +96,7 @@ export default function CentralEasternPaAffordabilityHavensHubPage() {
               <div className="grid gap-3 sm:grid-cols-2">
                 {CALCULATORS.map((c) => (
                   <Link key={c.href} href={c.href}
-                    className="rounded-xl border border-zinc-200 bg-white p-4 text-sm font-medium hover:border-[#3B82F6]">
+                    className="rounded-xl border border-zinc-200 bg-white p-4 text-sm font-medium hover:border-[#059669]">
                     {c.label} →
                   </Link>
                 ))}

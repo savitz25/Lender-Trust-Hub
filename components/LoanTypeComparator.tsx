@@ -76,7 +76,7 @@ export default function LoanTypeComparator() {
               }}
               className={`rounded-2xl border-2 p-5 transition-colors ${
                 selected === loan.id
-                  ? 'border-[#3B82F6] bg-[#3B82F6]/5 shadow-lg'
+                  ? 'border-[#059669] bg-emerald-50 shadow-lg'
                   : 'border-zinc-200 bg-white'
               }`}
             >

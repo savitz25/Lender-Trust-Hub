@@ -109,7 +109,7 @@ export default async function LocalLendersHubPage({ searchParams }: PageProps) {
       >
         <div className="container mx-auto px-4">
           <div className="mb-8">
-            <div className="text-xs font-semibold uppercase tracking-[2px] text-[#3B82F6]">
+            <div className="text-xs font-semibold uppercase tracking-[2px] text-[#059669]">
               Comprehensive Directory
             </div>
             <h2

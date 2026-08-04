@@ -38,7 +38,7 @@ export function TrustBar() {
       </div>
       <p className="container mx-auto px-4 pb-4 text-center text-[11px] text-zinc-500">
         *Research directory signals — not a guarantee of complete national coverage. See{' '}
-        <a href="/methodology" className="font-medium text-[#3B82F6] hover:underline">
+        <a href="/methodology" className="font-medium text-[#059669] hover:underline">
           methodology
         </a>
         .

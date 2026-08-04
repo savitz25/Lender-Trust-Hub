@@ -91,7 +91,7 @@ export function EmptyCoveragePanel({
               <li key={link.href + link.label}>
                 <Link
                   href={link.href}
-                  className="font-semibold text-[#3B82F6] underline-offset-2 hover:underline"
+                  className="font-semibold text-[#059669] underline-offset-2 hover:underline"
                 >
                   {link.label}
                 </Link>

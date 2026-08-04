@@ -504,9 +504,9 @@ export default async function CountyLendersPage({
     <div className="container mx-auto px-4 py-12">
       <nav aria-label="Breadcrumb" className="mb-6 text-sm text-zinc-500">
         <ol className="flex flex-wrap items-center gap-1">
-          <li><Link href="/" className="hover:text-[#3B82F6]">Home</Link></li>
+          <li><Link href="/" className="hover:text-[#059669]">Home</Link></li>
           <ChevronRight className="h-4 w-4" aria-hidden="true" />
-          <li><Link href="/local-lenders" className="hover:text-[#3B82F6]">Local Lenders</Link></li>
+          <li><Link href="/local-lenders" className="hover:text-[#059669]">Local Lenders</Link></li>
           <ChevronRight className="h-4 w-4" aria-hidden="true" />
           <li><span className="text-[#0A2540]">{countyLabel}</span></li>
         </ol>

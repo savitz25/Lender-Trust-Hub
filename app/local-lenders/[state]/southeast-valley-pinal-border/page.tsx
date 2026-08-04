@@ -80,9 +80,9 @@ export default function SoutheastValleyPinalBorderHubPage() {
                 ))}
               </div>
               <p className="mt-4 text-sm">
-                <Link href="/local-lenders/arizona/maricopa" className="text-[#3B82F6] hover:underline">Maricopa County →</Link>
+                <Link href="/local-lenders/arizona/maricopa" className="text-[#059669] hover:underline">Maricopa County →</Link>
                 {' · '}
-                <Link href="/local-lenders/arizona/pinal" className="text-[#3B82F6] hover:underline">Pinal County →</Link>
+                <Link href="/local-lenders/arizona/pinal" className="text-[#059669] hover:underline">Pinal County →</Link>
               </p>
             </section>
             <section>
@@ -90,7 +90,7 @@ export default function SoutheastValleyPinalBorderHubPage() {
               <div className="grid gap-3 sm:grid-cols-2">
                 {CALCULATORS.map((c) => (
                   <Link key={c.href} href={c.href}
-                    className="rounded-xl border border-zinc-200 bg-white p-4 text-sm font-medium hover:border-[#3B82F6]">
+                    className="rounded-xl border border-zinc-200 bg-white p-4 text-sm font-medium hover:border-[#059669]">
                     {c.label} →
                   </Link>
                 ))}

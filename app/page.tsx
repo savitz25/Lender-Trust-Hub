@@ -14,7 +14,7 @@ export default function HomePage() {
 
   return (
     <div>
-      <section className="relative border-b border-zinc-200 bg-gradient-to-br from-[#0A2540]/5 via-white to-[#14B8A6]/5">
+      <section className="lth-hero-wash relative border-b border-zinc-200">
         <div className="container mx-auto px-4 py-14 md:py-20">
           <div className="mx-auto max-w-4xl text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-semibold text-emerald-700">
@@ -73,7 +73,7 @@ export default function HomePage() {
 
       <section className="container mx-auto px-4 py-16">
         <div className="mb-12 text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#3B82F6]">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#059669]">
             How It Works
           </p>
           <h2 className="text-3xl font-bold text-[#0A2540]">
@@ -102,7 +102,7 @@ export default function HomePage() {
               key={item.step}
               className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm"
             >
-              <div className="mb-3 text-3xl font-bold text-[#3B82F6]/30">{item.step}</div>
+              <div className="mb-3 text-3xl font-bold text-emerald-600/30">{item.step}</div>
               <h3 className="mb-2 text-lg font-semibold text-[#0A2540]">{item.title}</h3>
               <p className="text-sm leading-relaxed text-zinc-600">{item.desc}</p>
             </div>

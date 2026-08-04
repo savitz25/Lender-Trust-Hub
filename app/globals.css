@@ -1,11 +1,25 @@
 @import "tailwindcss";
 
+/**
+ * Lender Trust Hub — Ask Trust Hub family tokens
+ * Align with Insurance (#059669 trust green, #0A2540 navy).
+ * Electric blue (#3B82F6 / #2563eb) is NOT a primary CTA fill.
+ */
 :root {
-  --primary: #0F172A;
-  --accent: #3B82F6;
+  --lth-brand-green: #059669;
+  --lth-brand-green-dark: #047857;
+  --lth-brand-navy: #0a2540;
+  --lth-brand-mark-blue: #3b82f6; /* triangle mark segment in logo PNG only */
+  --lth-surface-mint: #f0fdf9;
+  --lth-accent-teal: #0d9488;
+  --lth-link: #0f766e;
+  --lth-link-hover: #047857;
+
+  --primary: #0a2540;
+  --accent: #059669;
   --trust: #059669;
   --background: #fafafa;
-  --foreground: #0F172A;
+  --foreground: #0f172a;
 }
 
 .dark {
@@ -16,6 +30,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand-green: var(--lth-brand-green);
+  --color-brand-navy: var(--lth-brand-navy);
+  --color-trust: var(--trust);
   --font-sans: var(--font-inter);
 }
 
@@ -26,9 +43,29 @@ body {
 }
 
 .trust-badge {
-  @apply inline-flex items-center gap-1 rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700;
+  @apply inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-800;
 }
 
 .container {
   @apply mx-auto max-w-7xl;
+}
+
+/* Brand link utility — prefer over electric blue */
+.lth-link {
+  color: var(--lth-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.lth-link:hover {
+  color: var(--lth-link-hover);
+}
+
+/* Soft mint page wash (Insurance-style) */
+.lth-hero-wash {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    var(--lth-surface-mint) 45%,
+    #f8fafc 100%
+  );
 }
