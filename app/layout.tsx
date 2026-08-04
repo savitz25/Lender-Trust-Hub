@@ -17,11 +17,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.lendertrusthub.com'),
   title: {
-    default: 'Lender Trust Hub — NMLS Research Directory (2026)',
+    default: 'What Are You Trying to Accomplish? | Lender Trust Hub',
     template: '%s | Lender Trust Hub',
   },
   description:
-    'Independent research directory of mortgage lenders and brokers. NMLS licensing context, educational calculators, expanding county coverage. Zero paid placements. Not a lender.',
+    'What are you trying to accomplish? Research NMLS-verified mortgage lenders by goal — buy, refinance, affordability — with educational calculators. Independent directory. Zero paid placements. Not a lender.',
   applicationName: 'Lender Trust Hub',
   keywords: [
     'mortgage lenders',
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     canonical: 'https://www.lendertrusthub.com',
   },
   openGraph: {
-    title: 'Lender Trust Hub — NMLS Research Directory',
+    title: 'What Are You Trying to Accomplish? | Lender Trust Hub',
     description:
-      'Research NMLS-verified lenders before you apply. Independent directory — zero paid placements. Not a lender.',
+      'Goal-based NMLS lender research and educational calculators. Independent directory — zero paid placements. Not a lender.',
     siteName: 'Lender Trust Hub',
     url: 'https://www.lendertrusthub.com',
     type: 'website',
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lender Trust Hub — NMLS Research Directory',
+    title: 'What Are You Trying to Accomplish? | Lender Trust Hub',
     description:
-      'Research NMLS-verified lenders before you apply. Independent directory — zero paid placements.',
+      'Goal-based NMLS lender research. Independent directory — zero paid placements.',
   },
   icons: {
     icon: [{ url: '/brand/lender-trust-hub-favicon-32.png', sizes: '32x32', type: 'image/png' }],

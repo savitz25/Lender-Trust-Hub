@@ -31,6 +31,10 @@ Constant: `lib/network/standard-version.ts` → `ASK_NETWORK_STANDARD_VERSION`
 - **Do not bump for:** unrelated vertical content
 - Live host exposes `data-network-standard` on `<body>`
 
+### Hero intent (Priority 4)
+
+Lender homepage hero: **What are you trying to accomplish?** (goal chips → local-lenders / calculators). Vertical copy; Standard version not required for hero-only changes.
+
 ### Trust Mark contract
 
 Primary: `Ask Trust Hub Standard` → `https://www.asktrusthub.com/methodology`  

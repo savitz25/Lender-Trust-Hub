@@ -3,7 +3,9 @@ import { Shield, ArrowRight, CheckCircle } from 'lucide-react';
 import { SearchBar } from '@/components/SearchBar';
 import { TrustBar } from '@/components/TrustBar';
 import { HomeTabs } from '@/components/HomeTabs';
+import { HeroGoalChips } from '@/components/hero-goal-chips';
 import { NetworkBelongingLine } from '@/components/network/network-belonging-line';
+import { TrustMark } from '@/components/network/trust-mark';
 import { getFeaturedLenders } from '@/lib/lenders';
 import { Button } from '@/components/ui/button';
 
@@ -13,45 +15,52 @@ export default function HomePage() {
   return (
     <div>
       <section className="relative border-b border-zinc-200 bg-gradient-to-br from-[#0A2540]/5 via-white to-[#14B8A6]/5">
-        <div className="container mx-auto px-4 py-16 md:py-24">
+        <div className="container mx-auto px-4 py-14 md:py-20">
           <div className="mx-auto max-w-4xl text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-semibold text-emerald-700">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-semibold text-emerald-700">
               <Shield className="h-4 w-4" aria-hidden="true" />
-              INDEPENDENT NMLS DIRECTORY · ZERO PAID PLACEMENTS
+              INDEPENDENT NMLS RESEARCH · ZERO PAID PLACEMENTS
             </div>
-            <NetworkBelongingLine className="mb-4" />
+            <NetworkBelongingLine className="mb-3" />
+            <div className="mb-5 flex justify-center">
+              <TrustMark />
+            </div>
 
-            <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-[#0A2540] md:text-6xl">
-              Research NMLS-verified lenders
-              <br />
-              <span className="text-[#3B82F6]">before you apply</span>
+            <h1 className="mb-3 text-4xl font-bold leading-tight tracking-tight text-[#0A2540] md:text-5xl lg:text-6xl">
+              What are you trying to accomplish?
             </h1>
-
             <p className="mx-auto mb-8 max-w-2xl text-lg text-zinc-600 md:text-xl">
-              Independent mortgage research directory. Cross-check licensing context, public risk
-              signals, and county market orientation — then confirm every ID on NMLS Consumer Access.
-              We do not originate loans or sell ranking position.
+              Pick a financing goal, then research NMLS-verified lenders and educational calculators.
+              Independent directory — we do not originate loans or sell ranking position. Re-check
+              every ID on NMLS Consumer Access.
             </p>
 
-            <SearchBar className="mx-auto mb-6 max-w-xl" />
+            <HeroGoalChips />
 
-            <p className="mb-8 text-sm text-zinc-500">
-              Expanding state &amp; county coverage · Educational calculators · Not a lender
+            <div className="mx-auto mt-8 max-w-xl">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                Or search by ZIP / market
+              </p>
+              <SearchBar className="mx-auto" />
+            </div>
+
+            <p className="mt-6 mb-6 text-sm text-zinc-500">
+              Expanding state &amp; county coverage · Educational tools · Not a lender
             </p>
 
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link href="/local-lenders">
-                <Button size="lg" variant="trust" className="gap-2">
+                <Button size="lg" variant="trust" className="gap-2 min-h-11">
                   Browse lenders <ArrowRight className="h-5 w-5" aria-hidden="true" />
                 </Button>
               </Link>
               <Link href="/calculators">
-                <Button size="lg" variant="outline" className="gap-2">
+                <Button size="lg" variant="outline" className="gap-2 min-h-11">
                   Educational calculators
                 </Button>
               </Link>
               <Link href="/methodology">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="min-h-11">
                   Methodology
                 </Button>
               </Link>
