@@ -1,16 +1,22 @@
 # Lender Trust Hub
 
-**https://www.lendertrusthub.com** — Standalone independent directory of mortgage lenders and brokers.
+**Production domain:** https://www.lendertrusthub.com  
+**This repo is the source of truth for that domain** (`Lender-Trust-Hub` → Vercel Lender project).
 
-> **Tagline:** Trusted Local Lenders • Verified County Insights • National Expertise
+Sibling network repos: [Conumers-Trust-Hub](https://github.com/savitz25/Conumers-Trust-Hub) (Ask) · [Move-trust-Hub](https://github.com/savitz25/Move-trust-Hub) · [Insurance-trust-hub](https://github.com/savitz25/Insurance-trust-hub)
 
-This repository is the **production source of truth** for the apex site. It is not served under MoveTrustHub’s `/lender` path.
+**Network / multi-domain:** see [docs/NETWORK-DEPLOY.md](./docs/NETWORK-DEPLOY.md) and [docs/NETWORK-PR-CHECKLIST.md](./docs/NETWORK-PR-CHECKLIST.md).  
+Move monorepo `app/lender` changes do **not** update this apex domain — push **this** repo for production Lender.
 
 | Item | Value |
 |------|--------|
 | Production URL | https://www.lendertrusthub.com |
 | GitHub | https://github.com/savitz25/Lender-Trust-Hub |
 | Vercel project | `lender-trust-hub` |
+
+> **Tagline:** Trusted Local Lenders • Verified County Insights • National Expertise
+
+Standalone independent directory of mortgage lenders and brokers. Not served under MoveTrustHub’s `/lender` path (Move 301s there to this host).
 
 Optional sister directory (footer only): [Move Trust Hub](https://www.movetrusthub.com).
 

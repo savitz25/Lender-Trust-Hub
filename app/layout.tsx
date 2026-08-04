@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { AskNetworkBar } from '@/components/network/ask-network-bar';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { GtagProvider } from '@/components/directory/GtagProvider';
+import { ASK_NETWORK_STANDARD_VERSION } from '@/lib/network/standard-version';
 import './globals.css';
 
 const inter = Inter({
@@ -71,7 +72,11 @@ export default function RootLayout({
           </>
         )}
       </head>
-      <body className="min-h-screen flex flex-col antialiased bg-[#fafafa] text-[#0F172A] dark:bg-zinc-950 dark:text-zinc-100">
+      <body
+        className="min-h-screen flex flex-col antialiased bg-[#fafafa] text-[#0F172A] dark:bg-zinc-950 dark:text-zinc-100"
+        data-network-standard={ASK_NETWORK_STANDARD_VERSION}
+      >
+        {/* network-standard: {ASK_NETWORK_STANDARD_VERSION} */}
         <ThemeProvider>
           <GtagProvider />
           <AskNetworkBar />
