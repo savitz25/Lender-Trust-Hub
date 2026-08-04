@@ -32,8 +32,10 @@ import {
   getLendersForPlan,
   getResearching,
   getShortlisted,
+  listActivePlans,
   loadMyLendingStore,
   removeSavedLender,
+  setActivePlan,
   SHORTLIST_CAP,
   shortlistReplacing,
   shortlistWithDemoteOldest,
@@ -53,6 +55,7 @@ export function GuestLendingHq() {
   const [plan, setPlan] = useState<FinancePlan | null>(null);
   const [lenders, setLenders] = useState<SavedLender[]>([]);
   const [snapshots, setSnapshots] = useState<CalculatorSnapshot[]>([]);
+  const [openPlans, setOpenPlans] = useState<FinancePlan[]>([]);
   const [hydrated, setHydrated] = useState(false);
   const [label, setLabel] = useState('');
   const [zip, setZip] = useState('');
@@ -72,6 +75,7 @@ export function GuestLendingHq() {
     const store = loadMyLendingStore();
     const active = getActivePlan(store);
     setPlan(active);
+    setOpenPlans(listActivePlans(store));
     if (active) {
       setLenders(getLendersForPlan(active.id, store));
       setSnapshots(getCalculatorSnapshots(active.id));
@@ -151,6 +155,11 @@ export function GuestLendingHq() {
   return (
     <div className="space-y-6">
       <nav aria-label="My Lending sections" className="flex flex-wrap gap-2">
+        <Link href="/my-lending/plans">
+          <Button size="sm" variant="outline" className="gap-1.5">
+            All plans
+          </Button>
+        </Link>
         <Link href="/my-lending/setup">
           <Button size="sm" variant="outline" className="gap-1.5">
             <Settings2 className="h-3.5 w-3.5" aria-hidden />
@@ -172,16 +181,46 @@ export function GuestLendingHq() {
       </nav>
 
       <section className="rounded-2xl border border-teal-100 bg-white p-5 shadow-sm sm:p-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
-          Active plan
-        </p>
-        <h2 className="mt-1 text-xl font-semibold text-[#0A2540]">
-          {plan?.label || 'Financing research plan'}
-        </h2>
-        <p className="mt-1 text-sm leading-relaxed text-zinc-600">
-          Guest-saved on this device. Edit details below or save lenders from profiles. Research
-          only - not a marketplace or pre-approval service.
-        </p>
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
+              Active plan
+            </p>
+            <h2 className="mt-1 text-xl font-semibold text-[#0A2540]">
+              {plan?.label || 'Financing research plan'}
+            </h2>
+            <p className="mt-1 text-sm leading-relaxed text-zinc-600">
+              Guest-saved on this device. Shortlist and snapshots attach to this plan only. Research
+              only — not a marketplace or pre-approval service.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {openPlans.length > 1 ? (
+              <select
+                className="h-9 max-w-[14rem] rounded-md border border-zinc-200 bg-white px-2 text-sm font-medium text-zinc-800"
+                value={plan?.id ?? ''}
+                onChange={(e) => {
+                  const id = e.target.value;
+                  if (!id) return;
+                  setActivePlan(id);
+                  refresh();
+                }}
+                aria-label="Switch active plan"
+              >
+                {openPlans.map((p) => (
+                  <option key={p.id} value={p.id}>
+                    {p.label}
+                  </option>
+                ))}
+              </select>
+            ) : null}
+            <Link href="/my-lending/plans">
+              <Button size="sm" variant="outline">
+                All plans
+              </Button>
+            </Link>
+          </div>
+        </div>
 
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <div className="sm:col-span-2">

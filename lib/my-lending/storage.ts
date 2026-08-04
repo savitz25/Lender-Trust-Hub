@@ -38,11 +38,17 @@ const MAX_PLANS = 20;
 
 function emptyState(): MyLendingState {
   return {
-    version: 1,
+    version: 2,
     activePlanId: null,
     plans: [],
     savedLenders: [],
   };
+}
+
+function listNonArchived(plans: FinancePlan[]): FinancePlan[] {
+  return plans
+    .filter((p) => p.status !== 'archived')
+    .sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : -1));
 }
 
 function isBrowser(): boolean {
@@ -70,14 +76,18 @@ function normalizeLender(l: SavedLender): SavedLender {
   };
 }
 
+/**
+ * Phase D migration: accept v1|v2, backfill planId on lenders, ensure activePlanId.
+ */
 function normalizeState(raw: unknown): MyLendingState | null {
   if (!raw || typeof raw !== 'object') return null;
   const parsed = raw as MyLendingState;
-  if (parsed.version !== 1 || !Array.isArray(parsed.plans)) return null;
-  return {
-    version: 1,
-    activePlanId: parsed.activePlanId ?? null,
-    plans: (Array.isArray(parsed.plans) ? parsed.plans : []).map((p) => ({
+  if (parsed.version !== 1 && parsed.version !== 2) return null;
+  if (!Array.isArray(parsed.plans)) return null;
+
+  let plans: FinancePlan[] = (Array.isArray(parsed.plans) ? parsed.plans : [])
+    .filter((p) => p && typeof p.id === 'string')
+    .map((p) => ({
       ...p,
       label: String(p.label || 'My financing research'),
       loanFocus: Array.isArray(p.loanFocus) ? p.loanFocus : [],
@@ -88,11 +98,59 @@ function normalizeState(raw: unknown): MyLendingState | null {
       calculatorSnapshots: Array.isArray(p.calculatorSnapshots)
         ? p.calculatorSnapshots
         : [],
-    })),
-    savedLenders: (Array.isArray(parsed.savedLenders) ? parsed.savedLenders : [])
-      .map(normalizeLender)
-      .filter((l) => l.lenderSlug)
-      .slice(0, MAX_SAVED_LENDERS),
+    }))
+    .slice(0, MAX_PLANS);
+
+  let savedLenders = (Array.isArray(parsed.savedLenders) ? parsed.savedLenders : [])
+    .map(normalizeLender)
+    .filter((l) => l.lenderSlug);
+
+  const idToPlan = new Map<string, string>();
+  for (const plan of plans) {
+    for (const lid of plan.savedLenderIds) {
+      idToPlan.set(lid, plan.id);
+    }
+  }
+  const fallbackPlanId =
+    parsed.activePlanId && plans.some((p) => p.id === parsed.activePlanId)
+      ? parsed.activePlanId
+      : listNonArchived(plans)[0]?.id ?? plans[0]?.id ?? null;
+
+  savedLenders = savedLenders.map((l) => {
+    if (l.planId && plans.some((pl) => pl.id === l.planId)) return l;
+    const fromList = idToPlan.get(l.id);
+    if (fromList) return { ...l, planId: fromList };
+    if (fallbackPlanId) return { ...l, planId: fallbackPlanId };
+    return l;
+  });
+
+  plans = plans.map((plan) => {
+    const fromField = savedLenders.filter((l) => l.planId === plan.id).map((l) => l.id);
+    return {
+      ...plan,
+      savedLenderIds: Array.from(new Set([...plan.savedLenderIds, ...fromField])),
+      calculatorSnapshots: (plan.calculatorSnapshots ?? []).map((s) => ({
+        ...s,
+        planId: s.planId || plan.id,
+      })),
+    };
+  });
+
+  let activePlanId = parsed.activePlanId ?? null;
+  if (activePlanId) {
+    const hit = plans.find((p) => p.id === activePlanId);
+    if (!hit || hit.status === 'archived') {
+      activePlanId = listNonArchived(plans)[0]?.id ?? null;
+    }
+  } else {
+    activePlanId = listNonArchived(plans)[0]?.id ?? null;
+  }
+
+  return {
+    version: 2,
+    activePlanId,
+    plans,
+    savedLenders: savedLenders.slice(0, MAX_SAVED_LENDERS),
   };
 }
 
@@ -124,7 +182,7 @@ export function saveState(
 ): { ok: true } | { ok: false; error: string } {
   if (!isBrowser()) return { ok: false, error: 'Not available on server' };
   const next: MyLendingState = {
-    version: 1,
+    version: 2,
     activePlanId: state.activePlanId,
     plans: state.plans.slice(0, MAX_PLANS),
     savedLenders: state.savedLenders
@@ -148,20 +206,51 @@ export function saveState(
   }
 }
 
+/** Non-archived plans (library open set). */
 export function listActivePlans(state?: MyLendingState): FinancePlan[] {
   const s = state ?? loadState();
-  return s.plans
-    .filter((p) => p.status === 'active')
-    .sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : -1));
+  return listNonArchived(s.plans);
+}
+
+/** Full library: open + archived, most recently updated first. */
+export function listAllPlans(state?: MyLendingState): FinancePlan[] {
+  const s = state ?? loadState();
+  return s.plans.slice().sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : -1));
+}
+
+export function listPlans(state?: MyLendingState): FinancePlan[] {
+  return listAllPlans(state);
+}
+
+export function getPlanById(planId: string, state?: MyLendingState): FinancePlan | null {
+  const s = state ?? loadState();
+  return s.plans.find((p) => p.id === planId) ?? null;
 }
 
 export function getActivePlan(state?: MyLendingState): FinancePlan | null {
   const s = state ?? loadState();
   if (s.activePlanId) {
-    const hit = s.plans.find((p) => p.id === s.activePlanId && p.status === 'active');
+    const hit = s.plans.find((p) => p.id === s.activePlanId && p.status !== 'archived');
     if (hit) return hit;
   }
   return listActivePlans(s)[0] ?? null;
+}
+
+/** Switch HQ active plan. Unarchives if needed so Open from library works. */
+export function setActivePlan(planId: string): FinancePlan | null {
+  const state = loadState();
+  const idx = state.plans.findIndex((p) => p.id === planId);
+  if (idx < 0) return null;
+  const ts = nowIso();
+  const plan: FinancePlan = {
+    ...state.plans[idx],
+    status: 'active',
+    updatedAt: ts,
+  };
+  state.plans[idx] = plan;
+  state.activePlanId = plan.id;
+  saveState(state);
+  return plan;
 }
 
 export function getLendersForPlan(
@@ -186,7 +275,10 @@ export type UpsertPlanInput = {
   status?: PlanStatus;
 };
 
-/** Create or update plan. Phase A: new plan archives other actives (one active). */
+/**
+ * Create or update plan. Phase D: creating does NOT archive siblings;
+ * sets activePlanId when status is active.
+ */
 export function upsertPlan(input: UpsertPlanInput): FinancePlan {
   const state = loadState();
   const ts = nowIso();
@@ -205,19 +297,38 @@ export function upsertPlan(input: UpsertPlanInput): FinancePlan {
         updatedAt: ts,
       };
       state.plans[idx] = next;
-      if (next.status === 'active') state.activePlanId = next.id;
+      if (next.status === 'active') {
+        state.activePlanId = next.id;
+      } else if (state.activePlanId === next.id) {
+        state.activePlanId = listNonArchived(state.plans)[0]?.id ?? null;
+      }
       saveState(state);
       return next;
     }
   }
 
-  // New plan - Phase A keeps one simple active plan
-  state.plans = state.plans.map((p) =>
-    p.status === 'active' ? { ...p, status: 'archived' as const, updatedAt: ts } : p
-  );
+  return createPlan({
+    label,
+    loanFocus: input.loanFocus,
+    location: input.location,
+    notes: input.notes,
+    makeActive: true,
+  });
+}
+
+/** Create a new plan without archiving existing plans. */
+export function createPlan(input: {
+  label?: string;
+  loanFocus?: string[];
+  location?: FinancePlan['location'];
+  notes?: string;
+  makeActive?: boolean;
+}): FinancePlan {
+  const state = loadState();
+  const ts = nowIso();
   const plan: FinancePlan = {
     id: newId(),
-    label,
+    label: (input.label?.trim() || 'My financing research').slice(0, 120),
     loanFocus: input.loanFocus ?? [],
     location: input.location,
     notes: input.notes,
@@ -228,7 +339,11 @@ export function upsertPlan(input: UpsertPlanInput): FinancePlan {
     calculatorSnapshots: [],
   };
   state.plans = [plan, ...state.plans].slice(0, MAX_PLANS);
-  state.activePlanId = plan.id;
+  if (input.makeActive !== false) {
+    state.activePlanId = plan.id;
+  } else if (!state.activePlanId) {
+    state.activePlanId = plan.id;
+  }
   saveState(state);
   return plan;
 }
@@ -240,9 +355,90 @@ export function archivePlan(planId: string): void {
     p.id === planId ? { ...p, status: 'archived' as const, updatedAt: ts } : p
   );
   if (state.activePlanId === planId) {
-    state.activePlanId = listActivePlans(state)[0]?.id ?? null;
+    state.activePlanId = listNonArchived(state.plans)[0]?.id ?? null;
   }
   saveState(state);
+}
+
+/** Permanently remove plan + its lenders/snapshots. */
+export function deletePlan(planId: string): void {
+  const state = loadState();
+  const plan = state.plans.find((p) => p.id === planId);
+  if (!plan) return;
+  const removeIds = new Set(plan.savedLenderIds);
+  state.savedLenders = state.savedLenders.filter(
+    (l) => l.planId !== planId && !removeIds.has(l.id)
+  );
+  state.plans = state.plans.filter((p) => p.id !== planId);
+  if (state.activePlanId === planId) {
+    state.activePlanId = listNonArchived(state.plans)[0]?.id ?? null;
+  }
+  saveState(state);
+}
+
+/** Clone plan + lenders + snapshots; becomes active. */
+export function duplicatePlan(planId: string): FinancePlan | null {
+  const state = loadState();
+  const source = state.plans.find((p) => p.id === planId);
+  if (!source) return null;
+  const ts = nowIso();
+  const newPlanId = newId();
+  const clonedLenders: SavedLender[] = getLendersForPlan(planId, state).map((l) => {
+    const nid = newId();
+    return {
+      ...l,
+      id: nid,
+      planId: newPlanId,
+      savedAt: ts,
+      updatedAt: ts,
+    };
+  });
+  const plan: FinancePlan = {
+    ...source,
+    id: newPlanId,
+    label: `${source.label} (copy)`.slice(0, 120),
+    status: 'active',
+    createdAt: ts,
+    updatedAt: ts,
+    savedLenderIds: clonedLenders.map((l) => l.id),
+    calculatorSnapshots: (source.calculatorSnapshots ?? []).map((s) => ({
+      ...s,
+      id: newId(),
+      planId: newPlanId,
+      savedAt: ts,
+    })),
+  };
+  state.plans = [plan, ...state.plans].slice(0, MAX_PLANS);
+  state.savedLenders = [...clonedLenders, ...state.savedLenders].slice(0, MAX_SAVED_LENDERS);
+  state.activePlanId = plan.id;
+  saveState(state);
+  return plan;
+}
+
+export function renamePlan(planId: string, label: string): FinancePlan | null {
+  const existing = loadState().plans.find((p) => p.id === planId);
+  if (!existing) return null;
+  return upsertPlan({
+    id: planId,
+    label: label.trim() || existing.label,
+    loanFocus: existing.loanFocus,
+    location: existing.location,
+    notes: existing.notes,
+    status: existing.status,
+  });
+}
+
+export function getPlanStats(
+  planId: string,
+  state?: MyLendingState
+): { shortlist: number; lenders: number; snapshots: number } {
+  const s = state ?? loadState();
+  const lenders = getLendersForPlan(planId, s);
+  return {
+    shortlist: getShortlisted(lenders).length,
+    lenders: lenders.length,
+    snapshots: (s.plans.find((p) => p.id === planId)?.calculatorSnapshots ?? []).length,
+  };
 }
 
 export function ensureActivePlan(input: {

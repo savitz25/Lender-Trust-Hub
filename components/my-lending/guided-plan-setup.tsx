@@ -9,9 +9,11 @@ import {
   type LoanFocus,
 } from '@/lib/my-lending/types';
 import {
+  createPlan,
   ensureActivePlan,
   getActivePlan,
   getLastSaveError,
+  getLendersForPlan,
   upsertPlan,
 } from '@/lib/my-lending/storage';
 import { Button } from '@/components/ui/button';
@@ -33,14 +35,21 @@ export function GuidedPlanSetup() {
   const [savedLabel, setSavedLabel] = useState('');
   const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [createAsNew, setCreateAsNew] = useState(false);
+  const [hasShortlist, setHasShortlist] = useState(false);
+  const [activeLabel, setActiveLabel] = useState('My financing research');
 
   useEffect(() => {
     const active = ensureActivePlan({ label: 'My financing research' });
+    setActiveLabel(active.label);
     setCustomLabel(active.label);
     setFocus(active.loanFocus ?? []);
     setZip(active.location?.zip ?? '');
     setStateCode(active.location?.state ?? '');
     setNotes(active.notes ?? '');
+    const n = getLendersForPlan(active.id).length;
+    setHasShortlist(n > 0);
+    setCreateAsNew(n > 0);
   }, []);
 
   const locationLabel = useMemo(() => {
@@ -83,19 +92,33 @@ export function GuidedPlanSetup() {
     const mergedNotes =
       [notes.trim(), situationNotes].filter(Boolean).join(' · ') || undefined;
     const label = suggestedLabel;
-    const existing = getActivePlan() ?? ensureActivePlan();
-    upsertPlan({
-      id: existing.id,
-      label,
-      loanFocus: focus,
-      location: {
-        zip: zip.trim() || undefined,
-        state: stateCode.trim().toUpperCase().slice(0, 2) || undefined,
-        label: locationLabel,
-      },
-      notes: mergedNotes,
-      status: 'active',
-    });
+    if (createAsNew) {
+      createPlan({
+        label,
+        loanFocus: focus,
+        location: {
+          zip: zip.trim() || undefined,
+          state: stateCode.trim().toUpperCase().slice(0, 2) || undefined,
+          label: locationLabel,
+        },
+        notes: mergedNotes,
+        makeActive: true,
+      });
+    } else {
+      const existing = getActivePlan() ?? ensureActivePlan();
+      upsertPlan({
+        id: existing.id,
+        label,
+        loanFocus: focus,
+        location: {
+          zip: zip.trim() || undefined,
+          state: stateCode.trim().toUpperCase().slice(0, 2) || undefined,
+          label: locationLabel,
+        },
+        notes: mergedNotes,
+        status: 'active',
+      });
+    }
     const err = getLastSaveError();
     if (err) {
       setError(err);
@@ -111,21 +134,24 @@ export function GuidedPlanSetup() {
         <Check className="mx-auto h-10 w-10 text-emerald-700" aria-hidden />
         <h2 className="mt-3 text-xl font-semibold text-[#0A2540]">Plan ready</h2>
         <p className="mt-2 text-sm text-zinc-600">
-          Saved to <strong>{savedLabel}</strong>. Shortlist is unchanged. Next: shortlist
-          lenders, run educational calculators, then open your research report.
+          Saved to <strong>{savedLabel}</strong>
+          {createAsNew
+            ? ' as a new plan (previous plan stays in All plans).'
+            : '. Shortlist on this plan is unchanged.'}{' '}
+          Next: shortlist lenders, run calculators, then open your report.
         </p>
         <div className="mt-5 flex flex-wrap justify-center gap-2">
           <Link href="/my-lending">
             <Button variant="trust">Open My Lending</Button>
+          </Link>
+          <Link href="/my-lending/plans">
+            <Button variant="outline">All plans</Button>
           </Link>
           <Link href="/my-lending/report">
             <Button variant="outline">View report</Button>
           </Link>
           <Link href="/local-lenders">
             <Button variant="outline">Browse lenders</Button>
-          </Link>
-          <Link href="/calculators">
-            <Button variant="outline">Calculators</Button>
           </Link>
         </div>
       </div>
@@ -296,8 +322,43 @@ export function GuidedPlanSetup() {
               <dd className="text-[#0A2540]">{locationLabel || 'Not set'}</dd>
             </div>
           </dl>
+          <fieldset className="mt-5 space-y-2 rounded-xl border border-zinc-200 bg-zinc-50/80 p-4">
+            <legend className="px-1 text-sm font-semibold text-zinc-800">Save as</legend>
+            <label className="flex cursor-pointer items-start gap-2 text-sm">
+              <input
+                type="radio"
+                name="save-mode"
+                className="mt-1"
+                checked={!createAsNew}
+                onChange={() => setCreateAsNew(false)}
+              />
+              <span>
+                <span className="font-medium text-[#0A2540]">Update current plan</span>
+                <span className="block text-zinc-600">
+                  {activeLabel}
+                  {hasShortlist ? ' (keeps existing shortlist)' : ''}
+                </span>
+              </span>
+            </label>
+            <label className="flex cursor-pointer items-start gap-2 text-sm">
+              <input
+                type="radio"
+                name="save-mode"
+                className="mt-1"
+                checked={createAsNew}
+                onChange={() => setCreateAsNew(true)}
+              />
+              <span>
+                <span className="font-medium text-[#0A2540]">Create as new plan</span>
+                <span className="block text-zinc-600">
+                  Fresh shortlist; previous plan stays in All plans
+                  {hasShortlist ? ' (recommended — you already have saves)' : ''}
+                </span>
+              </span>
+            </label>
+          </fieldset>
           <p className="mt-4 text-xs text-zinc-500">
-            Research only · Not a loan offer · Guest-saved on this device · Shortlist stays intact
+            Research only · Not a loan offer · Guest-saved on this device
           </p>
           <div className="mt-2">
             <TrustMark />

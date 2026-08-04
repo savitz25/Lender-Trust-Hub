@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { Check, Copy, Mail, Printer } from 'lucide-react';
 import {
   LOAN_FOCUS_OPTIONS,
@@ -13,6 +14,7 @@ import {
   getActivePlan,
   getCalculatorSnapshots,
   getLendersForPlan,
+  getPlanById,
   getShortlisted,
   loadState,
   SHORTLIST_CAP,
@@ -91,6 +93,9 @@ function buildPlainText(params: {
  * Report-ready takeaway — copy / print / mailto.
  */
 export function CoverageReport() {
+  const searchParams = useSearchParams();
+  const planIdParam = searchParams?.get('planId') ?? null;
+
   const [plan, setPlan] = useState<FinancePlan | null>(null);
   const [lenders, setLenders] = useState<SavedLender[]>([]);
   const [snapshots, setSnapshots] = useState<CalculatorSnapshot[]>([]);
@@ -99,11 +104,13 @@ export function CoverageReport() {
 
   const refresh = useCallback(() => {
     const state = loadState();
-    const active = getActivePlan(state);
-    setPlan(active);
-    setLenders(active ? getLendersForPlan(active.id, state) : []);
-    setSnapshots(active ? getCalculatorSnapshots(active.id) : []);
-  }, []);
+    let target: FinancePlan | null = null;
+    if (planIdParam) target = getPlanById(planIdParam, state);
+    if (!target) target = getActivePlan(state);
+    setPlan(target);
+    setLenders(target ? getLendersForPlan(target.id, state) : []);
+    setSnapshots(target ? getCalculatorSnapshots(target.id) : []);
+  }, [planIdParam]);
 
   useEffect(() => {
     refresh();
@@ -214,6 +221,11 @@ export function CoverageReport() {
           <Link href="/my-lending">
             <Button type="button" variant="ghost">
               Back to HQ
+            </Button>
+          </Link>
+          <Link href="/my-lending/plans">
+            <Button type="button" variant="ghost">
+              All my plans
             </Button>
           </Link>
         </div>

@@ -72,8 +72,9 @@ export type SavedLender = {
   updatedAt: string;
 };
 
+/** Phase D: multi-plan library via activePlanId. version 2 after migration. */
 export type MyLendingState = {
-  version: 1;
+  version: 1 | 2;
   activePlanId: string | null;
   plans: FinancePlan[];
   savedLenders: SavedLender[];

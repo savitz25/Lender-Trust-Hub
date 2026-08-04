@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { CoverageReport } from '@/components/my-lending/coverage-report';
 
 export const metadata: Metadata = {
@@ -21,12 +22,24 @@ export default function MyLendingReportPage() {
             Back to My Lending
           </Link>
           {' · '}
+          <Link href="/my-lending/plans" className="font-medium text-emerald-800 hover:underline">
+            All plans
+          </Link>
+          {' · '}
           <Link href="/my-lending/setup" className="font-medium text-emerald-800 hover:underline">
             Setup
           </Link>
         </p>
         <div className="mt-6">
-          <CoverageReport />
+          <Suspense
+            fallback={
+              <div className="animate-pulse rounded-2xl border border-zinc-200 bg-zinc-50 p-10 text-center text-sm text-zinc-500">
+                Loading report...
+              </div>
+            }
+          >
+            <CoverageReport />
+          </Suspense>
         </div>
       </div>
     </div>
