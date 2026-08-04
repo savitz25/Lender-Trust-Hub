@@ -62,7 +62,8 @@ export default function MethodologyPage() {
       </h1>
       <p className="mt-4 text-lg leading-relaxed text-zinc-600">
         How we apply The Ask Trust Hub Standard to mortgage research: NMLS context, scores, sources,
-        updates, and hard limits. Independently operated · No paid placements · Not a lender.
+        updates, and hard limits. Part of the Ask Trust Hub network — common ownership, separated
+        research and listing order, no paid placements. Not a lender.
       </p>
       <div className="mt-4">
         <TrustMark />

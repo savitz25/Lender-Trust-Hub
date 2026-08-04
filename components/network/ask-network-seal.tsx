@@ -3,10 +3,11 @@ import {
   LENDER_CONTACT_EMAIL,
   NETWORK_HUBS,
 } from '@/lib/network/ask-trust-hub';
+import { ASK_NETWORK_OWNERSHIP_SHORT } from '@/lib/network/standard-version';
 import { TrustMark } from '@/components/network/trust-mark';
 
 /**
- * Footer network seal — Ask parent + hubs (you are here on Lender).
+ * Footer network seal — common ownership + separated research (not unaffiliated).
  */
 export function AskNetworkSeal() {
   return (
@@ -14,16 +15,17 @@ export function AskNetworkSeal() {
       <p className="text-sm font-semibold tracking-tight text-white">
         Part of the{' '}
         <a
-          href={ASK_TRUST_HUB.promiseUrl}
+          href={ASK_TRUST_HUB.url}
           className="underline underline-offset-2 hover:text-white/90"
           rel="noopener noreferrer"
         >
           Ask Trust Hub network
         </a>
       </p>
+      <p className="mt-1.5 text-xs font-medium leading-relaxed text-zinc-300">
+        {ASK_NETWORK_OWNERSHIP_SHORT}
+      </p>
       <p className="mt-1 text-xs leading-relaxed">
-        Independently operated · No paid placements
-        {' · '}
         <a
           href={ASK_TRUST_HUB.promiseUrl}
           className="underline underline-offset-2 hover:text-zinc-300"
