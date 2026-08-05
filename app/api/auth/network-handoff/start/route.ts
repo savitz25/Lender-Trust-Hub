@@ -24,11 +24,33 @@ function clientIp(request: Request): string | null {
   );
 }
 
+function hasAuthCookieHeader(request: Request): boolean {
+  const raw = request.headers.get('cookie') || '';
+  return /sb-[^=]+-auth-token/.test(raw);
+}
+
+function redirectFallback(
+  fallback: string,
+  reason: string,
+  extra?: Record<string, unknown>
+) {
+  console.warn('[network-handoff/start] skip_code', {
+    reason,
+    hasAuthCookie: extra?.hasAuthCookie,
+    toHub: extra?.toHub,
+    error: extra?.error,
+  });
+  const res = NextResponse.redirect(fallback);
+  res.headers.set('x-network-handoff', `skip:${reason}`);
+  return res;
+}
+
 /** GET /api/auth/network-handoff/start?to=insurance&next=/my-insurance */
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const toRaw = (searchParams.get('to') || '').toLowerCase();
   const next = searchParams.get('next');
+  const hasAuthCookie = hasAuthCookieHeader(request);
 
   if (!isNetworkHubId(toRaw) || toRaw === CURRENT_HUB) {
     return NextResponse.redirect(HUB_ORIGINS.lender);
@@ -40,20 +62,31 @@ export async function GET(request: Request) {
   ).toString();
 
   if (!isSupabaseConfigured() || !isSupabaseAdminConfigured()) {
-    console.warn(
-      '[network-handoff/start] missing Supabase public env or SUPABASE_SERVICE_ROLE_KEY'
-    );
-    return NextResponse.redirect(fallback);
+    return redirectFallback(fallback, 'no_service_role', { hasAuthCookie, toHub });
   }
 
   try {
     const supabase = await createClientIfConfigured();
-    if (!supabase) return NextResponse.redirect(fallback);
+    if (!supabase) {
+      return redirectFallback(fallback, 'no_supabase_client', { hasAuthCookie, toHub });
+    }
 
     const {
       data: { user },
+      error: userError,
     } = await supabase.auth.getUser();
-    if (!user) return NextResponse.redirect(fallback);
+
+    if (userError) {
+      console.warn('[network-handoff/start] getUser error', {
+        message: userError.message,
+        hasAuthCookie,
+        toHub,
+      });
+    }
+
+    if (!user) {
+      return redirectFallback(fallback, 'no_session', { hasAuthCookie, toHub });
+    }
 
     const result = await createNetworkHandoff({
       userId: user.id,
@@ -64,13 +97,27 @@ export async function GET(request: Request) {
     });
 
     if (!result.ok) {
-      console.warn('[network-handoff/start]', result.status, result.error);
-      return NextResponse.redirect(fallback);
+      return redirectFallback(fallback, `create_${result.status}`, {
+        hasAuthCookie,
+        toHub,
+        error: result.error,
+      });
     }
 
-    return NextResponse.redirect(result.redirectUrl);
+    console.info('[network-handoff/start] minted', {
+      toHub,
+      userId: user.id,
+      hasCode: Boolean(result.code),
+    });
+    const res = NextResponse.redirect(result.redirectUrl);
+    res.headers.set('x-network-handoff', 'ok');
+    return res;
   } catch (err) {
-    console.error('[network-handoff/start]', err);
-    return NextResponse.redirect(fallback);
+    console.error('[network-handoff/start] fatal', err);
+    return redirectFallback(fallback, 'exception', {
+      hasAuthCookie,
+      toHub,
+      error: err instanceof Error ? err.message : String(err),
+    });
   }
 }

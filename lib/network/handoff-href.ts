@@ -27,17 +27,18 @@ export function networkHubPublicUrl(to: HubLinkId): string {
   return HUB_URL[to];
 }
 
-export function networkHubHref(to: HubLinkId, signedIn: boolean, next?: string): string {
-  if (!signedIn) return networkHubPublicUrl(to);
+/** Always handoff start — /start is guest-safe. */
+export function networkHubHref(to: HubLinkId, _signedIn?: boolean, next?: string): string {
   return networkHandoffStartHref(to, next);
 }
 
+/** Rewrite absolute specialist-hub URLs through handoff start (always). */
 export function rewriteCrossHubHref(
   href: string,
-  signedIn: boolean,
+  _signedIn: boolean,
   currentHub: HubLinkId
 ): string {
-  if (!signedIn || !href) return href;
+  if (!href) return href;
   try {
     const base =
       typeof window !== 'undefined' ? window.location.origin : HUB_URL[currentHub];

@@ -5,7 +5,6 @@ import {
   rewriteCrossHubHref,
   type HubLinkId,
 } from '@/lib/network/handoff-href';
-import { useMyLendingOptional } from '@/components/my-lending/my-lending-provider';
 
 type CrossHubLinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'href'> & {
   href: string;
@@ -20,15 +19,14 @@ export function CrossHubLink({
   rel,
   ...rest
 }: CrossHubLinkProps) {
-  const ml = useMyLendingOptional();
-  const signedIn = Boolean(ml?.user) && !ml?.loading;
-  const resolved = rewriteCrossHubHref(href, signedIn, currentHub);
+  const resolved = rewriteCrossHubHref(href, true, currentHub);
   const isHandoff = resolved.startsWith('/api/auth/network-handoff/');
 
   return (
     <a
       href={resolved}
       rel={isHandoff ? undefined : rel ?? 'noopener noreferrer'}
+      data-network-handoff={isHandoff ? 'start' : undefined}
       {...rest}
     >
       {children}
