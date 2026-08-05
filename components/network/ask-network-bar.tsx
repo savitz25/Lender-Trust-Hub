@@ -3,25 +3,34 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { ASK_TRUST_HUB, NETWORK_HUBS } from '@/lib/network/ask-trust-hub';
+import { networkHubHref, type HubLinkId } from '@/lib/network/handoff-href';
+import { useMyLendingOptional } from '@/components/my-lending/my-lending-provider';
 
 /**
- * Slim network bar — always light (Insurance/Move family). No dark chrome.
+ * Slim network bar — silent SSO when signed in (handoff start on same origin).
  */
 export function AskNetworkBar() {
   const [open, setOpen] = useState(false);
+  const ml = useMyLendingOptional();
+  const signedIn = Boolean(ml?.user) && !ml?.loading;
 
   const links = [
-    ...NETWORK_HUBS.map((h) => ({
-      id: h.id,
-      label: h.shortLabel,
-      href: h.url,
-      active: h.id === 'lender',
-    })),
+    ...NETWORK_HUBS.map((h) => {
+      const id = h.id as HubLinkId;
+      return {
+        id: h.id,
+        label: h.shortLabel,
+        href: id === 'lender' ? h.url : networkHubHref(id, signedIn),
+        active: h.id === 'lender',
+        sameOrigin: id !== 'lender' && signedIn,
+      };
+    }),
     {
       id: 'standards',
       label: 'Standards',
       href: ASK_TRUST_HUB.methodologyUrl,
       active: false,
+      sameOrigin: false,
     },
   ];
 
@@ -52,7 +61,7 @@ export function AskNetworkBar() {
                 key={link.id}
                 href={link.href}
                 className="rounded-md px-2.5 py-1 font-medium text-zinc-600 hover:bg-white hover:text-[#0A2540]"
-                rel="noopener noreferrer"
+                rel={link.sameOrigin ? undefined : 'noopener noreferrer'}
               >
                 {link.label}
               </a>
@@ -76,7 +85,7 @@ export function AskNetworkBar() {
                   key={link.id}
                   href={link.href}
                   className="block px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50"
-                  rel="noopener noreferrer"
+                  rel={link.sameOrigin ? undefined : 'noopener noreferrer'}
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
