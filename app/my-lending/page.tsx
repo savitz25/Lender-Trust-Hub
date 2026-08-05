@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { GuestLendingHq } from '@/components/my-lending/guest-lending-hq';
+import { HandoffStatusBanner } from '@/components/my-lending/handoff-status-banner';
 import { TrustMark } from '@/components/network/trust-mark';
 
 export const metadata: Metadata = {
@@ -32,6 +34,11 @@ export default function MyLendingPage() {
         <div className="mt-2">
           <TrustMark />
         </div>
+        <Suspense fallback={null}>
+          <div className="mt-4">
+            <HandoffStatusBanner />
+          </div>
+        </Suspense>
         <p className="mt-3 text-sm text-zinc-500">
           <Link href="/local-lenders" className="font-medium text-[#059669] hover:underline">
             Local lenders
