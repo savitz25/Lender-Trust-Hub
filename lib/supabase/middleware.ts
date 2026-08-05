@@ -1,28 +1,31 @@
-/**
- * Supabase session helpers for Node/server runtimes.
- * Do NOT import this from root middleware.ts — Edge bundling fails on the
- * @supabase/ssr + path-alias graph under Vercel.
- *
- * Prefer: createClient() from @/lib/supabase/server in RSC / Route Handlers.
- */
-
 import { createServerClient } from '@supabase/ssr';
 import { type NextRequest, NextResponse } from 'next/server';
-import type { Database } from '@/types/supabase';
-import { getSupabaseAnonKey, getSupabaseUrl } from '@/lib/supabase/config';
+import {
+  getSupabaseAnonKey,
+  getSupabaseUrl,
+  isSupabaseConfigured,
+} from '@/lib/supabase/config';
+
+function hasSupabaseAuthCookies(request: NextRequest): boolean {
+  return request.cookies
+    .getAll()
+    .some((c) => c.name.includes('auth-token') || c.name.startsWith('sb-'));
+}
 
 /**
- * Optional helper if you later need session refresh outside Edge middleware
- * (e.g. a Node middleware polyfill or custom server).
+ * Refresh Supabase session cookies on the response when present.
+ * Keeps signed-in state sticky across navigations on lendertrusthub.com.
  */
-export async function refreshSupabaseSession(request: NextRequest) {
-  let supabaseResponse = NextResponse.next({ request });
+export async function updateSession(request: NextRequest): Promise<NextResponse> {
+  if (!isSupabaseConfigured() || !hasSupabaseAuthCookies(request)) {
+    return NextResponse.next({ request: { headers: request.headers } });
+  }
 
-  const url = getSupabaseUrl();
-  const anonKey = getSupabaseAnonKey();
-  if (!url || !anonKey) return supabaseResponse;
+  let response = NextResponse.next({
+    request: { headers: request.headers },
+  });
 
-  const supabase = createServerClient<Database>(url, anonKey, {
+  const supabase = createServerClient(getSupabaseUrl()!, getSupabaseAnonKey()!, {
     cookies: {
       getAll() {
         return request.cookies.getAll();
@@ -31,14 +34,16 @@ export async function refreshSupabaseSession(request: NextRequest) {
         cookiesToSet.forEach(({ name, value }) => {
           request.cookies.set(name, value);
         });
-        supabaseResponse = NextResponse.next({ request });
+        response = NextResponse.next({
+          request: { headers: request.headers },
+        });
         cookiesToSet.forEach(({ name, value, options }) => {
-          supabaseResponse.cookies.set(name, value, options);
+          response.cookies.set(name, value, options);
         });
       },
     },
   });
 
   await supabase.auth.getUser();
-  return supabaseResponse;
+  return response;
 }

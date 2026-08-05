@@ -1,18 +1,23 @@
 import { NextResponse } from 'next/server';
-import { createClientIfConfigured } from '@/lib/supabase/server';
+import { createServerClient } from '@supabase/ssr';
+import { cookies } from 'next/headers';
 import {
+  getSupabaseAnonKey,
+  getSupabaseUrl,
+  isSupabaseConfigured,
+} from '@/lib/supabase/config';
+import {
+  HUB_CANONICAL_ORIGIN,
   lendingAuthErrorUrl,
   lendingAuthSuccessUrl,
-  resolveSiteOrigin,
   sanitizePostLoginPath,
 } from '@/lib/my-lending/auth-constants';
 
 /**
- * Exchange OAuth / magic-link code for session on THIS hub only.
- * Post-login redirect stays on resolveSiteOrigin(request) — never Move.
+ * Exchange OAuth / magic-link code and set session cookies on lendertrusthub.com.
+ * Cookies are written onto the redirect response (required for session to stick).
  */
 export async function GET(request: Request) {
-  const origin = resolveSiteOrigin(request);
   const { searchParams } = new URL(request.url);
   const code = searchParams.get('code');
   const next = sanitizePostLoginPath(searchParams.get('next'));
@@ -20,20 +25,48 @@ export async function GET(request: Request) {
 
   if (oauthError) {
     console.error('[auth/callback] provider error', oauthError);
-    return NextResponse.redirect(lendingAuthErrorUrl(next, origin));
+    return NextResponse.redirect(lendingAuthErrorUrl(next));
   }
 
-  if (code) {
-    const supabase = await createClientIfConfigured();
-    if (!supabase) {
-      return NextResponse.redirect(lendingAuthErrorUrl(next, origin));
-    }
-    const { error } = await supabase.auth.exchangeCodeForSession(code);
-    if (!error) {
-      return NextResponse.redirect(lendingAuthSuccessUrl(next, origin));
-    }
+  if (!code) {
+    return NextResponse.redirect(lendingAuthErrorUrl(next));
+  }
+
+  if (!isSupabaseConfigured()) {
+    return NextResponse.redirect(lendingAuthErrorUrl(next));
+  }
+
+  const successUrl = lendingAuthSuccessUrl(next, HUB_CANONICAL_ORIGIN);
+  const errorUrl = lendingAuthErrorUrl(next, HUB_CANONICAL_ORIGIN);
+
+  // Build redirect first; attach session cookies to THIS response
+  let response = NextResponse.redirect(successUrl);
+  const cookieStore = await cookies();
+
+  const supabase = createServerClient(getSupabaseUrl()!, getSupabaseAnonKey()!, {
+    cookies: {
+      getAll() {
+        return cookieStore.getAll();
+      },
+      setAll(cookiesToSet) {
+        cookiesToSet.forEach(({ name, value, options }) => {
+          try {
+            cookieStore.set(name, value, options);
+          } catch {
+            /* ignore read-only */
+          }
+          response.cookies.set(name, value, options);
+        });
+      },
+    },
+  });
+
+  const { error } = await supabase.auth.exchangeCodeForSession(code);
+  if (error) {
     console.error('[auth/callback] exchange failed', error.message);
+    return NextResponse.redirect(errorUrl);
   }
 
-  return NextResponse.redirect(lendingAuthErrorUrl(next, origin));
+  console.info('[auth/callback] session set on Lender', { next });
+  return response;
 }

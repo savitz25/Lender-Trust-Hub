@@ -80,19 +80,22 @@ Or explicit:
 - `https://www.lendertrusthub.com/auth/confirm`
 - (same for insurance + move)
 
-### App redirect rules (code)
+### App redirect rules (code) — Move bridge
 
-Magic link / OAuth always set:
+Shared Supabase **Site URL** is Move. Redirects not on the allow-list fall back to Move and never set cookies on Lender.
 
-`emailRedirectTo` / `redirectTo` = `https://www.lendertrusthub.com/auth/callback?next=…`
+**Default strategy** (`AUTH_OAUTH_DIRECT` unset):
 
-Origin resolution (`lib/my-lending/auth-constants.ts` → `resolveSiteOrigin`):
+1. Magic link / Google / Facebook set  
+   `emailRedirectTo` / `redirectTo` =  
+   `https://www.movetrusthub.com/auth/callback?next=/my-lending&hub=lending`
+2. Move `/auth/callback` **does not** exchange the code; 302 to  
+   `https://www.lendertrusthub.com/auth/callback?code=…&next=…&hub=lending`
+3. Lender exchanges the code and sets **session cookies on lendertrusthub.com**
 
-1. Request `Host` if it is `*lendertrusthub.com` or localhost  
-2. `NEXT_PUBLIC_SITE_URL` **only if** host is Lender  
-3. Else `https://www.lendertrusthub.com`  
+Set `AUTH_OAUTH_DIRECT=1` only after Redirect URLs include `https://www.lendertrusthub.com/**`.
 
-Wrong env (e.g. Move URL on this Vercel project) is **ignored**.
+Canonical origin (never Move): `https://www.lendertrusthub.com`
 
 ### Google Cloud OAuth
 

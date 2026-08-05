@@ -1,30 +1,42 @@
 /**
  * My Lending / network auth constants.
- * Same Supabase Auth project as Move when env points at shared project.
  *
- * CRITICAL: magic-link emailRedirectTo and OAuth redirectTo must always target
- * this hub’s origin (lendertrusthub.com), never Move’s Site URL.
+ * Shared Supabase Auth project uses Move as Site URL. Redirects that are not
+ * allow-listed fall back to movetrusthub.com — so by default we use a Move
+ * bridge callback + handoff to this hub (same pattern as Insurance monorepo).
+ *
+ * Set AUTH_OAUTH_DIRECT=1 only after Supabase Redirect URLs include
+ * https://www.lendertrusthub.com/** and you want skip-the-bridge.
  */
 
 export const MY_LENDING_PATH = '/my-lending';
 export const AUTH_CALLBACK_PATH = '/auth/callback';
 export const AUTH_CONFIRM_PATH = '/auth/confirm';
 
-/** Canonical production origin for this hub — never movetrusthub.com */
+/** Canonical production origin — never movetrusthub.com */
 export const HUB_CANONICAL_ORIGIN = 'https://www.lendertrusthub.com';
 const HUB_HOST_FRAGMENT = 'lendertrusthub.com';
 
+/** Shared project Site URL host — used as OAuth/magic bridge when not direct */
+export const MOVE_AUTH_BRIDGE =
+  process.env.MOVE_AUTH_BRIDGE_URL?.trim() ||
+  'https://www.movetrusthub.com/auth/callback';
+
 /**
- * Resolve this hub’s public origin for Auth redirects.
- * Priority:
- * 1) Request Host when it is this hub (or localhost)
- * 2) NEXT_PUBLIC_SITE_URL only if it is this hub
- * 3) Canonical production origin
- *
- * Wrong env (e.g. Move URL on Lender Vercel) is ignored so OTP never lands on Move.
+ * When true, emailRedirectTo / OAuth redirectTo hit this hub directly.
+ * Default false → Move bridge (allowlisted Site URL) then handoff.
+ */
+export function useDirectAuthRedirect(): boolean {
+  return process.env.AUTH_OAUTH_DIRECT === '1' || process.env.AUTH_OAUTH_DIRECT === 'true';
+}
+
+/**
+ * Origin for post-login redirects and confirm links on THIS hub.
+ * Always canonical in production (www) so allow-list / cookies match.
+ * Localhost only in development.
  */
 export function resolveSiteOrigin(request?: Request | null): string {
-  if (request) {
+  if (request && process.env.NODE_ENV === 'development') {
     const hostRaw = (
       request.headers.get('x-forwarded-host') ||
       request.headers.get('host') ||
@@ -33,21 +45,7 @@ export function resolveSiteOrigin(request?: Request | null): string {
       .split(',')[0]
       .trim()
       .toLowerCase();
-
-    if (hostRaw.includes(HUB_HOST_FRAGMENT)) {
-      const proto = (
-        request.headers.get('x-forwarded-proto') ||
-        'https'
-      )
-        .split(',')[0]
-        .trim();
-      return `${proto}://${hostRaw}`.replace(/\/$/, '');
-    }
-
-    if (
-      hostRaw.startsWith('localhost') ||
-      hostRaw.startsWith('127.0.0.1')
-    ) {
+    if (hostRaw.startsWith('localhost') || hostRaw.startsWith('127.0.0.1')) {
       const proto = (
         request.headers.get('x-forwarded-proto') ||
         'http'
@@ -62,44 +60,48 @@ export function resolveSiteOrigin(request?: Request | null): string {
   if (env) {
     try {
       if (new URL(env).hostname.toLowerCase().includes(HUB_HOST_FRAGMENT)) {
+        // Normalize to www canonical for production hosts
+        if (env.includes('lendertrusthub.com') && !env.includes('localhost')) {
+          return HUB_CANONICAL_ORIGIN;
+        }
         return env;
       }
       console.warn(
-        '[auth] NEXT_PUBLIC_SITE_URL is not a Lender host; ignoring for redirects:',
+        '[auth] NEXT_PUBLIC_SITE_URL is not a Lender host; using canonical',
         env
       );
     } catch {
-      /* ignore bad env */
+      /* ignore */
     }
   }
 
   return HUB_CANONICAL_ORIGIN;
 }
 
-/** @deprecated Prefer resolveSiteOrigin(request) — kept for non-request call sites */
-export const PRODUCTION_SITE_ORIGIN = resolveSiteOrigin();
+export const PRODUCTION_SITE_ORIGIN = HUB_CANONICAL_ORIGIN;
 
-export function authCallbackUrl(
-  nextPath: string,
-  origin?: string
-): string {
-  const base = (origin || resolveSiteOrigin()).replace(/\/$/, '');
-  return `${base}${AUTH_CALLBACK_PATH}?next=${encodeURIComponent(nextPath)}`;
+/**
+ * URL Supabase should redirect to after magic link / OAuth.
+ * Prefer Move bridge (allowlisted) unless AUTH_OAUTH_DIRECT=1.
+ */
+export function authExternalRedirectUrl(nextPath: string): string {
+  const next = sanitizePostLoginPath(nextPath);
+  if (useDirectAuthRedirect()) {
+    return `${HUB_CANONICAL_ORIGIN}${AUTH_CALLBACK_PATH}?next=${encodeURIComponent(next)}&hub=lending`;
+  }
+  const bridge = new URL(MOVE_AUTH_BRIDGE);
+  bridge.searchParams.set('next', next);
+  bridge.searchParams.set('hub', 'lending');
+  return bridge.toString();
 }
 
-export function authConfirmUrl(
-  params: { tokenHash: string; type: string; nextPath: string },
-  origin?: string
-): string {
-  const base = (origin || resolveSiteOrigin()).replace(/\/$/, '');
-  const url = new URL(`${base}${AUTH_CONFIRM_PATH}`);
-  url.searchParams.set('token_hash', params.tokenHash);
-  url.searchParams.set('type', params.type);
-  url.searchParams.set('next', params.nextPath);
-  return url.toString();
+/** This hub’s callback (for handoff targets and post-login). */
+export function authCallbackUrl(nextPath: string, origin?: string): string {
+  const base = (origin || HUB_CANONICAL_ORIGIN).replace(/\/$/, '');
+  const next = sanitizePostLoginPath(nextPath);
+  return `${base}${AUTH_CALLBACK_PATH}?next=${encodeURIComponent(next)}&hub=lending`;
 }
 
-/** Static callback URL using resolved origin (no request). Prefer authCallbackUrl + request. */
 export const AUTH_CALLBACK_URL = `${HUB_CANONICAL_ORIGIN}${AUTH_CALLBACK_PATH}`;
 
 export function sanitizePostLoginPath(next: string | null | undefined): string {
@@ -118,9 +120,8 @@ export function sanitizePostLoginPath(next: string | null | undefined): string {
     return MY_LENDING_PATH;
   }
   try {
-    const base = HUB_CANONICAL_ORIGIN;
-    const parsed = new URL(next, base);
-    if (parsed.origin !== new URL(base).origin) {
+    const parsed = new URL(next, HUB_CANONICAL_ORIGIN);
+    if (parsed.origin !== new URL(HUB_CANONICAL_ORIGIN).origin) {
       return MY_LENDING_PATH;
     }
     return `${parsed.pathname}${parsed.search}${parsed.hash}` || MY_LENDING_PATH;
@@ -134,7 +135,7 @@ export function lendingAuthSuccessUrl(
   origin?: string
 ): string {
   const path = sanitizePostLoginPath(next);
-  const url = new URL(path, origin || resolveSiteOrigin());
+  const url = new URL(path, origin || HUB_CANONICAL_ORIGIN);
   url.searchParams.set('auth', 'success');
   return url.toString();
 }
@@ -144,23 +145,22 @@ export function lendingAuthErrorUrl(
   origin?: string
 ): string {
   const path = sanitizePostLoginPath(next);
-  const url = new URL(path, origin || resolveSiteOrigin());
+  const url = new URL(path, origin || HUB_CANONICAL_ORIGIN);
   url.searchParams.set('auth', 'error');
   return url.toString();
 }
 
-/**
- * Force Supabase OAuth authorize URL redirect_to onto this hub’s callback.
- */
+/** Force OAuth authorize URL redirect_to onto bridge (or direct). */
 export function ensureLendingOAuthUrl(
   oauthUrl: string,
-  nextPath?: string | null,
-  origin?: string
+  nextPath?: string | null
 ): string {
   try {
     const parsed = new URL(oauthUrl);
-    const next = sanitizePostLoginPath(nextPath);
-    parsed.searchParams.set('redirect_to', authCallbackUrl(next, origin));
+    parsed.searchParams.set(
+      'redirect_to',
+      authExternalRedirectUrl(sanitizePostLoginPath(nextPath))
+    );
     return parsed.toString();
   } catch {
     return oauthUrl;

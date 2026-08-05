@@ -1,29 +1,29 @@
 import { NextResponse } from 'next/server';
 import { createClientIfConfigured } from '@/lib/supabase/server';
 import {
-  authCallbackUrl,
+  authExternalRedirectUrl,
   ensureLendingOAuthUrl,
+  HUB_CANONICAL_ORIGIN,
   lendingAuthErrorUrl,
-  resolveSiteOrigin,
   sanitizePostLoginPath,
 } from '@/lib/my-lending/auth-constants';
 import { isSupabaseConfigured } from '@/lib/supabase/config';
 
 export async function GET(request: Request) {
-  const origin = resolveSiteOrigin(request);
-
   if (!isSupabaseConfigured()) {
-    return NextResponse.redirect(new URL('/my-lending?auth=error', origin));
+    return NextResponse.redirect(
+      new URL('/my-lending?auth=error', HUB_CANONICAL_ORIGIN)
+    );
   }
 
   const { searchParams } = new URL(request.url);
   const next = sanitizePostLoginPath(searchParams.get('next'));
   const supabase = await createClientIfConfigured();
   if (!supabase) {
-    return NextResponse.redirect(lendingAuthErrorUrl(next, origin));
+    return NextResponse.redirect(lendingAuthErrorUrl(next));
   }
 
-  const redirectTo = authCallbackUrl(next, origin);
+  const redirectTo = authExternalRedirectUrl(next);
   console.info('[auth/facebook] redirectTo', redirectTo);
 
   const { data, error } = await supabase.auth.signInWithOAuth({
@@ -33,8 +33,8 @@ export async function GET(request: Request) {
 
   if (error || !data.url) {
     console.error('[auth/facebook]', error?.message);
-    return NextResponse.redirect(lendingAuthErrorUrl(next, origin));
+    return NextResponse.redirect(lendingAuthErrorUrl(next));
   }
 
-  return NextResponse.redirect(ensureLendingOAuthUrl(data.url, next, origin));
+  return NextResponse.redirect(ensureLendingOAuthUrl(data.url, next));
 }

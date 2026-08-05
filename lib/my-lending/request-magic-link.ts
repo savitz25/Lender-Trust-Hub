@@ -3,8 +3,7 @@ import 'server-only';
 import { createClientIfConfigured } from '@/lib/supabase/server';
 import { isSupabaseConfigured } from '@/lib/supabase/config';
 import {
-  authCallbackUrl,
-  resolveSiteOrigin,
+  authExternalRedirectUrl,
   sanitizePostLoginPath,
 } from '@/lib/my-lending/auth-constants';
 
@@ -13,13 +12,15 @@ export type RequestMagicLinkResult =
   | { ok: false; status: number; error: string };
 
 /**
- * Magic link via Supabase OTP mailer.
- * Always sets emailRedirectTo to this hub’s /auth/callback (never Move Site URL).
+ * Magic link via Supabase OTP.
+ * emailRedirectTo uses Move bridge by default (hub=lending) so Supabase Site URL
+ * allowlist accepts it; Move hands the code off to lendertrusthub.com without
+ * exchanging the session there.
  */
 export async function requestMagicLink(
   emailRaw: string,
   nextRaw?: string | null,
-  request?: Request | null
+  _request?: Request | null
 ): Promise<RequestMagicLinkResult> {
   const email = emailRaw.trim().toLowerCase();
   if (!email || !email.includes('@')) {
@@ -34,8 +35,7 @@ export async function requestMagicLink(
   }
 
   const nextPath = sanitizePostLoginPath(nextRaw);
-  const origin = resolveSiteOrigin(request);
-  const emailRedirectTo = authCallbackUrl(nextPath, origin);
+  const emailRedirectTo = authExternalRedirectUrl(nextPath);
 
   const supabase = await createClientIfConfigured();
   if (!supabase) {
@@ -59,7 +59,7 @@ export async function requestMagicLink(
           ok: false,
           status: 500,
           error:
-            'Sign-in redirect is not allow-listed in Supabase. Add https://www.lendertrusthub.com/** to Auth → Redirect URLs.',
+            'Sign-in redirect is not allow-listed in Supabase. Add https://www.movetrusthub.com/** and https://www.lendertrusthub.com/** under Auth → Redirect URLs.',
         };
       }
       return {
