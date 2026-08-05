@@ -3,21 +3,23 @@ import 'server-only';
 import { createClientIfConfigured } from '@/lib/supabase/server';
 import { isSupabaseConfigured } from '@/lib/supabase/config';
 import {
-  AUTH_CALLBACK_URL,
+  authCallbackUrl,
+  resolveSiteOrigin,
   sanitizePostLoginPath,
 } from '@/lib/my-lending/auth-constants';
 
 export type RequestMagicLinkResult =
-  | { ok: true; delivery: 'supabase' }
+  | { ok: true; delivery: 'supabase'; emailRedirectTo: string }
   | { ok: false; status: number; error: string };
 
 /**
- * Magic link via Supabase OTP mailer (Move/Insurance parity path).
- * Optional Resend+generateLink can be added later when RESEND is configured.
+ * Magic link via Supabase OTP mailer.
+ * Always sets emailRedirectTo to this hub’s /auth/callback (never Move Site URL).
  */
 export async function requestMagicLink(
   emailRaw: string,
-  nextRaw?: string | null
+  nextRaw?: string | null,
+  request?: Request | null
 ): Promise<RequestMagicLinkResult> {
   const email = emailRaw.trim().toLowerCase();
   if (!email || !email.includes('@')) {
@@ -32,20 +34,34 @@ export async function requestMagicLink(
   }
 
   const nextPath = sanitizePostLoginPath(nextRaw);
+  const origin = resolveSiteOrigin(request);
+  const emailRedirectTo = authCallbackUrl(nextPath, origin);
+
   const supabase = await createClientIfConfigured();
   if (!supabase) {
     return { ok: false, status: 503, error: 'Sign-in is not configured yet.' };
   }
 
   try {
+    console.info('[my-lending] magic-link emailRedirectTo', emailRedirectTo);
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: {
-        emailRedirectTo: `${AUTH_CALLBACK_URL}?next=${encodeURIComponent(nextPath)}`,
+        emailRedirectTo,
         shouldCreateUser: true,
       },
     });
     if (error) {
+      console.error('[my-lending] signInWithOtp', error.message, error.code);
+      const lower = error.message.toLowerCase();
+      if (lower.includes('redirect') || lower.includes('url not allowed')) {
+        return {
+          ok: false,
+          status: 500,
+          error:
+            'Sign-in redirect is not allow-listed in Supabase. Add https://www.lendertrusthub.com/** to Auth → Redirect URLs.',
+        };
+      }
       return {
         ok: false,
         status: 500,
@@ -54,7 +70,7 @@ export async function requestMagicLink(
           : 'Could not send the sign-in link. Please try again shortly.',
       };
     }
-    return { ok: true, delivery: 'supabase' };
+    return { ok: true, delivery: 'supabase', emailRedirectTo };
   } catch (err) {
     console.error('[my-lending] OTP magic link failed', err);
     return {

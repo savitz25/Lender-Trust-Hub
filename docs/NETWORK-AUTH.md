@@ -60,17 +60,39 @@ Errors: `/my-lending?auth=error`
 
 ## Ops checklist (human — consoles)
 
-### Supabase Auth → URL configuration
+### Supabase Auth → URL configuration (required — human)
 
-Add redirect URLs for **all three** production origins (shared project):
+Shared project **arepfylnilkjmyduhwbz**. Site URL may stay Move; **Redirect URLs must include every hub** or Supabase falls back to Site URL (`movetrusthub.com/?code=…`).
 
-- `https://www.movetrusthub.com/auth/callback`
-- `https://www.insurancetrusthub.com/auth/callback`
+Add (if missing):
+
+```
+https://www.movetrusthub.com/**
+https://www.insurancetrusthub.com/**
+https://www.lendertrusthub.com/**
+https://www.asktrusthub.com/**
+http://localhost:3000/**
+```
+
+Or explicit:
+
 - `https://www.lendertrusthub.com/auth/callback`
-- (optional) same paths for preview deploy origins
-- If using confirm links: `…/auth/confirm` for each origin
+- `https://www.lendertrusthub.com/auth/confirm`
+- (same for insurance + move)
 
-Site URL may remain Move’s production URL; redirect allow-list must include Insurance + Lending.
+### App redirect rules (code)
+
+Magic link / OAuth always set:
+
+`emailRedirectTo` / `redirectTo` = `https://www.lendertrusthub.com/auth/callback?next=…`
+
+Origin resolution (`lib/my-lending/auth-constants.ts` → `resolveSiteOrigin`):
+
+1. Request `Host` if it is `*lendertrusthub.com` or localhost  
+2. `NEXT_PUBLIC_SITE_URL` **only if** host is Lender  
+3. Else `https://www.lendertrusthub.com`  
+
+Wrong env (e.g. Move URL on this Vercel project) is **ignored**.
 
 ### Google Cloud OAuth
 
