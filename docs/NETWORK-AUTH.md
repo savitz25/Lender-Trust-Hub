@@ -32,6 +32,8 @@ Do **not** hardcode secrets in git.
 | `GET /api/auth/facebook` | Start Facebook OAuth |
 | `GET /auth/callback` | OAuth / code exchange → session cookie |
 | `GET /auth/confirm` | Email OTP `token_hash` verify (Resend-style links) |
+| `GET /api/auth/network-handoff/start` | Start silent SSO to another hub (session required) |
+| `GET /auth/network-handoff` | Complete SSO — set cookies on this domain |
 
 Post-login default: `/my-lending?auth=success`  
 Errors: `/my-lending?auth=error`
@@ -96,6 +98,17 @@ Shared Supabase **Site URL** is Move. Redirects not on the allow-list fall back 
 Set `AUTH_OAUTH_DIRECT=1` only after Redirect URLs include `https://www.lendertrusthub.com/**`.
 
 Canonical origin (never Move): `https://www.lendertrusthub.com`
+
+### Silent cross-domain SSO (network handoff)
+
+Signed-in network bar / seal / journey links use one-time codes (90s, single-use, target-bound):
+
+1. `GET /api/auth/network-handoff/start?to=…` on current hub  
+2. 302 → target `/auth/network-handoff?code=…`  
+3. Target: consume row → `admin.generateLink` + `verifyOtp` → cookies via `@supabase/ssr` (same as callback) → HQ  
+
+Requires migration `20260805120000_network_auth_handoffs.sql` on shared project + `SUPABASE_SERVICE_ROLE_KEY` on each Vercel.  
+Sign-out v1 = this domain only. Guests get plain URLs. See `docs/NETWORK-SSO-HANDOFF.md`.
 
 ### Google Cloud OAuth
 
