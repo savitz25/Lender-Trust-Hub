@@ -74,14 +74,14 @@ export default function Navbar() {
           ? 'My Lending — financing research HQ'
           : 'My Lending — research passport (sign in optional on HQ)'
       }
-      className="inline-flex h-9 items-center gap-1.5 rounded-xl border bg-white px-3 text-xs font-semibold transition-colors"
+      className="inline-flex h-8 items-center gap-1 rounded-lg border bg-white px-2 text-xs font-semibold transition-colors sm:h-8 sm:px-2.5"
       style={{
         borderColor: LENDER_BRAND.border,
         color: LENDER_BRAND.navy,
       }}
     >
       <Bookmark className="h-3.5 w-3.5" style={{ color: LENDER_BRAND.teal }} aria-hidden />
-      <span className="hidden sm:inline">My Lending</span>
+      <span className="hidden xl:inline">My Lending</span>
       {showBadge ? (
         <span
           className="rounded-full px-1.5 py-0.5 text-[10px] font-semibold text-white tabular-nums"
@@ -100,30 +100,30 @@ export default function Navbar() {
       className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90"
       style={{ borderColor: LENDER_BRAND.border }}
     >
-      <div className="container mx-auto flex min-h-16 items-center justify-between gap-3 px-4 py-1 md:min-h-20">
-        <div className="flex min-w-0 items-center gap-2 sm:gap-3">
+      <div className="container mx-auto flex h-14 items-center justify-between gap-2 px-4 sm:h-16 sm:gap-3">
+        <div className="flex min-w-0 items-center gap-1.5 sm:gap-2">
           <BrandLogo priority />
           <span
-            className="hidden max-w-[6.5rem] text-[10px] font-semibold leading-tight tracking-wide xl:block"
+            className="hidden max-w-[5.5rem] text-[9px] font-semibold leading-tight tracking-wide 2xl:block"
             style={{ color: LENDER_BRAND.navy }}
           >
             Wealth &amp; finance
           </span>
         </div>
 
-        <div className="hidden max-w-xs flex-1 lg:block xl:max-w-sm">
-          <SearchBar className="[&_input]:h-10 [&_input]:border-[#E2E8F0] [&_input]:bg-white [&_input]:text-sm [&_button]:hidden" />
+        <div className="hidden max-w-[14rem] flex-1 xl:block xl:max-w-xs">
+          <SearchBar className="[&_input]:h-9 [&_input]:border-[#E2E8F0] [&_input]:bg-white [&_input]:text-sm [&_button]:hidden" />
         </div>
 
-        <div className="hidden items-center gap-3 text-sm lg:flex xl:gap-4">
+        <div className="hidden items-center gap-1.5 text-sm lg:flex xl:gap-2">
           <div className="relative">
             <button
               type="button"
               onClick={() => setDirectoriesOpen(!directoriesOpen)}
-              className="inline-flex items-center gap-1 font-semibold text-[#0A2540] hover:text-[#0D9488]"
+              className="inline-flex items-center gap-0.5 whitespace-nowrap px-1 font-semibold text-[#0A2540] hover:text-[#0D9488]"
               aria-expanded={directoriesOpen}
             >
-              Directories <ChevronDown className="h-4 w-4" style={{ color: LENDER_BRAND.teal }} />
+              Directories <ChevronDown className="h-3.5 w-3.5" style={{ color: LENDER_BRAND.teal }} />
             </button>
             {directoriesOpen && (
               <div
@@ -156,18 +156,25 @@ export default function Navbar() {
           </div>
 
           {LENDER_HEADER_NAV.map((link) => (
-            <Link key={link.href} href={link.href} className={linkClass(link.href)}>
+            <Link
+              key={link.href}
+              href={link.href}
+              className={cn(linkClass(link.href), 'whitespace-nowrap px-1')}
+            >
               {link.label}
             </Link>
           ))}
 
           {myLendingButton}
 
-          <Link href={LENDER_HEADER_CTA.href} className="lth-cta h-9 px-4 text-xs sm:text-sm">
+          <Link
+            href={LENDER_HEADER_CTA.href}
+            className="lth-cta h-8 shrink-0 px-3 text-xs sm:h-9 sm:px-3.5 sm:text-sm"
+          >
             {LENDER_HEADER_CTA.label}
           </Link>
 
-          <SwitchHubMenu />
+          <SwitchHubMenu className="shrink-0 [&>button]:min-h-8 [&>button]:px-2.5 [&>button]:py-1.5 [&>button]:text-xs" />
         </div>
 
         <div className="flex items-center gap-1.5 lg:hidden">
