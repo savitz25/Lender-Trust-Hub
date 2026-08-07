@@ -3,7 +3,7 @@
 import { LENDER_BRAND, LENDER_TAGLINE } from '@/lib/design/lender-design-system';
 
 /** Bump when logo / favicon assets change (cache bust). */
-export const LENDER_LOGO_VERSION = '20260807lth-fav';
+export const LENDER_LOGO_VERSION = '20260807lth-fav-t';
 
 export const BRAND = {
   name: 'Lender Trust Hub',

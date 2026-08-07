@@ -1,6 +1,7 @@
 /**
  * Generate Lender Trust Hub favicon + PWA icon set from the official lockup mark
- * (teal bracket + multi-node hub). Replaces legacy euro/handshake icon.
+ * (teal bracket + multi-node hub). Transparent backgrounds only — no white plate
+ * (matches Move Trust Hub tab-icon treatment).
  *
  * Usage: node scripts/install-lth-favicon.mjs [optionalSourcePng]
  */
@@ -15,10 +16,9 @@ const PUBLIC = join(ROOT, 'public');
 const DEFAULT = join(BRAND, 'lender-trust-hub-logo-header.png');
 const SOURCE = process.argv[2] || DEFAULT;
 
-const CANVAS = { r: 248, g: 250, b: 252 };
-const WHITE = { r: 255, g: 255, b: 255 };
+const TRANSPARENT = { r: 0, g: 0, b: 0, alpha: 0 };
 
-async function stripDarkBg(input) {
+async function stripBg(input) {
   const { data, info } = await sharp(input).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   const p = new Uint8ClampedArray(data);
   for (let i = 0; i < p.length; i += 4) {
@@ -26,7 +26,8 @@ async function stripDarkBg(input) {
     const g = p[i + 1];
     const b = p[i + 2];
     const a = p[i + 3];
-    if (a < 16 || (r < 40 && g < 40 && b < 45)) {
+    // near-black canvas or near-white plate → fully transparent
+    if (a < 16 || (r < 40 && g < 40 && b < 45) || (r > 245 && g > 245 && b > 245)) {
       p[i] = p[i + 1] = p[i + 2] = p[i + 3] = 0;
     }
   }
@@ -38,6 +39,7 @@ async function stripDarkBg(input) {
     .toBuffer();
 }
 
+/** Extract left hub mark (bracket + nodes) from horizontal lockup */
 async function extractMark(cleaned) {
   const meta = await sharp(cleaned).metadata();
   const w = meta.width || 1;
@@ -57,74 +59,36 @@ async function extractMark(cleaned) {
       bottom: Math.ceil((side - (m.height || 0)) / 2) + pad,
       left: Math.floor((side - (m.width || 0)) / 2) + pad,
       right: Math.ceil((side - (m.width || 0)) / 2) + pad,
-      background: { r: 0, g: 0, b: 0, alpha: 0 },
+      background: TRANSPARENT,
     })
     .png()
     .toBuffer();
 }
 
-async function writeOnBg(mark, rel, size, bg) {
+/** Square PNG with transparent canvas only (no solid plate) */
+async function writeTransparent(mark, rel, size) {
   const out = join(ROOT, rel);
-  const inner = Math.round(size * 0.82);
+  const inner = Math.max(Math.round(size * 0.88), size >= 32 ? size - 4 : size);
   const resized = await sharp(mark)
     .resize(inner, inner, {
       fit: 'contain',
-      background: { r: 0, g: 0, b: 0, alpha: 0 },
+      background: TRANSPARENT,
     })
     .png()
     .toBuffer();
 
-  if (bg) {
-    await sharp({
-      create: { width: size, height: size, channels: 3, background: bg },
-    })
-      .composite([{ input: resized, gravity: 'centre' }])
-      .png()
-      .toFile(out);
-  } else {
-    await sharp({
-      create: {
-        width: size,
-        height: size,
-        channels: 4,
-        background: { r: 0, g: 0, b: 0, alpha: 0 },
-      },
-    })
-      .composite([{ input: resized, gravity: 'centre' }])
-      .png()
-      .toFile(out);
-  }
-  console.log('wrote', rel);
-}
-
-async function writeFooterLogo(srcPath) {
-  const { data, info } = await sharp(srcPath).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
-  const px = new Uint8ClampedArray(data);
-  for (let i = 0; i < px.length; i += 4) {
-    if (px[i + 3] < 10) continue;
-    const r = px[i];
-    const g = px[i + 1];
-    const b = px[i + 2];
-    const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-    const isTeal = g > r + 8 && g > 85 && b > 70 && g > b * 0.7;
-    const isWarm = r > 150 && g > 80 && g < 200 && b < 120;
-    const isPurple = b > r + 15 && b > g + 10 && b > 90 && r < 160;
-    const isBlueNode = b > g + 20 && b > r + 30 && b > 140 && g < 200;
-    if (isTeal || isWarm || isPurple || isBlueNode) continue;
-    if (lum < 160) {
-      const t = 1 - lum / 160;
-      const v = Math.round(200 + t * 55);
-      px[i] = v;
-      px[i + 1] = Math.min(255, v + 4);
-      px[i + 2] = Math.min(255, v + 10);
-    }
-  }
-  await sharp(Buffer.from(px), {
-    raw: { width: info.width, height: info.height, channels: 4 },
+  await sharp({
+    create: {
+      width: size,
+      height: size,
+      channels: 4,
+      background: TRANSPARENT,
+    },
   })
-    .png()
-    .toFile(join(BRAND, 'lender-trust-hub-logo-footer.png'));
-  console.log('wrote brand/lender-trust-hub-logo-footer.png');
+    .composite([{ input: resized, gravity: 'centre' }])
+    .png({ compressionLevel: 9, adaptiveFiltering: true })
+    .toFile(out);
+  console.log('wrote', rel, '(transparent)');
 }
 
 async function main() {
@@ -136,33 +100,40 @@ async function main() {
   mkdirSync(BRAND, { recursive: true });
   mkdirSync(PUBLIC, { recursive: true });
 
-  const cleaned = await stripDarkBg(SOURCE);
+  const cleaned = await stripBg(SOURCE);
   const mark = await extractMark(cleaned);
   const markMeta = await sharp(mark).metadata();
-  console.log(`Mark: ${markMeta.width}x${markMeta.height}`);
+  console.log(`Source: ${SOURCE}`);
+  console.log(`Mark: ${markMeta.width}x${markMeta.height} (transparent extract)`);
 
-  await writeOnBg(mark, 'public/brand/lender-trust-hub-icon.png', 512, null);
-  await writeOnBg(mark, 'public/brand/lender-trust-hub-icon-192.png', 192, null);
-  await writeOnBg(mark, 'public/icon-512.png', 512, null);
-  await writeOnBg(mark, 'public/icon-192.png', 192, null);
-  await writeOnBg(mark, 'public/android-chrome-512x512.png', 512, null);
-  await writeOnBg(mark, 'public/android-chrome-192x192.png', 192, null);
+  // Brand masters
+  await writeTransparent(mark, 'public/brand/lender-trust-hub-icon.png', 512);
+  await writeTransparent(mark, 'public/brand/lender-trust-hub-icon-192.png', 192);
+  await writeTransparent(mark, 'public/brand/lender-trust-hub-favicon-32.png', 32);
+  // Email mark also transparent (clients that need a plate can composite)
+  await writeTransparent(mark, 'public/brand/lender-trust-hub-email-mark.png', 128);
 
-  await writeOnBg(mark, 'public/favicon-16x16.png', 16, CANVAS);
-  await writeOnBg(mark, 'public/favicon-32x32.png', 32, CANVAS);
-  await writeOnBg(mark, 'public/favicon-48x48.png', 48, CANVAS);
-  await writeOnBg(mark, 'public/favicon.png', 32, CANVAS);
-  await writeOnBg(mark, 'public/brand/lender-trust-hub-favicon-32.png', 32, CANVAS);
-  await writeOnBg(mark, 'public/apple-touch-icon.png', 180, WHITE);
-  await writeOnBg(mark, 'public/brand/lender-trust-hub-email-mark.png', 128, WHITE);
+  // PWA / public icons — all transparent
+  await writeTransparent(mark, 'public/icon-512.png', 512);
+  await writeTransparent(mark, 'public/icon-192.png', 192);
+  await writeTransparent(mark, 'public/android-chrome-512x512.png', 512);
+  await writeTransparent(mark, 'public/android-chrome-192x192.png', 192);
 
-  const icoBuf = await sharp({
-    create: { width: 32, height: 32, channels: 3, background: CANVAS },
+  // Favicon set — transparent (Move Trust Hub style for browser tabs)
+  await writeTransparent(mark, 'public/favicon-16x16.png', 16);
+  await writeTransparent(mark, 'public/favicon-32x32.png', 32);
+  await writeTransparent(mark, 'public/favicon-48x48.png', 48);
+  await writeTransparent(mark, 'public/favicon.png', 32);
+  await writeTransparent(mark, 'public/apple-touch-icon.png', 180);
+
+  // favicon.ico as transparent 32px PNG bytes (modern browsers)
+  const ico32 = await sharp({
+    create: { width: 32, height: 32, channels: 4, background: TRANSPARENT },
   })
     .composite([
       {
         input: await sharp(mark)
-          .resize(26, 26, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+          .resize(28, 28, { fit: 'contain', background: TRANSPARENT })
           .png()
           .toBuffer(),
         gravity: 'centre',
@@ -170,11 +141,9 @@ async function main() {
     ])
     .png()
     .toBuffer();
-  writeFileSync(join(PUBLIC, 'favicon.ico'), icoBuf);
-  writeFileSync(join(ROOT, 'app', 'favicon.ico'), icoBuf);
-  console.log('wrote public/favicon.ico + app/favicon.ico');
-
-  await writeFooterLogo(SOURCE);
+  writeFileSync(join(PUBLIC, 'favicon.ico'), ico32);
+  writeFileSync(join(ROOT, 'app', 'favicon.ico'), ico32);
+  console.log('wrote public/favicon.ico + app/favicon.ico (transparent)');
 
   writeFileSync(
     join(PUBLIC, 'site.webmanifest'),
@@ -208,7 +177,7 @@ async function main() {
     ) + '\n'
   );
   console.log('wrote public/site.webmanifest');
-  console.log('Done.');
+  console.log('Done — all icons transparent (no white plate).');
 }
 
 main().catch((e) => {
