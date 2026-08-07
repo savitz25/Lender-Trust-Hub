@@ -48,6 +48,26 @@ export const LENDER_TAGLINE = 'WHAT ARE YOU TRYING TO ACCOMPLISH?';
 export const LENDER_INDEPENDENCE_LINE =
   'Independent research — no paid placements, no lead fees.';
 
+/** Phase 2 — homepage hero (Wealth & Finance research layer) */
+export const LENDER_HERO = {
+  eyebrow: 'Lender Trust Hub  ·  Wealth & Finance',
+  headline: 'Verify. Compare. Finance wisely.',
+  support:
+    'Independent research for lenders and financing options. We surface verified public data — including NMLS records — with no paid placements and no lead fees. You decide.',
+  primaryCta: { label: 'Start your comparison', href: '/compare' },
+  secondaryCta: { label: 'Explore calculators', href: '/calculators' },
+  philosophy: 'We cite. You decide.',
+  networkLine: 'The Wealth & Finance layer of the Ask Trust Hub network.',
+  chips: [
+    { id: 'nmls', label: 'NMLS verified data' },
+    { id: 'independent', label: 'Independent research' },
+    { id: 'no-paid', label: 'No paid placements' },
+    { id: 'compare', label: 'Side-by-side comparisons' },
+  ],
+  searchTitle: 'Find local lenders',
+  searchHint: 'Enter a ZIP to browse licensed lenders in your area.',
+} as const;
+
 /**
  * Primary header nav (finance research IA).
  * Switch Hub is a separate control.

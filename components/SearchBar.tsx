@@ -46,7 +46,7 @@ export function SearchBar({ className }: { className?: string }) {
               setZip(e.target.value.replace(/\D/g, '').slice(0, 5));
               setError('');
             }}
-            className="h-14 w-full rounded-xl border border-zinc-200 bg-white pl-12 pr-4 text-base text-[#0A2540] shadow-sm focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[#059669]/20"
+            className="h-14 w-full rounded-xl border border-slate-200 bg-white pl-12 pr-4 text-base text-[#1E293B] shadow-sm focus:border-[#0D9488] focus:outline-none focus:ring-2 focus:ring-[#0D9488]/20"
             aria-label="ZIP code"
             aria-invalid={!!error}
             aria-describedby={error ? 'zip-error' : undefined}
