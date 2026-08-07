@@ -3,9 +3,14 @@ import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import { SearchBar } from '@/components/SearchBar';
 import { LenderDirectoryLoader } from '@/components/directory/LenderDirectoryLoader';
-import { getCountyLenderSegments } from '@/lib/lenders';
+import { getAllCounties, getCountyLenderSegments } from '@/lib/lenders';
 import { LENDER_LOCALITY_POLICY } from '@/lib/geo';
 import { RankingBasisPanel } from '@/components/research/ranking-basis-panel';
+import { CountyIntelligenceModules } from '@/components/mortgage/county-intelligence-modules';
+import {
+  assessCountyForPage,
+  countyRobotsForTier,
+} from '@/lib/mortgage/county-quality-tiers';
 import {
   EmptyCoveragePanel,
   NMLS_CONSUMER_ACCESS_URL,
@@ -19,6 +24,13 @@ function titleCase(slug: string): string {
     .join(' ');
 }
 
+export function generateStaticParams() {
+  return getAllCounties().map((c) => ({
+    state: c.stateSlug,
+    county: c.countySlug,
+  }));
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -27,6 +39,8 @@ export async function generateMetadata({
   const { state, county } = await params;
   const stateName = titleCase(state);
   const countyName = titleCase(county);
+  const quality = assessCountyForPage(state, county);
+  const robots = countyRobotsForTier(quality.tier);
   const isOrange = state === 'florida' && county === 'orange';
   const isHillsborough = state === 'florida' && county === 'hillsborough';
   const isDuval = state === 'florida' && county === 'duval';
@@ -484,7 +498,8 @@ export async function generateMetadata({
                                                                                                                                                                                           ? `Compare 12+ NMLS-verified Essex mortgage lenders. Montclair 11-day pending, 105%+ sale-to-list, elite schools, Union/Middlesex supplements.`
                                                                                                                                                                                           : isNjHudson
                                                                                                                                                                                             ? `Compare 12 NMLS-verified Hudson mortgage lenders. Hoboken 22.6% luxury growth, Jersey City high-density absorption, return-to-office Gold Coast demand.`
-                                                                                                                                                                                            : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
+                                                                                                                                                                                            : `Research mortgage companies with confirmed in-county HQ in ${countyName} County, ${stateName}. Locality-honest inventory and NMLS verification paths.`,
+    robots: { index: robots.index, follow: robots.follow },
   };
 }
 
@@ -502,6 +517,7 @@ export default async function CountyLendersPage({
   const countyLabel = `${countyName} County, ${stateName}`;
   const segments = getCountyLenderSegments(state, county, countyLabel);
   const { inCounty, nearby, inCountyCount, nearbyCount, localScarcity } = segments;
+  const quality = assessCountyForPage(state, county);
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -511,16 +527,28 @@ export default async function CountyLendersPage({
           <ChevronRight className="h-4 w-4" aria-hidden="true" />
           <li><Link href="/local-lenders" className="hover:text-[#059669]">Local Lenders</Link></li>
           <ChevronRight className="h-4 w-4" aria-hidden="true" />
+          <li>
+            <Link href={`/local-lenders/${state}`} className="hover:text-[#059669]">
+              {stateName}
+            </Link>
+          </li>
+          <ChevronRight className="h-4 w-4" aria-hidden="true" />
           <li><span className="text-[#0A2540]">{countyLabel}</span></li>
         </ol>
       </nav>
 
       <div className="mb-10">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500">
+          Tier {quality.tier} · {quality.tierLabel}
+          {quality.tier === 3 ? ' · noindex until quality gates pass' : ''}
+          {' · '}
+          quality score {quality.score}/100
+        </p>
         <h1 className="text-3xl font-bold text-[#0A2540] md:text-4xl">
-          Research mortgage lenders in {countyLabel}
+          Research mortgage companies in {countyLabel}
         </h1>
         <p className="mt-3 max-w-2xl text-zinc-600">
-          {inCountyCount} in-county HQ lender{inCountyCount !== 1 ? 's' : ''}
+          {inCountyCount} in-county HQ compan{inCountyCount === 1 ? 'y' : 'ies'}
           {nearbyCount > 0
             ? ` · ${nearbyCount} nearby / serving from elsewhere`
             : ''}
@@ -533,6 +561,16 @@ export default async function CountyLendersPage({
           localityNote={`${inCountyCount} in-county · ${nearbyCount} nearby — nearby never outranks in-county by score alone.`}
         />
       </div>
+
+      {(quality.tier === 1 || quality.tier === 2) && (
+        <CountyIntelligenceModules
+          stateSlug={state}
+          countySlug={county}
+          countyName={countyName}
+          assessment={quality}
+          inCounty={inCounty}
+        />
+      )}
 
       {localScarcity ? (
         <p className="mb-6 rounded-xl border border-amber-200 bg-amber-50/80 px-4 py-3 text-sm text-amber-950">

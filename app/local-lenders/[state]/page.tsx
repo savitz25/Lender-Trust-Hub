@@ -23,6 +23,7 @@ import {
   mortgageStateUrl,
 } from '@/lib/mortgage/seo';
 import { NetworkHandoff } from '@/components/network/network-handoff';
+import { StateResearchSections } from '@/components/mortgage/state-research-sections';
 
 /**
  * MORTGAGE STATE PAGE TEMPLATE
@@ -106,7 +107,7 @@ export default async function MortgageStatePage({
             NMLS research directory • Updated {MORTGAGE_DATA_UPDATED} • No Paid Placements
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">
-            Mortgage Lenders in {stateMeta.fullName} (2026)
+            Research mortgage companies in {stateMeta.fullName}
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
             {stats.total} distinct companies
@@ -123,8 +124,14 @@ export default async function MortgageStatePage({
       </section>
 
       <div className="container mx-auto px-4 py-10">
+        <div className="mb-10">
+          <StateResearchSections stateMeta={stateMeta} stats={stats} />
+        </div>
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-6">
+            <h2 className="text-xl font-semibold text-[#0A2540]">
+              Companies in {stateMeta.fullName} (distinct NMLS entities)
+            </h2>
             {slug === 'georgia' && (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 <Link

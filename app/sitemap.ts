@@ -3,9 +3,17 @@ import { SITE_URL } from '@/lib/directory/categories';
 import { lenders } from '@/lib/mockData';
 import { stateData } from '@/lib/fdic/stateData';
 import { getStateSlugsWithLenders } from '@/lib/mortgage/stateLenders';
+import { getSitemapCounties } from '@/lib/mortgage/county-quality-tiers';
+import { cleanNmlsId } from '@/lib/verification/nmls';
+import { catalogDistinctEntities } from '@/lib/verification';
+
+/** Meaningful lastmod for sitemap — day of generation (catalog is static build data). */
+function catalogLastMod(): Date {
+  return new Date();
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  const now = catalogLastMod();
 
   const staticPaths = [
     '/',
@@ -17,10 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/calculators',
     '/compare',
     '/local-lenders',
-    '/my-lending',
-    '/my-lending/plans',
-    '/my-lending/setup',
-    '/my-lending/report',
     '/fdic-insured-banks',
     '/auto-loan-companies',
   ];
@@ -28,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = staticPaths.map((path) => ({
     url: `${SITE_URL}${path === '/' ? '' : path}`,
     lastModified: now,
-    changeFrequency: 'weekly',
+    changeFrequency: 'weekly' as const,
     priority: path === '/' ? 1 : path === '/local-lenders' ? 0.9 : 0.8,
   }));
 
@@ -56,12 +60,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
     mortgageStates = [];
   }
 
-  const profiles: MetadataRoute.Sitemap = (lenders ?? []).map((l) => ({
-    url: `${SITE_URL}/lenders/${l.slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }));
+  // Phase 4: only Tier 1 / Tier 2 counties (Tier 3 noindex — omit from premium sitemap)
+  let mortgageCounties: MetadataRoute.Sitemap = [];
+  try {
+    mortgageCounties = getSitemapCounties().map((c) => ({
+      url: `${SITE_URL}/local-lenders/${c.stateSlug}/${c.countySlug}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: c.tier === 1 ? 0.8 : 0.65,
+    }));
+  } catch {
+    mortgageCounties = [];
+  }
 
-  return [...staticRoutes, ...fdicStates, ...mortgageStates, ...profiles];
+  // Strong profiles only: NMLS ID verified (Phase 0) + distinct entities
+  const profiles: MetadataRoute.Sitemap = catalogDistinctEntities(lenders ?? [])
+    .filter((l) => l.nmlsVerified && cleanNmlsId(l.nmlsId))
+    .map((l) => ({
+      url: `${SITE_URL}/lenders/${l.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }));
+
+  return [
+    ...staticRoutes,
+    ...fdicStates,
+    ...mortgageStates,
+    ...mortgageCounties,
+    ...profiles,
+  ];
 }
