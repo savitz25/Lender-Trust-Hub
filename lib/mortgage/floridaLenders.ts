@@ -86,7 +86,7 @@ export const FLORIDA_LENDERS: Lender[] = [
   },
   {
     id: 'fl-08', slug: 'premier-lending-corp', name: 'Premier Lending Corp', nmlsId: '1156346', type: 'Broker',
-    city: 'Cooper City', state: 'Florida', stateSlug: 'florida', county: 'Miami-Dade', countySlug: 'miami-dade',
+    city: 'Cooper City', state: 'Florida', stateSlug: 'florida', county: 'Broward', countySlug: 'broward',
     zipCodes: ['33101', '33157', '33180'], rating: 4.9, reviewCount: 180, trustScore: 94, countyExperienceScore: 96,
     nationalVolumeRank: 58, loanTypes: ['Conventional', 'FHA', 'Jumbo', 'Refinance'],
     specialties: ['Foreign National', 'ITIN Loans', 'Down Payment Assistance', 'Bilingual Services'],
@@ -542,7 +542,7 @@ export const FLORIDA_LENDERS: Lender[] = [
   },
   {
     id: 'fl-50', slug: 'floridas-va-mortgage-center-eglin', name: "Florida's VA Mortgage Center (Eglin / Panhandle)", nmlsId: '1299512', type: 'Lender',
-    city: 'Fort Walton Beach', state: 'Florida', stateSlug: 'florida', county: 'Bay', countySlug: 'bay',
+    city: 'Fort Walton Beach', state: 'Florida', stateSlug: 'florida', county: 'Okaloosa', countySlug: 'okaloosa',
     zipCodes: ['32547', '32548', '32401'], rating: 4.9, reviewCount: 165, trustScore: 94, countyExperienceScore: 96,
     nationalVolumeRank: 66, loanTypes: ['VA', 'Refinance'],
     specialties: ['VA Loans', 'Eglin AFB', 'Hurlburt Field'],
@@ -553,7 +553,7 @@ export const FLORIDA_LENDERS: Lender[] = [
   },
   {
     id: 'fl-51', slug: 'crosscountry-mortgage-panhandle', name: 'CrossCountry Mortgage (Panhandle / Veterans Lending)', nmlsId: '3029', type: 'Lender',
-    city: 'Pensacola', state: 'Florida', stateSlug: 'florida', county: 'Bay', countySlug: 'bay',
+    city: 'Pensacola', state: 'Florida', stateSlug: 'florida', county: 'Escambia', countySlug: 'escambia',
     zipCodes: ['32504', '32547', '32401'], rating: 4.8, reviewCount: 310, trustScore: 90, countyExperienceScore: 92,
     nationalVolumeRank: 22, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
     specialties: ['VA & Military', 'NAS Pensacola', 'Veteran-Centric'],
@@ -575,7 +575,7 @@ export const FLORIDA_LENDERS: Lender[] = [
   },
   {
     id: 'fl-53', slug: 'eglin-federal-credit-union', name: 'Eglin Federal Credit Union (VA Loans)', nmlsId: '440642', type: 'Credit Union',
-    city: 'Fort Walton Beach', state: 'Florida', stateSlug: 'florida', county: 'Bay', countySlug: 'bay',
+    city: 'Fort Walton Beach', state: 'Florida', stateSlug: 'florida', county: 'Okaloosa', countySlug: 'okaloosa',
     zipCodes: ['32547', '32548', '32542'], rating: 4.9, reviewCount: 380, trustScore: 91, countyExperienceScore: 94,
     nationalVolumeRank: 45, loanTypes: ['Conventional', 'VA', 'Refinance'],
     specialties: ['Eglin AFB', 'No Origination Fees', 'Military Membership'],
@@ -597,7 +597,7 @@ export const FLORIDA_LENDERS: Lender[] = [
   },
   {
     id: 'fl-55', slug: 'trident-home-loans', name: 'Trident Home Loans LLC', nmlsId: '65716', type: 'Broker',
-    city: 'Pensacola', state: 'Florida', stateSlug: 'florida', county: 'Bay', countySlug: 'bay',
+    city: 'Pensacola', state: 'Florida', stateSlug: 'florida', county: 'Escambia', countySlug: 'escambia',
     zipCodes: ['32504', '32503', '32507'], rating: 4.9, reviewCount: 195, trustScore: 91, countyExperienceScore: 92,
     nationalVolumeRank: 58, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
     specialties: ['Pensacola Independent', 'Fast Closings', 'Destin & Pensacola'],
@@ -609,7 +609,7 @@ export const FLORIDA_LENDERS: Lender[] = [
   // ── Statewide enterprise (Duval supplement) ────────────────────────────────
   {
     id: 'fl-18', slug: 'prmg', name: 'Paramount Residential Mortgage Group (PRMG)', nmlsId: '75243', type: 'Lender',
-    city: 'Jacksonville', state: 'Florida', stateSlug: 'florida', county: 'Miami-Dade', countySlug: 'miami-dade',
+    city: 'Jacksonville', state: 'Florida', stateSlug: 'florida', county: 'Duval', countySlug: 'duval',
     zipCodes: ['32202', '32256', '32073'], rating: 4.8, reviewCount: 420, trustScore: 90, countyExperienceScore: 85,
     nationalVolumeRank: 18, loanTypes: ['Conventional', 'FHA', 'VA', 'Jumbo', 'Refinance'],
     specialties: ['Down Payment Assistance', 'FHA', 'VA', 'Enterprise Agency Programs'],

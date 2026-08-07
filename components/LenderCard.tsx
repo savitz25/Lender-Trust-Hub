@@ -7,26 +7,29 @@ import { SaveLenderButton } from '@/components/my-lending/save-lender-button';
 import type { Lender } from '@/lib/mockData';
 import { NmlsVerificationBadge } from '@/components/nmls-verification-badge';
 import { cleanNmlsId } from '@/lib/verification';
+import { homeLocalityLine, type LenderPresenceLabel } from '@/lib/geo';
 
 export function LenderCard({
   lender,
   rank,
   countyLabel,
   profileReturnPath,
+  presenceLabel,
 }: {
   lender: Lender;
   rank?: number;
   countyLabel?: string;
   /** Optional return path appended as ?from= for profile back-nav */
   profileReturnPath?: string;
+  /** Phase 1 honest presence — never imply a branch without address support */
+  presenceLabel?: LenderPresenceLabel | string;
 }) {
-  const locationLine = [
-    lender.city,
-    lender.state,
-    countyLabel ? `Serves ${countyLabel}` : `${lender.county} County`,
-  ]
-    .filter(Boolean)
-    .join(' · ');
+  const geoLine = presenceLabel
+    ? presenceLabel
+    : countyLabel
+      ? homeLocalityLine(lender)
+      : homeLocalityLine(lender);
+  const locationLine = [lender.city, lender.state, geoLine].filter(Boolean).join(' · ');
 
   const profileHref = profileReturnPath
     ? `/lenders/${lender.slug}?from=${encodeURIComponent(profileReturnPath)}`

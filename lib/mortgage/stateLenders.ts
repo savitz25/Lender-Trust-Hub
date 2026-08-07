@@ -4,11 +4,8 @@
  */
 import { lenders, type Lender } from '@/lib/mockData';
 import { US_STATES } from '@/lib/fdic/states';
-import {
-  countEntitiesByCounty,
-  countLenderCatalog,
-  dedupeLendersByEntity,
-} from '@/lib/verification';
+import { countLenderCatalog, dedupeLendersByEntity, lenderEntityKey } from '@/lib/verification';
+import { deriveLenderHomeLocality } from '@/lib/geo';
 
 export interface StateMortgageStats {
   total: number;
@@ -33,15 +30,33 @@ export function getStateSlugsWithLenders(): string[] {
   return [...new Set(lenders.map((l) => l.stateSlug))].sort();
 }
 
+/** Top counties by distinct entities with derived HQ in that county. */
+function topCountiesByHomeLocality(
+  rows: Lender[],
+  limit = 5
+): { county: string; countySlug: string; count: number }[] {
+  const map = new Map<string, { county: string; countySlug: string; entities: Set<string> }>();
+  for (const row of rows) {
+    const home = deriveLenderHomeLocality(row);
+    if (!home.countySlug) continue;
+    let entry = map.get(home.countySlug);
+    if (!entry) {
+      entry = { county: home.county, countySlug: home.countySlug, entities: new Set() };
+      map.set(home.countySlug, entry);
+    }
+    entry.entities.add(lenderEntityKey(row));
+  }
+  return [...map.values()]
+    .map((e) => ({ county: e.county, countySlug: e.countySlug, count: e.entities.size }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, limit);
+}
+
 export function getStateMortgageStats(stateSlug: string): StateMortgageStats {
   const rows = getLenderRowsByStateSlug(stateSlug);
   const entities = dedupeLendersByEntity(rows);
   const counts = countLenderCatalog(rows);
-  const topCounties = countEntitiesByCounty(rows).slice(0, 5).map((c) => ({
-    county: c.county,
-    countySlug: c.countySlug,
-    count: c.count,
-  }));
+  const topCounties = topCountiesByHomeLocality(rows, 5);
   const avgTrustScore =
     entities.length > 0
       ? Math.round(entities.reduce((s, l) => s + l.trustScore, 0) / entities.length)

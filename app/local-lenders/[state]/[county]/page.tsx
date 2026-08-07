@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import { SearchBar } from '@/components/SearchBar';
 import { LenderDirectoryLoader } from '@/components/directory/LenderDirectoryLoader';
-import { getLendersByCounty } from '@/lib/lenders';
+import { getCountyLenderSegments } from '@/lib/lenders';
+import { LENDER_LOCALITY_POLICY } from '@/lib/geo';
 import {
   EmptyCoveragePanel,
   NMLS_CONSUMER_ACCESS_URL,
@@ -497,8 +498,9 @@ export default async function CountyLendersPage({
   const { zip } = await searchParams;
   const stateName = titleCase(state);
   const countyName = titleCase(county);
-  const lenders = getLendersByCounty(state, county);
   const countyLabel = `${countyName} County, ${stateName}`;
+  const segments = getCountyLenderSegments(state, county, countyLabel);
+  const { inCounty, nearby, inCountyCount, nearbyCount, localScarcity } = segments;
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -514,30 +516,77 @@ export default async function CountyLendersPage({
 
       <div className="mb-10">
         <h1 className="text-3xl font-bold text-[#0A2540] md:text-4xl">
-          Mortgage Lenders in {countyLabel}
+          Research mortgage lenders in {countyLabel}
         </h1>
         <p className="mt-3 max-w-2xl text-zinc-600">
-          {lenders.length} distinct lender{lenders.length !== 1 ? 's' : ''} (by NMLS entity) ranked by
-          county experience score and trust score. {zip ? `Showing results for ZIP ${zip}.` : ''}
+          {inCountyCount} in-county HQ lender{inCountyCount !== 1 ? 's' : ''}
+          {nearbyCount > 0
+            ? ` · ${nearbyCount} nearby / serving from elsewhere`
+            : ''}
+          . Local means a licensed business address in this county — not statewide license alone.
+          {zip ? ` Filtering context for ZIP ${zip}.` : ''}
         </p>
         <SearchBar className="mt-6 max-w-xl" />
       </div>
 
-      {lenders.length > 0 ? (
-        <LenderDirectoryLoader
-          lenders={lenders}
-          countyLabel={countyLabel}
-          profileReturnPath={`/local-lenders/${state}/${county}`}
-          showRank
-          emptyVariant="filtered"
-          emptyPlaceLabel={countyLabel}
-          emptyMessage={`No lenders match your filters in ${countyLabel}. Clear filters or browse other markets.`}
-        />
+      {localScarcity ? (
+        <p className="mb-6 rounded-xl border border-amber-200 bg-amber-50/80 px-4 py-3 text-sm text-amber-950">
+          {LENDER_LOCALITY_POLICY.scarceInCountyCopy(inCountyCount, countyLabel)}
+        </p>
+      ) : null}
+
+      {inCountyCount > 0 ? (
+        <section className="mb-12" aria-labelledby="in-county-heading">
+          <h2 id="in-county-heading" className="mb-2 text-xl font-semibold text-[#0A2540]">
+            In-county HQ
+          </h2>
+          <p className="mb-4 text-sm text-zinc-500">
+            Licensed business city or HQ locality maps to {countyName} County.
+          </p>
+          <LenderDirectoryLoader
+            lenders={inCounty}
+            countyLabel={countyLabel}
+            profileReturnPath={`/local-lenders/${state}/${county}`}
+            showRank
+            presenceLabel="HQ in county"
+            emptyVariant="filtered"
+            emptyPlaceLabel={countyLabel}
+            emptyMessage={`No in-county lenders match your filters in ${countyLabel}.`}
+          />
+        </section>
       ) : (
+        <div className="mb-10 rounded-2xl border border-zinc-200 bg-zinc-50 p-6">
+          <p className="text-sm text-zinc-700">{LENDER_LOCALITY_POLICY.emptyInCountyCopy}</p>
+        </div>
+      )}
+
+      {nearbyCount > 0 ? (
+        <section className="mb-12" aria-labelledby="nearby-heading">
+          <h2 id="nearby-heading" className="mb-2 text-xl font-semibold text-[#0A2540]">
+            Nearby / serving from elsewhere
+          </h2>
+          <p className="mb-4 text-sm text-zinc-500">
+            HQ outside {countyName} County. Not in-county locals — listed separately so inventory is
+            not padded as local.
+          </p>
+          <LenderDirectoryLoader
+            lenders={nearby}
+            countyLabel={countyLabel}
+            profileReturnPath={`/local-lenders/${state}/${county}`}
+            showRank={false}
+            presenceLabel="Serves from nearby market"
+            showSearch={false}
+            emptyVariant="filtered"
+            emptyPlaceLabel={countyLabel}
+          />
+        </section>
+      ) : null}
+
+      {inCountyCount === 0 && nearbyCount === 0 ? (
         <EmptyCoveragePanel
           variant="unmapped"
-          title={`We haven’t listed lenders in ${countyLabel} yet`}
-          description="This county is not fully mapped in our research directory. Re-check any company on NMLS Consumer Access — empty here is not a verdict on every licensed lender."
+          title={`We haven’t listed in-county lenders in ${countyLabel} yet`}
+          description="This county has no confirmed in-county HQ listings in our research directory. We do not pad with far-away offices labeled as local. Re-check any company on NMLS Consumer Access."
           placeLabel={countyLabel}
           primarySources={[
             {
@@ -557,7 +606,7 @@ export default async function CountyLendersPage({
             { href: '/calculators', label: 'Educational calculators' },
           ]}
         />
-      )}
+      ) : null}
     </div>
   );
-}
+}

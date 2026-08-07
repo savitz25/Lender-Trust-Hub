@@ -53,6 +53,8 @@ export interface LenderDirectoryClientProps {
   /** unmapped = thin/no inventory for place; filtered = filters removed all matches */
   emptyVariant?: 'unmapped' | 'filtered';
   emptyPlaceLabel?: string;
+  /** Phase 1: default presence line on cards (e.g. HQ in county) */
+  presenceLabel?: string;
 }
 
 export function LenderDirectoryClient({
@@ -69,6 +71,7 @@ export function LenderDirectoryClient({
   emptyMessage,
   emptyVariant = 'filtered',
   emptyPlaceLabel,
+  presenceLabel,
 }: LenderDirectoryClientProps) {
   const [searchInput, setSearchInput] = useState(initialSearch);
   const [debouncedSearch, setDebouncedSearch] = useState(initialSearch);
@@ -379,6 +382,7 @@ export function LenderDirectoryClient({
                 rank={showRank ? i + 1 : undefined}
                 countyLabel={countyLabel}
                 profileReturnPath={profileReturnPath}
+                presenceLabel={presenceLabel}
               />
             ))}
           </div>

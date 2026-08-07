@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Star, ShieldCheck, ChevronRight, Phone, ExternalLink } from 'lucide-react';
+import { Star, ChevronRight, Phone, ExternalLink } from 'lucide-react';
 import { getLenderBySlug, lenders } from '@/lib/lenders';
 import { Badge } from '@/components/ui/badge';
 import { MatchLenderButton } from '@/components/MatchLenderButton';
@@ -9,6 +9,9 @@ import { SaveLenderButton } from '@/components/my-lending/save-lender-button';
 import { RelatedDirectoryLinks } from '@/components/directory/RelatedDirectoryLinks';
 import { TrustMark } from '@/components/network/trust-mark';
 import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
+import { deriveLenderHomeLocality, homeLocalityLine } from '@/lib/geo';
+import { resolveNmlsVerification } from '@/lib/verification';
+import { NmlsVerificationBadge } from '@/components/nmls-verification-badge';
 
 export function generateStaticParams() {
   return lenders.map((l) => ({ slug: l.slug }));
@@ -37,7 +40,15 @@ export default async function LenderProfilePage({
   const lender = getLenderBySlug(slug);
   if (!lender) notFound();
 
-  const countyLabel = `${lender.county} County, ${lender.state}`;
+  const home = deriveLenderHomeLocality(lender);
+  const homeCountySlug = home.countySlug || lender.countySlug;
+  const countyLabel = home.county
+    ? `${home.county} County, ${lender.state}`
+    : `${lender.county} County, ${lender.state}`;
+  const nmls = resolveNmlsVerification({
+    nmlsId: lender.nmlsId,
+    nmlsVerified: lender.nmlsVerified,
+  });
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -47,7 +58,7 @@ export default async function LenderProfilePage({
           <ChevronRight className="h-4 w-4" aria-hidden="true" />
           <li>
             <Link
-              href={`/local-lenders/${lender.stateSlug}/${lender.countySlug}`}
+              href={`/local-lenders/${lender.stateSlug}/${homeCountySlug}`}
               className="hover:text-[#059669]"
             >
               {countyLabel}
@@ -63,15 +74,19 @@ export default async function LenderProfilePage({
           <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
             <div>
               <div className="mb-2 flex flex-wrap gap-2">
-                <span className="trust-badge">
-                  <ShieldCheck className="h-3 w-3" aria-hidden="true" />
-                  NMLS Verified
-                </span>
+                <NmlsVerificationBadge
+                  nmlsId={lender.nmlsId}
+                  nmlsVerified={lender.nmlsVerified}
+                />
                 <Badge variant="outline">{lender.type}</Badge>
+                {home.county ? (
+                  <Badge variant="outline">HQ in {home.county} County</Badge>
+                ) : null}
               </div>
               <h1 className="text-3xl font-bold text-[#0A2540]">{lender.name}</h1>
               <p className="mt-1 text-zinc-500">
-                {lender.city}, {lender.state} · NMLS #{lender.nmlsId}
+                {homeLocalityLine(lender)}
+                {nmls.nmlsId ? ` · NMLS #${nmls.nmlsId}` : ' · NMLS incomplete'}
               </p>
             </div>
             <div className="flex items-center gap-1.5 rounded-full bg-amber-500/10 px-3 py-1.5 text-lg font-semibold text-amber-700">
