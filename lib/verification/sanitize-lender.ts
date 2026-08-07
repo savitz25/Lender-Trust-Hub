@@ -1,6 +1,7 @@
 /**
- * Phase 0 — normalize a raw lender row for safe public display.
+ * Phase 0–3 — normalize a raw lender row for safe public display.
  * Missing data is better than invented data.
+ * Phase 3: Research Score recomputed per entity (not seed 90s).
  */
 
 import type { Lender } from '@/lib/mockData';
@@ -11,6 +12,7 @@ import {
   applyEntityTrustScores,
   dedupeLendersByEntity,
 } from '@/lib/verification/entity-identity';
+import { applyResearchScoreToLender } from '@/lib/research/research-signals';
 
 export function sanitizeLender(raw: Lender): Lender {
   const nmls = resolveNmlsVerification({
@@ -21,11 +23,10 @@ export function sanitizeLender(raw: Lender): Lender {
   const close = resolveClosingPerformance({
     avgCloseDays: raw.avgCloseDays,
     onTimeCloseRate: raw.onTimeCloseRate,
-    // Phase 0: no observed closing provenance wired
     provenance: null,
   });
 
-  return {
+  const base: Lender = {
     ...raw,
     nmlsId: nmls.nmlsId ?? '',
     nmlsVerified: nmls.showNmlsVerifiedBadge,
@@ -33,11 +34,12 @@ export function sanitizeLender(raw: Lender): Lender {
     avgCloseDays: close.avgCloseDays ?? undefined,
     onTimeCloseRate: close.onTimeCloseRate ?? undefined,
   };
+
+  return applyResearchScoreToLender(base);
 }
 
 /**
- * Sanitize every row, then force entity-level trust scores for shared NMLS IDs.
- * Does not drop geo rows (county context); callers dedupe for national lists.
+ * Sanitize every row, recompute research scores, align entity-level scores by NMLS.
  */
 export function finalizeLenderCatalog(raw: Lender[]): Lender[] {
   const sanitized = raw.map(sanitizeLender);

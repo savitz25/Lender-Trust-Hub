@@ -80,19 +80,28 @@ export default function ComparePage() {
             </thead>
             <tbody>
               {[
-                { label: 'Trust Score', get: (l: Lender) => `${l.trustScore}/100` },
-                { label: 'County Experience', get: (l: Lender) => `${l.countyExperienceScore}/100` },
-                { label: 'Rating', get: (l: Lender) => `${l.rating} (${l.reviewCount.toLocaleString()} reviews)` },
+                { label: 'Research Score', get: (l: Lender) => `${l.trustScore}/100` },
                 {
-                  label: 'Closing performance',
-                  get: () => 'No independently verified data',
+                  label: 'Local Market Evidence',
+                  get: (l: Lender) => `${l.countyExperienceScore}/100`,
                 },
                 {
                   label: 'NMLS ID',
                   get: (l: Lender) => (l.nmlsId ? `#${l.nmlsId}` : 'Not on file'),
                 },
-                { label: 'CFPB Complaints', get: (l: Lender) => String(l.cfpbComplaints) },
-                { label: 'BBB', get: (l: Lender) => l.bbbRating },
+                {
+                  label: 'NMLS status',
+                  get: (l: Lender) => (l.nmlsVerified ? 'ID verified' : l.nmlsId ? 'ID on file' : 'Incomplete'),
+                },
+                {
+                  label: 'Closing performance',
+                  get: () => 'No independently verified data',
+                },
+                {
+                  label: 'CFPB complaints',
+                  get: (l: Lender) =>
+                    `${l.cfpbComplaints} (not size-normalized; not a finding of fault)`,
+                },
                 { label: 'Loan Types', get: (l: Lender) => l.loanTypes.join(', ') },
               ].map((row) => (
                 <tr key={row.label} className="border-b border-zinc-100">

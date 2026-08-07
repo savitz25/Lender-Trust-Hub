@@ -41,7 +41,7 @@ export default function UpstateSCHubPage() {
       <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-emerald-400/40 bg-emerald-500/10 px-4 py-1.5 text-sm">
-            NMLS Verified · Zero Paid Placements · Greenville &amp; Spartanburg
+            NMLS research directory · Zero Paid Placements · Greenville &amp; Spartanburg
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — Upstate SC</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">

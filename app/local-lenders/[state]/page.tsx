@@ -646,7 +646,7 @@ export default async function MortgageStatePage({
               {[
                 { label: 'Distinct companies', value: stats.total },
                 { label: 'NMLS ID verified', value: stats.verified },
-                { label: 'Avg research score', value: stats.avgTrustScore },
+                { label: 'Avg Research Score', value: stats.avgTrustScore },
               ].map((card) => (
                 <div key={card.label} className="rounded-2xl border bg-white p-5 shadow-sm">
                   <p className="text-xs font-semibold uppercase text-zinc-400">{card.label}</p>

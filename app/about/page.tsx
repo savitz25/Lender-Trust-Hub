@@ -90,7 +90,7 @@ export default function AboutPage() {
         <p className="mx-auto mb-8 max-w-xl text-zinc-600">
           Coverage is <strong className="font-semibold text-[#0A2540]">expanding by state and
           county</strong>. We do not claim every U.S. county has verified lenders in our directory.
-          Full methodology (Trust Scores, close estimates, sources) is on{' '}
+          Full methodology (Research Score, Data Confidence, sources) is on{' '}
           <a href="/methodology" className="font-medium text-[#059669] hover:underline">
             /methodology
           </a>

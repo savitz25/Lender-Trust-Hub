@@ -15,6 +15,7 @@ import {
   type PlaceLocality,
 } from '@/lib/geo/city-county-lookup';
 import { dedupeLendersByEntity } from '@/lib/verification';
+import { compareLendersByResearchHonesty } from '@/lib/research/research-signals';
 
 export const MIN_MEANINGFUL_IN_COUNTY = 3;
 
@@ -189,10 +190,8 @@ export type CountyLenderSegments = {
   nearbyCount: number;
 };
 
-function sortByTrust(a: Lender, b: Lender): number {
-  const countyDiff = b.countyExperienceScore - a.countyExperienceScore;
-  if (countyDiff !== 0) return countyDiff;
-  return b.trustScore - a.trustScore;
+function sortByResearch(a: Lender, b: Lender): number {
+  return compareLendersByResearchHonesty(a, b);
 }
 
 function isAdjacent(
@@ -274,8 +273,8 @@ export function segmentLendersForCountyPage(params: {
     });
   }
 
-  const sortedIn = [...inCounty].sort(sortByTrust);
-  const nearby = [...nearbyMap.values()].sort(sortByTrust);
+  const sortedIn = [...inCounty].sort(sortByResearch);
+  const nearby = [...nearbyMap.values()].sort(sortByResearch);
   const hasMeaningfulLocalInventory =
     sortedIn.length >= LENDER_LOCALITY_POLICY.minMeaningfulInCounty;
   const localScarcity =
@@ -288,7 +287,7 @@ export function segmentLendersForCountyPage(params: {
     placeLabel,
     inCounty: sortedIn,
     nearby,
-    unknown: unknown.sort(sortByTrust),
+    unknown: unknown.sort(sortByResearch),
     primaryLocal: sortedIn,
     hasMeaningfulLocalInventory,
     localScarcity,

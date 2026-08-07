@@ -6,6 +6,7 @@ import { lenders, type Lender } from '@/lib/mockData';
 import { US_STATES } from '@/lib/fdic/states';
 import { countLenderCatalog, dedupeLendersByEntity, lenderEntityKey } from '@/lib/verification';
 import { deriveLenderHomeLocality } from '@/lib/geo';
+import { compareLendersByResearchHonesty } from '@/lib/research/research-signals';
 
 export interface StateMortgageStats {
   total: number;
@@ -19,7 +20,7 @@ export interface StateMortgageStats {
 
 export function getLendersByStateSlug(stateSlug: string): Lender[] {
   const rows = lenders.filter((l) => l.stateSlug === stateSlug);
-  return dedupeLendersByEntity(rows).sort((a, b) => b.trustScore - a.trustScore);
+  return dedupeLendersByEntity(rows).sort(compareLendersByResearchHonesty);
 }
 
 export function getLenderRowsByStateSlug(stateSlug: string): Lender[] {

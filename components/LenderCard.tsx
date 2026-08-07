@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Star, ExternalLink, MapPin } from 'lucide-react';
+import { ExternalLink, MapPin } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -8,6 +8,7 @@ import type { Lender } from '@/lib/mockData';
 import { NmlsVerificationBadge } from '@/components/nmls-verification-badge';
 import { cleanNmlsId } from '@/lib/verification';
 import { homeLocalityLine, type LenderPresenceLabel } from '@/lib/geo';
+import { computeLenderResearchSignals } from '@/lib/research/research-signals';
 
 export function LenderCard({
   lender,
@@ -19,17 +20,12 @@ export function LenderCard({
   lender: Lender;
   rank?: number;
   countyLabel?: string;
-  /** Optional return path appended as ?from= for profile back-nav */
   profileReturnPath?: string;
-  /** Phase 1 honest presence — never imply a branch without address support */
   presenceLabel?: LenderPresenceLabel | string;
 }) {
-  const geoLine = presenceLabel
-    ? presenceLabel
-    : countyLabel
-      ? homeLocalityLine(lender)
-      : homeLocalityLine(lender);
+  const geoLine = presenceLabel ?? homeLocalityLine(lender);
   const locationLine = [lender.city, lender.state, geoLine].filter(Boolean).join(' · ');
+  const signals = computeLenderResearchSignals(lender);
 
   const profileHref = profileReturnPath
     ? `/lenders/${lender.slug}?from=${encodeURIComponent(profileReturnPath)}`
@@ -71,22 +67,7 @@ export function LenderCard({
               {lender.type}
             </Badge>
             <NmlsVerificationBadge nmlsId={lender.nmlsId} nmlsVerified={lender.nmlsVerified} />
-            {lender.bbbRating ? (
-              <span className="rounded-full bg-zinc-50 px-2 py-0.5 text-xs font-medium text-zinc-600">
-                BBB {lender.bbbRating}
-              </span>
-            ) : null}
           </div>
-        </div>
-
-        <div className="mt-3 flex items-baseline gap-2">
-          <span className="inline-flex items-center gap-1 text-sm font-semibold text-amber-700">
-            <Star className="h-3.5 w-3.5 fill-current" aria-hidden="true" />
-            {lender.rating.toFixed(1)}
-          </span>
-          <span className="text-xs text-zinc-500">
-            ({lender.reviewCount.toLocaleString()} reviews)
-          </span>
         </div>
 
         <p className="mt-2 line-clamp-2 text-sm text-zinc-600">{lender.shortDescription}</p>
@@ -95,11 +76,6 @@ export function LenderCard({
           {lender.loanTypes.slice(0, 4).map((type) => (
             <Badge key={type} variant="default" className="text-xs">
               {type}
-            </Badge>
-          ))}
-          {lender.specialties.slice(0, 1).map((specialty) => (
-            <Badge key={specialty} variant="outline" className="text-xs">
-              {specialty}
             </Badge>
           ))}
         </div>
@@ -112,17 +88,23 @@ export function LenderCard({
             </dd>
           </div>
           <div>
-            <dt className="font-medium text-[#0A2540]">Trust Score</dt>
-            <dd className="tabular-nums">{lender.trustScore}/100</dd>
+            <dt className="font-medium text-[#0A2540]">Research Score</dt>
+            <dd className="tabular-nums">{signals.researchScore}/100</dd>
           </div>
           <div>
-            <dt className="font-medium text-[#0A2540]">County Exp.</dt>
-            <dd className="tabular-nums">{lender.countyExperienceScore}/100</dd>
+            <dt className="font-medium text-[#0A2540]">Data Confidence</dt>
+            <dd className="tabular-nums">{signals.dataConfidence}/100</dd>
+          </div>
+          <div>
+            <dt className="font-medium text-[#0A2540]">Local Evidence</dt>
+            <dd className="tabular-nums">
+              {signals.localMarket.hasEvidence ? `${signals.localMarket.score}/100` : '—'}
+            </dd>
           </div>
         </dl>
         <p className="mt-2 text-[10px] leading-snug text-zinc-400">
-          Closing performance is only shown when independently verified.{' '}
-          <Link href="/methodology#close-metrics" className="text-[#059669] hover:underline">
+          Research Score is not approval odds, rate, or closing speed.{' '}
+          <Link href="/methodology#scores" className="text-[#059669] hover:underline">
             Methodology
           </Link>
         </p>

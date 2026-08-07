@@ -5,6 +5,7 @@ import { SearchBar } from '@/components/SearchBar';
 import { LenderDirectoryLoader } from '@/components/directory/LenderDirectoryLoader';
 import { getCountyLenderSegments } from '@/lib/lenders';
 import { LENDER_LOCALITY_POLICY } from '@/lib/geo';
+import { RankingBasisPanel } from '@/components/research/ranking-basis-panel';
 import {
   EmptyCoveragePanel,
   NMLS_CONSUMER_ACCESS_URL,
@@ -527,6 +528,10 @@ export default async function CountyLendersPage({
           {zip ? ` Filtering context for ZIP ${zip}.` : ''}
         </p>
         <SearchBar className="mt-6 max-w-xl" />
+        <RankingBasisPanel
+          className="mt-6 max-w-2xl"
+          localityNote={`${inCountyCount} in-county · ${nearbyCount} nearby — nearby never outranks in-county by score alone.`}
+        />
       </div>
 
       {localScarcity ? (

@@ -36,8 +36,8 @@ const PIPELINE = [
   },
   {
     verb: 'SCORE',
-    title: 'Trust Score categories + limitations',
-    body: 'See scoring section below. Scores are not for sale. A tight band of near-identical high scores (e.g. many 96–98s) is a product limitation — not proof that every lender is equally best.',
+    title: 'Research Score + Data Confidence + NMLS status',
+    body: 'See scoring section below. Scores are not for sale. Near-identical high scores were a product bug — Research Score is recalibrated per entity. It never predicts approval, rate, or closing speed.',
   },
   {
     verb: 'UPDATE',
@@ -135,41 +135,72 @@ export default function MethodologyPage() {
       <section className="mt-12" id="scores">
         <h2 className="flex items-center gap-2 text-2xl font-semibold text-[#0A2540]">
           <BadgeCheck className="h-5 w-5 text-emerald-600" aria-hidden />
-          Trust Score honesty
+          Research Score honesty
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-          Where shown, Trust Score is a research composite (0–100). Approximate categories when
-          enrichment is available: base signal, public review rating/volume, BBB grade only when a
-          confirmed profile exists, CFPB complaint pattern cues. NMLS context supports listing
-          confidence — it does not alone manufacture a top score.
+          We separate signals that used to be overloaded into one inflated number:
         </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-zinc-600">
+          <li>
+            <strong className="text-[#0A2540]">Research Score (0–100)</strong> — recomputed per NMLS
+            entity from re-checkable NMLS identity, third-party reputation volume, CFPB pattern
+            context, BBB grade when listed, locality completeness, and loan-menu disclosure. Seed
+            “90s” are not used as-is.
+          </li>
+          <li>
+            <strong className="text-[#0A2540]">Data Confidence</strong> — how complete the listing
+            fields are for research (not a quality grade).
+          </li>
+          <li>
+            <strong className="text-[#0A2540]">NMLS / License Status</strong> — ID verified / on file
+            / incomplete (Phase 0 rules).
+          </li>
+          <li>
+            <strong className="text-[#0A2540]">Local Market Evidence</strong> — only when HQ locality
+            is derived from city/ZIP/county — not statewide license alone.
+          </li>
+        </ul>
+        <h3 className="mt-6 font-semibold text-[#0A2540]">Research Score factor weights</h3>
+        <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-zinc-600">
+          <li>NMLS identity evidence — up to 28 points</li>
+          <li>Third-party reputation (volume-weighted) — up to 26</li>
+          <li>CFPB complaint pattern (not a finding of fault; not size-normalized) — up to 16</li>
+          <li>BBB grade when listed — up to 12</li>
+          <li>Licensed locality completeness — up to 12</li>
+          <li>Loan type disclosure — up to 6</li>
+        </ul>
         <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50/50 p-5">
-          <h3 className="font-semibold text-[#0A2540]">
-            Near-identical high scores (e.g. many 96–98s)
-          </h3>
+          <h3 className="font-semibold text-[#0A2540]">What Research Score does not mean</h3>
           <p className="mt-2 text-sm leading-relaxed text-zinc-700">
-            If a market shows a tight band of high scores, public signals may be incomplete or
-            similar — not that every lender is equally “best.” Prefer Loan Estimates, re-check NMLS
-            IDs, and talk to multiple lenders. Do not treat a one-point score gap as a decision.
+            It does not predict approval, rate, closing speed, or future service quality. Nearby
+            lenders never outrank true in-county HQ by score cosmetics alone. Prefer Loan Estimates
+            and re-check NMLS before you apply.
           </p>
         </div>
-        <p className="mt-4 text-sm leading-relaxed text-zinc-600">
-          <strong className="text-[#0A2540]">County Experience Score</strong> is relative market
-          orientation (presence/ZIP cues) — not proof of best local execution.
-        </p>
+      </section>
+
+      <section className="mt-12" id="ranking">
+        <h2 className="text-2xl font-semibold text-[#0A2540]">How lists are ordered</h2>
+        <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-zinc-600">
+          <li>In-county HQ first, then nearby / serving from elsewhere (geographic honesty).</li>
+          <li>
+            Within each band: Research Score, then Data Confidence, then NMLS status, then listed
+            review volume.
+          </li>
+          <li>No paid relationships in organic ranking.</li>
+        </ol>
       </section>
 
       <section className="mt-12" id="close-metrics">
         <h2 className="flex items-center gap-2 text-2xl font-semibold text-[#0A2540]">
           <AlertTriangle className="h-5 w-5 text-amber-600" aria-hidden />
-          Avg close / on-time metrics
+          Closing performance &amp; third-party metrics
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-          Fields such as average close days or on-time close rate, when shown, are{' '}
-          <strong className="text-[#0A2540]">editorial or seed research estimates</strong> for
-          orientation. They are <strong className="text-[#0A2540]">not</strong> official NMLS
-          Consumer Access fields and <strong className="text-[#0A2540]">not</strong> CFPB-published
-          performance statistics. Confirm timelines with the lender in writing.
+          Closing performance is not displayed without a documented observed dataset. Seed
+          Google/BBB/Trustpilot snapshots and volume ranks are suppressed until independently
+          retrieved. CFPB counts, when shown, are raw catalog fields — not size-normalized and not a
+          finding of wrongdoing.
         </p>
       </section>
 

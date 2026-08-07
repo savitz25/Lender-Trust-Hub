@@ -35,7 +35,7 @@ export default function ColoradoSpringsStabilityVolumeHubPage() {
       <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-teal-400/40 bg-teal-500/10 px-4 py-1.5 text-sm">
-            NMLS Verified · Military &amp; Defense · El Paso County Focus
+            NMLS research directory · Military &amp; Defense · El Paso County Focus
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Trusted Mortgage Lenders — Colorado Springs</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">

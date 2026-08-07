@@ -108,9 +108,8 @@ export function filterLenders(filters: LenderFilters): Lender[] {
   }
 
   return result.sort((a, b) => {
-    const countyDiff = b.countyExperienceScore - a.countyExperienceScore;
-    if (countyDiff !== 0) return countyDiff;
-    return b.trustScore - a.trustScore;
+    if (b.trustScore !== a.trustScore) return b.trustScore - a.trustScore;
+    return b.countyExperienceScore - a.countyExperienceScore;
   });
 }
 

@@ -8,10 +8,10 @@ export type LenderSortOption =
   | 'name';
 
 export const LENDER_SORT_OPTIONS: { value: LenderSortOption; label: string }[] = [
-  { value: 'trust', label: 'Trust Score (High → Low)' },
-  { value: 'county-experience', label: 'County Experience (High → Low)' },
-  { value: 'rating', label: 'Customer Rating' },
-  { value: 'reviews', label: 'Number of Reviews' },
+  { value: 'trust', label: 'Research Score (High → Low)' },
+  { value: 'county-experience', label: 'Local Market Evidence (High → Low)' },
+  { value: 'rating', label: 'Listed rating snapshot' },
+  { value: 'reviews', label: 'Listed review volume' },
   { value: 'name', label: 'Name (A → Z)' },
 ];
 

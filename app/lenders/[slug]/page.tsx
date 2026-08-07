@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Star, ChevronRight, Phone, ExternalLink } from 'lucide-react';
+import { ChevronRight, Phone, ExternalLink } from 'lucide-react';
 import { getLenderBySlug, lenders } from '@/lib/lenders';
 import { Badge } from '@/components/ui/badge';
 import { MatchLenderButton } from '@/components/MatchLenderButton';
@@ -9,9 +9,11 @@ import { SaveLenderButton } from '@/components/my-lending/save-lender-button';
 import { RelatedDirectoryLinks } from '@/components/directory/RelatedDirectoryLinks';
 import { TrustMark } from '@/components/network/trust-mark';
 import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
+import { ResearchScoreDisplay } from '@/components/research/research-score-display';
 import { deriveLenderHomeLocality, homeLocalityLine } from '@/lib/geo';
 import { resolveNmlsVerification } from '@/lib/verification';
 import { NmlsVerificationBadge } from '@/components/nmls-verification-badge';
+import { computeLenderResearchSignals } from '@/lib/research/research-signals';
 
 export function generateStaticParams() {
   return lenders.map((l) => ({ slug: l.slug }));
@@ -49,6 +51,7 @@ export default async function LenderProfilePage({
     nmlsId: lender.nmlsId,
     nmlsVerified: lender.nmlsVerified,
   });
+  const signals = computeLenderResearchSignals(lender);
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -89,36 +92,12 @@ export default async function LenderProfilePage({
                 {nmls.nmlsId ? ` · NMLS #${nmls.nmlsId}` : ' · NMLS incomplete'}
               </p>
             </div>
-            <div className="flex items-center gap-1.5 rounded-full bg-amber-500/10 px-3 py-1.5 text-lg font-semibold text-amber-700">
-              <Star className="h-5 w-5 fill-current" aria-hidden="true" />
-              {lender.rating.toFixed(1)}
-              <span className="text-sm font-normal text-zinc-500">
-                ({lender.reviewCount.toLocaleString()})
-              </span>
-            </div>
           </div>
 
           <p className="mb-6 text-zinc-600 leading-relaxed">{lender.shortDescription}</p>
 
-          <div className="mb-2 grid gap-4 sm:grid-cols-2">
-            {[
-              {
-                label: 'Trust Score',
-                value: `${lender.trustScore}/100`,
-                note: 'Research composite — not a credit decision',
-              },
-              {
-                label: 'County Experience',
-                value: `${lender.countyExperienceScore}/100`,
-                note: 'Relative market orientation',
-              },
-            ].map((stat) => (
-              <div key={stat.label} className="rounded-xl bg-zinc-50 p-4 text-center">
-                <div className="text-xl font-bold text-[#0A2540]">{stat.value}</div>
-                <div className="text-xs text-zinc-500">{stat.label}</div>
-                <div className="mt-1 text-[10px] text-zinc-400">{stat.note}</div>
-              </div>
-            ))}
+          <div className="mb-6">
+            <ResearchScoreDisplay lender={lender} />
           </div>
           <div className="mb-6 rounded-xl border border-dashed border-zinc-200 bg-white p-4 text-center">
             <div className="text-sm font-medium leading-snug text-zinc-600">
@@ -184,13 +163,30 @@ export default async function LenderProfilePage({
             </div>
           </div>
 
-          <div className="mb-6 grid gap-3 rounded-xl border border-zinc-100 bg-zinc-50 p-4 text-sm sm:grid-cols-2">
-            <div><strong>BBB Rating:</strong> {lender.bbbRating}</div>
-            <div><strong>CFPB Complaints:</strong> {lender.cfpbComplaints}</div>
-            <div><strong>Google Rating:</strong> {lender.googleRating}/5</div>
-            <div><strong>Trustpilot:</strong> {lender.trustpilotRating}/5</div>
-            <div><strong>National Volume Rank:</strong> #{lender.nationalVolumeRank}</div>
-            <div><strong>Credit Tiers Served:</strong> {lender.creditTiers.join(', ')}</div>
+          <div className="mb-6 space-y-2 rounded-xl border border-zinc-100 bg-zinc-50 p-4 text-sm">
+            <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+              Public metrics (provenance-gated)
+            </p>
+            {signals.metrics.cfpbComplaints.displayable ? (
+              <div>
+                <strong>CFPB complaints (catalog):</strong> {lender.cfpbComplaints}
+                <p className="mt-0.5 text-xs text-zinc-500">{signals.metrics.cfpbComplaints.note}</p>
+              </div>
+            ) : null}
+            {signals.metrics.creditTiers.displayable && lender.creditTiers?.length ? (
+              <div>
+                <strong>Product / credit tiers listed:</strong> {lender.creditTiers.join(', ')}
+                <p className="mt-0.5 text-xs text-zinc-500">{signals.metrics.creditTiers.note}</p>
+              </div>
+            ) : null}
+            {!signals.metrics.googleRating.displayable &&
+            !signals.metrics.bbbRating.displayable &&
+            !signals.metrics.nationalVolumeRank.displayable ? (
+              <p className="text-xs text-zinc-500">
+                Third-party review and BBB snapshots are suppressed until independently retrieved.
+                Volume ranks are not shown without a documented source.
+              </p>
+            ) : null}
           </div>
 
           <div className="flex flex-wrap items-start gap-3">
