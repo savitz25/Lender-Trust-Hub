@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import { GuestLendingHq } from '@/components/my-lending/guest-lending-hq';
 import { HandoffStatusBanner } from '@/components/my-lending/handoff-status-banner';
 import { TrustMark } from '@/components/network/trust-mark';
+import { MyLendingReturnTracker } from '@/components/analytics/my-lending-return-tracker';
 
 export const metadata: Metadata = {
   title: 'My Lending - Financing research HQ',
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 export default function MyLendingPage() {
   return (
     <div className="lth-hero-wash border-b border-zinc-200/80">
+      <MyLendingReturnTracker />
       <div className="container mx-auto max-w-3xl px-4 py-10 md:py-14">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-800">
           My Lending

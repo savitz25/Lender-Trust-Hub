@@ -21,7 +21,9 @@ export type CalcEventName =
   | 'calc_input_change'
   | 'calc_banner_view'
   | 'calc_banner_dismiss'
-  | 'calc_banner_cta_click';
+  | 'calc_banner_cta_click'
+  /** Phase 5: user completed a calculator scenario (results visible) */
+  | 'calculator_complete';
 
 /** @deprecated Use CalcEventName */
 export type CalcEvent = CalcEventName;
@@ -101,8 +103,18 @@ export function trackCalcEvent(
     if (consent && typeof w.gtag === 'function') {
       w.gtag('event', name, {
         event_category: 'calculators',
+        hub: 'lender',
         ...safeParams,
       });
+      // Phase 5 priority alias
+      if (name === 'calculator_complete' || name === 'calc_export_csv' || name === 'calc_match_click') {
+        w.gtag('event', 'calculator_complete', {
+          event_category: 'calculators',
+          hub: 'lender',
+          ...safeParams,
+          completion_via: name,
+        });
+      }
     }
 
     dispatchCalcEvent(name, safeParams);

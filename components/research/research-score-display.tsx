@@ -22,48 +22,53 @@ export function ResearchScoreDisplay({ lender, compact = false, className = '' }
   }
 
   return (
-    <div className={`rounded-xl border border-zinc-200 bg-white p-4 ${className}`}>
-      <div className="grid gap-3 sm:grid-cols-2">
+    <div
+      className={`rounded-xl border border-zinc-200 bg-white p-4 sm:p-5 ${className}`}
+    >
+      <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-600">
             Research Score
           </p>
           <p className="mt-1 text-2xl font-bold tabular-nums text-[#0A2540]">
             {s.researchScore}
-            <span className="text-sm font-normal text-zinc-400"> / 100</span>
+            <span className="text-sm font-normal text-zinc-500"> / 100</span>
           </p>
-          <p className="mt-1 text-xs text-zinc-500">{s.measures}</p>
+          <p className="mt-1 text-xs leading-relaxed text-zinc-600">{s.measures}</p>
         </div>
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-600">
             Data Confidence
           </p>
           <p className="mt-1 text-2xl font-bold tabular-nums text-[#0A2540]">
             {s.dataConfidence}
-            <span className="text-sm font-normal text-zinc-400"> / 100</span>
+            <span className="text-sm font-normal text-zinc-500"> / 100</span>
           </p>
-          <p className="mt-1 text-xs text-zinc-500">{s.dataConfidenceLabel}</p>
+          <p className="mt-1 text-xs leading-relaxed text-zinc-600">{s.dataConfidenceLabel}</p>
         </div>
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-600">
             NMLS / License Status
           </p>
           <p className="mt-1 text-sm font-semibold text-[#0A2540]">
             {s.nmls.badgeLabel ?? 'Incomplete'}
           </p>
-          <p className="mt-1 text-xs text-zinc-500">{s.nmls.summary}</p>
+          <p className="mt-1 text-xs leading-relaxed text-zinc-600">{s.nmls.summary}</p>
         </div>
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-600">
             Local Market Evidence
           </p>
           <p className="mt-1 text-sm font-semibold text-[#0A2540]">{s.localMarket.label}</p>
-          <p className="mt-1 text-xs text-zinc-500">{s.localMarket.detail}</p>
+          <p className="mt-1 text-xs leading-relaxed text-zinc-600">{s.localMarket.detail}</p>
         </div>
       </div>
-      <p className="mt-3 text-xs text-zinc-500">
+      <p className="mt-4 text-xs leading-relaxed text-zinc-600">
         {s.doesNotMeasure}{' '}
-        <Link href={s.methodologyPath} className="font-medium text-[#059669] hover:underline">
+        <Link
+          href={s.methodologyPath}
+          className="inline-flex min-h-11 items-center font-medium text-[#059669] underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#059669]"
+        >
           Methodology
         </Link>
       </p>

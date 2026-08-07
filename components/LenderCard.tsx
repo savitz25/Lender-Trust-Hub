@@ -119,7 +119,11 @@ export function LenderCard({
           size="sm"
         />
         <Link href={profileHref} className="min-w-0 flex-1 sm:flex-none">
-          <Button size="sm" variant="outline" className="w-full sm:w-auto">
+          <Button
+            size="sm"
+            variant="outline"
+            className="min-h-11 w-full touch-manipulation sm:w-auto focus-visible:ring-2 focus-visible:ring-[#059669]"
+          >
             View Profile
           </Button>
         </Link>

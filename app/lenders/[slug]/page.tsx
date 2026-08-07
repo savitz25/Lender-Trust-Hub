@@ -10,6 +10,7 @@ import { RelatedDirectoryLinks } from '@/components/directory/RelatedDirectoryLi
 import { TrustMark } from '@/components/network/trust-mark';
 import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
 import { ResearchScoreDisplay } from '@/components/research/research-score-display';
+import { LenderProfileViewTracker } from '@/components/analytics/lender-profile-view-tracker';
 import { deriveLenderHomeLocality, homeLocalityLine } from '@/lib/geo';
 import { resolveNmlsVerification } from '@/lib/verification';
 import { NmlsVerificationBadge } from '@/components/nmls-verification-badge';
@@ -55,6 +56,7 @@ export default async function LenderProfilePage({
 
   return (
     <div className="container mx-auto px-4 py-12">
+      <LenderProfileViewTracker slug={lender.slug} nmlsVerified={lender.nmlsVerified} />
       <nav aria-label="Breadcrumb" className="mb-6 text-sm text-zinc-500">
         <ol className="flex flex-wrap items-center gap-1">
           <li><Link href="/" className="hover:text-[#059669]">Home</Link></li>

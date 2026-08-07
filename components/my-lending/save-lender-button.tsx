@@ -22,6 +22,7 @@ import {
   type SavedLender,
 } from '@/lib/my-lending/types';
 import { cn } from '@/lib/utils';
+import { trackMyLendingSave } from '@/lib/analytics/ga-events';
 
 type Props = {
   lenderSlug: string;
@@ -95,6 +96,9 @@ export function SaveLenderButton({
       return;
     }
     sync();
+    if (!res.alreadySaved) {
+      trackMyLendingSave({ slug: lenderSlug });
+    }
     showToast(
       res.alreadySaved
         ? 'Already in My Lending'

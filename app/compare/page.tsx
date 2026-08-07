@@ -1,14 +1,16 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Star, ShieldCheck } from 'lucide-react';
 import { lenders, type Lender } from '@/lib/mockData';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { trackLenderCompareSession } from '@/lib/analytics/ga-events';
 
 export default function ComparePage() {
   const [selected, setSelected] = useState<string[]>([]);
+  const sessionTracked = useRef(false);
 
   function toggleLender(id: string) {
     setSelected((prev) => {
@@ -18,6 +20,13 @@ export default function ComparePage() {
     });
   }
 
+  useEffect(() => {
+    if (selected.length >= 2 && !sessionTracked.current) {
+      sessionTracked.current = true;
+      trackLenderCompareSession({ count: selected.length });
+    }
+  }, [selected.length]);
+
   const compared = selected
     .map((id) => lenders.find((l) => l.id === id))
     .filter(Boolean) as Lender[];
@@ -26,10 +35,11 @@ export default function ComparePage() {
     <div className="container mx-auto px-4 py-12">
       <div className="mx-auto mb-10 max-w-2xl text-center">
         <h1 className="text-3xl font-bold text-[#0A2540] md:text-4xl">
-          Compare Lenders Side-by-Side
+          Compare mortgage companies
         </h1>
         <p className="mt-3 text-zinc-600">
-          Select up to 3 lenders to compare trust scores, ratings, and loan types.
+          Select up to 3 companies to compare Research Score, NMLS status, and loan types. Research
+          only — not rate quotes or approvals.
         </p>
       </div>
 
