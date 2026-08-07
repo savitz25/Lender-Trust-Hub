@@ -103,13 +103,13 @@ export default async function MortgageStatePage({
       <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-teal-400/40 bg-teal-500/10 px-4 py-1.5 text-sm">
-            NMLS Verified • Updated {MORTGAGE_DATA_UPDATED} • No Paid Placements
+            NMLS research directory • Updated {MORTGAGE_DATA_UPDATED} • No Paid Placements
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">
             Mortgage Lenders in {stateMeta.fullName} (2026)
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
-            {stats.total} lenders & brokers • {stats.verified} NMLS verified • Avg trust score{' '}
+            {stats.headlineLabel} • {stats.verified} with NMLS ID verified • Avg trust score{' '}
             {stats.avgTrustScore}
           </p>
           <div className="mt-6">
@@ -640,8 +640,8 @@ export default async function MortgageStatePage({
 
             <div className="grid gap-4 sm:grid-cols-3">
               {[
-                { label: 'Total Lenders', value: stats.total },
-                { label: 'NMLS Verified', value: stats.verified },
+                { label: 'Distinct lenders', value: stats.total },
+                { label: 'NMLS ID verified', value: stats.verified },
                 { label: 'Avg Trust Score', value: stats.avgTrustScore },
               ].map((card) => (
                 <div key={card.label} className="rounded-2xl border bg-white p-5 shadow-sm">

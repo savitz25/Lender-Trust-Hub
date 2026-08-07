@@ -1,16 +1,22 @@
-import { Shield, Star, MapPin, Database } from 'lucide-react';
+import { Shield, Building2, MapPin, Database } from 'lucide-react';
 import { TRUST_STATS } from '@/lib/mockData';
 
 const stats = [
   {
     icon: Shield,
-    value: `${TRUST_STATS.verifiedLenders.toLocaleString()}+`,
-    label: 'Directory listings*',
+    value: TRUST_STATS.verifiedLenders.toLocaleString(),
+    label: 'NMLS ID verified entities',
   },
   {
-    icon: Star,
-    value: `${(TRUST_STATS.totalReviews / 1_000_000).toFixed(1)}M`,
-    label: 'Review signals analyzed*',
+    icon: Building2,
+    value:
+      TRUST_STATS.branchListings > TRUST_STATS.distinctEntities
+        ? `${TRUST_STATS.distinctEntities} / ${TRUST_STATS.branchListings}`
+        : TRUST_STATS.distinctEntities.toLocaleString(),
+    label:
+      TRUST_STATS.branchListings > TRUST_STATS.distinctEntities
+        ? 'Lenders / branch listings'
+        : 'Distinct lenders in directory',
   },
   {
     icon: MapPin,
@@ -37,7 +43,7 @@ export function TrustBar() {
         ))}
       </div>
       <p className="container mx-auto px-4 pb-4 text-center text-[11px] text-zinc-500">
-        *Research directory signals — not a guarantee of complete national coverage. See{' '}
+        Research directory signals — distinct NMLS entities, not inflated geo rows. See{' '}
         <a href="/methodology" className="font-medium text-[#059669] hover:underline">
           methodology
         </a>

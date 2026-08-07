@@ -105,38 +105,46 @@ export default async function LenderProfilePage({
               </div>
             ))}
           </div>
-          <div className="mb-6 grid gap-4 sm:grid-cols-2">
-            {[
-              {
-                label: 'Close estimate (editorial)*',
-                value: `~${lender.avgCloseDays} days`,
-              },
-              {
-                label: 'On-time close (editorial)*',
-                value: `${lender.onTimeCloseRate}%`,
-              },
-            ].map((stat) => (
-              <div key={stat.label} className="rounded-xl border border-dashed border-zinc-200 bg-white p-4 text-center">
-                <div className="text-xl font-bold text-[#0A2540]">{stat.value}</div>
-                <div className="text-xs text-zinc-500">{stat.label}</div>
-              </div>
-            ))}
+          <div className="mb-6 rounded-xl border border-dashed border-zinc-200 bg-white p-4 text-center">
+            <div className="text-sm font-medium leading-snug text-zinc-600">
+              No independently verified closing-performance data available
+            </div>
+            <div className="mt-1 text-xs text-zinc-500">Closing performance</div>
           </div>
           <p className="mb-3 text-xs text-zinc-500">
-            *Close metrics are editorial/seed estimates — not NMLS or CFPB official fields.{' '}
+            Closing timelines are only shown when backed by a documented observed dataset (source,
+            sample size, window). Seed or editorial estimates are not displayed.{' '}
             <Link href="/methodology#close-metrics" className="font-medium text-[#059669] hover:underline">
               Hub methodology
             </Link>
-            . Research listing only — not an endorsement of this lender. Re-verify NMLS #
-            {lender.nmlsId} on{' '}
-            <a
-              href="https://www.nmlsconsumeraccess.org/"
-              className="font-medium text-[#059669] hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              NMLS Consumer Access
-            </a>
+            . Research listing only — not an endorsement of this lender.
+            {lender.nmlsId ? (
+              <>
+                {' '}
+                Re-verify NMLS #{lender.nmlsId} on{' '}
+                <a
+                  href="https://www.nmlsconsumeraccess.org/"
+                  className="font-medium text-[#059669] hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  NMLS Consumer Access
+                </a>
+              </>
+            ) : (
+              <>
+                {' '}
+                NMLS ID incomplete — recheck required on{' '}
+                <a
+                  href="https://www.nmlsconsumeraccess.org/"
+                  className="font-medium text-[#059669] hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  NMLS Consumer Access
+                </a>
+              </>
+            )}
             .
           </p>
           <div className="mb-6">

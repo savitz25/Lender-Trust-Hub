@@ -16,9 +16,17 @@ import { PENNSYLVANIA_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/pennsylvaniaLend
 import { ILLINOIS_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/illinoisLenders';
 import { MICHIGAN_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/michiganLenders';
 import { NEW_JERSEY_COUNTY_SUPPLEMENTS } from '@/lib/mortgage/newJerseyLenders';
+import {
+  cleanNmlsId,
+  countEntitiesByCounty,
+  countLenderCatalog,
+  dedupeLendersByEntity,
+  isCanonicalLenderProfile,
+} from '@/lib/verification';
 
 export { lenders };
 export type { Lender, LoanType, CreditTier };
+export { countLenderCatalog, dedupeLendersByEntity, isCanonicalLenderProfile };
 
 export interface LenderFilters {
   loanType?: LoanType;
@@ -29,7 +37,6 @@ export interface LenderFilters {
   stateSlug?: string;
   countySlug?: string;
   zip?: string;
-  /** Passed from calculator tools for personalized directory matching */
   estimatedLoan?: number;
   estimatedRate?: number;
   estimatedPayment?: number;
@@ -41,10 +48,12 @@ export function getLenderBySlug(slug: string): Lender | undefined {
 }
 
 export function getLenderByNmls(nmlsId: string): Lender | undefined {
-  return lenders.find((l) => l.nmlsId === nmlsId);
+  const clean = cleanNmlsId(nmlsId);
+  if (!clean) return undefined;
+  return lenders.find((l) => cleanNmlsId(l.nmlsId) === clean);
 }
 
-export function getCountyFromZip(zip: string): typeof ZIP_TO_COUNTY[string] | undefined {
+export function getCountyFromZip(zip: string): (typeof ZIP_TO_COUNTY)[string] | undefined {
   return ZIP_TO_COUNTY[zip.trim()];
 }
 
@@ -122,14 +131,18 @@ const STATE_COUNTY_SUPPLEMENTS: Record<string, Record<string, string[]>> = {
 export function getLendersByCounty(stateSlug: string, countySlug: string): Lender[] {
   const primary = filterLenders({ stateSlug, countySlug });
   const supplementSlugs = STATE_COUNTY_SUPPLEMENTS[stateSlug]?.[countySlug] ?? [];
-  if (supplementSlugs.length === 0) return primary;
+  let combined: Lender[];
+  if (supplementSlugs.length === 0) {
+    combined = primary;
+  } else {
+    const seen = new Set(primary.map((l) => l.slug));
+    const supplemental = supplementSlugs
+      .map((slug) => lenders.find((l) => l.slug === slug))
+      .filter((l): l is Lender => !!l && !seen.has(l.slug));
+    combined = [...primary, ...supplemental];
+  }
 
-  const seen = new Set(primary.map((l) => l.slug));
-  const supplemental = supplementSlugs
-    .map((slug) => lenders.find((l) => l.slug === slug))
-    .filter((l): l is Lender => !!l && !seen.has(l.slug));
-
-  return [...primary, ...supplemental].sort((a, b) => {
+  return dedupeLendersByEntity(combined).sort((a, b) => {
     const countyDiff = b.countyExperienceScore - a.countyExperienceScore;
     if (countyDiff !== 0) return countyDiff;
     return b.trustScore - a.trustScore;
@@ -137,31 +150,47 @@ export function getLendersByCounty(stateSlug: string, countySlug: string): Lende
 }
 
 export function getFeaturedLenders(limit = 6): Lender[] {
-  return [...lenders]
+  return dedupeLendersByEntity([...lenders])
     .sort((a, b) => b.trustScore - a.trustScore)
     .slice(0, limit);
 }
 
-export function getAllCounties(): { state: string; stateSlug: string; county: string; countySlug: string; lenderCount: number }[] {
-  const map = new Map<string, { state: string; stateSlug: string; county: string; countySlug: string; lenderCount: number }>();
-
+export function getAllCounties(): {
+  state: string;
+  stateSlug: string;
+  county: string;
+  countySlug: string;
+  lenderCount: number;
+}[] {
+  const byState = new Map<string, Lender[]>();
   for (const lender of lenders) {
-    const key = `${lender.stateSlug}/${lender.countySlug}`;
-    const existing = map.get(key);
-    if (existing) {
-      existing.lenderCount++;
-    } else {
-      map.set(key, {
-        state: lender.state,
-        stateSlug: lender.stateSlug,
-        county: lender.county,
-        countySlug: lender.countySlug,
-        lenderCount: 1,
+    const list = byState.get(lender.stateSlug);
+    if (list) list.push(lender);
+    else byState.set(lender.stateSlug, [lender]);
+  }
+
+  const out: {
+    state: string;
+    stateSlug: string;
+    county: string;
+    countySlug: string;
+    lenderCount: number;
+  }[] = [];
+
+  for (const [stateSlug, rows] of byState) {
+    const stateName = rows[0]?.state ?? stateSlug;
+    for (const c of countEntitiesByCounty(rows)) {
+      out.push({
+        state: stateName,
+        stateSlug,
+        county: c.county,
+        countySlug: c.countySlug,
+        lenderCount: c.count,
       });
     }
   }
 
-  return Array.from(map.values()).sort((a, b) => b.lenderCount - a.lenderCount);
+  return out.sort((a, b) => b.lenderCount - a.lenderCount);
 }
 
 export function buildMatchUrl(filters: LenderFilters): string {

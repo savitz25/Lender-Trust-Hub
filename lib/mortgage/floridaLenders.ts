@@ -152,15 +152,15 @@ export const FLORIDA_LENDERS: Lender[] = [
     website: 'https://primeres.com', phone: '(561) 285-7027',
   },
   {
-    id: 'fl-14', slug: 'palm-beach-mortgage-group', name: 'Palm Beach Mortgage Group, Inc.', nmlsId: 'SEE-NMLS', type: 'Broker',
+    id: 'fl-14', slug: 'palm-beach-mortgage-group', name: 'Palm Beach Mortgage Group, Inc.', nmlsId: '', type: 'Broker',
     city: 'Boca Raton', state: 'Florida', stateSlug: 'florida', county: 'Palm Beach', countySlug: 'palm-beach',
     zipCodes: ['33431', '33480', '33401'], rating: 4.8, reviewCount: 60, trustScore: 92, countyExperienceScore: 98,
     nationalVolumeRank: 75, loanTypes: ['Conventional', 'Jumbo', 'ARM', 'Refinance'],
     specialties: ['Luxury Homes', 'Second Homes', 'Coastal Properties'],
-    creditTiers: ['Excellent', 'Good'], nmlsVerified: true, cfpbComplaints: 0, bbbRating: 'A',
+    creditTiers: ['Excellent', 'Good'], nmlsVerified: false, cfpbComplaints: 0, bbbRating: 'A',
     googleRating: 4.8, trustpilotRating: 4.7, avgCloseDays: 32, onTimeCloseRate: 95,
     shortDescription: 'Palm Beach luxury specialist with roots to 1985 — jumbo, coastal barrier islands, and historic properties.',
-    phone: '(561) 555-0100',
+    // phone omitted — placeholder numbers are not displayed (Phase 0)
   },
   {
     id: 'fl-15', slug: 'america-home-loans', name: 'America Home Loans LLC', nmlsId: '885847', type: 'Lender',

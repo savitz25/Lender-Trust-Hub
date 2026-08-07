@@ -1,10 +1,12 @@
 import Link from 'next/link';
-import { Star, ShieldCheck, ExternalLink, MapPin } from 'lucide-react';
+import { Star, ExternalLink, MapPin } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { SaveLenderButton } from '@/components/my-lending/save-lender-button';
 import type { Lender } from '@/lib/mockData';
+import { NmlsVerificationBadge } from '@/components/nmls-verification-badge';
+import { cleanNmlsId } from '@/lib/verification';
 
 export function LenderCard({
   lender,
@@ -65,12 +67,7 @@ export function LenderCard({
             <Badge variant="outline" className="text-xs">
               {lender.type}
             </Badge>
-            {lender.nmlsVerified ? (
-              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">
-                <ShieldCheck className="h-3 w-3" aria-hidden="true" />
-                NMLS Verified
-              </span>
-            ) : null}
+            <NmlsVerificationBadge nmlsId={lender.nmlsId} nmlsVerified={lender.nmlsVerified} />
             {lender.bbbRating ? (
               <span className="rounded-full bg-zinc-50 px-2 py-0.5 text-xs font-medium text-zinc-600">
                 BBB {lender.bbbRating}
@@ -107,7 +104,9 @@ export function LenderCard({
         <dl className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2 text-xs text-zinc-500">
           <div>
             <dt className="font-medium text-[#0A2540]">NMLS</dt>
-            <dd className="tabular-nums">{lender.nmlsId}</dd>
+            <dd className="tabular-nums">
+              {cleanNmlsId(lender.nmlsId) ? `#${cleanNmlsId(lender.nmlsId)}` : 'Not on file'}
+            </dd>
           </div>
           <div>
             <dt className="font-medium text-[#0A2540]">Trust Score</dt>
@@ -117,13 +116,9 @@ export function LenderCard({
             <dt className="font-medium text-[#0A2540]">County Exp.</dt>
             <dd className="tabular-nums">{lender.countyExperienceScore}/100</dd>
           </div>
-          <div>
-            <dt className="font-medium text-[#0A2540]">Close est.*</dt>
-            <dd className="tabular-nums">~{lender.avgCloseDays} days</dd>
-          </div>
         </dl>
         <p className="mt-2 text-[10px] leading-snug text-zinc-400">
-          *Editorial estimate — not an NMLS/CFPB field.{' '}
+          Closing performance is only shown when independently verified.{' '}
           <Link href="/methodology#close-metrics" className="text-[#059669] hover:underline">
             Methodology
           </Link>

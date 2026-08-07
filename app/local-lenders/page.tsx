@@ -8,7 +8,7 @@ import { SearchBar } from '@/components/SearchBar';
 import { PersonalizedLenderBannerBoundary } from '@/components/PersonalizedLenderBannerBoundary';
 import { LenderDirectoryLoader } from '@/components/directory/LenderDirectoryLoader';
 import { SITE_URL, MORTGAGE_CATEGORY } from '@/lib/directory/categories';
-import { lenders, type LoanType } from '@/lib/mockData';
+import { lenders as rawCatalog, TRUST_STATS, type LoanType } from '@/lib/mockData';
 import { US_STATES } from '@/lib/fdic/states';
 import {
   getStateSlugsWithLenders,
@@ -22,8 +22,12 @@ import {
 import type { LenderSortOption } from '@/lib/directory/filter-lenders';
 import { NetworkHandoff } from '@/components/network/network-handoff';
 import { NetworkBelongingLine } from '@/components/network/network-belonging-line';
+import { catalogDistinctEntities } from '@/lib/verification';
 
 export const revalidate = 86400;
+
+/** National directory: one row per NMLS entity (no geo-variant inflation). */
+const lenders = catalogDistinctEntities(rawCatalog);
 
 const slugsWithLenders = getStateSlugsWithLenders();
 const slugSet = new Set(slugsWithLenders);
@@ -37,16 +41,16 @@ const stateGrid = US_STATES.filter((s) => slugSet.has(s.slug)).map((s) => ({
 
 export const metadata: Metadata = {
   title: buildMortgageHubTitle(),
-  description: buildMortgageHubDescription(lenders.length),
+  description: buildMortgageHubDescription(TRUST_STATS.distinctEntities),
   keywords: [
     'mortgage lenders by state',
-    'NMLS verified mortgage brokers',
+    'NMLS mortgage research directory',
     'local mortgage lenders',
     'best mortgage lenders 2026',
   ],
   openGraph: {
     title: buildMortgageHubTitle(),
-    description: buildMortgageHubDescription(lenders.length),
+    description: buildMortgageHubDescription(TRUST_STATS.distinctEntities),
     url: `${SITE_URL}${MORTGAGE_CATEGORY.hubPath}`,
     locale: 'en_US',
   },
@@ -84,13 +88,13 @@ export default async function LocalLendersHubPage({ searchParams }: PageProps) {
       <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-teal-400/40 bg-teal-500/10 px-4 py-1.5 text-sm">
-            NMLS Verified • County-Level Data • No Paid Placements
+            NMLS research directory • County-Level Data • No Paid Placements
           </p>
-          <h1 className="text-3xl font-bold md:text-5xl">Find Verified Mortgage Lenders</h1>
+          <h1 className="text-3xl font-bold md:text-5xl">Research Mortgage Lenders</h1>
           <NetworkBelongingLine className="mt-3 text-zinc-600 [&_a]:text-white/90" />
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
-            Compare NMLS-verified lenders in a 3-column directory — filter by loan type, trust score,
-            and location. Zero paid placements.
+            Compare distinct NMLS entities in a 3-column directory — filter by loan type, trust
+            score, and location. Hard NMLS ID verified requires a numeric ID. Zero paid placements.
           </p>
           <SearchBar className="mx-auto mt-8 max-w-md" />
         </div>

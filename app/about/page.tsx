@@ -100,15 +100,15 @@ export default function AboutPage() {
           <div className="grid grid-cols-3 gap-4 text-center">
             <div>
               <div className="text-2xl font-bold text-[#14B8A6]">
-                {TRUST_STATS.verifiedLenders.toLocaleString()}+
+                {TRUST_STATS.verifiedLenders.toLocaleString()}
               </div>
-              <div className="text-xs text-zinc-500">Listings*</div>
+              <div className="text-xs text-zinc-500">NMLS ID verified</div>
             </div>
             <div>
               <div className="text-2xl font-bold text-[#059669]">
-                {(TRUST_STATS.totalReviews / 1_000_000).toFixed(1)}M
+                {TRUST_STATS.distinctEntities.toLocaleString()}
               </div>
-              <div className="text-xs text-zinc-500">Review signals*</div>
+              <div className="text-xs text-zinc-500">Distinct entities</div>
             </div>
             <div>
               <div className="text-2xl font-bold text-[#0A2540]">
@@ -118,7 +118,7 @@ export default function AboutPage() {
             </div>
           </div>
           <p className="mt-4 text-[11px] text-zinc-500">
-            *Research directory signals — not complete national census.
+            Research directory — counts are distinct NMLS entities, not inflated geo rows.
           </p>
         </div>
       </section>

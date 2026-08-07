@@ -5,7 +5,6 @@ export type LenderSortOption =
   | 'rating'
   | 'reviews'
   | 'county-experience'
-  | 'close-days'
   | 'name';
 
 export const LENDER_SORT_OPTIONS: { value: LenderSortOption; label: string }[] = [
@@ -13,7 +12,6 @@ export const LENDER_SORT_OPTIONS: { value: LenderSortOption; label: string }[] =
   { value: 'county-experience', label: 'County Experience (High → Low)' },
   { value: 'rating', label: 'Customer Rating' },
   { value: 'reviews', label: 'Number of Reviews' },
-  { value: 'close-days', label: 'Fastest close est. (editorial)' },
   { value: 'name', label: 'Name (A → Z)' },
 ];
 
@@ -40,7 +38,6 @@ function matchesSearch(lender: Lender, raw: string): boolean {
   const q = raw.trim().toLowerCase();
   if (!q) return true;
 
-  // ZIP → match listed ZIPs or exact 5-digit on zipCodes
   if (/^\d{5}$/.test(q)) {
     return lender.zipCodes.some((z) => z === q || z.startsWith(q));
   }
@@ -101,8 +98,6 @@ export function filterAndSortLenders(
         return (
           b.countyExperienceScore - a.countyExperienceScore || b.trustScore - a.trustScore
         );
-      case 'close-days':
-        return a.avgCloseDays - b.avgCloseDays || b.trustScore - a.trustScore;
       case 'name':
         return a.name.localeCompare(b.name);
       case 'trust':

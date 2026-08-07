@@ -15,7 +15,7 @@ export function mortgageStateUrl(slug: string): string {
 }
 
 export function buildMortgageStateTitle(stateName: string, count: number): string {
-  return `Mortgage Lenders in ${stateName} ${YEAR} | ${count} NMLS Verified | LenderTrustHub`;
+  return `Mortgage Lenders in ${stateName} ${YEAR} | ${count} Research Directory | LenderTrustHub`;
 }
 
 export function buildMortgageStateDescription(
@@ -23,15 +23,15 @@ export function buildMortgageStateDescription(
   count: number,
   verified: number
 ): string {
-  return `Compare ${count} mortgage lenders and brokers in ${stateName}. ${verified} NMLS verified. County experience scores, trust ratings, and free calculators. No paid placements.`;
+  return `Research ${count} mortgage lenders in ${stateName} (${verified} with NMLS ID verified). County experience scores, trust ratings, free calculators. Confirm licensing on NMLS Consumer Access.`;
 }
 
 export function buildMortgageHubTitle(): string {
-  return `Mortgage Lenders by State ${YEAR} | NMLS Verified Directory | LenderTrustHub`;
+  return `Mortgage Lenders by State ${YEAR} | Research Directory | LenderTrustHub`;
 }
 
 export function buildMortgageHubDescription(total: number): string {
-  return `Find ${total}+ NMLS-verified mortgage lenders and brokers nationwide. State and county directories, trust scores, and free mortgage calculators.`;
+  return `Research ${total} distinct mortgage lenders and brokers nationwide by NMLS entity. State and county directories, trust scores, and free mortgage calculators.`;
 }
 
 export function buildMortgageStateJsonLd(

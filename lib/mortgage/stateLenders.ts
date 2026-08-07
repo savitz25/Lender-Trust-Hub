@@ -1,28 +1,32 @@
 /**
  * MORTGAGE VERTICAL DATA LAYER
- * ============================
- * Aggregates lenders by state from lib/mockData (replace with JSON per state at scale).
- *
- * TO CLONE FOR AUTO/MCA/CREDIT REPAIR:
- * 1. Copy this file → lib/auto/stateLenders.ts
- * 2. Swap data source + MORTGAGE_CATEGORY → AUTO_CATEGORY in pages
- * 3. Done in <5 minutes per vertical
+ * Phase 0: counts are distinct NMLS entities, not geo-variant row inflation.
  */
 import { lenders, type Lender } from '@/lib/mockData';
 import { US_STATES } from '@/lib/fdic/states';
+import {
+  countEntitiesByCounty,
+  countLenderCatalog,
+  dedupeLendersByEntity,
+} from '@/lib/verification';
 
 export interface StateMortgageStats {
   total: number;
+  branchListings: number;
   verified: number;
   avgTrustScore: number;
   topCounties: { county: string; countySlug: string; count: number }[];
   topLender?: Lender;
+  headlineLabel: string;
 }
 
 export function getLendersByStateSlug(stateSlug: string): Lender[] {
-  return lenders
-    .filter((l) => l.stateSlug === stateSlug)
-    .sort((a, b) => b.trustScore - a.trustScore);
+  const rows = lenders.filter((l) => l.stateSlug === stateSlug);
+  return dedupeLendersByEntity(rows).sort((a, b) => b.trustScore - a.trustScore);
+}
+
+export function getLenderRowsByStateSlug(stateSlug: string): Lender[] {
+  return lenders.filter((l) => l.stateSlug === stateSlug);
 }
 
 export function getStateSlugsWithLenders(): string[] {
@@ -30,28 +34,27 @@ export function getStateSlugsWithLenders(): string[] {
 }
 
 export function getStateMortgageStats(stateSlug: string): StateMortgageStats {
-  const stateLenders = getLendersByStateSlug(stateSlug);
-  const countyMap = new Map<string, { county: string; countySlug: string; count: number }>();
-
-  for (const l of stateLenders) {
-    const key = l.countySlug;
-    const existing = countyMap.get(key);
-    if (existing) existing.count++;
-    else countyMap.set(key, { county: l.county, countySlug: l.countySlug, count: 1 });
-  }
-
-  const topCounties = [...countyMap.values()].sort((a, b) => b.count - a.count).slice(0, 5);
+  const rows = getLenderRowsByStateSlug(stateSlug);
+  const entities = dedupeLendersByEntity(rows);
+  const counts = countLenderCatalog(rows);
+  const topCounties = countEntitiesByCounty(rows).slice(0, 5).map((c) => ({
+    county: c.county,
+    countySlug: c.countySlug,
+    count: c.count,
+  }));
   const avgTrustScore =
-    stateLenders.length > 0
-      ? Math.round(stateLenders.reduce((s, l) => s + l.trustScore, 0) / stateLenders.length)
+    entities.length > 0
+      ? Math.round(entities.reduce((s, l) => s + l.trustScore, 0) / entities.length)
       : 0;
 
   return {
-    total: stateLenders.length,
-    verified: stateLenders.filter((l) => l.nmlsVerified).length,
+    total: counts.distinctEntities,
+    branchListings: counts.branchListings,
+    verified: counts.verifiedEntities,
     avgTrustScore,
     topCounties,
-    topLender: stateLenders[0],
+    topLender: entities[0],
+    headlineLabel: counts.headlineLabel,
   };
 }
 
