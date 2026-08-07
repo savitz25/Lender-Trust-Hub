@@ -3,19 +3,18 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 /**
- * Trust Hub family buttons — brand green primary (not electric blue).
- * Primary/trust = solid green; outline = secondary; navy reserved for rare emphasis.
+ * Lender Trust Hub buttons — Deep Emerald Teal primary (#0D9488).
  */
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#059669] disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
-        default: 'bg-[#059669] text-white hover:bg-[#047857]',
+        default: 'bg-[#0D9488] text-white hover:bg-[#059669]',
         outline:
-          'border border-zinc-200 bg-white text-[#0A2540] hover:border-emerald-300 hover:bg-emerald-50/50',
-        ghost: 'text-[#0A2540] hover:bg-emerald-50 hover:text-[#047857]',
-        trust: 'bg-[#059669] text-white hover:bg-[#047857]',
+          'border border-[#E2E8F0] bg-white text-[#0A2540] hover:border-[#0D9488]/40 hover:bg-[#CCFBF1]/40',
+        ghost: 'text-[#0A2540] hover:bg-[#CCFBF1]/50 hover:text-[#059669]',
+        trust: 'bg-[#0D9488] text-white hover:bg-[#059669]',
         navy: 'bg-[#0A2540] text-white hover:bg-[#0A2540]/90',
       },
       size: {

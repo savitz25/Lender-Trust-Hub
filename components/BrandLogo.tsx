@@ -1,9 +1,8 @@
 import Link from 'next/link';
+import { BRAND, BRAND_LOGO } from '@/lib/brand';
 
 /**
- * Header logo: full horizontal LenderTrustHub lockup (triangle mark + wordmark).
- * Source: Consumer Trust Hub brand pack — LenderTrustHub-logo-transparent.png
- * Matches Insurance/Move family (shared mark geometry; green "Trust Hub").
+ * Header logo — official LTH transparent lockup (Phase 1).
  */
 export function BrandLogo({
   href = '/',
@@ -15,15 +14,14 @@ export function BrandLogo({
   const load = priority ? 'eager' : 'lazy';
 
   const inner = (
-    <span className="flex min-w-0 max-w-[min(280px,70vw)] items-center sm:max-w-[300px] md:max-w-[340px]">
+    <span className="hub-logo-slot relative block shrink-0 bg-transparent">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/brand/LenderTrustHub-logo-transparent.png"
-        srcSet="/brand/LenderTrustHub-logo-transparent.png 1x, /brand/lender-trust-hub-logo-header.png 1x"
-        sizes="(max-width: 640px) 180px, (max-width: 768px) 220px, 260px"
-        alt="Lender Trust Hub"
-        width={480}
-        height={151}
-        className="h-10 w-auto max-h-11 object-contain object-left sm:h-11 md:h-12"
+        src={BRAND_LOGO.headerSrc}
+        alt={BRAND_LOGO.alt}
+        width={BRAND_LOGO.width}
+        height={BRAND_LOGO.height}
+        className="h-full w-full object-contain object-left bg-transparent"
         loading={load}
         decoding="async"
         {...(priority ? { fetchPriority: 'high' as const } : {})}
@@ -38,25 +36,27 @@ export function BrandLogo({
   return (
     <Link
       href={href}
-      className="group flex shrink-0 items-center rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#059669] focus-visible:ring-offset-2"
-      aria-label="Lender Trust Hub — home"
+      className="group flex shrink-0 items-center rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] focus-visible:ring-offset-2"
+      aria-label={`${BRAND.name} — home`}
     >
       {inner}
     </Link>
   );
 }
 
-/** Footer / compact logo (same horizontal lockup). */
+/** Footer logo on navy — lighten for contrast */
 export function BrandLogoStacked({ className = '' }: { className?: string }) {
   return (
+    // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/brand/LenderTrustHub-logo-transparent.png"
-      alt="Lender Trust Hub"
-      width={600}
-      height={150}
-      className={`h-auto w-[140px] object-contain object-left py-1 sm:w-[180px] ${className}`}
+      src={BRAND_LOGO.footerSrc}
+      alt={BRAND_LOGO.alt}
+      width={BRAND_LOGO.width}
+      height={BRAND_LOGO.height}
+      className={`h-12 w-auto max-w-[192px] object-contain object-left ${className}`}
       loading="lazy"
       decoding="async"
+      style={{ filter: 'brightness(0) invert(1)', opacity: 0.95 }}
     />
   );
 }

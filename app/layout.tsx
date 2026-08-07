@@ -75,7 +75,8 @@ export default function RootLayout({
         )}
       </head>
       <body
-        className="flex min-h-screen flex-col bg-[#fafafa] text-[#0F172A] antialiased"
+        className="flex min-h-screen flex-col bg-[#F8FAFC] text-[#1E293B] antialiased"
+        data-hub="lender"
         data-network-standard={ASK_NETWORK_STANDARD_VERSION}
       >
         {/* network-standard: {ASK_NETWORK_STANDARD_VERSION} */}
@@ -84,7 +85,7 @@ export default function RootLayout({
             <GtagProvider />
             <AskNetworkBar />
             <Navbar />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 bg-[#F8FAFC]">{children}</main>
             <Footer />
           </MyLendingShell>
         </ThemeProvider>
