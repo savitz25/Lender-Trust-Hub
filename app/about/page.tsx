@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Shield, Database, Eye, Ban } from 'lucide-react';
 import { TrustBar } from '@/components/TrustBar';
-import { TRUST_STATS } from '@/lib/mockData';
+import { getMortgagePublicCounts, formatExactCount } from '@/lib/directory/public-counts';
 
 export const metadata: Metadata = {
   title: 'Trust & Transparency',
@@ -98,27 +98,33 @@ export default function AboutPage() {
         </p>
         <div className="mx-auto max-w-lg rounded-2xl border border-zinc-200 bg-white p-8">
           <div className="grid grid-cols-3 gap-4 text-center">
-            <div>
-              <div className="text-2xl font-bold text-[#14B8A6]">
-                {TRUST_STATS.verifiedLenders.toLocaleString()}
-              </div>
-              <div className="text-xs text-zinc-500">NMLS ID verified</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-[#059669]">
-                {TRUST_STATS.distinctEntities.toLocaleString()}
-              </div>
-              <div className="text-xs text-zinc-500">Distinct entities</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-[#0A2540]">
-                {TRUST_STATS.countiesCoveredLabel}
-              </div>
-              <div className="text-xs text-zinc-500">Coverage</div>
-            </div>
+            {(() => {
+              const c = getMortgagePublicCounts();
+              return (
+                <>
+                  <div>
+                    <div className="text-2xl font-bold text-[#14B8A6]">
+                      {formatExactCount(c.verifiedEntities)}
+                    </div>
+                    <div className="text-xs text-zinc-500">NMLS ID verified</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-[#059669]">
+                      {formatExactCount(c.distinctEntities)}
+                    </div>
+                    <div className="text-xs text-zinc-500">Distinct companies</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-[#0A2540]">Expanding</div>
+                    <div className="text-xs text-zinc-500">County coverage</div>
+                  </div>
+                </>
+              );
+            })()}
           </div>
           <p className="mt-4 text-[11px] text-zinc-500">
-            Research directory — counts are distinct NMLS entities, not inflated geo rows.
+            Live catalog counts only — distinct companies by NMLS, not padded location rows or
+            marketing floors.
           </p>
         </div>
       </section>

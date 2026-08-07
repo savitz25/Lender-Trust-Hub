@@ -5,9 +5,7 @@ import {
   AUTO_CATEGORY,
 } from '@/lib/directory/categories';
 
-/**
- * Internal link mesh for lender profiles — critical for crawl depth and authority.
- */
+/** Related research links on lender profiles. */
 export function RelatedDirectoryLinks({
   stateSlug,
   stateName,
@@ -17,24 +15,24 @@ export function RelatedDirectoryLinks({
 }) {
   const links = [
     {
-      label: `FDIC Insured Banks in ${stateName}`,
+      label: `FDIC insured banks in ${stateName}`,
       href: FDIC_CATEGORY.statePath(stateSlug),
-      description: 'Verify deposit insurance before you borrow',
+      description: 'Confirm deposit insurance context before you bank or close',
     },
     {
-      label: `Mortgage Lenders in ${stateName}`,
+      label: `Mortgage companies in ${stateName}`,
       href: MORTGAGE_CATEGORY.statePath(stateSlug),
-      description: 'NMLS verified brokers & lenders',
+      description: 'Research directory with NMLS-oriented signals',
     },
     {
-      label: `Auto Loan Companies in ${stateName}`,
+      label: `Auto loan companies in ${stateName}`,
       href: AUTO_CATEGORY.statePath(stateSlug),
-      description: 'Compare APR ranges & trust scores',
+      description: 'Compare APR ranges and research scores',
     },
     {
-      label: 'Free Mortgage Calculators',
+      label: 'Free mortgage calculators',
       href: '/calculators',
-      description: 'Payment, affordability & refinance tools',
+      description: 'Payment, affordability, and refinance tools',
     },
   ];
 

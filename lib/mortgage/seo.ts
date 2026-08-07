@@ -15,7 +15,7 @@ export function mortgageStateUrl(slug: string): string {
 }
 
 export function buildMortgageStateTitle(stateName: string, count: number): string {
-  return `Mortgage Lenders in ${stateName} ${YEAR} | ${count} Research Directory | LenderTrustHub`;
+  return `Mortgage Companies in ${stateName} ${YEAR} | ${count} in Research Directory | LenderTrustHub`;
 }
 
 export function buildMortgageStateDescription(
@@ -23,15 +23,15 @@ export function buildMortgageStateDescription(
   count: number,
   verified: number
 ): string {
-  return `Research ${count} mortgage lenders in ${stateName} (${verified} with NMLS ID verified). County experience scores, trust ratings, free calculators. Confirm licensing on NMLS Consumer Access.`;
+  return `Research ${count} distinct mortgage companies in ${stateName} (${verified} with NMLS ID verified). County locality honesty, trust signals, free calculators. Confirm licensing on NMLS Consumer Access.`;
 }
 
 export function buildMortgageHubTitle(): string {
-  return `Mortgage Lenders by State ${YEAR} | Research Directory | LenderTrustHub`;
+  return `Mortgage Companies by State ${YEAR} | Research Directory | LenderTrustHub`;
 }
 
 export function buildMortgageHubDescription(total: number): string {
-  return `Research ${total} distinct mortgage lenders and brokers nationwide by NMLS entity. State and county directories, trust scores, and free mortgage calculators.`;
+  return `Research ${total} distinct mortgage companies nationwide (by NMLS entity). State and county directories, trust scores, and free educational calculators. No paid placements.`;
 }
 
 export function buildMortgageStateJsonLd(
@@ -109,15 +109,15 @@ export function buildMortgageStateJsonLd(
             name: `How many mortgage lenders are in ${stateMeta.fullName}?`,
             acceptedAnswer: {
               '@type': 'Answer',
-              text: `Our directory lists ${stats.total} mortgage lenders and brokers in ${stateMeta.fullName}, with ${stats.verified} NMLS verified.`,
+              text: `Our research directory lists ${stats.total} distinct mortgage companies in ${stateMeta.fullName}, including ${stats.verified} with NMLS ID verified. Counts use company identity (NMLS), not padded location rows.`,
             },
           },
           {
             '@type': 'Question',
-            name: `Are these mortgage lenders in ${stateMeta.fullName} legitimate?`,
+            name: `How should I use mortgage company listings in ${stateMeta.fullName}?`,
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Every listing includes NMLS ID verification. We display trust scores from multiple data sources and do not accept paid placements.',
+              text: 'Treat listings as research aids. Re-check any company on NMLS Consumer Access. We display research scores from multiple sources and do not accept paid placements for ranking.',
             },
           },
         ],

@@ -27,6 +27,14 @@ export { IMPLEMENTATION_ORDER } from './implementation-order';
 export {
   DIRECTORY_CLUSTERS,
   INTERNAL_LINK_RULES,
+  HUB_TOPIC_SECTIONS,
   HUB_KEYWORD_SECTIONS,
 } from './content-clusters';
+export {
+  getMortgagePublicCounts,
+  formatExactCount,
+  formatLenderCount,
+  formatFdicBankCount,
+  getPublicTrustBarStats,
+} from './public-counts';
 export { GROWTH_PLAN_30_DAY, VERTICAL_CLONE_GUIDE } from './growth-plan';

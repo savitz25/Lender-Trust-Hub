@@ -15,7 +15,7 @@ export function autoStateUrl(slug: string): string {
 }
 
 export function buildAutoStateTitle(stateName: string, count: number): string {
-  return `Auto Loan Companies in ${stateName} ${YEAR} | ${count} Verified Lenders | LenderTrustHub`;
+  return `Auto Loan Companies in ${stateName} ${YEAR} | ${count} in Research Catalog | LenderTrustHub`;
 }
 
 export function buildAutoStateDescription(
@@ -24,15 +24,15 @@ export function buildAutoStateDescription(
   verified: number,
   avgAprLow: number
 ): string {
-  return `Compare ${count} auto loan companies in ${stateName}. ${verified} verified lenders. APRs from ${avgAprLow}%+. New, used, refinance & bad credit options. No paid placements.`;
+  return `Research ${count} auto financing companies in ${stateName} (${verified} marked verified in catalog). Published APR ranges from about ${avgAprLow}%. Confirm terms with any provider before applying.`;
 }
 
 export function buildAutoHubTitle(): string {
-  return `Auto Loan Companies by State ${YEAR} | Verified Directory | LenderTrustHub`;
+  return `Auto Loan Companies by State ${YEAR} | Research Directory | LenderTrustHub`;
 }
 
 export function buildAutoHubDescription(total: number): string {
-  return `Find ${total}+ verified auto loan companies nationwide. Compare APR ranges, trust scores, and loan types by state. Free directory — no paid placements.`;
+  return `Research ${total} auto financing companies in the published catalog. Compare APR ranges, research scores, and loan types by state. Free directory — no paid placements.`;
 }
 
 export function buildAutoStateJsonLd(

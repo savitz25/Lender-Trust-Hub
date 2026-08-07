@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   description: buildAutoHubDescription(autoProviders.length),
   keywords: [
     'auto loan companies by state',
-    'best auto loan lenders 2026',
+    'auto financing research directory',
     'car loan rates by state',
-    'auto finance companies near me',
+    'auto finance companies',
     'used car loan lenders',
   ],
   openGraph: {
@@ -67,10 +67,10 @@ export default function AutoLoanCompaniesHubPage() {
           <p className="mb-3 inline-flex rounded-full border border-teal-400/40 bg-teal-500/10 px-4 py-1.5 text-sm">
             Verified Lenders • APR Transparency • No Paid Placements
           </p>
-          <h1 className="text-3xl font-bold md:text-5xl">Find Verified Auto Loan Companies</h1>
+          <h1 className="text-3xl font-bold md:text-5xl">Research auto loan companies</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
-            Compare auto loan companies by state. Trust scores, APR ranges, and loan types for new,
-            used, refinance, and bad credit financing.
+            Compare auto financing companies by state. Research scores, APR ranges, and loan types
+            for new, used, refinance, and rebuilding-credit scenarios.
           </p>
           <SearchBar className="mx-auto mt-8 max-w-md" />
         </div>
@@ -80,10 +80,11 @@ export default function AutoLoanCompaniesHubPage() {
         categoryLabel={AUTO_CATEGORY.label}
         statePathPrefix={AUTO_CATEGORY.hubPath}
         title="Auto Loan Companies by State"
-        description={`${autoProviders.length}+ verified auto lenders across ${stateGrid.length} states. Select your state for APR comparisons, trust scores, and cross-links to FDIC banks and mortgage directories.`}
+        description={`${autoProviders.length} auto financing providers across ${stateGrid.length} states in the published catalog. Select a state for APR ranges, research scores, and links to FDIC and mortgage research.`}
         stateGrid={stateGrid}
         activeVertical="auto"
         availableSlugs={slugsWithProviders}
+        countNoun="providers"
       />
 
       <section className="border-t border-zinc-200 bg-zinc-50 py-12">

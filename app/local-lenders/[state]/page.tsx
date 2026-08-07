@@ -61,9 +61,9 @@ export async function generateMetadata({
     description,
     keywords: [
       `mortgage lenders in ${stateMeta.fullName}`,
-      `mortgage brokers ${stateMeta.fullName} 2026`,
-      `best mortgage lenders ${stateMeta.fullName}`,
-      'NMLS verified mortgage',
+      `mortgage brokers ${stateMeta.fullName}`,
+      `mortgage research directory ${stateMeta.fullName}`,
+      'NMLS mortgage directory',
     ],
     openGraph: { title, description, url: mortgageStateUrl(slug), locale: 'en_US' },
     alternates: { canonical: mortgageStateUrl(slug) },
@@ -109,8 +109,12 @@ export default async function MortgageStatePage({
             Mortgage Lenders in {stateMeta.fullName} (2026)
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
-            {stats.headlineLabel} • {stats.verified} with NMLS ID verified • Avg trust score{' '}
-            {stats.avgTrustScore}
+            {stats.total} distinct companies
+            {stats.branchListings > stats.total
+              ? ` · ${stats.branchListings} catalog location rows`
+              : ''}
+            {' · '}
+            {stats.verified} with NMLS ID verified · Avg research score {stats.avgTrustScore}
           </p>
           <div className="mt-6">
             <SearchBar className="mx-auto max-w-md" />
@@ -640,9 +644,9 @@ export default async function MortgageStatePage({
 
             <div className="grid gap-4 sm:grid-cols-3">
               {[
-                { label: 'Distinct lenders', value: stats.total },
+                { label: 'Distinct companies', value: stats.total },
                 { label: 'NMLS ID verified', value: stats.verified },
-                { label: 'Avg Trust Score', value: stats.avgTrustScore },
+                { label: 'Avg research score', value: stats.avgTrustScore },
               ].map((card) => (
                 <div key={card.label} className="rounded-2xl border bg-white p-5 shadow-sm">
                   <p className="text-xs font-semibold uppercase text-zinc-400">{card.label}</p>

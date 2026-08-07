@@ -13,7 +13,7 @@ const CTAS = [
     icon: Building2,
     label: 'Mortgage Lenders',
     href: MORTGAGE_CATEGORY.hubPath,
-    copy: 'NMLS verified directory',
+    copy: 'Mortgage research directory',
   },
   {
     icon: Car,

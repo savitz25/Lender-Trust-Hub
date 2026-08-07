@@ -70,10 +70,11 @@ export default function FDICInsuredBanksPage() {
         categoryLabel={FDIC_CATEGORY.label}
         statePathPrefix={FDIC_CATEGORY.hubPath}
         title="The Definitive FDIC Bank Directory"
-        description={`${totalBanks.toLocaleString()}+ verified institutions across ${stateCount} U.S. jurisdictions. Every listing links to official FDIC BankFind records. No paid placements — ever.`}
+        description={`${totalBanks.toLocaleString()} FDIC-insured institutions in published records across ${stateCount} U.S. jurisdictions with data. Every listing links to official FDIC BankFind records. No paid placements.`}
         stateGrid={stateGrid}
         defaultStateCode={DEFAULT_STATE_CODE}
         activeVertical="fdic"
+        countNoun="institutions"
       />
 
       <HubCTAStrip />

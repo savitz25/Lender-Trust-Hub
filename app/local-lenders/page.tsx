@@ -8,7 +8,7 @@ import { SearchBar } from '@/components/SearchBar';
 import { PersonalizedLenderBannerBoundary } from '@/components/PersonalizedLenderBannerBoundary';
 import { LenderDirectoryLoader } from '@/components/directory/LenderDirectoryLoader';
 import { SITE_URL, MORTGAGE_CATEGORY } from '@/lib/directory/categories';
-import { lenders as rawCatalog, TRUST_STATS, type LoanType } from '@/lib/mockData';
+import { lenders as rawCatalog, type LoanType } from '@/lib/mockData';
 import { US_STATES } from '@/lib/fdic/states';
 import {
   getStateSlugsWithLenders,
@@ -23,11 +23,13 @@ import type { LenderSortOption } from '@/lib/directory/filter-lenders';
 import { NetworkHandoff } from '@/components/network/network-handoff';
 import { NetworkBelongingLine } from '@/components/network/network-belonging-line';
 import { catalogDistinctEntities } from '@/lib/verification';
+import { getMortgagePublicCounts } from '@/lib/directory/public-counts';
 
 export const revalidate = 86400;
 
 /** National directory: one row per NMLS entity (no geo-variant inflation). */
 const lenders = catalogDistinctEntities(rawCatalog);
+const publicCounts = getMortgagePublicCounts();
 
 const slugsWithLenders = getStateSlugsWithLenders();
 const slugSet = new Set(slugsWithLenders);
@@ -37,20 +39,21 @@ const stateGrid = US_STATES.filter((s) => slugSet.has(s.slug)).map((s) => ({
   code: s.code,
   count: getStateMortgageStats(s.slug).total,
   region: s.region,
+  countNoun: 'companies' as const,
 }));
 
 export const metadata: Metadata = {
   title: buildMortgageHubTitle(),
-  description: buildMortgageHubDescription(TRUST_STATS.distinctEntities),
+  description: buildMortgageHubDescription(publicCounts.distinctEntities),
   keywords: [
     'mortgage lenders by state',
     'NMLS mortgage research directory',
     'local mortgage lenders',
-    'best mortgage lenders 2026',
+    'mortgage broker directory',
   ],
   openGraph: {
     title: buildMortgageHubTitle(),
-    description: buildMortgageHubDescription(TRUST_STATS.distinctEntities),
+    description: buildMortgageHubDescription(publicCounts.distinctEntities),
     url: `${SITE_URL}${MORTGAGE_CATEGORY.hubPath}`,
     locale: 'en_US',
   },
@@ -120,12 +123,11 @@ export default async function LocalLendersHubPage({ searchParams }: PageProps) {
               id="lender-directory-heading"
               className="mt-1 text-3xl font-semibold tracking-tight text-[#0A2540] md:text-4xl"
             >
-              Compare Verified Mortgage Lenders
+              Research mortgage companies
             </h2>
             <p className="mt-2 max-w-2xl text-zinc-600">
-              {lenders.length.toLocaleString()}+ NMLS-verified lenders and brokers. Sorted by trust
-              score with county experience, loan types, and verification badges. Independent
-              directory — no lead fees for ranking.
+              {publicCounts.directorySummary} Sorted by trust score with county locality signals and
+              loan types. Independent directory — no lead fees for ranking.
             </p>
           </div>
 
@@ -145,11 +147,12 @@ export default async function LocalLendersHubPage({ searchParams }: PageProps) {
         <NationalHubShell
           categoryLabel={MORTGAGE_CATEGORY.label}
           statePathPrefix={MORTGAGE_CATEGORY.hubPath}
-          title="Mortgage Lenders by State"
-          description={`Browse county-level listings across ${stateGrid.length} states. Pair with our FDIC bank directory for deposit safety.`}
+          title="Mortgage companies by state"
+          description={`${publicCounts.directoryHeadline} across ${stateGrid.length} states with published research profiles. Pair with the FDIC bank directory for deposit insurance context.`}
           stateGrid={stateGrid}
           activeVertical="mortgage"
           availableSlugs={slugsWithLenders}
+          countNoun="companies"
         />
       </div>
 

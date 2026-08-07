@@ -20,9 +20,9 @@ export function FDICHubContent({ totalBanks, stateCount }: { totalBanks: number;
               The Definitive FDIC Bank Directory
             </h2>
             <p className="mt-4 text-zinc-600">
-              {totalBanks.toLocaleString()}+ verified institutions across {stateCount} U.S.
-              jurisdictions. Every listing links to official FDIC BankFind records. No paid
-              placements — ever.
+              {totalBanks.toLocaleString()} FDIC-insured institutions in published records across{' '}
+              {stateCount} U.S. jurisdictions with data. Every listing links to official FDIC
+              BankFind records. No paid placements.
             </p>
           </div>
           <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">

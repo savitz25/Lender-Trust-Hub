@@ -2,8 +2,9 @@ import Link from 'next/link';
 import { DirectoryHubMap } from '@/components/directory/DirectoryHubMap';
 import { CrossVerticalNav } from '@/components/directory/CrossVerticalNav';
 import { ContentClusterHub } from '@/components/directory/ContentClusterHub';
-import { HUB_KEYWORD_SECTIONS } from '@/lib/directory/content-clusters';
+import { HUB_TOPIC_SECTIONS } from '@/lib/directory/content-clusters';
 import { US_STATES } from '@/lib/fdic/states';
+import { formatExactCount } from '@/lib/directory/public-counts';
 
 const REGIONS = [...new Set(US_STATES.map((s) => s.region))];
 
@@ -13,13 +14,28 @@ export interface StateGridItem {
   code: string;
   count: number;
   region: string;
+  /** When set, used instead of generic "listings" */
+  countNoun?: 'companies' | 'institutions' | 'providers' | 'listings';
 }
 
 type HubVertical = 'fdic' | 'mortgage' | 'auto';
 
+function countLabel(count: number, noun?: StateGridItem['countNoun']): string {
+  const n = formatExactCount(count);
+  switch (noun) {
+    case 'institutions':
+      return `${n} institution${count === 1 ? '' : 's'}`;
+    case 'companies':
+      return `${n} compan${count === 1 ? 'y' : 'ies'}`;
+    case 'providers':
+      return `${n} provider${count === 1 ? '' : 's'}`;
+    default:
+      return `${n} ${count === 1 ? 'listing' : 'listings'}`;
+  }
+}
+
 /**
- * National hub shell — map + region grid + cross-vertical nav + keyword sections.
- * Used by FDIC, mortgage, and auto hubs (and future verticals).
+ * National hub shell — map + region grid + cross-vertical nav + topic sections.
  */
 export function NationalHubShell({
   categoryLabel,
@@ -30,6 +46,7 @@ export function NationalHubShell({
   defaultStateCode = 'FL',
   activeVertical,
   availableSlugs,
+  countNoun,
 }: {
   categoryLabel: string;
   statePathPrefix: string;
@@ -39,13 +56,21 @@ export function NationalHubShell({
   defaultStateCode?: string;
   activeVertical: HubVertical;
   availableSlugs?: string[];
+  countNoun?: StateGridItem['countNoun'];
 }) {
   const gridByRegion = REGIONS.map((region) => ({
     region,
     states: stateGrid.filter((s) => s.region === region),
   })).filter((g) => g.states.length > 0);
 
-  const keywordSection = HUB_KEYWORD_SECTIONS[activeVertical];
+  const topicSection = HUB_TOPIC_SECTIONS[activeVertical];
+  const noun =
+    countNoun ??
+    (activeVertical === 'fdic'
+      ? 'institutions'
+      : activeVertical === 'mortgage'
+        ? 'companies'
+        : 'providers');
 
   return (
     <>
@@ -59,7 +84,7 @@ export function NationalHubShell({
           <div className="mt-10 grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <div className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm">
-                <h3 className="mb-3 text-lg font-semibold text-[#0A2540]">Interactive US Map</h3>
+                <h3 className="mb-3 text-lg font-semibold text-[#0A2540]">Interactive US map</h3>
                 <DirectoryHubMap
                   statePathPrefix={statePathPrefix}
                   defaultStateCode={defaultStateCode}
@@ -72,17 +97,16 @@ export function NationalHubShell({
         </div>
       </section>
 
-      {/* Keyword-optimized topical cluster section */}
       <section className="border-b border-zinc-200 bg-zinc-50 py-10">
         <div className="container mx-auto max-w-3xl px-4">
-          <h2 className="text-xl font-bold text-[#0A2540]">{keywordSection.title}</h2>
-          {keywordSection.paragraphs.map((p) => (
+          <h2 className="text-xl font-bold text-[#0A2540]">{topicSection.title}</h2>
+          {topicSection.paragraphs.map((p) => (
             <p key={p.slice(0, 40)} className="mt-3 text-sm leading-relaxed text-zinc-600">
               {p}
             </p>
           ))}
           <nav aria-label="Related directories" className="mt-5 flex flex-wrap gap-3">
-            {keywordSection.internalLinks.map((link) => (
+            {topicSection.internalLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -99,11 +123,10 @@ export function NationalHubShell({
       <section className="border-b border-zinc-200 bg-zinc-50 py-12">
         <div className="container mx-auto px-4">
           <h2 className="mb-2 text-2xl font-bold text-[#0A2540]">
-            Browse {categoryLabel} by State
+            Browse {categoryLabel} by state
           </h2>
           <p className="mb-8 max-w-3xl text-zinc-600">
-            Click any state for a dedicated SEO-optimized page with filters, insights, and
-            verification links.
+            Open any state for filters, research notes, and verification links to primary sources.
           </p>
           {gridByRegion.map(({ region, states }) => (
             <div key={region} className="mb-8">
@@ -120,7 +143,7 @@ export function NationalHubShell({
                   >
                     <span className="font-semibold text-[#0A2540]">{s.fullName}</span>
                     <span className="mt-1 block text-xs text-zinc-500">
-                      {s.count} {s.count === 1 ? 'listing' : 'listings'}
+                      {countLabel(s.count, s.countNoun ?? noun)}
                     </span>
                   </Link>
                 ))}

@@ -1,38 +1,34 @@
 import { Shield, Building2, MapPin, Database } from 'lucide-react';
-import { TRUST_STATS } from '@/lib/mockData';
-
-const stats = [
-  {
-    icon: Shield,
-    value: TRUST_STATS.verifiedLenders.toLocaleString(),
-    label: 'NMLS ID verified entities',
-  },
-  {
-    icon: Building2,
-    value:
-      TRUST_STATS.branchListings > TRUST_STATS.distinctEntities
-        ? `${TRUST_STATS.distinctEntities} / ${TRUST_STATS.branchListings}`
-        : TRUST_STATS.distinctEntities.toLocaleString(),
-    label:
-      TRUST_STATS.branchListings > TRUST_STATS.distinctEntities
-        ? 'Lenders / branch listings'
-        : 'Distinct lenders in directory',
-  },
-  {
-    icon: MapPin,
-    value: TRUST_STATS.countiesCoveredLabel,
-    label: 'County coverage',
-  },
-  {
-    icon: Database,
-    value: TRUST_STATS.dataSources.join(' · '),
-    label: 'Data source classes',
-  },
-];
+import { getPublicTrustBarStats, formatExactCount } from '@/lib/directory/public-counts';
 
 export function TrustBar() {
+  const bar = getPublicTrustBarStats();
+
+  const stats = [
+    {
+      icon: Shield,
+      value: formatExactCount(bar.nmlsVerified.value),
+      label: bar.nmlsVerified.label,
+    },
+    {
+      icon: Building2,
+      value: formatExactCount(bar.companies.value),
+      label: bar.companies.label,
+    },
+    {
+      icon: MapPin,
+      value: bar.coverageLabel,
+      label: 'County coverage',
+    },
+    {
+      icon: Database,
+      value: bar.sourcesLabel,
+      label: 'Data source classes',
+    },
+  ];
+
   return (
-    <section aria-label="Trust statistics" className="border-y border-zinc-200 bg-white">
+    <section aria-label="Directory statistics" className="border-y border-zinc-200 bg-white">
       <div className="container mx-auto grid grid-cols-2 gap-6 px-4 py-8 md:grid-cols-4 md:py-10">
         {stats.map((stat) => (
           <div key={stat.label} className="text-center">
@@ -43,7 +39,8 @@ export function TrustBar() {
         ))}
       </div>
       <p className="container mx-auto px-4 pb-4 text-center text-[11px] text-zinc-500">
-        Research directory signals — distinct NMLS entities, not inflated geo rows. See{' '}
+        Counts are live catalog inventory (distinct companies by NMLS). Not a complete national
+        census. See{' '}
         <a href="/methodology" className="font-medium text-[#059669] hover:underline">
           methodology
         </a>

@@ -48,14 +48,14 @@ export function CrossVerticalNav({
       label: stateName ? `Mortgage Lenders in ${stateName}` : 'Mortgage Lenders',
       href: stateSlug ? MORTGAGE_CATEGORY.statePath(stateSlug) : MORTGAGE_CATEGORY.hubPath,
       icon: ICONS.mortgage,
-      description: 'NMLS verified brokers & lenders',
+      description: 'NMLS-oriented research directory',
     },
     {
       id: 'auto',
       label: stateName ? `Auto Loans in ${stateName}` : 'Auto Loan Companies',
       href: stateSlug ? AUTO_CATEGORY.statePath(stateSlug) : AUTO_CATEGORY.hubPath,
       icon: ICONS.auto,
-      description: 'Compare APR ranges & trust scores',
+      description: 'Compare APR ranges & research scores',
     },
     {
       id: 'calculators',

@@ -6,136 +6,116 @@ import {
 } from './categories';
 
 /**
- * CONTENT CLUSTER STRATEGY — topical authority mesh for lending directory SEO.
- *
- * Hub pages link to pillar content; state pages link to sibling verticals.
- * Each cluster targets a featured-snippet-friendly query family.
+ * Public resource clusters — consumer-facing guides and directories.
+ * No SEO strategy notes, target queries, or planning language in UI.
  */
 
 export interface ContentCluster {
   id: string;
   pillarTitle: string;
-  targetQuery: string;
+  /** Short plain-language description for cards */
+  description: string;
   hubHref: string;
   stateHref: (slug: string) => string;
   relatedCalculator?: string;
-  /** Keyword-optimized H2 recommendation for hub copy */
   hubHeading?: string;
-  /** Long-tail variants to weave into body copy */
-  keywordVariants?: string[];
 }
 
 export const DIRECTORY_CLUSTERS: ContentCluster[] = [
   {
     id: 'fdic-banks',
     pillarTitle: 'FDIC Insured Banks by State',
-    targetQuery: 'FDIC insured banks near me',
+    description: 'Browse FDIC-insured institutions with links to official BankFind records.',
     hubHref: FDIC_CATEGORY.hubPath,
     stateHref: FDIC_CATEGORY.statePath,
     relatedCalculator: '/calculators',
-    hubHeading: 'Find FDIC Insured Banks in Every State',
-    keywordVariants: [
-      'list of FDIC banks',
-      'FDIC bank directory 2026',
-      'trusted FDIC insured institutions',
-    ],
+    hubHeading: 'Find FDIC-insured banks by state',
   },
   {
     id: 'mortgage-lenders',
-    pillarTitle: 'Verified Mortgage Lenders',
-    targetQuery: 'best mortgage lenders by state',
+    pillarTitle: 'Mortgage Lender Research Directory',
+    description: 'Research mortgage companies by state and county with NMLS-oriented verification signals.',
     hubHref: MORTGAGE_CATEGORY.hubPath,
     stateHref: MORTGAGE_CATEGORY.statePath,
     relatedCalculator: '/calculators',
-    hubHeading: 'NMLS Verified Mortgage Lenders Nationwide',
-    keywordVariants: [
-      'mortgage brokers near me',
-      'local mortgage lenders',
-      'NMLS verified mortgage directory',
-    ],
+    hubHeading: 'Research mortgage lenders nationwide',
   },
   {
     id: 'auto-loans',
     pillarTitle: 'Auto Loan Companies by State',
-    targetQuery: 'best auto loan companies near me',
+    description: 'Compare auto financing companies, APR ranges, and trust signals by state.',
     hubHref: AUTO_CATEGORY.hubPath,
     stateHref: AUTO_CATEGORY.statePath,
-    hubHeading: 'Compare Auto Loan Companies & APR Ranges',
-    keywordVariants: [
-      'car loan rates by state',
-      'auto finance companies',
-      'used car loan lenders',
-      'bad credit auto loans',
-    ],
+    hubHeading: 'Compare auto loan companies',
   },
   {
     id: 'deposit-safety',
     pillarTitle: 'FDIC Insurance Explained',
-    targetQuery: 'what does FDIC insurance cover',
+    description: 'How deposit insurance works and how to confirm coverage on BankFind.',
     hubHref: '/fdic-insured-banks',
     stateHref: (slug) => `/fdic-insured-banks/${slug}#fdic-faq-heading`,
-    hubHeading: 'Understanding FDIC Deposit Insurance Limits',
-    keywordVariants: ['FDIC insurance limit 2026', 'is my bank FDIC insured', 'deposit safety'],
+    hubHeading: 'Understanding FDIC deposit insurance',
   },
   {
     id: 'mortgage-tools',
     pillarTitle: 'Free Mortgage Calculators',
-    targetQuery: 'mortgage payment calculator',
+    description: 'Educational payment, affordability, refinance, and related tools — not rate quotes.',
     hubHref: '/calculators',
     stateHref: () => '/calculators',
-    hubHeading: 'Mortgage Payment & Affordability Tools',
-    keywordVariants: ['refinance calculator', 'DTI calculator', 'closing cost estimator'],
+    hubHeading: 'Mortgage payment and affordability tools',
   },
   {
     id: 'trust-transparency',
-    pillarTitle: 'How We Verify Listings',
-    targetQuery: 'is LenderTrustHub legit',
+    pillarTitle: 'How We Research Listings',
+    description: 'Methodology, independence, and limits of directory data — no paid placements.',
     hubHref: '/about',
     stateHref: () => '/about',
-    hubHeading: 'Our Verification Methodology',
-    keywordVariants: ['no paid placements', 'independent lender directory', 'trust scores'],
+    hubHeading: 'Our research methodology',
   },
 ];
 
-/** Keyword-optimized topical sections for national hubs */
-export const HUB_KEYWORD_SECTIONS = {
+/** Consumer help sections for national hubs (no SERP/keyword framing). */
+export const HUB_TOPIC_SECTIONS = {
   fdic: {
-    title: 'Why Use an FDIC Bank Directory?',
+    title: 'Why use an FDIC bank directory?',
     paragraphs: [
-      'Searching "FDIC insured banks near me" should return verified, up-to-date institutions — not sponsored ads. Our directory pulls from official FDIC BankFind records across all 50 states and D.C.',
-      'Each state page includes filters for headquarters location, asset size, and regulator — plus cross-links to mortgage lenders and auto loan companies in the same state.',
+      'This directory surfaces FDIC-insured institutions from public BankFind-oriented records so you can research deposit options without paid placement rankings.',
+      'Each state page includes filters and links to mortgage and auto research in the same state. Always confirm certificate status on official FDIC tools before you bank.',
     ],
     internalLinks: [
-      { label: 'Mortgage Lenders by State', href: MORTGAGE_CATEGORY.hubPath },
-      { label: 'Auto Loan Companies', href: AUTO_CATEGORY.hubPath },
-      { label: 'Free Calculators', href: '/calculators' },
+      { label: 'Mortgage lenders by state', href: MORTGAGE_CATEGORY.hubPath },
+      { label: 'Auto loan companies', href: AUTO_CATEGORY.hubPath },
+      { label: 'Free calculators', href: '/calculators' },
     ],
   },
   mortgage: {
-    title: 'How to Find the Best Mortgage Lenders in Your State',
+    title: 'How to research mortgage lenders in your state',
     paragraphs: [
-      'The query "best mortgage lenders by state" demands NMLS verification, county-level experience, and transparent trust scores — not pay-to-play rankings.',
-      'Browse by state for broker and lender listings, then pair with our FDIC bank directory to verify where you\'ll hold earnest money and closing funds.',
+      'Use this research directory to compare companies with NMLS-oriented identifiers, county locality honesty, and transparent trust signals — not pay-to-play rankings.',
+      'Browse by state and county, then re-check any company on NMLS Consumer Access. Pair with the FDIC bank directory when you need deposit insurance context for closing funds.',
     ],
     internalLinks: [
-      { label: 'FDIC Insured Banks', href: FDIC_CATEGORY.hubPath },
-      { label: 'Auto Loan Companies', href: AUTO_CATEGORY.hubPath },
-      { label: 'Mortgage Calculators', href: '/calculators' },
+      { label: 'FDIC insured banks', href: FDIC_CATEGORY.hubPath },
+      { label: 'Auto loan companies', href: AUTO_CATEGORY.hubPath },
+      { label: 'Mortgage calculators', href: '/calculators' },
     ],
   },
   auto: {
-    title: 'Compare Auto Loan Companies Before You Buy',
+    title: 'Compare auto loan companies before you buy',
     paragraphs: [
-      'Whether you need a new car loan, used vehicle financing, or bad credit auto loans, comparing APR ranges and trust scores by state saves thousands over the loan term.',
-      'Our auto loan directory links to FDIC banks and mortgage lenders in the same state — one platform for every borrowing decision.',
+      'Review auto financing companies by state with published APR ranges and research signals for new, used, refinance, and rebuilding-credit scenarios.',
+      'Cross-link to FDIC banks and mortgage research when you need a full financing picture. Confirm rates and terms directly with any lender before you apply.',
     ],
     internalLinks: [
-      { label: 'FDIC Insured Banks', href: FDIC_CATEGORY.hubPath },
-      { label: 'Mortgage Lenders', href: MORTGAGE_CATEGORY.hubPath },
-      { label: 'About Our Methodology', href: '/about' },
+      { label: 'FDIC insured banks', href: FDIC_CATEGORY.hubPath },
+      { label: 'Mortgage lenders', href: MORTGAGE_CATEGORY.hubPath },
+      { label: 'About our methodology', href: '/about' },
     ],
   },
 } as const;
+
+/** @deprecated use HUB_TOPIC_SECTIONS — kept as alias for imports during cleanup */
+export const HUB_KEYWORD_SECTIONS = HUB_TOPIC_SECTIONS;
 
 /** Internal linking rules — apply when rendering any directory page */
 export const INTERNAL_LINK_RULES = {

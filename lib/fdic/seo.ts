@@ -34,7 +34,7 @@ export function buildHubTitle(): string {
 }
 
 export function buildHubDescription(totalBanks: number): string {
-  return `Explore ${totalBanks.toLocaleString()}+ FDIC-insured banks across all 50 states and DC. Interactive map, bank comparison, certificate lookup, and official FDIC data. Free directory — no paid placements.`;
+  return `Explore ${totalBanks.toLocaleString()} FDIC-insured institutions in our published bank records across states with data. Interactive map, comparison tools, and links to official FDIC BankFind. Free directory — no paid placements.`;
 }
 
 function buildWebSiteSchema() {
