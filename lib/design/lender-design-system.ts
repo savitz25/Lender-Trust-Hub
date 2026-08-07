@@ -68,6 +68,167 @@ export const LENDER_HERO = {
   searchHint: 'Enter a ZIP to browse licensed lenders in your area.',
 } as const;
 
+/** Phase 3 — homepage sections below the hero */
+export const LENDER_TOOLS = {
+  eyebrow: 'Key tools',
+  title: 'What you can do here',
+  support:
+    'Practical research tools for financing decisions — not a lead marketplace. Start where you need clarity.',
+  items: [
+    {
+      id: 'compare',
+      title: 'Compare lenders',
+      description:
+        'Review options side-by-side using public signals and research aids — not paid rankings or sponsored slots.',
+      href: '/compare',
+      cta: 'Start comparing',
+    },
+    {
+      id: 'verify',
+      title: 'Verify a lender (NMLS)',
+      description:
+        'Find NMLS identifiers in our directory, then re-check licenses yourself on NMLS Consumer Access.',
+      href: '/local-lenders',
+      cta: 'Browse to verify',
+    },
+    {
+      id: 'calculators',
+      title: 'Loan calculators',
+      description:
+        'Educational payment, affordability, refinance, and related tools so the numbers are clearer before you decide.',
+      href: '/calculators',
+      cta: 'Open calculators',
+    },
+    {
+      id: 'local',
+      title: 'Browse local lenders',
+      description:
+        'Explore licensed lenders by state and market coverage. Coverage is expanding — not every county is listed yet.',
+      href: '/local-lenders',
+      cta: 'Browse markets',
+    },
+  ],
+} as const;
+
+export const LENDER_HOW_IT_WORKS = {
+  eyebrow: 'How it works',
+  title: 'Independent research, step by step',
+  support:
+    'A calm path from public data to your decision — with no pressure and no paid placements.',
+  steps: [
+    {
+      step: '01',
+      title: 'Start with verified public data',
+      description:
+        'Begin with directory listings and NMLS-related identifiers drawn from public sources we surface for research.',
+    },
+    {
+      step: '02',
+      title: 'Compare options side-by-side',
+      description:
+        'Use comparison tools and market pages to weigh public signals — never sponsored order or lead-fee ranking.',
+    },
+    {
+      step: '03',
+      title: 'Understand the numbers',
+      description:
+        'Run educational calculators for payments, affordability, and refinance scenarios before you commit.',
+    },
+    {
+      step: '04',
+      title: 'You decide',
+      description:
+        'Re-check licenses on NMLS Consumer Access, compare written offers yourself, and finance wisely. We cite. You decide.',
+    },
+  ],
+} as const;
+
+export const LENDER_TRUST = {
+  eyebrow: 'Trust & methodology',
+  title: 'Built for confidence — not conversion',
+  support:
+    'Lender Trust Hub is independent research only. We surface verified public sources so you can decide with clearer context.',
+  pillars: [
+    {
+      title: 'Independent research only',
+      body: 'We do not originate loans, sell ranking position, or operate as a lead marketplace.',
+    },
+    {
+      title: 'Verified public sources',
+      body: 'NMLS-related identifiers and other public signals are cited so you can re-check primary records yourself.',
+    },
+    {
+      title: 'No paid placements or lead fees',
+      body: 'Directory order and research aids are not sold. We do not collect lead fees for introductions.',
+    },
+    {
+      title: 'Clear separation of roles',
+      body: 'Research tools stay on this hub. Any external provider relationship is yours to evaluate — not ours to sell.',
+    },
+  ],
+  primaryCta: { label: 'Read our methodology', href: '/methodology' },
+  secondaryCta: {
+    label: 'Independence Policy',
+    href: 'https://www.asktrusthub.com/promise',
+    external: true,
+  },
+  tertiaryCta: { label: 'About & Trust', href: '/about' },
+  philosophy: 'We cite. You decide.',
+  tagline: 'Finance wisely. Grow well.',
+} as const;
+
+export const LENDER_PATHWAYS = {
+  eyebrow: 'Popular pathways',
+  title: 'Where people start',
+  support:
+    'Jump into common markets, financing goals, or the tools you are most likely to need next.',
+  markets: [
+    { label: 'Florida', href: '/local-lenders/florida' },
+    { label: 'California', href: '/local-lenders/california' },
+    { label: 'Texas', href: '/local-lenders/texas' },
+    { label: 'New York', href: '/local-lenders/new-york' },
+    { label: 'Arizona', href: '/local-lenders/arizona' },
+    { label: 'Illinois', href: '/local-lenders/illinois' },
+  ],
+  goals: [
+    {
+      label: 'Buy a home',
+      href: '/local-lenders',
+      detail: 'Browse local lenders for purchase research',
+    },
+    {
+      label: 'Refinance',
+      href: '/calculators',
+      detail: 'Educational refinance and payment tools',
+    },
+    {
+      label: 'See what I can afford',
+      href: '/calculators',
+      detail: 'Affordability and payment calculators',
+    },
+    {
+      label: 'Compare options',
+      href: '/compare',
+      detail: 'Side-by-side lender research',
+    },
+  ],
+  tools: [
+    { label: 'Local lenders directory', href: '/local-lenders' },
+    { label: 'Compare rates', href: '/compare' },
+    { label: 'Calculators', href: '/calculators' },
+    { label: 'My Lending', href: '/my-lending' },
+    { label: 'Methodology', href: '/methodology' },
+  ],
+} as const;
+
+export const LENDER_NETWORK_SECTION = {
+  eyebrow: 'Ask Trust Hub network',
+  title: 'Wealth & Finance within a wider research network',
+  support:
+    'Lender Trust Hub is the specialist finance layer. Ask is the parent knowledge layer; Move and Insurance cover their own verified domains under the same independence standard.',
+  philosophy: 'We cite. You decide.',
+} as const;
+
 /**
  * Primary header nav (finance research IA).
  * Switch Hub is a separate control.
