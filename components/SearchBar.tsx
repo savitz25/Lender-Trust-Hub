@@ -32,7 +32,7 @@ export function SearchBar({ className }: { className?: string }) {
       <div className="flex flex-col gap-2 sm:flex-row">
         <div className="relative flex-1">
           <MapPin
-            className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-zinc-400"
+            className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-[#0D9488]/70"
             aria-hidden="true"
           />
           <input

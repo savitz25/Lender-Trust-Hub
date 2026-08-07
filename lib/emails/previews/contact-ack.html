@@ -1,0 +1,51 @@
+<!--
+  Preview only — regenerate via buildContactAckEmail() in lib/emails/brand.ts
+  Open in a browser to review layout. Assets load from production domain.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preview — Contact acknowledgement</title>
+</head>
+<body style="margin:0;padding:24px;background:#F8FAFC;font-family:system-ui,sans-serif;">
+  <p style="max-width:560px;margin:0 auto 16px;font-size:13px;color:#1E293B;">
+    Static preview shell. Runtime emails use <code>buildContactAckEmail()</code> / <code>buildTransactionalEmail()</code>.
+  </p>
+  <iframe
+    title="Contact ack preview"
+    srcdoc=""
+    id="preview"
+    style="display:block;width:100%;max-width:600px;height:820px;margin:0 auto;border:1px solid #E2E8F0;border-radius:12px;background:#fff;"
+  ></iframe>
+  <script>
+    // Minimal inline sample mirroring EMAIL_BRAND structure (no build step).
+    document.getElementById('preview').srcdoc = `<!DOCTYPE html><html><body style="margin:0;background:#F8FAFC;padding:32px 16px;">
+<table width="100%" style="max-width:560px;margin:0 auto;"><tr><td>
+<table width="100%" style="background:#fff;border:1px solid #E2E8F0;border-radius:12px 12px 0 0;"><tr><td style="padding:24px;text-align:center;">
+<img src="https://www.lendertrusthub.com/brand/lender-trust-hub-logo-header.png" width="200" alt="Lender Trust Hub" style="max-width:200px;height:auto;border:0;" />
+</td></tr></table>
+<table width="100%" style="background:#fff;border:1px solid #E2E8F0;border-top:0;"><tr><td style="padding:28px;">
+<p style="margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#0D9488;">LENDER TRUST HUB</p>
+<h1 style="margin:0 0 16px;font-size:22px;color:#0A2540;">We received your message</h1>
+<p style="margin:0 0 14px;font-size:15px;line-height:1.6;color:#1E293B;">Hi there,</p>
+<p style="margin:0 0 14px;font-size:15px;line-height:1.6;color:#1E293B;">Thank you for contacting Lender Trust Hub. We typically respond within 2–3 business days.</p>
+<p style="margin:0;font-size:15px;line-height:1.6;color:#1E293B;">We cite. You decide. · Finance wisely. Grow well.</p>
+</td></tr></table>
+<table width="100%" style="background:#0A2540;border-radius:0 0 12px 12px;"><tr><td style="padding:28px 24px;text-align:center;">
+<p style="margin:0 0 8px;font-size:13px;font-weight:700;color:#fff;">Lender Trust Hub</p>
+<p style="margin:0 0 8px;font-size:12px;font-weight:600;color:#5EEAD4;">Part of the Ask Trust Hub network</p>
+<p style="margin:0 0 12px;font-size:12px;line-height:1.5;color:#94A3B8;">Independent research — no paid placements, no lead fees.</p>
+<p style="margin:0;font-size:12px;">
+<a href="https://www.asktrusthub.com" style="color:#5EEAD4;margin:0 6px;text-decoration:none;">Ask</a>
+<span style="color:#475569;">·</span>
+<a href="https://www.movetrusthub.com" style="color:#5EEAD4;margin:0 6px;text-decoration:none;">Move</a>
+<span style="color:#475569;">·</span>
+<a href="https://www.insurancetrusthub.com" style="color:#5EEAD4;margin:0 6px;text-decoration:none;">Insurance</a>
+</p>
+</td></tr></table>
+</td></tr></table></body></html>`;
+  </script>
+</body>
+</html>

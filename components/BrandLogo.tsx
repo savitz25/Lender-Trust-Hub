@@ -44,7 +44,7 @@ export function BrandLogo({
   );
 }
 
-/** Footer logo on navy — lighten for contrast */
+/** Footer logo on navy — multi-color mark + lightened wordmark (no CSS invert) */
 export function BrandLogoStacked({ className = '' }: { className?: string }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
@@ -53,10 +53,9 @@ export function BrandLogoStacked({ className = '' }: { className?: string }) {
       alt={BRAND_LOGO.alt}
       width={BRAND_LOGO.width}
       height={BRAND_LOGO.height}
-      className={`h-12 w-auto max-w-[192px] object-contain object-left ${className}`}
+      className={`h-12 w-auto max-w-[200px] object-contain object-left ${className}`}
       loading="lazy"
       decoding="async"
-      style={{ filter: 'brightness(0) invert(1)', opacity: 0.95 }}
     />
   );
 }

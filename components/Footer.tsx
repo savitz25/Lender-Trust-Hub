@@ -20,7 +20,7 @@ export default function Footer() {
       className="border-t border-white/10 text-slate-200"
       style={{ backgroundColor: LENDER_BRAND.navy }}
     >
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-12 sm:py-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12">
           <div className="sm:col-span-2 lg:col-span-4">
             <div className="mb-4">

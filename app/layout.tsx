@@ -6,6 +6,7 @@ import { AskNetworkBar } from '@/components/network/ask-network-bar';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { GtagProvider } from '@/components/directory/GtagProvider';
 import { MyLendingShell } from '@/components/my-lending/my-lending-shell';
+import { BRAND_ICONS, LENDER_LOGO_VERSION } from '@/lib/brand';
 import { ASK_NETWORK_STANDARD_VERSION } from '@/lib/network/standard-version';
 import './globals.css';
 
@@ -18,11 +19,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.lendertrusthub.com'),
   title: {
-    default: 'What Are You Trying to Accomplish? | Lender Trust Hub',
+    default: 'Verify. Compare. Finance wisely. | Lender Trust Hub',
     template: '%s | Lender Trust Hub',
   },
   description:
-    'What are you trying to accomplish? Research NMLS-verified mortgage lenders by goal — buy, refinance, affordability — with educational calculators. Independent directory. Zero paid placements. Not a lender.',
+    'Independent research for lenders and financing options. NMLS-oriented verification, rate comparison, and educational calculators. No paid placements. No lead fees. You decide.',
   applicationName: 'Lender Trust Hub',
   keywords: [
     'mortgage lenders',
@@ -36,24 +37,42 @@ export const metadata: Metadata = {
     canonical: 'https://www.lendertrusthub.com',
   },
   openGraph: {
-    title: 'What Are You Trying to Accomplish? | Lender Trust Hub',
+    title: 'Verify. Compare. Finance wisely. | Lender Trust Hub',
     description:
-      'Goal-based NMLS lender research and educational calculators. Independent directory — zero paid placements. Not a lender.',
+      'Independent lender research — NMLS verification signals, comparisons, and calculators. Zero paid placements.',
     siteName: 'Lender Trust Hub',
     url: 'https://www.lendertrusthub.com',
     type: 'website',
-    images: [{ url: '/brand/lender-trust-hub-logo-stacked.png', width: 1200, height: 1200 }],
+    images: [
+      {
+        url: `/brand/lender-trust-hub-logo-header.png?v=${LENDER_LOGO_VERSION}`,
+        width: 720,
+        height: 217,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'What Are You Trying to Accomplish? | Lender Trust Hub',
+    title: 'Verify. Compare. Finance wisely. | Lender Trust Hub',
     description:
-      'Goal-based NMLS lender research. Independent directory — zero paid placements.',
+      'Independent lender research. NMLS signals, comparisons, calculators — no paid placements.',
   },
   icons: {
-    icon: [{ url: '/brand/lender-trust-hub-favicon-32.png', sizes: '32x32', type: 'image/png' }],
-    apple: [{ url: '/brand/lender-trust-hub-icon-192.png', sizes: '192x192', type: 'image/png' }],
+    icon: [
+      { url: BRAND_ICONS.faviconIco, sizes: 'any' },
+      { url: BRAND_ICONS.favicon16, sizes: '16x16', type: 'image/png' },
+      { url: BRAND_ICONS.favicon32, sizes: '32x32', type: 'image/png' },
+      { url: BRAND_ICONS.android192, sizes: '192x192', type: 'image/png' },
+      { url: BRAND_ICONS.android512, sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [{ url: BRAND_ICONS.apple, sizes: '180x180', type: 'image/png' }],
+    shortcut: [BRAND_ICONS.favicon32],
   },
+  manifest: BRAND_ICONS.manifest,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#0D9488' },
+    { media: '(prefers-color-scheme: dark)', color: '#0A2540' },
+  ],
 };
 
 export default function RootLayout({

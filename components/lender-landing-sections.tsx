@@ -71,7 +71,7 @@ function SectionShell({
         backgroundColor: background,
       }}
     >
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <div className="lth-section-pad">
         <div className="max-w-2xl">
           <p
             className="text-xs font-semibold uppercase tracking-[0.14em]"
@@ -81,13 +81,13 @@ function SectionShell({
           </p>
           <h2
             id={`${id}-heading`}
-            className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl"
+            className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl"
             style={{ color: dark ? LENDER_BRAND.white : LENDER_BRAND.ink }}
           >
             {title}
           </h2>
           <p
-            className="mt-4 text-base leading-relaxed sm:text-lg"
+            className="mt-3 text-base leading-relaxed sm:mt-4 sm:text-lg"
             style={{ color: dark ? LENDER_BRAND.onNavySoft : LENDER_BRAND.ink }}
           >
             {support}
@@ -108,18 +108,18 @@ function ToolsSection() {
       support={LENDER_TOOLS.support}
       background={LENDER_BRAND.canvas}
     >
-      <ul className="mt-10 grid gap-4 sm:grid-cols-2">
+      <ul className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2">
         {LENDER_TOOLS.items.map((item) => {
           const Icon = TOOL_ICONS[item.id as keyof typeof TOOL_ICONS] ?? Scale;
           return (
             <li key={item.id}>
               <Link
                 href={item.href}
-                className="group flex h-full flex-col rounded-2xl border bg-white p-6 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] focus-visible:ring-offset-2"
+                className="group flex h-full min-h-[11rem] flex-col rounded-2xl border bg-white p-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] focus-visible:ring-offset-2 sm:p-6"
                 style={{
                   borderColor: LENDER_BRAND.border,
                   borderRadius: LENDER_RADIUS.cardLg,
-                  boxShadow: LENDER_SHADOW.soft,
+                  boxShadow: LENDER_SHADOW.card,
                 }}
               >
                 <span
@@ -160,7 +160,7 @@ function HowItWorksSection() {
       support={LENDER_HOW_IT_WORKS.support}
       background={LENDER_BRAND.white}
     >
-      <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <ol className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 lg:grid-cols-4">
         {LENDER_HOW_IT_WORKS.steps.map((item) => (
           <li
             key={item.step}
@@ -168,7 +168,7 @@ function HowItWorksSection() {
             style={{
               borderColor: LENDER_BRAND.border,
               borderRadius: LENDER_RADIUS.cardLg,
-              boxShadow: LENDER_SHADOW.soft,
+              boxShadow: LENDER_SHADOW.card,
             }}
           >
             <span
@@ -201,7 +201,7 @@ function TrustSection() {
       background={LENDER_BRAND.navy}
       dark
     >
-      <ul className="mt-10 grid gap-4 sm:grid-cols-2">
+      <ul className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2">
         {LENDER_TRUST.pillars.map((pillar) => (
           <li
             key={pillar.title}
@@ -222,9 +222,9 @@ function TrustSection() {
         ))}
       </ul>
 
-      <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-        <Link href={LENDER_TRUST.primaryCta.href}>
-          <Button size="lg" className="w-full gap-2 sm:w-auto">
+      <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center">
+        <Link href={LENDER_TRUST.primaryCta.href} className="w-full sm:w-auto">
+          <Button size="lg" className="min-h-12 w-full gap-2 sm:w-auto">
             {LENDER_TRUST.primaryCta.label}
             <ArrowRight className="h-4 w-4" aria-hidden />
           </Button>
@@ -233,7 +233,7 @@ function TrustSection() {
           href={LENDER_TRUST.secondaryCta.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-white/25 px-6 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+          className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-white/25 px-6 text-sm font-semibold text-white transition-colors hover:bg-white/10 sm:w-auto"
         >
           {LENDER_TRUST.secondaryCta.label}
           <ArrowUpRight className="h-4 w-4" aria-hidden />
@@ -266,14 +266,14 @@ function PathwaysSection() {
       support={LENDER_PATHWAYS.support}
       background={LENDER_BRAND.canvas}
     >
-      <div className="mt-10 grid gap-8 lg:grid-cols-3">
+      <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-3">
         {/* Markets */}
         <div
-          className="rounded-2xl border bg-white p-6"
+          className="rounded-2xl border bg-white p-5 sm:p-6"
           style={{
             borderColor: LENDER_BRAND.border,
             borderRadius: LENDER_RADIUS.cardLg,
-            boxShadow: LENDER_SHADOW.soft,
+            boxShadow: LENDER_SHADOW.card,
           }}
         >
           <div className="flex items-center gap-2">
@@ -287,7 +287,7 @@ function PathwaysSection() {
               <li key={market.href}>
                 <Link
                   href={market.href}
-                  className="inline-flex min-h-10 items-center rounded-full border bg-white px-3.5 py-2 text-sm font-semibold transition-colors hover:border-[#0D9488]/40 hover:bg-[#CCFBF1]/50"
+                  className="inline-flex min-h-11 items-center rounded-full border bg-white px-3.5 py-2 text-sm font-semibold transition-colors hover:border-[#0D9488]/40 hover:bg-[#CCFBF1]/50"
                   style={{ borderColor: LENDER_BRAND.border, color: LENDER_BRAND.ink }}
                 >
                   {market.label}
@@ -297,7 +297,7 @@ function PathwaysSection() {
           </ul>
           <Link
             href="/local-lenders"
-            className="mt-5 inline-flex items-center gap-1 text-sm font-semibold"
+            className="mt-5 inline-flex min-h-11 items-center gap-1 text-sm font-semibold"
             style={{ color: LENDER_BRAND.teal }}
           >
             All local lenders
@@ -307,11 +307,11 @@ function PathwaysSection() {
 
         {/* Goals */}
         <div
-          className="rounded-2xl border bg-white p-6"
+          className="rounded-2xl border bg-white p-5 sm:p-6"
           style={{
             borderColor: LENDER_BRAND.border,
             borderRadius: LENDER_RADIUS.cardLg,
-            boxShadow: LENDER_SHADOW.soft,
+            boxShadow: LENDER_SHADOW.card,
           }}
         >
           <div className="flex items-center gap-2">
@@ -326,7 +326,7 @@ function PathwaysSection() {
                 <Link
                   href={goal.href}
                   title={goal.detail}
-                  className="flex items-center justify-between gap-2 rounded-xl border px-3.5 py-3 text-sm font-semibold transition-colors hover:border-[#0D9488]/40 hover:bg-[#CCFBF1]/40"
+                  className="flex min-h-11 items-center justify-between gap-2 rounded-xl border px-3.5 py-3 text-sm font-semibold transition-colors hover:border-[#0D9488]/40 hover:bg-[#CCFBF1]/40"
                   style={{ borderColor: LENDER_BRAND.border, color: LENDER_BRAND.ink }}
                 >
                   {goal.label}
@@ -339,11 +339,11 @@ function PathwaysSection() {
 
         {/* Quick tools */}
         <div
-          className="rounded-2xl border bg-white p-6"
+          className="rounded-2xl border bg-white p-5 sm:p-6"
           style={{
             borderColor: LENDER_BRAND.border,
             borderRadius: LENDER_RADIUS.cardLg,
-            boxShadow: LENDER_SHADOW.soft,
+            boxShadow: LENDER_SHADOW.card,
           }}
         >
           <div className="flex items-center gap-2">
@@ -357,7 +357,7 @@ function PathwaysSection() {
               <li key={tool.href}>
                 <Link
                   href={tool.href}
-                  className="flex items-center justify-between gap-2 rounded-xl border px-3.5 py-3 text-sm font-semibold transition-colors hover:border-[#0D9488]/40 hover:bg-[#CCFBF1]/40"
+                  className="flex min-h-11 items-center justify-between gap-2 rounded-xl border px-3.5 py-3 text-sm font-semibold transition-colors hover:border-[#0D9488]/40 hover:bg-[#CCFBF1]/40"
                   style={{ borderColor: LENDER_BRAND.border, color: LENDER_BRAND.ink }}
                 >
                   {tool.label}
@@ -381,17 +381,17 @@ function NetworkSection() {
       support={LENDER_NETWORK_SECTION.support}
       background={LENDER_BRAND.white}
     >
-      <ul className="mt-10 grid gap-4 md:grid-cols-3">
+      <ul className="mt-8 grid gap-4 sm:mt-10 md:grid-cols-3">
         {LENDER_NETWORK_LINKS.map((hub) => (
           <li key={hub.id}>
             <a
               href={hub.href}
               rel="noopener noreferrer"
-              className="flex h-full flex-col rounded-2xl border bg-white p-6 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] focus-visible:ring-offset-2 hover:border-[#0D9488]/35"
+              className="flex h-full flex-col rounded-2xl border bg-white p-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] focus-visible:ring-offset-2 hover:border-[#0D9488]/35 sm:p-6"
               style={{
                 borderColor: LENDER_BRAND.border,
                 borderRadius: LENDER_RADIUS.cardLg,
-                boxShadow: LENDER_SHADOW.soft,
+                boxShadow: LENDER_SHADOW.card,
               }}
             >
               <p

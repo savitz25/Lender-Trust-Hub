@@ -37,8 +37,8 @@ export function LenderHero() {
         aria-hidden
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
+      <div className="lth-section-pad relative">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
           {/* Copy column */}
           <div className="lg:col-span-6">
             <p
