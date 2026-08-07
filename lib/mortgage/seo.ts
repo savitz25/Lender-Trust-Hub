@@ -2,6 +2,7 @@ import type { Lender } from '@/lib/mockData';
 import type { StateMeta } from '@/lib/fdic/types';
 import { SITE_URL, MORTGAGE_CATEGORY } from '@/lib/directory/categories';
 import { getStateMortgageStats } from './stateLenders';
+import { buildLenderOrganizationSchema } from '@/lib/seo/organization';
 
 const YEAR = MORTGAGE_CATEGORY.year;
 
@@ -43,12 +44,7 @@ export function buildMortgageStateJsonLd(
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'Organization',
-        '@id': `${SITE_URL}/#organization`,
-        name: 'Lender Trust Hub',
-        url: SITE_URL,
-      },
+      buildLenderOrganizationSchema(),
       {
         '@type': 'WebSite',
         '@id': `${SITE_URL}/#website`,
@@ -141,6 +137,7 @@ export function buildMortgageHubJsonLd(totalLenders: number, stateCount: number)
   return {
     '@context': 'https://schema.org',
     '@graph': [
+      buildLenderOrganizationSchema(),
       {
         '@type': 'WebPage',
         name: buildMortgageHubTitle(),
@@ -155,4 +152,4 @@ export function buildMortgageHubJsonLd(totalLenders: number, stateCount: number)
       },
     ],
   };
-}
+}

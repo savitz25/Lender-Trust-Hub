@@ -2,6 +2,7 @@ import type { FDICBank, StateFDICData, StateMeta } from './types';
 import { computeExtendedStateStats } from './utils';
 import { SITE_URL, FDIC_CATEGORY } from '@/lib/directory/categories';
 import { generateStateInsights } from './insights';
+import { buildLenderOrganizationSchema } from '@/lib/seo/organization';
 
 const CURRENT_YEAR = FDIC_CATEGORY.year;
 
@@ -57,23 +58,10 @@ function buildWebSiteSchema() {
 }
 
 function buildOrganizationSchema() {
-  return {
-    '@type': 'Organization',
-    '@id': `${SITE_URL}/#organization`,
-    name: 'Lender Trust Hub',
-    url: SITE_URL,
-    logo: `${SITE_URL}/brand/lender-trust-hub-icon.png`,
+  return buildLenderOrganizationSchema({
     description:
-      'Independent financial directory with verified FDIC bank data. No paid placements.',
-    sameAs: ['https://www.movetrusthub.com'],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '128',
-      bestRating: '5',
-      worstRating: '1',
-    },
-  };
+      'Specialist research directory with verified FDIC bank data. Part of the Ask Trust Hub network under common ownership with separated research and listing order. No paid placements.',
+  });
 }
 
 function buildBreadcrumbSchema(stateMeta: StateMeta) {

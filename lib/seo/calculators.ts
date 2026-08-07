@@ -1,4 +1,5 @@
 import { CALCULATORS } from '@/lib/calculators/registry';
+import { buildLenderOrganizationSchema } from '@/lib/seo/organization';
 
 const SITE = 'https://www.lendertrusthub.com';
 
@@ -21,15 +22,11 @@ export function calculatorsPageSchema() {
         name: 'Lender Trust Hub',
         publisher: { '@id': `${SITE}/#organization` },
       },
-      {
-        '@type': 'Organization',
-        '@id': `${SITE}/#organization`,
-        name: 'Lender Trust Hub',
-        url: SITE,
+      buildLenderOrganizationSchema({
         logo: `${SITE}/brand/lender-trust-hub-logo-stacked.png`,
-        description: 'Independent NMLS-verified mortgage lender directory. Zero paid placements.',
-        sameAs: ['https://www.movetrusthub.com'],
-      },
+        description:
+          'Specialist NMLS-oriented mortgage research directory and educational calculators. Part of the Ask Trust Hub network under common ownership with separated research and listing order. No paid placements.',
+      }),
       ...CALCULATORS.map((c) => ({
         '@type': 'SoftwareApplication',
         name: c.seoTitle,

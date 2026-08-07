@@ -2,6 +2,7 @@ import type { StateMeta } from '@/lib/fdic/types';
 import { SITE_URL, AUTO_CATEGORY } from '@/lib/directory/categories';
 import type { AutoLoanProvider } from './types';
 import { getStateAutoStats } from './stateProviders';
+import { buildLenderOrganizationSchema } from '@/lib/seo/organization';
 
 const YEAR = AUTO_CATEGORY.year;
 
@@ -44,12 +45,7 @@ export function buildAutoStateJsonLd(
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'Organization',
-        '@id': `${SITE_URL}/#organization`,
-        name: 'Lender Trust Hub',
-        url: SITE_URL,
-      },
+      buildLenderOrganizationSchema(),
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -132,6 +128,7 @@ export function buildAutoHubJsonLd(totalProviders: number, stateCount: number) {
   return {
     '@context': 'https://schema.org',
     '@graph': [
+      buildLenderOrganizationSchema(),
       {
         '@type': 'WebPage',
         name: buildAutoHubTitle(),
@@ -146,4 +143,4 @@ export function buildAutoHubJsonLd(totalProviders: number, stateCount: number) {
       },
     ],
   };
-}
+}
