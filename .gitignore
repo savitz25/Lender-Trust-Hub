@@ -41,3 +41,7 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+data/south-florida-agents.txt
+logo horrible.png
+agent.agencies USA/
