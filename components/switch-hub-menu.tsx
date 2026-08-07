@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { ChevronDown, ExternalLink } from 'lucide-react';
 import { LENDER_BRAND, LENDER_NETWORK_LINKS } from '@/lib/design/lender-design-system';
+import { resolveSwitchHubHref } from '@/lib/network/hub-last-location';
 import { cn } from '@/lib/utils';
 
 type Props = {
@@ -12,6 +13,7 @@ type Props = {
 
 /**
  * Switch Hub — network sibling + parent Ask destinations.
+ * Specialist hubs use resume entry URLs (last path restored on target).
  */
 export function SwitchHubMenu({ className, compact = false }: Props) {
   const [open, setOpen] = useState(false);
@@ -77,7 +79,7 @@ export function SwitchHubMenu({ className, compact = false }: Props) {
               <li key={hub.id}>
                 <a
                   role="menuitem"
-                  href={hub.href}
+                  href={resolveSwitchHubHref(hub.id, hub.href)}
                   rel="noopener noreferrer"
                   className="flex items-start gap-2 rounded-xl px-2.5 py-2.5 transition-colors hover:bg-[#CCFBF1]/60"
                   onClick={() => setOpen(false)}
