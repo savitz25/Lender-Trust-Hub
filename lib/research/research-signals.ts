@@ -17,7 +17,8 @@ import {
   resolveNmlsVerification,
   type NmlsVerificationDisplay,
 } from '@/lib/verification/nmls';
-import { deriveLenderHomeLocality } from '@/lib/geo';
+// Leaf import only — never `@/lib/geo` barrel (circular with catalog sanitize at build)
+import { deriveLenderHomeLocality } from '@/lib/geo/home-locality';
 import {
   resolveLenderMetricProvenance,
   type LenderMetricBundle,

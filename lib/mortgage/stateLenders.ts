@@ -5,7 +5,7 @@
 import { lenders, type Lender } from '@/lib/mockData';
 import { US_STATES } from '@/lib/fdic/states';
 import { countLenderCatalog, dedupeLendersByEntity, lenderEntityKey } from '@/lib/verification';
-import { deriveLenderHomeLocality } from '@/lib/geo';
+import { deriveLenderHomeLocality } from '@/lib/geo/home-locality';
 import { compareLendersByResearchHonesty } from '@/lib/research/research-signals';
 
 export interface StateMortgageStats {

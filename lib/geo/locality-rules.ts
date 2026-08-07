@@ -4,18 +4,22 @@
  * Local = licensed business city / HQ locality maps to the page county.
  * Nearby = same state, outside that county (adjacent or explicit serve-from-elsewhere).
  * Statewide license alone never makes a lender "local."
+ *
+ * Must not import research-signals or verification barrels (circular with catalog sanitize).
  */
 
 import type { Lender } from '@/lib/mockData';
-import { ZIP_TO_COUNTY } from '@/lib/mockData';
-import { countiesEqual, normalizeCountyName, titleCaseSlug } from '@/lib/geo/normalize';
+import { countiesEqual, titleCaseSlug } from '@/lib/geo/normalize';
 import {
-  lookupCountyByCity,
-  placeFromCountyFields,
-  type PlaceLocality,
-} from '@/lib/geo/city-county-lookup';
-import { dedupeLendersByEntity } from '@/lib/verification';
-import { compareLendersByResearchHonesty } from '@/lib/research/research-signals';
+  deriveLenderHomeLocality,
+  type DerivedHomeLocality,
+} from '@/lib/geo/home-locality';
+import { dedupeLendersByEntity } from '@/lib/verification/entity-identity';
+
+export {
+  deriveLenderHomeLocality,
+  type DerivedHomeLocality,
+} from '@/lib/geo/home-locality';
 
 export const MIN_MEANINGFUL_IN_COUNTY = 3;
 
@@ -40,11 +44,6 @@ export type LenderPresenceLabel =
   | 'Serves from nearby market'
   | 'Locality not confirmed';
 
-export type DerivedHomeLocality = PlaceLocality & {
-  /** city | zip | listed_county | unknown */
-  source: 'city' | 'zip' | 'listed_county' | 'unknown';
-};
-
 /**
  * Adjacent counties for honest "nearby" secondary lists (same state only).
  * Not a full graph — only markets where we currently list lenders.
@@ -62,54 +61,6 @@ const ADJACENT_COUNTIES: Record<string, Record<string, string[]>> = {
     escambia: ['bay', 'okaloosa'],
   },
 };
-
-/**
- * Derive true home county from licensed city / ZIP before listed market label.
- * City and ZIP beat a conflicting market countySlug (e.g. Jacksonville ≠ Miami-Dade).
- */
-export function deriveLenderHomeLocality(
-  lender: Pick<
-    Lender,
-    'city' | 'state' | 'stateSlug' | 'county' | 'countySlug' | 'zipCodes'
-  >
-): DerivedHomeLocality {
-  const stateSlug = lender.stateSlug;
-
-  const byCity = lookupCountyByCity(lender.city, stateSlug);
-  if (byCity) {
-    return { ...byCity, source: 'city' };
-  }
-
-  for (const zip of lender.zipCodes ?? []) {
-    const z = ZIP_TO_COUNTY[zip.trim()];
-    if (z && z.stateSlug === stateSlug) {
-      return {
-        county: z.county,
-        countySlug: z.countySlug,
-        stateSlug: z.stateSlug,
-        source: 'zip',
-      };
-    }
-  }
-
-  if (lender.county?.trim() || lender.countySlug?.trim()) {
-    return {
-      ...placeFromCountyFields(
-        lender.county || titleCaseSlug(lender.countySlug),
-        lender.countySlug || normalizeCountyName(lender.county).replace(/\s+/g, '-'),
-        stateSlug
-      ),
-      source: 'listed_county',
-    };
-  }
-
-  return {
-    county: '',
-    countySlug: '',
-    stateSlug,
-    source: 'unknown',
-  };
-}
 
 export type LenderLocalityVerdict = {
   class: LenderLocalityClass;
@@ -190,8 +141,11 @@ export type CountyLenderSegments = {
   nearbyCount: number;
 };
 
+/** Prefer research score already on the row (set at catalog sanitize) — no research-signals import. */
 function sortByResearch(a: Lender, b: Lender): number {
-  return compareLendersByResearchHonesty(a, b);
+  if (b.trustScore !== a.trustScore) return b.trustScore - a.trustScore;
+  if (b.reviewCount !== a.reviewCount) return b.reviewCount - a.reviewCount;
+  return a.slug.localeCompare(b.slug);
 }
 
 function isAdjacent(
@@ -244,20 +198,17 @@ export function segmentLendersForCountyPage(params: {
       continue;
     }
 
-    // Eligible for nearby secondary: adjacent HQ, or explicit supplement
     const adjacent = isAdjacent(pageStateSlug, pageCountySlug, locality.home.countySlug);
     if (adjacent) {
       nearbyMap.set(lender.slug, row);
     }
   }
 
-  // Supplements: never primary; only secondary if not already in-county
   for (const slug of supplementSlugs) {
     const lender = bySlug.get(slug);
     if (!lender) continue;
     if (inCounty.some((l) => l.slug === slug)) continue;
     const locality = classifyLenderLocality(lender, pageStateSlug, pageCountySlug);
-    // Force nearby label for explicit serve-from-elsewhere
     nearbyMap.set(slug, {
       ...lender,
       locality: {
