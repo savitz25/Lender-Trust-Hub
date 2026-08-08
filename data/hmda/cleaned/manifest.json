@@ -1,0 +1,78 @@
+{
+  "source_file": "state_FL-CA-MA-TX-NJ-NY-DC-PA-GA-SC-NC-TN.csv",
+  "source_path_relative": "state_FL-CA-MA-TX-NJ-NY-DC-PA-GA-SC-NC-TN.csv",
+  "data_vintage_years": [
+    "2025"
+  ],
+  "states_in_output": [
+    "CA",
+    "DC",
+    "FL",
+    "GA",
+    "MA",
+    "NC",
+    "NJ",
+    "NY",
+    "PA",
+    "SC",
+    "TN",
+    "TX"
+  ],
+  "priority_states": [
+    "DC",
+    "FL",
+    "GA",
+    "MA",
+    "NC",
+    "NJ",
+    "NY",
+    "PA",
+    "SC",
+    "TN",
+    "TX"
+  ],
+  "secondary_states": [
+    "CA"
+  ],
+  "row_counts": {
+    "raw_scanned": 6656862,
+    "kept": 5767420,
+    "skipped_purchased_action_6": 821116,
+    "skipped_incomplete": 68326,
+    "skipped_other_states": 0
+  },
+  "filters": {
+    "excluded_action_taken": [
+      6
+    ],
+    "excluded_action_taken_meaning": "Purchased loan",
+    "required_fields": [
+      "activity_year",
+      "lei",
+      "state_code",
+      "county_code"
+    ]
+  },
+  "outputs": {
+    "cleaned": [
+      "county_market_summary.csv",
+      "lender_activity_by_county.csv",
+      "lender_state_summary.csv",
+      "lei_mapping_candidates.csv"
+    ],
+    "florida": [
+      "county_market_summary_fl.csv",
+      "lender_activity_by_county_fl.csv",
+      "lender_state_summary_fl.csv",
+      "lei_mapping_candidates_fl.csv"
+    ]
+  },
+  "notes": [
+    "HMDA LAR does not include institution legal name; lei_mapping_candidates.institution_name is blank for LEI\u2192NMLS matching.",
+    "County names filled for all FL counties and selected high-volume counties in other states; otherwise county_name is blank (use county_fips).",
+    "Denial rate = denials / applications (action_taken 3 / non-purchase rows with valid geo).",
+    "Market share = lender originations / county originations in same year+state+county.",
+    "Do not use these tables as Trust Scores or editorial rankings."
+  ],
+  "data_vintage_label": "HMDA 2025"
+}
