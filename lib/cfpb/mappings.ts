@@ -96,6 +96,149 @@ export const CFPB_COMPANY_MAPPINGS: CfpbCompanyMapping[] = [
     matchNote:
       'Matched to CFPB parent label “WELLS FARGO & COMPANY” — bank-wide mortgage complaints, not a product-line isolate.',
   },
+  // ── Expansion wave 2 (2026-08) — exact CCDB company names only ──
+  {
+    ourLenderSlug: 'truist-bank',
+    cfpbCompanyNames: [
+      'TRUIST FINANCIAL CORPORATION',
+      'SUNTRUST BANKS, INC.',
+      'BB&T CORPORATION',
+    ],
+    matchMethod: 'curated-multi',
+    matchNote:
+      'Combined CFPB parent labels for Truist and predecessor banks SunTrust and BB&T. Counts are summed across lineage names; some historical complaints remain only under a predecessor label.',
+  },
+  {
+    ourLenderSlug: 'regions-bank',
+    cfpbCompanyNames: ['REGIONS FINANCIAL CORPORATION'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB parent label “REGIONS FINANCIAL CORPORATION” — bank-wide mortgage complaints.',
+  },
+  {
+    ourLenderSlug: 'new-american-funding',
+    cfpbCompanyNames: ['BROKER SOLUTIONS, INC.'],
+    matchMethod: 'curated-dba',
+    matchNote:
+      'New American Funding publishes under legal entity “BROKER SOLUTIONS, INC.” in the CFPB database (NMLS family / DBA).',
+  },
+  {
+    ourLenderSlug: 'pnc-bank',
+    cfpbCompanyNames: ['PNC Bank N.A.'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB company name “PNC Bank N.A.” — bank-wide mortgage complaints (spelling/punctuation as published).',
+  },
+  {
+    ourLenderSlug: 'better-mortgage',
+    cfpbCompanyNames: ['Better Mortgage, Inc.'],
+    matchMethod: 'curated-exact',
+    matchNote: 'Matched to CFPB company name “Better Mortgage, Inc.”.',
+  },
+  {
+    ourLenderSlug: 'ally-bank',
+    cfpbCompanyNames: ['ALLY FINANCIAL INC.'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB parent label “ALLY FINANCIAL INC.” — mortgage-related complaints under the Ally financial group (not a separate “Ally Bank” company string in CCDB).',
+  },
+  {
+    ourLenderSlug: 'td-bank',
+    cfpbCompanyNames: ['TD BANK US HOLDING COMPANY'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB parent label “TD BANK US HOLDING COMPANY” — bank-wide mortgage complaints.',
+  },
+  {
+    ourLenderSlug: 'usaa-federal-savings-bank',
+    cfpbCompanyNames: ['UNITED SERVICES AUTOMOBILE ASSOCIATION'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB company name “UNITED SERVICES AUTOMOBILE ASSOCIATION” (USAA family label used in CCDB for mortgage complaints).',
+  },
+  {
+    ourLenderSlug: 'flagstar-bank',
+    cfpbCompanyNames: ['Flagstar Bank, N.A.'],
+    matchMethod: 'curated-exact',
+    matchNote: 'Matched to CFPB company name “Flagstar Bank, N.A.”.',
+  },
+  {
+    ourLenderSlug: 'citizens-bank',
+    cfpbCompanyNames: ['CITIZENS FINANCIAL GROUP, INC.'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB parent label “CITIZENS FINANCIAL GROUP, INC.” — not First Citizens or other similarly named institutions.',
+  },
+  {
+    ourLenderSlug: 'us-bank',
+    cfpbCompanyNames: ['U.S. BANCORP'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB parent label “U.S. BANCORP” — bank-wide mortgage complaints.',
+  },
+  {
+    ourLenderSlug: 'sofi-bank',
+    cfpbCompanyNames: ['SOFI TECHNOLOGIES, INC.', 'SoFi Mortgage, LLC'],
+    matchMethod: 'curated-multi',
+    matchNote:
+      'Combined CFPB rows for “SOFI TECHNOLOGIES, INC.” and “SoFi Mortgage, LLC”. Counts are summed; volume is modest relative to large bank servicers.',
+  },
+  {
+    ourLenderSlug: 'suncoast-credit-union',
+    cfpbCompanyNames: ['SUNCOAST CREDIT UNION'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB company name “SUNCOAST CREDIT UNION”. Mortgage complaint volume is low (credit unions publish fewer CCDB rows than large banks).',
+  },
+  {
+    ourLenderSlug: 'academy-mortgage',
+    cfpbCompanyNames: ['Academy Mortgage Corporation'],
+    matchMethod: 'curated-exact',
+    matchNote: 'Matched to CFPB company name “Academy Mortgage Corporation”.',
+  },
+  {
+    ourLenderSlug: 'carrington-mortgage',
+    cfpbCompanyNames: ['CARRINGTON MORTGAGE SERVICES, LLC'],
+    matchMethod: 'curated-exact',
+    matchNote: 'Matched to CFPB company name “CARRINGTON MORTGAGE SERVICES, LLC”.',
+  },
+  {
+    ourLenderSlug: 'amerisave',
+    cfpbCompanyNames: ['AMERISAVE MORTGAGE CORPORATION'],
+    matchMethod: 'curated-exact',
+    matchNote: 'Matched to CFPB company name “AMERISAVE MORTGAGE CORPORATION”.',
+  },
+  {
+    ourLenderSlug: 'lakeview-loan-servicing',
+    cfpbCompanyNames: ['LAKEVIEW LOAN SERVICING, LLC'],
+    matchMethod: 'curated-exact',
+    matchNote: 'Matched to CFPB company name “LAKEVIEW LOAN SERVICING, LLC” (servicing-side label).',
+  },
+  {
+    ourLenderSlug: 'first-horizon-bank',
+    cfpbCompanyNames: ['FIRST HORIZON BANK'],
+    matchMethod: 'curated-exact',
+    matchNote: 'Matched to CFPB company name “FIRST HORIZON BANK”.',
+  },
+  {
+    ourLenderSlug: 'southstate-bank',
+    cfpbCompanyNames: ['SOUTHSTATE BANK CORPORATION'],
+    matchMethod: 'curated-exact',
+    matchNote: 'Matched to CFPB company name “SOUTHSTATE BANK CORPORATION”.',
+  },
+  {
+    ourLenderSlug: 'ameris-bank',
+    cfpbCompanyNames: ['AMERIS BANCORP'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB parent label “AMERIS BANCORP” (no exact “AMERIS BANK” company string with mortgage hits in CCDB).',
+  },
+  {
+    ourLenderSlug: '21st-mortgage',
+    cfpbCompanyNames: ['21ST MORTGAGE CORP.'],
+    matchMethod: 'curated-exact',
+    matchNote: 'Matched to CFPB company name “21ST MORTGAGE CORP.”.',
+  },
 ];
 
 const bySlug = new Map(CFPB_COMPANY_MAPPINGS.map((m) => [m.ourLenderSlug, m]));
