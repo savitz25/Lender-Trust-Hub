@@ -1,7 +1,7 @@
 {
   "version": 1,
   "product": "Mortgage",
-  "generatedAt": "2026-08-09T23:35:37.301Z",
+  "generatedAt": "2026-08-09T23:41:56.986Z",
   "recentWindowStart": "2024-08-09",
   "source": "CFPB Consumer Complaint Database",
   "sourceUrl": "https://www.consumerfinance.gov/data-research/consumer-complaints/",
@@ -62,7 +62,7 @@
           "pct": 0.1
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:14.801Z"
+      "fetchedAt": "2026-08-09T23:40:53.715Z"
     },
     {
       "company": "Academy Mortgage Corporation",
@@ -125,7 +125,7 @@
           "pct": 0.6
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:17.375Z"
+      "fetchedAt": "2026-08-09T23:40:54.547Z"
     },
     {
       "company": "ALLY FINANCIAL INC.",
@@ -183,7 +183,7 @@
           "pct": 1.2
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:20.574Z"
+      "fetchedAt": "2026-08-09T23:40:55.372Z"
     },
     {
       "company": "AmeriHome Mortgage Company, LLC",
@@ -241,7 +241,7 @@
           "pct": 1
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:21.414Z"
+      "fetchedAt": "2026-08-09T23:40:56.205Z"
     },
     {
       "company": "AMERIS BANCORP",
@@ -299,7 +299,7 @@
           "pct": 0.3
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:24.393Z"
+      "fetchedAt": "2026-08-09T23:40:57.033Z"
     },
     {
       "company": "AMERISAVE MORTGAGE CORPORATION",
@@ -357,7 +357,7 @@
           "pct": 0.1
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:27.289Z"
+      "fetchedAt": "2026-08-09T23:40:57.878Z"
     },
     {
       "company": "BB&T CORPORATION",
@@ -420,7 +420,7 @@
           "pct": 0.9
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:29.548Z"
+      "fetchedAt": "2026-08-09T23:40:58.707Z"
     },
     {
       "company": "Better Mortgage, Inc.",
@@ -478,7 +478,7 @@
           "pct": 0.3
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:35.552Z"
+      "fetchedAt": "2026-08-09T23:40:59.539Z"
     },
     {
       "company": "BROKER SOLUTIONS, INC.",
@@ -526,7 +526,7 @@
           "pct": 3
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:38.418Z"
+      "fetchedAt": "2026-08-09T23:41:00.366Z"
     },
     {
       "company": "CARDINAL FINANCIAL COMPANY, LIMITED PARTNERSHIP",
@@ -589,7 +589,7 @@
           "pct": 0.3
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:39.260Z"
+      "fetchedAt": "2026-08-09T23:41:01.207Z"
     },
     {
       "company": "CARRINGTON MORTGAGE SERVICES, LLC",
@@ -652,7 +652,7 @@
           "pct": 0.2
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:42.342Z"
+      "fetchedAt": "2026-08-09T23:41:02.087Z"
     },
     {
       "company": "CITIZENS FINANCIAL GROUP, INC.",
@@ -715,7 +715,191 @@
           "pct": 0.4
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:45.717Z"
+      "fetchedAt": "2026-08-09T23:41:02.917Z"
+    },
+    {
+      "company": "CMG Financial Services, Inc.",
+      "product": "Mortgage",
+      "totalComplaints": 737,
+      "complaintsLast24Months": 331,
+      "topIssues": [
+        {
+          "key": "Trouble during payment process",
+          "count": 442,
+          "pct": 60
+        },
+        {
+          "key": "Struggling to pay mortgage",
+          "count": 106,
+          "pct": 14.4
+        },
+        {
+          "key": "Applying for a mortgage or refinancing an existing mortgage",
+          "count": 67,
+          "pct": 9.1
+        },
+        {
+          "key": "Closing on a mortgage",
+          "count": 47,
+          "pct": 6.4
+        },
+        {
+          "key": "Loan servicing, payments, escrow account",
+          "count": 21,
+          "pct": 2.8
+        }
+      ],
+      "timelyYes": 717,
+      "timelyNo": 20,
+      "companyResponses": [
+        {
+          "key": "Closed with explanation",
+          "count": 722,
+          "pct": 98
+        },
+        {
+          "key": "Closed with monetary relief",
+          "count": 9,
+          "pct": 1.2
+        },
+        {
+          "key": "Closed with non-monetary relief",
+          "count": 4,
+          "pct": 0.5
+        },
+        {
+          "key": "Closed",
+          "count": 1,
+          "pct": 0.1
+        },
+        {
+          "key": "In progress",
+          "count": 1,
+          "pct": 0.1
+        }
+      ],
+      "fetchedAt": "2026-08-09T23:41:06.809Z"
+    },
+    {
+      "company": "CrossCountry Mortgage LLC",
+      "product": "Mortgage",
+      "totalComplaints": 1322,
+      "complaintsLast24Months": 602,
+      "topIssues": [
+        {
+          "key": "Trouble during payment process",
+          "count": 637,
+          "pct": 48.2
+        },
+        {
+          "key": "Applying for a mortgage or refinancing an existing mortgage",
+          "count": 240,
+          "pct": 18.2
+        },
+        {
+          "key": "Struggling to pay mortgage",
+          "count": 204,
+          "pct": 15.4
+        },
+        {
+          "key": "Closing on a mortgage",
+          "count": 169,
+          "pct": 12.8
+        },
+        {
+          "key": "Incorrect information on your report",
+          "count": 27,
+          "pct": 2
+        }
+      ],
+      "timelyYes": 1297,
+      "timelyNo": 25,
+      "companyResponses": [
+        {
+          "key": "Closed with explanation",
+          "count": 1088,
+          "pct": 82.3
+        },
+        {
+          "key": "Closed with non-monetary relief",
+          "count": 135,
+          "pct": 10.2
+        },
+        {
+          "key": "In progress",
+          "count": 70,
+          "pct": 5.3
+        },
+        {
+          "key": "Closed with monetary relief",
+          "count": 29,
+          "pct": 2.2
+        }
+      ],
+      "fetchedAt": "2026-08-09T23:41:09.642Z"
+    },
+    {
+      "company": "DHI Mortgage Company",
+      "product": "Mortgage",
+      "totalComplaints": 185,
+      "complaintsLast24Months": 41,
+      "topIssues": [
+        {
+          "key": "Applying for a mortgage or refinancing an existing mortgage",
+          "count": 69,
+          "pct": 37.3
+        },
+        {
+          "key": "Closing on a mortgage",
+          "count": 53,
+          "pct": 28.6
+        },
+        {
+          "key": "Application, originator, mortgage broker",
+          "count": 19,
+          "pct": 10.3
+        },
+        {
+          "key": "Trouble during payment process",
+          "count": 14,
+          "pct": 7.6
+        },
+        {
+          "key": "Loan servicing, payments, escrow account",
+          "count": 9,
+          "pct": 4.9
+        }
+      ],
+      "timelyYes": 173,
+      "timelyNo": 12,
+      "companyResponses": [
+        {
+          "key": "Closed with explanation",
+          "count": 143,
+          "pct": 77.3
+        },
+        {
+          "key": "Closed with monetary relief",
+          "count": 32,
+          "pct": 17.3
+        },
+        {
+          "key": "Closed with non-monetary relief",
+          "count": 7,
+          "pct": 3.8
+        },
+        {
+          "key": "Closed with relief",
+          "count": 2,
+          "pct": 1.1
+        },
+        {
+          "key": "Closed without relief",
+          "count": 1,
+          "pct": 0.5
+        }
+      ],
+      "fetchedAt": "2026-08-09T23:41:12.344Z"
     },
     {
       "company": "Eagle Home Mortgage, LLC",
@@ -768,7 +952,70 @@
           "pct": 1.7
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:46.545Z"
+      "fetchedAt": "2026-08-09T23:41:13.176Z"
+    },
+    {
+      "company": "Fairway Independent Mortgage Corporation",
+      "product": "Mortgage",
+      "totalComplaints": 301,
+      "complaintsLast24Months": 57,
+      "topIssues": [
+        {
+          "key": "Applying for a mortgage or refinancing an existing mortgage",
+          "count": 93,
+          "pct": 30.9
+        },
+        {
+          "key": "Trouble during payment process",
+          "count": 66,
+          "pct": 21.9
+        },
+        {
+          "key": "Closing on a mortgage",
+          "count": 62,
+          "pct": 20.6
+        },
+        {
+          "key": "Struggling to pay mortgage",
+          "count": 28,
+          "pct": 9.3
+        },
+        {
+          "key": "Application, originator, mortgage broker",
+          "count": 23,
+          "pct": 7.6
+        }
+      ],
+      "timelyYes": 299,
+      "timelyNo": 2,
+      "companyResponses": [
+        {
+          "key": "Closed with explanation",
+          "count": 261,
+          "pct": 86.7
+        },
+        {
+          "key": "Closed with monetary relief",
+          "count": 36,
+          "pct": 12
+        },
+        {
+          "key": "Closed",
+          "count": 2,
+          "pct": 0.7
+        },
+        {
+          "key": "Closed with non-monetary relief",
+          "count": 1,
+          "pct": 0.3
+        },
+        {
+          "key": "In progress",
+          "count": 1,
+          "pct": 0.3
+        }
+      ],
+      "fetchedAt": "2026-08-09T23:41:15.896Z"
     },
     {
       "company": "FIRST HORIZON BANK",
@@ -831,7 +1078,7 @@
           "pct": 1.3
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:49.585Z"
+      "fetchedAt": "2026-08-09T23:41:16.744Z"
     },
     {
       "company": "Flagstar Bank, N.A.",
@@ -894,7 +1141,7 @@
           "pct": 0.7
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:51.812Z"
+      "fetchedAt": "2026-08-09T23:41:17.580Z"
     },
     {
       "company": "Freedom Mortgage Company",
@@ -957,7 +1204,7 @@
           "pct": 0.1
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:52.641Z"
+      "fetchedAt": "2026-08-09T23:41:18.403Z"
     },
     {
       "company": "GUARANTEED RATE INC.",
@@ -1015,7 +1262,70 @@
           "pct": 0.4
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:53.483Z"
+      "fetchedAt": "2026-08-09T23:41:19.240Z"
+    },
+    {
+      "company": "Guild Holdings Company",
+      "product": "Mortgage",
+      "totalComplaints": 654,
+      "complaintsLast24Months": 193,
+      "topIssues": [
+        {
+          "key": "Trouble during payment process",
+          "count": 193,
+          "pct": 29.5
+        },
+        {
+          "key": "Struggling to pay mortgage",
+          "count": 107,
+          "pct": 16.4
+        },
+        {
+          "key": "Closing on a mortgage",
+          "count": 84,
+          "pct": 12.8
+        },
+        {
+          "key": "Applying for a mortgage or refinancing an existing mortgage",
+          "count": 81,
+          "pct": 12.4
+        },
+        {
+          "key": "Loan modification,collection,foreclosure",
+          "count": 48,
+          "pct": 7.3
+        }
+      ],
+      "timelyYes": 639,
+      "timelyNo": 15,
+      "companyResponses": [
+        {
+          "key": "Closed with explanation",
+          "count": 611,
+          "pct": 93.4
+        },
+        {
+          "key": "Closed with monetary relief",
+          "count": 18,
+          "pct": 2.8
+        },
+        {
+          "key": "Closed with non-monetary relief",
+          "count": 11,
+          "pct": 1.7
+        },
+        {
+          "key": "In progress",
+          "count": 8,
+          "pct": 1.2
+        },
+        {
+          "key": "Closed without relief",
+          "count": 5,
+          "pct": 0.8
+        }
+      ],
+      "fetchedAt": "2026-08-09T23:41:22.079Z"
     },
     {
       "company": "JPMORGAN CHASE & CO.",
@@ -1078,7 +1388,7 @@
           "pct": 2
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:54.305Z"
+      "fetchedAt": "2026-08-09T23:41:22.911Z"
     },
     {
       "company": "LAKEVIEW LOAN SERVICING, LLC",
@@ -1141,7 +1451,7 @@
           "pct": 0
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:57.143Z"
+      "fetchedAt": "2026-08-09T23:41:23.730Z"
     },
     {
       "company": "LD Holdings Group, LLC",
@@ -1204,7 +1514,55 @@
           "pct": 0.1
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:57.965Z"
+      "fetchedAt": "2026-08-09T23:41:24.609Z"
+    },
+    {
+      "company": "Movement Mortgage LLC",
+      "product": "Mortgage",
+      "totalComplaints": 472,
+      "complaintsLast24Months": 116,
+      "topIssues": [
+        {
+          "key": "Trouble during payment process",
+          "count": 152,
+          "pct": 32.2
+        },
+        {
+          "key": "Closing on a mortgage",
+          "count": 94,
+          "pct": 19.9
+        },
+        {
+          "key": "Applying for a mortgage or refinancing an existing mortgage",
+          "count": 93,
+          "pct": 19.7
+        },
+        {
+          "key": "Struggling to pay mortgage",
+          "count": 52,
+          "pct": 11
+        },
+        {
+          "key": "Application, originator, mortgage broker",
+          "count": 32,
+          "pct": 6.8
+        }
+      ],
+      "timelyYes": 470,
+      "timelyNo": 2,
+      "companyResponses": [
+        {
+          "key": "Closed with explanation",
+          "count": 456,
+          "pct": 96.6
+        },
+        {
+          "key": "Closed with monetary relief",
+          "count": 16,
+          "pct": 3.4
+        }
+      ],
+      "fetchedAt": "2026-08-09T23:41:27.392Z"
     },
     {
       "company": "Mr. Cooper Group Inc.",
@@ -1257,7 +1615,7 @@
           "pct": 0
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:58.791Z"
+      "fetchedAt": "2026-08-09T23:41:28.249Z"
     },
     {
       "company": "NATIONSTAR MORTGAGE LLC",
@@ -1320,7 +1678,128 @@
           "pct": 0.2
         }
       ],
-      "fetchedAt": "2026-08-09T23:34:59.625Z"
+      "fetchedAt": "2026-08-09T23:41:29.075Z"
+    },
+    {
+      "company": "NAVY FEDERAL CREDIT UNION",
+      "product": "Mortgage",
+      "totalComplaints": 2223,
+      "complaintsLast24Months": 504,
+      "topIssues": [
+        {
+          "key": "Applying for a mortgage or refinancing an existing mortgage",
+          "count": 813,
+          "pct": 36.6
+        },
+        {
+          "key": "Trouble during payment process",
+          "count": 398,
+          "pct": 17.9
+        },
+        {
+          "key": "Closing on a mortgage",
+          "count": 303,
+          "pct": 13.6
+        },
+        {
+          "key": "Struggling to pay mortgage",
+          "count": 185,
+          "pct": 8.3
+        },
+        {
+          "key": "Loan modification,collection,foreclosure",
+          "count": 162,
+          "pct": 7.3
+        }
+      ],
+      "timelyYes": 2220,
+      "timelyNo": 3,
+      "companyResponses": [
+        {
+          "key": "Closed with explanation",
+          "count": 1752,
+          "pct": 78.8
+        },
+        {
+          "key": "Closed with non-monetary relief",
+          "count": 201,
+          "pct": 9
+        },
+        {
+          "key": "Closed with monetary relief",
+          "count": 198,
+          "pct": 8.9
+        },
+        {
+          "key": "In progress",
+          "count": 41,
+          "pct": 1.8
+        },
+        {
+          "key": "Closed without relief",
+          "count": 17,
+          "pct": 0.8
+        }
+      ],
+      "fetchedAt": "2026-08-09T23:41:32.290Z"
+    },
+    {
+      "company": "PARAMOUNT RESIDENTIAL MORTGAGE GROUP",
+      "product": "Mortgage",
+      "totalComplaints": 231,
+      "complaintsLast24Months": 35,
+      "topIssues": [
+        {
+          "key": "Trouble during payment process",
+          "count": 87,
+          "pct": 37.7
+        },
+        {
+          "key": "Closing on a mortgage",
+          "count": 46,
+          "pct": 19.9
+        },
+        {
+          "key": "Struggling to pay mortgage",
+          "count": 30,
+          "pct": 13
+        },
+        {
+          "key": "Applying for a mortgage or refinancing an existing mortgage",
+          "count": 27,
+          "pct": 11.7
+        },
+        {
+          "key": "Application, originator, mortgage broker",
+          "count": 9,
+          "pct": 3.9
+        }
+      ],
+      "timelyYes": 218,
+      "timelyNo": 13,
+      "companyResponses": [
+        {
+          "key": "Closed with explanation",
+          "count": 197,
+          "pct": 85.3
+        },
+        {
+          "key": "Closed with monetary relief",
+          "count": 24,
+          "pct": 10.4
+        },
+        {
+          "key": "Closed",
+          "count": 6,
+          "pct": 2.6
+        },
+        {
+          "key": "Closed with non-monetary relief",
+          "count": 4,
+          "pct": 1.7
+        }
+      ],
+      "fetchedAt": "2026-08-09T23:41:35.289Z"
     },
     {
       "company": "PENNYMAC LOAN SERVICES, LLC.",
@@ -1383,7 +1862,70 @@
           "pct": 0.1
         }
       ],
-      "fetchedAt": "2026-08-09T23:35:00.439Z"
+      "fetchedAt": "2026-08-09T23:41:36.135Z"
+    },
+    {
+      "company": "PENTAGON FEDERAL CREDIT UNION",
+      "product": "Mortgage",
+      "totalComplaints": 823,
+      "complaintsLast24Months": 108,
+      "topIssues": [
+        {
+          "key": "Trouble during payment process",
+          "count": 275,
+          "pct": 33.4
+        },
+        {
+          "key": "Applying for a mortgage or refinancing an existing mortgage",
+          "count": 199,
+          "pct": 24.2
+        },
+        {
+          "key": "Closing on a mortgage",
+          "count": 105,
+          "pct": 12.8
+        },
+        {
+          "key": "Application, originator, mortgage broker",
+          "count": 74,
+          "pct": 9
+        },
+        {
+          "key": "Loan servicing, payments, escrow account",
+          "count": 45,
+          "pct": 5.5
+        }
+      ],
+      "timelyYes": 818,
+      "timelyNo": 5,
+      "companyResponses": [
+        {
+          "key": "Closed with explanation",
+          "count": 580,
+          "pct": 70.5
+        },
+        {
+          "key": "Closed with monetary relief",
+          "count": 133,
+          "pct": 16.2
+        },
+        {
+          "key": "Closed with non-monetary relief",
+          "count": 99,
+          "pct": 12
+        },
+        {
+          "key": "Closed without relief",
+          "count": 7,
+          "pct": 0.9
+        },
+        {
+          "key": "Closed with relief",
+          "count": 3,
+          "pct": 0.4
+        }
+      ],
+      "fetchedAt": "2026-08-09T23:41:38.957Z"
     },
     {
       "company": "PNC Bank N.A.",
@@ -1446,7 +1988,123 @@
           "pct": 2.1
         }
       ],
-      "fetchedAt": "2026-08-09T23:35:03.633Z"
+      "fetchedAt": "2026-08-09T23:41:39.803Z"
+    },
+    {
+      "company": "PRIMARY RESIDENTIAL MORTGAGE",
+      "product": "Mortgage",
+      "totalComplaints": 239,
+      "complaintsLast24Months": 23,
+      "topIssues": [
+        {
+          "key": "Trouble during payment process",
+          "count": 92,
+          "pct": 38.5
+        },
+        {
+          "key": "Applying for a mortgage or refinancing an existing mortgage",
+          "count": 36,
+          "pct": 15.1
+        },
+        {
+          "key": "Struggling to pay mortgage",
+          "count": 27,
+          "pct": 11.3
+        },
+        {
+          "key": "Application, originator, mortgage broker",
+          "count": 26,
+          "pct": 10.9
+        },
+        {
+          "key": "Closing on a mortgage",
+          "count": 25,
+          "pct": 10.5
+        }
+      ],
+      "timelyYes": 224,
+      "timelyNo": 15,
+      "companyResponses": [
+        {
+          "key": "Closed with explanation",
+          "count": 214,
+          "pct": 89.5
+        },
+        {
+          "key": "Closed with monetary relief",
+          "count": 19,
+          "pct": 7.9
+        },
+        {
+          "key": "Closed with non-monetary relief",
+          "count": 5,
+          "pct": 2.1
+        },
+        {
+          "key": "In progress",
+          "count": 1,
+          "pct": 0.4
+        }
+      ],
+      "fetchedAt": "2026-08-09T23:41:42.433Z"
+    },
+    {
+      "company": "PRIMELENDING, A PLAINSCAPITAL COMPANY",
+      "product": "Mortgage",
+      "totalComplaints": 202,
+      "complaintsLast24Months": 0,
+      "topIssues": [
+        {
+          "key": "Application, originator, mortgage broker",
+          "count": 51,
+          "pct": 25.2
+        },
+        {
+          "key": "Trouble during payment process",
+          "count": 35,
+          "pct": 17.3
+        },
+        {
+          "key": "Loan servicing, payments, escrow account",
+          "count": 26,
+          "pct": 12.9
+        },
+        {
+          "key": "Applying for a mortgage or refinancing an existing mortgage",
+          "count": 24,
+          "pct": 11.9
+        },
+        {
+          "key": "Closing on a mortgage",
+          "count": 21,
+          "pct": 10.4
+        }
+      ],
+      "timelyYes": 200,
+      "timelyNo": 2,
+      "companyResponses": [
+        {
+          "key": "Closed with explanation",
+          "count": 186,
+          "pct": 92.1
+        },
+        {
+          "key": "Closed with monetary relief",
+          "count": 14,
+          "pct": 6.9
+        },
+        {
+          "key": "Closed",
+          "count": 1,
+          "pct": 0.5
+        },
+        {
+          "key": "Untimely response",
+          "count": 1,
+          "pct": 0.5
+        }
+      ],
+      "fetchedAt": "2026-08-09T23:41:44.661Z"
     },
     {
       "company": "REGIONS FINANCIAL CORPORATION",
@@ -1509,7 +2167,7 @@
           "pct": 2.5
         }
       ],
-      "fetchedAt": "2026-08-09T23:35:08.245Z"
+      "fetchedAt": "2026-08-09T23:41:45.494Z"
     },
     {
       "company": "Rocket Mortgage, LLC",
@@ -1572,7 +2230,7 @@
           "pct": 0.3
         }
       ],
-      "fetchedAt": "2026-08-09T23:35:09.106Z"
+      "fetchedAt": "2026-08-09T23:41:46.316Z"
     },
     {
       "company": "Shellpoint Partners, LLC",
@@ -1635,7 +2293,7 @@
           "pct": 0.4
         }
       ],
-      "fetchedAt": "2026-08-09T23:35:09.934Z"
+      "fetchedAt": "2026-08-09T23:41:47.143Z"
     },
     {
       "company": "SoFi Mortgage, LLC",
@@ -1668,7 +2326,7 @@
           "pct": 100
         }
       ],
-      "fetchedAt": "2026-08-09T23:35:12.218Z"
+      "fetchedAt": "2026-08-09T23:41:47.972Z"
     },
     {
       "company": "SOFI TECHNOLOGIES, INC.",
@@ -1721,7 +2379,7 @@
           "pct": 4
         }
       ],
-      "fetchedAt": "2026-08-09T23:35:15.244Z"
+      "fetchedAt": "2026-08-09T23:41:49.095Z"
     },
     {
       "company": "SOUTHSTATE BANK CORPORATION",
@@ -1774,7 +2432,7 @@
           "pct": 5.6
         }
       ],
-      "fetchedAt": "2026-08-09T23:35:18.072Z"
+      "fetchedAt": "2026-08-09T23:41:49.921Z"
     },
     {
       "company": "SUNCOAST CREDIT UNION",
@@ -1817,7 +2475,7 @@
           "pct": 100
         }
       ],
-      "fetchedAt": "2026-08-09T23:35:20.837Z"
+      "fetchedAt": "2026-08-09T23:41:50.748Z"
     },
     {
       "company": "SUNTRUST BANKS, INC.",
@@ -1880,7 +2538,7 @@
           "pct": 3.4
         }
       ],
-      "fetchedAt": "2026-08-09T23:35:23.024Z"
+      "fetchedAt": "2026-08-09T23:41:51.575Z"
     },
     {
       "company": "TD BANK US HOLDING COMPANY",
@@ -1943,7 +2601,7 @@
           "pct": 0.6
         }
       ],
-      "fetchedAt": "2026-08-09T23:35:26.013Z"
+      "fetchedAt": "2026-08-09T23:41:52.393Z"
     },
     {
       "company": "TRUIST FINANCIAL CORPORATION",
@@ -2001,7 +2659,7 @@
           "pct": 0.4
         }
       ],
-      "fetchedAt": "2026-08-09T23:35:29.168Z"
+      "fetchedAt": "2026-08-09T23:41:53.225Z"
     },
     {
       "company": "U.S. BANCORP",
@@ -2064,7 +2722,7 @@
           "pct": 0.5
         }
       ],
-      "fetchedAt": "2026-08-09T23:35:32.078Z"
+      "fetchedAt": "2026-08-09T23:41:54.048Z"
     },
     {
       "company": "UNITED SERVICES AUTOMOBILE ASSOCIATION",
@@ -2127,7 +2785,7 @@
           "pct": 0.3
         }
       ],
-      "fetchedAt": "2026-08-09T23:35:35.167Z"
+      "fetchedAt": "2026-08-09T23:41:54.875Z"
     },
     {
       "company": "United Shore Financial Services, LLC",
@@ -2190,7 +2848,7 @@
           "pct": 0.1
         }
       ],
-      "fetchedAt": "2026-08-09T23:35:36.008Z"
+      "fetchedAt": "2026-08-09T23:41:55.701Z"
     },
     {
       "company": "WELLS FARGO & COMPANY",
@@ -2253,7 +2911,7 @@
           "pct": 0.1
         }
       ],
-      "fetchedAt": "2026-08-09T23:35:36.887Z"
+      "fetchedAt": "2026-08-09T23:41:56.572Z"
     }
   ]
 }

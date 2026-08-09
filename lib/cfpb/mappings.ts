@@ -239,6 +239,84 @@ export const CFPB_COMPANY_MAPPINGS: CfpbCompanyMapping[] = [
     matchMethod: 'curated-exact',
     matchNote: 'Matched to CFPB company name “21ST MORTGAGE CORP.”.',
   },
+  // ── Expansion wave 3 (2026-08) — directory branch/company slugs + confirmed exact CCDB names ──
+  {
+    ourLenderSlug: 'movement-mortgage-myrtle-beach',
+    cfpbCompanyNames: ['Movement Mortgage LLC'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB company name “Movement Mortgage LLC” (no comma). Directory slug is a regional branch listing of the same NMLS company.',
+  },
+  {
+    ourLenderSlug: 'navy-federal-jacksonville',
+    cfpbCompanyNames: ['NAVY FEDERAL CREDIT UNION'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB company name “NAVY FEDERAL CREDIT UNION”. Directory slug is a regional listing of the national credit union.',
+  },
+  {
+    ourLenderSlug: 'penfed-dc-mid-city',
+    cfpbCompanyNames: ['PENTAGON FEDERAL CREDIT UNION'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB company name “PENTAGON FEDERAL CREDIT UNION” (PenFed). Directory slug is a regional listing.',
+  },
+  {
+    ourLenderSlug: 'primelending-columbus',
+    cfpbCompanyNames: ['PRIMELENDING, A PLAINSCAPITAL COMPANY'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB company name “PRIMELENDING, A PLAINSCAPITAL COMPANY”. Directory slug is a regional team listing.',
+  },
+  {
+    ourLenderSlug: 'fairway-mortgage-augusta-sheppard',
+    cfpbCompanyNames: ['Fairway Independent Mortgage Corporation'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB company name “Fairway Independent Mortgage Corporation”. Directory slug is a branch/team listing of the company NMLS.',
+  },
+  {
+    ourLenderSlug: 'guild-mortgage-west-valley',
+    cfpbCompanyNames: ['Guild Holdings Company'],
+    matchMethod: 'curated-dba',
+    matchNote:
+      'Guild Mortgage activity publishes under parent “Guild Holdings Company” in CCDB (not “Guild Mortgage Company”). Directory slug is a regional branch listing.',
+  },
+  {
+    ourLenderSlug: 'crosscountry-mortgage-west-valley',
+    cfpbCompanyNames: ['CrossCountry Mortgage LLC'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB company name “CrossCountry Mortgage LLC” (no comma). Directory slug is a regional branch listing.',
+  },
+  {
+    ourLenderSlug: 'prmg',
+    cfpbCompanyNames: ['PARAMOUNT RESIDENTIAL MORTGAGE GROUP'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB company name “PARAMOUNT RESIDENTIAL MORTGAGE GROUP” (no “, Inc.” suffix in CCDB).',
+  },
+  {
+    ourLenderSlug: 'dhi-mortgage-buckeye',
+    cfpbCompanyNames: ['DHI Mortgage Company'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB company name “DHI Mortgage Company”. Directory slug is a regional listing of D.R. Horton’s captive lender.',
+  },
+  {
+    ourLenderSlug: 'cmg-home-loans-dennis-vo',
+    cfpbCompanyNames: ['CMG Financial Services, Inc.'],
+    matchMethod: 'curated-dba',
+    matchNote:
+      'CMG Home Loans / CMG Mortgage brand activity publishes under “CMG Financial Services, Inc.” in CCDB. Directory slug is a team listing under CMG.',
+  },
+  {
+    ourLenderSlug: 'prmi-aaron-swenson',
+    cfpbCompanyNames: ['PRIMARY RESIDENTIAL MORTGAGE'],
+    matchMethod: 'curated-exact',
+    matchNote:
+      'Matched to CFPB company name “PRIMARY RESIDENTIAL MORTGAGE” (no “, Inc.” in CCDB). Directory slug is a branch listing of PRMI.',
+  },
 ];
 
 const bySlug = new Map(CFPB_COMPANY_MAPPINGS.map((m) => [m.ourLenderSlug, m]));
