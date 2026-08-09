@@ -14,6 +14,8 @@
     "validate:env:strict": "tsx scripts/validate-env.ts --strict",
     "seed": "tsx scripts/seed-lenders.ts",
     "cfpb:fetch": "tsx scripts/fetch-cfpb-complaints.ts",
+    "audit:phase0-catalog": "tsx scripts/audit-phase0-catalog.ts",
+    "check:phase0": "node scripts/check-lender-phase0-integrity.mjs",
     "supabase:types": "supabase gen types typescript --linked > types/supabase.ts"
   },
   "dependencies": {

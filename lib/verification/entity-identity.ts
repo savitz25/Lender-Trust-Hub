@@ -16,6 +16,111 @@ export function lenderEntityKey(lender: Pick<Lender, 'nmlsId' | 'id' | 'slug'>):
 }
 
 /**
+ * Normalize a display name to a core company key so branch suffixes do not
+ * create false NMLS conflicts (e.g. "Guild Mortgage (Tampa)" ≈ "Guild Mortgage").
+ */
+export function coreCompanyName(name: string): string {
+  let s = (name || '').toLowerCase().trim();
+  // Drop parenthetical / em-dash / en-dash market suffixes
+  s = s.replace(/\s*[\(（].*$/, '');
+  s = s.replace(/\s*[—–].*$/, '');
+  // Drop trailing " - Market" style suffixes
+  s = s.replace(/\s+-\s+.*$/, '');
+  // Legal suffixes must not split HQ vs branch cores ("… Mortgage, LLC" vs "… Mortgage (Tampa)")
+  s = s.replace(
+    /[,\s]+(llc|l\.?l\.?c\.?|inc\.?|incorporated|corp\.?|corporation|ltd\.?|limited|co\.?|company|lp|l\.p\.|pllc|pc)\.?$/i,
+    ''
+  );
+  // Optional brand tail: "Home Loans" / "Mortgage Company" kept; strip trailing "independents"
+  s = s.replace(/\s+independents?$/i, '');
+  s = s.replace(/[^a-z0-9\s]/g, ' ');
+  s = s.replace(/\s+/g, ' ').trim();
+  // Collapse common brand variants
+  s = s.replace(/\bhome loans\b/g, 'home loans');
+  // "Veterans United Home Loans" ≈ "Veterans United"
+  if (s.endsWith(' home loans')) {
+    const base = s.slice(0, -' home loans'.length).trim();
+    if (base.split(' ').length >= 2) s = base;
+  }
+  return s;
+}
+
+function canonicalPreference(row: Lender): number {
+  let score = 0;
+  if (row.id?.startsWith('nat-')) score += 100;
+  if (row.specialties?.some((s) => /hmda/i.test(s))) score += 50;
+  if (row.website?.trim()) score += 5;
+  if (row.nmlsVerified) score += 3;
+  // Prefer shorter brand names over long "Specialists (...)" placeholders
+  score += Math.max(0, 40 - (row.name?.length ?? 40));
+  return score;
+}
+
+/**
+ * When the same NMLS ID is claimed by listings with *different* core company names,
+ * keep NMLS only on the winning company family and clear it on the rest.
+ *
+ * Prevents seed/placeholder reuse (e.g. shared synthetic IDs across unrelated
+ * "local specialist" rows) from merging Research Scores and entity counts.
+ * Branch clones of the same brand keep their NMLS.
+ */
+export function resolveNmlsIdentityConflicts<T extends Lender>(rows: T[]): T[] {
+  const byNmls = new Map<string, T[]>();
+  for (const row of rows) {
+    const nmls = cleanNmlsId(row.nmlsId);
+    if (!nmls) continue;
+    const list = byNmls.get(nmls);
+    if (list) list.push(row);
+    else byNmls.set(nmls, [row]);
+  }
+
+  const clearRowKeys = new Set<string>();
+
+  for (const group of byNmls.values()) {
+    if (group.length < 2) continue;
+
+    const byCore = new Map<string, T[]>();
+    for (const row of group) {
+      const core = coreCompanyName(row.name) || `slug:${row.slug}`;
+      const list = byCore.get(core);
+      if (list) list.push(row);
+      else byCore.set(core, [row]);
+    }
+    if (byCore.size <= 1) continue;
+
+    let winnerCore = '';
+    let winnerScore = -1;
+    for (const [core, members] of byCore) {
+      const pref = Math.max(...members.map(canonicalPreference));
+      const score = members.length * 1000 + pref;
+      if (score > winnerScore) {
+        winnerScore = score;
+        winnerCore = core;
+      }
+    }
+
+    for (const [core, members] of byCore) {
+      if (core === winnerCore) continue;
+      for (const row of members) {
+        clearRowKeys.add(row.id || row.slug);
+      }
+    }
+  }
+
+  if (clearRowKeys.size === 0) return rows;
+
+  return rows.map((row) => {
+    const key = row.id || row.slug;
+    if (!clearRowKeys.has(key)) return row;
+    return {
+      ...row,
+      nmlsId: '',
+      nmlsVerified: false,
+    };
+  });
+}
+
+/**
  * Prefer the richest / most local-looking row as the canonical profile for an entity.
  * Higher trust, then more reviews, then shorter slug (stable).
  */

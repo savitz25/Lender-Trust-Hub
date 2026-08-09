@@ -27,11 +27,13 @@ export {
 
 export {
   applyEntityTrustScores,
+  coreCompanyName,
   dedupeLendersByEntity,
   getCanonicalSlugForEntity,
   isCanonicalLenderProfile,
   lenderEntityKey,
   pickCanonicalLender,
+  resolveNmlsIdentityConflicts,
 } from '@/lib/verification/entity-identity';
 
 export {

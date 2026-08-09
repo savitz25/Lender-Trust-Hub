@@ -82,12 +82,13 @@ export const SOUTH_CAROLINA_LENDERS: Lender[] = [
     website: 'https://silvertonmortgage.com/greenville', phone: '(864) 555-4101',
   },
   {
-    id: 'sc-08', slug: 'fairway-mortgage-upstate', name: 'Fairway Independent Mortgage — Upstate', nmlsId: '2289', type: 'Lender',
+    // NMLS cleared: 2289 is Newrez on this catalog (HMDA national row). Do not share entity identity.
+    id: 'sc-08', slug: 'fairway-mortgage-upstate', name: 'Fairway Independent Mortgage — Upstate', nmlsId: '', type: 'Lender',
     city: 'Greenville', state: 'South Carolina', stateSlug: 'south-carolina', county: 'Greenville', countySlug: 'greenville',
     zipCodes: ['29601', '29615', '29607'], rating: 4.9, reviewCount: 340, trustScore: 94, countyExperienceScore: 95,
     nationalVolumeRank: 28, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
     specialties: ['Tech Workforce', 'First-Time Buyers', 'High Purchase Volume'],
-    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A+',
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: false, cfpbComplaints: 2, bbbRating: 'A+',
     googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 27, onTimeCloseRate: 96,
     shortDescription: 'Upstate Fairway — digital-first apps and VA/conventional for Greenville tech and manufacturing professionals.',
     website: 'https://fairway.com', phone: '(864) 555-4102',

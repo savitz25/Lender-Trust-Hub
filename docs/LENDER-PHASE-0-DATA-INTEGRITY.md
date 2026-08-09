@@ -78,14 +78,25 @@ node scripts/check-lender-phase0-integrity.mjs
 
 ---
 
+## 8. Final hygiene pass (2026-08)
+
+| Mechanism | Location |
+|-----------|----------|
+| NMLS identity conflict resolve | `resolveNmlsIdentityConflicts` in `entity-identity.ts` |
+| Zero unsourced CFPB catalog field | `stripUnsourcedReputation` in `sanitize-lender.ts` |
+| Runtime audit | `npm run audit:phase0-catalog` |
+
+See `docs/LENDER-PHASE-0-FINAL-HYGIENE.md` for findings, remaining gaps, and panel confirmation.
+
 ## Remaining data limitations / manual follow-ups
 
 1. **Real NMLS backfill** for listings that lost placeholder IDs (confirm on NMLS Consumer Access).
 2. **Real phone numbers** — do not reintroduce 555 patterns; prefer blank until confirmed.
 3. **Geo-variant URL consolidation** — non-canonical profiles are noindex; add 301s to canonical NMLS entity when consolidating public URLs.
 4. **Closing-performance dataset** — only re-enable with full provenance.
-5. **Seed ratings / review counts** — still present as soft directory signals; continue enrichment for observed provenance; do not merge third-party reviews into first-party review schema.
-6. **Do not expand counties / Credit Repair / MCA** in this phase.
+5. **Seed ratings / review counts** — stripped at sanitize; continue enrichment for observed provenance only.
+6. **Catalog CFPB counts** — stripped at sanitize; use CFPB evidence panel / CCDB snapshot for display.
+7. **Do not expand counties / Credit Repair / MCA** without real company identity.
 
 ## Research-only positioning
 

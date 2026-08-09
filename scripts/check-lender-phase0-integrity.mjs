@@ -28,10 +28,14 @@ ok('closing performance suppressed without provenance', perf.includes('NO_CLOSIN
 const sanitize = read('lib/verification/sanitize-lender.ts');
 ok('sanitizeLender wires NMLS + phone + close', sanitize.includes('sanitizeLender'));
 ok('finalizeLenderCatalog applies entity trust', sanitize.includes('applyEntityTrustScores'));
+ok('finalize resolves NMLS conflicts', sanitize.includes('resolveNmlsIdentityConflicts'));
+ok('unsourced CFPB catalog counts stripped', sanitize.includes('cfpbComplaints: 0'));
 
 const entity = read('lib/verification/entity-identity.ts');
 ok('entity key by NMLS', entity.includes('nmls:'));
 ok('dedupe by entity', entity.includes('dedupeLendersByEntity'));
+ok('NMLS identity conflict resolver', entity.includes('resolveNmlsIdentityConflicts'));
+ok('core company name normalizer', entity.includes('coreCompanyName'));
 
 const mock = read('lib/mockData.ts');
 ok('catalog finalized through sanitize', mock.includes('finalizeLenderCatalog'));
@@ -41,6 +45,12 @@ ok('no invented 2.8M reviews', !mock.includes('2_800_000'));
 
 const fl = read('lib/mortgage/floridaLenders.ts');
 ok('SEE-NMLS removed from FL source', !fl.includes("nmlsId: 'SEE-NMLS'") && !fl.includes('nmlsId: "SEE-NMLS"'));
+
+const sc = read('lib/mortgage/southCarolinaLenders.ts');
+ok(
+  'Fairway upstate does not share Newrez NMLS 2289',
+  !/fairway-mortgage-upstate[\s\S]{0,120}nmlsId:\s*['"]2289['"]/.test(sc)
+);
 
 const card = read('components/LenderCard.tsx');
 ok('card uses NmlsVerificationBadge', card.includes('NmlsVerificationBadge'));

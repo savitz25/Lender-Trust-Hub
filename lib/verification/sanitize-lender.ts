@@ -11,24 +11,27 @@ import { resolveNmlsVerification } from '@/lib/verification/nmls';
 import {
   applyEntityTrustScores,
   dedupeLendersByEntity,
+  resolveNmlsIdentityConflicts,
 } from '@/lib/verification/entity-identity';
 import { applyResearchScoreToLender } from '@/lib/research/research-signals';
 import { deriveLenderHomeLocality } from '@/lib/geo/home-locality';
 
 /**
- * Phase 0 hygiene: catalog seed ratings/reviews are not independently sourced.
+ * Phase 0 hygiene: catalog seed ratings/reviews/CFPB counts are not independently sourced.
  * Zero them so Research Score cannot treat editorial placeholders as evidence.
+ * Live CFPB evidence panels use the CCDB snapshot, not this catalog field.
  * When a real attributed review pipeline is wired, pass provenance and restore.
  */
 function stripUnsourcedReputation(raw: Lender): Pick<
   Lender,
-  'rating' | 'reviewCount' | 'googleRating' | 'trustpilotRating'
+  'rating' | 'reviewCount' | 'googleRating' | 'trustpilotRating' | 'cfpbComplaints'
 > {
   return {
     rating: 0,
     reviewCount: 0,
     googleRating: 0,
     trustpilotRating: 0,
+    cfpbComplaints: 0,
   };
 }
 
@@ -81,10 +84,13 @@ export function sanitizeLender(raw: Lender): Lender {
 }
 
 /**
- * Sanitize every row, recompute research scores, align entity-level scores by NMLS.
+ * Sanitize every row, resolve NMLS identity conflicts, recompute research scores,
+ * align entity-level scores by NMLS.
  */
 export function finalizeLenderCatalog(raw: Lender[]): Lender[] {
-  const sanitized = raw.map(sanitizeLender);
+  // Resolve shared-NMLS collisions on raw rows first so sanitize sees clean IDs.
+  const deconflicted = resolveNmlsIdentityConflicts(raw);
+  const sanitized = deconflicted.map(sanitizeLender);
   return applyEntityTrustScores(sanitized);
 }
 
