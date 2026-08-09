@@ -44,7 +44,7 @@ export default async function CompareLoanEstimatesPage({
   }>;
 }) {
   const sp = await searchParams;
-  const bootstrap = buildAnalyzerBootstrap();
+  const bootstrap = await buildAnalyzerBootstrap();
 
   const initialA: Partial<LoanEstimateInputs> = {};
   if (sp.lender && bootstrap.lenderContextBySlug[sp.lender]) {

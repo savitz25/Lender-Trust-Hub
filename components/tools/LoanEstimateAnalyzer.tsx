@@ -27,6 +27,7 @@ import type {
   LoanEstimateLoanType,
 } from '@/lib/tools/loan-estimate-analyzer/types';
 import type { AnalyzerBootstrap } from '@/lib/tools/loan-estimate-analyzer/serialize-context';
+import { FredRateContextPanel } from '@/components/rates/FredRateContextPanel';
 import { formatCurrency, cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 
@@ -444,6 +445,12 @@ export function LoanEstimateAnalyzer({
                 Marker = your origination % of loan. Colors are educational bands, not HMDA percentiles.
               </p>
             </div>
+
+            {/* FRED national rate context */}
+            <FredRateContextPanel
+              benchmarks={bootstrap.mortgageBenchmarks}
+              userRate={inputs.interestRate > 0 ? inputs.interestRate : null}
+            />
 
             {/* Rate / APR */}
             {analysis.rateAprNote && (

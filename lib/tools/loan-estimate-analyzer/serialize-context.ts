@@ -1,4 +1,6 @@
 import { getHmdaCountyEvidence, getHmdaLenderEvidenceBySlug } from '@/lib/hmda';
+import type { FredMortgageBenchmarks } from '@/lib/fred';
+import { getFredMortgageBenchmarks } from '@/lib/fred/server';
 import type { HmdaAnalyzerCountyContext, HmdaAnalyzerLenderContext } from './types';
 import {
   getAnalyzerCountyOptions,
@@ -49,10 +51,12 @@ export type AnalyzerBootstrap = {
   counties: AnalyzerCountyOption[];
   lenderContextBySlug: Record<string, HmdaAnalyzerLenderContext>;
   countyContextBySlug: Record<string, HmdaAnalyzerCountyContext>;
+  /** National mortgage rate benchmarks (FRED) — null payload still includes unavailable flags */
+  mortgageBenchmarks: FredMortgageBenchmarks;
 };
 
-/** Server-only: serialize all HMDA context the client analyzer needs. */
-export function buildAnalyzerBootstrap(): AnalyzerBootstrap {
+/** Server-only: serialize HMDA + FRED context the client tools need. */
+export async function buildAnalyzerBootstrap(): Promise<AnalyzerBootstrap> {
   const lenders = getAnalyzerLenderOptions();
   const counties = getAnalyzerCountyOptions();
   const lenderContextBySlug: Record<string, HmdaAnalyzerLenderContext> = {};
@@ -70,5 +74,13 @@ export function buildAnalyzerBootstrap(): AnalyzerBootstrap {
     if (ctx) countyContextBySlug[c.slug] = ctx;
   }
 
-  return { lenders, counties, lenderContextBySlug, countyContextBySlug };
+  const mortgageBenchmarks = await getFredMortgageBenchmarks();
+
+  return {
+    lenders,
+    counties,
+    lenderContextBySlug,
+    countyContextBySlug,
+    mortgageBenchmarks,
+  };
 }

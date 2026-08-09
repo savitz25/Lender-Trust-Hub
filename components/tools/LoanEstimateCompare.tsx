@@ -23,6 +23,7 @@ import {
 import { emptyLoanEstimateInputs } from '@/lib/tools/loan-estimate-analyzer/defaults';
 import type { LoanEstimateInputs, LoanEstimateLoanType } from '@/lib/tools/loan-estimate-analyzer/types';
 import type { AnalyzerBootstrap } from '@/lib/tools/loan-estimate-analyzer/serialize-context';
+import { FredRateContextPanel } from '@/components/rates/FredRateContextPanel';
 import { cn, formatCurrency } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 
@@ -573,6 +574,12 @@ function ComparisonResults({
           <p className="mt-3 text-sm text-zinc-500">Enter different figures to see callouts.</p>
         )}
       </section>
+
+      {/* Shared national rate benchmark (FRED) — not a per-offer winner */}
+      <FredRateContextPanel
+        benchmarks={bootstrap.mortgageBenchmarks}
+        compact
+      />
 
       {/* Desktop comparison matrix */}
       <section className="hidden lg:block" aria-labelledby="compare-matrix-heading">

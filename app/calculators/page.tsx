@@ -6,6 +6,8 @@ import { TrustBar } from '@/components/TrustBar';
 import { SearchBar } from '@/components/SearchBar';
 import { NetworkBelongingLine } from '@/components/network/network-belonging-line';
 import { NetworkHandoff } from '@/components/network/network-handoff';
+import { FredRateBenchmarkStrip } from '@/components/rates/FredRateContextPanel';
+import { getFredMortgageBenchmarks } from '@/lib/fred/server';
 import { calculatorsPageSchema } from '@/lib/seo/calculators';
 import { CALC_DISCLAIMER } from '@/lib/calculators/registry';
 
@@ -46,7 +48,9 @@ const FAQ = [
  },
 ];
 
-export default function CalculatorsPage() {
+export default async function CalculatorsPage() {
+ const mortgageBenchmarks = await getFredMortgageBenchmarks();
+
  return (
  <>
  <JsonLd data={calculatorsPageSchema()} />
@@ -81,6 +85,9 @@ export default function CalculatorsPage() {
  </Link>
  </div>
  <p className="mt-3 text-center text-xs text-zinc-500">No phone number required</p>
+ <div className="mx-auto mt-6 max-w-xl text-left">
+ <FredRateBenchmarkStrip benchmarks={mortgageBenchmarks} />
+ </div>
  <div className="mt-8">
  <SearchBar className="mx-auto max-w-lg" />
  </div>

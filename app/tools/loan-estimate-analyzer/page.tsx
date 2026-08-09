@@ -34,6 +34,10 @@ const FAQ = [
     q: 'Do I need to create an account?',
     a: 'No. Results are available immediately with no phone number or lead form required.',
   },
+  {
+    q: 'What is the national mortgage rate shown next to my interest rate?',
+    a: 'It is the Freddie Mac Primary Mortgage Market Survey average (30-year fixed), distributed via FRED. It is a research benchmark for context only — not a rate you are offered and not advice to accept or reject a Loan Estimate.',
+  },
 ];
 
 export default async function LoanEstimateAnalyzerPage({
@@ -42,7 +46,7 @@ export default async function LoanEstimateAnalyzerPage({
   searchParams: Promise<{ lender?: string; county?: string }>;
 }) {
   const sp = await searchParams;
-  const bootstrap = buildAnalyzerBootstrap();
+  const bootstrap = await buildAnalyzerBootstrap();
   const initialLenderSlug =
     sp.lender && bootstrap.lenderContextBySlug[sp.lender] ? sp.lender : '';
   const initialCountySlug =
