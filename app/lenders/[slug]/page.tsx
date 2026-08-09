@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { MatchLenderButton } from '@/components/MatchLenderButton';
 import { SaveLenderButton } from '@/components/my-lending/save-lender-button';
 import { RelatedDirectoryLinks } from '@/components/directory/RelatedDirectoryLinks';
+import { LoanEstimateToolsCta } from '@/components/tools/LoanEstimateToolsCta';
 import { TrustMark } from '@/components/network/trust-mark';
 import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
 import { ResearchScoreDisplay } from '@/components/research/research-score-display';
@@ -236,6 +237,15 @@ export default async function LenderProfilePage({
         {hmdaEvidence && <HmdaLenderEvidencePanel evidence={hmdaEvidence} />}
 
         {cfpbEvidence && <CfpbComplaintPanel evidence={cfpbEvidence} />}
+
+        <LoanEstimateToolsCta
+          variant="profile"
+          lenderSlug={lender.slug}
+          lenderName={lender.name}
+          countySlug={
+            lender.stateSlug === 'florida' ? lender.countySlug : undefined
+          }
+        />
 
         <div className="mt-8">
           <BeforeYouReachOut

@@ -153,15 +153,23 @@ export function HmdaLenderEvidencePanel({ evidence }: { evidence: HmdaLenderEvid
         <div className="rounded-xl border border-teal-200/80 bg-white/80 p-4">
           <p className="text-sm font-semibold text-[#0A2540]">Have a Loan Estimate from this lender?</p>
           <p className="mt-1 text-xs text-zinc-600">
-            Use our free Loan Estimate Analyzer for educational fee bands plus this lender&apos;s 2025
-            Florida HMDA context — no phone number required.
+            Educational fee bands plus this lender&apos;s 2025 Florida HMDA context when available —
+            no phone number required.
           </p>
-          <Link
-            href={`/tools/loan-estimate-analyzer?lender=${encodeURIComponent(evidence.slug)}`}
-            className="mt-2 inline-flex text-sm font-semibold text-[#059669] hover:underline"
-          >
-            Open Loan Estimate Analyzer →
-          </Link>
+          <div className="mt-2 flex flex-col gap-1.5 sm:flex-row sm:flex-wrap sm:gap-x-4">
+            <Link
+              href={`/tools/loan-estimate-analyzer?lender=${encodeURIComponent(evidence.slug)}`}
+              className="inline-flex text-sm font-semibold text-[#059669] hover:underline"
+            >
+              Analyze a Loan Estimate from this lender →
+            </Link>
+            <Link
+              href={`/tools/compare-loan-estimates?lender=${encodeURIComponent(evidence.slug)}`}
+              className="inline-flex text-sm font-semibold text-[#059669] hover:underline"
+            >
+              Compare Loan Estimates →
+            </Link>
+          </div>
         </div>
 
         <HmdaSourceNote />

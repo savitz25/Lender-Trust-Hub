@@ -134,6 +134,30 @@ export function HmdaCountyMarketPanel({ evidence }: { evidence: HmdaCountyEviden
           </div>
         )}
 
+        <div className="rounded-xl border border-sky-200/80 bg-white/80 p-4">
+          <p className="text-sm font-semibold text-[#0A2540]">
+            Researching offers in {evidence.countyName} County?
+          </p>
+          <p className="mt-1 text-xs text-zinc-600">
+            Understand your Loan Estimate or compare offers side by side — free educational tools,
+            no phone number required.
+          </p>
+          <div className="mt-2 flex flex-col gap-1.5 sm:flex-row sm:flex-wrap sm:gap-x-4">
+            <Link
+              href={`/tools/loan-estimate-analyzer?county=${encodeURIComponent(evidence.countySlug)}`}
+              className="inline-flex text-sm font-semibold text-[#059669] hover:underline"
+            >
+              Analyze a Loan Estimate →
+            </Link>
+            <Link
+              href={`/tools/compare-loan-estimates?county=${encodeURIComponent(evidence.countySlug)}`}
+              className="inline-flex text-sm font-semibold text-[#059669] hover:underline"
+            >
+              Compare offers side by side →
+            </Link>
+          </div>
+        </div>
+
         <HmdaSourceNote />
       </div>
     </section>

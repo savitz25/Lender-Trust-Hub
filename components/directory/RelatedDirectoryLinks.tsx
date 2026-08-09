@@ -34,6 +34,16 @@ export function RelatedDirectoryLinks({
       href: '/calculators',
       description: 'Payment, affordability, and refinance tools',
     },
+    {
+      label: 'Loan Estimate Analyzer',
+      href: '/tools/loan-estimate-analyzer',
+      description: 'Understand your Loan Estimate — fees, points, and educational context',
+    },
+    {
+      label: 'Compare Loan Estimates',
+      href: '/tools/compare-loan-estimates',
+      description: 'See how fees and terms differ across two or three offers',
+    },
   ];
 
   return (

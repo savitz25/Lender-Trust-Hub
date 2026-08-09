@@ -18,6 +18,7 @@ import {
 } from '@/components/research/empty-coverage-panel';
 import { getHmdaCountyEvidence } from '@/lib/hmda';
 import { HmdaCountyMarketPanel } from '@/components/hmda/HmdaCountyMarketPanel';
+import { LoanEstimateToolsCta } from '@/components/tools/LoanEstimateToolsCta';
 
 function titleCase(slug: string): string {
   return slug
@@ -566,6 +567,12 @@ export default async function CountyLendersPage({
       </div>
 
       {hmdaCounty && <HmdaCountyMarketPanel evidence={hmdaCounty} />}
+
+      <LoanEstimateToolsCta
+        variant="county"
+        countySlug={state === 'florida' ? county : undefined}
+        countyName={countyName}
+      />
 
       {(quality.tier === 1 || quality.tier === 2) && (
         <CountyIntelligenceModules

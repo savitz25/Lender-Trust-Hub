@@ -3,6 +3,8 @@ import {
   ArrowRight,
   ArrowUpRight,
   Calculator,
+  Columns3,
+  FileSearch,
   GitCompare,
   MapPin,
   Scale,
@@ -26,6 +28,8 @@ const TOOL_ICONS = {
   verify: ShieldCheck,
   calculators: Calculator,
   local: MapPin,
+  'le-analyzer': FileSearch,
+  'le-compare': Columns3,
 } as const;
 
 /**
@@ -117,7 +121,10 @@ function ToolsSection() {
                 href={item.href}
                 className="group flex h-full min-h-[11rem] flex-col rounded-2xl border bg-white p-5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] focus-visible:ring-offset-2 sm:p-6"
                 style={{
-                  borderColor: LENDER_BRAND.border,
+                  borderColor:
+                    item.id === 'le-analyzer' || item.id === 'le-compare'
+                      ? '#A7F3D0'
+                      : LENDER_BRAND.border,
                   borderRadius: LENDER_RADIUS.cardLg,
                   boxShadow: LENDER_SHADOW.card,
                 }}

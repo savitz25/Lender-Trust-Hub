@@ -23,9 +23,9 @@ const CTAS = [
   },
   {
     icon: Calculator,
-    label: 'Calculators',
-    href: '/calculators',
-    copy: 'Free payment tools',
+    label: 'Loan Estimate tools',
+    href: '/tools/loan-estimate-analyzer',
+    copy: 'Understand fees · Compare offers',
   },
 ] as const;
 
@@ -41,7 +41,7 @@ export function HubCTAStrip() {
           Explore every lending vertical
         </h2>
         <p className="mx-auto mt-2 max-w-xl text-center text-sm text-zinc-600">
-          One trusted platform — banks, mortgages, auto loans, and free calculators.
+          Banks, mortgages, auto loans, and free Loan Estimate research tools — no lead forms.
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {CTAS.map((cta) => (

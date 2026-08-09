@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { CALCULATORS, type CalcId } from '@/lib/calculators/registry';
 import { trackCalcEvent } from '@/lib/analytics/calculators';
 import { CalcHubSkeleton } from '@/components/calculators/shared/CalcSkeleton';
+import { LoanEstimateToolsCta } from '@/components/tools/LoanEstimateToolsCta';
 import { cn } from '@/lib/utils';
 
 type EmbedCalcId = Exclude<CalcId, 'loan-estimate' | 'compare-loan-estimates'>;
@@ -76,6 +77,8 @@ export function CalculatorHub({ defaultCalc }: { defaultCalc?: CalcId }) {
  <div>
  {!active && (
  <section aria-label="Calculator directory">
+ <LoanEstimateToolsCta variant="hub" />
+ <p className="mb-4 text-sm font-semibold text-zinc-500">All educational calculators</p>
  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
  {CALCULATORS.map((calc) => {
  const Icon = calc.icon;

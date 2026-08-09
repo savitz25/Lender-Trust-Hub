@@ -28,7 +28,7 @@ export const metadata: Metadata = {
  openGraph: {
  title: 'Mortgage Calculators Hub | Lender Trust Hub',
  description:
- 'Transparent Tools. Trusted Guidance. Nine free interactive calculators with verified lender matching.',
+ 'Transparent Tools. Trusted Guidance. Loan Estimate Analyzer, multi-LE compare, and free calculators — no lead forms.',
  url: 'https://www.lendertrusthub.com/calculators',
  type: 'website',
  },
@@ -63,10 +63,24 @@ export default function CalculatorsPage() {
  </h1>
  <NetworkBelongingLine className="mt-3" />
  <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
- Nine professional calculators with live charts, export options, and intelligent{' '}
- <strong className="font-semibold text-[#0A2540]">Match Me to Lenders</strong>{' '}
- integration — zero paid placements, always.
+ Educational calculators plus flagship Loan Estimate tools — understand fees, compare offers
+ side by side, and match research to NMLS-oriented directory signals. Zero paid placements.
  </p>
+ <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm">
+ <Link
+ href="/tools/loan-estimate-analyzer"
+ className="inline-flex min-h-11 items-center rounded-xl bg-[#0A2540] px-4 py-2.5 font-semibold text-white hover:bg-[#0A2540]/90"
+ >
+ Understand your Loan Estimate
+ </Link>
+ <Link
+ href="/tools/compare-loan-estimates"
+ className="inline-flex min-h-11 items-center rounded-xl border border-zinc-200 bg-white px-4 py-2.5 font-semibold text-[#0A2540] hover:border-emerald-400"
+ >
+ Compare offers side by side
+ </Link>
+ </div>
+ <p className="mt-3 text-center text-xs text-zinc-500">No phone number required</p>
  <div className="mt-8">
  <SearchBar className="mx-auto max-w-lg" />
  </div>

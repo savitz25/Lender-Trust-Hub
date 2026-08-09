@@ -228,6 +228,20 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
+              href="/tools/loan-estimate-analyzer"
+              className="rounded-xl px-2 py-3 text-base font-semibold text-[#0A2540] hover:bg-[#CCFBF1]/50 hover:text-[#0D9488]"
+              onClick={() => setIsOpen(false)}
+            >
+              Loan Estimate Analyzer
+            </Link>
+            <Link
+              href="/tools/compare-loan-estimates"
+              className="rounded-xl px-2 py-3 text-base font-semibold text-[#0A2540] hover:bg-[#CCFBF1]/50 hover:text-[#0D9488]"
+              onClick={() => setIsOpen(false)}
+            >
+              Compare Loan Estimates
+            </Link>
+            <Link
               href={MORTGAGE_CATEGORY.hubPath}
               className="rounded-xl px-2 py-3 text-base font-semibold text-[#0A2540]"
               onClick={() => setIsOpen(false)}
