@@ -158,41 +158,42 @@ export function computeLenderResearchScore(lender: Lender): {
   });
   total += repPts;
 
-  // CFPB — fewer complaints = slight positive; high counts reduce (not a finding of wrongdoing)
+  // CFPB — Phase 0: catalog "0" is not a verified clean record (most seeds default to 0).
+  // Score only positive complaint counts as a soft caution; treat 0 / missing as neutral.
   const cfpb = typeof lender.cfpbComplaints === 'number' ? lender.cfpbComplaints : null;
-  let cfpbPts = 8; // neutral mid when unknown
-  if (cfpb != null) {
-    if (cfpb === 0) cfpbPts = 16;
-    else if (cfpb <= 3) cfpbPts = 12;
+  let cfpbPts = 8; // neutral mid when unknown or catalog-zero
+  let cfpbDetail = 'CFPB count not independently verified in catalog';
+  if (cfpb != null && cfpb > 0) {
+    if (cfpb <= 3) cfpbPts = 12;
     else if (cfpb <= 10) cfpbPts = 8;
     else if (cfpb <= 25) cfpbPts = 4;
     else cfpbPts = 1;
+    cfpbDetail = `${cfpb} listed complaint(s) in catalog — not size-normalized; not a finding of wrongdoing`;
+  } else if (cfpb === 0) {
+    cfpbPts = 8;
+    cfpbDetail =
+      'Catalog shows 0 complaints — treated as unverified default, not a clean bill of health';
   }
   factors.push({
     id: 'cfpb',
     label: 'CFPB complaint pattern',
     points: cfpbPts,
     maxPoints: 16,
-    detail:
-      cfpb != null
-        ? `${cfpb} listed complaint(s) in catalog — not size-normalized; not a finding of wrongdoing`
-        : 'CFPB count not on file',
+    detail: cfpbDetail,
   });
   total += cfpbPts;
 
-  // BBB grade (catalog seed — low weight)
-  let bbbPts = 0;
+  // BBB — Phase 0: seed grades are not independently sourced; do not award points.
   const bbb = (lender.bbbRating ?? '').trim();
-  if (bbb === 'A+') bbbPts = 10;
-  else if (bbb === 'A') bbbPts = 7;
-  else if (bbb === 'A-') bbbPts = 5;
-  else if (bbb.startsWith('B')) bbbPts = 2;
+  const bbbPts = 0;
   factors.push({
     id: 'bbb',
     label: 'BBB grade (catalog)',
     points: bbbPts,
     maxPoints: 12,
-    detail: bbb ? `Grade ${bbb} as listed — confirm on BBB.org` : 'BBB not on file',
+    detail: bbb
+      ? `Grade ${bbb} listed in seed data — not scored until independently sourced (confirm on BBB.org)`
+      : 'BBB not on file',
   });
   total += bbbPts;
 
