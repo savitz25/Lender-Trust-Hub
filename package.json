@@ -13,6 +13,7 @@
     "validate:env": "tsx scripts/validate-env.ts",
     "validate:env:strict": "tsx scripts/validate-env.ts --strict",
     "seed": "tsx scripts/seed-lenders.ts",
+    "cfpb:fetch": "tsx scripts/fetch-cfpb-complaints.ts",
     "supabase:types": "supabase gen types typescript --linked > types/supabase.ts"
   },
   "dependencies": {

@@ -17,6 +17,8 @@ import { NmlsVerificationBadge } from '@/components/nmls-verification-badge';
 import { computeLenderResearchSignals } from '@/lib/research/research-signals';
 import { getHmdaLenderEvidenceBySlug } from '@/lib/hmda';
 import { HmdaLenderEvidencePanel } from '@/components/hmda/HmdaLenderEvidencePanel';
+import { getCfpbComplaintEvidenceBySlug } from '@/lib/cfpb';
+import { CfpbComplaintPanel } from '@/components/cfpb/CfpbComplaintPanel';
 
 export function generateStaticParams() {
   return lenders.map((l) => ({ slug: l.slug }));
@@ -56,6 +58,7 @@ export default async function LenderProfilePage({
   });
   const signals = computeLenderResearchSignals(lender);
   const hmdaEvidence = getHmdaLenderEvidenceBySlug(lender.slug);
+  const cfpbEvidence = getCfpbComplaintEvidenceBySlug(lender.slug);
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -231,6 +234,8 @@ export default async function LenderProfilePage({
         </div>
 
         {hmdaEvidence && <HmdaLenderEvidencePanel evidence={hmdaEvidence} />}
+
+        {cfpbEvidence && <CfpbComplaintPanel evidence={cfpbEvidence} />}
 
         <div className="mt-8">
           <BeforeYouReachOut
