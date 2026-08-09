@@ -15,6 +15,7 @@ import { PENNSYLVANIA_LENDERS } from '@/lib/mortgage/pennsylvaniaLenders';
 import { ILLINOIS_LENDERS } from '@/lib/mortgage/illinoisLenders';
 import { MICHIGAN_LENDERS } from '@/lib/mortgage/michiganLenders';
 import { NEW_JERSEY_LENDERS } from '@/lib/mortgage/newJerseyLenders';
+import { NATIONAL_HMDA_LENDERS } from '@/lib/mortgage/nationalHmdaLenders';
 import { countLenderCatalog } from '@/lib/verification/counts';
 import { finalizeLenderCatalog } from '@/lib/verification/sanitize-lender';
 
@@ -219,6 +220,7 @@ const NATIONAL_LENDERS: Lender[] = [
 ];
 
 const RAW_LENDERS: Lender[] = [
+  ...NATIONAL_HMDA_LENDERS,
   ...NATIONAL_LENDERS,
   ...FLORIDA_LENDERS,
   ...GEORGIA_LENDERS,
