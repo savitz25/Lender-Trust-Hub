@@ -15,6 +15,8 @@ import { deriveLenderHomeLocality, homeLocalityLine } from '@/lib/geo';
 import { resolveNmlsVerification } from '@/lib/verification';
 import { NmlsVerificationBadge } from '@/components/nmls-verification-badge';
 import { computeLenderResearchSignals } from '@/lib/research/research-signals';
+import { getHmdaLenderEvidenceBySlug } from '@/lib/hmda';
+import { HmdaLenderEvidencePanel } from '@/components/hmda/HmdaLenderEvidencePanel';
 
 export function generateStaticParams() {
   return lenders.map((l) => ({ slug: l.slug }));
@@ -53,6 +55,7 @@ export default async function LenderProfilePage({
     nmlsVerified: lender.nmlsVerified,
   });
   const signals = computeLenderResearchSignals(lender);
+  const hmdaEvidence = getHmdaLenderEvidenceBySlug(lender.slug);
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -226,6 +229,8 @@ export default async function LenderProfilePage({
             />
           </div>
         </div>
+
+        {hmdaEvidence && <HmdaLenderEvidencePanel evidence={hmdaEvidence} />}
 
         <div className="mt-8">
           <BeforeYouReachOut

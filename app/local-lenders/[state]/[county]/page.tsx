@@ -16,6 +16,8 @@ import {
   NMLS_CONSUMER_ACCESS_URL,
   CFPB_HOME_URL,
 } from '@/components/research/empty-coverage-panel';
+import { getHmdaCountyEvidence } from '@/lib/hmda';
+import { HmdaCountyMarketPanel } from '@/components/hmda/HmdaCountyMarketPanel';
 
 function titleCase(slug: string): string {
   return slug
@@ -518,6 +520,7 @@ export default async function CountyLendersPage({
   const segments = getCountyLenderSegments(state, county, countyLabel);
   const { inCounty, nearby, inCountyCount, nearbyCount, localScarcity } = segments;
   const quality = assessCountyForPage(state, county);
+  const hmdaCounty = getHmdaCountyEvidence(state, county);
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -561,6 +564,8 @@ export default async function CountyLendersPage({
           localityNote={`${inCountyCount} in-county · ${nearbyCount} nearby — nearby never outranks in-county by score alone.`}
         />
       </div>
+
+      {hmdaCounty && <HmdaCountyMarketPanel evidence={hmdaCounty} />}
 
       {(quality.tier === 1 || quality.tier === 2) && (
         <CountyIntelligenceModules
