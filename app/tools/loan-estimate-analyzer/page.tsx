@@ -141,6 +141,13 @@ export default async function LoanEstimateAnalyzerPage({
           </dl>
           <p className="mt-8 text-center text-sm text-zinc-500">
             Related:{' '}
+            <Link
+              href="/tools/compare-loan-estimates"
+              className="font-medium text-[#059669] hover:underline"
+            >
+              Compare 2–3 Loan Estimates
+            </Link>
+            {' · '}
             <Link href="/calculators" className="font-medium text-[#059669] hover:underline">
               All calculators
             </Link>

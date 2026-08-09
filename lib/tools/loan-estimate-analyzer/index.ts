@@ -25,3 +25,13 @@ export {
   type AnalyzerLenderOption,
   type AnalyzerCountyOption,
 } from './options';
+export {
+  compareLoanEstimates,
+  COMPARE_METRICS,
+  COMPARE_DRAFT_STORAGE_KEY,
+  MAX_COMPARE_ESTIMATES,
+  MIN_COMPARE_ESTIMATES,
+  type LoanEstimateComparison,
+  type CompareSlotId,
+  type CompareDraftPayload,
+} from './compare';

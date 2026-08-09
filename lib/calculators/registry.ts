@@ -16,7 +16,8 @@ export type CalcId =
   | 'rental'
   | 'dti'
   | 'closing'
-  | 'loan-estimate';
+  | 'loan-estimate'
+  | 'compare-loan-estimates';
 
 export interface CalcMeta {
   id: CalcId;
@@ -42,6 +43,18 @@ export const CALCULATORS: CalcMeta[] = [
     seoTitle: 'Loan Estimate Analyzer — Fee Research Tool',
     seoDescription:
       'Compare Loan Estimate origination charges and points with transparent educational bands and optional Florida 2025 HMDA context.',
+  },
+  {
+    id: 'compare-loan-estimates',
+    title: 'Compare Loan Estimates',
+    benefit:
+      'Side-by-side 2–3 LEs: rate, fees, points, credits, net cost. Mobile-friendly tabs — no lead form.',
+    icon: Scale,
+    featured: true,
+    href: '/tools/compare-loan-estimates',
+    seoTitle: 'Compare Loan Estimates Side-by-Side',
+    seoDescription:
+      'Compare two or three Loan Estimates: interest rate, APR, origination, points, credits, and monthly P&I with clear difference callouts.',
   },
   {
     id: 'payment',

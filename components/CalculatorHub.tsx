@@ -9,7 +9,7 @@ import { trackCalcEvent } from '@/lib/analytics/calculators';
 import { CalcHubSkeleton } from '@/components/calculators/shared/CalcSkeleton';
 import { cn } from '@/lib/utils';
 
-type EmbedCalcId = Exclude<CalcId, 'loan-estimate'>;
+type EmbedCalcId = Exclude<CalcId, 'loan-estimate' | 'compare-loan-estimates'>;
 
 const calcLoaders: Record<EmbedCalcId, () => Promise<{ default: React.ComponentType }>> = {
  payment: () => import('@/components/calculators/MortgagePaymentPITI'),
@@ -39,7 +39,11 @@ const CalcComponents: Partial<Record<EmbedCalcId, React.ComponentType>> = {};
 
 export function CalculatorHub({ defaultCalc }: { defaultCalc?: CalcId }) {
  const [active, setActive] = useState<EmbedCalcId | null>(
- defaultCalc && defaultCalc !== 'loan-estimate' ? defaultCalc : null
+ defaultCalc &&
+ defaultCalc !== 'loan-estimate' &&
+ defaultCalc !== 'compare-loan-estimates'
+ ? defaultCalc
+ : null
  );
 
  const openCalc = useCallback((id: EmbedCalcId) => {

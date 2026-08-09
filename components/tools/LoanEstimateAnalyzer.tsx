@@ -13,8 +13,13 @@ import {
   MapPin,
   Scale,
 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { analyzeLoanEstimateClient } from '@/lib/tools/loan-estimate-analyzer/client-analyze';
 import { emptyLoanEstimateInputs } from '@/lib/tools/loan-estimate-analyzer/defaults';
+import {
+  COMPARE_DRAFT_STORAGE_KEY,
+  type CompareDraftPayload,
+} from '@/lib/tools/loan-estimate-analyzer/compare';
 import type {
   FeeBandLevel,
   HmdaAnalyzerCountyContext,
@@ -72,6 +77,7 @@ export function LoanEstimateAnalyzer({
   initialLenderSlug?: string;
   initialCountySlug?: string;
 }) {
+  const router = useRouter();
   const [loanAmount, setLoanAmount] = useState('350000');
   const [interestRate, setInterestRate] = useState('6.5');
   const [apr, setApr] = useState('6.75');
@@ -138,6 +144,31 @@ export function LoanEstimateAnalyzer({
     if (!lenderSlug && bootstrap.lenders[0]) setLenderSlug(bootstrap.lenders[0].slug);
     if (!countySlug) setCountySlug('miami-dade');
     setSubmitted(true);
+  }
+
+  function goToCompare() {
+    try {
+      const draft: CompareDraftPayload = {
+        fromAnalyzer: true,
+        activeCount: 2,
+        estimates: {
+          A: inputs,
+        },
+      };
+      sessionStorage.setItem(COMPARE_DRAFT_STORAGE_KEY, JSON.stringify(draft));
+    } catch {
+      /* private mode */
+    }
+    const q = new URLSearchParams();
+    if (inputs.lenderSlug) q.set('lender', inputs.lenderSlug);
+    if (inputs.countySlug) q.set('county', inputs.countySlug);
+    q.set('loanAmount', String(inputs.loanAmount));
+    q.set('rate', String(inputs.interestRate));
+    if (inputs.apr != null) q.set('apr', String(inputs.apr));
+    q.set('origination', String(inputs.originationCharges));
+    q.set('points', String(inputs.discountPoints));
+    q.set('credits', String(inputs.lenderCredits));
+    router.push(`/tools/compare-loan-estimates?${q.toString()}`);
   }
 
   return (
@@ -310,10 +341,17 @@ export function LoanEstimateAnalyzer({
 
           <button
             type="submit"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#0A2540] px-5 py-3 text-sm font-semibold text-white hover:bg-[#0A2540]/90"
+            className="inline-flex w-full min-h-12 items-center justify-center gap-2 rounded-xl bg-[#0A2540] px-5 py-3 text-sm font-semibold text-white hover:bg-[#0A2540]/90"
           >
             Analyze Loan Estimate
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            onClick={goToCompare}
+            className="inline-flex w-full min-h-12 items-center justify-center gap-2 rounded-xl border border-zinc-200 bg-white px-5 py-3 text-sm font-semibold text-[#0A2540] hover:border-emerald-400"
+          >
+            Compare with another Loan Estimate
           </button>
         </form>
       </section>
