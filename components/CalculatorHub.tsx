@@ -2,13 +2,16 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { CALCULATORS, type CalcId } from '@/lib/calculators/registry';
 import { trackCalcEvent } from '@/lib/analytics/calculators';
 import { CalcHubSkeleton } from '@/components/calculators/shared/CalcSkeleton';
 import { cn } from '@/lib/utils';
 
-const calcLoaders: Record<CalcId, () => Promise<{ default: React.ComponentType }>> = {
+type EmbedCalcId = Exclude<CalcId, 'loan-estimate'>;
+
+const calcLoaders: Record<EmbedCalcId, () => Promise<{ default: React.ComponentType }>> = {
  payment: () => import('@/components/calculators/MortgagePaymentPITI'),
  affordability: () => import('@/components/AffordabilityFinder'),
  refinance: () => import('@/components/RefinanceROICalc'),
@@ -22,22 +25,24 @@ const calcLoaders: Record<CalcId, () => Promise<{ default: React.ComponentType }
  closing: () => import('@/components/ClosingCostsEstimator'),
 };
 
-function lazyCalc(id: CalcId) {
+function lazyCalc(id: EmbedCalcId) {
  return dynamic(calcLoaders[id], {
  ssr: false,
  loading: () => <CalcHubSkeleton />,
  });
 }
 
-const CalcComponents: Partial<Record<CalcId, React.ComponentType>> = {};
-(CALCULATORS.map((c) => c.id) as CalcId[]).forEach((id) => {
+const CalcComponents: Partial<Record<EmbedCalcId, React.ComponentType>> = {};
+(Object.keys(calcLoaders) as EmbedCalcId[]).forEach((id) => {
  CalcComponents[id] = lazyCalc(id);
 });
 
 export function CalculatorHub({ defaultCalc }: { defaultCalc?: CalcId }) {
- const [active, setActive] = useState<CalcId | null>(defaultCalc ?? null);
+ const [active, setActive] = useState<EmbedCalcId | null>(
+ defaultCalc && defaultCalc !== 'loan-estimate' ? defaultCalc : null
+ );
 
- const openCalc = useCallback((id: CalcId) => {
+ const openCalc = useCallback((id: EmbedCalcId) => {
  setActive(id);
  trackCalcEvent('calc_launch', { calc_id: id });
  history.pushState({ calc: id }, '', `#${id}`);
@@ -51,11 +56,11 @@ export function CalculatorHub({ defaultCalc }: { defaultCalc?: CalcId }) {
  }, []);
 
  useEffect(() => {
- const hash = window.location.hash.replace('#', '') as CalcId;
- if (hash && CALCULATORS.some((c) => c.id === hash)) setActive(hash);
+ const hash = window.location.hash.replace('#', '') as EmbedCalcId;
+ if (hash && hash in calcLoaders) setActive(hash);
  const onPop = () => {
- const h = window.location.hash.replace('#', '') as CalcId;
- setActive(CALCULATORS.some((c) => c.id === h) ? h : null);
+ const h = window.location.hash.replace('#', '') as EmbedCalcId;
+ setActive(h && h in calcLoaders ? h : null);
  };
  window.addEventListener('popstate', onPop);
  return () => window.removeEventListener('popstate', onPop);
@@ -82,13 +87,23 @@ export function CalculatorHub({ defaultCalc }: { defaultCalc?: CalcId }) {
  <Icon className="mb-3 h-8 w-8 text-emerald-600" aria-hidden="true" />
  <h3 className="text-lg font-bold text-[#0A2540]">{calc.title}</h3>
  <p className="mt-1 flex-1 text-sm text-zinc-500">{calc.benefit}</p>
+ {calc.href ? (
+ <Link
+ href={calc.href}
+ onClick={() => trackCalcEvent('calc_launch', { calc_id: calc.id })}
+ className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#059669] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#047857]"
+ >
+ Open tool <ArrowRight className="h-4 w-4" aria-hidden="true" />
+ </Link>
+ ) : (
  <button
  type="button"
- onClick={() => openCalc(calc.id)}
+ onClick={() => openCalc(calc.id as EmbedCalcId)}
  className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#059669] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#047857]"
  >
  Launch Calculator <ArrowRight className="h-4 w-4" aria-hidden="true" />
  </button>
+ )}
  </article>
  );
  })}

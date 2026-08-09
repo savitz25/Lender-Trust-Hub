@@ -1,7 +1,7 @@
 import type { LucideIcon } from 'lucide-react';
 import {
   Home, PiggyBank, RefreshCw, Calendar, Scale, Building2,
-  Landmark, TrendingUp, Calculator,
+  Landmark, TrendingUp, Calculator, FileSearch,
 } from 'lucide-react';
 
 export type CalcId =
@@ -15,7 +15,8 @@ export type CalcId =
   | 'down-payment'
   | 'rental'
   | 'dti'
-  | 'closing';
+  | 'closing'
+  | 'loan-estimate';
 
 export interface CalcMeta {
   id: CalcId;
@@ -25,9 +26,23 @@ export interface CalcMeta {
   featured?: boolean;
   seoTitle: string;
   seoDescription: string;
+  /** Dedicated route (not hub embed) */
+  href?: string;
 }
 
 export const CALCULATORS: CalcMeta[] = [
+  {
+    id: 'loan-estimate',
+    title: 'Loan Estimate Analyzer',
+    benefit:
+      'Paste LE fees, see educational bands + 2025 HMDA market context. No lead form required.',
+    icon: FileSearch,
+    featured: true,
+    href: '/tools/loan-estimate-analyzer',
+    seoTitle: 'Loan Estimate Analyzer — Fee Research Tool',
+    seoDescription:
+      'Compare Loan Estimate origination charges and points with transparent educational bands and optional Florida 2025 HMDA context.',
+  },
   {
     id: 'payment',
     title: 'Mortgage Payment (PITI)',
