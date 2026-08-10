@@ -1318,7 +1318,6 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
     fileSuffix: '_or',
     originationsColumn: 'oregon_originations',
     majorCountySlugs: new Set([
-      // Wave 1 — Portland metro / Willamette Valley / secondary volume
       'multnomah',
       'washington',
       'clackamas',
@@ -1337,6 +1336,15 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'coos',
       'lincoln',
       'columbia',
+      'clatsop',
+      'crook',
+      'tillamook',
+      'jefferson',
+      'union',
+      'wasco',
+      'malheur',
+      'curry',
+      'hood-river',
     ]),
   },
   WA: {

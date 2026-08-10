@@ -1,12 +1,15 @@
-# Oregon HMDA slice
+# Oregon HMDA slice (deepened)
 
-**Source:** `data/hmda/by-state/OR/` (national 2025 foundation)
+**Source:** `data/hmda/by-state/OR/` (national foundation)
 
-- County market rows: **21**
-- Lender–county activity (major markets): **4314**
+**Phase:** oregon-deepen
+
+- County market rows: **27**
+- Lender–county activity (major markets): **5415**
 - LEI state summaries: **629**
-- High-confidence LEI→directory mappings: **144**
-- Major markets with names: **18**
+- High-confidence LEI→directory mappings: **180**
+- Major markets with names: **27**
+- Top-20 mapped: **19/20** · Top-50 mapped: **45/50**
 
 ## Top mapped LEIs by OR originations
 
@@ -24,12 +27,22 @@
 - `crosscountry-mortgage-metrowest` — CROSSCOUNTRY MORTGAGE, LLC (1515 OR orig.)
 - `newrez` — Newrez LLC (1321 OR orig.)
 - `loandepot` — LOANDEPOT.COM, LLC (1270 OR orig.)
+- `first-community-credit-union-oregon` — FIRST COMMUNITY (1177 OR orig.)
 - `fairway-mortgage-augusta-sheppard` — FAIRWAY INDEPENDENT MORTGAGE CORPORATION (1175 OR orig.)
 - `selco-community-credit-union` — SELCO COMMUNITY (1167 OR orig.)
 - `mortgage-express` — MORTGAGE EXPRESS, LLC (1084 OR orig.)
 - `guaranteed-rate` — GUARANTEED RATE, INC. (1065 OR orig.)
 - `bank-of-america-mortgage-west-valley` — Bank of America, National Association (1044 OR orig.)
 - `movement-mortgage-myrtle-beach` — MOVEMENT MORTGAGE, LLC (906 OR orig.)
+- `kind-lending` — KIND LENDING, LLC (864 OR orig.)
+- `american-pacific-mortgage-inland-empire` — AMERICAN PACIFIC MORTGAGE CORPORATION (860 OR orig.)
+- `veterans-united-west-valley` — MORTGAGE RESEARCH CENTER, LLC (838 OR orig.)
+- `oregon-state-credit-union` — Oregon State Credit Union (831 OR orig.)
+- `cmg-home-loans-dennis-vo` — CMG Mortgage, Inc. (815 OR orig.)
+- `jpmorgan-chase-bank` — JPMorgan Chase Bank, National Association (811 OR orig.)
+- `maps-credit-union` — MARION AND POLK SCHOOLS CREDIT UNION (791 OR orig.)
+- `banner-bank` — Banner Bank (786 OR orig.)
+- `union-home-mortgage-reeves-team` — UNION HOME MORTGAGE CORP. (722 OR orig.)
 
 ## Major markets (panel-ready)
 
@@ -51,21 +64,24 @@
 - **Coos** (`41011`) — 1405 originations
 - **Lincoln** (`41041`) — 1308 originations
 - **Columbia** (`41009`) — 1301 originations
+- **Clatsop** (`41007`) — 1004 originations
+- **Crook** (`41013`) — 899 originations
+- **Tillamook** (`41057`) — 825 originations
+- **Jefferson** (`41031`) — 646 originations
+- **Union** (`41061`) — 516 originations
+- **Wasco** (`41065`) — 489 originations
+- **Malheur** (`41045`) — 452 originations
+- **Curry** (`41015`) — 441 originations
+- **Hood River** (`41027`) — 382 originations
 
 ## Matching rules
 
-- Reuse prior product-state curated LEI maps when the LEI has state activity
-- OR/WA curated: GLEIF-reidentified nationals + PNW regionals (OnPoint, BECU, Columbia Bank, Banner Bank, WSECU, Gesa, Spokane Teachers CU, Rogue CU, First Tech, SELCO, Oregon State CU, Evergreen MoneySource, etc.)
-- Precision only — no low-confidence LEI inventing
+- Reuse prior product-state curated LEI maps when LEI has OR activity
+- **or_deepen** GLEIF re-identification + OR directory hosts
+- Precision over coverage — low-confidence regionals deferred
 
 ## Rebuild
 
 ```bash
-python scripts/build-hmda-or-wa-slices.py
-```
-
-## Major slugs (for states.ts)
-
-```
-'multnomah', 'washington', 'clackamas', 'lane', 'marion', 'deschutes', 'jackson', 'linn', 'yamhill', 'douglas', 'polk', 'josephine', 'umatilla', 'klamath', 'benton', 'coos', 'lincoln', 'columbia'
+python scripts/build-hmda-oregon-deepen.py
 ```
