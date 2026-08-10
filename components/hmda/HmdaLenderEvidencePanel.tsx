@@ -55,7 +55,11 @@ export function HmdaLenderEvidencePanel({ evidence }: { evidence: HmdaLenderEvid
               What the federal data shows
             </h2>
             <p className="mt-1 text-sm text-slate-200">
-              Source: {evidence.source} · Florida activity only · Not a score or ranking
+              Source: {evidence.source} · {evidence.stateName} activity
+              {evidence.otherStates?.length
+                ? ` (primary of ${1 + evidence.otherStates.length} states)`
+                : ''}{' '}
+              · Not a score or ranking
             </p>
           </div>
           <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-teal-100 ring-1 ring-white/20">
@@ -68,22 +72,34 @@ export function HmdaLenderEvidencePanel({ evidence }: { evidence: HmdaLenderEvid
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <StatCard
             icon={<BarChart3 className="h-4 w-4" aria-hidden="true" />}
-            label="Florida originations"
-            value={formatInt(evidence.floridaOriginations)}
+            label={`${evidence.stateName} originations`}
+            value={formatInt(evidence.stateOriginations ?? evidence.floridaOriginations)}
           />
           <StatCard
             icon={<MapPin className="h-4 w-4" aria-hidden="true" />}
-            label="Major FL counties with activity"
+            label={`Counties with activity (${evidence.state})`}
             value={formatInt(evidence.countiesWithActivity)}
-            hint="Among tracked high-volume counties"
+            hint="Among tracked high-volume counties in this state slice"
           />
           <StatCard
             icon={<PieChart className="h-4 w-4" aria-hidden="true" />}
-            label="Florida applications (selected outcomes)"
-            value={formatInt(evidence.floridaApplications)}
-            hint="Originated + denied + approved not accepted"
+            label={`${evidence.stateName} applications`}
+            value={formatInt(evidence.stateApplications ?? evidence.floridaApplications)}
+            hint="HMDA applications in state summary (selected outcomes)"
           />
         </div>
+
+        {evidence.otherStates && evidence.otherStates.length > 0 ? (
+          <p className="text-xs text-zinc-600">
+            Also mapped in:{' '}
+            {evidence.otherStates
+              .map(
+                (s) =>
+                  `${s.stateName} (${s.originations.toLocaleString('en-US')} originations)`
+              )
+              .join(' · ')}
+          </p>
+        ) : null}
 
         {evidence.topCounties.length > 0 && (
           <div>
@@ -109,7 +125,7 @@ export function HmdaLenderEvidencePanel({ evidence }: { evidence: HmdaLenderEvid
         {mix && (
           <div>
             <h3 className="mb-3 text-sm font-semibold text-[#0A2540]">
-              Loan-type mix (Florida originations)
+              Loan-type mix ({evidence.stateName} originations)
             </h3>
             <div className="space-y-3 rounded-xl border border-zinc-200 bg-white p-4">
               <MixBar label="Conventional" pct={mix.conventionalPct} count={mix.conventionalOrig} />
@@ -135,7 +151,7 @@ export function HmdaLenderEvidencePanel({ evidence }: { evidence: HmdaLenderEvid
                   className="flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 text-sm"
                 >
                   <Link
-                    href={`/local-lenders/florida/${c.countySlug}`}
+                    href={`/local-lenders/${evidence.stateSlug}/${c.countySlug}`}
                     className="font-medium text-[#3B82F6] hover:underline"
                   >
                     {c.countyName} County

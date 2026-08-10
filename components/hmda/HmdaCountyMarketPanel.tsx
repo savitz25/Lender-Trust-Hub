@@ -21,7 +21,13 @@ export function HmdaCountyMarketPanel({ evidence }: { evidence: HmdaCountyEviden
               What the federal data shows — {evidence.countyName} County
             </h2>
             <p className="mt-1 text-sm text-slate-200">
-              Source: {evidence.source} · County-level activity · Not a score or ranking
+              Source: {evidence.source} ·{' '}
+              {evidence.stateSlug === 'texas'
+                ? 'Texas'
+                : evidence.stateSlug === 'florida'
+                  ? 'Florida'
+                  : evidence.state}{' '}
+              county-level activity · Not a score or ranking
             </p>
           </div>
           <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-sky-100 ring-1 ring-white/20">

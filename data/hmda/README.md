@@ -25,7 +25,17 @@ Secondary in extract: **CA**.
 
 ## Files in `florida/`
 
-Florida-only subsets of the same schemas (faster for FL-first product work).
+Florida-only subsets of the same schemas (FL-first product work).
+
+## Files in `texas/`
+
+Texas product slice (Phase 3 geography expansion). Rebuild with:
+
+```bash
+python scripts/build-hmda-texas-slice.py
+```
+
+See `docs/HMDA-TEXAS-EXPANSION.md`.
 
 ## Column notes
 

@@ -1,4 +1,9 @@
-import { loadHmdaFloridaData } from './load';
+import { loadAllHmdaStateData, loadHmdaStateData, type HmdaStateBundle } from './load';
+import {
+  HMDA_STATE_CONFIGS,
+  hmdaStateFromSlug,
+  type HmdaStateCode,
+} from './states';
 import {
   HMDA_SOURCE_LABEL,
   HMDA_SOURCE_NOTE,
@@ -7,34 +12,13 @@ import {
   type HmdaLoanTypeMix,
 } from './types';
 
-/** Major FL counties for first-pass market intelligence panels (high volume). */
-export const MAJOR_FLORIDA_COUNTY_SLUGS = new Set([
-  'miami-dade',
-  'broward',
-  'palm-beach',
-  'hillsborough',
-  'orange',
-  'duval',
-  'pinellas',
-  'lee',
-  'polk',
-  'brevard',
-  'volusia',
-  'pasco',
-  'seminole',
-  'sarasota',
-  'manatee',
-  'collier',
-  'osceola',
-  'lake',
-  'marion',
-  'st-johns',
-  'st-lucie',
-]);
+/** @deprecated Use HMDA_STATE_CONFIGS.FL.majorCountySlugs */
+export const MAJOR_FLORIDA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.FL.majorCountySlugs;
+
+export const MAJOR_TEXAS_COUNTY_SLUGS = HMDA_STATE_CONFIGS.TX.majorCountySlugs;
 
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
-  // Formats: "Broward:4462; Miami-Dade:4456" or "Broward (4462); Miami-Dade (4456)"
   return raw
     .split(';')
     .map((part) => part.trim())
@@ -70,14 +54,20 @@ function mixFromSummary(s: {
   };
 }
 
-/** Lender evidence for a directory profile slug (matched LEIs only). */
-export function getHmdaLenderEvidenceBySlug(slug: string): HmdaLenderEvidence | null {
-  const { mappings, stateSummaries, countyActivity } = loadHmdaFloridaData();
+function evidenceForBundle(
+  slug: string,
+  bundle: HmdaStateBundle
+): Omit<
+  HmdaLenderEvidence,
+  'otherStates' | 'floridaOriginations' | 'floridaApplications'
+> | null {
+  const { mappings, stateSummaries, countyActivity, config } = bundle;
   const matched = mappings.filter((m) => m.ourLenderSlug === slug);
   if (matched.length === 0) return null;
 
-  // Prefer highest Florida volume LEI if multiple map to same slug
-  const mapping = [...matched].sort((a, b) => b.floridaOriginations - a.floridaOriginations)[0];
+  const mapping = [...matched].sort(
+    (a, b) => (b.stateOriginations || 0) - (a.stateOriginations || 0)
+  )[0]!;
   const leis = new Set(matched.map((m) => m.lei));
 
   const summary =
@@ -123,14 +113,14 @@ export function getHmdaLenderEvidenceBySlug(slug: string): HmdaLenderEvidence | 
       ? topFromActivity
       : parseTopCounties(summary?.topCounties || '');
 
-  // Aggregate originations across matched LEIs for this slug when present
-  let floridaOriginations = summary?.floridaOriginations ?? mapping.floridaOriginations ?? null;
-  let floridaApplications = summary?.floridaApplications ?? null;
+  let stateOriginations =
+    summary?.stateOriginations ?? mapping.stateOriginations ?? null;
+  let stateApplications = summary?.stateApplications ?? null;
   if (matched.length > 1) {
     const related = stateSummaries.filter((s) => leis.has(s.lei));
     if (related.length > 0) {
-      floridaOriginations = related.reduce((n, s) => n + s.floridaOriginations, 0);
-      floridaApplications = related.reduce((n, s) => n + s.floridaApplications, 0);
+      stateOriginations = related.reduce((n, s) => n + s.stateOriginations, 0);
+      stateApplications = related.reduce((n, s) => n + s.stateApplications, 0);
     }
   }
 
@@ -140,9 +130,11 @@ export function getHmdaLenderEvidenceBySlug(slug: string): HmdaLenderEvidence | 
     nmlsId: mapping.nmlsId || summary?.nmlsId || null,
     slug,
     year: summary?.year || mapping.year || 2025,
-    state: summary?.state || 'FL',
-    floridaOriginations,
-    floridaApplications,
+    state: config.code,
+    stateName: config.name,
+    stateSlug: config.stateSlug,
+    stateOriginations,
+    stateApplications,
     countiesWithActivity:
       counties.length > 0
         ? counties.length
@@ -165,15 +157,59 @@ export function getHmdaLenderEvidenceBySlug(slug: string): HmdaLenderEvidence | 
   };
 }
 
-/** County market intelligence for major Florida counties. */
+/**
+ * Lender evidence across product states (FL, TX).
+ * Primary = highest state originations; otherStates lists secondary markets.
+ */
+export function getHmdaLenderEvidenceBySlug(slug: string): HmdaLenderEvidence | null {
+  const slices: (ReturnType<typeof evidenceForBundle> & {
+    stateOriginations: number | null;
+  })[] = [];
+
+  for (const bundle of loadAllHmdaStateData()) {
+    const e = evidenceForBundle(slug, bundle);
+    if (e) slices.push(e);
+  }
+
+  if (slices.length === 0) return null;
+
+  slices.sort(
+    (a, b) => (b.stateOriginations ?? 0) - (a.stateOriginations ?? 0)
+  );
+  const primary = slices[0]!;
+  const otherStates = slices.slice(1).map((s) => ({
+    stateCode: s.state,
+    stateName: s.stateName,
+    originations: s.stateOriginations ?? 0,
+  }));
+
+  // Florida originations for CFPB normalization (prefer real FL slice)
+  const flSlice = slices.find((s) => s.state === 'FL');
+  const floridaOriginations =
+    flSlice?.stateOriginations ??
+    (primary.state === 'FL' ? primary.stateOriginations : null);
+  const floridaApplications =
+    flSlice?.stateApplications ??
+    (primary.state === 'FL' ? primary.stateApplications : null);
+
+  return {
+    ...primary,
+    floridaOriginations,
+    floridaApplications,
+    otherStates,
+  };
+}
+
+/** County market intelligence for major counties in product states. */
 export function getHmdaCountyEvidence(
   stateSlug: string,
   countySlug: string
 ): HmdaCountyEvidence | null {
-  if (stateSlug !== 'florida' && stateSlug !== 'fl') return null;
-  if (!MAJOR_FLORIDA_COUNTY_SLUGS.has(countySlug)) return null;
+  const cfg = hmdaStateFromSlug(stateSlug);
+  if (!cfg) return null;
+  if (!cfg.majorCountySlugs.has(countySlug)) return null;
 
-  const { countyMarkets, countyActivity, mappings } = loadHmdaFloridaData();
+  const { countyMarkets, countyActivity, mappings } = loadHmdaStateData(cfg.code);
   const market = countyMarkets.find((c) => c.countySlug === countySlug);
   if (!market) return null;
 
@@ -198,6 +234,7 @@ export function getHmdaCountyEvidence(
     countyName: market.countyName,
     countySlug: market.countySlug,
     state: market.state,
+    stateSlug: cfg.stateSlug,
     year: market.year,
     applications: market.applications,
     originations: market.originations,
@@ -214,18 +251,27 @@ export function getHmdaCountyEvidence(
 }
 
 export function getMatchedHmdaSlugs(): string[] {
-  return [
-    ...new Set(
-      loadHmdaFloridaData()
-        .mappings.map((m) => m.ourLenderSlug)
-        .filter(Boolean)
-    ),
-  ];
+  const slugs = new Set<string>();
+  for (const bundle of loadAllHmdaStateData()) {
+    for (const m of bundle.mappings) {
+      if (m.ourLenderSlug) slugs.add(m.ourLenderSlug);
+    }
+  }
+  return [...slugs];
 }
 
 export function getHmdaCountySlugsForState(stateSlug: string): string[] {
-  if (stateSlug !== 'florida' && stateSlug !== 'fl') return [];
-  return loadHmdaFloridaData()
+  const cfg = hmdaStateFromSlug(stateSlug);
+  if (!cfg) return [];
+  return loadHmdaStateData(cfg.code)
     .countyMarkets.map((c) => c.countySlug)
-    .filter((s) => MAJOR_FLORIDA_COUNTY_SLUGS.has(s));
+    .filter((s) => cfg.majorCountySlugs.has(s));
+}
+
+export function getHmdaProductStates(): { code: HmdaStateCode; name: string; stateSlug: string }[] {
+  return Object.values(HMDA_STATE_CONFIGS).map((c) => ({
+    code: c.code,
+    name: c.name,
+    stateSlug: c.stateSlug,
+  }));
 }

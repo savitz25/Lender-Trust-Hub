@@ -16,7 +16,7 @@ function toLenderCtx(slug: string): HmdaAnalyzerLenderContext | null {
     slug: e.slug,
     name: e.institutionName,
     nmlsId: e.nmlsId,
-    floridaOriginations: e.floridaOriginations,
+    floridaOriginations: e.stateOriginations ?? e.floridaOriginations,
     countiesWithActivity: e.countiesWithActivity,
     topCounties: e.topCounties,
     conventionalPct: e.loanTypeMix?.conventionalPct ?? null,
@@ -27,8 +27,15 @@ function toLenderCtx(slug: string): HmdaAnalyzerLenderContext | null {
   };
 }
 
-function toCountyCtx(slug: string): HmdaAnalyzerCountyContext | null {
-  const e = getHmdaCountyEvidence('florida', slug);
+function toCountyCtx(optionSlug: string): HmdaAnalyzerCountyContext | null {
+  // Analyzer options use `tx:{county}` for Texas; bare slugs are Florida.
+  let stateSlug = 'florida';
+  let countySlug = optionSlug;
+  if (optionSlug.startsWith('tx:')) {
+    stateSlug = 'texas';
+    countySlug = optionSlug.slice(3);
+  }
+  const e = getHmdaCountyEvidence(stateSlug, countySlug);
   if (!e) return null;
   return {
     countyName: e.countyName,
@@ -42,7 +49,7 @@ function toCountyCtx(slug: string): HmdaAnalyzerCountyContext | null {
     purchasePct: e.purchasePct,
     refinancePct: e.refinancePct,
     source: e.source,
-    countyHref: `/local-lenders/florida/${e.countySlug}`,
+    countyHref: `/local-lenders/${e.stateSlug}/${e.countySlug}`,
   };
 }
 

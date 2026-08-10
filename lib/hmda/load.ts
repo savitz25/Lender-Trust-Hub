@@ -7,18 +7,30 @@ import type {
   HmdaLenderCountyActivity,
   HmdaLenderStateSummary,
 } from './types';
+import {
+  HMDA_ACTIVE_STATE_CODES,
+  HMDA_STATE_CONFIGS,
+  type HmdaStateCode,
+  type HmdaStateConfig,
+} from './states';
 
-const DATA_DIR = path.join(process.cwd(), 'data', 'hmda', 'florida');
-
-let cache: {
+export type HmdaStateBundle = {
+  code: HmdaStateCode;
+  config: HmdaStateConfig;
   mappings: HmdaLeiMapping[];
   stateSummaries: HmdaLenderStateSummary[];
   countyActivity: HmdaLenderCountyActivity[];
   countyMarkets: HmdaCountyMarketSummary[];
-} | null = null;
+};
 
-function readCsvFile(filename: string): Record<string, string>[] {
-  const filePath = path.join(DATA_DIR, filename);
+const bundleCache = new Map<HmdaStateCode, HmdaStateBundle>();
+
+function dataDir(cfg: HmdaStateConfig): string {
+  return path.join(process.cwd(), 'data', 'hmda', cfg.dataFolder);
+}
+
+function readCsvFile(cfg: HmdaStateConfig, filename: string): Record<string, string>[] {
+  const filePath = path.join(dataDir(cfg), filename);
   if (!fs.existsSync(filePath)) return [];
   return parseCsv(fs.readFileSync(filePath, 'utf-8'));
 }
@@ -34,41 +46,53 @@ export function countyNameToSlug(name: string): string {
     .replace(/[^a-z0-9-]/g, '');
 }
 
-function loadMappings(): HmdaLeiMapping[] {
-  return readCsvFile('lei_to_nmls_mapping.csv').map((r) => ({
+function loadMappings(cfg: HmdaStateConfig): HmdaLeiMapping[] {
+  return readCsvFile(cfg, 'lei_to_nmls_mapping.csv').map((r) => ({
     lei: r.lei,
     institutionName: r.institution_name_hmda || r.institution_name || r.legal_name || '',
     nmlsId: r.nmls_id || '',
     ourLenderSlug: (r.our_lender_slug || '').trim(),
     matchMethod: r.match_method || '',
-    floridaOriginations: num(r.florida_originations),
+    // Column may be florida_originations or texas_originations
+    stateOriginations: num(
+      r[cfg.originationsColumn] ?? r.florida_originations ?? r.texas_originations
+    ),
+    // Legacy alias used by older FL-only code paths
+    floridaOriginations: num(
+      r[cfg.originationsColumn] ?? r.florida_originations ?? r.texas_originations
+    ),
     year: num(r.year) || 2025,
+    state: cfg.code,
   }));
 }
 
-function loadStateSummaries(): HmdaLenderStateSummary[] {
-  const nameByLei = new Map(loadMappings().map((m) => [m.lei, m.institutionName]));
+function loadStateSummaries(cfg: HmdaStateConfig): HmdaLenderStateSummary[] {
+  const maps = loadMappings(cfg);
+  const nameByLei = new Map(maps.map((m) => [m.lei, m.institutionName]));
   const slugByLei = new Map(
-    loadMappings()
-      .filter((m) => m.ourLenderSlug)
-      .map((m) => [m.lei, m.ourLenderSlug])
+    maps.filter((m) => m.ourLenderSlug).map((m) => [m.lei, m.ourLenderSlug])
   );
-  const nmlsByLei = new Map(loadMappings().map((m) => [m.nmlsId ? m.lei : m.lei, m.nmlsId]));
+  const nmlsByLei = new Map(maps.map((m) => [m.lei, m.nmlsId]));
 
-  return readCsvFile('lender_state_summary_fl.csv').map((r) => {
+  const file = `lender_state_summary${cfg.fileSuffix}.csv`;
+  return readCsvFile(cfg, file).map((r) => {
     const lei = r.lei;
+    const originations = num(r.total_originations ?? r.florida_originations);
+    const applications = num(r.total_applications ?? r.florida_applications);
     return {
       lei,
       institutionName: r.institution_name || nameByLei.get(lei) || '',
       nmlsId: r.nmls_id || nmlsByLei.get(lei) || '',
       ourLenderSlug: r.our_lender_slug || slugByLei.get(lei) || '',
       year: num(r.year) || 2025,
-      state: r.state || 'FL',
-      floridaApplications: num(r.total_applications ?? r.florida_applications),
-      floridaOriginations: num(r.total_originations ?? r.florida_originations),
+      state: r.state || cfg.code,
+      stateApplications: applications,
+      stateOriginations: originations,
+      floridaApplications: applications,
+      floridaOriginations: originations,
       floridaDenials: num(r.denial_count ?? r.florida_denials),
       denialRatePct: num(r.denial_rate_pct),
-      countiesWithActivity: 0, // derived in queries from activity file
+      countiesWithActivity: 0,
       topCounties: r.top_counties_served || r.top_counties || '',
       conventionalOrig: num(r.orig_conventional ?? r.conventional_orig),
       fhaOrig: num(r.orig_fha ?? r.fha_orig),
@@ -83,8 +107,9 @@ function loadStateSummaries(): HmdaLenderStateSummary[] {
   });
 }
 
-function loadCountyActivity(): HmdaLenderCountyActivity[] {
-  return readCsvFile('lender_activity_by_county_fl.csv').map((r) => {
+function loadCountyActivity(cfg: HmdaStateConfig): HmdaLenderCountyActivity[] {
+  const file = `lender_activity_by_county${cfg.fileSuffix}.csv`;
+  return readCsvFile(cfg, file).map((r) => {
     const countyName = r.county_name || '';
     return {
       lei: r.lei,
@@ -92,7 +117,7 @@ function loadCountyActivity(): HmdaLenderCountyActivity[] {
       countyFips: r.county_fips,
       countyName,
       countySlug: countyNameToSlug(countyName),
-      state: r.state || 'FL',
+      state: r.state || cfg.code,
       year: num(r.year) || 2025,
       originations: num(r.originations),
       countyMarketSharePct: numOrNull(r.market_share_orig_pct ?? r.county_market_share_pct),
@@ -101,14 +126,15 @@ function loadCountyActivity(): HmdaLenderCountyActivity[] {
   });
 }
 
-function loadCountyMarkets(): HmdaCountyMarketSummary[] {
-  return readCsvFile('county_market_summary_fl.csv').map((r) => {
+function loadCountyMarkets(cfg: HmdaStateConfig): HmdaCountyMarketSummary[] {
+  const file = `county_market_summary${cfg.fileSuffix}.csv`;
+  return readCsvFile(cfg, file).map((r) => {
     const countyName = r.county_name || '';
     return {
       countyFips: r.county_fips,
       countyName,
       countySlug: countyNameToSlug(countyName),
-      state: r.state || 'FL',
+      state: r.state || cfg.code,
       year: num(r.year) || 2025,
       applications: num(r.total_applications ?? r.applications),
       originations: num(r.total_originations ?? r.originations),
@@ -124,7 +150,6 @@ function loadCountyMarkets(): HmdaCountyMarketSummary[] {
       usdaPct: num(r.orig_usda_other_pct ?? r.usda_pct),
       purchaseOrig: num(r.purchase_count ?? r.purchase_orig),
       refinanceOrig: num(r.refinance_count ?? r.refinance_orig),
-      // Remote schema: purchase/refi % of applications; convert to share of purchase+refi for UI split
       purchasePct: (() => {
         const p = num(r.purchase_count ?? r.purchase_orig);
         const ref = num(r.refinance_count ?? r.refinance_orig);
@@ -142,26 +167,28 @@ function loadCountyMarkets(): HmdaCountyMarketSummary[] {
       source: '2025 HMDA',
       sourceNote:
         r.priority_market === 'yes'
-          ? 'Priority Florida market. Denial rate = denials ÷ applications (HMDA cleaned extract).'
+          ? `Priority ${cfg.name} market. Denial rate = denials ÷ applications (HMDA cleaned extract).`
           : 'Denial rate = denials ÷ applications (HMDA cleaned extract).',
     };
   });
 }
 
-export function loadHmdaFloridaData() {
-  if (cache) return cache;
-  const mappings = loadMappings();
-  const countyActivity = loadCountyActivity();
+export function loadHmdaStateData(code: HmdaStateCode): HmdaStateBundle {
+  const cached = bundleCache.get(code);
+  if (cached) return cached;
+
+  const config = HMDA_STATE_CONFIGS[code];
+  const mappings = loadMappings(config);
+  const countyActivity = loadCountyActivity(config);
   const nameByLei = new Map(mappings.map((m) => [m.lei, m.institutionName]));
 
-  // Fill missing institution names on activity rows from mapping
   for (const row of countyActivity) {
     if (!row.institutionName) {
       row.institutionName = nameByLei.get(row.lei) || row.lei;
     }
   }
 
-  const stateSummaries = loadStateSummaries().map((s) => {
+  const stateSummaries = loadStateSummaries(config).map((s) => {
     const counties = new Set(
       countyActivity.filter((a) => a.lei === s.lei && a.originations > 0).map((a) => a.countySlug)
     );
@@ -172,15 +199,30 @@ export function loadHmdaFloridaData() {
     };
   });
 
-  cache = {
+  const bundle: HmdaStateBundle = {
+    code,
+    config,
     mappings,
     stateSummaries,
     countyActivity,
-    countyMarkets: loadCountyMarkets(),
+    countyMarkets: loadCountyMarkets(config),
   };
-  return cache;
+  bundleCache.set(code, bundle);
+  return bundle;
 }
 
-export function hmdaDataAvailable(): boolean {
-  return fs.existsSync(path.join(DATA_DIR, 'county_market_summary_fl.csv'));
+/** @deprecated Use loadHmdaStateData('FL') — kept for existing imports. */
+export function loadHmdaFloridaData() {
+  return loadHmdaStateData('FL');
+}
+
+export function loadAllHmdaStateData(): HmdaStateBundle[] {
+  return HMDA_ACTIVE_STATE_CODES.map((c) => loadHmdaStateData(c));
+}
+
+export function hmdaDataAvailable(code: HmdaStateCode = 'FL'): boolean {
+  const cfg = HMDA_STATE_CONFIGS[code];
+  return fs.existsSync(
+    path.join(dataDir(cfg), `county_market_summary${cfg.fileSuffix}.csv`)
+  );
 }
