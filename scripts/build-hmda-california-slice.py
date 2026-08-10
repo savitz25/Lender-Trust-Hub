@@ -57,16 +57,60 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "3029": "crosscountry-mortgage-silicon-valley",
     "1850": "american-pacific-mortgage-inland-empire",
     "75243": "prmg",
+    "76901": "bay-equity-home-loans-silicon-valley",
+    "3089": "nova-home-loans-inland-empire",
+    "1561": "silverton-mortgage-san-jose",
+    "3277": "sun-west-mortgage",
+    "237341": "american-financial-network",
+    "3925": "kind-lending",
+    "167441": "amwest-funding",
+    "433960": "citizens-bank",
+    "402216": "us-bank",
+    "399809": "usaa-federal-savings-bank",
+    "1121636": "sofi-bank",
+    "399797": "flagstar-bank",
 }
 
-# Optional CA-only high-confidence LEIs (GLEIF/legal + public NMLS + directory slug).
+# CA-active LEIs with GLEIF/legal name + published company NMLS + directory slug.
 CA_CURATED_LEI: dict[str, dict[str, str]] = {
-    # Prefer explicit CA directory hosts when company already mapped elsewhere
+    "549300SK2GVCQXPD4S58": {
+        "institution_name_hmda": "SUN WEST MORTGAGE COMPANY, INC.",
+        "nmls_id": "3277",
+        "our_lender_slug": "sun-west-mortgage",
+        "legal_name": "Sun West Mortgage Company, Inc.",
+        "match_confidence": "high",
+        "match_method": "ca_curated_gleif+public_nmls",
+    },
+    "5493008NWHQT1R22C024": {
+        "institution_name_hmda": "AMERICAN FINANCIAL NETWORK, INC.",
+        "nmls_id": "237341",
+        "our_lender_slug": "american-financial-network",
+        "legal_name": "American Financial Network, Inc.",
+        "match_confidence": "high",
+        "match_method": "ca_curated_gleif+public_nmls",
+    },
+    "549300MZ8VZJOVC63092": {
+        "institution_name_hmda": "KIND LENDING, LLC",
+        "nmls_id": "3925",
+        "our_lender_slug": "kind-lending",
+        "legal_name": "Kind Lending, LLC",
+        "match_confidence": "high",
+        "match_method": "ca_curated_gleif+public_nmls",
+    },
+    "549300O6Z0I6KYMESL47": {
+        "institution_name_hmda": "AMWEST FUNDING CORP.",
+        "nmls_id": "167441",
+        "our_lender_slug": "amwest-funding",
+        "legal_name": "AmWest Funding Corp.",
+        "match_confidence": "high",
+        "match_method": "ca_curated_gleif+public_nmls",
+    },
 }
 
 # Major California markets for county intelligence (FIPS → name)
-# Top-volume metros first; names filled when cleaned extract omits them.
+# Wave 1 metros + deepen: SoCal spillover, Central Valley, NorCal growth markets.
 CA_MAJOR_COUNTIES = {
+    # Wave 1 — top metros
     "06037": "Los Angeles",
     "06073": "San Diego",
     "06065": "Riverside",
@@ -91,6 +135,19 @@ CA_MAJOR_COUNTIES = {
     "06079": "San Luis Obispo",
     "06053": "Monterey",
     "06041": "Marin",
+    # Deepen — next volume band
+    "06017": "El Dorado",
+    "06047": "Merced",
+    "06089": "Shasta",
+    "06007": "Butte",
+    "06039": "Madera",
+    "06087": "Santa Cruz",
+    "06113": "Yolo",
+    "06057": "Nevada",
+    "06031": "Kings",
+    "06055": "Napa",
+    "06025": "Imperial",
+    "06023": "Humboldt",
 }
 
 

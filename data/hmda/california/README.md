@@ -1,9 +1,9 @@
 # California HMDA slice
-- County market rows: **24**
-- Lender–county activity (major counties): **10365**
+- County market rows: **36**
+- Lender–county activity (major counties): **13298**
 - LEI state summaries: **978**
-- High-confidence LEI→directory mappings: **54**
-- Major counties with names: **24**
+- High-confidence LEI→directory mappings: **58**
+- Major counties with names: **36**
 
 ## Top mapped LEIs by CA originations
 
@@ -19,19 +19,19 @@
 - `cmg-home-loans-dennis-vo` — CMG Mortgage, Inc. (8432 CA orig.)
 - `better-mortgage` — Better Mortgage Corporation (6742 CA orig.)
 - `loandepot` — loanDepot.com, LLC (6607 CA orig.)
+- `kind-lending` — KIND LENDING, LLC (6409 CA orig.)
 - `navy-federal-jacksonville` — Navy Federal Credit Union (6361 CA orig.)
 - `mr-cooper` — Nationstar Mortgage LLC (6248 CA orig.)
 - `newrez` — Newrez LLC (5772 CA orig.)
 - `new-american-funding` — Broker Solutions, Inc. (5105 CA orig.)
 - `amerihome-mortgage` — AmeriHome Mortgage Company, LLC (4698 CA orig.)
 - `mr-cooper` — NATIONSTAR MORTGAGE LLC (4657 CA orig.)
+- `amwest-funding` — AMWEST FUNDING CORP. (4633 CA orig.)
 - `ally-bank` — Ally Bank (4118 CA orig.)
 - `prmg` — PARAMOUNT RESIDENTIAL MORTGAGE GROUP, INC. (3975 CA orig.)
 - `guild-mortgage-silicon-valley` — Guild Mortgage Company LLC (3918 CA orig.)
 - `american-pacific-mortgage-inland-empire` — AMERICAN PACIFIC MORTGAGE CORPORATION (3554 CA orig.)
 - `homebridge-financial` — HOMEBRIDGE FINANCIAL SERVICES, INC. (3155 CA orig.)
-- `primelending-columbus` — PrimeLending, a PlainsCapital Company (2867 CA orig.)
-- `crosscountry-mortgage-silicon-valley` — CrossCountry Mortgage, LLC (2776 CA orig.)
 
 ## Major counties (panel-ready)
 
@@ -57,8 +57,20 @@
 - **Tulare** (`06107`) — 6843 originations
 - **Santa Barbara** (`06083`) — 5402 originations
 - **San Luis Obispo** (`06079`) — 4840 originations
+- **El Dorado** (`06017`) — 4769 originations
 - **Monterey** (`06053`) — 4435 originations
 - **Marin** (`06041`) — 4126 originations
+- **Merced** (`06047`) — 3637 originations
+- **Shasta** (`06089`) — 3591 originations
+- **Butte** (`06007`) — 3408 originations
+- **Madera** (`06039`) — 3401 originations
+- **Santa Cruz** (`06087`) — 3307 originations
+- **Yolo** (`06113`) — 2818 originations
+- **Nevada** (`06057`) — 2456 originations
+- **Kings** (`06031`) — 2345 originations
+- **Napa** (`06055`) — 1993 originations
+- **Imperial** (`06025`) — 1897 originations
+- **Humboldt** (`06023`) — 1397 originations
 
 ## Matching rules
 

@@ -138,6 +138,7 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
     fileSuffix: '_ca',
     originationsColumn: 'california_originations',
     majorCountySlugs: new Set([
+      // Wave 1 metros
       'los-angeles',
       'san-diego',
       'riverside',
@@ -162,6 +163,19 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'san-luis-obispo',
       'monterey',
       'marin',
+      // Deepen — SoCal spillover, Central Valley, NorCal growth
+      'el-dorado',
+      'merced',
+      'shasta',
+      'butte',
+      'madera',
+      'santa-cruz',
+      'yolo',
+      'nevada',
+      'kings',
+      'napa',
+      'imperial',
+      'humboldt',
     ]),
   },
 };

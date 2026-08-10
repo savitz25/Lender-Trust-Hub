@@ -43,6 +43,9 @@ const SPOT_COUNTIES: { state: string; county: string }[] = [
   { state: 'california', county: 'orange' },
   { state: 'california', county: 'riverside' },
   { state: 'california', county: 'santa-clara' },
+  { state: 'california', county: 'el-dorado' },
+  { state: 'california', county: 'merced' },
+  { state: 'california', county: 'santa-cruz' },
 ];
 
 const SPOT_LENDERS = [
@@ -54,6 +57,10 @@ const SPOT_LENDERS = [
   'ameris-bank',
   'wells-fargo-bank',
   'guild-mortgage-silicon-valley',
+  'sun-west-mortgage',
+  'kind-lending',
+  'amwest-funding',
+  'american-financial-network',
 ];
 
 let failures = 0;

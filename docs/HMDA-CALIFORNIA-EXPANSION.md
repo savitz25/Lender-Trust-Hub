@@ -16,10 +16,10 @@ Rebuild:
 python scripts/build-hmda-california-slice.py
 ```
 
-## Coverage (initial)
+## Coverage
 
-- High-confidence LEI → directory mappings (reuse FL / TX / GA curated maps + national NMLS→slug)
-- Major counties (panel-ready): Los Angeles, San Diego, Riverside, Orange, San Bernardino, Sacramento, Santa Clara, Alameda, Contra Costa, Kern, Fresno, San Joaquin, Ventura, Placer, San Mateo, Solano, San Francisco, Sonoma, Stanislaus, Tulare, Santa Barbara, San Luis Obispo, Monterey, Marin
+- High-confidence LEI → directory mappings (reuse FL / TX / GA curated maps + national NMLS→slug + CA curated)
+- Major counties (panel-ready): **36** — see [HMDA-CALIFORNIA-DEEPEN.md](./HMDA-CALIFORNIA-DEEPEN.md)
 - Lender–county activity limited to major named counties for panel clarity
 
 ## Product wiring
