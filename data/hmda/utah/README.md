@@ -1,12 +1,15 @@
-# Utah HMDA slice
+# Utah HMDA slice (deepened)
 
-**Source:** `data/hmda/by-state/UT/` (national 2025 foundation)
+**Source:** `data/hmda/by-state/UT/` (national foundation)
 
-- County market rows: **29**
-- Lender–county activity (major markets): **2932**
+**Phase:** utah-deepen
+
+- County market rows: **26**
+- Lender–county activity (major markets): **3556**
 - LEI state summaries: **499**
-- High-confidence LEI→directory mappings: **125**
-- Major markets with names: **16**
+- High-confidence LEI→directory mappings: **156**
+- Major markets with names: **26**
+- Top-20 mapped: **20/20** · Top-50 mapped: **46/50**
 
 ## Top mapped LEIs by UT originations
 
@@ -25,8 +28,12 @@
 - `utah-community-credit-union` — UTAH COMMUNITY FEDERAL CREDIT UNION (1549 UT orig.)
 - `pennymac` — PENNYMAC LOAN SERVICES, LLC (1214 UT orig.)
 - `dhi-mortgage-buckeye` — DHI MORTGAGE COMPANY, LTD. (1170 UT orig.)
+- `my-move-mortgage` — MY MOVE MORTGAGE, LLC (1140 UT orig.)
+- `cyprus-credit-union` — CYPRUS Federal Credit Union (1104 UT orig.)
 - `utah-first-credit-union` — UTAH FIRST (994 UT orig.)
+- `canyon-view-credit-union` — CANYON VIEW (978 UT orig.)
 - `fairway-mortgage-augusta-sheppard` — FAIRWAY INDEPENDENT MORTGAGE CORPORATION (934 UT orig.)
+- `plains-commerce-bank` — Plains Commerce Bank (934 UT orig.)
 - `mr-cooper` — NATIONSTAR MORTGAGE LLC (914 UT orig.)
 - `loandepot` — LOANDEPOT.COM, LLC (778 UT orig.)
 - `deseret-first-credit-union` — Deseret First Credit Union (775 UT orig.)
@@ -35,6 +42,7 @@
 - `us-bank` — U.S. Bank National Association (726 UT orig.)
 - `ranlife` — RANLIFE, INC. (712 UT orig.)
 - `bank-of-utah` — BANK OF UTAH (696 UT orig.)
+- `newrez` — Newrez LLC (687 UT orig.)
 
 ## Major markets (panel-ready)
 
@@ -54,21 +62,25 @@
 - **Sevier** (`49041`) — 641 originations
 - **Carbon** (`49007`) — 588 originations
 - **Morgan** (`49029`) — 481 originations
+- **Duchesne** (`49013`) — 470 originations
+- **Kane** (`49025`) — 392 originations
+- **Juab** (`49023`) — 385 originations
+- **Millard** (`49027`) — 345 originations
+- **Emery** (`49015`) — 216 originations
+- **Beaver** (`49001`) — 181 originations
+- **Rich** (`49033`) — 178 originations
+- **Grand** (`49019`) — 172 originations
+- **Garfield** (`49017`) — 171 originations
+- **San Juan** (`49037`) — 146 originations
 
 ## Matching rules
 
-- Reuse prior product-state curated LEI maps when the LEI has activity in this state
-- UT/NV curated: America First FCU, Mountain America FCU, Intercap, Goldenwest, First Colony, SecurityNational, Utah Community CU, RanLife, Bank of Utah, Deseret First, Utah First, Chartway, Security Home Mortgage, Provident Funding, Greater Nevada CU, plus Academy / PRMI / Zions directory reuse
-- Precision over coverage — no fuzzy LEI inventing
+- Reuse prior product-state curated LEI maps when LEI has UT activity
+- **ut_deepen** GLEIF re-identification + UT directory hosts
+- Precision over coverage — low-confidence regionals deferred
 
 ## Rebuild
 
 ```bash
-python scripts/build-hmda-ut-nv-slices.py
-```
-
-## Major slugs (for states.ts)
-
-```
-'salt-lake', 'utah', 'davis', 'weber', 'washington', 'cache', 'tooele', 'iron', 'box-elder', 'wasatch', 'summit', 'uintah', 'sanpete', 'sevier', 'carbon', 'morgan'
+python scripts/build-hmda-utah-deepen.py
 ```

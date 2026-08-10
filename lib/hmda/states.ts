@@ -1271,7 +1271,6 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
     fileSuffix: '_ut',
     originationsColumn: 'utah_originations',
     majorCountySlugs: new Set([
-      // Wave 1 — Wasatch Front + secondary high-volume markets
       'salt-lake',
       'utah',
       'davis',
@@ -1288,6 +1287,16 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'sevier',
       'carbon',
       'morgan',
+      'duchesne',
+      'kane',
+      'juab',
+      'millard',
+      'emery',
+      'beaver',
+      'rich',
+      'grand',
+      'garfield',
+      'san-juan',
     ]),
   },
   NV: {
