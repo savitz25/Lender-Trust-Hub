@@ -79,7 +79,7 @@ export function analyzeLoanEstimateClient(
 
   if (!hmdaLender) {
     limitations.push(
-      'No matched 2025 HMDA evidence for the selected lender (or none selected) among product-state HMDA slices (FL/TX/GA/CA/NC/SC). Fee placement uses educational bands only.'
+      'No matched 2025 HMDA evidence for the selected lender (or none selected) among product-state HMDA slices (FL/TX/GA/CA/NC/SC/NJ). Fee placement uses educational bands only.'
     );
   } else {
     limitations.push(

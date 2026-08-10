@@ -77,6 +77,16 @@ python scripts/build-hmda-south-carolina-slice.py
 
 See `docs/HMDA-SOUTH-CAROLINA-EXPANSION.md`.
 
+## Files in `new-jersey/`
+
+New Jersey product slice (Northeast Phase 1). Rebuild with:
+
+```bash
+python scripts/build-hmda-new-jersey-slice.py
+```
+
+See `docs/HMDA-NEW-JERSEY-EXPANSION.md`.
+
 ## Column notes
 
 - **Applications:** non-purchase HMDA rows with valid geography (includes originated, denied, withdrawn, etc.)  

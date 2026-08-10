@@ -25,6 +25,8 @@ export const MAJOR_NORTH_CAROLINA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.NC.majorCoun
 
 export const MAJOR_SOUTH_CAROLINA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.SC.majorCountySlugs;
 
+export const MAJOR_NEW_JERSEY_COUNTY_SLUGS = HMDA_STATE_CONFIGS.NJ.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw
@@ -166,7 +168,7 @@ function evidenceForBundle(
 }
 
 /**
- * Lender evidence across product states (FL, TX, GA, CA, NC, SC).
+ * Lender evidence across product states (FL, TX, GA, CA, NC, SC, NJ).
  * Primary = highest state originations; otherStates lists secondary markets.
  */
 export function getHmdaLenderEvidenceBySlug(slug: string): HmdaLenderEvidence | null {
