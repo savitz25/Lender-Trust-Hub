@@ -34,7 +34,9 @@ export type HmdaStateCode =
   | 'UT'
   | 'NV'
   | 'OR'
-  | 'WA';
+  | 'WA'
+  | 'AL'
+  | 'LA';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -80,7 +82,9 @@ export type HmdaStateConfig = {
     | 'utah_originations'
     | 'nevada_originations'
     | 'oregon_originations'
-    | 'washington_originations';
+    | 'washington_originations'
+    | 'alabama_originations'
+    | 'louisiana_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -1293,6 +1297,66 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'franklin',
     ]),
   },
+  AL: {
+    code: 'AL',
+    stateSlug: 'alabama',
+    name: 'Alabama',
+    dataFolder: 'alabama',
+    fileSuffix: '_al',
+    originationsColumn: 'alabama_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Birmingham / Huntsville / Mobile / coastal + secondary volume
+      'jefferson',
+      'madison',
+      'baldwin',
+      'mobile',
+      'shelby',
+      'lee',
+      'tuscaloosa',
+      'montgomery',
+      'limestone',
+      'morgan',
+      'st-clair',
+      'houston',
+      'elmore',
+      'lauderdale',
+      'marshall',
+      'calhoun',
+      'etowah',
+      'cullman',
+      'autauga',
+      'coffee',
+    ]),
+  },
+  LA: {
+    code: 'LA',
+    stateSlug: 'louisiana',
+    name: 'Louisiana',
+    dataFolder: 'louisiana',
+    fileSuffix: '_la',
+    originationsColumn: 'louisiana_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — major parishes (URL slugs use county naming convention)
+      'east-baton-rouge',
+      'st-tammany',
+      'jefferson',
+      'lafayette',
+      'orleans',
+      'caddo',
+      'livingston',
+      'calcasieu',
+      'ascension',
+      'bossier',
+      'ouachita',
+      'tangipahoa',
+      'rapides',
+      'terrebonne',
+      'lafourche',
+      'st-landry',
+      'st-charles',
+      'vermilion',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -1330,6 +1394,8 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'NV',
   'OR',
   'WA',
+  'AL',
+  'LA',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {

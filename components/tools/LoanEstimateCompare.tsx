@@ -542,7 +542,7 @@ function EstimateForm({
           ))}
         </select>
       </Field>
-      <Field label="County market (32 product states, optional)" htmlFor={`${id}-county`}>
+      <Field label="County market (36 product states, optional)" htmlFor={`${id}-county`}>
         <select
           id={`${id}-county`}
           className={inputClass}

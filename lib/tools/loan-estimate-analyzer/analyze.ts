@@ -119,7 +119,7 @@ export function analyzeLoanEstimate(inputs: LoanEstimateInputs): LoanEstimateAna
 
   if (!hmdaLender) {
     limitations.push(
-      'No matched 2025 HMDA evidence was found for the selected lender (or no lender was selected) among the 32 product-state HMDA slices (FL–NV). Fee placement uses educational bands only.'
+      'No matched 2025 HMDA evidence was found for the selected lender (or no lender was selected) among the 36 product-state HMDA slices (FL–LA). Fee placement uses educational bands only.'
     );
   } else {
     limitations.push(
