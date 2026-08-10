@@ -1,0 +1,23 @@
+Regional matching quality pass
+TX: maps=232 (+23 new, 1 refreshed) top20=20/20 top50=47/50
+NC: maps=256 (+24 new, 1 refreshed) top20=20/20 top50=45/50
+TN: maps=250 (+20 new, 1 refreshed) top20=20/20 top50=48/50
+WA: maps=189 (+19 new, 1 refreshed) top20=20/20 top50=47/50
+OR: maps=196 (+16 new, 0 refreshed) top20=20/20 top50=47/50
+NV: maps=160 (+16 new, 1 refreshed) top20=20/20 top50=44/50
+UT: maps=169 (+13 new, 1 refreshed) top20=20/20 top50=47/50
+CA: maps=79 (+21 new, 0 refreshed) top20=16/20 top50=32/50
+FL: maps=76 (+22 new, 0 refreshed) top20=19/20 top50=40/50
+GA: maps=78 (+21 new, 0 refreshed) top20=18/20 top50=35/50
+AZ: maps=144 (+21 new, 0 refreshed) top20=19/20 top50=40/50
+CO: maps=164 (+19 new, 0 refreshed) top20=20/20 top50=46/50
+IL: maps=133 (+15 new, 0 refreshed) top20=20/20 top50=34/50
+OH: maps=146 (+17 new, 0 refreshed) top20=19/20 top50=38/50
+PA: maps=106 (+15 new, 0 refreshed) top20=16/20 top50=38/50
+NY: maps=79 (+7 new, 0 refreshed) top20=14/20 top50=29/50
+MI: maps=153 (+17 new, 0 refreshed) top20=19/20 top50=33/50
+VA: maps=131 (+15 new, 0 refreshed) top20=20/20 top50=43/50
+SC: maps=97 (+22 new, 0 refreshed) top20=19/20 top50=43/50
+OK: maps=165 (+14 new, 1 refreshed) top20=16/20 top50=31/50
+
+new_maps=357
