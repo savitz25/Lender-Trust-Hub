@@ -34,6 +34,8 @@ import {
   MAJOR_KENTUCKY_COUNTY_SLUGS,
   MAJOR_UTAH_COUNTY_SLUGS,
   MAJOR_NEVADA_COUNTY_SLUGS,
+  MAJOR_OREGON_COUNTY_SLUGS,
+  MAJOR_WASHINGTON_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -451,6 +453,28 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (NV)`,
       originations: c.originations,
       stateSlug: 'nevada',
+    });
+  }
+
+  const or = loadHmdaStateData('OR');
+  for (const c of or.countyMarkets) {
+    if (!MAJOR_OREGON_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `or:${c.countySlug}`,
+      name: `${c.countyName} (OR)`,
+      originations: c.originations,
+      stateSlug: 'oregon',
+    });
+  }
+
+  const wa = loadHmdaStateData('WA');
+  for (const c of wa.countyMarkets) {
+    if (!MAJOR_WASHINGTON_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `wa:${c.countySlug}`,
+      name: `${c.countyName} (WA)`,
+      originations: c.originations,
+      stateSlug: 'washington',
     });
   }
 

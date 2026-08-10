@@ -77,6 +77,10 @@ export const MAJOR_UTAH_COUNTY_SLUGS = HMDA_STATE_CONFIGS.UT.majorCountySlugs;
 
 export const MAJOR_NEVADA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.NV.majorCountySlugs;
 
+export const MAJOR_OREGON_COUNTY_SLUGS = HMDA_STATE_CONFIGS.OR.majorCountySlugs;
+
+export const MAJOR_WASHINGTON_COUNTY_SLUGS = HMDA_STATE_CONFIGS.WA.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw

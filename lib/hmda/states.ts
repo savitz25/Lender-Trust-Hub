@@ -32,7 +32,9 @@ export type HmdaStateCode =
   | 'MO'
   | 'KY'
   | 'UT'
-  | 'NV';
+  | 'NV'
+  | 'OR'
+  | 'WA';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -76,7 +78,9 @@ export type HmdaStateConfig = {
     | 'missouri_originations'
     | 'kentucky_originations'
     | 'utah_originations'
-    | 'nevada_originations';
+    | 'nevada_originations'
+    | 'oregon_originations'
+    | 'washington_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -1231,6 +1235,64 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'humboldt',
     ]),
   },
+  OR: {
+    code: 'OR',
+    stateSlug: 'oregon',
+    name: 'Oregon',
+    dataFolder: 'oregon',
+    fileSuffix: '_or',
+    originationsColumn: 'oregon_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Portland metro / Willamette Valley / secondary volume
+      'multnomah',
+      'washington',
+      'clackamas',
+      'lane',
+      'marion',
+      'deschutes',
+      'jackson',
+      'linn',
+      'yamhill',
+      'douglas',
+      'polk',
+      'josephine',
+      'umatilla',
+      'klamath',
+      'benton',
+      'coos',
+      'lincoln',
+      'columbia',
+    ]),
+  },
+  WA: {
+    code: 'WA',
+    stateSlug: 'washington',
+    name: 'Washington',
+    dataFolder: 'washington',
+    fileSuffix: '_wa',
+    originationsColumn: 'washington_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Puget Sound / Spokane / southwest WA / secondary volume
+      'king',
+      'pierce',
+      'snohomish',
+      'spokane',
+      'clark',
+      'thurston',
+      'kitsap',
+      'whatcom',
+      'benton',
+      'yakima',
+      'cowlitz',
+      'skagit',
+      'island',
+      'lewis',
+      'mason',
+      'grant',
+      'grays-harbor',
+      'franklin',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -1266,6 +1328,8 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'KY',
   'UT',
   'NV',
+  'OR',
+  'WA',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {
