@@ -47,6 +47,10 @@ export const MAJOR_VIRGINIA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.VA.majorCountySlug
 
 export const MAJOR_MARYLAND_COUNTY_SLUGS = HMDA_STATE_CONFIGS.MD.majorCountySlugs;
 
+export const MAJOR_DELAWARE_COUNTY_SLUGS = HMDA_STATE_CONFIGS.DE.majorCountySlugs;
+
+export const MAJOR_DISTRICT_OF_COLUMBIA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.DC.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw

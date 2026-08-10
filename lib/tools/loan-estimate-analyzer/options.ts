@@ -19,6 +19,8 @@ import {
   MAJOR_NEW_HAMPSHIRE_COUNTY_SLUGS,
   MAJOR_VIRGINIA_COUNTY_SLUGS,
   MAJOR_MARYLAND_COUNTY_SLUGS,
+  MAJOR_DELAWARE_COUNTY_SLUGS,
+  MAJOR_DISTRICT_OF_COLUMBIA_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -271,6 +273,28 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (MD)`,
       originations: c.originations,
       stateSlug: 'maryland',
+    });
+  }
+
+  const de = loadHmdaStateData('DE');
+  for (const c of de.countyMarkets) {
+    if (!MAJOR_DELAWARE_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `de:${c.countySlug}`,
+      name: `${c.countyName} (DE)`,
+      originations: c.originations,
+      stateSlug: 'delaware',
+    });
+  }
+
+  const dc = loadHmdaStateData('DC');
+  for (const c of dc.countyMarkets) {
+    if (!MAJOR_DISTRICT_OF_COLUMBIA_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `dc:${c.countySlug}`,
+      name: `${c.countyName} (DC)`,
+      originations: c.originations,
+      stateSlug: 'district-of-columbia',
     });
   }
 

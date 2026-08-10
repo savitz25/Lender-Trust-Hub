@@ -17,7 +17,9 @@ export type HmdaStateCode =
   | 'CT'
   | 'NH'
   | 'VA'
-  | 'MD';
+  | 'MD'
+  | 'DE'
+  | 'DC';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -46,7 +48,9 @@ export type HmdaStateConfig = {
     | 'connecticut_originations'
     | 'new_hampshire_originations'
     | 'virginia_originations'
-    | 'maryland_originations';
+    | 'maryland_originations'
+    | 'delaware_originations'
+    | 'district_of_columbia_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -681,6 +685,30 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'somerset',
     ]),
   },
+  DE: {
+    code: 'DE',
+    stateSlug: 'delaware',
+    name: 'Delaware',
+    dataFolder: 'delaware',
+    fileSuffix: '_de',
+    originationsColumn: 'delaware_originations',
+    majorCountySlugs: new Set([
+      // Full 3-county state
+      'new-castle',
+      'sussex',
+      'kent',
+    ]),
+  },
+  DC: {
+    code: 'DC',
+    stateSlug: 'district-of-columbia',
+    name: 'District of Columbia',
+    dataFolder: 'district-of-columbia',
+    fileSuffix: '_dc',
+    originationsColumn: 'district_of_columbia_originations',
+    // Single county-equivalent FIPS 11001 → slug district-of-columbia
+    majorCountySlugs: new Set(['district-of-columbia']),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -701,6 +729,8 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'NH',
   'VA',
   'MD',
+  'DE',
+  'DC',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {
