@@ -49,6 +49,10 @@ import {
   MAJOR_WYOMING_COUNTY_SLUGS,
   MAJOR_NEW_MEXICO_COUNTY_SLUGS,
   MAJOR_WEST_VIRGINIA_COUNTY_SLUGS,
+  MAJOR_ALASKA_COUNTY_SLUGS,
+  MAJOR_HAWAII_COUNTY_SLUGS,
+  MAJOR_NORTH_DAKOTA_COUNTY_SLUGS,
+  MAJOR_SOUTH_DAKOTA_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -631,6 +635,50 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (WV)`,
       originations: c.originations,
       stateSlug: 'west-virginia',
+    });
+  }
+
+  const ak = loadHmdaStateData('AK');
+  for (const c of ak.countyMarkets) {
+    if (!MAJOR_ALASKA_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `ak:${c.countySlug}`,
+      name: `${c.countyName} (AK)`,
+      originations: c.originations,
+      stateSlug: 'alaska',
+    });
+  }
+
+  const hi = loadHmdaStateData('HI');
+  for (const c of hi.countyMarkets) {
+    if (!MAJOR_HAWAII_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `hi:${c.countySlug}`,
+      name: `${c.countyName} (HI)`,
+      originations: c.originations,
+      stateSlug: 'hawaii',
+    });
+  }
+
+  const nd = loadHmdaStateData('ND');
+  for (const c of nd.countyMarkets) {
+    if (!MAJOR_NORTH_DAKOTA_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `nd:${c.countySlug}`,
+      name: `${c.countyName} (ND)`,
+      originations: c.originations,
+      stateSlug: 'north-dakota',
+    });
+  }
+
+  const sd = loadHmdaStateData('SD');
+  for (const c of sd.countyMarkets) {
+    if (!MAJOR_SOUTH_DAKOTA_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `sd:${c.countySlug}`,
+      name: `${c.countyName} (SD)`,
+      originations: c.originations,
+      stateSlug: 'south-dakota',
     });
   }
 

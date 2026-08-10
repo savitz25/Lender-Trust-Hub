@@ -1,0 +1,5 @@
+year,state,county_fips,county_name,total_applications,total_originations,denial_count,denial_rate_pct,purchase_count,refinance_count,purpose_other_count,purchase_pct_of_apps,refinance_pct_of_apps,apps_conventional,apps_fha,apps_va,apps_usda_other,apps_other_loan_type,apps_conventional_pct,apps_fha_pct,apps_va_pct,orig_conventional,orig_fha,orig_va,orig_usda_other,orig_other_loan_type,orig_conventional_pct,orig_fha_pct,orig_va_pct,priority_market
+2025,HI,15003,Honolulu,23772,13362,5036,21.18,9906,7842,6024,41.67,32.99,18855,871,4018,28,0,79.32,3.66,16.9,10313,399,2628,22,0,77.18,2.99,19.67,national
+2025,HI,15001,Hawaii,6032,3347,1271,21.07,2570,2217,1245,42.61,36.75,4941,522,544,25,0,81.91,8.65,9.02,2713,311,307,16,0,81.06,9.29,9.17,national
+2025,HI,15009,Maui,3996,2057,999,25.0,1355,1491,1150,33.91,37.31,3525,297,171,3,0,88.21,7.43,4.28,1833,144,78,2,0,89.11,7.0,3.79,national
+2025,HI,15007,Kauai,1992,1048,483,24.25,691,763,538,34.69,38.3,1793,122,74,3,0,90.01,6.12,3.71,935,64,48,1,0,89.22,6.11,4.58,national

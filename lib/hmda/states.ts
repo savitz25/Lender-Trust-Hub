@@ -47,7 +47,11 @@ export type HmdaStateCode =
   | 'MT'
   | 'WY'
   | 'NM'
-  | 'WV';
+  | 'WV'
+  | 'AK'
+  | 'HI'
+  | 'ND'
+  | 'SD';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -106,7 +110,11 @@ export type HmdaStateConfig = {
     | 'montana_originations'
     | 'wyoming_originations'
     | 'new_mexico_originations'
-    | 'west_virginia_originations';
+    | 'west_virginia_originations'
+    | 'alaska_originations'
+    | 'hawaii_originations'
+    | 'north_dakota_originations'
+    | 'south_dakota_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -1668,6 +1676,97 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'hancock',
     ]),
   },
+  AK: {
+    code: 'AK',
+    stateSlug: 'alaska',
+    name: 'Alaska',
+    dataFolder: 'alaska',
+    fileSuffix: '_ak',
+    originationsColumn: 'alaska_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Anchorage / Railbelt / SE markets
+      'anchorage',
+      'matanuska-susitna',
+      'fairbanks-north-star',
+      'kenai-peninsula',
+      'juneau',
+      'ketchikan-gateway',
+      'kodiak-island',
+      'southeast-fairbanks',
+      'chugach',
+      'sitka',
+      'nome',
+      'bethel',
+    ]),
+  },
+  HI: {
+    code: 'HI',
+    stateSlug: 'hawaii',
+    name: 'Hawaii',
+    dataFolder: 'hawaii',
+    fileSuffix: '_hi',
+    originationsColumn: 'hawaii_originations',
+    majorCountySlugs: new Set([
+      // Full state — four counties
+      'honolulu',
+      'hawaii',
+      'maui',
+      'kauai',
+    ]),
+  },
+  ND: {
+    code: 'ND',
+    stateSlug: 'north-dakota',
+    name: 'North Dakota',
+    dataFolder: 'north-dakota',
+    fileSuffix: '_nd',
+    originationsColumn: 'north_dakota_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Fargo / Bismarck / Minot / Grand Forks / Bakken
+      'cass',
+      'burleigh',
+      'ward',
+      'grand-forks',
+      'morton',
+      'stark',
+      'williams',
+      'stutsman',
+      'richland',
+      'mckenzie',
+      'mclean',
+      'barnes',
+      'ramsey',
+      'traill',
+      'mercer',
+      'mountrail',
+    ]),
+  },
+  SD: {
+    code: 'SD',
+    stateSlug: 'south-dakota',
+    name: 'South Dakota',
+    dataFolder: 'south-dakota',
+    fileSuffix: '_sd',
+    originationsColumn: 'south_dakota_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Sioux Falls / Rapid City / secondary volume
+      'minnehaha',
+      'pennington',
+      'lincoln',
+      'meade',
+      'lawrence',
+      'codington',
+      'brookings',
+      'brown',
+      'union',
+      'davison',
+      'yankton',
+      'hughes',
+      'lake',
+      'clay',
+      'butte',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -1718,6 +1817,10 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'WY',
   'NM',
   'WV',
+  'AK',
+  'HI',
+  'ND',
+  'SD',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {
