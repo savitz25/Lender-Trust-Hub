@@ -99,7 +99,7 @@ export function ProgramsToolsCta({
           href="/my-lending"
           className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-transparent px-4 py-2.5 text-sm font-semibold text-sky-900 underline-offset-2 hover:underline"
         >
-          Save your research
+          Open My Lending
         </Link>
       </div>
     </aside>

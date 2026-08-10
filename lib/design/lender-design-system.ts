@@ -224,7 +224,7 @@ export const LENDER_PATHWAYS = {
     { label: 'Understand your Loan Estimate', href: '/tools/loan-estimate-analyzer' },
     { label: 'Compare offers side by side', href: '/tools/compare-loan-estimates' },
     { label: 'Explore programs', href: '/tools/program-finder' },
-    { label: 'Save your research', href: '/my-lending' },
+    { label: 'My Lending workspace', href: '/my-lending' },
     { label: 'Local lenders directory', href: '/local-lenders' },
     { label: 'Calculators', href: '/calculators' },
   ],

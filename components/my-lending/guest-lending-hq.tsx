@@ -15,7 +15,7 @@ import {
   Plus,
   Settings2,
   Shield,
-  Trash2,
+  StickyNote,
 } from 'lucide-react';
 import {
   LOAN_FOCUS_OPTIONS,
@@ -59,14 +59,17 @@ import {
 } from '@/lib/my-lending/storage';
 import { ShortlistFullPanel } from '@/components/my-lending/shortlist-full-panel';
 import { PrivateResearchNote } from '@/components/my-lending/private-research-note';
+import { RemoveConfirmButton } from '@/components/my-lending/remove-confirm-button';
 import { useMyLendingOptional } from '@/components/my-lending/my-lending-provider';
 import { TrustMark } from '@/components/network/trust-mark';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
+type NotesFilter = 'all' | 'notes';
+
 /**
- * My Lending HQ — research passport (V1.1).
- * Organize saves, private notes, empty-state onboarding, guest vs signed-in storage.
+ * My Lending HQ — research passport (V1.2).
+ * Scanable organization, private notes, low-friction save/reopen, guest-first storage.
  */
 export function GuestLendingHq() {
   const ml = useMyLendingOptional();
@@ -93,6 +96,9 @@ export function GuestLendingHq() {
   const [leSort, setLeSort] = useState<WorkspaceItemSort>('newest');
   const [compareSort, setCompareSort] = useState<WorkspaceItemSort>('newest');
   const [lenderSort, setLenderSort] = useState<WorkspaceItemSort>('newest');
+  const [leFilter, setLeFilter] = useState<NotesFilter>('all');
+  const [compareFilter, setCompareFilter] = useState<NotesFilter>('all');
+  const [lenderFilter, setLenderFilter] = useState<NotesFilter>('all');
   const [researchTab, setResearchTab] = useState<'estimates' | 'comparisons'>('estimates');
 
   const refresh = useCallback(() => {
@@ -130,18 +136,47 @@ export function GuestLendingHq() {
     };
   }, [refresh]);
 
-  const sortedLenders = useMemo(
-    () =>
-      sortByWorkspaceOrder(
-        lenders.map((l) => ({
-          ...l,
-          label: l.lenderName,
-          savedAt: l.savedAt,
-          updatedAt: l.updatedAt,
-        })),
-        lenderSort
-      ),
-    [lenders, lenderSort]
+  const sortedLenders = useMemo(() => {
+    const ordered = sortByWorkspaceOrder(
+      lenders.map((l) => ({
+        ...l,
+        label: l.lenderName,
+        savedAt: l.savedAt,
+        updatedAt: l.updatedAt,
+      })),
+      lenderSort
+    );
+    if (lenderFilter === 'notes') {
+      return ordered.filter((l) => Boolean(l.notes?.trim()));
+    }
+    return ordered;
+  }, [lenders, lenderSort, lenderFilter]);
+
+  const displayedLoanEstimates = useMemo(() => {
+    if (leFilter === 'notes') {
+      return loanEstimates.filter((i) => Boolean(i.notes?.trim()));
+    }
+    return loanEstimates;
+  }, [loanEstimates, leFilter]);
+
+  const displayedComparisons = useMemo(() => {
+    if (compareFilter === 'notes') {
+      return leComparisons.filter((i) => Boolean(i.notes?.trim()));
+    }
+    return leComparisons;
+  }, [leComparisons, compareFilter]);
+
+  const notesOnEstimates = useMemo(
+    () => loanEstimates.filter((i) => i.notes?.trim()).length,
+    [loanEstimates]
+  );
+  const notesOnComparisons = useMemo(
+    () => leComparisons.filter((i) => i.notes?.trim()).length,
+    [leComparisons]
+  );
+  const notesOnLenders = useMemo(
+    () => lenders.filter((i) => i.notes?.trim()).length,
+    [lenders]
   );
 
   const locationLabel = useMemo(() => {
@@ -261,22 +296,34 @@ export function GuestLendingHq() {
       <div className="space-y-6">
         {accountStrip}
         <ResearchPassportIntro storageMode={storageMode} firstVisit />
-        <div className="rounded-2xl border border-dashed border-zinc-200 bg-white px-5 py-12 text-center shadow-sm">
-          <Building2 className="mx-auto h-10 w-10 text-zinc-300" aria-hidden />
-          <p className="mt-3 font-medium text-[#0A2540]">Start your research passport</p>
-          <p className="mx-auto mt-1 max-w-md text-sm text-zinc-600">
-            Create a plan, then save Loan Estimates, side-by-side comparisons, and lenders as you
-            research. Optional — nothing is forced.
+        <div className="rounded-2xl border border-dashed border-teal-200 bg-white px-5 py-10 text-center shadow-sm">
+          <Building2 className="mx-auto h-10 w-10 text-teal-600/40" aria-hidden />
+          <p className="mt-3 text-lg font-semibold text-[#0A2540]">Start your research passport</p>
+          <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-zinc-600">
+            My Lending is a lightweight place to keep Loan Estimates, comparisons, lenders, and
+            private notes while you shop — so you can reopen tools later without starting over.
+            Optional. No lead form. Guest mode stays on this device.
           </p>
-          <div className="mt-5 flex flex-wrap justify-center gap-2">
-            <Link href="/my-lending/setup">
-              <Button variant="trust">Guided setup</Button>
-            </Link>
+          <ol className="mx-auto mt-5 max-w-md space-y-2 text-left text-sm text-zinc-600">
+            <li className="rounded-lg bg-teal-50/60 px-3 py-2 ring-1 ring-teal-100">
+              <span className="font-semibold text-[#0A2540]">1.</span> Analyze or compare a Loan
+              Estimate, then save it here.
+            </li>
+            <li className="rounded-lg bg-teal-50/60 px-3 py-2 ring-1 ring-teal-100">
+              <span className="font-semibold text-[#0A2540]">2.</span> Shortlist lenders from the
+              directory and add a private note.
+            </li>
+            <li className="rounded-lg bg-teal-50/60 px-3 py-2 ring-1 ring-teal-100">
+              <span className="font-semibold text-[#0A2540]">3.</span> Reopen anything from this page
+              when you return.
+            </li>
+          </ol>
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
             <Link href="/tools/loan-estimate-analyzer">
-              <Button variant="outline">Loan Estimate Analyzer</Button>
+              <Button variant="trust">Understand your Loan Estimate</Button>
             </Link>
             <Link href="/tools/compare-loan-estimates">
-              <Button variant="outline">Compare LEs</Button>
+              <Button variant="outline">Compare offers</Button>
             </Link>
             <Link href="/local-lenders">
               <Button variant="outline">Local lenders</Button>
@@ -284,8 +331,8 @@ export function GuestLendingHq() {
             <Link href="/tools/program-finder">
               <Button variant="outline">Program finder</Button>
             </Link>
-            <Link href="/programs">
-              <Button variant="outline">Program guides</Button>
+            <Link href="/my-lending/setup">
+              <Button variant="outline">Guided plan setup</Button>
             </Link>
           </div>
         </div>
@@ -308,7 +355,14 @@ export function GuestLendingHq() {
 
       {!hasAnyResearch ? <QuickResearchStrip /> : null}
 
-      <nav aria-label="My Lending sections" className="flex flex-wrap gap-2">
+      <WorkspaceJumpNav
+        estimates={loanEstimates.length}
+        comparisons={leComparisons.length}
+        lenders={lenders.length}
+        snapshots={snapshots.length}
+      />
+
+      <nav aria-label="My Lending tools" className="flex flex-wrap gap-2">
         <Link href="/my-lending/plans">
           <Button size="sm" variant="outline" className="gap-1.5">
             All plans
@@ -332,9 +386,17 @@ export function GuestLendingHq() {
             Calculators
           </Button>
         </Link>
+        <Link href="/tools/program-finder">
+          <Button size="sm" variant="outline" className="gap-1.5">
+            Program finder
+          </Button>
+        </Link>
       </nav>
 
-      <section className="rounded-2xl border border-teal-100 bg-white p-5 shadow-sm sm:p-6">
+      <section
+        id="ml-plan"
+        className="scroll-mt-24 rounded-2xl border border-teal-100 bg-white p-5 shadow-sm sm:p-6"
+      >
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
@@ -447,18 +509,23 @@ export function GuestLendingHq() {
           </ul>
         </div>
 
-        <div className="mt-4">
-          <label htmlFor="plan-notes" className="text-sm font-medium text-zinc-800">
-            Plan notes (optional)
+        <div className="mt-4 rounded-xl border border-amber-100 bg-amber-50/30 p-3">
+          <label htmlFor="plan-notes" className="flex items-center gap-1.5 text-sm font-medium text-zinc-800">
+            <StickyNote className="h-3.5 w-3.5 text-amber-800" aria-hidden />
+            Plan notes (optional, private)
           </label>
           <textarea
             id="plan-notes"
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             rows={3}
-            className="mt-1 w-full rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm"
-            placeholder="e.g. First-time buyer; comparing FHA vs conventional"
+            className="mt-1.5 w-full rounded-xl border border-amber-100 bg-white px-3 py-2 text-sm"
+            placeholder="e.g. First-time buyer; comparing FHA vs conventional; re-check rate lock Friday"
           />
+          <p className="mt-1 text-[11px] text-zinc-500">
+            High-level context for this plan. Item-level notes live under each LE, comparison, or
+            lender. Click Save plan to keep changes.
+          </p>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
@@ -506,7 +573,10 @@ export function GuestLendingHq() {
       </section>
 
       {/* Loan Estimate research — organized workspace */}
-      <section className="rounded-2xl border border-emerald-200/80 bg-gradient-to-br from-emerald-50/50 via-white to-sky-50/40 p-5 shadow-sm sm:p-6">
+      <section
+        id="ml-le-research"
+        className="scroll-mt-24 rounded-2xl border border-emerald-200/80 bg-gradient-to-br from-emerald-50/50 via-white to-sky-50/40 p-5 shadow-sm sm:p-6"
+      >
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <h2 className="flex items-center gap-2 text-lg font-semibold text-[#0A2540]">
@@ -514,8 +584,8 @@ export function GuestLendingHq() {
               Loan Estimate research
             </h2>
             <p className="mt-1 text-sm text-zinc-600">
-              Reopen a saved analysis in the free tools. Use private notes to capture trade-offs
-              before you forget them.
+              Estimates and side-by-side comparisons live here. Reopen in free tools; use private
+              notes for trade-offs you do not want to forget.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -571,18 +641,28 @@ export function GuestLendingHq() {
           <div className="mt-4" role="tabpanel">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <h3 className="text-sm font-semibold text-[#0A2540]">Saved Loan Estimates</h3>
-              {loanEstimates.length > 1 ? (
-                <SortSelect
-                  value={leSort}
-                  onChange={setLeSort}
-                  ariaLabel="Sort Loan Estimates"
-                />
-              ) : null}
+              <div className="flex flex-wrap items-center gap-2">
+                {loanEstimates.length > 0 ? (
+                  <NotesFilterSelect
+                    value={leFilter}
+                    onChange={setLeFilter}
+                    ariaLabel="Filter Loan Estimates by notes"
+                    notesCount={notesOnEstimates}
+                  />
+                ) : null}
+                {loanEstimates.length > 1 ? (
+                  <SortSelect
+                    value={leSort}
+                    onChange={setLeSort}
+                    ariaLabel="Sort Loan Estimates"
+                  />
+                ) : null}
+              </div>
             </div>
             {loanEstimates.length === 0 ? (
               <EmptyResearchCard
                 title="No Loan Estimates saved yet"
-                body="Understand your Loan Estimate in the free Analyzer, then choose Save research. You can reopen the same numbers here anytime — guest-first on this device."
+                body="Open the free Analyzer, review fee bands, then choose “Save to My Lending.” Reopen the same numbers here anytime — guest-first on this device."
                 links={[
                   {
                     href: '/tools/loan-estimate-analyzer',
@@ -592,15 +672,37 @@ export function GuestLendingHq() {
                   { href: '/tools/compare-loan-estimates', label: 'Compare offers side by side' },
                 ]}
               />
+            ) : displayedLoanEstimates.length === 0 ? (
+              <p className="mt-3 rounded-lg border border-dashed border-zinc-200 bg-white/80 px-3 py-4 text-center text-sm text-zinc-600">
+                No estimates with private notes yet.{' '}
+                <button
+                  type="button"
+                  className="font-semibold text-emerald-800 underline"
+                  onClick={() => setLeFilter('all')}
+                >
+                  Show all
+                </button>
+              </p>
             ) : (
               <ul className="mt-3 space-y-3">
-                {loanEstimates.map((item) => (
+                {displayedLoanEstimates.map((item) => (
                   <li
                     key={item.id}
-                    className="rounded-xl border border-emerald-100/80 bg-white px-3 py-3 shadow-sm"
+                    className="rounded-xl border border-l-4 border-emerald-100/80 border-l-emerald-500 bg-white px-3 py-3 shadow-sm"
                   >
                     <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                       <div className="min-w-0">
+                        <div className="mb-1 flex flex-wrap items-center gap-1.5">
+                          <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-emerald-900">
+                            Loan Estimate
+                          </span>
+                          {item.notes?.trim() ? (
+                            <span className="inline-flex items-center gap-0.5 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold text-amber-950">
+                              <StickyNote className="h-3 w-3" aria-hidden />
+                              Has note
+                            </span>
+                          ) : null}
+                        </div>
                         <p className="font-medium text-[#0A2540]">{item.label}</p>
                         <p className="text-xs text-zinc-500">{item.summary}</p>
                         {item.bandSummary ? (
@@ -617,7 +719,7 @@ export function GuestLendingHq() {
                         <Button
                           type="button"
                           size="sm"
-                          variant="outline"
+                          variant="trust"
                           className="min-h-10 font-semibold"
                           onClick={() => {
                             stageLeWorkspaceReopen({
@@ -629,19 +731,12 @@ export function GuestLendingHq() {
                         >
                           Reopen in Analyzer
                         </Button>
-                        <Button
-                          type="button"
-                          size="sm"
-                          variant="ghost"
-                          className="text-rose-700 hover:bg-rose-50"
-                          onClick={() => {
+                        <RemoveConfirmButton
+                          onConfirm={() => {
                             removeSavedLoanEstimate(item.id, plan?.id);
                             refresh();
                           }}
-                        >
-                          <Trash2 className="h-3.5 w-3.5" aria-hidden />
-                          Remove
-                        </Button>
+                        />
                       </div>
                     </div>
                     <PrivateResearchNote
@@ -651,6 +746,7 @@ export function GuestLendingHq() {
                         refresh();
                       }}
                       placeholder="e.g. Preferred cash-to-close; asked about rate lock…"
+                      emptyPrompt="Add a private note — fees, questions, or why this LE stood out"
                     />
                   </li>
                 ))}
@@ -661,21 +757,31 @@ export function GuestLendingHq() {
           <div className="mt-4" role="tabpanel">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <h3 className="flex items-center gap-1.5 text-sm font-semibold text-[#0A2540]">
-                <GitCompare className="h-4 w-4 text-emerald-700" aria-hidden />
+                <GitCompare className="h-4 w-4 text-sky-700" aria-hidden />
                 Saved comparisons
               </h3>
-              {leComparisons.length > 1 ? (
-                <SortSelect
-                  value={compareSort}
-                  onChange={setCompareSort}
-                  ariaLabel="Sort comparisons"
-                />
-              ) : null}
+              <div className="flex flex-wrap items-center gap-2">
+                {leComparisons.length > 0 ? (
+                  <NotesFilterSelect
+                    value={compareFilter}
+                    onChange={setCompareFilter}
+                    ariaLabel="Filter comparisons by notes"
+                    notesCount={notesOnComparisons}
+                  />
+                ) : null}
+                {leComparisons.length > 1 ? (
+                  <SortSelect
+                    value={compareSort}
+                    onChange={setCompareSort}
+                    ariaLabel="Sort comparisons"
+                  />
+                ) : null}
+              </div>
             </div>
             {leComparisons.length === 0 ? (
               <EmptyResearchCard
                 title="No comparisons saved yet"
-                body="Compare offers side by side, then Save comparison. Reopen later with the same A/B/C inputs — optional and guest-friendly."
+                body="Compare offers side by side, then “Save comparison to My Lending.” Reopen later with the same A/B/C inputs — optional and guest-friendly."
                 links={[
                   {
                     href: '/tools/compare-loan-estimates',
@@ -685,15 +791,37 @@ export function GuestLendingHq() {
                   { href: '/tools/loan-estimate-analyzer', label: 'Understand your Loan Estimate' },
                 ]}
               />
+            ) : displayedComparisons.length === 0 ? (
+              <p className="mt-3 rounded-lg border border-dashed border-zinc-200 bg-white/80 px-3 py-4 text-center text-sm text-zinc-600">
+                No comparisons with private notes yet.{' '}
+                <button
+                  type="button"
+                  className="font-semibold text-emerald-800 underline"
+                  onClick={() => setCompareFilter('all')}
+                >
+                  Show all
+                </button>
+              </p>
             ) : (
               <ul className="mt-3 space-y-3">
-                {leComparisons.map((item) => (
+                {displayedComparisons.map((item) => (
                   <li
                     key={item.id}
-                    className="rounded-xl border border-sky-100/80 bg-white px-3 py-3 shadow-sm"
+                    className="rounded-xl border border-l-4 border-sky-100/80 border-l-sky-500 bg-white px-3 py-3 shadow-sm"
                   >
                     <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                       <div className="min-w-0">
+                        <div className="mb-1 flex flex-wrap items-center gap-1.5">
+                          <span className="rounded-full bg-sky-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-sky-900">
+                            Comparison
+                          </span>
+                          {item.notes?.trim() ? (
+                            <span className="inline-flex items-center gap-0.5 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold text-amber-950">
+                              <StickyNote className="h-3 w-3" aria-hidden />
+                              Has note
+                            </span>
+                          ) : null}
+                        </div>
                         <p className="font-medium text-[#0A2540]">{item.label}</p>
                         <p className="text-xs text-zinc-500">{item.summary}</p>
                         <p className="text-[11px] text-zinc-400">
@@ -705,7 +833,7 @@ export function GuestLendingHq() {
                         <Button
                           type="button"
                           size="sm"
-                          variant="outline"
+                          variant="trust"
                           className="min-h-10 font-semibold"
                           onClick={() => {
                             stageLeWorkspaceReopen({
@@ -717,19 +845,12 @@ export function GuestLendingHq() {
                         >
                           Reopen comparison
                         </Button>
-                        <Button
-                          type="button"
-                          size="sm"
-                          variant="ghost"
-                          className="text-rose-700 hover:bg-rose-50"
-                          onClick={() => {
+                        <RemoveConfirmButton
+                          onConfirm={() => {
                             removeSavedLeComparison(item.id, plan?.id);
                             refresh();
                           }}
-                        >
-                          <Trash2 className="h-3.5 w-3.5" aria-hidden />
-                          Remove
-                        </Button>
+                        />
                       </div>
                     </div>
                     <PrivateResearchNote
@@ -739,6 +860,7 @@ export function GuestLendingHq() {
                         refresh();
                       }}
                       placeholder="e.g. Offer B lower APR but higher origination…"
+                      emptyPrompt="Add a private note — which offer you prefer and why"
                     />
                   </li>
                 ))}
@@ -789,143 +911,170 @@ export function GuestLendingHq() {
         </section>
       ) : null}
 
-      <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-6">
-        <div className="flex flex-wrap items-start justify-between gap-3">
-          <div>
-            <h2 className="flex items-center gap-2 text-lg font-semibold text-[#0A2540]">
-              <Bookmark className="h-5 w-5 text-emerald-700" aria-hidden />
-              Saved lenders
-            </h2>
-            <p className="mt-1 text-sm text-zinc-600">
-              Shortlist (max {SHORTLIST_CAP}), researching, and history — with private notes.
+      <div id="ml-lenders" className="scroll-mt-24 space-y-4">
+        <section className="rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50/40 via-white to-white p-5 shadow-sm sm:p-6">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <h2 className="flex items-center gap-2 text-lg font-semibold text-[#0A2540]">
+                <Bookmark className="h-5 w-5 text-violet-700" aria-hidden />
+                Saved lenders
+              </h2>
+              <p className="mt-1 text-sm text-zinc-600">
+                Shortlist (max {SHORTLIST_CAP}), researching, and history — with private notes.
+                Research aid only, not a lead form.
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              {lenders.length > 0 ? (
+                <NotesFilterSelect
+                  value={lenderFilter}
+                  onChange={setLenderFilter}
+                  ariaLabel="Filter lenders by notes"
+                  notesCount={notesOnLenders}
+                />
+              ) : null}
+              {lenders.length > 1 ? (
+                <SortSelect value={lenderSort} onChange={setLenderSort} ariaLabel="Sort lenders" />
+              ) : null}
+              <Link href="/local-lenders">
+                <Button size="sm" variant="outline">
+                  Directory
+                </Button>
+              </Link>
+            </div>
+          </div>
+          {lenders.length === 0 ? (
+            <EmptyResearchCard
+              title="No saved lenders yet"
+              body={`Save from a profile or directory card (shortlist max ${SHORTLIST_CAP}). Add a private note so you remember why they made the list.`}
+              links={[
+                { href: '/local-lenders', label: 'Browse local lenders', primary: true },
+                { href: '/tools/program-finder', label: 'Explore programs' },
+                { href: '/tools/loan-estimate-analyzer', label: 'Loan Estimate Analyzer' },
+              ]}
+            />
+          ) : lenderFilter === 'notes' && sortedLenders.length === 0 ? (
+            <p className="mt-4 rounded-lg border border-dashed border-zinc-200 bg-white px-3 py-4 text-center text-sm text-zinc-600">
+              No lenders with private notes yet.{' '}
+              <button
+                type="button"
+                className="font-semibold text-emerald-800 underline"
+                onClick={() => setLenderFilter('all')}
+              >
+                Show all
+              </button>
             </p>
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            {lenders.length > 1 ? (
-              <SortSelect value={lenderSort} onChange={setLenderSort} ariaLabel="Sort lenders" />
-            ) : null}
-            <Link href="/local-lenders">
-              <Button size="sm" variant="outline">
-                Directory
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+          ) : null}
+        </section>
 
-      <LenderBucket
-        title={`Shortlist (${getShortlisted(sortedLenders).length}/${SHORTLIST_CAP})`}
-        hint="Top candidates — max 3. Promote carefully. Research only."
-        items={getShortlisted(sortedLenders)}
-        empty="No shortlisted lenders yet. Save from a profile or directory card."
-        emptyLinks={[
-          { href: '/local-lenders', label: 'Browse local lenders', primary: true },
-          { href: '/tools/program-finder', label: 'Program finder' },
-          { href: '/programs', label: 'FHA · VA · DPA guides' },
-          { href: '/tools/loan-estimate-analyzer', label: 'Loan Estimate Analyzer' },
-        ]}
-        planId={plan?.id}
-        onStatus={(id, status, name) => {
-          const res = updateSavedLenderStatus(id, status);
-          if (res && !res.ok && res.reason === 'shortlist_full' && res.shortlisted) {
-            setFullPanel({ shortlisted: res.shortlisted, pendingId: id, pendingName: name });
-          } else {
-            refresh();
-          }
-        }}
-        onRemove={(slug) => {
-          removeSavedLender(slug, plan?.id);
-          refresh();
-        }}
-        onNotes={(id, n) => {
-          updateSavedLenderNotes(id, n);
-          refresh();
-        }}
-      />
-
-      <LenderBucket
-        title={`Still researching (${getResearching(sortedLenders).length})`}
-        hint="Directory saves can land here when shortlist is full."
-        items={getResearching(sortedLenders)}
-        empty="Nothing in researching."
-        planId={plan?.id}
-        onStatus={(id, status, name) => {
-          const res = updateSavedLenderStatus(id, status);
-          if (res && !res.ok && res.reason === 'shortlist_full' && res.shortlisted) {
-            setFullPanel({ shortlisted: res.shortlisted, pendingId: id, pendingName: name });
-          } else {
-            refresh();
-          }
-        }}
-        onRemove={(slug) => {
-          removeSavedLender(slug, plan?.id);
-          refresh();
-        }}
-        onNotes={(id, n) => {
-          updateSavedLenderNotes(id, n);
-          refresh();
-        }}
-      />
-
-      <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-6">
-        <button
-          type="button"
-          className="flex w-full items-center justify-between text-left"
-          onClick={() => setHistoryOpen((v) => !v)}
-          aria-expanded={historyOpen}
-        >
-          <h2 className="text-lg font-semibold text-[#0A2540]">
-            Reached out / done ({getHistory(sortedLenders).length})
-          </h2>
-          <span className="text-xs font-medium text-zinc-500">
-            {historyOpen ? 'Hide' : 'Show'}
-          </span>
-        </button>
-        {historyOpen ? (
-          <div className="mt-4">
-            {getHistory(sortedLenders).length === 0 ? (
-              <p className="text-sm text-zinc-500">No history yet.</p>
-            ) : (
-              <LenderList
-                items={getHistory(sortedLenders)}
-                planId={plan?.id}
-                onStatus={(id, status, name) => {
-                  const res = updateSavedLenderStatus(id, status);
-                  if (res && !res.ok && res.reason === 'shortlist_full' && res.shortlisted) {
-                    setFullPanel({
-                      shortlisted: res.shortlisted,
-                      pendingId: id,
-                      pendingName: name,
-                    });
-                  } else {
-                    refresh();
-                  }
-                }}
-                onRemove={(slug) => {
-                  removeSavedLender(slug, plan?.id);
+        {lenders.length > 0 && !(lenderFilter === 'notes' && sortedLenders.length === 0) ? (
+          <>
+            <LenderBucket
+              title={`Shortlist (${getShortlisted(sortedLenders).length}/${SHORTLIST_CAP})`}
+              hint="Top candidates — max 3. Promote carefully. Research only."
+              items={getShortlisted(sortedLenders)}
+              empty="No shortlisted lenders in this view. Save from a profile or directory card."
+              emptyLinks={
+                lenderFilter === 'all'
+                  ? [
+                      { href: '/local-lenders', label: 'Browse local lenders', primary: true },
+                      { href: '/tools/program-finder', label: 'Program finder' },
+                    ]
+                  : undefined
+              }
+              planId={plan?.id}
+              onStatus={(id, status, name) => {
+                const res = updateSavedLenderStatus(id, status);
+                if (res && !res.ok && res.reason === 'shortlist_full' && res.shortlisted) {
+                  setFullPanel({ shortlisted: res.shortlisted, pendingId: id, pendingName: name });
+                } else {
                   refresh();
-                }}
-                onNotes={(id, n) => {
-                  updateSavedLenderNotes(id, n);
+                }
+              }}
+              onRemove={(slug) => {
+                removeSavedLender(slug, plan?.id);
+                refresh();
+              }}
+              onNotes={(id, n) => {
+                updateSavedLenderNotes(id, n);
+                refresh();
+              }}
+            />
+
+            <LenderBucket
+              title={`Still researching (${getResearching(sortedLenders).length})`}
+              hint="Directory saves can land here when shortlist is full."
+              items={getResearching(sortedLenders)}
+              empty="Nothing in researching for this view."
+              planId={plan?.id}
+              onStatus={(id, status, name) => {
+                const res = updateSavedLenderStatus(id, status);
+                if (res && !res.ok && res.reason === 'shortlist_full' && res.shortlisted) {
+                  setFullPanel({ shortlisted: res.shortlisted, pendingId: id, pendingName: name });
+                } else {
                   refresh();
-                }}
-              />
-            )}
-          </div>
+                }
+              }}
+              onRemove={(slug) => {
+                removeSavedLender(slug, plan?.id);
+                refresh();
+              }}
+              onNotes={(id, n) => {
+                updateSavedLenderNotes(id, n);
+                refresh();
+              }}
+            />
+
+            <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-6">
+              <button
+                type="button"
+                className="flex w-full items-center justify-between text-left"
+                onClick={() => setHistoryOpen((v) => !v)}
+                aria-expanded={historyOpen}
+              >
+                <h2 className="text-lg font-semibold text-[#0A2540]">
+                  Reached out / done ({getHistory(sortedLenders).length})
+                </h2>
+                <span className="text-xs font-medium text-zinc-500">
+                  {historyOpen ? 'Hide' : 'Show'}
+                </span>
+              </button>
+              {historyOpen ? (
+                <div className="mt-4">
+                  {getHistory(sortedLenders).length === 0 ? (
+                    <p className="text-sm text-zinc-500">No history yet.</p>
+                  ) : (
+                    <LenderList
+                      items={getHistory(sortedLenders)}
+                      planId={plan?.id}
+                      onStatus={(id, status, name) => {
+                        const res = updateSavedLenderStatus(id, status);
+                        if (res && !res.ok && res.reason === 'shortlist_full' && res.shortlisted) {
+                          setFullPanel({
+                            shortlisted: res.shortlisted,
+                            pendingId: id,
+                            pendingName: name,
+                          });
+                        } else {
+                          refresh();
+                        }
+                      }}
+                      onRemove={(slug) => {
+                        removeSavedLender(slug, plan?.id);
+                        refresh();
+                      }}
+                      onNotes={(id, n) => {
+                        updateSavedLenderNotes(id, n);
+                        refresh();
+                      }}
+                    />
+                  )}
+                </div>
+              ) : null}
+            </section>
+          </>
         ) : null}
-      </section>
-
-      {lenders.length === 0 ? (
-        <EmptyResearchCard
-          title="No saved lenders yet"
-          body={`Save from a profile or directory card (shortlist max ${SHORTLIST_CAP}). Research aid only — not a lead form.`}
-          links={[
-            { href: '/local-lenders', label: 'Browse local lenders', primary: true },
-            { href: '/tools/program-finder', label: 'Explore programs' },
-            { href: '/calculators', label: 'Calculators' },
-          ]}
-        />
-      ) : null}
+      </div>
 
       {fullPanel ? (
         <ShortlistFullPanel
@@ -992,8 +1141,8 @@ function ResearchPassportIntro({
       </p>
       <p className="mt-1 text-sm leading-relaxed text-zinc-600">
         {firstVisit
-          ? 'Save what you research so you can come back later — without signing up. Not a CRM or lead funnel.'
-          : 'Reopen saved Loan Estimates and comparisons in the free tools. Private notes stay with each item so you remember why it mattered.'}{' '}
+          ? 'A calm place to keep what you research — Loan Estimates, comparisons, lenders, and private notes — so you can return without starting over. Not a CRM or lead funnel.'
+          : 'Jump to a section below, reopen tools with one tap, and use private notes so each item still makes sense next week.'}{' '}
         {storageMode === 'guest' ? (
           <span className="text-zinc-500">Guest mode: this device only (optional sign-in later).</span>
         ) : (
@@ -1017,6 +1166,50 @@ function ResearchPassportIntro({
         </ul>
       ) : null}
     </div>
+  );
+}
+
+function WorkspaceJumpNav({
+  estimates,
+  comparisons,
+  lenders,
+  snapshots,
+}: {
+  estimates: number;
+  comparisons: number;
+  lenders: number;
+  snapshots: number;
+}) {
+  const items = [
+    { href: '#ml-plan', label: 'Plan', count: null as number | null },
+    { href: '#ml-le-research', label: 'LEs', count: estimates },
+    { href: '#ml-le-research', label: 'Compares', count: comparisons },
+    { href: '#ml-lenders', label: 'Lenders', count: lenders },
+  ];
+  return (
+    <nav
+      aria-label="Jump to workspace sections"
+      className="flex flex-wrap items-center gap-2 rounded-xl border border-zinc-200 bg-white px-3 py-2.5 shadow-sm"
+    >
+      <span className="text-[11px] font-semibold uppercase tracking-wide text-zinc-500">
+        On this page
+      </span>
+      {items.map((item) => (
+        <a
+          key={item.label}
+          href={item.href}
+          className="inline-flex min-h-9 items-center gap-1 rounded-full border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-xs font-semibold text-[#0A2540] hover:border-emerald-400 hover:bg-emerald-50/60"
+        >
+          {item.label}
+          {item.count != null ? (
+            <span className="tabular-nums text-zinc-500">({item.count})</span>
+          ) : null}
+        </a>
+      ))}
+      {snapshots > 0 ? (
+        <span className="text-xs text-zinc-500">· {snapshots} calculator snapshot{snapshots === 1 ? '' : 's'}</span>
+      ) : null}
+    </nav>
   );
 }
 
@@ -1069,6 +1262,33 @@ function SortSelect({
         <option value="newest">Newest first</option>
         <option value="oldest">Oldest first</option>
         <option value="alpha">A–Z</option>
+      </select>
+    </label>
+  );
+}
+
+function NotesFilterSelect({
+  value,
+  onChange,
+  ariaLabel,
+  notesCount,
+}: {
+  value: NotesFilter;
+  onChange: (v: NotesFilter) => void;
+  ariaLabel: string;
+  notesCount: number;
+}) {
+  return (
+    <label className="inline-flex items-center gap-1.5 text-xs text-zinc-500">
+      <span className="sr-only sm:not-sr-only">Show</span>
+      <select
+        className="h-8 rounded-md border border-zinc-200 bg-white px-2 text-xs font-medium text-zinc-700"
+        value={value}
+        onChange={(e) => onChange(e.target.value as NotesFilter)}
+        aria-label={ariaLabel}
+      >
+        <option value="all">All items</option>
+        <option value="notes">With notes ({notesCount})</option>
       </select>
     </label>
   );
@@ -1193,10 +1413,21 @@ function LenderList({
       {items.map((l) => (
         <li
           key={l.id}
-          className="rounded-xl border border-zinc-100 bg-zinc-50/50 p-4"
+          className="rounded-xl border border-l-4 border-zinc-100 border-l-violet-400 bg-zinc-50/50 p-4"
         >
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="min-w-0">
+              <div className="mb-1 flex flex-wrap items-center gap-1.5">
+                <span className="rounded-full bg-violet-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-violet-900">
+                  Lender
+                </span>
+                {l.notes?.trim() ? (
+                  <span className="inline-flex items-center gap-0.5 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold text-amber-950">
+                    <StickyNote className="h-3 w-3" aria-hidden />
+                    Has note
+                  </span>
+                ) : null}
+              </div>
               <Link
                 href={l.profilePath || `/lenders/${l.lenderSlug}`}
                 className="font-semibold text-[#0A2540] hover:text-[#059669] hover:underline"
@@ -1234,26 +1465,18 @@ function LenderList({
                 ))}
               </select>
               <Link href={l.profilePath || `/lenders/${l.lenderSlug}`}>
-                <Button type="button" variant="outline" size="sm">
-                  Profile <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+                <Button type="button" variant="trust" size="sm">
+                  Open profile <ExternalLink className="h-3.5 w-3.5" aria-hidden />
                 </Button>
               </Link>
-              <Button
-                type="button"
-                variant="ghost"
-                size="sm"
-                className="text-rose-700 hover:bg-rose-50"
-                onClick={() => onRemove(l.lenderSlug)}
-              >
-                <Trash2 className="h-4 w-4" aria-hidden />
-                <span className="sr-only">Remove</span>
-              </Button>
+              <RemoveConfirmButton onConfirm={() => onRemove(l.lenderSlug)} label="Remove" />
             </div>
           </div>
           <PrivateResearchNote
             value={l.notes}
             onSave={(n) => onNotes(l.id, n)}
             placeholder="e.g. Called Monday; waiting on LE…"
+            emptyPrompt="Add a private note — questions, follow-ups, or why they are shortlisted"
           />
         </li>
       ))}

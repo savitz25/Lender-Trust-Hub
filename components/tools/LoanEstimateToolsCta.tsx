@@ -83,7 +83,7 @@ export function LoanEstimateToolsCta({
         <p className="mt-2 text-sm leading-relaxed text-zinc-600">
           Understand your Loan Estimate with educational fee bands and optional HMDA context
           {lenderName ? ` for ${lenderName}` : ''}. Compare offers side by side when you have more
-          than one. Save research to My Lending when you want to return later.
+          than one. Optional: save research to My Lending to reopen later — never required.
         </p>
         <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
           <Link
@@ -104,7 +104,7 @@ export function LoanEstimateToolsCta({
             href="/my-lending"
             className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-transparent px-4 py-2.5 text-sm font-semibold text-emerald-800 underline-offset-2 hover:underline"
           >
-            Save your research
+            Open My Lending
           </Link>
         </div>
       </aside>
@@ -194,7 +194,7 @@ export function LoanEstimateToolsCta({
           </Link>
           {' · '}
           <Link href="/my-lending" className="font-semibold text-[#059669] hover:underline">
-            Save your research
+            Open My Lending
           </Link>
         </p>
       </section>

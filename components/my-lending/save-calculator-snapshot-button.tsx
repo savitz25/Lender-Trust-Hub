@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { Bookmark } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { WorkspaceSaveToast } from '@/components/my-lending/workspace-save-toast';
 import { addCalculatorSnapshot } from '@/lib/my-lending/storage';
 import { MY_LENDING_PATH } from '@/lib/my-lending/types';
 import { cn } from '@/lib/utils';
@@ -30,7 +30,7 @@ export function SaveCalculatorSnapshotButton({
   href = '/calculators',
   className,
 }: Props) {
-  const [toast, setToast] = useState<string | null>(null);
+  const [toast, setToast] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   function onSave() {
@@ -47,8 +47,8 @@ export function SaveCalculatorSnapshotButton({
       setError('Could not save snapshot on this device.');
       return;
     }
-    setToast('Snapshot saved to My Lending');
-    window.setTimeout(() => setToast(null), 4000);
+    setToast(true);
+    window.setTimeout(() => setToast(false), 6000);
   }
 
   return (
@@ -57,20 +57,14 @@ export function SaveCalculatorSnapshotButton({
         <Bookmark className="h-3.5 w-3.5 text-emerald-700" aria-hidden />
         Save snapshot to My Lending
       </Button>
-      {toast ? (
-        <div
-          role="status"
-          className="absolute left-0 top-full z-20 mt-2 w-max max-w-[16rem] rounded-lg border border-emerald-200 bg-white px-3 py-2 text-xs shadow-md"
-        >
-          <p className="font-medium text-[#0A2540]">{toast}</p>
-          <Link
-            href={`${MY_LENDING_PATH}/report`}
-            className="mt-1 inline-block font-semibold text-emerald-800 underline"
-          >
-            View report
-          </Link>
-        </div>
-      ) : null}
+      <WorkspaceSaveToast
+        open={toast}
+        title="Calculator snapshot saved"
+        detail="Educational estimate only · not a Loan Estimate"
+        workspaceHref={MY_LENDING_PATH}
+        workspaceLabel="Open My Lending"
+        onDismiss={() => setToast(false)}
+      />
       {error ? (
         <p className="mt-1 text-xs text-rose-700" role="alert">
           {error}

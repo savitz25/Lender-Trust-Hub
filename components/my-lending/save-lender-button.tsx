@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Bookmark, BookmarkCheck, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ShortlistFullPanel } from '@/components/my-lending/shortlist-full-panel';
+import { WorkspaceSaveToast } from '@/components/my-lending/workspace-save-toast';
 import {
   getSavedLenderOnActivePlan,
   isLenderSaved,
@@ -173,28 +174,21 @@ export function SaveLenderButton({
           ) : (
             <Link
               href={MY_LENDING_PATH}
-              className="text-xs font-semibold text-emerald-800 underline"
+              className="text-xs font-semibold text-emerald-800 underline-offset-2 hover:underline"
             >
-              HQ
+              My Lending
             </Link>
           )}
         </div>
       )}
 
-      {toast ? (
-        <div
-          role="status"
-          className="absolute left-0 top-full z-20 mt-2 w-max max-w-[16rem] rounded-lg border border-emerald-200 bg-white px-3 py-2 text-xs text-zinc-700 shadow-md"
-        >
-          <p className="font-medium text-[#0A2540]">{toast}</p>
-          <Link
-            href={MY_LENDING_PATH}
-            className="mt-1 inline-block font-semibold text-emerald-800 underline"
-          >
-            Open HQ
-          </Link>
-        </div>
-      ) : null}
+      <WorkspaceSaveToast
+        open={Boolean(toast)}
+        title={toast ?? ''}
+        detail="Return later from My Lending · research only, not a lead"
+        workspaceLabel="Open My Lending"
+        onDismiss={() => setToast(null)}
+      />
       {error && !fullPanel ? (
         <p className="mt-1 text-xs text-rose-700" role="alert">
           {error}

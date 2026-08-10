@@ -164,6 +164,7 @@ export function LoanEstimateCompare({
   const [mobileTab, setMobileTab] = useState<CompareSlotId>('A');
   const [showResults, setShowResults] = useState(true);
   const [hydrated, setHydrated] = useState(false);
+  const [fromMyLending, setFromMyLending] = useState(false);
 
   // sessionStorage handoff from single analyzer or My Lending reopen
   useEffect(() => {
@@ -184,6 +185,7 @@ export function LoanEstimateCompare({
         });
         setCount(Math.min(MAX_COMPARE_ESTIMATES, Math.max(2, reopen.estimates.length)));
         setShowResults(true);
+        setFromMyLending(true);
         setHydrated(true);
         return;
       }
@@ -259,6 +261,23 @@ export function LoanEstimateCompare({
 
   return (
     <div className="space-y-8">
+      {fromMyLending ? (
+        <div
+          className="rounded-xl border border-emerald-200 bg-emerald-50/80 px-3 py-2.5 text-sm text-emerald-950"
+          role="status"
+        >
+          <p className="font-medium">Comparison loaded from My Lending</p>
+          <p className="mt-0.5 text-xs text-emerald-900/80">
+            Edit offers if needed, re-compare, and save again to keep your research passport current.
+          </p>
+          <Link
+            href="/my-lending"
+            className="mt-1 inline-block text-xs font-semibold text-emerald-900 underline-offset-2 hover:underline"
+          >
+            Back to My Lending workspace
+          </Link>
+        </div>
+      ) : null}
       {/* Controls */}
       <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
         <div>

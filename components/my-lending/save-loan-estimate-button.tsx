@@ -1,11 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { Bookmark } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { WorkspaceSaveToast } from '@/components/my-lending/workspace-save-toast';
 import { saveLoanEstimate } from '@/lib/my-lending/storage';
-import { MY_LENDING_PATH } from '@/lib/my-lending/types';
 import { cn } from '@/lib/utils';
 
 type Props = {
@@ -34,7 +33,8 @@ export function SaveLoanEstimateButton({
   className,
   size = 'default',
 }: Props) {
-  const [toast, setToast] = useState<string | null>(null);
+  const [toast, setToast] = useState(false);
+  const [savedLabel, setSavedLabel] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   function onSave() {
@@ -51,8 +51,9 @@ export function SaveLoanEstimateButton({
       setError('Could not save on this device (storage blocked or full).');
       return;
     }
-    setToast('Saved — reopen anytime from My Lending');
-    window.setTimeout(() => setToast(null), 5000);
+    setSavedLabel(item.label);
+    setToast(true);
+    window.setTimeout(() => setToast(false), 7000);
   }
 
   return (
@@ -65,23 +66,14 @@ export function SaveLoanEstimateButton({
         className="min-h-11 gap-1.5"
       >
         <Bookmark className="h-4 w-4 text-emerald-700" aria-hidden />
-        Save research
+        Save to My Lending
       </Button>
-      {toast ? (
-        <div
-          role="status"
-          className="absolute left-0 top-full z-20 mt-2 w-max max-w-[18rem] rounded-lg border border-emerald-200 bg-white px-3 py-2 text-xs shadow-md"
-        >
-          <p className="font-medium text-[#0A2540]">{toast}</p>
-          <p className="mt-0.5 text-zinc-500">Guest-first on this device · optional sign-in later</p>
-          <Link
-            href={MY_LENDING_PATH}
-            className="mt-1 inline-block font-semibold text-emerald-800 underline"
-          >
-            Open My Lending workspace
-          </Link>
-        </div>
-      ) : null}
+      <WorkspaceSaveToast
+        open={toast}
+        title={savedLabel ? `Saved “${savedLabel}”` : 'Loan Estimate saved'}
+        detail="Reopen anytime from My Lending · guest-first on this device"
+        onDismiss={() => setToast(false)}
+      />
       {error ? (
         <p className="mt-1 text-xs text-rose-700" role="alert">
           {error}

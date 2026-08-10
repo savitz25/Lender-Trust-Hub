@@ -408,8 +408,8 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
                 },
                 {
                   href: '/my-lending',
-                  label: 'Save your research',
-                  detail: 'My Lending workspace (guest-first)',
+                  label: 'Open My Lending',
+                  detail: 'Reopen saved LEs, comparisons & notes',
                 },
               ].map((item) => (
                 <li key={item.href}>

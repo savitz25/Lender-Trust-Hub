@@ -1,5 +1,7 @@
 # My Lending V1.1 — Research passport polish
 
+**Superseded polish:** see [MY-LENDING-V1.2.md](./MY-LENDING-V1.2.md) for organization, notes, and save/reopen improvements.
+
 Strengthens `/my-lending` as a lightweight research workspace. Not a CRM, lead funnel, or account-gated product.
 
 ## What changed
