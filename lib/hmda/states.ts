@@ -24,7 +24,8 @@ export type HmdaStateCode =
   | 'IL'
   | 'OH'
   | 'MI'
-  | 'IN';
+  | 'IN'
+  | 'AZ';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -60,7 +61,8 @@ export type HmdaStateConfig = {
     | 'illinois_originations'
     | 'ohio_originations'
     | 'michigan_originations'
-    | 'indiana_originations';
+    | 'indiana_originations'
+    | 'arizona_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -941,6 +943,29 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'marshall',
     ]),
   },
+  AZ: {
+    code: 'AZ',
+    stateSlug: 'arizona',
+    name: 'Arizona',
+    dataFolder: 'arizona',
+    fileSuffix: '_az',
+    originationsColumn: 'arizona_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Phoenix / Tucson / growth corridors + secondary volume
+      'maricopa',
+      'pima',
+      'pinal',
+      'yavapai',
+      'mohave',
+      'yuma',
+      'coconino',
+      'cochise',
+      'navajo',
+      'gila',
+      'santa-cruz',
+      'graham',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -968,6 +993,7 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'OH',
   'MI',
   'IN',
+  'AZ',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {

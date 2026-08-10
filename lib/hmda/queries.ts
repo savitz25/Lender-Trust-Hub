@@ -61,6 +61,8 @@ export const MAJOR_MICHIGAN_COUNTY_SLUGS = HMDA_STATE_CONFIGS.MI.majorCountySlug
 
 export const MAJOR_INDIANA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.IN.majorCountySlugs;
 
+export const MAJOR_ARIZONA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.AZ.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw

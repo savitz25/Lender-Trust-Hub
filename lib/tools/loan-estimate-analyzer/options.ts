@@ -26,6 +26,7 @@ import {
   MAJOR_OHIO_COUNTY_SLUGS,
   MAJOR_MICHIGAN_COUNTY_SLUGS,
   MAJOR_INDIANA_COUNTY_SLUGS,
+  MAJOR_ARIZONA_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -355,6 +356,17 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (IN)`,
       originations: c.originations,
       stateSlug: 'indiana',
+    });
+  }
+
+  const az = loadHmdaStateData('AZ');
+  for (const c of az.countyMarkets) {
+    if (!MAJOR_ARIZONA_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `az:${c.countySlug}`,
+      name: `${c.countyName} (AZ)`,
+      originations: c.originations,
+      stateSlug: 'arizona',
     });
   }
 
