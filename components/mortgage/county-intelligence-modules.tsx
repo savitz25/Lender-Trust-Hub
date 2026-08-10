@@ -7,26 +7,32 @@ const LOAN_PROGRAMS = [
   {
     id: 'conventional',
     label: 'Conventional',
-    href: '/calculators?calc=payment',
-    note: 'Educational payment scenarios — not a live rate quote',
+    href: '/programs/conventional',
+    note: 'Baseline purchase & refinance themes — educational overview',
   },
   {
     id: 'fha',
     label: 'FHA',
-    href: '/calculators?calc=affordability',
-    note: 'Affordability estimates for lower-down-payment research',
+    href: '/programs/fha',
+    note: 'Lower down-payment research themes — not an eligibility tool',
   },
   {
     id: 'va',
     label: 'VA',
-    href: '/calculators?calc=payment',
-    note: 'Confirm eligibility and benefits with VA and any lender',
+    href: '/programs/va',
+    note: 'Military / veteran program themes — confirm with VA sources',
   },
   {
-    id: 'refinance',
-    label: 'Refinance',
-    href: '/calculators?calc=refinance',
-    note: 'Educational refinance break-even style tools',
+    id: 'dpa',
+    label: 'Down-payment assistance',
+    href: '/programs/down-payment-assistance',
+    note: 'State/local assistance concepts — not a complete local inventory',
+  },
+  {
+    id: 'finder',
+    label: 'Program finder',
+    href: '/tools/program-finder',
+    note: 'Short guided shortlist with clear disclaimers',
   },
 ] as const;
 
@@ -75,22 +81,28 @@ export function CountyIntelligenceModules({
           </p>
           <ul className="mt-4 grid gap-3 sm:grid-cols-2">
             {LOAN_PROGRAMS.map((p) => {
-              const inInventory = loanTypesPresent.has(
-                p.id === 'refinance'
-                  ? 'Refinance'
-                  : p.id === 'fha'
-                    ? 'FHA'
-                    : p.id === 'va'
-                      ? 'VA'
-                      : 'Conventional'
-              );
+              const inventoryKey =
+                p.id === 'fha'
+                  ? 'FHA'
+                  : p.id === 'va'
+                    ? 'VA'
+                    : p.id === 'conventional'
+                      ? 'Conventional'
+                      : null;
+              const inInventory = inventoryKey
+                ? loanTypesPresent.has(inventoryKey)
+                : false;
+              const href =
+                p.id === 'finder' && stateSlug
+                  ? `${p.href}?state=${encodeURIComponent(stateSlug)}`
+                  : p.href;
               return (
                 <li
                   key={p.id}
                   className="rounded-xl border border-zinc-200 bg-white p-4 text-sm"
                 >
                   <Link
-                    href={p.href}
+                    href={href}
                     className="font-semibold text-[#0A2540] hover:text-[#059669]"
                   >
                     {p.label}

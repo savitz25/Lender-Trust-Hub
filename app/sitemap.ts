@@ -27,6 +27,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/local-lenders',
     '/fdic-insured-banks',
     '/auto-loan-companies',
+    '/programs',
+    '/programs/fha',
+    '/programs/va',
+    '/programs/conventional',
+    '/programs/usda',
+    '/programs/down-payment-assistance',
+    '/tools/program-finder',
+    '/tools/loan-estimate-analyzer',
+    '/tools/compare-loan-estimates',
+    '/my-lending',
   ];
 
   const staticRoutes: MetadataRoute.Sitemap = staticPaths.map((path) => ({

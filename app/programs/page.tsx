@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ChevronRight, Landmark } from 'lucide-react';
 import { getAllPrograms } from '@/lib/programs';
 import { ProgramCard } from '@/components/programs/ProgramCard';
+import { ProgramComparisonTable } from '@/components/programs/ProgramComparisonTable';
 import { ProgramDisclaimer } from '@/components/programs/ProgramDisclaimer';
 import { JsonLd } from '@/components/directory/JsonLd';
 
@@ -72,6 +73,44 @@ export default function ProgramsHubPage() {
             <ProgramCard key={p.id} program={p} />
           ))}
         </div>
+
+        <ProgramComparisonTable />
+
+        <section className="mx-auto mt-12 max-w-3xl rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-6">
+          <h2 className="text-lg font-bold text-[#0A2540]">Continue your research</h2>
+          <ul className="mt-3 flex flex-col gap-2 text-sm sm:flex-row sm:flex-wrap">
+            <li>
+              <Link
+                href="/tools/loan-estimate-analyzer"
+                className="font-medium text-[#059669] hover:underline"
+              >
+                Loan Estimate Analyzer
+              </Link>
+            </li>
+            <li className="hidden text-zinc-300 sm:inline">·</li>
+            <li>
+              <Link
+                href="/tools/compare-loan-estimates"
+                className="font-medium text-[#059669] hover:underline"
+              >
+                Compare Loan Estimates
+              </Link>
+            </li>
+            <li className="hidden text-zinc-300 sm:inline">·</li>
+            <li>
+              <Link href="/local-lenders" className="font-medium text-[#059669] hover:underline">
+                Local lenders directory
+              </Link>
+            </li>
+            <li className="hidden text-zinc-300 sm:inline">·</li>
+            <li>
+              <Link href="/my-lending" className="font-medium text-[#059669] hover:underline">
+                My Lending workspace
+              </Link>
+            </li>
+          </ul>
+        </section>
+
         <ProgramDisclaimer className="mx-auto mt-10 max-w-3xl" />
       </div>
     </>

@@ -15,3 +15,9 @@ export {
 } from './programs';
 
 export { scoreProgramFits, fitLevelLabel } from './finder';
+
+export {
+  PROGRAM_LOCATION_NOTES,
+  getProgramLocationNote,
+  type ProgramLocationNote,
+} from './location-notes';

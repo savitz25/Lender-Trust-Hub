@@ -11,6 +11,7 @@ import {
   type ProgramFitLevel,
 } from '@/lib/programs';
 import { ProgramDisclaimer } from '@/components/programs/ProgramDisclaimer';
+import { ProgramLocationPanel } from '@/components/programs/ProgramLocationPanel';
 import { cn } from '@/lib/utils';
 
 const emptyAnswers: FinderAnswers = {
@@ -218,6 +219,10 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
           </div>
         )}
 
+        {submitted && answers.stateSlug ? (
+          <ProgramLocationPanel stateSlug={answers.stateSlug} compact />
+        ) : null}
+
         {submitted &&
           results.map((r) => {
             const guide = getProgramById(r.programId);
@@ -275,8 +280,19 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
               Analyze a Loan Estimate
             </Link>
             {' · '}
+            <Link
+              href="/tools/compare-loan-estimates"
+              className="font-medium text-[#059669] hover:underline"
+            >
+              Compare LEs
+            </Link>
+            {' · '}
             <Link href="/local-lenders" className="font-medium text-[#059669] hover:underline">
               Browse lenders
+            </Link>
+            {' · '}
+            <Link href="/my-lending" className="font-medium text-[#059669] hover:underline">
+              My Lending
             </Link>
           </p>
         )}

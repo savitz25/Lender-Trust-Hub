@@ -281,6 +281,12 @@ export function GuestLendingHq() {
             <Link href="/local-lenders">
               <Button variant="outline">Local lenders</Button>
             </Link>
+            <Link href="/tools/program-finder">
+              <Button variant="outline">Program finder</Button>
+            </Link>
+            <Link href="/programs">
+              <Button variant="outline">Program guides</Button>
+            </Link>
           </div>
         </div>
         <FooterTrust />
@@ -804,6 +810,7 @@ export function GuestLendingHq() {
         emptyLinks={[
           { href: '/local-lenders', label: 'Browse local lenders', primary: true },
           { href: '/tools/program-finder', label: 'Program finder' },
+          { href: '/programs', label: 'FHA · VA · DPA guides' },
           { href: '/tools/loan-estimate-analyzer', label: 'Loan Estimate Analyzer' },
         ]}
         planId={plan?.id}

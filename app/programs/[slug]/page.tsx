@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { ChevronRight, ExternalLink } from 'lucide-react';
 import { getAllPrograms, getProgramBySlug } from '@/lib/programs';
 import { ProgramDisclaimer } from '@/components/programs/ProgramDisclaimer';
+import { ProgramLocationPanel } from '@/components/programs/ProgramLocationPanel';
 import { JsonLd } from '@/components/directory/JsonLd';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -27,6 +28,8 @@ export default async function ProgramGuidePage({ params }: Props) {
   const { slug } = await params;
   const program = getProgramBySlug(slug);
   if (!program) notFound();
+
+  const isDpa = program.id === 'down-payment-assistance';
 
   const schema = {
     '@context': 'https://schema.org',
@@ -61,7 +64,7 @@ export default async function ProgramGuidePage({ params }: Props) {
             </ol>
           </nav>
           <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
-            Educational program overview
+            Educational program overview · You decide
           </p>
           <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-[#0A2540] md:text-4xl">
             {program.name}
@@ -73,9 +76,14 @@ export default async function ProgramGuidePage({ params }: Props) {
       <article className="container mx-auto max-w-3xl px-4 py-10">
         <ProgramDisclaimer className="mb-8" />
 
-        <section className="prose-none space-y-4">
+        <section className="space-y-4">
           <h2 className="text-xl font-bold text-[#0A2540]">What it is</h2>
           <p className="text-base leading-relaxed text-zinc-700">{program.summary}</p>
+        </section>
+
+        <section className="mt-8">
+          <h2 className="text-xl font-bold text-[#0A2540]">Who commonly researches it</h2>
+          <p className="mt-2 text-sm leading-relaxed text-zinc-700">{program.whoCommonlyFor}</p>
         </section>
 
         <dl className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -96,6 +104,25 @@ export default async function ProgramGuidePage({ params }: Props) {
             </dd>
           </div>
         </dl>
+
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          <section>
+            <h2 className="text-lg font-bold text-emerald-900">Key advantages (research themes)</h2>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-zinc-700">
+              {program.advantages.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+          </section>
+          <section>
+            <h2 className="text-lg font-bold text-amber-950">Trade-offs &amp; caveats</h2>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-zinc-700">
+              {program.tradeoffs.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+          </section>
+        </div>
 
         <section className="mt-8">
           <h2 className="text-xl font-bold text-[#0A2540]">Eligibility themes (not a checklist)</h2>
@@ -125,7 +152,24 @@ export default async function ProgramGuidePage({ params }: Props) {
           <p className="mt-4 rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-600">
             {program.notAGuarantee}
           </p>
+          <p className="mt-3 text-sm">
+            <Link href="/programs" className="font-medium text-[#059669] hover:underline">
+              See all programs side by side
+            </Link>
+          </p>
         </section>
+
+        {isDpa ? (
+          <section className="mt-8 space-y-4">
+            <h2 className="text-xl font-bold text-[#0A2540]">Location awareness (V1)</h2>
+            <p className="text-sm text-zinc-600">
+              General DPA concepts apply nationwide. Deeper notes below focus on Florida and Texas
+              because those are core research markets here—not a complete U.S. inventory.
+            </p>
+            <ProgramLocationPanel stateSlug="florida" />
+            <ProgramLocationPanel stateSlug="texas" />
+          </section>
+        ) : null}
 
         <section className="mt-8">
           <h2 className="text-xl font-bold text-[#0A2540]">Related research tools</h2>
@@ -161,6 +205,8 @@ export default async function ProgramGuidePage({ params }: Props) {
             ))}
           </ul>
         </section>
+
+        <ProgramDisclaimer className="mt-10" />
       </article>
     </>
   );
