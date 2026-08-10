@@ -19,19 +19,38 @@ python scripts/build-hmda-massachusetts-slice.py
 | `/lenders/{slug}` | MA originations when LEI mapped |
 | Loan Estimate Analyzer | `ma:{county}` prefill options |
 
-## Major counties (wave 1)
+## Major counties
 
+### Wave 1
 Middlesex, Worcester, Essex, Norfolk, Plymouth, Bristol, Suffolk, Hampden, Barnstable, Berkshire, Hampshire, Franklin
 
-**Deferred (first pass):** Dukes, Nantucket (low volume; full 14-county market summary still available in slice).
+### Deepen (full state)
+**Dukes** (Martha’s Vineyard), **Nantucket** — lower volume but panel-ready for complete MA coverage
 
 ## Matching
 
-- Reuse prior product-state curated LEI maps when LEI has MA activity  
-- MA curated (GLEIF + published company NMLS + directory host):
-  - Leader Bank, Eastern Bank, Rockland Trust, Salem Five Mortgage, Total Mortgage Services  
-- Precision only — no low-confidence inventing  
-- See `data/hmda/massachusetts/README.md` for mapping counts  
+### Wave 1 curated
+Leader Bank, Eastern Bank, Rockland Trust, Salem Five Mortgage, Total Mortgage Services
+
+### Deepen curated (GLEIF + published company NMLS)
+| Lender | NMLS | Notes |
+|--------|------|--------|
+| Cape Cod Five | 401717 | Barnstable / Cape |
+| Middlesex Savings Bank | 440578 | MetroWest |
+| Cambridge Savings Bank | 543370 | Greater Boston |
+| Workers Credit Union | 472618 | Central MA |
+| Northpoint Mortgage | 1515 | Sturbridge HQ |
+| HarborOne Mortgage | 2561 | New England IMC |
+| BayCoast Mortgage | 1082048 | South Coast |
+| Radius Financial Group | 1846 | Norwell HQ |
+| Needham Bank | 2141744 | Norfolk County |
+
+Also reuses prior product-state LEI maps when LEI has MA activity. Precision only.
+
+## Intentionally deferred
+
+- Regionals / CUs without a verified public company NMLS + host (e.g. Bankesb / incomplete GLEIF label, First Technology FCU, Greylock FCU, Webster Bank pending verified company NMLS, Berkshire Bank company NMLS confirmation)
+- Low-confidence inventing of LEI→slug links
 
 ## Stability
 

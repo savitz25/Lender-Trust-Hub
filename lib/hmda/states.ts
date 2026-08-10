@@ -446,6 +446,9 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'berkshire',
       'hampshire',
       'franklin',
+      // Deepen — remaining counties (full state)
+      'dukes',
+      'nantucket',
     ]),
   },
 };

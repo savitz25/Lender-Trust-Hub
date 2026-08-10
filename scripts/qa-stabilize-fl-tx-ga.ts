@@ -140,6 +140,11 @@ const SPOT_COUNTIES: { state: string; county: string }[] = [
   { state: 'massachusetts', county: 'plymouth' },
   { state: 'massachusetts', county: 'hampden' },
   { state: 'massachusetts', county: 'barnstable' },
+  // MA deepen — full state
+  { state: 'massachusetts', county: 'dukes' },
+  { state: 'massachusetts', county: 'nantucket' },
+  { state: 'massachusetts', county: 'berkshire' },
+  { state: 'massachusetts', county: 'hampshire' },
 ];
 
 const SPOT_LENDERS = [
@@ -196,6 +201,16 @@ const SPOT_LENDERS = [
   'rockland-trust',
   'salem-five-mortgage',
   'total-mortgage-services',
+  // MA deepen
+  'cape-cod-five',
+  'middlesex-savings-bank',
+  'cambridge-savings-bank',
+  'workers-credit-union',
+  'northpoint-mortgage',
+  'harborone-mortgage',
+  'baycoast-mortgage',
+  'radius-financial-group',
+  'needham-bank',
   // PA deepen
   'fulton-bank',
   'first-national-bank-of-pennsylvania',
@@ -407,6 +422,8 @@ function main() {
     'ma:middlesex',
     'ma:worcester',
     'ma:suffolk',
+    'ma:dukes',
+    'ma:nantucket',
     'ca:orange',
     'orange',
   ]) {
@@ -479,6 +496,8 @@ function main() {
     { county: 'ma:middlesex', expect: 'massachusetts', label: 'ma:middlesex' },
     { county: 'ma:worcester', expect: 'massachusetts', label: 'ma:worcester' },
     { county: 'ma:suffolk', expect: 'massachusetts', label: 'ma:suffolk' },
+    { county: 'ma:dukes', expect: 'massachusetts', label: 'ma:dukes' },
+    { county: 'ma:nantucket', expect: 'massachusetts', label: 'ma:nantucket' },
     { county: 'miami-dade', expect: 'florida', label: 'miami-dade' },
     { county: 'orange', expect: 'florida', label: 'orange (FL bare)' },
     { county: 'ca:orange', expect: 'california', label: 'ca:orange' },

@@ -3,10 +3,10 @@
 **Source:** `data/hmda/by-state/MA/` (national 2025 foundation)
 
 - County market rows: **14**
-- Lender–county activity (major counties): **4151**
+- Lender–county activity (major counties): **4336**
 - LEI state summaries: **709**
-- High-confidence LEI→directory mappings: **84**
-- Major counties with names: **12**
+- High-confidence LEI→directory mappings: **93**
+- Major counties with names: **14**
 
 ## Top mapped LEIs by MA originations
 
@@ -22,6 +22,7 @@
 - `amerihome-mortgage` — AmeriHome Mortgage Company, LLC (2329 MA orig.)
 - `ally-bank` — Ally Bank (2282 MA orig.)
 - `td-bank` — TD Bank, National Association (1975 MA orig.)
+- `cape-cod-five` — The Cape Cod Five Cents Savings Bank (1955 MA orig.)
 - `primelending-columbus` — PrimeLending, a PlainsCapital Company (1954 MA orig.)
 - `pennymac` — PennyMac Loan Services, LLC (1900 MA orig.)
 - `mt-bank` — Manufacturers and Traders Trust Company (1690 MA orig.)
@@ -30,11 +31,10 @@
 - `fairway-mortgage-augusta-sheppard` — Fairway Independent Mortgage Corporation (1315 MA orig.)
 - `jpmorgan-chase-bank` — JPMorgan Chase Bank, National Association (1248 MA orig.)
 - `salem-five-mortgage` — SALEM FIVE MORTGAGE COMPANY, LLC (1194 MA orig.)
+- `middlesex-savings-bank` — Middlesex Savings Bank (1173 MA orig.)
 - `newrez` — Newrez LLC (1151 MA orig.)
+- `workers-credit-union` — Workers Federal Credit Union (1127 MA orig.)
 - `new-american-funding` — Broker Solutions, Inc. (1118 MA orig.)
-- `mr-cooper` — NATIONSTAR MORTGAGE LLC (932 MA orig.)
-- `us-bank` — U.S. Bank National Association (876 MA orig.)
-- `guaranteed-rate-affinity` — GUARANTEED RATE AFFINITY, LLC (816 MA orig.)
 
 ## Major counties (panel-ready)
 
@@ -50,12 +50,14 @@
 - **Berkshire** (`25003`) — 2729 originations
 - **Hampshire** (`25015`) — 2628 originations
 - **Franklin** (`25011`) — 1260 originations
+- **Dukes** (`25007`) — 514 originations
+- **Nantucket** (`25019`) — 413 originations
 
 ## Matching rules
 
 - Reuse prior product-state curated LEI maps when the LEI has MA activity
 - National NMLS→slug overrides prefer MA directory hosts when known
-- MA curated: Leader Bank, Eastern Bank, Rockland Trust, Salem Five Mortgage, Total Mortgage Services (GLEIF + published company NMLS)
+- MA curated wave 1 + deepen regionals (GLEIF + published company NMLS)
 - No fuzzy LEI inventing
 
 ## Rebuild

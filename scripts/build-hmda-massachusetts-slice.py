@@ -91,6 +91,16 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "401447": "rockland-trust",
     "4662": "salem-five-mortgage",
     "2764": "total-mortgage-services",
+    # MA deepen
+    "401717": "cape-cod-five",
+    "440578": "middlesex-savings-bank",
+    "543370": "cambridge-savings-bank",
+    "472618": "workers-credit-union",
+    "1515": "northpoint-mortgage",
+    "2561": "harborone-mortgage",
+    "1082048": "baycoast-mortgage",
+    "1846": "radius-financial-group",
+    "2141744": "needham-bank",
 }
 
 # High-confidence MA-active LEIs (GLEIF + published company NMLS). No inventing.
@@ -135,6 +145,79 @@ MA_CURATED_LEI: dict[str, dict[str, str]] = {
         "match_confidence": "high",
         "match_method": "ma_curated_gleif+public_nmls",
     },
+    # Deepen — high MA volume + published company NMLS
+    "5493007XQ02VMXYJYJ21": {
+        "institution_name_hmda": "The Cape Cod Five Cents Savings Bank",
+        "nmls_id": "401717",
+        "our_lender_slug": "cape-cod-five",
+        "legal_name": "The Cape Cod Five Cents Savings Bank",
+        "match_confidence": "high",
+        "match_method": "ma_curated_gleif+public_nmls",
+    },
+    "VMDPCBOQ43W3PZTYZL93": {
+        "institution_name_hmda": "Middlesex Savings Bank",
+        "nmls_id": "440578",
+        "our_lender_slug": "middlesex-savings-bank",
+        "legal_name": "Middlesex Savings Bank",
+        "match_confidence": "high",
+        "match_method": "ma_curated_gleif+public_nmls",
+    },
+    "549300FHGNOLF14HHS09": {
+        "institution_name_hmda": "Cambridge Savings Bank",
+        "nmls_id": "543370",
+        "our_lender_slug": "cambridge-savings-bank",
+        "legal_name": "Cambridge Savings Bank",
+        "match_confidence": "high",
+        "match_method": "ma_curated_gleif+public_nmls",
+    },
+    "254900MSO8KVQ05D2J27": {
+        "institution_name_hmda": "Workers Federal Credit Union",
+        "nmls_id": "472618",
+        "our_lender_slug": "workers-credit-union",
+        "legal_name": "Workers Credit Union (Workers Federal Credit Union)",
+        "match_confidence": "high",
+        "match_method": "ma_curated_gleif+public_nmls",
+    },
+    "549300JI0UWY4QIWDV89": {
+        "institution_name_hmda": "NORTHPOINT MORTGAGE, INC.",
+        "nmls_id": "1515",
+        "our_lender_slug": "northpoint-mortgage",
+        "legal_name": "Northpoint Mortgage, Inc.",
+        "match_confidence": "high",
+        "match_method": "ma_curated_gleif+public_nmls",
+    },
+    "549300DAUXQ2DCY4H838": {
+        "institution_name_hmda": "HARBORONE MORTGAGE, LLC",
+        "nmls_id": "2561",
+        "our_lender_slug": "harborone-mortgage",
+        "legal_name": "HarborOne Mortgage, LLC",
+        "match_confidence": "high",
+        "match_method": "ma_curated_gleif+public_nmls",
+    },
+    "549300SYR11CYON0JE74": {
+        "institution_name_hmda": "BAYCOAST MORTGAGE COMPANY, LLC",
+        "nmls_id": "1082048",
+        "our_lender_slug": "baycoast-mortgage",
+        "legal_name": "BayCoast Mortgage Company, LLC",
+        "match_confidence": "high",
+        "match_method": "ma_curated_gleif+public_nmls",
+    },
+    "549300GCEUZLVML1J263": {
+        "institution_name_hmda": "RADIUS FINANCIAL GROUP INC.",
+        "nmls_id": "1846",
+        "our_lender_slug": "radius-financial-group",
+        "legal_name": "Radius Financial Group Inc.",
+        "match_confidence": "high",
+        "match_method": "ma_curated_gleif+public_nmls",
+    },
+    "5493000NZZZU3GFIYL71": {
+        "institution_name_hmda": "Needham Bank",
+        "nmls_id": "2141744",
+        "our_lender_slug": "needham-bank",
+        "legal_name": "Needham Bank",
+        "match_confidence": "high",
+        "match_method": "ma_curated_gleif+public_nmls",
+    },
 }
 
 # All MA counties (FIPS → name)
@@ -155,7 +238,7 @@ MA_COUNTIES: dict[str, str] = {
     "25027": "Worcester",
 }
 
-# Wave 1 majors — highest volume metros + corridors (skip Dukes / Nantucket)
+# Wave 1 + deepen — all 14 Massachusetts counties (islands included for full-state panels)
 MA_MAJOR_FIPS = {
     "25017",  # Middlesex
     "25027",  # Worcester
@@ -169,6 +252,8 @@ MA_MAJOR_FIPS = {
     "25003",  # Berkshire
     "25015",  # Hampshire
     "25011",  # Franklin
+    "25007",  # Dukes (Martha's Vineyard)
+    "25019",  # Nantucket
 }
 
 
@@ -397,8 +482,7 @@ def main() -> None:
         "\n## Matching rules\n\n"
         "- Reuse prior product-state curated LEI maps when the LEI has MA activity\n"
         "- National NMLS→slug overrides prefer MA directory hosts when known\n"
-        "- MA curated: Leader Bank, Eastern Bank, Rockland Trust, Salem Five Mortgage, "
-        "Total Mortgage Services (GLEIF + published company NMLS)\n"
+        "- MA curated wave 1 + deepen regionals (GLEIF + published company NMLS)\n"
         "- No fuzzy LEI inventing\n"
         "\n## Rebuild\n\n"
         "```bash\n"
