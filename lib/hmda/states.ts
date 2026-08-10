@@ -26,7 +26,9 @@ export type HmdaStateCode =
   | 'MI'
   | 'IN'
   | 'AZ'
-  | 'CO';
+  | 'CO'
+  | 'WI'
+  | 'MN';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -64,7 +66,9 @@ export type HmdaStateConfig = {
     | 'michigan_originations'
     | 'indiana_originations'
     | 'arizona_originations'
-    | 'colorado_originations';
+    | 'colorado_originations'
+    | 'wisconsin_originations'
+    | 'minnesota_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -1014,6 +1018,68 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'montezuma',
     ]),
   },
+  WI: {
+    code: 'WI',
+    stateSlug: 'wisconsin',
+    name: 'Wisconsin',
+    dataFolder: 'wisconsin',
+    fileSuffix: '_wi',
+    originationsColumn: 'wisconsin_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Milwaukee / Madison / Fox Valley / secondary volume
+      'milwaukee',
+      'dane',
+      'waukesha',
+      'brown',
+      'outagamie',
+      'racine',
+      'rock',
+      'winnebago',
+      'kenosha',
+      'washington',
+      'marathon',
+      'sheboygan',
+      'la-crosse',
+      'walworth',
+      'st-croix',
+      'fond-du-lac',
+      'ozaukee',
+      'eau-claire',
+      'dodge',
+      'manitowoc',
+    ]),
+  },
+  MN: {
+    code: 'MN',
+    stateSlug: 'minnesota',
+    name: 'Minnesota',
+    dataFolder: 'minnesota',
+    fileSuffix: '_mn',
+    originationsColumn: 'minnesota_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Twin Cities core + Duluth / Rochester / secondary
+      'hennepin',
+      'dakota',
+      'ramsey',
+      'anoka',
+      'washington',
+      'wright',
+      'st-louis',
+      'scott',
+      'olmsted',
+      'stearns',
+      'carver',
+      'sherburne',
+      'crow-wing',
+      'chisago',
+      'clay',
+      'rice',
+      'blue-earth',
+      'otter-tail',
+      'isanti',
+      'winona',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -1043,6 +1109,8 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'IN',
   'AZ',
   'CO',
+  'WI',
+  'MN',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {

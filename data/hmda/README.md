@@ -68,6 +68,7 @@ Keep using dedicated expansion docs/scripts until migrated to `by-state/`:
 | Pennsylvania | `docs/HMDA-PENNSYLVANIA-EXPANSION.md` · `build-hmda-pennsylvania-slice.py` |
 | Massachusetts | `docs/HMDA-MASSACHUSETTS-EXPANSION.md` · `build-hmda-massachusetts-slice.py` |
 | Arizona | `docs/HMDA-ARIZONA-EXPANSION.md` · `build-hmda-arizona-slice.py` |
+| Wisconsin · Minnesota | `docs/HMDA-WI-MN-EXPANSION.md` · `build-hmda-wi-mn-slices.py` |
 | Rhode Island · Vermont · Maine | `docs/HMDA-RI-VT-ME-EXPANSION.md` · `build-hmda-ri-vt-me-slices.py` |
 | Connecticut · New Hampshire | `docs/HMDA-CT-NH-EXPANSION.md` · `build-hmda-ct-nh-slices.py` |
 | Virginia · Maryland | `docs/HMDA-VA-MD-EXPANSION.md` · `build-hmda-va-md-slices.py` |

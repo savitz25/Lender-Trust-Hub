@@ -65,6 +65,10 @@ export const MAJOR_ARIZONA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.AZ.majorCountySlugs
 
 export const MAJOR_COLORADO_COUNTY_SLUGS = HMDA_STATE_CONFIGS.CO.majorCountySlugs;
 
+export const MAJOR_WISCONSIN_COUNTY_SLUGS = HMDA_STATE_CONFIGS.WI.majorCountySlugs;
+
+export const MAJOR_MINNESOTA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.MN.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw

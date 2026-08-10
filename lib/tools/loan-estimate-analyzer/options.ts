@@ -28,6 +28,8 @@ import {
   MAJOR_INDIANA_COUNTY_SLUGS,
   MAJOR_ARIZONA_COUNTY_SLUGS,
   MAJOR_COLORADO_COUNTY_SLUGS,
+  MAJOR_WISCONSIN_COUNTY_SLUGS,
+  MAJOR_MINNESOTA_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -379,6 +381,28 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (CO)`,
       originations: c.originations,
       stateSlug: 'colorado',
+    });
+  }
+
+  const wi = loadHmdaStateData('WI');
+  for (const c of wi.countyMarkets) {
+    if (!MAJOR_WISCONSIN_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `wi:${c.countySlug}`,
+      name: `${c.countyName} (WI)`,
+      originations: c.originations,
+      stateSlug: 'wisconsin',
+    });
+  }
+
+  const mn = loadHmdaStateData('MN');
+  for (const c of mn.countyMarkets) {
+    if (!MAJOR_MINNESOTA_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `mn:${c.countySlug}`,
+      name: `${c.countyName} (MN)`,
+      originations: c.originations,
+      stateSlug: 'minnesota',
     });
   }
 
