@@ -755,7 +755,7 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
     fileSuffix: '_il',
     originationsColumn: 'illinois_originations',
     majorCountySlugs: new Set([
-      // Chicago metro core
+      // Wave 1 — Chicago metro + secondary metros
       'cook',
       'dupage',
       'will',
@@ -763,7 +763,6 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'kane',
       'mchenry',
       'kendall',
-      // Metro East / secondary
       'madison',
       'winnebago',
       'st-clair',
@@ -777,6 +776,19 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'kankakee',
       'lasalle',
       'macon',
+      // Deepen — next volume / collar / downstate
+      'grundy',
+      'williamson',
+      'vermilion',
+      'boone',
+      'ogle',
+      'henry',
+      'woodford',
+      'monroe',
+      'macoupin',
+      'whiteside',
+      'knox',
+      'adams',
     ]),
   },
   OH: {
@@ -787,7 +799,7 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
     fileSuffix: '_oh',
     originationsColumn: 'ohio_originations',
     majorCountySlugs: new Set([
-      // Columbus / Cleveland / Cincinnati / Dayton / Akron
+      // Wave 1 — Columbus / Cleveland / Cincinnati / Dayton / Akron
       'franklin',
       'cuyahoga',
       'hamilton',
@@ -808,6 +820,27 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'trumbull',
       'greene',
       'portage',
+      // Deepen — next volume / regional
+      'clark',
+      'wood',
+      'miami',
+      'richland',
+      'union',
+      'geauga',
+      'allen',
+      'wayne',
+      'muskingum',
+      'ashtabula',
+      'columbiana',
+      'pickaway',
+      'hancock',
+      'knox',
+      'erie',
+      'ross',
+      'marion',
+      'tuscarawas',
+      'madison',
+      'sandusky',
     ]),
   },
 };

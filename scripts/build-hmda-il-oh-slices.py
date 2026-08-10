@@ -62,7 +62,7 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "467341": "regions-bank",
     "480004": "synovus-bank",
     "1820": "cmg-home-loans-dennis-vo",
-    # IL / OH curated
+    # IL / OH curated (wave 1 + deepen)
     "1495": "greenstate-credit-union",
     "407798": "cefcu",
     "459308": "old-national-bank",
@@ -70,10 +70,18 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "446047": "union-savings-bank",
     "510034": "wright-patt-credit-union",
     "141868": "ruoff-mortgage",
+    "401052": "bmo-bank",
+    "449042": "wintrust-mortgage",
+    "692733": "consumers-credit-union-illinois",
+    "399836": "wesbanco-bank",
+    "619717": "first-financial-bank-ohio",
+    "746357": "superior-credit-union-ohio",
+    "292230": "kemba-financial-credit-union",
+    "469483": "seven-seventeen-credit-union",
 }
 
 IL_OH_CURATED_LEI: dict[str, dict[str, str]] = {
-    # Illinois
+    # Illinois — wave 1
     "549300W4FT4H1UWPGU95": {
         "institution_name_hmda": "GREENSTATE Credit Union",
         "nmls_id": "1495",
@@ -106,7 +114,32 @@ IL_OH_CURATED_LEI: dict[str, dict[str, str]] = {
         "match_confidence": "high",
         "match_method": "il_oh_curated_gleif+public_nmls",
     },
-    # Ohio
+    # Illinois — deepen
+    "3Y4U8VZURTYWI1W2K376": {
+        "institution_name_hmda": "BMO Bank National Association",
+        "nmls_id": "401052",
+        "our_lender_slug": "bmo-bank",
+        "legal_name": "BMO Bank National Association",
+        "match_confidence": "high",
+        "match_method": "il_oh_deepen_gleif+public_nmls",
+    },
+    "C398JSK21YCXWM603F55": {
+        "institution_name_hmda": "Barrington Bank & Trust Company, National Association",
+        "nmls_id": "449042",
+        "our_lender_slug": "wintrust-mortgage",
+        "legal_name": "Wintrust Mortgage (division of Barrington Bank & Trust)",
+        "match_confidence": "high",
+        "match_method": "il_oh_deepen_gleif+public_nmls",
+    },
+    "5493004K0Z4RFJSPYT52": {
+        "institution_name_hmda": "CONSUMERS COOPERATIVE CREDIT UNION",
+        "nmls_id": "692733",
+        "our_lender_slug": "consumers-credit-union-illinois",
+        "legal_name": "Consumers Credit Union (Illinois)",
+        "match_confidence": "high",
+        "match_method": "il_oh_deepen_gleif+public_nmls",
+    },
+    # Ohio — wave 1
     "549300HFBEONQN2CK447": {
         "institution_name_hmda": "Union Savings Bank",
         "nmls_id": "446047",
@@ -140,38 +173,88 @@ IL_OH_CURATED_LEI: dict[str, dict[str, str]] = {
         "match_confidence": "high",
         "match_method": "il_oh_curated_gleif+lei_identity",
     },
+    # Ohio — deepen
+    "QGPGHQ1ENZOOLJRFTH41": {
+        "institution_name_hmda": "WesBanco Bank, Inc.",
+        "nmls_id": "399836",
+        "our_lender_slug": "wesbanco-bank",
+        "legal_name": "WesBanco Bank, Inc.",
+        "match_confidence": "high",
+        "match_method": "il_oh_deepen_gleif+public_nmls",
+    },
+    "MV4O55SH8HO6KQSGW013": {
+        "institution_name_hmda": "First Financial Bank",
+        "nmls_id": "619717",
+        "our_lender_slug": "first-financial-bank-ohio",
+        "legal_name": "First Financial Bank (Ohio)",
+        "match_confidence": "high",
+        "match_method": "il_oh_deepen_gleif+public_nmls",
+    },
+    "254900ARL5FDX2OOH702": {
+        "institution_name_hmda": "SUPERIOR CREDIT UNION, INC.",
+        "nmls_id": "746357",
+        "our_lender_slug": "superior-credit-union-ohio",
+        "legal_name": "Superior Credit Union, Inc.",
+        "match_confidence": "high",
+        "match_method": "il_oh_deepen_gleif+public_nmls",
+    },
+    "549300Y6FMTOZSY0VW06": {
+        "institution_name_hmda": "Kemba Financial Credit Union Inc",
+        "nmls_id": "292230",
+        "our_lender_slug": "kemba-financial-credit-union",
+        "legal_name": "KEMBA Financial Credit Union",
+        "match_confidence": "high",
+        "match_method": "il_oh_deepen_gleif+public_nmls",
+    },
+    "549300567BJCXPG9IV35": {
+        "institution_name_hmda": "Seven Seventeen Credit Union",
+        "nmls_id": "469483",
+        "our_lender_slug": "seven-seventeen-credit-union",
+        "legal_name": "7 17 Credit Union (Seven Seventeen)",
+        "match_confidence": "high",
+        "match_method": "il_oh_deepen_gleif+public_nmls",
+    },
 }
 
 IL_COUNTIES: dict[str, str] = {
+    "17001": "Adams",
+    "17007": "Boone",
+    "17019": "Champaign",
+    "17027": "Clinton",
     "17031": "Cook",
+    "17037": "DeKalb",
     "17043": "DuPage",
+    "17063": "Grundy",
+    "17073": "Henry",
     "17089": "Kane",
+    "17091": "Kankakee",
     "17093": "Kendall",
+    "17095": "Knox",
     "17097": "Lake",
+    "17099": "LaSalle",
     "17111": "McHenry",
     "17113": "McLean",
+    "17115": "Macon",
+    "17117": "Macoupin",
     "17119": "Madison",
+    "17133": "Monroe",
+    "17141": "Ogle",
     "17143": "Peoria",
     "17161": "Rock Island",
     "17163": "St. Clair",
     "17167": "Sangamon",
     "17179": "Tazewell",
-    "17197": "Will",
-    "17201": "Winnebago",
-    "17019": "Champaign",
-    "17037": "DeKalb",
-    "17091": "Kankakee",
-    "17099": "LaSalle",
-    "17115": "Macon",
-    "17007": "Boone",
-    "17063": "Grundy",
     "17183": "Vermilion",
+    "17195": "Whiteside",
+    "17197": "Will",
     "17199": "Williamson",
-    "17141": "Ogle",
+    "17201": "Winnebago",
+    "17203": "Woodford",
 }
 
-# Wave 1 majors — Chicago metro + secondary metros with meaningful volume
+# Wave 1 + deepen (meaningful volume beyond Chicago / major metros)
 IL_MAJORS: set[str] = {
+    # Wave 1
     "17031",  # Cook
     "17043",  # DuPage
     "17197",  # Will
@@ -192,33 +275,63 @@ IL_MAJORS: set[str] = {
     "17091",  # Kankakee
     "17099",  # LaSalle
     "17115",  # Macon
+    # Deepen — next volume band (~900+ originations)
+    "17063",  # Grundy
+    "17199",  # Williamson
+    "17183",  # Vermilion
+    "17007",  # Boone
+    "17141",  # Ogle
+    "17073",  # Henry
+    "17203",  # Woodford
+    "17133",  # Monroe
+    "17117",  # Macoupin
+    "17195",  # Whiteside
+    "17095",  # Knox
+    "17001",  # Adams
 }
 
 OH_COUNTIES: dict[str, str] = {
     "39003": "Allen",
+    "39005": "Ashland",
+    "39007": "Ashtabula",
+    "39015": "Brown",
     "39017": "Butler",
     "39023": "Clark",
     "39025": "Clermont",
+    "39029": "Columbiana",
     "39035": "Cuyahoga",
     "39041": "Delaware",
+    "39043": "Erie",
     "39045": "Fairfield",
     "39049": "Franklin",
     "39055": "Geauga",
     "39057": "Greene",
     "39061": "Hamilton",
+    "39063": "Hancock",
+    "39083": "Knox",
     "39085": "Lake",
     "39089": "Licking",
+    "39091": "Logan",
     "39093": "Lorain",
     "39095": "Lucas",
+    "39097": "Madison",
     "39099": "Mahoning",
+    "39101": "Marion",
     "39103": "Medina",
     "39109": "Miami",
     "39113": "Montgomery",
+    "39119": "Muskingum",
+    "39123": "Ottawa",
+    "39129": "Pickaway",
     "39133": "Portage",
     "39139": "Richland",
+    "39141": "Ross",
+    "39143": "Sandusky",
+    "39145": "Scioto",
     "39151": "Stark",
     "39153": "Summit",
     "39155": "Trumbull",
+    "39157": "Tuscarawas",
     "39159": "Union",
     "39165": "Warren",
     "39169": "Wayne",
@@ -226,6 +339,7 @@ OH_COUNTIES: dict[str, str] = {
 }
 
 OH_MAJORS: set[str] = {
+    # Wave 1
     "39049",  # Franklin
     "39035",  # Cuyahoga
     "39061",  # Hamilton
@@ -246,6 +360,27 @@ OH_MAJORS: set[str] = {
     "39155",  # Trumbull
     "39057",  # Greene
     "39133",  # Portage
+    # Deepen — next volume / regional (~1,200+ originations)
+    "39023",  # Clark
+    "39173",  # Wood
+    "39109",  # Miami
+    "39139",  # Richland
+    "39159",  # Union
+    "39055",  # Geauga
+    "39003",  # Allen
+    "39169",  # Wayne
+    "39119",  # Muskingum
+    "39007",  # Ashtabula
+    "39029",  # Columbiana
+    "39129",  # Pickaway
+    "39063",  # Hancock
+    "39083",  # Knox
+    "39043",  # Erie
+    "39141",  # Ross
+    "39101",  # Marion
+    "39157",  # Tuscarawas
+    "39097",  # Madison
+    "39143",  # Sandusky
 }
 
 STATES = [
@@ -495,9 +630,10 @@ def build_state(
     md.append(
         "\n## Matching rules\n\n"
         "- Reuse prior product-state curated LEI maps when the LEI has state activity\n"
-        "- IL/OH curated: GreenState CU, CEFCU, Old National, Flat Branch, Union Savings Bank, "
-        "Wright-Patt CU, Ruoff Mortgage, KeyBank\n"
-        "- No fuzzy LEI inventing\n"
+        "- IL/OH curated + deepen: GreenState, CEFCU, Old National, Flat Branch, BMO, Wintrust Mortgage, "
+        "Consumers CU (IL), Union Savings Bank, Wright-Patt CU, Ruoff, KeyBank, WesBanco, "
+        "First Financial Bank (OH), Superior CU, KEMBA, 7 17 CU\n"
+        "- No fuzzy LEI inventing; KeyBank uses LEI identity (avoids Flagstar NMLS collision)\n"
         "\n## Rebuild\n\n"
         "```bash\n"
         "python scripts/build-hmda-il-oh-slices.py\n"

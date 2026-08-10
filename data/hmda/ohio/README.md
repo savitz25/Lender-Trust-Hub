@@ -3,10 +3,10 @@
 **Source:** `data/hmda/by-state/OH/` (national 2025 foundation)
 
 - County market rows: **61**
-- Lender–county activity (major markets): **6403**
+- Lender–county activity (major markets): **9916**
 - LEI state summaries: **977**
-- High-confidence LEI→directory mappings: **121**
-- Major markets with names: **20**
+- High-confidence LEI→directory mappings: **129**
+- Major markets with names: **40**
 
 ## Top mapped LEIs by OH originations
 
@@ -26,10 +26,10 @@
 - `pennymac` — PennyMac Loan Services, LLC (3505 OH orig.)
 - `nfm-lending` — NFM, INC. (3308 OH orig.)
 - `movement-mortgage-myrtle-beach` — Movement Mortgage, LLC (3302 OH orig.)
+- `wesbanco-bank` — WesBanco Bank, Inc. (3020 OH orig.)
 - `fairway-mortgage-augusta-sheppard` — Fairway Independent Mortgage Corporation (2964 OH orig.)
+- `first-financial-bank-ohio` — First Financial Bank (2850 OH orig.)
 - `mr-cooper` — Nationstar Mortgage LLC (2795 OH orig.)
-- `primelending-columbus` — PrimeLending, a PlainsCapital Company (2685 OH orig.)
-- `guild-mortgage-metrowest` — Guild Mortgage Company LLC (2477 OH orig.)
 
 ## Major markets (panel-ready)
 
@@ -53,12 +53,32 @@
 - **Trumbull** (`39155`) — 4424 originations
 - **Greene** (`39057`) — 4403 originations
 - **Portage** (`39133`) — 3623 originations
+- **Clark** (`39023`) — 3309 originations
+- **Wood** (`39173`) — 2998 originations
+- **Miami** (`39109`) — 2995 originations
+- **Richland** (`39139`) — 2688 originations
+- **Union** (`39159`) — 2549 originations
+- **Geauga** (`39055`) — 2526 originations
+- **Allen** (`39003`) — 2367 originations
+- **Wayne** (`39169`) — 2303 originations
+- **Muskingum** (`39119`) — 2169 originations
+- **Ashtabula** (`39007`) — 2097 originations
+- **Columbiana** (`39029`) — 1950 originations
+- **Pickaway** (`39129`) — 1893 originations
+- **Hancock** (`39063`) — 1676 originations
+- **Knox** (`39083`) — 1619 originations
+- **Erie** (`39043`) — 1581 originations
+- **Ross** (`39141`) — 1492 originations
+- **Marion** (`39101`) — 1360 originations
+- **Tuscarawas** (`39157`) — 1351 originations
+- **Madison** (`39097`) — 1276 originations
+- **Sandusky** (`39143`) — 1262 originations
 
 ## Matching rules
 
 - Reuse prior product-state curated LEI maps when the LEI has state activity
-- IL/OH curated: GreenState CU, CEFCU, Old National, Flat Branch, Union Savings Bank, Wright-Patt CU, Ruoff Mortgage, KeyBank
-- No fuzzy LEI inventing
+- IL/OH curated + deepen: GreenState, CEFCU, Old National, Flat Branch, BMO, Wintrust Mortgage, Consumers CU (IL), Union Savings Bank, Wright-Patt CU, Ruoff, KeyBank, WesBanco, First Financial Bank (OH), Superior CU, KEMBA, 7 17 CU
+- No fuzzy LEI inventing; KeyBank uses LEI identity (avoids Flagstar NMLS collision)
 
 ## Rebuild
 
@@ -69,5 +89,5 @@ python scripts/build-hmda-il-oh-slices.py
 ## Major slugs (for states.ts)
 
 ```
-'franklin', 'cuyahoga', 'hamilton', 'summit', 'montgomery', 'butler', 'stark', 'lucas', 'lorain', 'warren', 'delaware', 'lake', 'clermont', 'mahoning', 'licking', 'medina', 'fairfield', 'trumbull', 'greene', 'portage'
+'franklin', 'cuyahoga', 'hamilton', 'summit', 'montgomery', 'butler', 'stark', 'lucas', 'lorain', 'warren', 'delaware', 'lake', 'clermont', 'mahoning', 'licking', 'medina', 'fairfield', 'trumbull', 'greene', 'portage', 'clark', 'wood', 'miami', 'richland', 'union', 'geauga', 'allen', 'wayne', 'muskingum', 'ashtabula', 'columbiana', 'pickaway', 'hancock', 'knox', 'erie', 'ross', 'marion', 'tuscarawas', 'madison', 'sandusky'
 ```

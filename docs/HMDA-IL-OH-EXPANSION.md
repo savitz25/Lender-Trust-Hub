@@ -17,26 +17,37 @@ python scripts/build-hmda-il-oh-slices.py
 
 | Surface | Behavior |
 |---------|----------|
-| `/local-lenders/illinois/{county}` | Market panels for wave-1 major counties |
-| `/local-lenders/ohio/{county}` | Market panels for wave-1 major counties |
+| `/local-lenders/illinois/{county}` | Market panels for major counties |
+| `/local-lenders/ohio/{county}` | Market panels for major counties |
 | `/lenders/{slug}` | State originations when LEI mapped |
 | Analyzer | `il:{county}`, `oh:{county}` prefill options |
 
-## Major counties (wave 1)
+## Mapping coverage (deepen pass)
 
-### Illinois (20)
-Cook, DuPage, Will, Lake, Kane, McHenry, Kendall, Madison, Winnebago, St. Clair, Sangamon, Peoria, McLean, Champaign, Tazewell, Rock Island, DeKalb, Kankakee, LaSalle, Macon
+| Metric | Illinois | Ohio |
+|--------|----------|------|
+| Panel markets (majors) | **32** | **40** |
+| High-confidence LEI maps | see slice README after rebuild | see slice README after rebuild |
 
-### Ohio (20)
-Franklin, Cuyahoga, Hamilton, Summit, Montgomery, Butler, Stark, Lucas, Lorain, Warren, Delaware, Lake, Clermont, Mahoning, Licking, Medina, Fairfield, Trumbull, Greene, Portage
+## Major counties
+
+### Illinois — wave 1 + deepen
+**Wave 1:** Cook, DuPage, Will, Lake, Kane, McHenry, Kendall, Madison, Winnebago, St. Clair, Sangamon, Peoria, McLean, Champaign, Tazewell, Rock Island, DeKalb, Kankakee, LaSalle, Macon  
+
+**Deepen:** Grundy, Williamson, Vermilion, Boone, Ogle, Henry, Woodford, Monroe, Macoupin, Whiteside, Knox, Adams  
+
+### Ohio — wave 1 + deepen
+**Wave 1:** Franklin, Cuyahoga, Hamilton, Summit, Montgomery, Butler, Stark, Lucas, Lorain, Warren, Delaware, Lake, Clermont, Mahoning, Licking, Medina, Fairfield, Trumbull, Greene, Portage  
+
+**Deepen:** Clark, Wood, Miami, Richland, Union, Geauga, Allen, Wayne, Muskingum, Ashtabula, Columbiana, Pickaway, Hancock, Knox, Erie, Ross, Marion, Tuscarawas, Madison, Sandusky  
 
 ## Matching
 
 - Reuse prior product-state curated LEI maps when the LEI has IL or OH activity  
 - Precision only — no low-confidence LEI inventing  
+- KeyBank linked by LEI identity (avoids Flagstar NMLS collision)  
 
-### IL / OH curated (GLEIF + published company NMLS or LEI identity)
-
+### Wave 1 curated
 | Lender | NMLS | Slug |
 |--------|------|------|
 | GreenState Credit Union | 1495 | `greenstate-credit-union` |
@@ -48,16 +59,31 @@ Franklin, Cuyahoga, Hamilton, Summit, Montgomery, Butler, Stark, Lucas, Lorain, 
 | Ruoff Mortgage | 141868 | `ruoff-mortgage` |
 | KeyBank National Association | (LEI identity) | `keybank` |
 
-Huntington, Rocket, UWM, Chase, PNC, Guaranteed Rate, Eagle Home Mortgage, and other multi-state lenders reuse prior maps.
+### Deepen curated
+| Lender | NMLS | Slug |
+|--------|------|------|
+| BMO Bank N.A. | 401052 | `bmo-bank` |
+| Wintrust Mortgage (Barrington Bank & Trust) | 449042 | `wintrust-mortgage` |
+| Consumers Credit Union (IL) | 692733 | `consumers-credit-union-illinois` |
+| WesBanco Bank | 399836 | `wesbanco-bank` |
+| First Financial Bank (OH) | 619717 | `first-financial-bank-ohio` |
+| Superior Credit Union | 746357 | `superior-credit-union-ohio` |
+| KEMBA Financial Credit Union | 292230 | `kemba-financial-credit-union` |
+| 7 17 Credit Union | 469483 | `seven-seventeen-credit-union` |
 
-**Note:** KeyBank is linked by LEI identity rather than company NMLS to avoid collision with Flagstar’s published NMLS id in product maps.
+## What improved vs deferred
 
-## Intentionally deferred
+### Improved
+- IL panels expanded beyond Chicago / collar / major downstate metros (32 majors)  
+- OH panels expanded beyond Columbus / Cleveland / Cincinnati / Dayton / Akron core (40 majors)  
+- Eight additional high-confidence regional lenders with directory hosts + LEI maps  
+- Multi-state wiring intact for all **22** live product states  
 
-- Full 102-county IL / 88-county OH coverage  
-- BMO Bank N.A., Barrington Bank (Wintrust), First American Bank, Park National, WesBanco, First Financial, OriginPoint, Figure, Kiavi, Kemba FCU, Seven Seventeen CU — no clean company NMLS + directory host pairing in this pass  
+### Intentionally deferred
+- Full 102-county IL / 88-county OH coverage (thin rural panels)  
+- Park National Bank, OriginPoint, Figure, Kiavi, First American Bank, Morton Community Bank, Howard Hanna Financial Services — no clean company NMLS + host pairing in this pass  
 - Low-confidence LEI inventing  
 
 ## Stability
 
-Does not modify existing product-state folders for the other 20 live states. Multi-state wiring remains intact for all **22** active product states after this activation.
+Does not modify existing product-state folders for the other 20 live states.

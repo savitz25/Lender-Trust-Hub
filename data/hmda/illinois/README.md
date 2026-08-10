@@ -2,11 +2,11 @@
 
 **Source:** `data/hmda/by-state/IL/` (national 2025 foundation)
 
-- County market rows: **30**
-- Lender–county activity (major markets): **5995**
+- County market rows: **33**
+- Lender–county activity (major markets): **7510**
 - LEI state summaries: **1037**
-- High-confidence LEI→directory mappings: **113**
-- Major markets with names: **20**
+- High-confidence LEI→directory mappings: **118**
+- Major markets with names: **32**
 
 ## Top mapped LEIs by IL originations
 
@@ -21,15 +21,15 @@
 - `primelending-columbus` — PrimeLending, a PlainsCapital Company (4215 IL orig.)
 - `eagle-home-mortgage` — Eagle Home Mortgage, LLC (4111 IL orig.)
 - `greenstate-credit-union` — GREENSTATE Credit Union (3954 IL orig.)
+- `bmo-bank` — BMO Bank National Association (3906 IL orig.)
 - `pnc-bank` — PNC Bank, National Association (3711 IL orig.)
 - `new-american-funding` — Broker Solutions, Inc. (3581 IL orig.)
 - `movement-mortgage-myrtle-beach` — Movement Mortgage, LLC (2965 IL orig.)
 - `guaranteed-rate` — Guaranteed Rate, Inc. (2889 IL orig.)
 - `ally-bank` — Ally Bank (2870 IL orig.)
 - `cefcu` — CITIZENS EQUITY FIRST CREDIT UNION (2769 IL orig.)
+- `wintrust-mortgage` — Barrington Bank & Trust Company, National Association (2719 IL orig.)
 - `fairway-mortgage-augusta-sheppard` — Fairway Independent Mortgage Corporation (2485 IL orig.)
-- `american-pacific-mortgage-inland-empire` — AMERICAN PACIFIC MORTGAGE CORPORATION (2402 IL orig.)
-- `old-national-bank` — Old National Bank (2207 IL orig.)
 
 ## Major markets (panel-ready)
 
@@ -53,12 +53,24 @@
 - **Kankakee** (`17091`) — 2072 originations
 - **LaSalle** (`17099`) — 1951 originations
 - **Macon** (`17115`) — 1895 originations
+- **Grundy** (`17063`) — 1248 originations
+- **Williamson** (`17199`) — 1127 originations
+- **Vermilion** (`17183`) — 1109 originations
+- **Boone** (`17007`) — 1096 originations
+- **Ogle** (`17141`) — 1001 originations
+- **Henry** (`17073`) — 960 originations
+- **Woodford** (`17203`) — 863 originations
+- **Monroe** (`17133`) — 851 originations
+- **Macoupin** (`17117`) — 834 originations
+- **Whiteside** (`17195`) — 811 originations
+- **Knox** (`17095`) — 797 originations
+- **Adams** (`17001`) — 752 originations
 
 ## Matching rules
 
 - Reuse prior product-state curated LEI maps when the LEI has state activity
-- IL/OH curated: GreenState CU, CEFCU, Old National, Flat Branch, Union Savings Bank, Wright-Patt CU, Ruoff Mortgage, KeyBank
-- No fuzzy LEI inventing
+- IL/OH curated + deepen: GreenState, CEFCU, Old National, Flat Branch, BMO, Wintrust Mortgage, Consumers CU (IL), Union Savings Bank, Wright-Patt CU, Ruoff, KeyBank, WesBanco, First Financial Bank (OH), Superior CU, KEMBA, 7 17 CU
+- No fuzzy LEI inventing; KeyBank uses LEI identity (avoids Flagstar NMLS collision)
 
 ## Rebuild
 
@@ -69,5 +81,5 @@ python scripts/build-hmda-il-oh-slices.py
 ## Major slugs (for states.ts)
 
 ```
-'cook', 'dupage', 'will', 'lake', 'kane', 'mchenry', 'madison', 'winnebago', 'st-clair', 'sangamon', 'kendall', 'peoria', 'mclean', 'champaign', 'tazewell', 'rock-island', 'dekalb', 'kankakee', 'lasalle', 'macon'
+'cook', 'dupage', 'will', 'lake', 'kane', 'mchenry', 'madison', 'winnebago', 'st-clair', 'sangamon', 'kendall', 'peoria', 'mclean', 'champaign', 'tazewell', 'rock-island', 'dekalb', 'kankakee', 'lasalle', 'macon', 'grundy', 'williamson', 'vermilion', 'boone', 'ogle', 'henry', 'woodford', 'monroe', 'macoupin', 'whiteside', 'knox', 'adams'
 ```
