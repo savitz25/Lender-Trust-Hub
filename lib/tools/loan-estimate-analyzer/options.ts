@@ -44,6 +44,9 @@ import {
   MAJOR_ARKANSAS_COUNTY_SLUGS,
   MAJOR_MISSISSIPPI_COUNTY_SLUGS,
   MAJOR_OKLAHOMA_COUNTY_SLUGS,
+  MAJOR_IDAHO_COUNTY_SLUGS,
+  MAJOR_MONTANA_COUNTY_SLUGS,
+  MAJOR_WYOMING_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -571,6 +574,39 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (OK)`,
       originations: c.originations,
       stateSlug: 'oklahoma',
+    });
+  }
+
+  const id = loadHmdaStateData('ID');
+  for (const c of id.countyMarkets) {
+    if (!MAJOR_IDAHO_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `id:${c.countySlug}`,
+      name: `${c.countyName} (ID)`,
+      originations: c.originations,
+      stateSlug: 'idaho',
+    });
+  }
+
+  const mt = loadHmdaStateData('MT');
+  for (const c of mt.countyMarkets) {
+    if (!MAJOR_MONTANA_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `mt:${c.countySlug}`,
+      name: `${c.countyName} (MT)`,
+      originations: c.originations,
+      stateSlug: 'montana',
+    });
+  }
+
+  const wy = loadHmdaStateData('WY');
+  for (const c of wy.countyMarkets) {
+    if (!MAJOR_WYOMING_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `wy:${c.countySlug}`,
+      name: `${c.countyName} (WY)`,
+      originations: c.originations,
+      stateSlug: 'wyoming',
     });
   }
 

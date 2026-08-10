@@ -97,6 +97,12 @@ export const MAJOR_MISSISSIPPI_COUNTY_SLUGS = HMDA_STATE_CONFIGS.MS.majorCountyS
 
 export const MAJOR_OKLAHOMA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.OK.majorCountySlugs;
 
+export const MAJOR_IDAHO_COUNTY_SLUGS = HMDA_STATE_CONFIGS.ID.majorCountySlugs;
+
+export const MAJOR_MONTANA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.MT.majorCountySlugs;
+
+export const MAJOR_WYOMING_COUNTY_SLUGS = HMDA_STATE_CONFIGS.WY.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw

@@ -42,7 +42,10 @@ export type HmdaStateCode =
   | 'NE'
   | 'AR'
   | 'MS'
-  | 'OK';
+  | 'OK'
+  | 'ID'
+  | 'MT'
+  | 'WY';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -96,7 +99,10 @@ export type HmdaStateConfig = {
     | 'nebraska_originations'
     | 'arkansas_originations'
     | 'mississippi_originations'
-    | 'oklahoma_originations';
+    | 'oklahoma_originations'
+    | 'idaho_originations'
+    | 'montana_originations'
+    | 'wyoming_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -1532,6 +1538,74 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'carter',
     ]),
   },
+  ID: {
+    code: 'ID',
+    stateSlug: 'idaho',
+    name: 'Idaho',
+    dataFolder: 'idaho',
+    fileSuffix: '_id',
+    originationsColumn: 'idaho_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Treasure Valley / North Idaho / eastern + secondary volume
+      'ada',
+      'canyon',
+      'kootenai',
+      'bonneville',
+      'twin-falls',
+      'bannock',
+      'bonner',
+      'bingham',
+      'nez-perce',
+      'jefferson',
+      'elmore',
+      'payette',
+      'latah',
+      'madison',
+    ]),
+  },
+  MT: {
+    code: 'MT',
+    stateSlug: 'montana',
+    name: 'Montana',
+    dataFolder: 'montana',
+    fileSuffix: '_mt',
+    originationsColumn: 'montana_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Billings / Bozeman / Missoula / Flathead / secondary volume
+      'yellowstone',
+      'gallatin',
+      'flathead',
+      'missoula',
+      'cascade',
+      'lewis-and-clark',
+      'ravalli',
+      'silver-bow',
+      'lake',
+      'lincoln',
+    ]),
+  },
+  WY: {
+    code: 'WY',
+    stateSlug: 'wyoming',
+    name: 'Wyoming',
+    dataFolder: 'wyoming',
+    fileSuffix: '_wy',
+    originationsColumn: 'wyoming_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Cheyenne / Casper / energy + secondary volume
+      'laramie',
+      'natrona',
+      'campbell',
+      'sweetwater',
+      'albany',
+      'sheridan',
+      'park',
+      'fremont',
+      'lincoln',
+      'teton',
+      'uinta',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -1577,6 +1651,9 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'AR',
   'MS',
   'OK',
+  'ID',
+  'MT',
+  'WY',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {

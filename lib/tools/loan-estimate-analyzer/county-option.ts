@@ -42,6 +42,9 @@ const STATE_BY_PREFIX: Record<string, string> = {
   ar: 'arkansas',
   ms: 'mississippi',
   ok: 'oklahoma',
+  id: 'idaho',
+  mt: 'montana',
+  wy: 'wyoming',
 };
 
 const PREFIX_BY_STATE: Record<string, string | null> = {
@@ -87,6 +90,9 @@ const PREFIX_BY_STATE: Record<string, string | null> = {
   arkansas: 'ar',
   mississippi: 'ms',
   oklahoma: 'ok',
+  idaho: 'id',
+  montana: 'mt',
+  wyoming: 'wy',
 };
 
 const STATE_NAME_BY_SLUG: Record<string, string> = {
@@ -132,6 +138,9 @@ const STATE_NAME_BY_SLUG: Record<string, string> = {
   arkansas: 'Arkansas',
   mississippi: 'Mississippi',
   oklahoma: 'Oklahoma',
+  idaho: 'Idaho',
+  montana: 'Montana',
+  wyoming: 'Wyoming',
 };
 
 /** Human label for a directory state slug (product states). */
