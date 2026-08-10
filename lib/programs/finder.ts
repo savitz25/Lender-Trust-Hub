@@ -1,5 +1,6 @@
 import type { FinderAnswers, ProgramFitLevel, ProgramFitResult, ProgramId } from './types';
 import { getProgramById } from './programs';
+import { getProgramLocationNote, isDpaGuidanceState } from './location-notes';
 
 function pushUnique(list: string[], item: string) {
   if (!list.includes(item)) list.push(item);
@@ -141,38 +142,27 @@ function scoreOne(id: ProgramId, a: FinderAnswers): ProgramFitResult {
       fit = 'learn-more';
       pushUnique(reasons, 'DPA is most relevant when cash-to-close is tight; still useful to understand.');
     }
-    if (a.stateSlug === 'florida') {
+    if (isDpaGuidanceState(a.stateSlug)) {
+      const loc = getProgramLocationNote(a.stateSlug);
       fit = fit === 'learn-more' ? 'sometimes-relevant' : 'often-discussed';
+      if (loc) {
+        pushUnique(
+          reasons,
+          `${loc.stateName} selected: begin with the official statewide housing finance starting points on our ${loc.stateName} DPA research panel, then treat city/county programs as a separate track.`
+        );
+        pushUnique(
+          reasons,
+          `Many ${loc.stateName} research paths pair DPA with FHA or conventional—mortgage insurance still follows the first loan.`
+        );
+        pushUnique(
+          caveats,
+          `${loc.stateName} HFA and local programs change; we do not list every county or guarantee open funding.`
+        );
+      }
+    } else if (a.stateSlug && a.stateSlug !== 'other') {
       pushUnique(
         reasons,
-        'Florida selected: begin with Florida Housing Finance Corporation’s homebuyer pages, then local city/county assistance separately.'
-      );
-      pushUnique(
-        reasons,
-        'Many Florida research paths pair DPA with FHA or conventional—mortgage insurance still follows the first loan.'
-      );
-      pushUnique(
-        caveats,
-        'Florida Housing and local programs change; we do not list every county or guarantee open funding.'
-      );
-    } else if (a.stateSlug === 'texas') {
-      fit = fit === 'learn-more' ? 'sometimes-relevant' : 'often-discussed';
-      pushUnique(
-        reasons,
-        'Texas selected: begin with TDHCA Welcome Home and TSAHC assistance pages, then any city/county programs as a separate track.'
-      );
-      pushUnique(
-        reasons,
-        'Texas DPA is usually layered on a first mortgage (often FHA or conventional)—confirm pairing rules on official sites.'
-      );
-      pushUnique(
-        caveats,
-        'TDHCA, TSAHC, and municipal programs are separate systems; this tool is not a full Texas inventory.'
-      );
-    } else if (a.stateSlug === 'georgia' || a.stateSlug === 'north-carolina') {
-      pushUnique(
-        reasons,
-        `You selected ${a.stateSlug.replace(/-/g, ' ')}—start with that state’s housing finance agency and HUD-approved counseling.`
+        'For states without a dedicated module yet, start with your state housing finance agency and a HUD-approved counselor.'
       );
     }
     pushUnique(

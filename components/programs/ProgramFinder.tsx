@@ -10,10 +10,16 @@ import {
   type FinderAnswers,
   type ProgramFitLevel,
 } from '@/lib/programs';
-import { isDpaPriorityState } from '@/lib/programs/location-notes';
+import {
+  getDpaStateDisplayName,
+  getProgramFinderStateOptions,
+  isDpaPriorityState,
+} from '@/lib/programs/location-notes';
 import { ProgramDisclaimer } from '@/components/programs/ProgramDisclaimer';
 import { ProgramLocationPanel } from '@/components/programs/ProgramLocationPanel';
 import { cn } from '@/lib/utils';
+
+const FINDER_STATE_OPTIONS = getProgramFinderStateOptions();
 
 const emptyAnswers: FinderAnswers = {
   firstTimeBuyer: '',
@@ -169,7 +175,7 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
           <Field
             label="State (optional, for DPA framing)"
             htmlFor="pf-state"
-            hint="Florida and Texas unlock stronger official-source DPA research steps. Not a local program inventory."
+            hint="Expanded states unlock official-source DPA research panels (HFA starting points). Not a city/county program inventory or eligibility check."
           >
             <select
               id="pf-state"
@@ -178,17 +184,17 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
               onChange={(e) => update('stateSlug', e.target.value)}
             >
               <option value="">Skip</option>
-              <option value="florida">Florida (stronger DPA guidance)</option>
-              <option value="texas">Texas (stronger DPA guidance)</option>
-              <option value="georgia">Georgia</option>
-              <option value="north-carolina">North Carolina</option>
-              <option value="other">Other / multi-state</option>
+              {FINDER_STATE_OPTIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
             </select>
           </Field>
           {isDpaPriorityState(answers.stateSlug) ? (
             <p className="rounded-lg border border-sky-100 bg-sky-50/70 px-3 py-2 text-xs text-sky-950">
-              {answers.stateSlug === 'florida' ? 'Florida' : 'Texas'} selected: after you continue,
-              we surface official statewide starting points and FHA/conventional layering notes—not
+              {getDpaStateDisplayName(answers.stateSlug) ?? 'State'} selected: after you continue, we
+              surface official statewide starting points and FHA/conventional layering notes—not
               eligibility or a full county list.
             </p>
           ) : null}
@@ -338,7 +344,7 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
                   >
                     <BookOpen className="h-4 w-4" aria-hidden />
                     {isDpa && isDpaPriorityState(answers.stateSlug)
-                      ? `Open ${answers.stateSlug === 'florida' ? 'Florida' : 'Texas'} DPA research`
+                      ? `Open ${getDpaStateDisplayName(answers.stateSlug) ?? 'state'} DPA research`
                       : `Open ${guide.shortName} overview`}
                   </Link>
                   {isDpa && isDpaPriorityState(answers.stateSlug) ? (

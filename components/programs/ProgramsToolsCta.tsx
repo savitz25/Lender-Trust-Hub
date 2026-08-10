@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import { ArrowRight, Landmark } from 'lucide-react';
-import { dpaStateCtaCopy, isDpaPriorityState } from '@/lib/programs/location-notes';
+import {
+  dpaStateCtaCopy,
+  getDpaStateDisplayName,
+  isDpaPriorityState,
+} from '@/lib/programs/location-notes';
 import { cn } from '@/lib/utils';
 
 /** Discovery CTA for program explainers + finder — research framing only. */
@@ -18,6 +22,7 @@ export function ProgramsToolsCta({
     : '/tools/program-finder';
   const dpaPriority = isDpaPriorityState(stateSlug);
   const dpaHint = stateSlug ? dpaStateCtaCopy(stateSlug) : null;
+  const stateLabel = getDpaStateDisplayName(stateSlug);
   const dpaHref =
     stateSlug && dpaPriority
       ? `/programs/down-payment-assistance#${stateSlug}`
@@ -37,14 +42,6 @@ export function ProgramsToolsCta({
     );
   }
 
-  const stateLabel =
-    stateSlug === 'florida'
-      ? 'Florida'
-      : stateSlug === 'texas'
-        ? 'Texas'
-        : stateSlug === 'georgia'
-          ? 'Georgia'
-          : null;
   const title = dpaPriority
     ? `Exploring FHA, VA, or ${stateLabel} assistance?`
     : stateLabel

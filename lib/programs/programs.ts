@@ -269,7 +269,7 @@ export const PROGRAM_GUIDES: ProgramGuide[] = [
     shortName: 'DPA',
     tagline: 'State, local, and nonprofit help with down payment or closing costs—layered on a first mortgage.',
     summary:
-      'Down-payment assistance is not a single national product. It is a family of grants, forgivable second mortgages, deferred loans, and other structures offered by housing finance agencies, cities, counties, employers, and nonprofits. DPA almost always pairs with a first mortgage (often FHA or conventional) and has income, purchase-price, education, and occupancy rules. Florida, Texas, and other states maintain multiple programs that change over time—this site does not inventory every local program.',
+      'Down-payment assistance is not a single national product. It is a family of grants, forgivable second mortgages, deferred loans, and other structures offered by housing finance agencies, cities, counties, employers, and nonprofits. DPA almost always pairs with a first mortgage (often FHA or conventional) and has income, purchase-price, education, and occupancy rules. This site provides official-source research starting points for Florida, Texas, and additional high-value states—not a nationwide city/county inventory.',
     whoCommonlyFor:
       'First-time and cash-constrained buyers researching grants or second mortgages that reduce cash to close—always layered on a first mortgage.',
     typicalDownPayment:
@@ -314,8 +314,8 @@ export const PROGRAM_GUIDES: ProgramGuide[] = [
       { href: '/tools/program-finder', label: 'Program finder' },
       { href: '/programs/fha', label: 'FHA overview' },
       { href: '/programs/conventional', label: 'Conventional overview' },
-      { href: '/local-lenders/florida', label: 'Florida lenders (directory)' },
-      { href: '/local-lenders/texas', label: 'Texas lenders (directory)' },
+      { href: '/programs/down-payment-assistance#california', label: 'California DPA starts' },
+      { href: '/local-lenders', label: 'Local lenders directory' },
     ],
     sources: [
       {

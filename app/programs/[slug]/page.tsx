@@ -168,12 +168,13 @@ export default async function ProgramGuidePage({ params }: Props) {
             <section className="mt-10 space-y-6" aria-labelledby="dpa-location-heading">
               <div>
                 <h2 id="dpa-location-heading" className="text-xl font-bold text-[#0A2540]">
-                  Florida &amp; Texas: where to research officially
+                  State-aware guidance: where to research officially
                 </h2>
                 <p className="mt-2 text-sm text-zinc-600">
-                  Stronger guidance for markets we cover well. Jump to a state, use the official
-                  portals listed, and treat city/county programs as a separate research track. We do
-                  not inventory every local DPA or decide eligibility.
+                  High-quality starting points for expanded markets (deeper FL/TX modules plus Tier 1
+                  and Tier 2 states). Jump to a state, use the official portals listed, and treat
+                  city/county programs as a separate research track. We do not inventory every local
+                  DPA or decide eligibility.
                 </p>
                 <ul className="mt-3 flex flex-wrap gap-2 text-sm">
                   {PROGRAM_LOCATION_NOTES.map((n) => (
@@ -193,9 +194,9 @@ export default async function ProgramGuidePage({ params }: Props) {
               ))}
               <p className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-600">
                 <strong className="text-zinc-800">Intentionally deferred:</strong> a complete
-                city/county DPA database for Florida and Texas, live funding status, and application
-                matching. A high-quality “where to research officially” layer is safer than fake
-                completeness.
+                nationwide city/county DPA database, live open/closed funding status, eligibility
+                determination, and application matching. A high-quality “where to research
+                officially” layer for priority states is safer than fake completeness.
               </p>
             </section>
           </>

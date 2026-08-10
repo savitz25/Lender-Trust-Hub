@@ -19,6 +19,7 @@
 |--------|------|
 | `lib/programs/programs.ts` | FHA, VA, conventional, USDA, DPA guides (advantages, trade-offs, comparison rows) |
 | `lib/programs/finder.ts` | Pure fit heuristics (never claims qualification) |
+| `lib/programs/location-notes.ts` | State-aware DPA research modules (FL/TX deep + Tier 1/2 expansion) |
 | `lib/programs/location-notes.ts` | FL / TX framing for DPA & markets (not a national inventory) |
 
 ## UI

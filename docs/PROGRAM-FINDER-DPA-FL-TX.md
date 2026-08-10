@@ -1,37 +1,15 @@
-# Program Finder — FL / TX DPA awareness polish
+# Program Finder — FL / TX DPA awareness (superseded expansion note)
 
-## What was added
+FL/TX deep modules remain the richest content in `lib/programs/location-notes.ts`.
 
-### DPA page (`/programs/down-payment-assistance`)
-- National “common DPA themes” grid (first-time focus, income/price limits, education, layering, structure, funding)
-- Full **Florida** and **Texas** research panels:
-  - Official starting points (HFA / TDHCA / TSAHC / HUD / CFPB)
-  - Ordered research steps
-  - FHA / conventional layering notes
-  - Strong caveats on local variation and change
-- Jump links `#florida` / `#texas`
-- Explicit “intentionally deferred” note (no full local inventory)
+**See the full multi-state expansion:** [PROGRAM-FINDER-DPA-EXPANSION.md](./PROGRAM-FINDER-DPA-EXPANSION.md)
 
-### Program Finder
-- FL / TX labeled as stronger DPA guidance in the state control
-- Compact location panel with official next steps when FL/TX selected
-- DPA result card deep-links to state section + FHA/conventional context links
-- Fit heuristics add FL- and TX-specific research framing (not eligibility)
+## Original FL / TX deliverables (still live)
+- Full Florida Housing + Texas TDHCA/TSAHC research panels
+- Program Finder state boost and location panels
+- County / profile CTAs via `ProgramsToolsCta`
 
-### County / profile CTAs
-- `ProgramsToolsCta` on FL/TX pages emphasizes assistance pathways and deep-links to state DPA sections
-
-### Sources (prefer official)
-- Florida Housing (+ homebuyer overview)
-- TDHCA + Welcome Home programs
-- TSAHC loans & DPA pages
-- HUD counselor search, CFPB DPA explainers
-
-## Intentionally deferred
-- Complete city/county DPA database for FL and TX
-- Live funding / open-closed status
-- Dollar amounts, income limits, or “you qualify” language
-- Application forms or lender lead capture
-
-## Content module
-`lib/programs/location-notes.ts` — maintain here when official portals move.
+## Intentionally deferred (unchanged)
+- Complete city/county DPA database
+- Live funding status
+- Eligibility determination or lead capture

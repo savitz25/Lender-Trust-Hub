@@ -18,8 +18,12 @@ export { scoreProgramFits, fitLevelLabel } from './finder';
 
 export {
   PROGRAM_LOCATION_NOTES,
+  DPA_GUIDANCE_STATE_SLUGS,
   getProgramLocationNote,
   isDpaPriorityState,
+  isDpaGuidanceState,
+  getDpaStateDisplayName,
+  getProgramFinderStateOptions,
   dpaStateCtaCopy,
   type ProgramLocationNote,
   type OfficialSource,

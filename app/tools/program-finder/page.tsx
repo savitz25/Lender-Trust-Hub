@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ChevronRight, Landmark } from 'lucide-react';
 import { ProgramFinder } from '@/components/programs/ProgramFinder';
 import { JsonLd } from '@/components/directory/JsonLd';
+import { DPA_GUIDANCE_STATE_SLUGS } from '@/lib/programs/location-notes';
 
 export const metadata: Metadata = {
   title: 'Mortgage Program Finder — FHA, VA, DPA Education | Lender Trust Hub',
@@ -17,13 +18,7 @@ export default async function ProgramFinderPage({
   searchParams: Promise<{ state?: string }>;
 }) {
   const sp = await searchParams;
-  const allowed = new Set([
-    'florida',
-    'texas',
-    'georgia',
-    'north-carolina',
-    'other',
-  ]);
+  const allowed = new Set([...DPA_GUIDANCE_STATE_SLUGS, 'other']);
   const initialStateSlug =
     sp.state && allowed.has(sp.state) ? sp.state : '';
 

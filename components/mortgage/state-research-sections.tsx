@@ -7,6 +7,8 @@ import {
 } from '@/lib/mortgage/county-quality-tiers';
 import { getStateHousingResources } from '@/lib/mortgage/state-housing-resources';
 import { RankingBasisPanel } from '@/components/research/ranking-basis-panel';
+import { ProgramsToolsCta } from '@/components/programs/ProgramsToolsCta';
+import { isDpaGuidanceState } from '@/lib/programs/location-notes';
 
 type Props = {
   stateMeta: StateMeta;
@@ -111,6 +113,28 @@ export function StateResearchSections({ stateMeta, stats }: Props) {
         </h2>
         <ul className="mt-3 flex flex-wrap gap-3 text-sm">
           <li>
+            <Link
+              href={`/tools/program-finder?state=${encodeURIComponent(slug)}`}
+              className="font-medium text-[#059669] hover:underline"
+            >
+              Program / assistance finder →
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={
+                isDpaGuidanceState(slug)
+                  ? `/programs/down-payment-assistance#${slug}`
+                  : '/programs/down-payment-assistance'
+              }
+              className="font-medium text-[#059669] hover:underline"
+            >
+              {isDpaGuidanceState(slug)
+                ? `${stateMeta.fullName} DPA research starts →`
+                : 'Down-payment assistance guide →'}
+            </Link>
+          </li>
+          <li>
             <Link href="/calculators" className="font-medium text-[#059669] hover:underline">
               Educational calculators →
             </Link>
@@ -139,6 +163,11 @@ export function StateResearchSections({ stateMeta, stats }: Props) {
             </Link>
           </li>
         </ul>
+        {isDpaGuidanceState(slug) ? (
+          <div className="mt-4">
+            <ProgramsToolsCta stateSlug={slug} />
+          </div>
+        ) : null}
       </section>
 
       <section aria-labelledby="state-housing-heading">

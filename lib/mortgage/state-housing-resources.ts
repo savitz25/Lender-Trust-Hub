@@ -154,6 +154,53 @@ const BY_STATE: Record<string, HousingResourceLink[]> = {
       note: 'Tennessee homeownership resources',
     },
   ],
+  virginia: [
+    {
+      label: 'Virginia Housing',
+      href: 'https://www.virginiahousing.com/',
+      note: 'Virginia homebuyer and housing finance resources',
+    },
+  ],
+  maryland: [
+    {
+      label: 'Maryland Mortgage Program',
+      href: 'https://mmp.maryland.gov/',
+      note: 'Maryland statewide homebuyer program portal',
+    },
+    {
+      label: 'Maryland DHCD',
+      href: 'https://dhcd.maryland.gov/',
+      note: 'Maryland housing and community development resources',
+    },
+  ],
+  ohio: [
+    {
+      label: 'Ohio Housing Finance Agency (OHFA)',
+      href: 'https://ohiohome.org/',
+      note: 'Ohio homebuyer and housing finance resources',
+    },
+  ],
+  nevada: [
+    {
+      label: 'Nevada Housing Division',
+      href: 'https://housing.nv.gov/',
+      note: 'Nevada homeownership and housing resources',
+    },
+  ],
+  utah: [
+    {
+      label: 'Utah Housing Corporation',
+      href: 'https://utahhousingcorp.org/',
+      note: 'Utah homebuyer program information',
+    },
+  ],
+  oregon: [
+    {
+      label: 'Oregon Housing and Community Services (OHCS)',
+      href: 'https://www.oregon.gov/ohcs/',
+      note: 'Oregon homeownership and housing resources',
+    },
+  ],
   'new-jersey': [
     {
       label: 'New Jersey Housing and Mortgage Finance Agency',

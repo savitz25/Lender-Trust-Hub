@@ -6,7 +6,7 @@ import {
 } from '@/lib/programs/location-notes';
 import { cn } from '@/lib/utils';
 
-/** Explicit general vs location-specific DPA / market notes (FL, TX). */
+/** Explicit general vs location-specific DPA / market notes (expanded state modules). */
 export function ProgramLocationPanel({
   stateSlug,
   note,
@@ -34,16 +34,16 @@ export function ProgramLocationPanel({
       >
         <p className="font-medium text-zinc-800">Location notes</p>
         <p className="mt-1">
-          Stronger DPA research detail is available for <strong>Florida</strong> and{' '}
-          <strong>Texas</strong>. Elsewhere, start with your state housing finance agency and a
-          HUD-approved counselor—we do not inventory every U.S. local program.
+          State-aware DPA research modules cover Florida, Texas, and additional high-value states
+          (CA, NC, GA, AZ, WA, CO, and more). Elsewhere, start with your state housing finance agency
+          and a HUD-approved counselor—we do not inventory every U.S. local program.
         </p>
         <p className="mt-2">
           <Link
             href="/programs/down-payment-assistance"
             className="font-medium text-[#059669] hover:underline"
           >
-            National DPA overview
+            National DPA overview &amp; state panels
           </Link>
         </p>
       </aside>
