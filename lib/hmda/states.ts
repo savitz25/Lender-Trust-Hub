@@ -809,7 +809,6 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
     fileSuffix: '_tn',
     originationsColumn: 'tennessee_originations',
     majorCountySlugs: new Set([
-      // Wave 1 — Nashville / Memphis / Knoxville / Chattanooga core
       'davidson',
       'shelby',
       'knox',
@@ -819,7 +818,6 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'williamson',
       'sumner',
       'wilson',
-      // Next volume / regional metros
       'sullivan',
       'blount',
       'maury',
@@ -831,6 +829,21 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'anderson',
       'loudon',
       'putnam',
+      'roane',
+      'dickson',
+      'greene',
+      'hamblen',
+      'jefferson',
+      'cumberland',
+      'coffee',
+      'tipton',
+      'mcminn',
+      'cheatham',
+      'hickman',
+      'bedford',
+      'hawkins',
+      'marshall',
+      'gibson',
     ]),
   },
   IL: {
