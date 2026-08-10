@@ -25,14 +25,14 @@ export default function MyLendingPage() {
           Research passport for financing
         </h1>
         <p className="mt-3 max-w-2xl text-base leading-relaxed text-zinc-600">
-          Guest-saved on this device. Save Loan Estimates, side-by-side comparisons, and lenders —
-          then reopen your research later. Optional sign-in uses the same Ask Trust Hub account as
-          Move and Insurance (magic link, Google, or Facebook). Analyzer and Compare stay free
-          without an account.
+          Your research passport for financing: organize saved Loan Estimates, comparisons, and
+          lenders; add private notes; reopen tools later. Guest mode stays on this device. Optional
+          sign-in (same Ask Trust Hub account as Move and Insurance) enables a multi-device workspace
+          foundation. Analyzer and Compare stay free without an account.
         </p>
         <p className="mt-2 text-xs text-zinc-500">
-          Research only · We show the public record. You decide. · Not a lead funnel · NMLS
-          verification on primary sources
+          Research only · We show the public record. You decide. · Not a lead funnel · Guest =
+          device · Signed in = synced foundation when available
         </p>
         <div className="mt-2">
           <TrustMark />

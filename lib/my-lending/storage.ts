@@ -1,6 +1,7 @@
 /**
  * Guest-first My Lending persistence (localStorage).
- * Storage key: lth:my-lending:v1
+ * Guest key: lth:my-lending:v1
+ * Signed-in key: lth:my-lending:v1:user:{userId} (+ optional cloud push)
  * SSR-safe: empty on server. Quota errors fail soft.
  */
 
@@ -13,10 +14,13 @@ import {
   type SavedLeComparison,
   type SavedLender,
   type SavedLoanEstimate,
+  type WorkspaceItemSort,
   LE_WORKSPACE_REOPEN_KEY,
+  MAX_PRIVATE_NOTE_CHARS,
   MAX_SAVED_LE_COMPARISONS,
   MAX_SAVED_LOAN_ESTIMATES,
   MY_LENDING_STORE_KEY,
+  myLendingUserStoreKey,
   newId,
   nowIso,
   type LeWorkspaceReopen,
@@ -44,11 +48,183 @@ const MAX_PLANS = 20;
 
 function emptyState(): MyLendingState {
   return {
-    version: 2,
+    version: 3,
     activePlanId: null,
     plans: [],
     savedLenders: [],
   };
+}
+
+/** Active identity for storage namespace (null = guest device store). */
+let activeUserId: string | null = null;
+
+/** Optional cloud push after successful local save (signed-in only). */
+let cloudPushHandler:
+  | ((userId: string, state: MyLendingState) => void)
+  | null = null;
+
+export function registerMyLendingCloudPush(
+  handler: ((userId: string, state: MyLendingState) => void) | null
+): void {
+  cloudPushHandler = handler;
+}
+
+export function getMyLendingStorageUserId(): string | null {
+  return activeUserId;
+}
+
+export function getMyLendingStorageMode(): 'guest' | 'signed_in' {
+  return activeUserId ? 'signed_in' : 'guest';
+}
+
+function currentStoreKey(): string {
+  return activeUserId ? myLendingUserStoreKey(activeUserId) : MY_LENDING_STORE_KEY;
+}
+
+export function isMyLendingStateEmpty(state: MyLendingState): boolean {
+  return (
+    state.plans.length === 0 &&
+    state.savedLenders.length === 0 &&
+    !state.plans.some(
+      (p) =>
+        (p.savedLoanEstimates?.length ?? 0) > 0 ||
+        (p.savedLeComparisons?.length ?? 0) > 0 ||
+        (p.calculatorSnapshots?.length ?? 0) > 0
+    )
+  );
+}
+
+/** Max updatedAt across plans + lenders + nested LE items (for LWW sync). */
+export function getStateMaxUpdatedAt(state: MyLendingState): string {
+  let max = '';
+  for (const p of state.plans) {
+    if (p.updatedAt && p.updatedAt > max) max = p.updatedAt;
+    for (const s of p.savedLoanEstimates ?? []) {
+      if (s.updatedAt && s.updatedAt > max) max = s.updatedAt;
+      if (s.savedAt && s.savedAt > max) max = s.savedAt;
+    }
+    for (const c of p.savedLeComparisons ?? []) {
+      if (c.updatedAt && c.updatedAt > max) max = c.updatedAt;
+      if (c.savedAt && c.savedAt > max) max = c.savedAt;
+    }
+    for (const snap of p.calculatorSnapshots ?? []) {
+      if (snap.savedAt && snap.savedAt > max) max = snap.savedAt;
+    }
+  }
+  for (const l of state.savedLenders) {
+    if (l.updatedAt && l.updatedAt > max) max = l.updatedAt;
+    if (l.savedAt && l.savedAt > max) max = l.savedAt;
+  }
+  return max;
+}
+
+function readStoreKey(key: string): MyLendingState {
+  if (!isBrowser()) return emptyState();
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return emptyState();
+    return normalizeState(JSON.parse(raw)) ?? emptyState();
+  } catch {
+    return emptyState();
+  }
+}
+
+function writeStoreKey(
+  key: string,
+  state: MyLendingState
+): { ok: true } | { ok: false; error: string } {
+  if (!isBrowser()) return { ok: false, error: 'Not available on server' };
+  const next: MyLendingState = {
+    version: 3,
+    activePlanId: state.activePlanId,
+    plans: state.plans.slice(0, MAX_PLANS).map((p) => ({
+      ...p,
+      savedLoanEstimates: (p.savedLoanEstimates ?? []).slice(0, MAX_SAVED_LOAN_ESTIMATES),
+      savedLeComparisons: (p.savedLeComparisons ?? []).slice(0, MAX_SAVED_LE_COMPARISONS),
+    })),
+    savedLenders: state.savedLenders
+      .map(normalizeLender)
+      .filter((l) => l.lenderSlug)
+      .slice(0, MAX_SAVED_LENDERS),
+  };
+  try {
+    localStorage.setItem(key, JSON.stringify(next));
+    lastSaveError = null;
+    return { ok: true };
+  } catch (e) {
+    const msg =
+      e instanceof DOMException && e.name === 'QuotaExceededError'
+        ? 'Storage full - could not save My Lending on this device.'
+        : 'Could not save My Lending on this device (storage blocked or unavailable).';
+    if (typeof console !== 'undefined') console.warn('[my-lending]', msg, e);
+    lastSaveError = msg;
+    return { ok: false, error: msg };
+  }
+}
+
+/**
+ * Switch storage namespace (guest ↔ signed-in).
+ * One-way seed only: empty signed-in store receives a copy of guest data.
+ * Guest store is never wiped. No multi-device plan merge.
+ */
+export function setMyLendingStorageIdentity(userId: string | null): {
+  mode: 'guest' | 'signed_in';
+  seededFromGuest: boolean;
+} {
+  const next = userId?.trim() || null;
+  if (activeUserId === next) {
+    return { mode: next ? 'signed_in' : 'guest', seededFromGuest: false };
+  }
+
+  let seededFromGuest = false;
+  if (next) {
+    const userKey = myLendingUserStoreKey(next);
+    const userState = readStoreKey(userKey);
+    if (isMyLendingStateEmpty(userState)) {
+      const guest = readStoreKey(MY_LENDING_STORE_KEY);
+      if (!isMyLendingStateEmpty(guest)) {
+        writeStoreKey(userKey, guest);
+        seededFromGuest = true;
+      }
+    }
+  }
+
+  activeUserId = next;
+  dispatchChange();
+  return { mode: next ? 'signed_in' : 'guest', seededFromGuest };
+}
+
+/** Apply remote cloud payload into the active signed-in local cache. */
+export function replaceStateFromRemote(raw: MyLendingState): boolean {
+  const normalized = normalizeState(raw);
+  if (!normalized) return false;
+  const result = writeStoreKey(currentStoreKey(), normalized);
+  if (result.ok) dispatchChange();
+  return result.ok;
+}
+
+function clampNote(notes: string | undefined): string | undefined {
+  if (notes === undefined) return undefined;
+  const t = notes.trim().slice(0, MAX_PRIVATE_NOTE_CHARS);
+  return t || undefined;
+}
+
+export function sortByWorkspaceOrder<T extends { label: string; savedAt: string; updatedAt?: string }>(
+  items: T[],
+  sort: WorkspaceItemSort = 'newest'
+): T[] {
+  const copy = items.slice();
+  if (sort === 'alpha') {
+    return copy.sort((a, b) => a.label.localeCompare(b.label, undefined, { sensitivity: 'base' }));
+  }
+  if (sort === 'oldest') {
+    return copy.sort((a, b) => a.savedAt.localeCompare(b.savedAt));
+  }
+  return copy.sort((a, b) => {
+    const tb = b.updatedAt || b.savedAt;
+    const ta = a.updatedAt || a.savedAt;
+    return tb.localeCompare(ta) || b.savedAt.localeCompare(a.savedAt);
+  });
 }
 
 function listNonArchived(plans: FinancePlan[]): FinancePlan[] {
@@ -59,6 +235,12 @@ function listNonArchived(plans: FinancePlan[]): FinancePlan[] {
 
 function isBrowser(): boolean {
   return typeof window !== 'undefined';
+}
+
+let lastSaveError: string | null = null;
+
+export function getLastSaveError(): string | null {
+  return lastSaveError;
 }
 
 const VALID_STATUSES: LenderResearchStatus[] = [
@@ -171,28 +353,14 @@ function dispatchChange(): void {
   window.dispatchEvent(new CustomEvent('lth-my-lending-store'));
 }
 
-let lastSaveError: string | null = null;
-
-export function getLastSaveError(): string | null {
-  return lastSaveError;
-}
-
 export function loadState(): MyLendingState {
-  if (!isBrowser()) return emptyState();
-  try {
-    const raw = localStorage.getItem(MY_LENDING_STORE_KEY);
-    if (!raw) return emptyState();
-    const parsed = normalizeState(JSON.parse(raw));
-    return parsed ?? emptyState();
-  } catch {
-    return emptyState();
-  }
+  return readStoreKey(currentStoreKey());
 }
 
 export function saveState(
-  state: MyLendingState
+  state: MyLendingState,
+  opts?: { skipCloudPush?: boolean }
 ): { ok: true } | { ok: false; error: string } {
-  if (!isBrowser()) return { ok: false, error: 'Not available on server' };
   const next: MyLendingState = {
     version: 3,
     activePlanId: state.activePlanId,
@@ -206,20 +374,14 @@ export function saveState(
       .filter((l) => l.lenderSlug)
       .slice(0, MAX_SAVED_LENDERS),
   };
-  try {
-    localStorage.setItem(MY_LENDING_STORE_KEY, JSON.stringify(next));
-    lastSaveError = null;
+  const result = writeStoreKey(currentStoreKey(), next);
+  if (result.ok) {
     dispatchChange();
-    return { ok: true };
-  } catch (e) {
-    const msg =
-      e instanceof DOMException && e.name === 'QuotaExceededError'
-        ? 'Storage full - could not save My Lending on this device.'
-        : 'Could not save My Lending on this device (storage blocked or unavailable).';
-    if (typeof console !== 'undefined') console.warn('[my-lending]', msg, e);
-    lastSaveError = msg;
-    return { ok: false, error: msg };
+    if (!opts?.skipCloudPush && activeUserId && cloudPushHandler) {
+      cloudPushHandler(activeUserId, next);
+    }
   }
+  return result;
 }
 
 /** Non-archived plans (library open set). */
@@ -750,6 +912,33 @@ export function updateSavedLenderStatus(
   });
 }
 
+/** Private research note on a saved lender (short text). */
+export function updateSavedLenderNotes(
+  savedId: string,
+  notes: string
+): { ok: true } | { ok: false; error: string } {
+  const state = loadState();
+  const existing = state.savedLenders.find((l) => l.id === savedId);
+  if (!existing) return { ok: false, error: 'Lender not found' };
+  const ts = nowIso();
+  const updated: SavedLender = {
+    ...existing,
+    notes: clampNote(notes),
+    updatedAt: ts,
+  };
+  state.savedLenders = state.savedLenders.map((l) =>
+    l.id === savedId ? updated : l
+  );
+  if (existing.planId) {
+    state.plans = state.plans.map((p) =>
+      p.id === existing.planId ? { ...p, updatedAt: ts } : p
+    );
+  }
+  const result = saveState(state);
+  if (!result.ok) return { ok: false, error: result.error };
+  return { ok: true };
+}
+
 export function isLenderSaved(lenderSlug: string, state?: MyLendingState): boolean {
   const s = state ?? loadState();
   const plan = getActivePlan(s);
@@ -911,11 +1100,14 @@ export function saveLoanEstimate(input: SaveLoanEstimateInput): SavedLoanEstimat
   return item;
 }
 
-export function getSavedLoanEstimates(planId?: string): SavedLoanEstimate[] {
+export function getSavedLoanEstimates(
+  planId?: string,
+  sort: WorkspaceItemSort = 'newest'
+): SavedLoanEstimate[] {
   const plan = planId
     ? loadState().plans.find((p) => p.id === planId)
     : getActivePlan();
-  return plan?.savedLoanEstimates ?? [];
+  return sortByWorkspaceOrder(plan?.savedLoanEstimates ?? [], sort);
 }
 
 export function removeSavedLoanEstimate(id: string, planId?: string): void {
@@ -931,6 +1123,65 @@ export function removeSavedLoanEstimate(id: string, planId?: string): void {
   };
   state.plans = state.plans.map((p) => (p.id === plan.id ? nextPlan : p));
   saveState(state);
+}
+
+export function updateSavedLoanEstimateNotes(
+  id: string,
+  notes: string,
+  planId?: string
+): boolean {
+  const state = loadState();
+  const plan = planId
+    ? state.plans.find((p) => p.id === planId)
+    : getActivePlan(state);
+  if (!plan) return false;
+  const ts = nowIso();
+  let found = false;
+  const nextEstimates = (plan.savedLoanEstimates ?? []).map((item) => {
+    if (item.id !== id) return item;
+    found = true;
+    return {
+      ...item,
+      notes: clampNote(notes),
+      updatedAt: ts,
+    };
+  });
+  if (!found) return false;
+  const nextPlan: FinancePlan = {
+    ...plan,
+    savedLoanEstimates: nextEstimates,
+    updatedAt: ts,
+  };
+  state.plans = state.plans.map((p) => (p.id === plan.id ? nextPlan : p));
+  return saveState(state).ok;
+}
+
+export function updateSavedLoanEstimateLabel(
+  id: string,
+  label: string,
+  planId?: string
+): boolean {
+  const state = loadState();
+  const plan = planId
+    ? state.plans.find((p) => p.id === planId)
+    : getActivePlan(state);
+  if (!plan) return false;
+  const ts = nowIso();
+  const nextLabel = label.trim().slice(0, 120);
+  if (!nextLabel) return false;
+  let found = false;
+  const nextEstimates = (plan.savedLoanEstimates ?? []).map((item) => {
+    if (item.id !== id) return item;
+    found = true;
+    return { ...item, label: nextLabel, updatedAt: ts };
+  });
+  if (!found) return false;
+  state.plans = state.plans.map((p) =>
+    p.id === plan.id
+      ? { ...plan, savedLoanEstimates: nextEstimates, updatedAt: ts }
+      : p
+  );
+  return saveState(state).ok;
 }
 
 export type SaveLeComparisonInput = {
@@ -971,11 +1222,14 @@ export function saveLeComparison(input: SaveLeComparisonInput): SavedLeCompariso
   return item;
 }
 
-export function getSavedLeComparisons(planId?: string): SavedLeComparison[] {
+export function getSavedLeComparisons(
+  planId?: string,
+  sort: WorkspaceItemSort = 'newest'
+): SavedLeComparison[] {
   const plan = planId
     ? loadState().plans.find((p) => p.id === planId)
     : getActivePlan();
-  return plan?.savedLeComparisons ?? [];
+  return sortByWorkspaceOrder(plan?.savedLeComparisons ?? [], sort);
 }
 
 export function removeSavedLeComparison(id: string, planId?: string): void {
@@ -991,6 +1245,37 @@ export function removeSavedLeComparison(id: string, planId?: string): void {
   };
   state.plans = state.plans.map((p) => (p.id === plan.id ? nextPlan : p));
   saveState(state);
+}
+
+export function updateSavedLeComparisonNotes(
+  id: string,
+  notes: string,
+  planId?: string
+): boolean {
+  const state = loadState();
+  const plan = planId
+    ? state.plans.find((p) => p.id === planId)
+    : getActivePlan(state);
+  if (!plan) return false;
+  const ts = nowIso();
+  let found = false;
+  const nextComparisons = (plan.savedLeComparisons ?? []).map((item) => {
+    if (item.id !== id) return item;
+    found = true;
+    return {
+      ...item,
+      notes: clampNote(notes),
+      updatedAt: ts,
+    };
+  });
+  if (!found) return false;
+  const nextPlan: FinancePlan = {
+    ...plan,
+    savedLeComparisons: nextComparisons,
+    updatedAt: ts,
+  };
+  state.plans = state.plans.map((p) => (p.id === plan.id ? nextPlan : p));
+  return saveState(state).ok;
 }
 
 export function stageLeWorkspaceReopen(payload: LeWorkspaceReopen): void {

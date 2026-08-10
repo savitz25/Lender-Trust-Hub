@@ -188,6 +188,25 @@ export type Database = {
         Update: Partial<Database['public']['Tables']['saved_calculator_scenarios']['Row']>;
         Relationships: [];
       };
+      /** My Lending V1.1 — signed-in workspace blob (last-write-wins) */
+      my_lending_workspaces: {
+        Row: {
+          user_id: string;
+          payload: Json;
+          client_updated_at: string;
+          updated_at: string;
+          created_at: string;
+        };
+        Insert: {
+          user_id: string;
+          payload?: Json;
+          client_updated_at?: string;
+          updated_at?: string;
+          created_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['my_lending_workspaces']['Row']>;
+        Relationships: [];
+      };
     };
     Views: {
       [_ in never]: never;

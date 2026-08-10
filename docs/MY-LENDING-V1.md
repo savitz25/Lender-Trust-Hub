@@ -39,4 +39,8 @@ Caps: 25 Loan Estimates, 15 comparisons per plan (localStorage-friendly).
 
 ## Out of scope (later)
 
-Cloud sync of LE payloads, email nurture, PDF storage, folders, lender messaging.
+Email nurture, PDF storage, folders, lender messaging, full cloud conflict merge.
+
+## V1.1
+
+See [MY-LENDING-V1.1.md](./MY-LENDING-V1.1.md) — notes, organization, empty states, signed-in sync foundation.

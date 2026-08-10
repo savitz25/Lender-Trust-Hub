@@ -116,9 +116,10 @@ export type SavedLender = {
 };
 
 /**
- * Guest workspace state.
+ * Guest / signed-in workspace state (same shape).
  * v1/v2 — plans + lenders (+ calculator snapshots on plans)
  * v3 — + saved Loan Estimates and LE comparisons on plans
+ * Notes on LEs / comparisons / lenders are supported in v3 (optional fields).
  */
 export type MyLendingState = {
   version: 1 | 2 | 3;
@@ -126,6 +127,9 @@ export type MyLendingState = {
   plans: FinancePlan[];
   savedLenders: SavedLender[];
 };
+
+/** Workspace list sort for V1.1 organization */
+export type WorkspaceItemSort = 'newest' | 'oldest' | 'alpha';
 
 /** SessionStorage key to reopen a saved LE/comparison in the tools */
 export const LE_WORKSPACE_REOPEN_KEY = 'lth:my-lending:le-reopen:v1';
@@ -167,10 +171,16 @@ export const LENDER_STATUS_OPTIONS: {
 ];
 
 export const MY_LENDING_STORE_KEY = 'lth:my-lending:v1';
+/** Signed-in device cache: `${MY_LENDING_STORE_KEY}:user:${userId}` */
+export function myLendingUserStoreKey(userId: string): string {
+  return `${MY_LENDING_STORE_KEY}:user:${userId}`;
+}
 export const MY_LENDING_PATH = '/my-lending';
 
 export const MAX_SAVED_LOAN_ESTIMATES = 25;
 export const MAX_SAVED_LE_COMPARISONS = 15;
+/** Private research notes — short, not a document system */
+export const MAX_PRIVATE_NOTE_CHARS = 500;
 
 export function newId(): string {
   if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {

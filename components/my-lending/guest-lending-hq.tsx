@@ -8,6 +8,7 @@ import {
   Calculator,
   ExternalLink,
   FileText,
+  GitCompare,
   LogIn,
   LogOut,
   MapPin,
@@ -26,6 +27,7 @@ import {
   type SavedLeComparison,
   type SavedLender,
   type SavedLoanEstimate,
+  type WorkspaceItemSort,
 } from '@/lib/my-lending/types';
 import {
   ensureActivePlan,
@@ -47,19 +49,24 @@ import {
   SHORTLIST_CAP,
   shortlistReplacing,
   shortlistWithDemoteOldest,
+  sortByWorkspaceOrder,
   stageLeWorkspaceReopen,
+  updateSavedLeComparisonNotes,
+  updateSavedLenderNotes,
   updateSavedLenderStatus,
+  updateSavedLoanEstimateNotes,
   upsertPlan,
 } from '@/lib/my-lending/storage';
 import { ShortlistFullPanel } from '@/components/my-lending/shortlist-full-panel';
+import { PrivateResearchNote } from '@/components/my-lending/private-research-note';
 import { useMyLendingOptional } from '@/components/my-lending/my-lending-provider';
 import { TrustMark } from '@/components/network/trust-mark';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 /**
- * Phase B guest-first Lending HQ — shortlist cap 3 + status buckets.
- * Research only; no lead-gen.
+ * My Lending HQ — research passport (V1.1).
+ * Organize saves, private notes, empty-state onboarding, guest vs signed-in storage.
  */
 export function GuestLendingHq() {
   const ml = useMyLendingOptional();
@@ -83,6 +90,10 @@ export function GuestLendingHq() {
     pendingName: string;
   } | null>(null);
   const [historyOpen, setHistoryOpen] = useState(false);
+  const [leSort, setLeSort] = useState<WorkspaceItemSort>('newest');
+  const [compareSort, setCompareSort] = useState<WorkspaceItemSort>('newest');
+  const [lenderSort, setLenderSort] = useState<WorkspaceItemSort>('newest');
+  const [researchTab, setResearchTab] = useState<'estimates' | 'comparisons'>('estimates');
 
   const refresh = useCallback(() => {
     const store = loadMyLendingStore();
@@ -92,8 +103,8 @@ export function GuestLendingHq() {
     if (active) {
       setLenders(getLendersForPlan(active.id, store));
       setSnapshots(getCalculatorSnapshots(active.id));
-      setLoanEstimates(getSavedLoanEstimates(active.id));
-      setLeComparisons(getSavedLeComparisons(active.id));
+      setLoanEstimates(getSavedLoanEstimates(active.id, leSort));
+      setLeComparisons(getSavedLeComparisons(active.id, compareSort));
       setLabel(active.label);
       setZip(active.location?.zip ?? '');
       setStateCode(active.location?.state ?? '');
@@ -105,11 +116,9 @@ export function GuestLendingHq() {
       setLoanEstimates([]);
       setLeComparisons([]);
     }
-  }, []);
+  }, [leSort, compareSort]);
 
   useEffect(() => {
-    // D.4: do not auto-create a plan on empty HQ (after delete last plan).
-    // Setup / Save still call ensureActivePlan when the user acts.
     refresh();
     setHydrated(true);
     const onStore = () => refresh();
@@ -121,10 +130,27 @@ export function GuestLendingHq() {
     };
   }, [refresh]);
 
+  const sortedLenders = useMemo(
+    () =>
+      sortByWorkspaceOrder(
+        lenders.map((l) => ({
+          ...l,
+          label: l.lenderName,
+          savedAt: l.savedAt,
+          updatedAt: l.updatedAt,
+        })),
+        lenderSort
+      ),
+    [lenders, lenderSort]
+  );
+
   const locationLabel = useMemo(() => {
     const parts = [zip, stateCode].filter(Boolean);
     return parts.join(' · ') || undefined;
   }, [zip, stateCode]);
+
+  const storageMode = ml?.workspaceStorage?.mode ?? 'guest';
+  const syncStatus = ml?.workspaceStorage?.syncStatus ?? 'local_only';
 
   function persistPlanFields() {
     setError(null);
@@ -159,7 +185,11 @@ export function GuestLendingHq() {
       setError(err);
       return;
     }
-    setMessage('Plan saved on this device.');
+    setMessage(
+      storageMode === 'signed_in'
+        ? 'Plan saved to your research workspace.'
+        : 'Plan saved on this device.'
+    );
     refresh();
   }
 
@@ -183,8 +213,15 @@ export function GuestLendingHq() {
           <span className="font-medium text-[#0A2540]">{ml.user.email}</span>
         </p>
         <p className="mt-1 text-xs text-zinc-500">
-          Research workspace only — tools still work without signing in. Guest plans on this device
-          stay when you sign out. Cloud plan sync is not enabled yet (local is source of truth).
+          Signed-in workspace uses a synced research foundation when available. Guest data on this
+          device is kept separate and is never deleted when you sign out.
+          {syncStatus === 'syncing'
+            ? ' Syncing…'
+            : syncStatus === 'synced'
+              ? ' Workspace cache ready.'
+              : syncStatus === 'error'
+                ? ' Cloud sync unavailable — still saved on this device.'
+                : ' Local signed-in cache on this device.'}
         </p>
       </div>
       <Button
@@ -202,8 +239,8 @@ export function GuestLendingHq() {
       <div>
         <p className="text-sm font-medium text-[#0A2540]">Sign in (optional)</p>
         <p className="mt-1 text-sm text-zinc-600">
-          Tools work without an account. Sign in to use the same Ask Trust Hub identity across Move,
-          Insurance, and Lending.
+          Guest mode keeps research on this device only. Sign in for a multi-device workspace
+          foundation — never required to use Analyzer, Compare, or save tools.
         </p>
       </div>
       <Button
@@ -218,50 +255,35 @@ export function GuestLendingHq() {
     </div>
   );
 
-  // D.4: empty library after delete last plan
+  // Empty library after delete last plan
   if (!plan && openPlans.length === 0) {
     return (
       <div className="space-y-6">
         {accountStrip}
+        <ResearchPassportIntro storageMode={storageMode} firstVisit />
         <div className="rounded-2xl border border-dashed border-zinc-200 bg-white px-5 py-12 text-center shadow-sm">
           <Building2 className="mx-auto h-10 w-10 text-zinc-300" aria-hidden />
-          <p className="mt-3 font-medium text-[#0A2540]">No financing plans yet</p>
+          <p className="mt-3 font-medium text-[#0A2540]">Start your research passport</p>
           <p className="mx-auto mt-1 max-w-md text-sm text-zinc-600">
-            Start guided setup to create a research plan. Shortlist and calculator snapshots attach
-            to the active plan.
+            Create a plan, then save Loan Estimates, side-by-side comparisons, and lenders as you
+            research. Optional — nothing is forced.
           </p>
           <div className="mt-5 flex flex-wrap justify-center gap-2">
             <Link href="/my-lending/setup">
               <Button variant="trust">Guided setup</Button>
             </Link>
-            <Link href="/my-lending/plans">
-              <Button variant="outline">All plans</Button>
+            <Link href="/tools/loan-estimate-analyzer">
+              <Button variant="outline">Loan Estimate Analyzer</Button>
+            </Link>
+            <Link href="/tools/compare-loan-estimates">
+              <Button variant="outline">Compare LEs</Button>
             </Link>
             <Link href="/local-lenders">
-              <Button variant="outline">Browse lenders</Button>
+              <Button variant="outline">Local lenders</Button>
             </Link>
           </div>
         </div>
-        <div className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-4 text-sm text-zinc-600">
-          <p className="flex items-start gap-2">
-            <Shield className="mt-0.5 h-4 w-4 shrink-0 text-teal-700" aria-hidden />
-            <span>
-              Research only · Not an endorsement · Verify licenses on{' '}
-              <a
-                href="https://www.nmlsconsumeraccess.org/"
-                className="font-medium text-[#059669] underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                NMLS Consumer Access
-              </a>
-              .
-            </span>
-          </p>
-          <div className="mt-2">
-            <TrustMark />
-          </div>
-        </div>
+        <FooterTrust />
       </div>
     );
   }
@@ -269,6 +291,8 @@ export function GuestLendingHq() {
   return (
     <div className="space-y-6">
       {accountStrip}
+
+      <ResearchPassportIntro storageMode={storageMode} />
 
       <nav aria-label="My Lending sections" className="flex flex-wrap gap-2">
         <Link href="/my-lending/plans">
@@ -306,8 +330,10 @@ export function GuestLendingHq() {
               {plan?.label || 'Financing research plan'}
             </h2>
             <p className="mt-1 text-sm leading-relaxed text-zinc-600">
-              Guest-saved on this device. Shortlist and snapshots attach to this plan only. Research
-              only — not a marketplace or pre-approval service.
+              {storageMode === 'signed_in'
+                ? 'Saved to your signed-in research workspace (device cache + sync foundation when available).'
+                : 'Guest-saved on this device. Sign in anytime for multi-device foundation — optional.'}{' '}
+              Research only — not a marketplace or pre-approval service.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-2">
@@ -409,7 +435,7 @@ export function GuestLendingHq() {
 
         <div className="mt-4">
           <label htmlFor="plan-notes" className="text-sm font-medium text-zinc-800">
-            Notes (optional)
+            Plan notes (optional)
           </label>
           <textarea
             id="plan-notes"
@@ -423,7 +449,7 @@ export function GuestLendingHq() {
 
         <div className="mt-4 flex flex-wrap gap-2">
           <Button type="button" variant="trust" onClick={persistPlanFields}>
-            Save plan on this device
+            {storageMode === 'signed_in' ? 'Save plan' : 'Save plan on this device'}
           </Button>
           <Link href="/local-lenders">
             <Button type="button" variant="outline">
@@ -455,166 +481,254 @@ export function GuestLendingHq() {
         ) : null}
         {plan ? (
           <p className="mt-3 text-xs text-zinc-500">
-            Shortlist {getShortlisted(lenders).length}/{SHORTLIST_CAP} · {lenders.length} saved
-            total · {snapshots.length} calculator snapshot
+            Shortlist {getShortlisted(lenders).length}/{SHORTLIST_CAP} · {lenders.length} lenders ·{' '}
+            {loanEstimates.length} LE
+            {loanEstimates.length === 1 ? '' : 's'} · {leComparisons.length} comparison
+            {leComparisons.length === 1 ? '' : 's'} · {snapshots.length} calculator snapshot
             {snapshots.length === 1 ? '' : 's'} · Updated{' '}
             {new Date(plan.updatedAt).toLocaleString()}
           </p>
         ) : null}
       </section>
 
+      {/* Loan Estimate research — organized workspace */}
       <section className="rounded-2xl border border-emerald-200/80 bg-gradient-to-br from-emerald-50/50 via-white to-sky-50/40 p-5 shadow-sm sm:p-6">
-        <h2 className="flex items-center gap-2 text-lg font-semibold text-[#0A2540]">
-          <FileText className="h-5 w-5 text-emerald-700" aria-hidden />
-          Loan Estimate research
-        </h2>
-        <p className="mt-1 text-sm text-zinc-600">
-          Save analyses and side-by-side comparisons from our free tools. Guest-stored on this
-          device — research only, not a lead form.
-        </p>
-
-        <div className="mt-4">
-          <h3 className="text-sm font-semibold text-[#0A2540]">
-            Saved Loan Estimates ({loanEstimates.length})
-          </h3>
-          {loanEstimates.length === 0 ? (
-            <p className="mt-2 text-sm text-zinc-500">
-              None yet.{' '}
-              <Link
-                href="/tools/loan-estimate-analyzer"
-                className="font-medium text-emerald-800 underline"
-              >
-                Analyze a Loan Estimate
-              </Link>{' '}
-              and choose Save to My Lending.
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 className="flex items-center gap-2 text-lg font-semibold text-[#0A2540]">
+              <FileText className="h-5 w-5 text-emerald-700" aria-hidden />
+              Loan Estimate research
+            </h2>
+            <p className="mt-1 text-sm text-zinc-600">
+              Saved analyses and side-by-side comparisons. Add private notes as you shop offers.
             </p>
-          ) : (
-            <ul className="mt-2 space-y-2">
-              {loanEstimates.map((item) => (
-                <li
-                  key={item.id}
-                  className="flex flex-col gap-2 rounded-lg border border-zinc-100 bg-white px-3 py-2.5 sm:flex-row sm:items-center sm:justify-between"
-                >
-                  <div className="min-w-0">
-                    <p className="font-medium text-[#0A2540]">{item.label}</p>
-                    <p className="text-xs text-zinc-500">{item.summary}</p>
-                    <p className="text-[11px] text-zinc-400">
-                      Saved {new Date(item.savedAt).toLocaleString()}
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Button
-                      type="button"
-                      size="sm"
-                      variant="outline"
-                      onClick={() => {
-                        stageLeWorkspaceReopen({
-                          type: 'loan-estimate',
-                          inputs: item.inputs,
-                        });
-                        window.location.href = '/tools/loan-estimate-analyzer';
-                      }}
-                    >
-                      Reopen
-                    </Button>
-                    <Button
-                      type="button"
-                      size="sm"
-                      variant="ghost"
-                      onClick={() => {
-                        removeSavedLoanEstimate(item.id, plan?.id);
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <Link href="/tools/loan-estimate-analyzer">
+              <Button size="sm" variant="outline">
+                Analyzer
+              </Button>
+            </Link>
+            <Link href="/tools/compare-loan-estimates">
+              <Button size="sm" variant="outline">
+                Compare
+              </Button>
+            </Link>
+          </div>
+        </div>
+
+        <div
+          className="mt-4 flex flex-wrap gap-2 border-b border-emerald-100 pb-3"
+          role="tablist"
+          aria-label="Loan Estimate research tabs"
+        >
+          <button
+            type="button"
+            role="tab"
+            aria-selected={researchTab === 'estimates'}
+            onClick={() => setResearchTab('estimates')}
+            className={cn(
+              'rounded-full px-3 py-1.5 text-sm font-semibold transition-colors',
+              researchTab === 'estimates'
+                ? 'bg-emerald-700 text-white'
+                : 'bg-white text-zinc-700 ring-1 ring-zinc-200 hover:bg-zinc-50'
+            )}
+          >
+            Loan Estimates ({loanEstimates.length})
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={researchTab === 'comparisons'}
+            onClick={() => setResearchTab('comparisons')}
+            className={cn(
+              'rounded-full px-3 py-1.5 text-sm font-semibold transition-colors',
+              researchTab === 'comparisons'
+                ? 'bg-emerald-700 text-white'
+                : 'bg-white text-zinc-700 ring-1 ring-zinc-200 hover:bg-zinc-50'
+            )}
+          >
+            Comparisons ({leComparisons.length})
+          </button>
+        </div>
+
+        {researchTab === 'estimates' ? (
+          <div className="mt-4" role="tabpanel">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <h3 className="text-sm font-semibold text-[#0A2540]">Saved Loan Estimates</h3>
+              {loanEstimates.length > 1 ? (
+                <SortSelect
+                  value={leSort}
+                  onChange={setLeSort}
+                  ariaLabel="Sort Loan Estimates"
+                />
+              ) : null}
+            </div>
+            {loanEstimates.length === 0 ? (
+              <EmptyResearchCard
+                title="No Loan Estimates saved yet"
+                body="Paste numbers from a Loan Estimate into the free Analyzer, then Save to My Lending. Notes stay private to your workspace."
+                links={[
+                  {
+                    href: '/tools/loan-estimate-analyzer',
+                    label: 'Open Loan Estimate Analyzer',
+                    primary: true,
+                  },
+                  { href: '/tools/compare-loan-estimates', label: 'Compare offers' },
+                ]}
+              />
+            ) : (
+              <ul className="mt-3 space-y-3">
+                {loanEstimates.map((item) => (
+                  <li
+                    key={item.id}
+                    className="rounded-xl border border-emerald-100/80 bg-white px-3 py-3 shadow-sm"
+                  >
+                    <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                      <div className="min-w-0">
+                        <p className="font-medium text-[#0A2540]">{item.label}</p>
+                        <p className="text-xs text-zinc-500">{item.summary}</p>
+                        {item.bandSummary ? (
+                          <p className="mt-0.5 text-[11px] text-zinc-400">{item.bandSummary}</p>
+                        ) : null}
+                        <p className="text-[11px] text-zinc-400">
+                          Saved {new Date(item.savedAt).toLocaleString()}
+                          {item.updatedAt !== item.savedAt
+                            ? ` · Updated ${new Date(item.updatedAt).toLocaleString()}`
+                            : ''}
+                        </p>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        <Button
+                          type="button"
+                          size="sm"
+                          variant="outline"
+                          onClick={() => {
+                            stageLeWorkspaceReopen({
+                              type: 'loan-estimate',
+                              inputs: item.inputs,
+                            });
+                            window.location.href = '/tools/loan-estimate-analyzer';
+                          }}
+                        >
+                          Reopen
+                        </Button>
+                        <Button
+                          type="button"
+                          size="sm"
+                          variant="ghost"
+                          className="text-rose-700 hover:bg-rose-50"
+                          onClick={() => {
+                            removeSavedLoanEstimate(item.id, plan?.id);
+                            refresh();
+                          }}
+                        >
+                          <Trash2 className="h-3.5 w-3.5" aria-hidden />
+                          Remove
+                        </Button>
+                      </div>
+                    </div>
+                    <PrivateResearchNote
+                      value={item.notes}
+                      onSave={(n) => {
+                        updateSavedLoanEstimateNotes(item.id, n, plan?.id);
                         refresh();
                       }}
-                    >
-                      <Trash2 className="h-3.5 w-3.5" aria-hidden />
-                      Remove
-                    </Button>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-
-        <div className="mt-6">
-          <h3 className="text-sm font-semibold text-[#0A2540]">
-            Saved comparisons ({leComparisons.length})
-          </h3>
-          {leComparisons.length === 0 ? (
-            <p className="mt-2 text-sm text-zinc-500">
-              None yet.{' '}
-              <Link
-                href="/tools/compare-loan-estimates"
-                className="font-medium text-emerald-800 underline"
-              >
-                Compare Loan Estimates
-              </Link>{' '}
-              and save the side-by-side view.
-            </p>
-          ) : (
-            <ul className="mt-2 space-y-2">
-              {leComparisons.map((item) => (
-                <li
-                  key={item.id}
-                  className="flex flex-col gap-2 rounded-lg border border-zinc-100 bg-white px-3 py-2.5 sm:flex-row sm:items-center sm:justify-between"
-                >
-                  <div className="min-w-0">
-                    <p className="font-medium text-[#0A2540]">{item.label}</p>
-                    <p className="text-xs text-zinc-500">{item.summary}</p>
-                    <p className="text-[11px] text-zinc-400">
-                      {item.estimates.length} offers · Saved{' '}
-                      {new Date(item.savedAt).toLocaleString()}
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Button
-                      type="button"
-                      size="sm"
-                      variant="outline"
-                      onClick={() => {
-                        stageLeWorkspaceReopen({
-                          type: 'comparison',
-                          estimates: item.estimates,
-                        });
-                        window.location.href = '/tools/compare-loan-estimates';
-                      }}
-                    >
-                      Reopen
-                    </Button>
-                    <Button
-                      type="button"
-                      size="sm"
-                      variant="ghost"
-                      onClick={() => {
-                        removeSavedLeComparison(item.id, plan?.id);
+                      placeholder="e.g. Preferred cash-to-close; asked about rate lock…"
+                    />
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ) : (
+          <div className="mt-4" role="tabpanel">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <h3 className="flex items-center gap-1.5 text-sm font-semibold text-[#0A2540]">
+                <GitCompare className="h-4 w-4 text-emerald-700" aria-hidden />
+                Saved comparisons
+              </h3>
+              {leComparisons.length > 1 ? (
+                <SortSelect
+                  value={compareSort}
+                  onChange={setCompareSort}
+                  ariaLabel="Sort comparisons"
+                />
+              ) : null}
+            </div>
+            {leComparisons.length === 0 ? (
+              <EmptyResearchCard
+                title="No comparisons saved yet"
+                body="Load 2–3 Loan Estimates side by side, then save the comparison to revisit differences later."
+                links={[
+                  {
+                    href: '/tools/compare-loan-estimates',
+                    label: 'Compare Loan Estimates',
+                    primary: true,
+                  },
+                  { href: '/tools/loan-estimate-analyzer', label: 'Single LE Analyzer' },
+                ]}
+              />
+            ) : (
+              <ul className="mt-3 space-y-3">
+                {leComparisons.map((item) => (
+                  <li
+                    key={item.id}
+                    className="rounded-xl border border-sky-100/80 bg-white px-3 py-3 shadow-sm"
+                  >
+                    <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                      <div className="min-w-0">
+                        <p className="font-medium text-[#0A2540]">{item.label}</p>
+                        <p className="text-xs text-zinc-500">{item.summary}</p>
+                        <p className="text-[11px] text-zinc-400">
+                          {item.estimates.length} offers · Saved{' '}
+                          {new Date(item.savedAt).toLocaleString()}
+                        </p>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        <Button
+                          type="button"
+                          size="sm"
+                          variant="outline"
+                          onClick={() => {
+                            stageLeWorkspaceReopen({
+                              type: 'comparison',
+                              estimates: item.estimates,
+                            });
+                            window.location.href = '/tools/compare-loan-estimates';
+                          }}
+                        >
+                          Reopen
+                        </Button>
+                        <Button
+                          type="button"
+                          size="sm"
+                          variant="ghost"
+                          className="text-rose-700 hover:bg-rose-50"
+                          onClick={() => {
+                            removeSavedLeComparison(item.id, plan?.id);
+                            refresh();
+                          }}
+                        >
+                          <Trash2 className="h-3.5 w-3.5" aria-hidden />
+                          Remove
+                        </Button>
+                      </div>
+                    </div>
+                    <PrivateResearchNote
+                      value={item.notes}
+                      onSave={(n) => {
+                        updateSavedLeComparisonNotes(item.id, n, plan?.id);
                         refresh();
                       }}
-                    >
-                      <Trash2 className="h-3.5 w-3.5" aria-hidden />
-                      Remove
-                    </Button>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-
-        <div className="mt-4 flex flex-wrap gap-2 text-sm">
-          <Link
-            href="/tools/loan-estimate-analyzer"
-            className="font-medium text-emerald-800 underline"
-          >
-            Loan Estimate Analyzer
-          </Link>
-          <span className="text-zinc-300">·</span>
-          <Link
-            href="/tools/compare-loan-estimates"
-            className="font-medium text-emerald-800 underline"
-          >
-            Compare offers
-          </Link>
-        </div>
+                      placeholder="e.g. Offer B lower APR but higher origination…"
+                    />
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
       </section>
 
       {snapshots.length > 0 ? (
@@ -658,11 +772,38 @@ export function GuestLendingHq() {
         </section>
       ) : null}
 
+      <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-6">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 className="flex items-center gap-2 text-lg font-semibold text-[#0A2540]">
+              <Bookmark className="h-5 w-5 text-emerald-700" aria-hidden />
+              Saved lenders
+            </h2>
+            <p className="mt-1 text-sm text-zinc-600">
+              Shortlist (max {SHORTLIST_CAP}), researching, and history — with private notes.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {lenders.length > 1 ? (
+              <SortSelect value={lenderSort} onChange={setLenderSort} ariaLabel="Sort lenders" />
+            ) : null}
+            <Link href="/local-lenders">
+              <Button size="sm" variant="outline">
+                Directory
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <LenderBucket
-        title={`Shortlist (${getShortlisted(lenders).length}/${SHORTLIST_CAP})`}
+        title={`Shortlist (${getShortlisted(sortedLenders).length}/${SHORTLIST_CAP})`}
         hint="Top candidates — max 3. Promote carefully. Research only."
-        items={getShortlisted(lenders)}
+        items={getShortlisted(sortedLenders)}
         empty="No shortlisted lenders yet. Save from a profile or directory card."
+        emptyLinks={[
+          { href: '/local-lenders', label: 'Browse local lenders', primary: true },
+        ]}
         planId={plan?.id}
         onStatus={(id, status, name) => {
           const res = updateSavedLenderStatus(id, status);
@@ -676,12 +817,16 @@ export function GuestLendingHq() {
           removeSavedLender(slug, plan?.id);
           refresh();
         }}
+        onNotes={(id, n) => {
+          updateSavedLenderNotes(id, n);
+          refresh();
+        }}
       />
 
       <LenderBucket
-        title={`Still researching (${getResearching(lenders).length})`}
+        title={`Still researching (${getResearching(sortedLenders).length})`}
         hint="Directory saves can land here when shortlist is full."
-        items={getResearching(lenders)}
+        items={getResearching(sortedLenders)}
         empty="Nothing in researching."
         planId={plan?.id}
         onStatus={(id, status, name) => {
@@ -696,6 +841,10 @@ export function GuestLendingHq() {
           removeSavedLender(slug, plan?.id);
           refresh();
         }}
+        onNotes={(id, n) => {
+          updateSavedLenderNotes(id, n);
+          refresh();
+        }}
       />
 
       <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-6">
@@ -706,7 +855,7 @@ export function GuestLendingHq() {
           aria-expanded={historyOpen}
         >
           <h2 className="text-lg font-semibold text-[#0A2540]">
-            Reached out / done ({getHistory(lenders).length})
+            Reached out / done ({getHistory(sortedLenders).length})
           </h2>
           <span className="text-xs font-medium text-zinc-500">
             {historyOpen ? 'Hide' : 'Show'}
@@ -714,11 +863,11 @@ export function GuestLendingHq() {
         </button>
         {historyOpen ? (
           <div className="mt-4">
-            {getHistory(lenders).length === 0 ? (
+            {getHistory(sortedLenders).length === 0 ? (
               <p className="text-sm text-zinc-500">No history yet.</p>
             ) : (
               <LenderList
-                items={getHistory(lenders)}
+                items={getHistory(sortedLenders)}
                 planId={plan?.id}
                 onStatus={(id, status, name) => {
                   const res = updateSavedLenderStatus(id, status);
@@ -736,6 +885,10 @@ export function GuestLendingHq() {
                   removeSavedLender(slug, plan?.id);
                   refresh();
                 }}
+                onNotes={(id, n) => {
+                  updateSavedLenderNotes(id, n);
+                  refresh();
+                }}
               />
             )}
           </div>
@@ -743,21 +896,14 @@ export function GuestLendingHq() {
       </section>
 
       {lenders.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-zinc-200 bg-zinc-50 px-4 py-10 text-center">
-          <Building2 className="mx-auto h-8 w-8 text-zinc-400" aria-hidden />
-          <p className="mt-2 font-medium text-zinc-800">No saved lenders yet</p>
-          <p className="mt-1 text-sm text-zinc-600">
-            Save from a lender profile or directory card (shortlist max {SHORTLIST_CAP}).
-          </p>
-          <div className="mt-4 flex flex-wrap justify-center gap-2">
-            <Link href="/local-lenders">
-              <Button variant="trust">Browse local lenders</Button>
-            </Link>
-            <Link href="/calculators">
-              <Button variant="outline">Calculators</Button>
-            </Link>
-          </div>
-        </div>
+        <EmptyResearchCard
+          title="No saved lenders yet"
+          body={`Save from a lender profile or directory card (shortlist max ${SHORTLIST_CAP}). Your shortlist is a research aid — not a lead form.`}
+          links={[
+            { href: '/local-lenders', label: 'Browse local lenders', primary: true },
+            { href: '/calculators', label: 'Calculators' },
+          ]}
+        />
       ) : null}
 
       {fullPanel ? (
@@ -806,25 +952,109 @@ export function GuestLendingHq() {
         />
       ) : null}
 
-      <div className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-4 text-sm text-zinc-600">
-        <p className="flex items-start gap-2">
-          <Shield className="mt-0.5 h-4 w-4 shrink-0 text-teal-700" aria-hidden />
-          <span>
-            Research only · Not an endorsement · Not a lender or broker · Verify licenses on{' '}
-            <a
-              href="https://www.nmlsconsumeraccess.org/"
-              className="font-medium text-[#059669] underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              NMLS Consumer Access
-            </a>
-            . Common ownership network · No paid placements.
-          </span>
-        </p>
-        <div className="mt-2">
-          <TrustMark />
-        </div>
+      <FooterTrust />
+    </div>
+  );
+}
+
+function ResearchPassportIntro({
+  storageMode,
+  firstVisit,
+}: {
+  storageMode: 'guest' | 'signed_in';
+  firstVisit?: boolean;
+}) {
+  return (
+    <div className="rounded-2xl border border-teal-100 bg-gradient-to-r from-teal-50/80 to-white px-4 py-4 sm:px-5">
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-800">
+        Your research passport
+      </p>
+      <p className="mt-1 text-sm leading-relaxed text-zinc-600">
+        {firstVisit
+          ? 'My Lending holds the financing research you choose to keep — Loan Estimates, comparisons, and lenders — so you can revisit calmly. Not a CRM, not a lead funnel.'
+          : 'Revisit saved Loan Estimates, comparisons, and lenders in one place. Private notes help you remember why an offer stood out.'}{' '}
+        {storageMode === 'guest' ? (
+          <span className="text-zinc-500">Currently guest (this device only).</span>
+        ) : (
+          <span className="text-zinc-500">Signed-in workspace foundation active.</span>
+        )}
+      </p>
+    </div>
+  );
+}
+
+function SortSelect({
+  value,
+  onChange,
+  ariaLabel,
+}: {
+  value: WorkspaceItemSort;
+  onChange: (v: WorkspaceItemSort) => void;
+  ariaLabel: string;
+}) {
+  return (
+    <label className="inline-flex items-center gap-1.5 text-xs text-zinc-500">
+      <span className="sr-only sm:not-sr-only">Sort</span>
+      <select
+        className="h-8 rounded-md border border-zinc-200 bg-white px-2 text-xs font-medium text-zinc-700"
+        value={value}
+        onChange={(e) => onChange(e.target.value as WorkspaceItemSort)}
+        aria-label={ariaLabel}
+      >
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+        <option value="alpha">A–Z</option>
+      </select>
+    </label>
+  );
+}
+
+function EmptyResearchCard({
+  title,
+  body,
+  links,
+}: {
+  title: string;
+  body: string;
+  links: Array<{ href: string; label: string; primary?: boolean }>;
+}) {
+  return (
+    <div className="mt-3 rounded-xl border border-dashed border-zinc-200 bg-zinc-50/80 px-4 py-8 text-center">
+      <p className="font-medium text-zinc-800">{title}</p>
+      <p className="mx-auto mt-1 max-w-md text-sm text-zinc-600">{body}</p>
+      <div className="mt-4 flex flex-wrap justify-center gap-2">
+        {links.map((l) => (
+          <Link key={l.href + l.label} href={l.href}>
+            <Button size="sm" variant={l.primary ? 'trust' : 'outline'}>
+              {l.label}
+            </Button>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function FooterTrust() {
+  return (
+    <div className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-4 text-sm text-zinc-600">
+      <p className="flex items-start gap-2">
+        <Shield className="mt-0.5 h-4 w-4 shrink-0 text-teal-700" aria-hidden />
+        <span>
+          Research only · Not an endorsement · Not a lender or broker · Verify licenses on{' '}
+          <a
+            href="https://www.nmlsconsumeraccess.org/"
+            className="font-medium text-[#059669] underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            NMLS Consumer Access
+          </a>
+          . Common ownership network · No paid placements.
+        </span>
+      </p>
+      <div className="mt-2">
+        <TrustMark />
       </div>
     </div>
   );
@@ -835,17 +1065,21 @@ function LenderBucket({
   hint,
   items,
   empty,
+  emptyLinks,
   planId,
   onStatus,
   onRemove,
+  onNotes,
 }: {
   title: string;
   hint: string;
   items: SavedLender[];
   empty: string;
+  emptyLinks?: Array<{ href: string; label: string; primary?: boolean }>;
   planId?: string;
   onStatus: (id: string, status: LenderResearchStatus, name: string) => void;
   onRemove: (slug: string) => void;
+  onNotes: (id: string, notes: string) => void;
 }) {
   return (
     <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-6">
@@ -855,10 +1089,20 @@ function LenderBucket({
       </h2>
       <p className="mt-1 text-sm text-zinc-600">{hint}</p>
       {items.length === 0 ? (
-        <p className="mt-4 text-sm text-zinc-500">{empty}</p>
+        emptyLinks?.length ? (
+          <EmptyResearchCard title={empty} body="" links={emptyLinks} />
+        ) : (
+          <p className="mt-4 text-sm text-zinc-500">{empty}</p>
+        )
       ) : (
         <div className="mt-4">
-          <LenderList items={items} planId={planId} onStatus={onStatus} onRemove={onRemove} />
+          <LenderList
+            items={items}
+            planId={planId}
+            onStatus={onStatus}
+            onRemove={onRemove}
+            onNotes={onNotes}
+          />
         </div>
       )}
     </section>
@@ -870,72 +1114,82 @@ function LenderList({
   planId,
   onStatus,
   onRemove,
+  onNotes,
 }: {
   items: SavedLender[];
   planId?: string;
   onStatus: (id: string, status: LenderResearchStatus, name: string) => void;
   onRemove: (slug: string) => void;
+  onNotes: (id: string, notes: string) => void;
 }) {
+  void planId;
   return (
     <ul className="space-y-3">
       {items.map((l) => (
         <li
           key={l.id}
-          className="flex flex-col gap-3 rounded-xl border border-zinc-100 bg-zinc-50/50 p-4 sm:flex-row sm:items-center sm:justify-between"
+          className="rounded-xl border border-zinc-100 bg-zinc-50/50 p-4"
         >
-          <div className="min-w-0">
-            <Link
-              href={l.profilePath || `/lenders/${l.lenderSlug}`}
-              className="font-semibold text-[#0A2540] hover:text-[#059669] hover:underline"
-            >
-              {l.lenderName}
-            </Link>
-            <p className="mt-0.5 flex flex-wrap items-center gap-x-2 text-xs text-zinc-500">
-              {l.nmlsId || l.licenseSummary ? (
-                <span>{l.licenseSummary || `NMLS #${l.nmlsId}`}</span>
-              ) : null}
-              {l.loanTypes?.length ? (
-                <span className="inline-flex items-center gap-1">
-                  <MapPin className="h-3 w-3" aria-hidden />
-                  {l.loanTypes.slice(0, 4).join(', ')}
-                </span>
-              ) : null}
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            <label className="sr-only" htmlFor={`status-${l.id}`}>
-              Status for {l.lenderName}
-            </label>
-            <select
-              id={`status-${l.id}`}
-              value={l.status}
-              onChange={(e) =>
-                onStatus(l.id, e.target.value as LenderResearchStatus, l.lenderName)
-              }
-              className="h-10 rounded-lg border border-zinc-200 bg-white px-2 text-sm"
-            >
-              {LENDER_STATUS_OPTIONS.map((s) => (
-                <option key={s.id} value={s.id}>
-                  {s.label}
-                </option>
-              ))}
-            </select>
-            <Link href={l.profilePath || `/lenders/${l.lenderSlug}`}>
-              <Button type="button" variant="outline" size="sm">
-                Profile <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="min-w-0">
+              <Link
+                href={l.profilePath || `/lenders/${l.lenderSlug}`}
+                className="font-semibold text-[#0A2540] hover:text-[#059669] hover:underline"
+              >
+                {l.lenderName}
+              </Link>
+              <p className="mt-0.5 flex flex-wrap items-center gap-x-2 text-xs text-zinc-500">
+                {l.nmlsId || l.licenseSummary ? (
+                  <span>{l.licenseSummary || `NMLS #${l.nmlsId}`}</span>
+                ) : null}
+                {l.loanTypes?.length ? (
+                  <span className="inline-flex items-center gap-1">
+                    <MapPin className="h-3 w-3" aria-hidden />
+                    {l.loanTypes.slice(0, 4).join(', ')}
+                  </span>
+                ) : null}
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <label className="sr-only" htmlFor={`status-${l.id}`}>
+                Status for {l.lenderName}
+              </label>
+              <select
+                id={`status-${l.id}`}
+                value={l.status}
+                onChange={(e) =>
+                  onStatus(l.id, e.target.value as LenderResearchStatus, l.lenderName)
+                }
+                className="h-10 rounded-lg border border-zinc-200 bg-white px-2 text-sm"
+              >
+                {LENDER_STATUS_OPTIONS.map((s) => (
+                  <option key={s.id} value={s.id}>
+                    {s.label}
+                  </option>
+                ))}
+              </select>
+              <Link href={l.profilePath || `/lenders/${l.lenderSlug}`}>
+                <Button type="button" variant="outline" size="sm">
+                  Profile <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+                </Button>
+              </Link>
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                className="text-rose-700 hover:bg-rose-50"
+                onClick={() => onRemove(l.lenderSlug)}
+              >
+                <Trash2 className="h-4 w-4" aria-hidden />
+                <span className="sr-only">Remove</span>
               </Button>
-            </Link>
-            <Button
-              type="button"
-              variant="ghost"
-              size="sm"
-              className="text-rose-700 hover:bg-rose-50"
-              onClick={() => onRemove(l.lenderSlug)}
-            >
-              <Trash2 className="h-4 w-4" aria-hidden />
-              <span className="sr-only">Remove</span>
-            </Button>
+            </div>
           </div>
+          <PrivateResearchNote
+            value={l.notes}
+            onSave={(n) => onNotes(l.id, n)}
+            placeholder="e.g. Called Monday; waiting on LE…"
+          />
         </li>
       ))}
     </ul>
