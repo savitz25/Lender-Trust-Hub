@@ -45,7 +45,9 @@ export type HmdaStateCode =
   | 'OK'
   | 'ID'
   | 'MT'
-  | 'WY';
+  | 'WY'
+  | 'NM'
+  | 'WV';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -102,7 +104,9 @@ export type HmdaStateConfig = {
     | 'oklahoma_originations'
     | 'idaho_originations'
     | 'montana_originations'
-    | 'wyoming_originations';
+    | 'wyoming_originations'
+    | 'new_mexico_originations'
+    | 'west_virginia_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -1606,6 +1610,64 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'uinta',
     ]),
   },
+  NM: {
+    code: 'NM',
+    stateSlug: 'new-mexico',
+    name: 'New Mexico',
+    dataFolder: 'new-mexico',
+    fileSuffix: '_nm',
+    originationsColumn: 'new_mexico_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Albuquerque / Santa Fe / southern + secondary volume
+      'bernalillo',
+      'sandoval',
+      'dona-ana',
+      'santa-fe',
+      'valencia',
+      'san-juan',
+      'otero',
+      'eddy',
+      'chaves',
+      'lea',
+      'curry',
+      'los-alamos',
+      'taos',
+      'lincoln',
+      'torrance',
+      'grant',
+      'rio-arriba',
+      'mckinley',
+    ]),
+  },
+  WV: {
+    code: 'WV',
+    stateSlug: 'west-virginia',
+    name: 'West Virginia',
+    dataFolder: 'west-virginia',
+    fileSuffix: '_wv',
+    originationsColumn: 'west_virginia_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Eastern Panhandle / Kanawha Valley / northern + secondary
+      'berkeley',
+      'kanawha',
+      'jefferson',
+      'monongalia',
+      'cabell',
+      'wood',
+      'raleigh',
+      'putnam',
+      'harrison',
+      'marion',
+      'mercer',
+      'ohio',
+      'hampshire',
+      'greenbrier',
+      'morgan',
+      'fayette',
+      'wayne',
+      'hancock',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -1654,6 +1716,8 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'ID',
   'MT',
   'WY',
+  'NM',
+  'WV',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {

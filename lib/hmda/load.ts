@@ -40,6 +40,13 @@ export function countyNameToSlug(name: string): string {
   return name
     .trim()
     .toLowerCase()
+    // ASCII-safe county URLs (e.g. Doña Ana → dona-ana)
+    .replace(/ñ/g, 'n')
+    .replace(/[áà]/g, 'a')
+    .replace(/[éè]/g, 'e')
+    .replace(/[íì]/g, 'i')
+    .replace(/[óò]/g, 'o')
+    .replace(/[úùü]/g, 'u')
     .replace(/\./g, '')
     .replace(/'/g, '')
     .replace(/\s+/g, '-')
@@ -116,7 +123,9 @@ function loadMappings(cfg: HmdaStateConfig): HmdaLeiMapping[] {
         r.oklahoma_originations ??
         r.idaho_originations ??
         r.montana_originations ??
-        r.wyoming_originations
+        r.wyoming_originations ??
+        r.new_mexico_originations ??
+        r.west_virginia_originations
     ),
     // Legacy alias used by older FL-only code paths
     floridaOriginations: num(
@@ -165,7 +174,9 @@ function loadMappings(cfg: HmdaStateConfig): HmdaLeiMapping[] {
         r.oklahoma_originations ??
         r.idaho_originations ??
         r.montana_originations ??
-        r.wyoming_originations
+        r.wyoming_originations ??
+        r.new_mexico_originations ??
+        r.west_virginia_originations
     ),
     year: num(r.year) || 2025,
     state: cfg.code,

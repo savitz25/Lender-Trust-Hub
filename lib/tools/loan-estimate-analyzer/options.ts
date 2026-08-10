@@ -47,6 +47,8 @@ import {
   MAJOR_IDAHO_COUNTY_SLUGS,
   MAJOR_MONTANA_COUNTY_SLUGS,
   MAJOR_WYOMING_COUNTY_SLUGS,
+  MAJOR_NEW_MEXICO_COUNTY_SLUGS,
+  MAJOR_WEST_VIRGINIA_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -607,6 +609,28 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (WY)`,
       originations: c.originations,
       stateSlug: 'wyoming',
+    });
+  }
+
+  const nm = loadHmdaStateData('NM');
+  for (const c of nm.countyMarkets) {
+    if (!MAJOR_NEW_MEXICO_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `nm:${c.countySlug}`,
+      name: `${c.countyName} (NM)`,
+      originations: c.originations,
+      stateSlug: 'new-mexico',
+    });
+  }
+
+  const wv = loadHmdaStateData('WV');
+  for (const c of wv.countyMarkets) {
+    if (!MAJOR_WEST_VIRGINIA_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `wv:${c.countySlug}`,
+      name: `${c.countyName} (WV)`,
+      originations: c.originations,
+      stateSlug: 'west-virginia',
     });
   }
 

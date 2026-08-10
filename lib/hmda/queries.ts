@@ -103,6 +103,10 @@ export const MAJOR_MONTANA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.MT.majorCountySlugs
 
 export const MAJOR_WYOMING_COUNTY_SLUGS = HMDA_STATE_CONFIGS.WY.majorCountySlugs;
 
+export const MAJOR_NEW_MEXICO_COUNTY_SLUGS = HMDA_STATE_CONFIGS.NM.majorCountySlugs;
+
+export const MAJOR_WEST_VIRGINIA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.WV.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw
@@ -244,7 +248,7 @@ function evidenceForBundle(
 }
 
 /**
- * Lender evidence across all active product states (42: FL–OK including AR, MS, OK).
+ * Lender evidence across all active product states (47: FL–WV including NM, WV).
  * Primary = highest state originations; otherStates lists secondary markets.
  */
 export function getHmdaLenderEvidenceBySlug(slug: string): HmdaLenderEvidence | null {

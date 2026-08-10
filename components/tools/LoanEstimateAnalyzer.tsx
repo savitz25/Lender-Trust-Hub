@@ -345,7 +345,7 @@ export function LoanEstimateAnalyzer({
           <Field
             label="County market context (optional)"
             htmlFor="le-county"
-            hint="Major product-state counties (42 states: FL–OK including AR, MS, and OK) with 2025 HMDA market summaries."
+            hint="Major product-state counties (47 states: FL–WV including NM and WV) with 2025 HMDA market summaries."
           >
             <select
               id="le-county"
