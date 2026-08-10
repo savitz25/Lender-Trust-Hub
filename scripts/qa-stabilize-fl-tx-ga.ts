@@ -1,6 +1,6 @@
 /**
  * Multi-state stabilize QA: HMDA evidence + analyzer integrity.
- * FL · TX · GA · CA · NC · SC · NJ
+ * FL · TX · GA · CA · NC · SC · NJ · NY · PA
  *
  *   npx tsx scripts/qa-stabilize-fl-tx-ga.ts
  */
@@ -10,9 +10,12 @@ import {
   MAJOR_FLORIDA_COUNTY_SLUGS,
   MAJOR_GEORGIA_COUNTY_SLUGS,
   MAJOR_NEW_JERSEY_COUNTY_SLUGS,
+  MAJOR_NEW_YORK_COUNTY_SLUGS,
   MAJOR_NORTH_CAROLINA_COUNTY_SLUGS,
+  MAJOR_PENNSYLVANIA_COUNTY_SLUGS,
   MAJOR_SOUTH_CAROLINA_COUNTY_SLUGS,
   MAJOR_TEXAS_COUNTY_SLUGS,
+  type HmdaStateCode,
   getHmdaCountyEvidence,
   getHmdaLenderEvidenceBySlug,
   loadAllHmdaStateData,
@@ -88,6 +91,17 @@ const SPOT_COUNTIES: { state: string; county: string }[] = [
   { state: 'new-jersey', county: 'cumberland' },
   { state: 'new-jersey', county: 'warren' },
   { state: 'new-jersey', county: 'salem' },
+  // NY
+  { state: 'new-york', county: 'kings' },
+  { state: 'new-york', county: 'queens' },
+  { state: 'new-york', county: 'new-york-county' },
+  { state: 'new-york', county: 'suffolk' },
+  { state: 'new-york', county: 'nassau' },
+  { state: 'new-york', county: 'westchester' },
+  { state: 'new-york', county: 'erie' },
+  { state: 'new-york', county: 'monroe' },
+  { state: 'new-york', county: 'bronx' },
+  { state: 'new-york', county: 'richmond' },
 ];
 
 const SPOT_LENDERS = [
@@ -152,7 +166,7 @@ function fail(label: string) {
 }
 
 function checkMajors(
-  code: 'FL' | 'TX' | 'GA' | 'CA' | 'NC' | 'SC' | 'NJ',
+  code: HmdaStateCode,
   stateSlug: string,
   majors: ReadonlySet<string>
 ) {
@@ -184,7 +198,7 @@ function checkMajors(
 }
 
 function main() {
-  console.log('=== County majors (7 states) ===');
+  console.log('=== County majors (9 states) ===');
   checkMajors('FL', 'florida', MAJOR_FLORIDA_COUNTY_SLUGS);
   checkMajors('TX', 'texas', MAJOR_TEXAS_COUNTY_SLUGS);
   checkMajors('GA', 'georgia', MAJOR_GEORGIA_COUNTY_SLUGS);
@@ -192,6 +206,8 @@ function main() {
   checkMajors('NC', 'north-carolina', MAJOR_NORTH_CAROLINA_COUNTY_SLUGS);
   checkMajors('SC', 'south-carolina', MAJOR_SOUTH_CAROLINA_COUNTY_SLUGS);
   checkMajors('NJ', 'new-jersey', MAJOR_NEW_JERSEY_COUNTY_SLUGS);
+  checkMajors('NY', 'new-york', MAJOR_NEW_YORK_COUNTY_SLUGS);
+  checkMajors('PA', 'pennsylvania', MAJOR_PENNSYLVANIA_COUNTY_SLUGS);
 
   console.log('\n=== Mapping slugs in catalog ===');
   let mapMiss = 0;
@@ -241,7 +257,7 @@ function main() {
       fail(`lender ${slug} no evidence`);
       continue;
     }
-    if (!['FL', 'TX', 'GA', 'CA', 'NC', 'SC', 'NJ'].includes(e.state)) {
+    if (!['FL', 'TX', 'GA', 'CA', 'NC', 'SC', 'NJ', 'NY', 'PA'].includes(e.state)) {
       fail(`lender ${slug} unexpected state ${e.state}`);
       continue;
     }
@@ -257,7 +273,9 @@ function main() {
             MAJOR_NORTH_CAROLINA_COUNTY_SLUGS.has(c.countySlug)) ||
           (e.stateSlug === 'south-carolina' &&
             MAJOR_SOUTH_CAROLINA_COUNTY_SLUGS.has(c.countySlug)) ||
-          (e.stateSlug === 'new-jersey' && MAJOR_NEW_JERSEY_COUNTY_SLUGS.has(c.countySlug))
+          (e.stateSlug === 'new-jersey' && MAJOR_NEW_JERSEY_COUNTY_SLUGS.has(c.countySlug)) ||
+          (e.stateSlug === 'new-york' && MAJOR_NEW_YORK_COUNTY_SLUGS.has(c.countySlug)) ||
+          (e.stateSlug === 'pennsylvania' && MAJOR_PENNSYLVANIA_COUNTY_SLUGS.has(c.countySlug))
         ) {
           fail(`lender ${slug} county share link broken ${e.stateSlug}/${c.countySlug}`);
         }
@@ -290,7 +308,7 @@ function main() {
   const counties = getAnalyzerCountyOptions();
   if (lenders.length < 20) fail(`few lenders: ${lenders.length}`);
   else ok(`lenders=${lenders.length}`);
-  if (counties.length < 120) fail(`few counties: ${counties.length}`);
+  if (counties.length < 140) fail(`few counties: ${counties.length}`);
   else ok(`counties=${counties.length}`);
 
   const seenOpts = new Set<string>();
@@ -313,6 +331,11 @@ function main() {
     'nj:bergen',
     'nj:ocean',
     'nj:hudson',
+    'ny:kings',
+    'ny:suffolk',
+    'pa:philadelphia',
+    'pa:allegheny',
+    'pa:montgomery',
     'ca:orange',
     'orange',
   ]) {
@@ -346,6 +369,15 @@ function main() {
   if (analyzerCountyOptionSlug('new-jersey', 'bergen') !== 'nj:bergen') {
     fail('prefill NJ bergen');
   } else ok('prefill NJ bergen = nj:bergen');
+  if (analyzerCountyOptionSlug('new-york', 'kings') !== 'ny:kings') {
+    fail('prefill NY kings');
+  } else ok('prefill NY kings = ny:kings');
+  if (analyzerCountyOptionSlug('pennsylvania', 'philadelphia') !== 'pa:philadelphia') {
+    fail('prefill PA philadelphia');
+  } else ok('prefill PA philadelphia = pa:philadelphia');
+  if (analyzerCountyOptionSlug('pennsylvania', 'allegheny') !== 'pa:allegheny') {
+    fail('prefill PA allegheny');
+  } else ok('prefill PA allegheny = pa:allegheny');
   if (analyzerCountyOptionSlug('tennessee', 'davidson') !== undefined) {
     fail('prefill non-product state should be undefined');
   } else ok('prefill non-product state = undefined');
@@ -363,6 +395,9 @@ function main() {
     { county: 'nj:bergen', expect: 'new-jersey', label: 'nj:bergen' },
     { county: 'nj:ocean', expect: 'new-jersey', label: 'nj:ocean' },
     { county: 'nj:middlesex', expect: 'new-jersey', label: 'nj:middlesex' },
+    { county: 'ny:kings', expect: 'new-york', label: 'ny:kings' },
+    { county: 'ny:suffolk', expect: 'new-york', label: 'ny:suffolk' },
+    { county: 'ny:new-york-county', expect: 'new-york', label: 'ny:new-york-county' },
     { county: 'miami-dade', expect: 'florida', label: 'miami-dade' },
     { county: 'orange', expect: 'florida', label: 'orange (FL bare)' },
     { county: 'ca:orange', expect: 'california', label: 'ca:orange' },

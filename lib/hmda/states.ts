@@ -1,6 +1,6 @@
 /** HMDA product states with cleaned slices under data/hmda/{folder}/ */
 
-export type HmdaStateCode = 'FL' | 'TX' | 'GA' | 'CA' | 'NC' | 'SC' | 'NJ';
+export type HmdaStateCode = 'FL' | 'TX' | 'GA' | 'CA' | 'NC' | 'SC' | 'NJ' | 'NY';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -9,7 +9,7 @@ export type HmdaStateConfig = {
   name: string;
   /** data/hmda/{dataFolder}/ */
   dataFolder: string;
-  /** File name suffixes (e.g. _fl, _tx, _ga, _ca, _nc, _sc, _nj) for summary CSVs */
+  /** File name suffixes (e.g. _fl, _tx, _ny) for summary CSVs */
   fileSuffix: string;
   /** Mapping CSV column for state originations */
   originationsColumn:
@@ -19,7 +19,8 @@ export type HmdaStateConfig = {
     | 'california_originations'
     | 'north_carolina_originations'
     | 'south_carolina_originations'
-    | 'new_jersey_originations';
+    | 'new_jersey_originations'
+    | 'new_york_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -295,6 +296,39 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'salem',
     ]),
   },
+  NY: {
+    code: 'NY',
+    stateSlug: 'new-york',
+    name: 'New York',
+    dataFolder: 'new-york',
+    fileSuffix: '_ny',
+    originationsColumn: 'new_york_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — highest volume + metros
+      'suffolk',
+      'nassau',
+      'erie',
+      'monroe',
+      'queens',
+      'kings',
+      'westchester',
+      'onondaga',
+      'new-york-county', // Manhattan (directory slug; HMDA name is "New York")
+      'orange',
+      'albany',
+      'richmond',
+      'dutchess',
+      'saratoga',
+      'rockland',
+      'bronx',
+      'niagara',
+      'oneida',
+      'schenectady',
+      'rensselaer',
+      'ulster',
+      'broome',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -305,6 +339,7 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'NC',
   'SC',
   'NJ',
+  'NY',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {

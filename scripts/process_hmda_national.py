@@ -24,7 +24,9 @@ NAT_DIR = OUT_ROOT / "national"
 BY_STATE_DIR = OUT_ROOT / "by-state"
 
 # Site markets already live / in pipeline (for priority flags only)
-LIVE_ROLLOUT_STATES = {"FL", "TX", "GA", "CA", "NC", "SC", "NJ", "TN", "NY", "MA", "PA", "DC"}
+LIVE_ROLLOUT_STATES = {
+    "FL", "TX", "GA", "CA", "NC", "SC", "NJ", "NY", "TN", "MA", "PA", "DC",
+}
 
 ACTION_ORIGINATED = "1"
 ACTION_DENIED = "3"

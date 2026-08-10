@@ -9,6 +9,7 @@ import {
   MAJOR_NORTH_CAROLINA_COUNTY_SLUGS,
   MAJOR_SOUTH_CAROLINA_COUNTY_SLUGS,
   MAJOR_NEW_JERSEY_COUNTY_SLUGS,
+  MAJOR_NEW_YORK_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -16,7 +17,7 @@ export type AnalyzerLenderOption = {
   slug: string;
   name: string;
   nmlsId: string;
-  /** Combined product-state originations (FL+TX+GA+CA+NC+SC+NJ) for sort/display */
+  /** Combined product-state originations for sort/display */
   originations: number;
   /** @deprecated Use originations */
   floridaOriginations: number;
@@ -151,6 +152,17 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (NJ)`,
       originations: c.originations,
       stateSlug: 'new-jersey',
+    });
+  }
+
+  const ny = loadHmdaStateData('NY');
+  for (const c of ny.countyMarkets) {
+    if (!MAJOR_NEW_YORK_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `ny:${c.countySlug}`,
+      name: `${c.countyName} (NY)`,
+      originations: c.originations,
+      stateSlug: 'new-york',
     });
   }
 

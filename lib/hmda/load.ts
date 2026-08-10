@@ -46,6 +46,22 @@ export function countyNameToSlug(name: string): string {
     .replace(/[^a-z0-9-]/g, '');
 }
 
+/**
+ * Align HMDA names with directory URL slugs when they diverge.
+ * Manhattan: HMDA "New York" county → site `/local-lenders/new-york/new-york-county`.
+ */
+export function resolveHmdaCountySlug(
+  cfg: HmdaStateConfig,
+  countyName: string,
+  countyFips?: string
+): string {
+  const fips = (countyFips || '').trim();
+  if (cfg.code === 'NY' && (fips === '36061' || countyNameToSlug(countyName) === 'new-york')) {
+    return 'new-york-county';
+  }
+  return countyNameToSlug(countyName);
+}
+
 function loadMappings(cfg: HmdaStateConfig): HmdaLeiMapping[] {
   return readCsvFile(cfg, 'lei_to_nmls_mapping.csv').map((r) => ({
     lei: r.lei,
@@ -62,7 +78,8 @@ function loadMappings(cfg: HmdaStateConfig): HmdaLeiMapping[] {
         r.california_originations ??
         r.north_carolina_originations ??
         r.south_carolina_originations ??
-        r.new_jersey_originations
+        r.new_jersey_originations ??
+        r.new_york_originations
     ),
     // Legacy alias used by older FL-only code paths
     floridaOriginations: num(
@@ -73,7 +90,8 @@ function loadMappings(cfg: HmdaStateConfig): HmdaLeiMapping[] {
         r.california_originations ??
         r.north_carolina_originations ??
         r.south_carolina_originations ??
-        r.new_jersey_originations
+        r.new_jersey_originations ??
+        r.new_york_originations
     ),
     year: num(r.year) || 2025,
     state: cfg.code,
@@ -125,12 +143,13 @@ function loadCountyActivity(cfg: HmdaStateConfig): HmdaLenderCountyActivity[] {
   const file = `lender_activity_by_county${cfg.fileSuffix}.csv`;
   return readCsvFile(cfg, file).map((r) => {
     const countyName = r.county_name || '';
+    const countyFips = r.county_fips || '';
     return {
       lei: r.lei,
       institutionName: r.institution_name || '',
-      countyFips: r.county_fips,
+      countyFips,
       countyName,
-      countySlug: countyNameToSlug(countyName),
+      countySlug: resolveHmdaCountySlug(cfg, countyName, countyFips),
       state: r.state || cfg.code,
       year: num(r.year) || 2025,
       originations: num(r.originations),
@@ -144,10 +163,11 @@ function loadCountyMarkets(cfg: HmdaStateConfig): HmdaCountyMarketSummary[] {
   const file = `county_market_summary${cfg.fileSuffix}.csv`;
   return readCsvFile(cfg, file).map((r) => {
     const countyName = r.county_name || '';
+    const countyFips = r.county_fips || '';
     return {
-      countyFips: r.county_fips,
+      countyFips,
       countyName,
-      countySlug: countyNameToSlug(countyName),
+      countySlug: resolveHmdaCountySlug(cfg, countyName, countyFips),
       state: r.state || cfg.code,
       year: num(r.year) || 2025,
       applications: num(r.total_applications ?? r.applications),
