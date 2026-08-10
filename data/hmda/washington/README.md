@@ -1,12 +1,15 @@
-# Washington HMDA slice
+# Washington HMDA slice (deepened)
 
-**Source:** `data/hmda/by-state/WA/` (national 2025 foundation)
+**Source:** `data/hmda/by-state/WA/` (national foundation)
 
-- County market rows: **24**
-- Lender–county activity (major markets): **5066**
+**Phase:** washington-deepen
+
+- County market rows: **28**
+- Lender–county activity (major markets): **6575**
 - LEI state summaries: **714**
-- High-confidence LEI→directory mappings: **141**
-- Major markets with names: **18**
+- High-confidence LEI→directory mappings: **170**
+- Major markets with names: **28**
+- Top-20 mapped: **20/20** · Top-50 mapped: **44/50**
 
 ## Top mapped LEIs by WA originations
 
@@ -14,11 +17,11 @@
 - `rocket-mortgage` — Rocket Mortgage, LLC (10611 WA orig.)
 - `united-wholesale-mortgage` — United Wholesale Mortgage, LLC (10462 WA orig.)
 - `amerihome-mortgage` — AmeriHome Mortgage Company, LLC (5796 WA orig.)
-- `guild-mortgage-metrowest` — GUILD MORTGAGE COMPANY LLC (5691 WA orig.)
+- `guild-mortgage-snohomish` — GUILD MORTGAGE COMPANY LLC (5691 WA orig.)
 - `movement-mortgage-myrtle-beach` — MOVEMENT MORTGAGE, LLC (5559 WA orig.)
-- `crosscountry-mortgage-metrowest` — CROSSCOUNTRY MORTGAGE, LLC (4877 WA orig.)
+- `crosscountry-mortgage-snohomish` — CROSSCOUNTRY MORTGAGE, LLC (4877 WA orig.)
 - `us-bank` — U.S. Bank National Association (3524 WA orig.)
-- `bank-of-america-mortgage-west-valley` — Bank of America, National Association (3420 WA orig.)
+- `bank-of-america-mortgage-snohomish` — Bank of America, National Association (3420 WA orig.)
 - `pennymac` — PENNYMAC LOAN SERVICES, LLC (2953 WA orig.)
 - `jpmorgan-chase-bank` — JPMorgan Chase Bank, National Association (2816 WA orig.)
 - `newrez` — Newrez LLC (2702 WA orig.)
@@ -30,6 +33,16 @@
 - `gesa-credit-union` — GESA CREDIT UNION (2070 WA orig.)
 - `spokane-teachers-credit-union` — SPOKANE TEACHERS (1963 WA orig.)
 - `american-pacific-mortgage-inland-empire` — AMERICAN PACIFIC MORTGAGE CORPORATION (1911 WA orig.)
+- `guaranteed-rate` — GUARANTEED RATE, INC. (1847 WA orig.)
+- `columbia-bank-pnw` — Columbia Bank (1846 WA orig.)
+- `banner-bank` — Banner Bank (1842 WA orig.)
+- `new-american-funding` — NEW AMERICAN FUNDING, LLC (1680 WA orig.)
+- `dhi-mortgage-buckeye` — DHI MORTGAGE COMPANY, LTD. (1626 WA orig.)
+- `veterans-united-snohomish` — MORTGAGE RESEARCH CENTER, LLC (1561 WA orig.)
+- `freedom-mortgage` — FREEDOM MORTGAGE CORPORATION (1518 WA orig.)
+- `wells-fargo-bank` — Wells Fargo Bank, National Association (1514 WA orig.)
+- `first-security-bank-washington` — 1st Security Bank of Washington (1432 WA orig.)
+- `mr-cooper` — NATIONSTAR MORTGAGE LLC (1403 WA orig.)
 
 ## Major markets (panel-ready)
 
@@ -51,21 +64,25 @@
 - **Grant** (`53025`) — 2074 originations
 - **Grays Harbor** (`53027`) — 2027 originations
 - **Franklin** (`53021`) — 2013 originations
+- **Chelan** (`53007`) — 1738 originations
+- **Clallam** (`53009`) — 1689 originations
+- **Kittitas** (`53037`) — 1371 originations
+- **Walla Walla** (`53071`) — 1178 originations
+- **Stevens** (`53065`) — 1054 originations
+- **Douglas** (`53017`) — 1018 originations
+- **Whitman** (`53075`) — 737 originations
+- **Jefferson** (`53031`) — 665 originations
+- **Okanogan** (`53047`) — 657 originations
+- **Pacific** (`53049`) — 652 originations
 
 ## Matching rules
 
-- Reuse prior product-state curated LEI maps when the LEI has state activity
-- OR/WA curated: GLEIF-reidentified nationals + PNW regionals (OnPoint, BECU, Columbia Bank, Banner Bank, WSECU, Gesa, Spokane Teachers CU, Rogue CU, First Tech, SELCO, Oregon State CU, Evergreen MoneySource, etc.)
-- Precision only — no low-confidence LEI inventing
+- Reuse prior product-state curated LEI maps when LEI has WA activity
+- **wa_deepen** GLEIF re-identification + WA directory host preference
+- Precision over coverage — low-confidence regionals deferred
 
 ## Rebuild
 
 ```bash
-python scripts/build-hmda-or-wa-slices.py
-```
-
-## Major slugs (for states.ts)
-
-```
-'king', 'pierce', 'snohomish', 'spokane', 'clark', 'thurston', 'kitsap', 'benton', 'whatcom', 'yakima', 'cowlitz', 'skagit', 'island', 'lewis', 'mason', 'grant', 'grays-harbor', 'franklin'
+python scripts/build-hmda-washington-deepen.py
 ```
