@@ -85,6 +85,12 @@ export const MAJOR_ALABAMA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.AL.majorCountySlugs
 
 export const MAJOR_LOUISIANA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.LA.majorCountySlugs;
 
+export const MAJOR_IOWA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.IA.majorCountySlugs;
+
+export const MAJOR_KANSAS_COUNTY_SLUGS = HMDA_STATE_CONFIGS.KS.majorCountySlugs;
+
+export const MAJOR_NEBRASKA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.NE.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw

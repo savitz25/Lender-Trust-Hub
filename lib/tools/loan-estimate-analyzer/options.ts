@@ -38,6 +38,9 @@ import {
   MAJOR_WASHINGTON_COUNTY_SLUGS,
   MAJOR_ALABAMA_COUNTY_SLUGS,
   MAJOR_LOUISIANA_COUNTY_SLUGS,
+  MAJOR_IOWA_COUNTY_SLUGS,
+  MAJOR_KANSAS_COUNTY_SLUGS,
+  MAJOR_NEBRASKA_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -499,6 +502,39 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (LA)`,
       originations: c.originations,
       stateSlug: 'louisiana',
+    });
+  }
+
+  const ia = loadHmdaStateData('IA');
+  for (const c of ia.countyMarkets) {
+    if (!MAJOR_IOWA_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `ia:${c.countySlug}`,
+      name: `${c.countyName} (IA)`,
+      originations: c.originations,
+      stateSlug: 'iowa',
+    });
+  }
+
+  const ks = loadHmdaStateData('KS');
+  for (const c of ks.countyMarkets) {
+    if (!MAJOR_KANSAS_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `ks:${c.countySlug}`,
+      name: `${c.countyName} (KS)`,
+      originations: c.originations,
+      stateSlug: 'kansas',
+    });
+  }
+
+  const ne = loadHmdaStateData('NE');
+  for (const c of ne.countyMarkets) {
+    if (!MAJOR_NEBRASKA_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `ne:${c.countySlug}`,
+      name: `${c.countyName} (NE)`,
+      originations: c.originations,
+      stateSlug: 'nebraska',
     });
   }
 

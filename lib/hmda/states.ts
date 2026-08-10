@@ -36,7 +36,10 @@ export type HmdaStateCode =
   | 'OR'
   | 'WA'
   | 'AL'
-  | 'LA';
+  | 'LA'
+  | 'IA'
+  | 'KS'
+  | 'NE';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -84,7 +87,10 @@ export type HmdaStateConfig = {
     | 'oregon_originations'
     | 'washington_originations'
     | 'alabama_originations'
-    | 'louisiana_originations';
+    | 'louisiana_originations'
+    | 'iowa_originations'
+    | 'kansas_originations'
+    | 'nebraska_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -1357,6 +1363,82 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'vermilion',
     ]),
   },
+  IA: {
+    code: 'IA',
+    stateSlug: 'iowa',
+    name: 'Iowa',
+    dataFolder: 'iowa',
+    fileSuffix: '_ia',
+    originationsColumn: 'iowa_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Des Moines / Cedar Rapids / Quad Cities / secondary volume
+      'polk',
+      'linn',
+      'scott',
+      'johnson',
+      'black-hawk',
+      'woodbury',
+      'dallas',
+      'dubuque',
+      'pottawattamie',
+      'warren',
+      'story',
+      'jasper',
+      'clinton',
+      'muscatine',
+      'bremer',
+    ]),
+  },
+  KS: {
+    code: 'KS',
+    stateSlug: 'kansas',
+    name: 'Kansas',
+    dataFolder: 'kansas',
+    fileSuffix: '_ks',
+    originationsColumn: 'kansas_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — KC metro / Wichita / Topeka / secondary volume
+      'johnson',
+      'sedgwick',
+      'shawnee',
+      'douglas',
+      'wyandotte',
+      'leavenworth',
+      'butler',
+      'reno',
+      'riley',
+      'miami',
+      'geary',
+      'harvey',
+      'saline',
+      'pottawatomie',
+    ]),
+  },
+  NE: {
+    code: 'NE',
+    stateSlug: 'nebraska',
+    name: 'Nebraska',
+    dataFolder: 'nebraska',
+    fileSuffix: '_ne',
+    originationsColumn: 'nebraska_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Omaha / Lincoln / secondary volume
+      'douglas',
+      'lancaster',
+      'sarpy',
+      'hall',
+      'buffalo',
+      'dodge',
+      'cass',
+      'lincoln',
+      'platte',
+      'saunders',
+      'washington',
+      'madison',
+      'adams',
+      'scotts-bluff',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -1396,6 +1478,9 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'WA',
   'AL',
   'LA',
+  'IA',
+  'KS',
+  'NE',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {
