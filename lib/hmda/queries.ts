@@ -91,6 +91,12 @@ export const MAJOR_KANSAS_COUNTY_SLUGS = HMDA_STATE_CONFIGS.KS.majorCountySlugs;
 
 export const MAJOR_NEBRASKA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.NE.majorCountySlugs;
 
+export const MAJOR_ARKANSAS_COUNTY_SLUGS = HMDA_STATE_CONFIGS.AR.majorCountySlugs;
+
+export const MAJOR_MISSISSIPPI_COUNTY_SLUGS = HMDA_STATE_CONFIGS.MS.majorCountySlugs;
+
+export const MAJOR_OKLAHOMA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.OK.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw
@@ -232,7 +238,7 @@ function evidenceForBundle(
 }
 
 /**
- * Lender evidence across all active product states (36: FL–LA including OR, WA, AL, LA).
+ * Lender evidence across all active product states (42: FL–OK including AR, MS, OK).
  * Primary = highest state originations; otherStates lists secondary markets.
  */
 export function getHmdaLenderEvidenceBySlug(slug: string): HmdaLenderEvidence | null {

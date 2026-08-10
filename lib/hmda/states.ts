@@ -39,7 +39,10 @@ export type HmdaStateCode =
   | 'LA'
   | 'IA'
   | 'KS'
-  | 'NE';
+  | 'NE'
+  | 'AR'
+  | 'MS'
+  | 'OK';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -90,7 +93,10 @@ export type HmdaStateConfig = {
     | 'louisiana_originations'
     | 'iowa_originations'
     | 'kansas_originations'
-    | 'nebraska_originations';
+    | 'nebraska_originations'
+    | 'arkansas_originations'
+    | 'mississippi_originations'
+    | 'oklahoma_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -1439,6 +1445,93 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'scotts-bluff',
     ]),
   },
+  AR: {
+    code: 'AR',
+    stateSlug: 'arkansas',
+    name: 'Arkansas',
+    dataFolder: 'arkansas',
+    fileSuffix: '_ar',
+    originationsColumn: 'arkansas_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — NWA / Little Rock / secondary volume
+      'benton',
+      'pulaski',
+      'washington',
+      'saline',
+      'faulkner',
+      'craighead',
+      'sebastian',
+      'garland',
+      'lonoke',
+      'white',
+      'crawford',
+      'pope',
+      'baxter',
+      'greene',
+      'boone',
+      'jefferson',
+      'crittenden',
+      'independence',
+    ]),
+  },
+  MS: {
+    code: 'MS',
+    stateSlug: 'mississippi',
+    name: 'Mississippi',
+    dataFolder: 'mississippi',
+    fileSuffix: '_ms',
+    originationsColumn: 'mississippi_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — DeSoto / Coast / Jackson metro / secondary volume
+      'desoto',
+      'harrison',
+      'rankin',
+      'hinds',
+      'jackson',
+      'madison',
+      'lee',
+      'lafayette',
+      'lamar',
+      'forrest',
+      'jones',
+      'hancock',
+      'pearl-river',
+      'lowndes',
+      'lauderdale',
+      'marshall',
+      'oktibbeha',
+      'warren',
+    ]),
+  },
+  OK: {
+    code: 'OK',
+    stateSlug: 'oklahoma',
+    name: 'Oklahoma',
+    dataFolder: 'oklahoma',
+    fileSuffix: '_ok',
+    originationsColumn: 'oklahoma_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — OKC / Tulsa / secondary volume
+      'oklahoma',
+      'tulsa',
+      'cleveland',
+      'canadian',
+      'wagoner',
+      'comanche',
+      'rogers',
+      'logan',
+      'pottawatomie',
+      'creek',
+      'grady',
+      'mcclain',
+      'payne',
+      'muskogee',
+      'garfield',
+      'washington',
+      'bryan',
+      'carter',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -1481,6 +1574,9 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'IA',
   'KS',
   'NE',
+  'AR',
+  'MS',
+  'OK',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {
