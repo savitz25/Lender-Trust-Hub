@@ -3,8 +3,10 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ChevronRight, ExternalLink } from 'lucide-react';
 import { getAllPrograms, getProgramBySlug } from '@/lib/programs';
+import { PROGRAM_LOCATION_NOTES } from '@/lib/programs/location-notes';
 import { ProgramDisclaimer } from '@/components/programs/ProgramDisclaimer';
 import { ProgramLocationPanel } from '@/components/programs/ProgramLocationPanel';
+import { DpaCommonThemes } from '@/components/programs/DpaCommonThemes';
 import { JsonLd } from '@/components/directory/JsonLd';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -160,15 +162,43 @@ export default async function ProgramGuidePage({ params }: Props) {
         </section>
 
         {isDpa ? (
-          <section className="mt-8 space-y-4">
-            <h2 className="text-xl font-bold text-[#0A2540]">Location awareness (V1)</h2>
-            <p className="text-sm text-zinc-600">
-              General DPA concepts apply nationwide. Deeper notes below focus on Florida and Texas
-              because those are core research markets here—not a complete U.S. inventory.
-            </p>
-            <ProgramLocationPanel stateSlug="florida" />
-            <ProgramLocationPanel stateSlug="texas" />
-          </section>
+          <>
+            <DpaCommonThemes />
+
+            <section className="mt-10 space-y-6" aria-labelledby="dpa-location-heading">
+              <div>
+                <h2 id="dpa-location-heading" className="text-xl font-bold text-[#0A2540]">
+                  Florida &amp; Texas: where to research officially
+                </h2>
+                <p className="mt-2 text-sm text-zinc-600">
+                  Stronger guidance for markets we cover well. Jump to a state, use the official
+                  portals listed, and treat city/county programs as a separate research track. We do
+                  not inventory every local DPA or decide eligibility.
+                </p>
+                <ul className="mt-3 flex flex-wrap gap-2 text-sm">
+                  {PROGRAM_LOCATION_NOTES.map((n) => (
+                    <li key={n.stateSlug}>
+                      <a
+                        href={`#${n.stateSlug}`}
+                        className="inline-flex min-h-10 items-center rounded-full border border-sky-200 bg-sky-50 px-3 py-1.5 font-semibold text-sky-950 hover:bg-sky-100"
+                      >
+                        {n.stateName}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {PROGRAM_LOCATION_NOTES.map((n) => (
+                <ProgramLocationPanel key={n.stateSlug} note={n} showFullDetail />
+              ))}
+              <p className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-600">
+                <strong className="text-zinc-800">Intentionally deferred:</strong> a complete
+                city/county DPA database for Florida and Texas, live funding status, and application
+                matching. A high-quality “where to research officially” layer is safer than fake
+                completeness.
+              </p>
+            </section>
+          </>
         ) : null}
 
         <section className="mt-8">

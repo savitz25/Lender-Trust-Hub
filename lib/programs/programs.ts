@@ -323,16 +323,28 @@ export const PROGRAM_GUIDES: ProgramGuide[] = [
         href: 'https://www.hud.gov/findacounselor',
       },
       {
-        label: 'Florida Housing Finance Corporation (example state HFA)',
+        label: 'CFPB — What is down payment assistance?',
+        href: 'https://www.consumerfinance.gov/ask-cfpb/what-is-down-payment-assistance-en-120/',
+      },
+      {
+        label: 'Florida Housing Finance Corporation',
         href: 'https://www.floridahousing.org/',
       },
       {
-        label: 'Texas State Affordable Housing Corporation',
-        href: 'https://www.tsahc.org/',
+        label: 'Florida Housing — Homebuyer overview',
+        href: 'https://www.floridahousing.org/programs/homebuyer-overview-page',
       },
       {
-        label: 'CFPB — down payment assistance',
-        href: 'https://www.consumerfinance.gov/ask-cfpb/what-is-down-payment-assistance-en-120/',
+        label: 'Texas Department of Housing and Community Affairs',
+        href: 'https://www.tdhca.texas.gov/',
+      },
+      {
+        label: 'TDHCA Welcome Home — programs',
+        href: 'https://welcomehome.tdhca.texas.gov/programs',
+      },
+      {
+        label: 'Texas State Affordable Housing Corporation — DPA',
+        href: 'https://www.tsahc.org/homebuyers-renters/loans-down-payment-assistance',
       },
     ],
   },

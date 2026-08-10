@@ -10,6 +10,7 @@ import {
   type FinderAnswers,
   type ProgramFitLevel,
 } from '@/lib/programs';
+import { isDpaPriorityState } from '@/lib/programs/location-notes';
 import { ProgramDisclaimer } from '@/components/programs/ProgramDisclaimer';
 import { ProgramLocationPanel } from '@/components/programs/ProgramLocationPanel';
 import { cn } from '@/lib/utils';
@@ -154,7 +155,7 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
           <Field
             label="State (optional, for DPA framing)"
             htmlFor="pf-state"
-            hint="Helps point you to state housing finance themes—not a local program database."
+            hint="Florida and Texas unlock stronger official-source DPA research steps. Not a local program inventory."
           >
             <select
               id="pf-state"
@@ -163,13 +164,20 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
               onChange={(e) => update('stateSlug', e.target.value)}
             >
               <option value="">Skip</option>
-              <option value="florida">Florida</option>
-              <option value="texas">Texas</option>
+              <option value="florida">Florida (stronger DPA guidance)</option>
+              <option value="texas">Texas (stronger DPA guidance)</option>
               <option value="georgia">Georgia</option>
               <option value="north-carolina">North Carolina</option>
               <option value="other">Other / multi-state</option>
             </select>
           </Field>
+          {isDpaPriorityState(answers.stateSlug) ? (
+            <p className="rounded-lg border border-sky-100 bg-sky-50/70 px-3 py-2 text-xs text-sky-950">
+              {answers.stateSlug === 'florida' ? 'Florida' : 'Texas'} selected: after you continue,
+              we surface official statewide starting points and FHA/conventional layering notes—not
+              eligibility or a full county list.
+            </p>
+          ) : null}
 
           <button
             type="submit"
@@ -227,10 +235,20 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
           results.map((r) => {
             const guide = getProgramById(r.programId);
             if (!guide) return null;
+            const isDpa = r.programId === 'down-payment-assistance';
+            const dpaDeep =
+              isDpa && isDpaPriorityState(answers.stateSlug)
+                ? `/programs/down-payment-assistance#${answers.stateSlug}`
+                : `/programs/${guide.slug}`;
             return (
               <article
                 key={r.programId}
-                className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm"
+                className={cn(
+                  'rounded-xl border bg-white p-5 shadow-sm',
+                  isDpa && isDpaPriorityState(answers.stateSlug)
+                    ? 'border-sky-200 ring-1 ring-sky-100'
+                    : 'border-zinc-200'
+                )}
               >
                 <div className="flex flex-wrap items-start justify-between gap-2">
                   <div>
@@ -259,13 +277,33 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
                     <li key={c}>• {c}</li>
                   ))}
                 </ul>
-                <Link
-                  href={`/programs/${guide.slug}`}
-                  className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700"
-                >
-                  <BookOpen className="h-4 w-4" aria-hidden />
-                  Open {guide.shortName} overview
-                </Link>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <Link
+                    href={dpaDeep}
+                    className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700"
+                  >
+                    <BookOpen className="h-4 w-4" aria-hidden />
+                    {isDpa && isDpaPriorityState(answers.stateSlug)
+                      ? `Open ${answers.stateSlug === 'florida' ? 'Florida' : 'Texas'} DPA research`
+                      : `Open ${guide.shortName} overview`}
+                  </Link>
+                  {isDpa && isDpaPriorityState(answers.stateSlug) ? (
+                    <>
+                      <Link
+                        href="/programs/fha"
+                        className="inline-flex min-h-11 items-center rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#0A2540] hover:border-emerald-400"
+                      >
+                        FHA layering context
+                      </Link>
+                      <Link
+                        href="/programs/conventional"
+                        className="inline-flex min-h-11 items-center rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#0A2540] hover:border-emerald-400"
+                      >
+                        Conventional baseline
+                      </Link>
+                    </>
+                  ) : null}
+                </div>
               </article>
             );
           })}

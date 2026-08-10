@@ -40,6 +40,11 @@ const BY_STATE: Record<string, HousingResourceLink[]> = {
       href: 'https://www.floridahousing.org/',
       note: 'State housing finance and homebuyer program portal',
     },
+    {
+      label: 'Florida Housing — Homebuyer overview',
+      href: 'https://www.floridahousing.org/programs/homebuyer-overview-page',
+      note: 'Published homebuyer program families (confirm currency and funding)',
+    },
   ],
   california: [
     {
@@ -53,6 +58,16 @@ const BY_STATE: Record<string, HousingResourceLink[]> = {
       label: 'Texas Department of Housing and Community Affairs',
       href: 'https://www.tdhca.texas.gov/',
       note: 'Texas housing programs and homebuyer resources',
+    },
+    {
+      label: 'TDHCA Welcome Home — programs',
+      href: 'https://welcomehome.tdhca.texas.gov/programs',
+      note: 'Published statewide homebuyer-oriented pathways (confirm current offerings)',
+    },
+    {
+      label: 'Texas State Affordable Housing Corporation (TSAHC)',
+      href: 'https://www.tsahc.org/homebuyers-renters/loans-down-payment-assistance',
+      note: 'TSAHC loans and down-payment assistance research starting point',
     },
   ],
   'new-york': [

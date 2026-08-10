@@ -95,7 +95,9 @@ export function CountyIntelligenceModules({
               const href =
                 p.id === 'finder' && stateSlug
                   ? `${p.href}?state=${encodeURIComponent(stateSlug)}`
-                  : p.href;
+                  : p.id === 'dpa' && (stateSlug === 'florida' || stateSlug === 'texas')
+                    ? `${p.href}#${stateSlug}`
+                    : p.href;
               return (
                 <li
                   key={p.id}

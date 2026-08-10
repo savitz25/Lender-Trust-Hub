@@ -39,11 +39,12 @@
 - My Lending empty / shortlist research links
 - Sitemap static routes
 
-## Location awareness (V1)
+## Location awareness (V1 + FL/TX polish)
 
 - Finder accepts optional state (FL, TX, GA, NC, other)
-- DPA page includes FL + TX notes with official HFA links
-- Explicit: not a complete nationwide DPA database
+- **Florida & Texas** get stronger DPA research steps, official portals, and FHA/conventional layering notes
+- DPA page: `#florida` / `#texas` full panels — see `docs/PROGRAM-FINDER-DPA-FL-TX.md`
+- Explicit: not a complete nationwide or county DPA database
 
 ## Out of scope (later)
 

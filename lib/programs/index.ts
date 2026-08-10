@@ -19,5 +19,8 @@ export { scoreProgramFits, fitLevelLabel } from './finder';
 export {
   PROGRAM_LOCATION_NOTES,
   getProgramLocationNote,
+  isDpaPriorityState,
+  dpaStateCtaCopy,
   type ProgramLocationNote,
+  type OfficialSource,
 } from './location-notes';
