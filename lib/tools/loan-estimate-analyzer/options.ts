@@ -6,6 +6,7 @@ import {
   MAJOR_TEXAS_COUNTY_SLUGS,
   MAJOR_GEORGIA_COUNTY_SLUGS,
   MAJOR_CALIFORNIA_COUNTY_SLUGS,
+  MAJOR_NORTH_CAROLINA_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -70,7 +71,7 @@ export function getAnalyzerLenderOptions(): AnalyzerLenderOption[] {
   );
 }
 
-/** Major FL + TX + GA + CA counties for optional market context (prefixed names). */
+/** Major FL + TX + GA + CA + NC counties for optional market context (prefixed names). */
 export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
   const out: AnalyzerCountyOption[] = [];
 
@@ -115,6 +116,17 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (CA)`,
       originations: c.originations,
       stateSlug: 'california',
+    });
+  }
+
+  const nc = loadHmdaStateData('NC');
+  for (const c of nc.countyMarkets) {
+    if (!MAJOR_NORTH_CAROLINA_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `nc:${c.countySlug}`,
+      name: `${c.countyName} (NC)`,
+      originations: c.originations,
+      stateSlug: 'north-carolina',
     });
   }
 

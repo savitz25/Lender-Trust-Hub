@@ -21,6 +21,8 @@ export const MAJOR_GEORGIA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.GA.majorCountySlugs
 
 export const MAJOR_CALIFORNIA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.CA.majorCountySlugs;
 
+export const MAJOR_NORTH_CAROLINA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.NC.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw

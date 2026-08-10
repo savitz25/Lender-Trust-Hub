@@ -580,7 +580,9 @@ export default async function CountyLendersPage({
                 ? `ga:${county}`
                 : state === 'california'
                   ? `ca:${county}`
-                  : undefined
+                  : state === 'north-carolina'
+                    ? `nc:${county}`
+                    : undefined
         }
         countyName={countyName}
       />

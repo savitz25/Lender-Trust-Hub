@@ -1,6 +1,6 @@
 /** HMDA product states with cleaned slices under data/hmda/{folder}/ */
 
-export type HmdaStateCode = 'FL' | 'TX' | 'GA' | 'CA';
+export type HmdaStateCode = 'FL' | 'TX' | 'GA' | 'CA' | 'NC';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -9,14 +9,15 @@ export type HmdaStateConfig = {
   name: string;
   /** data/hmda/{dataFolder}/ */
   dataFolder: string;
-  /** File name suffixes (e.g. _fl, _tx, _ga, _ca) for summary CSVs */
+  /** File name suffixes (e.g. _fl, _tx, _ga, _ca, _nc) for summary CSVs */
   fileSuffix: string;
   /** Mapping CSV column for state originations */
   originationsColumn:
     | 'florida_originations'
     | 'texas_originations'
     | 'georgia_originations'
-    | 'california_originations';
+    | 'california_originations'
+    | 'north_carolina_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -178,9 +179,49 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'humboldt',
     ]),
   },
+  NC: {
+    code: 'NC',
+    stateSlug: 'north-carolina',
+    name: 'North Carolina',
+    dataFolder: 'north-carolina',
+    fileSuffix: '_nc',
+    originationsColumn: 'north_carolina_originations',
+    majorCountySlugs: new Set([
+      'wake',
+      'mecklenburg',
+      'guilford',
+      'forsyth',
+      'durham',
+      'cumberland',
+      'union',
+      'brunswick',
+      'johnston',
+      'cabarrus',
+      'onslow',
+      'gaston',
+      'new-hanover',
+      'iredell',
+      'buncombe',
+      'harnett',
+      'catawba',
+      'alamance',
+      'davidson',
+      'rowan',
+      'pitt',
+      'moore',
+      'randolph',
+      'henderson',
+      'craven',
+      'lincoln',
+      'orange',
+      'wayne',
+      'pender',
+      'franklin',
+    ]),
+  },
 };
 
-export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = ['FL', 'TX', 'GA', 'CA'];
+export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = ['FL', 'TX', 'GA', 'CA', 'NC'];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {
   const s = stateSlug.toLowerCase();

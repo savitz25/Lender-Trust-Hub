@@ -28,9 +28,11 @@ export function HmdaCountyMarketPanel({ evidence }: { evidence: HmdaCountyEviden
                   ? 'Georgia'
                   : evidence.stateSlug === 'california'
                     ? 'California'
-                    : evidence.stateSlug === 'florida'
-                      ? 'Florida'
-                      : evidence.state}{' '}
+                    : evidence.stateSlug === 'north-carolina'
+                      ? 'North Carolina'
+                      : evidence.stateSlug === 'florida'
+                        ? 'Florida'
+                        : evidence.state}{' '}
               ({evidence.state}) county-level activity · Not a score or ranking
             </p>
           </div>
