@@ -289,6 +289,10 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'cape-may',
       'sussex',
       'hunterdon',
+      // Deepen — full NJ extract
+      'cumberland',
+      'warren',
+      'salem',
     ]),
   },
 };

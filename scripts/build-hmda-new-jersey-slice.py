@@ -78,15 +78,116 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "421841": "united-community-bank",
     "754127": "southern-first-bank",
     "1598647": "guaranteed-rate-affinity",
+    # NJ deepen — high-confidence company NMLS
+    "338923": "anniemac-home-mortgage",  # American Neighborhood / AnnieMac (Mount Laurel)
+    "409701": "oceanfirst-bank",
+    "411254": "valley-national-bank",
+    "381076": "mt-bank",
+    "2184": "embrace-home-loans",
+    "2893": "nfm-lending",
+    "412915": "citibank",
+    "33041": "advisors-mortgage-group",
+    "176743": "absolute-home-mortgage",
+    "75164": "prosperity-home-mortgage",
+    "504284": "columbia-bank-nj",
 }
 
-# High-confidence NJ-active LEIs only when GLEIF name + public NMLS + directory slug are solid.
+# High-confidence NJ-active LEIs (GLEIF legal name + published company NMLS + directory slug).
 # Do not invent low-confidence matches.
-NJ_CURATED_LEI: dict[str, dict[str, str]] = {}
+NJ_CURATED_LEI: dict[str, dict[str, str]] = {
+    "549300F8C5JA44WNMI75": {
+        "institution_name_hmda": "AMERICAN NEIGHBORHOOD MORTGAGE ACCEPTANCE COMPANY LLC",
+        "nmls_id": "338923",
+        "our_lender_slug": "anniemac-home-mortgage",
+        "legal_name": "American Neighborhood Mortgage Acceptance Company LLC (dba AnnieMac)",
+        "match_confidence": "high",
+        "match_method": "nj_curated_gleif+public_nmls",
+    },
+    "5493002N5168AC238149": {
+        "institution_name_hmda": "OceanFirst Bank, National Association",
+        "nmls_id": "409701",
+        "our_lender_slug": "oceanfirst-bank",
+        "legal_name": "OceanFirst Bank, National Association",
+        "match_confidence": "high",
+        "match_method": "nj_curated_gleif+public_nmls",
+    },
+    "KI0VI4JRMCIJ329YTN75": {
+        "institution_name_hmda": "Valley National Bank",
+        "nmls_id": "411254",
+        "our_lender_slug": "valley-national-bank",
+        "legal_name": "Valley National Bank",
+        "match_confidence": "high",
+        "match_method": "nj_curated_gleif+public_nmls",
+    },
+    "WWB2V0FCW3A0EE3ZJN75": {
+        "institution_name_hmda": "Manufacturers and Traders Trust Company",
+        "nmls_id": "381076",
+        "our_lender_slug": "mt-bank",
+        "legal_name": "Manufacturers and Traders Trust Company (M&T Bank)",
+        "match_confidence": "high",
+        "match_method": "nj_curated_gleif+public_nmls",
+    },
+    "213800QUAI2VH5YM6310": {
+        "institution_name_hmda": "EMBRACE HOME LOANS, INC.",
+        "nmls_id": "2184",
+        "our_lender_slug": "embrace-home-loans",
+        "legal_name": "Embrace Home Loans, Inc.",
+        "match_confidence": "high",
+        "match_method": "nj_curated_gleif+public_nmls",
+    },
+    "549300MCIFZSDHUT8X63": {
+        "institution_name_hmda": "NFM, INC.",
+        "nmls_id": "2893",
+        "our_lender_slug": "nfm-lending",
+        "legal_name": "NFM, Inc. (dba NFM Lending)",
+        "match_confidence": "high",
+        "match_method": "nj_curated_gleif+public_nmls",
+    },
+    "E57ODZWZ7FF32TWEFA76": {
+        "institution_name_hmda": "Citibank, National Association",
+        "nmls_id": "412915",
+        "our_lender_slug": "citibank",
+        "legal_name": "Citibank, National Association",
+        "match_confidence": "high",
+        "match_method": "nj_curated_gleif+public_nmls",
+    },
+    "254900F9ZTVTX763V835": {
+        "institution_name_hmda": "Advisors Mortgage Group, L.L.C.",
+        "nmls_id": "33041",
+        "our_lender_slug": "advisors-mortgage-group",
+        "legal_name": "Advisors Mortgage Group, L.L.C.",
+        "match_confidence": "high",
+        "match_method": "nj_curated_gleif+public_nmls",
+    },
+    "549300D4ZYLSQ5LMTV35": {
+        "institution_name_hmda": "ABSOLUTE HOME MORTGAGE CORPORATION",
+        "nmls_id": "176743",
+        "our_lender_slug": "absolute-home-mortgage",
+        "legal_name": "Absolute Home Mortgage Corporation",
+        "match_confidence": "high",
+        "match_method": "nj_curated_gleif+public_nmls",
+    },
+    "5493005PKOSG7MYX0B34": {
+        "institution_name_hmda": "Prosperity Home Mortgage, LLC",
+        "nmls_id": "75164",
+        "our_lender_slug": "prosperity-home-mortgage",
+        "legal_name": "Prosperity Home Mortgage, LLC",
+        "match_confidence": "high",
+        "match_method": "nj_curated_gleif+public_nmls",
+    },
+    "5493005LKFCLR81TSN28": {
+        "institution_name_hmda": "Columbia Bank",
+        "nmls_id": "504284",
+        "our_lender_slug": "columbia-bank-nj",
+        "legal_name": "Columbia Bank",
+        "match_confidence": "high",
+        "match_method": "nj_curated_gleif+public_nmls",
+    },
+}
 
-# Major New Jersey markets (FIPS → name) — high-volume North/Central/South Jersey
+# Major New Jersey markets (FIPS → name) — wave 1 + deepen (all 21 counties in extract)
 NJ_MAJOR_COUNTIES = {
-    "34029": "Ocean",  # top volume in extract
+    "34029": "Ocean",
     "34003": "Bergen",
     "34025": "Monmouth",
     "34023": "Middlesex",
@@ -104,6 +205,10 @@ NJ_MAJOR_COUNTIES = {
     "34009": "Cape May",
     "34037": "Sussex",
     "34019": "Hunterdon",
+    # Deepen — remaining counties with meaningful volume
+    "34011": "Cumberland",
+    "34041": "Warren",
+    "34033": "Salem",
 }
 
 

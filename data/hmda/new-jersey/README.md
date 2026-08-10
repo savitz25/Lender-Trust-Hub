@@ -1,9 +1,9 @@
 # New Jersey HMDA slice
 - County market rows: **21**
-- Lender–county activity (major counties): **6839**
+- Lender–county activity (major counties): **7549**
 - LEI state summaries: **776**
-- High-confidence LEI→directory mappings: **68**
-- Major counties with names: **18**
+- High-confidence LEI→directory mappings: **79**
+- Major counties with names: **21**
 
 ## Top mapped LEIs by NJ originations
 
@@ -19,19 +19,19 @@
 - `jpmorgan-chase-bank` — JPMorgan Chase Bank, National Association (3325 NJ orig.)
 - `fairway-mortgage-augusta-sheppard` — Fairway Independent Mortgage Corporation (3144 NJ orig.)
 - `amerihome-mortgage` — AmeriHome Mortgage Company, LLC (2257 NJ orig.)
+- `oceanfirst-bank` — OceanFirst Bank, National Association (2071 NJ orig.)
 - `newrez` — Newrez LLC (1951 NJ orig.)
+- `anniemac-home-mortgage` — AMERICAN NEIGHBORHOOD MORTGAGE ACCEPTANCE COMPANY LLC (1899 NJ orig.)
+- `advisors-mortgage-group` — Advisors Mortgage Group, L.L.C. (1831 NJ orig.)
 - `wells-fargo-bank` — Wells Fargo Bank, National Association (1716 NJ orig.)
+- `valley-national-bank` — Valley National Bank (1659 NJ orig.)
 - `mr-cooper` — NATIONSTAR MORTGAGE LLC (1625 NJ orig.)
 - `cardinal-financial` — Cardinal Financial Company, Limited Partnership (1579 NJ orig.)
+- `absolute-home-mortgage` — ABSOLUTE HOME MORTGAGE CORPORATION (1569 NJ orig.)
 - `navy-federal-jacksonville` — Navy Federal Credit Union (1515 NJ orig.)
+- `mt-bank` — Manufacturers and Traders Trust Company (1501 NJ orig.)
 - `prmg` — PARAMOUNT RESIDENTIAL MORTGAGE GROUP, INC. (1490 NJ orig.)
 - `guild-mortgage-nj-suburbs` — Guild Mortgage Company LLC (1432 NJ orig.)
-- `us-bank` — U.S. Bank National Association (1413 NJ orig.)
-- `new-american-funding-marlton-wayne` — Broker Solutions, Inc. (1346 NJ orig.)
-- `better-mortgage` — Better Mortgage Corporation (1279 NJ orig.)
-- `guaranteed-rate-affinity` — GUARANTEED RATE AFFINITY, LLC (1110 NJ orig.)
-- `homebridge-financial` — HOMEBRIDGE FINANCIAL SERVICES, INC. (989 NJ orig.)
-- `cmg-home-loans-dennis-vo` — CMG Mortgage, Inc. (918 NJ orig.)
 
 ## Major counties (panel-ready)
 
@@ -53,6 +53,9 @@
 - **Cape May** (`34009`) — 4121 originations
 - **Sussex** (`34037`) — 4116 originations
 - **Hunterdon** (`34019`) — 2982 originations
+- **Cumberland** (`34011`) — 2744 originations
+- **Warren** (`34041`) — 2736 originations
+- **Salem** (`34033`) — 1643 originations
 
 ## Matching rules
 

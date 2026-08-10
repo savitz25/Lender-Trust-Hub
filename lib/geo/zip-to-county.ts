@@ -303,4 +303,11 @@ export const ZIP_TO_COUNTY: Record<string, { state: string; stateSlug: string; c
   '07920': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Somerset', countySlug: 'somerset' },
   '08401': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Atlantic', countySlug: 'atlantic' },
   '08096': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Gloucester', countySlug: 'gloucester' },
+  // NJ deepen counties
+  '08332': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Cumberland', countySlug: 'cumberland' },
+  '08360': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Cumberland', countySlug: 'cumberland' },
+  '07882': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Warren', countySlug: 'warren' },
+  '07823': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Warren', countySlug: 'warren' },
+  '08079': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Salem', countySlug: 'salem' },
+  '08098': { state: 'New Jersey', stateSlug: 'new-jersey', county: 'Salem', countySlug: 'salem' },
 };

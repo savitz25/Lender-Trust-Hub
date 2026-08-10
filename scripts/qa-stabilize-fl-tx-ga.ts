@@ -84,6 +84,10 @@ const SPOT_COUNTIES: { state: string; county: string }[] = [
   { state: 'new-jersey', county: 'morris' },
   { state: 'new-jersey', county: 'passaic' },
   { state: 'new-jersey', county: 'somerset' },
+  // NJ deepen
+  { state: 'new-jersey', county: 'cumberland' },
+  { state: 'new-jersey', county: 'warren' },
+  { state: 'new-jersey', county: 'salem' },
 ];
 
 const SPOT_LENDERS = [
@@ -116,6 +120,15 @@ const SPOT_LENDERS = [
   'td-bank',
   'pnc-bank',
   'silverton-mortgage-wayne-nj',
+  'anniemac-home-mortgage',
+  'oceanfirst-bank',
+  'valley-national-bank',
+  'mt-bank',
+  'advisors-mortgage-group',
+  'absolute-home-mortgage',
+  'embrace-home-loans',
+  'nfm-lending',
+  'columbia-bank-nj',
 ];
 
 /** National lenders expected to have both HMDA + CFPB when snapshot present */
