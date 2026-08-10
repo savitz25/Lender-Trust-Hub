@@ -352,8 +352,12 @@ export function LoanEstimateAnalyzer({
             onClick={goToCompare}
             className="inline-flex w-full min-h-12 items-center justify-center gap-2 rounded-xl border border-zinc-200 bg-white px-5 py-3 text-sm font-semibold text-[#0A2540] hover:border-emerald-400"
           >
-            Compare with another Loan Estimate
+            Compare offers side by side
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </button>
+          <p className="text-center text-xs text-zinc-500">
+            Carries these figures into Estimate A on the compare tool
+          </p>
         </form>
       </section>
 
@@ -368,9 +372,16 @@ export function LoanEstimateAnalyzer({
           </h2>
           <p className="mt-2 text-sm text-zinc-600">
             {submitted
-              ? 'Fee placement uses published educational bands. Federal data (when selected) is 2025 HMDA volume and market mix — not fee microdata.'
-              : 'Enter figures and select Analyze. You can also load an example to explore the layout.'}
+              ? 'Fee bands are educational. Rate context uses national Freddie Mac averages via FRED when available. HMDA (when selected) is Florida volume and mix — not fee percentiles.'
+              : 'Enter figures from your LE and choose Analyze. Load an example anytime to explore the layout. No phone number required.'}
           </p>
+          {!submitted ? (
+            <p className="mt-2 text-xs text-zinc-500">
+              When you have more than one offer, use{' '}
+              <span className="font-medium text-zinc-700">Compare offers side by side</span> to carry
+              these figures into Estimate A on the compare tool.
+            </p>
+          ) : null}
         </div>
 
         {submitted && (

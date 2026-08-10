@@ -12,15 +12,22 @@ export function HmdaCountyMarketPanel({ evidence }: { evidence: HmdaCountyEviden
       className="mb-10 overflow-hidden rounded-2xl border border-[#0A2540]/15 bg-gradient-to-br from-slate-50 via-white to-sky-50/50 shadow-sm"
     >
       <div className="border-b border-[#0A2540]/10 bg-[#0A2540] px-5 py-4 text-white md:px-6">
-        <p className="text-xs font-semibold uppercase tracking-wider text-sky-200/90">
-          Florida market intelligence
-        </p>
-        <h2 id="hmda-county-evidence-heading" className="mt-1 text-xl font-bold md:text-2xl">
-          What the federal data shows — {evidence.countyName} County
-        </h2>
-        <p className="mt-1 text-sm text-slate-200">
-          Source: {evidence.source} · County-level HMDA activity · Not a lender ranking product
-        </p>
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-sky-200/90">
+              Federal mortgage data · HMDA
+            </p>
+            <h2 id="hmda-county-evidence-heading" className="mt-1 text-xl font-bold md:text-2xl">
+              What the federal data shows — {evidence.countyName} County
+            </h2>
+            <p className="mt-1 text-sm text-slate-200">
+              Source: {evidence.source} · County-level activity · Not a score or ranking
+            </p>
+          </div>
+          <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-sky-100 ring-1 ring-white/20">
+            Research panel
+          </span>
+        </div>
       </div>
 
       <div className="space-y-6 p-5 md:p-6">
@@ -134,29 +141,7 @@ export function HmdaCountyMarketPanel({ evidence }: { evidence: HmdaCountyEviden
           </div>
         )}
 
-        <div className="rounded-xl border border-sky-200/80 bg-white/80 p-4">
-          <p className="text-sm font-semibold text-[#0A2540]">
-            Researching offers in {evidence.countyName} County?
-          </p>
-          <p className="mt-1 text-xs text-zinc-600">
-            Understand your Loan Estimate or compare offers side by side — free educational tools,
-            no phone number required.
-          </p>
-          <div className="mt-2 flex flex-col gap-1.5 sm:flex-row sm:flex-wrap sm:gap-x-4">
-            <Link
-              href={`/tools/loan-estimate-analyzer?county=${encodeURIComponent(evidence.countySlug)}`}
-              className="inline-flex text-sm font-semibold text-[#059669] hover:underline"
-            >
-              Analyze a Loan Estimate →
-            </Link>
-            <Link
-              href={`/tools/compare-loan-estimates?county=${encodeURIComponent(evidence.countySlug)}`}
-              className="inline-flex text-sm font-semibold text-[#059669] hover:underline"
-            >
-              Compare offers side by side →
-            </Link>
-          </div>
-        </div>
+        {/* Loan Estimate tool CTAs: county page shell (LoanEstimateToolsCta) — keep panel focused on data. */}
 
         <HmdaSourceNote />
       </div>

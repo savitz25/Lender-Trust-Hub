@@ -81,9 +81,10 @@ export function LoanEstimateToolsCta({
             : 'Have a Loan Estimate from this lender?'}
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-          See how fees and terms differ with educational bands
-          {lenderSlug ? ' and this company\u2019s public HMDA context when available' : ''}. Compare
-          two or three offers side by side when you have multiple LEs.
+          Educational fee bands, optional national rate context, and public HMDA activity when
+          available
+          {lenderName ? ` for ${lenderName}` : ''}. Compare two or three offers side by side when you
+          have multiple Loan Estimates. We show the public record. You decide.
         </p>
         <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
           <Link

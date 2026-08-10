@@ -359,8 +359,11 @@ export function LoanEstimateCompare({
       <p className="text-center text-sm text-zinc-500">
         Prefer one estimate at a time?{' '}
         <Link href="/tools/loan-estimate-analyzer" className="font-medium text-[#059669] hover:underline">
-          Open single Loan Estimate Analyzer
+          Understand your Loan Estimate
         </Link>
+        <span className="mt-1 block text-xs text-zinc-400">
+          Educational research only · No phone number · We show the public record. You decide.
+        </span>
       </p>
     </div>
   );

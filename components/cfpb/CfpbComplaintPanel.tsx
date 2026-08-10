@@ -19,10 +19,10 @@ export function CfpbComplaintPanel({ evidence }: { evidence: CfpbComplaintEviden
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-200/90">
-              Consumer complaint context
+              Consumer complaint context · CFPB
             </p>
             <h2 id="cfpb-complaint-evidence-heading" className="mt-1 text-xl font-bold md:text-2xl">
-              What the CFPB complaint database shows
+              What the public complaint record shows
             </h2>
             <p className="mt-1 text-sm text-slate-200">
               Source: {evidence.source} · Mortgage product only · Not a score or ranking
@@ -44,9 +44,9 @@ export function CfpbComplaintPanel({ evidence }: { evidence: CfpbComplaintEviden
           />
           <StatCard
             icon={<Clock className="h-4 w-4" aria-hidden="true" />}
-            label={`Recent complaints (≥ ${evidence.recentWindowStart})`}
+            label="Recent complaints (~24 months)"
             value={formatInt(evidence.complaintsLast24Months)}
-            hint="~24-month window from snapshot date"
+            hint={`Published on or after ${evidence.recentWindowStart}`}
           />
           <StatCard
             icon={<Scale className="h-4 w-4" aria-hidden="true" />}
@@ -58,7 +58,7 @@ export function CfpbComplaintPanel({ evidence }: { evidence: CfpbComplaintEviden
             }
             hint={
               evidence.timelyYes + evidence.timelyNo > 0
-                ? `${formatInt(evidence.timelyYes)} yes · ${formatInt(evidence.timelyNo)} no`
+                ? `${formatInt(evidence.timelyYes)} yes · ${formatInt(evidence.timelyNo)} no (CFPB field)`
                 : undefined
             }
           />

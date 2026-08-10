@@ -59,7 +59,9 @@ export default async function LenderProfilePage({
   });
   const signals = computeLenderResearchSignals(lender);
   const hmdaEvidence = getHmdaLenderEvidenceBySlug(lender.slug);
-  const cfpbEvidence = getCfpbComplaintEvidenceBySlug(lender.slug);
+  const cfpbEvidence = getCfpbComplaintEvidenceBySlug(lender.slug, {
+    nmlsId: lender.nmlsId,
+  });
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -262,11 +264,13 @@ export default async function LenderProfilePage({
 
         <RelatedDirectoryLinks stateSlug={lender.stateSlug} stateName={lender.state} />
 
-        <p className="mt-6 text-center text-xs text-zinc-400">
-          Data aggregated from NMLS, CFPB, BBB, Google, and Trustpilot for informational
-          purposes. Lender Trust Hub is not a lender or broker and does not provide
-          financial advice.
+        <p className="mt-6 text-center text-xs leading-relaxed text-zinc-400">
+          Research listing only — not an endorsement. Public panels (when shown) cite HMDA and/or
+          CFPB sources with as-of dates. Re-verify NMLS identity on NMLS Consumer Access before
+          applying. Lender Trust Hub is not a lender or broker and does not provide financial advice.
+          We show the public record. You decide.
         </p>
+
       </div>
     </div>
   );

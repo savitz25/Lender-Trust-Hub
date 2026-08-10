@@ -108,11 +108,11 @@ export function FredRateContextPanel({
             href={benchmarks.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-[#059669] hover:underline"
+            className="font-medium text-[#3B82F6] underline-offset-2 hover:underline"
           >
             {benchmarks.sourceLabel}
           </a>
-          . {benchmarks.note}
+          . {benchmarks.note} We show the public record. You decide.
         </span>
       </p>
     </div>
