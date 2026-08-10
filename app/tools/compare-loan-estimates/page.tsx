@@ -136,7 +136,7 @@ export default async function CompareLoanEstimatesPage({
               </li>
               <li className="flex gap-2">
                 <Shield className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
-                Optional 2025 multi-state HMDA context (13 product states including RI, VT, and ME)
+                Optional 2025 multi-state HMDA context (28 product states from FL through MN)
                 when you pick a matched lender or county.
               </li>
             </ul>

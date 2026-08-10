@@ -210,7 +210,7 @@ function evidenceForBundle(
 }
 
 /**
- * Lender evidence across product states (FL…ME including RI, VT, ME).
+ * Lender evidence across all active product states (28: FL–MN).
  * Primary = highest state originations; otherStates lists secondary markets.
  */
 export function getHmdaLenderEvidenceBySlug(slug: string): HmdaLenderEvidence | null {
