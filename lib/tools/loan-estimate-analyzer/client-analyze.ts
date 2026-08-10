@@ -79,7 +79,7 @@ export function analyzeLoanEstimateClient(
 
   if (!hmdaLender) {
     limitations.push(
-      'No matched Florida 2025 HMDA evidence for the selected lender (or none selected). Fee placement uses educational bands only.'
+      'No matched 2025 HMDA evidence for the selected lender (or none selected) among Florida, Texas, and Georgia. Fee placement uses educational bands only.'
     );
   } else {
     limitations.push(
@@ -89,7 +89,7 @@ export function analyzeLoanEstimateClient(
 
   if (!hmdaCounty) {
     limitations.push(
-      'No Florida county market summary selected (or outside our major-county set). Market context is limited.'
+      'No major county market summary selected (or outside our FL/TX/GA major-county set). Market context is limited.'
     );
   }
 
@@ -113,7 +113,7 @@ export function analyzeLoanEstimateClient(
   ];
   if (hmdaLender) {
     citations.push({
-      label: 'Lender Florida activity',
+      label: `Lender ${hmdaLender.primaryStateName} activity`,
       detail: `${hmdaLender.source} via CFPB/FFIEC — originations and loan-type mix, not fee distributions.`,
     });
   }

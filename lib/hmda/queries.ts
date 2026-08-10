@@ -160,7 +160,7 @@ function evidenceForBundle(
 }
 
 /**
- * Lender evidence across product states (FL, TX).
+ * Lender evidence across product states (FL, TX, GA).
  * Primary = highest state originations; otherStates lists secondary markets.
  */
 export function getHmdaLenderEvidenceBySlug(slug: string): HmdaLenderEvidence | null {

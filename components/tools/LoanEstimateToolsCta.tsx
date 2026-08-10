@@ -126,8 +126,8 @@ export function LoanEstimateToolsCta({
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-zinc-600">
           If you already have offers, analyze fees and terms—or compare two or three Loan Estimates
           side by side. Educational research only
-          {countySlug ? ', with optional Florida HMDA market context' : ''}. No phone number
-          required.
+          {countySlug ? ', with optional FL / TX / GA HMDA market context when available' : ''}. No
+          phone number required.
         </p>
         <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
           <Link

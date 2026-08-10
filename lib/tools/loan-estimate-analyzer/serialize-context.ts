@@ -2,6 +2,7 @@ import { getHmdaCountyEvidence, getHmdaLenderEvidenceBySlug } from '@/lib/hmda';
 import type { FredMortgageBenchmarks } from '@/lib/fred';
 import { getFredMortgageBenchmarks } from '@/lib/fred/server';
 import type { HmdaAnalyzerCountyContext, HmdaAnalyzerLenderContext } from './types';
+import { parseAnalyzerCountyOption } from './county-option';
 import {
   getAnalyzerCountyOptions,
   getAnalyzerLenderOptions,
@@ -12,11 +13,15 @@ import {
 function toLenderCtx(slug: string): HmdaAnalyzerLenderContext | null {
   const e = getHmdaLenderEvidenceBySlug(slug);
   if (!e) return null;
+  const stateOrig = e.stateOriginations ?? e.floridaOriginations;
   return {
     slug: e.slug,
     name: e.institutionName,
     nmlsId: e.nmlsId,
-    floridaOriginations: e.stateOriginations ?? e.floridaOriginations,
+    primaryStateName: e.stateName,
+    primaryStateCode: e.state,
+    stateOriginations: stateOrig,
+    floridaOriginations: stateOrig,
     countiesWithActivity: e.countiesWithActivity,
     topCounties: e.topCounties,
     conventionalPct: e.loanTypeMix?.conventionalPct ?? null,
@@ -28,21 +33,23 @@ function toLenderCtx(slug: string): HmdaAnalyzerLenderContext | null {
 }
 
 function toCountyCtx(optionSlug: string): HmdaAnalyzerCountyContext | null {
-  // Analyzer options: bare slugs = Florida; `tx:` / `ga:` prefixes for other states.
-  let stateSlug = 'florida';
-  let countySlug = optionSlug;
-  if (optionSlug.startsWith('tx:')) {
-    stateSlug = 'texas';
-    countySlug = optionSlug.slice(3);
-  } else if (optionSlug.startsWith('ga:')) {
-    stateSlug = 'georgia';
-    countySlug = optionSlug.slice(3);
-  }
-  const e = getHmdaCountyEvidence(stateSlug, countySlug);
+  const parsed = parseAnalyzerCountyOption(optionSlug);
+  if (!parsed) return null;
+  const e = getHmdaCountyEvidence(parsed.stateSlug, parsed.countySlug);
   if (!e) return null;
+  const stateName =
+    e.stateSlug === 'texas'
+      ? 'Texas'
+      : e.stateSlug === 'georgia'
+        ? 'Georgia'
+        : e.stateSlug === 'florida'
+          ? 'Florida'
+          : e.state;
   return {
     countyName: e.countyName,
     countySlug: e.countySlug,
+    stateName,
+    stateSlug: e.stateSlug,
     applications: e.applications,
     originations: e.originations,
     denialRatePct: e.denialRatePct,

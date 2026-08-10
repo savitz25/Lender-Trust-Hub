@@ -3,6 +3,7 @@ import {
   getHmdaLenderEvidenceBySlug,
 } from '@/lib/hmda';
 import { classifyNetLenderPct, classifyOriginationPct } from './educational-bands';
+import { parseAnalyzerCountyOption } from './county-option';
 import type {
   DerivedEstimateMetrics,
   HmdaAnalyzerCountyContext,
@@ -60,11 +61,15 @@ function lenderContext(slug: string): HmdaAnalyzerLenderContext | null {
   if (!slug) return null;
   const e = getHmdaLenderEvidenceBySlug(slug);
   if (!e) return null;
+  const stateOrig = e.stateOriginations ?? e.floridaOriginations;
   return {
     slug: e.slug,
     name: e.institutionName,
     nmlsId: e.nmlsId,
-    floridaOriginations: e.floridaOriginations,
+    primaryStateName: e.stateName,
+    primaryStateCode: e.state,
+    stateOriginations: stateOrig,
+    floridaOriginations: stateOrig,
     countiesWithActivity: e.countiesWithActivity,
     topCounties: e.topCounties,
     conventionalPct: e.loanTypeMix?.conventionalPct ?? null,
@@ -75,13 +80,24 @@ function lenderContext(slug: string): HmdaAnalyzerLenderContext | null {
   };
 }
 
-function countyContext(countySlug: string): HmdaAnalyzerCountyContext | null {
-  if (!countySlug) return null;
-  const e = getHmdaCountyEvidence('florida', countySlug);
+function countyContext(optionSlug: string): HmdaAnalyzerCountyContext | null {
+  const parsed = parseAnalyzerCountyOption(optionSlug);
+  if (!parsed) return null;
+  const e = getHmdaCountyEvidence(parsed.stateSlug, parsed.countySlug);
   if (!e) return null;
+  const stateName =
+    e.stateSlug === 'texas'
+      ? 'Texas'
+      : e.stateSlug === 'georgia'
+        ? 'Georgia'
+        : e.stateSlug === 'florida'
+          ? 'Florida'
+          : e.state;
   return {
     countyName: e.countyName,
     countySlug: e.countySlug,
+    stateName,
+    stateSlug: e.stateSlug,
     applications: e.applications,
     originations: e.originations,
     denialRatePct: e.denialRatePct,
@@ -91,7 +107,7 @@ function countyContext(countySlug: string): HmdaAnalyzerCountyContext | null {
     purchasePct: e.purchasePct,
     refinancePct: e.refinancePct,
     source: e.source,
-    countyHref: `/local-lenders/florida/${e.countySlug}`,
+    countyHref: `/local-lenders/${e.stateSlug}/${e.countySlug}`,
   };
 }
 
@@ -111,7 +127,7 @@ export function analyzeLoanEstimate(inputs: LoanEstimateInputs): LoanEstimateAna
 
   if (!hmdaLender) {
     limitations.push(
-      'No matched Florida 2025 HMDA evidence was found for the selected lender (or no lender was selected). Fee placement uses educational bands only.'
+      'No matched 2025 HMDA evidence was found for the selected lender (or no lender was selected) among Florida, Texas, and Georgia product slices. Fee placement uses educational bands only.'
     );
   } else {
     limitations.push(
@@ -121,7 +137,7 @@ export function analyzeLoanEstimate(inputs: LoanEstimateInputs): LoanEstimateAna
 
   if (!hmdaCounty) {
     limitations.push(
-      'No Florida county market summary was selected (or the county is outside our current major-county set). Market context is limited to educational fee bands.'
+      'No major county market summary was selected (or the county is outside our FL/TX/GA major-county set). Market context is limited to educational fee bands.'
     );
   }
 
@@ -145,7 +161,7 @@ export function analyzeLoanEstimate(inputs: LoanEstimateInputs): LoanEstimateAna
   ];
   if (hmdaLender) {
     citations.push({
-      label: 'Lender Florida activity',
+      label: `Lender ${hmdaLender.primaryStateName} activity`,
       detail: `${hmdaLender.source} via CFPB/FFIEC public filings — originations and loan-type mix, not fee distributions.`,
     });
   }

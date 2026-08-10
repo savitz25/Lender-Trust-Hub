@@ -322,7 +322,7 @@ export function LoanEstimateAnalyzer({
           <Field
             label="Lender (HMDA-matched, optional)"
             htmlFor="le-lender"
-            hint="Selecting a matched lender adds 2025 Florida federal activity context — not a fee percentile."
+            hint="Selecting a matched lender adds 2025 FL / TX / GA federal activity context — not a fee percentile."
           >
             <select
               id="le-lender"
@@ -334,8 +334,8 @@ export function LoanEstimateAnalyzer({
               {bootstrap.lenders.map((l) => (
                 <option key={l.slug} value={l.slug}>
                   {l.name}
-                  {l.floridaOriginations
-                    ? ` · ${l.floridaOriginations.toLocaleString()} FL orig.`
+                  {(l.originations ?? l.floridaOriginations)
+                    ? ` · ${(l.originations ?? l.floridaOriginations).toLocaleString()} orig.`
                     : ''}
                 </option>
               ))}
@@ -343,9 +343,9 @@ export function LoanEstimateAnalyzer({
           </Field>
 
           <Field
-            label="Florida county (optional)"
+            label="County market context (optional)"
             htmlFor="le-county"
-            hint="Major Florida counties with 2025 HMDA market summaries."
+            hint="Major Florida, Texas, and Georgia counties with 2025 HMDA market summaries."
           >
             <select
               id="le-county"
@@ -394,7 +394,7 @@ export function LoanEstimateAnalyzer({
           </h2>
           <p className="mt-2 text-sm text-zinc-600">
             {submitted
-              ? 'Fee bands are educational. Rate context uses national Freddie Mac averages via FRED when available. HMDA (when selected) is Florida volume and mix — not fee percentiles.'
+              ? 'Fee bands are educational. Rate context uses national Freddie Mac averages via FRED when available. HMDA (when selected) is FL/TX/GA volume and mix — not fee percentiles.'
               : 'Enter figures from your LE and choose Analyze. Load an example anytime to explore the layout. No phone number required.'}
           </p>
           {!submitted ? (
@@ -535,17 +535,23 @@ export function LoanEstimateAnalyzer({
               <div className="rounded-xl border border-teal-200 bg-teal-50/40 p-4">
                 <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold text-[#0A2540]">
                   <Building2 className="h-4 w-4 text-teal-700" aria-hidden="true" />
-                  Federal data on this lender (Florida, {analysis.hmdaLender.source})
+                  Federal data on this lender ({analysis.hmdaLender.primaryStateName},{' '}
+                  {analysis.hmdaLender.source})
                 </h3>
                 <p className="mb-3 text-xs text-zinc-600">
-                  Activity context only — not a historical fee range for your Loan Estimate.
+                  Activity context only — not a historical fee range for your Loan Estimate. Primary
+                  state is the product slice with the most originations among FL / TX / GA.
                 </p>
                 <dl className="grid gap-2 text-sm sm:grid-cols-2">
                   <div>
-                    <dt className="text-xs text-zinc-500">Florida originations</dt>
+                    <dt className="text-xs text-zinc-500">
+                      {analysis.hmdaLender.primaryStateName} originations
+                    </dt>
                     <dd className="font-semibold tabular-nums text-[#0A2540]">
-                      {analysis.hmdaLender.floridaOriginations?.toLocaleString('en-US') ??
-                        'Not available'}
+                      {(
+                        analysis.hmdaLender.stateOriginations ??
+                        analysis.hmdaLender.floridaOriginations
+                      )?.toLocaleString('en-US') ?? 'Not available'}
                     </dd>
                   </div>
                   <div>
@@ -590,7 +596,7 @@ export function LoanEstimateAnalyzer({
               <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-4 text-sm text-zinc-600">
                 <p className="font-medium text-zinc-800">No lender HMDA context selected</p>
                 <p className="mt-1">
-                  Choose a HMDA-matched lender above to attach 2025 Florida federal activity. Many
+                  Choose a HMDA-matched lender above to attach 2025 FL / TX / GA federal activity. Many
                   national originators are already linked in our directory.
                 </p>
               </div>

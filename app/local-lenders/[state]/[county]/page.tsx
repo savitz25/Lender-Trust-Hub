@@ -571,7 +571,15 @@ export default async function CountyLendersPage({
 
       <LoanEstimateToolsCta
         variant="county"
-        countySlug={state === 'florida' ? county : undefined}
+        countySlug={
+          state === 'florida'
+            ? county
+            : state === 'texas'
+              ? `tx:${county}`
+              : state === 'georgia'
+                ? `ga:${county}`
+                : undefined
+        }
         countyName={countyName}
       />
 

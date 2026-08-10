@@ -27,7 +27,10 @@ export interface LoanEstimateInputs {
   loanType: LoanEstimateLoanType;
   /** Directory slug for HMDA-matched lender, if known */
   lenderSlug: string;
-  /** Florida county slug for market context */
+  /**
+   * County market context option slug:
+   * bare slug = Florida major county; `tx:{slug}` / `ga:{slug}` for TX/GA.
+   */
   countySlug: string;
 }
 
@@ -58,6 +61,15 @@ export interface HmdaAnalyzerLenderContext {
   slug: string;
   name: string;
   nmlsId: string | null;
+  /** Primary product-state name (highest originations among FL/TX/GA) */
+  primaryStateName: string;
+  primaryStateCode: string;
+  /** Originations in the primary product state */
+  stateOriginations: number | null;
+  /**
+   * @deprecated Prefer stateOriginations + primaryStateName.
+   * Kept for older call sites; equals primary-state volume in bootstrap.
+   */
   floridaOriginations: number | null;
   countiesWithActivity: number | null;
   topCounties: { name: string; originations: number }[];
@@ -71,6 +83,8 @@ export interface HmdaAnalyzerLenderContext {
 export interface HmdaAnalyzerCountyContext {
   countyName: string;
   countySlug: string;
+  stateName: string;
+  stateSlug: string;
   applications: number;
   originations: number;
   denialRatePct: number;

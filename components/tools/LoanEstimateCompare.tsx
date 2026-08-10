@@ -542,7 +542,7 @@ function EstimateForm({
           ))}
         </select>
       </Field>
-      <Field label="Florida county (optional)" htmlFor={`${id}-county`}>
+      <Field label="County market (FL / TX / GA, optional)" htmlFor={`${id}-county`}>
         <select
           id={`${id}-county`}
           className={inputClass}
@@ -850,9 +850,11 @@ function ComparisonResults({
                   <p className="mt-2 text-zinc-700">
                     {lender.name}:{' '}
                     <span className="tabular-nums font-medium">
-                      {lender.floridaOriginations?.toLocaleString() ?? '—'}
+                      {(
+                        lender.stateOriginations ?? lender.floridaOriginations
+                      )?.toLocaleString() ?? '—'}
                     </span>{' '}
-                    FL originations ({lender.source}).{' '}
+                    {lender.primaryStateName || 'State'} originations ({lender.source}).{' '}
                     <Link href={lender.profileHref} className="font-medium text-[#059669] underline">
                       Profile
                     </Link>

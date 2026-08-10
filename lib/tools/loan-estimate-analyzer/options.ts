@@ -13,6 +13,8 @@ export type AnalyzerLenderOption = {
   name: string;
   nmlsId: string;
   /** Combined product-state originations (FL+TX+GA) for sort/display */
+  originations: number;
+  /** @deprecated Use originations */
   floridaOriginations: number;
 };
 
@@ -36,13 +38,15 @@ export function getAnalyzerLenderOptions(): AnalyzerLenderOption[] {
       const orig = summary?.stateOriginations ?? m.stateOriginations ?? 0;
       const existing = bySlug.get(m.ourLenderSlug);
       if (existing) {
-        existing.floridaOriginations += orig;
+        existing.originations += orig;
+        existing.floridaOriginations = existing.originations;
         continue;
       }
       bySlug.set(m.ourLenderSlug, {
         slug: m.ourLenderSlug,
         name: catalog?.name || m.institutionName || m.ourLenderSlug,
         nmlsId: m.nmlsId || catalog?.nmlsId || '',
+        originations: orig,
         floridaOriginations: orig,
       });
     }
@@ -55,12 +59,13 @@ export function getAnalyzerLenderOptions(): AnalyzerLenderOption[] {
       slug,
       name: catalog?.name || slug,
       nmlsId: catalog?.nmlsId || '',
+      originations: 0,
       floridaOriginations: 0,
     });
   }
 
   return [...bySlug.values()].sort(
-    (a, b) => b.floridaOriginations - a.floridaOriginations || a.name.localeCompare(b.name)
+    (a, b) => b.originations - a.originations || a.name.localeCompare(b.name)
   );
 }
 

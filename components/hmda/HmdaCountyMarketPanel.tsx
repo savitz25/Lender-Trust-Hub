@@ -29,7 +29,7 @@ export function HmdaCountyMarketPanel({ evidence }: { evidence: HmdaCountyEviden
                   : evidence.stateSlug === 'florida'
                     ? 'Florida'
                     : evidence.state}{' '}
-              county-level activity · Not a score or ranking
+              ({evidence.state}) county-level activity · Not a score or ranking
             </p>
           </div>
           <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-sky-100 ring-1 ring-white/20">
@@ -45,7 +45,7 @@ export function HmdaCountyMarketPanel({ evidence }: { evidence: HmdaCountyEviden
           <Metric
             label="Denial rate"
             value={`${evidence.denialRatePct.toFixed(1)}%`}
-            hint="Denials ÷ (originations + denials + approved not accepted)"
+            hint="Denials ÷ applications (cleaned HMDA county extract)"
           />
           <Metric
             label="Purchase vs refinance"
