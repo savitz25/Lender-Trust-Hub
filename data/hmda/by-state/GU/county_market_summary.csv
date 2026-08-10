@@ -1,0 +1,2 @@
+year,state,county_fips,county_name,total_applications,total_originations,denial_count,denial_rate_pct,purchase_count,refinance_count,purpose_other_count,purchase_pct_of_apps,refinance_pct_of_apps,apps_conventional,apps_fha,apps_va,apps_usda_other,apps_other_loan_type,apps_conventional_pct,apps_fha_pct,apps_va_pct,orig_conventional,orig_fha,orig_va,orig_usda_other,orig_other_loan_type,orig_conventional_pct,orig_fha_pct,orig_va_pct,priority_market
+2025,GU,66010,,213,157,14,6.57,166,43,4,77.93,20.19,58,50,99,6,0,27.23,23.47,46.48,39,35,77,6,0,24.84,22.29,49.04,national

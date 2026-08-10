@@ -1,0 +1,5 @@
+lei,institution_name,nmls_id,our_lender_slug,match_status,total_applications,total_originations,gu_originations,states_with_originations,priority_match
+549300GKFNPRWNS0GF29,,,,unmatched,102677,70098,0,TX:10655;WA:5796;CA:4698;FL:4388;TN:3925;PA:2626;NH:2466;MA:2329;VA:2325;NJ:2257,high
+549300R9S3MVDV4MGF56,,,,unmatched,52143,15089,0,FL:1296;CA:1022;GA:873;TX:848;IN:732;NC:680;OH:675;NY:576;MI:570;TN:533,high
+549300VJQJVZKJBDWS17,,,,unmatched,9038,6553,0,CT:3299;MA:1361;NH:320;ME:313;FL:201;NY:185;RI:148;MD:119;PA:117;NJ:112,high
+549300ZOBXG0DT4I6U54,,,,unmatched,472,301,0,NJ:176;NY:45;FL:33;PA:16;CT:12;HI:6;TX:4;MD:2;VA:2;GA:1,medium

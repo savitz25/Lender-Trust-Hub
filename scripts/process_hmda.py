@@ -2,6 +2,11 @@
 """
 Process raw HMDA LAR extract into website-ready summary tables.
 
+**Prefer the national pipeline going forward:**
+  python scripts/process_hmda_national.py year_2025.csv
+  python scripts/extract_hmda_state.py FL
+
+This multi-state script remains for reprocessing older regional extracts only.
 Does not invent editorial metrics. Streams the raw CSV (does not modify it).
 """
 

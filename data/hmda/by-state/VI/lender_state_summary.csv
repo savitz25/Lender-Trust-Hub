@@ -1,0 +1,6 @@
+year,state,lei,institution_name,total_applications,total_originations,top_counties_served,orig_conventional,orig_fha,orig_va,orig_usda_other,orig_other_loan_type,orig_conventional_pct,orig_fha_pct,orig_va_pct,priority_market
+2025,VI,549300XED7IBK9VVQH70,,123,84,78030:44; 78020:22; 78010:18,74,6,4,0,0,88.1,7.14,4.76,national
+2025,VI,2549005SIVTHG14U2905,,86,56,78010:26; 78030:25; 78020:5,56,0,0,0,0,100.0,0.0,0.0,national
+2025,VI,549300SK2GVCQXPD4S58,,69,45,78010:25; 78030:18; 78020:2,29,3,13,0,0,64.44,6.67,28.89,national
+2025,VI,549300GKFNPRWNS0GF29,,33,18,78010:8; 78030:8; 78020:2,12,2,4,0,0,66.67,11.11,22.22,national
+2025,VI,549300QV3GEYMP1WSO93,,25,14,78010:13; 78030:1,14,0,0,0,0,100.0,0.0,0.0,national

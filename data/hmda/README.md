@@ -1,108 +1,95 @@
-# HMDA cleaned datasets
+# HMDA data foundation (national)
 
-**Data vintage:** HMDA activity year(s) **2025**  
-**Source file (raw, unchanged):** `state_FL-CA-MA-TX-NJ-NY-DC-PA-GA-SC-NC-TN.csv` (~2399 MB)  
-**Processed:** streaming LAR → summary tables only  
+**Source of truth:** `year_2025.csv` (nationwide HMDA LAR, **2025**)  
+**Raw size:** ~4.76 GB (gitignored)  
+**Processed:** streaming LAR → national summaries + by-state partitions  
 
-## What was filtered out
+## Filters (same standard as prior state slices)
 
-- `action_taken = 6` (purchased loans) — not used for origination market stats  
-- Rows missing year, LEI, state, or county  
-- States outside: CA, DC, FL, GA, MA, NC, NJ, NY, PA, SC, TN, TX
+| Filter | Rule |
+|--------|------|
+| Purchased loans | Drop `action_taken = 6` |
+| Incomplete geo | Drop missing year, LEI, state, or county FIPS |
+| Invalid state | Drop codes outside US states/DC/territories |
+| Applications | All kept non-purchase rows with valid geo |
+| Originations | `action_taken = 1` |
+| Denials | `action_taken = 3` |
 
-Priority site markets: **DC, FL, GA, MA, NC, NJ, NY, PA, SC, TN, TX** (Florida sorted first in multi-state files).  
-Secondary in extract: **CA**.
+**Scan stats:** 13,543,606 rows → **11,660,618 kept** | states/territories: **54**
 
-## Files in `cleaned/`
+## Layout
 
-| File | Description |
-|------|-------------|
-| `county_market_summary.csv` | County-level applications, originations, denials, loan-type mix, purchase vs refinance |
-| `lender_activity_by_county.csv` | LEI activity per county + market share of originations |
-| `lender_state_summary.csv` | LEI totals per state + top counties served |
-| `lei_mapping_candidates.csv` | Unique LEIs ranked for NMLS/slug matching (`priority_match` high/medium/low) |
-| `manifest.json` | Machine-readable run stats and notes |
-
-## Files in `florida/`
-
-Florida-only subsets of the same schemas (FL-first product work).
-
-## Files in `texas/`
-
-Texas product slice (Phase 3 geography expansion). Rebuild with:
-
-```bash
-python scripts/build-hmda-texas-slice.py
+```text
+data/hmda/
+  national/                 # full US aggregates
+    county_market_summary.csv
+    lender_activity_by_county.csv   # large; often gitignored — rebuild locally
+    lender_state_summary.csv
+    lei_mapping_candidates.csv
+    manifest.json
+  by-state/
+    index.json              # quick stats per state
+    FL/  TX/  GA/  …        # same 4 files per state
+  florida/                  # FL product + LEI mapping work
+  texas/ georgia/ …         # product slices (see docs/HMDA-*-EXPANSION.md)
+  cleaned/                  # legacy multi-state extract
+  README.md
 ```
 
-See `docs/HMDA-TEXAS-EXPANSION.md`.
-
-## Files in `georgia/`
-
-Georgia product slice. Rebuild with:
+## Extract / activate a state
 
 ```bash
-python scripts/build-hmda-georgia-slice.py
+# Rebuild everything from raw national file
+python scripts/process_hmda_national.py year_2025.csv
+
+# Point product code at a partition
+#   data/hmda/by-state/AZ/
+# or copy with aliases:
+python scripts/extract_hmda_state.py AZ --out data/hmda/arizona
+python scripts/extract_hmda_state.py FL
 ```
 
-See `docs/HMDA-GEORGIA-EXPANSION.md`.
+State folders under `by-state/{ST}/` use the same schemas as existing evidence panels.
 
-## Files in `california/`
+## Product slices (existing live work)
 
-California product slice. Rebuild with:
+Keep using dedicated expansion docs/scripts until migrated to `by-state/`:
 
-```bash
-python scripts/build-hmda-california-slice.py
-```
+| Slice | Docs / rebuild |
+|-------|----------------|
+| Florida | `florida/` + `lei_to_nmls_mapping.csv` |
+| Texas | `docs/HMDA-TEXAS-EXPANSION.md` · `build-hmda-texas-slice.py` |
+| Georgia | `docs/HMDA-GEORGIA-EXPANSION.md` · `build-hmda-georgia-slice.py` |
+| California | `docs/HMDA-CALIFORNIA-EXPANSION.md` · `build-hmda-california-slice.py` |
+| North Carolina | `docs/HMDA-NORTH-CAROLINA-EXPANSION.md` · `build-hmda-north-carolina-slice.py` |
+| South Carolina | `docs/HMDA-SOUTH-CAROLINA-EXPANSION.md` · `build-hmda-south-carolina-slice.py` |
+| New Jersey | `docs/HMDA-NEW-JERSEY-EXPANSION.md` · `build-hmda-new-jersey-slice.py` |
 
-See `docs/HMDA-CALIFORNIA-EXPANSION.md`.
+National partitions for these states match the earlier multi-state extract (e.g. FL Miami-Dade originations 34,236).
 
-## Files in `north-carolina/`
+## Live rollout priority flags
 
-North Carolina product slice. Rebuild with:
-
-```bash
-python scripts/build-hmda-north-carolina-slice.py
-```
-
-See `docs/HMDA-NORTH-CAROLINA-EXPANSION.md`.
-
-## Files in `south-carolina/`
-
-South Carolina product slice. Rebuild with:
-
-```bash
-python scripts/build-hmda-south-carolina-slice.py
-```
-
-See `docs/HMDA-SOUTH-CAROLINA-EXPANSION.md`.
-
-## Files in `new-jersey/`
-
-New Jersey product slice (Northeast Phase 1). Rebuild with:
-
-```bash
-python scripts/build-hmda-new-jersey-slice.py
-```
-
-See `docs/HMDA-NEW-JERSEY-EXPANSION.md`.
+`priority_market=yes` on: **CA, DC, FL, GA, MA, NC, NJ, NY, PA, SC, TN, TX**  
+Other states: `priority_market=national` until activated on the site.
 
 ## Column notes
 
-- **Applications:** non-purchase HMDA rows with valid geography (includes originated, denied, withdrawn, etc.)  
+- **Applications:** non-purchase HMDA rows with valid geography  
 - **Originations:** `action_taken = 1`  
 - **Denials:** `action_taken = 3`  
-- **Loan types:** Conventional / FHA / VA / USDA+other from HMDA `loan_type`  
-- **Purchase vs refinance:** from `loan_purpose` (1 vs 31/32)  
-- **institution_name / nmls_id:** empty placeholders for future LEI mapping  
+- **Loan types:** Conventional / FHA / VA / USDA+other  
+- **Purchase vs refinance:** `loan_purpose` 1 vs 31/32  
+- **institution_name / nmls_id:** empty until LEI mapping  
+
+## Compatibility
+
+Column names align with the multi-state pipeline so loaders and LEI mapping scripts work when pointed at:
+
+- `data/hmda/by-state/FL/…` or  
+- `data/hmda/national/…` with a state filter  
 
 ## Do not
 
-- Publish these as “Trust Scores” or invent ranking metrics  
-- Delete the raw CSV — keep it for reprocessing  
-
-## Re-run
-
-```bash
-python scripts/process_hmda.py path/to/raw.csv
-```
+- Commit `year_2025.csv`  
+- Invent Trust Scores or force LEI→NMLS matches  
+- Delete working product slices until product code is switched to `by-state/`  

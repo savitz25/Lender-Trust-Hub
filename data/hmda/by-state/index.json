@@ -1,0 +1,519 @@
+{
+  "year": [
+    "2025"
+  ],
+  "states": [
+    "AK",
+    "AL",
+    "AR",
+    "AZ",
+    "CA",
+    "CO",
+    "CT",
+    "DC",
+    "DE",
+    "FL",
+    "GA",
+    "GU",
+    "HI",
+    "IA",
+    "ID",
+    "IL",
+    "IN",
+    "KS",
+    "KY",
+    "LA",
+    "MA",
+    "MD",
+    "ME",
+    "MI",
+    "MN",
+    "MO",
+    "MS",
+    "MT",
+    "NC",
+    "ND",
+    "NE",
+    "NH",
+    "NJ",
+    "NM",
+    "NV",
+    "NY",
+    "OH",
+    "OK",
+    "OR",
+    "PA",
+    "PR",
+    "RI",
+    "SC",
+    "SD",
+    "TN",
+    "TX",
+    "UT",
+    "VA",
+    "VI",
+    "VT",
+    "WA",
+    "WI",
+    "WV",
+    "WY"
+  ],
+  "live_rollout_states": [
+    "CA",
+    "DC",
+    "FL",
+    "GA",
+    "MA",
+    "NC",
+    "NJ",
+    "NY",
+    "PA",
+    "SC",
+    "TN",
+    "TX"
+  ],
+  "by_state": {
+    "AK": {
+      "counties": 30,
+      "lender_county_rows": 834,
+      "lei_state_rows": 195,
+      "lei_candidates": 195,
+      "originations": 11904,
+      "applications": 19641
+    },
+    "AL": {
+      "counties": 67,
+      "lender_county_rows": 9693,
+      "lei_state_rows": 885,
+      "lei_candidates": 885,
+      "originations": 114635,
+      "applications": 206604
+    },
+    "AR": {
+      "counties": 75,
+      "lender_county_rows": 7069,
+      "lei_state_rows": 674,
+      "lei_candidates": 674,
+      "originations": 66394,
+      "applications": 116797
+    },
+    "AZ": {
+      "counties": 15,
+      "lender_county_rows": 4179,
+      "lei_state_rows": 953,
+      "lei_candidates": 953,
+      "originations": 183374,
+      "applications": 308338
+    },
+    "CA": {
+      "counties": 58,
+      "lender_county_rows": 15849,
+      "lei_state_rows": 978,
+      "lei_candidates": 978,
+      "originations": 569218,
+      "applications": 1014489
+    },
+    "CO": {
+      "counties": 64,
+      "lender_county_rows": 9380,
+      "lei_state_rows": 977,
+      "lei_candidates": 977,
+      "originations": 156145,
+      "applications": 260212
+    },
+    "CT": {
+      "counties": 9,
+      "lender_county_rows": 2865,
+      "lei_state_rows": 607,
+      "lei_candidates": 607,
+      "originations": 74032,
+      "applications": 123096
+    },
+    "DC": {
+      "counties": 1,
+      "lender_county_rows": 404,
+      "lei_state_rows": 402,
+      "lei_candidates": 402,
+      "originations": 9223,
+      "applications": 16634
+    },
+    "DE": {
+      "counties": 3,
+      "lender_county_rows": 1012,
+      "lei_state_rows": 473,
+      "lei_candidates": 473,
+      "originations": 26905,
+      "applications": 45536
+    },
+    "FL": {
+      "counties": 67,
+      "lender_county_rows": 22359,
+      "lei_state_rows": 1794,
+      "lei_candidates": 1794,
+      "originations": 489025,
+      "applications": 928427
+    },
+    "GA": {
+      "counties": 159,
+      "lender_county_rows": 22296,
+      "lei_state_rows": 1061,
+      "lei_candidates": 1061,
+      "originations": 241754,
+      "applications": 447003
+    },
+    "GU": {
+      "counties": 1,
+      "lender_county_rows": 4,
+      "lei_state_rows": 4,
+      "lei_candidates": 4,
+      "originations": 157,
+      "applications": 213
+    },
+    "HI": {
+      "counties": 4,
+      "lender_county_rows": 686,
+      "lei_state_rows": 272,
+      "lei_candidates": 272,
+      "originations": 19814,
+      "applications": 35792
+    },
+    "IA": {
+      "counties": 99,
+      "lender_county_rows": 7302,
+      "lei_state_rows": 645,
+      "lei_candidates": 645,
+      "originations": 75693,
+      "applications": 110214
+    },
+    "ID": {
+      "counties": 44,
+      "lender_county_rows": 4397,
+      "lei_state_rows": 529,
+      "lei_candidates": 529,
+      "originations": 56565,
+      "applications": 89792
+    },
+    "IL": {
+      "counties": 102,
+      "lender_county_rows": 11673,
+      "lei_state_rows": 1037,
+      "lei_candidates": 1037,
+      "originations": 231788,
+      "applications": 394488
+    },
+    "IN": {
+      "counties": 92,
+      "lender_county_rows": 13265,
+      "lei_state_rows": 907,
+      "lei_candidates": 907,
+      "originations": 177798,
+      "applications": 285688
+    },
+    "KS": {
+      "counties": 105,
+      "lender_county_rows": 6157,
+      "lei_state_rows": 677,
+      "lei_candidates": 677,
+      "originations": 60230,
+      "applications": 94350
+    },
+    "KY": {
+      "counties": 120,
+      "lender_county_rows": 11112,
+      "lei_state_rows": 751,
+      "lei_candidates": 751,
+      "originations": 100355,
+      "applications": 172675
+    },
+    "LA": {
+      "counties": 64,
+      "lender_county_rows": 6879,
+      "lei_state_rows": 605,
+      "lei_candidates": 605,
+      "originations": 69035,
+      "applications": 132458
+    },
+    "MA": {
+      "counties": 14,
+      "lender_county_rows": 4336,
+      "lei_state_rows": 709,
+      "lei_candidates": 709,
+      "originations": 135275,
+      "applications": 216396
+    },
+    "MD": {
+      "counties": 24,
+      "lender_county_rows": 6293,
+      "lei_state_rows": 708,
+      "lei_candidates": 708,
+      "originations": 125573,
+      "applications": 225524
+    },
+    "ME": {
+      "counties": 16,
+      "lender_county_rows": 2531,
+      "lei_state_rows": 455,
+      "lei_candidates": 455,
+      "originations": 35441,
+      "applications": 56760
+    },
+    "MI": {
+      "counties": 83,
+      "lender_county_rows": 12896,
+      "lei_state_rows": 857,
+      "lei_candidates": 857,
+      "originations": 228503,
+      "applications": 381619
+    },
+    "MN": {
+      "counties": 87,
+      "lender_county_rows": 10402,
+      "lei_state_rows": 772,
+      "lei_candidates": 772,
+      "originations": 122478,
+      "applications": 184549
+    },
+    "MO": {
+      "counties": 115,
+      "lender_county_rows": 11931,
+      "lei_state_rows": 908,
+      "lei_candidates": 908,
+      "originations": 145882,
+      "applications": 233218
+    },
+    "MS": {
+      "counties": 82,
+      "lender_county_rows": 6259,
+      "lei_state_rows": 576,
+      "lei_candidates": 576,
+      "originations": 54386,
+      "applications": 102491
+    },
+    "MT": {
+      "counties": 56,
+      "lender_county_rows": 3073,
+      "lei_state_rows": 482,
+      "lei_candidates": 482,
+      "originations": 22968,
+      "applications": 37122
+    },
+    "NC": {
+      "counties": 100,
+      "lender_county_rows": 19814,
+      "lei_state_rows": 1121,
+      "lei_candidates": 1121,
+      "originations": 279735,
+      "applications": 484454
+    },
+    "ND": {
+      "counties": 53,
+      "lender_county_rows": 1775,
+      "lei_state_rows": 277,
+      "lei_candidates": 277,
+      "originations": 14322,
+      "applications": 20553
+    },
+    "NE": {
+      "counties": 92,
+      "lender_county_rows": 4246,
+      "lei_state_rows": 491,
+      "lei_candidates": 491,
+      "originations": 43732,
+      "applications": 65091
+    },
+    "NH": {
+      "counties": 10,
+      "lender_county_rows": 2229,
+      "lei_state_rows": 475,
+      "lei_candidates": 475,
+      "originations": 35576,
+      "applications": 57640
+    },
+    "NJ": {
+      "counties": 21,
+      "lender_county_rows": 7549,
+      "lei_state_rows": 776,
+      "lei_candidates": 776,
+      "originations": 177325,
+      "applications": 318529
+    },
+    "NM": {
+      "counties": 33,
+      "lender_county_rows": 3118,
+      "lei_state_rows": 513,
+      "lei_candidates": 513,
+      "originations": 39201,
+      "applications": 73276
+    },
+    "NV": {
+      "counties": 17,
+      "lender_county_rows": 2000,
+      "lei_state_rows": 536,
+      "lei_candidates": 536,
+      "originations": 69135,
+      "applications": 119768
+    },
+    "NY": {
+      "counties": 62,
+      "lender_county_rows": 8730,
+      "lei_state_rows": 630,
+      "lei_candidates": 630,
+      "originations": 231331,
+      "applications": 388207
+    },
+    "OH": {
+      "counties": 88,
+      "lender_county_rows": 15148,
+      "lei_state_rows": 977,
+      "lei_candidates": 977,
+      "originations": 276279,
+      "applications": 460825
+    },
+    "OK": {
+      "counties": 77,
+      "lender_county_rows": 7940,
+      "lei_state_rows": 733,
+      "lei_candidates": 733,
+      "originations": 78683,
+      "applications": 139828
+    },
+    "OR": {
+      "counties": 36,
+      "lender_county_rows": 5844,
+      "lei_state_rows": 629,
+      "lei_candidates": 629,
+      "originations": 89073,
+      "applications": 146902
+    },
+    "PA": {
+      "counties": 67,
+      "lender_county_rows": 13433,
+      "lei_state_rows": 994,
+      "lei_candidates": 994,
+      "originations": 271254,
+      "applications": 444887
+    },
+    "PR": {
+      "counties": 78,
+      "lender_county_rows": 1792,
+      "lei_state_rows": 63,
+      "lei_candidates": 63,
+      "originations": 14243,
+      "applications": 21168
+    },
+    "RI": {
+      "counties": 5,
+      "lender_county_rows": 1111,
+      "lei_state_rows": 385,
+      "lei_candidates": 385,
+      "originations": 25984,
+      "applications": 43488
+    },
+    "SC": {
+      "counties": 46,
+      "lender_county_rows": 9824,
+      "lei_state_rows": 1009,
+      "lei_candidates": 1009,
+      "originations": 142410,
+      "applications": 251641
+    },
+    "SD": {
+      "counties": 66,
+      "lender_county_rows": 2267,
+      "lei_state_rows": 333,
+      "lei_candidates": 333,
+      "originations": 17103,
+      "applications": 25914
+    },
+    "TN": {
+      "counties": 95,
+      "lender_county_rows": 15961,
+      "lei_state_rows": 1141,
+      "lei_candidates": 1141,
+      "originations": 175419,
+      "applications": 302219
+    },
+    "TX": {
+      "counties": 253,
+      "lender_county_rows": 32546,
+      "lei_state_rows": 1376,
+      "lei_candidates": 1376,
+      "originations": 524257,
+      "applications": 954534
+    },
+    "UT": {
+      "counties": 29,
+      "lender_county_rows": 3620,
+      "lei_state_rows": 499,
+      "lei_candidates": 499,
+      "originations": 95932,
+      "applications": 151347
+    },
+    "VA": {
+      "counties": 133,
+      "lender_county_rows": 18783,
+      "lei_state_rows": 885,
+      "lei_candidates": 885,
+      "originations": 202417,
+      "applications": 340304
+    },
+    "VI": {
+      "counties": 3,
+      "lender_county_rows": 14,
+      "lei_state_rows": 5,
+      "lei_candidates": 5,
+      "originations": 217,
+      "applications": 340
+    },
+    "VT": {
+      "counties": 14,
+      "lender_county_rows": 1260,
+      "lei_state_rows": 278,
+      "lei_candidates": 278,
+      "originations": 13414,
+      "applications": 20692
+    },
+    "WA": {
+      "counties": 39,
+      "lender_county_rows": 7442,
+      "lei_state_rows": 714,
+      "lei_candidates": 714,
+      "originations": 174653,
+      "applications": 286871
+    },
+    "WI": {
+      "counties": 72,
+      "lender_county_rows": 11142,
+      "lei_state_rows": 843,
+      "lei_candidates": 843,
+      "originations": 154296,
+      "applications": 226408
+    },
+    "WV": {
+      "counties": 55,
+      "lender_county_rows": 3685,
+      "lei_state_rows": 470,
+      "lei_candidates": 470,
+      "originations": 29401,
+      "applications": 53823
+    },
+    "WY": {
+      "counties": 23,
+      "lender_county_rows": 1669,
+      "lei_state_rows": 356,
+      "lei_candidates": 356,
+      "originations": 13311,
+      "applications": 21783
+    }
+  },
+  "paths": {
+    "national": "data/hmda/national/",
+    "by_state_template": "data/hmda/by-state/{ST}/",
+    "state_files": [
+      "county_market_summary.csv",
+      "lender_activity_by_county.csv",
+      "lender_state_summary.csv",
+      "lei_mapping_candidates.csv"
+    ]
+  }
+}
