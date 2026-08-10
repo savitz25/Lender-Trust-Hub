@@ -4,16 +4,17 @@ import { ChevronRight, FileSearch, Shield } from 'lucide-react';
 import { LoanEstimateAnalyzer } from '@/components/tools/LoanEstimateAnalyzer';
 import { buildAnalyzerBootstrap } from '@/lib/tools/loan-estimate-analyzer/serialize-context';
 import { JsonLd } from '@/components/directory/JsonLd';
+import { ResearchPathNav } from '@/components/research/research-path-nav';
 
 export const metadata: Metadata = {
-  title: 'Loan Estimate Analyzer — Compare Fees to Market Context | Lender Trust Hub',
+  title: 'Understand Your Loan Estimate — Fee Bands & Market Context | Lender Trust Hub',
   description:
-    'Paste key numbers from your Loan Estimate and see educational fee bands, APR/rate context, and 2025 multi-state HMDA activity (all 50 states + DC) for matched lenders and counties. Free research tool — no lead form required.',
+    'Paste key numbers from your Loan Estimate and see educational fee bands, APR/rate context, and multi-state HMDA activity for matched lenders and counties. Free research tool — no lead form required.',
   alternates: {
     canonical: 'https://www.lendertrusthub.com/tools/loan-estimate-analyzer',
   },
   openGraph: {
-    title: 'Loan Estimate Analyzer | Lender Trust Hub',
+    title: 'Understand Your Loan Estimate | Lender Trust Hub',
     description:
       'Educational Loan Estimate research: fee bands, points vs rate, and federal HMDA market context. No phone number required.',
     url: 'https://www.lendertrusthub.com/tools/loan-estimate-analyzer',
@@ -143,25 +144,32 @@ export default async function LoanEstimateAnalyzerPage({
               </div>
             ))}
           </dl>
+          <div className="mx-auto mt-10 max-w-2xl text-left">
+            <ResearchPathNav
+              variant="tools"
+              heading="Browse lenders & programs after your LE"
+              context={{}}
+            />
+          </div>
           <p className="mt-8 text-center text-sm text-zinc-500">
             Related:{' '}
             <Link
               href="/tools/compare-loan-estimates"
               className="font-medium text-[#059669] hover:underline"
             >
-              Compare 2–3 Loan Estimates
+              Compare offers side by side
             </Link>
             {' · '}
-            <Link href="/calculators" className="font-medium text-[#059669] hover:underline">
-              All calculators
+            <Link href="/tools/program-finder" className="font-medium text-[#059669] hover:underline">
+              Explore assistance programs
+            </Link>
+            {' · '}
+            <Link href="/local-lenders" className="font-medium text-[#059669] hover:underline">
+              Local lenders by state
             </Link>
             {' · '}
             <Link href="/methodology" className="font-medium text-[#059669] hover:underline">
               Research methodology
-            </Link>
-            {' · '}
-            <Link href="/local-lenders/florida" className="font-medium text-[#059669] hover:underline">
-              Florida lenders
             </Link>
           </p>
         </div>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { CountyQualityAssessment } from '@/lib/mortgage/county-quality-score';
 import { getStateHousingResources } from '@/lib/mortgage/state-housing-resources';
+import { isDpaGuidanceState } from '@/lib/programs/location-notes';
 import type { Lender } from '@/lib/mockData';
 
 const LOAN_PROGRAMS = [
@@ -95,7 +96,7 @@ export function CountyIntelligenceModules({
               const href =
                 p.id === 'finder' && stateSlug
                   ? `${p.href}?state=${encodeURIComponent(stateSlug)}`
-                  : p.id === 'dpa' && (stateSlug === 'florida' || stateSlug === 'texas')
+                  : p.id === 'dpa' && isDpaGuidanceState(stateSlug)
                     ? `${p.href}#${stateSlug}`
                     : p.href;
               return (

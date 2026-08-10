@@ -110,7 +110,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-6 border-t border-white/10 pt-6 text-center text-xs text-slate-500">
-          © {year} LenderTrustHub.com — Independent research · Expanding coverage · Zero paid
+          © {year} LenderTrustHub.com — Independent national research directory · Zero paid
           placements
         </div>
       </div>

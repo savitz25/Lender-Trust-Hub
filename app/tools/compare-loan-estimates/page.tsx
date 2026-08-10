@@ -6,16 +6,17 @@ import { buildAnalyzerBootstrap } from '@/lib/tools/loan-estimate-analyzer/seria
 import { emptyLoanEstimateInputs } from '@/lib/tools/loan-estimate-analyzer/defaults';
 import type { LoanEstimateInputs } from '@/lib/tools/loan-estimate-analyzer/types';
 import { JsonLd } from '@/components/directory/JsonLd';
+import { ResearchPathNav } from '@/components/research/research-path-nav';
 
 export const metadata: Metadata = {
-  title: 'Compare Loan Estimates Side-by-Side | Lender Trust Hub',
+  title: 'Compare Loan Estimates Side by Side — Educational Research | Lender Trust Hub',
   description:
-    'Compare 2 or 3 Loan Estimates side-by-side: rate, APR, origination, points, credits, net fees, and monthly P&I. Educational research — no lead form required.',
+    'Compare 2 or 3 Loan Estimates side by side: rate, APR, origination, points, credits, net fees, and monthly P&I. Educational research — no lead form required.',
   alternates: {
     canonical: 'https://www.lendertrusthub.com/tools/compare-loan-estimates',
   },
   openGraph: {
-    title: 'Compare Loan Estimates | Lender Trust Hub',
+    title: 'Compare Loan Estimates Side by Side | Lender Trust Hub',
     description:
       'Clear differences in rate, fees, and credits across Loan Estimates. Independent research framing — not a sales ranking.',
     url: 'https://www.lendertrusthub.com/tools/compare-loan-estimates',
@@ -152,18 +153,27 @@ export default async function CompareLoanEstimatesPage({
       </div>
 
       <section className="border-t border-zinc-200 bg-zinc-50/80 py-10">
-        <div className="container mx-auto max-w-2xl px-4 text-center text-sm text-zinc-600">
-          <p>
+        <div className="container mx-auto max-w-2xl px-4 text-sm text-zinc-600">
+          <ResearchPathNav
+            variant="tools"
+            heading="After you compare offers"
+            context={{}}
+          />
+          <p className="mt-8 text-center">
             Related:{' '}
             <Link
               href="/tools/loan-estimate-analyzer"
               className="font-medium text-[#059669] hover:underline"
             >
-              Single Loan Estimate Analyzer
+              Understand your Loan Estimate
             </Link>
             {' · '}
-            <Link href="/calculators" className="font-medium text-[#059669] hover:underline">
-              All calculators
+            <Link href="/tools/program-finder" className="font-medium text-[#059669] hover:underline">
+              Explore assistance programs
+            </Link>
+            {' · '}
+            <Link href="/local-lenders" className="font-medium text-[#059669] hover:underline">
+              Local lenders by state
             </Link>
             {' · '}
             <Link href="/methodology" className="font-medium text-[#059669] hover:underline">

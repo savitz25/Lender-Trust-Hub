@@ -4,6 +4,7 @@ import { lenders } from '@/lib/mockData';
 import { stateData } from '@/lib/fdic/stateData';
 import { getStateSlugsWithLenders } from '@/lib/mortgage/stateLenders';
 import { getSitemapCounties } from '@/lib/mortgage/county-quality-tiers';
+import { HIGH_VOLUME_STATE_SLUGS } from '@/lib/mortgage/seo';
 import { cleanNmlsId } from '@/lib/verification/nmls';
 import { catalogDistinctEntities } from '@/lib/verification';
 
@@ -15,35 +16,35 @@ function catalogLastMod(): Date {
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = catalogLastMod();
 
-  const staticPaths = [
-    '/',
-    '/about',
-    '/methodology',
-    '/contact',
-    '/privacy',
-    '/terms',
-    '/calculators',
-    '/compare',
-    '/local-lenders',
-    '/fdic-insured-banks',
-    '/auto-loan-companies',
-    '/programs',
-    '/programs/fha',
-    '/programs/va',
-    '/programs/conventional',
-    '/programs/usda',
-    '/programs/down-payment-assistance',
-    '/tools/program-finder',
-    '/tools/loan-estimate-analyzer',
-    '/tools/compare-loan-estimates',
-    '/my-lending',
+  /** Indexable public research surfaces only — workspace routes excluded */
+  const staticPaths: Array<{ path: string; priority: number; changeFrequency: 'weekly' | 'monthly' }> = [
+    { path: '/', priority: 1, changeFrequency: 'weekly' },
+    { path: '/local-lenders', priority: 0.95, changeFrequency: 'weekly' },
+    { path: '/tools/loan-estimate-analyzer', priority: 0.92, changeFrequency: 'weekly' },
+    { path: '/tools/compare-loan-estimates', priority: 0.92, changeFrequency: 'weekly' },
+    { path: '/tools/program-finder', priority: 0.9, changeFrequency: 'weekly' },
+    { path: '/programs', priority: 0.88, changeFrequency: 'weekly' },
+    { path: '/programs/fha', priority: 0.85, changeFrequency: 'monthly' },
+    { path: '/programs/va', priority: 0.85, changeFrequency: 'monthly' },
+    { path: '/programs/conventional', priority: 0.85, changeFrequency: 'monthly' },
+    { path: '/programs/usda', priority: 0.82, changeFrequency: 'monthly' },
+    { path: '/programs/down-payment-assistance', priority: 0.88, changeFrequency: 'weekly' },
+    { path: '/calculators', priority: 0.85, changeFrequency: 'weekly' },
+    { path: '/compare', priority: 0.8, changeFrequency: 'weekly' },
+    { path: '/methodology', priority: 0.75, changeFrequency: 'monthly' },
+    { path: '/about', priority: 0.7, changeFrequency: 'monthly' },
+    { path: '/contact', priority: 0.5, changeFrequency: 'monthly' },
+    { path: '/privacy', priority: 0.3, changeFrequency: 'monthly' },
+    { path: '/terms', priority: 0.3, changeFrequency: 'monthly' },
+    { path: '/fdic-insured-banks', priority: 0.75, changeFrequency: 'weekly' },
+    { path: '/auto-loan-companies', priority: 0.7, changeFrequency: 'weekly' },
   ];
 
-  const staticRoutes: MetadataRoute.Sitemap = staticPaths.map((path) => ({
+  const staticRoutes: MetadataRoute.Sitemap = staticPaths.map(({ path, priority, changeFrequency }) => ({
     url: `${SITE_URL}${path === '/' ? '' : path}`,
     lastModified: now,
-    changeFrequency: 'weekly' as const,
-    priority: path === '/' ? 1 : path === '/local-lenders' ? 0.9 : 0.8,
+    changeFrequency,
+    priority,
   }));
 
   let fdicStates: MetadataRoute.Sitemap = [];
@@ -52,7 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}/fdic-insured-banks/${state}`,
       lastModified: now,
       changeFrequency: 'weekly' as const,
-      priority: 0.75,
+      priority: 0.7,
     }));
   } catch {
     fdicStates = [];
@@ -64,21 +65,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}/local-lenders/${state}`,
       lastModified: now,
       changeFrequency: 'weekly' as const,
-      priority: 0.85,
+      priority: HIGH_VOLUME_STATE_SLUGS.has(state) ? 0.92 : 0.84,
     }));
   } catch {
     mortgageStates = [];
   }
 
-  // Phase 4: only Tier 1 / Tier 2 counties (Tier 3 noindex — omit from premium sitemap)
+  // Tier 1 / Tier 2 counties only (Tier 3 noindex — omit)
   let mortgageCounties: MetadataRoute.Sitemap = [];
   try {
-    mortgageCounties = getSitemapCounties().map((c) => ({
-      url: `${SITE_URL}/local-lenders/${c.stateSlug}/${c.countySlug}`,
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
-      priority: c.tier === 1 ? 0.8 : 0.65,
-    }));
+    mortgageCounties = getSitemapCounties().map((c) => {
+      const highVolume = HIGH_VOLUME_STATE_SLUGS.has(c.stateSlug);
+      const priority =
+        c.tier === 1
+          ? highVolume
+            ? 0.88
+            : 0.8
+          : highVolume
+            ? 0.72
+            : 0.65;
+      return {
+        url: `${SITE_URL}/local-lenders/${c.stateSlug}/${c.countySlug}`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority,
+      };
+    });
   } catch {
     mortgageCounties = [];
   }
@@ -90,7 +102,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}/lenders/${l.slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      priority: HIGH_VOLUME_STATE_SLUGS.has(l.stateSlug) ? 0.74 : 0.68,
     }));
 
   return [

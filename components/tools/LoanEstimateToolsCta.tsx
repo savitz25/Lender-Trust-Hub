@@ -101,6 +101,12 @@ export function LoanEstimateToolsCta({
             Compare offers side by side
           </Link>
           <Link
+            href="/tools/program-finder"
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-transparent px-4 py-2.5 text-sm font-semibold text-sky-900 underline-offset-2 hover:underline"
+          >
+            Explore assistance programs
+          </Link>
+          <Link
             href="/my-lending"
             className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-transparent px-4 py-2.5 text-sm font-semibold text-emerald-800 underline-offset-2 hover:underline"
           >
@@ -138,7 +144,7 @@ export function LoanEstimateToolsCta({
             href={analyze}
             className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700"
           >
-            Analyze a Loan Estimate
+            Understand your Loan Estimate
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
           <Link
@@ -146,6 +152,12 @@ export function LoanEstimateToolsCta({
             className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#0A2540] hover:border-sky-400"
           >
             Compare offers side by side
+          </Link>
+          <Link
+            href="/tools/program-finder"
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-transparent px-4 py-2.5 text-sm font-semibold text-sky-900 underline-offset-2 hover:underline"
+          >
+            Explore assistance programs
           </Link>
         </div>
       </aside>

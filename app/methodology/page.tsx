@@ -248,9 +248,11 @@ export default function MethodologyPage() {
           Coverage
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-          Lender Trust Hub coverage is <strong className="text-[#0A2540]">expanding by state and
-          county</strong>. We do not claim a complete directory of every U.S. county or every
-          licensed originator. Absence from our directory is not a regulatory finding.
+          Lender Trust Hub is a <strong className="text-[#0A2540]">national research directory</strong>{' '}
+          with state hubs, county market pages, and HMDA evidence where matched. We still do not claim
+          a complete inventory of every U.S. county or every licensed originator. Absence from our
+          directory is not a regulatory finding. County pages may be tiered for quality (some remain
+          noindex until inventory gates pass).
         </p>
       </section>
 

@@ -18,12 +18,17 @@ import {
 } from '@/lib/mortgage/stateLenders';
 import {
   buildMortgageStateDescription,
+  buildMortgageStateH1,
   buildMortgageStateJsonLd,
   buildMortgageStateTitle,
   mortgageStateUrl,
 } from '@/lib/mortgage/seo';
 import { NetworkHandoff } from '@/components/network/network-handoff';
 import { StateResearchSections } from '@/components/mortgage/state-research-sections';
+import { ResearchPathNav } from '@/components/research/research-path-nav';
+import { getHmdaStateMarketSummary } from '@/lib/hmda';
+import { HmdaStateSummaryPanel } from '@/components/hmda/HmdaStateSummaryPanel';
+import { LoanEstimateToolsCta } from '@/components/tools/LoanEstimateToolsCta';
 
 /**
  * MORTGAGE STATE PAGE TEMPLATE
@@ -84,6 +89,7 @@ export default async function MortgageStatePage({
   const stateLenders = getLendersByStateSlug(slug);
   const stats = getStateMortgageStats(slug);
   const jsonLd = buildMortgageStateJsonLd(stateMeta, stateLenders);
+  const hmdaState = getHmdaStateMarketSummary(slug);
 
   if (stateLenders.length === 0) notFound();
 
@@ -104,10 +110,10 @@ export default async function MortgageStatePage({
       <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-teal-400/40 bg-teal-500/10 px-4 py-1.5 text-sm">
-            NMLS research directory • Updated {MORTGAGE_DATA_UPDATED} • No Paid Placements
+            National research directory · NMLS-oriented · No paid placements · Catalog {MORTGAGE_DATA_UPDATED}
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">
-            Research mortgage companies in {stateMeta.fullName}
+            {buildMortgageStateH1(stateMeta.fullName)}
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
             {stats.total} distinct companies
@@ -117,6 +123,9 @@ export default async function MortgageStatePage({
             {' · '}
             {stats.verified} with NMLS ID verified · Avg research score {stats.avgTrustScore}
           </p>
+          <p className="mx-auto mt-2 max-w-xl text-sm text-zinc-500">
+            HMDA evidence where available · County market pages · Free Loan Estimate tools
+          </p>
           <div className="mt-6">
             <SearchBar className="mx-auto max-w-md" />
           </div>
@@ -124,6 +133,23 @@ export default async function MortgageStatePage({
       </section>
 
       <div className="container mx-auto px-4 py-10">
+        {hmdaState ? (
+          <div className="mb-10">
+            <HmdaStateSummaryPanel summary={hmdaState} />
+          </div>
+        ) : null}
+
+        <div className="mb-10">
+          <LoanEstimateToolsCta variant="banner" />
+        </div>
+
+        <div className="mb-10">
+          <ResearchPathNav
+            context={{ stateSlug: slug, stateName: stateMeta.fullName }}
+            heading={`Research path for ${stateMeta.fullName}`}
+          />
+        </div>
+
         <div className="mb-10">
           <StateResearchSections stateMeta={stateMeta} stats={stats} />
         </div>

@@ -373,3 +373,57 @@ export function getHmdaProductStates(): { code: HmdaStateCode; name: string; sta
     stateSlug: c.stateSlug,
   }));
 }
+
+/** Lightweight state-level HMDA rollup for state hub authority blocks (existing data only). */
+export type HmdaStateMarketSummary = {
+  stateSlug: string;
+  stateName: string;
+  year: number;
+  countyCount: number;
+  applications: number;
+  originations: number;
+  denialRatePct: number | null;
+  purchasePct: number | null;
+  refinancePct: number | null;
+  topCounties: Array<{ countySlug: string; countyName: string; originations: number }>;
+  source: string;
+  sourceNote: string;
+};
+
+export function getHmdaStateMarketSummary(stateSlug: string): HmdaStateMarketSummary | null {
+  const cfg = hmdaStateFromSlug(stateSlug);
+  if (!cfg) return null;
+  const { countyMarkets } = loadHmdaStateData(cfg.code);
+  const majors = countyMarkets.filter((c) => cfg.majorCountySlugs.has(c.countySlug));
+  if (majors.length === 0) return null;
+
+  const applications = majors.reduce((s, c) => s + c.applications, 0);
+  const originations = majors.reduce((s, c) => s + c.originations, 0);
+  const denials = majors.reduce((s, c) => s + c.denials, 0);
+  const purchaseOrig = majors.reduce((s, c) => s + c.purchaseOrig, 0);
+  const refinanceOrig = majors.reduce((s, c) => s + c.refinanceOrig, 0);
+  const purposeTotal = purchaseOrig + refinanceOrig;
+  const topCounties = [...majors]
+    .sort((a, b) => b.originations - a.originations)
+    .slice(0, 6)
+    .map((c) => ({
+      countySlug: c.countySlug,
+      countyName: c.countyName,
+      originations: c.originations,
+    }));
+
+  return {
+    stateSlug: cfg.stateSlug,
+    stateName: cfg.name,
+    year: majors[0]?.year ?? 2025,
+    countyCount: majors.length,
+    applications,
+    originations,
+    denialRatePct: applications > 0 ? (denials / applications) * 100 : null,
+    purchasePct: purposeTotal > 0 ? (purchaseOrig / purposeTotal) * 100 : null,
+    refinancePct: purposeTotal > 0 ? (refinanceOrig / purposeTotal) * 100 : null,
+    topCounties,
+    source: majors[0]?.source || HMDA_SOURCE_LABEL,
+    sourceNote: majors[0]?.sourceNote || HMDA_SOURCE_NOTE,
+  };
+}

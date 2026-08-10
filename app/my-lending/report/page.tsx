@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     'Takeaway summary of your guest-saved financing plan, shortlist, and calculator snapshots. Research only — not a loan offer.',
   alternates: { canonical: 'https://www.lendertrusthub.com/my-lending/report' },
+  robots: { index: false, follow: false },
 };
 
 export default function MyLendingReportPage() {

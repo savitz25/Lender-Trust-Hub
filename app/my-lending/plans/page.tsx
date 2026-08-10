@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description:
     'Library of guest-saved financing research plans. Switch active plan, rename, archive, or open report-ready summaries. Research only.',
   alternates: { canonical: 'https://www.lendertrusthub.com/my-lending/plans' },
+  robots: { index: false, follow: false },
 };
 
 export default function MyLendingPlansPage() {

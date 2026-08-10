@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description:
     'Guest-first financing research plan and saved lenders on Lender Trust Hub. Works without signing in. Research only - verify on NMLS Consumer Access. Not a lender.',
   alternates: { canonical: 'https://www.lendertrusthub.com/my-lending' },
+  robots: { index: false, follow: false },
 };
 
 export default function MyLendingPage() {

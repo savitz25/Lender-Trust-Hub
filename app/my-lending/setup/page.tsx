@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description:
     'Build a guest-saved financing research plan on Lender Trust Hub. Educational only — not a loan application or offer.',
   alternates: { canonical: 'https://www.lendertrusthub.com/my-lending/setup' },
+  robots: { index: false, follow: false },
 };
 
 export default function MyLendingSetupPage() {

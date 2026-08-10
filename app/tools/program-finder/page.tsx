@@ -4,6 +4,7 @@ import { ChevronRight, Landmark } from 'lucide-react';
 import { ProgramFinder } from '@/components/programs/ProgramFinder';
 import { JsonLd } from '@/components/directory/JsonLd';
 import { DPA_GUIDANCE_STATE_SLUGS } from '@/lib/programs/location-notes';
+import { ResearchPathNav } from '@/components/research/research-path-nav';
 
 export const metadata: Metadata = {
   title: 'Mortgage Program Finder — FHA, VA, DPA Education | Lender Trust Hub',
@@ -76,10 +77,32 @@ export default async function ProgramFinderPage({
 
       <div className="container mx-auto px-4 py-10 md:py-12">
         <ProgramFinder initialStateSlug={initialStateSlug} />
+        <div className="mx-auto mt-10 max-w-3xl">
+          <ResearchPathNav
+            variant="tools"
+            heading="Browse local lenders next"
+            context={
+              initialStateSlug && initialStateSlug !== 'other'
+                ? { stateSlug: initialStateSlug }
+                : {}
+            }
+          />
+        </div>
         <p className="mt-10 text-center text-sm text-zinc-500">
           Prefer long-form reading?{' '}
           <Link href="/programs" className="font-medium text-[#059669] hover:underline">
             Browse all program overviews
+          </Link>
+          {' · '}
+          <Link href="/local-lenders" className="font-medium text-[#059669] hover:underline">
+            Local lenders by state
+          </Link>
+          {' · '}
+          <Link
+            href="/tools/loan-estimate-analyzer"
+            className="font-medium text-[#059669] hover:underline"
+          >
+            Understand your Loan Estimate
           </Link>
         </p>
       </div>

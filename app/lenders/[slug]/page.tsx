@@ -7,11 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { MatchLenderButton } from '@/components/MatchLenderButton';
 import { SaveLenderButton } from '@/components/my-lending/save-lender-button';
 import { RelatedDirectoryLinks } from '@/components/directory/RelatedDirectoryLinks';
+import { JsonLd } from '@/components/directory/JsonLd';
 import { LoanEstimateToolsCta } from '@/components/tools/LoanEstimateToolsCta';
 import { ProgramsToolsCta } from '@/components/programs/ProgramsToolsCta';
 import { TrustMark } from '@/components/network/trust-mark';
 import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
 import { ResearchScoreDisplay } from '@/components/research/research-score-display';
+import { ResearchPathNav } from '@/components/research/research-path-nav';
 import { LenderProfileViewTracker } from '@/components/analytics/lender-profile-view-tracker';
 import { deriveLenderHomeLocality, homeLocalityLine } from '@/lib/geo';
 import { resolveNmlsVerification } from '@/lib/verification';
@@ -22,6 +24,11 @@ import { HmdaLenderEvidencePanel } from '@/components/hmda/HmdaLenderEvidencePan
 import { getCfpbComplaintEvidenceBySlug } from '@/lib/cfpb';
 import { CfpbComplaintPanel } from '@/components/cfpb/CfpbComplaintPanel';
 import { analyzerCountyOptionSlug } from '@/lib/tools/loan-estimate-analyzer/county-option';
+import {
+  buildLenderProfileDescription,
+  buildLenderProfileJsonLd,
+  buildLenderProfileTitle,
+} from '@/lib/mortgage/seo';
 
 export function generateStaticParams() {
   return lenders.map((l) => ({ slug: l.slug }));
@@ -35,9 +42,18 @@ export async function generateMetadata({
   const { slug } = await params;
   const lender = getLenderBySlug(slug);
   if (!lender) return { title: 'Lender Not Found' };
+  const locality = `${lender.city}, ${lender.state}`;
+  const title = buildLenderProfileTitle(lender.name, lender.nmlsId);
+  const description = buildLenderProfileDescription(
+    lender.name,
+    locality,
+    lender.shortDescription
+  );
   return {
-    title: `${lender.name} — NMLS #${lender.nmlsId}`,
-    description: lender.shortDescription,
+    title,
+    description,
+    openGraph: { title, description },
+    alternates: { canonical: `https://www.lendertrusthub.com/lenders/${lender.slug}` },
   };
 }
 
@@ -64,13 +80,42 @@ export default async function LenderProfilePage({
   const cfpbEvidence = getCfpbComplaintEvidenceBySlug(lender.slug, {
     nmlsId: lender.nmlsId,
   });
+  const profileDescription = buildLenderProfileDescription(
+    lender.name,
+    `${lender.city}, ${lender.state}`,
+    lender.shortDescription
+  );
+  const jsonLd = buildLenderProfileJsonLd({
+    name: lender.name,
+    slug: lender.slug,
+    nmlsId: lender.nmlsId,
+    description: profileDescription,
+    city: lender.city,
+    state: lender.state,
+    stateSlug: lender.stateSlug,
+    countySlug: homeCountySlug,
+    countyName: home.county || lender.county,
+  });
 
   return (
     <div className="container mx-auto px-4 py-12">
+      <JsonLd data={jsonLd} />
       <LenderProfileViewTracker slug={lender.slug} nmlsVerified={lender.nmlsVerified} />
       <nav aria-label="Breadcrumb" className="mb-6 text-sm text-zinc-500">
         <ol className="flex flex-wrap items-center gap-1">
           <li><Link href="/" className="hover:text-[#059669]">Home</Link></li>
+          <ChevronRight className="h-4 w-4" aria-hidden="true" />
+          <li>
+            <Link href="/local-lenders" className="hover:text-[#059669]">
+              Local Lenders
+            </Link>
+          </li>
+          <ChevronRight className="h-4 w-4" aria-hidden="true" />
+          <li>
+            <Link href={`/local-lenders/${lender.stateSlug}`} className="hover:text-[#059669]">
+              {lender.state}
+            </Link>
+          </li>
           <ChevronRight className="h-4 w-4" aria-hidden="true" />
           <li>
             <Link
@@ -254,6 +299,20 @@ export default async function LenderProfilePage({
 
         <div className="mt-6">
           <ProgramsToolsCta stateSlug={lender.stateSlug} />
+        </div>
+
+        <div className="mt-6">
+          <ResearchPathNav
+            context={{
+              stateSlug: lender.stateSlug,
+              stateName: lender.state,
+              countySlug: homeCountySlug || lender.countySlug,
+              countyName: home.county || lender.county,
+              lenderSlug: lender.slug,
+              lenderName: lender.name,
+            }}
+            heading="Counties, state hub & tools"
+          />
         </div>
 
         <div className="mt-8">

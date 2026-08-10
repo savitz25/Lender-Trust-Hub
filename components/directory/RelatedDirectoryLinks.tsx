@@ -15,14 +15,29 @@ export function RelatedDirectoryLinks({
 }) {
   const links = [
     {
+      label: `Mortgage lenders in ${stateName}`,
+      href: MORTGAGE_CATEGORY.statePath(stateSlug),
+      description: 'State hub · county markets · HMDA evidence',
+    },
+    {
+      label: 'Understand your Loan Estimate',
+      href: '/tools/loan-estimate-analyzer',
+      description: 'Fee bands, points vs rate, educational market context',
+    },
+    {
+      label: 'Compare offers side by side',
+      href: '/tools/compare-loan-estimates',
+      description: 'See how fees and terms differ across two or three offers',
+    },
+    {
+      label: 'Explore assistance programs',
+      href: `/tools/program-finder?state=${encodeURIComponent(stateSlug)}`,
+      description: 'FHA, VA, conventional, USDA, and DPA research pathways',
+    },
+    {
       label: `FDIC insured banks in ${stateName}`,
       href: FDIC_CATEGORY.statePath(stateSlug),
       description: 'Confirm deposit insurance context before you bank or close',
-    },
-    {
-      label: `Mortgage companies in ${stateName}`,
-      href: MORTGAGE_CATEGORY.statePath(stateSlug),
-      description: 'Research directory with NMLS-oriented signals',
     },
     {
       label: `Auto loan companies in ${stateName}`,
@@ -33,16 +48,6 @@ export function RelatedDirectoryLinks({
       label: 'Free mortgage calculators',
       href: '/calculators',
       description: 'Payment, affordability, and refinance tools',
-    },
-    {
-      label: 'Loan Estimate Analyzer',
-      href: '/tools/loan-estimate-analyzer',
-      description: 'Understand your Loan Estimate — fees, points, and educational context',
-    },
-    {
-      label: 'Compare Loan Estimates',
-      href: '/tools/compare-loan-estimates',
-      description: 'See how fees and terms differ across two or three offers',
     },
   ];
 
