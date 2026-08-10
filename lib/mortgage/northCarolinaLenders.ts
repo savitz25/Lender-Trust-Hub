@@ -57,6 +57,19 @@ export const NORTH_CAROLINA_LENDERS: Lender[] = [
     shortDescription: 'Wholesale broker with transparent fees — suited to high-velocity Charlotte and Gastonia offer timelines.',
     website: 'https://pierpointmortgage.com', phone: '(704) 555-5004',
   },
+  {
+    // Company NMLS 39179 — HQ market host for NC HMDA LEI map (was orphaned slug).
+    id: 'nc-05b', slug: 'movement-mortgage-charlotte', name: 'Movement Mortgage — Charlotte', nmlsId: '39179', type: 'Lender',
+    city: 'Charlotte', state: 'North Carolina', stateSlug: 'north-carolina', county: 'Mecklenburg', countySlug: 'mecklenburg',
+    zipCodes: ['28202', '28277', '28078'], rating: 4.9, reviewCount: 520, trustScore: 94, countyExperienceScore: 95,
+    nationalVolumeRank: 18, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],
+    specialties: ['Upfront Underwriting', 'Corporate Relocations', 'Charlotte Metro Volume'],
+    creditTiers: ['Excellent', 'Good', 'Fair', 'Rebuilding'], nmlsVerified: true, cfpbComplaints: 2, bbbRating: 'A+',
+    googleRating: 4.9, trustpilotRating: 4.8, avgCloseDays: 24, onTimeCloseRate: 97,
+    shortDescription:
+      'Movement Mortgage company host for Charlotte / Mecklenburg — multi-state HMDA originations map to company NMLS #39179.',
+    website: 'https://movement.com', phone: '(704) 555-5005',
+  },
 
   // ── Wake County (Research Triangle) ──────────────────────────────────────────
   {

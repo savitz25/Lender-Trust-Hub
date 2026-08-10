@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Building2, Percent, Scale } from 'lucide-react';
 import type { HmdaCountyEvidence } from '@/lib/hmda';
+import { hmdaStateDisplayName } from '@/lib/tools/loan-estimate-analyzer/county-option';
 import { HmdaSourceNote } from './HmdaSourceNote';
 
 export function HmdaCountyMarketPanel({ evidence }: { evidence: HmdaCountyEvidence }) {
@@ -21,21 +22,8 @@ export function HmdaCountyMarketPanel({ evidence }: { evidence: HmdaCountyEviden
               What the federal data shows — {evidence.countyName} County
             </h2>
             <p className="mt-1 text-sm text-slate-200">
-              Source: {evidence.source} ·{' '}
-              {evidence.stateSlug === 'texas'
-                ? 'Texas'
-                : evidence.stateSlug === 'georgia'
-                  ? 'Georgia'
-                  : evidence.stateSlug === 'california'
-                    ? 'California'
-                    : evidence.stateSlug === 'north-carolina'
-                      ? 'North Carolina'
-                      : evidence.stateSlug === 'south-carolina'
-                        ? 'South Carolina'
-                        : evidence.stateSlug === 'florida'
-                          ? 'Florida'
-                          : evidence.state}{' '}
-              ({evidence.state}) county-level activity · Not a score or ranking
+              Source: {evidence.source} · {hmdaStateDisplayName(evidence.stateSlug)} (
+              {evidence.state}) county-level activity · Not a score or ranking
             </p>
           </div>
           <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-sky-100 ring-1 ring-white/20">

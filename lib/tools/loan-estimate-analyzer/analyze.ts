@@ -3,7 +3,7 @@ import {
   getHmdaLenderEvidenceBySlug,
 } from '@/lib/hmda';
 import { classifyNetLenderPct, classifyOriginationPct } from './educational-bands';
-import { parseAnalyzerCountyOption } from './county-option';
+import { hmdaStateDisplayName, parseAnalyzerCountyOption } from './county-option';
 import type {
   DerivedEstimateMetrics,
   HmdaAnalyzerCountyContext,
@@ -85,24 +85,10 @@ function countyContext(optionSlug: string): HmdaAnalyzerCountyContext | null {
   if (!parsed) return null;
   const e = getHmdaCountyEvidence(parsed.stateSlug, parsed.countySlug);
   if (!e) return null;
-  const stateName =
-    e.stateSlug === 'texas'
-      ? 'Texas'
-      : e.stateSlug === 'georgia'
-        ? 'Georgia'
-        : e.stateSlug === 'california'
-          ? 'California'
-          : e.stateSlug === 'north-carolina'
-            ? 'North Carolina'
-            : e.stateSlug === 'south-carolina'
-              ? 'South Carolina'
-              : e.stateSlug === 'florida'
-                ? 'Florida'
-                : e.state;
   return {
     countyName: e.countyName,
     countySlug: e.countySlug,
-    stateName,
+    stateName: hmdaStateDisplayName(e.stateSlug),
     stateSlug: e.stateSlug,
     applications: e.applications,
     originations: e.originations,

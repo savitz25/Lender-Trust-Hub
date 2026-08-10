@@ -1,5 +1,6 @@
 /**
- * Stabilize QA: multi-state HMDA evidence + analyzer option integrity.
+ * Six-state stabilize QA: multi-state HMDA evidence + analyzer integrity.
+ * FL · TX · GA · CA · NC · SC
  *
  *   npx tsx scripts/qa-stabilize-fl-tx-ga.ts
  */
@@ -13,51 +14,64 @@ import {
   MAJOR_TEXAS_COUNTY_SLUGS,
   getHmdaCountyEvidence,
   getHmdaLenderEvidenceBySlug,
+  loadAllHmdaStateData,
   loadHmdaStateData,
 } from '../lib/hmda';
+import { getCfpbComplaintEvidenceBySlug } from '../lib/cfpb';
 import { analyzeLoanEstimate } from '../lib/tools/loan-estimate-analyzer/analyze';
 import { emptyLoanEstimateInputs } from '../lib/tools/loan-estimate-analyzer/defaults';
 import {
   getAnalyzerCountyOptions,
   getAnalyzerLenderOptions,
 } from '../lib/tools/loan-estimate-analyzer/options';
-import { parseAnalyzerCountyOption } from '../lib/tools/loan-estimate-analyzer/county-option';
+import {
+  analyzerCountyOptionSlug,
+  parseAnalyzerCountyOption,
+} from '../lib/tools/loan-estimate-analyzer/county-option';
 import { getHmdaCountyEvidence as getCounty } from '../lib/hmda';
 
+/** Prompt-required high-volume spots + deepen samples */
 const SPOT_COUNTIES: { state: string; county: string }[] = [
+  // FL
   { state: 'florida', county: 'miami-dade' },
   { state: 'florida', county: 'broward' },
   { state: 'florida', county: 'palm-beach' },
   { state: 'florida', county: 'hillsborough' },
   { state: 'florida', county: 'orange' },
+  // TX
   { state: 'texas', county: 'harris' },
   { state: 'texas', county: 'dallas' },
   { state: 'texas', county: 'tarrant' },
   { state: 'texas', county: 'travis' },
   { state: 'texas', county: 'bexar' },
+  // GA
   { state: 'georgia', county: 'fulton' },
   { state: 'georgia', county: 'gwinnett' },
   { state: 'georgia', county: 'cobb' },
   { state: 'georgia', county: 'dekalb' },
   { state: 'georgia', county: 'chatham' },
+  // CA
   { state: 'california', county: 'los-angeles' },
   { state: 'california', county: 'san-diego' },
   { state: 'california', county: 'orange' },
-  { state: 'california', county: 'riverside' },
   { state: 'california', county: 'santa-clara' },
-  { state: 'california', county: 'el-dorado' },
-  { state: 'california', county: 'merced' },
-  { state: 'california', county: 'santa-cruz' },
+  { state: 'california', county: 'sacramento' },
+  // NC
+  { state: 'north-carolina', county: 'wake' },
+  { state: 'north-carolina', county: 'mecklenburg' },
+  { state: 'north-carolina', county: 'guilford' },
+  { state: 'north-carolina', county: 'durham' },
+  { state: 'north-carolina', county: 'buncombe' },
+  // SC
   { state: 'south-carolina', county: 'horry' },
   { state: 'south-carolina', county: 'greenville' },
   { state: 'south-carolina', county: 'charleston' },
-  { state: 'south-carolina', county: 'spartanburg' },
   { state: 'south-carolina', county: 'richland' },
+  { state: 'south-carolina', county: 'york' },
+  // SC deepen / hygiene
   { state: 'south-carolina', county: 'sumter' },
   { state: 'south-carolina', county: 'pickens' },
   { state: 'south-carolina', county: 'oconee' },
-  { state: 'south-carolina', county: 'orangeburg' },
-  { state: 'south-carolina', county: 'greenwood' },
 ];
 
 const SPOT_LENDERS = [
@@ -82,6 +96,20 @@ const SPOT_LENDERS = [
   'nvr-mortgage',
   'carolina-one-mortgage',
   'gateway-mortgage-myrtle-beach',
+  'jpmorgan-chase-bank',
+  'freedom-mortgage',
+  'loandepot',
+];
+
+/** National lenders expected to have both HMDA + CFPB when snapshot present */
+const COEXIST_LENDERS = [
+  'rocket-mortgage',
+  'united-wholesale-mortgage',
+  'wells-fargo-bank',
+  'truist-bank',
+  'freedom-mortgage',
+  'loandepot',
+  'jpmorgan-chase-bank',
 ];
 
 let failures = 0;
@@ -126,7 +154,7 @@ function checkMajors(
 }
 
 function main() {
-  console.log('=== County majors ===');
+  console.log('=== County majors (6 states) ===');
   checkMajors('FL', 'florida', MAJOR_FLORIDA_COUNTY_SLUGS);
   checkMajors('TX', 'texas', MAJOR_TEXAS_COUNTY_SLUGS);
   checkMajors('GA', 'georgia', MAJOR_GEORGIA_COUNTY_SLUGS);
@@ -134,7 +162,19 @@ function main() {
   checkMajors('NC', 'north-carolina', MAJOR_NORTH_CAROLINA_COUNTY_SLUGS);
   checkMajors('SC', 'south-carolina', MAJOR_SOUTH_CAROLINA_COUNTY_SLUGS);
 
-  console.log('\n=== Spot counties ===');
+  console.log('\n=== Mapping slugs in catalog ===');
+  let mapMiss = 0;
+  for (const b of loadAllHmdaStateData()) {
+    for (const m of b.mappings) {
+      if (m.ourLenderSlug && !getLenderBySlug(m.ourLenderSlug)) {
+        fail(`catalog missing ${b.config.code} ${m.ourLenderSlug}`);
+        mapMiss++;
+      }
+    }
+  }
+  if (mapMiss === 0) ok('all HMDA mapping slugs resolve in directory catalog');
+
+  console.log('\n=== Spot counties (prompt matrix) ===');
   for (const { state, county } of SPOT_COUNTIES) {
     const e = getHmdaCountyEvidence(state, county);
     if (!e) {
@@ -145,7 +185,6 @@ function main() {
       fail(`${state}/${county} state bleed: ${e.stateSlug}`);
       continue;
     }
-    // Linked top lenders must exist in catalog
     for (const l of e.topMatchedLenders) {
       if (l.slug && !getLenderBySlug(l.slug)) {
         fail(`${state}/${county} top lender slug missing in catalog: ${l.slug}`);
@@ -153,6 +192,16 @@ function main() {
     }
     ok(`${state}/${county} apps=${e.applications} top=${e.topMatchedLenders.length}`);
   }
+
+  // Orange collision: bare = FL, ca: = California
+  const flOrange = parseAnalyzerCountyOption('orange');
+  const caOrange = parseAnalyzerCountyOption('ca:orange');
+  if (flOrange?.stateSlug !== 'florida' || flOrange.countySlug !== 'orange') {
+    fail('bare orange should parse as Florida');
+  } else ok('bare orange → Florida (no CA bleed)');
+  if (caOrange?.stateSlug !== 'california' || caOrange.countySlug !== 'orange') {
+    fail('ca:orange should parse as California');
+  } else ok('ca:orange → California');
 
   console.log('\n=== Spot lenders ===');
   for (const slug of SPOT_LENDERS) {
@@ -168,7 +217,6 @@ function main() {
     for (const c of e.countyShares) {
       const ce = getHmdaCountyEvidence(e.stateSlug, c.countySlug);
       if (!ce) {
-        // county may be major but share from activity — should still resolve if major
         if (
           (e.stateSlug === 'florida' && MAJOR_FLORIDA_COUNTY_SLUGS.has(c.countySlug)) ||
           (e.stateSlug === 'texas' && MAJOR_TEXAS_COUNTY_SLUGS.has(c.countySlug)) ||
@@ -188,20 +236,50 @@ function main() {
     );
   }
 
+  console.log('\n=== CFPB + HMDA coexistence ===');
+  for (const slug of COEXIST_LENDERS) {
+    const h = getHmdaLenderEvidenceBySlug(slug);
+    if (!h) {
+      fail(`coexist hmda missing ${slug}`);
+      continue;
+    }
+    const catalog = getLenderBySlug(slug);
+    const c = getCfpbComplaintEvidenceBySlug(slug, { nmlsId: catalog?.nmlsId });
+    if (!c) {
+      // Snapshot may be incomplete for some names — soft fail only if mapped national
+      fail(`coexist cfpb missing for ${slug} (mapping or snapshot gap)`);
+    } else {
+      ok(`coexist ${slug} hmda=${h.state} cfpb companies=${c.companiesMatched.length}`);
+    }
+  }
+
   console.log('\n=== Analyzer options + multi-state county parse ===');
   const lenders = getAnalyzerLenderOptions();
   const counties = getAnalyzerCountyOptions();
   if (lenders.length < 20) fail(`few lenders: ${lenders.length}`);
   else ok(`lenders=${lenders.length}`);
-  if (counties.length < 40) fail(`few counties: ${counties.length}`);
+  if (counties.length < 100) fail(`few counties: ${counties.length}`);
   else ok(`counties=${counties.length}`);
+
+  const seenOpts = new Set<string>();
+  for (const o of counties) {
+    if (seenOpts.has(o.slug)) fail(`duplicate county option ${o.slug}`);
+    seenOpts.add(o.slug);
+  }
+  ok('county option slugs unique');
 
   for (const key of [
     'miami-dade',
     'tx:harris',
     'ga:fulton',
     'ca:los-angeles',
+    'ca:sacramento',
+    'nc:wake',
+    'nc:mecklenburg',
     'sc:horry',
+    'sc:york',
+    'ca:orange',
+    'orange',
   ]) {
     const found = counties.find((c) => c.slug === key);
     if (!found) fail(`options missing county ${key}`);
@@ -212,12 +290,56 @@ function main() {
       else ok(`options county ${key} → ${e.stateSlug}`);
     }
   }
-  for (const key of ['rocket-mortgage', 'synovus-bank']) {
+  for (const key of ['rocket-mortgage', 'synovus-bank', 'first-citizens-bank', 'southstate-bank']) {
     if (!lenders.some((l) => l.slug === key)) fail(`options missing lender ${key}`);
     else ok(`options lender ${key}`);
   }
 
-  // analyze.ts multi-state county path
+  // County page prefill helper
+  if (analyzerCountyOptionSlug('florida', 'orange') !== 'orange') {
+    fail('prefill FL orange');
+  } else ok('prefill FL orange = bare slug');
+  if (analyzerCountyOptionSlug('california', 'orange') !== 'ca:orange') {
+    fail('prefill CA orange');
+  } else ok('prefill CA orange = ca:orange');
+  if (analyzerCountyOptionSlug('north-carolina', 'wake') !== 'nc:wake') {
+    fail('prefill NC wake');
+  } else ok('prefill NC wake = nc:wake');
+  if (analyzerCountyOptionSlug('south-carolina', 'york') !== 'sc:york') {
+    fail('prefill SC york');
+  } else ok('prefill SC york = sc:york');
+  if (analyzerCountyOptionSlug('tennessee', 'davidson') !== undefined) {
+    fail('prefill non-product state should be undefined');
+  } else ok('prefill non-product state = undefined');
+
+  console.log('\n=== analyzeLoanEstimate multi-state paths ===');
+  const cases: { county: string; expect: string; label: string }[] = [
+    { county: 'ga:fulton', expect: 'georgia', label: 'ga:fulton' },
+    { county: 'tx:harris', expect: 'texas', label: 'tx:harris' },
+    { county: 'ca:los-angeles', expect: 'california', label: 'ca:los-angeles' },
+    { county: 'ca:sacramento', expect: 'california', label: 'ca:sacramento' },
+    { county: 'nc:wake', expect: 'north-carolina', label: 'nc:wake' },
+    { county: 'nc:buncombe', expect: 'north-carolina', label: 'nc:buncombe' },
+    { county: 'sc:horry', expect: 'south-carolina', label: 'sc:horry' },
+    { county: 'sc:york', expect: 'south-carolina', label: 'sc:york' },
+    { county: 'miami-dade', expect: 'florida', label: 'miami-dade' },
+    { county: 'orange', expect: 'florida', label: 'orange (FL bare)' },
+    { county: 'ca:orange', expect: 'california', label: 'ca:orange' },
+  ];
+  for (const c of cases) {
+    const analysis = analyzeLoanEstimate({
+      ...emptyLoanEstimateInputs(),
+      loanAmount: 300000,
+      interestRate: 6.5,
+      countySlug: c.county,
+    });
+    if (!analysis.hmdaCounty || analysis.hmdaCounty.stateSlug !== c.expect) {
+      fail(
+        `analyzeLoanEstimate ${c.label} expected ${c.expect} got ${analysis.hmdaCounty?.stateSlug}`
+      );
+    } else ok(`analyzeLoanEstimate ${c.label} → ${c.expect}`);
+  }
+
   const gaAnalysis = analyzeLoanEstimate({
     ...emptyLoanEstimateInputs(),
     loanAmount: 300000,
@@ -225,44 +347,8 @@ function main() {
     countySlug: 'ga:fulton',
     lenderSlug: 'synovus-bank',
   });
-  if (!gaAnalysis.hmdaCounty || gaAnalysis.hmdaCounty.stateSlug !== 'georgia') {
-    fail('analyzeLoanEstimate ga:fulton did not resolve Georgia');
-  } else ok('analyzeLoanEstimate ga:fulton → Georgia');
-  if (!gaAnalysis.hmdaLender || gaAnalysis.hmdaLender.primaryStateCode !== 'GA') {
-    // primary may still be GA for synovus
-    if (!gaAnalysis.hmdaLender) fail('analyzeLoanEstimate synovus missing');
-    else ok(`analyzeLoanEstimate synovus primary=${gaAnalysis.hmdaLender.primaryStateCode}`);
-  } else ok('analyzeLoanEstimate synovus primary=GA');
-
-  const txAnalysis = analyzeLoanEstimate({
-    ...emptyLoanEstimateInputs(),
-    loanAmount: 300000,
-    interestRate: 6.5,
-    countySlug: 'tx:harris',
-  });
-  if (!txAnalysis.hmdaCounty || txAnalysis.hmdaCounty.stateSlug !== 'texas') {
-    fail('analyzeLoanEstimate tx:harris did not resolve Texas');
-  } else ok('analyzeLoanEstimate tx:harris → Texas');
-
-  const caAnalysis = analyzeLoanEstimate({
-    ...emptyLoanEstimateInputs(),
-    loanAmount: 300000,
-    interestRate: 6.5,
-    countySlug: 'ca:los-angeles',
-  });
-  if (!caAnalysis.hmdaCounty || caAnalysis.hmdaCounty.stateSlug !== 'california') {
-    fail('analyzeLoanEstimate ca:los-angeles did not resolve California');
-  } else ok('analyzeLoanEstimate ca:los-angeles → California');
-
-  const scAnalysis = analyzeLoanEstimate({
-    ...emptyLoanEstimateInputs(),
-    loanAmount: 300000,
-    interestRate: 6.5,
-    countySlug: 'sc:horry',
-  });
-  if (!scAnalysis.hmdaCounty || scAnalysis.hmdaCounty.stateSlug !== 'south-carolina') {
-    fail('analyzeLoanEstimate sc:horry did not resolve South Carolina');
-  } else ok('analyzeLoanEstimate sc:horry → South Carolina');
+  if (!gaAnalysis.hmdaLender) fail('analyzeLoanEstimate synovus missing');
+  else ok(`analyzeLoanEstimate synovus primary=${gaAnalysis.hmdaLender.primaryStateCode}`);
 
   console.log(`\n=== Result: ${failures === 0 ? 'PASS' : `FAIL (${failures})`} ===`);
   process.exit(failures === 0 ? 0 : 1);

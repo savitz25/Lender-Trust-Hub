@@ -8,7 +8,7 @@ import { JsonLd } from '@/components/directory/JsonLd';
 export const metadata: Metadata = {
   title: 'Loan Estimate Analyzer — Compare Fees to Market Context | Lender Trust Hub',
   description:
-    'Paste key numbers from your Loan Estimate and see educational fee bands, APR/rate context, and 2025 Florida HMDA activity for matched lenders and counties. Free research tool — no lead form required.',
+    'Paste key numbers from your Loan Estimate and see educational fee bands, APR/rate context, and 2025 multi-state HMDA activity (FL, TX, GA, CA, NC, SC) for matched lenders and counties. Free research tool — no lead form required.',
   alternates: {
     canonical: 'https://www.lendertrusthub.com/tools/loan-estimate-analyzer',
   },

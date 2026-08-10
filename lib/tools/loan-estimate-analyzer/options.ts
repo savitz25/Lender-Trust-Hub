@@ -15,7 +15,7 @@ export type AnalyzerLenderOption = {
   slug: string;
   name: string;
   nmlsId: string;
-  /** Combined product-state originations (FL+TX+GA) for sort/display */
+  /** Combined product-state originations (FL+TX+GA+CA+NC+SC) for sort/display */
   originations: number;
   /** @deprecated Use originations */
   floridaOriginations: number;

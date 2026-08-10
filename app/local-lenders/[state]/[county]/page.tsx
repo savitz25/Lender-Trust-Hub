@@ -20,6 +20,7 @@ import { getHmdaCountyEvidence } from '@/lib/hmda';
 import { HmdaCountyMarketPanel } from '@/components/hmda/HmdaCountyMarketPanel';
 import { LoanEstimateToolsCta } from '@/components/tools/LoanEstimateToolsCta';
 import { ProgramsToolsCta } from '@/components/programs/ProgramsToolsCta';
+import { analyzerCountyOptionSlug } from '@/lib/tools/loan-estimate-analyzer/county-option';
 
 function titleCase(slug: string): string {
   return slug
@@ -571,21 +572,7 @@ export default async function CountyLendersPage({
 
       <LoanEstimateToolsCta
         variant="county"
-        countySlug={
-          state === 'florida'
-            ? county
-            : state === 'texas'
-              ? `tx:${county}`
-              : state === 'georgia'
-                ? `ga:${county}`
-                : state === 'california'
-                  ? `ca:${county}`
-                  : state === 'north-carolina'
-                    ? `nc:${county}`
-                    : state === 'south-carolina'
-                      ? `sc:${county}`
-                      : undefined
-        }
+        countySlug={analyzerCountyOptionSlug(state, county)}
         countyName={countyName}
       />
 
