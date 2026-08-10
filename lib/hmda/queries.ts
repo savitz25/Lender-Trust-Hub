@@ -69,6 +69,10 @@ export const MAJOR_WISCONSIN_COUNTY_SLUGS = HMDA_STATE_CONFIGS.WI.majorCountySlu
 
 export const MAJOR_MINNESOTA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.MN.majorCountySlugs;
 
+export const MAJOR_MISSOURI_COUNTY_SLUGS = HMDA_STATE_CONFIGS.MO.majorCountySlugs;
+
+export const MAJOR_KENTUCKY_COUNTY_SLUGS = HMDA_STATE_CONFIGS.KY.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw

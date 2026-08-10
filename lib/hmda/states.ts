@@ -28,7 +28,9 @@ export type HmdaStateCode =
   | 'AZ'
   | 'CO'
   | 'WI'
-  | 'MN';
+  | 'MN'
+  | 'MO'
+  | 'KY';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -68,7 +70,9 @@ export type HmdaStateConfig = {
     | 'arizona_originations'
     | 'colorado_originations'
     | 'wisconsin_originations'
-    | 'minnesota_originations';
+    | 'minnesota_originations'
+    | 'missouri_originations'
+    | 'kentucky_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -1118,6 +1122,64 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'nicollet',
     ]),
   },
+  MO: {
+    code: 'MO',
+    stateSlug: 'missouri',
+    name: 'Missouri',
+    dataFolder: 'missouri',
+    fileSuffix: '_mo',
+    originationsColumn: 'missouri_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — St. Louis / Kansas City / Springfield / mid-state
+      'st-louis',
+      'jackson',
+      'st-charles',
+      'greene',
+      'clay',
+      'jefferson',
+      'st-louis-city',
+      'boone',
+      'cass',
+      'jasper',
+      'christian',
+      'platte',
+      'franklin',
+      'cole',
+      'buchanan',
+      'cape-girardeau',
+      'lincoln',
+      'camden',
+    ]),
+  },
+  KY: {
+    code: 'KY',
+    stateSlug: 'kentucky',
+    name: 'Kentucky',
+    dataFolder: 'kentucky',
+    fileSuffix: '_ky',
+    originationsColumn: 'kentucky_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Louisville / Lexington / NKY / secondary volume
+      'jefferson',
+      'fayette',
+      'kenton',
+      'boone',
+      'warren',
+      'hardin',
+      'campbell',
+      'bullitt',
+      'madison',
+      'daviess',
+      'oldham',
+      'scott',
+      'jessamine',
+      'shelby',
+      'christian',
+      'mccracken',
+      'franklin',
+      'nelson',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -1149,6 +1211,8 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'CO',
   'WI',
   'MN',
+  'MO',
+  'KY',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {

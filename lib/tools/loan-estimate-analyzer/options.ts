@@ -30,6 +30,8 @@ import {
   MAJOR_COLORADO_COUNTY_SLUGS,
   MAJOR_WISCONSIN_COUNTY_SLUGS,
   MAJOR_MINNESOTA_COUNTY_SLUGS,
+  MAJOR_MISSOURI_COUNTY_SLUGS,
+  MAJOR_KENTUCKY_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -403,6 +405,28 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (MN)`,
       originations: c.originations,
       stateSlug: 'minnesota',
+    });
+  }
+
+  const mo = loadHmdaStateData('MO');
+  for (const c of mo.countyMarkets) {
+    if (!MAJOR_MISSOURI_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `mo:${c.countySlug}`,
+      name: `${c.countyName} (MO)`,
+      originations: c.originations,
+      stateSlug: 'missouri',
+    });
+  }
+
+  const ky = loadHmdaStateData('KY');
+  for (const c of ky.countyMarkets) {
+    if (!MAJOR_KENTUCKY_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `ky:${c.countySlug}`,
+      name: `${c.countyName} (KY)`,
+      originations: c.originations,
+      stateSlug: 'kentucky',
     });
   }
 
