@@ -79,7 +79,7 @@ export function analyzeLoanEstimateClient(
 
   if (!hmdaLender) {
     limitations.push(
-      'No matched 2025 HMDA evidence for the selected lender (or none selected) among Florida, Texas, Georgia, and California. Fee placement uses educational bands only.'
+      'No matched 2025 HMDA evidence for the selected lender (or none selected) among product-state HMDA slices (FL/TX/GA/CA/NC/SC). Fee placement uses educational bands only.'
     );
   } else {
     limitations.push(
@@ -89,7 +89,7 @@ export function analyzeLoanEstimateClient(
 
   if (!hmdaCounty) {
     limitations.push(
-      'No major county market summary selected (or outside our FL/TX/GA/CA major-county set). Market context is limited.'
+      'No major county market summary selected (or outside our product-state major-county set). Market context is limited.'
     );
   }
 

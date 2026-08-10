@@ -23,6 +23,8 @@ export const MAJOR_CALIFORNIA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.CA.majorCountySl
 
 export const MAJOR_NORTH_CAROLINA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.NC.majorCountySlugs;
 
+export const MAJOR_SOUTH_CAROLINA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.SC.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw
@@ -164,7 +166,7 @@ function evidenceForBundle(
 }
 
 /**
- * Lender evidence across product states (FL, TX, GA, CA).
+ * Lender evidence across product states (FL, TX, GA, CA, NC, SC).
  * Primary = highest state originations; otherStates lists secondary markets.
  */
 export function getHmdaLenderEvidenceBySlug(slug: string): HmdaLenderEvidence | null {

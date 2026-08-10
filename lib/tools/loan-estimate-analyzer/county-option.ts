@@ -17,6 +17,9 @@ export function parseAnalyzerCountyOption(optionSlug: string): {
   if (optionSlug.startsWith('nc:')) {
     return { stateSlug: 'north-carolina', countySlug: optionSlug.slice(3) };
   }
+  if (optionSlug.startsWith('sc:')) {
+    return { stateSlug: 'south-carolina', countySlug: optionSlug.slice(3) };
+  }
   // Bare slug = Florida major county (legacy + default)
   return { stateSlug: 'florida', countySlug: optionSlug };
 }

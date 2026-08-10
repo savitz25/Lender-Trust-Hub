@@ -61,7 +61,7 @@ export interface HmdaAnalyzerLenderContext {
   slug: string;
   name: string;
   nmlsId: string | null;
-  /** Primary product-state name (highest originations among FL/TX/GA) */
+  /** Primary product-state name (highest originations among product states) */
   primaryStateName: string;
   primaryStateCode: string;
   /** Originations in the primary product state */

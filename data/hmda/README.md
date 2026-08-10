@@ -67,6 +67,16 @@ python scripts/build-hmda-north-carolina-slice.py
 
 See `docs/HMDA-NORTH-CAROLINA-EXPANSION.md`.
 
+## Files in `south-carolina/`
+
+South Carolina product slice. Rebuild with:
+
+```bash
+python scripts/build-hmda-south-carolina-slice.py
+```
+
+See `docs/HMDA-SOUTH-CAROLINA-EXPANSION.md`.
+
 ## Column notes
 
 - **Applications:** non-purchase HMDA rows with valid geography (includes originated, denied, withdrawn, etc.)  

@@ -46,9 +46,11 @@ function toCountyCtx(optionSlug: string): HmdaAnalyzerCountyContext | null {
           ? 'California'
           : e.stateSlug === 'north-carolina'
             ? 'North Carolina'
-            : e.stateSlug === 'florida'
-              ? 'Florida'
-              : e.state;
+            : e.stateSlug === 'south-carolina'
+              ? 'South Carolina'
+              : e.stateSlug === 'florida'
+                ? 'Florida'
+                : e.state;
   return {
     countyName: e.countyName,
     countySlug: e.countySlug,

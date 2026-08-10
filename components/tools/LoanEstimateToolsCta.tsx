@@ -130,7 +130,7 @@ export function LoanEstimateToolsCta({
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-zinc-600">
           If you already have offers, analyze fees and terms—or compare two or three Loan Estimates
           side by side. Educational research only
-          {countySlug ? ', with optional FL / TX / GA HMDA market context when available' : ''}. No
+          {countySlug ? ', with optional multi-state HMDA market context when available' : ''}. No
           phone number required.
         </p>
         <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
@@ -174,7 +174,7 @@ export function LoanEstimateToolsCta({
             href={analyze}
             icon={<FileSearch className="h-7 w-7 text-emerald-600" aria-hidden="true" />}
             title="Understand your Loan Estimate"
-            description="Fee bands, points vs rate, optional FL / TX / GA / CA HMDA context — then save research to My Lending."
+            description="Fee bands, points vs rate, optional multi-state HMDA context — then save research to My Lending."
             cta="Open analyzer"
             featured
           />

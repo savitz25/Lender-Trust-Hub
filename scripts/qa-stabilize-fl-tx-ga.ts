@@ -1,5 +1,5 @@
 /**
- * Stabilize QA: FL / TX / GA / CA HMDA evidence + analyzer option integrity.
+ * Stabilize QA: multi-state HMDA evidence + analyzer option integrity.
  *
  *   npx tsx scripts/qa-stabilize-fl-tx-ga.ts
  */
@@ -8,6 +8,8 @@ import {
   MAJOR_CALIFORNIA_COUNTY_SLUGS,
   MAJOR_FLORIDA_COUNTY_SLUGS,
   MAJOR_GEORGIA_COUNTY_SLUGS,
+  MAJOR_NORTH_CAROLINA_COUNTY_SLUGS,
+  MAJOR_SOUTH_CAROLINA_COUNTY_SLUGS,
   MAJOR_TEXAS_COUNTY_SLUGS,
   getHmdaCountyEvidence,
   getHmdaLenderEvidenceBySlug,
@@ -46,6 +48,11 @@ const SPOT_COUNTIES: { state: string; county: string }[] = [
   { state: 'california', county: 'el-dorado' },
   { state: 'california', county: 'merced' },
   { state: 'california', county: 'santa-cruz' },
+  { state: 'south-carolina', county: 'horry' },
+  { state: 'south-carolina', county: 'greenville' },
+  { state: 'south-carolina', county: 'charleston' },
+  { state: 'south-carolina', county: 'spartanburg' },
+  { state: 'south-carolina', county: 'richland' },
 ];
 
 const SPOT_LENDERS = [
@@ -61,6 +68,8 @@ const SPOT_LENDERS = [
   'kind-lending',
   'amwest-funding',
   'american-financial-network',
+  'movement-mortgage-myrtle-beach',
+  'southstate-bank',
 ];
 
 let failures = 0;
@@ -73,7 +82,7 @@ function fail(label: string) {
 }
 
 function checkMajors(
-  code: 'FL' | 'TX' | 'GA' | 'CA',
+  code: 'FL' | 'TX' | 'GA' | 'CA' | 'NC' | 'SC',
   stateSlug: string,
   majors: ReadonlySet<string>
 ) {
@@ -110,6 +119,8 @@ function main() {
   checkMajors('TX', 'texas', MAJOR_TEXAS_COUNTY_SLUGS);
   checkMajors('GA', 'georgia', MAJOR_GEORGIA_COUNTY_SLUGS);
   checkMajors('CA', 'california', MAJOR_CALIFORNIA_COUNTY_SLUGS);
+  checkMajors('NC', 'north-carolina', MAJOR_NORTH_CAROLINA_COUNTY_SLUGS);
+  checkMajors('SC', 'south-carolina', MAJOR_SOUTH_CAROLINA_COUNTY_SLUGS);
 
   console.log('\n=== Spot counties ===');
   for (const { state, county } of SPOT_COUNTIES) {
@@ -138,7 +149,7 @@ function main() {
       fail(`lender ${slug} no evidence`);
       continue;
     }
-    if (!['FL', 'TX', 'GA', 'CA'].includes(e.state)) {
+    if (!['FL', 'TX', 'GA', 'CA', 'NC', 'SC'].includes(e.state)) {
       fail(`lender ${slug} unexpected state ${e.state}`);
       continue;
     }
@@ -150,7 +161,11 @@ function main() {
           (e.stateSlug === 'florida' && MAJOR_FLORIDA_COUNTY_SLUGS.has(c.countySlug)) ||
           (e.stateSlug === 'texas' && MAJOR_TEXAS_COUNTY_SLUGS.has(c.countySlug)) ||
           (e.stateSlug === 'georgia' && MAJOR_GEORGIA_COUNTY_SLUGS.has(c.countySlug)) ||
-          (e.stateSlug === 'california' && MAJOR_CALIFORNIA_COUNTY_SLUGS.has(c.countySlug))
+          (e.stateSlug === 'california' && MAJOR_CALIFORNIA_COUNTY_SLUGS.has(c.countySlug)) ||
+          (e.stateSlug === 'north-carolina' &&
+            MAJOR_NORTH_CAROLINA_COUNTY_SLUGS.has(c.countySlug)) ||
+          (e.stateSlug === 'south-carolina' &&
+            MAJOR_SOUTH_CAROLINA_COUNTY_SLUGS.has(c.countySlug))
         ) {
           fail(`lender ${slug} county share link broken ${e.stateSlug}/${c.countySlug}`);
         }
@@ -169,7 +184,13 @@ function main() {
   if (counties.length < 40) fail(`few counties: ${counties.length}`);
   else ok(`counties=${counties.length}`);
 
-  for (const key of ['miami-dade', 'tx:harris', 'ga:fulton', 'ca:los-angeles']) {
+  for (const key of [
+    'miami-dade',
+    'tx:harris',
+    'ga:fulton',
+    'ca:los-angeles',
+    'sc:horry',
+  ]) {
     const found = counties.find((c) => c.slug === key);
     if (!found) fail(`options missing county ${key}`);
     else {
@@ -220,6 +241,16 @@ function main() {
   if (!caAnalysis.hmdaCounty || caAnalysis.hmdaCounty.stateSlug !== 'california') {
     fail('analyzeLoanEstimate ca:los-angeles did not resolve California');
   } else ok('analyzeLoanEstimate ca:los-angeles → California');
+
+  const scAnalysis = analyzeLoanEstimate({
+    ...emptyLoanEstimateInputs(),
+    loanAmount: 300000,
+    interestRate: 6.5,
+    countySlug: 'sc:horry',
+  });
+  if (!scAnalysis.hmdaCounty || scAnalysis.hmdaCounty.stateSlug !== 'south-carolina') {
+    fail('analyzeLoanEstimate sc:horry did not resolve South Carolina');
+  } else ok('analyzeLoanEstimate sc:horry → South Carolina');
 
   console.log(`\n=== Result: ${failures === 0 ? 'PASS' : `FAIL (${failures})`} ===`);
   process.exit(failures === 0 ? 0 : 1);

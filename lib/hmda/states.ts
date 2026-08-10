@@ -1,6 +1,6 @@
 /** HMDA product states with cleaned slices under data/hmda/{folder}/ */
 
-export type HmdaStateCode = 'FL' | 'TX' | 'GA' | 'CA' | 'NC';
+export type HmdaStateCode = 'FL' | 'TX' | 'GA' | 'CA' | 'NC' | 'SC';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -9,7 +9,7 @@ export type HmdaStateConfig = {
   name: string;
   /** data/hmda/{dataFolder}/ */
   dataFolder: string;
-  /** File name suffixes (e.g. _fl, _tx, _ga, _ca, _nc) for summary CSVs */
+  /** File name suffixes (e.g. _fl, _tx, _ga, _ca, _nc, _sc) for summary CSVs */
   fileSuffix: string;
   /** Mapping CSV column for state originations */
   originationsColumn:
@@ -17,7 +17,8 @@ export type HmdaStateConfig = {
     | 'texas_originations'
     | 'georgia_originations'
     | 'california_originations'
-    | 'north_carolina_originations';
+    | 'north_carolina_originations'
+    | 'south_carolina_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -219,9 +220,39 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'franklin',
     ]),
   },
+  SC: {
+    code: 'SC',
+    stateSlug: 'south-carolina',
+    name: 'South Carolina',
+    dataFolder: 'south-carolina',
+    fileSuffix: '_sc',
+    originationsColumn: 'south_carolina_originations',
+    majorCountySlugs: new Set([
+      'horry',
+      'greenville',
+      'charleston',
+      'spartanburg',
+      'richland',
+      'berkeley',
+      'york',
+      'lexington',
+      'beaufort',
+      'dorchester',
+      'anderson',
+      'aiken',
+      'lancaster',
+      'sumter',
+      'florence',
+      'pickens',
+      'kershaw',
+      'laurens',
+      'jasper',
+      'georgetown',
+    ]),
+  },
 };
 
-export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = ['FL', 'TX', 'GA', 'CA', 'NC'];
+export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = ['FL', 'TX', 'GA', 'CA', 'NC', 'SC'];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {
   const s = stateSlug.toLowerCase();

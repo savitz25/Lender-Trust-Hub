@@ -28,7 +28,7 @@ const FAQ = [
   },
   {
     q: 'Do you use real HMDA fee percentiles?',
-    a: 'Not yet. Our cleaned 2025 HMDA tables summarize applications, originations, denials, and product mix — not loan-level origination charge distributions. Fee placement uses published educational bands. When a matched lender or major FL / TX / GA / CA county is selected, we show real HMDA volume and mix context separately.',
+    a: 'Not yet. Our cleaned 2025 HMDA tables summarize applications, originations, denials, and product mix — not loan-level origination charge distributions. Fee placement uses published educational bands. When a matched lender or major product-state county is selected, we show real HMDA volume and mix context separately.',
   },
   {
     q: 'Do I need to create an account?',
@@ -101,7 +101,7 @@ export default async function LoanEstimateAnalyzerPage({
             <p className="mt-4 text-lg leading-relaxed text-zinc-600">
               Received a Loan Estimate and unsure if the fees look reasonable? Enter the key numbers
               from the form. We show transparent educational fee bands, points vs rate context, and —
-              when you select a matched lender or major Florida, Texas, Georgia, or California county — real{' '}
+              when you select a matched lender or major product-state county — real{' '}
               <strong className="font-semibold text-[#0A2540]">2025 HMDA</strong> market activity.
             </p>
             <ul className="mt-5 space-y-2 text-sm text-zinc-600">

@@ -322,7 +322,7 @@ export function LoanEstimateAnalyzer({
           <Field
             label="Lender (HMDA-matched, optional)"
             htmlFor="le-lender"
-            hint="Selecting a matched lender adds 2025 FL / TX / GA / CA federal activity context — not a fee percentile."
+            hint="Selecting a matched lender adds 2025 multi-state federal activity context — not a fee percentile."
           >
             <select
               id="le-lender"
@@ -345,7 +345,7 @@ export function LoanEstimateAnalyzer({
           <Field
             label="County market context (optional)"
             htmlFor="le-county"
-            hint="Major Florida, Texas, Georgia, and California counties with 2025 HMDA market summaries."
+            hint="Major product-state counties (FL, TX, GA, CA, NC, SC) with 2025 HMDA market summaries."
           >
             <select
               id="le-county"
@@ -394,7 +394,7 @@ export function LoanEstimateAnalyzer({
           </h2>
           <p className="mt-2 text-sm text-zinc-600">
             {submitted
-              ? 'Fee bands are educational. Rate context uses national Freddie Mac averages via FRED when available. HMDA (when selected) is FL/TX/GA/CA volume and mix — not fee percentiles.'
+              ? 'Fee bands are educational. Rate context uses national Freddie Mac averages via FRED when available. HMDA (when selected) is product-state volume and mix — not fee percentiles.'
               : 'Enter figures from your LE and choose Analyze. Load an example anytime to explore the layout. No phone number required.'}
           </p>
           {!submitted ? (
@@ -540,7 +540,7 @@ export function LoanEstimateAnalyzer({
                 </h3>
                 <p className="mb-3 text-xs text-zinc-600">
                   Activity context only — not a historical fee range for your Loan Estimate. Primary
-                  state is the product slice with the most originations among FL / TX / GA.
+                  state is the product slice with the most originations among active HMDA states.
                 </p>
                 <dl className="grid gap-2 text-sm sm:grid-cols-2">
                   <div>
@@ -596,7 +596,7 @@ export function LoanEstimateAnalyzer({
               <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-4 text-sm text-zinc-600">
                 <p className="font-medium text-zinc-800">No lender HMDA context selected</p>
                 <p className="mt-1">
-                  Choose a HMDA-matched lender above to attach 2025 FL / TX / GA / CA federal activity. Many
+                  Choose a HMDA-matched lender above to attach 2025 multi-state federal activity. Many
                   national originators are already linked in our directory.
                 </p>
               </div>
