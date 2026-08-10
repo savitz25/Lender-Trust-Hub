@@ -228,6 +228,7 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
     fileSuffix: '_sc',
     originationsColumn: 'south_carolina_originations',
     majorCountySlugs: new Set([
+      // Wave 1
       'horry',
       'greenville',
       'charleston',
@@ -248,6 +249,17 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'laurens',
       'jasper',
       'georgetown',
+      // Deepen
+      'oconee',
+      'orangeburg',
+      'greenwood',
+      'cherokee',
+      'darlington',
+      'chester',
+      'colleton',
+      'chesterfield',
+      'edgefield',
+      'newberry',
     ]),
   },
 };

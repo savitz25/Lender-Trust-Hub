@@ -187,17 +187,18 @@ export const SOUTH_CAROLINA_COUNTY_SUPPLEMENTS: Record<string, string[]> = {
 
 export const GRAND_STRAND_HUB_COUNTIES = [
   { name: 'Horry', slug: 'horry', highlight: 'Myrtle Beach, retirees, condo & beach financing' },
-  { name: 'Georgetown', slug: 'georgetown', highlight: 'Pawleys Island, coastal reach — coming soon' },
+  { name: 'Georgetown', slug: 'georgetown', highlight: 'Pawleys Island, coastal reach — HMDA market panel live' },
 ] as const;
 
 export const UPSTATE_SC_HUB_COUNTIES = [
   { name: 'Greenville', slug: 'greenville', highlight: 'Greenville, Greer, manufacturing & tech' },
   { name: 'Spartanburg', slug: 'spartanburg', highlight: 'USDA outer-ring, industrial subdivisions' },
-  { name: 'Pickens', slug: 'pickens', highlight: 'Easley corridor — coming soon' },
+  { name: 'Pickens', slug: 'pickens', highlight: 'Easley corridor — HMDA market panel live' },
+  { name: 'Oconee', slug: 'oconee', highlight: 'Seneca / Lake Hartwell — HMDA market panel live' },
 ] as const;
 
 export const LOWCOUNTRY_HUB_COUNTIES = [
   { name: 'Charleston', slug: 'charleston', highlight: 'Mt. Pleasant, downtown, luxury condos' },
   { name: 'Berkeley', slug: 'berkeley', highlight: 'Summerville, Goose Creek, corporate growth' },
-  { name: 'Dorchester', slug: 'dorchester', highlight: 'North Charleston suburbs — coming soon' },
+  { name: 'Dorchester', slug: 'dorchester', highlight: 'North Charleston suburbs — HMDA market panel live' },
 ] as const;

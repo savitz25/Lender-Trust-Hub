@@ -58,7 +58,7 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "3274": "guild-mortgage-grand-strand",
     "3029": "crosscountry-mortgage-west-valley",
     "1904": "union-home-mortgage-myrtle-beach",
-    "1921": "primelending-columbus",
+    "1921": "primelending-greenville",  # SC directory host preferred over Columbus
     "405455": "ameris-bank",
     "405461": "southstate-bank",
     "3277": "sun-west-mortgage",
@@ -66,13 +66,126 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "3925": "kind-lending",
     "167441": "amwest-funding",
     "480004": "synovus-bank",
+    # SC deepen — company NMLS + directory / national hosts
+    "1561": "silverton-mortgage-myrtle-beach",  # Vanderbilt dba Silverton
+    "72043": "atlantic-bay-mortgage-charleston",
+    "7233": "gateway-mortgage-myrtle-beach",
+    "1086435": "carolina-one-mortgage",
+    "503941": "first-citizens-bank",
+    "1124061": "lower",
+    "1127": "nvr-mortgage",
+    "86548": "first-heritage-mortgage",
+    "1043": "new-day-financial",
+    "421841": "united-community-bank",
+    "754127": "southern-first-bank",
+    "1598647": "guaranteed-rate-affinity",
 }
 
-# No low-confidence inventing unless verified SC-only LEIs later.
-SC_CURATED_LEI: dict[str, dict[str, str]] = {}
+# High-confidence SC-active LEIs (GLEIF legal name + published company NMLS + directory slug).
+# Do not add fuzzy / low-confidence rows.
+SC_CURATED_LEI: dict[str, dict[str, str]] = {
+    "5493000YNV8IX4VD3X12": {
+        "institution_name_hmda": "VANDERBILT MORTGAGE AND FINANCE, INC.",
+        "nmls_id": "1561",
+        "our_lender_slug": "silverton-mortgage-myrtle-beach",
+        "legal_name": "Vanderbilt Mortgage and Finance, Inc. (dba Silverton Mortgage)",
+        "match_confidence": "high",
+        "match_method": "sc_curated_gleif+public_nmls+silverton_dba",
+    },
+    "549300RWXUAFD1WAE410": {
+        "institution_name_hmda": "ATLANTIC BAY MORTGAGE GROUP, L.L.C.",
+        "nmls_id": "72043",
+        "our_lender_slug": "atlantic-bay-mortgage-charleston",
+        "legal_name": "Atlantic Bay Mortgage Group, L.L.C.",
+        "match_confidence": "high",
+        "match_method": "sc_curated_gleif+public_nmls+sc_directory",
+    },
+    "54930034MNPILHP25H80": {
+        "institution_name_hmda": "Gateway First Bank",
+        "nmls_id": "7233",
+        "our_lender_slug": "gateway-mortgage-myrtle-beach",
+        "legal_name": "Gateway First Bank",
+        "match_confidence": "high",
+        "match_method": "sc_curated_gleif+public_nmls+sc_directory",
+    },
+    "549300JA1J2RX1MKI366": {
+        "institution_name_hmda": "CAROLINA ONE MORTGAGE, LLC",
+        "nmls_id": "1086435",
+        "our_lender_slug": "carolina-one-mortgage",
+        "legal_name": "Carolina One Mortgage, LLC",
+        "match_confidence": "high",
+        "match_method": "sc_curated_gleif+public_nmls+sc_directory",
+    },
+    "L9VVX1KT5TFTKS0MLF66": {
+        "institution_name_hmda": "First-Citizens Bank & Trust Company",
+        "nmls_id": "503941",
+        "our_lender_slug": "first-citizens-bank",
+        "legal_name": "First-Citizens Bank & Trust Company",
+        "match_confidence": "high",
+        "match_method": "sc_curated_gleif+public_nmls",
+    },
+    "549300RN01LBYR8ZVX74": {
+        "institution_name_hmda": "LOWER, LLC",
+        "nmls_id": "1124061",
+        "our_lender_slug": "lower",
+        "legal_name": "Lower, LLC",
+        "match_confidence": "high",
+        "match_method": "sc_curated_gleif+public_nmls",
+    },
+    "549300KBWX4NV5Q1E376": {
+        "institution_name_hmda": "NVR Mortgage Finance, Inc.",
+        "nmls_id": "1127",
+        "our_lender_slug": "nvr-mortgage",
+        "legal_name": "NVR Mortgage Finance, Inc.",
+        "match_confidence": "high",
+        "match_method": "sc_curated_gleif+public_nmls",
+    },
+    "549300EM8ID8J7F8OM55": {
+        "institution_name_hmda": "First Heritage Mortgage, LLC",
+        "nmls_id": "86548",
+        "our_lender_slug": "first-heritage-mortgage",
+        "legal_name": "First Heritage Mortgage, LLC",
+        "match_confidence": "high",
+        "match_method": "sc_curated_gleif+public_nmls",
+    },
+    "549300SUCQ1358EGVE89": {
+        "institution_name_hmda": "NEW DAY FINANCIAL, LLC",
+        "nmls_id": "1043",
+        "our_lender_slug": "new-day-financial",
+        "legal_name": "New Day Financial, LLC",
+        "match_confidence": "high",
+        "match_method": "sc_curated_gleif+public_nmls",
+    },
+    "T68X8LLAQYRNDV034K14": {
+        "institution_name_hmda": "United Community Bank",
+        "nmls_id": "421841",
+        "our_lender_slug": "united-community-bank",
+        "legal_name": "United Community Bank",
+        "match_confidence": "high",
+        "match_method": "sc_curated_gleif+public_nmls",
+    },
+    "549300PP6R8WIOP60124": {
+        "institution_name_hmda": "Southern First Bank",
+        "nmls_id": "754127",
+        "our_lender_slug": "southern-first-bank",
+        "legal_name": "Southern First Bank",
+        "match_confidence": "high",
+        "match_method": "sc_curated_gleif+public_nmls",
+    },
+    "54930001NSTOD85LT125": {
+        "institution_name_hmda": "GUARANTEED RATE AFFINITY, LLC",
+        "nmls_id": "1598647",
+        "our_lender_slug": "guaranteed-rate-affinity",
+        "legal_name": "Guaranteed Rate Affinity, LLC",
+        "match_confidence": "high",
+        "match_method": "sc_curated_gleif+public_nmls",
+    },
+}
 
 # Major South Carolina markets (FIPS → name)
+# Wave 1 metros + FIPS hygiene fix (Sumter/Pickens/Oconee) + deepen band.
 SC_MAJOR_COUNTIES = {
+    # Wave 1 — top metros / high volume
     "45051": "Horry",  # Myrtle Beach / Grand Strand
     "45045": "Greenville",
     "45019": "Charleston",
@@ -86,13 +199,24 @@ SC_MAJOR_COUNTIES = {
     "45007": "Anderson",
     "45003": "Aiken",
     "45057": "Lancaster",
-    "45077": "Sumter",
+    "45085": "Sumter",  # corrected FIPS (was mislabeled 45077)
     "45041": "Florence",
-    "45073": "Pickens",
+    "45077": "Pickens",  # corrected FIPS (was mislabeled 45073)
     "45055": "Kershaw",
     "45059": "Laurens",
     "45053": "Jasper",
     "45043": "Georgetown",
+    # Deepen — next volume band (coastal / Midlands / Upstate)
+    "45073": "Oconee",  # was mislabeled Pickens in wave 1
+    "45075": "Orangeburg",
+    "45047": "Greenwood",
+    "45021": "Cherokee",
+    "45031": "Darlington",
+    "45023": "Chester",
+    "45029": "Colleton",
+    "45025": "Chesterfield",
+    "45037": "Edgefield",
+    "45071": "Newberry",
 }
 
 

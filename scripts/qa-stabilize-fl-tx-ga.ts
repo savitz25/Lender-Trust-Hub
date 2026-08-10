@@ -53,6 +53,11 @@ const SPOT_COUNTIES: { state: string; county: string }[] = [
   { state: 'south-carolina', county: 'charleston' },
   { state: 'south-carolina', county: 'spartanburg' },
   { state: 'south-carolina', county: 'richland' },
+  { state: 'south-carolina', county: 'sumter' },
+  { state: 'south-carolina', county: 'pickens' },
+  { state: 'south-carolina', county: 'oconee' },
+  { state: 'south-carolina', county: 'orangeburg' },
+  { state: 'south-carolina', county: 'greenwood' },
 ];
 
 const SPOT_LENDERS = [
@@ -70,6 +75,13 @@ const SPOT_LENDERS = [
   'american-financial-network',
   'movement-mortgage-myrtle-beach',
   'southstate-bank',
+  'silverton-mortgage-myrtle-beach',
+  'atlantic-bay-mortgage-charleston',
+  'first-citizens-bank',
+  'lower',
+  'nvr-mortgage',
+  'carolina-one-mortgage',
+  'gateway-mortgage-myrtle-beach',
 ];
 
 let failures = 0;
