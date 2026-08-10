@@ -17,7 +17,8 @@ export type CalcId =
   | 'dti'
   | 'closing'
   | 'loan-estimate'
-  | 'compare-loan-estimates';
+  | 'compare-loan-estimates'
+  | 'program-finder';
 
 export interface CalcMeta {
   id: CalcId;
@@ -55,6 +56,18 @@ export const CALCULATORS: CalcMeta[] = [
     seoTitle: 'Compare Loan Estimates Side-by-Side',
     seoDescription:
       'Compare two or three Loan Estimates: interest rate, APR, origination, points, credits, and monthly P&I with clear difference callouts.',
+  },
+  {
+    id: 'program-finder',
+    title: 'Program & assistance finder',
+    benefit:
+      'Educational FHA, VA, conventional, USDA, and DPA themes—optional quiz, no eligibility decision or lead form.',
+    icon: Landmark,
+    featured: true,
+    href: '/tools/program-finder',
+    seoTitle: 'Mortgage Program Finder — FHA, VA, DPA',
+    seoDescription:
+      'Explore common mortgage program types with clear caveats. Educational research only—not a qualification tool.',
   },
   {
     id: 'payment',

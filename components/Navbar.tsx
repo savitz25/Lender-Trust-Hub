@@ -242,6 +242,20 @@ export default function Navbar() {
               Compare Loan Estimates
             </Link>
             <Link
+              href="/tools/program-finder"
+              className="rounded-xl px-2 py-3 text-base font-semibold text-[#0A2540] hover:bg-[#CCFBF1]/50 hover:text-[#0D9488]"
+              onClick={() => setIsOpen(false)}
+            >
+              Program Finder
+            </Link>
+            <Link
+              href="/programs"
+              className="rounded-xl px-2 py-3 text-base font-semibold text-[#0A2540] hover:bg-[#CCFBF1]/50 hover:text-[#0D9488]"
+              onClick={() => setIsOpen(false)}
+            >
+              FHA · VA · DPA Guides
+            </Link>
+            <Link
               href={MORTGAGE_CATEGORY.hubPath}
               className="rounded-xl px-2 py-3 text-base font-semibold text-[#0A2540]"
               onClick={() => setIsOpen(false)}

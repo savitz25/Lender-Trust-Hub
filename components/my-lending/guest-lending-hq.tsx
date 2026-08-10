@@ -803,6 +803,8 @@ export function GuestLendingHq() {
         empty="No shortlisted lenders yet. Save from a profile or directory card."
         emptyLinks={[
           { href: '/local-lenders', label: 'Browse local lenders', primary: true },
+          { href: '/tools/program-finder', label: 'Program finder' },
+          { href: '/tools/loan-estimate-analyzer', label: 'Loan Estimate Analyzer' },
         ]}
         planId={plan?.id}
         onStatus={(id, status, name) => {

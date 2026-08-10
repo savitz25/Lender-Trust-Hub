@@ -8,9 +8,13 @@ import { CALCULATORS, type CalcId } from '@/lib/calculators/registry';
 import { trackCalcEvent } from '@/lib/analytics/calculators';
 import { CalcHubSkeleton } from '@/components/calculators/shared/CalcSkeleton';
 import { LoanEstimateToolsCta } from '@/components/tools/LoanEstimateToolsCta';
+import { ProgramsToolsCta } from '@/components/programs/ProgramsToolsCta';
 import { cn } from '@/lib/utils';
 
-type EmbedCalcId = Exclude<CalcId, 'loan-estimate' | 'compare-loan-estimates'>;
+type EmbedCalcId = Exclude<
+  CalcId,
+  'loan-estimate' | 'compare-loan-estimates' | 'program-finder'
+>;
 
 const calcLoaders: Record<EmbedCalcId, () => Promise<{ default: React.ComponentType }>> = {
  payment: () => import('@/components/calculators/MortgagePaymentPITI'),
@@ -42,7 +46,8 @@ export function CalculatorHub({ defaultCalc }: { defaultCalc?: CalcId }) {
  const [active, setActive] = useState<EmbedCalcId | null>(
  defaultCalc &&
  defaultCalc !== 'loan-estimate' &&
- defaultCalc !== 'compare-loan-estimates'
+ defaultCalc !== 'compare-loan-estimates' &&
+ defaultCalc !== 'program-finder'
  ? defaultCalc
  : null
  );
@@ -78,6 +83,9 @@ export function CalculatorHub({ defaultCalc }: { defaultCalc?: CalcId }) {
  {!active && (
  <section aria-label="Calculator directory">
  <LoanEstimateToolsCta variant="hub" />
+ <div className="mb-8">
+   <ProgramsToolsCta />
+ </div>
  <p className="mb-4 text-sm font-semibold text-zinc-500">All educational calculators</p>
  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
  {CALCULATORS.map((calc) => {

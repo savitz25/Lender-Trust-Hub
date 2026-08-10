@@ -8,6 +8,7 @@ import { MatchLenderButton } from '@/components/MatchLenderButton';
 import { SaveLenderButton } from '@/components/my-lending/save-lender-button';
 import { RelatedDirectoryLinks } from '@/components/directory/RelatedDirectoryLinks';
 import { LoanEstimateToolsCta } from '@/components/tools/LoanEstimateToolsCta';
+import { ProgramsToolsCta } from '@/components/programs/ProgramsToolsCta';
 import { TrustMark } from '@/components/network/trust-mark';
 import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
 import { ResearchScoreDisplay } from '@/components/research/research-score-display';
@@ -248,6 +249,10 @@ export default async function LenderProfilePage({
             lender.stateSlug === 'florida' ? lender.countySlug : undefined
           }
         />
+
+        <div className="mt-6">
+          <ProgramsToolsCta stateSlug={lender.stateSlug} />
+        </div>
 
         <div className="mt-8">
           <BeforeYouReachOut

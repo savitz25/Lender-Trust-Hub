@@ -107,6 +107,14 @@ export const LENDER_TOOLS = {
       href: '/local-lenders',
       cta: 'Browse markets',
     },
+    {
+      id: 'programs',
+      title: 'Program & assistance finder',
+      description:
+        'Educational FHA, VA, conventional, USDA, and down-payment assistance themes—no application form or eligibility decision.',
+      href: '/tools/program-finder',
+      cta: 'Explore programs',
+    },
   ],
 } as const;
 
@@ -282,6 +290,8 @@ export const LENDER_FOOTER_COLUMNS = [
       { href: '/calculators', label: 'Calculators' },
       { href: '/tools/loan-estimate-analyzer', label: 'Loan Estimate Analyzer' },
       { href: '/tools/compare-loan-estimates', label: 'Compare Loan Estimates' },
+      { href: '/tools/program-finder', label: 'Program Finder' },
+      { href: '/programs', label: 'FHA · VA · DPA Guides' },
       { href: '/my-lending', label: 'My Lending' },
     ],
   },
