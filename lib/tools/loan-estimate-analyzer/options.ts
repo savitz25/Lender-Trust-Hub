@@ -22,6 +22,8 @@ import {
   MAJOR_DELAWARE_COUNTY_SLUGS,
   MAJOR_DISTRICT_OF_COLUMBIA_COUNTY_SLUGS,
   MAJOR_TENNESSEE_COUNTY_SLUGS,
+  MAJOR_ILLINOIS_COUNTY_SLUGS,
+  MAJOR_OHIO_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -307,6 +309,28 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (TN)`,
       originations: c.originations,
       stateSlug: 'tennessee',
+    });
+  }
+
+  const il = loadHmdaStateData('IL');
+  for (const c of il.countyMarkets) {
+    if (!MAJOR_ILLINOIS_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `il:${c.countySlug}`,
+      name: `${c.countyName} (IL)`,
+      originations: c.originations,
+      stateSlug: 'illinois',
+    });
+  }
+
+  const oh = loadHmdaStateData('OH');
+  for (const c of oh.countyMarkets) {
+    if (!MAJOR_OHIO_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `oh:${c.countySlug}`,
+      name: `${c.countyName} (OH)`,
+      originations: c.originations,
+      stateSlug: 'ohio',
     });
   }
 

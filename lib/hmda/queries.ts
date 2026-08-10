@@ -53,6 +53,10 @@ export const MAJOR_DISTRICT_OF_COLUMBIA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.DC.maj
 
 export const MAJOR_TENNESSEE_COUNTY_SLUGS = HMDA_STATE_CONFIGS.TN.majorCountySlugs;
 
+export const MAJOR_ILLINOIS_COUNTY_SLUGS = HMDA_STATE_CONFIGS.IL.majorCountySlugs;
+
+export const MAJOR_OHIO_COUNTY_SLUGS = HMDA_STATE_CONFIGS.OH.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw
