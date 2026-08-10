@@ -113,6 +113,13 @@ const SPOT_COUNTIES: { state: string; county: string }[] = [
   { state: 'pennsylvania', county: 'york' },
   { state: 'pennsylvania', county: 'berks' },
   { state: 'pennsylvania', county: 'lehigh' },
+  // PA deepen
+  { state: 'pennsylvania', county: 'blair' },
+  { state: 'pennsylvania', county: 'pike' },
+  { state: 'pennsylvania', county: 'carbon' },
+  { state: 'pennsylvania', county: 'lawrence' },
+  { state: 'pennsylvania', county: 'indiana' },
+  { state: 'pennsylvania', county: 'somerset' },
 ];
 
 const SPOT_LENDERS = [
@@ -154,6 +161,19 @@ const SPOT_LENDERS = [
   'embrace-home-loans',
   'nfm-lending',
   'columbia-bank-nj',
+  // PA deepen
+  'fulton-bank',
+  'first-national-bank-of-pennsylvania',
+  'first-commonwealth-bank',
+  'northwest-bank',
+  'huntington-national-bank',
+  'univest-bank',
+  'wsfs-bank',
+  'police-fire-federal-credit-union',
+  'mortgage-america',
+  'emm-loans',
+  'hma-mortgage',
+  'american-heritage-federal-credit-union',
 ];
 
 /** National lenders expected to have both HMDA + CFPB when snapshot present */

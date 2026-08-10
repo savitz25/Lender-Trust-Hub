@@ -19,15 +19,19 @@ python scripts/build-hmda-pennsylvania-slice.py
 | `/lenders/{slug}` | Pennsylvania originations when LEI mapped |
 | Loan Estimate Analyzer | `pa:{county}` prefill options |
 
-## Major counties (wave 1)
+## Major counties
 
-**Philly metro:** Philadelphia, Montgomery, Bucks, Delaware, Chester  
+**Wave 1 — Philly metro:** Philadelphia, Montgomery, Bucks, Delaware, Chester  
 
-**Pittsburgh:** Allegheny, Westmoreland, Butler, Washington, Beaver  
+**Wave 1 — Pittsburgh:** Allegheny, Westmoreland, Butler, Washington, Beaver  
 
-**South-central / Lehigh Valley:** Lancaster, York, Berks, Lehigh, Northampton, Dauphin, Cumberland, Lebanon  
+**Wave 1 — South-central / Lehigh Valley:** Lancaster, York, Berks, Lehigh, Northampton, Dauphin, Cumberland, Lebanon  
 
-**Other high volume:** Lackawanna, Luzerne, Erie, Monroe, Franklin, Centre, Fayette, Adams, Cambria, Lycoming, Schuylkill, Mercer  
+**Wave 1 — Other high volume:** Lackawanna, Luzerne, Erie, Monroe, Franklin, Centre, Fayette, Adams, Cambria, Lycoming, Schuylkill, Mercer  
+
+**Deepen:** Blair, Pike, Carbon, Lawrence, Northumberland, Clearfield, Wayne, Somerset, Crawford, Indiana, Columbia, Armstrong, Perry, Bedford  
+
+See `docs/HMDA-PENNSYLVANIA-DEEPEN.md` for the deepen coverage summary.  
 
 ## Matching
 

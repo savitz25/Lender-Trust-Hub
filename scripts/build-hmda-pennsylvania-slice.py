@@ -24,6 +24,7 @@ CA_MAP = ROOT / "data" / "hmda" / "california" / "lei_to_nmls_mapping.csv"
 NC_MAP = ROOT / "data" / "hmda" / "north-carolina" / "lei_to_nmls_mapping.csv"
 SC_MAP = ROOT / "data" / "hmda" / "south-carolina" / "lei_to_nmls_mapping.csv"
 NJ_MAP = ROOT / "data" / "hmda" / "new-jersey" / "lei_to_nmls_mapping.csv"
+NY_MAP = ROOT / "data" / "hmda" / "new-york" / "lei_to_nmls_mapping.csv"
 GLEIF_CACHE = ROOT / "data" / "hmda" / "florida" / "_gleif_name_cache.json"
 OUT = ROOT / "data" / "hmda" / "pennsylvania"
 
@@ -83,25 +84,129 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "2893": "nfm-lending",
     "75164": "prosperity-home-mortgage",
     "338923": "anniemac-home-mortgage",
-    # PA-relevant regional banks (company NMLS)
-    "401591": "fulton-bank",  # Fulton Bank, N.A.
     "411254": "valley-national-bank",
-    "480228": "santander-bank",
     "399804": "bank-of-america",
-    "407363": "first-national-bank-of-pennsylvania",
+    # PA deepen — company NMLS published on official / Zillow company pages
+    "485401": "fulton-bank",  # Fulton Bank, N.A.
+    "766529": "first-national-bank-of-pennsylvania",  # FNB PA (fnb-online.com)
+    "479240": "first-commonwealth-bank",  # First Commonwealth Bank (fcbanking.com)
+    "419814": "northwest-bank",  # Northwest Bank, Warren PA
+    "402436": "huntington-national-bank",  # Huntington National Bank
+    "415882": "univest-bank",  # Univest Bank and Trust Co.
+    "417673": "wsfs-bank",  # WSFS Bank
+    "800659": "police-fire-federal-credit-union",  # PFFCU (pffcu.org mortgages)
+    "128501": "mortgage-america",  # Mortgage America, Inc. (Whitehall)
+    "2926": "emm-loans",  # EMM Loans LLC
+    "139164": "hma-mortgage",  # Affordable Mortgage Advisors dba HMA
+    "433838": "american-heritage-federal-credit-union",  # American Heritage FCU
 }
 
-# High-confidence PA-active LEIs only (GLEIF / public NMLS / prior curated maps).
+# High-confidence PA-active LEIs only (GLEIF legal name + published company NMLS).
 # Do not invent low-confidence matches.
 PA_CURATED_LEI: dict[str, dict[str, str]] = {
-    # Fulton Bank — regional PA bank (if LEI appears in PA extract it will map)
-    # Santander Bank
-    # First National Bank of Pennsylvania
-    # Additional curated rows filled from PA activity when LEI is in extract
+    "DZC62HF6UIZYJ08V1J90": {
+        "institution_name_hmda": "Fulton Bank, National Association",
+        "nmls_id": "485401",
+        "our_lender_slug": "fulton-bank",
+        "legal_name": "Fulton Bank, National Association",
+        "match_confidence": "high",
+        "match_method": "gleif+public_nmls_zillow_company",
+    },
+    "N8T7HW55LK5D2ORCKP39": {
+        "institution_name_hmda": "First National Bank of Pennsylvania",
+        "nmls_id": "766529",
+        "our_lender_slug": "first-national-bank-of-pennsylvania",
+        "legal_name": "First National Bank of Pennsylvania",
+        "match_confidence": "high",
+        "match_method": "gleif+fnb_online_nmls",
+    },
+    "VN1JLT1F3FLLVN3FZG89": {
+        "institution_name_hmda": "First Commonwealth Bank",
+        "nmls_id": "479240",
+        "our_lender_slug": "first-commonwealth-bank",
+        "legal_name": "First Commonwealth Bank",
+        "match_confidence": "high",
+        "match_method": "gleif+fcbanking_nmls",
+    },
+    "LVR1UQE8OOCO93IHEB52": {
+        "institution_name_hmda": "Northwest Bank",
+        "nmls_id": "419814",
+        "our_lender_slug": "northwest-bank",
+        "legal_name": "Northwest Bank",
+        "match_confidence": "high",
+        "match_method": "gleif+public_nmls_company",
+    },
+    "2WHM8VNJH63UN14OL754": {
+        "institution_name_hmda": "The Huntington National Bank",
+        "nmls_id": "402436",
+        "our_lender_slug": "huntington-national-bank",
+        "legal_name": "The Huntington National Bank",
+        "match_confidence": "high",
+        "match_method": "gleif+huntington_nmls",
+    },
+    "549300LBK5BTNFKZJD14": {
+        "institution_name_hmda": "Univest Bank and Trust Co.",
+        "nmls_id": "415882",
+        "our_lender_slug": "univest-bank",
+        "legal_name": "Univest Bank and Trust Co.",
+        "match_confidence": "high",
+        "match_method": "gleif+univest_nmls",
+    },
+    "5493005DKMV1IHIM8E20": {
+        "institution_name_hmda": "Wilmington Savings Fund Society, FSB",
+        "nmls_id": "417673",
+        "our_lender_slug": "wsfs-bank",
+        "legal_name": "Wilmington Savings Fund Society, FSB",
+        "match_confidence": "high",
+        "match_method": "gleif+wsfs_nmls",
+    },
+    "54930063XGNMIXS57091": {
+        "institution_name_hmda": "POLICE & FIRE FEDERAL CREDIT UNION",
+        "nmls_id": "800659",
+        "our_lender_slug": "police-fire-federal-credit-union",
+        "legal_name": "Police & Fire Federal Credit Union",
+        "match_confidence": "high",
+        "match_method": "gleif+pffcu_mortgage_nmls",
+    },
+    "5493000GQ5D5YW5QID32": {
+        "institution_name_hmda": "MORTGAGE AMERICA, INC.",
+        "nmls_id": "128501",
+        "our_lender_slug": "mortgage-america",
+        "legal_name": "Mortgage America, Inc.",
+        "match_confidence": "high",
+        "match_method": "gleif+mortgage_america_nmls",
+    },
+    "549300EMNDEK4BA8WB53": {
+        "institution_name_hmda": "EMM LOANS LLC",
+        "nmls_id": "2926",
+        "our_lender_slug": "emm-loans",
+        "legal_name": "EMM Loans LLC",
+        "match_confidence": "high",
+        "match_method": "gleif+emm_loans_nmls",
+    },
+    "549300DE8TS4EYTPX729": {
+        "institution_name_hmda": "AFFORDABLE MORTGAGE ADVISORS, LLC",
+        "nmls_id": "139164",
+        "our_lender_slug": "hma-mortgage",
+        "legal_name": "Affordable Mortgage Advisors, LLC dba HMA Mortgage",
+        "match_confidence": "high",
+        "match_method": "gleif+hma_mortgage_nmls",
+    },
+    "549300N5GF79IZ5Y7G10": {
+        "institution_name_hmda": "AMERICAN HERITAGE FCU",
+        "nmls_id": "433838",
+        "our_lender_slug": "american-heritage-federal-credit-union",
+        "legal_name": "American Heritage Federal Credit Union",
+        "match_confidence": "high",
+        "match_method": "gleif+ahfcu_nmls",
+    },
 }
 
-# Major Pennsylvania markets (FIPS → name) — Philly metro, Pittsburgh, mid-state
+# Major Pennsylvania markets (FIPS → name)
+# Wave 1: Philly metro, Pittsburgh, mid-state / Lehigh / NE PA
+# Deepen: next-volume SE PA, Pittsburgh ring, central/north counties
 PA_MAJOR_COUNTIES = {
+    # Wave 1
     "42101": "Philadelphia",
     "42003": "Allegheny",
     "42091": "Montgomery",
@@ -132,6 +237,21 @@ PA_MAJOR_COUNTIES = {
     "42081": "Lycoming",
     "42107": "Schuylkill",
     "42085": "Mercer",
+    # Deepen — next volume / regional
+    "42013": "Blair",
+    "42103": "Pike",
+    "42025": "Carbon",
+    "42073": "Lawrence",
+    "42097": "Northumberland",
+    "42033": "Clearfield",
+    "42127": "Wayne",
+    "42111": "Somerset",
+    "42039": "Crawford",
+    "42063": "Indiana",
+    "42037": "Columbia",
+    "42005": "Armstrong",
+    "42099": "Perry",
+    "42009": "Bedford",
 }
 
 
@@ -192,6 +312,7 @@ def load_lei_maps() -> dict[str, dict[str, str]]:
     ingest(NC_MAP, ["north_carolina_originations", "total_originations"])
     ingest(SC_MAP, ["south_carolina_originations", "total_originations"])
     ingest(NJ_MAP, ["new_jersey_originations", "total_originations"])
+    ingest(NY_MAP, ["new_york_originations", "total_originations"])
     return lei_to_map
 
 
@@ -296,7 +417,7 @@ def main() -> None:
         mapping_by_lei[lei] = row
 
     for lei, prior in lei_to_map.items():
-        add_mapping(lei, prior, "reuse_fl_tx_ga_ca_nc_sc_nj_curated_lei+")
+        add_mapping(lei, prior, "reuse_fl_tx_ga_ca_nc_sc_nj_ny_curated_lei+")
 
     for lei, cur in PA_CURATED_LEI.items():
         add_mapping(lei, cur, "pa_curated+")
@@ -380,9 +501,10 @@ def main() -> None:
         )
     md.append(
         "\n## Matching rules\n\n"
-        "- Reuse FL / TX / GA / CA / NC / SC / NJ curated LEI maps when the LEI has PA activity\n"
+        "- Reuse FL / TX / GA / CA / NC / SC / NJ / NY curated LEI maps when the LEI has PA activity\n"
+        "- PA-curated LEIs: GLEIF name + published company NMLS only\n"
         "- National NMLS→slug overrides prefer company-level directory hosts\n"
-        "- No fuzzy LEI inventing; no New York product files touched\n"
+        "- No fuzzy LEI inventing; does not modify New York product folders\n"
         "\n## Rebuild\n\n"
         "```bash\n"
         "python scripts/build-hmda-pennsylvania-slice.py\n"

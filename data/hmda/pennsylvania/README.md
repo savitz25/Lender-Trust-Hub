@@ -1,9 +1,9 @@
 # Pennsylvania HMDA slice
-- County market rows: **34**
-- Lender–county activity (major counties): **9219**
+- County market rows: **44**
+- Lender–county activity (major counties): **11514**
 - LEI state summaries: **994**
-- High-confidence LEI→directory mappings: **79**
-- Major counties with names: **30**
+- High-confidence LEI→directory mappings: **91**
+- Major counties with names: **44**
 
 ## Top mapped LEIs by PA originations
 
@@ -12,13 +12,18 @@
 - `citizens-bank` — Citizens Bank, National Association (10441 PA orig.)
 - `united-wholesale-mortgage` — United Wholesale Mortgage, LLC (9333 PA orig.)
 - `freedom-mortgage` — Freedom Mortgage Corporation (8399 PA orig.)
+- `first-national-bank-of-pennsylvania` — First National Bank of Pennsylvania (5819 PA orig.)
 - `fairway-mortgage-augusta-sheppard` — Fairway Independent Mortgage Corporation (4488 PA orig.)
+- `police-fire-federal-credit-union` — POLICE & FIRE FEDERAL CREDIT UNION (3973 PA orig.)
 - `cardinal-financial` — Cardinal Financial Company, Limited Partnership (3902 PA orig.)
 - `ally-bank` — Ally Bank (3258 PA orig.)
+- `first-commonwealth-bank` — First Commonwealth Bank (3223 PA orig.)
+- `fulton-bank` — Fulton Bank, National Association (3211 PA orig.)
 - `mr-cooper` — Nationstar Mortgage LLC (3119 PA orig.)
 - `mt-bank` — Manufacturers and Traders Trust Company (3099 PA orig.)
 - `movement-mortgage-charlotte` — Movement Mortgage, LLC (2643 PA orig.)
 - `amerihome-mortgage` — AmeriHome Mortgage Company, LLC (2626 PA orig.)
+- `northwest-bank` — Northwest Bank (2412 PA orig.)
 - `prosperity-home-mortgage` — Prosperity Home Mortgage, LLC (2325 PA orig.)
 - `truist-bank` — Truist Bank (2152 PA orig.)
 - `new-american-funding` — Broker Solutions, Inc. (2148 PA orig.)
@@ -26,12 +31,7 @@
 - `newrez` — Newrez LLC (2124 PA orig.)
 - `pennymac` — PennyMac Loan Services, LLC (2123 PA orig.)
 - `union-home-mortgage-myrtle-beach` — UNION HOME MORTGAGE CORP. (1934 PA orig.)
-- `guaranteed-rate` — Guaranteed Rate, Inc. (1841 PA orig.)
-- `td-bank` — TD Bank, National Association (1803 PA orig.)
-- `mr-cooper` — NATIONSTAR MORTGAGE LLC (1746 PA orig.)
-- `guild-mortgage-nj-suburbs` — Guild Mortgage Company LLC (1673 PA orig.)
-- `jpmorgan-chase-bank` — JPMorgan Chase Bank, National Association (1667 PA orig.)
-- `wells-fargo-bank` — Wells Fargo Bank, National Association (1628 PA orig.)
+- `american-heritage-federal-credit-union` — AMERICAN HERITAGE FCU (1847 PA orig.)
 
 ## Major counties (panel-ready)
 
@@ -64,13 +64,28 @@
 - **Fayette** (`42051`) — 2394 originations
 - **Lycoming** (`42081`) — 2367 originations
 - **Cambria** (`42021`) — 2188 originations
+- **Blair** (`42013`) — 2183 originations
+- **Pike** (`42103`) — 2072 originations
 - **Mercer** (`42085`) — 2005 originations
+- **Carbon** (`42025`) — 1898 originations
+- **Lawrence** (`42073`) — 1845 originations
+- **Northumberland** (`42097`) — 1463 originations
+- **Clearfield** (`42033`) — 1460 originations
+- **Wayne** (`42127`) — 1407 originations
+- **Somerset** (`42111`) — 1393 originations
+- **Crawford** (`42039`) — 1384 originations
+- **Indiana** (`42063`) — 1381 originations
+- **Columbia** (`42037`) — 1196 originations
+- **Armstrong** (`42005`) — 1067 originations
+- **Perry** (`42099`) — 1057 originations
+- **Bedford** (`42009`) — 1003 originations
 
 ## Matching rules
 
-- Reuse FL / TX / GA / CA / NC / SC / NJ curated LEI maps when the LEI has PA activity
+- Reuse FL / TX / GA / CA / NC / SC / NJ / NY curated LEI maps when the LEI has PA activity
+- PA-curated LEIs: GLEIF name + published company NMLS only
 - National NMLS→slug overrides prefer company-level directory hosts
-- No fuzzy LEI inventing; no New York product files touched
+- No fuzzy LEI inventing; does not modify New York product folders
 
 ## Rebuild
 

@@ -338,19 +338,17 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
     fileSuffix: '_pa',
     originationsColumn: 'pennsylvania_originations',
     majorCountySlugs: new Set([
-      // Philly metro
+      // Wave 1 — Philly / Pittsburgh / mid-state
       'philadelphia',
       'montgomery',
       'bucks',
       'delaware',
       'chester',
-      // Pittsburgh
       'allegheny',
       'westmoreland',
       'butler',
       'washington',
       'beaver',
-      // South-central / Lehigh Valley
       'lancaster',
       'york',
       'berks',
@@ -359,7 +357,6 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'dauphin',
       'cumberland',
       'lebanon',
-      // Northeast / Erie / other high volume
       'lackawanna',
       'luzerne',
       'erie',
@@ -372,6 +369,21 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'lycoming',
       'schuylkill',
       'mercer',
+      // Deepen — next volume / regional
+      'blair',
+      'pike',
+      'carbon',
+      'lawrence',
+      'northumberland',
+      'clearfield',
+      'wayne',
+      'somerset',
+      'crawford',
+      'indiana',
+      'columbia',
+      'armstrong',
+      'perry',
+      'bedford',
     ]),
   },
 };
