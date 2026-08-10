@@ -39,6 +39,10 @@ export const MAJOR_VERMONT_COUNTY_SLUGS = HMDA_STATE_CONFIGS.VT.majorCountySlugs
 
 export const MAJOR_MAINE_COUNTY_SLUGS = HMDA_STATE_CONFIGS.ME.majorCountySlugs;
 
+export const MAJOR_CONNECTICUT_COUNTY_SLUGS = HMDA_STATE_CONFIGS.CT.majorCountySlugs;
+
+export const MAJOR_NEW_HAMPSHIRE_COUNTY_SLUGS = HMDA_STATE_CONFIGS.NH.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw

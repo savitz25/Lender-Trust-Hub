@@ -15,6 +15,8 @@ import {
   MAJOR_RHODE_ISLAND_COUNTY_SLUGS,
   MAJOR_VERMONT_COUNTY_SLUGS,
   MAJOR_MAINE_COUNTY_SLUGS,
+  MAJOR_CONNECTICUT_COUNTY_SLUGS,
+  MAJOR_NEW_HAMPSHIRE_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -223,6 +225,28 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (ME)`,
       originations: c.originations,
       stateSlug: 'maine',
+    });
+  }
+
+  const ct = loadHmdaStateData('CT');
+  for (const c of ct.countyMarkets) {
+    if (!MAJOR_CONNECTICUT_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `ct:${c.countySlug}`,
+      name: `${c.countyName} (CT)`,
+      originations: c.originations,
+      stateSlug: 'connecticut',
+    });
+  }
+
+  const nh = loadHmdaStateData('NH');
+  for (const c of nh.countyMarkets) {
+    if (!MAJOR_NEW_HAMPSHIRE_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `nh:${c.countySlug}`,
+      name: `${c.countyName} (NH)`,
+      originations: c.originations,
+      stateSlug: 'new-hampshire',
     });
   }
 

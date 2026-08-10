@@ -13,7 +13,9 @@ export type HmdaStateCode =
   | 'MA'
   | 'RI'
   | 'VT'
-  | 'ME';
+  | 'ME'
+  | 'CT'
+  | 'NH';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -22,7 +24,7 @@ export type HmdaStateConfig = {
   name: string;
   /** data/hmda/{dataFolder}/ */
   dataFolder: string;
-  /** File name suffixes (e.g. _fl, _tx, _ri, _vt, _me) for summary CSVs */
+  /** File name suffixes (e.g. _fl, _ct, _nh) for summary CSVs */
   fileSuffix: string;
   /** Mapping CSV column for state originations */
   originationsColumn:
@@ -38,7 +40,9 @@ export type HmdaStateConfig = {
     | 'massachusetts_originations'
     | 'rhode_island_originations'
     | 'vermont_originations'
-    | 'maine_originations';
+    | 'maine_originations'
+    | 'connecticut_originations'
+    | 'new_hampshire_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -520,6 +524,46 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'piscataquis',
     ]),
   },
+  CT: {
+    code: 'CT',
+    stateSlug: 'connecticut',
+    name: 'Connecticut',
+    dataFolder: 'connecticut',
+    fileSuffix: '_ct',
+    originationsColumn: 'connecticut_originations',
+    // HMDA uses Census planning-region county-equivalents (not legacy counties)
+    majorCountySlugs: new Set([
+      'capitol', // Hartford-area (09110)
+      'western-connecticut', // Fairfield-area (09190)
+      'south-central-connecticut', // New Haven-area (09170)
+      'naugatuck-valley',
+      'southeastern-connecticut', // New London-area
+      'greater-bridgeport',
+      'lower-connecticut-river-valley',
+      'northeastern-connecticut',
+      'northwest-hills',
+    ]),
+  },
+  NH: {
+    code: 'NH',
+    stateSlug: 'new-hampshire',
+    name: 'New Hampshire',
+    dataFolder: 'new-hampshire',
+    fileSuffix: '_nh',
+    originationsColumn: 'new_hampshire_originations',
+    majorCountySlugs: new Set([
+      'hillsborough',
+      'rockingham',
+      'merrimack',
+      'strafford',
+      'grafton',
+      'belknap',
+      'carroll',
+      'cheshire',
+      'sullivan',
+      'coos',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -536,6 +580,8 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'RI',
   'VT',
   'ME',
+  'CT',
+  'NH',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {
