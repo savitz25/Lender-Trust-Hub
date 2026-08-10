@@ -1298,7 +1298,6 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
     fileSuffix: '_nv',
     originationsColumn: 'nevada_originations',
     majorCountySlugs: new Set([
-      // Wave 1 — Las Vegas / Reno + secondary high-volume markets
       'clark',
       'washoe',
       'lyon',
@@ -1308,6 +1307,12 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'carson-city',
       'churchill',
       'humboldt',
+      'white-pine',
+      'storey',
+      'lander',
+      'lincoln',
+      'pershing',
+      'mineral',
     ]),
   },
   OR: {

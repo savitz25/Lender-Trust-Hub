@@ -1,12 +1,15 @@
-# Nevada HMDA slice
+# Nevada HMDA slice (deepened)
 
-**Source:** `data/hmda/by-state/NV/` (national 2025 foundation)
+**Source:** `data/hmda/by-state/NV/` (national foundation)
 
-- County market rows: **17**
-- Lender–county activity (major markets): **1757**
+**Phase:** nevada-deepen
+
+- County market rows: **15**
+- Lender–county activity (major markets): **1985**
 - LEI state summaries: **536**
-- High-confidence LEI→directory mappings: **116**
-- Major markets with names: **9**
+- High-confidence LEI→directory mappings: **144**
+- Major markets with names: **15**
+- Top-20 mapped: **20/20** · Top-50 mapped: **43/50**
 
 ## Top mapped LEIs by NV originations
 
@@ -20,13 +23,14 @@
 - `us-bank` — U.S. Bank National Association (1593 NV orig.)
 - `loandepot` — LOANDEPOT.COM, LLC (1512 NV orig.)
 - `crosscountry-mortgage-metrowest` — CROSSCOUNTRY MORTGAGE, LLC (1424 NV orig.)
-- `guaranteed-rate` — Guaranteed Rate, Inc. (1233 NV orig.)
+- `bank-of-america-mortgage-west-valley` — Bank of America, National Association (1233 NV orig.)
 - `new-american-funding` — NEW AMERICAN FUNDING, LLC (1190 NV orig.)
 - `navy-federal-jacksonville` — Navy Federal Credit Union (1122 NV orig.)
 - `freedom-mortgage` — FREEDOM MORTGAGE CORPORATION (1108 NV orig.)
 - `zions-bank` — Zions Bancorporation, N.A. (1054 NV orig.)
 - `guaranteed-rate` — GUARANTEED RATE, INC. (986 NV orig.)
 - `amerihome-mortgage` — AmeriHome Mortgage Company, LLC (932 NV orig.)
+- `kbhs-home-loans` — KBHS HOME LOANS, LLC (905 NV orig.)
 - `veterans-united-west-valley` — MORTGAGE RESEARCH CENTER, LLC (900 NV orig.)
 - `jpmorgan-chase-bank` — JPMorgan Chase Bank, National Association (865 NV orig.)
 - `cmg-home-loans-dennis-vo` — CMG Mortgage, Inc. (836 NV orig.)
@@ -35,6 +39,10 @@
 - `greater-nevada-credit-union` — GREATER NEVADA LLC (634 NV orig.)
 - `movement-mortgage-myrtle-beach` — MOVEMENT MORTGAGE, LLC (619 NV orig.)
 - `newrez` — Newrez LLC (593 NV orig.)
+- `silver-state-schools-credit-union` — SILVER STATE SCHOOLS SERVICE COMPANY, LLC (574 NV orig.)
+- `mutual-of-omaha-mortgage` — MUTUAL OF OMAHA MORTGAGE, INC. (509 NV orig.)
+- `wells-fargo-bank` — Wells Fargo Bank, National Association (486 NV orig.)
+- `better-mortgage` — Better Mortgage Corporation (480 NV orig.)
 
 ## Major markets (panel-ready)
 
@@ -47,21 +55,21 @@
 - **Carson City** (`32510`) — 1108 originations
 - **Churchill** (`32001`) — 565 originations
 - **Humboldt** (`32013`) — 419 originations
+- **White Pine** (`32033`) — 195 originations
+- **Storey** (`32029`) — 125 originations
+- **Lander** (`32015`) — 102 originations
+- **Lincoln** (`32017`) — 87 originations
+- **Pershing** (`32027`) — 85 originations
+- **Mineral** (`32021`) — 63 originations
 
 ## Matching rules
 
-- Reuse prior product-state curated LEI maps when the LEI has activity in this state
-- UT/NV curated: America First FCU, Mountain America FCU, Intercap, Goldenwest, First Colony, SecurityNational, Utah Community CU, RanLife, Bank of Utah, Deseret First, Utah First, Chartway, Security Home Mortgage, Provident Funding, Greater Nevada CU, plus Academy / PRMI / Zions directory reuse
-- Precision over coverage — no fuzzy LEI inventing
+- Reuse prior product-state curated LEI maps when LEI has NV activity
+- **nv_deepen** GLEIF re-identification + NV directory hosts
+- Precision over coverage — low-confidence regionals deferred
 
 ## Rebuild
 
 ```bash
-python scripts/build-hmda-ut-nv-slices.py
-```
-
-## Major slugs (for states.ts)
-
-```
-'clark', 'washoe', 'lyon', 'nye', 'douglas', 'elko', 'carson-city', 'churchill', 'humboldt'
+python scripts/build-hmda-nevada-deepen.py
 ```

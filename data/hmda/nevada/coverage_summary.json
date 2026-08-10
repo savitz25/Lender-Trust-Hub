@@ -1,0 +1,39 @@
+{
+  "state": "NV",
+  "phase": "nevada-deepen",
+  "major_counties": 15,
+  "major_county_slugs": [
+    "clark",
+    "washoe",
+    "lyon",
+    "nye",
+    "douglas",
+    "elko",
+    "carson-city",
+    "churchill",
+    "humboldt",
+    "white-pine",
+    "storey",
+    "lander",
+    "lincoln",
+    "pershing",
+    "mineral"
+  ],
+  "cms_rows": 15,
+  "activity_rows": 1985,
+  "lss_rows": 536,
+  "mapped_leis": 144,
+  "top20_mapped": 20,
+  "top50_mapped": 43,
+  "deferred_examples": [
+    "Figure Lending / Kiavi Funding",
+    "United Federal Credit Union",
+    "Inspire Home Loans / OCMBC",
+    "Panorama Mortgage / Gold Star Mortgage",
+    "Canopy Mortgage / GoodLeap",
+    "East West Bank / Toll Brothers Mortgage",
+    "Moria Development",
+    "Esmeralda / Eureka (minimal HMDA volume)"
+  ],
+  "notes": "Expanded major-county panels to 15 (nearly full active NV set); GLEIF re-ID; linked KBHS, Silver State Schools CU, One Nevada CU; retained Greater Nevada / America First / Mountain America."
+}
