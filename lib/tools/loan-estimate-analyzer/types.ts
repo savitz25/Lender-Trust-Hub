@@ -30,7 +30,7 @@ export interface LoanEstimateInputs {
   /**
    * County market context option slug:
    * bare slug = Florida major county;
-   * `tx:`, `ga:`, `ca:`, `nc:`, `sc:`, `nj:`, `ny:` prefixes for other product states.
+   * `tx:`, `ga:`, `ca:`, `nc:`, `sc:`, `nj:`, `ny:`, `pa:` prefixes for other product states.
    */
   countySlug: string;
 }

@@ -60,9 +60,10 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "399809": "usaa-federal-savings-bank",
     "1121636": "sofi-bank",
     "399797": "flagstar-bank",
-    "39179": "movement-mortgage",
-    "3274": "guild-mortgage",
-    "3029": "crosscountry-mortgage",
+    "39179": "movement-mortgage-myrtle-beach",
+    # Regional hosts only — bare company slugs do not exist in the directory catalog
+    "3274": "guild-mortgage-nyc-boroughs",
+    "3029": "crosscountry-mortgage-western-ny",
     "399807": "navy-federal-jacksonville",
     "412915": "citibank",
     "381076": "mt-bank",

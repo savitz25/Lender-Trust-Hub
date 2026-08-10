@@ -32,7 +32,7 @@
 - `mr-cooper` — Nationstar Mortgage LLC (1116 NY orig.)
 - `mr-cooper` — NATIONSTAR MORTGAGE LLC (959 NY orig.)
 - `new-american-funding` — Broker Solutions, Inc. (937 NY orig.)
-- `movement-mortgage` — Movement Mortgage, LLC (849 NY orig.)
+- `movement-mortgage-myrtle-beach` — Movement Mortgage, LLC (849 NY orig.)
 - `american-financial-network` — AMERICAN FINANCIAL NETWORK, INC. (827 NY orig.)
 - `anniemac-home-mortgage` — AMERICAN NEIGHBORHOOD MORTGAGE ACCEPTANCE COMPANY LLC (768 NY orig.)
 
@@ -46,7 +46,7 @@
 - **Kings** (`36047`) — 12897 originations
 - **Westchester** (`36119`) — 12210 originations
 - **Onondaga** (`36067`) — 8764 originations
-- **New York / Manhattan** (`36061`) — 7521 originations · site slug `new-york-county`
+- **New York** (`36061`) — 7521 originations
 - **Orange** (`36071`) — 7180 originations
 - **Albany** (`36001`) — 5656 originations
 - **Richmond** (`36085`) — 5382 originations

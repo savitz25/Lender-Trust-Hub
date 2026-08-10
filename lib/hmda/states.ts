@@ -1,6 +1,6 @@
 /** HMDA product states with cleaned slices under data/hmda/{folder}/ */
 
-export type HmdaStateCode = 'FL' | 'TX' | 'GA' | 'CA' | 'NC' | 'SC' | 'NJ' | 'NY';
+export type HmdaStateCode = 'FL' | 'TX' | 'GA' | 'CA' | 'NC' | 'SC' | 'NJ' | 'NY' | 'PA';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -9,7 +9,7 @@ export type HmdaStateConfig = {
   name: string;
   /** data/hmda/{dataFolder}/ */
   dataFolder: string;
-  /** File name suffixes (e.g. _fl, _tx, _ny) for summary CSVs */
+  /** File name suffixes (e.g. _fl, _tx, _ny, _pa) for summary CSVs */
   fileSuffix: string;
   /** Mapping CSV column for state originations */
   originationsColumn:
@@ -20,7 +20,8 @@ export type HmdaStateConfig = {
     | 'north_carolina_originations'
     | 'south_carolina_originations'
     | 'new_jersey_originations'
-    | 'new_york_originations';
+    | 'new_york_originations'
+    | 'pennsylvania_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -329,6 +330,50 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'broome',
     ]),
   },
+  PA: {
+    code: 'PA',
+    stateSlug: 'pennsylvania',
+    name: 'Pennsylvania',
+    dataFolder: 'pennsylvania',
+    fileSuffix: '_pa',
+    originationsColumn: 'pennsylvania_originations',
+    majorCountySlugs: new Set([
+      // Philly metro
+      'philadelphia',
+      'montgomery',
+      'bucks',
+      'delaware',
+      'chester',
+      // Pittsburgh
+      'allegheny',
+      'westmoreland',
+      'butler',
+      'washington',
+      'beaver',
+      // South-central / Lehigh Valley
+      'lancaster',
+      'york',
+      'berks',
+      'lehigh',
+      'northampton',
+      'dauphin',
+      'cumberland',
+      'lebanon',
+      // Northeast / Erie / other high volume
+      'lackawanna',
+      'luzerne',
+      'erie',
+      'monroe',
+      'franklin',
+      'centre',
+      'fayette',
+      'adams',
+      'cambria',
+      'lycoming',
+      'schuylkill',
+      'mercer',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -340,6 +385,7 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'SC',
   'NJ',
   'NY',
+  'PA',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {

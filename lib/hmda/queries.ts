@@ -29,6 +29,8 @@ export const MAJOR_NEW_JERSEY_COUNTY_SLUGS = HMDA_STATE_CONFIGS.NJ.majorCountySl
 
 export const MAJOR_NEW_YORK_COUNTY_SLUGS = HMDA_STATE_CONFIGS.NY.majorCountySlugs;
 
+export const MAJOR_PENNSYLVANIA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.PA.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw
