@@ -25,6 +25,7 @@ MAP_PATHS = [
     ROOT / "data" / "hmda" / "north-carolina" / "lei_to_nmls_mapping.csv",
     ROOT / "data" / "hmda" / "south-carolina" / "lei_to_nmls_mapping.csv",
     ROOT / "data" / "hmda" / "new-jersey" / "lei_to_nmls_mapping.csv",
+    ROOT / "data" / "hmda" / "pennsylvania" / "lei_to_nmls_mapping.csv",
 ]
 GLEIF_CACHE = ROOT / "data" / "hmda" / "florida" / "_gleif_name_cache.json"
 
@@ -85,6 +86,15 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "503941": "first-citizens-bank",
     "405455": "ameris-bank",
     "405461": "southstate-bank",
+    # NY deepen — company NMLS → directory hosts
+    "3254": "premium-mortgage",
+    "3232": "homestead-funding",
+    "34384": "contour-mortgage",
+    "819382": "nationwide-mortgage-bankers",
+    "2113": "plaza-home-mortgage",
+    "500501": "nbt-bank",
+    "29600": "1st-priority-mortgage",
+    "2212": "fm-home-loans",
 }
 
 # High-confidence NY-active LEIs (GLEIF name + public NMLS). No inventing.
@@ -119,6 +129,71 @@ NY_CURATED_LEI: dict[str, dict[str, str]] = {
         "nmls_id": "2184",
         "our_lender_slug": "embrace-home-loans",
         "legal_name": "Embrace Home Loans, Inc.",
+        "match_confidence": "high",
+        "match_method": "ny_curated_gleif+public_nmls",
+    },
+    # Wave 2 deepen — high NY HMDA volume + published company NMLS
+    "254900XN7UWEWK13RO81": {
+        "institution_name_hmda": "PREMIUM MORTGAGE CORPORATION",
+        "nmls_id": "3254",
+        "our_lender_slug": "premium-mortgage",
+        "legal_name": "Premium Mortgage Corporation",
+        "match_confidence": "high",
+        "match_method": "ny_curated_gleif+public_nmls",
+    },
+    "549300T3F9S1MKFKHC53": {
+        "institution_name_hmda": "HOMESTEAD FUNDING CORP.",
+        "nmls_id": "3232",
+        "our_lender_slug": "homestead-funding",
+        "legal_name": "Homestead Funding Corp.",
+        "match_confidence": "high",
+        "match_method": "ny_curated_gleif+public_nmls",
+    },
+    "549300CLRXFVF83ZL806": {
+        "institution_name_hmda": "NATIONWIDE MORTGAGE BANKERS, INC.",
+        "nmls_id": "819382",
+        "our_lender_slug": "nationwide-mortgage-bankers",
+        "legal_name": "Nationwide Mortgage Bankers, Inc. (NMB / NMBNOW)",
+        "match_confidence": "high",
+        "match_method": "ny_curated_gleif+public_nmls",
+    },
+    "549300LLKEKXL2RM1F61": {
+        "institution_name_hmda": "CONTOUR MORTGAGE CORPORATION",
+        "nmls_id": "34384",
+        "our_lender_slug": "contour-mortgage",
+        "legal_name": "Contour Mortgage Corporation",
+        "match_confidence": "high",
+        "match_method": "ny_curated_gleif+public_nmls",
+    },
+    "5493009BOQDC6PCFR785": {
+        "institution_name_hmda": "NBT Bank, National Association",
+        "nmls_id": "500501",
+        "our_lender_slug": "nbt-bank",
+        "legal_name": "NBT Bank, National Association",
+        "match_confidence": "high",
+        "match_method": "ny_curated_gleif+public_nmls",
+    },
+    "549300JYXTZDSPJEPI44": {
+        "institution_name_hmda": "PLAZA HOME MORTGAGE, INC.",
+        "nmls_id": "2113",
+        "our_lender_slug": "plaza-home-mortgage",
+        "legal_name": "Plaza Home Mortgage, Inc.",
+        "match_confidence": "high",
+        "match_method": "ny_curated_gleif+public_nmls",
+    },
+    "549300ZGZ9WQMJLEPH17": {
+        "institution_name_hmda": "1ST PRIORITY MORTGAGE, INC.",
+        "nmls_id": "29600",
+        "our_lender_slug": "1st-priority-mortgage",
+        "legal_name": "1st Priority Mortgage, Inc.",
+        "match_confidence": "high",
+        "match_method": "ny_curated_gleif+public_nmls",
+    },
+    "254900ACUWEGW702BR80": {
+        "institution_name_hmda": "FM Home Loans, LLC",
+        "nmls_id": "2212",
+        "our_lender_slug": "fm-home-loans",
+        "legal_name": "FM Home Loans, LLC",
         "match_confidence": "high",
         "match_method": "ny_curated_gleif+public_nmls",
     },
@@ -190,8 +265,9 @@ NY_COUNTIES: dict[str, str] = {
     "36123": "Yates",
 }
 
-# Wave 1 majors for activity filtering (high volume / metro)
+# Wave 1 + deepen majors for activity filtering (high volume / metro / corridor)
 NY_MAJOR_FIPS = {
+    # Wave 1
     "36103",  # Suffolk
     "36059",  # Nassau
     "36029",  # Erie
@@ -214,6 +290,34 @@ NY_MAJOR_FIPS = {
     "36083",  # Rensselaer
     "36111",  # Ulster
     "36007",  # Broome
+    # Deepen — Hudson Valley / downstate spillover
+    "36079",  # Putnam
+    "36105",  # Sullivan
+    "36021",  # Columbia
+    "36039",  # Greene
+    # Deepen — Finger Lakes / Central / North Country corridors
+    "36069",  # Ontario
+    "36075",  # Oswego
+    "36117",  # Wayne
+    "36045",  # Jefferson
+    "36101",  # Steuben
+    "36013",  # Chautauqua
+    "36015",  # Chemung
+    "36113",  # Warren
+    "36053",  # Madison
+    "36011",  # Cayuga
+    "36109",  # Tompkins
+    "36051",  # Livingston
+    "36043",  # Herkimer
+    "36115",  # Washington
+    "36037",  # Genesee
+    "36089",  # St. Lawrence
+    "36035",  # Fulton
+    "36019",  # Clinton
+    "36009",  # Cattaraugus
+    "36057",  # Montgomery
+    "36107",  # Tioga
+    "36077",  # Otsego
 }
 
 
@@ -271,6 +375,7 @@ def load_lei_maps() -> dict[str, dict[str, str]]:
                 "south_carolina_originations",
                 "new_jersey_originations",
                 "new_york_originations",
+                "pennsylvania_originations",
                 "total_originations",
             ],
         )
@@ -381,7 +486,7 @@ def main() -> None:
         mapping_by_lei[lei] = row
 
     for lei, prior in lei_to_map.items():
-        add_mapping(lei, prior, "reuse_fl_tx_ga_ca_nc_sc_nj_curated_lei+")
+        add_mapping(lei, prior, "reuse_prior_state_curated_lei+")
 
     for lei, cur in NY_CURATED_LEI.items():
         add_mapping(lei, cur, "ny_curated+")
@@ -437,8 +542,9 @@ def main() -> None:
         )
     md.append(
         "\n## Matching rules\n\n"
-        "- Reuse FL / TX / GA / CA / NC / SC / NJ curated LEI maps when the LEI has NY activity\n"
+        "- Reuse prior product-state curated LEI maps when the LEI has NY activity\n"
         "- National NMLS→slug overrides prefer company-level hosts\n"
+        "- NY curated LEIs: high-confidence GLEIF name + published company NMLS only\n"
         "- No fuzzy LEI inventing\n"
         "\n## Rebuild\n\n"
         "```bash\n"

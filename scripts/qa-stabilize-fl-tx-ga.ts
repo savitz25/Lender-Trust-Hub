@@ -102,6 +102,15 @@ const SPOT_COUNTIES: { state: string; county: string }[] = [
   { state: 'new-york', county: 'monroe' },
   { state: 'new-york', county: 'bronx' },
   { state: 'new-york', county: 'richmond' },
+  // NY deepen
+  { state: 'new-york', county: 'putnam' },
+  { state: 'new-york', county: 'sullivan' },
+  { state: 'new-york', county: 'ontario' },
+  { state: 'new-york', county: 'oswego' },
+  { state: 'new-york', county: 'jefferson' },
+  { state: 'new-york', county: 'tompkins' },
+  { state: 'new-york', county: 'chautauqua' },
+  { state: 'new-york', county: 'warren' },
   // PA
   { state: 'pennsylvania', county: 'philadelphia' },
   { state: 'pennsylvania', county: 'allegheny' },
@@ -161,6 +170,15 @@ const SPOT_LENDERS = [
   'embrace-home-loans',
   'nfm-lending',
   'columbia-bank-nj',
+  // NY deepen
+  'premium-mortgage',
+  'homestead-funding',
+  'nationwide-mortgage-bankers',
+  'contour-mortgage',
+  'nbt-bank',
+  'plaza-home-mortgage',
+  '1st-priority-mortgage',
+  'fm-home-loans',
   // PA deepen
   'fulton-bank',
   'first-national-bank-of-pennsylvania',
