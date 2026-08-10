@@ -83,7 +83,7 @@ export const SOUTH_CAROLINA_LENDERS: Lender[] = [
   },
   {
     // NMLS cleared: 2289 is Newrez on this catalog (HMDA national row). Do not share entity identity.
-    id: 'sc-08', slug: 'fairway-mortgage-upstate', name: 'Fairway Independent Mortgage — Upstate', nmlsId: '', type: 'Lender',
+    id: 'sc-08', slug: 'fairway-mortgage-upstate', name: 'Fairway Independent Mortgage — Upstate', nmlsId: '1702', type: 'Lender',
     city: 'Greenville', state: 'South Carolina', stateSlug: 'south-carolina', county: 'Greenville', countySlug: 'greenville',
     zipCodes: ['29601', '29615', '29607'], rating: 4.9, reviewCount: 340, trustScore: 94, countyExperienceScore: 95,
     nationalVolumeRank: 28, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],

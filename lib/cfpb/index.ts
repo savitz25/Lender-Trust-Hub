@@ -16,6 +16,8 @@ export {
 export {
   CFPB_COMPANY_MAPPINGS,
   getCfpbMappingBySlug,
+  getCfpbMappingByNmls,
+  resolveCfpbMapping,
   getAllMappedCfpbCompanyNames,
   getMappedCfpbSlugs,
 } from './mappings';

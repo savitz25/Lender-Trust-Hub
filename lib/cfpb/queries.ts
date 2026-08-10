@@ -1,10 +1,11 @@
 import { getHmdaLenderEvidenceBySlug, HMDA_VINTAGE_YEAR } from '@/lib/hmda';
-import { CFPB_COMPANY_MAPPINGS, getCfpbMappingBySlug } from './mappings';
+import { CFPB_COMPANY_MAPPINGS, resolveCfpbMapping } from './mappings';
 import { getCompanySnapshotMap, loadCfpbSnapshot } from './load';
 import {
   CFPB_SOURCE_LABEL,
   CFPB_SOURCE_NOTE,
   CFPB_SOURCE_URL,
+  type CfpbCompanyMapping,
   type CfpbComplaintEvidence,
   type CfpbCountBucket,
   type CfpbHmdaNormalizationPrep,
@@ -80,9 +81,9 @@ function attachHmdaNormalization(
 function evidenceFromSnapshots(
   slug: string,
   snaps: CfpbCompanySnapshot[],
+  mapping: CfpbCompanyMapping,
   meta: { dataAsOf: string; recentWindowStart: string }
 ): CfpbComplaintEvidence | null {
-  const mapping = getCfpbMappingBySlug(slug);
   if (!mapping || snaps.length === 0) return null;
 
   const totalComplaints = snaps.reduce((s, c) => s + c.totalComplaints, 0);
@@ -130,11 +131,15 @@ function evidenceFromSnapshots(
 }
 
 /**
- * Complaint evidence for a directory slug (mapped + snapshot present).
+ * Complaint evidence for a directory profile (mapped + snapshot present).
+ * Resolves by exact slug first, then by company NMLS (branch listings).
  * Returns null when unmapped or snapshot missing for all companies.
  */
-export function getCfpbComplaintEvidenceBySlug(slug: string): CfpbComplaintEvidence | null {
-  const mapping = getCfpbMappingBySlug(slug);
+export function getCfpbComplaintEvidenceBySlug(
+  slug: string,
+  options?: { nmlsId?: string | null }
+): CfpbComplaintEvidence | null {
+  const mapping = resolveCfpbMapping({ slug, nmlsId: options?.nmlsId });
   if (!mapping) return null;
 
   const file = loadCfpbSnapshot();
@@ -150,7 +155,7 @@ export function getCfpbComplaintEvidenceBySlug(slug: string): CfpbComplaintEvide
   const dataAsOf =
     snaps.map((s) => s.fetchedAt).sort().at(-1) ?? file.generatedAt;
 
-  return evidenceFromSnapshots(slug, snaps, {
+  return evidenceFromSnapshots(slug, snaps, mapping, {
     dataAsOf,
     recentWindowStart: file.recentWindowStart,
   });

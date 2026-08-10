@@ -21,8 +21,16 @@ export type CfpbMatchMethod =
   | 'curated-multi';
 
 export interface CfpbCompanyMapping {
-  /** Directory / HMDA lender slug */
+  /**
+   * Primary directory slug for docs / HMDA linkage.
+   * Other branch listings resolve via `nmlsIds` when the profile NMLS matches.
+   */
   ourLenderSlug: string;
+  /**
+   * Company-level NMLS IDs (digits only). When set, any directory profile with
+   * this NMLS inherits the CFPB mapping (branch listings of the same company).
+   */
+  nmlsIds?: string[];
   /** Exact `company` filter values accepted by the CFPB search API */
   cfpbCompanyNames: string[];
   matchMethod: CfpbMatchMethod;

@@ -1,6 +1,6 @@
 # CFPB Consumer Complaint integration — matching notes
 
-**Phase 1 + expansion waves 2–3 (2026-08)** — mortgage product only, curated exact company names.
+**Waves 1–4 (2026-08)** — mortgage product only, curated exact company names + optional company-NMLS inheritance for branch listings.
 
 ## Data source
 
@@ -8,104 +8,87 @@
 - Docs: https://cfpb.github.io/api/ccdb/
 - Snapshot path: `data/cfpb/mortgage-complaints-snapshot.json`
 - Refresh: `npm run cfpb:fetch`
-- Discovery helper: `npx tsx scripts/_discover-cfpb-names.ts` (edit candidate list first)
+- Discovery helpers: `scripts/_discover-cfpb-names.ts`, `scripts/_discover-cfpb-wave4.ts`, `scripts/_verify-cfpb-exact.ts`
 
 ## How matching works
 
-1. Directory slug → curated list in `lib/cfpb/mappings.ts`
-2. Each mapping lists **exact** CFPB `company` field values (case/punctuation matter)
-3. Snapshot stores per-company totals, 24-month window, top issues, timely response, company response buckets
-4. Profile panel merges multi-name mappings (e.g. Mr. Cooper, Truist lineage) by summing counts and re-ranking issues
+1. Directory profile → `resolveCfpbMapping({ slug, nmlsId })` in `lib/cfpb/mappings.ts`
+2. Prefer **exact slug** mapping; else match **company NMLS** (`nmlsIds` on the mapping) so regional branch listings inherit the same CFPB company
+3. Each mapping lists **exact** CFPB `company` field values (case/punctuation matter)
+4. Snapshot stores per-company totals, 24-month window, top issues, timely response, company response buckets
+5. Profile panel merges multi-name mappings by summing counts and re-ranking issues
 
 We **do not** fuzzy-match at runtime. Wrong company names return zero hits on the API.
 
-## Wave 1 — core nationals
+## Wave 4 additions (2026-08)
 
-| Directory slug | CFPB company name(s) | Quality |
-|----------------|----------------------|---------|
-| rocket-mortgage | Rocket Mortgage, LLC | High |
-| united-wholesale-mortgage | United Shore Financial Services, LLC | Medium–high (legal/DBA) |
-| freedom-mortgage | Freedom Mortgage Company | High |
-| loandepot | LD Holdings Group, LLC | Medium (holdco label) |
-| guaranteed-rate | GUARANTEED RATE INC. | High (trailing `.` required) |
-| pennymac | PENNYMAC LOAN SERVICES, LLC. | High (trailing `.` required) |
-| jpmorgan-chase-bank | JPMORGAN CHASE & CO. | Medium (parent bank-wide) |
-| mr-cooper | NATIONSTAR MORTGAGE LLC + Mr. Cooper Group Inc. | Medium (rebrand / multi-name sum) |
-| newrez | Shellpoint Partners, LLC | Lower (affiliate / servicing family) |
-| cardinal-financial | CARDINAL FINANCIAL COMPANY, LIMITED PARTNERSHIP | High |
-| amerihome-mortgage | AmeriHome Mortgage Company, LLC | High |
-| eagle-home-mortgage | Eagle Home Mortgage, LLC | High |
-| wells-fargo-bank | WELLS FARGO & COMPANY | Medium (parent bank-wide) |
+### New exact company mappings
 
-## Wave 2 — priority expansion list
+| Primary directory slug | CFPB company name(s) | Company NMLS inheritance | Notes |
+|------------------------|----------------------|--------------------------|-------|
+| bank-of-america-mortgage-silicon-valley | BANK OF AMERICA, NATIONAL ASSOCIATION | 399802 | Bank-wide; all BoA Mortgage directory rows with 399802 |
+| veterans-united-jacksonville | Mortgage Research Center, LLC | 1907 | VU legal entity / DBA in CCDB |
+| lennar-mortgage-clovis | Lennar Financial Services, LLC | 1058 | Not “Lennar Mortgage, LLC” |
+| supreme-lending-south-florida | Supreme Lending | 2129 | Exact company string |
+| acrisure-mortgage | FBC MORTGAGE, LLC + Acrisure Mortgage Partners, LLC | 152859 | Multi-sum (former FBC + current label) |
+| union-home-mortgage-reeves-team (and coastal / myrtle-beach slugs) | Union Home Mortgage Corp | — (explicit slugs) | No trailing period; LO NMLS differs by team |
+| city-national-bank-mortgage | CITY NATIONAL BANK | 5369 | Not City National Bank of Florida |
+| fifth-third-bank | FIFTH THIRD FINANCIAL CORPORATION | 3444, 399800 | Parent label; reserved for profiles |
+| huntington-bank | HUNTINGTON NATIONAL BANK, THE | — | Trailing “THE” required |
+| keybank | KEYCORP | — | Parent label |
+| capital-one | CAPITAL ONE FINANCIAL CORPORATION | — | Parent label |
+| citibank | CITIBANK, N.A. | — | Trailing period required |
+| discover-bank | DISCOVER BANK | 3656 | Exact |
+| synovus-bank | Synovus Bank | — | Exact |
 
-| Directory slug | CFPB company name(s) | Quality / notes |
-|----------------|----------------------|-----------------|
-| truist-bank | TRUIST FINANCIAL CORPORATION + SUNTRUST BANKS, INC. + BB&T CORPORATION | Medium — lineage multi-sum |
-| regions-bank | REGIONS FINANCIAL CORPORATION | Medium (parent) |
-| new-american-funding | BROKER SOLUTIONS, INC. | Medium–high (legal/DBA) |
-| pnc-bank | PNC Bank N.A. | High (exact published string) |
-| better-mortgage | Better Mortgage, Inc. | High |
-| ally-bank | ALLY FINANCIAL INC. | Medium (parent; no “Ally Bank” mortgage string) |
-| td-bank | TD BANK US HOLDING COMPANY | Medium (parent) |
-| usaa-federal-savings-bank | UNITED SERVICES AUTOMOBILE ASSOCIATION | Medium (family label) |
-| flagstar-bank | Flagstar Bank, N.A. | High |
-| citizens-bank | CITIZENS FINANCIAL GROUP, INC. | Medium (parent; not First Citizens) |
-| us-bank | U.S. BANCORP | Medium (parent) |
-| sofi-bank | SOFI TECHNOLOGIES, INC. + SoFi Mortgage, LLC | Medium (multi; modest volume) |
-| suncoast-credit-union | SUNCOAST CREDIT UNION | High (low volume) |
-| academy-mortgage | Academy Mortgage Corporation | High |
-| carrington-mortgage | CARRINGTON MORTGAGE SERVICES, LLC | High |
-| amerisave | AMERISAVE MORTGAGE CORPORATION | High |
-| lakeview-loan-servicing | LAKEVIEW LOAN SERVICING, LLC | High (servicing) |
-| first-horizon-bank | FIRST HORIZON BANK | High |
-| southstate-bank | SOUTHSTATE BANK CORPORATION | High |
-| ameris-bank | AMERIS BANCORP | Medium (parent; no “AMERIS BANK” hits) |
-| 21st-mortgage | 21ST MORTGAGE CORP. | High |
+### NMLS inheritance (wave 4 infrastructure)
 
-## Wave 3 — directory branch / company slugs (2026-08)
+Branch listings that share a **company NMLS** now resolve CFPB without per-slug rows, including e.g.:
 
-| Directory slug | CFPB company name(s) | Quality / notes |
-|----------------|----------------------|-----------------|
-| movement-mortgage-myrtle-beach | Movement Mortgage LLC | High (no comma; regional directory slug) |
-| navy-federal-jacksonville | NAVY FEDERAL CREDIT UNION | High (regional directory slug) |
-| penfed-dc-mid-city | PENTAGON FEDERAL CREDIT UNION | High (regional directory slug) |
-| primelending-columbus | PRIMELENDING, A PLAINSCAPITAL COMPANY | High (regional directory slug) |
-| fairway-mortgage-augusta-sheppard | Fairway Independent Mortgage Corporation | High (branch/team directory slug) |
-| guild-mortgage-west-valley | Guild Holdings Company | Medium (parent holdco; not “Guild Mortgage Company”) |
-| crosscountry-mortgage-west-valley | CrossCountry Mortgage LLC | High (no comma; regional directory slug) |
-| prmg | PARAMOUNT RESIDENTIAL MORTGAGE GROUP | High (no “, Inc.” in CCDB) |
-| dhi-mortgage-buckeye | DHI Mortgage Company | High (regional directory slug) |
-| cmg-home-loans-dennis-vo | CMG Financial Services, Inc. | Medium (brand/holdco label for CMG) |
-| prmi-aaron-swenson | PRIMARY RESIDENTIAL MORTGAGE | High (no “, Inc.”; branch directory slug) |
+- All `bank-of-america-mortgage-*` with NMLS **399802**
+- All `veterans-united-*` with NMLS **1907**
+- All `guild-mortgage-*` with NMLS **3274** → Guild Holdings Company
+- All `crosscountry-mortgage-*` with NMLS **3029**
+- All `movement-mortgage-*` with NMLS **39179**
+- All `new-american-funding-*` with NMLS **6606**
+- All `lennar-mortgage-*` with NMLS **1058**
+- All `acrisure-mortgage-*` with NMLS **152859**
 
-## Reviewed but left unmatched
+(Exact company strings remain those already documented in waves 1–3.)
 
-| Directory slug / brand | Why unmatched |
-|------------------------|---------------|
-| space-coast-credit-union | Exact `SPACE COAST CREDIT UNION` / `Space Coast Credit Union` → **0** mortgage hits. |
-| homebridge-financial | Exact HomeBridge / Homebridge Financial Services strings → **0**. Search surface pointed at unrelated “AMA Advisors, LLC.” — **not** mapped. |
-| capital-city-home-loans | Search noise (Capital One / Village Capital) — no exact Capital City Home Loans company string with clean hits. |
-| floridas-va-mortgage-center | Specialty VA shop; no verified exact CCDB company string in this pass. |
-| FAIRWINDS CREDIT UNION / ACHIEVA CREDIT UNION | Exact filters → **0** mortgage hits (no directory national profile required). |
-| Bank of America (brand) | Exact `BANK OF AMERICA, NATIONAL ASSOCIATION` **has** high volume, but **no** national directory slug in HMDA national set yet — do not invent a profile solely for CFPB. |
+## Waves 1–3 (summary)
+
+See git history for full tables. Core nationals (Rocket, UWM, Freedom, loanDepot, Guaranteed Rate, PennyMac, Chase, Wells, Mr. Cooper, Truist, Regions, PNC, Better, Ally, TD, USAA, Flagstar, Citizens, U.S. Bank, SoFi, SouthState, Ameris, First Horizon, etc.) remain mapped with exact CCDB names.
+
+## Reviewed but still unmatched
+
+| Brand / slug | Why |
+|--------------|-----|
+| **space-coast-credit-union** | Exact company filters → **0** mortgage hits |
+| **homebridge-financial** | Exact HomeBridge strings → **0**. Search hits only unrelated **AMA Advisors, LLC.** — not mapped |
+| **floridas-va-mortgage-center** | No exclusive CCDB company string (search mixes Freedom/Navy Federal/etc.) |
+| **capital-city-home-loans** | No exact company string; search noise (Capital One / Village Capital) |
+| **City National Bank of Florida** | No exact mortgage company hits under that name |
+| **fairway-mortgage-upstate** | Directory row has empty NMLS and no dedicated slug mapping — fix NMLS on the listing or add slug row |
+| **PierPoint Mortgage** | Search total 0 for brand |
+| Tiny local brokers without a clean exclusive CCDB label | Left unmatched by design |
 
 ## Limitations (transparency)
 
 - Complaint volume is **not** a finding of fault
 - Large originators/servicers get more complaints in absolute terms
-- CFPB publication rules (company relationship confirmed or 15 days; some depository exclusions) mean the database is incomplete by design
+- CFPB publication rules mean the database is incomplete by design
 - “Timely response” is a CFPB field, not our score
-- Experimental **complaints / 1,000 FL HMDA originations** mixes **national** complaint windows with **Florida** HMDA originations — rough size context only
-- Parent/holdco labels (banks, Guild Holdings, CMG Financial Services) include more than a single branch or brand product line
-- Regional directory slugs (Myrtle Beach, Jacksonville, etc.) inherit **company-level** national CFPB totals — not branch-specific complaint counts
+- Experimental **complaints / 1,000 FL HMDA originations** mixes **national** complaints with **Florida** HMDA originations
+- Parent/holdco labels (banks, Guild Holdings, CMG Financial Services) are broader than a single branch brand
+- NMLS inheritance applies company-level national totals to every branch profile sharing that company NMLS
 
 ## Path to further expansion
 
-1. Confirm exact `company=` filter returns total > 0 before adding (see `scripts/_verify-cfpb-exact.ts` pattern)
-2. `npm run cfpb:fetch` after mapping edits
-3. Never invent rankings from raw complaint counts
-4. Prefer precision over coverage
+1. Confirm exact `company=` total > 0 before adding
+2. Prefer attaching `nmlsIds` so all branch listings inherit
+3. `npm run cfpb:fetch` after mapping edits
+4. Never invent rankings from raw complaint counts
 
 ## UI copy principles
 
