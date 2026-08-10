@@ -76,10 +76,19 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "446859": "german-american-bank",
     "408076": "centier-bank",
     "431669": "lake-city-bank",
+    # MI / IN deepen
+    "423037": "msgcu",
+    "406384": "dart-bank",
+    "419813": "mercantile-bank-michigan",
+    "140012": "staunton-financial",
+    "402492": "indiana-members-credit-union",
+    "686706": "everwise-credit-union",
+    "409733": "centra-credit-union",
+    "518136": "liberty-federal-credit-union",
 }
 
 MI_IN_CURATED_LEI: dict[str, dict[str, str]] = {
-    # Michigan
+    # Michigan — wave 1
     "549300YB1H2FRI6JPM51": {
         "institution_name_hmda": "LAKE MICHIGAN CREDIT UNION",
         "nmls_id": "442967",
@@ -120,7 +129,40 @@ MI_IN_CURATED_LEI: dict[str, dict[str, str]] = {
         "match_confidence": "high",
         "match_method": "mi_in_curated_gleif+public_nmls",
     },
-    # Indiana (+ multi-state First Merchants)
+    # Michigan — deepen
+    "549300WWLOUWIJ1Q0H29": {
+        "institution_name_hmda": "MICHIGAN SCHOOLS AND GOVERNMENT",
+        "nmls_id": "423037",
+        "our_lender_slug": "msgcu",
+        "legal_name": "Michigan Schools and Government Credit Union (MSGCU)",
+        "match_confidence": "high",
+        "match_method": "mi_in_deepen_gleif+public_nmls",
+    },
+    "5493008P6YO2KM3EO556": {
+        "institution_name_hmda": "The Dart Bank",
+        "nmls_id": "406384",
+        "our_lender_slug": "dart-bank",
+        "legal_name": "Dart Bank",
+        "match_confidence": "high",
+        "match_method": "mi_in_deepen_gleif+public_nmls",
+    },
+    "RM2F4G3WBQ8R9OKYRH19": {
+        "institution_name_hmda": "Mercantile Bank",
+        "nmls_id": "419813",
+        "our_lender_slug": "mercantile-bank-michigan",
+        "legal_name": "Mercantile Bank of Michigan",
+        "match_confidence": "high",
+        "match_method": "mi_in_deepen_gleif+public_nmls",
+    },
+    "549300KQQRECSLK8ID57": {
+        "institution_name_hmda": "STAUNTON FINANCIAL, INC.",
+        "nmls_id": "140012",
+        "our_lender_slug": "staunton-financial",
+        "legal_name": "Staunton Financial, Inc. (Total Home Lending / John Adams Mortgage)",
+        "match_confidence": "high",
+        "match_method": "mi_in_deepen_gleif+public_nmls",
+    },
+    # Indiana — wave 1
     "S0Q3AHZRL5K6VQE35M07": {
         "institution_name_hmda": "First Merchants Bank",
         "nmls_id": "",
@@ -177,18 +219,55 @@ MI_IN_CURATED_LEI: dict[str, dict[str, str]] = {
         "match_confidence": "high",
         "match_method": "mi_in_curated_gleif+public_nmls",
     },
+    # Indiana — deepen
+    "549300S99IK3EU11AS13": {
+        "institution_name_hmda": "INDIANA MEMBERS CREDIT UNION",
+        "nmls_id": "402492",
+        "our_lender_slug": "indiana-members-credit-union",
+        "legal_name": "Indiana Members Credit Union",
+        "match_confidence": "high",
+        "match_method": "mi_in_deepen_gleif+public_nmls",
+    },
+    "549300SXT4VBB68QCC26": {
+        "institution_name_hmda": "EVERWISE CREDIT UNION",
+        "nmls_id": "686706",
+        "our_lender_slug": "everwise-credit-union",
+        "legal_name": "Everwise Credit Union",
+        "match_confidence": "high",
+        "match_method": "mi_in_deepen_gleif+public_nmls",
+    },
+    "5493007LUU2DLS755O60": {
+        "institution_name_hmda": "Centra Credit Union",
+        "nmls_id": "409733",
+        "our_lender_slug": "centra-credit-union",
+        "legal_name": "Centra Credit Union",
+        "match_confidence": "high",
+        "match_method": "mi_in_deepen_gleif+public_nmls",
+    },
+    "54930072OCHTUJOZQB56": {
+        "institution_name_hmda": "Liberty Credit Union",
+        "nmls_id": "518136",
+        "our_lender_slug": "liberty-federal-credit-union",
+        "legal_name": "Liberty Federal Credit Union",
+        "match_confidence": "high",
+        "match_method": "mi_in_deepen_gleif+public_nmls",
+    },
 }
 
 MI_COUNTIES: dict[str, str] = {
     "26005": "Allegan",
+    "26015": "Barry",
     "26017": "Bay",
     "26021": "Berrien",
     "26025": "Calhoun",
+    "26027": "Cass",
     "26037": "Clinton",
     "26045": "Eaton",
     "26049": "Genesee",
     "26055": "Grand Traverse",
     "26065": "Ingham",
+    "26067": "Ionia",
+    "26073": "Isabella",
     "26075": "Jackson",
     "26077": "Kalamazoo",
     "26081": "Kent",
@@ -196,18 +275,25 @@ MI_COUNTIES: dict[str, str] = {
     "26091": "Lenawee",
     "26093": "Livingston",
     "26099": "Macomb",
+    "26107": "Mecosta",
+    "26111": "Midland",
     "26115": "Monroe",
+    "26117": "Montcalm",
     "26121": "Muskegon",
+    "26123": "Newaygo",
     "26125": "Oakland",
     "26139": "Ottawa",
     "26145": "Saginaw",
     "26147": "St. Clair",
+    "26149": "St. Joseph",
+    "26155": "Shiawassee",
     "26159": "Van Buren",
     "26161": "Washtenaw",
     "26163": "Wayne",
 }
 
 MI_MAJORS: set[str] = {
+    # Wave 1
     "26163",  # Wayne
     "26125",  # Oakland
     "26099",  # Macomb
@@ -228,6 +314,22 @@ MI_MAJORS: set[str] = {
     "26025",  # Calhoun
     "26055",  # Grand Traverse
     "26045",  # Eaton
+    # Deepen — next volume band (~1,000+ originations)
+    "26091",  # Lenawee
+    "26087",  # Lapeer
+    "26017",  # Bay
+    "26159",  # Van Buren
+    "26037",  # Clinton
+    "26015",  # Barry
+    "26111",  # Midland
+    "26155",  # Shiawassee
+    "26067",  # Ionia
+    "26149",  # St. Joseph
+    "26027",  # Cass
+    "26073",  # Isabella
+    "26107",  # Mecosta
+    "26117",  # Montcalm
+    "26123",  # Newaygo
 }
 
 IN_COUNTIES: dict[str, str] = {
@@ -235,30 +337,41 @@ IN_COUNTIES: dict[str, str] = {
     "18005": "Bartholomew",
     "18011": "Boone",
     "18019": "Clark",
+    "18029": "Dearborn",
+    "18033": "DeKalb",
     "18035": "Delaware",
     "18039": "Elkhart",
     "18043": "Floyd",
+    "18053": "Grant",
     "18057": "Hamilton",
     "18059": "Hancock",
+    "18061": "Harrison",
     "18063": "Hendricks",
+    "18065": "Henry",
     "18067": "Howard",
     "18081": "Johnson",
     "18085": "Kosciusko",
     "18089": "Lake",
     "18091": "LaPorte",
+    "18093": "Lawrence",
     "18095": "Madison",
     "18097": "Marion",
+    "18099": "Marshall",
     "18105": "Monroe",
     "18109": "Morgan",
+    "18113": "Noble",
     "18127": "Porter",
     "18141": "St. Joseph",
+    "18145": "Shelby",
     "18157": "Tippecanoe",
     "18163": "Vanderburgh",
     "18167": "Vigo",
     "18173": "Warrick",
+    "18177": "Wayne",
 }
 
 IN_MAJORS: set[str] = {
+    # Wave 1
     "18097",  # Marion
     "18057",  # Hamilton
     "18089",  # Lake
@@ -279,6 +392,22 @@ IN_MAJORS: set[str] = {
     "18091",  # LaPorte
     "18109",  # Morgan
     "18043",  # Floyd
+    # Deepen — next volume / regional
+    "18067",  # Howard
+    "18085",  # Kosciusko
+    "18005",  # Bartholomew
+    "18167",  # Vigo
+    "18173",  # Warrick
+    "18029",  # Dearborn
+    "18177",  # Wayne
+    "18033",  # DeKalb
+    "18145",  # Shelby
+    "18053",  # Grant
+    "18113",  # Noble
+    "18093",  # Lawrence
+    "18061",  # Harrison
+    "18065",  # Henry
+    "18099",  # Marshall
 }
 
 STATES = [
@@ -523,8 +652,9 @@ def build_state(
     md.append(
         "\n## Matching rules\n\n"
         "- Reuse prior product-state curated LEI maps when the LEI has state activity\n"
-        "- MI/IN curated: Lake Michigan CU, Mortgage 1, DFCU, Genisys, MSUFCU, First Merchants, "
-        "GVC Mortgage, 3Rivers FCU, 1st Source, German American, Centier, Lake City Bank\n"
+        "- MI/IN curated + deepen: LMCU, Mortgage 1, DFCU, Genisys, MSUFCU, MSGCU, Dart Bank, "
+        "Mercantile Bank, Staunton Financial, First Merchants, GVC, 3Rivers, 1st Source, "
+        "German American, Centier, Lake City, Indiana Members CU, Everwise, Centra, Liberty FCU\n"
         "- First Merchants uses LEI identity (no forced company NMLS inventing)\n"
         "- No fuzzy LEI inventing\n"
         "\n## Rebuild\n\n"

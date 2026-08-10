@@ -3,10 +3,10 @@
 **Source:** `data/hmda/by-state/IN/` (national 2025 foundation)
 
 - County market rows: **48**
-- Lender–county activity (major markets): **5522**
+- Lender–county activity (major markets): **7885**
 - LEI state summaries: **907**
-- High-confidence LEI→directory mappings: **124**
-- Major markets with names: **20**
+- High-confidence LEI→directory mappings: **130**
+- Major markets with names: **35**
 
 ## Top mapped LEIs by IN originations
 
@@ -24,12 +24,12 @@
 - `guild-mortgage-metrowest` — Guild Mortgage Company LLC (2580 IN orig.)
 - `huntington-national-bank` — The Huntington National Bank (2547 IN orig.)
 - `three-rivers-federal-credit-union` — Three Rivers Federal Credit Union (2448 IN orig.)
+- `indiana-members-credit-union` — INDIANA MEMBERS CREDIT UNION (2387 IN orig.)
 - `movement-mortgage-myrtle-beach` — Movement Mortgage, LLC (2331 IN orig.)
 - `union-home-mortgage-reeves-team` — UNION HOME MORTGAGE CORP. (2257 IN orig.)
+- `everwise-credit-union` — EVERWISE CREDIT UNION (2255 IN orig.)
+- `centra-credit-union` — Centra Credit Union (2206 IN orig.)
 - `freedom-mortgage` — Freedom Mortgage Corporation (2201 IN orig.)
-- `newrez` — Newrez LLC (2080 IN orig.)
-- `german-american-bank` — German American Bank (2053 IN orig.)
-- `loandepot` — loanDepot.com, LLC (1952 IN orig.)
 
 ## Major markets (panel-ready)
 
@@ -53,11 +53,26 @@
 - **LaPorte** (`18091`) — 2546 originations
 - **Morgan** (`18109`) — 2461 originations
 - **Floyd** (`18043`) — 2456 originations
+- **Howard** (`18067`) — 2430 originations
+- **Kosciusko** (`18085`) — 2357 originations
+- **Bartholomew** (`18005`) — 2320 originations
+- **Vigo** (`18167`) — 2299 originations
+- **Warrick** (`18173`) — 1789 originations
+- **Dearborn** (`18029`) — 1477 originations
+- **Wayne** (`18177`) — 1257 originations
+- **DeKalb** (`18033`) — 1256 originations
+- **Shelby** (`18145`) — 1244 originations
+- **Grant** (`18053`) — 1200 originations
+- **Noble** (`18113`) — 1172 originations
+- **Lawrence** (`18093`) — 1159 originations
+- **Harrison** (`18061`) — 1138 originations
+- **Henry** (`18065`) — 1136 originations
+- **Marshall** (`18099`) — 1131 originations
 
 ## Matching rules
 
 - Reuse prior product-state curated LEI maps when the LEI has state activity
-- MI/IN curated: Lake Michigan CU, Mortgage 1, DFCU, Genisys, MSUFCU, First Merchants, GVC Mortgage, 3Rivers FCU, 1st Source, German American, Centier, Lake City Bank
+- MI/IN curated + deepen: LMCU, Mortgage 1, DFCU, Genisys, MSUFCU, MSGCU, Dart Bank, Mercantile Bank, Staunton Financial, First Merchants, GVC, 3Rivers, 1st Source, German American, Centier, Lake City, Indiana Members CU, Everwise, Centra, Liberty FCU
 - First Merchants uses LEI identity (no forced company NMLS inventing)
 - No fuzzy LEI inventing
 
@@ -70,5 +85,5 @@ python scripts/build-hmda-mi-in-slices.py
 ## Major slugs (for states.ts)
 
 ```
-'marion', 'hamilton', 'lake', 'allen', 'st-joseph', 'hendricks', 'johnson', 'elkhart', 'porter', 'vanderburgh', 'tippecanoe', 'clark', 'madison', 'hancock', 'boone', 'monroe', 'delaware', 'laporte', 'morgan', 'floyd'
+'marion', 'hamilton', 'lake', 'allen', 'st-joseph', 'hendricks', 'johnson', 'elkhart', 'porter', 'vanderburgh', 'tippecanoe', 'clark', 'madison', 'hancock', 'boone', 'monroe', 'delaware', 'laporte', 'morgan', 'floyd', 'howard', 'kosciusko', 'bartholomew', 'vigo', 'warrick', 'dearborn', 'wayne', 'dekalb', 'shelby', 'grant', 'noble', 'lawrence', 'harrison', 'henry', 'marshall'
 ```

@@ -855,7 +855,7 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
     fileSuffix: '_mi',
     originationsColumn: 'michigan_originations',
     majorCountySlugs: new Set([
-      // Detroit metro + Grand Rapids / West MI + secondary
+      // Wave 1 — Detroit metro + Grand Rapids / West MI + secondary
       'wayne',
       'oakland',
       'macomb',
@@ -876,6 +876,22 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'calhoun',
       'grand-traverse',
       'eaton',
+      // Deepen — next volume / regional
+      'lenawee',
+      'lapeer',
+      'bay',
+      'van-buren',
+      'clinton',
+      'barry',
+      'midland',
+      'shiawassee',
+      'ionia',
+      'st-joseph',
+      'cass',
+      'isabella',
+      'mecosta',
+      'montcalm',
+      'newaygo',
     ]),
   },
   IN: {
@@ -886,7 +902,7 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
     fileSuffix: '_in',
     originationsColumn: 'indiana_originations',
     majorCountySlugs: new Set([
-      // Indianapolis metro + NW IN / Fort Wayne / secondary
+      // Wave 1 — Indianapolis metro + NW IN / Fort Wayne / secondary
       'marion',
       'hamilton',
       'lake',
@@ -907,6 +923,22 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'laporte',
       'morgan',
       'floyd',
+      // Deepen — next volume / regional
+      'howard',
+      'kosciusko',
+      'bartholomew',
+      'vigo',
+      'warrick',
+      'dearborn',
+      'wayne',
+      'dekalb',
+      'shelby',
+      'grant',
+      'noble',
+      'lawrence',
+      'harrison',
+      'henry',
+      'marshall',
     ]),
   },
 };

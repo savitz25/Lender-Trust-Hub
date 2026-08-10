@@ -17,26 +17,37 @@ python scripts/build-hmda-mi-in-slices.py
 
 | Surface | Behavior |
 |---------|----------|
-| `/local-lenders/michigan/{county}` | Market panels for wave-1 major counties |
-| `/local-lenders/indiana/{county}` | Market panels for wave-1 major counties |
+| `/local-lenders/michigan/{county}` | Market panels for major counties |
+| `/local-lenders/indiana/{county}` | Market panels for major counties |
 | `/lenders/{slug}` | State originations when LEI mapped |
 | Analyzer | `mi:{county}`, `in:{county}` prefill options |
 
-## Major counties (wave 1)
+## Mapping coverage (deepen pass)
 
-### Michigan (20)
-Wayne, Oakland, Macomb, Kent, Genesee, Ottawa, Washtenaw, Kalamazoo, Livingston, Ingham, Muskegon, St. Clair, Monroe, Berrien, Jackson, Saginaw, Allegan, Calhoun, Grand Traverse, Eaton
+| Metric | Michigan | Indiana |
+|--------|----------|---------|
+| Panel markets (majors) | **35** | **35** |
+| High-confidence LEI maps | see slice README after rebuild | see slice README after rebuild |
 
-### Indiana (20)
-Marion, Hamilton, Lake, Allen, St. Joseph, Hendricks, Johnson, Elkhart, Porter, Vanderburgh, Tippecanoe, Clark, Madison, Hancock, Boone, Monroe, Delaware, LaPorte, Morgan, Floyd
+## Major counties
+
+### Michigan — wave 1 + deepen
+**Wave 1:** Wayne, Oakland, Macomb, Kent, Genesee, Ottawa, Washtenaw, Kalamazoo, Livingston, Ingham, Muskegon, St. Clair, Monroe, Berrien, Jackson, Saginaw, Allegan, Calhoun, Grand Traverse, Eaton  
+
+**Deepen:** Lenawee, Lapeer, Bay, Van Buren, Clinton, Barry, Midland, Shiawassee, Ionia, St. Joseph, Cass, Isabella, Mecosta, Montcalm, Newaygo  
+
+### Indiana — wave 1 + deepen
+**Wave 1:** Marion, Hamilton, Lake, Allen, St. Joseph, Hendricks, Johnson, Elkhart, Porter, Vanderburgh, Tippecanoe, Clark, Madison, Hancock, Boone, Monroe, Delaware, LaPorte, Morgan, Floyd  
+
+**Deepen:** Howard, Kosciusko, Bartholomew, Vigo, Warrick, Dearborn, Wayne, DeKalb, Shelby, Grant, Noble, Lawrence, Harrison, Henry, Marshall  
 
 ## Matching
 
 - Reuse prior product-state curated LEI maps when the LEI has MI or IN activity  
 - Precision only — no low-confidence LEI inventing  
+- First Merchants linked by LEI identity  
 
-### MI / IN curated (GLEIF + published company NMLS or LEI identity)
-
+### Wave 1 curated
 | Lender | NMLS | Slug |
 |--------|------|------|
 | Lake Michigan Credit Union | 442967 | `lake-michigan-credit-union` |
@@ -52,16 +63,31 @@ Marion, Hamilton, Lake, Allen, St. Joseph, Hendricks, Johnson, Elkhart, Porter, 
 | Centier Bank | 408076 | `centier-bank` |
 | Lake City Bank | 431669 | `lake-city-bank` |
 
-Rocket, UWM, Huntington, Flagstar, Ruoff, Old National, First Financial (OH), and other multi-state lenders reuse prior maps.
+### Deepen curated
+| Lender | NMLS | Slug |
+|--------|------|------|
+| MSGCU | 423037 | `msgcu` |
+| Dart Bank | 406384 | `dart-bank` |
+| Mercantile Bank (MI) | 419813 | `mercantile-bank-michigan` |
+| Staunton Financial | 140012 | `staunton-financial` |
+| Indiana Members Credit Union | 402492 | `indiana-members-credit-union` |
+| Everwise Credit Union | 686706 | `everwise-credit-union` |
+| Centra Credit Union | 409733 | `centra-credit-union` |
+| Liberty Federal Credit Union | 518136 | `liberty-federal-credit-union` |
 
-**Note:** First Merchants is linked by LEI identity rather than inventing a company NMLS.
+## What improved vs deferred
 
-## Intentionally deferred
+### Improved
+- MI panels expanded beyond Detroit / Grand Rapids / first-wave mid-state set (**35** majors)  
+- IN panels expanded beyond Indianapolis / NW IN / Fort Wayne core (**35** majors)  
+- Eight additional high-confidence regional lenders with directory hosts + LEI maps  
+- Multi-state wiring intact for all **24** live product states  
 
-- Full 83-county MI / 92-county IN coverage  
-- Independent Bank (MI), MSGCU, Consumers CU (MI), Mercantile Bank, Horizon Bank, Indiana Members CU, Everwise, Centra — no clean company NMLS + host pairing in this pass  
+### Intentionally deferred
+- Full 83-county MI / 92-county IN coverage (thin rural panels)  
+- Independent Bank (MI), Consumers CU (MI), Credit Union ONE, Mortgage Center, Horizon Bank — no clean company NMLS + host pairing in this pass  
 - Low-confidence LEI inventing  
 
 ## Stability
 
-Does not modify existing product-state folders for the other 22 live states. Multi-state wiring remains intact for all **24** active product states after this activation.
+Does not modify existing product-state folders for the other 22 live states.

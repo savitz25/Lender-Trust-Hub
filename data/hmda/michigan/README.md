@@ -3,10 +3,10 @@
 **Source:** `data/hmda/by-state/MI/` (national 2025 foundation)
 
 - County market rows: **41**
-- Lender–county activity (major markets): **5681**
+- Lender–county activity (major markets): **8222**
 - LEI state summaries: **857**
-- High-confidence LEI→directory mappings: **129**
-- Major markets with names: **20**
+- High-confidence LEI→directory mappings: **136**
+- Major markets with names: **35**
 
 ## Top mapped LEIs by MI originations
 
@@ -20,16 +20,16 @@
 - `mortgage-1` — MORTGAGE 1 INCORPORATED (3342 MI orig.)
 - `jpmorgan-chase-bank` — JPMorgan Chase Bank, National Association (2995 MI orig.)
 - `dfcu-financial` — DFCU FINANCIAL (2985 MI orig.)
+- `msgcu` — MICHIGAN SCHOOLS AND GOVERNMENT (2902 MI orig.)
 - `pnc-bank` — PNC Bank, National Association (2885 MI orig.)
 - `genisys-credit-union` — Genisys Credit Union (2770 MI orig.)
 - `flagstar-bank` — Flagstar Bank, National Association (2677 MI orig.)
+- `dart-bank` — The Dart Bank (2600 MI orig.)
 - `msufcu` — MICHIGAN STATE UNIVERSITY Federal Credit Union (2551 MI orig.)
+- `staunton-financial` — STAUNTON FINANCIAL, INC. (2473 MI orig.)
 - `movement-mortgage-myrtle-beach` — Movement Mortgage, LLC (2334 MI orig.)
 - `freedom-mortgage` — Freedom Mortgage Corporation (2327 MI orig.)
-- `guaranteed-rate` — Guaranteed Rate, Inc. (1939 MI orig.)
-- `first-merchants-bank` — First Merchants Bank (1861 MI orig.)
-- `newrez` — Newrez LLC (1723 MI orig.)
-- `mr-cooper` — Nationstar Mortgage LLC (1707 MI orig.)
+- `mercantile-bank-michigan` — Mercantile Bank (2101 MI orig.)
 
 ## Major markets (panel-ready)
 
@@ -53,11 +53,26 @@
 - **Calhoun** (`26025`) — 3152 originations
 - **Grand Traverse** (`26055`) — 2514 originations
 - **Eaton** (`26045`) — 2482 originations
+- **Lenawee** (`26091`) — 2324 originations
+- **Lapeer** (`26087`) — 2268 originations
+- **Bay** (`26017`) — 2131 originations
+- **Van Buren** (`26159`) — 2006 originations
+- **Clinton** (`26037`) — 1898 originations
+- **Barry** (`26015`) — 1783 originations
+- **Montcalm** (`26117`) — 1767 originations
+- **Midland** (`26111`) — 1716 originations
+- **Shiawassee** (`26155`) — 1675 originations
+- **Ionia** (`26067`) — 1478 originations
+- **St. Joseph** (`26149`) — 1462 originations
+- **Newaygo** (`26123`) — 1332 originations
+- **Cass** (`26027`) — 1324 originations
+- **Isabella** (`26073`) — 1101 originations
+- **Mecosta** (`26107`) — 1004 originations
 
 ## Matching rules
 
 - Reuse prior product-state curated LEI maps when the LEI has state activity
-- MI/IN curated: Lake Michigan CU, Mortgage 1, DFCU, Genisys, MSUFCU, First Merchants, GVC Mortgage, 3Rivers FCU, 1st Source, German American, Centier, Lake City Bank
+- MI/IN curated + deepen: LMCU, Mortgage 1, DFCU, Genisys, MSUFCU, MSGCU, Dart Bank, Mercantile Bank, Staunton Financial, First Merchants, GVC, 3Rivers, 1st Source, German American, Centier, Lake City, Indiana Members CU, Everwise, Centra, Liberty FCU
 - First Merchants uses LEI identity (no forced company NMLS inventing)
 - No fuzzy LEI inventing
 
@@ -70,5 +85,5 @@ python scripts/build-hmda-mi-in-slices.py
 ## Major slugs (for states.ts)
 
 ```
-'wayne', 'oakland', 'macomb', 'kent', 'genesee', 'ottawa', 'washtenaw', 'kalamazoo', 'livingston', 'ingham', 'muskegon', 'st-clair', 'monroe', 'berrien', 'jackson', 'saginaw', 'allegan', 'calhoun', 'grand-traverse', 'eaton'
+'wayne', 'oakland', 'macomb', 'kent', 'genesee', 'ottawa', 'washtenaw', 'kalamazoo', 'livingston', 'ingham', 'muskegon', 'st-clair', 'monroe', 'berrien', 'jackson', 'saginaw', 'allegan', 'calhoun', 'grand-traverse', 'eaton', 'lenawee', 'lapeer', 'bay', 'van-buren', 'clinton', 'barry', 'montcalm', 'midland', 'shiawassee', 'ionia', 'st-joseph', 'newaygo', 'cass', 'isabella', 'mecosta'
 ```
