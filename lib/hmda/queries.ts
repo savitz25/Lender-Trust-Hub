@@ -57,6 +57,10 @@ export const MAJOR_ILLINOIS_COUNTY_SLUGS = HMDA_STATE_CONFIGS.IL.majorCountySlug
 
 export const MAJOR_OHIO_COUNTY_SLUGS = HMDA_STATE_CONFIGS.OH.majorCountySlugs;
 
+export const MAJOR_MICHIGAN_COUNTY_SLUGS = HMDA_STATE_CONFIGS.MI.majorCountySlugs;
+
+export const MAJOR_INDIANA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.IN.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw

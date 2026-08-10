@@ -22,7 +22,9 @@ export type HmdaStateCode =
   | 'DC'
   | 'TN'
   | 'IL'
-  | 'OH';
+  | 'OH'
+  | 'MI'
+  | 'IN';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -56,7 +58,9 @@ export type HmdaStateConfig = {
     | 'district_of_columbia_originations'
     | 'tennessee_originations'
     | 'illinois_originations'
-    | 'ohio_originations';
+    | 'ohio_originations'
+    | 'michigan_originations'
+    | 'indiana_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -843,6 +847,68 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'sandusky',
     ]),
   },
+  MI: {
+    code: 'MI',
+    stateSlug: 'michigan',
+    name: 'Michigan',
+    dataFolder: 'michigan',
+    fileSuffix: '_mi',
+    originationsColumn: 'michigan_originations',
+    majorCountySlugs: new Set([
+      // Detroit metro + Grand Rapids / West MI + secondary
+      'wayne',
+      'oakland',
+      'macomb',
+      'kent',
+      'genesee',
+      'ottawa',
+      'washtenaw',
+      'kalamazoo',
+      'livingston',
+      'ingham',
+      'muskegon',
+      'st-clair',
+      'monroe',
+      'berrien',
+      'jackson',
+      'saginaw',
+      'allegan',
+      'calhoun',
+      'grand-traverse',
+      'eaton',
+    ]),
+  },
+  IN: {
+    code: 'IN',
+    stateSlug: 'indiana',
+    name: 'Indiana',
+    dataFolder: 'indiana',
+    fileSuffix: '_in',
+    originationsColumn: 'indiana_originations',
+    majorCountySlugs: new Set([
+      // Indianapolis metro + NW IN / Fort Wayne / secondary
+      'marion',
+      'hamilton',
+      'lake',
+      'allen',
+      'st-joseph',
+      'hendricks',
+      'johnson',
+      'elkhart',
+      'porter',
+      'vanderburgh',
+      'tippecanoe',
+      'clark',
+      'madison',
+      'hancock',
+      'boone',
+      'monroe',
+      'delaware',
+      'laporte',
+      'morgan',
+      'floyd',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -868,6 +934,8 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'TN',
   'IL',
   'OH',
+  'MI',
+  'IN',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {

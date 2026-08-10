@@ -24,6 +24,8 @@ import {
   MAJOR_TENNESSEE_COUNTY_SLUGS,
   MAJOR_ILLINOIS_COUNTY_SLUGS,
   MAJOR_OHIO_COUNTY_SLUGS,
+  MAJOR_MICHIGAN_COUNTY_SLUGS,
+  MAJOR_INDIANA_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -331,6 +333,28 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (OH)`,
       originations: c.originations,
       stateSlug: 'ohio',
+    });
+  }
+
+  const mi = loadHmdaStateData('MI');
+  for (const c of mi.countyMarkets) {
+    if (!MAJOR_MICHIGAN_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `mi:${c.countySlug}`,
+      name: `${c.countyName} (MI)`,
+      originations: c.originations,
+      stateSlug: 'michigan',
+    });
+  }
+
+  const indiana = loadHmdaStateData('IN');
+  for (const c of indiana.countyMarkets) {
+    if (!MAJOR_INDIANA_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `in:${c.countySlug}`,
+      name: `${c.countyName} (IN)`,
+      originations: c.originations,
+      stateSlug: 'indiana',
     });
   }
 
