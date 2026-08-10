@@ -12,6 +12,9 @@ import {
   MAJOR_NEW_YORK_COUNTY_SLUGS,
   MAJOR_PENNSYLVANIA_COUNTY_SLUGS,
   MAJOR_MASSACHUSETTS_COUNTY_SLUGS,
+  MAJOR_RHODE_ISLAND_COUNTY_SLUGS,
+  MAJOR_VERMONT_COUNTY_SLUGS,
+  MAJOR_MAINE_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -187,6 +190,39 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (MA)`,
       originations: c.originations,
       stateSlug: 'massachusetts',
+    });
+  }
+
+  const ri = loadHmdaStateData('RI');
+  for (const c of ri.countyMarkets) {
+    if (!MAJOR_RHODE_ISLAND_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `ri:${c.countySlug}`,
+      name: `${c.countyName} (RI)`,
+      originations: c.originations,
+      stateSlug: 'rhode-island',
+    });
+  }
+
+  const vt = loadHmdaStateData('VT');
+  for (const c of vt.countyMarkets) {
+    if (!MAJOR_VERMONT_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `vt:${c.countySlug}`,
+      name: `${c.countyName} (VT)`,
+      originations: c.originations,
+      stateSlug: 'vermont',
+    });
+  }
+
+  const me = loadHmdaStateData('ME');
+  for (const c of me.countyMarkets) {
+    if (!MAJOR_MAINE_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `me:${c.countySlug}`,
+      name: `${c.countyName} (ME)`,
+      originations: c.originations,
+      stateSlug: 'maine',
     });
   }
 

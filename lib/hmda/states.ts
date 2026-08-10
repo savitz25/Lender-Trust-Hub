@@ -10,7 +10,10 @@ export type HmdaStateCode =
   | 'NJ'
   | 'NY'
   | 'PA'
-  | 'MA';
+  | 'MA'
+  | 'RI'
+  | 'VT'
+  | 'ME';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -19,7 +22,7 @@ export type HmdaStateConfig = {
   name: string;
   /** data/hmda/{dataFolder}/ */
   dataFolder: string;
-  /** File name suffixes (e.g. _fl, _tx, _ny, _pa, _ma) for summary CSVs */
+  /** File name suffixes (e.g. _fl, _tx, _ri, _vt, _me) for summary CSVs */
   fileSuffix: string;
   /** Mapping CSV column for state originations */
   originationsColumn:
@@ -32,7 +35,10 @@ export type HmdaStateConfig = {
     | 'new_jersey_originations'
     | 'new_york_originations'
     | 'pennsylvania_originations'
-    | 'massachusetts_originations';
+    | 'massachusetts_originations'
+    | 'rhode_island_originations'
+    | 'vermont_originations'
+    | 'maine_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -451,6 +457,69 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'nantucket',
     ]),
   },
+  RI: {
+    code: 'RI',
+    stateSlug: 'rhode-island',
+    name: 'Rhode Island',
+    dataFolder: 'rhode-island',
+    fileSuffix: '_ri',
+    originationsColumn: 'rhode_island_originations',
+    majorCountySlugs: new Set([
+      'providence',
+      'kent',
+      'washington',
+      'newport',
+      'bristol',
+    ]),
+  },
+  VT: {
+    code: 'VT',
+    stateSlug: 'vermont',
+    name: 'Vermont',
+    dataFolder: 'vermont',
+    fileSuffix: '_vt',
+    originationsColumn: 'vermont_originations',
+    majorCountySlugs: new Set([
+      'chittenden',
+      'washington',
+      'franklin',
+      'windsor',
+      'rutland',
+      'windham',
+      'lamoille',
+      'addison',
+      'orleans',
+      'bennington',
+      'caledonia',
+      'orange',
+    ]),
+  },
+  ME: {
+    code: 'ME',
+    stateSlug: 'maine',
+    name: 'Maine',
+    dataFolder: 'maine',
+    fileSuffix: '_me',
+    originationsColumn: 'maine_originations',
+    majorCountySlugs: new Set([
+      'cumberland',
+      'york',
+      'penobscot',
+      'kennebec',
+      'androscoggin',
+      'oxford',
+      'hancock',
+      'somerset',
+      'aroostook',
+      'waldo',
+      'knox',
+      'lincoln',
+      'sagadahoc',
+      'washington',
+      'franklin',
+      'piscataquis',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -464,6 +533,9 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'NY',
   'PA',
   'MA',
+  'RI',
+  'VT',
+  'ME',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {

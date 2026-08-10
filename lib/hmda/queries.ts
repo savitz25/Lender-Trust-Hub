@@ -33,6 +33,12 @@ export const MAJOR_PENNSYLVANIA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.PA.majorCounty
 
 export const MAJOR_MASSACHUSETTS_COUNTY_SLUGS = HMDA_STATE_CONFIGS.MA.majorCountySlugs;
 
+export const MAJOR_RHODE_ISLAND_COUNTY_SLUGS = HMDA_STATE_CONFIGS.RI.majorCountySlugs;
+
+export const MAJOR_VERMONT_COUNTY_SLUGS = HMDA_STATE_CONFIGS.VT.majorCountySlugs;
+
+export const MAJOR_MAINE_COUNTY_SLUGS = HMDA_STATE_CONFIGS.ME.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw
@@ -174,7 +180,7 @@ function evidenceForBundle(
 }
 
 /**
- * Lender evidence across product states (FL, TX, GA, CA, NC, SC, NJ, NY, PA, MA).
+ * Lender evidence across product states (FL…ME including RI, VT, ME).
  * Primary = highest state originations; otherStates lists secondary markets.
  */
 export function getHmdaLenderEvidenceBySlug(slug: string): HmdaLenderEvidence | null {
