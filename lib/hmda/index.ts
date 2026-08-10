@@ -37,4 +37,5 @@ export {
   getHmdaProductStates,
   MAJOR_FLORIDA_COUNTY_SLUGS,
   MAJOR_TEXAS_COUNTY_SLUGS,
+  MAJOR_GEORGIA_COUNTY_SLUGS,
 } from './queries';

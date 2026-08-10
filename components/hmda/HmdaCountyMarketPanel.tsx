@@ -24,9 +24,11 @@ export function HmdaCountyMarketPanel({ evidence }: { evidence: HmdaCountyEviden
               Source: {evidence.source} ·{' '}
               {evidence.stateSlug === 'texas'
                 ? 'Texas'
-                : evidence.stateSlug === 'florida'
-                  ? 'Florida'
-                  : evidence.state}{' '}
+                : evidence.stateSlug === 'georgia'
+                  ? 'Georgia'
+                  : evidence.stateSlug === 'florida'
+                    ? 'Florida'
+                    : evidence.state}{' '}
               county-level activity · Not a score or ranking
             </p>
           </div>

@@ -4,6 +4,7 @@ import {
   loadHmdaStateData,
   MAJOR_FLORIDA_COUNTY_SLUGS,
   MAJOR_TEXAS_COUNTY_SLUGS,
+  MAJOR_GEORGIA_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -11,7 +12,7 @@ export type AnalyzerLenderOption = {
   slug: string;
   name: string;
   nmlsId: string;
-  /** Combined product-state originations (FL+TX) for sort/display */
+  /** Combined product-state originations (FL+TX+GA) for sort/display */
   floridaOriginations: number;
 };
 
@@ -63,7 +64,7 @@ export function getAnalyzerLenderOptions(): AnalyzerLenderOption[] {
   );
 }
 
-/** Major FL + TX counties for optional market context (prefixed names). */
+/** Major FL + TX + GA counties for optional market context (prefixed names). */
 export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
   const out: AnalyzerCountyOption[] = [];
 
@@ -86,6 +87,17 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (TX)`,
       originations: c.originations,
       stateSlug: 'texas',
+    });
+  }
+
+  const ga = loadHmdaStateData('GA');
+  for (const c of ga.countyMarkets) {
+    if (!MAJOR_GEORGIA_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `ga:${c.countySlug}`,
+      name: `${c.countyName} (GA)`,
+      originations: c.originations,
+      stateSlug: 'georgia',
     });
   }
 

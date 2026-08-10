@@ -17,6 +17,8 @@ export const MAJOR_FLORIDA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.FL.majorCountySlugs
 
 export const MAJOR_TEXAS_COUNTY_SLUGS = HMDA_STATE_CONFIGS.TX.majorCountySlugs;
 
+export const MAJOR_GEORGIA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.GA.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw

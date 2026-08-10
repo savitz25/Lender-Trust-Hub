@@ -28,11 +28,14 @@ function toLenderCtx(slug: string): HmdaAnalyzerLenderContext | null {
 }
 
 function toCountyCtx(optionSlug: string): HmdaAnalyzerCountyContext | null {
-  // Analyzer options use `tx:{county}` for Texas; bare slugs are Florida.
+  // Analyzer options: bare slugs = Florida; `tx:` / `ga:` prefixes for other states.
   let stateSlug = 'florida';
   let countySlug = optionSlug;
   if (optionSlug.startsWith('tx:')) {
     stateSlug = 'texas';
+    countySlug = optionSlug.slice(3);
+  } else if (optionSlug.startsWith('ga:')) {
+    stateSlug = 'georgia';
     countySlug = optionSlug.slice(3);
   }
   const e = getHmdaCountyEvidence(stateSlug, countySlug);

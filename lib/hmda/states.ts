@@ -1,6 +1,6 @@
 /** HMDA product states with cleaned slices under data/hmda/{folder}/ */
 
-export type HmdaStateCode = 'FL' | 'TX';
+export type HmdaStateCode = 'FL' | 'TX' | 'GA';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -9,10 +9,13 @@ export type HmdaStateConfig = {
   name: string;
   /** data/hmda/{dataFolder}/ */
   dataFolder: string;
-  /** File name suffixes (e.g. _fl, _tx) for summary CSVs */
+  /** File name suffixes (e.g. _fl, _tx, _ga) for summary CSVs */
   fileSuffix: string;
   /** Mapping CSV column for state originations */
-  originationsColumn: 'florida_originations' | 'texas_originations';
+  originationsColumn:
+    | 'florida_originations'
+    | 'texas_originations'
+    | 'georgia_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -79,9 +82,39 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'webb',
     ]),
   },
+  GA: {
+    code: 'GA',
+    stateSlug: 'georgia',
+    name: 'Georgia',
+    dataFolder: 'georgia',
+    fileSuffix: '_ga',
+    originationsColumn: 'georgia_originations',
+    majorCountySlugs: new Set([
+      'fulton',
+      'gwinnett',
+      'cobb',
+      'dekalb',
+      'cherokee',
+      'forsyth',
+      'chatham',
+      'henry',
+      'paulding',
+      'hall',
+      'houston',
+      'clayton',
+      'columbia',
+      'coweta',
+      'richmond',
+      'muscogee',
+      'douglas',
+      'bartow',
+      'fayette',
+      'bibb',
+    ]),
+  },
 };
 
-export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = ['FL', 'TX'];
+export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = ['FL', 'TX', 'GA'];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {
   const s = stateSlug.toLowerCase();

@@ -55,11 +55,17 @@ function loadMappings(cfg: HmdaStateConfig): HmdaLeiMapping[] {
     matchMethod: r.match_method || '',
     // Column may be florida_originations or texas_originations
     stateOriginations: num(
-      r[cfg.originationsColumn] ?? r.florida_originations ?? r.texas_originations
+      r[cfg.originationsColumn] ??
+        r.florida_originations ??
+        r.texas_originations ??
+        r.georgia_originations
     ),
     // Legacy alias used by older FL-only code paths
     floridaOriginations: num(
-      r[cfg.originationsColumn] ?? r.florida_originations ?? r.texas_originations
+      r[cfg.originationsColumn] ??
+        r.florida_originations ??
+        r.texas_originations ??
+        r.georgia_originations
     ),
     year: num(r.year) || 2025,
     state: cfg.code,
