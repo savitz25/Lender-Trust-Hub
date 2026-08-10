@@ -576,7 +576,7 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
     fileSuffix: '_va',
     originationsColumn: 'virginia_originations',
     majorCountySlugs: new Set([
-      // NOVA / Richmond / Hampton Roads wave 1
+      // Wave 1 — NOVA / Richmond / Hampton Roads core
       'fairfax',
       'virginia-beach',
       'loudoun',
@@ -609,6 +609,40 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'lynchburg',
       'louisa',
       'isle-of-wight',
+      // Deepen — next volume counties / independent cities (min ~700 orig)
+      'orange',
+      'franklin',
+      'shenandoah',
+      'caroline',
+      'campbell',
+      'warren',
+      'gloucester',
+      'new-kent',
+      'washington',
+      'pittsylvania',
+      'powhatan',
+      'botetourt',
+      'fluvanna',
+      'petersburg',
+      'goochland',
+      'king-george',
+      'henry',
+      'prince-george',
+      'pulaski',
+      'westmoreland',
+      'dinwiddie',
+      'manassas',
+      'staunton',
+      'waynesboro',
+      'amherst',
+      'danville',
+      'king-william',
+      'mecklenburg',
+      'accomack',
+      'hopewell',
+      'charlottesville',
+      'salem',
+      'carroll',
     ]),
   },
   MD: {
@@ -619,6 +653,7 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
     fileSuffix: '_md',
     originationsColumn: 'maryland_originations',
     majorCountySlugs: new Set([
+      // Wave 1 — Baltimore–Washington corridor + mid-tier
       'prince-georges',
       'montgomery',
       'baltimore',
@@ -641,6 +676,9 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'dorchester',
       'caroline',
       'garrett',
+      // Deepen — remaining meaningful counties (full 24-county panel set)
+      'kent',
+      'somerset',
     ]),
   },
 };

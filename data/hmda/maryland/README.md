@@ -3,10 +3,10 @@
 **Source:** `data/hmda/by-state/MD/` (national 2025 foundation)
 
 - County market rows: **24**
-- Lender–county activity (major markets): **6061**
+- Lender–county activity (major markets): **6293**
 - LEI state summaries: **708**
-- High-confidence LEI→directory mappings: **105**
-- Major markets with names: **22**
+- High-confidence LEI→directory mappings: **112**
+- Major markets with names: **24**
 
 ## Top mapped LEIs by MD originations
 
@@ -27,9 +27,9 @@
 - `tower-federal-credit-union` — TOWER Federal Credit Union (1696 MD orig.)
 - `first-national-bank-of-pennsylvania` — First National Bank of Pennsylvania (1678 MD orig.)
 - `townebank` — TowneBank (1552 MD orig.)
+- `apg-federal-credit-union` — ABERDEEN PROVING GROUND FEDERAL CREDIT UNION (1497 MD orig.)
 - `primary-residential-mortgage` — PRIMARY RESIDENTIAL MORTGAGE, INC. (1466 MD orig.)
 - `movement-mortgage-myrtle-beach` — Movement Mortgage, LLC (1405 MD orig.)
-- `amerihome-mortgage` — AmeriHome Mortgage Company, LLC (1275 MD orig.)
 
 ## Major markets (panel-ready)
 
@@ -55,17 +55,19 @@
 - **Dorchester** (`24019`) — 779 originations
 - **Caroline** (`24011`) — 748 originations
 - **Garrett** (`24023`) — 707 originations
+- **Kent** (`24029`) — 438 originations
+- **Somerset** (`24039`) — 378 originations
 
 ## Major slugs (for states.ts)
 
 ```
-'prince-georges', 'montgomery', 'baltimore', 'anne-arundel', 'baltimore-city', 'frederick', 'howard', 'harford', 'charles', 'carroll', 'washington', 'st-marys', 'calvert', 'cecil', 'worcester', 'wicomico', 'queen-annes', 'allegany', 'talbot', 'dorchester', 'caroline', 'garrett'
+'prince-georges', 'montgomery', 'baltimore', 'anne-arundel', 'baltimore-city', 'frederick', 'howard', 'harford', 'charles', 'carroll', 'washington', 'st-marys', 'calvert', 'cecil', 'worcester', 'wicomico', 'queen-annes', 'allegany', 'talbot', 'dorchester', 'caroline', 'garrett', 'kent', 'somerset'
 ```
 
 ## Matching rules
 
 - Reuse prior product-state curated LEI maps when the LEI has state activity
-- VA/MD curated: Alcova, Atlantic Coast Mortgage, Atlantic Union Bank, First Home Mortgage, Tower FCU, TowneBank
+- VA/MD curated wave 1 + deepen (VACU, Langley, C&F, BayPort, Southern Trust, Intercoastal, United Bank, Direct Mortgage, APG FCU, …)
 - No fuzzy LEI inventing
 
 ## Rebuild

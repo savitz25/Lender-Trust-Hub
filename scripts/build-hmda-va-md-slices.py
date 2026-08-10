@@ -79,6 +79,16 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "71603": "first-home-mortgage",
     "586147": "tower-federal-credit-union",
     "512138": "townebank",
+    # VA / MD deepen
+    "407552": "virginia-credit-union",
+    "402897": "langley-federal-credit-union",
+    "147312": "cf-mortgage",
+    "476890": "bayport-credit-union",
+    "2921": "southern-trust-mortgage",
+    "56323": "intercoastal-mortgage",
+    "522399": "united-bank",
+    "832799": "direct-mortgage-loans",
+    "480340": "apg-federal-credit-union",
 }
 
 VA_MD_CURATED_LEI: dict[str, dict[str, str]] = {
@@ -130,6 +140,79 @@ VA_MD_CURATED_LEI: dict[str, dict[str, str]] = {
         "match_confidence": "high",
         "match_method": "va_md_curated_gleif+public_nmls",
     },
+    # Deepen
+    "5493009LKZIV63KY6458": {
+        "institution_name_hmda": "VIRGINIA FEDERAL CREDIT UNION",
+        "nmls_id": "407552",
+        "our_lender_slug": "virginia-credit-union",
+        "legal_name": "Virginia Credit Union (Virginia Federal Credit Union)",
+        "match_confidence": "high",
+        "match_method": "va_md_deepen_gleif+public_nmls",
+    },
+    "549300CHR7TPQ6LLXG47": {
+        "institution_name_hmda": "LANGLEY FEDERAL CREDIT UNION",
+        "nmls_id": "402897",
+        "our_lender_slug": "langley-federal-credit-union",
+        "legal_name": "Langley Federal Credit Union",
+        "match_confidence": "high",
+        "match_method": "va_md_deepen_gleif+public_nmls",
+    },
+    "549300BWFA5UY7H4WJ62": {
+        "institution_name_hmda": "C & F Mortgage Corporation",
+        "nmls_id": "147312",
+        "our_lender_slug": "cf-mortgage",
+        "legal_name": "C&F Mortgage Corporation",
+        "match_confidence": "high",
+        "match_method": "va_md_deepen_gleif+public_nmls",
+    },
+    "5493000E527OH5Y8TR73": {
+        "institution_name_hmda": "NEWPORT NEWS SHIPBUILDING EMPLOYEES CREDIT UNION, INC. DBA BAYPORT CREDIT UNION",
+        "nmls_id": "476890",
+        "our_lender_slug": "bayport-credit-union",
+        "legal_name": "BayPort Credit Union",
+        "match_confidence": "high",
+        "match_method": "va_md_deepen_gleif+public_nmls",
+    },
+    "549300FOXIQQV5UZD367": {
+        "institution_name_hmda": "SOUTHERN TRUST MORTGAGE, LLC",
+        "nmls_id": "2921",
+        "our_lender_slug": "southern-trust-mortgage",
+        "legal_name": "Southern Trust Mortgage LLC",
+        "match_confidence": "high",
+        "match_method": "va_md_deepen_gleif+public_nmls",
+    },
+    "549300BM4NS8HDJT3X28": {
+        "institution_name_hmda": "INTERCOASTAL MORTGAGE, LLC",
+        "nmls_id": "56323",
+        "our_lender_slug": "intercoastal-mortgage",
+        "legal_name": "Intercoastal Mortgage, LLC",
+        "match_confidence": "high",
+        "match_method": "va_md_deepen_gleif+public_nmls",
+    },
+    "549300MKOZ81ZWTNKB12": {
+        "institution_name_hmda": "United Bank",
+        "nmls_id": "522399",
+        "our_lender_slug": "united-bank",
+        "legal_name": "United Bank",
+        "match_confidence": "high",
+        "match_method": "va_md_deepen_gleif+public_nmls",
+    },
+    "549300I0ICF6REKHOC74": {
+        "institution_name_hmda": "DIRECT MORTGAGE LOANS, LLC",
+        "nmls_id": "832799",
+        "our_lender_slug": "direct-mortgage-loans",
+        "legal_name": "Direct Mortgage Loans, LLC",
+        "match_confidence": "high",
+        "match_method": "va_md_deepen_gleif+public_nmls",
+    },
+    "5493004XJV6Y8XQYPX87": {
+        "institution_name_hmda": "ABERDEEN PROVING GROUND FEDERAL CREDIT UNION",
+        "nmls_id": "480340",
+        "our_lender_slug": "apg-federal-credit-union",
+        "legal_name": "APG Federal Credit Union",
+        "match_confidence": "high",
+        "match_method": "va_md_deepen_gleif+public_nmls",
+    },
 }
 
 # High-volume VA counties + independent cities (panel wave 1)
@@ -167,12 +250,31 @@ VA_COUNTIES: dict[str, str] = {
     "51073": "Gloucester",
     "51075": "Goochland",
     "51093": "Isle of Wight",
+    "51001": "Accomack",
+    "51009": "Amherst",
+    "51023": "Botetourt",
+    "51031": "Campbell",
+    "51033": "Caroline",
+    "51035": "Carroll",
+    "51036": "Charles City",
+    "51053": "Dinwiddie",
+    "51061": "Fauquier",
+    "51065": "Fluvanna",
+    "51067": "Franklin",
+    "51073": "Gloucester",
+    "51075": "Goochland",
+    "51079": "Greene",
+    "51089": "Henry",
+    "51093": "Isle of Wight",
     "51099": "King George",
     "51101": "King William",
     "51109": "Louisa",
+    "51117": "Mecklenburg",
     "51121": "Montgomery",
     "51127": "New Kent",
+    "51137": "Orange",
     "51139": "Page",
+    "51143": "Pittsylvania",
     "51145": "Powhatan",
     "51147": "Prince Edward",
     "51149": "Prince George",
@@ -184,8 +286,12 @@ VA_COUNTIES: dict[str, str] = {
     "51185": "Tazewell",
     "51187": "Warren",
     "51191": "Washington",
+    "51193": "Westmoreland",
+    "51197": "Wythe",
     "51199": "York",
     "51520": "Bristol",
+    "51540": "Charlottesville",
+    "51590": "Danville",
     "51600": "Fairfax City",
     "51630": "Fredericksburg",
     "51660": "Harrisonburg",
@@ -238,8 +344,8 @@ STATES = [
         "col": "virginia_originations",
         "alias_col": "va_originations",
         "counties": VA_COUNTIES,
-        # Filled dynamically: originations >= 1500 among named majors
-        "min_orig": 1500,
+        # Deepen: lower threshold for panel-ready markets
+        "min_orig": 700,
     },
     {
         "code": "MD",
@@ -249,7 +355,8 @@ STATES = [
         "col": "maryland_originations",
         "alias_col": "md_originations",
         "counties": MD_COUNTIES,
-        "min_orig": 700,
+        # Full state panels (all 24 counties/city)
+        "min_orig": 300,
     },
 ]
 
@@ -498,8 +605,8 @@ def build_state(
         + "\n```\n"
         "\n## Matching rules\n\n"
         "- Reuse prior product-state curated LEI maps when the LEI has state activity\n"
-        "- VA/MD curated: Alcova, Atlantic Coast Mortgage, Atlantic Union Bank, "
-        "First Home Mortgage, Tower FCU, TowneBank\n"
+        "- VA/MD curated wave 1 + deepen (VACU, Langley, C&F, BayPort, Southern Trust, "
+        "Intercoastal, United Bank, Direct Mortgage, APG FCU, …)\n"
         "- No fuzzy LEI inventing\n"
         "\n## Rebuild\n\n"
         "```bash\n"

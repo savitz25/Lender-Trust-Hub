@@ -3,10 +3,10 @@
 **Source:** `data/hmda/by-state/VA/` (national 2025 foundation)
 
 - County market rows: **113**
-- Lender–county activity (major markets): **8513**
+- Lender–county activity (major markets): **13252**
 - LEI state summaries: **885**
-- High-confidence LEI→directory mappings: **107**
-- Major markets with names: **32**
+- High-confidence LEI→directory mappings: **116**
+- Major markets with names: **65**
 
 ## Top mapped LEIs by VA originations
 
@@ -19,17 +19,17 @@
 - `fairway-mortgage-augusta-sheppard` — Fairway Independent Mortgage Corporation (4338 VA orig.)
 - `atlantic-bay-mortgage-charleston` — ATLANTIC BAY MORTGAGE GROUP, L.L.C. (4244 VA orig.)
 - `guild-mortgage-metrowest` — Guild Mortgage Company LLC (3646 VA orig.)
+- `virginia-credit-union` — VIRGINIA FEDERAL CREDIT UNION (3576 VA orig.)
 - `atlantic-coast-mortgage` — Atlantic Coast Mortgage, LLC (3458 VA orig.)
 - `atlantic-union-bank` — Atlantic Union Bank (3237 VA orig.)
 - `freedom-mortgage` — Freedom Mortgage Corporation (2938 VA orig.)
 - `nvr-mortgage` — NVR Mortgage Finance, Inc. (2711 VA orig.)
+- `langley-federal-credit-union` — LANGLEY FEDERAL CREDIT UNION (2701 VA orig.)
 - `guaranteed-rate` — Guaranteed Rate, Inc. (2688 VA orig.)
 - `alcova-mortgage` — Alcova Mortgage LLC (2663 VA orig.)
 - `first-heritage-mortgage` — First Heritage Mortgage, LLC (2637 VA orig.)
 - `anniemac-home-mortgage` — AMERICAN NEIGHBORHOOD MORTGAGE ACCEPTANCE COMPANY LLC (2520 VA orig.)
 - `amerihome-mortgage` — AmeriHome Mortgage Company, LLC (2325 VA orig.)
-- `pennymac` — PennyMac Loan Services, LLC (2215 VA orig.)
-- `newrez` — Newrez LLC (2175 VA orig.)
 
 ## Major markets (panel-ready)
 
@@ -64,18 +64,51 @@
 - **Montgomery** (`51121`) — 1576 originations
 - **Lynchburg** (`51680`) — 1569 originations
 - **Louisa** (`51109`) — 1534 originations
+- **Orange** (`51137`) — 1425 originations
+- **Franklin** (`51067`) — 1385 originations
 - **Isle of Wight** (`51093`) — 1384 originations
+- **Shenandoah** (`51171`) — 1252 originations
+- **Caroline** (`51033`) — 1245 originations
+- **Campbell** (`51031`) — 1218 originations
+- **Warren** (`51187`) — 1205 originations
+- **Gloucester** (`51073`) — 1185 originations
+- **New Kent** (`51127`) — 1122 originations
+- **Washington** (`51191`) — 1070 originations
+- **Pittsylvania** (`51143`) — 946 originations
+- **Powhatan** (`51145`) — 908 originations
+- **Botetourt** (`51023`) — 896 originations
+- **Fluvanna** (`51065`) — 892 originations
+- **Petersburg** (`51730`) — 858 originations
+- **Goochland** (`51075`) — 855 originations
+- **King George** (`51099`) — 853 originations
+- **Henry** (`51089`) — 807 originations
+- **Prince George** (`51149`) — 778 originations
+- **Pulaski** (`51155`) — 776 originations
+- **Westmoreland** (`51193`) — 746 originations
+- **Dinwiddie** (`51053`) — 732 originations
+- **Manassas** (`51683`) — 731 originations
+- **Staunton** (`51790`) — 728 originations
+- **Waynesboro** (`51820`) — 723 originations
+- **Amherst** (`51009`) — 710 originations
+- **Danville** (`51590`) — 709 originations
+- **King William** (`51101`) — 656 originations
+- **Mecklenburg** (`51117`) — 656 originations
+- **Accomack** (`51001`) — 655 originations
+- **Hopewell** (`51670`) — 623 originations
+- **Charlottesville** (`51540`) — 616 originations
+- **Salem** (`51775`) — 611 originations
+- **Carroll** (`51035`) — 599 originations
 
 ## Major slugs (for states.ts)
 
 ```
-'fairfax', 'virginia-beach', 'loudoun', 'chesterfield', 'prince-william', 'henrico', 'chesapeake', 'norfolk', 'spotsylvania', 'stafford', 'richmond', 'newport-news', 'hampton', 'suffolk', 'arlington', 'hanover', 'portsmouth', 'frederick', 'alexandria', 'roanoke', 'albemarle', 'james-city', 'roanoke-city', 'bedford', 'augusta', 'fauquier', 'rockingham', 'york', 'montgomery', 'lynchburg', 'louisa', 'isle-of-wight'
+'fairfax', 'virginia-beach', 'loudoun', 'chesterfield', 'prince-william', 'henrico', 'chesapeake', 'norfolk', 'spotsylvania', 'stafford', 'richmond', 'newport-news', 'hampton', 'suffolk', 'arlington', 'hanover', 'portsmouth', 'frederick', 'alexandria', 'roanoke', 'albemarle', 'james-city', 'roanoke-city', 'bedford', 'augusta', 'fauquier', 'rockingham', 'york', 'montgomery', 'lynchburg', 'louisa', 'orange', 'franklin', 'isle-of-wight', 'shenandoah', 'caroline', 'campbell', 'warren', 'gloucester', 'new-kent', 'washington', 'pittsylvania', 'powhatan', 'botetourt', 'fluvanna', 'petersburg', 'goochland', 'king-george', 'henry', 'prince-george', 'pulaski', 'westmoreland', 'dinwiddie', 'manassas', 'staunton', 'waynesboro', 'amherst', 'danville', 'king-william', 'mecklenburg', 'accomack', 'hopewell', 'charlottesville', 'salem', 'carroll'
 ```
 
 ## Matching rules
 
 - Reuse prior product-state curated LEI maps when the LEI has state activity
-- VA/MD curated: Alcova, Atlantic Coast Mortgage, Atlantic Union Bank, First Home Mortgage, Tower FCU, TowneBank
+- VA/MD curated wave 1 + deepen (VACU, Langley, C&F, BayPort, Southern Trust, Intercoastal, United Bank, Direct Mortgage, APG FCU, …)
 - No fuzzy LEI inventing
 
 ## Rebuild
