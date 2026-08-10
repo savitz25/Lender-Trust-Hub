@@ -90,9 +90,11 @@ function countyContext(optionSlug: string): HmdaAnalyzerCountyContext | null {
       ? 'Texas'
       : e.stateSlug === 'georgia'
         ? 'Georgia'
-        : e.stateSlug === 'florida'
-          ? 'Florida'
-          : e.state;
+        : e.stateSlug === 'california'
+          ? 'California'
+          : e.stateSlug === 'florida'
+            ? 'Florida'
+            : e.state;
   return {
     countyName: e.countyName,
     countySlug: e.countySlug,
@@ -127,7 +129,7 @@ export function analyzeLoanEstimate(inputs: LoanEstimateInputs): LoanEstimateAna
 
   if (!hmdaLender) {
     limitations.push(
-      'No matched 2025 HMDA evidence was found for the selected lender (or no lender was selected) among Florida, Texas, and Georgia product slices. Fee placement uses educational bands only.'
+      'No matched 2025 HMDA evidence was found for the selected lender (or no lender was selected) among Florida, Texas, Georgia, and California product slices. Fee placement uses educational bands only.'
     );
   } else {
     limitations.push(
@@ -137,7 +139,7 @@ export function analyzeLoanEstimate(inputs: LoanEstimateInputs): LoanEstimateAna
 
   if (!hmdaCounty) {
     limitations.push(
-      'No major county market summary was selected (or the county is outside our FL/TX/GA major-county set). Market context is limited to educational fee bands.'
+      'No major county market summary was selected (or the county is outside our FL/TX/GA/CA major-county set). Market context is limited to educational fee bands.'
     );
   }
 

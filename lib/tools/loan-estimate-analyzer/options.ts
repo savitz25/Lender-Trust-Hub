@@ -5,6 +5,7 @@ import {
   MAJOR_FLORIDA_COUNTY_SLUGS,
   MAJOR_TEXAS_COUNTY_SLUGS,
   MAJOR_GEORGIA_COUNTY_SLUGS,
+  MAJOR_CALIFORNIA_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -69,7 +70,7 @@ export function getAnalyzerLenderOptions(): AnalyzerLenderOption[] {
   );
 }
 
-/** Major FL + TX + GA counties for optional market context (prefixed names). */
+/** Major FL + TX + GA + CA counties for optional market context (prefixed names). */
 export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
   const out: AnalyzerCountyOption[] = [];
 
@@ -103,6 +104,17 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (GA)`,
       originations: c.originations,
       stateSlug: 'georgia',
+    });
+  }
+
+  const ca = loadHmdaStateData('CA');
+  for (const c of ca.countyMarkets) {
+    if (!MAJOR_CALIFORNIA_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `ca:${c.countySlug}`,
+      name: `${c.countyName} (CA)`,
+      originations: c.originations,
+      stateSlug: 'california',
     });
   }
 

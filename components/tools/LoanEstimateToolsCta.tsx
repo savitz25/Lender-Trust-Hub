@@ -174,7 +174,7 @@ export function LoanEstimateToolsCta({
             href={analyze}
             icon={<FileSearch className="h-7 w-7 text-emerald-600" aria-hidden="true" />}
             title="Understand your Loan Estimate"
-            description="Fee bands, points vs rate, optional FL / TX / GA HMDA context — then save research to My Lending."
+            description="Fee bands, points vs rate, optional FL / TX / GA / CA HMDA context — then save research to My Lending."
             cta="Open analyzer"
             featured
           />

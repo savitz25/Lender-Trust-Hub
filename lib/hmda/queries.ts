@@ -19,6 +19,8 @@ export const MAJOR_TEXAS_COUNTY_SLUGS = HMDA_STATE_CONFIGS.TX.majorCountySlugs;
 
 export const MAJOR_GEORGIA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.GA.majorCountySlugs;
 
+export const MAJOR_CALIFORNIA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.CA.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw
@@ -160,7 +162,7 @@ function evidenceForBundle(
 }
 
 /**
- * Lender evidence across product states (FL, TX, GA).
+ * Lender evidence across product states (FL, TX, GA, CA).
  * Primary = highest state originations; otherStates lists secondary markets.
  */
 export function getHmdaLenderEvidenceBySlug(slug: string): HmdaLenderEvidence | null {

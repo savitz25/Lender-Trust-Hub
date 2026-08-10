@@ -1,10 +1,11 @@
 /**
- * Stabilize QA: FL / TX / GA HMDA evidence + analyzer option integrity.
+ * Stabilize QA: FL / TX / GA / CA HMDA evidence + analyzer option integrity.
  *
  *   npx tsx scripts/qa-stabilize-fl-tx-ga.ts
  */
 import { getLenderBySlug } from '../lib/lenders';
 import {
+  MAJOR_CALIFORNIA_COUNTY_SLUGS,
   MAJOR_FLORIDA_COUNTY_SLUGS,
   MAJOR_GEORGIA_COUNTY_SLUGS,
   MAJOR_TEXAS_COUNTY_SLUGS,
@@ -37,6 +38,11 @@ const SPOT_COUNTIES: { state: string; county: string }[] = [
   { state: 'georgia', county: 'cobb' },
   { state: 'georgia', county: 'dekalb' },
   { state: 'georgia', county: 'chatham' },
+  { state: 'california', county: 'los-angeles' },
+  { state: 'california', county: 'san-diego' },
+  { state: 'california', county: 'orange' },
+  { state: 'california', county: 'riverside' },
+  { state: 'california', county: 'santa-clara' },
 ];
 
 const SPOT_LENDERS = [
@@ -47,6 +53,7 @@ const SPOT_LENDERS = [
   'regions-bank',
   'ameris-bank',
   'wells-fargo-bank',
+  'guild-mortgage-silicon-valley',
 ];
 
 let failures = 0;
@@ -59,7 +66,7 @@ function fail(label: string) {
 }
 
 function checkMajors(
-  code: 'FL' | 'TX' | 'GA',
+  code: 'FL' | 'TX' | 'GA' | 'CA',
   stateSlug: string,
   majors: ReadonlySet<string>
 ) {
@@ -95,6 +102,7 @@ function main() {
   checkMajors('FL', 'florida', MAJOR_FLORIDA_COUNTY_SLUGS);
   checkMajors('TX', 'texas', MAJOR_TEXAS_COUNTY_SLUGS);
   checkMajors('GA', 'georgia', MAJOR_GEORGIA_COUNTY_SLUGS);
+  checkMajors('CA', 'california', MAJOR_CALIFORNIA_COUNTY_SLUGS);
 
   console.log('\n=== Spot counties ===');
   for (const { state, county } of SPOT_COUNTIES) {
@@ -123,7 +131,7 @@ function main() {
       fail(`lender ${slug} no evidence`);
       continue;
     }
-    if (!['FL', 'TX', 'GA'].includes(e.state)) {
+    if (!['FL', 'TX', 'GA', 'CA'].includes(e.state)) {
       fail(`lender ${slug} unexpected state ${e.state}`);
       continue;
     }
@@ -134,7 +142,8 @@ function main() {
         if (
           (e.stateSlug === 'florida' && MAJOR_FLORIDA_COUNTY_SLUGS.has(c.countySlug)) ||
           (e.stateSlug === 'texas' && MAJOR_TEXAS_COUNTY_SLUGS.has(c.countySlug)) ||
-          (e.stateSlug === 'georgia' && MAJOR_GEORGIA_COUNTY_SLUGS.has(c.countySlug))
+          (e.stateSlug === 'georgia' && MAJOR_GEORGIA_COUNTY_SLUGS.has(c.countySlug)) ||
+          (e.stateSlug === 'california' && MAJOR_CALIFORNIA_COUNTY_SLUGS.has(c.countySlug))
         ) {
           fail(`lender ${slug} county share link broken ${e.stateSlug}/${c.countySlug}`);
         }
@@ -153,7 +162,7 @@ function main() {
   if (counties.length < 40) fail(`few counties: ${counties.length}`);
   else ok(`counties=${counties.length}`);
 
-  for (const key of ['miami-dade', 'tx:harris', 'ga:fulton']) {
+  for (const key of ['miami-dade', 'tx:harris', 'ga:fulton', 'ca:los-angeles']) {
     const found = counties.find((c) => c.slug === key);
     if (!found) fail(`options missing county ${key}`);
     else {
@@ -194,6 +203,16 @@ function main() {
   if (!txAnalysis.hmdaCounty || txAnalysis.hmdaCounty.stateSlug !== 'texas') {
     fail('analyzeLoanEstimate tx:harris did not resolve Texas');
   } else ok('analyzeLoanEstimate tx:harris → Texas');
+
+  const caAnalysis = analyzeLoanEstimate({
+    ...emptyLoanEstimateInputs(),
+    loanAmount: 300000,
+    interestRate: 6.5,
+    countySlug: 'ca:los-angeles',
+  });
+  if (!caAnalysis.hmdaCounty || caAnalysis.hmdaCounty.stateSlug !== 'california') {
+    fail('analyzeLoanEstimate ca:los-angeles did not resolve California');
+  } else ok('analyzeLoanEstimate ca:los-angeles → California');
 
   console.log(`\n=== Result: ${failures === 0 ? 'PASS' : `FAIL (${failures})`} ===`);
   process.exit(failures === 0 ? 0 : 1);

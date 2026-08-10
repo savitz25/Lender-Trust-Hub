@@ -47,6 +47,16 @@ python scripts/build-hmda-georgia-slice.py
 
 See `docs/HMDA-GEORGIA-EXPANSION.md`.
 
+## Files in `california/`
+
+California product slice. Rebuild with:
+
+```bash
+python scripts/build-hmda-california-slice.py
+```
+
+See `docs/HMDA-CALIFORNIA-EXPANSION.md`.
+
 ## Column notes
 
 - **Applications:** non-purchase HMDA rows with valid geography (includes originated, denied, withdrawn, etc.)  

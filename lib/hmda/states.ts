@@ -1,6 +1,6 @@
 /** HMDA product states with cleaned slices under data/hmda/{folder}/ */
 
-export type HmdaStateCode = 'FL' | 'TX' | 'GA';
+export type HmdaStateCode = 'FL' | 'TX' | 'GA' | 'CA';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -9,13 +9,14 @@ export type HmdaStateConfig = {
   name: string;
   /** data/hmda/{dataFolder}/ */
   dataFolder: string;
-  /** File name suffixes (e.g. _fl, _tx, _ga) for summary CSVs */
+  /** File name suffixes (e.g. _fl, _tx, _ga, _ca) for summary CSVs */
   fileSuffix: string;
   /** Mapping CSV column for state originations */
   originationsColumn:
     | 'florida_originations'
     | 'texas_originations'
-    | 'georgia_originations';
+    | 'georgia_originations'
+    | 'california_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -129,9 +130,43 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'spalding',
     ]),
   },
+  CA: {
+    code: 'CA',
+    stateSlug: 'california',
+    name: 'California',
+    dataFolder: 'california',
+    fileSuffix: '_ca',
+    originationsColumn: 'california_originations',
+    majorCountySlugs: new Set([
+      'los-angeles',
+      'san-diego',
+      'riverside',
+      'orange',
+      'san-bernardino',
+      'sacramento',
+      'santa-clara',
+      'alameda',
+      'contra-costa',
+      'kern',
+      'fresno',
+      'san-joaquin',
+      'ventura',
+      'placer',
+      'san-mateo',
+      'solano',
+      'san-francisco',
+      'sonoma',
+      'stanislaus',
+      'tulare',
+      'santa-barbara',
+      'san-luis-obispo',
+      'monterey',
+      'marin',
+    ]),
+  },
 };
 
-export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = ['FL', 'TX', 'GA'];
+export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = ['FL', 'TX', 'GA', 'CA'];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {
   const s = stateSlug.toLowerCase();
