@@ -11,6 +11,7 @@ import {
   MAJOR_NEW_JERSEY_COUNTY_SLUGS,
   MAJOR_NEW_YORK_COUNTY_SLUGS,
   MAJOR_PENNSYLVANIA_COUNTY_SLUGS,
+  MAJOR_MASSACHUSETTS_COUNTY_SLUGS,
 } from '@/lib/hmda';
 import { getLenderBySlug } from '@/lib/lenders';
 
@@ -175,6 +176,17 @@ export function getAnalyzerCountyOptions(): AnalyzerCountyOption[] {
       name: `${c.countyName} (PA)`,
       originations: c.originations,
       stateSlug: 'pennsylvania',
+    });
+  }
+
+  const ma = loadHmdaStateData('MA');
+  for (const c of ma.countyMarkets) {
+    if (!MAJOR_MASSACHUSETTS_COUNTY_SLUGS.has(c.countySlug)) continue;
+    out.push({
+      slug: `ma:${c.countySlug}`,
+      name: `${c.countyName} (MA)`,
+      originations: c.originations,
+      stateSlug: 'massachusetts',
     });
   }
 

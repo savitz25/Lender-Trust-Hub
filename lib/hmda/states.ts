@@ -1,6 +1,16 @@
 /** HMDA product states with cleaned slices under data/hmda/{folder}/ */
 
-export type HmdaStateCode = 'FL' | 'TX' | 'GA' | 'CA' | 'NC' | 'SC' | 'NJ' | 'NY' | 'PA';
+export type HmdaStateCode =
+  | 'FL'
+  | 'TX'
+  | 'GA'
+  | 'CA'
+  | 'NC'
+  | 'SC'
+  | 'NJ'
+  | 'NY'
+  | 'PA'
+  | 'MA';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -9,7 +19,7 @@ export type HmdaStateConfig = {
   name: string;
   /** data/hmda/{dataFolder}/ */
   dataFolder: string;
-  /** File name suffixes (e.g. _fl, _tx, _ny, _pa) for summary CSVs */
+  /** File name suffixes (e.g. _fl, _tx, _ny, _pa, _ma) for summary CSVs */
   fileSuffix: string;
   /** Mapping CSV column for state originations */
   originationsColumn:
@@ -21,7 +31,8 @@ export type HmdaStateConfig = {
     | 'south_carolina_originations'
     | 'new_jersey_originations'
     | 'new_york_originations'
-    | 'pennsylvania_originations';
+    | 'pennsylvania_originations'
+    | 'massachusetts_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -414,6 +425,29 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'bedford',
     ]),
   },
+  MA: {
+    code: 'MA',
+    stateSlug: 'massachusetts',
+    name: 'Massachusetts',
+    dataFolder: 'massachusetts',
+    fileSuffix: '_ma',
+    originationsColumn: 'massachusetts_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — highest volume metros
+      'middlesex',
+      'worcester',
+      'essex',
+      'norfolk',
+      'plymouth',
+      'bristol',
+      'suffolk',
+      'hampden',
+      'barnstable',
+      'berkshire',
+      'hampshire',
+      'franklin',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -426,6 +460,7 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'NJ',
   'NY',
   'PA',
+  'MA',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {

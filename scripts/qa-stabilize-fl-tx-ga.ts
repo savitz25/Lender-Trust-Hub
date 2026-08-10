@@ -1,6 +1,6 @@
 /**
  * Multi-state stabilize QA: HMDA evidence + analyzer integrity.
- * FL · TX · GA · CA · NC · SC · NJ · NY · PA
+ * FL · TX · GA · CA · NC · SC · NJ · NY · PA · MA
  *
  *   npx tsx scripts/qa-stabilize-fl-tx-ga.ts
  */
@@ -9,6 +9,7 @@ import {
   MAJOR_CALIFORNIA_COUNTY_SLUGS,
   MAJOR_FLORIDA_COUNTY_SLUGS,
   MAJOR_GEORGIA_COUNTY_SLUGS,
+  MAJOR_MASSACHUSETTS_COUNTY_SLUGS,
   MAJOR_NEW_JERSEY_COUNTY_SLUGS,
   MAJOR_NEW_YORK_COUNTY_SLUGS,
   MAJOR_NORTH_CAROLINA_COUNTY_SLUGS,
@@ -129,6 +130,16 @@ const SPOT_COUNTIES: { state: string; county: string }[] = [
   { state: 'pennsylvania', county: 'lawrence' },
   { state: 'pennsylvania', county: 'indiana' },
   { state: 'pennsylvania', county: 'somerset' },
+  // MA
+  { state: 'massachusetts', county: 'middlesex' },
+  { state: 'massachusetts', county: 'worcester' },
+  { state: 'massachusetts', county: 'essex' },
+  { state: 'massachusetts', county: 'suffolk' },
+  { state: 'massachusetts', county: 'norfolk' },
+  { state: 'massachusetts', county: 'bristol' },
+  { state: 'massachusetts', county: 'plymouth' },
+  { state: 'massachusetts', county: 'hampden' },
+  { state: 'massachusetts', county: 'barnstable' },
 ];
 
 const SPOT_LENDERS = [
@@ -179,6 +190,12 @@ const SPOT_LENDERS = [
   'plaza-home-mortgage',
   '1st-priority-mortgage',
   'fm-home-loans',
+  // MA
+  'leader-bank',
+  'eastern-bank',
+  'rockland-trust',
+  'salem-five-mortgage',
+  'total-mortgage-services',
   // PA deepen
   'fulton-bank',
   'first-national-bank-of-pennsylvania',
@@ -247,7 +264,7 @@ function checkMajors(
 }
 
 function main() {
-  console.log('=== County majors (9 states) ===');
+  console.log('=== County majors (10 states) ===');
   checkMajors('FL', 'florida', MAJOR_FLORIDA_COUNTY_SLUGS);
   checkMajors('TX', 'texas', MAJOR_TEXAS_COUNTY_SLUGS);
   checkMajors('GA', 'georgia', MAJOR_GEORGIA_COUNTY_SLUGS);
@@ -257,6 +274,7 @@ function main() {
   checkMajors('NJ', 'new-jersey', MAJOR_NEW_JERSEY_COUNTY_SLUGS);
   checkMajors('NY', 'new-york', MAJOR_NEW_YORK_COUNTY_SLUGS);
   checkMajors('PA', 'pennsylvania', MAJOR_PENNSYLVANIA_COUNTY_SLUGS);
+  checkMajors('MA', 'massachusetts', MAJOR_MASSACHUSETTS_COUNTY_SLUGS);
 
   console.log('\n=== Mapping slugs in catalog ===');
   let mapMiss = 0;
@@ -306,7 +324,7 @@ function main() {
       fail(`lender ${slug} no evidence`);
       continue;
     }
-    if (!['FL', 'TX', 'GA', 'CA', 'NC', 'SC', 'NJ', 'NY', 'PA'].includes(e.state)) {
+    if (!['FL', 'TX', 'GA', 'CA', 'NC', 'SC', 'NJ', 'NY', 'PA', 'MA'].includes(e.state)) {
       fail(`lender ${slug} unexpected state ${e.state}`);
       continue;
     }
@@ -324,7 +342,8 @@ function main() {
             MAJOR_SOUTH_CAROLINA_COUNTY_SLUGS.has(c.countySlug)) ||
           (e.stateSlug === 'new-jersey' && MAJOR_NEW_JERSEY_COUNTY_SLUGS.has(c.countySlug)) ||
           (e.stateSlug === 'new-york' && MAJOR_NEW_YORK_COUNTY_SLUGS.has(c.countySlug)) ||
-          (e.stateSlug === 'pennsylvania' && MAJOR_PENNSYLVANIA_COUNTY_SLUGS.has(c.countySlug))
+          (e.stateSlug === 'pennsylvania' && MAJOR_PENNSYLVANIA_COUNTY_SLUGS.has(c.countySlug)) ||
+          (e.stateSlug === 'massachusetts' && MAJOR_MASSACHUSETTS_COUNTY_SLUGS.has(c.countySlug))
         ) {
           fail(`lender ${slug} county share link broken ${e.stateSlug}/${c.countySlug}`);
         }
@@ -385,6 +404,9 @@ function main() {
     'pa:philadelphia',
     'pa:allegheny',
     'pa:montgomery',
+    'ma:middlesex',
+    'ma:worcester',
+    'ma:suffolk',
     'ca:orange',
     'orange',
   ]) {
@@ -427,6 +449,9 @@ function main() {
   if (analyzerCountyOptionSlug('pennsylvania', 'allegheny') !== 'pa:allegheny') {
     fail('prefill PA allegheny');
   } else ok('prefill PA allegheny = pa:allegheny');
+  if (analyzerCountyOptionSlug('massachusetts', 'middlesex') !== 'ma:middlesex') {
+    fail('prefill MA middlesex');
+  } else ok('prefill MA middlesex = ma:middlesex');
   if (analyzerCountyOptionSlug('tennessee', 'davidson') !== undefined) {
     fail('prefill non-product state should be undefined');
   } else ok('prefill non-product state = undefined');
@@ -451,6 +476,9 @@ function main() {
     { county: 'pa:allegheny', expect: 'pennsylvania', label: 'pa:allegheny' },
     { county: 'pa:montgomery', expect: 'pennsylvania', label: 'pa:montgomery' },
     { county: 'pa:lancaster', expect: 'pennsylvania', label: 'pa:lancaster' },
+    { county: 'ma:middlesex', expect: 'massachusetts', label: 'ma:middlesex' },
+    { county: 'ma:worcester', expect: 'massachusetts', label: 'ma:worcester' },
+    { county: 'ma:suffolk', expect: 'massachusetts', label: 'ma:suffolk' },
     { county: 'miami-dade', expect: 'florida', label: 'miami-dade' },
     { county: 'orange', expect: 'florida', label: 'orange (FL bare)' },
     { county: 'ca:orange', expect: 'california', label: 'ca:orange' },

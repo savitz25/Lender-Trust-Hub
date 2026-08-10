@@ -31,6 +31,8 @@ export const MAJOR_NEW_YORK_COUNTY_SLUGS = HMDA_STATE_CONFIGS.NY.majorCountySlug
 
 export const MAJOR_PENNSYLVANIA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.PA.majorCountySlugs;
 
+export const MAJOR_MASSACHUSETTS_COUNTY_SLUGS = HMDA_STATE_CONFIGS.MA.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw
@@ -172,7 +174,7 @@ function evidenceForBundle(
 }
 
 /**
- * Lender evidence across product states (FL, TX, GA, CA, NC, SC, NJ, NY).
+ * Lender evidence across product states (FL, TX, GA, CA, NC, SC, NJ, NY, PA, MA).
  * Primary = highest state originations; otherStates lists secondary markets.
  */
 export function getHmdaLenderEvidenceBySlug(slug: string): HmdaLenderEvidence | null {

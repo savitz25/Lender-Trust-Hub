@@ -66,6 +66,7 @@ Keep using dedicated expansion docs/scripts until migrated to `by-state/`:
 | New Jersey | `docs/HMDA-NEW-JERSEY-EXPANSION.md` · `build-hmda-new-jersey-slice.py` |
 | New York | `docs/HMDA-NEW-YORK-EXPANSION.md` · `build-hmda-new-york-slice.py` |
 | Pennsylvania | `docs/HMDA-PENNSYLVANIA-EXPANSION.md` · `build-hmda-pennsylvania-slice.py` |
+| Massachusetts | `docs/HMDA-MASSACHUSETTS-EXPANSION.md` · `build-hmda-massachusetts-slice.py` |
 
 National partitions for these states match the earlier multi-state extract (e.g. FL Miami-Dade originations 34,236).
 
