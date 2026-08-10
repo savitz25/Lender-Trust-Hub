@@ -15,7 +15,9 @@ export type HmdaStateCode =
   | 'VT'
   | 'ME'
   | 'CT'
-  | 'NH';
+  | 'NH'
+  | 'VA'
+  | 'MD';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -24,7 +26,7 @@ export type HmdaStateConfig = {
   name: string;
   /** data/hmda/{dataFolder}/ */
   dataFolder: string;
-  /** File name suffixes (e.g. _fl, _ct, _nh) for summary CSVs */
+  /** File name suffixes (e.g. _fl, _va, _md) for summary CSVs */
   fileSuffix: string;
   /** Mapping CSV column for state originations */
   originationsColumn:
@@ -42,7 +44,9 @@ export type HmdaStateConfig = {
     | 'vermont_originations'
     | 'maine_originations'
     | 'connecticut_originations'
-    | 'new_hampshire_originations';
+    | 'new_hampshire_originations'
+    | 'virginia_originations'
+    | 'maryland_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -564,6 +568,81 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'coos',
     ]),
   },
+  VA: {
+    code: 'VA',
+    stateSlug: 'virginia',
+    name: 'Virginia',
+    dataFolder: 'virginia',
+    fileSuffix: '_va',
+    originationsColumn: 'virginia_originations',
+    majorCountySlugs: new Set([
+      // NOVA / Richmond / Hampton Roads wave 1
+      'fairfax',
+      'virginia-beach',
+      'loudoun',
+      'chesterfield',
+      'prince-william',
+      'henrico',
+      'chesapeake',
+      'norfolk',
+      'spotsylvania',
+      'stafford',
+      'richmond',
+      'newport-news',
+      'hampton',
+      'suffolk',
+      'arlington',
+      'hanover',
+      'portsmouth',
+      'frederick',
+      'alexandria',
+      'roanoke',
+      'albemarle',
+      'james-city',
+      'roanoke-city',
+      'bedford',
+      'augusta',
+      'fauquier',
+      'rockingham',
+      'york',
+      'montgomery',
+      'lynchburg',
+      'louisa',
+      'isle-of-wight',
+    ]),
+  },
+  MD: {
+    code: 'MD',
+    stateSlug: 'maryland',
+    name: 'Maryland',
+    dataFolder: 'maryland',
+    fileSuffix: '_md',
+    originationsColumn: 'maryland_originations',
+    majorCountySlugs: new Set([
+      'prince-georges',
+      'montgomery',
+      'baltimore',
+      'anne-arundel',
+      'baltimore-city',
+      'frederick',
+      'howard',
+      'harford',
+      'charles',
+      'carroll',
+      'washington',
+      'st-marys',
+      'calvert',
+      'cecil',
+      'worcester',
+      'wicomico',
+      'queen-annes',
+      'allegany',
+      'talbot',
+      'dorchester',
+      'caroline',
+      'garrett',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -582,6 +661,8 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'ME',
   'CT',
   'NH',
+  'VA',
+  'MD',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {

@@ -43,6 +43,10 @@ export const MAJOR_CONNECTICUT_COUNTY_SLUGS = HMDA_STATE_CONFIGS.CT.majorCountyS
 
 export const MAJOR_NEW_HAMPSHIRE_COUNTY_SLUGS = HMDA_STATE_CONFIGS.NH.majorCountySlugs;
 
+export const MAJOR_VIRGINIA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.VA.majorCountySlugs;
+
+export const MAJOR_MARYLAND_COUNTY_SLUGS = HMDA_STATE_CONFIGS.MD.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw

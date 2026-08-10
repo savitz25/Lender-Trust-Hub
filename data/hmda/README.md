@@ -69,6 +69,7 @@ Keep using dedicated expansion docs/scripts until migrated to `by-state/`:
 | Massachusetts | `docs/HMDA-MASSACHUSETTS-EXPANSION.md` · `build-hmda-massachusetts-slice.py` |
 | Rhode Island · Vermont · Maine | `docs/HMDA-RI-VT-ME-EXPANSION.md` · `build-hmda-ri-vt-me-slices.py` |
 | Connecticut · New Hampshire | `docs/HMDA-CT-NH-EXPANSION.md` · `build-hmda-ct-nh-slices.py` |
+| Virginia · Maryland | `docs/HMDA-VA-MD-EXPANSION.md` · `build-hmda-va-md-slices.py` |
 
 National partitions for these states match the earlier multi-state extract (e.g. FL Miami-Dade originations 34,236).
 
