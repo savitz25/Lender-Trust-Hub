@@ -25,7 +25,8 @@ export type HmdaStateCode =
   | 'OH'
   | 'MI'
   | 'IN'
-  | 'AZ';
+  | 'AZ'
+  | 'CO';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -62,7 +63,8 @@ export type HmdaStateConfig = {
     | 'ohio_originations'
     | 'michigan_originations'
     | 'indiana_originations'
-    | 'arizona_originations';
+    | 'arizona_originations'
+    | 'colorado_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -966,6 +968,37 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'graham',
     ]),
   },
+  CO: {
+    code: 'CO',
+    stateSlug: 'colorado',
+    name: 'Colorado',
+    dataFolder: 'colorado',
+    fileSuffix: '_co',
+    originationsColumn: 'colorado_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Front Range metros + mountain / western secondary
+      'el-paso',
+      'jefferson',
+      'arapahoe',
+      'denver',
+      'adams',
+      'douglas',
+      'weld',
+      'larimer',
+      'boulder',
+      'mesa',
+      'pueblo',
+      'broomfield',
+      'garfield',
+      'eagle',
+      'summit',
+      'la-plata',
+      'elbert',
+      'fremont',
+      'teller',
+      'montrose',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -994,6 +1027,7 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'MI',
   'IN',
   'AZ',
+  'CO',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {
