@@ -32,7 +32,7 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "2289": "newrez",
     "1120271": "amerihome-mortgage",
     "66247": "cardinal-financial",
-    "6606": "new-american-funding",
+    "6606": "new-american-funding-west-valley",
     "2104": "mr-cooper",
     "446038": "pnc-bank",
     "399801": "wells-fargo-bank",
@@ -45,8 +45,8 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "1121636": "sofi-bank",
     "399797": "flagstar-bank",
     "39179": "movement-mortgage-myrtle-beach",
-    "3274": "guild-mortgage-west-valley",  # AZ directory listing
-    "3029": "crosscountry-mortgage-metrowest",
+    "3274": "guild-mortgage-west-valley",
+    "3029": "crosscountry-mortgage-west-valley",
     "399807": "navy-federal-jacksonville",
     "412915": "citibank",
     "381076": "mt-bank",
@@ -68,20 +68,29 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "1025894": "mutual-of-omaha-mortgage",
     "237341": "american-financial-network",
     "2458338": "cmg-home-loans-dennis-vo",
-    # AZ curated
+    # AZ directory NMLS → AZ-preferred slugs
     "430888": "desert-financial-credit-union",
     "3089": "nova-home-loans-west-valley",
     "439822": "oneaz-credit-union-east-valley",
+    "1907": "veterans-united-west-valley",
+    "14622": "dhi-mortgage-buckeye",
+    "1058": "lennar-mortgage-queen-creek",
+    "399802": "bank-of-america-mortgage-west-valley",
+    "127772": "sun-american-mortgage-queen-creek",
+    "1561": "silverton-mortgage-west-valley",
 }
 
+# GLEIF-verified LEI identities (2026 API) → AZ directory / national slugs.
+# Overrides prior multi-state maps when those maps used stale/colliding LEI names.
 AZ_CURATED_LEI: dict[str, dict[str, str]] = {
+    # ── AZ regional (wave 1) ──────────────────────────────────────────────
     "549300HFXTV55C2HHM89": {
         "institution_name_hmda": "DESERT FINANCIAL CREDIT UNION",
         "nmls_id": "430888",
         "our_lender_slug": "desert-financial-credit-union",
         "legal_name": "Desert Financial Credit Union",
         "match_confidence": "high",
-        "match_method": "az_curated_gleif+public_nmls",
+        "match_method": "az_deepen_gleif+public_nmls",
     },
     "549300HIVO8XPBPNVG69": {
         "institution_name_hmda": "NOVA FINANCIAL & INVESTMENT CORPORATION",
@@ -89,7 +98,7 @@ AZ_CURATED_LEI: dict[str, dict[str, str]] = {
         "our_lender_slug": "nova-home-loans-west-valley",
         "legal_name": "Nova Home Loans (Nova Financial & Investment Corporation)",
         "match_confidence": "high",
-        "match_method": "az_curated_gleif+public_nmls",
+        "match_method": "az_deepen_gleif+public_nmls",
     },
     "549300EWL25M8JXH2R78": {
         "institution_name_hmda": "OneAZ Credit Union",
@@ -97,16 +106,144 @@ AZ_CURATED_LEI: dict[str, dict[str, str]] = {
         "our_lender_slug": "oneaz-credit-union-east-valley",
         "legal_name": "OneAZ Credit Union",
         "match_confidence": "high",
-        "match_method": "az_curated_gleif+public_nmls",
+        "match_method": "az_deepen_gleif+public_nmls",
     },
-    # Guild: force AZ directory slug even if prior states used other branch slugs
-    "549300LYRWPSYPK6S325": {
-        "institution_name_hmda": "Guild Mortgage Company LLC",
+    "549300S7EJRY2DY1UR88": {
+        "institution_name_hmda": "SUN AMERICAN MORTGAGE COMPANY",
+        "nmls_id": "127772",
+        "our_lender_slug": "sun-american-mortgage-queen-creek",
+        "legal_name": "Sun American Mortgage Company",
+        "match_confidence": "high",
+        "match_method": "az_deepen_gleif+public_nmls",
+    },
+    # ── High-value AZ directory nationals re-identified via GLEIF ─────────
+    "549300AQ3T62GXDU7D76": {
+        "institution_name_hmda": "GUILD MORTGAGE COMPANY LLC",
         "nmls_id": "3274",
         "our_lender_slug": "guild-mortgage-west-valley",
         "legal_name": "Guild Mortgage Company LLC",
         "match_confidence": "high",
-        "match_method": "az_curated_directory_slug",
+        "match_method": "az_deepen_gleif_reidentify+directory_nmls",
+    },
+    "549300VZVN841I2ILS84": {
+        "institution_name_hmda": "CROSSCOUNTRY MORTGAGE, LLC",
+        "nmls_id": "3029",
+        "our_lender_slug": "crosscountry-mortgage-west-valley",
+        "legal_name": "CrossCountry Mortgage, LLC",
+        "match_confidence": "high",
+        "match_method": "az_deepen_gleif_reidentify+directory_nmls",
+    },
+    "549300LYRWPSYPK6S325": {
+        "institution_name_hmda": "FREEDOM MORTGAGE CORPORATION",
+        "nmls_id": "2767",
+        "our_lender_slug": "freedom-mortgage",
+        "legal_name": "Freedom Mortgage Corporation",
+        "match_confidence": "high",
+        "match_method": "az_deepen_gleif_reidentify+public_nmls",
+    },
+    "5493001SXWZ4OFP8Z903": {
+        "institution_name_hmda": "DHI MORTGAGE COMPANY, LTD.",
+        "nmls_id": "14622",
+        "our_lender_slug": "dhi-mortgage-buckeye",
+        "legal_name": "DHI Mortgage Company, Ltd.",
+        "match_confidence": "high",
+        "match_method": "az_deepen_gleif_reidentify+directory_nmls",
+    },
+    "549300H3IZO24NSOO931": {
+        "institution_name_hmda": "LENNAR MORTGAGE, LLC",
+        "nmls_id": "1058",
+        "our_lender_slug": "lennar-mortgage-queen-creek",
+        "legal_name": "Lennar Mortgage, LLC",
+        "match_confidence": "high",
+        "match_method": "az_deepen_gleif_reidentify+directory_nmls",
+    },
+    "B4TYDEB6GKMZO031MB27": {
+        "institution_name_hmda": "Bank of America, National Association",
+        "nmls_id": "399802",
+        "our_lender_slug": "bank-of-america-mortgage-west-valley",
+        "legal_name": "Bank of America, National Association",
+        "match_confidence": "high",
+        "match_method": "az_deepen_gleif_reidentify+directory_nmls",
+    },
+    "549300MGPZBLQDIL7538": {
+        "institution_name_hmda": "FAIRWAY INDEPENDENT MORTGAGE CORPORATION",
+        "nmls_id": "2909",
+        "our_lender_slug": "fairway-mortgage-augusta-sheppard",
+        "legal_name": "Fairway Independent Mortgage Corporation",
+        "match_confidence": "high",
+        "match_method": "az_deepen_gleif_reidentify+public_nmls",
+    },
+    "RVDPPPGHCGZ40J4VQ731": {
+        "institution_name_hmda": "PENNYMAC LOAN SERVICES, LLC",
+        "nmls_id": "35953",
+        "our_lender_slug": "pennymac",
+        "legal_name": "PennyMac Loan Services, LLC",
+        "match_confidence": "high",
+        "match_method": "az_deepen_gleif_reidentify+public_nmls",
+    },
+    "549300AG64NHILB7ZP05": {
+        "institution_name_hmda": "LOANDEPOT.COM, LLC",
+        "nmls_id": "174457",
+        "our_lender_slug": "loandepot",
+        "legal_name": "loanDepot.com, LLC",
+        "match_confidence": "high",
+        "match_method": "az_deepen_gleif_reidentify+public_nmls",
+    },
+    "549300DD5QQUHO6PCH70": {
+        "institution_name_hmda": "MORTGAGE RESEARCH CENTER, LLC",
+        "nmls_id": "1907",
+        "our_lender_slug": "veterans-united-west-valley",
+        "legal_name": "Mortgage Research Center, LLC (Veterans United Home Loans)",
+        "match_confidence": "high",
+        "match_method": "az_deepen_gleif_reidentify+directory_nmls",
+    },
+    "549300DD4R4SYK5RAQ92": {
+        "institution_name_hmda": "MOVEMENT MORTGAGE, LLC",
+        "nmls_id": "39179",
+        "our_lender_slug": "movement-mortgage-myrtle-beach",
+        "legal_name": "Movement Mortgage, LLC",
+        "match_confidence": "high",
+        "match_method": "az_deepen_gleif_reidentify+public_nmls",
+    },
+    "549300U3721PJGQZYY68": {
+        "institution_name_hmda": "GUARANTEED RATE, INC.",
+        "nmls_id": "2611",
+        "our_lender_slug": "guaranteed-rate",
+        "legal_name": "Guaranteed Rate, Inc.",
+        "match_confidence": "high",
+        "match_method": "az_deepen_gleif_reidentify+public_nmls",
+    },
+    "549300LBCBNR1OT00651": {
+        "institution_name_hmda": "NATIONSTAR MORTGAGE LLC",
+        "nmls_id": "2104",
+        "our_lender_slug": "mr-cooper",
+        "legal_name": "Nationstar Mortgage LLC (Mr. Cooper)",
+        "match_confidence": "high",
+        "match_method": "az_deepen_gleif_reidentify+public_nmls",
+    },
+    "549300E2UX99HKDBR481": {
+        "institution_name_hmda": "NEW AMERICAN FUNDING, LLC",
+        "nmls_id": "6606",
+        "our_lender_slug": "new-american-funding-west-valley",
+        "legal_name": "New American Funding, LLC / Broker Solutions, Inc.",
+        "match_confidence": "high",
+        "match_method": "az_deepen_gleif+directory_nmls",
+    },
+    "5493000YNV8IX4VD3X12": {
+        "institution_name_hmda": "VANDERBILT MORTGAGE AND FINANCE, INC.",
+        "nmls_id": "1561",
+        "our_lender_slug": "silverton-mortgage-west-valley",
+        "legal_name": "Vanderbilt Mortgage and Finance, Inc. (dba Silverton Mortgage)",
+        "match_confidence": "high",
+        "match_method": "az_deepen_directory_slug+public_nmls",
+    },
+    "549300121SF0K2LN2804": {
+        "institution_name_hmda": "PRIMELENDING, A PLAINSCAPITAL COMPANY",
+        "nmls_id": "1921",
+        "our_lender_slug": "primelending-columbus",
+        "legal_name": "PrimeLending, a PlainsCapital Company",
+        "match_confidence": "high",
+        "match_method": "az_deepen_gleif_reidentify+public_nmls",
     },
 }
 
@@ -129,7 +266,7 @@ AZ_COUNTIES: dict[str, str] = {
     "04027": "Yuma",
 }
 
-# Wave-1 high-volume / major metros for panels
+# Wave 1 + deepen — full state panel set (all 15 AZ counties with HMDA volume)
 AZ_MAJORS: set[str] = {
     "04013",  # Maricopa
     "04019",  # Pima
@@ -143,6 +280,10 @@ AZ_MAJORS: set[str] = {
     "04007",  # Gila
     "04023",  # Santa Cruz
     "04009",  # Graham
+    # Deepen — remaining counties with meaningful (if thinner) volume
+    "04001",  # Apache
+    "04012",  # La Paz
+    "04011",  # Greenlee
 }
 
 COL = "arizona_originations"
@@ -229,19 +370,22 @@ def main() -> None:
         gleif = json.loads(GLEIF_CACHE.read_text(encoding="utf-8"))
     for lei, cur in AZ_CURATED_LEI.items():
         gleif.setdefault(lei, cur["institution_name_hmda"])
-    # Refresh a few high-volume AZ names into gleif cache
-    extra_gleif = {
-        "549300HFXTV55C2HHM89": "DESERT FINANCIAL CREDIT UNION",
-        "549300HIVO8XPBPNVG69": "NOVA FINANCIAL & INVESTMENT CORPORATION",
-        "549300PC4MFWQBNVKG88": "V.I.P. MORTGAGE, INC.",
-        "549300V36YE6JCCEJB76": "Arizona Financial Credit Union",
-        "549300EWL25M8JXH2R78": "OneAZ Credit Union",
-        "549300Z4HQ7YDKUVEW39": "VANTAGE WEST",
-        "549300WYBPIWKK6SQC06": "Bell Bank",
-        "5493002IVUY1DY0ZCL83": "COPPER STATE CREDIT UNION",
-        "5493001I7Z53NDBE4X59": "ALTITUDE FINANCIAL CORPORATION",
-    }
-    gleif.update(extra_gleif)
+    # GLEIF-verified names (including re-identified nationals + deferred regionals)
+    for lei, cur in AZ_CURATED_LEI.items():
+        gleif[lei] = cur["institution_name_hmda"]
+    gleif.update(
+        {
+            "549300PC4MFWQBNVKG88": "V.I.P. MORTGAGE, INC.",
+            "549300V36YE6JCCEJB76": "Arizona Financial Credit Union",
+            "549300Z4HQ7YDKUVEW39": "VANTAGE WEST",
+            "549300WYBPIWKK6SQC06": "Bell Bank",
+            "5493002IVUY1DY0ZCL83": "COPPER STATE CREDIT UNION",
+            "5493001I7Z53NDBE4X59": "ALTITUDE FINANCIAL CORPORATION",
+            "549300UI36AJZ0WZ4U93": "TAYLOR MORRISON HOME FUNDING, INC.",
+            "5493002QI2ILHHZH8D20": "KBHS HOME LOANS, LLC",
+            "5493001HHBUTXHS7TZ96": "HOMEAMERICAN MORTGAGE CORPORATION",
+        }
+    )
     if GLEIF_CACHE.exists() or True:
         GLEIF_CACHE.parent.mkdir(parents=True, exist_ok=True)
         GLEIF_CACHE.write_text(json.dumps(gleif, indent=2, sort_keys=True) + "\n", encoding="utf-8")
@@ -399,8 +543,11 @@ def main() -> None:
     md.append(
         "\n## Matching rules\n\n"
         "- Reuse prior product-state curated LEI maps when the LEI has AZ activity\n"
-        "- AZ curated: Desert Financial CU, Nova Home Loans, OneAZ CU, Guild West Valley\n"
-        "- Precision only — no low-confidence LEI inventing (VIP, Vantage West, etc. deferred)\n"
+        "- AZ deepen: GLEIF-reidentified high-value LEIs + AZ directory NMLS/slugs "
+        "(Guild, CCM, DHI, Lennar, BofA, VU/MRC, Freedom, Fairway, PennyMac, loanDepot, "
+        "Movement, Guaranteed Rate, NAF, Silverton, Sun American, Desert Financial, Nova, OneAZ)\n"
+        "- Precision only — no low-confidence LEI inventing "
+        "(VIP Mortgage, Arizona Financial CU, Vantage West, Copper State CU, builder captives without directory deferred)\n"
         "\n## Rebuild\n\n"
         "```bash\n"
         "python scripts/build-hmda-arizona-slice.py\n"

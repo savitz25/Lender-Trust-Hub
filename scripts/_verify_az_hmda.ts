@@ -1,5 +1,5 @@
 /**
- * Quick Arizona HMDA smoke check (run with tsx / project node).
+ * Arizona HMDA smoke check (wave 1 + deepen).
  */
 import {
   MAJOR_ARIZONA_COUNTY_SLUGS,
@@ -15,8 +15,16 @@ console.log('county markets', az.countyMarkets.length);
 console.log('county activity rows', az.countyActivity.length);
 console.log('majors config', MAJOR_ARIZONA_COUNTY_SLUGS.size);
 
-const must = ['maricopa', 'pima', 'pinal', 'yavapai', 'mohave', 'yuma', 'coconino'];
-for (const slug of must) {
+const mustCounties = [
+  'maricopa',
+  'pima',
+  'pinal',
+  'yavapai',
+  'apache',
+  'la-paz',
+  'greenlee',
+];
+for (const slug of mustCounties) {
   const e = getHmdaCountyEvidence('arizona', slug);
   if (!e) {
     console.error('FAIL missing county', slug);
@@ -26,32 +34,57 @@ for (const slug of must) {
   }
 }
 
-const lenders = [
-  'united-wholesale-mortgage',
-  'rocket-mortgage',
-  'desert-financial-credit-union',
-  'nova-home-loans-west-valley',
-  'oneaz-credit-union-east-valley',
-  'guild-mortgage-west-valley',
+const lenders: Array<{ slug: string; expectAzPrimary?: boolean }> = [
+  { slug: 'united-wholesale-mortgage' },
+  { slug: 'rocket-mortgage' },
+  { slug: 'desert-financial-credit-union', expectAzPrimary: true },
+  { slug: 'nova-home-loans-west-valley', expectAzPrimary: true },
+  { slug: 'oneaz-credit-union-east-valley', expectAzPrimary: true },
+  { slug: 'guild-mortgage-west-valley' },
+  { slug: 'crosscountry-mortgage-west-valley' },
+  { slug: 'dhi-mortgage-buckeye' },
+  { slug: 'lennar-mortgage-queen-creek' },
+  { slug: 'bank-of-america-mortgage-west-valley' },
+  { slug: 'veterans-united-west-valley' },
+  { slug: 'freedom-mortgage' },
+  { slug: 'pennymac' },
+  { slug: 'loandepot' },
+  { slug: 'sun-american-mortgage-queen-creek' },
+  { slug: 'silverton-mortgage-west-valley' },
+  { slug: 'new-american-funding-west-valley' },
 ];
-for (const slug of lenders) {
+
+for (const { slug, expectAzPrimary } of lenders) {
   const e = getHmdaLenderEvidenceBySlug(slug);
   if (!e) {
     console.error('FAIL lender', slug);
     process.exitCode = 1;
-  } else {
-    const azSlice = e.otherStates?.find((s) => s.state === 'AZ') || (e.state === 'AZ' ? e : null);
-    console.log(
-      'OK lender',
-      slug,
-      'primary',
-      e.state,
-      e.stateName,
-      'orig',
-      e.stateOriginations,
-      azSlice ? `has AZ context` : ''
-    );
+    continue;
   }
+  const azOrig =
+    e.state === 'AZ'
+      ? e.stateOriginations
+      : e.otherStates?.find((s) => s.state === 'AZ')?.originations;
+  console.log(
+    'OK lender',
+    slug,
+    'primary',
+    e.state,
+    e.stateName,
+    'primaryOrig',
+    e.stateOriginations,
+    'azOrig',
+    azOrig ?? 'n/a'
+  );
+  if (expectAzPrimary && e.state !== 'AZ') {
+    console.error('WARN expected AZ primary for', slug, 'got', e.state);
+  }
+}
+
+// Sanity: deepen re-ids should not show wrong institution labels on AZ primary
+const guild = getHmdaLenderEvidenceBySlug('guild-mortgage-west-valley');
+if (guild?.state === 'AZ' && guild.stateOriginations < 3000) {
+  console.error('WARN guild AZ volume unexpectedly low', guild.stateOriginations);
 }
 
 console.log('done');

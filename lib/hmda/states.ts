@@ -966,6 +966,10 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'gila',
       'santa-cruz',
       'graham',
+      // Deepen — remaining AZ counties with HMDA volume
+      'apache',
+      'la-paz',
+      'greenlee',
     ]),
   },
   CO: {
