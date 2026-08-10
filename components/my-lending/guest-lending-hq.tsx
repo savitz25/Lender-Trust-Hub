@@ -23,7 +23,9 @@ import {
   type FinancePlan,
   type LoanFocus,
   type LenderResearchStatus,
+  type SavedLeComparison,
   type SavedLender,
+  type SavedLoanEstimate,
 } from '@/lib/my-lending/types';
 import {
   ensureActivePlan,
@@ -33,14 +35,19 @@ import {
   getLastSaveError,
   getLendersForPlan,
   getResearching,
+  getSavedLeComparisons,
+  getSavedLoanEstimates,
   getShortlisted,
   listActivePlans,
   loadMyLendingStore,
+  removeSavedLeComparison,
+  removeSavedLoanEstimate,
   removeSavedLender,
   setActivePlan,
   SHORTLIST_CAP,
   shortlistReplacing,
   shortlistWithDemoteOldest,
+  stageLeWorkspaceReopen,
   updateSavedLenderStatus,
   upsertPlan,
 } from '@/lib/my-lending/storage';
@@ -59,6 +66,8 @@ export function GuestLendingHq() {
   const [plan, setPlan] = useState<FinancePlan | null>(null);
   const [lenders, setLenders] = useState<SavedLender[]>([]);
   const [snapshots, setSnapshots] = useState<CalculatorSnapshot[]>([]);
+  const [loanEstimates, setLoanEstimates] = useState<SavedLoanEstimate[]>([]);
+  const [leComparisons, setLeComparisons] = useState<SavedLeComparison[]>([]);
   const [openPlans, setOpenPlans] = useState<FinancePlan[]>([]);
   const [hydrated, setHydrated] = useState(false);
   const [label, setLabel] = useState('');
@@ -83,6 +92,8 @@ export function GuestLendingHq() {
     if (active) {
       setLenders(getLendersForPlan(active.id, store));
       setSnapshots(getCalculatorSnapshots(active.id));
+      setLoanEstimates(getSavedLoanEstimates(active.id));
+      setLeComparisons(getSavedLeComparisons(active.id));
       setLabel(active.label);
       setZip(active.location?.zip ?? '');
       setStateCode(active.location?.state ?? '');
@@ -91,6 +102,8 @@ export function GuestLendingHq() {
     } else {
       setLenders([]);
       setSnapshots([]);
+      setLoanEstimates([]);
+      setLeComparisons([]);
     }
   }, []);
 
@@ -448,6 +461,160 @@ export function GuestLendingHq() {
             {new Date(plan.updatedAt).toLocaleString()}
           </p>
         ) : null}
+      </section>
+
+      <section className="rounded-2xl border border-emerald-200/80 bg-gradient-to-br from-emerald-50/50 via-white to-sky-50/40 p-5 shadow-sm sm:p-6">
+        <h2 className="flex items-center gap-2 text-lg font-semibold text-[#0A2540]">
+          <FileText className="h-5 w-5 text-emerald-700" aria-hidden />
+          Loan Estimate research
+        </h2>
+        <p className="mt-1 text-sm text-zinc-600">
+          Save analyses and side-by-side comparisons from our free tools. Guest-stored on this
+          device — research only, not a lead form.
+        </p>
+
+        <div className="mt-4">
+          <h3 className="text-sm font-semibold text-[#0A2540]">
+            Saved Loan Estimates ({loanEstimates.length})
+          </h3>
+          {loanEstimates.length === 0 ? (
+            <p className="mt-2 text-sm text-zinc-500">
+              None yet.{' '}
+              <Link
+                href="/tools/loan-estimate-analyzer"
+                className="font-medium text-emerald-800 underline"
+              >
+                Analyze a Loan Estimate
+              </Link>{' '}
+              and choose Save to My Lending.
+            </p>
+          ) : (
+            <ul className="mt-2 space-y-2">
+              {loanEstimates.map((item) => (
+                <li
+                  key={item.id}
+                  className="flex flex-col gap-2 rounded-lg border border-zinc-100 bg-white px-3 py-2.5 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <div className="min-w-0">
+                    <p className="font-medium text-[#0A2540]">{item.label}</p>
+                    <p className="text-xs text-zinc-500">{item.summary}</p>
+                    <p className="text-[11px] text-zinc-400">
+                      Saved {new Date(item.savedAt).toLocaleString()}
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant="outline"
+                      onClick={() => {
+                        stageLeWorkspaceReopen({
+                          type: 'loan-estimate',
+                          inputs: item.inputs,
+                        });
+                        window.location.href = '/tools/loan-estimate-analyzer';
+                      }}
+                    >
+                      Reopen
+                    </Button>
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => {
+                        removeSavedLoanEstimate(item.id, plan?.id);
+                        refresh();
+                      }}
+                    >
+                      <Trash2 className="h-3.5 w-3.5" aria-hidden />
+                      Remove
+                    </Button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <div className="mt-6">
+          <h3 className="text-sm font-semibold text-[#0A2540]">
+            Saved comparisons ({leComparisons.length})
+          </h3>
+          {leComparisons.length === 0 ? (
+            <p className="mt-2 text-sm text-zinc-500">
+              None yet.{' '}
+              <Link
+                href="/tools/compare-loan-estimates"
+                className="font-medium text-emerald-800 underline"
+              >
+                Compare Loan Estimates
+              </Link>{' '}
+              and save the side-by-side view.
+            </p>
+          ) : (
+            <ul className="mt-2 space-y-2">
+              {leComparisons.map((item) => (
+                <li
+                  key={item.id}
+                  className="flex flex-col gap-2 rounded-lg border border-zinc-100 bg-white px-3 py-2.5 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <div className="min-w-0">
+                    <p className="font-medium text-[#0A2540]">{item.label}</p>
+                    <p className="text-xs text-zinc-500">{item.summary}</p>
+                    <p className="text-[11px] text-zinc-400">
+                      {item.estimates.length} offers · Saved{' '}
+                      {new Date(item.savedAt).toLocaleString()}
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant="outline"
+                      onClick={() => {
+                        stageLeWorkspaceReopen({
+                          type: 'comparison',
+                          estimates: item.estimates,
+                        });
+                        window.location.href = '/tools/compare-loan-estimates';
+                      }}
+                    >
+                      Reopen
+                    </Button>
+                    <Button
+                      type="button"
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => {
+                        removeSavedLeComparison(item.id, plan?.id);
+                        refresh();
+                      }}
+                    >
+                      <Trash2 className="h-3.5 w-3.5" aria-hidden />
+                      Remove
+                    </Button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <div className="mt-4 flex flex-wrap gap-2 text-sm">
+          <Link
+            href="/tools/loan-estimate-analyzer"
+            className="font-medium text-emerald-800 underline"
+          >
+            Loan Estimate Analyzer
+          </Link>
+          <span className="text-zinc-300">·</span>
+          <Link
+            href="/tools/compare-loan-estimates"
+            className="font-medium text-emerald-800 underline"
+          >
+            Compare offers
+          </Link>
+        </div>
       </section>
 
       {snapshots.length > 0 ? (

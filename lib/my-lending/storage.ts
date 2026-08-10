@@ -10,10 +10,16 @@ import {
   type LenderResearchStatus,
   type MyLendingState,
   type PlanStatus,
+  type SavedLeComparison,
   type SavedLender,
+  type SavedLoanEstimate,
+  LE_WORKSPACE_REOPEN_KEY,
+  MAX_SAVED_LE_COMPARISONS,
+  MAX_SAVED_LOAN_ESTIMATES,
   MY_LENDING_STORE_KEY,
   newId,
   nowIso,
+  type LeWorkspaceReopen,
 } from '@/lib/my-lending/types';
 import {
   gateShortlistAdd,
@@ -82,7 +88,7 @@ function normalizeLender(l: SavedLender): SavedLender {
 function normalizeState(raw: unknown): MyLendingState | null {
   if (!raw || typeof raw !== 'object') return null;
   const parsed = raw as MyLendingState;
-  if (parsed.version !== 1 && parsed.version !== 2) return null;
+  if (parsed.version !== 1 && parsed.version !== 2 && parsed.version !== 3) return null;
   if (!Array.isArray(parsed.plans)) return null;
 
   let plans: FinancePlan[] = (Array.isArray(parsed.plans) ? parsed.plans : [])
@@ -97,6 +103,12 @@ function normalizeState(raw: unknown): MyLendingState | null {
       savedLenderIds: Array.isArray(p.savedLenderIds) ? p.savedLenderIds : [],
       calculatorSnapshots: Array.isArray(p.calculatorSnapshots)
         ? p.calculatorSnapshots
+        : [],
+      savedLoanEstimates: Array.isArray(p.savedLoanEstimates)
+        ? p.savedLoanEstimates.slice(0, MAX_SAVED_LOAN_ESTIMATES)
+        : [],
+      savedLeComparisons: Array.isArray(p.savedLeComparisons)
+        ? p.savedLeComparisons.slice(0, MAX_SAVED_LE_COMPARISONS)
         : [],
     }))
     .slice(0, MAX_PLANS);
@@ -147,7 +159,7 @@ function normalizeState(raw: unknown): MyLendingState | null {
   }
 
   return {
-    version: 2,
+    version: 3,
     activePlanId,
     plans,
     savedLenders: savedLenders.slice(0, MAX_SAVED_LENDERS),
@@ -182,9 +194,13 @@ export function saveState(
 ): { ok: true } | { ok: false; error: string } {
   if (!isBrowser()) return { ok: false, error: 'Not available on server' };
   const next: MyLendingState = {
-    version: 2,
+    version: 3,
     activePlanId: state.activePlanId,
-    plans: state.plans.slice(0, MAX_PLANS),
+    plans: state.plans.slice(0, MAX_PLANS).map((p) => ({
+      ...p,
+      savedLoanEstimates: (p.savedLoanEstimates ?? []).slice(0, MAX_SAVED_LOAN_ESTIMATES),
+      savedLeComparisons: (p.savedLeComparisons ?? []).slice(0, MAX_SAVED_LE_COMPARISONS),
+    })),
     savedLenders: state.savedLenders
       .map(normalizeLender)
       .filter((l) => l.lenderSlug)
@@ -337,6 +353,8 @@ export function createPlan(input: {
     updatedAt: ts,
     savedLenderIds: [],
     calculatorSnapshots: [],
+    savedLoanEstimates: [],
+    savedLeComparisons: [],
   };
   state.plans = [plan, ...state.plans].slice(0, MAX_PLANS);
   if (input.makeActive !== false) {
@@ -406,6 +424,20 @@ export function duplicatePlan(planId: string): FinancePlan | null {
       id: newId(),
       planId: newPlanId,
       savedAt: ts,
+    })),
+    savedLoanEstimates: (source.savedLoanEstimates ?? []).map((s) => ({
+      ...s,
+      id: newId(),
+      planId: newPlanId,
+      savedAt: ts,
+      updatedAt: ts,
+    })),
+    savedLeComparisons: (source.savedLeComparisons ?? []).map((s) => ({
+      ...s,
+      id: newId(),
+      planId: newPlanId,
+      savedAt: ts,
+      updatedAt: ts,
     })),
   };
   state.plans = [plan, ...state.plans].slice(0, MAX_PLANS);
@@ -823,3 +855,161 @@ export function removeCalculatorSnapshot(snapshotId: string, planId?: string): v
 }
 
 export const loadMyLendingStore = loadState;
+
+// ── Phase 3: Loan Estimate + comparison workspace ───────────────────────────
+
+function activePlanOrCreate(state: MyLendingState, planId?: string): FinancePlan {
+  let plan =
+    (planId ? state.plans.find((p) => p.id === planId) : getActivePlan(state)) ?? null;
+  if (!plan) {
+    plan = ensureActivePlan({ label: 'My financing research' });
+    Object.assign(state, loadState());
+    plan = getActivePlan(state)!;
+  }
+  return plan;
+}
+
+export type SaveLoanEstimateInput = {
+  label?: string;
+  notes?: string;
+  inputs: Record<string, unknown>;
+  summary: string;
+  bandSummary?: string;
+  lenderSlug?: string;
+  countySlug?: string;
+  planId?: string;
+};
+
+export function saveLoanEstimate(input: SaveLoanEstimateInput): SavedLoanEstimate | null {
+  const state = loadState();
+  const plan = activePlanOrCreate(state, input.planId);
+  const ts = nowIso();
+  const item: SavedLoanEstimate = {
+    id: newId(),
+    planId: plan.id,
+    label: (input.label?.trim() || 'Saved Loan Estimate').slice(0, 120),
+    notes: input.notes?.trim() || undefined,
+    inputs: input.inputs ?? {},
+    summary: input.summary.trim() || 'Loan Estimate research snapshot',
+    bandSummary: input.bandSummary,
+    lenderSlug: input.lenderSlug,
+    countySlug: input.countySlug,
+    savedAt: ts,
+    updatedAt: ts,
+  };
+  const nextPlan: FinancePlan = {
+    ...plan,
+    savedLoanEstimates: [item, ...(plan.savedLoanEstimates ?? [])].slice(
+      0,
+      MAX_SAVED_LOAN_ESTIMATES
+    ),
+    updatedAt: ts,
+  };
+  state.plans = state.plans.map((p) => (p.id === plan.id ? nextPlan : p));
+  state.activePlanId = plan.id;
+  if (!saveState(state).ok) return null;
+  return item;
+}
+
+export function getSavedLoanEstimates(planId?: string): SavedLoanEstimate[] {
+  const plan = planId
+    ? loadState().plans.find((p) => p.id === planId)
+    : getActivePlan();
+  return plan?.savedLoanEstimates ?? [];
+}
+
+export function removeSavedLoanEstimate(id: string, planId?: string): void {
+  const state = loadState();
+  const plan = planId
+    ? state.plans.find((p) => p.id === planId)
+    : getActivePlan(state);
+  if (!plan) return;
+  const nextPlan: FinancePlan = {
+    ...plan,
+    savedLoanEstimates: (plan.savedLoanEstimates ?? []).filter((s) => s.id !== id),
+    updatedAt: nowIso(),
+  };
+  state.plans = state.plans.map((p) => (p.id === plan.id ? nextPlan : p));
+  saveState(state);
+}
+
+export type SaveLeComparisonInput = {
+  label?: string;
+  notes?: string;
+  estimates: SavedLeComparison['estimates'];
+  summary: string;
+  headlineCallouts?: string[];
+  planId?: string;
+};
+
+export function saveLeComparison(input: SaveLeComparisonInput): SavedLeComparison | null {
+  const state = loadState();
+  const plan = activePlanOrCreate(state, input.planId);
+  const ts = nowIso();
+  const item: SavedLeComparison = {
+    id: newId(),
+    planId: plan.id,
+    label: (input.label?.trim() || 'Saved LE comparison').slice(0, 120),
+    notes: input.notes?.trim() || undefined,
+    estimates: input.estimates ?? [],
+    summary: input.summary.trim() || 'Multi-offer comparison',
+    headlineCallouts: input.headlineCallouts,
+    savedAt: ts,
+    updatedAt: ts,
+  };
+  const nextPlan: FinancePlan = {
+    ...plan,
+    savedLeComparisons: [item, ...(plan.savedLeComparisons ?? [])].slice(
+      0,
+      MAX_SAVED_LE_COMPARISONS
+    ),
+    updatedAt: ts,
+  };
+  state.plans = state.plans.map((p) => (p.id === plan.id ? nextPlan : p));
+  state.activePlanId = plan.id;
+  if (!saveState(state).ok) return null;
+  return item;
+}
+
+export function getSavedLeComparisons(planId?: string): SavedLeComparison[] {
+  const plan = planId
+    ? loadState().plans.find((p) => p.id === planId)
+    : getActivePlan();
+  return plan?.savedLeComparisons ?? [];
+}
+
+export function removeSavedLeComparison(id: string, planId?: string): void {
+  const state = loadState();
+  const plan = planId
+    ? state.plans.find((p) => p.id === planId)
+    : getActivePlan(state);
+  if (!plan) return;
+  const nextPlan: FinancePlan = {
+    ...plan,
+    savedLeComparisons: (plan.savedLeComparisons ?? []).filter((s) => s.id !== id),
+    updatedAt: nowIso(),
+  };
+  state.plans = state.plans.map((p) => (p.id === plan.id ? nextPlan : p));
+  saveState(state);
+}
+
+export function stageLeWorkspaceReopen(payload: LeWorkspaceReopen): void {
+  if (typeof window === 'undefined') return;
+  try {
+    sessionStorage.setItem(LE_WORKSPACE_REOPEN_KEY, JSON.stringify(payload));
+  } catch {
+    /* private mode */
+  }
+}
+
+export function consumeLeWorkspaceReopen(): LeWorkspaceReopen | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    const raw = sessionStorage.getItem(LE_WORKSPACE_REOPEN_KEY);
+    if (!raw) return null;
+    sessionStorage.removeItem(LE_WORKSPACE_REOPEN_KEY);
+    return JSON.parse(raw) as LeWorkspaceReopen;
+  } catch {
+    return null;
+  }
+}

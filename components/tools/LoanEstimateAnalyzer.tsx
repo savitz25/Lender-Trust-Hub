@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState, type ReactNode } from 'react';
+import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import {
   AlertTriangle,
@@ -24,10 +24,13 @@ import type {
   FeeBandLevel,
   HmdaAnalyzerCountyContext,
   HmdaAnalyzerLenderContext,
+  LoanEstimateInputs,
   LoanEstimateLoanType,
 } from '@/lib/tools/loan-estimate-analyzer/types';
 import type { AnalyzerBootstrap } from '@/lib/tools/loan-estimate-analyzer/serialize-context';
 import { FredRateContextPanel } from '@/components/rates/FredRateContextPanel';
+import { SaveLoanEstimateButton } from '@/components/my-lending/save-loan-estimate-button';
+import { consumeLeWorkspaceReopen } from '@/lib/my-lending/storage';
 import { formatCurrency, cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 
@@ -92,6 +95,25 @@ export function LoanEstimateAnalyzer({
   const [submitted, setSubmitted] = useState(
     Boolean(initialLenderSlug || initialCountySlug)
   );
+
+  useEffect(() => {
+    const reopen = consumeLeWorkspaceReopen();
+    if (reopen?.type !== 'loan-estimate') return;
+    const i = emptyLoanEstimateInputs(reopen.inputs as Partial<LoanEstimateInputs>);
+    setLoanAmount(String(i.loanAmount));
+    setInterestRate(String(i.interestRate));
+    setApr(i.apr == null ? '' : String(i.apr));
+    setOriginationCharges(String(i.originationCharges));
+    setDiscountPoints(String(i.discountPoints));
+    setLenderCredits(String(i.lenderCredits));
+    setTotalClosingCosts(
+      i.totalClosingCosts == null ? '' : String(i.totalClosingCosts)
+    );
+    setLoanType(i.loanType || 'conventional');
+    setLenderSlug(i.lenderSlug || '');
+    setCountySlug(i.countySlug || '');
+    setSubmitted(true);
+  }, []);
 
   const inputs = useMemo(
     () =>
@@ -386,6 +408,27 @@ export function LoanEstimateAnalyzer({
 
         {submitted && (
           <>
+            <div className="flex flex-wrap items-center gap-3">
+              <SaveLoanEstimateButton
+                label={
+                  inputs.lenderSlug
+                    ? `LE · ${bootstrap.lenders.find((l) => l.slug === inputs.lenderSlug)?.name ?? inputs.lenderSlug}`
+                    : 'Saved Loan Estimate'
+                }
+                inputs={{ ...inputs }}
+                summary={`${formatCurrency(inputs.loanAmount)} loan · ${inputs.interestRate}% rate · net fees ${formatCurrency(analysis.derived.netLenderCost)} · orig ${analysis.originationBand.framing}`}
+                bandSummary={`${analysis.originationBand.framing} · ${analysis.netCostBand.framing}`}
+                lenderSlug={inputs.lenderSlug || undefined}
+                countySlug={inputs.countySlug || undefined}
+              />
+              <Link
+                href="/my-lending"
+                className="text-sm font-medium text-emerald-800 underline-offset-2 hover:underline"
+              >
+                My Lending workspace
+              </Link>
+            </div>
+
             {/* Metric tiles */}
             <div className="grid gap-3 sm:grid-cols-2">
               <Metric

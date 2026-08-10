@@ -24,6 +24,8 @@ import { emptyLoanEstimateInputs } from '@/lib/tools/loan-estimate-analyzer/defa
 import type { LoanEstimateInputs, LoanEstimateLoanType } from '@/lib/tools/loan-estimate-analyzer/types';
 import type { AnalyzerBootstrap } from '@/lib/tools/loan-estimate-analyzer/serialize-context';
 import { FredRateContextPanel } from '@/components/rates/FredRateContextPanel';
+import { SaveLeComparisonButton } from '@/components/my-lending/save-le-comparison-button';
+import { consumeLeWorkspaceReopen } from '@/lib/my-lending/storage';
 import { cn, formatCurrency } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 
@@ -163,9 +165,29 @@ export function LoanEstimateCompare({
   const [showResults, setShowResults] = useState(true);
   const [hydrated, setHydrated] = useState(false);
 
-  // sessionStorage handoff from single analyzer
+  // sessionStorage handoff from single analyzer or My Lending reopen
   useEffect(() => {
     try {
+      const reopen = consumeLeWorkspaceReopen();
+      if (reopen?.type === 'comparison' && reopen.estimates?.length) {
+        setForms((prev) => {
+          const next = { ...prev };
+          reopen.estimates.forEach((est, idx) => {
+            const id = SLOTS[idx];
+            if (!id) return;
+            next[id] = formFromInputs(
+              emptyLoanEstimateInputs(est.inputs as Partial<LoanEstimateInputs>),
+              est.label || SLOT_LABELS[id]
+            );
+          });
+          return next;
+        });
+        setCount(Math.min(MAX_COMPARE_ESTIMATES, Math.max(2, reopen.estimates.length)));
+        setShowResults(true);
+        setHydrated(true);
+        return;
+      }
+
       const raw = sessionStorage.getItem(COMPARE_DRAFT_STORAGE_KEY);
       if (raw) {
         const draft = JSON.parse(raw) as CompareDraftPayload;
@@ -346,14 +368,37 @@ export function LoanEstimateCompare({
       </div>
 
       {showResults && (
-        <ComparisonResults
-          comparison={comparison}
-          bootstrap={bootstrap}
-          forms={forms}
-          activeSlots={activeSlots}
-          mobileTab={mobileTab}
-          setMobileTab={setMobileTab}
-        />
+        <>
+          <div className="flex flex-wrap items-center gap-3">
+            <SaveLeComparisonButton
+              label={`Comparison · ${activeSlots.length} offers`}
+              estimates={activeSlots.map((id) => ({
+                id,
+                label: forms[id].label.trim() || SLOT_LABELS[id],
+                inputs: { ...inputsFromForm(forms[id]) },
+              }))}
+              summary={
+                comparison.headlineCallouts.slice(0, 2).join(' · ') ||
+                `${activeSlots.length}-offer Loan Estimate comparison`
+              }
+              headlineCallouts={comparison.headlineCallouts}
+            />
+            <Link
+              href="/my-lending"
+              className="text-sm font-medium text-emerald-800 underline-offset-2 hover:underline"
+            >
+              My Lending workspace
+            </Link>
+          </div>
+          <ComparisonResults
+            comparison={comparison}
+            bootstrap={bootstrap}
+            forms={forms}
+            activeSlots={activeSlots}
+            mobileTab={mobileTab}
+            setMobileTab={setMobileTab}
+          />
+        </>
       )}
 
       <p className="text-center text-sm text-zinc-500">

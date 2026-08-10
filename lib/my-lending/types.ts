@@ -41,6 +41,46 @@ export type CalculatorSnapshot = {
   savedAt: string;
 };
 
+/**
+ * Phase 3 — saved Loan Estimate analysis (guest workspace).
+ * Inputs are the analyzer form values; summary is human-readable.
+ */
+export type SavedLoanEstimate = {
+  id: string;
+  planId: string;
+  label: string;
+  notes?: string;
+  /** LoanEstimateInputs-compatible plain object */
+  inputs: Record<string, unknown>;
+  /** Key derived metrics for list display */
+  summary: string;
+  /** Optional snapshot of fee band labels */
+  bandSummary?: string;
+  lenderSlug?: string;
+  countySlug?: string;
+  savedAt: string;
+  updatedAt: string;
+};
+
+/** Phase 3 — saved multi-LE comparison (2–3 offers). */
+export type SavedLeComparison = {
+  id: string;
+  planId: string;
+  label: string;
+  notes?: string;
+  /** Array of { id, label, inputs } for estimates A/B/C */
+  estimates: Array<{
+    id: string;
+    label: string;
+    inputs: Record<string, unknown>;
+  }>;
+  summary: string;
+  /** Headline callouts from last compare */
+  headlineCallouts?: string[];
+  savedAt: string;
+  updatedAt: string;
+};
+
 /** Financing research plan. Phase A uses one active plan; array shape ready for Phase D. */
 export type FinancePlan = {
   id: string;
@@ -54,6 +94,9 @@ export type FinancePlan = {
   savedLenderIds: string[];
   /** Phase C calculator saves (default []) */
   calculatorSnapshots?: CalculatorSnapshot[];
+  /** Phase 3 Loan Estimate research */
+  savedLoanEstimates?: SavedLoanEstimate[];
+  savedLeComparisons?: SavedLeComparison[];
 };
 
 /** Lender shortlist item — research only, not a lead. */
@@ -72,13 +115,27 @@ export type SavedLender = {
   updatedAt: string;
 };
 
-/** Phase D: multi-plan library via activePlanId. version 2 after migration. */
+/**
+ * Guest workspace state.
+ * v1/v2 — plans + lenders (+ calculator snapshots on plans)
+ * v3 — + saved Loan Estimates and LE comparisons on plans
+ */
 export type MyLendingState = {
-  version: 1 | 2;
+  version: 1 | 2 | 3;
   activePlanId: string | null;
   plans: FinancePlan[];
   savedLenders: SavedLender[];
 };
+
+/** SessionStorage key to reopen a saved LE/comparison in the tools */
+export const LE_WORKSPACE_REOPEN_KEY = 'lth:my-lending:le-reopen:v1';
+
+export type LeWorkspaceReopen =
+  | { type: 'loan-estimate'; inputs: Record<string, unknown> }
+  | {
+      type: 'comparison';
+      estimates: Array<{ id: string; label: string; inputs: Record<string, unknown> }>;
+    };
 
 export const LOAN_FOCUS_OPTIONS: { id: LoanFocus; label: string }[] = [
   { id: 'purchase', label: 'Purchase' },
@@ -111,6 +168,9 @@ export const LENDER_STATUS_OPTIONS: {
 
 export const MY_LENDING_STORE_KEY = 'lth:my-lending:v1';
 export const MY_LENDING_PATH = '/my-lending';
+
+export const MAX_SAVED_LOAN_ESTIMATES = 25;
+export const MAX_SAVED_LE_COMPARISONS = 15;
 
 export function newId(): string {
   if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
