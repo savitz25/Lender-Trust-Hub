@@ -246,19 +246,19 @@ export const GEORGIA_COUNTY_SUPPLEMENTS: Record<string, string[]> = {
 export const NORTH_ATLANTA_HUB_COUNTIES = [
   { name: 'Forsyth', slug: 'forsyth', highlight: 'Cumming, schools, new construction growth' },
   { name: 'Fulton', slug: 'fulton', highlight: 'Alpharetta, Johns Creek, Suwanee border' },
-  { name: 'Gwinnett', slug: 'gwinnett', highlight: 'Suwanee, Duluth reach — coming soon' },
+  { name: 'Gwinnett', slug: 'gwinnett', highlight: 'Suwanee, Duluth — HMDA market panel live' },
 ] as const;
 
 export const METRO_OUTER_RING_HUB_COUNTIES = [
   { name: 'Henry', slug: 'henry', highlight: 'McDonough, affordable starter homes, DPA programs' },
-  { name: 'Clayton', slug: 'clayton', highlight: 'South metro growth — coming soon' },
-  { name: 'Paulding', slug: 'paulding', highlight: 'Loganville corridor, USDA eligible — coming soon' },
+  { name: 'Clayton', slug: 'clayton', highlight: 'South metro growth — HMDA market panel live' },
+  { name: 'Paulding', slug: 'paulding', highlight: 'West metro growth — HMDA market panel live' },
 ] as const;
 
 export const COASTAL_SAVANNAH_HUB_COUNTIES = [
   { name: 'Chatham', slug: 'chatham', highlight: 'Savannah, Pooler, port & industrial relocations' },
-  { name: 'Effingham', slug: 'effingham', highlight: 'Rincon, Guyton suburban growth — coming soon' },
-  { name: 'Bryan', slug: 'bryan', highlight: 'Richmond Hill, coastal exurbs — coming soon' },
+  { name: 'Effingham', slug: 'effingham', highlight: 'Rincon, Guyton — HMDA market panel live' },
+  { name: 'Bryan', slug: 'bryan', highlight: 'Richmond Hill, coastal exurbs — HMDA market panel live' },
 ] as const;
 
 export const MIDDLE_GEORGIA_HUB_COUNTIES = [

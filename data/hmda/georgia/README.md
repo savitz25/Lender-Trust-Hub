@@ -1,9 +1,9 @@
 # Georgia HMDA slice
-- County market rows: **25**
-- Lender–county activity (major counties): **8572**
+- County market rows: **35**
+- Lender–county activity (major counties): **10841**
 - LEI state summaries: **1061**
-- High-confidence LEI→directory mappings: **50**
-- Major counties with names: **25**
+- High-confidence LEI→directory mappings: **57**
+- Major counties with names: **35**
 
 ## Top mapped LEIs by GA originations
 
@@ -23,10 +23,15 @@
 - `guaranteed-rate` — Guaranteed Rate, Inc. (3440 GA orig.)
 - `regions-bank` — Regions Bank (2869 GA orig.)
 - `crosscountry-mortgage-west-valley` — CrossCountry Mortgage, LLC (2777 GA orig.)
+- `synovus-bank` — Synovus Bank (2576 GA orig.)
 - `mr-cooper` — NATIONSTAR MORTGAGE LLC (2560 GA orig.)
 - `newrez` — Newrez LLC (2480 GA orig.)
 - `academy-mortgage` — Academy Mortgage Corporation (2402 GA orig.)
 - `cardinal-financial` — Cardinal Financial Company, Limited Partnership (2388 GA orig.)
+- `jpmorgan-chase-bank` — JPMorgan Chase Bank, National Association (2140 GA orig.)
+- `southstate-bank` — SouthState Bank, National Association (1856 GA orig.)
+- `wells-fargo-bank` — Wells Fargo Bank, National Association (1509 GA orig.)
+- `mr-cooper` — Nationstar Mortgage LLC (1447 GA orig.)
 
 ## Major counties (panel-ready)
 
@@ -55,3 +60,19 @@
 - **Bibb** (`13021`) — 2887 originations
 - **Newton** (`13217`) — 2832 originations
 - **Walton** (`13297`) — 2798 originations
+- **Lowndes** (`13185`) — 2788 originations
+- **Rockdale** (`13247`) — 2428 originations
+- **Effingham** (`13103`) — 2168 originations
+- **Glynn** (`13127`) — 2110 originations
+- **Floyd** (`13115`) — 1996 originations
+- **Clarke** (`13059`) — 1877 originations
+- **Catoosa** (`13047`) — 1821 originations
+- **Bryan** (`13029`) — 1784 originations
+- **Whitfield** (`13313`) — 1740 originations
+- **Spalding** (`13255`) — 1596 originations
+
+## Matching rules
+
+- Reuse FL/TX curated LEI maps when the LEI has GA activity
+- GA-curated LEIs only when GLEIF/legal name + public NMLS are high-confidence
+- No fuzzy LEI inventing

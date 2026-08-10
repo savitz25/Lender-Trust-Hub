@@ -474,9 +474,11 @@ export const CFPB_COMPANY_MAPPINGS: CfpbCompanyMapping[] = [
   },
   {
     ourLenderSlug: 'synovus-bank',
+    nmlsIds: ['480004', '179119'],
     cfpbCompanyNames: ['Synovus Bank'],
     matchMethod: 'curated-exact',
-    matchNote: 'Matched to CFPB company name “Synovus Bank”.',
+    matchNote:
+      'Matched to CFPB company name “Synovus Bank”. NMLS inheritance covers bank/mortgage company IDs when present on directory rows.',
   },
 ];
 

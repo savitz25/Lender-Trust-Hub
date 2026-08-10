@@ -16,10 +16,10 @@ Rebuild:
 python scripts/build-hmda-georgia-slice.py
 ```
 
-## Coverage (initial)
+## Coverage
 
-- High-confidence LEI → directory mappings (reuse FL curated maps; national slugs by NMLS)
-- Major counties: Fulton, Gwinnett, Cobb, DeKalb, Cherokee, Forsyth, Chatham, Henry, Paulding, Hall, Houston, Clayton, Columbia, Coweta, Richmond, Muscogee, Douglas, Bartow, Fayette, Bibb, …
+- High-confidence LEI → directory mappings (reuse FL **and TX** curated maps; national slugs by NMLS)
+- Major counties: **35** panel-ready (metro Atlanta + secondary markets) — see [HMDA-GEORGIA-DEEPEN.md](./HMDA-GEORGIA-DEEPEN.md)
 - Lender–county activity limited to major named counties for panel clarity
 
 ## Product wiring
