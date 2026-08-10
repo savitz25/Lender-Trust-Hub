@@ -30,7 +30,9 @@ export type HmdaStateCode =
   | 'WI'
   | 'MN'
   | 'MO'
-  | 'KY';
+  | 'KY'
+  | 'UT'
+  | 'NV';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -72,7 +74,9 @@ export type HmdaStateConfig = {
     | 'wisconsin_originations'
     | 'minnesota_originations'
     | 'missouri_originations'
-    | 'kentucky_originations';
+    | 'kentucky_originations'
+    | 'utah_originations'
+    | 'nevada_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -1180,6 +1184,53 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'nelson',
     ]),
   },
+  UT: {
+    code: 'UT',
+    stateSlug: 'utah',
+    name: 'Utah',
+    dataFolder: 'utah',
+    fileSuffix: '_ut',
+    originationsColumn: 'utah_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Wasatch Front + secondary high-volume markets
+      'salt-lake',
+      'utah',
+      'davis',
+      'weber',
+      'washington',
+      'cache',
+      'tooele',
+      'iron',
+      'box-elder',
+      'wasatch',
+      'summit',
+      'uintah',
+      'sanpete',
+      'sevier',
+      'carbon',
+      'morgan',
+    ]),
+  },
+  NV: {
+    code: 'NV',
+    stateSlug: 'nevada',
+    name: 'Nevada',
+    dataFolder: 'nevada',
+    fileSuffix: '_nv',
+    originationsColumn: 'nevada_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Las Vegas / Reno + secondary high-volume markets
+      'clark',
+      'washoe',
+      'lyon',
+      'nye',
+      'douglas',
+      'elko',
+      'carson-city',
+      'churchill',
+      'humboldt',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -1213,6 +1264,8 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'MN',
   'MO',
   'KY',
+  'UT',
+  'NV',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {

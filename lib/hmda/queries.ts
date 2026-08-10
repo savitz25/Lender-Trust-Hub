@@ -73,6 +73,10 @@ export const MAJOR_MISSOURI_COUNTY_SLUGS = HMDA_STATE_CONFIGS.MO.majorCountySlug
 
 export const MAJOR_KENTUCKY_COUNTY_SLUGS = HMDA_STATE_CONFIGS.KY.majorCountySlugs;
 
+export const MAJOR_UTAH_COUNTY_SLUGS = HMDA_STATE_CONFIGS.UT.majorCountySlugs;
+
+export const MAJOR_NEVADA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.NV.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw
@@ -214,7 +218,7 @@ function evidenceForBundle(
 }
 
 /**
- * Lender evidence across all active product states (28: FL–MN).
+ * Lender evidence across all active product states (32: FL–NV including MO, KY, UT, NV).
  * Primary = highest state originations; otherStates lists secondary markets.
  */
 export function getHmdaLenderEvidenceBySlug(slug: string): HmdaLenderEvidence | null {
