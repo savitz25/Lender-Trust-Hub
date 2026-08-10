@@ -19,7 +19,8 @@ export type HmdaStateCode =
   | 'VA'
   | 'MD'
   | 'DE'
-  | 'DC';
+  | 'DC'
+  | 'TN';
 
 export type HmdaStateConfig = {
   code: HmdaStateCode;
@@ -50,7 +51,8 @@ export type HmdaStateConfig = {
     | 'virginia_originations'
     | 'maryland_originations'
     | 'delaware_originations'
-    | 'district_of_columbia_originations';
+    | 'district_of_columbia_originations'
+    | 'tennessee_originations';
   /** Major county slugs for market intelligence panels */
   majorCountySlugs: ReadonlySet<string>;
 };
@@ -709,6 +711,38 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
     // Single county-equivalent FIPS 11001 → slug district-of-columbia
     majorCountySlugs: new Set(['district-of-columbia']),
   },
+  TN: {
+    code: 'TN',
+    stateSlug: 'tennessee',
+    name: 'Tennessee',
+    dataFolder: 'tennessee',
+    fileSuffix: '_tn',
+    originationsColumn: 'tennessee_originations',
+    majorCountySlugs: new Set([
+      // Wave 1 — Nashville / Memphis / Knoxville / Chattanooga core
+      'davidson',
+      'shelby',
+      'knox',
+      'hamilton',
+      'rutherford',
+      'montgomery',
+      'williamson',
+      'sumner',
+      'wilson',
+      // Next volume / regional metros
+      'sullivan',
+      'blount',
+      'maury',
+      'washington',
+      'sevier',
+      'bradley',
+      'robertson',
+      'madison',
+      'anderson',
+      'loudon',
+      'putnam',
+    ]),
+  },
 };
 
 export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
@@ -731,6 +765,7 @@ export const HMDA_ACTIVE_STATE_CODES: HmdaStateCode[] = [
   'MD',
   'DE',
   'DC',
+  'TN',
 ];
 
 export function hmdaStateFromSlug(stateSlug: string): HmdaStateConfig | null {

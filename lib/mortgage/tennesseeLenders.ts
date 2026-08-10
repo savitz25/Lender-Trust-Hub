@@ -93,7 +93,7 @@ export const TENNESSEE_LENDERS: Lender[] = [
     website: 'https://crosscountrymortgage.com', phone: '(615) 555-6004',
   },
   {
-    id: 'tn-09', slug: 'ascend-federal-credit-union', name: 'Ascend Federal Credit Union', nmlsId: '402436', type: 'Credit Union',
+    id: 'tn-09', slug: 'ascend-federal-credit-union', name: 'Ascend Federal Credit Union', nmlsId: '451452', type: 'Credit Union',
     city: 'Franklin', state: 'Tennessee', stateSlug: 'tennessee', county: 'Williamson', countySlug: 'williamson',
     zipCodes: ['37064', '37027', '37129'], rating: 4.8, reviewCount: 320, trustScore: 91, countyExperienceScore: 92,
     nationalVolumeRank: 72, loanTypes: ['Conventional', 'FHA', 'VA', 'Refinance'],

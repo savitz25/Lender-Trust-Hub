@@ -90,7 +90,8 @@ function loadMappings(cfg: HmdaStateConfig): HmdaLeiMapping[] {
         r.virginia_originations ??
         r.maryland_originations ??
         r.delaware_originations ??
-        r.district_of_columbia_originations
+        r.district_of_columbia_originations ??
+        r.tennessee_originations
     ),
     // Legacy alias used by older FL-only code paths
     floridaOriginations: num(
@@ -113,7 +114,8 @@ function loadMappings(cfg: HmdaStateConfig): HmdaLeiMapping[] {
         r.virginia_originations ??
         r.maryland_originations ??
         r.delaware_originations ??
-        r.district_of_columbia_originations
+        r.district_of_columbia_originations ??
+        r.tennessee_originations
     ),
     year: num(r.year) || 2025,
     state: cfg.code,

@@ -51,6 +51,8 @@ export const MAJOR_DELAWARE_COUNTY_SLUGS = HMDA_STATE_CONFIGS.DE.majorCountySlug
 
 export const MAJOR_DISTRICT_OF_COLUMBIA_COUNTY_SLUGS = HMDA_STATE_CONFIGS.DC.majorCountySlugs;
 
+export const MAJOR_TENNESSEE_COUNTY_SLUGS = HMDA_STATE_CONFIGS.TN.majorCountySlugs;
+
 function parseTopCounties(raw: string): { name: string; originations: number }[] {
   if (!raw.trim()) return [];
   return raw
