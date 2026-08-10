@@ -282,7 +282,7 @@ export function compareLoanEstimates(
   const limitations = [
     'Educational comparison only — not underwriting, not a recommendation of any lender, and not financial advice.',
     'We do not declare an overall “winner.” Trade-offs (cash at closing vs monthly payment vs rate) depend on your situation.',
-    'HMDA context, if shown, is 2025 multi-state market activity (FL/TX/GA/CA/NC/SC/NJ) — not historical fee percentiles for these Loan Estimates.',
+    'HMDA context, if shown, is 2025 multi-state market activity (FL/TX/GA/CA/NC/SC/NJ/NY/PA/MA) — not historical fee percentiles for these Loan Estimates.',
   ];
 
   return {

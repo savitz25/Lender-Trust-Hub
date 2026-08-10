@@ -21,6 +21,7 @@ import { getHmdaLenderEvidenceBySlug } from '@/lib/hmda';
 import { HmdaLenderEvidencePanel } from '@/components/hmda/HmdaLenderEvidencePanel';
 import { getCfpbComplaintEvidenceBySlug } from '@/lib/cfpb';
 import { CfpbComplaintPanel } from '@/components/cfpb/CfpbComplaintPanel';
+import { analyzerCountyOptionSlug } from '@/lib/tools/loan-estimate-analyzer/county-option';
 
 export function generateStaticParams() {
   return lenders.map((l) => ({ slug: l.slug }));
@@ -245,9 +246,10 @@ export default async function LenderProfilePage({
           variant="profile"
           lenderSlug={lender.slug}
           lenderName={lender.name}
-          countySlug={
-            lender.stateSlug === 'florida' ? lender.countySlug : undefined
-          }
+          countySlug={analyzerCountyOptionSlug(
+            lender.stateSlug,
+            homeCountySlug || lender.countySlug
+          )}
         />
 
         <div className="mt-6">
