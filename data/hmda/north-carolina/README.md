@@ -1,39 +1,50 @@
-# North Carolina HMDA slice
-- County market rows: **30**
-- Lender–county activity (major counties): **10217**
+# North Carolina HMDA slice (deepened)
+
+**Source:** `data/hmda/by-state/NC/` (national foundation)
+
+**Phase:** north-carolina-deepen
+
+- County market rows: **40**
+- Lender–county activity (major markets): **12427**
 - LEI state summaries: **1121**
-- High-confidence LEI→directory mappings: **63**
-- Major counties with names: **30**
+- High-confidence LEI→directory mappings: **232**
+- Major markets with names: **40**
+- Top-20 mapped: **20/20** · Top-50 mapped: **43/50**
 
 ## Top mapped LEIs by NC originations
 
+- `state-employees-credit-union-nc` — STATE EMPLOYEES' CREDIT UNION (27575 NC orig.)
 - `rocket-mortgage` — Rocket Mortgage, LLC (18462 NC orig.)
 - `united-wholesale-mortgage` — United Wholesale Mortgage, LLC (13671 NC orig.)
-- `cardinal-financial` — Cardinal Financial Company, Limited Partnership (8138 NC orig.)
+- `movement-mortgage-charlotte` — MOVEMENT MORTGAGE, LLC (8138 NC orig.)
 - `truist-bank` — Truist Bank (7920 NC orig.)
-- `crosscountry-mortgage-charlotte` — CrossCountry Mortgage, LLC (5258 NC orig.)
+- `first-citizens-bank` — First-Citizens Bank & Trust Company (6984 NC orig.)
+- `atlantic-bay-mortgage-charleston` — ATLANTIC BAY MORTGAGE GROUP, L.L.C. (6049 NC orig.)
+- `dhi-mortgage-buckeye` — DHI MORTGAGE COMPANY, LTD. (5258 NC orig.)
 - `navy-federal-jacksonville` — Navy Federal Credit Union (5249 NC orig.)
-- `guaranteed-rate` — Guaranteed Rate, Inc. (4880 NC orig.)
-- `movement-mortgage-charlotte` — Movement Mortgage, LLC (4769 NC orig.)
-- `guild-mortgage-charlotte` — Guild Mortgage Company LLC (4463 NC orig.)
-- `freedom-mortgage` — Freedom Mortgage Corporation (4431 NC orig.)
-- `pennymac` — PennyMac Loan Services, LLC (3969 NC orig.)
-- `fairway-mortgage-augusta-sheppard` — Fairway Independent Mortgage Corporation (3751 NC orig.)
-- `primelending-columbus` — PrimeLending, a PlainsCapital Company (2993 NC orig.)
+- `first-national-bank-of-pennsylvania` — First National Bank of Pennsylvania (5046 NC orig.)
+- `bank-of-america-mortgage-north-dfw` — Bank of America, National Association (4880 NC orig.)
+- `veterans-united-west-valley` — MORTGAGE RESEARCH CENTER, LLC (4769 NC orig.)
+- `freedom-mortgage` — FREEDOM MORTGAGE CORPORATION (4463 NC orig.)
+- `crosscountry-mortgage-charlotte` — CROSSCOUNTRY MORTGAGE, LLC (4431 NC orig.)
+- `loandepot` — LOANDEPOT.COM, LLC (3969 NC orig.)
+- `pennymac` — PENNYMAC LOAN SERVICES, LLC (3751 NC orig.)
+- `truliant-federal-credit-union` — Truliant Federal Credit Union (3466 NC orig.)
+- `coastal-federal-credit-union` — COASTAL Federal Credit Union (3167 NC orig.)
+- `fairway-mortgage-augusta-sheppard` — FAIRWAY INDEPENDENT MORTGAGE CORPORATION (2993 NC orig.)
 - `newrez` — Newrez LLC (2787 NC orig.)
-- `loandepot` — loanDepot.com, LLC (2756 NC orig.)
-- `mr-cooper` — Nationstar Mortgage LLC (2491 NC orig.)
+- `lennar-mortgage-queen-creek` — LENNAR MORTGAGE, LLC (2756 NC orig.)
+- `silverton-mortgage-myrtle-beach` — VANDERBILT MORTGAGE AND FINANCE, INC. (2515 NC orig.)
+- `guaranteed-rate` — GUARANTEED RATE, INC. (2491 NC orig.)
 - `pnc-bank` — PNC Bank, National Association (2361 NC orig.)
 - `jpmorgan-chase-bank` — JPMorgan Chase Bank, National Association (2307 NC orig.)
 - `wells-fargo-bank` — Wells Fargo Bank, National Association (2302 NC orig.)
 - `eagle-home-mortgage` — Eagle Home Mortgage, LLC (2216 NC orig.)
 - `union-home-mortgage-reeves-team` — UNION HOME MORTGAGE CORP. (2127 NC orig.)
-- `ally-bank` — Ally Bank (1957 NC orig.)
+- `guild-mortgage-charlotte` — GUILD MORTGAGE COMPANY LLC (1957 NC orig.)
 - `mr-cooper` — NATIONSTAR MORTGAGE LLC (1949 NC orig.)
-- `new-american-funding` — Broker Solutions, Inc. (1619 NC orig.)
-- `prmg` — Paramount Residential Mortgage Group, Inc. (1555 NC orig.)
 
-## Major counties (panel-ready)
+## Major markets (panel-ready)
 
 - **Wake** (`37183`) — 32310 originations
 - **Mecklenburg** (`37119`) — 29329 originations
@@ -65,15 +76,26 @@
 - **Wayne** (`37191`) — 2636 originations
 - **Pender** (`37141`) — 2534 originations
 - **Franklin** (`37069`) — 2471 originations
+- **Carteret** (`37031`) — 2442 originations
+- **Cleveland** (`37045`) — 2373 originations
+- **Nash** (`37127`) — 2288 originations
+- **Rockingham** (`37157`) — 2272 originations
+- **Hoke** (`37093`) — 2212 originations
+- **Chatham** (`37037`) — 2161 originations
+- **Burke** (`37023`) — 1900 originations
+- **Caldwell** (`37027`) — 1896 originations
+- **Stanly** (`37167`) — 1878 originations
+- **Dare** (`37055`) — 1806 originations
 
 ## Matching rules
 
-- Reuse FL / TX / GA / CA curated LEI maps when the LEI has NC activity
-- National NMLS→slug overrides prefer company-level directory hosts
-- No fuzzy LEI inventing
+- Reuse prior product-state curated LEI maps when LEI has NC activity
+- **nc_deepen** GLEIF re-identification overrides corrupted early FL-reuse swaps
+- Prefer NC directory hosts (Guild/CCM/Movement Charlotte, SECU, Truliant, Coastal FCU)
+- Precision over coverage — low-confidence regionals deferred
 
 ## Rebuild
 
 ```bash
-python scripts/build-hmda-north-carolina-slice.py
+python scripts/build-hmda-north-carolina-deepen.py
 ```
