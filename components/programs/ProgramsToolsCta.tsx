@@ -38,14 +38,22 @@ export function ProgramsToolsCta({
   }
 
   const stateLabel =
-    stateSlug === 'florida' ? 'Florida' : stateSlug === 'texas' ? 'Texas' : null;
+    stateSlug === 'florida'
+      ? 'Florida'
+      : stateSlug === 'texas'
+        ? 'Texas'
+        : stateSlug === 'georgia'
+          ? 'Georgia'
+          : null;
   const title = dpaPriority
     ? `Exploring FHA, VA, or ${stateLabel} assistance?`
-    : 'Exploring FHA, VA, or down-payment help?';
+    : stateLabel
+      ? `Exploring FHA, VA, or programs in ${stateLabel}?`
+      : 'Exploring FHA, VA, or down-payment help?';
 
   const body = dpaPriority
     ? `${dpaHint ?? ''} Open the program finder with your state pre-filled, or go to official-source starting points for down-payment assistance. Not an eligibility decision. We show the public record. You decide.`
-    : 'Compare common program themes—down payment ranges, insurance concepts, and when people research each path. Not an eligibility decision. We show the public record. You decide.';
+    : 'Explore programs with clear trade-offs—down payment themes, insurance concepts, and when people research each path. Not an eligibility decision. We show the public record. You decide.';
 
   return (
     <aside
@@ -75,7 +83,7 @@ export function ProgramsToolsCta({
           className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#0A2540] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#0A2540]/90"
         >
           <Landmark className="h-4 w-4" aria-hidden />
-          {dpaPriority ? 'Program finder (this state)' : 'Open program finder'}
+          {dpaPriority || stateLabel ? 'Explore programs' : 'Open program finder'}
           <ArrowRight className="h-4 w-4" aria-hidden />
         </Link>
         <Link
@@ -88,7 +96,13 @@ export function ProgramsToolsCta({
           href="/programs"
           className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#0A2540] hover:border-sky-400"
         >
-          All program overviews
+          FHA · VA · DPA guides
+        </Link>
+        <Link
+          href="/my-lending"
+          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-transparent px-4 py-2.5 text-sm font-semibold text-sky-900 underline-offset-2 hover:underline"
+        >
+          Save your research
         </Link>
       </div>
     </aside>

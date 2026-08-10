@@ -425,7 +425,7 @@ export function LoanEstimateAnalyzer({
                 href="/my-lending"
                 className="text-sm font-medium text-emerald-800 underline-offset-2 hover:underline"
               >
-                My Lending workspace
+                Save your research
               </Link>
             </div>
 

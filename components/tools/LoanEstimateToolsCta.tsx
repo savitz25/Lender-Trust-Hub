@@ -81,10 +81,9 @@ export function LoanEstimateToolsCta({
             : 'Have a Loan Estimate from this lender?'}
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-          Educational fee bands, optional national rate context, and public HMDA activity when
-          available
-          {lenderName ? ` for ${lenderName}` : ''}. Compare two or three offers side by side when you
-          have multiple Loan Estimates. We show the public record. You decide.
+          Understand your Loan Estimate with educational fee bands and optional HMDA context
+          {lenderName ? ` for ${lenderName}` : ''}. Compare offers side by side when you have more
+          than one. Save research to My Lending when you want to return later.
         </p>
         <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
           <Link
@@ -92,15 +91,20 @@ export function LoanEstimateToolsCta({
             className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#0A2540] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#0A2540]/90"
           >
             <FileSearch className="h-4 w-4" aria-hidden="true" />
-            Analyze a Loan Estimate
-            {lenderSlug ? ' from this lender' : ''}
+            Understand your Loan Estimate
           </Link>
           <Link
             href={compare}
             className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#0A2540] hover:border-emerald-400"
           >
             <Columns3 className="h-4 w-4" aria-hidden="true" />
-            Compare Loan Estimates
+            Compare offers side by side
+          </Link>
+          <Link
+            href="/my-lending"
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-transparent px-4 py-2.5 text-sm font-semibold text-emerald-800 underline-offset-2 hover:underline"
+          >
+            Save your research
           </Link>
         </div>
       </aside>
@@ -169,20 +173,30 @@ export function LoanEstimateToolsCta({
           <ToolCard
             href={analyze}
             icon={<FileSearch className="h-7 w-7 text-emerald-600" aria-hidden="true" />}
-            title="Loan Estimate Analyzer"
-            description="Understand your Loan Estimate — fees, points, APR vs rate, with optional 2025 HMDA market context."
+            title="Understand your Loan Estimate"
+            description="Fee bands, points vs rate, optional FL / TX / GA HMDA context — then save research to My Lending."
             cta="Open analyzer"
             featured
           />
           <ToolCard
             href={compare}
             icon={<Columns3 className="h-7 w-7 text-sky-600" aria-hidden="true" />}
-            title="Compare Loan Estimates"
-            description="Compare offers side by side — rate, origination, points, credits, and monthly P&I differences."
+            title="Compare offers side by side"
+            description="2–3 Loan Estimates — rate, origination, points, credits, and monthly P&I. Save a comparison when ready."
             cta="Open comparison"
             featured
           />
         </div>
+        <p className="mt-3 text-center text-sm text-zinc-500">
+          Also:{' '}
+          <Link href="/tools/program-finder" className="font-semibold text-[#059669] hover:underline">
+            Explore programs
+          </Link>
+          {' · '}
+          <Link href="/my-lending" className="font-semibold text-[#059669] hover:underline">
+            Save your research
+          </Link>
+        </p>
       </section>
     );
   }

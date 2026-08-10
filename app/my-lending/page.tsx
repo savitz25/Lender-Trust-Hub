@@ -43,30 +43,30 @@ export default function MyLendingPage() {
           </div>
         </Suspense>
         <p className="mt-3 text-sm text-zinc-500">
-          <Link href="/local-lenders" className="font-medium text-[#059669] hover:underline">
-            Local lenders
-          </Link>
-          {' · '}
           <Link
             href="/tools/loan-estimate-analyzer"
             className="font-medium text-[#059669] hover:underline"
           >
-            Loan Estimate Analyzer
+            Understand your Loan Estimate
           </Link>
           {' · '}
           <Link
             href="/tools/compare-loan-estimates"
             className="font-medium text-[#059669] hover:underline"
           >
-            Compare LEs
+            Compare offers side by side
+          </Link>
+          {' · '}
+          <Link href="/tools/program-finder" className="font-medium text-[#059669] hover:underline">
+            Explore programs
+          </Link>
+          {' · '}
+          <Link href="/local-lenders" className="font-medium text-[#059669] hover:underline">
+            Local lenders
           </Link>
           {' · '}
           <Link href="/calculators" className="font-medium text-[#059669] hover:underline">
             Calculators
-          </Link>
-          {' · '}
-          <Link href="/compare" className="font-medium text-[#059669] hover:underline">
-            Compare lenders
           </Link>
           {' · '}
           <Link href="/about" className="font-medium text-[#059669] hover:underline">

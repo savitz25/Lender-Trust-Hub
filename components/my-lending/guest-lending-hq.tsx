@@ -294,11 +294,19 @@ export function GuestLendingHq() {
     );
   }
 
+  const hasAnyResearch =
+    loanEstimates.length > 0 ||
+    leComparisons.length > 0 ||
+    lenders.length > 0 ||
+    snapshots.length > 0;
+
   return (
     <div className="space-y-6">
       {accountStrip}
 
-      <ResearchPassportIntro storageMode={storageMode} />
+      <ResearchPassportIntro storageMode={storageMode} firstVisit={!hasAnyResearch} />
+
+      {!hasAnyResearch ? <QuickResearchStrip /> : null}
 
       <nav aria-label="My Lending sections" className="flex flex-wrap gap-2">
         <Link href="/my-lending/plans">
@@ -506,18 +514,19 @@ export function GuestLendingHq() {
               Loan Estimate research
             </h2>
             <p className="mt-1 text-sm text-zinc-600">
-              Saved analyses and side-by-side comparisons. Add private notes as you shop offers.
+              Reopen a saved analysis in the free tools. Use private notes to capture trade-offs
+              before you forget them.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
             <Link href="/tools/loan-estimate-analyzer">
               <Button size="sm" variant="outline">
-                Analyzer
+                Understand your LE
               </Button>
             </Link>
             <Link href="/tools/compare-loan-estimates">
               <Button size="sm" variant="outline">
-                Compare
+                Compare offers
               </Button>
             </Link>
           </div>
@@ -573,14 +582,14 @@ export function GuestLendingHq() {
             {loanEstimates.length === 0 ? (
               <EmptyResearchCard
                 title="No Loan Estimates saved yet"
-                body="Paste numbers from a Loan Estimate into the free Analyzer, then Save to My Lending. Notes stay private to your workspace."
+                body="Understand your Loan Estimate in the free Analyzer, then choose Save research. You can reopen the same numbers here anytime — guest-first on this device."
                 links={[
                   {
                     href: '/tools/loan-estimate-analyzer',
-                    label: 'Open Loan Estimate Analyzer',
+                    label: 'Understand your Loan Estimate',
                     primary: true,
                   },
-                  { href: '/tools/compare-loan-estimates', label: 'Compare offers' },
+                  { href: '/tools/compare-loan-estimates', label: 'Compare offers side by side' },
                 ]}
               />
             ) : (
@@ -609,6 +618,7 @@ export function GuestLendingHq() {
                           type="button"
                           size="sm"
                           variant="outline"
+                          className="min-h-10 font-semibold"
                           onClick={() => {
                             stageLeWorkspaceReopen({
                               type: 'loan-estimate',
@@ -617,7 +627,7 @@ export function GuestLendingHq() {
                             window.location.href = '/tools/loan-estimate-analyzer';
                           }}
                         >
-                          Reopen
+                          Reopen in Analyzer
                         </Button>
                         <Button
                           type="button"
@@ -665,14 +675,14 @@ export function GuestLendingHq() {
             {leComparisons.length === 0 ? (
               <EmptyResearchCard
                 title="No comparisons saved yet"
-                body="Load 2–3 Loan Estimates side by side, then save the comparison to revisit differences later."
+                body="Compare offers side by side, then Save comparison. Reopen later with the same A/B/C inputs — optional and guest-friendly."
                 links={[
                   {
                     href: '/tools/compare-loan-estimates',
-                    label: 'Compare Loan Estimates',
+                    label: 'Compare offers side by side',
                     primary: true,
                   },
-                  { href: '/tools/loan-estimate-analyzer', label: 'Single LE Analyzer' },
+                  { href: '/tools/loan-estimate-analyzer', label: 'Understand your Loan Estimate' },
                 ]}
               />
             ) : (
@@ -696,6 +706,7 @@ export function GuestLendingHq() {
                           type="button"
                           size="sm"
                           variant="outline"
+                          className="min-h-10 font-semibold"
                           onClick={() => {
                             stageLeWorkspaceReopen({
                               type: 'comparison',
@@ -704,7 +715,7 @@ export function GuestLendingHq() {
                             window.location.href = '/tools/compare-loan-estimates';
                           }}
                         >
-                          Reopen
+                          Reopen comparison
                         </Button>
                         <Button
                           type="button"
@@ -907,9 +918,10 @@ export function GuestLendingHq() {
       {lenders.length === 0 ? (
         <EmptyResearchCard
           title="No saved lenders yet"
-          body={`Save from a lender profile or directory card (shortlist max ${SHORTLIST_CAP}). Your shortlist is a research aid — not a lead form.`}
+          body={`Save from a profile or directory card (shortlist max ${SHORTLIST_CAP}). Research aid only — not a lead form.`}
           links={[
             { href: '/local-lenders', label: 'Browse local lenders', primary: true },
+            { href: '/tools/program-finder', label: 'Explore programs' },
             { href: '/calculators', label: 'Calculators' },
           ]}
         />
@@ -980,14 +992,58 @@ function ResearchPassportIntro({
       </p>
       <p className="mt-1 text-sm leading-relaxed text-zinc-600">
         {firstVisit
-          ? 'My Lending holds the financing research you choose to keep — Loan Estimates, comparisons, and lenders — so you can revisit calmly. Not a CRM, not a lead funnel.'
-          : 'Revisit saved Loan Estimates, comparisons, and lenders in one place. Private notes help you remember why an offer stood out.'}{' '}
+          ? 'Save what you research so you can come back later — without signing up. Not a CRM or lead funnel.'
+          : 'Reopen saved Loan Estimates and comparisons in the free tools. Private notes stay with each item so you remember why it mattered.'}{' '}
         {storageMode === 'guest' ? (
-          <span className="text-zinc-500">Currently guest (this device only).</span>
+          <span className="text-zinc-500">Guest mode: this device only (optional sign-in later).</span>
         ) : (
           <span className="text-zinc-500">Signed-in workspace foundation active.</span>
         )}
       </p>
+      {firstVisit ? (
+        <ul className="mt-3 grid gap-1.5 text-xs text-zinc-600 sm:grid-cols-3">
+          <li className="rounded-lg bg-white/80 px-2.5 py-2 ring-1 ring-teal-100">
+            <span className="font-semibold text-[#0A2540]">Save LEs</span>
+            <span className="mt-0.5 block">Reopen Analyzer with the same numbers</span>
+          </li>
+          <li className="rounded-lg bg-white/80 px-2.5 py-2 ring-1 ring-teal-100">
+            <span className="font-semibold text-[#0A2540]">Save comparisons</span>
+            <span className="mt-0.5 block">Reload 2–3 offers side by side</span>
+          </li>
+          <li className="rounded-lg bg-white/80 px-2.5 py-2 ring-1 ring-teal-100">
+            <span className="font-semibold text-[#0A2540]">Shortlist lenders</span>
+            <span className="mt-0.5 block">Max {SHORTLIST_CAP} top candidates + notes</span>
+          </li>
+        </ul>
+      ) : null}
+    </div>
+  );
+}
+
+/** Light discovery strip — research tools only, no lead framing. */
+function QuickResearchStrip() {
+  return (
+    <div className="rounded-xl border border-zinc-200 bg-white px-3 py-3 shadow-sm sm:px-4">
+      <p className="text-[11px] font-semibold uppercase tracking-wide text-zinc-500">
+        Save your research from
+      </p>
+      <ul className="mt-2 flex flex-wrap gap-2 text-sm">
+        {[
+          { href: '/tools/loan-estimate-analyzer', label: 'Understand your Loan Estimate' },
+          { href: '/tools/compare-loan-estimates', label: 'Compare offers side by side' },
+          { href: '/tools/program-finder', label: 'Explore programs' },
+          { href: '/local-lenders', label: 'Browse local lenders' },
+        ].map((l) => (
+          <li key={l.href}>
+            <Link
+              href={l.href}
+              className="inline-flex min-h-9 items-center rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1.5 font-medium text-[#0A2540] hover:border-emerald-400 hover:bg-emerald-50/50"
+            >
+              {l.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Compass } from 'lucide-react';
+import { ArrowRight, BookOpen, Compass, RotateCcw } from 'lucide-react';
 import {
   fitLevelLabel,
   getProgramById,
@@ -45,21 +45,35 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
     stateSlug: initialStateSlug,
   });
   const [submitted, setSubmitted] = useState(false);
+  const resultsRef = useRef<HTMLElement>(null);
 
   const results = useMemo(
     () => (submitted ? scoreProgramFits(answers) : []),
     [submitted, answers]
   );
 
+  useEffect(() => {
+    if (submitted && resultsRef.current) {
+      resultsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [submitted]);
+
   function update<K extends keyof FinderAnswers>(key: K, value: FinderAnswers[K]) {
     setAnswers((prev) => ({ ...prev, [key]: value }));
+  }
+
+  function resetResults() {
+    setSubmitted(false);
   }
 
   return (
     <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
       <section
         aria-labelledby="pf-form-heading"
-        className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm md:p-6"
+        className={cn(
+          'rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm md:p-6',
+          submitted ? 'order-2 lg:order-1' : 'order-1'
+        )}
       >
         <div className="mb-5">
           <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
@@ -179,19 +193,35 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
             </p>
           ) : null}
 
-          <button
-            type="submit"
-            className="inline-flex w-full min-h-12 items-center justify-center gap-2 rounded-xl bg-[#0A2540] px-5 py-3 text-sm font-semibold text-white hover:bg-[#0A2540]/90"
-          >
-            Show educational program fits
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </button>
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <button
+              type="submit"
+              className="inline-flex w-full min-h-12 flex-1 items-center justify-center gap-2 rounded-xl bg-[#0A2540] px-5 py-3 text-sm font-semibold text-white hover:bg-[#0A2540]/90"
+            >
+              {submitted ? 'Update program fits' : 'Show educational program fits'}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </button>
+            {submitted ? (
+              <button
+                type="button"
+                onClick={resetResults}
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm font-semibold text-zinc-700 hover:bg-zinc-50"
+              >
+                <RotateCcw className="h-4 w-4" aria-hidden />
+                Clear results
+              </button>
+            ) : null}
+          </div>
         </form>
 
         <ProgramDisclaimer className="mt-5" />
       </section>
 
-      <section aria-labelledby="pf-results-heading" className="space-y-4">
+      <section
+        ref={resultsRef}
+        aria-labelledby="pf-results-heading"
+        className={cn('space-y-4 scroll-mt-20', submitted ? 'order-1 lg:order-2' : 'order-2')}
+      >
         <div className="rounded-2xl border border-[#0A2540]/15 bg-gradient-to-br from-slate-50 via-white to-emerald-50/40 p-5 shadow-sm md:p-6">
           <p className="text-xs font-semibold uppercase tracking-wider text-emerald-800">
             Results · Not an approval
@@ -201,7 +231,7 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
           </h2>
           <p className="mt-2 text-sm text-zinc-600">
             {submitted
-              ? 'Ranked by educational relevance to your answers. Open each overview for down-payment themes, insurance concepts, and official sources.'
+              ? 'These are research fits only—not a qualification decision. Open a guide for down-payment themes, mortgage insurance concepts, and trade-offs, then continue into tools or local lenders.'
               : 'Answer any questions (or none) and continue. You can also browse all program pages without the quiz.'}
           </p>
         </div>
@@ -240,6 +270,8 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
               isDpa && isDpaPriorityState(answers.stateSlug)
                 ? `/programs/down-payment-assistance#${answers.stateSlug}`
                 : `/programs/${guide.slug}`;
+            const advantage = guide.advantages?.[0];
+            const tradeoff = guide.tradeoffs?.[0];
             return (
               <article
                 key={r.programId}
@@ -264,7 +296,11 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
                     {fitLevelLabel(r.fit)}
                   </span>
                 </div>
-                <ul className="mt-3 space-y-1.5 text-sm text-zinc-700">
+
+                <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                  Why this ranked for your answers
+                </p>
+                <ul className="mt-1.5 space-y-1.5 text-sm text-zinc-700">
                   {r.reasons.map((reason) => (
                     <li key={reason} className="flex gap-2">
                       <Compass className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden />
@@ -272,6 +308,24 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
                     </li>
                   ))}
                 </ul>
+
+                {(advantage || tradeoff) && (
+                  <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                    {advantage ? (
+                      <div className="rounded-lg border border-emerald-100 bg-emerald-50/50 px-3 py-2 text-xs text-zinc-700">
+                        <p className="font-semibold text-emerald-900">Common research theme</p>
+                        <p className="mt-0.5">{advantage}</p>
+                      </div>
+                    ) : null}
+                    {tradeoff ? (
+                      <div className="rounded-lg border border-amber-100 bg-amber-50/40 px-3 py-2 text-xs text-zinc-700">
+                        <p className="font-semibold text-amber-950">Trade-off to read carefully</p>
+                        <p className="mt-0.5">{tradeoff}</p>
+                      </div>
+                    ) : null}
+                  </div>
+                )}
+
                 <ul className="mt-3 space-y-1 text-xs text-zinc-500">
                   {r.caveats.map((c) => (
                     <li key={c}>• {c}</li>
@@ -293,7 +347,7 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
                         href="/programs/fha"
                         className="inline-flex min-h-11 items-center rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#0A2540] hover:border-emerald-400"
                       >
-                        FHA layering context
+                        FHA layering
                       </Link>
                       <Link
                         href="/programs/conventional"
@@ -302,37 +356,68 @@ export function ProgramFinder({ initialStateSlug = '' }: { initialStateSlug?: st
                         Conventional baseline
                       </Link>
                     </>
-                  ) : null}
+                  ) : (
+                    <>
+                      <Link
+                        href="/tools/loan-estimate-analyzer"
+                        className="inline-flex min-h-11 items-center rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#0A2540] hover:border-emerald-400"
+                      >
+                        Understand your LE
+                      </Link>
+                      <Link
+                        href="/local-lenders"
+                        className="inline-flex min-h-11 items-center rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#0A2540] hover:border-emerald-400"
+                      >
+                        Local lenders
+                      </Link>
+                    </>
+                  )}
                 </div>
               </article>
             );
           })}
 
         {submitted && (
-          <p className="text-center text-sm text-zinc-500">
-            Next:{' '}
-            <Link
-              href="/tools/loan-estimate-analyzer"
-              className="font-medium text-[#059669] hover:underline"
-            >
-              Analyze a Loan Estimate
-            </Link>
-            {' · '}
-            <Link
-              href="/tools/compare-loan-estimates"
-              className="font-medium text-[#059669] hover:underline"
-            >
-              Compare LEs
-            </Link>
-            {' · '}
-            <Link href="/local-lenders" className="font-medium text-[#059669] hover:underline">
-              Browse lenders
-            </Link>
-            {' · '}
-            <Link href="/my-lending" className="font-medium text-[#059669] hover:underline">
-              My Lending
-            </Link>
-          </p>
+          <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm">
+            <p className="text-sm font-semibold text-[#0A2540]">What to do next</p>
+            <p className="mt-1 text-xs text-zinc-500">
+              Educational steps only — no application and no eligibility decision on this site.
+            </p>
+            <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+              {[
+                {
+                  href: '/tools/loan-estimate-analyzer',
+                  label: 'Understand your Loan Estimate',
+                  detail: 'Fee bands + optional HMDA context',
+                },
+                {
+                  href: '/tools/compare-loan-estimates',
+                  label: 'Compare offers side by side',
+                  detail: '2–3 Loan Estimates clearly',
+                },
+                {
+                  href: '/local-lenders',
+                  label: 'Browse local lenders',
+                  detail: 'Directory research by market',
+                },
+                {
+                  href: '/my-lending',
+                  label: 'Save your research',
+                  detail: 'My Lending workspace (guest-first)',
+                },
+              ].map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="flex min-h-11 flex-col justify-center rounded-lg border border-zinc-100 bg-zinc-50/80 px-3 py-2 hover:border-emerald-300 hover:bg-emerald-50/40"
+                  >
+                    <span className="text-sm font-semibold text-[#059669]">{item.label}</span>
+                    <span className="text-xs text-zinc-500">{item.detail}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </section>
     </div>

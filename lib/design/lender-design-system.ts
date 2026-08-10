@@ -221,11 +221,12 @@ export const LENDER_PATHWAYS = {
     },
   ],
   tools: [
+    { label: 'Understand your Loan Estimate', href: '/tools/loan-estimate-analyzer' },
+    { label: 'Compare offers side by side', href: '/tools/compare-loan-estimates' },
+    { label: 'Explore programs', href: '/tools/program-finder' },
+    { label: 'Save your research', href: '/my-lending' },
     { label: 'Local lenders directory', href: '/local-lenders' },
-    { label: 'Compare rates', href: '/compare' },
     { label: 'Calculators', href: '/calculators' },
-    { label: 'My Lending', href: '/my-lending' },
-    { label: 'Methodology', href: '/methodology' },
   ],
 } as const;
 

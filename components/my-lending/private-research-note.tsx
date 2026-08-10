@@ -21,13 +21,13 @@ export function PrivateResearchNote({
   className?: string;
   placeholder?: string;
 }) {
-  const [open, setOpen] = useState(Boolean(value?.trim()));
+  /** Start collapsed so lists stay scannable; preview shows existing notes. */
+  const [open, setOpen] = useState(false);
   const [draft, setDraft] = useState(value ?? '');
   const [savedFlash, setSavedFlash] = useState(false);
 
   useEffect(() => {
     setDraft(value ?? '');
-    if (value?.trim()) setOpen(true);
   }, [value]);
 
   function persist() {
@@ -44,17 +44,28 @@ export function PrivateResearchNote({
   }
 
   if (!open) {
+    const preview = value?.trim();
     return (
       <button
         type="button"
         onClick={() => setOpen(true)}
         className={cn(
-          'inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500 hover:text-teal-800',
+          'mt-1.5 flex w-full max-w-full items-start gap-1.5 rounded-lg border border-transparent px-0 py-1 text-left text-xs font-medium text-zinc-500 hover:border-amber-100 hover:bg-amber-50/50 hover:text-teal-800',
           className
         )}
       >
-        <StickyNote className="h-3.5 w-3.5" aria-hidden />
-        {value?.trim() ? 'Edit private note' : 'Add private note'}
+        <StickyNote className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden />
+        <span className="min-w-0">
+          {preview ? (
+            <>
+              <span className="font-semibold text-amber-900/80">Private note · </span>
+              <span className="font-normal text-zinc-600 line-clamp-2">{preview}</span>
+              <span className="mt-0.5 block text-[11px] font-medium text-teal-800">Tap to edit</span>
+            </>
+          ) : (
+            <span>Add a private note — why this stood out</span>
+          )}
+        </span>
       </button>
     );
   }
