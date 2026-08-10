@@ -1001,6 +1001,17 @@ export const HMDA_STATE_CONFIGS: Record<HmdaStateCode, HmdaStateConfig> = {
       'fremont',
       'teller',
       'montrose',
+      // Deepen — next volume mountain / western / plains
+      'grand',
+      'park',
+      'delta',
+      'routt',
+      'chaffee',
+      'morgan',
+      'archuleta',
+      'gunnison',
+      'pitkin',
+      'montezuma',
     ]),
   },
 };

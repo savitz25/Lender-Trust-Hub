@@ -60,9 +60,18 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "130676": "homeamerican-mortgage",
     "182334": "american-financing",
     "414674": "alpine-bank",
+    # CO deepen
+    "467014": "zions-bank",
+    "421606": "westerra-credit-union",
+    "2143": "benchmark-mortgage",
+    "3032": "loan-simple",
+    "458903": "security-service-federal-credit-union",
+    "403501": "bok-financial",
+    "422866": "climb-credit-union",
 }
 
 CO_CURATED_LEI: dict[str, dict[str, str]] = {
+    # Wave 1
     "6GK3WNTSHBNJOVP1LV97": {
         "institution_name_hmda": "WINGS CREDIT UNION",
         "nmls_id": "405466",
@@ -136,13 +145,88 @@ CO_CURATED_LEI: dict[str, dict[str, str]] = {
         "match_confidence": "high",
         "match_method": "co_curated_gleif+public_nmls",
     },
+    # Deepen
+    "8WH0EE09O9V05QJZ3V89": {
+        "institution_name_hmda": "Zions Bancorporation, N.A.",
+        "nmls_id": "467014",
+        "our_lender_slug": "zions-bank",
+        "legal_name": "Zions Bancorporation, N.A. (includes Vectra Bank Colorado brand)",
+        "match_confidence": "high",
+        "match_method": "co_deepen_gleif+public_nmls",
+    },
+    "549300GYQ8ZT1NUXRM52": {
+        "institution_name_hmda": "WESTERRA CREDIT UNION",
+        "nmls_id": "421606",
+        "our_lender_slug": "westerra-credit-union",
+        "legal_name": "Westerra Credit Union",
+        "match_confidence": "high",
+        "match_method": "co_deepen_gleif+public_nmls",
+    },
+    "5493001GDRY0EL7VG372": {
+        "institution_name_hmda": "ARK-LA-TEX FINANCIAL SERVICES, LLC.",
+        "nmls_id": "2143",
+        "our_lender_slug": "benchmark-mortgage",
+        "legal_name": "Ark-La-Tex Financial Services, LLC dba Benchmark Mortgage",
+        "match_confidence": "high",
+        "match_method": "co_deepen_gleif+public_nmls",
+    },
+    "549300748YYU6VG08N83": {
+        "institution_name_hmda": "Loan Simple, Inc.",
+        "nmls_id": "3032",
+        "our_lender_slug": "loan-simple",
+        "legal_name": "Loan Simple, Inc.",
+        "match_confidence": "high",
+        "match_method": "co_deepen_gleif+public_nmls",
+    },
+    "5493008N1D96CHCTQC27": {
+        "institution_name_hmda": "SECURITY SERVICE FEDERAL CREDIT UNION",
+        "nmls_id": "458903",
+        "our_lender_slug": "security-service-federal-credit-union",
+        "legal_name": "Security Service Federal Credit Union",
+        "match_confidence": "high",
+        "match_method": "co_deepen_gleif+public_nmls",
+    },
+    "FU7RSW4CQQY98A2O7J66": {
+        "institution_name_hmda": "BOKF, National Association",
+        "nmls_id": "403501",
+        "our_lender_slug": "bok-financial",
+        "legal_name": "BOKF, National Association (BOK Financial)",
+        "match_confidence": "high",
+        "match_method": "co_deepen_gleif+public_nmls",
+    },
+    "549300RWXIW3CFTANH88": {
+        "institution_name_hmda": "SOOPER CU DBA CLIMB CU",
+        "nmls_id": "422866",
+        "our_lender_slug": "climb-credit-union",
+        "legal_name": "Climb Credit Union (formerly Sooper Credit Union)",
+        "match_confidence": "high",
+        "match_method": "co_deepen_gleif+public_nmls",
+    },
+    "549300R0DP2GXAIMGB41": {
+        "institution_name_hmda": "Bank of Colorado",
+        "nmls_id": "",
+        "our_lender_slug": "bank-of-colorado",
+        "legal_name": "Bank of Colorado",
+        "match_confidence": "high",
+        "match_method": "co_deepen_gleif+lei_identity",
+    },
+    "549300ABEFRFKC9S8368": {
+        "institution_name_hmda": "CREDIT UNION OF COLORADO, A FEDERAL CREDIT UNION",
+        "nmls_id": "",
+        "our_lender_slug": "credit-union-of-colorado",
+        "legal_name": "Credit Union of Colorado, a Federal Credit Union",
+        "match_confidence": "high",
+        "match_method": "co_deepen_gleif+lei_identity",
+    },
 }
 
 CO_COUNTIES: dict[str, str] = {
     "08001": "Adams",
     "08005": "Arapahoe",
+    "08007": "Archuleta",
     "08013": "Boulder",
     "08014": "Broomfield",
+    "08015": "Chaffee",
     "08029": "Delta",
     "08031": "Denver",
     "08035": "Douglas",
@@ -151,12 +235,17 @@ CO_COUNTIES: dict[str, str] = {
     "08041": "El Paso",
     "08043": "Fremont",
     "08045": "Garfield",
+    "08049": "Grand",
+    "08051": "Gunnison",
     "08059": "Jefferson",
     "08067": "La Plata",
     "08069": "Larimer",
     "08077": "Mesa",
+    "08083": "Montezuma",
     "08085": "Montrose",
+    "08087": "Morgan",
     "08093": "Park",
+    "08097": "Pitkin",
     "08101": "Pueblo",
     "08107": "Routt",
     "08117": "Summit",
@@ -164,8 +253,9 @@ CO_COUNTIES: dict[str, str] = {
     "08123": "Weld",
 }
 
-# Wave 1 majors — Front Range metros + secondary volume
+# Wave 1 + deepen (mountain / western / plains volume band)
 CO_MAJORS: set[str] = {
+    # Wave 1
     "08041",  # El Paso
     "08059",  # Jefferson
     "08005",  # Arapahoe
@@ -186,6 +276,17 @@ CO_MAJORS: set[str] = {
     "08043",  # Fremont
     "08119",  # Teller
     "08085",  # Montrose
+    # Deepen — next volume band (~500+ originations)
+    "08049",  # Grand
+    "08093",  # Park
+    "08029",  # Delta
+    "08107",  # Routt
+    "08015",  # Chaffee
+    "08087",  # Morgan
+    "08007",  # Archuleta
+    "08051",  # Gunnison
+    "08097",  # Pitkin
+    "08083",  # Montezuma
 }
 
 
@@ -406,9 +507,10 @@ def build_state(
     md.append(
         "\n## Matching rules\n\n"
         "- Reuse prior product-state curated LEI maps when the LEI has CO activity\n"
-        "- CO curated: Wings CU, FirstBank (CO), Elevations CU, Canvas CU, Bellco CU, "
-        "V.I.P. Mortgage, HomeAmerican Mortgage, American Financing, Alpine Bank\n"
-        "- FirstBank (CO) and Bellco use LEI identity to avoid cross-state NMLS collisions\n"
+        "- CO curated + deepen: Wings, FirstBank (CO), Elevations, Canvas, Bellco, VIP, "
+        "HomeAmerican, American Financing, Alpine, Zions, Westerra, Benchmark, Loan Simple, "
+        "Security Service FCU, BOK Financial, Climb CU, Bank of Colorado, Credit Union of Colorado\n"
+        "- FirstBank (CO), Bellco, Bank of Colorado, CU of Colorado use LEI identity where needed\n"
         "- No fuzzy LEI inventing\n"
         "\n## Rebuild\n\n"
         "```bash\n"

@@ -2,11 +2,11 @@
 
 **Source:** `data/hmda/by-state/CO/` (national 2025 foundation)
 
-- County market rows: **24**
-- Lender–county activity (major markets): **6266**
+- County market rows: **30**
+- Lender–county activity (major markets): **7721**
 - LEI state summaries: **977**
-- High-confidence LEI→directory mappings: **136**
-- Major markets with names: **20**
+- High-confidence LEI→directory mappings: **145**
+- Major markets with names: **30**
 
 ## Top mapped LEIs by CO originations
 
@@ -53,12 +53,22 @@
 - **Fremont** (`08043`) — 1227 originations
 - **Teller** (`08119`) — 1103 originations
 - **Montrose** (`08085`) — 1076 originations
+- **Grand** (`08049`) — 967 originations
+- **Park** (`08093`) — 931 originations
+- **Delta** (`08029`) — 838 originations
+- **Routt** (`08107`) — 778 originations
+- **Chaffee** (`08015`) — 704 originations
+- **Morgan** (`08087`) — 606 originations
+- **Archuleta** (`08007`) — 513 originations
+- **Gunnison** (`08051`) — 477 originations
+- **Pitkin** (`08097`) — 474 originations
+- **Montezuma** (`08083`) — 471 originations
 
 ## Matching rules
 
 - Reuse prior product-state curated LEI maps when the LEI has CO activity
-- CO curated: Wings CU, FirstBank (CO), Elevations CU, Canvas CU, Bellco CU, V.I.P. Mortgage, HomeAmerican Mortgage, American Financing, Alpine Bank
-- FirstBank (CO) and Bellco use LEI identity to avoid cross-state NMLS collisions
+- CO curated + deepen: Wings, FirstBank (CO), Elevations, Canvas, Bellco, VIP, HomeAmerican, American Financing, Alpine, Zions, Westerra, Benchmark, Loan Simple, Security Service FCU, BOK Financial, Climb CU, Bank of Colorado, Credit Union of Colorado
+- FirstBank (CO), Bellco, Bank of Colorado, CU of Colorado use LEI identity where needed
 - No fuzzy LEI inventing
 
 ## Rebuild
@@ -70,5 +80,5 @@ python scripts/build-hmda-co-slices.py
 ## Major slugs (for states.ts)
 
 ```
-'el-paso', 'jefferson', 'arapahoe', 'denver', 'adams', 'douglas', 'weld', 'larimer', 'boulder', 'mesa', 'pueblo', 'broomfield', 'garfield', 'eagle', 'summit', 'la-plata', 'elbert', 'fremont', 'teller', 'montrose'
+'el-paso', 'jefferson', 'arapahoe', 'denver', 'adams', 'douglas', 'weld', 'larimer', 'boulder', 'mesa', 'pueblo', 'broomfield', 'garfield', 'eagle', 'summit', 'la-plata', 'elbert', 'fremont', 'teller', 'montrose', 'grand', 'park', 'delta', 'routt', 'chaffee', 'morgan', 'archuleta', 'gunnison', 'pitkin', 'montezuma'
 ```
