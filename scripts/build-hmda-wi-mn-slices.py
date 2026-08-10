@@ -72,6 +72,8 @@ NATIONAL_SLUG_BY_NMLS: dict[str, str] = {
     "1907": "veterans-united-west-valley",
     "1058": "lennar-mortgage-queen-creek",
     "449042": "wintrust-mortgage",
+    "401043": "landmark-credit-union",
+    "523134": "trustone-financial-credit-union",
 }
 
 # GLEIF-verified LEI identities → existing national/directory slugs.
@@ -197,38 +199,223 @@ WI_MN_CURATED_LEI: dict[str, dict[str, str]] = {
         "match_confidence": "high",
         "match_method": "wi_mn_reuse_wintrust_family+public_nmls",
     },
+    # ── Deepen: high-volume WI / MN regionals (LEI identity; NMLS only when verified) ─
+    "254900NTAC4H10MGSU23": {
+        "institution_name_hmda": "Summit Credit Union",
+        "nmls_id": "",
+        "our_lender_slug": "summit-credit-union",
+        "legal_name": "Summit Credit Union",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "254900CN1DD55MJDFH69": {
+        "institution_name_hmda": "University Of Wisconsin Credit Union",
+        "nmls_id": "",
+        "our_lender_slug": "university-of-wisconsin-credit-union",
+        "legal_name": "UW Credit Union",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "549300KY533JFETOYG46": {
+        "institution_name_hmda": "Landmark Credit Union",
+        "nmls_id": "401043",
+        "our_lender_slug": "landmark-credit-union",
+        "legal_name": "Landmark Credit Union",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+public_nmls",
+    },
+    "ZF85QS7OXKPBG52R7N18": {
+        "institution_name_hmda": "Associated Bank, National Association",
+        "nmls_id": "",
+        "our_lender_slug": "associated-bank",
+        "legal_name": "Associated Bank, National Association",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "254900CIEUZUO7CHPG88": {
+        "institution_name_hmda": "COVANTAGE CREDIT UNION",
+        "nmls_id": "",
+        "our_lender_slug": "covantage-credit-union",
+        "legal_name": "CoVantage Credit Union",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "254900Q5026VQBAVI394": {
+        "institution_name_hmda": "Community First Credit Union",
+        "nmls_id": "",
+        "our_lender_slug": "community-first-credit-union-wi",
+        "legal_name": "Community First Credit Union (Appleton, WI)",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "549300FS35FQXZRU4Z45": {
+        "institution_name_hmda": "EDUCATORS CREDIT UNION",
+        "nmls_id": "",
+        "our_lender_slug": "educators-credit-union",
+        "legal_name": "Educators Credit Union",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "IWRZQFYIRJ0IMURZBB68": {
+        "institution_name_hmda": "Johnson Bank",
+        "nmls_id": "",
+        "our_lender_slug": "johnson-bank",
+        "legal_name": "Johnson Bank",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "549300OZ550X4QD5PC74": {
+        "institution_name_hmda": "Royal Credit Union",
+        "nmls_id": "",
+        "our_lender_slug": "royal-credit-union",
+        "legal_name": "Royal Credit Union",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "549300FUMS21JPQM1N03": {
+        "institution_name_hmda": "FOX COMMUNITIES CREDIT UNION",
+        "nmls_id": "",
+        "our_lender_slug": "fox-communities-credit-union",
+        "legal_name": "Fox Communities Credit Union",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "38CFVD4YYFWD1FV7IM34": {
+        "institution_name_hmda": "Nicolet National Bank",
+        "nmls_id": "",
+        "our_lender_slug": "nicolet-national-bank",
+        "legal_name": "Nicolet National Bank",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "549300VEZ43KYEWR3610": {
+        "institution_name_hmda": "CAPITAL Credit Union",
+        "nmls_id": "",
+        "our_lender_slug": "capital-credit-union-wi",
+        "legal_name": "Capital Credit Union (Wisconsin)",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "549300BRLQAIJ1LJA253": {
+        "institution_name_hmda": "Bank First, N.A.",
+        "nmls_id": "",
+        "our_lender_slug": "bank-first-na",
+        "legal_name": "Bank First, N.A.",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "549300A0SVCQJPHVGV20": {
+        "institution_name_hmda": "ALTRA Federal Credit Union",
+        "nmls_id": "",
+        "our_lender_slug": "altra-federal-credit-union",
+        "legal_name": "Altra Federal Credit Union",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "254900X6OAHFW6BUT219": {
+        "institution_name_hmda": "WESTCONSIN CREDIT UNION",
+        "nmls_id": "",
+        "our_lender_slug": "westconsin-credit-union",
+        "legal_name": "Westconsin Credit Union",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "549300WYBPIWKK6SQC06": {
+        "institution_name_hmda": "Bell Bank",
+        "nmls_id": "",
+        "our_lender_slug": "bell-bank",
+        "legal_name": "Bell Bank",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "549300LG07PXWSIMC813": {
+        "institution_name_hmda": "TRUSTONE FINANCIAL CREDIT UNION",
+        "nmls_id": "523134",
+        "our_lender_slug": "trustone-financial-credit-union",
+        "legal_name": "TruStone Financial Credit Union",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+public_nmls",
+    },
+    "549300NL3JN3ABDPH257": {
+        "institution_name_hmda": "AFFINITY PLUS",
+        "nmls_id": "",
+        "our_lender_slug": "affinity-plus-federal-credit-union",
+        "legal_name": "Affinity Plus Federal Credit Union",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "549300QDGMFASKEN7Z77": {
+        "institution_name_hmda": "BLAZE CREDIT UNION",
+        "nmls_id": "",
+        "our_lender_slug": "blaze-credit-union",
+        "legal_name": "Blaze Credit Union",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "549300HVW3AI97UKTO72": {
+        "institution_name_hmda": "Wings Financial Credit Union",
+        "nmls_id": "",
+        "our_lender_slug": "wings-financial-credit-union",
+        "legal_name": "Wings Financial Credit Union",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
+    "549300C4J510S9L1RF98": {
+        "institution_name_hmda": "Alerus Financial, National Association",
+        "nmls_id": "",
+        "our_lender_slug": "alerus-financial",
+        "legal_name": "Alerus Financial, National Association",
+        "match_confidence": "high",
+        "match_method": "wi_mn_deepen_gleif+lei_identity",
+    },
 }
 
-# Wisconsin county FIPS → name (majors + fill blanks for volume counties)
+# Wisconsin county FIPS → name (wave 1 + deepen)
 WI_COUNTIES: dict[str, str] = {
+    "55005": "Barron",
     "55009": "Brown",
     "55015": "Calumet",
     "55017": "Chippewa",
     "55021": "Columbia",
     "55025": "Dane",
     "55027": "Dodge",
+    "55029": "Door",
+    "55031": "Douglas",
+    "55033": "Dunn",
     "55035": "Eau Claire",
     "55039": "Fond du Lac",
+    "55045": "Green",
     "55055": "Jefferson",
     "55059": "Kenosha",
     "55063": "La Crosse",
     "55071": "Manitowoc",
     "55073": "Marathon",
+    "55075": "Marinette",
     "55079": "Milwaukee",
+    "55081": "Monroe",
+    "55083": "Oconto",
+    "55085": "Oneida",
     "55087": "Outagamie",
     "55089": "Ozaukee",
+    "55093": "Pierce",
+    "55095": "Polk",
+    "55097": "Portage",
     "55101": "Racine",
     "55105": "Rock",
     "55109": "St. Croix",
     "55111": "Sauk",
+    "55115": "Shawano",
     "55117": "Sheboygan",
     "55127": "Walworth",
     "55131": "Washington",
     "55133": "Waukesha",
+    "55135": "Waupaca",
     "55139": "Winnebago",
+    "55141": "Wood",
 }
 
 WI_MAJORS: set[str] = {
+    # Wave 1
     "55079",  # Milwaukee
     "55025",  # Dane
     "55133",  # Waukesha
@@ -249,36 +436,70 @@ WI_MAJORS: set[str] = {
     "55035",  # Eau Claire
     "55027",  # Dodge
     "55071",  # Manitowoc
+    # Deepen — next volume / regional
+    "55055",  # Jefferson
+    "55021",  # Columbia
+    "55111",  # Sauk
+    "55015",  # Calumet
+    "55017",  # Chippewa
+    "55141",  # Wood
+    "55135",  # Waupaca
+    "55095",  # Polk
+    "55097",  # Portage
+    "55083",  # Oconto
+    "55005",  # Barron
+    "55075",  # Marinette
+    "55115",  # Shawano
+    "55031",  # Douglas
+    "55085",  # Oneida
+    "55081",  # Monroe
+    "55029",  # Door
+    "55093",  # Pierce
+    "55045",  # Green
+    "55033",  # Dunn
 }
 
 MN_COUNTIES: dict[str, str] = {
     "27003": "Anoka",
+    "27005": "Becker",
+    "27009": "Benton",
     "27013": "Blue Earth",
     "27017": "Carlton",
     "27019": "Carver",
+    "27021": "Cass",
     "27025": "Chisago",
     "27027": "Clay",
     "27035": "Crow Wing",
     "27037": "Dakota",
+    "27041": "Douglas",
     "27049": "Goodhue",
     "27053": "Hennepin",
     "27059": "Isanti",
     "27061": "Itasca",
+    "27067": "Kandiyohi",
+    "27079": "Le Sueur",
+    "27085": "McLeod",
     "27095": "Mille Lacs",
+    "27099": "Mower",
+    "27103": "Nicollet",
     "27109": "Olmsted",
     "27111": "Otter Tail",
+    "27115": "Pine",
     "27123": "Ramsey",
     "27131": "Rice",
     "27137": "St. Louis",
     "27139": "Scott",
     "27141": "Sherburne",
     "27145": "Stearns",
+    "27147": "Steele",
     "27163": "Washington",
     "27169": "Winona",
     "27171": "Wright",
+    "27097": "Morrison",
 }
 
 MN_MAJORS: set[str] = {
+    # Wave 1
     "27053",  # Hennepin
     "27037",  # Dakota
     "27123",  # Ramsey
@@ -299,6 +520,23 @@ MN_MAJORS: set[str] = {
     "27111",  # Otter Tail
     "27059",  # Isanti
     "27169",  # Winona
+    # Deepen — next volume / regional
+    "27049",  # Goodhue
+    "27061",  # Itasca
+    "27017",  # Carlton
+    "27009",  # Benton
+    "27095",  # Mille Lacs
+    "27041",  # Douglas
+    "27085",  # McLeod
+    "27021",  # Cass
+    "27005",  # Becker
+    "27099",  # Mower
+    "27115",  # Pine
+    "27067",  # Kandiyohi
+    "27147",  # Steele
+    "27079",  # Le Sueur
+    "27097",  # Morrison
+    "27103",  # Nicollet
 }
 
 STATES = [
@@ -558,10 +796,11 @@ def build_state(
     md.append(
         "\n## Matching rules\n\n"
         "- Reuse prior product-state curated LEI maps when the LEI has state activity\n"
-        "- WI/MN curated: GLEIF-reidentified nationals (Fairway, PennyMac, Guaranteed Rate, "
-        "loanDepot, CrossCountry, Guild, Veterans United/MRC, Lennar, Freedom, Huntington, "
-        "Old National, BMO, Academy, Wintrust family)\n"
-        "- Regional credit unions without directory profiles deferred (no thin inventing)\n"
+        "- WI/MN curated: GLEIF-reidentified nationals + deepen regionals "
+        "(Summit CU, UWCU, Landmark, Associated Bank, Bell Bank, TruStone, Affinity Plus, "
+        "Blaze, Wings, Johnson Bank, Nicolet, Royal CU, and other high-volume LEI identities)\n"
+        "- NMLS filled only when verified (e.g. Landmark 401043, TruStone 523134); else LEI identity\n"
+        "- Remaining unmapped regionals deferred when no high-confidence directory link\n"
         "\n## Rebuild\n\n"
         "```bash\n"
         "python scripts/build-hmda-wi-mn-slices.py\n"

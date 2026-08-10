@@ -1,5 +1,5 @@
 /**
- * Wisconsin + Minnesota HMDA smoke check.
+ * Wisconsin + Minnesota HMDA smoke check (wave 1 + deepen).
  */
 import {
   MAJOR_MINNESOTA_COUNTY_SLUGS,
@@ -11,10 +11,26 @@ import {
 
 for (const code of ['WI', 'MN'] as const) {
   const b = loadHmdaStateData(code);
-  console.log(code, 'mappings', b.mappings.length, 'counties', b.countyMarkets.length, 'activity', b.countyActivity.length);
+  console.log(
+    code,
+    'mappings',
+    b.mappings.length,
+    'counties',
+    b.countyMarkets.length,
+    'activity',
+    b.countyActivity.length
+  );
 }
 
-const wiCounties = ['milwaukee', 'dane', 'waukesha', 'brown', 'outagamie', 'st-croix'];
+const wiCounties = [
+  'milwaukee',
+  'dane',
+  'jefferson',
+  'wood',
+  'door',
+  'dunn',
+  'shawano',
+];
 for (const slug of wiCounties) {
   const e = getHmdaCountyEvidence('wisconsin', slug);
   if (!e) {
@@ -25,7 +41,15 @@ for (const slug of wiCounties) {
   }
 }
 
-const mnCounties = ['hennepin', 'ramsey', 'dakota', 'anoka', 'st-louis', 'olmsted'];
+const mnCounties = [
+  'hennepin',
+  'goodhue',
+  'itasca',
+  'mcleod',
+  'benton',
+  'steele',
+  'nicollet',
+];
 for (const slug of mnCounties) {
   const e = getHmdaCountyEvidence('minnesota', slug);
   if (!e) {
@@ -42,16 +66,18 @@ console.log('MN majors config', MAJOR_MINNESOTA_COUNTY_SLUGS.size);
 const lenders = [
   'united-wholesale-mortgage',
   'rocket-mortgage',
-  'us-bank',
-  'bmo-bank',
-  'fairway-mortgage-augusta-sheppard',
-  'pennymac',
-  'guaranteed-rate',
-  'crosscountry-mortgage-metrowest',
-  'guild-mortgage-metrowest',
-  'old-national-bank',
-  'huntington-national-bank',
-  'veterans-united-west-valley',
+  'summit-credit-union',
+  'university-of-wisconsin-credit-union',
+  'landmark-credit-union',
+  'associated-bank',
+  'bell-bank',
+  'trustone-financial-credit-union',
+  'affinity-plus-federal-credit-union',
+  'wings-financial-credit-union',
+  'blaze-credit-union',
+  'johnson-bank',
+  'nicolet-national-bank',
+  'royal-credit-union',
 ];
 for (const slug of lenders) {
   const e = getHmdaLenderEvidenceBySlug(slug);
@@ -59,7 +85,7 @@ for (const slug of lenders) {
     console.error('FAIL lender', slug);
     process.exitCode = 1;
   } else {
-    console.log('OK lender', slug, e.state, e.stateOriginations);
+    console.log('OK lender', slug, e.state, e.stateName, e.stateOriginations);
   }
 }
 
