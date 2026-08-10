@@ -102,6 +102,17 @@ const SPOT_COUNTIES: { state: string; county: string }[] = [
   { state: 'new-york', county: 'monroe' },
   { state: 'new-york', county: 'bronx' },
   { state: 'new-york', county: 'richmond' },
+  // PA
+  { state: 'pennsylvania', county: 'philadelphia' },
+  { state: 'pennsylvania', county: 'allegheny' },
+  { state: 'pennsylvania', county: 'montgomery' },
+  { state: 'pennsylvania', county: 'bucks' },
+  { state: 'pennsylvania', county: 'delaware' },
+  { state: 'pennsylvania', county: 'lancaster' },
+  { state: 'pennsylvania', county: 'chester' },
+  { state: 'pennsylvania', county: 'york' },
+  { state: 'pennsylvania', county: 'berks' },
+  { state: 'pennsylvania', county: 'lehigh' },
 ];
 
 const SPOT_LENDERS = [
@@ -398,6 +409,10 @@ function main() {
     { county: 'ny:kings', expect: 'new-york', label: 'ny:kings' },
     { county: 'ny:suffolk', expect: 'new-york', label: 'ny:suffolk' },
     { county: 'ny:new-york-county', expect: 'new-york', label: 'ny:new-york-county' },
+    { county: 'pa:philadelphia', expect: 'pennsylvania', label: 'pa:philadelphia' },
+    { county: 'pa:allegheny', expect: 'pennsylvania', label: 'pa:allegheny' },
+    { county: 'pa:montgomery', expect: 'pennsylvania', label: 'pa:montgomery' },
+    { county: 'pa:lancaster', expect: 'pennsylvania', label: 'pa:lancaster' },
     { county: 'miami-dade', expect: 'florida', label: 'miami-dade' },
     { county: 'orange', expect: 'florida', label: 'orange (FL bare)' },
     { county: 'ca:orange', expect: 'california', label: 'ca:orange' },
