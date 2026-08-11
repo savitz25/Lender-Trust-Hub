@@ -68,7 +68,8 @@ export function resolveLeEmbedParams(
     // Prefer prefixed option when state known (non-FL); bare for FL or bare county keys
     const candidates: string[] = [];
     if (st) {
-      candidates.push(analyzerCountyOptionSlug(st.stateSlug, countyRaw));
+      const optionSlug = analyzerCountyOptionSlug(st.stateSlug, countyRaw);
+      if (optionSlug) candidates.push(optionSlug);
     }
     candidates.push(countyRaw);
     // Also try common bare + state prefix from code
