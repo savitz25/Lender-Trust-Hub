@@ -370,7 +370,7 @@ export function orientationCopy(ctx: JourneyContext): {
   const fromMove = ctx.src === 'move' || ctx.journey === 'relocate';
   if (fromMove && place) {
     return {
-      eyebrow: 'Your relocation research',
+      eyebrow: 'Continuing your relocation research',
       title: `Moving to ${place}`,
       body:
         ctx.intent === 'buy'
@@ -379,6 +379,16 @@ export function orientationCopy(ctx: JourneyContext): {
             ? 'Continue with coverage research for your destination. Educational only — not a quote marketplace.'
             : 'Continue with local market research. Choose mortgage tools if you’re buying, or coverage research if you’re renting.',
     };
+  }
+  if (place && !fromMove) {
+    // Session restore without fresh URL move tag
+    if (ctx.journey === 'relocate' || ctx.src === 'move') {
+      return {
+        eyebrow: 'Continuing your relocation research',
+        title: place,
+        body: 'Restored from your recent research session on this browser. Educational only.',
+      };
+    }
   }
   if (ctx.src === 'lender' && place) {
     return {

@@ -5,7 +5,7 @@ import { LoanEstimateAnalyzer } from '@/components/tools/LoanEstimateAnalyzer';
 import { buildAnalyzerBootstrap } from '@/lib/tools/loan-estimate-analyzer/serialize-context';
 import { JsonLd } from '@/components/directory/JsonLd';
 import { ResearchPathNav } from '@/components/research/research-path-nav';
-import { ContinueTrustJourney } from '@/components/network/continue-trust-journey';
+import { JourneySessionSync } from '@/components/network/journey-session-sync';
 import { parseJourneyContext } from '@/lib/network/journey-context';
 import { parseAnalyzerCountyOption } from '@/lib/tools/loan-estimate-analyzer/county-option';
 
@@ -67,7 +67,6 @@ export default async function LoanEstimateAnalyzerPage({
     ...journey,
     src: journey.src ?? 'lender',
     journey: journey.journey ?? 'purchase',
-    intent: journey.intent ?? 'buy',
     stateSlug: journey.stateSlug ?? parsedCounty?.stateSlug,
     county: journey.county ?? parsedCounty?.countySlug,
   };
@@ -164,10 +163,12 @@ export default async function LoanEstimateAnalyzerPage({
             ))}
           </dl>
           <div className="mx-auto mt-10 max-w-2xl space-y-6 text-left">
-            <ContinueTrustJourney
+            <JourneySessionSync
+              urlContext={journeyWithGeo}
+              preferSrc="lender"
               currentHub="lender"
-              context={journeyWithGeo}
-              title="Homeowners insurance is typically required to close"
+              showContinue
+              continueTitle="Homeowners insurance is typically required to close"
             />
             <ResearchPathNav
               variant="tools"

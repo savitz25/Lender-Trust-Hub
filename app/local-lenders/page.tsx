@@ -28,8 +28,10 @@ import {
   parseJourneyContext,
   resolveLenderLandingPath,
 } from '@/lib/network/journey-context';
-import { ContinueTrustJourney } from '@/components/network/continue-trust-journey';
-import { JourneyOrientationBanner } from '@/components/network/journey-orientation-banner';
+import {
+  JourneySessionSync,
+  ResearchSessionHubRedirect,
+} from '@/components/network/journey-session-sync';
 import { JourneyLandingTracker } from '@/components/network/journey-landing-tracker';
 
 export const revalidate = 86400;
@@ -172,12 +174,16 @@ export default async function LocalLendersHubPage({ searchParams }: PageProps) {
         />
       </div>
 
+      {/* Stage B.1: params first; origin-local session restores return visits */}
+      <ResearchSessionHubRedirect hasUrlState={Boolean(journey.stateSlug)} />
       <section className="border-t border-zinc-200 bg-white py-10">
         <div className="container mx-auto max-w-2xl space-y-6 px-4">
-          <JourneyOrientationBanner context={journey} />
-          <ContinueTrustJourney
+          <JourneySessionSync
+            urlContext={journey}
+            preferSrc="lender"
             currentHub="lender"
-            context={{ ...journey, src: journey.src ?? 'lender', journey: journey.journey ?? 'purchase' }}
+            showOrientation
+            showContinue
           />
         </div>
       </section>

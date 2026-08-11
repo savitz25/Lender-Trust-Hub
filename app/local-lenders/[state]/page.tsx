@@ -36,7 +36,7 @@ import {
 } from '@/lib/network/journey-context';
 import { JourneyOrientationBanner } from '@/components/network/journey-orientation-banner';
 import { JourneyLandingTracker } from '@/components/network/journey-landing-tracker';
-import { ContinueTrustJourney } from '@/components/network/continue-trust-journey';
+import { JourneySessionSync } from '@/components/network/journey-session-sync';
 
 /**
  * MORTGAGE STATE PAGE TEMPLATE
@@ -798,14 +798,15 @@ export default async function MortgageStatePage({
         </div>
 
         <div className="mt-10 max-w-2xl">
-          <ContinueTrustJourney
-            currentHub="lender"
-            context={{
+          <JourneySessionSync
+            urlContext={{
               ...journey,
               src: journey.src ?? 'lender',
               journey: journey.journey ?? 'purchase',
-              intent: journey.intent ?? 'buy',
             }}
+            preferSrc="lender"
+            currentHub="lender"
+            showContinue
           />
         </div>
       </div>

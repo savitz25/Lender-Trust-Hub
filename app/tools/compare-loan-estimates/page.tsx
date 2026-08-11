@@ -7,7 +7,7 @@ import { emptyLoanEstimateInputs } from '@/lib/tools/loan-estimate-analyzer/defa
 import type { LoanEstimateInputs } from '@/lib/tools/loan-estimate-analyzer/types';
 import { JsonLd } from '@/components/directory/JsonLd';
 import { ResearchPathNav } from '@/components/research/research-path-nav';
-import { ContinueTrustJourney } from '@/components/network/continue-trust-journey';
+import { JourneySessionSync } from '@/components/network/journey-session-sync';
 import { parseJourneyContext } from '@/lib/network/journey-context';
 
 export const metadata: Metadata = {
@@ -162,15 +162,16 @@ export default async function CompareLoanEstimatesPage({
 
       <section className="border-t border-zinc-200 bg-zinc-50/80 py-10">
         <div className="container mx-auto max-w-2xl px-4 text-sm text-zinc-600">
-          <ContinueTrustJourney
-            currentHub="lender"
-            context={{
+          <JourneySessionSync
+            urlContext={{
               ...journey,
               src: journey.src ?? 'lender',
               journey: journey.journey ?? 'purchase',
-              intent: journey.intent ?? 'buy',
             }}
-            title="Homeowners insurance is typically required to close"
+            preferSrc="lender"
+            currentHub="lender"
+            showContinue
+            continueTitle="Homeowners insurance is typically required to close"
           />
           <div className="mt-6">
             <ResearchPathNav
