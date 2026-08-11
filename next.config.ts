@@ -58,6 +58,24 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      // Stage C.1 — allow partners to iframe research embeds (no DENY framing)
+      {
+        source: '/embed/:path*',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: 'frame-ancestors *',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, s-maxage=86400, stale-while-revalidate=604800',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+        ],
+      },
     ];
   },
   experimental: {

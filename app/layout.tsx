@@ -7,6 +7,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import { GtagProvider } from '@/components/directory/GtagProvider';
 import { MyLendingShell } from '@/components/my-lending/my-lending-shell';
 import { HubLastLocationBridge } from '@/components/network/hub-last-location-bridge';
+import { SiteChrome } from '@/components/embed/site-chrome';
 import { BRAND_ICONS, LENDER_LOGO_VERSION } from '@/lib/brand';
 import { ASK_NETWORK_STANDARD_VERSION } from '@/lib/network/standard-version';
 import './globals.css';
@@ -104,10 +105,17 @@ export default function RootLayout({
           <MyLendingShell>
             <HubLastLocationBridge hubId="lender" />
             <GtagProvider />
-            <AskNetworkBar />
-            <Navbar />
-            <main className="flex-1 bg-[#F8FAFC]">{children}</main>
-            <Footer />
+            <SiteChrome
+              chrome={
+                <>
+                  <AskNetworkBar />
+                  <Navbar />
+                </>
+              }
+              footer={<Footer />}
+            >
+              {children}
+            </SiteChrome>
           </MyLendingShell>
         </ThemeProvider>
       </body>
