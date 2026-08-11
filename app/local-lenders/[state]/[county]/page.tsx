@@ -30,6 +30,13 @@ import {
   mortgageCountyUrl,
 } from '@/lib/mortgage/seo';
 import { analyzerCountyOptionSlug } from '@/lib/tools/loan-estimate-analyzer/county-option';
+import {
+  parseJourneyContext,
+  type JourneyContext,
+} from '@/lib/network/journey-context';
+import { JourneyOrientationBanner } from '@/components/network/journey-orientation-banner';
+import { JourneyLandingTracker } from '@/components/network/journey-landing-tracker';
+import { ContinueTrustJourney } from '@/components/network/continue-trust-journey';
 
 function titleCase(slug: string): string {
   return slug
@@ -82,10 +89,11 @@ export default async function CountyLendersPage({
   searchParams,
 }: {
   params: Promise<{ state: string; county: string }>;
-  searchParams: Promise<{ zip?: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { state, county } = await params;
-  const { zip } = await searchParams;
+  const sp = await searchParams;
+  const zip = typeof sp.zip === 'string' ? sp.zip : Array.isArray(sp.zip) ? sp.zip[0] : undefined;
   const stateName = titleCase(state);
   const countyName = titleCase(county);
   const countyLabel = `${countyName} County, ${stateName}`;
@@ -105,10 +113,17 @@ export default async function CountyLendersPage({
   const topMatched = (hmdaCounty?.topMatchedLenders ?? [])
     .filter((l) => l.slug)
     .slice(0, 5);
+  const journey: JourneyContext = {
+    ...parseJourneyContext(sp),
+    stateSlug: state,
+    county,
+    stateName,
+  };
 
   return (
     <>
       <JsonLd data={jsonLd} />
+      <JourneyLandingTracker context={journey} landedOn="county" />
       <div className="container mx-auto px-4 py-12">
         <nav aria-label="Breadcrumb" className="mb-6 text-sm text-zinc-500">
           <ol className="flex flex-wrap items-center gap-1">
@@ -135,6 +150,10 @@ export default async function CountyLendersPage({
             </li>
           </ol>
         </nav>
+
+        <div className="mb-6">
+          <JourneyOrientationBanner context={journey} />
+        </div>
 
         <div className="mb-10">
           <h1 className="text-3xl font-bold text-[#0A2540] md:text-4xl">
@@ -295,7 +314,17 @@ export default async function CountyLendersPage({
           />
         ) : null}
 
-        <div className="mt-10">
+        <div className="mt-10 space-y-6">
+          <ContinueTrustJourney
+            currentHub="lender"
+            context={{
+              ...journey,
+              journey: journey.journey ?? 'purchase',
+              intent: journey.intent ?? 'buy',
+              src: journey.src ?? 'lender',
+            }}
+            title="Coverage is typically next after financing research"
+          />
           <ResearchPathNav
             context={{
               stateSlug: state,
@@ -303,7 +332,7 @@ export default async function CountyLendersPage({
               countySlug: county,
               countyName,
             }}
-            heading="Keep researching"
+            heading="Keep researching on this hub"
           />
         </div>
       </div>

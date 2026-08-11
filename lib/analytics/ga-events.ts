@@ -138,6 +138,54 @@ export function trackOutboundSpecialistHub(params: {
   });
 }
 
+/** Stage A′ — contextual inter-hub continuation (non-PII). */
+export function trackJourneyHandoff(params: {
+  from_hub: string;
+  to_hub: string;
+  priority?: string;
+  journey?: string;
+  intent?: string;
+  state?: string;
+  county?: string;
+  source_path?: string;
+}): void {
+  trackLenderEvent('journey_handoff_click', {
+    from_hub: params.from_hub,
+    to_hub: params.to_hub,
+    handoff_priority: params.priority ?? 'primary',
+    journey: params.journey ?? '',
+    intent: params.intent ?? '',
+    state: params.state ?? '',
+    county: params.county ?? '',
+    source_path:
+      params.source_path ??
+      (typeof window !== 'undefined' ? window.location.pathname : ''),
+  });
+  trackLenderEvent('cross_hub_continuation', {
+    from_hub: params.from_hub,
+    to_hub: params.to_hub,
+    landing_style: 'contextual',
+  });
+}
+
+export function trackJourneyLanding(params: {
+  src?: string;
+  journey?: string;
+  intent?: string;
+  state?: string;
+  county?: string;
+  landed_on: 'county' | 'state' | 'hub' | 'tool' | 'other';
+}): void {
+  trackLenderEvent('journey_context_landing', {
+    src_hub: params.src ?? '',
+    journey: params.journey ?? '',
+    intent: params.intent ?? '',
+    state: params.state ?? '',
+    county: params.county ?? '',
+    landed_on: params.landed_on,
+  });
+}
+
 export function trackOutboundPrimarySource(params: {
   host?: string;
   kind?: string;

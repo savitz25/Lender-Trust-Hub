@@ -5,7 +5,7 @@ import { JsonLd } from '@/components/directory/JsonLd';
 import { TrustBar } from '@/components/TrustBar';
 import { SearchBar } from '@/components/SearchBar';
 import { NetworkBelongingLine } from '@/components/network/network-belonging-line';
-import { NetworkHandoff } from '@/components/network/network-handoff';
+import { ContinueTrustJourney } from '@/components/network/continue-trust-journey';
 import { FredRateBenchmarkStrip } from '@/components/rates/FredRateContextPanel';
 import { getFredMortgageBenchmarks } from '@/lib/fred/server';
 import { calculatorsPageSchema } from '@/lib/seo/calculators';
@@ -105,7 +105,11 @@ export default async function CalculatorsPage() {
  <div className="container mx-auto px-4 py-10 md:py-14">
  <CalculatorHub />
  <div className="mx-auto mt-10 max-w-2xl">
- <NetworkHandoff context="lender-calculator" variant="card" />
+ <ContinueTrustJourney
+ currentHub="lender"
+ context={{ src: 'lender', journey: 'purchase', intent: 'buy' }}
+ title="After payment research"
+ />
  </div>
  </div>
 

@@ -23,13 +23,20 @@ import {
   buildMortgageStateTitle,
   mortgageStateUrl,
 } from '@/lib/mortgage/seo';
-import { NetworkHandoff } from '@/components/network/network-handoff';
+
 import { StateResearchSections } from '@/components/mortgage/state-research-sections';
 import { ResearchPathNav } from '@/components/research/research-path-nav';
 import { getHmdaStateMarketSummary } from '@/lib/hmda';
 import { HmdaStateSummaryPanel } from '@/components/hmda/HmdaStateSummaryPanel';
 import { LoanEstimateToolsCta } from '@/components/tools/LoanEstimateToolsCta';
 import { NetworkResearchStandard } from '@/components/network/network-research-standard';
+import {
+  parseJourneyContext,
+  type JourneyContext,
+} from '@/lib/network/journey-context';
+import { JourneyOrientationBanner } from '@/components/network/journey-orientation-banner';
+import { JourneyLandingTracker } from '@/components/network/journey-landing-tracker';
+import { ContinueTrustJourney } from '@/components/network/continue-trust-journey';
 
 /**
  * MORTGAGE STATE PAGE TEMPLATE
@@ -80,10 +87,13 @@ export async function generateMetadata({
 
 export default async function MortgageStatePage({
   params,
+  searchParams,
 }: {
   params: Promise<{ state: string }>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { state: slug } = await params;
+  const sp = searchParams ? await searchParams : {};
   const stateMeta = STATE_BY_SLUG.get(slug);
   if (!stateMeta) notFound();
 
@@ -91,12 +101,19 @@ export default async function MortgageStatePage({
   const stats = getStateMortgageStats(slug);
   const jsonLd = buildMortgageStateJsonLd(stateMeta, stateLenders);
   const hmdaState = getHmdaStateMarketSummary(slug);
+  const journey: JourneyContext = {
+    ...parseJourneyContext(sp),
+    stateSlug: slug,
+    stateCode: stateMeta.code,
+    stateName: stateMeta.fullName,
+  };
 
   if (stateLenders.length === 0) notFound();
 
   return (
     <>
       <JsonLd data={jsonLd} />
+      <JourneyLandingTracker context={journey} landedOn="state" />
 
       <div className="container mx-auto px-4 pt-6">
         <Breadcrumbs
@@ -134,6 +151,10 @@ export default async function MortgageStatePage({
       </section>
 
       <div className="container mx-auto px-4 py-10">
+        <div className="mb-8">
+          <JourneyOrientationBanner context={journey} />
+        </div>
+
         {hmdaState ? (
           <div className="mb-10">
             <HmdaStateSummaryPanel summary={hmdaState} />
@@ -777,14 +798,14 @@ export default async function MortgageStatePage({
         </div>
 
         <div className="mt-10 max-w-2xl">
-          <NetworkHandoff
-            context="lender-directory"
-            geography={{
-              state: stateMeta.fullName,
-              stateCode: stateMeta.code,
-              stateSlug: slug,
+          <ContinueTrustJourney
+            currentHub="lender"
+            context={{
+              ...journey,
+              src: journey.src ?? 'lender',
+              journey: journey.journey ?? 'purchase',
+              intent: journey.intent ?? 'buy',
             }}
-            variant="card"
           />
         </div>
       </div>

@@ -5,6 +5,9 @@ import { LoanEstimateAnalyzer } from '@/components/tools/LoanEstimateAnalyzer';
 import { buildAnalyzerBootstrap } from '@/lib/tools/loan-estimate-analyzer/serialize-context';
 import { JsonLd } from '@/components/directory/JsonLd';
 import { ResearchPathNav } from '@/components/research/research-path-nav';
+import { ContinueTrustJourney } from '@/components/network/continue-trust-journey';
+import { parseJourneyContext } from '@/lib/network/journey-context';
+import { parseAnalyzerCountyOption } from '@/lib/tools/loan-estimate-analyzer/county-option';
 
 export const metadata: Metadata = {
   title: 'Understand Your Loan Estimate — Fee Bands & Market Context | Lender Trust Hub',
@@ -44,14 +47,30 @@ const FAQ = [
 export default async function LoanEstimateAnalyzerPage({
   searchParams,
 }: {
-  searchParams: Promise<{ lender?: string; county?: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const sp = await searchParams;
+  const first = (k: string) => {
+    const v = sp[k];
+    return Array.isArray(v) ? v[0] : v;
+  };
   const bootstrap = await buildAnalyzerBootstrap();
+  const lenderParam = first('lender');
+  const countyParam = first('county');
   const initialLenderSlug =
-    sp.lender && bootstrap.lenderContextBySlug[sp.lender] ? sp.lender : '';
+    lenderParam && bootstrap.lenderContextBySlug[lenderParam] ? lenderParam : '';
   const initialCountySlug =
-    sp.county && bootstrap.countyContextBySlug[sp.county] ? sp.county : '';
+    countyParam && bootstrap.countyContextBySlug[countyParam] ? countyParam : '';
+  const journey = parseJourneyContext(sp);
+  const parsedCounty = countyParam ? parseAnalyzerCountyOption(countyParam) : null;
+  const journeyWithGeo = {
+    ...journey,
+    src: journey.src ?? 'lender',
+    journey: journey.journey ?? 'purchase',
+    intent: journey.intent ?? 'buy',
+    stateSlug: journey.stateSlug ?? parsedCounty?.stateSlug,
+    county: journey.county ?? parsedCounty?.countySlug,
+  };
 
   const schema = {
     '@context': 'https://schema.org',
@@ -144,11 +163,19 @@ export default async function LoanEstimateAnalyzerPage({
               </div>
             ))}
           </dl>
-          <div className="mx-auto mt-10 max-w-2xl text-left">
+          <div className="mx-auto mt-10 max-w-2xl space-y-6 text-left">
+            <ContinueTrustJourney
+              currentHub="lender"
+              context={journeyWithGeo}
+              title="Homeowners insurance is typically required to close"
+            />
             <ResearchPathNav
               variant="tools"
               heading="Browse lenders & programs after your LE"
-              context={{}}
+              context={{
+                stateSlug: journeyWithGeo.stateSlug,
+                countySlug: journeyWithGeo.county,
+              }}
             />
           </div>
           <p className="mt-8 text-center text-sm text-zinc-500">

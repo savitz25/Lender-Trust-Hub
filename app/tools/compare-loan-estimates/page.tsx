@@ -7,6 +7,8 @@ import { emptyLoanEstimateInputs } from '@/lib/tools/loan-estimate-analyzer/defa
 import type { LoanEstimateInputs } from '@/lib/tools/loan-estimate-analyzer/types';
 import { JsonLd } from '@/components/directory/JsonLd';
 import { ResearchPathNav } from '@/components/research/research-path-nav';
+import { ContinueTrustJourney } from '@/components/network/continue-trust-journey';
+import { parseJourneyContext } from '@/lib/network/journey-context';
 
 export const metadata: Metadata = {
   title: 'Compare Loan Estimates Side by Side — Educational Research | Lender Trust Hub',
@@ -33,19 +35,25 @@ function numParam(v: string | undefined): number | undefined {
 export default async function CompareLoanEstimatesPage({
   searchParams,
 }: {
-  searchParams: Promise<{
-    lender?: string;
-    county?: string;
-    loanAmount?: string;
-    rate?: string;
-    apr?: string;
-    origination?: string;
-    points?: string;
-    credits?: string;
-  }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const sp = await searchParams;
+  const raw = await searchParams;
+  const first = (k: string) => {
+    const v = raw[k];
+    return Array.isArray(v) ? v[0] : v;
+  };
+  const sp = {
+    lender: first('lender'),
+    county: first('county'),
+    loanAmount: first('loanAmount'),
+    rate: first('rate'),
+    apr: first('apr'),
+    origination: first('origination'),
+    points: first('points'),
+    credits: first('credits'),
+  };
   const bootstrap = await buildAnalyzerBootstrap();
+  const journey = parseJourneyContext(raw);
 
   const initialA: Partial<LoanEstimateInputs> = {};
   if (sp.lender && bootstrap.lenderContextBySlug[sp.lender]) {
@@ -154,11 +162,26 @@ export default async function CompareLoanEstimatesPage({
 
       <section className="border-t border-zinc-200 bg-zinc-50/80 py-10">
         <div className="container mx-auto max-w-2xl px-4 text-sm text-zinc-600">
-          <ResearchPathNav
-            variant="tools"
-            heading="After you compare offers"
-            context={{}}
+          <ContinueTrustJourney
+            currentHub="lender"
+            context={{
+              ...journey,
+              src: journey.src ?? 'lender',
+              journey: journey.journey ?? 'purchase',
+              intent: journey.intent ?? 'buy',
+            }}
+            title="Homeowners insurance is typically required to close"
           />
+          <div className="mt-6">
+            <ResearchPathNav
+              variant="tools"
+              heading="After you compare offers"
+              context={{
+                stateSlug: journey.stateSlug,
+                countySlug: journey.county,
+              }}
+            />
+          </div>
           <p className="mt-8 text-center">
             Related:{' '}
             <Link

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { redirect } from 'next/navigation';
 import { JsonLd } from '@/components/directory/JsonLd';
 import { Breadcrumbs } from '@/components/directory/Breadcrumbs';
 import { NationalHubShell } from '@/components/directory/NationalHubShell';
@@ -20,10 +21,16 @@ import {
   buildMortgageHubTitle,
 } from '@/lib/mortgage/seo';
 import type { LenderSortOption } from '@/lib/directory/filter-lenders';
-import { NetworkHandoff } from '@/components/network/network-handoff';
 import { NetworkBelongingLine } from '@/components/network/network-belonging-line';
 import { catalogDistinctEntities } from '@/lib/verification';
 import { getMortgagePublicCounts } from '@/lib/directory/public-counts';
+import {
+  parseJourneyContext,
+  resolveLenderLandingPath,
+} from '@/lib/network/journey-context';
+import { ContinueTrustJourney } from '@/components/network/continue-trust-journey';
+import { JourneyOrientationBanner } from '@/components/network/journey-orientation-banner';
+import { JourneyLandingTracker } from '@/components/network/journey-landing-tracker';
 
 export const revalidate = 86400;
 
@@ -73,6 +80,14 @@ function firstParam(v: string | string[] | undefined): string {
 
 export default async function LocalLendersHubPage({ searchParams }: PageProps) {
   const params = await searchParams;
+  const journey = parseJourneyContext(params);
+
+  // Stage A′: never dump known geography on the national hub homepage
+  if (journey.stateSlug) {
+    const path = resolveLenderLandingPath(journey);
+    redirect(path.startsWith('/') ? path : `/${path}`);
+  }
+
   const jsonLd = buildMortgageHubJsonLd(lenders.length, stateGrid.length);
 
   const initialSearch = firstParam(params.q) || firstParam(params.search) || firstParam(params.zip);
@@ -83,6 +98,7 @@ export default async function LocalLendersHubPage({ searchParams }: PageProps) {
   return (
     <>
       <JsonLd data={jsonLd} />
+      <JourneyLandingTracker context={journey} landedOn="hub" />
 
       <div className="container mx-auto px-4 pt-6">
         <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Mortgage Lenders' }]} />
@@ -91,13 +107,13 @@ export default async function LocalLendersHubPage({ searchParams }: PageProps) {
       <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-teal-400/40 bg-teal-500/10 px-4 py-1.5 text-sm">
-            NMLS research directory • County-Level Data • No Paid Placements
+            NMLS research directory · County-level locality honesty
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">Research Mortgage Lenders</h1>
           <NetworkBelongingLine className="mt-3 text-zinc-600 [&_a]:text-white/90" />
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
-            Compare distinct NMLS entities in a 3-column directory — filter by loan type, trust
-            score, and location. Hard NMLS ID verified requires a numeric ID. Zero paid placements.
+            Compare distinct NMLS entities — filter by loan type and location. Evidence chips, not
+            decorative scoreboards. Research only.
           </p>
           <SearchBar className="mx-auto mt-8 max-w-md" />
         </div>
@@ -157,8 +173,12 @@ export default async function LocalLendersHubPage({ searchParams }: PageProps) {
       </div>
 
       <section className="border-t border-zinc-200 bg-white py-10">
-        <div className="container mx-auto max-w-2xl px-4">
-          <NetworkHandoff context="lender-directory" variant="card" />
+        <div className="container mx-auto max-w-2xl space-y-6 px-4">
+          <JourneyOrientationBanner context={journey} />
+          <ContinueTrustJourney
+            currentHub="lender"
+            context={{ ...journey, src: journey.src ?? 'lender', journey: journey.journey ?? 'purchase' }}
+          />
         </div>
       </section>
 
