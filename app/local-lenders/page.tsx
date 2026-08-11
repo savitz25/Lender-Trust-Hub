@@ -126,7 +126,7 @@ export default async function LocalLendersHubPage({ searchParams }: PageProps) {
               Research mortgage companies
             </h2>
             <p className="mt-2 max-w-2xl text-zinc-600">
-              {publicCounts.directorySummary} Sorted by trust score with county locality signals and
+              {publicCounts.directorySummary} Ordered by locality honesty and NMLS signals —
               loan types. Independent directory — no lead fees for ranking.
             </p>
           </div>

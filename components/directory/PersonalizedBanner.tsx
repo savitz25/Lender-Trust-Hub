@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Sparkles } from 'lucide-react';
+import { Compass } from 'lucide-react';
 import { FDIC_CATEGORY, MORTGAGE_CATEGORY } from '@/lib/directory/categories';
 
 type Vertical = 'fdic' | 'mortgage' | 'auto';
@@ -8,70 +8,68 @@ const BANNER_COPY: Record<
   Vertical,
   {
     audience: string;
-    body: (state: string, top?: string) => string;
+    body: (state: string) => string;
     cta: string;
     href: (slug: string) => string;
   }
 > = {
   fdic: {
-    audience: 'residents',
-    body: (state, top) =>
-      top
-        ? `Start with ${top} or filter for banks headquartered in ${state}. Then compare mortgage lenders and auto loan rates.`
-        : `Filter for banks headquartered in ${state} for local branch access. Then compare mortgage lenders and use our free calculators.`,
-    cta: 'Explore Mortgage Lenders →',
+    audience: 'deposit research',
+    body: (state) =>
+      `Filter for banks headquartered in ${state} when local branch access matters. Then compare mortgage lenders and educational calculators.`,
+    cta: 'Explore mortgage lenders →',
     href: (slug) => MORTGAGE_CATEGORY.statePath(slug),
   },
   mortgage: {
-    audience: 'homebuyers',
-    body: (state, top) =>
-      `Compare NMLS-verified lenders by county experience score.${top ? ` Top rated: ${top}.` : ''} Pair with our FDIC bank directory for deposit safety.`,
-    cta: 'Try Calculators →',
+    audience: 'home financing research',
+    body: (state) =>
+      `Browse NMLS-oriented mortgage companies in ${state} with locality-honest county pages. Pair with FDIC bank research for deposit safety.`,
+    cta: 'Open calculators →',
     href: () => '/calculators',
   },
   auto: {
-    audience: 'drivers',
-    body: (state, top) =>
-      `Compare verified auto lenders by APR range and trust score.${top ? ` Top rated: ${top}.` : ''} Cross-check FDIC banks for your down payment account.`,
-    cta: 'Explore FDIC Banks →',
+    audience: 'auto financing research',
+    body: (state) =>
+      `Compare auto financing companies in ${state} by published APR ranges. Cross-check FDIC banks if you need a down-payment account.`,
+    cta: 'Explore FDIC banks →',
     href: (slug) => FDIC_CATEGORY.statePath(slug),
   },
 };
 
 /**
- * Context-aware personalization — A/B friendly via data-variant.
- * Server-rendered for SEO; swap copy per vertical in props.
+ * Context-aware research handoff — evidence-based framing only.
+ * No “top rated” / “recommended winner” language.
  */
 export function PersonalizedBanner({
   stateName,
   stateSlug,
   vertical = 'fdic',
-  topEntityName,
+  topEntityName: _topEntityName,
   variant = 'default',
 }: {
   stateName: string;
   stateSlug: string;
   vertical?: Vertical;
+  /** @deprecated Ignored — naming an entity “top” implied a ranking award */
   topEntityName?: string;
   variant?: string;
 }) {
+  void _topEntityName;
   const config = BANNER_COPY[vertical];
 
   return (
     <aside
       data-variant={variant}
       data-vertical={vertical}
-      className="mb-8 rounded-2xl border border-[#D4AF37]/25 bg-gradient-to-r from-amber-50 to-white p-5 md:flex md:items-center md:justify-between md:gap-6"
+      className="mb-8 rounded-2xl border border-zinc-200 bg-gradient-to-r from-slate-50 to-white p-5 md:flex md:items-center md:justify-between md:gap-6"
     >
       <div className="flex items-start gap-3">
-        <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" aria-hidden="true" />
+        <Compass className="mt-0.5 h-5 w-5 shrink-0 text-teal-700" aria-hidden="true" />
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
-            Recommended for {stateName} {config.audience}
+          <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+            Research path · {stateName} {config.audience}
           </p>
-          <p className="mt-1 text-sm text-zinc-700">
-            {config.body(stateName, topEntityName)}
-          </p>
+          <p className="mt-1 text-sm text-zinc-700">{config.body(stateName)}</p>
         </div>
       </div>
       <Link

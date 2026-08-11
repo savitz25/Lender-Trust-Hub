@@ -38,8 +38,8 @@ export default function ComparePage() {
           Compare mortgage companies
         </h1>
         <p className="mt-3 text-zinc-600">
-          Select up to 3 companies to compare Research Score, NMLS status, and loan types. Research
-          only — not rate quotes or approvals.
+          Select up to 3 companies to compare NMLS status, loan types, and other listed signals.
+          Research only — not rate quotes, rankings, or approvals.
         </p>
       </div>
 
@@ -90,18 +90,19 @@ export default function ComparePage() {
             </thead>
             <tbody>
               {[
-                { label: 'Research Score', get: (l: Lender) => `${l.trustScore}/100` },
-                {
-                  label: 'Local Market Evidence',
-                  get: (l: Lender) => `${l.countyExperienceScore}/100`,
-                },
                 {
                   label: 'NMLS ID',
                   get: (l: Lender) => (l.nmlsId ? `#${l.nmlsId}` : 'Not on file'),
                 },
                 {
                   label: 'NMLS status',
-                  get: (l: Lender) => (l.nmlsVerified ? 'ID verified' : l.nmlsId ? 'ID on file' : 'Incomplete'),
+                  get: (l: Lender) =>
+                    l.nmlsVerified ? 'ID verified' : l.nmlsId ? 'ID on file' : 'Incomplete',
+                },
+                {
+                  label: 'Local HQ evidence',
+                  get: (l: Lender) =>
+                    l.county || l.city ? `${l.city || '—'}, ${l.state || l.county}` : 'Not mapped',
                 },
                 {
                   label: 'Closing performance',

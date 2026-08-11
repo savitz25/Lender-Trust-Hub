@@ -137,12 +137,6 @@ export default async function CountyLendersPage({
         </nav>
 
         <div className="mb-10">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500">
-            Tier {quality.tier} · {quality.tierLabel}
-            {quality.tier === 3 ? ' · noindex until quality gates pass' : ''}
-            {' · '}
-            quality score {quality.score}/100
-          </p>
           <h1 className="text-3xl font-bold text-[#0A2540] md:text-4xl">
             {buildMortgageCountyH1(countyName, stateName)}
           </h1>

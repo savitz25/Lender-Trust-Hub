@@ -71,17 +71,83 @@ export const RESEARCH_SCORE_COPY = {
 } as const;
 
 export const LENDER_RANKING_BASIS: RankingBasis = {
-  primaryOrder: 'In-county HQ first, then nearby / serving from elsewhere (Phase 1)',
+  primaryOrder: 'In-county HQ first, then nearby / serving from elsewhere',
   secondaryOrder:
-    'Within each locality band: Research Score, then Data Confidence, then NMLS status, then review volume',
+    'Within each locality band: NMLS verification strength, then data completeness, then review volume when attributed',
   rules: [
-    'No paid relationships in organic ranking',
-    'Nearby lenders never appear in the in-county section, regardless of score',
-    'NMLS / License Status is shown separately from Research Score',
-    'Research Score is computed once per NMLS entity, not per geo row',
+    'List order is research convenience — not a purchased ranking or “best lender” award',
+    'Nearby lenders never appear in the in-county section',
+    'We show public-record evidence chips, not a decorative grade',
     'Third-party ratings are attributed snapshots — not first-party reviews',
   ],
 };
+
+/** Public evidence chips — preferred over a precise 0–100 ranking display */
+export type EvidenceBadge = {
+  id: string;
+  label: string;
+  present: boolean;
+  detail: string;
+};
+
+export function getLenderEvidenceBadges(
+  lender: Lender,
+  opts?: { hmdaAvailable?: boolean; cfpbRecordAvailable?: boolean }
+): EvidenceBadge[] {
+  const nmls = resolveNmlsVerification({
+    nmlsId: lender.nmlsId,
+    nmlsVerified: lender.nmlsVerified,
+  });
+  const local = computeLocalMarketEvidence(lender);
+  const hasRating =
+    ((lender.googleRating ?? lender.rating) ?? 0) > 0 && (lender.reviewCount ?? 0) > 0;
+  const cfpbPresent =
+    opts?.cfpbRecordAvailable === true ||
+    (typeof lender.cfpbComplaints === 'number' && lender.cfpbComplaints > 0);
+
+  return [
+    {
+      id: 'nmls',
+      label: nmls.showNmlsVerifiedBadge
+        ? 'NMLS verified'
+        : nmls.nmlsId
+          ? 'NMLS on file'
+          : 'NMLS incomplete',
+      present: Boolean(nmls.nmlsId),
+      detail: nmls.summary,
+    },
+    {
+      id: 'local',
+      label: local.hasEvidence ? 'Local HQ evidence' : 'Local HQ not mapped',
+      present: local.hasEvidence,
+      detail: local.detail,
+    },
+    {
+      id: 'ratings',
+      label: hasRating ? 'Third-party rating attributed' : 'No attributed rating',
+      present: hasRating,
+      detail: hasRating
+        ? `Catalog snapshot · ${(lender.googleRating || lender.rating).toFixed(1)} · ${lender.reviewCount} reviews (confirm on source platforms)`
+        : 'No volume-backed third-party rating on file',
+    },
+    {
+      id: 'cfpb',
+      label: cfpbPresent ? 'CFPB complaint record available' : 'CFPB record not shown',
+      present: cfpbPresent,
+      detail: cfpbPresent
+        ? 'Public CFPB complaint context available — not a finding of fault'
+        : 'No CFPB complaint panel matched for this listing',
+    },
+    {
+      id: 'hmda',
+      label: opts?.hmdaAvailable ? 'HMDA activity available' : 'HMDA not matched',
+      present: Boolean(opts?.hmdaAvailable),
+      detail: opts?.hmdaAvailable
+        ? 'Matched federal HMDA activity panel available on profile'
+        : 'No LEI/slug HMDA match in our research tables',
+    },
+  ];
+}
 
 /** Factor weights published on methodology (percent of Research Score max). */
 export const RESEARCH_SCORE_WEIGHTS = [
@@ -333,14 +399,19 @@ export function applyResearchScoreToLender(lender: Lender): Lender {
   };
 }
 
-/** Sort within a locality band: research → confidence → nmls → reviews */
+/**
+ * Sort within a locality band for directory convenience.
+ * NMLS strength first — not a decorative scoreboard.
+ */
 export function compareLendersByResearchHonesty(a: Lender, b: Lender): number {
-  if (b.trustScore !== a.trustScore) return b.trustScore - a.trustScore;
-  const ca = computeDataConfidence(a).score;
-  const cb = computeDataConfidence(b).score;
-  if (cb !== ca) return cb - ca;
   const na = a.nmlsVerified ? 2 : cleanNmlsId(a.nmlsId) ? 1 : 0;
   const nb = b.nmlsVerified ? 2 : cleanNmlsId(b.nmlsId) ? 1 : 0;
   if (nb !== na) return nb - na;
-  return b.reviewCount - a.reviewCount;
+  const ca = computeDataConfidence(a).score;
+  const cb = computeDataConfidence(b).score;
+  if (cb !== ca) return cb - ca;
+  const la = computeLocalMarketEvidence(a).hasEvidence ? 1 : 0;
+  const lb = computeLocalMarketEvidence(b).hasEvidence ? 1 : 0;
+  if (lb !== la) return lb - la;
+  return b.reviewCount - a.reviewCount || a.name.localeCompare(b.name);
 }

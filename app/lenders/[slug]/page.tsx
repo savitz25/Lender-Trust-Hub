@@ -155,7 +155,11 @@ export default async function LenderProfilePage({
           <p className="mb-6 text-zinc-600 leading-relaxed">{lender.shortDescription}</p>
 
           <div className="mb-6">
-            <ResearchScoreDisplay lender={lender} />
+            <ResearchScoreDisplay
+              lender={lender}
+              hmdaAvailable={Boolean(hmdaEvidence)}
+              cfpbRecordAvailable={Boolean(cfpbEvidence)}
+            />
           </div>
           <div className="mb-6 rounded-xl border border-dashed border-zinc-200 bg-white p-4 text-center">
             <div className="text-sm font-medium leading-snug text-zinc-600">
@@ -331,10 +335,8 @@ export default async function LenderProfilePage({
         <RelatedDirectoryLinks stateSlug={lender.stateSlug} stateName={lender.state} />
 
         <p className="mt-6 text-center text-xs leading-relaxed text-zinc-400">
-          Research listing only — not an endorsement. Public panels (when shown) cite HMDA and/or
-          CFPB sources with as-of dates. Re-verify NMLS identity on NMLS Consumer Access before
-          applying. Lender Trust Hub is not a lender or broker and does not provide financial advice.
-          We show the public record. You decide.
+          Research listing only — not an endorsement. Re-verify NMLS identity on NMLS Consumer Access
+          before applying. Lender Trust Hub is not a lender or broker.
         </p>
 
       </div>

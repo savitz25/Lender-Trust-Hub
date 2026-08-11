@@ -29,6 +29,7 @@ import { ResearchPathNav } from '@/components/research/research-path-nav';
 import { getHmdaStateMarketSummary } from '@/lib/hmda';
 import { HmdaStateSummaryPanel } from '@/components/hmda/HmdaStateSummaryPanel';
 import { LoanEstimateToolsCta } from '@/components/tools/LoanEstimateToolsCta';
+import { NetworkResearchStandard } from '@/components/network/network-research-standard';
 
 /**
  * MORTGAGE STATE PAGE TEMPLATE
@@ -110,7 +111,7 @@ export default async function MortgageStatePage({
       <section className="lth-hero-wash border-b border-zinc-200 py-14 text-[#0A2540]">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-3 inline-flex rounded-full border border-teal-400/40 bg-teal-500/10 px-4 py-1.5 text-sm">
-            National research directory · NMLS-oriented · No paid placements · Catalog {MORTGAGE_DATA_UPDATED}
+            National research directory · NMLS-oriented · Catalog {MORTGAGE_DATA_UPDATED}
           </p>
           <h1 className="text-3xl font-bold md:text-5xl">
             {buildMortgageStateH1(stateMeta.fullName)}
@@ -121,7 +122,7 @@ export default async function MortgageStatePage({
               ? ` · ${stats.branchListings} catalog location rows`
               : ''}
             {' · '}
-            {stats.verified} with NMLS ID verified · Avg research score {stats.avgTrustScore}
+            {stats.verified} with NMLS ID verified
           </p>
           <p className="mx-auto mt-2 max-w-xl text-sm text-zinc-500">
             HMDA evidence where available · County market pages · Free Loan Estimate tools
@@ -138,6 +139,10 @@ export default async function MortgageStatePage({
             <HmdaStateSummaryPanel summary={hmdaState} />
           </div>
         ) : null}
+
+        <div className="mb-10">
+          <NetworkResearchStandard />
+        </div>
 
         <div className="mb-10">
           <LoanEstimateToolsCta variant="banner" />
@@ -679,7 +684,7 @@ export default async function MortgageStatePage({
               {[
                 { label: 'Distinct companies', value: stats.total },
                 { label: 'NMLS ID verified', value: stats.verified },
-                { label: 'Avg Research Score', value: stats.avgTrustScore },
+                { label: 'NMLS ID verified', value: stats.verified },
               ].map((card) => (
                 <div key={card.label} className="rounded-2xl border bg-white p-5 shadow-sm">
                   <p className="text-xs font-semibold uppercase text-zinc-400">{card.label}</p>

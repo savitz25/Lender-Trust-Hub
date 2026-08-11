@@ -41,7 +41,7 @@ export function StateResearchSections({ stateMeta, stats }: Props) {
           </li>
           <li className="rounded-xl border border-zinc-200 bg-white p-4">
             <p className="text-2xl font-bold text-[#0A2540]">{indexable.length}</p>
-            <p className="text-xs text-zinc-500">Indexable county research pages (Tier 1–2)</p>
+            <p className="text-xs text-zinc-500">County research pages with usable inventory</p>
           </li>
         </ul>
       </section>
@@ -53,11 +53,11 @@ export function StateResearchSections({ stateMeta, stats }: Props) {
       {premium.length > 0 ? (
         <section aria-labelledby="premium-counties-heading">
           <h2 id="premium-counties-heading" className="text-xl font-semibold text-[#0A2540]">
-            Premium county research surfaces
+            Stronger county research surfaces
           </h2>
           <p className="mt-2 text-sm text-zinc-600">
-            Highest quality scores from real in-county inventory and research usefulness — not
-            population alone.
+            Counties with stronger true in-county inventory for research — not population rank and
+            not a paid “best of” list.
           </p>
           <ul className="mt-4 grid gap-2 sm:grid-cols-2">
             {premium.map((c) => (
@@ -74,7 +74,7 @@ export function StateResearchSections({ stateMeta, stats }: Props) {
                     County
                   </span>
                   <span className="text-xs text-emerald-800">
-                    Tier 1 · score {c.score} · {c.metadata.inCountyCount} in-county
+                    {c.metadata.inCountyCount} in-county HQ
                   </span>
                 </Link>
               </li>
@@ -86,7 +86,7 @@ export function StateResearchSections({ stateMeta, stats }: Props) {
       {indexable.length > 0 ? (
         <section aria-labelledby="major-counties-heading">
           <h2 id="major-counties-heading" className="text-xl font-semibold text-[#0A2540]">
-            Major counties (indexable)
+            County research pages
           </h2>
           <ul className="mt-3 flex flex-wrap gap-2 text-sm">
             {indexable.slice(0, 12).map((c) => (
@@ -99,7 +99,6 @@ export function StateResearchSections({ stateMeta, stats }: Props) {
                     .split('-')
                     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
                     .join(' ')}
-                  <span className="ml-1 text-xs text-zinc-400">T{c.tier}</span>
                 </Link>
               </li>
             ))}

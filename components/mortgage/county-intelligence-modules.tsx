@@ -66,8 +66,8 @@ export function CountyIntelligenceModules({
     <div className="mb-12 space-y-8">
       {assessment.tier === 1 ? (
         <p className="rounded-xl border border-emerald-200 bg-emerald-50/60 px-4 py-3 text-sm text-emerald-950">
-          Premium county research surface (quality score {assessment.score}/100). Inventory and
-          tools below use real catalog signals only — not fabricated local market color.
+          Stronger local inventory for this county. Listings and tools below use real catalog
+          signals only — not fabricated market color or paid rankings.
         </p>
       ) : null}
 
@@ -199,12 +199,11 @@ export function CountyIntelligenceModules({
       </section>
 
       <p className="text-xs text-zinc-400">
-        County quality score {assessment.score}/100 · Tier {assessment.tier} ({assessment.tierLabel}
-        ). See{' '}
+        Research context for {countyName} County. See{' '}
         <Link href="/methodology" className="text-[#059669] hover:underline">
           methodology
         </Link>
-        . Path: /local-lenders/{stateSlug}/{countySlug}
+        .
       </p>
     </div>
   );

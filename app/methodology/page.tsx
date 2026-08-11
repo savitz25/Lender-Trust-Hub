@@ -135,46 +135,49 @@ export default function MethodologyPage() {
       <section className="mt-12" id="scores">
         <h2 className="flex items-center gap-2 text-2xl font-semibold text-[#0A2540]">
           <BadgeCheck className="h-5 w-5 text-emerald-600" aria-hidden />
-          Research Score honesty
+          Evidence honesty (not a scoreboard)
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-          We separate signals that used to be overloaded into one inflated number:
+          Public cards and profiles emphasize evidence chips — what public or attributed signals are
+          available — instead of a decorative 0–100 grade that clustered many lenders in a narrow band.
         </p>
         <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-zinc-600">
           <li>
-            <strong className="text-[#0A2540]">Research Score (0–100)</strong> — recomputed per NMLS
-            entity from re-checkable NMLS identity, third-party reputation volume, CFPB pattern
-            context, BBB grade when listed, locality completeness, and loan-menu disclosure. Seed
-            “90s” are not used as-is.
+            <strong className="text-[#0A2540]">NMLS verified / on file</strong> — re-checkable
+            company identity path.
           </li>
           <li>
-            <strong className="text-[#0A2540]">Data Confidence</strong> — how complete the listing
-            fields are for research (not a quality grade).
+            <strong className="text-[#0A2540]">Local HQ evidence</strong> — when city/ZIP/county HQ
+            locality is derived (not statewide license alone).
           </li>
           <li>
-            <strong className="text-[#0A2540]">NMLS / License Status</strong> — ID verified / on file
-            / incomplete (Phase 0 rules).
+            <strong className="text-[#0A2540]">HMDA / CFPB panels</strong> — when we have a matched
+            public-record extract on the profile.
           </li>
           <li>
-            <strong className="text-[#0A2540]">Local Market Evidence</strong> — only when HQ locality
-            is derived from city/ZIP/county — not statewide license alone.
+            <strong className="text-[#0A2540]">Third-party ratings</strong> — attributed snapshots
+            with volume when present; not first-party reviews.
           </li>
         </ul>
-        <h3 className="mt-6 font-semibold text-[#0A2540]">Research Score factor weights</h3>
+        <p className="mt-4 text-sm leading-relaxed text-zinc-600">
+          An optional technical composite still exists for methodology transparency (factor weights
+          below). It is not presented as a ranking score on directory cards.
+        </p>
+        <h3 className="mt-6 font-semibold text-[#0A2540]">Optional composite factor weights</h3>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-zinc-600">
           <li>NMLS identity evidence — up to 28 points</li>
           <li>Third-party reputation (volume-weighted) — up to 26</li>
           <li>CFPB complaint pattern (not a finding of fault; not size-normalized) — up to 16</li>
-          <li>BBB grade when listed — up to 12</li>
+          <li>BBB grade when independently sourced — up to 12 (seed grades not scored)</li>
           <li>Licensed locality completeness — up to 12</li>
           <li>Loan type disclosure — up to 6</li>
         </ul>
         <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50/50 p-5">
-          <h3 className="font-semibold text-[#0A2540]">What Research Score does not mean</h3>
+          <h3 className="font-semibold text-[#0A2540]">What evidence chips do not mean</h3>
           <p className="mt-2 text-sm leading-relaxed text-zinc-700">
-            It does not predict approval, rate, closing speed, or future service quality. Nearby
-            lenders never outrank true in-county HQ by score cosmetics alone. Prefer Loan Estimates
-            and re-check NMLS before you apply.
+            They do not predict approval, rate, closing speed, or future service quality. They are
+            not a regulator grade or “top rated” award. Prefer Loan Estimates and re-check NMLS
+            before you apply.
           </p>
         </div>
       </section>
@@ -184,10 +187,10 @@ export default function MethodologyPage() {
         <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-zinc-600">
           <li>In-county HQ first, then nearby / serving from elsewhere (geographic honesty).</li>
           <li>
-            Within each band: Research Score, then Data Confidence, then NMLS status, then listed
-            review volume.
+            Within each band: NMLS verification strength, then data completeness, then review volume
+            when attributed.
           </li>
-          <li>No paid relationships in organic ranking.</li>
+          <li>List order cannot be purchased — research convenience only, not a “best of” award.</li>
         </ol>
       </section>
 
@@ -251,8 +254,7 @@ export default function MethodologyPage() {
           Lender Trust Hub is a <strong className="text-[#0A2540]">national research directory</strong>{' '}
           with state hubs, county market pages, and HMDA evidence where matched. We still do not claim
           a complete inventory of every U.S. county or every licensed originator. Absence from our
-          directory is not a regulatory finding. County pages may be tiered for quality (some remain
-          noindex until inventory gates pass).
+          directory is not a regulatory finding.
         </p>
       </section>
 

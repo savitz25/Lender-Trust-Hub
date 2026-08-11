@@ -7,7 +7,7 @@ type Props = {
   localityNote?: string;
 };
 
-/** Explains organic order — locality first, then research honesty. */
+/** Explains organic order — locality first; not a purchased ranking. */
 export function RankingBasisPanel({ className = '', localityNote }: Props) {
   const b = LENDER_RANKING_BASIS;
   return (
@@ -39,10 +39,10 @@ export function RankingBasisPanel({ className = '', localityNote }: Props) {
           href="/methodology#scores"
           className="inline-flex min-h-11 items-center font-medium text-[#059669] underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#059669]"
         >
-          Score methodology
+          Research methodology
         </Link>
         {' · '}
-        Research Score is not approval odds, rate, or closing speed.
+        List order is for research convenience — not a “best lender” award.
       </p>
     </aside>
   );
