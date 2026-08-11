@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { trackLenderEvent } from '@/lib/analytics/ga-events';
 
 type Props = {
-  kind: 'hmda-county' | 'loan-estimate-analyzer';
+  kind: 'hmda-county' | 'loan-estimate-analyzer' | 'lender-evidence';
   state?: string;
   county?: string;
   embedSrc?: string;
