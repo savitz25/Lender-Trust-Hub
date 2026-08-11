@@ -4,17 +4,25 @@ import { useEffect } from 'react';
 import { trackLenderEvent } from '@/lib/analytics/ga-events';
 
 type Props = {
-  kind: 'hmda-county';
+  kind: 'hmda-county' | 'loan-estimate-analyzer';
   state?: string;
   county?: string;
   embedSrc?: string;
   hasData: boolean;
+  extra?: Record<string, string | number | boolean | undefined>;
 };
 
 /**
  * Soft analytics for embeds: impression on mount; click-through via capture on CTA.
  */
-export function EmbedAnalytics({ kind, state, county, embedSrc, hasData }: Props) {
+export function EmbedAnalytics({
+  kind,
+  state,
+  county,
+  embedSrc,
+  hasData,
+  extra,
+}: Props) {
   useEffect(() => {
     trackLenderEvent('embed_impression', {
       embed_kind: kind,
@@ -22,7 +30,9 @@ export function EmbedAnalytics({ kind, state, county, embedSrc, hasData }: Props
       county: county ?? '',
       embed_src: embedSrc ?? '',
       has_data: hasData,
+      ...extra,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- fire once per mount identity
   }, [kind, state, county, embedSrc, hasData]);
 
   useEffect(() => {
