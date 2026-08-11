@@ -37,6 +37,7 @@ import {
 import { JourneyOrientationBanner } from '@/components/network/journey-orientation-banner';
 import { JourneyLandingTracker } from '@/components/network/journey-landing-tracker';
 import { JourneySessionSync } from '@/components/network/journey-session-sync';
+import { ContinueTrustJourney } from '@/components/network/continue-trust-journey';
 
 function titleCase(slug: string): string {
   return slug
@@ -315,6 +316,16 @@ export default async function CountyLendersPage({
         ) : null}
 
         <div className="mt-10 space-y-6">
+          {/* SSR crawlable handoffs; client sync persists session + gap-fills intent */}
+          <ContinueTrustJourney
+            currentHub="lender"
+            context={{
+              ...journey,
+              journey: journey.journey ?? 'purchase',
+              src: journey.src ?? 'lender',
+            }}
+            title="Coverage is typically next after financing research"
+          />
           <JourneySessionSync
             urlContext={{
               ...journey,
@@ -323,8 +334,7 @@ export default async function CountyLendersPage({
             }}
             preferSrc="lender"
             currentHub="lender"
-            showContinue
-            continueTitle="Coverage is typically next after financing research"
+            silent
           />
           <ResearchPathNav
             context={{
