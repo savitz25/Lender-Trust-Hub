@@ -64,7 +64,7 @@ function isPrimarySourceHost(host: string): boolean {
 
 function specialistHub(
   host: string
-): 'insurance' | 'move' | 'ask' | null {
+): 'insurance' | 'move' | 'ask' | 'contractor' | null {
   if (host === 'www.insurancetrusthub.com' || host === 'insurancetrusthub.com') {
     return 'insurance';
   }
@@ -73,6 +73,9 @@ function specialistHub(
   }
   if (host === 'www.asktrusthub.com' || host === 'asktrusthub.com') {
     return 'ask';
+  }
+  if (host === 'www.contractortrusthub.com' || host === 'contractortrusthub.com') {
+    return 'contractor';
   }
   return null;
 }
