@@ -129,7 +129,7 @@ export function trackResearchPathClick(params: {
 }
 
 export function trackOutboundSpecialistHub(params: {
-  hub: 'insurance' | 'move' | 'ask';
+  hub: 'insurance' | 'move' | 'ask' | 'contractor';
   href?: string;
 }): void {
   trackLenderEvent('outbound_specialist_hub', {
