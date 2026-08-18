@@ -48,7 +48,7 @@ export default function Footer() {
               Network
             </h4>
             <ul className="space-y-2.5 text-sm text-slate-300">
-              {LENDER_NETWORK_LINKS.map((hub) => (
+              {LENDER_NETWORK_LINKS.filter((hub) => hub.id !== 'lender').map((hub) => (
                 <li key={hub.id}>
                   <a
                     href={hub.href}

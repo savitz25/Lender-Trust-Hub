@@ -32,6 +32,9 @@ export function buildLenderOrganizationSchema(opts?: {
       'https://www.asktrusthub.com',
       'https://www.movetrusthub.com',
       'https://www.insurancetrusthub.com',
+      'https://www.contractortrusthub.com',
+      'https://www.seniortrusthub.com',
+      'https://www.investortrusthub.com',
     ],
   };
 }

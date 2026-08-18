@@ -3,21 +3,26 @@
 import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { Check, ChevronDown, X } from 'lucide-react';
 import { ASK_TRUST_HUB, NETWORK_HUBS } from '@/lib/network/ask-trust-hub';
-import { networkHubHref, type HubLinkId } from '@/lib/network/handoff-href';
+import { networkHubHref, SSO_HANDOFF_HUBS, type HubLinkId } from '@/lib/network/handoff-href';
 import { NetworkHandoffLink } from '@/components/network/network-handoff-link';
+import { SwitchHubMenu } from '@/components/switch-hub-menu';
 
 const HUB_HOME: Record<HubLinkId, string> = {
   move: '/my-move',
   insurance: '/my-insurance',
   lender: '/my-lending',
   contractor: '/',
+  senior: '/',
+  investor: '/',
 };
 
 const HUB_BLURB: Record<HubLinkId, string> = {
   move: 'Moving directory · FMCSA research',
   insurance: 'Insurance research · plans & agents',
   lender: 'Lending research · NMLS lenders',
-  contractor: 'Contractor research · Florida licenses',
+  contractor: 'Contractor research · state licensing boards',
+  senior: 'Senior care research · CMS / supported states',
+  investor: 'Investment firm research · SEC/IARD',
 };
 
 const ACTIVE_HUB: HubLinkId = 'lender';
@@ -74,7 +79,7 @@ export function AskNetworkBar() {
         toHub: id,
         nextPath,
         active,
-        sameOriginHandoff: !active,
+        sameOriginHandoff: !active && SSO_HANDOFF_HUBS.has(id),
         external: active,
       };
     }),
@@ -104,38 +109,9 @@ export function AskNetworkBar() {
           <span className="sm:hidden">Ask Trust Hub</span>
         </a>
 
-        <nav aria-label="Ask Trust Hub network" className="hidden items-center gap-1 sm:flex">
-          {links.map((link) =>
-            link.active ? (
-              <span
-                key={link.id}
-                className="rounded-md bg-emerald-50 px-2.5 py-1.5 font-semibold text-emerald-900 shadow-sm ring-1 ring-emerald-200"
-                aria-current="page"
-              >
-                {link.shortLabel}
-              </span>
-            ) : link.sameOriginHandoff && link.toHub ? (
-              <NetworkHandoffLink
-                key={link.id}
-                href={link.href}
-                toHub={link.toHub}
-                nextPath={link.nextPath}
-                className="rounded-md px-2.5 py-1.5 font-medium text-zinc-600 hover:bg-white hover:text-[#0A2540]"
-              >
-                {link.shortLabel}
-              </NetworkHandoffLink>
-            ) : (
-              <a
-                key={link.id}
-                href={link.href}
-                className="rounded-md px-2.5 py-1.5 font-medium text-zinc-600 hover:bg-white hover:text-[#0A2540]"
-                rel="noopener noreferrer"
-              >
-                {link.shortLabel}
-              </a>
-            )
-          )}
-        </nav>
+        <div className="hidden sm:block">
+          <SwitchHubMenu compact />
+        </div>
 
         <div className="sm:hidden">
           <button

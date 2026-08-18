@@ -79,9 +79,13 @@ export function SwitchHubMenu({ className, compact = false }: Props) {
               <li key={hub.id}>
                 <a
                   role="menuitem"
-                  href={resolveSwitchHubHref(hub.id, hub.href)}
+                  href={hub.id === 'lender' ? '/' : resolveSwitchHubHref(hub.id, hub.href)}
+                  aria-current={hub.id === 'lender' ? 'page' : undefined}
                   rel="noopener noreferrer"
-                  className="flex items-start gap-2 rounded-xl px-2.5 py-2.5 transition-colors hover:bg-[#CCFBF1]/60"
+                  className={cn(
+                    'flex min-h-11 items-start gap-2 rounded-xl px-2.5 py-2.5 transition-colors hover:bg-[#CCFBF1]/60',
+                    hub.id === 'lender' && 'bg-[#CCFBF1]/70'
+                  )}
                   onClick={() => setOpen(false)}
                 >
                   <span className="min-w-0 flex-1">
@@ -90,6 +94,11 @@ export function SwitchHubMenu({ className, compact = false }: Props) {
                       style={{ color: LENDER_BRAND.navy }}
                     >
                       {hub.label}
+                      {hub.id === 'lender' ? (
+                        <span className="ml-2 text-[11px] font-semibold uppercase tracking-wide" style={{ color: LENDER_BRAND.teal }}>
+                          Current
+                        </span>
+                      ) : null}
                     </span>
                     <span
                       className="mt-0.5 block text-xs leading-snug"
