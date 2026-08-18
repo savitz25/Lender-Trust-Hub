@@ -16,6 +16,7 @@
     "cfpb:fetch": "tsx scripts/fetch-cfpb-complaints.ts",
     "audit:phase0-catalog": "tsx scripts/audit-phase0-catalog.ts",
     "check:phase0": "node scripts/check-lender-phase0-integrity.mjs",
+    "check:journey-v21": "node scripts/check-journey-v21.mjs",
     "supabase:types": "supabase gen types typescript --linked > types/supabase.ts"
   },
   "dependencies": {

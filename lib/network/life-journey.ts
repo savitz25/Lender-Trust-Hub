@@ -72,45 +72,59 @@ export function resolveLifeJourney(
     case 'lender-le-tool':
     case 'lender-county':
       return {
-        label,
-        body: `Homeowners insurance is typically required to close. Research coverage considerations in ${place} — educational only, not a quote marketplace.`,
+        label: 'Planning the rest of the purchase?',
+        body: `After financing, research homeowners and other relevant coverage in ${place}. Educational only — not a quote marketplace.`,
         links: [
           {
             href: insuranceHref,
-            label: 'Research coverage considerations',
+            label: 'Research insurance coverage',
           },
         ],
       };
-    case 'lender-calculator':
+    case 'lender-calculator': {
+      const fromMove = geography?.journey === 'relocate';
+      const links = [
+        {
+          href: insuranceHref,
+          label: 'Research insurance coverage',
+        },
+      ];
+      if (fromMove) {
+        links.push({
+          href: moveHref,
+          label: 'Plan your move',
+        });
+      }
       return {
-        label,
-        body: 'A payment estimate is one research step. Many buyers also research homeowners coverage — and movers if relocating.',
-        links: [
-          {
-            href: insuranceHref,
-            label: 'Research homeowners insurance',
-          },
-          {
-            href: moveHref,
-            label: 'Research licensed movers',
-          },
-        ],
+        label: 'Planning the rest of the purchase?',
+        body: fromMove
+          ? 'After financing, research homeowners and other relevant coverage. You arrived from a relocation path — mover research stays available.'
+          : 'After financing, research homeowners and other relevant coverage. Educational only — not a quote marketplace.',
+        links,
       };
-    case 'lender-directory':
+    }
+    case 'lender-directory': {
+      const fromMove = geography?.journey === 'relocate';
+      const links = [
+        {
+          href: insuranceHref,
+          label: 'Research insurance coverage',
+        },
+      ];
+      if (fromMove) {
+        links.push({
+          href: moveHref,
+          label: 'Plan your move',
+        });
+      }
       return {
-        label,
-        body: 'Financing is one part of buying. Next for many buyers: coverage research, then the move if you’re relocating.',
-        links: [
-          {
-            href: insuranceHref,
-            label: 'Research coverage options',
-          },
-          {
-            href: moveHref,
-            label: 'Research interstate movers',
-          },
-        ],
+        label: 'Planning the rest of the purchase?',
+        body: fromMove
+          ? 'Financing is one part of buying in a new area. Next: coverage research, and your move plan if you are still relocating.'
+          : 'Financing is one part of buying. Next for many buyers: homeowners and other relevant coverage. Relocating is not assumed.',
+        links,
       };
+    }
     default: {
       const _exhaustive: never = context;
       return _exhaustive;
