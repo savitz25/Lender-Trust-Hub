@@ -8,8 +8,13 @@ import { GtagProvider } from '@/components/directory/GtagProvider';
 import { MyLendingShell } from '@/components/my-lending/my-lending-shell';
 import { HubLastLocationBridge } from '@/components/network/hub-last-location-bridge';
 import { SiteChrome } from '@/components/embed/site-chrome';
-import { BRAND_ICONS, LENDER_LOGO_VERSION } from '@/lib/brand';
+import { BRAND_ICONS } from '@/lib/brand';
 import { ASK_NETWORK_STANDARD_VERSION } from '@/lib/network/standard-version';
+import {
+  SHARE_HUB,
+  resolveShareOrigin,
+  shareOgImageAbsoluteUrl,
+} from '@/lib/seo/share-hub';
 import './globals.css';
 
 const inter = Inter({
@@ -19,7 +24,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.lendertrusthub.com'),
+  metadataBase: new URL(resolveShareOrigin()),
   title: {
     default: 'Verify. Compare. Finance wisely. | Lender Trust Hub',
     template: '%s | Lender Trust Hub',
@@ -36,28 +41,30 @@ export const metadata: Metadata = {
     'mortgage broker directory',
   ],
   alternates: {
-    canonical: 'https://www.lendertrusthub.com',
+    canonical: resolveShareOrigin(),
   },
   openGraph: {
     title: 'Verify. Compare. Finance wisely. | Lender Trust Hub',
     description:
       'Independent lender research — NMLS verification signals, comparisons, and calculators. Zero paid placements.',
-    siteName: 'Lender Trust Hub',
-    url: 'https://www.lendertrusthub.com',
+    siteName: SHARE_HUB.brand,
+    url: resolveShareOrigin(),
     type: 'website',
     images: [
       {
-        url: `/brand/lender-trust-hub-logo-header.png?v=${LENDER_LOGO_VERSION}`,
-        width: 720,
-        height: 217,
+        url: shareOgImageAbsoluteUrl(),
+        width: SHARE_HUB.ogWidth,
+        height: SHARE_HUB.ogHeight,
+        alt: SHARE_HUB.ogAlt,
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: SHARE_HUB.twitterCard,
     title: 'Verify. Compare. Finance wisely. | Lender Trust Hub',
     description:
       'Independent lender research. NMLS signals, comparisons, calculators — no paid placements.',
+    images: [{ url: shareOgImageAbsoluteUrl(), alt: SHARE_HUB.ogAlt }],
   },
   icons: {
     icon: [
