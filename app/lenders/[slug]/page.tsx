@@ -49,11 +49,23 @@ export async function generateMetadata({
     locality,
     lender.shortDescription
   );
+  const image = {
+    url: `https://www.lendertrusthub.com/lenders/${lender.slug}/share-og`,
+    width: 1200,
+    height: 630,
+    alt: `${lender.name} — lender research on LenderTrustHub`,
+  };
   return {
     title,
     description,
-    openGraph: { title, description },
     alternates: { canonical: `https://www.lendertrusthub.com/lenders/${lender.slug}` },
+    openGraph: { title, description, images: [image] },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [{ url: image.url, alt: image.alt }],
+    },
   };
 }
 
