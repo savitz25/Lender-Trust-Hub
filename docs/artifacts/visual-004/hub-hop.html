@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>VISUAL-004 — Ask ↔ Investor ↔ Lender hub-hop</title>
+  <style>
+    :root { font-family: Inter, system-ui, sans-serif; color: #0A2540; background: #F8FAFC; }
+    body { margin: 24px; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 18px; margin: 32px 0 12px; }
+    p, td { color: #1E293B; font-size: 14px; }
+    .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    figure { margin: 0; background: #fff; border: 1px solid #E2E8F0; border-radius: 16px; overflow: hidden; }
+    figcaption { padding: 10px 12px; font-size: 12px; font-weight: 600; border-top: 1px solid #E2E8F0; }
+    img { display: block; width: 100%; }
+    table { border-collapse: collapse; background: #fff; border: 1px solid #E2E8F0; }
+    th, td { padding: 8px 12px; border-bottom: 1px solid #E2E8F0; text-align: left; }
+    .ok { color: #0D9488; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <h1>Ask ↔ Investor ↔ Lender hub-hop</h1>
+  <p>Same-scale proof that TRUSTHUB_VISUAL_STANDARD_V1 is a three-Hub OS. Measurements at 1440.</p>
+  <table>
+    <thead>
+      <tr><th>Measurement</th><th>Ask</th><th>Investor</th><th>Lender</th><th>Delta</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Header height</td><td>69</td><td>69</td><td>69</td><td class="ok">0</td></tr>
+      <tr><td>Mark optical</td><td>36 @ (144,16)</td><td>36 @ (144,16)</td><td>36 @ (144,16)</td><td class="ok">0</td></tr>
+      <tr><td>Logo left edge</td><td>144</td><td>144</td><td>144</td><td class="ok">0</td></tr>
+      <tr><td>Switch Hub</td><td>44×129 @ x=1167</td><td>44×129 @ x=1167</td><td>44×129 @ x=1167</td><td class="ok">0</td></tr>
+      <tr><td>Overflow</td><td>0</td><td>0</td><td>0</td><td class="ok">0</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Desktop 1440 — headers</h2>
+  <div class="grid3">
+    <figure>
+      <img src="ask-ref/header-desktop.png" alt="Ask header" />
+      <figcaption>ASK — indigo Concierge</figcaption>
+    </figure>
+    <figure>
+      <img src="investor-ref/header-desktop.png" alt="Investor header" />
+      <figcaption>INVESTOR — cream, green, no Concierge</figcaption>
+    </figure>
+    <figure>
+      <img src="after/header-desktop.png" alt="Lender header" />
+      <figcaption>LENDER — teal, My Lending, no network bar</figcaption>
+    </figure>
+  </div>
+
+  <h2>Desktop 1440 — pages</h2>
+  <div class="grid3">
+    <figure>
+      <img src="ask-ref/desktop-1440.jpg" alt="Ask homepage" />
+      <figcaption>ASK</figcaption>
+    </figure>
+    <figure>
+      <img src="investor-ref/desktop-1440.jpg" alt="Investor homepage" />
+      <figcaption>INVESTOR</figcaption>
+    </figure>
+    <figure>
+      <img src="after/desktop-1440.jpg" alt="Lender homepage" />
+      <figcaption>LENDER</figcaption>
+    </figure>
+  </div>
+
+  <h2>Mobile 390</h2>
+  <div class="grid3">
+    <figure>
+      <img src="ask-ref/mobile-390.jpg" alt="Ask mobile" />
+      <figcaption>ASK · 57 / 30</figcaption>
+    </figure>
+    <figure>
+      <img src="investor-ref/mobile-390.jpg" alt="Investor mobile" />
+      <figcaption>INVESTOR · 57 / 30</figcaption>
+    </figure>
+    <figure>
+      <img src="after/mobile-390.jpg" alt="Lender mobile" />
+      <figcaption>LENDER · 57 / 30</figcaption>
+    </figure>
+  </div>
+
+  <p>Stable: header height, mark height, logo left edge, Switch Hub geometry, shell edge.</p>
+  <p>Changed: wordmark, accent, Lender terminology, My Lending, teal personality, no stacked network bar.</p>
+</body>
+</html>

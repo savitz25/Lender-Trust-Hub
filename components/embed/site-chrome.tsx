@@ -26,7 +26,7 @@ export function SiteChrome({
   return (
     <>
       {chrome}
-      <main className="flex-1 bg-[#F8FAFC]">{children}</main>
+      <main id="main-content" className="flex-1 bg-[#F8FAFC]">{children}</main>
       {footer}
     </>
   );
