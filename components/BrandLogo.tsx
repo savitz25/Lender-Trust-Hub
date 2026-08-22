@@ -1,61 +1,55 @@
 import Link from 'next/link';
-import { BRAND, BRAND_LOGO } from '@/lib/brand';
+import { LenderNetworkMark } from '@/components/lender-network-mark';
+import { BRAND } from '@/lib/brand';
+import { cn } from '@/lib/utils';
 
 /**
- * Header logo — official LTH transparent lockup (Phase 1).
+ * Header: tight canonical mark + two-line HTML wordmark in the 36/33/30 slot.
+ * Tagline stays off the 69px bar.
  */
 export function BrandLogo({
   href = '/',
-  priority = false,
+  className,
+  inverted = false,
 }: {
   href?: string;
-  priority?: boolean;
+  className?: string;
+  inverted?: boolean;
 }) {
-  const load = priority ? 'eager' : 'lazy';
-
   const inner = (
-    <span className="hub-logo-slot relative block shrink-0 bg-transparent">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={BRAND_LOGO.headerSrc}
-        alt={BRAND_LOGO.alt}
-        width={BRAND_LOGO.width}
-        height={BRAND_LOGO.height}
-        className="h-full w-full object-contain object-left bg-transparent"
-        loading={load}
-        decoding="async"
-        {...(priority ? { fetchPriority: 'high' as const } : {})}
-      />
-    </span>
+    <>
+      <LenderNetworkMark className="th-logo-mark" />
+      <span className="th-logo-wordmark">
+        <span className="th-logo-name">LENDER</span>
+        <span className="th-logo-hub">TRUST HUB</span>
+      </span>
+    </>
   );
 
   if (!href) {
-    return <div className="flex items-center">{inner}</div>;
+    return (
+      <div className={cn('th-logo-lockup', inverted && 'th-logo-lockup-on-dark', className)}>
+        {inner}
+      </div>
+    );
   }
 
   return (
     <Link
       href={href}
-      className="group flex shrink-0 items-center rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] focus-visible:ring-offset-2"
-      aria-label={`${BRAND.name} — home`}
+      className={cn(
+        'group th-logo-lockup flex shrink-0 items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--th-accent)] focus-visible:ring-offset-2',
+        inverted && 'th-logo-lockup-on-dark',
+        className,
+      )}
+      aria-label={`${BRAND.name} home`}
     >
       {inner}
     </Link>
   );
 }
 
-/** Footer logo on navy — multi-color mark + lightened wordmark (no CSS invert) */
+/** Footer lockup on navy — same canonical mark, inverted wordmark. */
 export function BrandLogoStacked({ className = '' }: { className?: string }) {
-  return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={BRAND_LOGO.footerSrc}
-      alt={BRAND_LOGO.alt}
-      width={BRAND_LOGO.width}
-      height={BRAND_LOGO.height}
-      className={`h-12 w-auto max-w-[200px] object-contain object-left ${className}`}
-      loading="lazy"
-      decoding="async"
-    />
-  );
+  return <BrandLogo href="/" inverted className={className} />;
 }

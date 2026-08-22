@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { AskNetworkBar } from '@/components/network/ask-network-bar';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { GtagProvider } from '@/components/directory/GtagProvider';
 import { MyLendingShell } from '@/components/my-lending/my-lending-shell';
@@ -10,6 +9,7 @@ import { HubLastLocationBridge } from '@/components/network/hub-last-location-br
 import { SiteChrome } from '@/components/embed/site-chrome';
 import { BRAND_ICONS } from '@/lib/brand';
 import { ASK_NETWORK_STANDARD_VERSION } from '@/lib/network/standard-version';
+import { TH_CHASSIS_VERSION } from '@/lib/design/trusthub-visual-standard';
 import {
   SHARE_HUB,
   resolveShareOrigin,
@@ -68,6 +68,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
       { url: BRAND_ICONS.faviconIco, sizes: 'any' },
       { url: BRAND_ICONS.favicon16, sizes: '16x16', type: 'image/png' },
       { url: BRAND_ICONS.favicon32, sizes: '32x32', type: 'image/png' },
@@ -106,6 +107,7 @@ export default function RootLayout({
         className="flex min-h-screen flex-col bg-[#F8FAFC] text-[#1E293B] antialiased"
         data-hub="lender"
         data-network-standard={ASK_NETWORK_STANDARD_VERSION}
+        data-th-chassis={TH_CHASSIS_VERSION}
       >
         {/* network-standard: {ASK_NETWORK_STANDARD_VERSION} */}
         <ThemeProvider>
@@ -113,12 +115,7 @@ export default function RootLayout({
             <HubLastLocationBridge hubId="lender" />
             <GtagProvider />
             <SiteChrome
-              chrome={
-                <>
-                  <AskNetworkBar />
-                  <Navbar />
-                </>
-              }
+              chrome={<Navbar />}
               footer={<Footer />}
             >
               {children}
