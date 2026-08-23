@@ -16,6 +16,10 @@ import {
   getStateSlugsWithLenders,
   MORTGAGE_DATA_UPDATED,
 } from '@/lib/mortgage/stateLenders';
+import { lenders as allLenders } from '@/lib/lenders';
+import { parseLenderAskHandoff } from '@/lib/search-handoff/parse';
+import { resolveLenderAskHandoff } from '@/lib/search-handoff/resolve';
+import { filterLendersForAskHandoff } from '@/lib/search-handoff/match';
 import {
   buildMortgageStateDescription,
   buildMortgageStateH1,
@@ -98,7 +102,13 @@ export default async function MortgageStatePage({
   const stateMeta = STATE_BY_SLUG.get(slug);
   if (!stateMeta) notFound();
 
-  const stateLenders = getLendersByStateSlug(slug);
+  const askCtx = parseLenderAskHandoff(sp);
+  const askDest = askCtx ? resolveLenderAskHandoff(askCtx) : null;
+  const catalogStateLenders = getLendersByStateSlug(slug);
+  const stateLenders =
+    askCtx && askDest?.status === 'ok'
+      ? filterLendersForAskHandoff(allLenders, askCtx, askDest.geography).map((m) => m.lender)
+      : catalogStateLenders;
   const stats = getStateMortgageStats(slug);
   const jsonLd = buildMortgageStateJsonLd(stateMeta, stateLenders);
   const hmdaState = getHmdaStateMarketSummary(slug);
@@ -722,6 +732,7 @@ export default async function MortgageStatePage({
                   lender={lender}
                   rank={i + 1}
                   countyLabel={`${lender.county} County`}
+                  profileReturnPath={askDest?.href}
                 />
               ))}
             </div>

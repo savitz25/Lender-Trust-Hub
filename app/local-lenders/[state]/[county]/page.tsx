@@ -4,7 +4,10 @@ import { ChevronRight } from 'lucide-react';
 import { SearchBar } from '@/components/SearchBar';
 import { LenderDirectoryLoader } from '@/components/directory/LenderDirectoryLoader';
 import { JsonLd } from '@/components/directory/JsonLd';
-import { getAllCounties, getCountyLenderSegments } from '@/lib/lenders';
+import { getAllCounties, getCountyLenderSegments, lenders } from '@/lib/lenders';
+import { parseLenderAskHandoff } from '@/lib/search-handoff/parse';
+import { resolveLenderAskHandoff } from '@/lib/search-handoff/resolve';
+import { filterLendersForAskHandoff } from '@/lib/search-handoff/match';
 import { LENDER_LOCALITY_POLICY } from '@/lib/geo';
 import { RankingBasisPanel } from '@/components/research/ranking-basis-panel';
 import { ResearchPathNav } from '@/components/research/research-path-nav';
@@ -99,7 +102,26 @@ export default async function CountyLendersPage({
   const countyName = titleCase(county);
   const countyLabel = `${countyName} County, ${stateName}`;
   const segments = getCountyLenderSegments(state, county, countyLabel);
-  const { inCounty, nearby, inCountyCount, nearbyCount, localScarcity } = segments;
+  const askCtx = parseLenderAskHandoff(sp);
+  const askDest = askCtx ? resolveLenderAskHandoff(askCtx) : null;
+  const askMatches =
+    askCtx && askDest?.status === 'ok'
+      ? filterLendersForAskHandoff(lenders, askCtx, askDest.geography)
+      : null;
+  const allowIds = askMatches ? new Set(askMatches.map((m) => m.lender.id)) : null;
+  const inCounty = allowIds
+    ? segments.inCounty.filter((l) => allowIds.has(l.id))
+    : segments.inCounty;
+  const nearby = allowIds
+    ? segments.nearby.filter((l) => allowIds.has(l.id))
+    : segments.nearby;
+  const shownIds = new Set([...inCounty, ...nearby].map((l) => l.id));
+  const hmdaActivityOnly = (askMatches || [])
+    .filter((m) => m.reasons.includes('hmda_activity_county') && !shownIds.has(m.lender.id))
+    .map((m) => m.lender);
+  const inCountyCount = inCounty.length;
+  const nearbyCount = nearby.length;
+  const localScarcity = segments.localScarcity && !askCtx;
   const quality = assessCountyForPage(state, county);
   const hmdaCounty = getHmdaCountyEvidence(state, county);
   const description = buildMortgageCountyDescription(countyName, stateName, inCountyCount);
@@ -288,7 +310,29 @@ export default async function CountyLendersPage({
           </section>
         ) : null}
 
-        {inCountyCount === 0 && nearbyCount === 0 ? (
+        {hmdaActivityOnly.length > 0 ? (
+          <section className="mb-12" aria-labelledby="hmda-activity-heading">
+            <h2 id="hmda-activity-heading" className="mb-2 text-xl font-semibold text-[#0A2540]">
+              HMDA activity in this county
+            </h2>
+            <p className="mb-4 text-sm text-zinc-500">
+              Reported mortgage originations in {countyName} County. This is not a license, branch, or
+              office claim.
+            </p>
+            <LenderDirectoryLoader
+              lenders={hmdaActivityOnly}
+              countyLabel={countyLabel}
+              profileReturnPath={askDest?.href || `/local-lenders/${state}/${county}`}
+              showRank={false}
+              presenceLabel="HMDA activity in county"
+              showSearch={false}
+              emptyVariant="filtered"
+              emptyPlaceLabel={countyLabel}
+            />
+          </section>
+        ) : null}
+
+        {inCountyCount === 0 && nearbyCount === 0 && hmdaActivityOnly.length === 0 ? (
           <EmptyCoveragePanel
             variant="unmapped"
             title={`We haven’t listed in-county lenders in ${countyLabel} yet`}

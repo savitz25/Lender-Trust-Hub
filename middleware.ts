@@ -28,6 +28,26 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  if ((request.nextUrl.searchParams.get('src') || '').toLowerCase() === 'ask') {
+    const { parseLenderAskHandoff } = await import('@/lib/search-handoff/parse');
+    const {
+      isResolvedLenderAskPath,
+      resolveLenderAskHandoff,
+      shouldRedirectLenderAskEntry,
+    } = await import('@/lib/search-handoff/resolve');
+    const ctx = parseLenderAskHandoff(request.nextUrl.searchParams);
+    if (ctx) {
+      const dest = resolveLenderAskHandoff(ctx);
+      if (shouldRedirectLenderAskEntry(pathname) && !isResolvedLenderAskPath(pathname, dest)) {
+        const destUrl = request.nextUrl.clone();
+        const qIndex = dest.href.indexOf('?');
+        destUrl.pathname = qIndex === -1 ? dest.href : dest.href.slice(0, qIndex);
+        destUrl.search = qIndex === -1 ? '' : dest.href.slice(qIndex);
+        return NextResponse.redirect(destUrl, 307);
+      }
+    }
+  }
+
   return updateSession(request);
 }
 

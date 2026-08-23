@@ -16,6 +16,7 @@ export function LenderCard({
   countyLabel,
   profileReturnPath,
   presenceLabel,
+  matchPrecision,
 }: {
   lender: Lender;
   /** @deprecated Rank numbers imply a scoreboard — ignored on public cards */
@@ -23,6 +24,8 @@ export function LenderCard({
   countyLabel?: string;
   profileReturnPath?: string;
   presenceLabel?: LenderPresenceLabel | string;
+  /** Internal Ask ranking signal — not shown as consumer copy. */
+  matchPrecision?: { best: string; reasons: string[] };
 }) {
   void _rank;
   const geoLine = presenceLabel ?? homeLocalityLine(lender);
@@ -37,6 +40,8 @@ export function LenderCard({
       id={`lender-${lender.id}`}
       aria-label={`${lender.name} — mortgage ${lender.type.toLowerCase()}${countyLabel ? ` in ${countyLabel}` : ''}`}
       className="group flex h-full flex-col overflow-hidden transition-colors hover:border-emerald-300"
+      data-match-precision={matchPrecision?.best}
+      data-match-reasons={matchPrecision?.reasons.join(' ')}
     >
       <div className="flex flex-1 flex-col p-5">
         <div className="space-y-1.5">

@@ -7,6 +7,8 @@ import { GtagProvider } from '@/components/directory/GtagProvider';
 import { MyLendingShell } from '@/components/my-lending/my-lending-shell';
 import { HubLastLocationBridge } from '@/components/network/hub-last-location-bridge';
 import { SiteChrome } from '@/components/embed/site-chrome';
+import { Suspense } from 'react';
+import { AskSearchContextBanner } from '@/components/search-handoff/ask-search-context-banner';
 import { BRAND_ICONS } from '@/lib/brand';
 import { ASK_NETWORK_STANDARD_VERSION } from '@/lib/network/standard-version';
 import { TH_CHASSIS_VERSION } from '@/lib/design/trusthub-visual-standard';
@@ -118,6 +120,9 @@ export default function RootLayout({
               chrome={<Navbar />}
               footer={<Footer />}
             >
+              <Suspense fallback={null}>
+                <AskSearchContextBanner />
+              </Suspense>
               {children}
             </SiteChrome>
           </MyLendingShell>

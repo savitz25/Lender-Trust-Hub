@@ -40,6 +40,7 @@ const CITY_TO_COUNTY: Record<string, PlaceLocality> = {
   orlando: { county: 'Orange', countySlug: 'orange', stateSlug: 'florida' },
   tampa: { county: 'Hillsborough', countySlug: 'hillsborough', stateSlug: 'florida' },
   jacksonville: { county: 'Duval', countySlug: 'duval', stateSlug: 'florida' },
+  austin: { county: 'Travis', countySlug: 'travis', stateSlug: 'texas' },
   // Panhandle — regression targets
   'panama city': { county: 'Bay', countySlug: 'bay', stateSlug: 'florida' },
   'panama city beach': { county: 'Bay', countySlug: 'bay', stateSlug: 'florida' },
