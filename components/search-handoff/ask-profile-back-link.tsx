@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
@@ -23,25 +22,13 @@ function sanitizeFrom(from: string | null): string | null {
 
 export function AskProfileBackLink() {
   const searchParams = useSearchParams();
-  const [href, setHref] = useState<string | null>(null);
-  const [label, setLabel] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fromUrl = parseLenderAskHandoff(searchParams);
-    const fromSession = fromUrl ? null : readLenderAskHandoff();
-    const ctx = fromUrl || fromSession;
-    if (ctx) {
-      const dest = resolveLenderAskHandoff(ctx);
-      setHref(dest.href);
-      setLabel(dest.backLabel);
-      return;
-    }
-    const from = sanitizeFrom(searchParams.get('from'));
-    if (from) {
-      setHref(from);
-      setLabel('Back to results');
-    }
-  }, [searchParams]);
+  const fromUrl = parseLenderAskHandoff(searchParams);
+  const fromSession = fromUrl ? null : readLenderAskHandoff();
+  const ctx = fromUrl || fromSession;
+  const fallbackFrom = ctx ? null : sanitizeFrom(searchParams.get('from'));
+  const destination = ctx ? resolveLenderAskHandoff(ctx) : null;
+  const href = destination?.href || fallbackFrom;
+  const label = destination?.backLabel || (fallbackFrom ? 'Back to results' : null);
 
   if (!href || !label) return null;
 
