@@ -10,7 +10,7 @@ export const BRAND = {
   shortName: 'LTH',
   domain: 'lendertrusthub.com',
   url: 'https://www.lendertrusthub.com',
-  email: 'hello@lendertrusthub.com',
+  email: 'hello@asktrusthub.com',
   tagline: LENDER_TAGLINE,
   colors: LENDER_BRAND,
 } as const;
