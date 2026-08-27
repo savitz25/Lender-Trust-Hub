@@ -6,3 +6,6 @@ export * from './lei-resolution';
 export * from './build-graph';
 export * from './fingerprint';
 export * from './id-tests';
+export * from './profile-metrics';
+export * from './profile-intelligence';
+export * from './profile-tests';

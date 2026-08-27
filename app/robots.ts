@@ -14,6 +14,9 @@ export default function robots(): MetadataRoute.Robots {
           '/my-lending',
           '/my-lending/',
           '/auth/',
+          // National profile intelligence Preview QA — noindex until indexing gate
+          '/lender',
+          '/lender/',
         ],
       },
     ],

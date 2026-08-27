@@ -1,0 +1,22 @@
+{
+  "contract_version": "lend-nat-011-v1",
+  "forbidden": ["Trust Score", "risk score", "quality score", "complaint score", "approval score", "best/worst ranking", "A-F grade"],
+  "metrics": [
+    {"metric_key": "hmda_application_count", "source": "HMDA 2025 state grain", "numerator": "sum(applications)", "denominator": "n/a (count)", "available_in_current_vintage": true, "safe_for_future_public_display": true},
+    {"metric_key": "hmda_origination_count", "source": "HMDA 2025 state grain", "numerator": "sum(originations)", "denominator": "n/a (count)", "available_in_current_vintage": true, "safe_for_future_public_display": true},
+    {"metric_key": "hmda_origination_rate", "source": "HMDA 2025 state grain", "numerator": "originations", "denominator": "state-grain applications", "available_in_current_vintage": true, "safe_for_future_public_display": true},
+    {"metric_key": "hmda_denial_count", "source": "HMDA 2025 county grain", "numerator": "sum(denials)", "denominator": "n/a (count)", "available_in_current_vintage": true, "safe_for_future_public_display": true},
+    {"metric_key": "hmda_denial_rate", "source": "HMDA 2025 mixed grain", "numerator": "county-grain denials", "denominator": "state-grain applications (never denials/observation-row-count)", "available_in_current_vintage": true, "safe_for_future_public_display": true},
+    {"metric_key": "hmda_purchase_application_count", "available_in_current_vintage": false, "safe_for_future_public_display": false, "limitations": "NULL in current LEI summaries"},
+    {"metric_key": "hmda_refinance_application_count", "available_in_current_vintage": false, "safe_for_future_public_display": false},
+    {"metric_key": "hmda_conventional_application_count", "available_in_current_vintage": false, "safe_for_future_public_display": false},
+    {"metric_key": "hmda_fha_application_count", "available_in_current_vintage": false, "safe_for_future_public_display": false},
+    {"metric_key": "hmda_va_application_count", "available_in_current_vintage": false, "safe_for_future_public_display": false},
+    {"metric_key": "hmda_usda_application_count", "available_in_current_vintage": false, "safe_for_future_public_display": false},
+    {"metric_key": "states_with_hmda_activity", "source": "HMDA 2025 state grain", "available_in_current_vintage": true, "safe_for_future_public_display": true, "limitations": "not operates-in / not HQ"},
+    {"metric_key": "counties_with_hmda_activity", "source": "HMDA 2025 county grain", "available_in_current_vintage": true, "safe_for_future_public_display": true},
+    {"metric_key": "cfpb_complaint_count", "source": "CFPB CCDB confirmed bridges only", "available_in_current_vintage": true, "safe_for_future_public_display": true, "limitations": "not a score; not enforcement"},
+    {"metric_key": "cfpb_complaint_24m", "source": "CFPB CCDB date_received>=2024-08-26", "available_in_current_vintage": true, "safe_for_future_public_display": true},
+    {"metric_key": "enforcement_event_count", "source": "federal enforcement confirmed respondents", "available_in_current_vintage": true, "safe_for_future_public_display": true, "limitations": "complaint bridge is not enforcement proof; NONE OBSERVED is not proof of no history"}
+  ]
+}
