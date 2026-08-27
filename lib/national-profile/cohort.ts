@@ -9,7 +9,7 @@ import renderFile from '@/docs/lend-nat-014-render-cohort.json';
 export const NATIONAL_PROFILE_GATE = {
   mode: 'controlled_index' as const,
   productionLaunchEnabled: true,
-  landingNoindex: true,
+  landingNoindex: false,
   sitemap: true,
   contractVersion: 'lend-nat-011-v1',
   cohortVersion: 'lend-nat-014-v1',

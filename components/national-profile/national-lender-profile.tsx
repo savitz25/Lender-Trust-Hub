@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { ProfileIntelligence } from '@/lib/identity/profile-intelligence';
 import type { NationalProfileCohortEntry } from '@/lib/national-profile/cohort';
+import { nationalPresentationName } from '@/lib/national-profile/discovery';
 import {
   coverageCopy,
   familyLabel,
@@ -105,6 +106,7 @@ export function NationalLenderProfile({
   const classes = profile.identity.classifications || [];
   const cover = coverageCopy(profile.coverage);
   const typeLabel = primaryClassification(classes);
+  const headingName = nationalPresentationName(profile.identity.canonical_name, profile.identity.display_name);
   const nmls = ids.find((i) => i.identifier_type === 'NMLS_INSTITUTION');
   const lei = ids.find((i) => i.identifier_type === 'LEI');
   const cert = ids.find((i) => i.identifier_type === 'FDIC_CERT');
@@ -177,14 +179,14 @@ export function NationalLenderProfile({
               </Link>
             </li>
             <li aria-hidden="true">/</li>
-            <li className="min-w-0 break-words text-slate-800">{profile.identity.display_name || profile.identity.canonical_name}</li>
+            <li className="min-w-0 break-words text-slate-800">{headingName}</li>
           </ol>
         </nav>
 
         <header className="min-w-0 max-w-full rounded-2xl border border-slate-200 bg-[#0A2540] px-4 py-6 text-white sm:px-6">
           <p className="text-xs font-semibold uppercase tracking-wider text-teal-200">Independent lender research</p>
           <h1 className="mt-1 break-words text-2xl font-bold leading-tight sm:text-3xl">
-            {profile.identity.display_name || profile.identity.canonical_name}
+            {headingName}
           </h1>
           {typeLabel ? <p className="mt-2 text-sm text-slate-200">{typeLabel}</p> : null}
           <ul className="mt-4 flex min-w-0 flex-wrap gap-2 text-sm">

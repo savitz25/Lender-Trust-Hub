@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   /** Indexable public research surfaces only — workspace routes excluded */
   const staticPaths: Array<{ path: string; priority: number; changeFrequency: 'weekly' | 'monthly' }> = [
     { path: '/', priority: 1, changeFrequency: 'weekly' },
+    { path: '/lender', priority: 0.9, changeFrequency: 'weekly' },
     { path: '/local-lenders', priority: 0.95, changeFrequency: 'weekly' },
     { path: '/tools/loan-estimate-analyzer', priority: 0.92, changeFrequency: 'weekly' },
     { path: '/tools/compare-loan-estimates', priority: 0.92, changeFrequency: 'weekly' },

@@ -5,6 +5,7 @@ import { NationalLenderProfile } from '@/components/national-profile/national-le
 import { NATIONAL_PROFILE_COHORT, getCohortBySlug, nationalProfilePath } from '@/lib/national-profile/cohort';
 import { fetchNationalProfile } from '@/lib/national-profile/fetch';
 import { buildNationalProfileJsonLd } from '@/lib/national-profile/jsonld';
+import { nationalPresentationName } from '@/lib/national-profile/discovery';
 import {
   isNationalIndexingSlug,
   resolveNationalProfileSlug,
@@ -34,7 +35,9 @@ export async function generateMetadata({
   if (!entry) return { title: 'Lender research not found', robots: nationalProfileRobots() };
   const result = await fetchNationalProfile(slug);
   if (!result) return { title: 'Lender research not found', robots: nationalProfileRobots() };
-  const name = result.profile.identity.display_name || result.profile.identity.canonical_name || entry.displayName;
+  const name =
+    nationalPresentationName(result.profile.identity.canonical_name, result.profile.identity.display_name) ||
+    entry.displayName;
   const title = nationalProfileTitle(name);
   const description = nationalProfileDescriptionForSlug(name, slug);
   return {
@@ -59,7 +62,7 @@ export default async function NationalLenderPage({
   if (!result) notFound();
 
   const jsonLd = buildNationalProfileJsonLd({
-    name: result.profile.identity.display_name || result.profile.identity.canonical_name,
+    name: nationalPresentationName(result.profile.identity.canonical_name, result.profile.identity.display_name),
     slug,
     identifiers: result.profile.identity.identifiers,
   });

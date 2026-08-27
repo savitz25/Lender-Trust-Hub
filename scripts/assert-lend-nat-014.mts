@@ -87,7 +87,11 @@ assert(
   'non-cohort render is PHH hold only'
 );
 assert('IDX19-src', nationalSitemap.includes('nationalIndexingSitemapLocs') && !nationalSitemap.includes('lender_cfpb_complaints') && !nationalSitemap.includes('lender_hmda_observations'), 'sitemap from manifest');
-assert('IDX20-src', landing.includes('nationalProfileRobots') && seo.includes('isLanding'), 'landing noindex helper');
+assert('IDX20-src', seo.includes('isLanding') && publicLenderLandingFailClosed(), 'profile helper still fail-closed for unknown slugs');
+
+function publicLenderLandingFailClosed() {
+  return read('lib/national-profile/publication.ts').includes('if (input.isLanding || !input.slug)');
+}
 assert('IDX21', view.includes('overflow-x-clip') && view.includes('min-w-0'), '390 overflow containment');
 assert('IDX22', view.includes('overflow-x-auto') && view.includes('break-words'), '360 wrap');
 assert('IDX23', view.includes('px-4') && view.includes('min-w-0'), '320 usable padding');

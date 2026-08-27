@@ -74,7 +74,7 @@ export function runIdxContractTests(): IdxResult[] {
     nationalIndexingSitemapLocs().every((u) => u.includes('/lender/') && !u.includes('/lenders/')),
     'national sitemap uses /lender/{slug}'
   );
-  check('IDX20', publicLenderRobots({ isLanding: true }).index === false, '/lender landing noindex');
+  check('IDX20', publicLenderRobots({ isLanding: true }).index === false, 'unknown/landing helper remains fail-closed for profiles');
 
   const rocketRobots = publicLenderRobots({ slug: 'rocket-mortgage' });
   const holdRobots = publicLenderRobots({ slug: 'phh-home-loans' });
