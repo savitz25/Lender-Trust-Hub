@@ -13,7 +13,7 @@ import {
   stateName,
   topEntries,
 } from '@/lib/national-profile/format';
-import { NATIONAL_PROFILE_GATE } from '@/lib/national-profile/cohort';
+
 
 function asRecord(v: unknown): Record<string, unknown> {
   return v && typeof v === 'object' && !Array.isArray(v) ? (v as Record<string, unknown>) : {};
@@ -87,11 +87,13 @@ export function NationalLenderProfile({
   profile,
   fetchSource,
   fetchMs,
+  indexable = false,
 }: {
   entry: NationalProfileCohortEntry;
   profile: ProfileIntelligence;
   fetchSource: string;
   fetchMs: number;
+  indexable?: boolean;
 }) {
   const lending = asRecord(profile.lending);
   const geo = asRecord(profile.geography);
@@ -148,13 +150,18 @@ export function NationalLenderProfile({
       data-lth-contract={profile.contract_version}
       data-lth-stable-key={entry.stableKey}
       data-lth-institution-id={profile.identity.institution_id}
+      data-lth-robots={indexable ? 'index,follow' : 'noindex,nofollow'}
     >
       <div className="th-shell mx-auto w-full max-w-[1200px] px-4 py-8 sm:py-10">
-        {NATIONAL_PROFILE_GATE.noindex ? (
-          <p className="mb-4 break-words rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-snug text-amber-950">
-            Preview research profile. Not indexed. Not a ranking.
+        {indexable ? (
+          <p className="mb-4 break-words rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs leading-snug text-slate-700">
+            Independent research profile. Not a ranking.
           </p>
-        ) : null}
+        ) : (
+          <p className="mb-4 break-words rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-snug text-amber-950">
+            Research profile. Not indexed. Not a ranking.
+          </p>
+        )}
 
         <nav aria-label="Breadcrumb" className="mb-4 text-sm text-slate-600">
           <ol className="flex min-w-0 flex-wrap gap-1">

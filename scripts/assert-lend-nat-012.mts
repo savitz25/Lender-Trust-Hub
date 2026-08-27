@@ -41,7 +41,14 @@ assert('LPI19-ui', view.includes('No lender score') || view.includes('No Trust H
 assert('LPI19b', !view.includes('best lender') && !view.includes('top lender'), 'no ranking copy');
 assert('LPI20-src', !builtLd.includes('aggregateRating') && !builtLd.includes('reviewRating') && !builtLd.includes('ratingValue'), 'jsonld no ratings');
 assert('LPI24', view.includes('<h1') && (read('components/embed/site-chrome.tsx').includes('id="main-content"')) && read('components/Navbar.tsx').includes('Skip to content'), 'a11y shell');
-assert('LPI25-src', robots.includes("'/lender'") && page.includes('nationalProfileRobots') && !sitemap.includes('/lender/'), 'noindex / not in sitemap');
+assert(
+  'LPI25-src',
+  !robots.includes("'/lender'") &&
+    page.includes('nationalProfileRobotsForSlug') &&
+    !sitemap.includes('/lender/') &&
+    robots.includes('sitemap-lenders-national.xml'),
+  'no blanket /lender disallow; catalog sitemap unchanged; national sitemap listed'
+);
 assert('LPI26', fetchSrc.includes('lender_profile_intelligence') && !fetchSrc.includes('lender_cfpb_complaints') && !fetchSrc.includes('lender_hmda_observations'), 'snapshot PK not live scans');
 assert('PREV8-src', !fetchSrc.includes('lend-nat-011-cohort.json') && !fetchSrc.includes('gated_fixture'), 'fetch never loads fixture JSON');
 {

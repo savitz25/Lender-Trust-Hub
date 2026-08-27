@@ -70,7 +70,11 @@ export function runLpiContractTests(cohort: Record<string, ProfileIntelligence>)
       })
     : {};
   check('LPI20', !jsonLdHasForbiddenRatings(ld), 'no aggregateRating/reviewRating');
-  check('LPI25', NATIONAL_PROFILE_GATE.noindex && NATIONAL_PROFILE_GATE.sitemap === false, 'noindex preview gate');
+  check(
+    'LPI25',
+    NATIONAL_PROFILE_GATE.mode === 'controlled_index' && NATIONAL_PROFILE_GATE.landingNoindex === true,
+    'controlled index; landing remains noindex'
+  );
   check('LPI27', nationalProfileAbsoluteTitle('Rocket Mortgage').split('Lender Trust Hub').length === 2, 'brand once');
   check('LPI29', NATIONAL_PROFILE_COHORT.every((r) => !r.stableKey.includes('person') && !r.stableKey.includes('branch')), 'no MLO/branch creation');
   check('LPI-path', nationalProfilePath('rocket-mortgage') === '/lender/rocket-mortgage', 'canonical /lender/{slug}');

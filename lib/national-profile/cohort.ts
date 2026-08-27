@@ -1,13 +1,20 @@
 /**
- * LEND-NAT-012 — Preview publication gate.
- * Only this allowlist may render at /lender/{slug}. Not a sitemap. Not mass indexation.
+ * LEND-NAT-014 — controlled render + indexing gate.
+ * Rendering is the render cohort (indexing cohort + QA holds).
+ * Indexation is a strict subset via publicLenderRobots.
  */
 
+import renderFile from '@/docs/lend-nat-014-render-cohort.json';
+
 export const NATIONAL_PROFILE_GATE = {
-  mode: 'preview' as const,
-  noindex: true,
-  sitemap: false,
+  mode: 'controlled_index' as const,
+  productionLaunchEnabled: true,
+  landingNoindex: true,
+  sitemap: true,
   contractVersion: 'lend-nat-011-v1',
+  cohortVersion: 'lend-nat-014-v1',
+  /** @deprecated global noindex; per-profile robots via publicLenderRobots */
+  noindex: false,
 };
 
 export type NationalProfileCohortEntry = {
@@ -19,7 +26,8 @@ export type NationalProfileCohortEntry = {
   notes: string;
 };
 
-export const NATIONAL_PROFILE_COHORT: NationalProfileCohortEntry[] = [
+/** Original LEND-NAT-012 QA ten. Still render; index only if they pass 014 policy. */
+export const NATIONAL_PROFILE_QA_COHORT: NationalProfileCohortEntry[] = [
   {
     key: 'rocket',
     slug: 'rocket-mortgage',
@@ -98,9 +106,35 @@ export const NATIONAL_PROFILE_COHORT: NationalProfileCohortEntry[] = [
     stableKey: 'gleif-lei:549300KO4XT2PA011C25',
     entityId: 'd1f252fa-2d62-5965-8722-17dbff8f57e8',
     displayName: 'PHH Home Loans, LLC',
-    notes: 'PHH Services/Corporation not folded from ownership',
+    notes: 'PUBLICATION_HOLD — identity only; render noindex',
   },
 ];
+
+const QA_BY_STABLE = new Map(NATIONAL_PROFILE_QA_COHORT.map((r) => [r.stableKey, r]));
+
+type RenderRow = {
+  institution_id: string;
+  stable_key: string;
+  slug: string;
+  display_name: string;
+  publication_status: string;
+  reason: string;
+  index?: boolean;
+};
+
+export const NATIONAL_PROFILE_COHORT: NationalProfileCohortEntry[] = (renderFile.rows as RenderRow[]).map(
+  (row) => {
+    const qa = QA_BY_STABLE.get(row.stable_key);
+    return {
+      key: qa?.key || row.slug,
+      slug: row.slug,
+      stableKey: row.stable_key,
+      entityId: row.institution_id,
+      displayName: qa?.displayName || row.display_name,
+      notes: qa?.notes || `${row.publication_status}: ${row.reason}`,
+    };
+  }
+);
 
 export function getCohortBySlug(slug: string): NationalProfileCohortEntry | undefined {
   return NATIONAL_PROFILE_COHORT.find((row) => row.slug === slug);
