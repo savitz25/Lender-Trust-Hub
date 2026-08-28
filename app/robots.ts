@@ -20,6 +20,8 @@ export default function robots(): MetadataRoute.Robots {
           '/my-lending',
           '/my-lending/',
           '/auth/',
+          '/internal/',
+          '/internal',
           // Do not blanket-disallow /lender/{slug}. Per-profile robots + sitemap decide indexation.
         ],
       },

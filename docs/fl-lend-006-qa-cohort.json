@@ -1,0 +1,221 @@
+{
+  "task": "FL-LEND-006",
+  "public": false,
+  "index": false,
+  "sitemap": false,
+  "production_renderer": false,
+  "federal_slot": "NONE_AVAILABLE_IN_WORKSET",
+  "count": 30,
+  "rows": [
+    {
+      "institution_id": "a870efe4-ba3d-5084-b24b-a6227137e3f7",
+      "nmls_id": "1025894",
+      "slug": "mutual-of-omaha-mortgage",
+      "name": "MUTUAL OF OMAHA MORTGAGE, INC.",
+      "tag": "national_overlap"
+    },
+    {
+      "institution_id": "6247e4e6-c3be-5817-a216-9ec4742965c1",
+      "nmls_id": "1000869",
+      "slug": "island-mortgage-inc",
+      "name": "ISLAND MORTGAGE, INC.",
+      "tag": "florida_only_new"
+    },
+    {
+      "institution_id": "f614fc7d-ebac-5642-b664-1382bb142472",
+      "nmls_id": "1003861",
+      "slug": "7th-level-mortgage-limited-liability-company",
+      "name": "7TH LEVEL MORTGAGE LIMITED LIABILITY COMPANY",
+      "tag": "mbr_only"
+    },
+    {
+      "institution_id": "9a74b928-80a0-5cfd-a762-917d31701352",
+      "nmls_id": "101475",
+      "slug": "federated-mortgage-corp",
+      "name": "FEDERATED MORTGAGE CORP.",
+      "tag": "mld_only"
+    },
+    {
+      "institution_id": "618fffc8-bcd7-5b39-b30b-51d1ee10fd57",
+      "nmls_id": "1120111",
+      "slug": "griffin-funding-inc",
+      "name": "GRIFFIN FUNDING, INC.",
+      "tag": "dual_mbr_mld"
+    },
+    {
+      "institution_id": "8ba3ae07-2bd0-5704-8bdf-35b40e6ec1c0",
+      "nmls_id": "101794",
+      "slug": "holiday-inn-club-vacations-incorporated",
+      "name": "HOLIDAY INN CLUB VACATIONS INCORPORATED",
+      "tag": "servicer_yes"
+    },
+    {
+      "institution_id": "d21006f2-d62c-5896-93d4-acf6875cf586",
+      "nmls_id": "1011688",
+      "slug": "florida-mortgage-processing-group-llc",
+      "name": "FLORIDA MORTGAGE PROCESSING GROUP LLC",
+      "tag": "one_ofr_event"
+    },
+    {
+      "institution_id": "22399013-9757-5353-9aad-1b0454b8205f",
+      "nmls_id": "1036987",
+      "slug": "capital-international-financial-inc",
+      "name": "CAPITAL INTERNATIONAL FINANCIAL INC.",
+      "tag": "multiple_ofr_events"
+    },
+    {
+      "institution_id": "9661955a-27e2-52b4-ad0f-42249e438920",
+      "nmls_id": "1040637",
+      "slug": "national-mortgage-group",
+      "name": "NATIONAL MORTGAGE GROUP",
+      "tag": "fine"
+    },
+    {
+      "institution_id": "5ab62f02-ea45-54f9-9272-fe3bcbd4faf5",
+      "nmls_id": "1004165",
+      "slug": "click-quick-loan-llc",
+      "name": "CLICK QUICK LOAN LLC",
+      "tag": "no_confirmed_ofr"
+    },
+    {
+      "institution_id": "d52a9857-ad53-5286-8eb8-3ebf1b21835e",
+      "nmls_id": "1043",
+      "slug": "new-day-financial",
+      "name": "NEW DAY FINANCIAL, LLC",
+      "tag": "hmda"
+    },
+    {
+      "institution_id": "8d87131c-8f83-508b-a2f5-33c834714d3c",
+      "nmls_id": "1156346",
+      "slug": "premier-lending-corp",
+      "name": "PREMIER LENDING CORP",
+      "tag": "cfpb"
+    },
+    {
+      "institution_id": "5f8b618a-6039-5485-beb4-b466e95b993b",
+      "nmls_id": "1005474",
+      "slug": "mortgage-lending-masters-llc",
+      "name": "MORTGAGE LENDING MASTERS, LLC",
+      "tag": "sparse"
+    },
+    {
+      "institution_id": "24871db0-67b7-5861-8e99-9cfee7e533a0",
+      "nmls_id": "1027328",
+      "slug": "american-fidelity-financial-solutions-inc",
+      "name": "AMERICAN FIDELITY FINANCIAL SOLUTIONS INC",
+      "tag": "long_name"
+    },
+    {
+      "institution_id": "6e03493b-bb27-52e4-bcea-407490cf9e3d",
+      "nmls_id": "103430",
+      "slug": "blackburne-and-sons-realty-capital-corporation",
+      "name": "BLACKBURNE & SONS REALTY CAPITAL CORPORATION",
+      "tag": "multiple_credentials"
+    },
+    {
+      "institution_id": "6ab370cc-5f1b-5989-bffd-d74f8aeabf3f",
+      "nmls_id": "1006777",
+      "slug": "uptown-financial-group-inc",
+      "name": "UPTOWN FINANCIAL GROUP, INC.",
+      "tag": "fill"
+    },
+    {
+      "institution_id": "b04a9d0b-e339-571c-a59d-b0e110332b63",
+      "nmls_id": "1006977",
+      "slug": "integrity-first-lending-llc",
+      "name": "INTEGRITY FIRST LENDING LLC",
+      "tag": "fill"
+    },
+    {
+      "institution_id": "b6325e5f-4992-5bc4-8467-49f82b12d561",
+      "nmls_id": "1008714",
+      "slug": "wheeler-capital-partners-llc",
+      "name": "WHEELER CAPITAL PARTNERS LLC",
+      "tag": "fill"
+    },
+    {
+      "institution_id": "61add5b5-e92d-5f00-82b3-da52d9089951",
+      "nmls_id": "10098",
+      "slug": "par-east-mortgage-co-inc",
+      "name": "PAR EAST MORTGAGE CO., INC.",
+      "tag": "fill"
+    },
+    {
+      "institution_id": "c228a045-c5be-51e9-9a55-e220847a3f0f",
+      "nmls_id": "1011251",
+      "slug": "north-point-mortgage-advisors-llc",
+      "name": "NORTH POINT MORTGAGE ADVISORS, LLC",
+      "tag": "fill"
+    },
+    {
+      "institution_id": "191d0a9f-85ef-504f-a34d-a967d356682b",
+      "nmls_id": "1014298",
+      "slug": "1st-american-lending-llc",
+      "name": "1ST AMERICAN LENDING LLC",
+      "tag": "fill"
+    },
+    {
+      "institution_id": "a00ce671-2b6b-57b6-9f8f-d92dd5b81824",
+      "nmls_id": "101561",
+      "slug": "howard-hanna-financial-services-inc",
+      "name": "HOWARD HANNA FINANCIAL SERVICES, INC.",
+      "tag": "fill"
+    },
+    {
+      "institution_id": "aae1b96c-d91e-521b-9688-225cf2f3b0d9",
+      "nmls_id": "101770",
+      "slug": "northwest-funding-group-inc",
+      "name": "NORTHWEST FUNDING GROUP, INC.",
+      "tag": "fill"
+    },
+    {
+      "institution_id": "e8c92561-9f43-5d92-b109-e160656af5d8",
+      "nmls_id": "1018",
+      "slug": "go-mortgage-llc",
+      "name": "GO MORTGAGE, LLC",
+      "tag": "fill"
+    },
+    {
+      "institution_id": "937dd722-dc0d-5383-8e00-e9e2ba87d4b5",
+      "nmls_id": "1018333",
+      "slug": "total-media-management-llc",
+      "name": "TOTAL MEDIA MANAGEMENT, LLC",
+      "tag": "fill"
+    },
+    {
+      "institution_id": "5725bcf3-62eb-5f54-913c-6af83027f47f",
+      "nmls_id": "1018489",
+      "slug": "upstate-premier-mortgage-inc",
+      "name": "UPSTATE PREMIER MORTGAGE, INC.",
+      "tag": "fill"
+    },
+    {
+      "institution_id": "29c7ced9-cf64-5e93-bc37-4ddc498121cc",
+      "nmls_id": "1019",
+      "slug": "mld-mortgage-inc",
+      "name": "MLD MORTGAGE INC.",
+      "tag": "fill"
+    },
+    {
+      "institution_id": "8f4b4c83-c119-5f37-a168-eddff73ba4f8",
+      "nmls_id": "1019709",
+      "slug": "concord-one-financial-llc",
+      "name": "CONCORD ONE FINANCIAL, LLC",
+      "tag": "fill"
+    },
+    {
+      "institution_id": "4582c6b8-9249-5fb2-a881-f546af8d7ef6",
+      "nmls_id": "1019723",
+      "slug": "erika-diana-johnson",
+      "name": "ERIKA DIANA JOHNSON",
+      "tag": "fill"
+    },
+    {
+      "institution_id": "3db97cca-e753-5249-bd19-f6d189b51335",
+      "nmls_id": "1019791",
+      "slug": "full-beaker-inc",
+      "name": "FULL BEAKER, INC.",
+      "tag": "fill"
+    }
+  ]
+}

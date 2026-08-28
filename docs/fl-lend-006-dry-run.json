@@ -1,0 +1,636 @@
+{
+  "target": "hidcrbexurginnuqgipx",
+  "table_exists": null,
+  "baseline": {
+    "institutions": 14623,
+    "nmls": 6641,
+    "person_mlo": 0,
+    "branch": 0,
+    "lei": 4715,
+    "fdic": 5377,
+    "ncua": 1096,
+    "rssd": 8100,
+    "hmda": 454480,
+    "cfpb": 458146,
+    "enf": 17655,
+    "profiles": 8447,
+    "licenses": 6435,
+    "sre": 2515
+  },
+  "baseline_ok": true,
+  "workset": 6303,
+  "held_nmls": 22,
+  "held_rows": 23,
+  "approved": 6435,
+  "unique_nmls": 6325,
+  "overlap": {
+    "has_lpi": 127,
+    "no_lpi": 6176,
+    "sum": 6303,
+    "render_enabled": 21,
+    "indexed": 21,
+    "searchable": 21
+  },
+  "licenses": {
+    "creds_confirmed": 6412,
+    "mbr_confirmed": 5040,
+    "mld_confirmed": 1372
+  },
+  "dual": 54,
+  "servicer_companies": 492,
+  "contacts": {
+    "phone_companies": 5862,
+    "prim_addr_companies": 6303,
+    "mail_addr_companies": 6190
+  },
+  "ofr": {
+    "confirmed_events": 342,
+    "confirmed_institutions": 294,
+    "confirmed_institutions_in_workset": 294,
+    "no_event_profiles": 6009,
+    "review_on_workset": 0,
+    "unresolved_on_workset": 0,
+    "confirmed_fine_obs": 190,
+    "confirmed_fine_dollars": 701425.0
+  },
+  "overlays": {
+    "hmda_profiles": 89,
+    "cfpb_confirmed_profiles": 22,
+    "federal_profiles": 0
+  },
+  "slugs": {
+    "algorithm": [
+      "1. Reuse existing national render-cohort slug when institution_id already has one.",
+      "2. Else reuse indexing-cohort slug.",
+      "3. Else slugify OFR firm_name (lower, '&'\u2192'and', non [a-z0-9]\u2192'-', collapse, trim, max 80).",
+      "4. If reserved or colliding: {base}-nmls-{nmls_id}.",
+      "5. If still colliding: {base}-nmls-{nmls_id}-{institution_id[:8]}.",
+      "Reserved = catalog mockData slugs \u222a national render 181 \u222a indexing 180 \u222a search 181 \u222a generated Florida slugs \u222a {florida,lender,lenders}."
+    ],
+    "strategies": {
+      "reuse_national_render": 21,
+      "name": 6246,
+      "disambiguated_nmls": 36
+    },
+    "collision_count": 0,
+    "sample_collisions": [],
+    "sample_disambiguated": [
+      {
+        "institution_id": "33c46267-ed1b-5151-a9ca-8b4a5f2af78e",
+        "nmls": "1300486",
+        "base": "empire-mortgage-llc",
+        "slug": "empire-mortgage-llc-nmls-1300486",
+        "name": "EMPIRE MORTGAGE LLC"
+      },
+      {
+        "institution_id": "3de001a9-a083-5484-b0c0-ca0a3b45f6dc",
+        "nmls": "1485736",
+        "base": "the-mortgage-professionals-llc",
+        "slug": "the-mortgage-professionals-llc-nmls-1485736",
+        "name": "THE MORTGAGE PROFESSIONALS, LLC."
+      },
+      {
+        "institution_id": "11c6bfda-2278-501d-8dee-1cc6f22f3df4",
+        "nmls": "1717120",
+        "base": "united-mortgage-group-inc",
+        "slug": "united-mortgage-group-inc-nmls-1717120",
+        "name": "UNITED MORTGAGE GROUP INC."
+      },
+      {
+        "institution_id": "5a376752-6169-5099-8142-1f9e279b9b33",
+        "nmls": "1759355",
+        "base": "prime-rate-mortgage-llc",
+        "slug": "prime-rate-mortgage-llc-nmls-1759355",
+        "name": "PRIME RATE MORTGAGE LLC"
+      },
+      {
+        "institution_id": "e65a5686-1ab2-59ab-bd17-56bc66f19cc8",
+        "nmls": "2012339",
+        "base": "elite-mortgage-group-llc",
+        "slug": "elite-mortgage-group-llc-nmls-2012339",
+        "name": "ELITE MORTGAGE GROUP LLC"
+      },
+      {
+        "institution_id": "ecfbb178-1e98-5156-a0a3-5a20025a5880",
+        "nmls": "2114606",
+        "base": "cornerstone-mortgage-group-llc",
+        "slug": "cornerstone-mortgage-group-llc-nmls-2114606",
+        "name": "CORNERSTONE MORTGAGE GROUP, LLC"
+      },
+      {
+        "institution_id": "f5499628-fa09-553c-878a-50f22d3933b5",
+        "nmls": "2190975",
+        "base": "stellar-mortgage-corporation",
+        "slug": "stellar-mortgage-corporation-nmls-2190975",
+        "name": "STELLAR MORTGAGE CORPORATION"
+      },
+      {
+        "institution_id": "efb5df24-da79-5f0f-ab07-f65781815a58",
+        "nmls": "231891",
+        "base": "town-and-country-mortgage-services-inc",
+        "slug": "town-and-country-mortgage-services-inc-nmls-231891",
+        "name": "TOWN & COUNTRY MORTGAGE SERVICES, INC."
+      },
+      {
+        "institution_id": "37119d50-669b-5892-a12b-3512dbed6e94",
+        "nmls": "2337695",
+        "base": "mortgage-capital-llc",
+        "slug": "mortgage-capital-llc-nmls-2337695",
+        "name": "MORTGAGE CAPITAL LLC"
+      },
+      {
+        "institution_id": "2a7e4769-b0f5-5ff8-b39d-d8ff5d76743d",
+        "nmls": "2372305",
+        "base": "bravo-mortgage-llc",
+        "slug": "bravo-mortgage-llc-nmls-2372305",
+        "name": "BRAVO MORTGAGE LLC"
+      },
+      {
+        "institution_id": "14f7739a-ccf1-5417-a961-9d645fb9c83e",
+        "nmls": "237990",
+        "base": "professional-mortgage-solutions-inc",
+        "slug": "professional-mortgage-solutions-inc-nmls-237990",
+        "name": "PROFESSIONAL MORTGAGE SOLUTIONS INC"
+      },
+      {
+        "institution_id": "1e1fb8dd-f6dd-5922-aa0b-2a232a99e048",
+        "nmls": "2385035",
+        "base": "universal-mortgage-llc",
+        "slug": "universal-mortgage-llc-nmls-2385035",
+        "name": "UNIVERSAL MORTGAGE LLC"
+      }
+    ],
+    "unique_slugs": 6303
+  },
+  "security": {
+    "grants": [
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "anon",
+        "privilege_type": "DELETE"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "anon",
+        "privilege_type": "INSERT"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "anon",
+        "privilege_type": "REFERENCES"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "anon",
+        "privilege_type": "SELECT"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "anon",
+        "privilege_type": "TRIGGER"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "anon",
+        "privilege_type": "TRUNCATE"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "anon",
+        "privilege_type": "UPDATE"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "authenticated",
+        "privilege_type": "DELETE"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "authenticated",
+        "privilege_type": "INSERT"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "authenticated",
+        "privilege_type": "REFERENCES"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "authenticated",
+        "privilege_type": "SELECT"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "authenticated",
+        "privilege_type": "TRIGGER"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "authenticated",
+        "privilege_type": "TRUNCATE"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "authenticated",
+        "privilege_type": "UPDATE"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "postgres",
+        "privilege_type": "DELETE"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "postgres",
+        "privilege_type": "INSERT"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "postgres",
+        "privilege_type": "REFERENCES"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "postgres",
+        "privilege_type": "SELECT"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "postgres",
+        "privilege_type": "TRIGGER"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "postgres",
+        "privilege_type": "TRUNCATE"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "postgres",
+        "privilege_type": "UPDATE"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "service_role",
+        "privilege_type": "DELETE"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "service_role",
+        "privilege_type": "INSERT"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "service_role",
+        "privilege_type": "REFERENCES"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "service_role",
+        "privilege_type": "SELECT"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "service_role",
+        "privilege_type": "TRIGGER"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "service_role",
+        "privilege_type": "TRUNCATE"
+      },
+      {
+        "table_name": "lender_profile_intelligence",
+        "grantee": "service_role",
+        "privilege_type": "UPDATE"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "anon",
+        "privilege_type": "DELETE"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "anon",
+        "privilege_type": "INSERT"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "anon",
+        "privilege_type": "REFERENCES"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "anon",
+        "privilege_type": "SELECT"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "anon",
+        "privilege_type": "TRIGGER"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "anon",
+        "privilege_type": "TRUNCATE"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "anon",
+        "privilege_type": "UPDATE"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "authenticated",
+        "privilege_type": "DELETE"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "authenticated",
+        "privilege_type": "INSERT"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "authenticated",
+        "privilege_type": "REFERENCES"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "authenticated",
+        "privilege_type": "SELECT"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "authenticated",
+        "privilege_type": "TRIGGER"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "authenticated",
+        "privilege_type": "TRUNCATE"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "authenticated",
+        "privilege_type": "UPDATE"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "postgres",
+        "privilege_type": "DELETE"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "postgres",
+        "privilege_type": "INSERT"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "postgres",
+        "privilege_type": "REFERENCES"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "postgres",
+        "privilege_type": "SELECT"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "postgres",
+        "privilege_type": "TRIGGER"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "postgres",
+        "privilege_type": "TRUNCATE"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "postgres",
+        "privilege_type": "UPDATE"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "service_role",
+        "privilege_type": "DELETE"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "service_role",
+        "privilege_type": "INSERT"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "service_role",
+        "privilege_type": "REFERENCES"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "service_role",
+        "privilege_type": "SELECT"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "service_role",
+        "privilege_type": "TRIGGER"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "service_role",
+        "privilege_type": "TRUNCATE"
+      },
+      {
+        "table_name": "lender_state_licenses",
+        "grantee": "service_role",
+        "privilege_type": "UPDATE"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "anon",
+        "privilege_type": "DELETE"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "anon",
+        "privilege_type": "INSERT"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "anon",
+        "privilege_type": "REFERENCES"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "anon",
+        "privilege_type": "SELECT"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "anon",
+        "privilege_type": "TRIGGER"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "anon",
+        "privilege_type": "TRUNCATE"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "anon",
+        "privilege_type": "UPDATE"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "authenticated",
+        "privilege_type": "DELETE"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "authenticated",
+        "privilege_type": "INSERT"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "authenticated",
+        "privilege_type": "REFERENCES"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "authenticated",
+        "privilege_type": "SELECT"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "authenticated",
+        "privilege_type": "TRIGGER"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "authenticated",
+        "privilege_type": "TRUNCATE"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "authenticated",
+        "privilege_type": "UPDATE"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "postgres",
+        "privilege_type": "DELETE"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "postgres",
+        "privilege_type": "INSERT"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "postgres",
+        "privilege_type": "REFERENCES"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "postgres",
+        "privilege_type": "SELECT"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "postgres",
+        "privilege_type": "TRIGGER"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "postgres",
+        "privilege_type": "TRUNCATE"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "postgres",
+        "privilege_type": "UPDATE"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "service_role",
+        "privilege_type": "DELETE"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "service_role",
+        "privilege_type": "INSERT"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "service_role",
+        "privilege_type": "REFERENCES"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "service_role",
+        "privilege_type": "SELECT"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "service_role",
+        "privilege_type": "TRIGGER"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "service_role",
+        "privilege_type": "TRUNCATE"
+      },
+      {
+        "table_name": "lender_state_regulatory_events",
+        "grantee": "service_role",
+        "privilege_type": "UPDATE"
+      }
+    ],
+    "rls": [
+      {
+        "relname": "lender_profile_intelligence",
+        "relrowsecurity": true,
+        "relforcerowsecurity": false
+      },
+      {
+        "relname": "lender_state_licenses",
+        "relrowsecurity": true,
+        "relforcerowsecurity": false
+      },
+      {
+        "relname": "lender_state_regulatory_events",
+        "relrowsecurity": true,
+        "relforcerowsecurity": false
+      }
+    ],
+    "policies": [
+      {
+        "tablename": "lender_profile_intelligence",
+        "policyname": "Service role manage lender_profile_intelligence",
+        "roles": "{public}",
+        "cmd": "ALL",
+        "qual": "(auth.role() = 'service_role'::text)"
+      },
+      {
+        "tablename": "lender_state_licenses",
+        "policyname": "Service role manage lender_state_licenses",
+        "roles": "{public}",
+        "cmd": "ALL",
+        "qual": "(auth.role() = 'service_role'::text)"
+      },
+      {
+        "tablename": "lender_state_regulatory_events",
+        "policyname": "Service role manage lender_state_regulatory_events",
+        "roles": "{public}",
+        "cmd": "ALL",
+        "qual": "(auth.role() = 'service_role'::text)"
+      }
+    ]
+  },
+  "move": {
+    "host_ok": true,
+    "institutions": 8447,
+    "state_company_profiles": null
+  },
+  "stop": [],
+  "dry_run_pass": true
+}
