@@ -1,0 +1,355 @@
+{
+  "snapshotVersion": "lender-home-intel-snapshot-v1",
+  "homepagePublicationVersion": "intel-004-v1",
+  "retrievedAt": "2026-08-27",
+  "hmdaOfficialAsOf": "2025",
+  "hmdaSourceVintage": "HMDA 2025 reporting vintage",
+  "hmdaGrain": "county",
+  "institutions": 14623,
+  "lpiSnapshots": 8447,
+  "nmlsInstitution": 6641,
+  "publicRender": 181,
+  "publicIndex": 180,
+  "floridaPublic": 130,
+  "floridaInternal": 6303,
+  "applications": 11529787,
+  "originations": 6793253,
+  "denials": 2008514,
+  "complaints": 458146,
+  "complaintsAttached": 195368,
+  "complaintsUnattached": 262778,
+  "cfpbLabels": 2499,
+  "cfpbConfirmedBridges": 74,
+  "depository": {
+    "FDIC": 5371,
+    "UNKNOWN": 1639,
+    "NCUA": 1096,
+    "NONBANK": 341
+  },
+  "geography": [
+    {
+      "state": "AK",
+      "applications": 19195,
+      "originations": 11904,
+      "denials": 2588
+    },
+    {
+      "state": "AL",
+      "applications": 203437,
+      "originations": 114635,
+      "denials": 39242
+    },
+    {
+      "state": "AR",
+      "applications": 114072,
+      "originations": 66394,
+      "denials": 20091
+    },
+    {
+      "state": "AZ",
+      "applications": 307379,
+      "originations": 183374,
+      "denials": 49376
+    },
+    {
+      "state": "CA",
+      "applications": 1010547,
+      "originations": 569218,
+      "denials": 174475
+    },
+    {
+      "state": "CO",
+      "applications": 257140,
+      "originations": 156145,
+      "denials": 39356
+    },
+    {
+      "state": "CT",
+      "applications": 122527,
+      "originations": 74032,
+      "denials": 20884
+    },
+    {
+      "state": "DC",
+      "applications": 16547,
+      "originations": 9223,
+      "denials": 2915
+    },
+    {
+      "state": "DE",
+      "applications": 45359,
+      "originations": 26905,
+      "denials": 8159
+    },
+    {
+      "state": "FL",
+      "applications": 922758,
+      "originations": 489025,
+      "denials": 192366
+    },
+    {
+      "state": "GA",
+      "applications": 439097,
+      "originations": 241754,
+      "denials": 82246
+    },
+    {
+      "state": "GU",
+      "applications": 211,
+      "originations": 157,
+      "denials": 12
+    },
+    {
+      "state": "HI",
+      "applications": 35607,
+      "originations": 19814,
+      "denials": 7720
+    },
+    {
+      "state": "IA",
+      "applications": 107487,
+      "originations": 75693,
+      "denials": 12808
+    },
+    {
+      "state": "ID",
+      "applications": 88182,
+      "originations": 56565,
+      "denials": 12384
+    },
+    {
+      "state": "IL",
+      "applications": 390786,
+      "originations": 231788,
+      "denials": 65185
+    },
+    {
+      "state": "IN",
+      "applications": 281773,
+      "originations": 177798,
+      "denials": 45279
+    },
+    {
+      "state": "KS",
+      "applications": 91833,
+      "originations": 60230,
+      "denials": 12966
+    },
+    {
+      "state": "KY",
+      "applications": 168118,
+      "originations": 100355,
+      "denials": 30407
+    },
+    {
+      "state": "LA",
+      "applications": 129810,
+      "originations": 69035,
+      "denials": 27962
+    },
+    {
+      "state": "MA",
+      "applications": 215563,
+      "originations": 135275,
+      "denials": 34534
+    },
+    {
+      "state": "MD",
+      "applications": 224070,
+      "originations": 125573,
+      "denials": 41408
+    },
+    {
+      "state": "ME",
+      "applications": 56024,
+      "originations": 35441,
+      "denials": 8827
+    },
+    {
+      "state": "MI",
+      "applications": 377740,
+      "originations": 228503,
+      "denials": 68488
+    },
+    {
+      "state": "MN",
+      "applications": 181686,
+      "originations": 122478,
+      "denials": 23744
+    },
+    {
+      "state": "MO",
+      "applications": 229201,
+      "originations": 145882,
+      "denials": 32912
+    },
+    {
+      "state": "MS",
+      "applications": 99730,
+      "originations": 54386,
+      "denials": 22004
+    },
+    {
+      "state": "MT",
+      "applications": 36022,
+      "originations": 22968,
+      "denials": 5024
+    },
+    {
+      "state": "NC",
+      "applications": 478702,
+      "originations": 279735,
+      "denials": 84978
+    },
+    {
+      "state": "ND",
+      "applications": 19787,
+      "originations": 14322,
+      "denials": 2038
+    },
+    {
+      "state": "NE",
+      "applications": 63508,
+      "originations": 43732,
+      "denials": 7486
+    },
+    {
+      "state": "NH",
+      "applications": 57137,
+      "originations": 35576,
+      "denials": 9315
+    },
+    {
+      "state": "NJ",
+      "applications": 316994,
+      "originations": 177325,
+      "denials": 55453
+    },
+    {
+      "state": "NM",
+      "applications": 71931,
+      "originations": 39201,
+      "denials": 13015
+    },
+    {
+      "state": "NV",
+      "applications": 119179,
+      "originations": 69135,
+      "denials": 20423
+    },
+    {
+      "state": "NY",
+      "applications": 385646,
+      "originations": 231331,
+      "denials": 74973
+    },
+    {
+      "state": "OH",
+      "applications": 456221,
+      "originations": 276279,
+      "denials": 79024
+    },
+    {
+      "state": "OK",
+      "applications": 136810,
+      "originations": 78683,
+      "denials": 23493
+    },
+    {
+      "state": "OR",
+      "applications": 145271,
+      "originations": 89073,
+      "denials": 21731
+    },
+    {
+      "state": "PA",
+      "applications": 441180,
+      "originations": 271254,
+      "denials": 79217
+    },
+    {
+      "state": "PR",
+      "applications": 20871,
+      "originations": 14243,
+      "denials": 3213
+    },
+    {
+      "state": "RI",
+      "applications": 43277,
+      "originations": 25984,
+      "denials": 8017
+    },
+    {
+      "state": "SC",
+      "applications": 248965,
+      "originations": 142410,
+      "denials": 44842
+    },
+    {
+      "state": "SD",
+      "applications": 25017,
+      "originations": 17103,
+      "denials": 2941
+    },
+    {
+      "state": "TN",
+      "applications": 297360,
+      "originations": 175419,
+      "denials": 49744
+    },
+    {
+      "state": "TX",
+      "applications": 943136,
+      "originations": 524257,
+      "denials": 178854
+    },
+    {
+      "state": "UT",
+      "applications": 150251,
+      "originations": 95932,
+      "denials": 23659
+    },
+    {
+      "state": "VA",
+      "applications": 334442,
+      "originations": 202417,
+      "denials": 51797
+    },
+    {
+      "state": "VI",
+      "applications": 336,
+      "originations": 217,
+      "denials": 19
+    },
+    {
+      "state": "VT",
+      "applications": 20266,
+      "originations": 13414,
+      "denials": 2892
+    },
+    {
+      "state": "WA",
+      "applications": 284887,
+      "originations": 174653,
+      "denials": 43937
+    },
+    {
+      "state": "WI",
+      "applications": 223596,
+      "originations": 154296,
+      "denials": 30385
+    },
+    {
+      "state": "WV",
+      "applications": 52061,
+      "originations": 29401,
+      "denials": 10639
+    },
+    {
+      "state": "WY",
+      "applications": 21055,
+      "originations": 13311,
+      "denials": 3067
+    }
+  ]
+}
