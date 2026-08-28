@@ -1,0 +1,15 @@
+{
+  "task": "FL-LEND-010",
+  "public": false,
+  "rows": [
+    {"tag": "mlo_confirmed_nmls_order", "source_record_id": "FLAIO|2026-402|135961", "match_method": "EXACT_NMLS_PERSON_IN_ORDER"},
+    {"tag": "mlo_confirmed_lo_license_order", "source_record_id": "FLAIO|2026-389|117119", "license": "LO560", "match_method": "EXACT_UNIQUE_LO_LICENSE_IN_ORDER"},
+    {"tag": "mlo_unresolved", "note": "1364 person FLAIO rows remain unresolved after document audit"},
+    {"tag": "mlo_ambiguous_nmls_ocr_split", "source_record_id": "FLAIO|2017-553|72352", "nmls": ["1609444", "160944"], "confidence": "review_required"},
+    {"tag": "lo93058_collision", "license": "LO93058", "nmls": ["1064642", "2137367"], "class": "MULTIPLE_ACTIVE_CONFLICT"},
+    {"tag": "branch_unresolved_all", "count": 31, "note": "orders name a company+location branch; extracted NMLS did not uniquely match NMLS_BRANCH; no MBRB/MLDB license in text"},
+    {"tag": "mixed_unresolved", "source_record_id": "FLAIO|2015-543|62699", "subject": "Mortgage Broker/Loan Originator", "document": "Wells Fargo Advisors declaratory statement"},
+    {"tag": "mlo_company_relation_confirmed", "available": false, "reason": "no official employer/sponsor NMLS bulk source; OFR PRA submitted 2026-08-28"},
+    {"tag": "branch_parent_confirmed", "available": false, "reason": "no official parent/main-office NMLS bulk source; OFR PRA submitted 2026-08-28"}
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "LO": {
+    "rows": 150194,
+    "unique_licenses": 150191,
+    "duplicate_license_groups": 3,
+    "approved_duplicate_groups": 1,
+    "approved_dup_licenses": [
+      "LO93058"
+    ]
+  },
+  "MBRB": {
+    "rows": 1943,
+    "unique_licenses": 1943,
+    "duplicate_license_groups": 0,
+    "approved_duplicate_groups": 0,
+    "approved_dup_licenses": []
+  },
+  "MLDB": {
+    "rows": 24311,
+    "unique_licenses": 24164,
+    "duplicate_license_groups": 147,
+    "approved_duplicate_groups": 13,
+    "approved_dup_licenses": [
+      "MLDB15885",
+      "MLDB15888",
+      "MLDB168",
+      "MLDB17398",
+      "MLDB1749",
+      "MLDB22200",
+      "MLDB23214",
+      "MLDB2409",
+      "MLDB2564",
+      "MLDB3294",
+      "MLDB3712",
+      "MLDB4364",
+      "MLDB7639"
+    ]
+  },
+  "LO93058": [
+    {
+      "nmls": "1064642",
+      "status": "Approved",
+      "last": "BENSON",
+      "first": "JOEL",
+      "initial": "18-AUG-2021",
+      "status_eff": "01-DEC-2025"
+    },
+    {
+      "nmls": "2137367",
+      "status": "Approved",
+      "last": "MECIAS",
+      "first": "AL",
+      "initial": "07-JUL-2021",
+      "status_eff": "07-JAN-2026"
+    }
+  ]
+}
