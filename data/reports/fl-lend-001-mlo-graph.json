@@ -1,0 +1,22 @@
+{
+  "nmls_lo_rows": 61634,
+  "with_sponsoring_company_id": 53421,
+  "distinct_sponsor_company_nmls": 6086,
+  "sponsor_in_mld_nmls": 1482,
+  "sponsor_in_mbr_nmls": 5019,
+  "sponsor_in_nmls_company_ids": 5936,
+  "branch_relationship_column_present": false,
+  "email_notification": {
+    "filled_email_like": 61633,
+    "pct": 100.0
+  },
+  "email_filing": {
+    "filled_email_like": 61634,
+    "pct": 100.0
+  },
+  "phone_in_nmls_lo_file": false,
+  "phone_in_ofr_monthly_lo": {
+    "filled": 1691,
+    "pct": 1.13
+  }
+}

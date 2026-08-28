@@ -1,0 +1,13 @@
+{
+  "existing_graph": "TypeScript FLORIDA_LENDERS listing catalog + HMDA lei_to_nmls_mapping. public.lenders is listing grain, not institution grain.",
+  "source_company_nmls": 10216,
+  "attached_existing_nmls_in_legacy_or_hmda_map": 52,
+  "net_new_high_confidence_candidates": 10164,
+  "review_required": "not scored this pass \u2014 no name/address matching executed",
+  "malformed_nmls_samples": [],
+  "malformed_count": 0,
+  "conflicts": 4,
+  "attachment_pct_vs_legacy_or_hmda_map": 0.51,
+  "execute": false,
+  "reason": "Audit-only. Additive credential schema not present. Unexplained listing-grain collisions (one NMLS, many FL slugs) are expected locality clones, not institution duplicates \u2014 must not be ingested as extra institutions."
+}

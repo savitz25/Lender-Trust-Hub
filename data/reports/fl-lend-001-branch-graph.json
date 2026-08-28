@@ -1,0 +1,13 @@
+{
+  "mlldb_monthly_rows": 24330,
+  "mbrb_monthly_rows": 1946,
+  "nmls_branch_rows": 6753,
+  "distinct_branch_nmls_nmls_file": 6690,
+  "distinct_branch_nmls_monthly_mldb": 22402,
+  "distinct_branch_nmls_monthly_mbrb": 1907,
+  "parent_links_from_nmls_roster": 6690,
+  "multi_parent_collisions": 0,
+  "multi_parent_samples": {},
+  "self_parent": 0,
+  "relationship_authority": "NMLS Company/Branch roster Company Id + Branch Id (PRR #141420). Stronger than name similarity."
+}

@@ -1,0 +1,85 @@
+{
+  "MLD": {
+    "rows": 2805,
+    "distinct_license": 2805,
+    "distinct_nmls": 2453,
+    "status": {
+      "Approved": 1384,
+      "Expired": 560,
+      "Terminated": 841,
+      "Revoked": 14,
+      "Denied Tech": 4,
+      "Suspended": 1,
+      "Inactive": 1
+    },
+    "active_status_rows": 1384,
+    "other_status_rows": 1421
+  },
+  "MLDB": {
+    "rows": 24330,
+    "distinct_license": 24183,
+    "distinct_nmls": 22402,
+    "status": {
+      "Terminated": 16156,
+      "Approved": 5929,
+      "Expired": 2219,
+      "Inactive": 22,
+      "Withdrawn": 3,
+      "Denied Tech": 1
+    },
+    "active_status_rows": 5929,
+    "other_status_rows": 18401
+  },
+  "MBR": {
+    "rows": 8672,
+    "distinct_license": 8672,
+    "distinct_nmls": 8301,
+    "status": {
+      "Approved": 5051,
+      "Expired": 2348,
+      "Terminated": 1234,
+      "Inactive": 8,
+      "Denied Tech": 10,
+      "Revoked": 18,
+      "Suspended": 2,
+      "Withdrawn": 1
+    },
+    "active_status_rows": 5051,
+    "other_status_rows": 3621
+  },
+  "MBRB": {
+    "rows": 1946,
+    "distinct_license": 1946,
+    "distinct_nmls": 1907,
+    "status": {
+      "Terminated": 749,
+      "Approved": 695,
+      "Expired": 490,
+      "Inactive": 12
+    },
+    "active_status_rows": 695,
+    "other_status_rows": 1251
+  },
+  "LO": {
+    "rows": 150211,
+    "distinct_license": 150208,
+    "distinct_nmls": 135221,
+    "status": {
+      "Expired": 85778,
+      "Approved": 59475,
+      "Terminated": 4835,
+      "Denied Tech": 64,
+      "Inactive": 35,
+      "Revoked": 17,
+      "Denied Cause": 6,
+      "Withdrawn": 1
+    },
+    "active_status_rows": 59475,
+    "other_status_rows": 90736,
+    "ai_jr_sz_rows": [
+      64096,
+      53667,
+      32448
+    ]
+  }
+}

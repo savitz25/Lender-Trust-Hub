@@ -1,0 +1,1058 @@
+{
+  "generated_at": "2026-08-28T19:56:25.948460+00:00",
+  "task": "FL-LEND-001/002 source audit",
+  "execute": false,
+  "prr": {
+    "number": "141420",
+    "reference": "1341691",
+    "produced": "2026-08-28",
+    "analyst_note": "7 files: 2 NMLS (emails), 5 OFR website downloads."
+  },
+  "manifest": [
+    {
+      "source_file_id": "raw-84874b988f8b",
+      "original_filename": "florida FDIC insured Banks.xlsx",
+      "local_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\florida FDIC insured Banks.xlsx",
+      "file_type": ".xlsx",
+      "compressed_or_extracted": "extracted_or_plain",
+      "file_size": 29256,
+      "sha256": "78c0a8c099d2bfa0d357032469ea7ecb332e80b948938824d39baf57b37f0f6f",
+      "received_date": "2026-06-26",
+      "public_records_request_number": null,
+      "public_records_reference_number": null,
+      "source_authority": "FDIC (separate file)",
+      "source_family": "fdic_insured_banks_list",
+      "classification": "NOT_PRR_141420"
+    },
+    {
+      "source_file_id": "raw-82fd7a18055c",
+      "original_filename": "Loan Originators.csv",
+      "local_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\Loan Originators.csv",
+      "file_type": ".csv",
+      "compressed_or_extracted": "extracted_or_plain",
+      "file_size": 17042016,
+      "sha256": "519fc3637497b67c2b5fde023eaf931e5844ea14fcef6609f8312c1d02995130",
+      "received_date": "2026-08-28",
+      "public_records_request_number": "141420",
+      "public_records_reference_number": "1341691",
+      "source_authority": "Florida Office of Financial Regulation",
+      "source_family": "ofr_prr_141420_nmls_derived_roster",
+      "classification": "NMLS_DERIVED_OFR_PRODUCTION",
+      "notes": "NMLS Individual/Company roster exported for Florida regulator. Contains emails. As-of 2026-08-27, generated 2026-08-28."
+    },
+    {
+      "source_file_id": "raw-f15f7639eeb2",
+      "original_filename": "LoanOriginators_AI_Monthly (4).zip",
+      "local_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\LoanOriginators_AI_Monthly (4).zip",
+      "file_type": ".zip",
+      "compressed_or_extracted": "compressed",
+      "file_size": 3530642,
+      "sha256": "8547d6ac67be13d6970e249eb61133fd6b781c80c9e762f971bad2a607f94889",
+      "received_date": "2026-08-28",
+      "public_records_request_number": "141420",
+      "public_records_reference_number": "1341691",
+      "source_authority": "Florida Office of Financial Regulation",
+      "source_family": "ofr_website_monthly_download",
+      "source_url_if_standard_download": "https://flofr.gov (registration data download / REAL monthly zip)",
+      "classification": "OFR_WEBSITE_MONTHLY"
+    },
+    {
+      "source_file_id": "raw-e9d7020400d2",
+      "original_filename": "LoanOriginators_JR_Monthly (3).zip",
+      "local_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\LoanOriginators_JR_Monthly (3).zip",
+      "file_type": ".zip",
+      "compressed_or_extracted": "compressed",
+      "file_size": 2949815,
+      "sha256": "6180d0aad892244749cc0de3d965d410bbcb3f1c1ec0e5cf8aedec964d9e61dd",
+      "received_date": "2026-08-28",
+      "public_records_request_number": "141420",
+      "public_records_reference_number": "1341691",
+      "source_authority": "Florida Office of Financial Regulation",
+      "source_family": "ofr_website_monthly_download",
+      "source_url_if_standard_download": "https://flofr.gov (registration data download / REAL monthly zip)",
+      "classification": "OFR_WEBSITE_MONTHLY"
+    },
+    {
+      "source_file_id": "raw-223cf032317b",
+      "original_filename": "LoanOriginators_SZ_Monthly (4).zip",
+      "local_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\LoanOriginators_SZ_Monthly (4).zip",
+      "file_type": ".zip",
+      "compressed_or_extracted": "compressed",
+      "file_size": 1791603,
+      "sha256": "3b73143e96dcaeb3716d3c845b99a0558355a0394f7c5935c50b7bc33ddb13e2",
+      "received_date": "2026-08-28",
+      "public_records_request_number": "141420",
+      "public_records_reference_number": "1341691",
+      "source_authority": "Florida Office of Financial Regulation",
+      "source_family": "ofr_website_monthly_download",
+      "source_url_if_standard_download": "https://flofr.gov (registration data download / REAL monthly zip)",
+      "classification": "OFR_WEBSITE_MONTHLY"
+    },
+    {
+      "source_file_id": "raw-88b32203a012",
+      "original_filename": "Mortgage Businesses.csv",
+      "local_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\Mortgage Businesses.csv",
+      "file_type": ".csv",
+      "compressed_or_extracted": "extracted_or_plain",
+      "file_size": 4082748,
+      "sha256": "34a9b176fdef1b8ca9c96a1aacf7884fdfe0de3af62018e1b1308759c231a72b",
+      "received_date": "2026-08-28",
+      "public_records_request_number": "141420",
+      "public_records_reference_number": "1341691",
+      "source_authority": "Florida Office of Financial Regulation",
+      "source_family": "ofr_prr_141420_nmls_derived_roster",
+      "classification": "NMLS_DERIVED_OFR_PRODUCTION",
+      "notes": "NMLS Individual/Company roster exported for Florida regulator. Contains emails. As-of 2026-08-27, generated 2026-08-28."
+    },
+    {
+      "source_file_id": "raw-a618b415ad96",
+      "original_filename": "MortgageFirms_MBR-MBRB_Monthly (8).zip",
+      "local_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\MortgageFirms_MBR-MBRB_Monthly (8).zip",
+      "file_type": ".zip",
+      "compressed_or_extracted": "compressed",
+      "file_size": 640570,
+      "sha256": "c4827b29bc9e9f3e92484e5fc5ddef5cd3090c7bce1db743e928171f71a27474",
+      "received_date": "2026-08-28",
+      "public_records_request_number": "141420",
+      "public_records_reference_number": "1341691",
+      "source_authority": "Florida Office of Financial Regulation",
+      "source_family": "ofr_website_monthly_download",
+      "source_url_if_standard_download": "https://flofr.gov (registration data download / REAL monthly zip)",
+      "classification": "OFR_WEBSITE_MONTHLY"
+    },
+    {
+      "source_file_id": "raw-9f8b58b551fe",
+      "original_filename": "MortgageFirms_MLD-MLDB_Monthly (7).zip",
+      "local_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\MortgageFirms_MLD-MLDB_Monthly (7).zip",
+      "file_type": ".zip",
+      "compressed_or_extracted": "compressed",
+      "file_size": 1269147,
+      "sha256": "7a194926bfffb9715a8c69bada1440a441d33d1f147361866f84530e301484f0",
+      "received_date": "2026-08-28",
+      "public_records_request_number": "141420",
+      "public_records_reference_number": "1341691",
+      "source_authority": "Florida Office of Financial Regulation",
+      "source_family": "ofr_website_monthly_download",
+      "source_url_if_standard_download": "https://flofr.gov (registration data download / REAL monthly zip)",
+      "classification": "OFR_WEBSITE_MONTHLY"
+    }
+  ],
+  "zip_members": {
+    "LoanOriginators_AI_Monthly (4).zip": [
+      {
+        "member": "LoanOrignators_AI_Monthly.csv",
+        "bytes": 13545635,
+        "zip_datetime": "2026-08-28T06:03:28",
+        "extracted_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\extracted\\LoanOrignators_AI_Monthly.csv",
+        "extracted_sha256": "f34c9615b6cf572fb78c79fecefbb17d1b77f3ae197e732fe52823e52a9c87b5"
+      }
+    ],
+    "LoanOriginators_JR_Monthly (3).zip": [
+      {
+        "member": "LoanOrignators_JR_Monthly.csv",
+        "bytes": 11329129,
+        "zip_datetime": "2026-08-28T06:03:42",
+        "extracted_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\extracted\\LoanOrignators_JR_Monthly.csv",
+        "extracted_sha256": "072db3cf34647f1a45ef75cbf461b73499e22aba3cdb325bce56d01d5c4697d1"
+      }
+    ],
+    "LoanOriginators_SZ_Monthly (4).zip": [
+      {
+        "member": "LoanOrignators_SZ_Monthly.csv",
+        "bytes": 6864019,
+        "zip_datetime": "2026-08-28T06:03:50",
+        "extracted_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\extracted\\LoanOrignators_SZ_Monthly.csv",
+        "extracted_sha256": "3462f6c519cadff5fe11fd57b6360ebbcce4ab96ea9cfa015f428883cc6a16e0"
+      }
+    ],
+    "MortgageFirms_MBR-MBRB_Monthly (8).zip": [
+      {
+        "member": "MortgageFirms_MBR-MBRB_Monthly.csv",
+        "bytes": 2374662,
+        "zip_datetime": "2026-08-28T06:03:54",
+        "extracted_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\extracted\\MortgageFirms_MBR-MBRB_Monthly.csv",
+        "extracted_sha256": "625a37aa978e9ba7da8f0cad360f770c31fd5f3f2deff205568030d3f13452f1"
+      }
+    ],
+    "MortgageFirms_MLD-MLDB_Monthly (7).zip": [
+      {
+        "member": "MortgageFirms_MLD-MLDB_Monthly.csv",
+        "bytes": 5586726,
+        "zip_datetime": "2026-08-28T06:05:00",
+        "extracted_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\extracted\\MortgageFirms_MLD-MLDB_Monthly.csv",
+        "extracted_sha256": "97065fbea62c362982624e392a7e124e7f6e226dbaf0a434f629c8b0eb577661"
+      }
+    ]
+  },
+  "seven_ofr_records": [
+    {
+      "file": "LoanOriginators_AI_Monthly (4).zip \u2192 LoanOrignators_AI_Monthly.csv",
+      "origin": "OFR website monthly download",
+      "class": "LO A-I",
+      "raw_rows": 64096,
+      "distinct_ids": 64096,
+      "date": "zip member 2026-08-28 06:03:28",
+      "notes": "Standard OFR columns. Typo INTIAL APPROVAL. No email. Has PHONE, COUNTY, STATUS."
+    },
+    {
+      "file": "LoanOriginators_JR_Monthly (3).zip \u2192 LoanOrignators_JR_Monthly.csv",
+      "origin": "OFR website monthly download",
+      "class": "LO J-R",
+      "raw_rows": 53667,
+      "distinct_ids": 53667,
+      "date": "zip member 2026-08-28 06:03:42",
+      "notes": "Same schema as AI. Inner filename misspells Originators."
+    },
+    {
+      "file": "LoanOriginators_SZ_Monthly (4).zip \u2192 LoanOrignators_SZ_Monthly.csv",
+      "origin": "OFR website monthly download",
+      "class": "LO S-Z",
+      "raw_rows": 32448,
+      "distinct_ids": 32448,
+      "date": "zip member 2026-08-28 06:03:50",
+      "notes": "Same schema."
+    },
+    {
+      "file": "MortgageFirms_MBR-MBRB_Monthly (8).zip",
+      "origin": "OFR website monthly download",
+      "class": "MBR/MBRB",
+      "raw_rows": 10618,
+      "distinct_ids": 10618,
+      "date": "zip member 2026-08-28 06:03:54",
+      "notes": "LICENSE TYPE MBR vs MBRB. No SERVICER column. No email."
+    },
+    {
+      "file": "MortgageFirms_MLD-MLDB_Monthly (7).zip",
+      "origin": "OFR website monthly download",
+      "class": "MLD/MLDB",
+      "raw_rows": 27135,
+      "distinct_ids": 26988,
+      "date": "zip member 2026-08-28 06:05:00",
+      "notes": "Adds SERVICER column. LICENSE TYPE MLD vs MLDB. No email."
+    },
+    {
+      "file": "Loan Originators.csv",
+      "origin": "NMLS-derived OFR PRR #141420 production",
+      "class": "Individual Roster (Regulator) \u2014 relationship/contact",
+      "raw_rows": 61634,
+      "distinct_ids": 61608,
+      "date": "As Of Date 8/27/2026; generated 8/28/2026 7:52; Active license only",
+      "notes": "Emails, sponsoring company + company NMLS, sponsorship status/dates, worker classification. No individual phone. No branch id."
+    },
+    {
+      "file": "Mortgage Businesses.csv",
+      "origin": "NMLS-derived OFR PRR #141420 production",
+      "class": "Company/Branch Roster by License Type \u2014 relationship/contact",
+      "raw_rows": 13326,
+      "distinct_ids": 6450,
+      "date": "As Of Date 8/27/2026; generated 8/28/2026 7:53; Active license only",
+      "notes": "Company Id + Branch Id parent link. Company/complaint emails and phones. Blank Branch Id = company credential."
+    }
+  ],
+  "source_counts": [
+    {
+      "source": "ofr_monthly_lo_ai",
+      "rows": 64096,
+      "distinct_license": 64096,
+      "license_type": {
+        "LO": 64096
+      },
+      "status": {
+        "Expired": 36493,
+        "Approved": 25498,
+        "Terminated": 2055,
+        "Denied Tech": 26,
+        "Inactive": 13,
+        "Revoked": 8,
+        "Denied Cause": 2,
+        "Withdrawn": 1
+      },
+      "nmls": {
+        "column_present": true,
+        "filled": 64096,
+        "blank": 0,
+        "valid_nmls": 64096,
+        "distinct_valid": 57682,
+        "malformed": 0,
+        "malformed_samples": []
+      },
+      "prim_state": {
+        "FL": 19982,
+        "CA": 6329,
+        "MI": 4815,
+        "TX": 3694,
+        "AZ": 3352,
+        "OH": 2259,
+        "MO": 2017,
+        "NC": 1845,
+        "NJ": 1830,
+        "GA": 1744,
+        "MD": 1703,
+        "NY": 1567,
+        "PA": 1328,
+        "CO": 1135,
+        "IL": 1085,
+        "IN": 1017,
+        "TN": 922,
+        "VA": 897,
+        "SC": 678,
+        "UT": 591,
+        "NV": 570,
+        "MA": 512,
+        "KY": 487,
+        "AL": 407,
+        "KS": 368,
+        "WA": 365,
+        "CT": 319,
+        "MN": 303,
+        "RI": 236,
+        "WI": 183
+      },
+      "date": "monthly zip inner 2026-08-28 06:03; NMLS as-of 2026-08-27 generated 2026-08-28"
+    },
+    {
+      "source": "ofr_monthly_lo_jr",
+      "rows": 53667,
+      "distinct_license": 53667,
+      "license_type": {
+        "LO": 53667
+      },
+      "status": {
+        "Expired": 30611,
+        "Approved": 21261,
+        "Terminated": 1752,
+        "Denied Tech": 19,
+        "Inactive": 13,
+        "Revoked": 8,
+        "Denied Cause": 3
+      },
+      "nmls": {
+        "column_present": true,
+        "filled": 53667,
+        "blank": 0,
+        "valid_nmls": 53667,
+        "distinct_valid": 48332,
+        "malformed": 0,
+        "malformed_samples": []
+      },
+      "prim_state": {
+        "FL": 16679,
+        "CA": 5772,
+        "MI": 3908,
+        "TX": 3003,
+        "AZ": 2862,
+        "OH": 1841,
+        "MO": 1607,
+        "NC": 1495,
+        "NJ": 1424,
+        "NY": 1371,
+        "GA": 1359,
+        "MD": 1341,
+        "PA": 1130,
+        "IL": 1061,
+        "CO": 914,
+        "IN": 805,
+        "VA": 788,
+        "TN": 700,
+        "SC": 538,
+        "UT": 483,
+        "MA": 472,
+        "NV": 436,
+        "AL": 362,
+        "KS": 343,
+        "KY": 341,
+        "MN": 334,
+        "WA": 325,
+        "CT": 318,
+        "RI": 199,
+        "WI": 153
+      },
+      "date": "monthly zip inner 2026-08-28 06:03; NMLS as-of 2026-08-27 generated 2026-08-28"
+    },
+    {
+      "source": "ofr_monthly_lo_sz",
+      "rows": 32448,
+      "distinct_license": 32448,
+      "license_type": {
+        "LO": 32448
+      },
+      "status": {
+        "Expired": 18674,
+        "Approved": 12716,
+        "Terminated": 1028,
+        "Denied Tech": 19,
+        "Inactive": 9,
+        "Revoked": 1,
+        "Denied Cause": 1
+      },
+      "nmls": {
+        "column_present": true,
+        "filled": 32448,
+        "blank": 0,
+        "valid_nmls": 32448,
+        "distinct_valid": 29207,
+        "malformed": 0,
+        "malformed_samples": []
+      },
+      "prim_state": {
+        "FL": 9484,
+        "CA": 3378,
+        "MI": 2503,
+        "TX": 1859,
+        "AZ": 1764,
+        "OH": 1232,
+        "MO": 1059,
+        "NC": 933,
+        "GA": 933,
+        "NJ": 880,
+        "MD": 824,
+        "NY": 822,
+        "PA": 718,
+        "CO": 631,
+        "IL": 622,
+        "IN": 535,
+        "VA": 464,
+        "TN": 463,
+        "SC": 333,
+        "UT": 319,
+        "MA": 267,
+        "NV": 255,
+        "KS": 236,
+        "KY": 224,
+        "AL": 211,
+        "WA": 205,
+        "MN": 173,
+        "CT": 153,
+        "WI": 106,
+        "RI": 100
+      },
+      "date": "monthly zip inner 2026-08-28 06:03; NMLS as-of 2026-08-27 generated 2026-08-28"
+    },
+    {
+      "source": "ofr_monthly_mbr_mbrb",
+      "rows": 10618,
+      "distinct_license": 10618,
+      "license_type": {
+        "MBR": 8672,
+        "MBRB": 1946
+      },
+      "status": {
+        "Approved": 5746,
+        "Expired": 2838,
+        "Terminated": 1983,
+        "Inactive": 20,
+        "Revoked": 18,
+        "Denied Tech": 10,
+        "Suspended": 2,
+        "Withdrawn": 1
+      },
+      "nmls": {
+        "column_present": true,
+        "filled": 10618,
+        "blank": 0,
+        "valid_nmls": 10618,
+        "distinct_valid": 10208,
+        "malformed": 0,
+        "malformed_samples": []
+      },
+      "prim_state": {
+        "FL": 5231,
+        "CA": 901,
+        "TX": 464,
+        "MI": 443,
+        "GA": 348,
+        "NY": 289,
+        "CO": 236,
+        "AZ": 223,
+        "PA": 202,
+        "NJ": 201,
+        "NC": 166,
+        "IL": 163,
+        "VA": 150,
+        "MD": 148,
+        "OH": 145,
+        "UT": 115,
+        "MA": 103,
+        "SC": 98,
+        "NV": 95,
+        "CT": 87,
+        "TN": 85,
+        "MN": 81,
+        "KY": 75,
+        "IN": 67,
+        "WA": 65,
+        "AL": 61,
+        "MO": 57,
+        "LA": 48,
+        "NH": 29,
+        "WI": 27
+      },
+      "date": "monthly zip inner 2026-08-28 06:03; NMLS as-of 2026-08-27 generated 2026-08-28"
+    },
+    {
+      "source": "ofr_monthly_mld_mldb",
+      "rows": 27135,
+      "distinct_license": 26988,
+      "license_type": {
+        "MLDB": 24330,
+        "MLD": 2805
+      },
+      "status": {
+        "Terminated": 16997,
+        "Approved": 7313,
+        "Expired": 2779,
+        "Inactive": 23,
+        "Revoked": 14,
+        "Denied Tech": 5,
+        "Withdrawn": 3,
+        "Suspended": 1
+      },
+      "nmls": {
+        "column_present": true,
+        "filled": 27135,
+        "blank": 0,
+        "valid_nmls": 27135,
+        "distinct_valid": 24855,
+        "malformed": 0,
+        "malformed_samples": []
+      },
+      "prim_state": {
+        "FL": 8729,
+        "CA": 1607,
+        "TX": 1483,
+        "GA": 1177,
+        "NC": 878,
+        "NJ": 832,
+        "IL": 762,
+        "OH": 739,
+        "VA": 688,
+        "AZ": 632,
+        "TN": 621,
+        "SC": 589,
+        "NY": 586,
+        "CO": 563,
+        "MD": 562,
+        "MI": 551,
+        "PA": 548,
+        "MA": 540,
+        "IN": 411,
+        "MO": 401,
+        "MN": 388,
+        "AL": 381,
+        "WA": 373,
+        "NV": 371,
+        "CT": 285,
+        "KY": 260,
+        "UT": 244,
+        "WI": 237,
+        "LA": 170,
+        "RI": 162
+      },
+      "date": "monthly zip inner 2026-08-28 06:03; NMLS as-of 2026-08-27 generated 2026-08-28"
+    },
+    {
+      "source": "nmls_individual_roster_fl",
+      "rows": 61634,
+      "distinct_license": 59515,
+      "license_type": {
+        "FL Mortgage Loan Originator License": 61634
+      },
+      "status": {
+        "Approved": 59493,
+        "Pending - Incomplete": 546,
+        "Pending - Review (Temporary Authority)": 489,
+        "Pending - Review": 426,
+        "Pending - Deficient": 324,
+        "Pending - Deficient (Temporary Authority)": 156,
+        "Pending - Deficient (Temporary Authority Eligible)": 120,
+        "Terminated - Failed to Renew": 38,
+        "Pending - Withdrawal Requested": 30,
+        "Approved - Surrender/Cancellation Requested": 12
+      },
+      "nmls": {
+        "column_present": true,
+        "filled": 61634,
+        "blank": 0,
+        "valid_nmls": 61634,
+        "distinct_valid": 61608,
+        "malformed": 0,
+        "malformed_samples": []
+      },
+      "prim_state": {},
+      "date": "monthly zip inner 2026-08-28 06:03; NMLS as-of 2026-08-27 generated 2026-08-28"
+    },
+    {
+      "source": "nmls_company_branch_roster_fl",
+      "rows": 13326,
+      "distinct_license": 13121,
+      "license_type": {
+        "FL Mortgage Broker License": 5154,
+        "FL Mortgage Lender Servicer Branch License": 3961,
+        "FL Mortgage Lender Branch License": 2072,
+        "FL Mortgage Lender License": 907,
+        "FL Mortgage Broker Branch License": 720,
+        "FL Mortgage Lender Servicer License": 512
+      },
+      "status": {
+        "Approved": 13039,
+        "Pending - Review": 128,
+        "Pending - Incomplete": 70,
+        "Approved - Surrender/Cancellation Requested": 63,
+        "Terminated - Failed to Renew": 17,
+        "Pending - Withdrawal Requested": 6,
+        "Suspended": 3
+      },
+      "nmls": {
+        "column_present": true,
+        "filled": 13326,
+        "blank": 0,
+        "valid_nmls": 13326,
+        "distinct_valid": 6450,
+        "malformed": 0,
+        "malformed_samples": []
+      },
+      "prim_state": {
+        "FL": 4393,
+        "CA": 996,
+        "TX": 630,
+        "GA": 516,
+        "MI": 455,
+        "NY": 423,
+        "NJ": 400,
+        "NC": 353,
+        "IL": 343,
+        "AZ": 323,
+        "PA": 316,
+        "VA": 308,
+        "CO": 305,
+        "OH": 291,
+        "MA": 261,
+        "MD": 250,
+        "TN": 244,
+        "SC": 233,
+        "NV": 201,
+        "MN": 178,
+        "IN": 175,
+        "MO": 163,
+        "WA": 160,
+        "CT": 150,
+        "UT": 136,
+        "AL": 130,
+        "KY": 121,
+        "LA": 100,
+        "WI": 90,
+        "NH": 65
+      },
+      "date": "monthly zip inner 2026-08-28 06:03; NMLS as-of 2026-08-27 generated 2026-08-28"
+    }
+  ],
+  "monthly_universe": {
+    "MLD": {
+      "rows": 2805,
+      "distinct_license": 2805,
+      "distinct_nmls": 2453,
+      "status": {
+        "Approved": 1384,
+        "Expired": 560,
+        "Terminated": 841,
+        "Revoked": 14,
+        "Denied Tech": 4,
+        "Suspended": 1,
+        "Inactive": 1
+      },
+      "active_status_rows": 1384,
+      "other_status_rows": 1421
+    },
+    "MLDB": {
+      "rows": 24330,
+      "distinct_license": 24183,
+      "distinct_nmls": 22402,
+      "status": {
+        "Terminated": 16156,
+        "Approved": 5929,
+        "Expired": 2219,
+        "Inactive": 22,
+        "Withdrawn": 3,
+        "Denied Tech": 1
+      },
+      "active_status_rows": 5929,
+      "other_status_rows": 18401
+    },
+    "MBR": {
+      "rows": 8672,
+      "distinct_license": 8672,
+      "distinct_nmls": 8301,
+      "status": {
+        "Approved": 5051,
+        "Expired": 2348,
+        "Terminated": 1234,
+        "Inactive": 8,
+        "Denied Tech": 10,
+        "Revoked": 18,
+        "Suspended": 2,
+        "Withdrawn": 1
+      },
+      "active_status_rows": 5051,
+      "other_status_rows": 3621
+    },
+    "MBRB": {
+      "rows": 1946,
+      "distinct_license": 1946,
+      "distinct_nmls": 1907,
+      "status": {
+        "Terminated": 749,
+        "Approved": 695,
+        "Expired": 490,
+        "Inactive": 12
+      },
+      "active_status_rows": 695,
+      "other_status_rows": 1251
+    },
+    "LO": {
+      "rows": 150211,
+      "distinct_license": 150208,
+      "distinct_nmls": 135221,
+      "status": {
+        "Expired": 85778,
+        "Approved": 59475,
+        "Terminated": 4835,
+        "Denied Tech": 64,
+        "Inactive": 35,
+        "Revoked": 17,
+        "Denied Cause": 6,
+        "Withdrawn": 1
+      },
+      "active_status_rows": 59475,
+      "other_status_rows": 90736,
+      "ai_jr_sz_rows": [
+        64096,
+        53667,
+        32448
+      ]
+    }
+  },
+  "nmls_lo": {
+    "rows": 61634,
+    "distinct_individual_id": 61608,
+    "distinct_license": 59515,
+    "status": {
+      "Approved": 59493,
+      "Pending - Incomplete": 546,
+      "Pending - Review (Temporary Authority)": 489,
+      "Pending - Review": 426,
+      "Pending - Deficient": 324,
+      "Pending - Deficient (Temporary Authority)": 156,
+      "Pending - Deficient (Temporary Authority Eligible)": 120,
+      "Terminated - Failed to Renew": 38,
+      "Pending - Withdrawal Requested": 30,
+      "Approved - Surrender/Cancellation Requested": 12
+    },
+    "sponsorship_status": {
+      "Accepted": 53130,
+      "(blank)": 8213,
+      "Requested": 291
+    },
+    "worker_class": {
+      "W2 Employee": 40708,
+      "Non-W2 Employee": 12365,
+      "(blank)": 8561
+    },
+    "remote": {
+      "Office-Centric": 25745,
+      "Fully Remote": 15213,
+      "(blank)": 11542,
+      "Hybrid": 9134
+    },
+    "distinct_sponsoring_company_id": 6086,
+    "sponsor_filled": 53421,
+    "contact": {
+      "Individual Notification Email Address": {
+        "filled_email_like": 61633,
+        "pct": 100.0
+      },
+      "Individual Filing Email Address": {
+        "filled_email_like": 61634,
+        "pct": 100.0
+      }
+    },
+    "license_name": {
+      "FL Mortgage Loan Originator License": 61634
+    },
+    "as_of": {
+      "8/27/2026": 61634
+    },
+    "generated": {
+      "8/28/2026 7:52": 61634
+    }
+  },
+  "nmls_company_branch": {
+    "company_rows_blank_branch_id": 6573,
+    "branch_rows_with_branch_id": 6753,
+    "distinct_company_id": 6450,
+    "distinct_branch_id": 6690,
+    "license_name": {
+      "FL Mortgage Broker License": 5154,
+      "FL Mortgage Lender Servicer Branch License": 3961,
+      "FL Mortgage Lender Branch License": 2072,
+      "FL Mortgage Lender License": 907,
+      "FL Mortgage Broker Branch License": 720,
+      "FL Mortgage Lender Servicer License": 512
+    },
+    "status": {
+      "Approved": 13039,
+      "Pending - Review": 128,
+      "Pending - Incomplete": 70,
+      "Approved - Surrender/Cancellation Requested": 63,
+      "Terminated - Failed to Renew": 17,
+      "Pending - Withdrawal Requested": 6,
+      "Suspended": 3
+    },
+    "contact": {
+      "Company Contact Email": {
+        "filled_email_like": 13326,
+        "pct": 100.0
+      },
+      "Complaint Contact Email": {
+        "filled_email_like": 13311,
+        "pct": 99.89
+      },
+      "Company Contact Phone": {
+        "filled_phone_like": 13325,
+        "pct": 99.99
+      },
+      "Complaint Contact Phone": {
+        "filled_phone_like": 13310,
+        "pct": 99.88
+      }
+    }
+  },
+  "nmls_coverage": {
+    "institution_nmls_mld_mbr_company": 10216,
+    "branch_nmls_monthly_mldb_mbrb": 24105,
+    "branch_nmls_nmls_roster": 6690,
+    "individual_nmls_monthly_lo": 135221,
+    "individual_nmls_nmls_roster": 61608
+  },
+  "cross_file": {
+    "lo_license_monthly_only": 90709,
+    "lo_license_nmls_only": 16,
+    "lo_license_both": 59499,
+    "lo_nmls_both": 60093,
+    "mld_nmls_in_nmls_company_roster": 1500,
+    "mbr_nmls_in_nmls_company_roster": 5312,
+    "mldb_nmls_in_nmls_branch_ids": 5950,
+    "mbrb_nmls_in_nmls_branch_ids": 769,
+    "companies_with_both_mld_and_mbr_nmls": 637,
+    "note": "NMLS-derived rosters are Active-only as of 2026-08-27. Monthly OFR zips include all statuses. Intersection gaps are expected."
+  },
+  "branch_graph": {
+    "mlldb_monthly_rows": 24330,
+    "mbrb_monthly_rows": 1946,
+    "nmls_branch_rows": 6753,
+    "distinct_branch_nmls_nmls_file": 6690,
+    "distinct_branch_nmls_monthly_mldb": 22402,
+    "distinct_branch_nmls_monthly_mbrb": 1907,
+    "parent_links_from_nmls_roster": 6690,
+    "multi_parent_collisions": 0,
+    "multi_parent_samples": {},
+    "self_parent": 0,
+    "relationship_authority": "NMLS Company/Branch roster Company Id + Branch Id (PRR #141420). Stronger than name similarity."
+  },
+  "mlo_graph": {
+    "nmls_lo_rows": 61634,
+    "with_sponsoring_company_id": 53421,
+    "distinct_sponsor_company_nmls": 6086,
+    "sponsor_in_mld_nmls": 1482,
+    "sponsor_in_mbr_nmls": 5019,
+    "sponsor_in_nmls_company_ids": 5936,
+    "branch_relationship_column_present": false,
+    "email_notification": {
+      "filled_email_like": 61633,
+      "pct": 100.0
+    },
+    "email_filing": {
+      "filled_email_like": 61634,
+      "pct": 100.0
+    },
+    "phone_in_nmls_lo_file": false,
+    "phone_in_ofr_monthly_lo": {
+      "filled": 1691,
+      "pct": 1.13
+    }
+  },
+  "legacy_catalog": {
+    "listings": 50,
+    "distinct_nmls": 40,
+    "found_in_ofr_company_or_branch_nmls": 42,
+    "not_found_or_empty": [
+      {
+        "slug": "prime-time-mortgage",
+        "name": "Prime Time Mortgage Inc.",
+        "nmls": "372175"
+      },
+      {
+        "slug": "palm-beach-mortgage-group",
+        "name": "Palm Beach Mortgage Group, Inc.",
+        "nmls": null
+      },
+      {
+        "slug": "america-home-loans",
+        "name": "America Home Loans LLC",
+        "nmls": "885847"
+      },
+      {
+        "slug": "contemporary-mortgage-services",
+        "name": "Contemporary Mortgage Services",
+        "nmls": "230074"
+      },
+      {
+        "slug": "my-easy-mortgage",
+        "name": "My Easy Mortgage",
+        "nmls": "1926205"
+      },
+      {
+        "slug": "navy-federal-jacksonville",
+        "name": "Navy Federal Credit Union (Jacksonville Area)",
+        "nmls": "399807"
+      },
+      {
+        "slug": "panhandle-credit-union",
+        "name": "Panhandle Credit Union",
+        "nmls": "2163677"
+      },
+      {
+        "slug": "eglin-federal-credit-union",
+        "name": "Eglin Federal Credit Union (VA Loans)",
+        "nmls": "440642"
+      }
+    ],
+    "duplicate_nmls_slugs": {
+      "152859": [
+        "acrisure-mortgage",
+        "acrisure-mortgage-tampa",
+        "acrisure-mortgage-jacksonville",
+        "acrisure-mortgage-panhandle"
+      ],
+      "6606": [
+        "new-american-funding-orlando",
+        "new-american-funding-tampa",
+        "new-american-funding-jacksonville",
+        "new-american-funding-panama-city"
+      ],
+      "1907": [
+        "floridas-va-mortgage-center-tampa",
+        "floridas-va-mortgage-center-jacksonville"
+      ],
+      "3274": [
+        "guild-mortgage-tampa",
+        "guild-mortgage-jacksonville",
+        "guild-mortgage-panhandle"
+      ]
+    },
+    "note": "Listings include geo clones (same NMLS, different city). Those are locality rows, not extra institutions."
+  },
+  "hmda_crosswalk": {
+    "florida_hmda_leis_2025": 1794,
+    "lei_with_nmls_mapping": 54,
+    "ofr_company_nmls_with_fl_hmda_nmls": 26,
+    "ofr_company_nmls_without_mapped_fl_hmda": 10190,
+    "fl_hmda_nmls_without_ofr_mld_mbr_company": 28,
+    "wording": "no attached OFR MLD/MBR credential \u2014 not 'unlicensed lender'. Banks/CUs and exemptions remain separate.",
+    "note": "HMDA uses LEI. Only LEIs with an existing lei_to_nmls_mapping.csv row can join OFR NMLS. Unmapped HMDA LEIs are not counted as unmatched OFR."
+  },
+  "fdic": {
+    "error": "pandas not available",
+    "path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\florida FDIC insured Banks.xlsx"
+  },
+  "canonical_attachment_dry_run": {
+    "existing_graph": "TypeScript FLORIDA_LENDERS listing catalog + HMDA lei_to_nmls_mapping. public.lenders is listing grain, not institution grain.",
+    "source_company_nmls": 10216,
+    "attached_existing_nmls_in_legacy_or_hmda_map": 52,
+    "net_new_high_confidence_candidates": 10164,
+    "review_required": "not scored this pass \u2014 no name/address matching executed",
+    "malformed_nmls_samples": [],
+    "malformed_count": 0,
+    "conflicts": 4,
+    "attachment_pct_vs_legacy_or_hmda_map": 0.51,
+    "execute": false,
+    "reason": "Audit-only. Additive credential schema not present. Unexplained listing-grain collisions (one NMLS, many FL slugs) are expected locality clones, not institution duplicates \u2014 must not be ingested as extra institutions."
+  },
+  "collisions": {
+    "one_nmls_many_legacy_slugs": {
+      "152859": [
+        "acrisure-mortgage",
+        "acrisure-mortgage-tampa",
+        "acrisure-mortgage-jacksonville",
+        "acrisure-mortgage-panhandle"
+      ],
+      "6606": [
+        "new-american-funding-orlando",
+        "new-american-funding-tampa",
+        "new-american-funding-jacksonville",
+        "new-american-funding-panama-city"
+      ],
+      "1907": [
+        "floridas-va-mortgage-center-tampa",
+        "floridas-va-mortgage-center-jacksonville"
+      ],
+      "3274": [
+        "guild-mortgage-tampa",
+        "guild-mortgage-jacksonville",
+        "guild-mortgage-panhandle"
+      ]
+    },
+    "dup_slug_count": 4,
+    "legacy_empty_nmls": [
+      "palm-beach-mortgage-group"
+    ],
+    "nmls_lo_one_person_many_licenses": 0,
+    "branch_multi_parent": 0,
+    "companies_mld_and_mbr": 637,
+    "monthly_vs_nmls_active_only_gap": {
+      "lo_license_monthly_only": 90709,
+      "lo_license_nmls_only": 16,
+      "lo_license_both": 59499,
+      "lo_nmls_both": 60093,
+      "mld_nmls_in_nmls_company_roster": 1500,
+      "mbr_nmls_in_nmls_company_roster": 5312,
+      "mldb_nmls_in_nmls_branch_ids": 5950,
+      "mbrb_nmls_in_nmls_branch_ids": 769,
+      "companies_with_both_mld_and_mbr_nmls": 637,
+      "note": "NMLS-derived rosters are Active-only as of 2026-08-27. Monthly OFR zips include all statuses. Intersection gaps are expected."
+    },
+    "execution_blockers": [
+      "public.lenders is listing/geo grain (slug+county), not canonical institution + credential + branch + person.",
+      "No additive credential/relationship tables exist yet. Mapping proposed; not applied.",
+      "User requested review of source/count/schema audit before the next ingest prompt.",
+      "NMLS-derived rosters are Active-only; monthly files include other statuses \u2014 do not collapse clocks."
+    ],
+    "person_multi_license_samples": {}
+  },
+  "schema_inspection": {
+    "public.lenders": "id/slug/name/nmls_id/county \u2014 directory listing grain. trust_score present historically. Not credential grain.",
+    "migrations": [
+      "20260701120000_initial_lender_schema.sql",
+      "20260805120000_network_auth_handoffs.sql",
+      "20260809120000_my_lending_workspaces.sql"
+    ],
+    "proposed_additive": [
+      "source_datasets / ofr_prr_141420 provenance",
+      "institution_identifiers namespace nmls_company (reuse nmls_id where unique)",
+      "regulatory_credentials (namespace fl_mld, fl_mbr, fl_mldb, fl_mbrb, fl_lo)",
+      "mortgage_branches + branch_identifiers nmls_branch",
+      "mortgage_people + person_identifiers nmls_individual",
+      "person_institution_relationships SPONSORED_BY with dates; publication_allowed default false for person contact"
+    ],
+    "applied": false
+  },
+  "forbidden_not_done": [
+    "no NMLS scrape",
+    "no Trust Scores",
+    "no rankings",
+    "no /florida",
+    "no county pages",
+    "no MLO pages",
+    "no Production ingest",
+    "no HMDA/licensure inference"
+  ]
+}

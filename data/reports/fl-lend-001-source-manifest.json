@@ -1,0 +1,243 @@
+{
+  "manifest": [
+    {
+      "source_file_id": "raw-84874b988f8b",
+      "original_filename": "florida FDIC insured Banks.xlsx",
+      "local_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\florida FDIC insured Banks.xlsx",
+      "file_type": ".xlsx",
+      "compressed_or_extracted": "extracted_or_plain",
+      "file_size": 29256,
+      "sha256": "78c0a8c099d2bfa0d357032469ea7ecb332e80b948938824d39baf57b37f0f6f",
+      "received_date": "2026-06-26",
+      "public_records_request_number": null,
+      "public_records_reference_number": null,
+      "source_authority": "FDIC (separate file)",
+      "source_family": "fdic_insured_banks_list",
+      "classification": "NOT_PRR_141420"
+    },
+    {
+      "source_file_id": "raw-82fd7a18055c",
+      "original_filename": "Loan Originators.csv",
+      "local_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\Loan Originators.csv",
+      "file_type": ".csv",
+      "compressed_or_extracted": "extracted_or_plain",
+      "file_size": 17042016,
+      "sha256": "519fc3637497b67c2b5fde023eaf931e5844ea14fcef6609f8312c1d02995130",
+      "received_date": "2026-08-28",
+      "public_records_request_number": "141420",
+      "public_records_reference_number": "1341691",
+      "source_authority": "Florida Office of Financial Regulation",
+      "source_family": "ofr_prr_141420_nmls_derived_roster",
+      "classification": "NMLS_DERIVED_OFR_PRODUCTION",
+      "notes": "NMLS Individual/Company roster exported for Florida regulator. Contains emails. As-of 2026-08-27, generated 2026-08-28."
+    },
+    {
+      "source_file_id": "raw-f15f7639eeb2",
+      "original_filename": "LoanOriginators_AI_Monthly (4).zip",
+      "local_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\LoanOriginators_AI_Monthly (4).zip",
+      "file_type": ".zip",
+      "compressed_or_extracted": "compressed",
+      "file_size": 3530642,
+      "sha256": "8547d6ac67be13d6970e249eb61133fd6b781c80c9e762f971bad2a607f94889",
+      "received_date": "2026-08-28",
+      "public_records_request_number": "141420",
+      "public_records_reference_number": "1341691",
+      "source_authority": "Florida Office of Financial Regulation",
+      "source_family": "ofr_website_monthly_download",
+      "source_url_if_standard_download": "https://flofr.gov (registration data download / REAL monthly zip)",
+      "classification": "OFR_WEBSITE_MONTHLY"
+    },
+    {
+      "source_file_id": "raw-e9d7020400d2",
+      "original_filename": "LoanOriginators_JR_Monthly (3).zip",
+      "local_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\LoanOriginators_JR_Monthly (3).zip",
+      "file_type": ".zip",
+      "compressed_or_extracted": "compressed",
+      "file_size": 2949815,
+      "sha256": "6180d0aad892244749cc0de3d965d410bbcb3f1c1ec0e5cf8aedec964d9e61dd",
+      "received_date": "2026-08-28",
+      "public_records_request_number": "141420",
+      "public_records_reference_number": "1341691",
+      "source_authority": "Florida Office of Financial Regulation",
+      "source_family": "ofr_website_monthly_download",
+      "source_url_if_standard_download": "https://flofr.gov (registration data download / REAL monthly zip)",
+      "classification": "OFR_WEBSITE_MONTHLY"
+    },
+    {
+      "source_file_id": "raw-223cf032317b",
+      "original_filename": "LoanOriginators_SZ_Monthly (4).zip",
+      "local_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\LoanOriginators_SZ_Monthly (4).zip",
+      "file_type": ".zip",
+      "compressed_or_extracted": "compressed",
+      "file_size": 1791603,
+      "sha256": "3b73143e96dcaeb3716d3c845b99a0558355a0394f7c5935c50b7bc33ddb13e2",
+      "received_date": "2026-08-28",
+      "public_records_request_number": "141420",
+      "public_records_reference_number": "1341691",
+      "source_authority": "Florida Office of Financial Regulation",
+      "source_family": "ofr_website_monthly_download",
+      "source_url_if_standard_download": "https://flofr.gov (registration data download / REAL monthly zip)",
+      "classification": "OFR_WEBSITE_MONTHLY"
+    },
+    {
+      "source_file_id": "raw-88b32203a012",
+      "original_filename": "Mortgage Businesses.csv",
+      "local_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\Mortgage Businesses.csv",
+      "file_type": ".csv",
+      "compressed_or_extracted": "extracted_or_plain",
+      "file_size": 4082748,
+      "sha256": "34a9b176fdef1b8ca9c96a1aacf7884fdfe0de3af62018e1b1308759c231a72b",
+      "received_date": "2026-08-28",
+      "public_records_request_number": "141420",
+      "public_records_reference_number": "1341691",
+      "source_authority": "Florida Office of Financial Regulation",
+      "source_family": "ofr_prr_141420_nmls_derived_roster",
+      "classification": "NMLS_DERIVED_OFR_PRODUCTION",
+      "notes": "NMLS Individual/Company roster exported for Florida regulator. Contains emails. As-of 2026-08-27, generated 2026-08-28."
+    },
+    {
+      "source_file_id": "raw-a618b415ad96",
+      "original_filename": "MortgageFirms_MBR-MBRB_Monthly (8).zip",
+      "local_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\MortgageFirms_MBR-MBRB_Monthly (8).zip",
+      "file_type": ".zip",
+      "compressed_or_extracted": "compressed",
+      "file_size": 640570,
+      "sha256": "c4827b29bc9e9f3e92484e5fc5ddef5cd3090c7bce1db743e928171f71a27474",
+      "received_date": "2026-08-28",
+      "public_records_request_number": "141420",
+      "public_records_reference_number": "1341691",
+      "source_authority": "Florida Office of Financial Regulation",
+      "source_family": "ofr_website_monthly_download",
+      "source_url_if_standard_download": "https://flofr.gov (registration data download / REAL monthly zip)",
+      "classification": "OFR_WEBSITE_MONTHLY"
+    },
+    {
+      "source_file_id": "raw-9f8b58b551fe",
+      "original_filename": "MortgageFirms_MLD-MLDB_Monthly (7).zip",
+      "local_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\originals\\MortgageFirms_MLD-MLDB_Monthly (7).zip",
+      "file_type": ".zip",
+      "compressed_or_extracted": "compressed",
+      "file_size": 1269147,
+      "sha256": "7a194926bfffb9715a8c69bada1440a441d33d1f147361866f84530e301484f0",
+      "received_date": "2026-08-28",
+      "public_records_request_number": "141420",
+      "public_records_reference_number": "1341691",
+      "source_authority": "Florida Office of Financial Regulation",
+      "source_family": "ofr_website_monthly_download",
+      "source_url_if_standard_download": "https://flofr.gov (registration data download / REAL monthly zip)",
+      "classification": "OFR_WEBSITE_MONTHLY"
+    }
+  ],
+  "zip_members": {
+    "LoanOriginators_AI_Monthly (4).zip": [
+      {
+        "member": "LoanOrignators_AI_Monthly.csv",
+        "bytes": 13545635,
+        "zip_datetime": "2026-08-28T06:03:28",
+        "extracted_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\extracted\\LoanOrignators_AI_Monthly.csv",
+        "extracted_sha256": "f34c9615b6cf572fb78c79fecefbb17d1b77f3ae197e732fe52823e52a9c87b5"
+      }
+    ],
+    "LoanOriginators_JR_Monthly (3).zip": [
+      {
+        "member": "LoanOrignators_JR_Monthly.csv",
+        "bytes": 11329129,
+        "zip_datetime": "2026-08-28T06:03:42",
+        "extracted_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\extracted\\LoanOrignators_JR_Monthly.csv",
+        "extracted_sha256": "072db3cf34647f1a45ef75cbf461b73499e22aba3cdb325bce56d01d5c4697d1"
+      }
+    ],
+    "LoanOriginators_SZ_Monthly (4).zip": [
+      {
+        "member": "LoanOrignators_SZ_Monthly.csv",
+        "bytes": 6864019,
+        "zip_datetime": "2026-08-28T06:03:50",
+        "extracted_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\extracted\\LoanOrignators_SZ_Monthly.csv",
+        "extracted_sha256": "3462f6c519cadff5fe11fd57b6360ebbcce4ab96ea9cfa015f428883cc6a16e0"
+      }
+    ],
+    "MortgageFirms_MBR-MBRB_Monthly (8).zip": [
+      {
+        "member": "MortgageFirms_MBR-MBRB_Monthly.csv",
+        "bytes": 2374662,
+        "zip_datetime": "2026-08-28T06:03:54",
+        "extracted_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\extracted\\MortgageFirms_MBR-MBRB_Monthly.csv",
+        "extracted_sha256": "625a37aa978e9ba7da8f0cad360f770c31fd5f3f2deff205568030d3f13452f1"
+      }
+    ],
+    "MortgageFirms_MLD-MLDB_Monthly (7).zip": [
+      {
+        "member": "MortgageFirms_MLD-MLDB_Monthly.csv",
+        "bytes": 5586726,
+        "zip_datetime": "2026-08-28T06:05:00",
+        "extracted_path": "C:\\Users\\Michael.Savitsky\\lender-trust-hub\\data\\raw\\florida\\ofr-prr-141420\\extracted\\MortgageFirms_MLD-MLDB_Monthly.csv",
+        "extracted_sha256": "97065fbea62c362982624e392a7e124e7f6e226dbaf0a434f629c8b0eb577661"
+      }
+    ]
+  },
+  "seven": [
+    {
+      "file": "LoanOriginators_AI_Monthly (4).zip \u2192 LoanOrignators_AI_Monthly.csv",
+      "origin": "OFR website monthly download",
+      "class": "LO A-I",
+      "raw_rows": 64096,
+      "distinct_ids": 64096,
+      "date": "zip member 2026-08-28 06:03:28",
+      "notes": "Standard OFR columns. Typo INTIAL APPROVAL. No email. Has PHONE, COUNTY, STATUS."
+    },
+    {
+      "file": "LoanOriginators_JR_Monthly (3).zip \u2192 LoanOrignators_JR_Monthly.csv",
+      "origin": "OFR website monthly download",
+      "class": "LO J-R",
+      "raw_rows": 53667,
+      "distinct_ids": 53667,
+      "date": "zip member 2026-08-28 06:03:42",
+      "notes": "Same schema as AI. Inner filename misspells Originators."
+    },
+    {
+      "file": "LoanOriginators_SZ_Monthly (4).zip \u2192 LoanOrignators_SZ_Monthly.csv",
+      "origin": "OFR website monthly download",
+      "class": "LO S-Z",
+      "raw_rows": 32448,
+      "distinct_ids": 32448,
+      "date": "zip member 2026-08-28 06:03:50",
+      "notes": "Same schema."
+    },
+    {
+      "file": "MortgageFirms_MBR-MBRB_Monthly (8).zip",
+      "origin": "OFR website monthly download",
+      "class": "MBR/MBRB",
+      "raw_rows": 10618,
+      "distinct_ids": 10618,
+      "date": "zip member 2026-08-28 06:03:54",
+      "notes": "LICENSE TYPE MBR vs MBRB. No SERVICER column. No email."
+    },
+    {
+      "file": "MortgageFirms_MLD-MLDB_Monthly (7).zip",
+      "origin": "OFR website monthly download",
+      "class": "MLD/MLDB",
+      "raw_rows": 27135,
+      "distinct_ids": 26988,
+      "date": "zip member 2026-08-28 06:05:00",
+      "notes": "Adds SERVICER column. LICENSE TYPE MLD vs MLDB. No email."
+    },
+    {
+      "file": "Loan Originators.csv",
+      "origin": "NMLS-derived OFR PRR #141420 production",
+      "class": "Individual Roster (Regulator) \u2014 relationship/contact",
+      "raw_rows": 61634,
+      "distinct_ids": 61608,
+      "date": "As Of Date 8/27/2026; generated 8/28/2026 7:52; Active license only",
+      "notes": "Emails, sponsoring company + company NMLS, sponsorship status/dates, worker classification. No individual phone. No branch id."
+    },
+    {
+      "file": "Mortgage Businesses.csv",
+      "origin": "NMLS-derived OFR PRR #141420 production",
+      "class": "Company/Branch Roster by License Type \u2014 relationship/contact",
+      "raw_rows": 13326,
+      "distinct_ids": 6450,
+      "date": "As Of Date 8/27/2026; generated 8/28/2026 7:53; Active license only",
+      "notes": "Company Id + Branch Id parent link. Company/complaint emails and phones. Blank Branch Id = company credential."
+    }
+  ]
+}
