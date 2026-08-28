@@ -1,0 +1,8 @@
+{
+  "status": "BLOCKED",
+  "reason": "NATIONAL_CANONICAL_GRAPH_NOT_OPENABLE",
+  "detail": "TARGET_DATABASE_URL / .env.local for hidcrbexurginnuqgipx is not present on this host. Refusing to invent a v2 graph or write Move/Investor/Contractor databases.",
+  "source_company_nmls": 10216,
+  "held_unresolved_without_production": 10216,
+  "net_new_confirmed": 0
+}

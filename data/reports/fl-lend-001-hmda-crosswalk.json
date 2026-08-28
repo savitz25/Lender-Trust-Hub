@@ -1,0 +1,9 @@
+{
+  "florida_hmda_leis_2025": 1794,
+  "lei_with_nmls_mapping": 54,
+  "ofr_company_nmls_with_fl_hmda_nmls": 26,
+  "ofr_company_nmls_without_mapped_fl_hmda": 10190,
+  "fl_hmda_nmls_without_ofr_mld_mbr_company": 28,
+  "wording": "no attached OFR MLD/MBR credential \u2014 not 'unlicensed lender'. Banks/CUs and exemptions remain separate.",
+  "note": "HMDA uses LEI. Only LEIs with an existing lei_to_nmls_mapping.csv row can join OFR NMLS. Unmapped HMDA LEIs are not counted as unmatched OFR."
+}

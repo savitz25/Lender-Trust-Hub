@@ -1,0 +1,103 @@
+{
+  "listings": 55,
+  "nmlsId_fields": 55,
+  "distinct_nmls": 41,
+  "found_in_ofr_company_or_branch_nmls": 42,
+  "not_found_or_empty": [
+    {
+      "slug": "prime-time-mortgage",
+      "name": "Prime Time Mortgage Inc.",
+      "nmls": "372175"
+    },
+    {
+      "slug": "palm-beach-mortgage-group",
+      "name": "Palm Beach Mortgage Group, Inc.",
+      "nmls": null
+    },
+    {
+      "slug": "america-home-loans",
+      "name": "America Home Loans LLC",
+      "nmls": "885847"
+    },
+    {
+      "slug": "contemporary-mortgage-services",
+      "name": "Contemporary Mortgage Services",
+      "nmls": "230074"
+    },
+    {
+      "slug": "my-easy-mortgage",
+      "name": "My Easy Mortgage",
+      "nmls": "1926205"
+    },
+    {
+      "slug": "navy-federal-jacksonville",
+      "name": "Navy Federal Credit Union (Jacksonville Area)",
+      "nmls": "399807"
+    },
+    {
+      "slug": "panhandle-credit-union",
+      "name": "Panhandle Credit Union",
+      "nmls": "2163677"
+    },
+    {
+      "slug": "eglin-federal-credit-union",
+      "name": "Eglin Federal Credit Union (VA Loans)",
+      "nmls": "440642"
+    }
+  ],
+  "duplicate_nmls_slugs": {
+    "1299512": [
+      "floridas-va-mortgage-center",
+      "floridas-va-mortgage-center-orlando",
+      "floridas-va-mortgage-center-tampa",
+      "floridas-va-mortgage-center-jacksonville",
+      "floridas-va-mortgage-center-eglin"
+    ],
+    "152859": [
+      "acrisure-mortgage",
+      "acrisure-mortgage-tampa",
+      "acrisure-mortgage-jacksonville",
+      "acrisure-mortgage-panhandle"
+    ],
+    "6606": [
+      "new-american-funding-orlando",
+      "new-american-funding-tampa",
+      "new-american-funding-jacksonville",
+      "new-american-funding-panama-city"
+    ],
+    "1907": [
+      "veterans-united-tampa",
+      "veterans-united-jacksonville"
+    ],
+    "3274": [
+      "guild-mortgage-tampa",
+      "guild-mortgage-jacksonville",
+      "guild-mortgage-panhandle"
+    ]
+  },
+  "note": "Listings include geo clones (same NMLS, different city). Those are locality rows, not extra institutions.",
+  "empty_nmls": [
+    "palm-beach-mortgage-group",
+    "bay",
+    "okaloosa",
+    "escambia",
+    "santa-rosa",
+    "walton",
+    "duval",
+    "st-johns",
+    "clay",
+    "nassau",
+    "hillsborough",
+    "pinellas",
+    "pasco",
+    "orange",
+    "osceola",
+    "seminole",
+    "miami-dade",
+    "broward",
+    "palm-beach",
+    "orange",
+    "hillsborough",
+    "duval"
+  ]
+}

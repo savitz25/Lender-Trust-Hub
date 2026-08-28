@@ -46,6 +46,9 @@ data/south-florida-agents.txt
 logo horrible.png
 agent.agencies USA/
 
+# Florida OFR PRR originals / extracts (immutable local copies)
+data/raw/
+
 # Raw HMDA LAR extracts (multi-GB) — never commit
 year_2025.csv
 state_FL-*.csv

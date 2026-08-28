@@ -1,0 +1,12 @@
+{
+  "lo_license_monthly_only": 90709,
+  "lo_license_nmls_only": 16,
+  "lo_license_both": 59499,
+  "lo_nmls_both": 60093,
+  "mld_nmls_in_nmls_company_roster": 1500,
+  "mbr_nmls_in_nmls_company_roster": 5312,
+  "mldb_nmls_in_nmls_branch_ids": 5950,
+  "mbrb_nmls_in_nmls_branch_ids": 769,
+  "companies_with_both_mld_and_mbr_nmls": 637,
+  "note": "NMLS-derived rosters are Active-only as of 2026-08-27. Monthly OFR zips include all statuses. Intersection gaps are expected."
+}

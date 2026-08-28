@@ -1,0 +1,28 @@
+{
+  "prr_141420": false,
+  "last_write": "2026-06-26T09:10:10",
+  "bytes": 29256,
+  "sha256": "78c0a8c099d2bfa0d357032469ea7ecb332e80b948938824d39baf57b37f0f6f",
+  "shared_strings": 933,
+  "cert_mentions": 198,
+  "distinct_cert": 198,
+  "sample_lines": [
+    "FDIC-Insured Lenders List",
+    "1st Source Bank",
+    "Website: www.1stsource.com",
+    "Amerant Bank, National Association",
+    "Website: www.amerantbank.com",
+    "Amerasia Bank",
+    "Website: www.amerasiabankny.com",
+    "American Commerce Bank, National Association",
+    "Website: www.americancommercebank.com",
+    "American Momentum Bank",
+    "Website: www.americanmomentum.bank",
+    "Ameris Bank",
+    "Website: www.amerisbank.com",
+    "Anchor Bank",
+    "Website: https://www.anchorbank.com",
+    "Anthem Bank &amp; Trust"
+  ],
+  "note": "Preexisting FDIC list, not OFR PRR #141420. Do not duplicate national FDIC spine."
+}
