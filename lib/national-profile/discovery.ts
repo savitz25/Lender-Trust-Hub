@@ -134,7 +134,8 @@ export function parseDiscoveryQuery(raw: string): ParsedDiscoveryQuery {
   }
   const compact = rest.replace(/\s+/g, '');
   let identifierValue: string | null = null;
-  if (identifierKind === 'lei' || (!identifierKind && /^[A-Za-z0-9]{20}$/.test(compact))) {
+  const unprefixedLei = !identifierKind && !/\s/.test(rest) && /^[A-Za-z0-9]{20}$/.test(compact);
+  if (identifierKind === 'lei' || unprefixedLei) {
     identifierKind = 'lei';
     identifierValue = compact.toUpperCase();
   } else if (identifierKind === 'nmls' || identifierKind === 'fdic' || identifierKind === 'ncua') {

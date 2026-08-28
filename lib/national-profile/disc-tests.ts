@@ -33,6 +33,17 @@ export function runDiscContractTests(): DiscResult[] {
   check('DISC6-nmls-navy', navy.some((h) => h.record.slug === 'navy-federal-credit-union'), 'NMLS digits');
   const lei = searchDiscovery('549300FGXN1K3HLB1R50');
   check('DISC7', lei[0]?.record.slug === 'rocket-mortgage' && lei[0]?.matchedIdentifier === 'lei', 'LEI exact');
+  check(
+    'DISC7-prefix',
+    searchDiscovery('LEI 549300FGXN1K3HLB1R50')[0]?.record.slug === 'rocket-mortgage',
+    'LEI prefix still exact'
+  );
+  check(
+    'DISC7-spaced-name-not-lei',
+    parseDiscoveryQuery('AXE CAPITAL LENDING LLC').identifierKind == null &&
+      searchDiscovery('AXE CAPITAL LENDING LLC').some((h) => h.record.slug === 'axe-capital-lending-llc' && h.match === 'canonical_exact'),
+    '20-letter legal name with spaces is not a LEI'
+  );
   const parsedNmls = parseDiscoveryQuery('NMLS 3030');
   check('DISC8', parsedNmls.identifierKind === 'nmls' && parsedNmls.identifierValue === '3030', 'namespaces parsed');
   const nmls3030 = searchDiscovery('nmls 3030');
