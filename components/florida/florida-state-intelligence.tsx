@@ -63,7 +63,7 @@ export function FloridaStateIntelligence() {
       <nav aria-label="Breadcrumb" className="mb-4 text-sm text-slate-600">
         <ol className="flex flex-wrap gap-1">
           <li>
-            <Link href="/" className="text-[#0D9488] underline-offset-2 hover:underline">
+            <Link href="/" className="text-[#047857] underline underline-offset-2">
               Home
             </Link>
           </li>
@@ -84,7 +84,7 @@ export function FloridaStateIntelligence() {
         </p>
         <p className="mt-2 text-sm text-slate-600">
           Local catalog pages remain at{' '}
-          <Link href="/local-lenders/florida" className="text-[#0D9488] underline-offset-2 hover:underline">
+          <Link href="/local-lenders/florida" className="text-[#047857] underline underline-offset-2">
             /local-lenders/florida
           </Link>
           . Those pages are not this official-source Intelligence snapshot.
@@ -401,7 +401,7 @@ export function FloridaStateIntelligence() {
                 <tr key={src.id} className="border-b border-slate-100 align-top">
                   <td className="py-2 pr-2">
                     {src.url ? (
-                      <a href={src.url} className="break-words text-[#0D9488] underline-offset-2 hover:underline">
+                      <a href={src.url} className="break-words text-[#047857] underline underline-offset-2">
                         {src.name} (official FLAIO index)
                       </a>
                     ) : (
@@ -420,18 +420,18 @@ export function FloridaStateIntelligence() {
         </div>
         <p className="mt-4 text-sm text-slate-600">
           Read the hub{' '}
-          <Link href="/methodology" className="text-[#0D9488] underline-offset-2 hover:underline">
+          <Link href="/methodology" className="text-[#047857] underline underline-offset-2">
             methodology
           </Link>
           . Confirm licenses on{' '}
           <a
             href="https://www.nmlsconsumeraccess.org/"
-            className="text-[#0D9488] underline-offset-2 hover:underline"
+            className="text-[#047857] underline underline-offset-2"
           >
             NMLS Consumer Access
           </a>{' '}
           and{' '}
-          <a href="https://flofr.gov/" className="text-[#0D9488] underline-offset-2 hover:underline">
+          <a href="https://flofr.gov/" className="text-[#047857] underline underline-offset-2">
             Florida OFR
           </a>
           .
