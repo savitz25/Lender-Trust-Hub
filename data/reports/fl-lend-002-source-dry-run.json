@@ -1,0 +1,126 @@
+{
+  "task": "FL-LEND-002",
+  "prr": "141420",
+  "prr_ref": "1341691",
+  "source_company_nmls": 10216,
+  "credentials": {
+    "monthly": {
+      "MLD": {
+        "rows": 2805,
+        "distinct_license": 2805,
+        "distinct_nmls": 2453,
+        "status": {
+          "Approved": 1384,
+          "Expired": 560,
+          "Terminated": 841,
+          "Revoked": 14,
+          "Denied Tech": 4,
+          "Suspended": 1,
+          "Inactive": 1
+        },
+        "current_approved": 1384,
+        "historical_other": 1421
+      },
+      "MLDB": {
+        "rows": 24330,
+        "distinct_license": 24183,
+        "distinct_nmls": 22402,
+        "status": {
+          "Terminated": 16156,
+          "Approved": 5929,
+          "Expired": 2219,
+          "Inactive": 22,
+          "Withdrawn": 3,
+          "Denied Tech": 1
+        },
+        "current_approved": 5929,
+        "historical_other": 18401
+      },
+      "MBR": {
+        "rows": 8672,
+        "distinct_license": 8672,
+        "distinct_nmls": 8301,
+        "status": {
+          "Approved": 5051,
+          "Expired": 2348,
+          "Terminated": 1234,
+          "Inactive": 8,
+          "Denied Tech": 10,
+          "Revoked": 18,
+          "Suspended": 2,
+          "Withdrawn": 1
+        },
+        "current_approved": 5051,
+        "historical_other": 3621
+      },
+      "MBRB": {
+        "rows": 1946,
+        "distinct_license": 1946,
+        "distinct_nmls": 1907,
+        "status": {
+          "Terminated": 749,
+          "Approved": 695,
+          "Expired": 490,
+          "Inactive": 12
+        },
+        "current_approved": 695,
+        "historical_other": 1251
+      },
+      "LO": {
+        "rows": 150211,
+        "distinct_license": 150208,
+        "distinct_nmls": 135221,
+        "status": {
+          "Expired": 85778,
+          "Approved": 59475,
+          "Terminated": 4835,
+          "Denied Tech": 64,
+          "Inactive": 35,
+          "Revoked": 17,
+          "Denied Cause": 6,
+          "Withdrawn": 1
+        },
+        "current_approved": 59475,
+        "historical_other": 90736
+      }
+    },
+    "nmls_prr": {
+      "by_class_rows": {
+        "MBR": 5154,
+        "MLS": 512,
+        "MLDB": 2072,
+        "MLSB": 3961,
+        "MLD": 907,
+        "MBRB": 720
+      },
+      "business_status": {
+        "Approved": 13039,
+        "Approved - Surrender/Cancellation Requested": 63,
+        "Pending - Review": 128,
+        "Pending - Incomplete": 70,
+        "Terminated - Failed to Renew": 17,
+        "Pending - Withdrawal Requested": 6,
+        "Suspended": 3
+      },
+      "lo_status": {
+        "Approved": 59493,
+        "Pending - Deficient": 324,
+        "Pending - Review": 426,
+        "Pending - Incomplete": 546,
+        "Pending - Review (Temporary Authority)": 489,
+        "Pending - Deficient (Temporary Authority Eligible)": 120,
+        "Pending - Deficient (Temporary Authority)": 156,
+        "Terminated - Failed to Renew": 38,
+        "Pending - Withdrawal Requested": 30,
+        "Approved - Surrender/Cancellation Requested": 12
+      },
+      "lo_rows": 61634,
+      "lo_distinct_nmls": 61608,
+      "lo_with_sponsor": 53421
+    }
+  },
+  "branch_parents": 6690,
+  "branch_parent_collisions": 0,
+  "net_new_confirmed_policy": 0,
+  "apply": false
+}
