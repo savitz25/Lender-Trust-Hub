@@ -57,7 +57,8 @@ export function runFlexpTests(): Flexp[] {
   check('FLEXP31', !floridaCompanyJsonLdHasForbiddenRatings({ foo: 'bar' }), 'ratings helper');
   check('FLEXP-leak', publicProfileLeakHits({ name: 'x', nmls_id: '1' }).length === 0, 'leak helper');
   check('FLEXP42-phase1-index', FLORIDA_PHASE1_GATE.robotsIndex === true && FLORIDA_PHASE1_GATE.sitemap === true, 'phase1 remains index');
-  check('FLEXP-phase2-preview-gate', FLORIDA_PHASE2_GATE.robotsIndex === false && FLORIDA_PHASE2_GATE.sitemap === false, 'phase2 noindex until 2A+gate');
+  check('FLEXP44', FLORIDA_PHASE2_GATE.robotsIndex === true && FLORIDA_PHASE2_COUNT === 100, 'phase2 index,follow');
+  check('FLEXP45', FLORIDA_PHASE2_GATE.sitemap === true, 'phase2 in florida sitemap');
   check('FLEXP50', DISCOVERY_SEARCHABLE_COUNT === 181 && FLORIDA_PHASE1_GATE.search === false && FLORIDA_PHASE2_GATE.search === false, 'searchable 181');
   check('FLEXP51', RENDER_COHORT.length === 181, String(RENDER_COHORT.length));
   check('FLEXP52', INDEXING_COHORT.length === 180, String(INDEXING_COHORT.length));

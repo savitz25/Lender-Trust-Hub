@@ -42,11 +42,11 @@ export function isFloridaPhase2Slug(slug: string): boolean {
   return BY_SLUG.has(slug);
 }
 
-/** Preview / Production Phase 2A: renderable, not indexed, not in sitemap. Flip after indexation gate. */
+/** After Production Phase 2A + indexation gate. Search remains false. */
 export const FLORIDA_PHASE2_GATE = {
   version: FLORIDA_PHASE2_VERSION,
-  robotsIndex: false as boolean,
-  sitemap: false as boolean,
+  robotsIndex: true as boolean,
+  sitemap: true as boolean,
   search: false,
   count: FLORIDA_PHASE2_COUNT,
 };
