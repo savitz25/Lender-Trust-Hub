@@ -1,5 +1,6 @@
 import { SITE_URL } from '@/lib/directory/categories';
 import { FLORIDA_PHASE1_GATE, FLORIDA_PHASE1_ROWS } from '@/lib/florida-profile/phase1';
+import { FLORIDA_PHASE2_GATE, FLORIDA_PHASE2_ROWS } from '@/lib/florida-profile/phase2';
 import { nationalProfilePath } from '@/lib/national-profile/cohort';
 
 export const dynamic = 'force-static';
@@ -9,9 +10,13 @@ function xmlEscape(value: string): string {
 }
 
 export function GET() {
-  const locs = FLORIDA_PHASE1_GATE.sitemap
-    ? FLORIDA_PHASE1_ROWS.map((row) => `${SITE_URL}${nationalProfilePath(row.slug)}`)
-    : [];
+  const locs: string[] = [];
+  if (FLORIDA_PHASE1_GATE.sitemap) {
+    locs.push(...FLORIDA_PHASE1_ROWS.map((row) => `${SITE_URL}${nationalProfilePath(row.slug)}`));
+  }
+  if (FLORIDA_PHASE2_GATE.sitemap) {
+    locs.push(...FLORIDA_PHASE2_ROWS.map((row) => `${SITE_URL}${nationalProfilePath(row.slug)}`));
+  }
   const body = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',

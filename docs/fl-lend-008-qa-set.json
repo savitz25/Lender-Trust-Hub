@@ -1,0 +1,18 @@
+{
+  "task": "FL-LEND-008",
+  "count": 12,
+  "rows": [
+    { "tag": "b2_event", "slug": "axe-capital-lending-llc" },
+    { "tag": "b2_event", "slug": "loyal-lending-solutions-llc" },
+    { "tag": "b2_event", "slug": "cash-cow-funding-inc" },
+    { "tag": "c2_zero", "slug": "jmac-lending-inc" },
+    { "tag": "c2_zero", "slug": "new-vista-funding-corporation" },
+    { "tag": "c2_zero", "slug": "think-one-mortgage-inc" },
+    { "tag": "mbr_only", "slug": "hunter-lending-llc" },
+    { "tag": "mld_only", "slug": "priority-1-lending-llc" },
+    { "tag": "servicer_yes", "slug": "onity-mortgage-corporation" },
+    { "tag": "dual_mbr_mld", "slug": "lend-a-loan-llc" },
+    { "tag": "long_name", "slug": "halpern-and-associates-mortgage-corporation-inc" },
+    { "tag": "largest_ofr", "slug": "irex-sales-corporation" }
+  ]
+}

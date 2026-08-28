@@ -32,5 +32,6 @@ export function runFlpubTests(): Flpub[] {
   check('FLPUB-leak-empty', publicProfileLeakHits({ name: 'x', nmls_id: '1' }).length === 0, 'no leak keys');
   check('FLPUB48-snapshot', FLORIDA_SNAPSHOT.fingerprint === '616a961b7524fd5fd48ba7dcedcc553aabe9b658a586557908622912f5f08edc', 'si fingerprint');
   check('FLPUB-search-off', FLORIDA_PHASE1_GATE.search === false, 'no search expansion');
+  check('FLPUB-phase1-untouched', FLORIDA_PHASE1_GATE.robotsIndex === true && FLORIDA_PHASE1_GATE.sitemap === true, 'phase1 index+sitemap');
   return out;
 }

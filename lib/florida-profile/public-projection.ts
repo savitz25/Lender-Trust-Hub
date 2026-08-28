@@ -1,5 +1,8 @@
 import { FLORIDA_PHASE1_COPY } from './copy';
 import type { Phase1Cohort, Phase1Kind } from './phase1';
+import type { Phase2Cohort } from './phase2';
+
+export type FloridaPubCohort = Phase1Cohort | Phase2Cohort;
 
 const LEAK_KEYS = [
   'raw_metadata',
@@ -45,7 +48,7 @@ export type FloridaPublicProfile = {
   name: string;
   nmls_id: string;
   slug: string;
-  cohort: Phase1Cohort;
+  cohort: FloridaPubCohort;
   kind: Phase1Kind;
   credentials: PublicCredential[];
   dual_mbr_mld: boolean;
@@ -115,7 +118,7 @@ function slimEvent(v: unknown): PublicOfrEvent {
 
 export function toFloridaPublicProfile(
   raw: Record<string, unknown>,
-  meta: { cohort: Phase1Cohort; kind: Phase1Kind; slug: string }
+  meta: { cohort: FloridaPubCohort; kind: Phase1Kind; slug: string }
 ): FloridaPublicProfile {
   const identity = rec(raw.identity);
   const licensing = rec(raw.floridaLicensing);

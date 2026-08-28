@@ -19,12 +19,13 @@ import {
   nationalProfileTitle,
 } from '@/lib/national-profile/seo';
 import { FLORIDA_PHASE1_ROWS, FLORIDA_PHASE1_GATE, getPhase1Row } from '@/lib/florida-profile/phase1';
+import { FLORIDA_PHASE2_ROWS, FLORIDA_PHASE2_GATE, getPhase2Row } from '@/lib/florida-profile/phase2';
 import { fetchPublicLenderProfile } from '@/lib/florida-profile/fetch-public';
 import { buildFloridaCompanyJsonLd } from '@/lib/florida-profile/jsonld';
 
 export const dynamic = 'force-dynamic';
 
-const PHASE1_NOINDEX = {
+const FLORIDA_NOINDEX = {
   index: false,
   follow: false,
   googleBot: { index: false, follow: false },
@@ -32,7 +33,10 @@ const PHASE1_NOINDEX = {
 
 export function generateStaticParams() {
   const national = NATIONAL_PROFILE_COHORT.map((row) => ({ slug: row.slug }));
-  const florida = FLORIDA_PHASE1_ROWS.map((row) => ({ slug: row.slug }));
+  const florida = [
+    ...FLORIDA_PHASE1_ROWS.map((row) => ({ slug: row.slug })),
+    ...FLORIDA_PHASE2_ROWS.map((row) => ({ slug: row.slug })),
+  ];
   return [...national, ...florida];
 }
 
@@ -61,19 +65,19 @@ export async function generateMetadata({
     };
   }
   const phase1 = getPhase1Row(slug);
-  if (!phase1) return { title: 'Lender research not found', robots: nationalProfileRobots() };
+  const phase2 = getPhase2Row(slug);
+  if (!phase1 && !phase2) return { title: 'Lender research not found', robots: nationalProfileRobots() };
   const pub = await fetchPublicLenderProfile(slug);
   if (!pub || pub.kind === 'national_only' || !pub.florida) {
     return { title: 'Lender research not found', robots: nationalProfileRobots() };
   }
   const title = nationalProfileTitle(pub.florida.name);
   const description = `Research ${pub.florida.name} using Florida OFR licensing and Regulatory & Enforcement History. Independent research. Not a ranking, score, or lending advice.`;
+  const indexable = phase1 ? FLORIDA_PHASE1_GATE.robotsIndex : FLORIDA_PHASE2_GATE.robotsIndex;
   return {
     title,
     description,
-    robots: FLORIDA_PHASE1_GATE.robotsIndex
-      ? { index: true, follow: true }
-      : PHASE1_NOINDEX,
+    robots: indexable ? { index: true, follow: true } : FLORIDA_NOINDEX,
     alternates: { canonical: nationalProfileCanonical(slug) },
     openGraph: { title, description, url: nationalProfileCanonical(slug) },
   };
