@@ -77,6 +77,14 @@ export const LENDER_TOOLS = {
     'Practical research tools for financing decisions — not a lead marketplace. Start where you need clarity.',
   items: [
     {
+      id: 'florida-research',
+      title: 'Florida research',
+      description:
+        'Official OFR licensing, HMDA Florida activity, CFPB complaint observations, and Regulatory & Enforcement History. Not a ranking.',
+      href: '/florida',
+      cta: 'Open Florida research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
@@ -314,6 +322,7 @@ export const LENDER_FOOTER_COLUMNS = [
     title: 'Research',
     links: [
       { href: '/local-lenders', label: 'Local Lenders' },
+      { href: '/florida', label: 'Florida Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },

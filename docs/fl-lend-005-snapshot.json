@@ -1,0 +1,350 @@
+{
+  "task": "FL-LEND-005",
+  "generated_at": "2026-08-27T21:11:51.528392+00:00",
+  "snapshot_date": "2026-08-27",
+  "target": "hidcrbexurginnuqgipx",
+  "baseline": {
+    "institutions": 14623,
+    "nmls": 6641,
+    "person_mlo": 0,
+    "branch": 0,
+    "lei": 4715,
+    "fdic": 5377,
+    "ncua": 1096,
+    "rssd": 8100,
+    "hmda": 454480,
+    "cfpb": 458146,
+    "enf": 17655,
+    "profiles": 8447,
+    "licenses": 6435,
+    "sre": 2515
+  },
+  "licensing": {
+    "approved_credentials": 6435,
+    "mbr": 5051,
+    "mld": 1384,
+    "unique_nmls": 6325,
+    "dual_nmls": 55,
+    "confirmed_nmls": 6303,
+    "held_nmls": 22,
+    "held_rows": 23,
+    "phone_credentials": 5949,
+    "prim_addr": 6435,
+    "mail_addr": 6312,
+    "prim_state_fl": 2681,
+    "mld_servicer_yes_rows": 501,
+    "mld_servicer_yes_nmls": 501,
+    "source_dataset": "FL_OFR_CH494",
+    "source_as_of": "2026-08-27",
+    "source_role": "Current Approved Chapter 494 company credential roster (MBR/MLD).",
+    "credential_multiplicity": {
+      "1": 6217,
+      "2": 106,
+      "3": 2
+    }
+  },
+  "ofr": {
+    "written_observations": 2515,
+    "company": 952,
+    "person_mlo": 1531,
+    "branch": 31,
+    "mixed": 1,
+    "company_confirmed": 342,
+    "company_review": 3,
+    "company_unresolved": 607,
+    "confirmed_institutions": 294,
+    "company_types": {
+      "WITHDRAWAL": 20,
+      "EMERGENCY_ORDER": 1,
+      "FINAL_ORDER": 769,
+      "OTHER": 82,
+      "LICENSE_DENIAL": 80
+    },
+    "company_findings": {
+      "UNSPECIFIED": 78,
+      "AGENCY_FINDING": 458,
+      "NOT_DISCIPLINE": 23,
+      "CONSENTED_ORDER": 393
+    },
+    "company_fines": 436,
+    "company_fine_dollars": 2047387.0,
+    "company_revocation": 29,
+    "company_suspension": 8,
+    "company_consent_mentioned": 393,
+    "company_docs": 952,
+    "held_event_nmls": [
+      {
+        "nmls_id": "1359205",
+        "n": 2
+      },
+      {
+        "nmls_id": "205042",
+        "n": 1
+      }
+    ],
+    "held_with_institution": 0,
+    "year_min": "2015-07-08",
+    "year_max": "2026-08-25",
+    "coverage_start": "2015-07",
+    "coverage_end": "2026-08-27",
+    "source_dataset": "FL_OFR_FLAIO",
+    "source_url": "https://www.doah.state.fl.us/FLAIO/OFR/",
+    "text_extractable_company": 943,
+    "non_text_company": 9
+  },
+  "hmda": {
+    "criterion": "geo_grain=state AND state_code=FL",
+    "rows": 1794,
+    "leis": 1794,
+    "attached_inst": 1069,
+    "applications": 927616,
+    "originations": 489025,
+    "denials": 0,
+    "apps_conventional": 0,
+    "apps_fha": 0,
+    "apps_va": 0,
+    "apps_usda_other": 0,
+    "purchase_applications": 0,
+    "refinance_applications": 0,
+    "years": [
+      {
+        "data_year": 2025,
+        "rows": 1794,
+        "applications": 927616,
+        "originations": 489025,
+        "denials": 0
+      }
+    ],
+    "vintages": [
+      {
+        "source_vintage": "HMDA 2025",
+        "n": 1794
+      }
+    ],
+    "confidence": [
+      {
+        "attribution_confidence": "confirmed",
+        "n": 1069
+      },
+      {
+        "attribution_confidence": "unresolved",
+        "n": 718
+      },
+      {
+        "attribution_confidence": "review_required",
+        "n": 7
+      }
+    ],
+    "source_observed": "2025-12-31",
+    "source_dataset": "hmda_2025_lender_state_summary",
+    "county_rows": 22359,
+    "note": "State-grain HMDA LEI summaries for Florida. Not a ranking. Denial ratio is descriptive (denials/applications) and is not a fairness score.",
+    "denial_ratio": 0.0
+  },
+  "cfpb": {
+    "criterion": "consumer_state=FL AND product ILIKE mortgage (already mortgage-scoped table)",
+    "rows": 47961,
+    "confirmed": 21247,
+    "high_confidence": 7811,
+    "review_required": 23,
+    "unresolved": 18880,
+    "attached_inst": 61,
+    "products": [
+      {
+        "product": "Mortgage",
+        "n": 47961
+      }
+    ],
+    "issues": [
+      {
+        "issue": "Loan modification,collection,foreclosure",
+        "n": 12786
+      },
+      {
+        "issue": "Trouble during payment process",
+        "n": 12312
+      },
+      {
+        "issue": "Loan servicing, payments, escrow account",
+        "n": 7396
+      },
+      {
+        "issue": "Struggling to pay mortgage",
+        "n": 5848
+      },
+      {
+        "issue": "Applying for a mortgage or refinancing an existing mortgage",
+        "n": 2620
+      },
+      {
+        "issue": "Closing on a mortgage",
+        "n": 1865
+      },
+      {
+        "issue": "Application, originator, mortgage broker",
+        "n": 1576
+      },
+      {
+        "issue": "Other",
+        "n": 1172
+      },
+      {
+        "issue": "Settlement process and costs",
+        "n": 849
+      },
+      {
+        "issue": "Incorrect information on your report",
+        "n": 640
+      },
+      {
+        "issue": "Credit decision / Underwriting",
+        "n": 551
+      },
+      {
+        "issue": "Problem with a company's investigation into an existing problem",
+        "n": 126
+      }
+    ],
+    "years": [
+      {
+        "y": 2011,
+        "n": 105
+      },
+      {
+        "y": 2012,
+        "n": 4164
+      },
+      {
+        "y": 2013,
+        "n": 5553
+      },
+      {
+        "y": 2014,
+        "n": 5004
+      },
+      {
+        "y": 2015,
+        "n": 4643
+      },
+      {
+        "y": 2016,
+        "n": 3870
+      },
+      {
+        "y": 2017,
+        "n": 2654
+      },
+      {
+        "y": 2018,
+        "n": 2451
+      },
+      {
+        "y": 2019,
+        "n": 2072
+      },
+      {
+        "y": 2020,
+        "n": 2452
+      },
+      {
+        "y": 2021,
+        "n": 2416
+      },
+      {
+        "y": 2022,
+        "n": 2574
+      },
+      {
+        "y": 2023,
+        "n": 2782
+      },
+      {
+        "y": 2024,
+        "n": 2208
+      },
+      {
+        "y": 2025,
+        "n": 2760
+      },
+      {
+        "y": 2026,
+        "n": 2253
+      }
+    ],
+    "date_min": "2011-12-01",
+    "date_max": "2026-08-24",
+    "observed": "2026-08-26",
+    "geography_edge": "COMPLAINT_REPORTED_FROM",
+    "note": "Consumer-submitted CFPB mortgage complaints reported from Florida. Not regulator findings. Not a ranking."
+  },
+  "federal_overlay": {
+    "method": "Confirmed federal enforcement events whose respondent institution_id also has a confirmed Florida Chapter 494 company credential. Not HQ/address geocoding.",
+    "events": 0,
+    "institutions": 0,
+    "label": "FEDERAL",
+    "included": false
+  },
+  "publication": {
+    "index_cohort": 180,
+    "searchable": 181,
+    "indexable": 180,
+    "florida_profiles_published": 0
+  },
+  "move": {
+    "sre": null,
+    "licenses": null,
+    "institutions": 8447
+  },
+  "sources": [
+    {
+      "id": "ofr_ch494",
+      "name": "Florida OFR Chapter 494 monthly company files",
+      "role": "Current Approved MBR/MLD credential roster",
+      "coverage": "Approved company credentials as ingested FL-LEND-002 (2026-08-27 monthly files)",
+      "as_of": "2026-08-27",
+      "retrieved": "2026-08-27",
+      "limitations": "Current Approved snapshot, not a historical license-status time series. PRIM COUNTY is not service territory."
+    },
+    {
+      "id": "flaio",
+      "name": "DOAH FLAIO OFR indexed final agency actions",
+      "role": "Florida Regulatory & Enforcement History (final agency action)",
+      "coverage": "July 2015 through 2026-08-27",
+      "as_of": "2026-08-27",
+      "retrieved": "2026-08-27",
+      "url": "https://www.doah.state.fl.us/FLAIO/OFR/",
+      "limitations": "Pre-2015 REAL search not bulk-acquired. 607 company orders not attached to current Approved identities. Fine dollars partial. 9 PDFs not text-extractable. No OCR. Complaint exhibits are not standalone findings."
+    },
+    {
+      "id": "hmda",
+      "name": "HMDA / FFIEC production evidence",
+      "role": "Florida-state lending activity aggregates",
+      "coverage": "State-grain LEI observations with state_code=FL",
+      "as_of": "2025-12-31",
+      "vintage": [
+        {
+          "source_vintage": "HMDA 2025",
+          "n": 1794
+        }
+      ],
+      "limitations": "HMDA reporters only. Many Chapter 494 brokers are not HMDA reporters. Not lender quality. Denial ratio is descriptive, not a fairness score."
+    },
+    {
+      "id": "cfpb",
+      "name": "CFPB Consumer Complaint Database",
+      "role": "Florida-reported mortgage consumer complaint observations",
+      "coverage": "consumer_state=FL in the mortgage-scoped production table",
+      "as_of": "2026-08-24",
+      "retrieved": "2026-08-26",
+      "limitations": "Consumer-submitted records, not regulator findings. Geography is COMPLAINT_REPORTED_FROM, never LICENSED_IN. Unattributed rows are included."
+    },
+    {
+      "id": "federal_enf",
+      "name": "Existing federal enforcement graph",
+      "role": "FEDERAL overlay on institutions that also hold confirmed Florida Chapter 494 credentials",
+      "coverage": "Confirmed federal events on confirmed FL-licensed institutions",
+      "limitations": "Not a Florida-HQ geocode. Separate sovereign from OFR. Not summed with OFR counts."
+    }
+  ],
+  "fingerprint": "616a961b7524fd5fd48ba7dcedcc553aabe9b658a586557908622912f5f08edc"
+}
