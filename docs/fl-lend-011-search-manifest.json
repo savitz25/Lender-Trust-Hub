@@ -1,0 +1,31 @@
+{
+  "task": "FL-LEND-011",
+  "contract": "fl-lend-search-fl-v1",
+  "generated_at": "2026-08-28T16:51:31.726754+00:00",
+  "national_searchable": 181,
+  "florida_phase1": 30,
+  "florida_phase2": 100,
+  "florida_union": 130,
+  "national_florida_overlap": 0,
+  "phase1_phase2_overlap": 0,
+  "held_intersection": 0,
+  "unique_searchable": 311,
+  "projection_fingerprint": "59508fba5158c0fa3db78cfbc21e6e53b98de9e681228df9af6d48f206badf38",
+  "source_manifests": [
+    "fl-lend-007-phase1-v1",
+    "fl-lend-008-phase2-v1"
+  ],
+  "national_search_index": "lend-nat-016-search-index.json",
+  "search": true,
+  "ranked": false,
+  "florida_union_slugs": 130,
+  "national_florida_overlap_ids": 0,
+  "national_florida_overlap_slugs": 0,
+  "national_florida_overlap_nmls": 0,
+  "phase1_phase2_overlap_ids": 0,
+  "phase1_phase2_overlap_slugs": 0,
+  "duplicate_florida_ids": 0,
+  "duplicate_florida_slugs": 0,
+  "predicted_unique_searchable": 311,
+  "search_false_on_manifests": true
+}

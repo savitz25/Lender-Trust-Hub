@@ -9,16 +9,6 @@
       "source": "/calculators-hub/:path*",
       "destination": "/calculators",
       "permanent": true
-    },
-    {
-      "source": "/lender",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/lender/:path*",
-      "destination": "/:path*",
-      "permanent": true
     }
   ]
 }

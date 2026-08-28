@@ -1,0 +1,410 @@
+{
+  "task": "LEND-NAT-002",
+  "executedProductionWrites": false,
+  "publicCatalogWrites": 0,
+  "slugWrites": 0,
+  "sitemapChanges": 0,
+  "catalogFingerprintBefore": "45a3cff5fbb415b73e2014e01357b1f878ccb0e4d9508ac5108a2bef3078789d",
+  "catalogFingerprintAfter": "45a3cff5fbb415b73e2014e01357b1f878ccb0e4d9508ac5108a2bef3078789d",
+  "catalogUnchanged": true,
+  "census": {
+    "locationRows": 1049,
+    "uniqueSlugs": 1048,
+    "duplicateSlugs": [
+      "first-tech-federal-credit-union"
+    ],
+    "distinctEntities": 629,
+    "nmlsVerifiedEntities": 463,
+    "rowsWithNumericNmls": 884,
+    "distinctNumericNmls": 464,
+    "nmlsSlotClasses": {
+      "CONFIRMED_INSTITUTION_NMLS": 880,
+      "LIKELY_BRANCH_NMLS": 1,
+      "LIKELY_PERSON_OR_TEAM_NMLS": 0,
+      "COLLISION": 2,
+      "MISSING": 165,
+      "UNKNOWN": 1
+    }
+  },
+  "manifest": {
+    "generatedAt": "2026-08-26T21:58:14.150Z",
+    "publicCatalogWrites": 0,
+    "slugWrites": 0,
+    "sitemapChanges": 0,
+    "census": {
+      "locationRows": 1049,
+      "uniqueSlugs": 1048,
+      "duplicateSlugs": [
+        "first-tech-federal-credit-union"
+      ],
+      "distinctEntities": 629,
+      "nmlsVerifiedEntities": 463,
+      "rowsWithNumericNmls": 884,
+      "distinctNumericNmls": 464,
+      "nmlsSlotClasses": {
+        "CONFIRMED_INSTITUTION_NMLS": 880,
+        "LIKELY_BRANCH_NMLS": 1,
+        "LIKELY_PERSON_OR_TEAM_NMLS": 0,
+        "COLLISION": 2,
+        "MISSING": 165,
+        "UNKNOWN": 1
+      }
+    },
+    "lei": {
+      "distinctLeis": 4715,
+      "leisWithAnyNmlsMap": 438,
+      "distinctMappedNmls": 288,
+      "oneLeiOneNmls": 280,
+      "oneLeiManyNmls": 13,
+      "oneNmlsOneLei": 270,
+      "oneNmlsManyLei": 18,
+      "unresolvedLeis": 4469,
+      "confirmedAttachedLeis": 246,
+      "reviewRequiredLeis": 28,
+      "branchTeamContamination": 1
+    },
+    "counts": {
+      "candidatePublicCatalogRows": 1049,
+      "uniqueInstitutionNmlsIds": 460,
+      "confirmedInstitutionEntities": 460,
+      "ambiguousNmlsIds": 4,
+      "geoClonesLinked": 420,
+      "hmdaLeis": 4715,
+      "leisDeterministicallyAttached": 246,
+      "unresolvedLeis": 4469,
+      "identifierRows": 5176,
+      "nmlsInstitutionIdentifiers": 460,
+      "leiIdentifiers": 4715,
+      "fdicIdentifiers": 0,
+      "sourceLinks": 5764,
+      "legacyBridges": 1049,
+      "identityConflicts": 39
+    },
+    "fingerprints": {
+      "INSTITUTION_COHORT": "a1b7ef0aa4645b1789f10363d6d8bf1256e03552f29ed75caf315b254aee871b",
+      "IDENTIFIER_COHORT": "e1864332f5651e01501d382a92c5b6ca5db8efd1bd1faf33b4498c4b9b1d312d",
+      "SOURCE_LINK_COHORT": "9642454326325279279c20dfeb46980aeddd6087d29c895e9f64cc1dddb97fc8",
+      "LEGACY_BRIDGE_COHORT": "883890217b592d9ee663533ba41fa6460f83476b8f1b0fe1a8d4e4a8a2724e14"
+    }
+  },
+  "gleif": {
+    "cacheFile": "data/hmda/florida/_gleif_name_cache.json",
+    "cacheEntries": 745,
+    "fieldsPresent": [
+      "legal_name_only"
+    ],
+    "fieldsAbsent": [
+      "lei_status",
+      "legal_address",
+      "headquarters_address",
+      "registration_authority",
+      "registration_authority_entity_id",
+      "parent_relationships",
+      "successor_predecessor",
+      "entity_status"
+    ],
+    "nationalLeis": 4715,
+    "nationalLeisWithCachedName": 745,
+    "coveragePct": 15.8,
+    "note": "Cache is Florida matching names only. GLEIF does not provide NMLS. No bulk GLEIF API pull in this task."
+  },
+  "fdic": {
+    "fdicRows": 4846,
+    "distinctCerts": 4041,
+    "identifiersAttached": 0,
+    "identifiersCreated": 0,
+    "exactLegalNameMatches": 63,
+    "exactLegalNameMatchExamples": [
+      {
+        "name": "JPMorgan Chase Bank",
+        "certs": [
+          "628"
+        ]
+      },
+      {
+        "name": "Truist Bank",
+        "certs": [
+          "9846"
+        ]
+      },
+      {
+        "name": "Regions Bank",
+        "certs": [
+          "12368"
+        ]
+      },
+      {
+        "name": "Ally Bank",
+        "certs": [
+          "57803"
+        ]
+      },
+      {
+        "name": "Citizens Bank",
+        "certs": [
+          "9647",
+          "22601",
+          "262",
+          "324",
+          "14488",
+          "17809",
+          "57957",
+          "14851",
+          "893",
+          "16817",
+          "3140"
+        ]
+      },
+      {
+        "name": "Ameris Bank",
+        "certs": [
+          "20504"
+        ]
+      },
+      {
+        "name": "First Horizon Bank",
+        "certs": [
+          "4977"
+        ]
+      },
+      {
+        "name": "USAA Federal Savings Bank",
+        "certs": [
+          "32188"
+        ]
+      },
+      {
+        "name": "First Citizens Bank",
+        "certs": [
+          "23152",
+          "4433"
+        ]
+      },
+      {
+        "name": "United Community Bank",
+        "certs": [
+          "16889",
+          "19459",
+          "13656",
+          "19143",
+          "8544"
+        ]
+      },
+      {
+        "name": "Southern First Bank",
+        "certs": [
+          "35295"
+        ]
+      },
+      {
+        "name": "Valley National Bank",
+        "certs": [
+          "9396"
+        ]
+      },
+      {
+        "name": "Citibank",
+        "certs": [
+          "7213"
+        ]
+      },
+      {
+        "name": "Columbia Bank",
+        "certs": [
+          "28834",
+          "17266"
+        ]
+      },
+      {
+        "name": "First National Bank of Pennsylvania",
+        "certs": [
+          "7888"
+        ]
+      }
+    ],
+    "disposition": "UNRESOLVED — name match is not deterministic CERT↔NMLS; no FDIC identifiers attached"
+  },
+  "namedCollisions": {
+    "fairway": [
+      {
+        "type": "NMLS_BRANCH",
+        "value": "2909",
+        "disposition": "quarantined",
+        "notes": "Named LEND-NAT-001 collision: fairway"
+      },
+      {
+        "type": "LEI",
+        "value": "RVDPPPGHCGZ40J4VQ731",
+        "disposition": "quarantined",
+        "notes": "Named LEI collision family — no auto-merge"
+      }
+    ],
+    "cmg": [
+      {
+        "type": "NMLS_PERSON",
+        "value": "2458338",
+        "disposition": "quarantined",
+        "notes": "Named LEND-NAT-001 collision: cmg"
+      },
+      {
+        "type": "LEI",
+        "value": "254900DTLHVWQ7NP7R34",
+        "disposition": "quarantined",
+        "notes": "Named LEI collision family — no auto-merge"
+      }
+    ],
+    "movement_veterans_united": [
+      {
+        "value": "549300DD5QQUHO6PCH70",
+        "disposition": "quarantined"
+      }
+    ],
+    "pennymac_fairway": [
+      {
+        "value": "RVDPPPGHCGZ40J4VQ731",
+        "disposition": "quarantined"
+      }
+    ],
+    "guaranteed_rate_bank_of_america": [
+      {
+        "value": "B4TYDEB6GKMZO031MB27",
+        "disposition": "quarantined"
+      }
+    ],
+    "harborone_summit": [
+      {
+        "value": "2561",
+        "disposition": "quarantined"
+      }
+    ],
+    "cadence_huntington": [
+      {
+        "value": "402436",
+        "disposition": "quarantined"
+      }
+    ],
+    "first_tech": [
+      {
+        "value": "first-tech-federal-credit-union",
+        "disposition": "recorded"
+      }
+    ]
+  },
+  "tests": {
+    "passed": 18,
+    "failed": 0,
+    "results": [
+      {
+        "id": "ID1",
+        "pass": true,
+        "detail": "same NMLS across FL/TX/CA → 1 institution(s)"
+      },
+      {
+        "id": "ID2",
+        "pass": true,
+        "detail": "3038 + 3030 + 1820 institutions, not 2909/2458338; got 3"
+      },
+      {
+        "id": "ID3",
+        "pass": true,
+        "detail": "branch NMLS 2909 not in NMLS_INSTITUTION"
+      },
+      {
+        "id": "ID4",
+        "pass": true,
+        "detail": "person/team NMLS 2458338 not in NMLS_INSTITUTION"
+      },
+      {
+        "id": "ID5",
+        "pass": true,
+        "detail": "same LEI reimport → 1 identifier(s)"
+      },
+      {
+        "id": "ID6",
+        "pass": true,
+        "detail": "name/GLEIF/directory-only method is insufficient for CONFIRMED"
+      },
+      {
+        "id": "ID7",
+        "pass": true,
+        "detail": "named LEND-NAT-001 collision quarantine"
+      },
+      {
+        "id": "ID8",
+        "pass": true,
+        "detail": "one NMLS → 2 LEIs, 1 institution(s)"
+      },
+      {
+        "id": "ID9",
+        "pass": true,
+        "detail": "no institution stable_key is a public slug"
+      },
+      {
+        "id": "ID10",
+        "pass": true,
+        "detail": "geo clones=2, HAS_BRANCH relations=0"
+      },
+      {
+        "id": "ID11",
+        "pass": true,
+        "detail": "orphan HMDA LEI preserved unattached"
+      },
+      {
+        "id": "ID12",
+        "pass": true,
+        "detail": "FDIC cert cannot be written as NMLS_INSTITUTION"
+      },
+      {
+        "id": "ID13",
+        "pass": true,
+        "detail": "name kinds=legal"
+      },
+      {
+        "id": "ID14",
+        "pass": true,
+        "detail": "no parent/sub flattening relationships created"
+      },
+      {
+        "id": "ID15",
+        "pass": true,
+        "detail": "current status is unknown, not inferred from import"
+      },
+      {
+        "id": "ID16",
+        "pass": true,
+        "detail": "public catalog rows unchanged after graph build"
+      },
+      {
+        "id": "ID17",
+        "pass": true,
+        "detail": "reimport fingerprints match"
+      },
+      {
+        "id": "ID18",
+        "pass": true,
+        "detail": "fairway=named LEND-NAT-001 collision quarantine; cmg=named LEND-NAT-001 collision quarantine"
+      }
+    ]
+  },
+  "idempotency": {
+    "pass": true,
+    "first": {
+      "INSTITUTION_COHORT": "a1b7ef0aa4645b1789f10363d6d8bf1256e03552f29ed75caf315b254aee871b",
+      "IDENTIFIER_COHORT": "e1864332f5651e01501d382a92c5b6ca5db8efd1bd1faf33b4498c4b9b1d312d",
+      "SOURCE_LINK_COHORT": "9642454326325279279c20dfeb46980aeddd6087d29c895e9f64cc1dddb97fc8",
+      "LEGACY_BRIDGE_COHORT": "883890217b592d9ee663533ba41fa6460f83476b8f1b0fe1a8d4e4a8a2724e14"
+    },
+    "second": {
+      "INSTITUTION_COHORT": "a1b7ef0aa4645b1789f10363d6d8bf1256e03552f29ed75caf315b254aee871b",
+      "IDENTIFIER_COHORT": "e1864332f5651e01501d382a92c5b6ca5db8efd1bd1faf33b4498c4b9b1d312d",
+      "SOURCE_LINK_COHORT": "9642454326325279279c20dfeb46980aeddd6087d29c895e9f64cc1dddb97fc8",
+      "LEGACY_BRIDGE_COHORT": "883890217b592d9ee663533ba41fa6460f83476b8f1b0fe1a8d4e4a8a2724e14"
+    },
+    "newInstitutionEntities": 0,
+    "newIdentifiers": 0,
+    "newSourceLinks": 0,
+    "newBridges": 0
+  },
+  "observedAt": "2025-01-01",
+  "hmdaSummariesUnchanged": true
+}

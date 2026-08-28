@@ -1,0 +1,604 @@
+{
+  "qa_found": 30,
+  "phone_class": {
+    "public_candidate": 31,
+    "internal_only": 1
+  },
+  "contact_class": {
+    "public_candidate": 32
+  },
+  "qa_dual": 1,
+  "qa_mbr_only": 19,
+  "qa_mld_only": 10,
+  "qa_multi_mld": 1,
+  "qa_servicer": 7,
+  "qa_ofr_pos": [
+    "florida-mortgage-processing-group-llc",
+    "capital-international-financial-inc",
+    "national-mortgage-group"
+  ],
+  "qa_ofr_zero": [
+    "mutual-of-omaha-mortgage",
+    "island-mortgage-inc",
+    "7th-level-mortgage-limited-liability-company",
+    "federated-mortgage-corp",
+    "griffin-funding-inc",
+    "holiday-inn-club-vacations-incorporated",
+    "click-quick-loan-llc",
+    "new-day-financial",
+    "premier-lending-corp",
+    "mortgage-lending-masters-llc",
+    "american-fidelity-financial-solutions-inc",
+    "blackburne-and-sons-realty-capital-corporation",
+    "uptown-financial-group-inc",
+    "integrity-first-lending-llc",
+    "wheeler-capital-partners-llc",
+    "par-east-mortgage-co-inc",
+    "north-point-mortgage-advisors-llc",
+    "1st-american-lending-llc",
+    "howard-hanna-financial-services-inc",
+    "northwest-funding-group-inc",
+    "go-mortgage-llc",
+    "total-media-management-llc",
+    "upstate-premier-mortgage-inc",
+    "mld-mortgage-inc",
+    "concord-one-financial-llc",
+    "erika-diana-johnson",
+    "full-beaker-inc"
+  ],
+  "review_before_public_creds": 0,
+  "review_examples": [],
+  "corpus": {
+    "n": 6303,
+    "ofr_pos": 294,
+    "ofr_zero": 6009
+  },
+  "samples": [
+    {
+      "slug": "mutual-of-omaha-mortgage",
+      "tag": "national_overlap",
+      "creds": 1,
+      "classes": [
+        "MLD"
+      ],
+      "ofr": 0,
+      "servicer": "OFR MLD credential reports SERVICER=Yes",
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "island-mortgage-inc",
+      "tag": "florida_only_new",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "7th-level-mortgage-limited-liability-company",
+      "tag": "mbr_only",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "federated-mortgage-corp",
+      "tag": "mld_only",
+      "creds": 1,
+      "classes": [
+        "MLD"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "griffin-funding-inc",
+      "tag": "dual_mbr_mld",
+      "creds": 2,
+      "classes": [
+        "MBR",
+        "MLD"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate",
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate",
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "holiday-inn-club-vacations-incorporated",
+      "tag": "servicer_yes",
+      "creds": 1,
+      "classes": [
+        "MLD"
+      ],
+      "ofr": 0,
+      "servicer": "OFR MLD credential reports SERVICER=Yes",
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "florida-mortgage-processing-group-llc",
+      "tag": "one_ofr_event",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 1,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "capital-international-financial-inc",
+      "tag": "multiple_ofr_events",
+      "creds": 1,
+      "classes": [
+        "MLD"
+      ],
+      "ofr": 2,
+      "servicer": "OFR MLD credential reports SERVICER=Yes",
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "national-mortgage-group",
+      "tag": "fine",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 1,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "click-quick-loan-llc",
+      "tag": "no_confirmed_ofr",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "new-day-financial",
+      "tag": "hmda",
+      "creds": 1,
+      "classes": [
+        "MLD"
+      ],
+      "ofr": 0,
+      "servicer": "OFR MLD credential reports SERVICER=Yes",
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "premier-lending-corp",
+      "tag": "cfpb",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "mortgage-lending-masters-llc",
+      "tag": "sparse",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "american-fidelity-financial-solutions-inc",
+      "tag": "long_name",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "blackburne-and-sons-realty-capital-corporation",
+      "tag": "multiple_credentials",
+      "creds": 2,
+      "classes": [
+        "MLD",
+        "MLD"
+      ],
+      "ofr": 0,
+      "servicer": "OFR MLD credential reports SERVICER=Yes",
+      "phone_classes": [
+        "public_candidate",
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate",
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "uptown-financial-group-inc",
+      "tag": "fill",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "integrity-first-lending-llc",
+      "tag": "fill",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "wheeler-capital-partners-llc",
+      "tag": "fill",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "par-east-mortgage-co-inc",
+      "tag": "fill",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "north-point-mortgage-advisors-llc",
+      "tag": "fill",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "internal_only"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "1st-american-lending-llc",
+      "tag": "fill",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "howard-hanna-financial-services-inc",
+      "tag": "fill",
+      "creds": 1,
+      "classes": [
+        "MLD"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "northwest-funding-group-inc",
+      "tag": "fill",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "go-mortgage-llc",
+      "tag": "fill",
+      "creds": 1,
+      "classes": [
+        "MLD"
+      ],
+      "ofr": 0,
+      "servicer": "OFR MLD credential reports SERVICER=Yes",
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "total-media-management-llc",
+      "tag": "fill",
+      "creds": 1,
+      "classes": [
+        "MLD"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "upstate-premier-mortgage-inc",
+      "tag": "fill",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "mld-mortgage-inc",
+      "tag": "fill",
+      "creds": 1,
+      "classes": [
+        "MLD"
+      ],
+      "ofr": 0,
+      "servicer": "OFR MLD credential reports SERVICER=Yes",
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "concord-one-financial-llc",
+      "tag": "fill",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "erika-diana-johnson",
+      "tag": "fill",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    },
+    {
+      "slug": "full-beaker-inc",
+      "tag": "fill",
+      "creds": 1,
+      "classes": [
+        "MBR"
+      ],
+      "ofr": 0,
+      "servicer": null,
+      "phone_classes": [
+        "public_candidate"
+      ],
+      "contact_classes": [
+        "public_candidate"
+      ],
+      "has_raw_metadata": false,
+      "has_review_notes": false
+    }
+  ]
+}

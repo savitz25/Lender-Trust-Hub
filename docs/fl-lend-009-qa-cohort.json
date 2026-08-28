@@ -1,0 +1,21 @@
+{
+  "task": "FL-LEND-009",
+  "public": false,
+  "note": "Internal QA only. Official OFR monthly files supply no employer/parent NMLS, so company-relation and confirmed-regulatory MLO/branch slots are empty.",
+  "rows": [
+    {"tag": "mlo_no_company_relation", "stable_key": "nmls-person:1000086", "name": "RICHARDS, TODD MANLEY"},
+    {"tag": "mlo_multiple_company_relations", "available": false, "reason": "OFR monthly LO file has no company NMLS column"},
+    {"tag": "mlo_confirmed_regulatory", "available": false, "reason": "1531 person FLAIO rows have nmls_id null, license_number null, nmls_candidates []"},
+    {"tag": "mlo_without_regulatory", "stable_key": "nmls-person:1000086"},
+    {"tag": "mlo_long_name", "stable_key": "nmls-person:1010846", "name": "SCHEIDELL-PAHOLSKI, THEODORE FREDERICK FRANCIS"},
+    {"tag": "mlo_multiple_contacts", "stable_key": "nmls-person:101450", "contact_kinds": 3},
+    {"tag": "branch_mbrb", "nmls_id": "1013416", "license_number": "MBRB116"},
+    {"tag": "branch_mldb", "nmls_id": "1001618", "license_number": "MLDB21421"},
+    {"tag": "branch_dual_mbrb_mldb", "nmls_id": "1808597"},
+    {"tag": "branch_confirmed_parent", "available": false, "reason": "OFR monthly MBRB/MLDB files have no parent/company NMLS column"},
+    {"tag": "branch_unresolved_parent", "stable_key": "nmls-branch:1001618", "parent_link": "UNRESOLVED_NO_OFFICIAL_PARENT_NMLS"},
+    {"tag": "branch_regulatory_confirmed", "available": false, "reason": "31 branch FLAIO rows have no NMLS/license keys"},
+    {"tag": "held_company_relation", "available": false, "reason": "no official company NMLS on LO/branch rows"},
+    {"tag": "branch_long_name", "stable_key": "nmls-branch:1751777"}
+  ]
+}

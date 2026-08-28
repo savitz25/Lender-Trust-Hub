@@ -15,9 +15,8 @@ const nextConfig: NextConfig = {
     return [
       { source: '/calculators-hub', destination: '/calculators', permanent: true },
       { source: '/calculators-hub/:path*', destination: '/calculators', permanent: true },
-      // Legacy monorepo path bookmarks (if anyone hits /lender/* on this host)
-      { source: '/lender', destination: '/', permanent: true },
-      { source: '/lender/:path*', destination: '/:path*', permanent: true },
+      // /lender/{slug} is the national profile-intelligence route (LEND-NAT-012).
+      // Do not redirect it to catalog clones at /lenders/{slug}.
     ];
   },
   async headers() {

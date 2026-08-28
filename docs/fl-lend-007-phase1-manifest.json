@@ -1,0 +1,495 @@
+{
+  "task": "FL-LEND-007",
+  "version": "fl-lend-007-phase1-v1",
+  "selection": "nmls_id ascending, first 10 matching each stratum, excluding national render/index ids",
+  "ranked": false,
+  "count": 30,
+  "cohort_a": 10,
+  "cohort_b": 10,
+  "cohort_c": 10,
+  "robots_index": true,
+  "sitemap": true,
+  "search": false,
+  "rows": [
+    {
+      "cohort": "A",
+      "kind": "NATIONAL_PLUS_FLORIDA",
+      "institution_id": "a137e9bf-068f-53ee-a0f5-5c6a40bdc570",
+      "nmls_id": "1054357",
+      "slug": "the-truth-about-lending-llc",
+      "name": "THE TRUTH ABOUT LENDING LLC",
+      "stable_key": "nmls-inst:1054357",
+      "has_national_snapshot": true,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "A",
+      "kind": "NATIONAL_PLUS_FLORIDA",
+      "institution_id": "756e82c0-8c71-5890-bf26-1cca625444f5",
+      "nmls_id": "1058",
+      "slug": "lennar-mortgage-llc",
+      "name": "LENNAR MORTGAGE, LLC",
+      "stable_key": "nmls-inst:1058",
+      "has_national_snapshot": true,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MLD"
+      ],
+      "servicer": 1
+    },
+    {
+      "cohort": "A",
+      "kind": "NATIONAL_PLUS_FLORIDA",
+      "institution_id": "197aff60-07b7-5cac-af20-b0093215b18b",
+      "nmls_id": "1124061",
+      "slug": "lower-llc",
+      "name": "LOWER, LLC",
+      "stable_key": "nmls-inst:1124061",
+      "has_national_snapshot": true,
+      "ofr": 0,
+      "credential_count": 2,
+      "classes": [
+        "MLD"
+      ],
+      "servicer": 1
+    },
+    {
+      "cohort": "A",
+      "kind": "NATIONAL_PLUS_FLORIDA",
+      "institution_id": "2004574b-cd74-5d94-8734-8b0d2643ab34",
+      "nmls_id": "1125367",
+      "slug": "nations-trust-mortgage-inc",
+      "name": "NATIONS TRUST MORTGAGE INC",
+      "stable_key": "nmls-inst:1125367",
+      "has_national_snapshot": true,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "A",
+      "kind": "NATIONAL_PLUS_FLORIDA",
+      "institution_id": "7915d856-7445-53aa-af14-8acb426d7e5a",
+      "nmls_id": "1127",
+      "slug": "nvr-mortgage-finance-inc",
+      "name": "NVR MORTGAGE FINANCE, INC.",
+      "stable_key": "nmls-inst:1127",
+      "has_national_snapshot": true,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MLD"
+      ],
+      "servicer": 1
+    },
+    {
+      "cohort": "A",
+      "kind": "NATIONAL_PLUS_FLORIDA",
+      "institution_id": "e858ff80-5c51-5c4b-96f2-e319bc594fdf",
+      "nmls_id": "112844",
+      "slug": "pierpoint-mortgage-llc",
+      "name": "PIERPOINT MORTGAGE, LLC",
+      "stable_key": "nmls-inst:112844",
+      "has_national_snapshot": true,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MLD"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "A",
+      "kind": "NATIONAL_PLUS_FLORIDA",
+      "institution_id": "8d87131c-8f83-508b-a2f5-33c834714d3c",
+      "nmls_id": "1156346",
+      "slug": "premier-lending-corp",
+      "name": "PREMIER LENDING CORP",
+      "stable_key": "nmls-inst:1156346",
+      "has_national_snapshot": true,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "A",
+      "kind": "NATIONAL_PLUS_FLORIDA",
+      "institution_id": "b3894b1f-655d-530d-a144-9cc38a5c1e86",
+      "nmls_id": "120308",
+      "slug": "dsld-mortgage-llc",
+      "name": "DSLD MORTGAGE, LLC",
+      "stable_key": "nmls-inst:120308",
+      "has_national_snapshot": true,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MLD"
+      ],
+      "servicer": 1
+    },
+    {
+      "cohort": "A",
+      "kind": "NATIONAL_PLUS_FLORIDA",
+      "institution_id": "3b3bef74-830c-56ef-a0d0-bd90fc1e8a39",
+      "nmls_id": "1229691",
+      "slug": "loanpro-mortgage-solutions-llc",
+      "name": "LOANPRO MORTGAGE SOLUTIONS, LLC",
+      "stable_key": "nmls-inst:1229691",
+      "has_national_snapshot": true,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "A",
+      "kind": "NATIONAL_PLUS_FLORIDA",
+      "institution_id": "f259708d-233e-5d8c-a7c8-9f799992db85",
+      "nmls_id": "128501",
+      "slug": "mortgage-america-inc",
+      "name": "MORTGAGE AMERICA, INC.",
+      "stable_key": "nmls-inst:128501",
+      "has_national_snapshot": true,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MLD"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "B",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "d21006f2-d62c-5896-93d4-acf6875cf586",
+      "nmls_id": "1011688",
+      "slug": "florida-mortgage-processing-group-llc",
+      "name": "FLORIDA MORTGAGE PROCESSING GROUP LLC",
+      "stable_key": "nmls-inst:1011688",
+      "has_national_snapshot": false,
+      "ofr": 1,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "B",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "51a8c5b0-03a6-5315-939c-dd99eef6beac",
+      "nmls_id": "1030124",
+      "slug": "jumbo-loan-experts-llc",
+      "name": "JUMBO LOAN EXPERTS LLC",
+      "stable_key": "nmls-inst:1030124",
+      "has_national_snapshot": false,
+      "ofr": 1,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "B",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "22399013-9757-5353-9aad-1b0454b8205f",
+      "nmls_id": "1036987",
+      "slug": "capital-international-financial-inc",
+      "name": "CAPITAL INTERNATIONAL FINANCIAL INC.",
+      "stable_key": "nmls-inst:1036987",
+      "has_national_snapshot": false,
+      "ofr": 2,
+      "credential_count": 1,
+      "classes": [
+        "MLD"
+      ],
+      "servicer": 1
+    },
+    {
+      "cohort": "B",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "9661955a-27e2-52b4-ad0f-42249e438920",
+      "nmls_id": "1040637",
+      "slug": "national-mortgage-group",
+      "name": "NATIONAL MORTGAGE GROUP",
+      "stable_key": "nmls-inst:1040637",
+      "has_national_snapshot": false,
+      "ofr": 1,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "B",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "625eed6a-1785-54a7-9943-6322fbb924b1",
+      "nmls_id": "1060707",
+      "slug": "sky-apply-mortgage-inc",
+      "name": "SKY APPLY MORTGAGE INC",
+      "stable_key": "nmls-inst:1060707",
+      "has_national_snapshot": false,
+      "ofr": 2,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "B",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "dd09424f-ab39-5b87-af9e-b85b71274e43",
+      "nmls_id": "1065732",
+      "slug": "mortgage-solutions-fcs-inc",
+      "name": "MORTGAGE SOLUTIONS FCS INC.",
+      "stable_key": "nmls-inst:1065732",
+      "has_national_snapshot": false,
+      "ofr": 1,
+      "credential_count": 1,
+      "classes": [
+        "MLD"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "B",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "fe50f2bf-fff2-5981-8046-e5a8fd9259b1",
+      "nmls_id": "1067081",
+      "slug": "mortgage-america-investors-llc",
+      "name": "MORTGAGE AMERICA INVESTORS LLC",
+      "stable_key": "nmls-inst:1067081",
+      "has_national_snapshot": false,
+      "ofr": 1,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "B",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "cf29eecf-ec27-53a5-8c79-7e01d614e8e5",
+      "nmls_id": "107643",
+      "slug": "american-millenium-company-l-l-c",
+      "name": "AMERICAN MILLENIUM COMPANY, L.L.C.",
+      "stable_key": "nmls-inst:107643",
+      "has_national_snapshot": false,
+      "ofr": 1,
+      "credential_count": 1,
+      "classes": [
+        "MLD"
+      ],
+      "servicer": 1
+    },
+    {
+      "cohort": "B",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "612db710-c6e7-5d2c-bc8a-fc36194185e6",
+      "nmls_id": "1086140",
+      "slug": "ultimate-mortgage-connection-llc",
+      "name": "ULTIMATE MORTGAGE CONNECTION LLC",
+      "stable_key": "nmls-inst:1086140",
+      "has_national_snapshot": false,
+      "ofr": 1,
+      "credential_count": 1,
+      "classes": [
+        "MLD"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "B",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "91a14fe8-1eb2-5974-aaf6-a564024c9e9f",
+      "nmls_id": "1092255",
+      "slug": "regent-mortgage-corporation",
+      "name": "REGENT MORTGAGE CORPORATION",
+      "stable_key": "nmls-inst:1092255",
+      "has_national_snapshot": false,
+      "ofr": 1,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "C",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "6247e4e6-c3be-5817-a216-9ec4742965c1",
+      "nmls_id": "1000869",
+      "slug": "island-mortgage-inc",
+      "name": "ISLAND MORTGAGE, INC.",
+      "stable_key": "nmls-inst:1000869",
+      "has_national_snapshot": false,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "C",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "f614fc7d-ebac-5642-b664-1382bb142472",
+      "nmls_id": "1003861",
+      "slug": "7th-level-mortgage-limited-liability-company",
+      "name": "7TH LEVEL MORTGAGE LIMITED LIABILITY COMPANY",
+      "stable_key": "nmls-inst:1003861",
+      "has_national_snapshot": false,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "C",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "5ab62f02-ea45-54f9-9272-fe3bcbd4faf5",
+      "nmls_id": "1004165",
+      "slug": "click-quick-loan-llc",
+      "name": "CLICK QUICK LOAN LLC",
+      "stable_key": "nmls-inst:1004165",
+      "has_national_snapshot": false,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "C",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "5f8b618a-6039-5485-beb4-b466e95b993b",
+      "nmls_id": "1005474",
+      "slug": "mortgage-lending-masters-llc",
+      "name": "MORTGAGE LENDING MASTERS, LLC",
+      "stable_key": "nmls-inst:1005474",
+      "has_national_snapshot": false,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "C",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "6ab370cc-5f1b-5989-bffd-d74f8aeabf3f",
+      "nmls_id": "1006777",
+      "slug": "uptown-financial-group-inc",
+      "name": "UPTOWN FINANCIAL GROUP, INC.",
+      "stable_key": "nmls-inst:1006777",
+      "has_national_snapshot": false,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "C",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "b04a9d0b-e339-571c-a59d-b0e110332b63",
+      "nmls_id": "1006977",
+      "slug": "integrity-first-lending-llc",
+      "name": "INTEGRITY FIRST LENDING LLC",
+      "stable_key": "nmls-inst:1006977",
+      "has_national_snapshot": false,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "C",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "b6325e5f-4992-5bc4-8467-49f82b12d561",
+      "nmls_id": "1008714",
+      "slug": "wheeler-capital-partners-llc",
+      "name": "WHEELER CAPITAL PARTNERS LLC",
+      "stable_key": "nmls-inst:1008714",
+      "has_national_snapshot": false,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "C",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "61add5b5-e92d-5f00-82b3-da52d9089951",
+      "nmls_id": "10098",
+      "slug": "par-east-mortgage-co-inc",
+      "name": "PAR EAST MORTGAGE CO., INC.",
+      "stable_key": "nmls-inst:10098",
+      "has_national_snapshot": false,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "C",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "c228a045-c5be-51e9-9a55-e220847a3f0f",
+      "nmls_id": "1011251",
+      "slug": "north-point-mortgage-advisors-llc",
+      "name": "NORTH POINT MORTGAGE ADVISORS, LLC",
+      "stable_key": "nmls-inst:1011251",
+      "has_national_snapshot": false,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    },
+    {
+      "cohort": "C",
+      "kind": "FLORIDA_ONLY",
+      "institution_id": "191d0a9f-85ef-504f-a34d-a967d356682b",
+      "nmls_id": "1014298",
+      "slug": "1st-american-lending-llc",
+      "name": "1ST AMERICAN LENDING LLC",
+      "stable_key": "nmls-inst:1014298",
+      "has_national_snapshot": false,
+      "ofr": 0,
+      "credential_count": 1,
+      "classes": [
+        "MBR"
+      ],
+      "servicer": 0
+    }
+  ]
+}

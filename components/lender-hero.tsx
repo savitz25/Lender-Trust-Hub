@@ -91,6 +91,12 @@ export function LenderHero() {
                   {LENDER_HERO.secondaryCta.label}
                 </Button>
               </Link>
+              <Link
+                href={LENDER_HERO.tertiaryCta.href}
+                className="text-sm font-semibold text-[#0D9488] underline-offset-2 hover:underline focus:outline-none focus:ring-2 focus:ring-[#0D9488]/40 sm:ml-1"
+              >
+                {LENDER_HERO.tertiaryCta.label}
+              </Link>
             </div>
 
             {/* Trust chips */}
@@ -162,6 +168,14 @@ export function LenderHero() {
               </div>
 
               <SearchBar />
+
+              <p className="mt-3 text-sm" style={{ color: LENDER_BRAND.ink }}>
+                Looking up a known institution by name or identifier?{' '}
+                <Link href="/lender" className="font-semibold text-[#0D9488] underline-offset-2 hover:underline">
+                  Search national lender research
+                </Link>
+                .
+              </p>
 
               <p
                 className="mt-4 border-t pt-4 text-xs leading-relaxed sm:text-sm"

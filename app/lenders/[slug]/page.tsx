@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { ChevronRight, Phone, ExternalLink } from 'lucide-react';
 import { getLenderBySlug, lenders } from '@/lib/lenders';
@@ -15,6 +16,7 @@ import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
 import { ResearchScoreDisplay } from '@/components/research/research-score-display';
 import { ResearchPathNav } from '@/components/research/research-path-nav';
 import { LenderProfileViewTracker } from '@/components/analytics/lender-profile-view-tracker';
+import { AskProfileBackLink } from '@/components/search-handoff/ask-profile-back-link';
 import { deriveLenderHomeLocality, homeLocalityLine } from '@/lib/geo';
 import { resolveNmlsVerification } from '@/lib/verification';
 import { NmlsVerificationBadge } from '@/components/nmls-verification-badge';
@@ -113,6 +115,9 @@ export default async function LenderProfilePage({
     <div className="container mx-auto px-4 py-12">
       <JsonLd data={jsonLd} />
       <LenderProfileViewTracker slug={lender.slug} nmlsVerified={lender.nmlsVerified} />
+      <Suspense fallback={null}>
+        <AskProfileBackLink />
+      </Suspense>
       <nav aria-label="Breadcrumb" className="mb-6 text-sm text-zinc-500">
         <ol className="flex flex-wrap items-center gap-1">
           <li><Link href="/" className="hover:text-[#059669]">Home</Link></li>

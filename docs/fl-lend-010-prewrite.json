@@ -1,0 +1,123 @@
+{
+  "task": "FL-LEND-010",
+  "generated_at": "2026-08-28T16:26:38.188742+00:00",
+  "relationship_sources": {
+    "ofr_monthly_lo_company_nmls_column": false,
+    "ofr_monthly_branch_parent_nmls_column": false,
+    "nmls_consumer_access_scraped": false,
+    "predicted_confirmed_person_company": 0,
+    "predicted_confirmed_branch_company": 0
+  },
+  "person_docs": {
+    "index_rows": 1531,
+    "url_available": 1531,
+    "downloaded": 1531,
+    "text_extractable": 1516,
+    "scanned_or_empty_text": 15,
+    "missing_or_error": 0,
+    "with_nmls_pattern": 1027,
+    "with_lo": 127,
+    "with_mbrb": 0,
+    "with_mldb": 0
+  },
+  "branch_docs": {
+    "index_rows": 31,
+    "url_available": 31,
+    "downloaded": 31,
+    "text_extractable": 31,
+    "scanned_or_empty_text": 0,
+    "missing_or_error": 0,
+    "with_nmls_pattern": 19,
+    "with_lo": 0,
+    "with_mbrb": 0,
+    "with_mldb": 0
+  },
+  "mixed_docs": {
+    "index_rows": 1,
+    "url_available": 1,
+    "downloaded": 1,
+    "text_extractable": 1,
+    "scanned_or_empty_text": 0,
+    "missing_or_error": 0,
+    "with_nmls_pattern": 1,
+    "with_lo": 0,
+    "with_mbrb": 0,
+    "with_mldb": 0
+  },
+  "person_confidence": {
+    "confirmed": 166,
+    "unresolved": 1364,
+    "review_required": 1
+  },
+  "branch_confidence": {
+    "unresolved": 31
+  },
+  "mixed": [
+    {
+      "source_record_id": "FLAIO|2015-543|62699",
+      "entity_bucket": "mixed_company_person",
+      "document_url": "https://www.doah.state.fl.us/FLAID/OFR/2015/OFR_62699_11162015_102319.pdf",
+      "ok": true,
+      "downloaded": true,
+      "text_extractable": true,
+      "scanned": false,
+      "missing": false,
+      "url_available": true,
+      "nmls": [
+        "2234"
+      ],
+      "lo": [],
+      "mbrb": [],
+      "mldb": [],
+      "person_nmls_hits": [],
+      "branch_nmls_hits": [],
+      "institution_nmls_hits": [],
+      "lo_hits": [],
+      "branch_lic_hits": [],
+      "confidence": "unresolved",
+      "match_method": "MIXED_SUBJECT",
+      "respondent_entity_id": null,
+      "review_reason": null,
+      "multi_nmls": false,
+      "sponsor_language": true
+    }
+  ],
+  "lo93058": [
+    {
+      "nmls": "1064642",
+      "status": "Approved",
+      "last": "BENSON",
+      "first": "JOEL",
+      "initial": "18-AUG-2021",
+      "status_eff": "01-DEC-2025"
+    },
+    {
+      "nmls": "2137367",
+      "status": "Approved",
+      "last": "MECIAS",
+      "first": "AL",
+      "initial": "07-JUL-2021",
+      "status_eff": "07-JAN-2026"
+    }
+  ],
+  "license_collisions": {
+    "LO": {
+      "rows": 150194,
+      "unique_licenses": 150191,
+      "duplicate_license_groups": 3,
+      "approved_duplicate_groups": 1
+    },
+    "MBRB": {
+      "rows": 1943,
+      "unique_licenses": 1943,
+      "duplicate_license_groups": 0,
+      "approved_duplicate_groups": 0
+    },
+    "MLDB": {
+      "rows": 24311,
+      "unique_licenses": 24164,
+      "duplicate_license_groups": 147,
+      "approved_duplicate_groups": 13
+    }
+  }
+}

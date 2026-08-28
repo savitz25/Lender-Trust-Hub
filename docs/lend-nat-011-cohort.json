@@ -1,0 +1,4519 @@
+{
+  "rocket": {
+    "cfpb": {
+      "issue": {
+        "Other": 8,
+        "Closing on a mortgage": 735,
+        "Struggling to pay mortgage": 994,
+        "Improper use of your report": 72,
+        "Settlement process and costs": 122,
+        "Credit decision / Underwriting": 124,
+        "Trouble during payment process": 2664,
+        "Incorrect information on your report": 104,
+        "Application, originator, mortgage broker": 637,
+        "Loan modification,collection,foreclosure": 122,
+        "Loan servicing, payments, escrow account": 256,
+        "Problem with fraud alerts or security freezes": 3,
+        "Unable to get your credit report or credit score": 3,
+        "Credit monitoring or identity theft protection services": 9,
+        "Applying for a mortgage or refinancing an existing mortgage": 1598,
+        "Problem with a company's investigation into an existing problem": 56,
+        "Problem with a credit reporting company's investigation into an existing problem": 14
+      },
+      "product": {
+        "Mortgage": 7521
+      },
+      "source_labels": [
+        {
+          "count": 7521,
+          "method": "exact_fold_to_gleif_legal_or_dba",
+          "count_24m": 3288,
+          "confidence": "confirmed",
+          "source_company_key": "Rocket Mortgage, LLC"
+        }
+      ],
+      "not_enforcement": true,
+      "timely_response": {
+        "No": 38,
+        "Yes": 7483
+      },
+      "company_response": {
+        "Closed": 10,
+        "In progress": 91,
+        "Untimely response": 2,
+        "Closed with relief": 6,
+        "Closed without relief": 19,
+        "Closed with explanation": 7123,
+        "Closed with monetary relief": 240,
+        "Closed with non-monetary relief": 30
+      },
+      "window_24m_start": "2024-08-26",
+      "unresolved_related": [],
+      "coverage_disclosure": "Complaint data includes only records deterministically attributed to this institution. Some CFPB source labels remain unresolved and are listed separately.",
+      "attribution_confidence": "confirmed",
+      "attributed_complaint_count": 7521,
+      "attributed_complaint_count_24m": 3288
+    },
+    "roles": {
+      "depository": "NONBANK",
+      "classifications": [
+        {
+          "family": "UNKNOWN",
+          "source": "lend-nat-002-default",
+          "authoritative": false
+        },
+        {
+          "family": "UNKNOWN",
+          "source": "catalog_editorial_type",
+          "authoritative": false
+        },
+        {
+          "family": "NONBANK_MORTGAGE_COMPANY",
+          "source": "lend-nat-010",
+          "authoritative": true
+        }
+      ],
+      "servicer_status": "NOT ESTABLISHED",
+      "servicer_evidence": [],
+      "inference_forbidden": [
+        "company name",
+        "CFPB volume",
+        "ownership",
+        "parent",
+        "historical reputation"
+      ]
+    },
+    "scores": null,
+    "lending": {
+      "va": {
+        "reason": "apps_va not populated",
+        "available": false
+      },
+      "fha": {
+        "reason": "apps_fha not populated",
+        "available": false
+      },
+      "yoy": {
+        "reason": "single HMDA vintage (2025)",
+        "available": false
+      },
+      "period": "HMDA 2025 reporting vintage",
+      "source": "lender_hmda_observations",
+      "usda_rhs": {
+        "reason": "apps_usda_other not populated",
+        "available": false
+      },
+      "conventional": {
+        "reason": "apps_conventional not populated",
+        "available": false
+      },
+      "hmda_denial_rate": {
+        "value": 0.181497,
+        "available": true,
+        "numerator": 110604,
+        "denominator": 609400,
+        "action_taken_excluded": [
+          "full LAR action_taken not materialized (withdrawn, incomplete, approved-not-accepted, etc.)"
+        ],
+        "action_taken_included": [
+          "originated (count)",
+          "denied (county count)"
+        ],
+        "denominator_definition": "county-grain denials / state-grain applications. Never denials/observation-row-count."
+      },
+      "hmda_denial_count": {
+        "grain": "county",
+        "value": 110604,
+        "available": true,
+        "numerator": 110604
+      },
+      "hmda_origination_rate": {
+        "value": 0.704516,
+        "available": true,
+        "numerator": 429332,
+        "denominator": 609400,
+        "denominator_definition": "state-grain applications"
+      },
+      "purchase_applications": {
+        "reason": "purchase_applications NULL in current LEI summaries",
+        "available": false
+      },
+      "hmda_application_count": {
+        "grain": "state",
+        "value": 609400,
+        "available": true,
+        "numerator": 609400,
+        "denominator": null
+      },
+      "hmda_origination_count": {
+        "grain": "state",
+        "value": 429332,
+        "available": true,
+        "numerator": 429332,
+        "denominator": null
+      },
+      "refinance_applications": {
+        "reason": "refinance_applications NULL in current LEI summaries",
+        "available": false
+      }
+    },
+    "sources": [
+      {
+        "note": "source vintage, not ingest date",
+        "as_of": "HMDA 2025",
+        "agency": "FFIEC",
+        "dataset": "hmda_2025_lender_state_summary",
+        "source_observed_to": "2025-12-31",
+        "source_observed_from": "2025-12-31"
+      },
+      {
+        "note": "attributed confirmed complaints only",
+        "agency": "CFPB",
+        "dataset": "cfpb_ccdb",
+        "source_url": "https://www.consumerfinance.gov/data-research/consumer-complaints/",
+        "source_observed_to": "2026-08-20",
+        "source_observed_from": "2011-12-13"
+      },
+      {
+        "agency": "GLEIF",
+        "dataset": "lei-records",
+        "source_url": "https://api.gleif.org/api/v1/lei-records"
+      }
+    ],
+    "coverage": {
+      "cfpb": "AVAILABLE",
+      "hmda": "AVAILABLE",
+      "nmls": "AVAILABLE",
+      "identity": "COMPLETE",
+      "depository": "NONBANK",
+      "enforcement": "NONE OBSERVED",
+      "servicer_role": "NOT ESTABLISHED"
+    },
+    "identity": {
+      "names": [
+        {
+          "kind": "legal",
+          "name": "Rocket Mortgage",
+          "source": "public_catalog"
+        },
+        {
+          "kind": "legal",
+          "name": "ROCKET MORTGAGE, LLC",
+          "source": "gleif"
+        },
+        {
+          "kind": "historical",
+          "name": "QUICKEN LOANS INC.",
+          "source": "gleif_other_names"
+        },
+        {
+          "kind": "historical",
+          "name": "QUICKEN LOANS, LLC",
+          "source": "gleif_other_names"
+        }
+      ],
+      "stable_key": "nmls-inst:3030",
+      "identifiers": [
+        {
+          "confidence": "confirmed",
+          "observed_at": null,
+          "source_dataset": "public_catalog",
+          "identifier_type": "NMLS_INSTITUTION",
+          "identifier_value": "3030"
+        },
+        {
+          "confidence": "confirmed",
+          "observed_at": "2025-01-01",
+          "source_dataset": "hmda_2025",
+          "identifier_type": "LEI",
+          "identifier_value": "549300FGXN1K3HLB1R50"
+        }
+      ],
+      "display_name": "Rocket Mortgage",
+      "canonical_name": "Rocket Mortgage",
+      "current_status": "unknown",
+      "institution_id": "1e2fa9a5-7067-52e9-8b44-4da4e71c9d47",
+      "classifications": [
+        {
+          "family": "UNKNOWN",
+          "source": "lend-nat-002-default",
+          "authoritative": false
+        },
+        {
+          "family": "UNKNOWN",
+          "source": "catalog_editorial_type",
+          "authoritative": false
+        },
+        {
+          "family": "NONBANK_MORTGAGE_COMPANY",
+          "source": "lend-nat-010",
+          "authoritative": true
+        }
+      ],
+      "identity_confidence": "confirmed"
+    },
+    "rankings": null,
+    "geography": {
+      "states": [
+        {
+          "state": "CA",
+          "applications": 59471,
+          "originations": 42202
+        },
+        {
+          "state": "FL",
+          "applications": 47276,
+          "originations": 31530
+        },
+        {
+          "state": "TX",
+          "applications": 46463,
+          "originations": 30579
+        },
+        {
+          "state": "MI",
+          "applications": 31108,
+          "originations": 22693
+        },
+        {
+          "state": "GA",
+          "applications": 30248,
+          "originations": 21182
+        },
+        {
+          "state": "NC",
+          "applications": 25507,
+          "originations": 18462
+        },
+        {
+          "state": "OH",
+          "applications": 23480,
+          "originations": 16656
+        },
+        {
+          "state": "PA",
+          "applications": 22733,
+          "originations": 16043
+        },
+        {
+          "state": "NY",
+          "applications": 20355,
+          "originations": 13729
+        },
+        {
+          "state": "VA",
+          "applications": 19481,
+          "originations": 14489
+        },
+        {
+          "state": "AZ",
+          "applications": 18094,
+          "originations": 13320
+        },
+        {
+          "state": "IL",
+          "applications": 17332,
+          "originations": 11970
+        },
+        {
+          "state": "TN",
+          "applications": 16700,
+          "originations": 11919
+        },
+        {
+          "state": "NJ",
+          "applications": 16617,
+          "originations": 12035
+        },
+        {
+          "state": "WA",
+          "applications": 14497,
+          "originations": 10611
+        },
+        {
+          "state": "IN",
+          "applications": 13692,
+          "originations": 9736
+        },
+        {
+          "state": "SC",
+          "applications": 13584,
+          "originations": 9760
+        },
+        {
+          "state": "MD",
+          "applications": 12964,
+          "originations": 9294
+        },
+        {
+          "state": "CO",
+          "applications": 11630,
+          "originations": 8433
+        },
+        {
+          "state": "MO",
+          "applications": 10591,
+          "originations": 7481
+        },
+        {
+          "state": "AL",
+          "applications": 10027,
+          "originations": 6770
+        },
+        {
+          "state": "MA",
+          "applications": 8879,
+          "originations": 6590
+        },
+        {
+          "state": "KY",
+          "applications": 8496,
+          "originations": 6049
+        },
+        {
+          "state": "WI",
+          "applications": 7901,
+          "originations": 5736
+        },
+        {
+          "state": "MN",
+          "applications": 7739,
+          "originations": 5672
+        },
+        {
+          "state": "OK",
+          "applications": 7060,
+          "originations": 4587
+        },
+        {
+          "state": "NV",
+          "applications": 6950,
+          "originations": 5226
+        },
+        {
+          "state": "OR",
+          "applications": 6734,
+          "originations": 4851
+        },
+        {
+          "state": "UT",
+          "applications": 6338,
+          "originations": 4780
+        },
+        {
+          "state": "CT",
+          "applications": 6158,
+          "originations": 4505
+        },
+        {
+          "state": "AR",
+          "applications": 5931,
+          "originations": 4094
+        },
+        {
+          "state": "LA",
+          "applications": 5844,
+          "originations": 3674
+        },
+        {
+          "state": "KS",
+          "applications": 5378,
+          "originations": 3859
+        },
+        {
+          "state": "MS",
+          "applications": 4668,
+          "originations": 2997
+        },
+        {
+          "state": "NM",
+          "applications": 4475,
+          "originations": 2972
+        },
+        {
+          "state": "ID",
+          "applications": 4417,
+          "originations": 3398
+        },
+        {
+          "state": "IA",
+          "applications": 3819,
+          "originations": 2551
+        },
+        {
+          "state": "WV",
+          "applications": 3659,
+          "originations": 2472
+        },
+        {
+          "state": "NE",
+          "applications": 3413,
+          "originations": 2480
+        },
+        {
+          "state": "NH",
+          "applications": 3124,
+          "originations": 2297
+        },
+        {
+          "state": "ME",
+          "applications": 2649,
+          "originations": 1775
+        },
+        {
+          "state": "DE",
+          "applications": 2399,
+          "originations": 1788
+        },
+        {
+          "state": "MT",
+          "applications": 2027,
+          "originations": 1465
+        },
+        {
+          "state": "HI",
+          "applications": 1651,
+          "originations": 1101
+        },
+        {
+          "state": "WY",
+          "applications": 1576,
+          "originations": 1170
+        },
+        {
+          "state": "RI",
+          "applications": 1452,
+          "originations": 1016
+        },
+        {
+          "state": "VT",
+          "applications": 1182,
+          "originations": 786
+        },
+        {
+          "state": "AK",
+          "applications": 1066,
+          "originations": 776
+        },
+        {
+          "state": "SD",
+          "applications": 1040,
+          "originations": 753
+        },
+        {
+          "state": "ND",
+          "applications": 830,
+          "originations": 549
+        },
+        {
+          "state": "DC",
+          "applications": 695,
+          "originations": 469
+        }
+      ],
+      "language": "HMDA activity observed in listed states/counties. This is not headquarters, not licensed-in, and not a branch network.",
+      "headquarters": null,
+      "top_counties": [
+        {
+          "state": "AZ",
+          "denials": 1599,
+          "county_fips": "04013",
+          "applications": 11107,
+          "originations": 8327
+        },
+        {
+          "state": "CA",
+          "denials": 2100,
+          "county_fips": "06037",
+          "applications": 11087,
+          "originations": 7659
+        },
+        {
+          "state": "TX",
+          "denials": 1437,
+          "county_fips": "48201",
+          "applications": 6602,
+          "originations": 4343
+        },
+        {
+          "state": "MI",
+          "denials": 1095,
+          "county_fips": "26163",
+          "applications": 6477,
+          "originations": 4686
+        },
+        {
+          "state": "IL",
+          "denials": 1310,
+          "county_fips": "17031",
+          "applications": 6074,
+          "originations": 3955
+        },
+        {
+          "state": "CA",
+          "denials": 831,
+          "county_fips": "06073",
+          "applications": 5442,
+          "originations": 3920
+        },
+        {
+          "state": "CA",
+          "denials": 971,
+          "county_fips": "06065",
+          "applications": 5404,
+          "originations": 3844
+        },
+        {
+          "state": "MI",
+          "denials": 610,
+          "county_fips": "26125",
+          "applications": 5103,
+          "originations": 3915
+        },
+        {
+          "state": "NV",
+          "denials": 781,
+          "county_fips": "32003",
+          "applications": 4947,
+          "originations": 3690
+        },
+        {
+          "state": "CA",
+          "denials": 749,
+          "county_fips": "06059",
+          "applications": 4475,
+          "originations": 3235
+        },
+        {
+          "state": "CA",
+          "denials": 758,
+          "county_fips": "06071",
+          "applications": 4010,
+          "originations": 2802
+        },
+        {
+          "state": "FL",
+          "denials": 927,
+          "county_fips": "12011",
+          "applications": 3680,
+          "originations": 2317
+        },
+        {
+          "state": "TX",
+          "denials": 733,
+          "county_fips": "48439",
+          "applications": 3646,
+          "originations": 2530
+        },
+        {
+          "state": "MI",
+          "denials": 487,
+          "county_fips": "26099",
+          "applications": 3441,
+          "originations": 2572
+        },
+        {
+          "state": "CA",
+          "denials": 502,
+          "county_fips": "06067",
+          "applications": 3367,
+          "originations": 2467
+        }
+      ],
+      "headquarters_source": "FDIC institutions CITY/STALP when FDIC_CERT present; otherwise null",
+      "states_with_hmda_activity": 51,
+      "counties_with_hmda_activity": 3072
+    },
+    "computed_at": "2026-08-27T12:49:29Z",
+    "enforcement": {
+      "events": [],
+      "by_agency": {},
+      "section_title": "Regulatory & Enforcement History",
+      "attribution_rule": "respondent.confidence=confirmed and respondent.institution_id set via CERT/NMLS/LEI. CFPB complaint bridge is not enforcement proof.",
+      "by_action_family": {},
+      "attributed_event_count": 0,
+      "none_observed_is_not_proof": true
+    },
+    "limitations": [
+      "HMDA 2025 is a reporting vintage, not current 2026 lending activity.",
+      "HMDA activity geography is not headquarters and not a branch or license map.",
+      "CFPB counts include confirmed attributions only.",
+      "Enforcement requires an independent confirmed identifier; a complaint bridge is not enough.",
+      "NONE OBSERVED enforcement is not proof of no history.",
+      "No Trust Score, ranking, or quality conversion is computed.",
+      "Purchase/refinance and FHA/VA/conventional program splits are not populated in the current LEI summaries.",
+      "Year-over-year HMDA is unavailable (single vintage).",
+      "Full HMDA action_taken distribution is not materialized; only applications, originations, and county-grain denials."
+    ],
+    "contract_version": "lend-nat-011-v1",
+    "public_projection_status": "internal_only"
+  },
+  "freedom_corporation": {
+    "cfpb": {
+      "issue": {},
+      "product": {},
+      "source_labels": [],
+      "not_enforcement": true,
+      "timely_response": {},
+      "company_response": {},
+      "window_24m_start": "2024-08-26",
+      "unresolved_related": [
+        {
+          "label": "Freedom Mortgage Company",
+          "reason": "CFPB label Company does not exact-fold to GLEIF FREEDOM MORTGAGE CORPORATION; otherNames empty.",
+          "confidence": "unresolved",
+          "complaint_count": 8866,
+          "complaint_count_24m": 2592
+        }
+      ],
+      "coverage_disclosure": "Complaint data includes only records deterministically attributed to this institution. Some CFPB source labels remain unresolved and are listed separately.",
+      "attribution_confidence": "confirmed",
+      "attributed_complaint_count": 0,
+      "attributed_complaint_count_24m": 0
+    },
+    "roles": {
+      "depository": "NONBANK",
+      "classifications": [
+        {
+          "family": "UNKNOWN",
+          "source": "lend-nat-002-default",
+          "authoritative": false
+        },
+        {
+          "family": "UNKNOWN",
+          "source": "catalog_editorial_type",
+          "authoritative": false
+        },
+        {
+          "family": "INDEPENDENT_MORTGAGE_BANK",
+          "source": "lend-nat-004",
+          "authoritative": false
+        },
+        {
+          "family": "NONBANK_MORTGAGE_COMPANY",
+          "source": "lend-nat-010",
+          "authoritative": true
+        }
+      ],
+      "servicer_status": "NOT ESTABLISHED",
+      "servicer_evidence": [],
+      "inference_forbidden": [
+        "company name",
+        "CFPB volume",
+        "ownership",
+        "parent",
+        "historical reputation"
+      ]
+    },
+    "scores": null,
+    "lending": {
+      "va": {
+        "reason": "apps_va not populated",
+        "available": false
+      },
+      "fha": {
+        "reason": "apps_fha not populated",
+        "available": false
+      },
+      "yoy": {
+        "reason": "single HMDA vintage (2025)",
+        "available": false
+      },
+      "period": "HMDA 2025 reporting vintage",
+      "source": "lender_hmda_observations",
+      "usda_rhs": {
+        "reason": "apps_usda_other not populated",
+        "available": false
+      },
+      "conventional": {
+        "reason": "apps_conventional not populated",
+        "available": false
+      },
+      "hmda_denial_rate": {
+        "value": 0.085384,
+        "available": true,
+        "numerator": 14127,
+        "denominator": 165453,
+        "action_taken_excluded": [
+          "full LAR action_taken not materialized (withdrawn, incomplete, approved-not-accepted, etc.)"
+        ],
+        "action_taken_included": [
+          "originated (count)",
+          "denied (county count)"
+        ],
+        "denominator_definition": "county-grain denials / state-grain applications. Never denials/observation-row-count."
+      },
+      "hmda_denial_count": {
+        "grain": "county",
+        "value": 14127,
+        "available": true,
+        "numerator": 14127
+      },
+      "hmda_origination_rate": {
+        "value": 0.422972,
+        "available": true,
+        "numerator": 69982,
+        "denominator": 165453,
+        "denominator_definition": "state-grain applications"
+      },
+      "purchase_applications": {
+        "reason": "purchase_applications NULL in current LEI summaries",
+        "available": false
+      },
+      "hmda_application_count": {
+        "grain": "state",
+        "value": 165453,
+        "available": true,
+        "numerator": 165453,
+        "denominator": null
+      },
+      "hmda_origination_count": {
+        "grain": "state",
+        "value": 69982,
+        "available": true,
+        "numerator": 69982,
+        "denominator": null
+      },
+      "refinance_applications": {
+        "reason": "refinance_applications NULL in current LEI summaries",
+        "available": false
+      }
+    },
+    "sources": [
+      {
+        "note": "source vintage, not ingest date",
+        "as_of": "HMDA 2025",
+        "agency": "FFIEC",
+        "dataset": "hmda_2025_lender_state_summary",
+        "source_observed_to": "2025-12-31",
+        "source_observed_from": "2025-12-31"
+      },
+      {
+        "agency": "GLEIF",
+        "dataset": "lei-records",
+        "source_url": "https://api.gleif.org/api/v1/lei-records"
+      }
+    ],
+    "coverage": {
+      "cfpb": "UNRESOLVED",
+      "hmda": "AVAILABLE",
+      "nmls": "AVAILABLE",
+      "identity": "COMPLETE",
+      "depository": "NONBANK",
+      "enforcement": "NONE OBSERVED",
+      "servicer_role": "NOT ESTABLISHED"
+    },
+    "identity": {
+      "names": [
+        {
+          "kind": "legal",
+          "name": "Freedom Mortgage",
+          "source": "public_catalog"
+        },
+        {
+          "kind": "legal",
+          "name": "FREEDOM MORTGAGE CORPORATION",
+          "source": "gleif_official"
+        },
+        {
+          "kind": "legal",
+          "name": "FREEDOM MORTGAGE CORPORATION",
+          "source": "gleif"
+        }
+      ],
+      "stable_key": "nmls-inst:2767",
+      "identifiers": [
+        {
+          "confidence": "confirmed",
+          "observed_at": null,
+          "source_dataset": "public_catalog",
+          "identifier_type": "NMLS_INSTITUTION",
+          "identifier_value": "2767"
+        },
+        {
+          "confidence": "confirmed",
+          "observed_at": "2026-08-26",
+          "source_dataset": "lend-nat-004",
+          "identifier_type": "LEI",
+          "identifier_value": "549300LYRWPSYPK6S325"
+        }
+      ],
+      "display_name": "Freedom Mortgage",
+      "canonical_name": "Freedom Mortgage",
+      "current_status": "unknown",
+      "institution_id": "9cdfce71-84f9-5648-a966-89f562d73ed7",
+      "classifications": [
+        {
+          "family": "UNKNOWN",
+          "source": "lend-nat-002-default",
+          "authoritative": false
+        },
+        {
+          "family": "UNKNOWN",
+          "source": "catalog_editorial_type",
+          "authoritative": false
+        },
+        {
+          "family": "INDEPENDENT_MORTGAGE_BANK",
+          "source": "lend-nat-004",
+          "authoritative": false
+        },
+        {
+          "family": "NONBANK_MORTGAGE_COMPANY",
+          "source": "lend-nat-010",
+          "authoritative": true
+        }
+      ],
+      "identity_confidence": "confirmed"
+    },
+    "rankings": null,
+    "geography": {
+      "states": [
+        {
+          "state": "FL",
+          "applications": 13067,
+          "originations": 5374
+        },
+        {
+          "state": "TX",
+          "applications": 12545,
+          "originations": 5759
+        },
+        {
+          "state": "CA",
+          "applications": 11002,
+          "originations": 3918
+        },
+        {
+          "state": "NC",
+          "applications": 9632,
+          "originations": 4463
+        },
+        {
+          "state": "GA",
+          "applications": 9293,
+          "originations": 3946
+        },
+        {
+          "state": "VA",
+          "applications": 8029,
+          "originations": 3646
+        },
+        {
+          "state": "OH",
+          "applications": 5665,
+          "originations": 2477
+        },
+        {
+          "state": "TN",
+          "applications": 5493,
+          "originations": 2436
+        },
+        {
+          "state": "IN",
+          "applications": 5454,
+          "originations": 2580
+        },
+        {
+          "state": "SC",
+          "applications": 5296,
+          "originations": 2168
+        },
+        {
+          "state": "MD",
+          "applications": 5078,
+          "originations": 2128
+        },
+        {
+          "state": "AZ",
+          "applications": 4991,
+          "originations": 2123
+        },
+        {
+          "state": "PA",
+          "applications": 4510,
+          "originations": 1673
+        },
+        {
+          "state": "IL",
+          "applications": 4316,
+          "originations": 1573
+        },
+        {
+          "state": "NJ",
+          "applications": 4045,
+          "originations": 1432
+        },
+        {
+          "state": "MO",
+          "applications": 3946,
+          "originations": 1814
+        },
+        {
+          "state": "AL",
+          "applications": 3725,
+          "originations": 1669
+        },
+        {
+          "state": "WA",
+          "applications": 3654,
+          "originations": 1518
+        },
+        {
+          "state": "CO",
+          "applications": 3542,
+          "originations": 1594
+        },
+        {
+          "state": "MI",
+          "applications": 3515,
+          "originations": 1463
+        },
+        {
+          "state": "KY",
+          "applications": 2752,
+          "originations": 1270
+        },
+        {
+          "state": "NV",
+          "applications": 2502,
+          "originations": 1108
+        },
+        {
+          "state": "LA",
+          "applications": 2501,
+          "originations": 1040
+        },
+        {
+          "state": "MA",
+          "applications": 2209,
+          "originations": 792
+        },
+        {
+          "state": "OK",
+          "applications": 2105,
+          "originations": 846
+        },
+        {
+          "state": "WI",
+          "applications": 2068,
+          "originations": 918
+        },
+        {
+          "state": "MN",
+          "applications": 1878,
+          "originations": 765
+        },
+        {
+          "state": "NY",
+          "applications": 1765,
+          "originations": 531
+        },
+        {
+          "state": "OR",
+          "applications": 1717,
+          "originations": 712
+        },
+        {
+          "state": "AR",
+          "applications": 1672,
+          "originations": 675
+        },
+        {
+          "state": "CT",
+          "applications": 1645,
+          "originations": 586
+        },
+        {
+          "state": "MS",
+          "applications": 1626,
+          "originations": 694
+        },
+        {
+          "state": "UT",
+          "applications": 1549,
+          "originations": 726
+        },
+        {
+          "state": "KS",
+          "applications": 1491,
+          "originations": 697
+        },
+        {
+          "state": "NM",
+          "applications": 1304,
+          "originations": 491
+        },
+        {
+          "state": "ID",
+          "applications": 966,
+          "originations": 432
+        },
+        {
+          "state": "HI",
+          "applications": 924,
+          "originations": 516
+        },
+        {
+          "state": "IA",
+          "applications": 919,
+          "originations": 338
+        },
+        {
+          "state": "NE",
+          "applications": 898,
+          "originations": 419
+        },
+        {
+          "state": "DE",
+          "applications": 804,
+          "originations": 332
+        },
+        {
+          "state": "ME",
+          "applications": 749,
+          "originations": 346
+        },
+        {
+          "state": "NH",
+          "applications": 729,
+          "originations": 316
+        },
+        {
+          "state": "MT",
+          "applications": 724,
+          "originations": 331
+        },
+        {
+          "state": "WV",
+          "applications": 707,
+          "originations": 293
+        },
+        {
+          "state": "RI",
+          "applications": 584,
+          "originations": 211
+        },
+        {
+          "state": "WY",
+          "applications": 512,
+          "originations": 242
+        },
+        {
+          "state": "AK",
+          "applications": 355,
+          "originations": 170
+        },
+        {
+          "state": "SD",
+          "applications": 343,
+          "originations": 162
+        },
+        {
+          "state": "ND",
+          "applications": 238,
+          "originations": 89
+        },
+        {
+          "state": "VT",
+          "applications": 219,
+          "originations": 99
+        },
+        {
+          "state": "DC",
+          "applications": 200,
+          "originations": 81
+        }
+      ],
+      "language": "HMDA activity observed in listed states/counties. This is not headquarters, not licensed-in, and not a branch network.",
+      "headquarters": null,
+      "top_counties": [
+        {
+          "state": "AZ",
+          "denials": 188,
+          "county_fips": "04013",
+          "applications": 2653,
+          "originations": 1081
+        },
+        {
+          "state": "NV",
+          "denials": 120,
+          "county_fips": "32003",
+          "applications": 1873,
+          "originations": 831
+        },
+        {
+          "state": "CA",
+          "denials": 130,
+          "county_fips": "06065",
+          "applications": 1578,
+          "originations": 566
+        },
+        {
+          "state": "IL",
+          "denials": 126,
+          "county_fips": "17031",
+          "applications": 1358,
+          "originations": 400
+        },
+        {
+          "state": "CA",
+          "denials": 120,
+          "county_fips": "06037",
+          "applications": 1342,
+          "originations": 436
+        },
+        {
+          "state": "TX",
+          "denials": 123,
+          "county_fips": "48201",
+          "applications": 1274,
+          "originations": 558
+        },
+        {
+          "state": "CA",
+          "denials": 84,
+          "county_fips": "06073",
+          "applications": 1084,
+          "originations": 418
+        },
+        {
+          "state": "MD",
+          "denials": 77,
+          "county_fips": "24033",
+          "applications": 1044,
+          "originations": 406
+        },
+        {
+          "state": "CA",
+          "denials": 71,
+          "county_fips": "06071",
+          "applications": 1020,
+          "originations": 334
+        },
+        {
+          "state": "CO",
+          "denials": 49,
+          "county_fips": "08041",
+          "applications": 1007,
+          "originations": 492
+        },
+        {
+          "state": "TX",
+          "denials": 77,
+          "county_fips": "48029",
+          "applications": 1002,
+          "originations": 480
+        },
+        {
+          "state": "FL",
+          "denials": 122,
+          "county_fips": "12057",
+          "applications": 993,
+          "originations": 436
+        },
+        {
+          "state": "NC",
+          "denials": 68,
+          "county_fips": "37051",
+          "applications": 977,
+          "originations": 490
+        },
+        {
+          "state": "NC",
+          "denials": 52,
+          "county_fips": "37133",
+          "applications": 851,
+          "originations": 429
+        },
+        {
+          "state": "TX",
+          "denials": 55,
+          "county_fips": "48439",
+          "applications": 834,
+          "originations": 412
+        }
+      ],
+      "headquarters_source": "FDIC institutions CITY/STALP when FDIC_CERT present; otherwise null",
+      "states_with_hmda_activity": 51,
+      "counties_with_hmda_activity": 2569
+    },
+    "computed_at": "2026-08-27T12:49:29Z",
+    "enforcement": {
+      "events": [],
+      "by_agency": {},
+      "section_title": "Regulatory & Enforcement History",
+      "attribution_rule": "respondent.confidence=confirmed and respondent.institution_id set via CERT/NMLS/LEI. CFPB complaint bridge is not enforcement proof.",
+      "by_action_family": {},
+      "attributed_event_count": 0,
+      "none_observed_is_not_proof": true
+    },
+    "limitations": [
+      "HMDA 2025 is a reporting vintage, not current 2026 lending activity.",
+      "HMDA activity geography is not headquarters and not a branch or license map.",
+      "CFPB counts include confirmed attributions only.",
+      "Enforcement requires an independent confirmed identifier; a complaint bridge is not enough.",
+      "NONE OBSERVED enforcement is not proof of no history.",
+      "No Trust Score, ranking, or quality conversion is computed.",
+      "Purchase/refinance and FHA/VA/conventional program splits are not populated in the current LEI summaries.",
+      "Year-over-year HMDA is unavailable (single vintage).",
+      "Full HMDA action_taken distribution is not materialized; only applications, originations, and county-grain denials.",
+      "Related unresolved CFPB source labels exist and are not folded into this profile."
+    ],
+    "contract_version": "lend-nat-011-v1",
+    "public_projection_status": "internal_only"
+  },
+  "boa": {
+    "cfpb": {
+      "issue": {
+        "Other": 922,
+        "Closing on a mortgage": 792,
+        "Struggling to pay mortgage": 2452,
+        "Improper use of your report": 20,
+        "Settlement process and costs": 1347,
+        "Credit decision / Underwriting": 819,
+        "Trouble during payment process": 3550,
+        "Incorrect information on your report": 228,
+        "Application, originator, mortgage broker": 2515,
+        "Loan modification,collection,foreclosure": 25056,
+        "Loan servicing, payments, escrow account": 9298,
+        "Problem with credit report or credit score": 1,
+        "Problem with fraud alerts or security freezes": 9,
+        "Unable to get your credit report or credit score": 5,
+        "Credit monitoring or identity theft protection services": 1,
+        "Applying for a mortgage or refinancing an existing mortgage": 1343,
+        "Problem with a company's investigation into an existing problem": 23,
+        "Problem with a credit reporting company's investigation into an existing problem": 35
+      },
+      "product": {
+        "Mortgage": 48416
+      },
+      "source_labels": [
+        {
+          "count": 48416,
+          "method": "unique_folded_legal_name_plus_authoritative_identifier",
+          "count_24m": 1066,
+          "confidence": "confirmed",
+          "source_company_key": "BANK OF AMERICA, NATIONAL ASSOCIATION"
+        }
+      ],
+      "not_enforcement": true,
+      "timely_response": {
+        "No": 1184,
+        "Yes": 47232
+      },
+      "company_response": {
+        "Closed": 740,
+        "In progress": 32,
+        "Untimely response": 85,
+        "Closed with relief": 90,
+        "Closed without relief": 3822,
+        "Closed with explanation": 34381,
+        "Closed with monetary relief": 1789,
+        "Closed with non-monetary relief": 7477
+      },
+      "window_24m_start": "2024-08-26",
+      "unresolved_related": [],
+      "coverage_disclosure": "Complaint data includes only records deterministically attributed to this institution. Some CFPB source labels remain unresolved and are listed separately.",
+      "attribution_confidence": "confirmed",
+      "attributed_complaint_count": 48416,
+      "attributed_complaint_count_24m": 1066
+    },
+    "roles": {
+      "depository": "FDIC",
+      "classifications": [
+        {
+          "family": "UNKNOWN",
+          "source": "lend-nat-002-default",
+          "authoritative": false
+        },
+        {
+          "family": "UNKNOWN",
+          "source": "catalog_editorial_type",
+          "authoritative": false
+        },
+        {
+          "family": "DEPOSITORY_BANK",
+          "source": "lend-nat-004",
+          "authoritative": false
+        },
+        {
+          "family": "DEPOSITORY_BANK",
+          "source": "lend-nat-005",
+          "authoritative": true
+        }
+      ],
+      "servicer_status": "NOT ESTABLISHED",
+      "servicer_evidence": [],
+      "inference_forbidden": [
+        "company name",
+        "CFPB volume",
+        "ownership",
+        "parent",
+        "historical reputation"
+      ]
+    },
+    "scores": null,
+    "lending": {
+      "va": {
+        "reason": "apps_va not populated",
+        "available": false
+      },
+      "fha": {
+        "reason": "apps_fha not populated",
+        "available": false
+      },
+      "yoy": {
+        "reason": "single HMDA vintage (2025)",
+        "available": false
+      },
+      "period": "HMDA 2025 reporting vintage",
+      "source": "lender_hmda_observations",
+      "usda_rhs": {
+        "reason": "apps_usda_other not populated",
+        "available": false
+      },
+      "conventional": {
+        "reason": "apps_conventional not populated",
+        "available": false
+      },
+      "hmda_denial_rate": {
+        "value": 0.332435,
+        "available": true,
+        "numerator": 72302,
+        "denominator": 217492,
+        "action_taken_excluded": [
+          "full LAR action_taken not materialized (withdrawn, incomplete, approved-not-accepted, etc.)"
+        ],
+        "action_taken_included": [
+          "originated (count)",
+          "denied (county count)"
+        ],
+        "denominator_definition": "county-grain denials / state-grain applications. Never denials/observation-row-count."
+      },
+      "hmda_denial_count": {
+        "grain": "county",
+        "value": 72302,
+        "available": true,
+        "numerator": 72302
+      },
+      "hmda_origination_rate": {
+        "value": 0.407049,
+        "available": true,
+        "numerator": 88530,
+        "denominator": 217492,
+        "denominator_definition": "state-grain applications"
+      },
+      "purchase_applications": {
+        "reason": "purchase_applications NULL in current LEI summaries",
+        "available": false
+      },
+      "hmda_application_count": {
+        "grain": "state",
+        "value": 217492,
+        "available": true,
+        "numerator": 217492,
+        "denominator": null
+      },
+      "hmda_origination_count": {
+        "grain": "state",
+        "value": 88530,
+        "available": true,
+        "numerator": 88530,
+        "denominator": null
+      },
+      "refinance_applications": {
+        "reason": "refinance_applications NULL in current LEI summaries",
+        "available": false
+      }
+    },
+    "sources": [
+      {
+        "note": "source vintage, not ingest date",
+        "as_of": "HMDA 2025",
+        "agency": "FFIEC",
+        "dataset": "hmda_2025_lender_state_summary",
+        "source_observed_to": "2025-12-31",
+        "source_observed_from": "2025-12-31"
+      },
+      {
+        "note": "attributed confirmed complaints only",
+        "agency": "CFPB",
+        "dataset": "cfpb_ccdb",
+        "source_url": "https://www.consumerfinance.gov/data-research/consumer-complaints/",
+        "source_observed_to": "2026-08-25",
+        "source_observed_from": "2011-12-01"
+      },
+      {
+        "note": "confirmed respondents only",
+        "agency": "MULTI",
+        "dataset": "lender_federal_enforcement_events"
+      },
+      {
+        "agency": "GLEIF",
+        "dataset": "lei-records",
+        "source_url": "https://api.gleif.org/api/v1/lei-records"
+      },
+      {
+        "agency": "FDIC",
+        "dataset": "institutions",
+        "source_url": "https://api.fdic.gov/banks/institutions"
+      }
+    ],
+    "coverage": {
+      "cfpb": "AVAILABLE",
+      "hmda": "AVAILABLE",
+      "nmls": "AVAILABLE",
+      "identity": "COMPLETE",
+      "depository": "FDIC",
+      "enforcement": "AVAILABLE",
+      "servicer_role": "NOT ESTABLISHED"
+    },
+    "identity": {
+      "names": [
+        {
+          "kind": "legal",
+          "name": "Bank of America Mortgage",
+          "source": "public_catalog"
+        },
+        {
+          "kind": "display",
+          "name": "Bank of America Mortgage (DC)",
+          "source": "public_catalog"
+        },
+        {
+          "kind": "legal",
+          "name": "Bank Of America, National Association",
+          "source": "gleif_official"
+        },
+        {
+          "kind": "legal",
+          "name": "Bank of America, National Association",
+          "source": "fdic_bankfind"
+        }
+      ],
+      "stable_key": "nmls-inst:399802",
+      "identifiers": [
+        {
+          "confidence": "confirmed",
+          "observed_at": null,
+          "source_dataset": "public_catalog",
+          "identifier_type": "NMLS_INSTITUTION",
+          "identifier_value": "399802"
+        },
+        {
+          "confidence": "confirmed",
+          "observed_at": "2026-08-26",
+          "source_dataset": "lend-nat-005",
+          "identifier_type": "FDIC_CERT",
+          "identifier_value": "3510"
+        },
+        {
+          "confidence": "confirmed",
+          "observed_at": "2026-08-26",
+          "source_dataset": "lend-nat-005",
+          "identifier_type": "RSSD",
+          "identifier_value": "480228"
+        },
+        {
+          "confidence": "confirmed",
+          "observed_at": "2026-08-26",
+          "source_dataset": "lend-nat-005",
+          "identifier_type": "LEI",
+          "identifier_value": "B4TYDEB6GKMZO031MB27"
+        }
+      ],
+      "display_name": "Bank of America Mortgage (DC)",
+      "canonical_name": "Bank of America Mortgage",
+      "current_status": "unknown",
+      "institution_id": "1addd8ad-ae59-5b1b-9b7c-2e5f6be74cba",
+      "classifications": [
+        {
+          "family": "UNKNOWN",
+          "source": "lend-nat-002-default",
+          "authoritative": false
+        },
+        {
+          "family": "UNKNOWN",
+          "source": "catalog_editorial_type",
+          "authoritative": false
+        },
+        {
+          "family": "DEPOSITORY_BANK",
+          "source": "lend-nat-004",
+          "authoritative": false
+        },
+        {
+          "family": "DEPOSITORY_BANK",
+          "source": "lend-nat-005",
+          "authoritative": true
+        }
+      ],
+      "identity_confidence": "confirmed"
+    },
+    "rankings": null,
+    "geography": {
+      "states": [
+        {
+          "state": "CA",
+          "applications": 40190,
+          "originations": 17758
+        },
+        {
+          "state": "FL",
+          "applications": 23634,
+          "originations": 7938
+        },
+        {
+          "state": "TX",
+          "applications": 18008,
+          "originations": 6141
+        },
+        {
+          "state": "NJ",
+          "applications": 12142,
+          "originations": 5136
+        },
+        {
+          "state": "NC",
+          "applications": 10276,
+          "originations": 4880
+        },
+        {
+          "state": "NY",
+          "applications": 10193,
+          "originations": 3897
+        },
+        {
+          "state": "GA",
+          "applications": 9168,
+          "originations": 3440
+        },
+        {
+          "state": "MA",
+          "applications": 7784,
+          "originations": 3551
+        },
+        {
+          "state": "WA",
+          "applications": 6986,
+          "originations": 3420
+        },
+        {
+          "state": "IL",
+          "applications": 6817,
+          "originations": 2889
+        },
+        {
+          "state": "VA",
+          "applications": 6584,
+          "originations": 2688
+        },
+        {
+          "state": "AZ",
+          "applications": 6229,
+          "originations": 2582
+        },
+        {
+          "state": "MD",
+          "applications": 6051,
+          "originations": 2255
+        },
+        {
+          "state": "SC",
+          "applications": 5009,
+          "originations": 2119
+        },
+        {
+          "state": "CT",
+          "applications": 4591,
+          "originations": 2061
+        },
+        {
+          "state": "PA",
+          "applications": 4468,
+          "originations": 1841
+        },
+        {
+          "state": "MI",
+          "applications": 4464,
+          "originations": 1939
+        },
+        {
+          "state": "TN",
+          "applications": 3749,
+          "originations": 1499
+        },
+        {
+          "state": "MO",
+          "applications": 3487,
+          "originations": 1520
+        },
+        {
+          "state": "NV",
+          "applications": 3296,
+          "originations": 1233
+        },
+        {
+          "state": "OR",
+          "applications": 2389,
+          "originations": 1044
+        },
+        {
+          "state": "CO",
+          "applications": 2216,
+          "originations": 965
+        },
+        {
+          "state": "OH",
+          "applications": 2149,
+          "originations": 810
+        },
+        {
+          "state": "KS",
+          "applications": 1342,
+          "originations": 578
+        },
+        {
+          "state": "RI",
+          "applications": 1298,
+          "originations": 432
+        },
+        {
+          "state": "OK",
+          "applications": 1250,
+          "originations": 502
+        },
+        {
+          "state": "IN",
+          "applications": 1235,
+          "originations": 450
+        },
+        {
+          "state": "MN",
+          "applications": 1212,
+          "originations": 533
+        },
+        {
+          "state": "NH",
+          "applications": 1068,
+          "originations": 483
+        },
+        {
+          "state": "NM",
+          "applications": 1033,
+          "originations": 356
+        },
+        {
+          "state": "AR",
+          "applications": 980,
+          "originations": 384
+        },
+        {
+          "state": "AL",
+          "applications": 820,
+          "originations": 320
+        },
+        {
+          "state": "DE",
+          "applications": 714,
+          "originations": 338
+        },
+        {
+          "state": "ME",
+          "applications": 712,
+          "originations": 283
+        },
+        {
+          "state": "LA",
+          "applications": 677,
+          "originations": 219
+        },
+        {
+          "state": "KY",
+          "applications": 677,
+          "originations": 255
+        },
+        {
+          "state": "UT",
+          "applications": 628,
+          "originations": 258
+        },
+        {
+          "state": "WI",
+          "applications": 607,
+          "originations": 249
+        },
+        {
+          "state": "DC",
+          "applications": 546,
+          "originations": 249
+        },
+        {
+          "state": "ID",
+          "applications": 451,
+          "originations": 204
+        },
+        {
+          "state": "IA",
+          "applications": 395,
+          "originations": 160
+        },
+        {
+          "state": "MS",
+          "applications": 377,
+          "originations": 98
+        },
+        {
+          "state": "MT",
+          "applications": 306,
+          "originations": 115
+        },
+        {
+          "state": "NE",
+          "applications": 270,
+          "originations": 103
+        },
+        {
+          "state": "WV",
+          "applications": 248,
+          "originations": 75
+        },
+        {
+          "state": "AK",
+          "applications": 196,
+          "originations": 62
+        },
+        {
+          "state": "VT",
+          "applications": 191,
+          "originations": 87
+        },
+        {
+          "state": "HI",
+          "applications": 151,
+          "originations": 54
+        },
+        {
+          "state": "WY",
+          "applications": 80,
+          "originations": 30
+        },
+        {
+          "state": "SD",
+          "applications": 76,
+          "originations": 25
+        },
+        {
+          "state": "ND",
+          "applications": 72,
+          "originations": 22
+        }
+      ],
+      "language": "HMDA activity observed in listed states/counties. This is not headquarters, not licensed-in, and not a branch network.",
+      "headquarters": {
+        "city": "Charlotte",
+        "state": "NC",
+        "source": "fdic_institutions_active",
+        "address": "100 N Tryon St",
+        "source_url": "https://api.fdic.gov/banks/institutions"
+      },
+      "top_counties": [
+        {
+          "state": "CA",
+          "denials": 3024,
+          "county_fips": "06037",
+          "applications": 8999,
+          "originations": 3603
+        },
+        {
+          "state": "AZ",
+          "denials": 1388,
+          "county_fips": "04013",
+          "applications": 4488,
+          "originations": 1938
+        },
+        {
+          "state": "CA",
+          "denials": 1059,
+          "county_fips": "06059",
+          "applications": 4064,
+          "originations": 1917
+        },
+        {
+          "state": "IL",
+          "denials": 1294,
+          "county_fips": "17031",
+          "applications": 3791,
+          "originations": 1621
+        },
+        {
+          "state": "CA",
+          "denials": 633,
+          "county_fips": "06085",
+          "applications": 3718,
+          "originations": 2383
+        },
+        {
+          "state": "TX",
+          "denials": 1443,
+          "county_fips": "48201",
+          "applications": 3246,
+          "originations": 1092
+        },
+        {
+          "state": "WA",
+          "denials": 676,
+          "county_fips": "53033",
+          "applications": 3117,
+          "originations": 1742
+        },
+        {
+          "state": "FL",
+          "denials": 1199,
+          "county_fips": "12011",
+          "applications": 2824,
+          "originations": 788
+        },
+        {
+          "state": "CA",
+          "denials": 831,
+          "county_fips": "06073",
+          "applications": 2801,
+          "originations": 1246
+        },
+        {
+          "state": "FL",
+          "denials": 1176,
+          "county_fips": "12086",
+          "applications": 2597,
+          "originations": 650
+        },
+        {
+          "state": "NC",
+          "denials": 601,
+          "county_fips": "37119",
+          "applications": 2582,
+          "originations": 1418
+        },
+        {
+          "state": "NV",
+          "denials": 932,
+          "county_fips": "32003",
+          "applications": 2471,
+          "originations": 896
+        },
+        {
+          "state": "CA",
+          "denials": 548,
+          "county_fips": "06001",
+          "applications": 2457,
+          "originations": 1345
+        },
+        {
+          "state": "CA",
+          "denials": 1025,
+          "county_fips": "06065",
+          "applications": 2362,
+          "originations": 723
+        },
+        {
+          "state": "FL",
+          "denials": 791,
+          "county_fips": "12099",
+          "applications": 2238,
+          "originations": 779
+        }
+      ],
+      "headquarters_source": "FDIC institutions CITY/STALP when FDIC_CERT present; otherwise null",
+      "states_with_hmda_activity": 51,
+      "counties_with_hmda_activity": 1887
+    },
+    "computed_at": "2026-08-27T12:49:29Z",
+    "enforcement": {
+      "events": [
+        {
+          "title": "Bank Of America / Cia, Brian C.",
+          "agency": "OCC",
+          "event_id": "3d27a697-c97c-59a1-81d6-f025bd944922",
+          "issued_on": "2000-02-08",
+          "source_url": "https://apps.occ.gov/EASearch/",
+          "action_family": "PROHIBITION",
+          "source_dataset": "occ_easearch",
+          "raw_action_type": "Prohibition/Removal Orders",
+          "procedural_posture": "FINAL",
+          "attribution_confidence": "confirmed"
+        },
+        {
+          "title": "Bank Of America / Dagnino, Daniel D.",
+          "agency": "OCC",
+          "event_id": "143f6395-5956-557b-b964-f7e1fe01c898",
+          "issued_on": "2000-02-07",
+          "source_url": "https://apps.occ.gov/EASearch/",
+          "action_family": "PROHIBITION",
+          "source_dataset": "occ_easearch",
+          "raw_action_type": "Prohibition/Removal Orders",
+          "procedural_posture": "FINAL",
+          "attribution_confidence": "confirmed"
+        },
+        {
+          "title": "Bank Of America / Mouling, Karen D.",
+          "agency": "OCC",
+          "event_id": "c00a827a-d9e3-51cd-bc5d-301e48ea7877",
+          "issued_on": "2000-01-18",
+          "source_url": "https://apps.occ.gov/EASearch/",
+          "action_family": "PROHIBITION",
+          "source_dataset": "occ_easearch",
+          "raw_action_type": "Prohibition/Removal Orders",
+          "procedural_posture": "FINAL",
+          "attribution_confidence": "confirmed"
+        },
+        {
+          "title": "Bank Of America / Yi, Judy",
+          "agency": "OCC",
+          "event_id": "d1c346df-1e57-5f9c-90a6-85be5491fcaa",
+          "issued_on": "2000-03-08",
+          "source_url": "https://apps.occ.gov/EASearch/",
+          "action_family": "PROHIBITION",
+          "source_dataset": "occ_easearch",
+          "raw_action_type": "Prohibition/Removal Orders",
+          "procedural_posture": "FINAL",
+          "attribution_confidence": "confirmed"
+        },
+        {
+          "title": "Bank Of America National Trust & Savings Association / McRoyal, Shonn",
+          "agency": "OCC",
+          "event_id": "d82613df-af94-5552-b1fd-42ad796435f5",
+          "issued_on": "1997-11-08",
+          "source_url": "https://apps.occ.gov/EASearch/",
+          "action_family": "PROHIBITION",
+          "source_dataset": "occ_easearch",
+          "raw_action_type": "Prohibition/Removal Orders",
+          "procedural_posture": "FINAL",
+          "attribution_confidence": "confirmed"
+        },
+        {
+          "title": "Bank Of America National Trust And Savings Associatio / Villanueva, William G.",
+          "agency": "OCC",
+          "event_id": "fd989e00-860b-54da-b7f9-e8d7581db4bb",
+          "issued_on": "2000-03-28",
+          "source_url": "https://apps.occ.gov/EASearch/",
+          "action_family": "PROHIBITION",
+          "source_dataset": "occ_easearch",
+          "raw_action_type": "Prohibition/Removal Orders",
+          "procedural_posture": "FINAL",
+          "attribution_confidence": "confirmed"
+        },
+        {
+          "title": "Bank Of America Nt & Sa / Blanks, Danielle Sheree",
+          "agency": "OCC",
+          "event_id": "a9a41a3a-0347-5f07-bf28-50edd5c89b58",
+          "issued_on": "1997-12-05",
+          "source_url": "https://apps.occ.gov/EASearch/",
+          "action_family": "RESTITUTION",
+          "source_dataset": "occ_easearch",
+          "raw_action_type": "C&D or PC&D Requiring Restitution",
+          "procedural_posture": "FINAL",
+          "attribution_confidence": "confirmed"
+        },
+        {
+          "title": "Bank Of America, N.A. / Marron, James J.",
+          "agency": "OCC",
+          "event_id": "32dd81b6-a2ee-5125-a370-58e5fc092419",
+          "issued_on": "2000-06-28",
+          "source_url": "https://apps.occ.gov/EASearch/",
+          "action_family": "PROHIBITION",
+          "source_dataset": "occ_easearch",
+          "raw_action_type": "Prohibition/Removal Orders",
+          "procedural_posture": "FINAL",
+          "attribution_confidence": "confirmed"
+        },
+        {
+          "title": "Bank Of America, N.A. / Marron, James J.",
+          "agency": "OCC",
+          "event_id": "1774c4ff-9850-539e-86a9-66f9c532d99c",
+          "issued_on": "2000-06-28",
+          "source_url": "https://apps.occ.gov/EASearch/",
+          "action_family": "RESTITUTION",
+          "source_dataset": "occ_easearch",
+          "raw_action_type": "C&D or PC&D Requiring Restitution",
+          "procedural_posture": "FINAL",
+          "attribution_confidence": "confirmed"
+        },
+        {
+          "title": "Bank Of America, N.A. / Munoz, Paula E.",
+          "agency": "OCC",
+          "event_id": "40003963-6da7-5355-a57a-9ab279f7242d",
+          "issued_on": "1997-05-02",
+          "source_url": "https://apps.occ.gov/EASearch/",
+          "action_family": "PROHIBITION",
+          "source_dataset": "occ_easearch",
+          "raw_action_type": "Prohibition/Removal Orders",
+          "procedural_posture": "FINAL",
+          "attribution_confidence": "confirmed"
+        },
+        {
+          "title": "Bank Of America, N.A. / Nguyen, Julie",
+          "agency": "OCC",
+          "event_id": "87fc55c7-9fd5-575f-a8e7-dca891ce936c",
+          "issued_on": "1997-08-25",
+          "source_url": "https://apps.occ.gov/EASearch/",
+          "action_family": "PROHIBITION",
+          "source_dataset": "occ_easearch",
+          "raw_action_type": "Prohibition/Removal Orders",
+          "procedural_posture": "FINAL",
+          "attribution_confidence": "confirmed"
+        },
+        {
+          "title": "Bank Of America, N.A. / Washington, Brenda L.",
+          "agency": "OCC",
+          "event_id": "63d909eb-814f-5db4-b772-450176f3b1d9",
+          "issued_on": "1997-09-05",
+          "source_url": "https://apps.occ.gov/EASearch/",
+          "action_family": "PROHIBITION",
+          "source_dataset": "occ_easearch",
+          "raw_action_type": "Prohibition/Removal Orders",
+          "procedural_posture": "FINAL",
+          "attribution_confidence": "confirmed"
+        }
+      ],
+      "by_agency": {
+        "OCC": 119
+      },
+      "section_title": "Regulatory & Enforcement History",
+      "attribution_rule": "respondent.confidence=confirmed and respondent.institution_id set via CERT/NMLS/LEI. CFPB complaint bridge is not enforcement proof.",
+      "by_action_family": {
+        "OTHER": 1,
+        "NOTICE": 1,
+        "PROHIBITION": 72,
+        "RESTITUTION": 19,
+        "CEASE_AND_DESIST": 11,
+        "FORMAL_AGREEMENT": 3,
+        "CIVIL_MONEY_PENALTY": 12
+      },
+      "attributed_event_count": 119,
+      "none_observed_is_not_proof": false
+    },
+    "limitations": [
+      "HMDA 2025 is a reporting vintage, not current 2026 lending activity.",
+      "HMDA activity geography is not headquarters and not a branch or license map.",
+      "CFPB counts include confirmed attributions only.",
+      "Enforcement requires an independent confirmed identifier; a complaint bridge is not enough.",
+      "NONE OBSERVED enforcement is not proof of no history.",
+      "No Trust Score, ranking, or quality conversion is computed.",
+      "Purchase/refinance and FHA/VA/conventional program splits are not populated in the current LEI summaries.",
+      "Year-over-year HMDA is unavailable (single vintage).",
+      "Full HMDA action_taken distribution is not materialized; only applications, originations, and county-grain denials."
+    ],
+    "contract_version": "lend-nat-011-v1",
+    "public_projection_status": "internal_only"
+  },
+  "navy_federal": {
+    "cfpb": {
+      "issue": {
+        "Other": 6,
+        "Closing on a mortgage": 304,
+        "Struggling to pay mortgage": 187,
+        "Improper use of your report": 8,
+        "Settlement process and costs": 23,
+        "Credit decision / Underwriting": 43,
+        "Trouble during payment process": 404,
+        "Incorrect information on your report": 24,
+        "Application, originator, mortgage broker": 113,
+        "Loan modification,collection,foreclosure": 162,
+        "Loan servicing, payments, escrow account": 127,
+        "Unable to get your credit report or credit score": 3,
+        "Applying for a mortgage or refinancing an existing mortgage": 817,
+        "Problem with a company's investigation into an existing problem": 10,
+        "Problem with a credit reporting company's investigation into an existing problem": 5
+      },
+      "product": {
+        "Mortgage": 2236
+      },
+      "source_labels": [
+        {
+          "count": 2236,
+          "method": "unique_folded_legal_name_plus_authoritative_identifier",
+          "count_24m": 508,
+          "confidence": "confirmed",
+          "source_company_key": "NAVY FEDERAL CREDIT UNION"
+        }
+      ],
+      "not_enforcement": true,
+      "timely_response": {
+        "No": 3,
+        "Yes": 2233
+      },
+      "company_response": {
+        "Closed": 4,
+        "In progress": 35,
+        "Untimely response": 1,
+        "Closed with relief": 9,
+        "Closed without relief": 17,
+        "Closed with explanation": 1764,
+        "Closed with monetary relief": 200,
+        "Closed with non-monetary relief": 206
+      },
+      "window_24m_start": "2024-08-26",
+      "unresolved_related": [],
+      "coverage_disclosure": "Complaint data includes only records deterministically attributed to this institution. Some CFPB source labels remain unresolved and are listed separately.",
+      "attribution_confidence": "confirmed",
+      "attributed_complaint_count": 2236,
+      "attributed_complaint_count_24m": 508
+    },
+    "roles": {
+      "depository": "NCUA",
+      "classifications": [
+        {
+          "family": "UNKNOWN",
+          "source": "lend-nat-002-default",
+          "authoritative": false
+        },
+        {
+          "family": "UNKNOWN",
+          "source": "catalog_editorial_type",
+          "authoritative": false
+        },
+        {
+          "family": "CREDIT_UNION",
+          "source": "lend-nat-005",
+          "authoritative": true
+        }
+      ],
+      "servicer_status": "NOT ESTABLISHED",
+      "servicer_evidence": [],
+      "inference_forbidden": [
+        "company name",
+        "CFPB volume",
+        "ownership",
+        "parent",
+        "historical reputation"
+      ]
+    },
+    "scores": null,
+    "lending": {
+      "va": {
+        "reason": "apps_va not populated",
+        "available": false
+      },
+      "fha": {
+        "reason": "apps_fha not populated",
+        "available": false
+      },
+      "yoy": {
+        "reason": "single HMDA vintage (2025)",
+        "available": false
+      },
+      "period": "HMDA 2025 reporting vintage",
+      "source": "lender_hmda_observations",
+      "usda_rhs": {
+        "reason": "apps_usda_other not populated",
+        "available": false
+      },
+      "conventional": {
+        "reason": "apps_conventional not populated",
+        "available": false
+      },
+      "hmda_denial_rate": {
+        "value": 0.223829,
+        "available": true,
+        "numerator": 40199,
+        "denominator": 179597,
+        "action_taken_excluded": [
+          "full LAR action_taken not materialized (withdrawn, incomplete, approved-not-accepted, etc.)"
+        ],
+        "action_taken_included": [
+          "originated (count)",
+          "denied (county count)"
+        ],
+        "denominator_definition": "county-grain denials / state-grain applications. Never denials/observation-row-count."
+      },
+      "hmda_denial_count": {
+        "grain": "county",
+        "value": 40199,
+        "available": true,
+        "numerator": 40199
+      },
+      "hmda_origination_rate": {
+        "value": 0.448487,
+        "available": true,
+        "numerator": 80547,
+        "denominator": 179597,
+        "denominator_definition": "state-grain applications"
+      },
+      "purchase_applications": {
+        "reason": "purchase_applications NULL in current LEI summaries",
+        "available": false
+      },
+      "hmda_application_count": {
+        "grain": "state",
+        "value": 179597,
+        "available": true,
+        "numerator": 179597,
+        "denominator": null
+      },
+      "hmda_origination_count": {
+        "grain": "state",
+        "value": 80547,
+        "available": true,
+        "numerator": 80547,
+        "denominator": null
+      },
+      "refinance_applications": {
+        "reason": "refinance_applications NULL in current LEI summaries",
+        "available": false
+      }
+    },
+    "sources": [
+      {
+        "note": "source vintage, not ingest date",
+        "as_of": "HMDA 2025",
+        "agency": "FFIEC",
+        "dataset": "hmda_2025_lender_state_summary",
+        "source_observed_to": "2025-12-31",
+        "source_observed_from": "2025-12-31"
+      },
+      {
+        "note": "attributed confirmed complaints only",
+        "agency": "CFPB",
+        "dataset": "cfpb_ccdb",
+        "source_url": "https://www.consumerfinance.gov/data-research/consumer-complaints/",
+        "source_observed_to": "2026-08-18",
+        "source_observed_from": "2011-12-02"
+      },
+      {
+        "agency": "GLEIF",
+        "dataset": "lei-records",
+        "source_url": "https://api.gleif.org/api/v1/lei-records"
+      }
+    ],
+    "coverage": {
+      "cfpb": "AVAILABLE",
+      "hmda": "AVAILABLE",
+      "nmls": "AVAILABLE",
+      "identity": "COMPLETE",
+      "depository": "NCUA",
+      "enforcement": "NONE OBSERVED",
+      "servicer_role": "NOT ESTABLISHED"
+    },
+    "identity": {
+      "names": [
+        {
+          "kind": "legal",
+          "name": "Navy Federal Credit Union",
+          "source": "public_catalog"
+        },
+        {
+          "kind": "display",
+          "name": "Navy Federal Credit Union (Jacksonville Area)",
+          "source": "public_catalog"
+        },
+        {
+          "kind": "legal",
+          "name": "NAVY FEDERAL CREDIT UNION",
+          "source": "ncua_foicu"
+        }
+      ],
+      "stable_key": "nmls-inst:399807",
+      "identifiers": [
+        {
+          "confidence": "confirmed",
+          "observed_at": null,
+          "source_dataset": "public_catalog",
+          "identifier_type": "NMLS_INSTITUTION",
+          "identifier_value": "399807"
+        },
+        {
+          "confidence": "confirmed",
+          "observed_at": "2026-08-26",
+          "source_dataset": "lend-nat-005",
+          "identifier_type": "NCUA_CHARTER",
+          "identifier_value": "5536"
+        },
+        {
+          "confidence": "confirmed",
+          "observed_at": "2026-08-26",
+          "source_dataset": "lend-nat-005",
+          "identifier_type": "RSSD",
+          "identifier_value": "617677"
+        },
+        {
+          "confidence": "confirmed",
+          "observed_at": "2026-08-26",
+          "source_dataset": "lend-nat-005",
+          "identifier_type": "LEI",
+          "identifier_value": "5493003GQDUH26DNNH17"
+        }
+      ],
+      "display_name": "Navy Federal Credit Union (Jacksonville Area)",
+      "canonical_name": "Navy Federal Credit Union",
+      "current_status": "unknown",
+      "institution_id": "46b4f54f-f5bf-5164-9c6b-69af1c2cb1d4",
+      "classifications": [
+        {
+          "family": "UNKNOWN",
+          "source": "lend-nat-002-default",
+          "authoritative": false
+        },
+        {
+          "family": "UNKNOWN",
+          "source": "catalog_editorial_type",
+          "authoritative": false
+        },
+        {
+          "family": "CREDIT_UNION",
+          "source": "lend-nat-005",
+          "authoritative": true
+        }
+      ],
+      "identity_confidence": "confirmed"
+    },
+    "rankings": null,
+    "geography": {
+      "states": [
+        {
+          "state": "FL",
+          "applications": 19452,
+          "originations": 8416
+        },
+        {
+          "state": "VA",
+          "applications": 19395,
+          "originations": 9684
+        },
+        {
+          "state": "CA",
+          "applications": 15476,
+          "originations": 6361
+        },
+        {
+          "state": "GA",
+          "applications": 12388,
+          "originations": 5118
+        },
+        {
+          "state": "TX",
+          "applications": 11693,
+          "originations": 4267
+        },
+        {
+          "state": "MD",
+          "applications": 11436,
+          "originations": 5163
+        },
+        {
+          "state": "NC",
+          "applications": 10565,
+          "originations": 5249
+        },
+        {
+          "state": "SC",
+          "applications": 5424,
+          "originations": 2487
+        },
+        {
+          "state": "PA",
+          "applications": 4660,
+          "originations": 2141
+        },
+        {
+          "state": "WA",
+          "applications": 4527,
+          "originations": 2289
+        },
+        {
+          "state": "AZ",
+          "applications": 4421,
+          "originations": 1960
+        },
+        {
+          "state": "TN",
+          "applications": 4080,
+          "originations": 1902
+        },
+        {
+          "state": "OH",
+          "applications": 3865,
+          "originations": 1830
+        },
+        {
+          "state": "IL",
+          "applications": 3739,
+          "originations": 1532
+        },
+        {
+          "state": "NJ",
+          "applications": 3633,
+          "originations": 1515
+        },
+        {
+          "state": "NY",
+          "applications": 3600,
+          "originations": 1476
+        },
+        {
+          "state": "CO",
+          "applications": 3361,
+          "originations": 1547
+        },
+        {
+          "state": "AL",
+          "applications": 3283,
+          "originations": 1525
+        },
+        {
+          "state": "NV",
+          "applications": 2579,
+          "originations": 1122
+        },
+        {
+          "state": "MI",
+          "applications": 2484,
+          "originations": 1099
+        },
+        {
+          "state": "MO",
+          "applications": 2262,
+          "originations": 1087
+        },
+        {
+          "state": "LA",
+          "applications": 2113,
+          "originations": 860
+        },
+        {
+          "state": "IN",
+          "applications": 1842,
+          "originations": 906
+        },
+        {
+          "state": "OK",
+          "applications": 1733,
+          "originations": 811
+        },
+        {
+          "state": "CT",
+          "applications": 1609,
+          "originations": 812
+        },
+        {
+          "state": "MS",
+          "applications": 1519,
+          "originations": 633
+        },
+        {
+          "state": "MA",
+          "applications": 1436,
+          "originations": 690
+        },
+        {
+          "state": "KY",
+          "applications": 1397,
+          "originations": 668
+        },
+        {
+          "state": "WI",
+          "applications": 1195,
+          "originations": 602
+        },
+        {
+          "state": "OR",
+          "applications": 1171,
+          "originations": 540
+        },
+        {
+          "state": "NM",
+          "applications": 1085,
+          "originations": 500
+        },
+        {
+          "state": "AR",
+          "applications": 1057,
+          "originations": 500
+        },
+        {
+          "state": "WV",
+          "applications": 1048,
+          "originations": 500
+        },
+        {
+          "state": "HI",
+          "applications": 985,
+          "originations": 326
+        },
+        {
+          "state": "KS",
+          "applications": 981,
+          "originations": 515
+        },
+        {
+          "state": "MN",
+          "applications": 964,
+          "originations": 465
+        },
+        {
+          "state": "DC",
+          "applications": 786,
+          "originations": 297
+        },
+        {
+          "state": "DE",
+          "applications": 743,
+          "originations": 344
+        },
+        {
+          "state": "UT",
+          "applications": 646,
+          "originations": 275
+        },
+        {
+          "state": "NE",
+          "applications": 639,
+          "originations": 331
+        },
+        {
+          "state": "NH",
+          "applications": 634,
+          "originations": 342
+        },
+        {
+          "state": "ME",
+          "applications": 621,
+          "originations": 314
+        },
+        {
+          "state": "ID",
+          "applications": 561,
+          "originations": 296
+        },
+        {
+          "state": "RI",
+          "applications": 526,
+          "originations": 294
+        },
+        {
+          "state": "IA",
+          "applications": 496,
+          "originations": 229
+        },
+        {
+          "state": "MT",
+          "applications": 384,
+          "originations": 176
+        },
+        {
+          "state": "AK",
+          "applications": 370,
+          "originations": 168
+        },
+        {
+          "state": "WY",
+          "applications": 220,
+          "originations": 115
+        },
+        {
+          "state": "SD",
+          "applications": 191,
+          "originations": 104
+        },
+        {
+          "state": "VT",
+          "applications": 184,
+          "originations": 92
+        },
+        {
+          "state": "ND",
+          "applications": 138,
+          "originations": 72
+        }
+      ],
+      "language": "HMDA activity observed in listed states/counties. This is not headquarters, not licensed-in, and not a branch network.",
+      "headquarters": null,
+      "top_counties": [
+        {
+          "state": "CA",
+          "denials": 1144,
+          "county_fips": "06073",
+          "applications": 4728,
+          "originations": 2042
+        },
+        {
+          "state": "MD",
+          "denials": 795,
+          "county_fips": "24033",
+          "applications": 2850,
+          "originations": 1106
+        },
+        {
+          "state": "CA",
+          "denials": 742,
+          "county_fips": "06065",
+          "applications": 2638,
+          "originations": 1096
+        },
+        {
+          "state": "AZ",
+          "denials": 621,
+          "county_fips": "04013",
+          "applications": 2569,
+          "originations": 1133
+        },
+        {
+          "state": "VA",
+          "denials": 423,
+          "county_fips": "51059",
+          "applications": 2488,
+          "originations": 1251
+        },
+        {
+          "state": "VA",
+          "denials": 499,
+          "county_fips": "51810",
+          "applications": 2386,
+          "originations": 1186
+        },
+        {
+          "state": "NV",
+          "denials": 557,
+          "county_fips": "32003",
+          "applications": 2169,
+          "originations": 901
+        },
+        {
+          "state": "FL",
+          "denials": 428,
+          "county_fips": "12031",
+          "applications": 1993,
+          "originations": 896
+        },
+        {
+          "state": "CA",
+          "denials": 567,
+          "county_fips": "06037",
+          "applications": 1931,
+          "originations": 693
+        },
+        {
+          "state": "MD",
+          "denials": 346,
+          "county_fips": "24003",
+          "applications": 1871,
+          "originations": 912
+        },
+        {
+          "state": "VA",
+          "denials": 323,
+          "county_fips": "51153",
+          "applications": 1725,
+          "originations": 887
+        },
+        {
+          "state": "IL",
+          "denials": 498,
+          "county_fips": "17031",
+          "applications": 1493,
+          "originations": 499
+        },
+        {
+          "state": "VA",
+          "denials": 289,
+          "county_fips": "51550",
+          "applications": 1476,
+          "originations": 753
+        },
+        {
+          "state": "FL",
+          "denials": 234,
+          "county_fips": "12033",
+          "applications": 1451,
+          "originations": 772
+        },
+        {
+          "state": "TX",
+          "denials": 430,
+          "county_fips": "48201",
+          "applications": 1447,
+          "originations": 461
+        }
+      ],
+      "headquarters_source": "FDIC institutions CITY/STALP when FDIC_CERT present; otherwise null",
+      "states_with_hmda_activity": 51,
+      "counties_with_hmda_activity": 2476
+    },
+    "computed_at": "2026-08-27T12:49:29Z",
+    "enforcement": {
+      "events": [],
+      "by_agency": {},
+      "section_title": "Regulatory & Enforcement History",
+      "attribution_rule": "respondent.confidence=confirmed and respondent.institution_id set via CERT/NMLS/LEI. CFPB complaint bridge is not enforcement proof.",
+      "by_action_family": {},
+      "attributed_event_count": 0,
+      "none_observed_is_not_proof": true
+    },
+    "limitations": [
+      "HMDA 2025 is a reporting vintage, not current 2026 lending activity.",
+      "HMDA activity geography is not headquarters and not a branch or license map.",
+      "CFPB counts include confirmed attributions only.",
+      "Enforcement requires an independent confirmed identifier; a complaint bridge is not enough.",
+      "NONE OBSERVED enforcement is not proof of no history.",
+      "No Trust Score, ranking, or quality conversion is computed.",
+      "Purchase/refinance and FHA/VA/conventional program splits are not populated in the current LEI summaries.",
+      "Year-over-year HMDA is unavailable (single vintage).",
+      "Full HMDA action_taken distribution is not materialized; only applications, originations, and county-grain denials."
+    ],
+    "contract_version": "lend-nat-011-v1",
+    "public_projection_status": "internal_only"
+  },
+  "sps_servicer": {
+    "cfpb": {
+      "issue": {
+        "Other": 260,
+        "Closing on a mortgage": 366,
+        "Struggling to pay mortgage": 4524,
+        "Improper use of your report": 12,
+        "Settlement process and costs": 180,
+        "Credit decision / Underwriting": 68,
+        "Trouble during payment process": 3941,
+        "Incorrect information on your report": 120,
+        "Application, originator, mortgage broker": 151,
+        "Loan modification,collection,foreclosure": 3499,
+        "Loan servicing, payments, escrow account": 1390,
+        "Problem with fraud alerts or security freezes": 2,
+        "Unable to get your credit report or credit score": 6,
+        "Credit monitoring or identity theft protection services": 5,
+        "Applying for a mortgage or refinancing an existing mortgage": 437,
+        "Problem with a company's investigation into an existing problem": 17,
+        "Problem with a credit reporting company's investigation into an existing problem": 27
+      },
+      "product": {
+        "Mortgage": 15005
+      },
+      "source_labels": [
+        {
+          "count": 15005,
+          "method": "exact_fold_to_gleif_legal_or_dba",
+          "count_24m": 1903,
+          "confidence": "confirmed",
+          "source_company_key": "SELECT PORTFOLIO SERVICING, INC."
+        }
+      ],
+      "not_enforcement": true,
+      "timely_response": {
+        "No": 59,
+        "Yes": 14946
+      },
+      "company_response": {
+        "Closed": 17,
+        "In progress": 7,
+        "Closed with relief": 37,
+        "Closed with explanation": 14846,
+        "Closed with monetary relief": 14,
+        "Closed with non-monetary relief": 84
+      },
+      "window_24m_start": "2024-08-26",
+      "unresolved_related": [],
+      "coverage_disclosure": "Complaint data includes only records deterministically attributed to this institution. Some CFPB source labels remain unresolved and are listed separately.",
+      "attribution_confidence": "confirmed",
+      "attributed_complaint_count": 15005,
+      "attributed_complaint_count_24m": 1903
+    },
+    "roles": {
+      "depository": "NONBANK",
+      "classifications": [
+        {
+          "family": "MORTGAGE_SERVICER",
+          "source": "lend-nat-009",
+          "authoritative": true
+        }
+      ],
+      "servicer_status": "CONFIRMED",
+      "servicer_evidence": [
+        {
+          "raw": "GLEIF legal name includes servicing descriptor",
+          "role": "IS_MORTGAGE_SERVICER",
+          "record": "254900AF53CA0NLFZW89",
+          "source": "gleif_legal_name",
+          "status": "CURRENT",
+          "confidence": "high_confidence"
+        }
+      ],
+      "inference_forbidden": [
+        "company name",
+        "CFPB volume",
+        "ownership",
+        "parent",
+        "historical reputation"
+      ]
+    },
+    "scores": null,
+    "lending": {
+      "va": {
+        "reason": "apps_va not populated",
+        "available": false
+      },
+      "fha": {
+        "reason": "apps_fha not populated",
+        "available": false
+      },
+      "yoy": {
+        "reason": "single HMDA vintage (2025)",
+        "available": false
+      },
+      "period": "HMDA 2025 reporting vintage",
+      "source": "lender_hmda_observations",
+      "usda_rhs": {
+        "reason": "apps_usda_other not populated",
+        "available": false
+      },
+      "conventional": {
+        "reason": "apps_conventional not populated",
+        "available": false
+      },
+      "hmda_denial_rate": {
+        "value": null,
+        "available": false,
+        "numerator": null,
+        "denominator": null,
+        "action_taken_excluded": [
+          "full LAR action_taken not materialized (withdrawn, incomplete, approved-not-accepted, etc.)"
+        ],
+        "action_taken_included": [
+          "originated (count)",
+          "denied (county count)"
+        ],
+        "denominator_definition": "county-grain denials / state-grain applications. Never denials/observation-row-count."
+      },
+      "hmda_denial_count": {
+        "grain": "county",
+        "value": null,
+        "available": false,
+        "numerator": null
+      },
+      "hmda_origination_rate": {
+        "value": null,
+        "available": false,
+        "numerator": null,
+        "denominator": null,
+        "denominator_definition": "state-grain applications"
+      },
+      "purchase_applications": {
+        "reason": "purchase_applications NULL in current LEI summaries",
+        "available": false
+      },
+      "hmda_application_count": {
+        "grain": "state",
+        "value": null,
+        "available": false,
+        "numerator": null,
+        "denominator": null
+      },
+      "hmda_origination_count": {
+        "grain": "state",
+        "value": null,
+        "available": false,
+        "numerator": null,
+        "denominator": null
+      },
+      "refinance_applications": {
+        "reason": "refinance_applications NULL in current LEI summaries",
+        "available": false
+      }
+    },
+    "sources": [
+      {
+        "note": "attributed confirmed complaints only",
+        "agency": "CFPB",
+        "dataset": "cfpb_ccdb",
+        "source_url": "https://www.consumerfinance.gov/data-research/consumer-complaints/",
+        "source_observed_to": "2026-08-17",
+        "source_observed_from": "2011-12-05"
+      },
+      {
+        "agency": "GLEIF",
+        "dataset": "lei-records",
+        "source_url": "https://api.gleif.org/api/v1/lei-records"
+      }
+    ],
+    "coverage": {
+      "cfpb": "AVAILABLE",
+      "hmda": "NOT AVAILABLE",
+      "nmls": "HUMAN_GATED",
+      "identity": "COMPLETE",
+      "depository": "NONBANK",
+      "enforcement": "NONE OBSERVED",
+      "servicer_role": "CONFIRMED"
+    },
+    "identity": {
+      "names": [
+        {
+          "kind": "legal",
+          "name": "SELECT PORTFOLIO SERVICING, INC.",
+          "source": "gleif"
+        },
+        {
+          "kind": "historical",
+          "name": "FAIRBANKS CAPITAL CORP.",
+          "source": "gleif_other_names"
+        }
+      ],
+      "stable_key": "gleif-lei:254900AF53CA0NLFZW89",
+      "identifiers": [
+        {
+          "note": "LEI is the entity stable_key. identifier_type=LEI was not written (HMDA LEI count invariant).",
+          "confidence": "confirmed",
+          "observed_at": null,
+          "source_dataset": "gleif_stable_key",
+          "identifier_type": "LEI",
+          "identifier_value": "254900AF53CA0NLFZW89"
+        }
+      ],
+      "display_name": "Select Portfolio Servicing, Inc.",
+      "canonical_name": "Select Portfolio Servicing, Inc.",
+      "current_status": "observed",
+      "institution_id": "2c4c7b7e-969d-55c6-8c84-0744facdf874",
+      "classifications": [
+        {
+          "family": "MORTGAGE_SERVICER",
+          "source": "lend-nat-009",
+          "authoritative": true
+        }
+      ],
+      "identity_confidence": "confirmed"
+    },
+    "rankings": null,
+    "geography": {
+      "states": [],
+      "language": "HMDA activity observed in listed states/counties. This is not headquarters, not licensed-in, and not a branch network.",
+      "headquarters": null,
+      "top_counties": [],
+      "headquarters_source": "FDIC institutions CITY/STALP when FDIC_CERT present; otherwise null",
+      "states_with_hmda_activity": 0,
+      "counties_with_hmda_activity": 0
+    },
+    "computed_at": "2026-08-27T12:49:29Z",
+    "enforcement": {
+      "events": [],
+      "by_agency": {},
+      "section_title": "Regulatory & Enforcement History",
+      "attribution_rule": "respondent.confidence=confirmed and respondent.institution_id set via CERT/NMLS/LEI. CFPB complaint bridge is not enforcement proof.",
+      "by_action_family": {},
+      "attributed_event_count": 0,
+      "none_observed_is_not_proof": true
+    },
+    "limitations": [
+      "HMDA 2025 is a reporting vintage, not current 2026 lending activity.",
+      "HMDA activity geography is not headquarters and not a branch or license map.",
+      "CFPB counts include confirmed attributions only.",
+      "Enforcement requires an independent confirmed identifier; a complaint bridge is not enough.",
+      "NONE OBSERVED enforcement is not proof of no history.",
+      "No Trust Score, ranking, or quality conversion is computed.",
+      "No HMDA observations attached to this institution.",
+      "Purchase/refinance and FHA/VA/conventional program splits are not populated in the current LEI summaries.",
+      "Year-over-year HMDA is unavailable (single vintage).",
+      "Full HMDA action_taken distribution is not materialized; only applications, originations, and county-grain denials.",
+      "Company NMLS was not ingested this pass (NMLS Consumer Access is human-gated)."
+    ],
+    "contract_version": "lend-nat-011-v1",
+    "public_projection_status": "internal_only"
+  },
+  "small_hmda": {
+    "cfpb": {
+      "issue": {},
+      "product": {},
+      "source_labels": [],
+      "not_enforcement": true,
+      "timely_response": {},
+      "company_response": {},
+      "window_24m_start": "2024-08-26",
+      "unresolved_related": [],
+      "coverage_disclosure": "Complaint data includes only records deterministically attributed to this institution. Some CFPB source labels remain unresolved and are listed separately.",
+      "attribution_confidence": "confirmed",
+      "attributed_complaint_count": 0,
+      "attributed_complaint_count_24m": 0
+    },
+    "roles": {
+      "depository": "FDIC",
+      "classifications": [
+        {
+          "family": "DEPOSITORY_BANK",
+          "source": "lend-nat-005",
+          "authoritative": true
+        }
+      ],
+      "servicer_status": "NOT ESTABLISHED",
+      "servicer_evidence": [],
+      "inference_forbidden": [
+        "company name",
+        "CFPB volume",
+        "ownership",
+        "parent",
+        "historical reputation"
+      ]
+    },
+    "scores": null,
+    "lending": {
+      "va": {
+        "reason": "apps_va not populated",
+        "available": false
+      },
+      "fha": {
+        "reason": "apps_fha not populated",
+        "available": false
+      },
+      "yoy": {
+        "reason": "single HMDA vintage (2025)",
+        "available": false
+      },
+      "period": "HMDA 2025 reporting vintage",
+      "source": "lender_hmda_observations",
+      "usda_rhs": {
+        "reason": "apps_usda_other not populated",
+        "available": false
+      },
+      "conventional": {
+        "reason": "apps_conventional not populated",
+        "available": false
+      },
+      "hmda_denial_rate": {
+        "value": 0.05,
+        "available": true,
+        "numerator": 1,
+        "denominator": 20,
+        "action_taken_excluded": [
+          "full LAR action_taken not materialized (withdrawn, incomplete, approved-not-accepted, etc.)"
+        ],
+        "action_taken_included": [
+          "originated (count)",
+          "denied (county count)"
+        ],
+        "denominator_definition": "county-grain denials / state-grain applications. Never denials/observation-row-count."
+      },
+      "hmda_denial_count": {
+        "grain": "county",
+        "value": 1,
+        "available": true,
+        "numerator": 1
+      },
+      "hmda_origination_rate": {
+        "value": 0.9,
+        "available": true,
+        "numerator": 18,
+        "denominator": 20,
+        "denominator_definition": "state-grain applications"
+      },
+      "purchase_applications": {
+        "reason": "purchase_applications NULL in current LEI summaries",
+        "available": false
+      },
+      "hmda_application_count": {
+        "grain": "state",
+        "value": 20,
+        "available": true,
+        "numerator": 20,
+        "denominator": null
+      },
+      "hmda_origination_count": {
+        "grain": "state",
+        "value": 18,
+        "available": true,
+        "numerator": 18,
+        "denominator": null
+      },
+      "refinance_applications": {
+        "reason": "refinance_applications NULL in current LEI summaries",
+        "available": false
+      }
+    },
+    "sources": [
+      {
+        "note": "source vintage, not ingest date",
+        "as_of": "HMDA 2025",
+        "agency": "FFIEC",
+        "dataset": "hmda_2025_lender_state_summary",
+        "source_observed_to": "2025-12-31",
+        "source_observed_from": "2025-12-31"
+      },
+      {
+        "agency": "GLEIF",
+        "dataset": "lei-records",
+        "source_url": "https://api.gleif.org/api/v1/lei-records"
+      },
+      {
+        "agency": "FDIC",
+        "dataset": "institutions",
+        "source_url": "https://api.fdic.gov/banks/institutions"
+      }
+    ],
+    "coverage": {
+      "cfpb": "NONE",
+      "hmda": "AVAILABLE",
+      "nmls": "NOT FOUND",
+      "identity": "COMPLETE",
+      "depository": "FDIC",
+      "enforcement": "NONE OBSERVED",
+      "servicer_role": "NOT ESTABLISHED"
+    },
+    "identity": {
+      "names": [
+        {
+          "kind": "legal",
+          "name": "Bank of Eastern Oregon",
+          "source": "fdic_bankfind"
+        }
+      ],
+      "stable_key": "fdic-cert:16243",
+      "identifiers": [
+        {
+          "confidence": "confirmed",
+          "observed_at": "2026-08-26",
+          "source_dataset": "lend-nat-005",
+          "identifier_type": "FDIC_CERT",
+          "identifier_value": "16243"
+        },
+        {
+          "confidence": "confirmed",
+          "observed_at": "2026-08-26",
+          "source_dataset": "lend-nat-005",
+          "identifier_type": "RSSD",
+          "identifier_value": "14865"
+        },
+        {
+          "confidence": "confirmed",
+          "observed_at": "2026-08-26",
+          "source_dataset": "lend-nat-005",
+          "identifier_type": "LEI",
+          "identifier_value": "549300J0CQITHCF2G618"
+        }
+      ],
+      "display_name": "Bank of Eastern Oregon",
+      "canonical_name": "Bank of Eastern Oregon",
+      "current_status": "observed",
+      "institution_id": "5edeebd0-e907-54ad-afe9-fe27a19765bb",
+      "classifications": [
+        {
+          "family": "DEPOSITORY_BANK",
+          "source": "lend-nat-005",
+          "authoritative": true
+        }
+      ],
+      "identity_confidence": "confirmed"
+    },
+    "rankings": null,
+    "geography": {
+      "states": [
+        {
+          "state": "OR",
+          "applications": 19,
+          "originations": 17
+        },
+        {
+          "state": "WA",
+          "applications": 1,
+          "originations": 1
+        }
+      ],
+      "language": "HMDA activity observed in listed states/counties. This is not headquarters, not licensed-in, and not a branch network.",
+      "headquarters": {
+        "city": "Heppner",
+        "state": "OR",
+        "source": "fdic_institutions_active",
+        "address": "279 N Main St",
+        "source_url": "https://api.fdic.gov/banks/institutions"
+      },
+      "top_counties": [
+        {
+          "state": "OR",
+          "denials": 0,
+          "county_fips": "41063",
+          "applications": 5,
+          "originations": 4
+        },
+        {
+          "state": "OR",
+          "denials": 0,
+          "county_fips": "41049",
+          "applications": 4,
+          "originations": 4
+        },
+        {
+          "state": "OR",
+          "denials": 0,
+          "county_fips": "41059",
+          "applications": 4,
+          "originations": 4
+        },
+        {
+          "state": "OR",
+          "denials": 1,
+          "county_fips": "41023",
+          "applications": 3,
+          "originations": 2
+        },
+        {
+          "state": "OR",
+          "denials": 0,
+          "county_fips": "41061",
+          "applications": 2,
+          "originations": 2
+        },
+        {
+          "state": "OR",
+          "denials": 0,
+          "county_fips": "41021",
+          "applications": 1,
+          "originations": 1
+        },
+        {
+          "state": "WA",
+          "denials": 0,
+          "county_fips": "53021",
+          "applications": 1,
+          "originations": 1
+        }
+      ],
+      "headquarters_source": "FDIC institutions CITY/STALP when FDIC_CERT present; otherwise null",
+      "states_with_hmda_activity": 2,
+      "counties_with_hmda_activity": 7
+    },
+    "computed_at": "2026-08-27T12:49:29Z",
+    "enforcement": {
+      "events": [],
+      "by_agency": {},
+      "section_title": "Regulatory & Enforcement History",
+      "attribution_rule": "respondent.confidence=confirmed and respondent.institution_id set via CERT/NMLS/LEI. CFPB complaint bridge is not enforcement proof.",
+      "by_action_family": {},
+      "attributed_event_count": 0,
+      "none_observed_is_not_proof": true
+    },
+    "limitations": [
+      "HMDA 2025 is a reporting vintage, not current 2026 lending activity.",
+      "HMDA activity geography is not headquarters and not a branch or license map.",
+      "CFPB counts include confirmed attributions only.",
+      "Enforcement requires an independent confirmed identifier; a complaint bridge is not enough.",
+      "NONE OBSERVED enforcement is not proof of no history.",
+      "No Trust Score, ranking, or quality conversion is computed.",
+      "Purchase/refinance and FHA/VA/conventional program splits are not populated in the current LEI summaries.",
+      "Year-over-year HMDA is unavailable (single vintage).",
+      "Full HMDA action_taken distribution is not materialized; only applications, originations, and county-grain denials."
+    ],
+    "contract_version": "lend-nat-011-v1",
+    "public_projection_status": "internal_only"
+  },
+  "sparse_historical_servicer": {
+    "cfpb": {
+      "issue": {},
+      "product": {},
+      "source_labels": [],
+      "not_enforcement": true,
+      "timely_response": {},
+      "company_response": {},
+      "window_24m_start": "2024-08-26",
+      "unresolved_related": [],
+      "coverage_disclosure": "Complaint data includes only records deterministically attributed to this institution. Some CFPB source labels remain unresolved and are listed separately.",
+      "attribution_confidence": "confirmed",
+      "attributed_complaint_count": 0,
+      "attributed_complaint_count_24m": 0
+    },
+    "roles": {
+      "depository": "NONBANK",
+      "classifications": [
+        {
+          "family": "MORTGAGE_SERVICER",
+          "source": "lend-nat-009",
+          "authoritative": true
+        }
+      ],
+      "servicer_status": "HISTORICAL",
+      "servicer_evidence": [
+        {
+          "raw": "GLEIF legal name indicates servicing; CFPB enforcement names this legal entity",
+          "role": "IS_MORTGAGE_SERVICER",
+          "record": "549300MEMWF0Y8H4PL17",
+          "source": "cfpb_enforcement",
+          "status": "HISTORICAL",
+          "confidence": "confirmed"
+        }
+      ],
+      "inference_forbidden": [
+        "company name",
+        "CFPB volume",
+        "ownership",
+        "parent",
+        "historical reputation"
+      ]
+    },
+    "scores": null,
+    "lending": {
+      "va": {
+        "reason": "apps_va not populated",
+        "available": false
+      },
+      "fha": {
+        "reason": "apps_fha not populated",
+        "available": false
+      },
+      "yoy": {
+        "reason": "single HMDA vintage (2025)",
+        "available": false
+      },
+      "period": "HMDA 2025 reporting vintage",
+      "source": "lender_hmda_observations",
+      "usda_rhs": {
+        "reason": "apps_usda_other not populated",
+        "available": false
+      },
+      "conventional": {
+        "reason": "apps_conventional not populated",
+        "available": false
+      },
+      "hmda_denial_rate": {
+        "value": null,
+        "available": false,
+        "numerator": null,
+        "denominator": null,
+        "action_taken_excluded": [
+          "full LAR action_taken not materialized (withdrawn, incomplete, approved-not-accepted, etc.)"
+        ],
+        "action_taken_included": [
+          "originated (count)",
+          "denied (county count)"
+        ],
+        "denominator_definition": "county-grain denials / state-grain applications. Never denials/observation-row-count."
+      },
+      "hmda_denial_count": {
+        "grain": "county",
+        "value": null,
+        "available": false,
+        "numerator": null
+      },
+      "hmda_origination_rate": {
+        "value": null,
+        "available": false,
+        "numerator": null,
+        "denominator": null,
+        "denominator_definition": "state-grain applications"
+      },
+      "purchase_applications": {
+        "reason": "purchase_applications NULL in current LEI summaries",
+        "available": false
+      },
+      "hmda_application_count": {
+        "grain": "state",
+        "value": null,
+        "available": false,
+        "numerator": null,
+        "denominator": null
+      },
+      "hmda_origination_count": {
+        "grain": "state",
+        "value": null,
+        "available": false,
+        "numerator": null,
+        "denominator": null
+      },
+      "refinance_applications": {
+        "reason": "refinance_applications NULL in current LEI summaries",
+        "available": false
+      }
+    },
+    "sources": [
+      {
+        "agency": "GLEIF",
+        "dataset": "lei-records",
+        "source_url": "https://api.gleif.org/api/v1/lei-records"
+      }
+    ],
+    "coverage": {
+      "cfpb": "NONE",
+      "hmda": "NOT AVAILABLE",
+      "nmls": "HUMAN_GATED",
+      "identity": "COMPLETE",
+      "depository": "NONBANK",
+      "enforcement": "NONE OBSERVED",
+      "servicer_role": "HISTORICAL"
+    },
+    "identity": {
+      "names": [
+        {
+          "kind": "legal",
+          "name": "OCWEN LOAN SERVICING, LLC",
+          "source": "gleif"
+        }
+      ],
+      "stable_key": "gleif-lei:549300MEMWF0Y8H4PL17",
+      "identifiers": [
+        {
+          "note": "LEI is the entity stable_key. identifier_type=LEI was not written (HMDA LEI count invariant).",
+          "confidence": "confirmed",
+          "observed_at": null,
+          "source_dataset": "gleif_stable_key",
+          "identifier_type": "LEI",
+          "identifier_value": "549300MEMWF0Y8H4PL17"
+        }
+      ],
+      "display_name": "Ocwen Loan Servicing, Llc",
+      "canonical_name": "Ocwen Loan Servicing, Llc",
+      "current_status": "inactive",
+      "institution_id": "804628f9-0830-5bbc-af52-1b7d4b1ea8c0",
+      "classifications": [
+        {
+          "family": "MORTGAGE_SERVICER",
+          "source": "lend-nat-009",
+          "authoritative": true
+        }
+      ],
+      "identity_confidence": "confirmed"
+    },
+    "rankings": null,
+    "geography": {
+      "states": [],
+      "language": "HMDA activity observed in listed states/counties. This is not headquarters, not licensed-in, and not a branch network.",
+      "headquarters": null,
+      "top_counties": [],
+      "headquarters_source": "FDIC institutions CITY/STALP when FDIC_CERT present; otherwise null",
+      "states_with_hmda_activity": 0,
+      "counties_with_hmda_activity": 0
+    },
+    "computed_at": "2026-08-27T12:49:29Z",
+    "enforcement": {
+      "events": [],
+      "by_agency": {},
+      "section_title": "Regulatory & Enforcement History",
+      "attribution_rule": "respondent.confidence=confirmed and respondent.institution_id set via CERT/NMLS/LEI. CFPB complaint bridge is not enforcement proof.",
+      "by_action_family": {},
+      "attributed_event_count": 0,
+      "none_observed_is_not_proof": true
+    },
+    "limitations": [
+      "HMDA 2025 is a reporting vintage, not current 2026 lending activity.",
+      "HMDA activity geography is not headquarters and not a branch or license map.",
+      "CFPB counts include confirmed attributions only.",
+      "Enforcement requires an independent confirmed identifier; a complaint bridge is not enough.",
+      "NONE OBSERVED enforcement is not proof of no history.",
+      "No Trust Score, ranking, or quality conversion is computed.",
+      "No HMDA observations attached to this institution.",
+      "Purchase/refinance and FHA/VA/conventional program splits are not populated in the current LEI summaries.",
+      "Year-over-year HMDA is unavailable (single vintage).",
+      "Full HMDA action_taken distribution is not materialized; only applications, originations, and county-grain denials.",
+      "Company NMLS was not ingested this pass (NMLS Consumer Access is human-gated)."
+    ],
+    "contract_version": "lend-nat-011-v1",
+    "public_projection_status": "internal_only"
+  },
+  "newrez": {
+    "cfpb": {
+      "issue": {},
+      "product": {},
+      "source_labels": [],
+      "not_enforcement": true,
+      "timely_response": {},
+      "company_response": {},
+      "window_24m_start": "2024-08-26",
+      "unresolved_related": [
+        {
+          "label": "Shellpoint Partners, LLC",
+          "reason": "No exact GLEIF; Newrez otherName is Stenton Mortgage, Inc. only. Not a trade-name bridge.",
+          "confidence": "unresolved",
+          "complaint_count": 16636,
+          "complaint_count_24m": 6715
+        }
+      ],
+      "coverage_disclosure": "Complaint data includes only records deterministically attributed to this institution. Some CFPB source labels remain unresolved and are listed separately.",
+      "attribution_confidence": "confirmed",
+      "attributed_complaint_count": 0,
+      "attributed_complaint_count_24m": 0
+    },
+    "roles": {
+      "depository": "NONBANK",
+      "classifications": [
+        {
+          "family": "UNKNOWN",
+          "source": "lend-nat-002-default",
+          "authoritative": false
+        },
+        {
+          "family": "UNKNOWN",
+          "source": "catalog_editorial_type",
+          "authoritative": false
+        },
+        {
+          "family": "MORTGAGE_SERVICER",
+          "source": "lend-nat-009",
+          "authoritative": true
+        }
+      ],
+      "servicer_status": "NOT ESTABLISHED",
+      "servicer_evidence": [],
+      "inference_forbidden": [
+        "company name",
+        "CFPB volume",
+        "ownership",
+        "parent",
+        "historical reputation"
+      ]
+    },
+    "scores": null,
+    "lending": {
+      "va": {
+        "reason": "apps_va not populated",
+        "available": false
+      },
+      "fha": {
+        "reason": "apps_fha not populated",
+        "available": false
+      },
+      "yoy": {
+        "reason": "single HMDA vintage (2025)",
+        "available": false
+      },
+      "period": "HMDA 2025 reporting vintage",
+      "source": "lender_hmda_observations",
+      "usda_rhs": {
+        "reason": "apps_usda_other not populated",
+        "available": false
+      },
+      "conventional": {
+        "reason": "apps_conventional not populated",
+        "available": false
+      },
+      "hmda_denial_rate": {
+        "value": 0.193989,
+        "available": true,
+        "numerator": 36391,
+        "denominator": 187593,
+        "action_taken_excluded": [
+          "full LAR action_taken not materialized (withdrawn, incomplete, approved-not-accepted, etc.)"
+        ],
+        "action_taken_included": [
+          "originated (count)",
+          "denied (county count)"
+        ],
+        "denominator_definition": "county-grain denials / state-grain applications. Never denials/observation-row-count."
+      },
+      "hmda_denial_count": {
+        "grain": "county",
+        "value": 36391,
+        "available": true,
+        "numerator": 36391
+      },
+      "hmda_origination_rate": {
+        "value": 0.354848,
+        "available": true,
+        "numerator": 66567,
+        "denominator": 187593,
+        "denominator_definition": "state-grain applications"
+      },
+      "purchase_applications": {
+        "reason": "purchase_applications NULL in current LEI summaries",
+        "available": false
+      },
+      "hmda_application_count": {
+        "grain": "state",
+        "value": 187593,
+        "available": true,
+        "numerator": 187593,
+        "denominator": null
+      },
+      "hmda_origination_count": {
+        "grain": "state",
+        "value": 66567,
+        "available": true,
+        "numerator": 66567,
+        "denominator": null
+      },
+      "refinance_applications": {
+        "reason": "refinance_applications NULL in current LEI summaries",
+        "available": false
+      }
+    },
+    "sources": [
+      {
+        "note": "source vintage, not ingest date",
+        "as_of": "HMDA 2025",
+        "agency": "FFIEC",
+        "dataset": "hmda_2025_lender_state_summary",
+        "source_observed_to": "2025-12-31",
+        "source_observed_from": "2025-12-31"
+      },
+      {
+        "agency": "GLEIF",
+        "dataset": "lei-records",
+        "source_url": "https://api.gleif.org/api/v1/lei-records"
+      }
+    ],
+    "coverage": {
+      "cfpb": "UNRESOLVED",
+      "hmda": "AVAILABLE",
+      "nmls": "AVAILABLE",
+      "identity": "COMPLETE",
+      "depository": "NONBANK",
+      "enforcement": "NONE OBSERVED",
+      "servicer_role": "NOT ESTABLISHED"
+    },
+    "identity": {
+      "names": [
+        {
+          "kind": "legal",
+          "name": "Newrez",
+          "source": "public_catalog"
+        },
+        {
+          "kind": "legal",
+          "name": "NEWREZ LLC",
+          "source": "gleif"
+        },
+        {
+          "kind": "historical",
+          "name": "Stenton Mortgage, Inc.",
+          "source": "gleif_other_names"
+        }
+      ],
+      "stable_key": "nmls-inst:2289",
+      "identifiers": [
+        {
+          "confidence": "confirmed",
+          "observed_at": null,
+          "source_dataset": "public_catalog",
+          "identifier_type": "NMLS_INSTITUTION",
+          "identifier_value": "2289"
+        },
+        {
+          "confidence": "confirmed",
+          "observed_at": "2025-01-01",
+          "source_dataset": "hmda_2025",
+          "identifier_type": "LEI",
+          "identifier_value": "549300FNXYY540N23N64"
+        }
+      ],
+      "display_name": "Newrez",
+      "canonical_name": "Newrez",
+      "current_status": "unknown",
+      "institution_id": "c1262860-66db-5353-a838-c3cbd2499489",
+      "classifications": [
+        {
+          "family": "UNKNOWN",
+          "source": "lend-nat-002-default",
+          "authoritative": false
+        },
+        {
+          "family": "UNKNOWN",
+          "source": "catalog_editorial_type",
+          "authoritative": false
+        },
+        {
+          "family": "MORTGAGE_SERVICER",
+          "source": "lend-nat-009",
+          "authoritative": true
+        }
+      ],
+      "identity_confidence": "confirmed"
+    },
+    "rankings": null,
+    "geography": {
+      "states": [
+        {
+          "state": "FL",
+          "applications": 17519,
+          "originations": 5643
+        },
+        {
+          "state": "CA",
+          "applications": 17000,
+          "originations": 5772
+        },
+        {
+          "state": "TX",
+          "applications": 15001,
+          "originations": 4793
+        },
+        {
+          "state": "NY",
+          "applications": 8653,
+          "originations": 3123
+        },
+        {
+          "state": "GA",
+          "applications": 7880,
+          "originations": 2480
+        },
+        {
+          "state": "NC",
+          "applications": 7099,
+          "originations": 2787
+        },
+        {
+          "state": "NJ",
+          "applications": 6535,
+          "originations": 1951
+        },
+        {
+          "state": "PA",
+          "applications": 6444,
+          "originations": 2124
+        },
+        {
+          "state": "VA",
+          "applications": 6390,
+          "originations": 2175
+        },
+        {
+          "state": "IL",
+          "applications": 6033,
+          "originations": 1857
+        },
+        {
+          "state": "WA",
+          "applications": 5849,
+          "originations": 2702
+        },
+        {
+          "state": "OH",
+          "applications": 5795,
+          "originations": 2258
+        },
+        {
+          "state": "MD",
+          "applications": 5739,
+          "originations": 1711
+        },
+        {
+          "state": "IN",
+          "applications": 5421,
+          "originations": 2080
+        },
+        {
+          "state": "MI",
+          "applications": 4958,
+          "originations": 1723
+        },
+        {
+          "state": "AZ",
+          "applications": 4922,
+          "originations": 1845
+        },
+        {
+          "state": "CO",
+          "applications": 3831,
+          "originations": 1561
+        },
+        {
+          "state": "TN",
+          "applications": 3780,
+          "originations": 1361
+        },
+        {
+          "state": "SC",
+          "applications": 3749,
+          "originations": 1334
+        },
+        {
+          "state": "MA",
+          "applications": 3690,
+          "originations": 1151
+        },
+        {
+          "state": "MO",
+          "applications": 3424,
+          "originations": 1311
+        },
+        {
+          "state": "OR",
+          "applications": 2945,
+          "originations": 1321
+        },
+        {
+          "state": "WI",
+          "applications": 2776,
+          "originations": 1295
+        },
+        {
+          "state": "AL",
+          "applications": 2730,
+          "originations": 938
+        },
+        {
+          "state": "LA",
+          "applications": 2664,
+          "originations": 1007
+        },
+        {
+          "state": "CT",
+          "applications": 2556,
+          "originations": 874
+        },
+        {
+          "state": "MN",
+          "applications": 2419,
+          "originations": 1057
+        },
+        {
+          "state": "UT",
+          "applications": 1801,
+          "originations": 687
+        },
+        {
+          "state": "NV",
+          "applications": 1716,
+          "originations": 593
+        },
+        {
+          "state": "KY",
+          "applications": 1621,
+          "originations": 579
+        },
+        {
+          "state": "OK",
+          "applications": 1591,
+          "originations": 588
+        },
+        {
+          "state": "AK",
+          "applications": 1344,
+          "originations": 973
+        },
+        {
+          "state": "AR",
+          "applications": 1306,
+          "originations": 420
+        },
+        {
+          "state": "DE",
+          "applications": 1127,
+          "originations": 344
+        },
+        {
+          "state": "MS",
+          "applications": 1088,
+          "originations": 329
+        },
+        {
+          "state": "KS",
+          "applications": 1069,
+          "originations": 392
+        },
+        {
+          "state": "IA",
+          "applications": 939,
+          "originations": 343
+        },
+        {
+          "state": "NM",
+          "applications": 935,
+          "originations": 292
+        },
+        {
+          "state": "HI",
+          "applications": 891,
+          "originations": 392
+        },
+        {
+          "state": "ME",
+          "applications": 857,
+          "originations": 271
+        },
+        {
+          "state": "NH",
+          "applications": 836,
+          "originations": 301
+        },
+        {
+          "state": "ID",
+          "applications": 795,
+          "originations": 325
+        },
+        {
+          "state": "NE",
+          "applications": 657,
+          "originations": 254
+        },
+        {
+          "state": "RI",
+          "applications": 638,
+          "originations": 250
+        },
+        {
+          "state": "WV",
+          "applications": 538,
+          "originations": 210
+        },
+        {
+          "state": "MT",
+          "applications": 481,
+          "originations": 197
+        },
+        {
+          "state": "DC",
+          "applications": 353,
+          "originations": 105
+        },
+        {
+          "state": "SD",
+          "applications": 347,
+          "originations": 148
+        },
+        {
+          "state": "WY",
+          "applications": 317,
+          "originations": 147
+        },
+        {
+          "state": "VT",
+          "applications": 273,
+          "originations": 84
+        },
+        {
+          "state": "ND",
+          "applications": 271,
+          "originations": 109
+        }
+      ],
+      "language": "HMDA activity observed in listed states/counties. This is not headquarters, not licensed-in, and not a branch network.",
+      "headquarters": null,
+      "top_counties": [
+        {
+          "state": "CA",
+          "denials": 714,
+          "county_fips": "06037",
+          "applications": 3058,
+          "originations": 791
+        },
+        {
+          "state": "AZ",
+          "denials": 469,
+          "county_fips": "04013",
+          "applications": 2877,
+          "originations": 1107
+        },
+        {
+          "state": "IL",
+          "denials": 566,
+          "county_fips": "17031",
+          "applications": 2583,
+          "originations": 751
+        },
+        {
+          "state": "FL",
+          "denials": 601,
+          "county_fips": "12086",
+          "applications": 1993,
+          "originations": 446
+        },
+        {
+          "state": "TX",
+          "denials": 525,
+          "county_fips": "48201",
+          "applications": 1972,
+          "originations": 540
+        },
+        {
+          "state": "CA",
+          "denials": 379,
+          "county_fips": "06065",
+          "applications": 1817,
+          "originations": 610
+        },
+        {
+          "state": "CA",
+          "denials": 220,
+          "county_fips": "06073",
+          "applications": 1704,
+          "originations": 702
+        },
+        {
+          "state": "FL",
+          "denials": 482,
+          "county_fips": "12011",
+          "applications": 1656,
+          "originations": 422
+        },
+        {
+          "state": "CA",
+          "denials": 312,
+          "county_fips": "06071",
+          "applications": 1351,
+          "originations": 405
+        },
+        {
+          "state": "WA",
+          "denials": 195,
+          "county_fips": "53033",
+          "applications": 1348,
+          "originations": 639
+        },
+        {
+          "state": "NY",
+          "denials": 322,
+          "county_fips": "36103",
+          "applications": 1253,
+          "originations": 404
+        },
+        {
+          "state": "MD",
+          "denials": 328,
+          "county_fips": "24033",
+          "applications": 1250,
+          "originations": 298
+        },
+        {
+          "state": "NV",
+          "denials": 264,
+          "county_fips": "32003",
+          "applications": 1250,
+          "originations": 433
+        },
+        {
+          "state": "FL",
+          "denials": 244,
+          "county_fips": "12057",
+          "applications": 1141,
+          "originations": 369
+        },
+        {
+          "state": "TX",
+          "denials": 249,
+          "county_fips": "48029",
+          "applications": 1130,
+          "originations": 381
+        }
+      ],
+      "headquarters_source": "FDIC institutions CITY/STALP when FDIC_CERT present; otherwise null",
+      "states_with_hmda_activity": 51,
+      "counties_with_hmda_activity": 2512
+    },
+    "computed_at": "2026-08-27T12:49:29Z",
+    "enforcement": {
+      "events": [],
+      "by_agency": {},
+      "section_title": "Regulatory & Enforcement History",
+      "attribution_rule": "respondent.confidence=confirmed and respondent.institution_id set via CERT/NMLS/LEI. CFPB complaint bridge is not enforcement proof.",
+      "by_action_family": {},
+      "attributed_event_count": 0,
+      "none_observed_is_not_proof": true
+    },
+    "limitations": [
+      "HMDA 2025 is a reporting vintage, not current 2026 lending activity.",
+      "HMDA activity geography is not headquarters and not a branch or license map.",
+      "CFPB counts include confirmed attributions only.",
+      "Enforcement requires an independent confirmed identifier; a complaint bridge is not enough.",
+      "NONE OBSERVED enforcement is not proof of no history.",
+      "No Trust Score, ranking, or quality conversion is computed.",
+      "Purchase/refinance and FHA/VA/conventional program splits are not populated in the current LEI summaries.",
+      "Year-over-year HMDA is unavailable (single vintage).",
+      "Full HMDA action_taken distribution is not materialized; only applications, originations, and county-grain denials.",
+      "Related unresolved CFPB source labels exist and are not folded into this profile."
+    ],
+    "contract_version": "lend-nat-011-v1",
+    "public_projection_status": "internal_only"
+  },
+  "sls_llc": {
+    "cfpb": {
+      "issue": {},
+      "product": {},
+      "source_labels": [],
+      "not_enforcement": true,
+      "timely_response": {},
+      "company_response": {},
+      "window_24m_start": "2024-08-26",
+      "unresolved_related": [
+        {
+          "label": "Specialized Loan Servicing Holdings LLC",
+          "reason": "Holdings label is not the GLEIF operating LLC.",
+          "confidence": "unresolved",
+          "complaint_count": 7886,
+          "complaint_count_24m": 0
+        }
+      ],
+      "coverage_disclosure": "Complaint data includes only records deterministically attributed to this institution. Some CFPB source labels remain unresolved and are listed separately.",
+      "attribution_confidence": "confirmed",
+      "attributed_complaint_count": 0,
+      "attributed_complaint_count_24m": 0
+    },
+    "roles": {
+      "depository": "NONBANK",
+      "classifications": [
+        {
+          "family": "MORTGAGE_SERVICER",
+          "source": "lend-nat-009",
+          "authoritative": true
+        }
+      ],
+      "servicer_status": "CONFIRMED",
+      "servicer_evidence": [
+        {
+          "raw": "GLEIF legal name indicates servicing; CFPB enforcement names this legal entity",
+          "role": "IS_MORTGAGE_SERVICER",
+          "record": "549300QSUEE20YO86W39",
+          "source": "cfpb_enforcement",
+          "status": "CURRENT",
+          "confidence": "confirmed"
+        }
+      ],
+      "inference_forbidden": [
+        "company name",
+        "CFPB volume",
+        "ownership",
+        "parent",
+        "historical reputation"
+      ]
+    },
+    "scores": null,
+    "lending": {
+      "va": {
+        "reason": "apps_va not populated",
+        "available": false
+      },
+      "fha": {
+        "reason": "apps_fha not populated",
+        "available": false
+      },
+      "yoy": {
+        "reason": "single HMDA vintage (2025)",
+        "available": false
+      },
+      "period": "HMDA 2025 reporting vintage",
+      "source": "lender_hmda_observations",
+      "usda_rhs": {
+        "reason": "apps_usda_other not populated",
+        "available": false
+      },
+      "conventional": {
+        "reason": "apps_conventional not populated",
+        "available": false
+      },
+      "hmda_denial_rate": {
+        "value": null,
+        "available": false,
+        "numerator": null,
+        "denominator": null,
+        "action_taken_excluded": [
+          "full LAR action_taken not materialized (withdrawn, incomplete, approved-not-accepted, etc.)"
+        ],
+        "action_taken_included": [
+          "originated (count)",
+          "denied (county count)"
+        ],
+        "denominator_definition": "county-grain denials / state-grain applications. Never denials/observation-row-count."
+      },
+      "hmda_denial_count": {
+        "grain": "county",
+        "value": null,
+        "available": false,
+        "numerator": null
+      },
+      "hmda_origination_rate": {
+        "value": null,
+        "available": false,
+        "numerator": null,
+        "denominator": null,
+        "denominator_definition": "state-grain applications"
+      },
+      "purchase_applications": {
+        "reason": "purchase_applications NULL in current LEI summaries",
+        "available": false
+      },
+      "hmda_application_count": {
+        "grain": "state",
+        "value": null,
+        "available": false,
+        "numerator": null,
+        "denominator": null
+      },
+      "hmda_origination_count": {
+        "grain": "state",
+        "value": null,
+        "available": false,
+        "numerator": null,
+        "denominator": null
+      },
+      "refinance_applications": {
+        "reason": "refinance_applications NULL in current LEI summaries",
+        "available": false
+      }
+    },
+    "sources": [
+      {
+        "agency": "GLEIF",
+        "dataset": "lei-records",
+        "source_url": "https://api.gleif.org/api/v1/lei-records"
+      }
+    ],
+    "coverage": {
+      "cfpb": "UNRESOLVED",
+      "hmda": "NOT AVAILABLE",
+      "nmls": "HUMAN_GATED",
+      "identity": "COMPLETE",
+      "depository": "NONBANK",
+      "enforcement": "NONE OBSERVED",
+      "servicer_role": "CONFIRMED"
+    },
+    "identity": {
+      "names": [
+        {
+          "kind": "legal",
+          "name": "SPECIALIZED LOAN SERVICING LLC",
+          "source": "gleif"
+        }
+      ],
+      "stable_key": "gleif-lei:549300QSUEE20YO86W39",
+      "identifiers": [
+        {
+          "note": "LEI is the entity stable_key. identifier_type=LEI was not written (HMDA LEI count invariant).",
+          "confidence": "confirmed",
+          "observed_at": null,
+          "source_dataset": "gleif_stable_key",
+          "identifier_type": "LEI",
+          "identifier_value": "549300QSUEE20YO86W39"
+        }
+      ],
+      "display_name": "Specialized Loan Servicing Llc",
+      "canonical_name": "Specialized Loan Servicing Llc",
+      "current_status": "observed",
+      "institution_id": "226970c2-12b4-5490-a5e7-0a54afa60cc7",
+      "classifications": [
+        {
+          "family": "MORTGAGE_SERVICER",
+          "source": "lend-nat-009",
+          "authoritative": true
+        }
+      ],
+      "identity_confidence": "confirmed"
+    },
+    "rankings": null,
+    "geography": {
+      "states": [],
+      "language": "HMDA activity observed in listed states/counties. This is not headquarters, not licensed-in, and not a branch network.",
+      "headquarters": null,
+      "top_counties": [],
+      "headquarters_source": "FDIC institutions CITY/STALP when FDIC_CERT present; otherwise null",
+      "states_with_hmda_activity": 0,
+      "counties_with_hmda_activity": 0
+    },
+    "computed_at": "2026-08-27T12:49:29Z",
+    "enforcement": {
+      "events": [],
+      "by_agency": {},
+      "section_title": "Regulatory & Enforcement History",
+      "attribution_rule": "respondent.confidence=confirmed and respondent.institution_id set via CERT/NMLS/LEI. CFPB complaint bridge is not enforcement proof.",
+      "by_action_family": {},
+      "attributed_event_count": 0,
+      "none_observed_is_not_proof": true
+    },
+    "limitations": [
+      "HMDA 2025 is a reporting vintage, not current 2026 lending activity.",
+      "HMDA activity geography is not headquarters and not a branch or license map.",
+      "CFPB counts include confirmed attributions only.",
+      "Enforcement requires an independent confirmed identifier; a complaint bridge is not enough.",
+      "NONE OBSERVED enforcement is not proof of no history.",
+      "No Trust Score, ranking, or quality conversion is computed.",
+      "No HMDA observations attached to this institution.",
+      "Purchase/refinance and FHA/VA/conventional program splits are not populated in the current LEI summaries.",
+      "Year-over-year HMDA is unavailable (single vintage).",
+      "Full HMDA action_taken distribution is not materialized; only applications, originations, and county-grain denials.",
+      "Related unresolved CFPB source labels exist and are not folded into this profile.",
+      "Company NMLS was not ingested this pass (NMLS Consumer Access is human-gated)."
+    ],
+    "contract_version": "lend-nat-011-v1",
+    "public_projection_status": "internal_only"
+  },
+  "phh_home_loans": {
+    "cfpb": {
+      "issue": {},
+      "product": {},
+      "source_labels": [],
+      "not_enforcement": true,
+      "timely_response": {},
+      "company_response": {},
+      "window_24m_start": "2024-08-26",
+      "unresolved_related": [
+        {
+          "label": "PHH Mortgage Services Corporation",
+          "reason": "No exact GLEIF; not folded from PHH Home Loans or Ocwen ownership.",
+          "confidence": "unresolved",
+          "complaint_count": 2364,
+          "complaint_count_24m": 0
+        }
+      ],
+      "coverage_disclosure": "Complaint data includes only records deterministically attributed to this institution. Some CFPB source labels remain unresolved and are listed separately.",
+      "attribution_confidence": "confirmed",
+      "attributed_complaint_count": 0,
+      "attributed_complaint_count_24m": 0
+    },
+    "roles": {
+      "depository": "NONBANK",
+      "classifications": [
+        {
+          "family": "NONBANK_MORTGAGE_COMPANY",
+          "source": "lend-nat-009",
+          "authoritative": true
+        }
+      ],
+      "servicer_status": "NOT ESTABLISHED",
+      "servicer_evidence": [],
+      "inference_forbidden": [
+        "company name",
+        "CFPB volume",
+        "ownership",
+        "parent",
+        "historical reputation"
+      ]
+    },
+    "scores": null,
+    "lending": {
+      "va": {
+        "reason": "apps_va not populated",
+        "available": false
+      },
+      "fha": {
+        "reason": "apps_fha not populated",
+        "available": false
+      },
+      "yoy": {
+        "reason": "single HMDA vintage (2025)",
+        "available": false
+      },
+      "period": "HMDA 2025 reporting vintage",
+      "source": "lender_hmda_observations",
+      "usda_rhs": {
+        "reason": "apps_usda_other not populated",
+        "available": false
+      },
+      "conventional": {
+        "reason": "apps_conventional not populated",
+        "available": false
+      },
+      "hmda_denial_rate": {
+        "value": null,
+        "available": false,
+        "numerator": null,
+        "denominator": null,
+        "action_taken_excluded": [
+          "full LAR action_taken not materialized (withdrawn, incomplete, approved-not-accepted, etc.)"
+        ],
+        "action_taken_included": [
+          "originated (count)",
+          "denied (county count)"
+        ],
+        "denominator_definition": "county-grain denials / state-grain applications. Never denials/observation-row-count."
+      },
+      "hmda_denial_count": {
+        "grain": "county",
+        "value": null,
+        "available": false,
+        "numerator": null
+      },
+      "hmda_origination_rate": {
+        "value": null,
+        "available": false,
+        "numerator": null,
+        "denominator": null,
+        "denominator_definition": "state-grain applications"
+      },
+      "purchase_applications": {
+        "reason": "purchase_applications NULL in current LEI summaries",
+        "available": false
+      },
+      "hmda_application_count": {
+        "grain": "state",
+        "value": null,
+        "available": false,
+        "numerator": null,
+        "denominator": null
+      },
+      "hmda_origination_count": {
+        "grain": "state",
+        "value": null,
+        "available": false,
+        "numerator": null,
+        "denominator": null
+      },
+      "refinance_applications": {
+        "reason": "refinance_applications NULL in current LEI summaries",
+        "available": false
+      }
+    },
+    "sources": [
+      {
+        "agency": "GLEIF",
+        "dataset": "lei-records",
+        "source_url": "https://api.gleif.org/api/v1/lei-records"
+      }
+    ],
+    "coverage": {
+      "cfpb": "UNRESOLVED",
+      "hmda": "NOT AVAILABLE",
+      "nmls": "HUMAN_GATED",
+      "identity": "COMPLETE",
+      "depository": "NONBANK",
+      "enforcement": "NONE OBSERVED",
+      "servicer_role": "NOT ESTABLISHED"
+    },
+    "identity": {
+      "names": [
+        {
+          "kind": "legal",
+          "name": "PHH Home Loans, LLC",
+          "source": "gleif"
+        }
+      ],
+      "stable_key": "gleif-lei:549300KO4XT2PA011C25",
+      "identifiers": [
+        {
+          "note": "LEI is the entity stable_key. identifier_type=LEI was not written (HMDA LEI count invariant).",
+          "confidence": "confirmed",
+          "observed_at": null,
+          "source_dataset": "gleif_stable_key",
+          "identifier_type": "LEI",
+          "identifier_value": "549300KO4XT2PA011C25"
+        }
+      ],
+      "display_name": "PHH Home Loans, LLC",
+      "canonical_name": "PHH Home Loans, LLC",
+      "current_status": "observed",
+      "institution_id": "d1f252fa-2d62-5965-8722-17dbff8f57e8",
+      "classifications": [
+        {
+          "family": "NONBANK_MORTGAGE_COMPANY",
+          "source": "lend-nat-009",
+          "authoritative": true
+        }
+      ],
+      "identity_confidence": "confirmed"
+    },
+    "rankings": null,
+    "geography": {
+      "states": [],
+      "language": "HMDA activity observed in listed states/counties. This is not headquarters, not licensed-in, and not a branch network.",
+      "headquarters": null,
+      "top_counties": [],
+      "headquarters_source": "FDIC institutions CITY/STALP when FDIC_CERT present; otherwise null",
+      "states_with_hmda_activity": 0,
+      "counties_with_hmda_activity": 0
+    },
+    "computed_at": "2026-08-27T12:49:29Z",
+    "enforcement": {
+      "events": [],
+      "by_agency": {},
+      "section_title": "Regulatory & Enforcement History",
+      "attribution_rule": "respondent.confidence=confirmed and respondent.institution_id set via CERT/NMLS/LEI. CFPB complaint bridge is not enforcement proof.",
+      "by_action_family": {},
+      "attributed_event_count": 0,
+      "none_observed_is_not_proof": true
+    },
+    "limitations": [
+      "HMDA 2025 is a reporting vintage, not current 2026 lending activity.",
+      "HMDA activity geography is not headquarters and not a branch or license map.",
+      "CFPB counts include confirmed attributions only.",
+      "Enforcement requires an independent confirmed identifier; a complaint bridge is not enough.",
+      "NONE OBSERVED enforcement is not proof of no history.",
+      "No Trust Score, ranking, or quality conversion is computed.",
+      "No HMDA observations attached to this institution.",
+      "Purchase/refinance and FHA/VA/conventional program splits are not populated in the current LEI summaries.",
+      "Year-over-year HMDA is unavailable (single vintage).",
+      "Full HMDA action_taken distribution is not materialized; only applications, originations, and county-grain denials.",
+      "Related unresolved CFPB source labels exist and are not folded into this profile.",
+      "Company NMLS was not ingested this pass (NMLS Consumer Access is human-gated)."
+    ],
+    "contract_version": "lend-nat-011-v1",
+    "public_projection_status": "internal_only"
+  }
+}

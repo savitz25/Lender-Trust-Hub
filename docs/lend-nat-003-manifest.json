@@ -1,0 +1,440 @@
+{
+  "ok": true,
+  "apply": true,
+  "public_writes": 0,
+  "identity": {
+    "institutions": 460,
+    "identifiers": 5176,
+    "conflicts": 39
+  },
+  "attached_leis": 246,
+  "unattached_leis": 4469,
+  "obs": {
+    "county": 418078,
+    "state": 36402,
+    "total": 454480,
+    "with_institution": 116569,
+    "without_institution": 337911
+  },
+  "coverage": {
+    "leis": 246,
+    "applications": 4991120,
+    "originations": 2847019,
+    "denials_county_grain": 1017571,
+    "lei_pct": 5.22,
+    "app_pct": 42.85,
+    "orig_pct": 41.91,
+    "den_pct": 50.66
+  },
+  "orphan": {
+    "leis": 4469,
+    "applications": 6657024,
+    "originations": 3946234,
+    "denials_county_grain": 990943,
+    "app_pct": 57.15,
+    "orig_pct": 58.09,
+    "blocked_conflict_leis": 28,
+    "hmda_leis_missing_from_graph": 0
+  },
+  "aggregation": {
+    "lei_state_vs_county_orig_mismatches": 0,
+    "origination_gap_state_minus_material_county": 0,
+    "explanation": "County file is material LEI\u00d7county cells (418,078). State summary includes residual volume not in those cells. Gap is expected; use state grain for institution national/state totals, county grain for county activity."
+  },
+  "totals": {
+    "state_rows": 36402,
+    "county_rows": 418078,
+    "state_leis": 4715,
+    "county_leis": 4715,
+    "applications_state_grain": 11648144,
+    "originations_state_grain": 6793253,
+    "denials_county_grain": 2008514,
+    "county_market_applications": 11660618,
+    "county_market_originations": 6793253,
+    "county_market_denials": 2057689
+  },
+  "purpose_semantics": {
+    "purchase_originations_at_lei_grain": "UNSUPPORTED",
+    "refinance_originations_at_lei_grain": "UNSUPPORTED",
+    "purchase_applications_county_market": 5311621,
+    "refinance_applications_county_market": 3792193,
+    "note": "county_market purchase_count is application purpose, not origination"
+  },
+  "fingerprints": {
+    "HMDA_COUNTY_COHORT": "a14de8ee38bc7de0f5c3edc47a2ac4cb70b53a45b9d1a1e016c055f055ccc398",
+    "HMDA_STATE_COHORT": "4c755231b47fe62082f052da03995d00c30d6014a5d9e601b2623692243f65ee",
+    "INSTITUTION_NATIONAL_SAMPLE": "46ddc917f7a5d32e08478db25457b37451673212d57986b01777a7308bf77507"
+  },
+  "storage": {
+    "county_rows": 418078,
+    "state_rows": 36402,
+    "total_rows": 454480,
+    "est_mb": 113.6,
+    "note": "Aggregated LEI\u00d7geo observations, not 11.66M LAR rows"
+  },
+  "tests": [
+    {
+      "id": "HMDA1",
+      "pass": true,
+      "detail": "confirmed state obs with institution=5425"
+    },
+    {
+      "id": "HMDA2",
+      "pass": true,
+      "detail": "unattached obs have null institution_id"
+    },
+    {
+      "id": "HMDA3",
+      "pass": true,
+      "detail": "every observation retains 20-char LEI"
+    },
+    {
+      "id": "HMDA4",
+      "pass": true,
+      "detail": "builder never reads slug/name for attribution_for()"
+    },
+    {
+      "id": "HMDA5",
+      "pass": true,
+      "detail": "conflict blocked examples=20"
+    },
+    {
+      "id": "HMDA6",
+      "pass": true,
+      "detail": "no LICENSED_IN rows created; HMDA state is HAD_HMDA_ACTIVITY_IN only"
+    },
+    {
+      "id": "HMDA7",
+      "pass": true,
+      "detail": "no HAS_BRANCH rows; county FIPS is activity geography"
+    },
+    {
+      "id": "HMDA8",
+      "pass": true,
+      "detail": "purchase_originations NULL at LEI grain"
+    },
+    {
+      "id": "HMDA9",
+      "pass": true,
+      "detail": "refinance_originations NULL at LEI grain"
+    },
+    {
+      "id": "HMDA10",
+      "pass": true,
+      "detail": "orig_fha is transaction mix, not FHA approval"
+    },
+    {
+      "id": "HMDA11",
+      "pass": true,
+      "detail": "orig_va is transaction mix, not VA authorization"
+    },
+    {
+      "id": "HMDA12",
+      "pass": true,
+      "detail": "denials stored as counts only; no trust/quality field"
+    },
+    {
+      "id": "HMDA13",
+      "pass": true,
+      "detail": "apps=11648144 orig=6793253"
+    },
+    {
+      "id": "HMDA14",
+      "pass": true,
+      "detail": "rates not persisted; numerator originations + denominator applications retained"
+    },
+    {
+      "id": "HMDA15",
+      "pass": true,
+      "detail": "state-minus-material-county orig gap=0 (explained material-cell filter)"
+    },
+    {
+      "id": "HMDA16",
+      "pass": true,
+      "detail": "data_year=2025 on all rows"
+    },
+    {
+      "id": "HMDA17",
+      "pass": true,
+      "detail": "natural key unique index; ON CONFLICT DO NOTHING on apply"
+    },
+    {
+      "id": "HMDA18",
+      "pass": true,
+      "detail": "public catalog files not imported by this script"
+    },
+    {
+      "id": "ID-STABLE",
+      "pass": true,
+      "detail": "inst=460 conflicts=39"
+    }
+  ],
+  "failed": [],
+  "top_attached": [
+    {
+      "institution_id": "1e2fa9a5-7067-52e9-8b44-4da4e71c9d47",
+      "leis": [
+        "549300FGXN1K3HLB1R50"
+      ],
+      "applications": 609400,
+      "originations": 429332,
+      "denials_county_grain": 110604,
+      "orig_conventional": 330110,
+      "orig_fha": 65337,
+      "orig_va": 33885,
+      "orig_usda_other": 0,
+      "states": 51,
+      "counties": 3072
+    },
+    {
+      "institution_id": "96b1a392-4ce1-5d27-8262-3fc157f2b5c6",
+      "leis": [
+        "549300HW662MN1WU8550"
+      ],
+      "applications": 576697,
+      "originations": 422119,
+      "denials_county_grain": 69486,
+      "orig_conventional": 262456,
+      "orig_fha": 87294,
+      "orig_va": 71372,
+      "orig_usda_other": 997,
+      "states": 51,
+      "counties": 2864
+    },
+    {
+      "institution_id": "cd1af978-b047-57b4-b61e-83ea83c7e02d",
+      "leis": [
+        "7H6GLXDRUGQFU57RNE97"
+      ],
+      "applications": 152415,
+      "originations": 94243,
+      "denials_county_grain": 15765,
+      "orig_conventional": 91496,
+      "orig_fha": 1735,
+      "orig_va": 1012,
+      "orig_usda_other": 0,
+      "states": 51,
+      "counties": 2198
+    },
+    {
+      "institution_id": "46b4f54f-f5bf-5164-9c6b-69af1c2cb1d4",
+      "leis": [
+        "5493003GQDUH26DNNH17"
+      ],
+      "applications": 179597,
+      "originations": 80547,
+      "denials_county_grain": 40199,
+      "orig_conventional": 61447,
+      "orig_fha": 0,
+      "orig_va": 19100,
+      "orig_usda_other": 0,
+      "states": 51,
+      "counties": 2476
+    },
+    {
+      "institution_id": "90924883-fcd5-516a-a444-2323373a8ec2",
+      "leis": [
+        "6BYL5QZYBDK8S7L73M02"
+      ],
+      "applications": 151785,
+      "originations": 74632,
+      "denials_county_grain": 49686,
+      "orig_conventional": 71451,
+      "orig_fha": 1958,
+      "orig_va": 1114,
+      "orig_usda_other": 109,
+      "states": 51,
+      "counties": 2233
+    },
+    {
+      "institution_id": "3d2208fc-740d-581f-804a-bd615acbd839",
+      "leis": [
+        "DRMSV1Q0EKMEXLAU1P80"
+      ],
+      "applications": 119619,
+      "originations": 68902,
+      "denials_county_grain": 34097,
+      "orig_conventional": 68218,
+      "orig_fha": 535,
+      "orig_va": 149,
+      "orig_usda_other": 0,
+      "states": 50,
+      "counties": 1352
+    },
+    {
+      "institution_id": "c1262860-66db-5353-a838-c3cbd2499489",
+      "leis": [
+        "549300FNXYY540N23N64"
+      ],
+      "applications": 187593,
+      "originations": 66567,
+      "denials_county_grain": 36391,
+      "orig_conventional": 41729,
+      "orig_fha": 10547,
+      "orig_va": 13733,
+      "orig_usda_other": 558,
+      "states": 51,
+      "counties": 2512
+    },
+    {
+      "institution_id": "564844c4-ba35-5fa7-ad5a-484c8267a927",
+      "leis": [
+        "AD6GFRVSDT01YPT1CS68"
+      ],
+      "applications": 116535,
+      "originations": 61280,
+      "denials_county_grain": 32119,
+      "orig_conventional": 60515,
+      "orig_fha": 528,
+      "orig_va": 228,
+      "orig_usda_other": 9,
+      "states": 51,
+      "counties": 1700
+    }
+  ],
+  "top_unattached": [
+    {
+      "lei": "549300VZVN841I2ILS84",
+      "applications": 190472,
+      "originations": 125099,
+      "states": 52,
+      "gleif_name": "CROSSCOUNTRY MORTGAGE, LLC",
+      "status": "review_required",
+      "reason": "conflict lei_nmls_resolution review_required"
+    },
+    {
+      "lei": "RVDPPPGHCGZ40J4VQ731",
+      "applications": 193807,
+      "originations": 100816,
+      "states": 51,
+      "gleif_name": "PENNYMAC LOAN SERVICES, LLC",
+      "status": "review_required",
+      "reason": "conflict lei_nmls_resolution review_required"
+    },
+    {
+      "lei": "549300AG64NHILB7ZP05",
+      "applications": 155159,
+      "originations": 91730,
+      "states": 51,
+      "gleif_name": "LOANDEPOT.COM, LLC",
+      "status": "review_required",
+      "reason": "conflict lei_nmls_resolution review_required"
+    },
+    {
+      "lei": "B4TYDEB6GKMZO031MB27",
+      "applications": 217492,
+      "originations": 88530,
+      "states": 51,
+      "gleif_name": "Bank of America, National Association",
+      "status": "review_required",
+      "reason": "conflict lei_nmls_resolution review_required"
+    },
+    {
+      "lei": "549300AQ3T62GXDU7D76",
+      "applications": 121724,
+      "originations": 86111,
+      "states": 50,
+      "gleif_name": "GUILD MORTGAGE COMPANY LLC",
+      "status": "review_required",
+      "reason": "conflict lei_nmls_resolution review_required"
+    },
+    {
+      "lei": "549300DD5QQUHO6PCH70",
+      "applications": 178189,
+      "originations": 82764,
+      "states": 51,
+      "gleif_name": "MORTGAGE RESEARCH CENTER, LLC",
+      "status": "review_required",
+      "reason": "conflict lei_nmls_resolution review_required"
+    },
+    {
+      "lei": "549300MGPZBLQDIL7538",
+      "applications": 103697,
+      "originations": 74450,
+      "states": 51,
+      "gleif_name": "FAIRWAY INDEPENDENT MORTGAGE CORPORATION",
+      "status": "review_required",
+      "reason": "conflict lei_nmls_resolution review_required"
+    },
+    {
+      "lei": "549300U3721PJGQZYY68",
+      "applications": 129086,
+      "originations": 70579,
+      "states": 51,
+      "gleif_name": "GUARANTEED RATE, INC.",
+      "status": "review_required",
+      "reason": "conflict lei_nmls_resolution review_required"
+    },
+    {
+      "lei": "549300GKFNPRWNS0GF29",
+      "applications": 102676,
+      "originations": 70098,
+      "states": 53,
+      "gleif_name": "AmeriHome Mortgage Company, LLC",
+      "status": "review_required",
+      "reason": "conflict lei_nmls_resolution review_required"
+    },
+    {
+      "lei": "549300LYRWPSYPK6S325",
+      "applications": 165453,
+      "originations": 69982,
+      "states": 51,
+      "gleif_name": "FREEDOM MORTGAGE CORPORATION",
+      "status": "review_required",
+      "reason": "conflict lei_nmls_resolution review_required"
+    },
+    {
+      "lei": "5493001SXWZ4OFP8Z903",
+      "applications": 101400,
+      "originations": 69159,
+      "states": 36,
+      "gleif_name": "DHI MORTGAGE COMPANY, LTD.",
+      "status": "review_required",
+      "reason": "conflict lei_nmls_resolution review_required"
+    },
+    {
+      "lei": "549300DD4R4SYK5RAQ92",
+      "applications": 81084,
+      "originations": 57781,
+      "states": 51,
+      "gleif_name": "MOVEMENT MORTGAGE, LLC",
+      "status": "review_required",
+      "reason": "conflict lei_nmls_resolution review_required"
+    },
+    {
+      "lei": "549300H3IZO24NSOO931",
+      "applications": 77359,
+      "originations": 56951,
+      "states": 29,
+      "gleif_name": "LENNAR MORTGAGE, LLC",
+      "status": "review_required",
+      "reason": "conflict lei_nmls_resolution review_required"
+    },
+    {
+      "lei": "549300LBCBNR1OT00651",
+      "applications": 79599,
+      "originations": 52217,
+      "states": 51,
+      "gleif_name": "NATIONSTAR MORTGAGE LLC",
+      "status": "review_required",
+      "reason": "conflict lei_nmls_resolution review_required"
+    },
+    {
+      "lei": "2WHM8VNJH63UN14OL754",
+      "applications": 90347,
+      "originations": 51203,
+      "states": 50,
+      "gleif_name": "The Huntington National Bank",
+      "status": "review_required",
+      "reason": "conflict lei_nmls_resolution review_required"
+    }
+  ],
+  "executed": true,
+  "inserted": 0,
+  "existing": 454480,
+  "post_count": 454480,
+  "post_with_institution": 116569,
+  "post_institutions": 460,
+  "post_identifiers": 5176,
+  "post_conflicts": 39
+}

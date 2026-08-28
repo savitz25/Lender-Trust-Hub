@@ -1,0 +1,294 @@
+{
+  "task": "FL-LEND-009",
+  "generated_at": "2026-08-28T15:01:24.892292+00:00",
+  "target": "hidcrbexurginnuqgipx",
+  "host_ok": true,
+  "architecture": {
+    "entity_table": "lender_national_entities",
+    "kinds": [
+      "institution",
+      "branch",
+      "person_mlo"
+    ],
+    "person_identifier_type": "NMLS_PERSON",
+    "person_identifier_note": "Existing enum is NMLS_PERSON, not NMLS_INDIVIDUAL. Use existing type; do not split namespace.",
+    "branch_identifier_type": "NMLS_BRANCH",
+    "license_table": "lender_state_licenses already allows LO,MBRB,MLDB; FL-LEND-002 ingested Approved MBR/MLD only",
+    "relationship_table": "lender_entity_relationships currently SUBSIDIARY_OF/PARENT_OF/BRAND_OF/SUCCESSOR_TO/PREDECESSOR_OF; needs ASSOCIATED_WITH and BELONGS_TO plus temporality",
+    "company_graph_locked": true,
+    "publication": "none"
+  },
+  "lo": {
+    "label": "LO",
+    "source_rows": 150194,
+    "status_distribution": {
+      "Expired": 85778,
+      "Approved": 59458,
+      "Terminated": 4835,
+      "Denied Tech": 64,
+      "Inactive": 35,
+      "Revoked": 17,
+      "Denied Cause": 6,
+      "Withdrawn": 1
+    },
+    "type_distribution": {
+      "LO": 150194
+    },
+    "approved_rows": 59458,
+    "unique_nmls_all": 135209,
+    "unique_approved_nmls": 59458,
+    "approved_missing_nmls": 0,
+    "malformed_nmls": 0,
+    "missing_nmls_all": 0,
+    "license_rows": 150194,
+    "unique_licenses": 150191,
+    "duplicate_license_groups": 3,
+    "duplicate_approved_nmls_groups": 0,
+    "max_rows_per_approved_nmls": 1,
+    "phone_approved": 221,
+    "email_columns": [],
+    "email_approved": 0,
+    "prim_address_approved": 59458,
+    "mail_address_approved": 58934,
+    "company_reference_columns": [],
+    "columns": [
+      "LICENSE NUMBER",
+      "LICENSE TYPE",
+      "NMLS ID",
+      "INTIAL APPROVAL",
+      "LAST NAME",
+      "FIRST NAME",
+      "MIDDLE NAME",
+      "PRIM ADDRESS 1",
+      "PRIM ADDRESS 2",
+      "PRIM CITY",
+      "COUNTY",
+      "PRIM STATE",
+      "PRIM ZIP",
+      "MAIL ADDRESS 1",
+      "MAIL ADDRESS 2",
+      "MAIL CITY",
+      "MAIL STATE",
+      "MAIL ZIP",
+      "PHONE",
+      "STATUS",
+      "STATUS EFFECTIVE DATE"
+    ]
+  },
+  "mbrb": {
+    "label": "MBRB",
+    "source_rows": 1943,
+    "status_distribution": {
+      "Terminated": 749,
+      "Approved": 692,
+      "Expired": 490,
+      "Inactive": 12
+    },
+    "type_distribution": {
+      "MBRB": 1943
+    },
+    "approved_rows": 692,
+    "unique_nmls_all": 1904,
+    "unique_approved_nmls": 692,
+    "approved_missing_nmls": 0,
+    "malformed_nmls": 0,
+    "missing_nmls_all": 0,
+    "license_rows": 1943,
+    "unique_licenses": 1943,
+    "duplicate_license_groups": 0,
+    "duplicate_approved_nmls_groups": 0,
+    "max_rows_per_approved_nmls": 1,
+    "phone_approved": 679,
+    "email_columns": [],
+    "email_approved": 0,
+    "prim_address_approved": 692,
+    "mail_address_approved": 0,
+    "company_reference_columns": [],
+    "columns": [
+      "LICENSE NUMBER",
+      "LICENSE TYPE",
+      "NMLS ID",
+      "INTIAL APPROVAL",
+      "FIRM NAME",
+      "PRIM ADDRESS 1",
+      "PRIM ADDRESS 2",
+      "PRIM CITY",
+      "COUNTY",
+      "PRIM STATE",
+      "PRIM ZIP",
+      "MAIL ADDRESS 1",
+      "MAIL ADDRESS 2",
+      "MAIL CITY",
+      "MAIL STATE",
+      "MAIL ZIP",
+      "PHONE",
+      "STATUS",
+      "STATUS EFFECTIVE DATE"
+    ]
+  },
+  "mldb": {
+    "label": "MLDB",
+    "source_rows": 24311,
+    "status_distribution": {
+      "Terminated": 16153,
+      "Approved": 5913,
+      "Expired": 2219,
+      "Inactive": 22,
+      "Withdrawn": 3,
+      "Denied Tech": 1
+    },
+    "type_distribution": {
+      "MLDB": 24311
+    },
+    "approved_rows": 5913,
+    "unique_nmls_all": 22383,
+    "unique_approved_nmls": 5869,
+    "approved_missing_nmls": 0,
+    "malformed_nmls": 0,
+    "missing_nmls_all": 0,
+    "license_rows": 24311,
+    "unique_licenses": 24164,
+    "duplicate_license_groups": 147,
+    "duplicate_approved_nmls_groups": 43,
+    "max_rows_per_approved_nmls": 3,
+    "phone_approved": 5763,
+    "email_columns": [],
+    "email_approved": 0,
+    "prim_address_approved": 5913,
+    "mail_address_approved": 31,
+    "company_reference_columns": [],
+    "columns": [
+      "LICENSE NUMBER",
+      "LICENSE TYPE",
+      "NMLS ID",
+      "INTIAL APPROVAL",
+      "FIRM NAME",
+      "PRIM ADDRESS 1",
+      "PRIM ADDRESS 2",
+      "PRIM CITY",
+      "COUNTY",
+      "PRIM STATE",
+      "PRIM ZIP",
+      "MAIL ADDRESS 1",
+      "MAIL ADDRESS 2",
+      "MAIL CITY",
+      "MAIL STATE",
+      "MAIL ZIP",
+      "PHONE",
+      "STATUS",
+      "STATUS EFFECTIVE DATE",
+      "SERVICER"
+    ]
+  },
+  "overlaps": {
+    "lo_company_nmls": 0,
+    "branch_company_nmls": 0,
+    "lo_branch_nmls": 0,
+    "dual_mbrb_mldb_nmls": 27
+  },
+  "approved_unique": {
+    "lo_nmls": 59458,
+    "mbrb_nmls": 692,
+    "mldb_nmls": 5869,
+    "branch_nmls": 6534,
+    "dual_branch_nmls": 27
+  },
+  "historical": {
+    "lo_nonapproved_rows": 90736,
+    "branch_nonapproved_rows": 19649,
+    "approved_lo_with_additional_license_rows": 7735,
+    "approved_branch_with_both_classes_in_source": 100
+  },
+  "blank_approved_licenses": 0,
+  "graph": {
+    "institutions": 14623,
+    "person_mlo": 0,
+    "branch": 0,
+    "nmls_institution": 6641,
+    "nmls_branch": 1,
+    "nmls_person": 0,
+    "nmls_branch_unattached": 1,
+    "nmls_branch_values": [
+      "2909"
+    ],
+    "relationships": 1700,
+    "licenses": 6435,
+    "license_classes": {
+      "MBR": 5051,
+      "MLD": 1384
+    },
+    "profiles": 6303,
+    "sre": 2515,
+    "sre_company_confirmed": 342,
+    "sre_company_inst": 294,
+    "sre_person": 1531,
+    "sre_branch": 31,
+    "sre_mixed": 1,
+    "identifier_types": []
+  },
+  "regulatory_preview": {
+    "person_events": 1531,
+    "person_with_nmls": 0,
+    "person_with_license": 0,
+    "person_nmls_in_approved_lo": 0,
+    "person_license_in_approved_lo": 0,
+    "person_conf_now": {
+      "unresolved": 1531
+    },
+    "branch_events": 31,
+    "branch_with_nmls": 0,
+    "branch_nmls_in_approved": 0,
+    "branch_license_in_approved": 0,
+    "branch_conf_now": {
+      "unresolved": 31
+    },
+    "mixed": [
+      {
+        "id": "87c3c6ac-31ed-5f20-b7df-5fc37b6acdee",
+        "nmls_id": null,
+        "license_number": null,
+        "subject_raw": "Mortgage Broker/Loan Originator",
+        "attribution_confidence": "unresolved"
+      }
+    ]
+  },
+  "stop": {
+    "person_nmls_mixed_into_institution": false,
+    "branch_nmls_mixed_into_institution": false,
+    "lo_branch_nmls_overlap": false,
+    "cannot_distinguish_person_vs_branch": false,
+    "name_only_canonical": false,
+    "wrong_db": false,
+    "license_pk_collision": false,
+    "held_silently_attached": false
+  },
+  "dry_run": {
+    "new_PERSON_MLO_entities": 59458,
+    "existing_person_overlap": 0,
+    "new_BRANCH_entities": 6534,
+    "existing_branch_identifier_overlap": 0,
+    "new_NMLS_PERSON": 59458,
+    "new_NMLS_BRANCH": 6534,
+    "new_LO_credentials": 59457,
+    "new_branch_credentials": 6592,
+    "person_company_confirmed_relations": 0,
+    "branch_company_confirmed_relations": 0,
+    "person_branch_confirmed_relations": 0,
+    "reason_relations_zero": "OFR Chapter 494 monthly LO/MBRB/MLDB files contain no employer, sponsor, parent, main-office, or company-NMLS column. Name/address/phone inference is forbidden.",
+    "regulatory_person_confirmed_nmls": 0,
+    "regulatory_person_confirmed_license": 0,
+    "regulatory_person_events": 1531,
+    "regulatory_branch_confirmed_nmls": 0,
+    "regulatory_branch_confirmed_license": 0,
+    "regulatory_branch_events": 31,
+    "mixed_events": 1,
+    "license_pk_collisions": [],
+    "idempotency_key": {
+      "entities": "stable_key = nmls-person:{nmls} | nmls-branch:{nmls}",
+      "identifiers": "(identifier_type, identifier_value)",
+      "licenses": "(jurisdiction, license_number) and (source_dataset, source_record_id)",
+      "relationships": "none predicted from current official files"
+    }
+  },
+  "pass": true
+}

@@ -1,0 +1,50 @@
+{
+  "task": "FL-LEND-006",
+  "target": "hidcrbexurginnuqgipx",
+  "contract": "fl-lend-provider-v1",
+  "generated_at": "2026-08-28T03:22:21.297118+00:00",
+  "summary": {
+    "workset": 6303,
+    "held_excluded": 22,
+    "slug_strategies": {
+      "reuse_national_render": 21,
+      "name": 6246,
+      "disambiguated_nmls": 36
+    },
+    "unique_slugs": 6303,
+    "has_lpi": 127,
+    "no_lpi": 6176,
+    "apply": true
+  },
+  "reconciliation": {
+    "florida_confirmed_companies": 6303,
+    "license_credential_rows_attached": 6412,
+    "mbr_attached": 5040,
+    "mld_attached": 1372,
+    "dual_companies": 54,
+    "servicer_yes_companies": 492,
+    "profiles_with_phone": 5862,
+    "profiles_with_prim_addr": 6303,
+    "profiles_with_mail_addr": 6190,
+    "profiles_with_confirmed_ofr": 294,
+    "confirmed_ofr_event_observations": 342,
+    "no_confirmed_ofr_profiles": 6009,
+    "confirmed_fine_obs": 190,
+    "confirmed_fine_dollars": 701425.0,
+    "profiles_with_hmda": 89,
+    "profiles_with_cfpb": 22,
+    "profiles_with_federal": 0,
+    "has_lpi_overlap": 127,
+    "rows_before": 6303,
+    "rows_after": 6303,
+    "anon_authenticated_grants": []
+  },
+  "qa_cohort_count": 30,
+  "idempotency_hint": {
+    "before": 6303,
+    "after": 6303,
+    "new_if_before_zero": 0,
+    "semantic_updates": 0,
+    "computed_at_recent_10m": 0
+  }
+}

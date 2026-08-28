@@ -30,6 +30,7 @@ const TOOL_ICONS = {
   local: MapPin,
   'le-analyzer': FileSearch,
   'le-compare': Columns3,
+  'florida-research': Scale,
 } as const;
 
 /**

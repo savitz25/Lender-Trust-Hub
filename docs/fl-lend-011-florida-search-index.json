@@ -1,0 +1,4168 @@
+{
+  "contract": "fl-lend-search-fl-v1",
+  "count": 130,
+  "fingerprint": "59508fba5158c0fa3db78cfbc21e6e53b98de9e681228df9af6d48f206badf38",
+  "rows": [
+    {
+      "institution_id": "c460fdca-3e92-53fa-8467-f115abaf0651",
+      "slug": "1-stop-mortgage-llc",
+      "canonical_name": "1 STOP MORTGAGE LLC",
+      "display_name": "1 STOP MORTGAGE LLC",
+      "presentation_name": "1 STOP MORTGAGE LLC",
+      "stable_key": "nmls-inst:2746999",
+      "historical_names": [],
+      "nmls": "2746999",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "1 stop mortgage llc"
+    },
+    {
+      "institution_id": "191d0a9f-85ef-504f-a34d-a967d356682b",
+      "slug": "1st-american-lending-llc",
+      "canonical_name": "1ST AMERICAN LENDING LLC",
+      "display_name": "1ST AMERICAN LENDING LLC",
+      "presentation_name": "1ST AMERICAN LENDING LLC",
+      "stable_key": "nmls-inst:1014298",
+      "historical_names": [],
+      "nmls": "1014298",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "1st american lending llc"
+    },
+    {
+      "institution_id": "f6d2d204-2ad0-5c0d-9d11-d198c24327f7",
+      "slug": "3hb-capital-llc",
+      "canonical_name": "3HB CAPITAL LLC",
+      "display_name": "3HB CAPITAL LLC",
+      "presentation_name": "3HB CAPITAL LLC",
+      "stable_key": "nmls-inst:2033311",
+      "historical_names": [],
+      "nmls": "2033311",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "3hb capital llc"
+    },
+    {
+      "institution_id": "8398ebab-5657-5e15-abc3-ed2820a21844",
+      "slug": "5th-avenue-mortgage-corporation",
+      "canonical_name": "5TH AVENUE MORTGAGE CORPORATION",
+      "display_name": "5TH AVENUE MORTGAGE CORPORATION",
+      "presentation_name": "5TH AVENUE MORTGAGE CORPORATION",
+      "stable_key": "nmls-inst:2413588",
+      "historical_names": [],
+      "nmls": "2413588",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "5th avenue mortgage corporation"
+    },
+    {
+      "institution_id": "f614fc7d-ebac-5642-b664-1382bb142472",
+      "slug": "7th-level-mortgage-limited-liability-company",
+      "canonical_name": "7TH LEVEL MORTGAGE LIMITED LIABILITY COMPANY",
+      "display_name": "7TH LEVEL MORTGAGE LIMITED LIABILITY COMPANY",
+      "presentation_name": "7TH LEVEL MORTGAGE LIMITED LIABILITY COMPANY",
+      "stable_key": "nmls-inst:1003861",
+      "historical_names": [],
+      "nmls": "1003861",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "7th level mortgage limited liability company"
+    },
+    {
+      "institution_id": "80e25c3b-d33b-585e-8c93-65b104e304da",
+      "slug": "all-state-lenders-corp",
+      "canonical_name": "ALL STATE LENDERS CORP.",
+      "display_name": "ALL STATE LENDERS CORP.",
+      "presentation_name": "ALL STATE LENDERS CORP.",
+      "stable_key": "nmls-inst:224649",
+      "historical_names": [],
+      "nmls": "224649",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "all state lenders corp"
+    },
+    {
+      "institution_id": "c86fc572-962e-5563-9d7a-ff09de921f85",
+      "slug": "american-federal-mortgage-corporation",
+      "canonical_name": "AMERICAN FEDERAL MORTGAGE CORPORATION",
+      "display_name": "AMERICAN FEDERAL MORTGAGE CORPORATION",
+      "presentation_name": "AMERICAN FEDERAL MORTGAGE CORPORATION",
+      "stable_key": "nmls-inst:2756",
+      "historical_names": [],
+      "nmls": "2756",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "american federal mortgage corporation"
+    },
+    {
+      "institution_id": "b44f18c2-8342-5cec-8235-9169e993bdd1",
+      "slug": "american-financial-mortgage-services-inc",
+      "canonical_name": "AMERICAN FINANCIAL MORTGAGE SERVICES, INC.",
+      "display_name": "AMERICAN FINANCIAL MORTGAGE SERVICES, INC.",
+      "presentation_name": "AMERICAN FINANCIAL MORTGAGE SERVICES, INC.",
+      "stable_key": "nmls-inst:226068",
+      "historical_names": [],
+      "nmls": "226068",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "american financial mortgage services inc"
+    },
+    {
+      "institution_id": "cf29eecf-ec27-53a5-8c79-7e01d614e8e5",
+      "slug": "american-millenium-company-l-l-c",
+      "canonical_name": "AMERICAN MILLENIUM COMPANY, L.L.C.",
+      "display_name": "AMERICAN MILLENIUM COMPANY, L.L.C.",
+      "presentation_name": "AMERICAN MILLENIUM COMPANY, L.L.C.",
+      "stable_key": "nmls-inst:107643",
+      "historical_names": [],
+      "nmls": "107643",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "american millenium company l l c"
+    },
+    {
+      "institution_id": "c602d26e-2940-5a33-a70f-d6b313e46839",
+      "slug": "axe-capital-lending-llc",
+      "canonical_name": "AXE CAPITAL LENDING LLC",
+      "display_name": "AXE CAPITAL LENDING LLC",
+      "presentation_name": "AXE CAPITAL LENDING LLC",
+      "stable_key": "nmls-inst:2079333",
+      "historical_names": [],
+      "nmls": "2079333",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "axe capital lending llc"
+    },
+    {
+      "institution_id": "a4fe09a8-1239-5946-8df1-9607dc9a9ee2",
+      "slug": "bay-capital-mortgage-corporation",
+      "canonical_name": "BAY CAPITAL MORTGAGE CORPORATION",
+      "display_name": "BAY CAPITAL MORTGAGE CORPORATION",
+      "presentation_name": "BAY CAPITAL MORTGAGE CORPORATION",
+      "stable_key": "nmls-inst:39610",
+      "historical_names": [],
+      "nmls": "39610",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "bay capital mortgage corporation"
+    },
+    {
+      "institution_id": "bd2bb0af-9789-5096-a4be-62c9135ae6b0",
+      "slug": "beck-finance-group-llc",
+      "canonical_name": "BECK FINANCE GROUP, LLC",
+      "display_name": "BECK FINANCE GROUP, LLC",
+      "presentation_name": "BECK FINANCE GROUP, LLC",
+      "stable_key": "nmls-inst:390675",
+      "historical_names": [],
+      "nmls": "390675",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "beck finance group llc"
+    },
+    {
+      "institution_id": "20f9deee-cdd3-577c-8241-1342662c03a7",
+      "slug": "better-lending-llc",
+      "canonical_name": "BETTER LENDING LLC",
+      "display_name": "BETTER LENDING LLC",
+      "presentation_name": "BETTER LENDING LLC",
+      "stable_key": "nmls-inst:2085351",
+      "historical_names": [],
+      "nmls": "2085351",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "better lending llc"
+    },
+    {
+      "institution_id": "4f4c8338-2389-5231-be07-993a9d3a582e",
+      "slug": "bills-com-llc",
+      "canonical_name": "BILLS.COM, LLC",
+      "display_name": "BILLS.COM, LLC",
+      "presentation_name": "BILLS.COM, LLC",
+      "stable_key": "nmls-inst:138464",
+      "historical_names": [],
+      "nmls": "138464",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "bills com llc"
+    },
+    {
+      "institution_id": "b8b49842-7b24-5da3-849d-afcd9f74e923",
+      "slug": "bittersweet-mortgage-corp",
+      "canonical_name": "BITTERSWEET MORTGAGE CORP.",
+      "display_name": "BITTERSWEET MORTGAGE CORP.",
+      "presentation_name": "BITTERSWEET MORTGAGE CORP.",
+      "stable_key": "nmls-inst:2512910",
+      "historical_names": [],
+      "nmls": "2512910",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "bittersweet mortgage corp"
+    },
+    {
+      "institution_id": "be45bd0f-422d-5cdd-9be4-6de9cfa57b40",
+      "slug": "blue-crab-mortgage-llc",
+      "canonical_name": "BLUE CRAB MORTGAGE, LLC",
+      "display_name": "BLUE CRAB MORTGAGE, LLC",
+      "presentation_name": "BLUE CRAB MORTGAGE, LLC",
+      "stable_key": "nmls-inst:2817696",
+      "historical_names": [],
+      "nmls": "2817696",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "blue crab mortgage llc"
+    },
+    {
+      "institution_id": "78aeca15-6c57-5bd0-9e7e-74fbbea9db31",
+      "slug": "bmic-mortgage-inc",
+      "canonical_name": "BMIC MORTGAGE, INC.",
+      "display_name": "BMIC MORTGAGE, INC.",
+      "presentation_name": "BMIC MORTGAGE, INC.",
+      "stable_key": "nmls-inst:177349",
+      "historical_names": [],
+      "nmls": "177349",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "bmic mortgage inc"
+    },
+    {
+      "institution_id": "453f81c0-0a61-5640-8f66-6326ba03f84d",
+      "slug": "bud-weber-mortgages-llc",
+      "canonical_name": "BUD WEBER MORTGAGES, LLC",
+      "display_name": "BUD WEBER MORTGAGES, LLC",
+      "presentation_name": "BUD WEBER MORTGAGES, LLC",
+      "stable_key": "nmls-inst:219938",
+      "historical_names": [],
+      "nmls": "219938",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "bud weber mortgages llc"
+    },
+    {
+      "institution_id": "f4c3eec7-1d8e-5f91-99f6-1b1d4bc2ccf4",
+      "slug": "buenaventura-inc",
+      "canonical_name": "BUENAVENTURA INC",
+      "display_name": "BUENAVENTURA INC",
+      "presentation_name": "BUENAVENTURA INC",
+      "stable_key": "nmls-inst:1815315",
+      "historical_names": [],
+      "nmls": "1815315",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "buenaventura inc"
+    },
+    {
+      "institution_id": "22399013-9757-5353-9aad-1b0454b8205f",
+      "slug": "capital-international-financial-inc",
+      "canonical_name": "CAPITAL INTERNATIONAL FINANCIAL INC.",
+      "display_name": "CAPITAL INTERNATIONAL FINANCIAL INC.",
+      "presentation_name": "CAPITAL INTERNATIONAL FINANCIAL INC.",
+      "stable_key": "nmls-inst:1036987",
+      "historical_names": [],
+      "nmls": "1036987",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "capital international financial inc"
+    },
+    {
+      "institution_id": "1960f69a-768d-52e7-ae01-9cf478cf3359",
+      "slug": "capital-lending-inc",
+      "canonical_name": "CAPITAL LENDING, INC.",
+      "display_name": "CAPITAL LENDING, INC.",
+      "presentation_name": "CAPITAL LENDING, INC.",
+      "stable_key": "nmls-inst:317711",
+      "historical_names": [],
+      "nmls": "317711",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "capital lending inc"
+    },
+    {
+      "institution_id": "f8668a0b-356d-5660-b8c4-e0c1ecda3bd6",
+      "slug": "carpe-diem-visions-llc",
+      "canonical_name": "CARPE DIEM VISIONS LLC",
+      "display_name": "CARPE DIEM VISIONS LLC",
+      "presentation_name": "CARPE DIEM VISIONS LLC",
+      "stable_key": "nmls-inst:2326065",
+      "historical_names": [],
+      "nmls": "2326065",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "carpe diem visions llc"
+    },
+    {
+      "institution_id": "038a9c9d-d156-5d8b-a597-d73e8fb619b4",
+      "slug": "casabella-financial-services-llc",
+      "canonical_name": "CASABELLA FINANCIAL SERVICES, LLC",
+      "display_name": "CASABELLA FINANCIAL SERVICES, LLC",
+      "presentation_name": "CASABELLA FINANCIAL SERVICES, LLC",
+      "stable_key": "nmls-inst:1855215",
+      "historical_names": [],
+      "nmls": "1855215",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "casabella financial services llc"
+    },
+    {
+      "institution_id": "9a24e5bc-281c-5638-9d2a-dc1409b2281f",
+      "slug": "cash-cow-funding-inc",
+      "canonical_name": "CASH COW FUNDING INC.",
+      "display_name": "CASH COW FUNDING INC.",
+      "presentation_name": "CASH COW FUNDING INC.",
+      "stable_key": "nmls-inst:378532",
+      "historical_names": [],
+      "nmls": "378532",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "cash cow funding inc"
+    },
+    {
+      "institution_id": "30ac5751-c31d-5428-898f-175ea4ba48dd",
+      "slug": "cityscape-financial-services-inc",
+      "canonical_name": "CITYSCAPE FINANCIAL SERVICES INC",
+      "display_name": "CITYSCAPE FINANCIAL SERVICES INC",
+      "presentation_name": "CITYSCAPE FINANCIAL SERVICES INC",
+      "stable_key": "nmls-inst:1456724",
+      "historical_names": [],
+      "nmls": "1456724",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "cityscape financial services inc"
+    },
+    {
+      "institution_id": "ed4989a4-f3bd-501f-bc22-c9c05f0f59b3",
+      "slug": "classic-mortgage-l-l-c",
+      "canonical_name": "CLASSIC MORTGAGE, L.L.C.",
+      "display_name": "CLASSIC MORTGAGE, L.L.C.",
+      "presentation_name": "CLASSIC MORTGAGE, L.L.C.",
+      "stable_key": "nmls-inst:31149",
+      "historical_names": [],
+      "nmls": "31149",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "classic mortgage l l c"
+    },
+    {
+      "institution_id": "5ab62f02-ea45-54f9-9272-fe3bcbd4faf5",
+      "slug": "click-quick-loan-llc",
+      "canonical_name": "CLICK QUICK LOAN LLC",
+      "display_name": "CLICK QUICK LOAN LLC",
+      "presentation_name": "CLICK QUICK LOAN LLC",
+      "stable_key": "nmls-inst:1004165",
+      "historical_names": [],
+      "nmls": "1004165",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "click quick loan llc"
+    },
+    {
+      "institution_id": "ecd825ec-6662-5616-8d6c-86f32efbe952",
+      "slug": "cmc-processing-llc",
+      "canonical_name": "CMC PROCESSING LLC",
+      "display_name": "CMC PROCESSING LLC",
+      "presentation_name": "CMC PROCESSING LLC",
+      "stable_key": "nmls-inst:2591501",
+      "historical_names": [],
+      "nmls": "2591501",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "cmc processing llc"
+    },
+    {
+      "institution_id": "c011fb0b-a91b-5d6f-8c19-1be71c83bf19",
+      "slug": "commodore-mortgage-llc",
+      "canonical_name": "COMMODORE MORTGAGE LLC",
+      "display_name": "COMMODORE MORTGAGE LLC",
+      "presentation_name": "COMMODORE MORTGAGE LLC",
+      "stable_key": "nmls-inst:2409113",
+      "historical_names": [],
+      "nmls": "2409113",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "commodore mortgage llc"
+    },
+    {
+      "institution_id": "13362f13-2f6e-5072-abcf-d7828d48bfb1",
+      "slug": "compass-lending-group-llc",
+      "canonical_name": "COMPASS LENDING GROUP LLC",
+      "display_name": "COMPASS LENDING GROUP LLC",
+      "presentation_name": "COMPASS LENDING GROUP LLC",
+      "stable_key": "nmls-inst:1731503",
+      "historical_names": [],
+      "nmls": "1731503",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "compass lending group llc"
+    },
+    {
+      "institution_id": "d6ca5d98-7cdf-51da-9565-321201198181",
+      "slug": "d-s-w-enterprises-llc",
+      "canonical_name": "D. S. W. ENTERPRISES, LLC.",
+      "display_name": "D. S. W. ENTERPRISES, LLC.",
+      "presentation_name": "D. S. W. ENTERPRISES, LLC.",
+      "stable_key": "nmls-inst:571455",
+      "historical_names": [],
+      "nmls": "571455",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "d s w enterprises llc"
+    },
+    {
+      "institution_id": "2be53a32-b3e3-5f20-8006-b63018328749",
+      "slug": "destiny-mortgage-group-inc",
+      "canonical_name": "DESTINY MORTGAGE GROUP, INC.",
+      "display_name": "DESTINY MORTGAGE GROUP, INC.",
+      "presentation_name": "DESTINY MORTGAGE GROUP, INC.",
+      "stable_key": "nmls-inst:127553",
+      "historical_names": [],
+      "nmls": "127553",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "destiny mortgage group inc"
+    },
+    {
+      "institution_id": "b3894b1f-655d-530d-a144-9cc38a5c1e86",
+      "slug": "dsld-mortgage-llc",
+      "canonical_name": "DSLD MORTGAGE, LLC",
+      "display_name": "DSLD MORTGAGE, LLC",
+      "presentation_name": "DSLD MORTGAGE, LLC",
+      "stable_key": "nmls-inst:120308",
+      "historical_names": [],
+      "nmls": "120308",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "dsld mortgage llc"
+    },
+    {
+      "institution_id": "c511a7b0-d3ae-5378-ad35-27d70fb8856e",
+      "slug": "enotiva-lending-solutions-llc",
+      "canonical_name": "ENOTIVA LENDING SOLUTIONS, LLC",
+      "display_name": "ENOTIVA LENDING SOLUTIONS, LLC",
+      "presentation_name": "ENOTIVA LENDING SOLUTIONS, LLC",
+      "stable_key": "nmls-inst:1185931",
+      "historical_names": [],
+      "nmls": "1185931",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "enotiva lending solutions llc"
+    },
+    {
+      "institution_id": "dd68beb9-0470-5e42-b782-9f30292d973a",
+      "slug": "ethics-mortgage-llc",
+      "canonical_name": "ETHICS MORTGAGE LLC",
+      "display_name": "ETHICS MORTGAGE LLC",
+      "presentation_name": "ETHICS MORTGAGE LLC",
+      "stable_key": "nmls-inst:1508421",
+      "historical_names": [],
+      "nmls": "1508421",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "ethics mortgage llc"
+    },
+    {
+      "institution_id": "64450248-92d1-5aa6-adce-4b2317ae65cc",
+      "slug": "fidusplus-mortgage-services-llc",
+      "canonical_name": "FIDUSPLUS MORTGAGE SERVICES LLC\"\"",
+      "display_name": "FIDUSPLUS MORTGAGE SERVICES LLC\"\"",
+      "presentation_name": "FIDUSPLUS MORTGAGE SERVICES LLC\"\"",
+      "stable_key": "nmls-inst:2050246",
+      "historical_names": [],
+      "nmls": "2050246",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "fidusplus mortgage services llc"
+    },
+    {
+      "institution_id": "d21006f2-d62c-5896-93d4-acf6875cf586",
+      "slug": "florida-mortgage-processing-group-llc",
+      "canonical_name": "FLORIDA MORTGAGE PROCESSING GROUP LLC",
+      "display_name": "FLORIDA MORTGAGE PROCESSING GROUP LLC",
+      "presentation_name": "FLORIDA MORTGAGE PROCESSING GROUP LLC",
+      "stable_key": "nmls-inst:1011688",
+      "historical_names": [],
+      "nmls": "1011688",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "florida mortgage processing group llc"
+    },
+    {
+      "institution_id": "bbec6432-0dff-5a8d-bc4c-2210e187a191",
+      "slug": "freedom-financial-services-inc",
+      "canonical_name": "FREEDOM FINANCIAL SERVICES, INC.",
+      "display_name": "FREEDOM FINANCIAL SERVICES, INC.",
+      "presentation_name": "FREEDOM FINANCIAL SERVICES, INC.",
+      "stable_key": "nmls-inst:2121727",
+      "historical_names": [],
+      "nmls": "2121727",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "freedom financial services inc"
+    },
+    {
+      "institution_id": "750cb738-94e4-5520-9da5-7cd3d2e5b002",
+      "slug": "garcia-gary-lee",
+      "canonical_name": "GARCIA, GARY,LEE",
+      "display_name": "GARCIA, GARY,LEE",
+      "presentation_name": "GARCIA, GARY,LEE",
+      "stable_key": "nmls-inst:238161",
+      "historical_names": [],
+      "nmls": "238161",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "garcia gary lee"
+    },
+    {
+      "institution_id": "1f52270a-3539-5140-bd91-ded52276960f",
+      "slug": "goldsmith-equity-group-llc",
+      "canonical_name": "GOLDSMITH EQUITY GROUP LLC",
+      "display_name": "GOLDSMITH EQUITY GROUP LLC",
+      "presentation_name": "GOLDSMITH EQUITY GROUP LLC",
+      "stable_key": "nmls-inst:1475189",
+      "historical_names": [],
+      "nmls": "1475189",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "goldsmith equity group llc"
+    },
+    {
+      "institution_id": "5f90dce2-0ade-5c84-9b01-7df8622c5352",
+      "slug": "gooi-mortgage-inc",
+      "canonical_name": "GOOI MORTGAGE, INC.",
+      "display_name": "GOOI MORTGAGE, INC.",
+      "presentation_name": "GOOI MORTGAGE, INC.",
+      "stable_key": "nmls-inst:1273251",
+      "historical_names": [],
+      "nmls": "1273251",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "gooi mortgage inc"
+    },
+    {
+      "institution_id": "bf47a2ca-820f-595e-b44f-a8ffe5429131",
+      "slug": "green-light-mortgage-processing-llc",
+      "canonical_name": "GREEN LIGHT MORTGAGE PROCESSING LLC",
+      "display_name": "GREEN LIGHT MORTGAGE PROCESSING LLC",
+      "presentation_name": "GREEN LIGHT MORTGAGE PROCESSING LLC",
+      "stable_key": "nmls-inst:2480991",
+      "historical_names": [],
+      "nmls": "2480991",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "green light mortgage processing llc"
+    },
+    {
+      "institution_id": "3574f54a-88a1-5b42-94e7-6e964e0b8412",
+      "slug": "greenhome-mortgage-group-llc",
+      "canonical_name": "GREENHOME MORTGAGE GROUP LLC",
+      "display_name": "GREENHOME MORTGAGE GROUP LLC",
+      "presentation_name": "GREENHOME MORTGAGE GROUP LLC",
+      "stable_key": "nmls-inst:1381234",
+      "historical_names": [],
+      "nmls": "1381234",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "greenhome mortgage group llc"
+    },
+    {
+      "institution_id": "33c5b9fd-e783-5e45-b573-b20f9eec564a",
+      "slug": "guide-mortgage-llc",
+      "canonical_name": "GUIDE MORTGAGE, LLC",
+      "display_name": "GUIDE MORTGAGE, LLC",
+      "presentation_name": "GUIDE MORTGAGE, LLC",
+      "stable_key": "nmls-inst:2327585",
+      "historical_names": [],
+      "nmls": "2327585",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "guide mortgage llc"
+    },
+    {
+      "institution_id": "367d894d-444a-514a-b664-41256d32a5e7",
+      "slug": "halpern-and-associates-mortgage-corporation-inc",
+      "canonical_name": "HALPERN & ASSOCIATES MORTGAGE CORPORATION, INC.",
+      "display_name": "HALPERN & ASSOCIATES MORTGAGE CORPORATION, INC.",
+      "presentation_name": "HALPERN & ASSOCIATES MORTGAGE CORPORATION, INC.",
+      "stable_key": "nmls-inst:366842",
+      "historical_names": [],
+      "nmls": "366842",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "halpern and associates mortgage corporation inc"
+    },
+    {
+      "institution_id": "04600e40-c641-5177-abe9-19ee381d3cb4",
+      "slug": "home-pad-lending-llc",
+      "canonical_name": "HOME PAD LENDING LLC",
+      "display_name": "HOME PAD LENDING LLC",
+      "presentation_name": "HOME PAD LENDING LLC",
+      "stable_key": "nmls-inst:1857677",
+      "historical_names": [],
+      "nmls": "1857677",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "home pad lending llc"
+    },
+    {
+      "institution_id": "a49f4459-9b8a-5b30-bde1-4f615ee2d2e4",
+      "slug": "homeland-lending-llc",
+      "canonical_name": "HOMELAND LENDING LLC",
+      "display_name": "HOMELAND LENDING LLC",
+      "presentation_name": "HOMELAND LENDING LLC",
+      "stable_key": "nmls-inst:245662",
+      "historical_names": [],
+      "nmls": "245662",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "homeland lending llc"
+    },
+    {
+      "institution_id": "6ad32feb-7d61-599c-b7f6-5df894897ef3",
+      "slug": "homelife-international-mortgage-co-inc",
+      "canonical_name": "HOMELIFE INTERNATIONAL MORTGAGE CO. INC.",
+      "display_name": "HOMELIFE INTERNATIONAL MORTGAGE CO. INC.",
+      "presentation_name": "HOMELIFE INTERNATIONAL MORTGAGE CO. INC.",
+      "stable_key": "nmls-inst:390228",
+      "historical_names": [],
+      "nmls": "390228",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "homelife international mortgage co inc"
+    },
+    {
+      "institution_id": "b662bfe3-b150-5c05-af07-05bdc4d85ad0",
+      "slug": "housing-partnership-inc",
+      "canonical_name": "HOUSING PARTNERSHIP, INC.",
+      "display_name": "HOUSING PARTNERSHIP, INC.",
+      "presentation_name": "HOUSING PARTNERSHIP, INC.",
+      "stable_key": "nmls-inst:222891",
+      "historical_names": [],
+      "nmls": "222891",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "housing partnership inc"
+    },
+    {
+      "institution_id": "16cd674d-4246-5da0-8e83-6379fdfcd9c0",
+      "slug": "hunter-lending-llc",
+      "canonical_name": "HUNTER LENDING, LLC",
+      "display_name": "HUNTER LENDING, LLC",
+      "presentation_name": "HUNTER LENDING, LLC",
+      "stable_key": "nmls-inst:372137",
+      "historical_names": [],
+      "nmls": "372137",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "hunter lending llc"
+    },
+    {
+      "institution_id": "fd94613d-ccb3-5e55-8194-40207c8927f5",
+      "slug": "infosys-bpo-americas-llc",
+      "canonical_name": "INFOSYS BPO AMERICAS, LLC",
+      "display_name": "INFOSYS BPO AMERICAS, LLC",
+      "presentation_name": "INFOSYS BPO AMERICAS, LLC",
+      "stable_key": "nmls-inst:1584380",
+      "historical_names": [],
+      "nmls": "1584380",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "infosys bpo americas llc"
+    },
+    {
+      "institution_id": "b04a9d0b-e339-571c-a59d-b0e110332b63",
+      "slug": "integrity-first-lending-llc",
+      "canonical_name": "INTEGRITY FIRST LENDING LLC",
+      "display_name": "INTEGRITY FIRST LENDING LLC",
+      "presentation_name": "INTEGRITY FIRST LENDING LLC",
+      "stable_key": "nmls-inst:1006977",
+      "historical_names": [],
+      "nmls": "1006977",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "integrity first lending llc"
+    },
+    {
+      "institution_id": "cb1444bc-94eb-5f25-b0a1-06b211be6980",
+      "slug": "irex-sales-corporation",
+      "canonical_name": "IREX SALES CORPORATION",
+      "display_name": "IREX SALES CORPORATION",
+      "presentation_name": "IREX SALES CORPORATION",
+      "stable_key": "nmls-inst:1774964",
+      "historical_names": [],
+      "nmls": "1774964",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "irex sales corporation"
+    },
+    {
+      "institution_id": "6247e4e6-c3be-5817-a216-9ec4742965c1",
+      "slug": "island-mortgage-inc",
+      "canonical_name": "ISLAND MORTGAGE, INC.",
+      "display_name": "ISLAND MORTGAGE, INC.",
+      "presentation_name": "ISLAND MORTGAGE, INC.",
+      "stable_key": "nmls-inst:1000869",
+      "historical_names": [],
+      "nmls": "1000869",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "island mortgage inc"
+    },
+    {
+      "institution_id": "04714bc7-88cb-58b4-bcf4-7b18cdde8957",
+      "slug": "itwins-financial-inc",
+      "canonical_name": "ITWINS FINANCIAL, INC",
+      "display_name": "ITWINS FINANCIAL, INC",
+      "presentation_name": "ITWINS FINANCIAL, INC",
+      "stable_key": "nmls-inst:1561644",
+      "historical_names": [],
+      "nmls": "1561644",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "itwins financial inc"
+    },
+    {
+      "institution_id": "8b9140e9-a141-53bb-bfc5-a9c1e8b14897",
+      "slug": "jmac-lending-inc",
+      "canonical_name": "JMAC LENDING, INC.",
+      "display_name": "JMAC LENDING, INC.",
+      "presentation_name": "JMAC LENDING, INC.",
+      "stable_key": "nmls-inst:53112",
+      "historical_names": [],
+      "nmls": "53112",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "jmac lending inc"
+    },
+    {
+      "institution_id": "dc2e0796-72a7-55d0-9a6f-db7074d6ee87",
+      "slug": "jorolenz-mortgage-llc",
+      "canonical_name": "JOROLENZ MORTGAGE LLC",
+      "display_name": "JOROLENZ MORTGAGE LLC",
+      "presentation_name": "JOROLENZ MORTGAGE LLC",
+      "stable_key": "nmls-inst:2292355",
+      "historical_names": [],
+      "nmls": "2292355",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "jorolenz mortgage llc"
+    },
+    {
+      "institution_id": "51a8c5b0-03a6-5315-939c-dd99eef6beac",
+      "slug": "jumbo-loan-experts-llc",
+      "canonical_name": "JUMBO LOAN EXPERTS LLC",
+      "display_name": "JUMBO LOAN EXPERTS LLC",
+      "presentation_name": "JUMBO LOAN EXPERTS LLC",
+      "stable_key": "nmls-inst:1030124",
+      "historical_names": [],
+      "nmls": "1030124",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "jumbo loan experts llc"
+    },
+    {
+      "institution_id": "06d4271e-8dc3-5ce1-b4cb-79347fa7e8ad",
+      "slug": "k-and-c-processing-llc",
+      "canonical_name": "K & C PROCESSING LLC",
+      "display_name": "K & C PROCESSING LLC",
+      "presentation_name": "K & C PROCESSING LLC",
+      "stable_key": "nmls-inst:2469156",
+      "historical_names": [],
+      "nmls": "2469156",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "k and c processing llc"
+    },
+    {
+      "institution_id": "40a18cfa-094d-58c1-8071-8e487b67cb2d",
+      "slug": "l-a-valley-realty-inc",
+      "canonical_name": "L.A. VALLEY REALTY INC.",
+      "display_name": "L.A. VALLEY REALTY INC.",
+      "presentation_name": "L.A. VALLEY REALTY INC.",
+      "stable_key": "nmls-inst:236556",
+      "historical_names": [],
+      "nmls": "236556",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "l a valley realty inc"
+    },
+    {
+      "institution_id": "5d297789-dcc3-5422-b1f8-4c5402d5eba9",
+      "slug": "lake-pointe-mortgage-l-l-c",
+      "canonical_name": "LAKE POINTE MORTGAGE, L.L.C.",
+      "display_name": "LAKE POINTE MORTGAGE, L.L.C.",
+      "presentation_name": "LAKE POINTE MORTGAGE, L.L.C.",
+      "stable_key": "nmls-inst:1596039",
+      "historical_names": [],
+      "nmls": "1596039",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "lake pointe mortgage l l c"
+    },
+    {
+      "institution_id": "2c1c12f3-d179-558f-b049-e859c8a6fe6d",
+      "slug": "lend-a-loan-llc",
+      "canonical_name": "LEND-A-LOAN LLC",
+      "display_name": "LEND-A-LOAN LLC",
+      "presentation_name": "LEND-A-LOAN LLC",
+      "stable_key": "nmls-inst:2101891",
+      "historical_names": [],
+      "nmls": "2101891",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR",
+        "MLD"
+      ],
+      "normalized_name": "lend a loan llc"
+    },
+    {
+      "institution_id": "1579c585-9a25-5b0e-888b-1a19836ab817",
+      "slug": "lendercity-inc",
+      "canonical_name": "LENDERCITY, INC.",
+      "display_name": "LENDERCITY, INC.",
+      "presentation_name": "LENDERCITY, INC.",
+      "stable_key": "nmls-inst:193390",
+      "historical_names": [],
+      "nmls": "193390",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "lendercity inc"
+    },
+    {
+      "institution_id": "756e82c0-8c71-5890-bf26-1cca625444f5",
+      "slug": "lennar-mortgage-llc",
+      "canonical_name": "LENNAR MORTGAGE, LLC",
+      "display_name": "LENNAR MORTGAGE, LLC",
+      "presentation_name": "LENNAR MORTGAGE, LLC",
+      "stable_key": "nmls-inst:1058",
+      "historical_names": [],
+      "nmls": "1058",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "lennar mortgage llc"
+    },
+    {
+      "institution_id": "0c72722a-2ed0-5eeb-a2bf-ce18daae4b0a",
+      "slug": "lewin-and-associates-inc",
+      "canonical_name": "LEWIN & ASSOCIATES, INC.",
+      "display_name": "LEWIN & ASSOCIATES, INC.",
+      "presentation_name": "LEWIN & ASSOCIATES, INC.",
+      "stable_key": "nmls-inst:339259",
+      "historical_names": [],
+      "nmls": "339259",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "lewin and associates inc"
+    },
+    {
+      "institution_id": "96330869-6fd3-5d3b-8743-626427de18b6",
+      "slug": "liberty-mortgage-associates-inc",
+      "canonical_name": "LIBERTY MORTGAGE ASSOCIATES INC",
+      "display_name": "LIBERTY MORTGAGE ASSOCIATES INC",
+      "presentation_name": "LIBERTY MORTGAGE ASSOCIATES INC",
+      "stable_key": "nmls-inst:275236",
+      "historical_names": [],
+      "nmls": "275236",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "liberty mortgage associates inc"
+    },
+    {
+      "institution_id": "3b3bef74-830c-56ef-a0d0-bd90fc1e8a39",
+      "slug": "loanpro-mortgage-solutions-llc",
+      "canonical_name": "LOANPRO MORTGAGE SOLUTIONS, LLC",
+      "display_name": "LOANPRO MORTGAGE SOLUTIONS, LLC",
+      "presentation_name": "LOANPRO MORTGAGE SOLUTIONS, LLC",
+      "stable_key": "nmls-inst:1229691",
+      "historical_names": [],
+      "nmls": "1229691",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "loanpro mortgage solutions llc"
+    },
+    {
+      "institution_id": "c8ef7243-c281-53ec-8ea4-e2f9bd32a6c5",
+      "slug": "lone-mortgage-inc",
+      "canonical_name": "LONE MORTGAGE, INC.",
+      "display_name": "LONE MORTGAGE, INC.",
+      "presentation_name": "LONE MORTGAGE, INC.",
+      "stable_key": "nmls-inst:328524",
+      "historical_names": [],
+      "nmls": "328524",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "lone mortgage inc"
+    },
+    {
+      "institution_id": "197aff60-07b7-5cac-af20-b0093215b18b",
+      "slug": "lower-llc",
+      "canonical_name": "LOWER, LLC",
+      "display_name": "LOWER, LLC",
+      "presentation_name": "LOWER, LLC",
+      "stable_key": "nmls-inst:1124061",
+      "historical_names": [],
+      "nmls": "1124061",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "lower llc"
+    },
+    {
+      "institution_id": "9a5331d8-6974-54b7-9521-a695fb60fae8",
+      "slug": "loyal-lending-solutions-llc",
+      "canonical_name": "LOYAL LENDING SOLUTIONS LLC",
+      "display_name": "LOYAL LENDING SOLUTIONS LLC",
+      "presentation_name": "LOYAL LENDING SOLUTIONS LLC",
+      "stable_key": "nmls-inst:1175577",
+      "historical_names": [],
+      "nmls": "1175577",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "loyal lending solutions llc"
+    },
+    {
+      "institution_id": "65a8fe47-81e3-5352-99d3-dd1c91a9b6b9",
+      "slug": "miami-beach-mortgage-lenders-llc",
+      "canonical_name": "MIAMI BEACH MORTGAGE LENDERS LLC",
+      "display_name": "MIAMI BEACH MORTGAGE LENDERS LLC",
+      "presentation_name": "MIAMI BEACH MORTGAGE LENDERS LLC",
+      "stable_key": "nmls-inst:1659700",
+      "historical_names": [],
+      "nmls": "1659700",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "miami beach mortgage lenders llc"
+    },
+    {
+      "institution_id": "6adc6fde-8768-5a94-a0a3-631a6338a52a",
+      "slug": "miles-funding-l-l-c",
+      "canonical_name": "MILES FUNDING, L.L.C.",
+      "display_name": "MILES FUNDING, L.L.C.",
+      "presentation_name": "MILES FUNDING, L.L.C.",
+      "stable_key": "nmls-inst:1448227",
+      "historical_names": [],
+      "nmls": "1448227",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "miles funding l l c"
+    },
+    {
+      "institution_id": "4165204e-da7d-5a86-ba38-44ef4008e4c4",
+      "slug": "moonstone-mortgage-llc",
+      "canonical_name": "MOONSTONE MORTGAGE, LLC",
+      "display_name": "MOONSTONE MORTGAGE, LLC",
+      "presentation_name": "MOONSTONE MORTGAGE, LLC",
+      "stable_key": "nmls-inst:2524554",
+      "historical_names": [],
+      "nmls": "2524554",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "moonstone mortgage llc"
+    },
+    {
+      "institution_id": "fe50f2bf-fff2-5981-8046-e5a8fd9259b1",
+      "slug": "mortgage-america-investors-llc",
+      "canonical_name": "MORTGAGE AMERICA INVESTORS LLC",
+      "display_name": "MORTGAGE AMERICA INVESTORS LLC",
+      "presentation_name": "MORTGAGE AMERICA INVESTORS LLC",
+      "stable_key": "nmls-inst:1067081",
+      "historical_names": [],
+      "nmls": "1067081",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "mortgage america investors llc"
+    },
+    {
+      "institution_id": "f259708d-233e-5d8c-a7c8-9f799992db85",
+      "slug": "mortgage-america-inc",
+      "canonical_name": "MORTGAGE AMERICA, INC.",
+      "display_name": "MORTGAGE AMERICA, INC.",
+      "presentation_name": "MORTGAGE AMERICA, INC.",
+      "stable_key": "nmls-inst:128501",
+      "historical_names": [],
+      "nmls": "128501",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "mortgage america inc"
+    },
+    {
+      "institution_id": "37119d50-669b-5892-a12b-3512dbed6e94",
+      "slug": "mortgage-capital-llc-nmls-2337695",
+      "canonical_name": "MORTGAGE CAPITAL LLC",
+      "display_name": "MORTGAGE CAPITAL LLC",
+      "presentation_name": "MORTGAGE CAPITAL LLC",
+      "stable_key": "nmls-inst:2337695",
+      "historical_names": [],
+      "nmls": "2337695",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "mortgage capital llc"
+    },
+    {
+      "institution_id": "5f8b618a-6039-5485-beb4-b466e95b993b",
+      "slug": "mortgage-lending-masters-llc",
+      "canonical_name": "MORTGAGE LENDING MASTERS, LLC",
+      "display_name": "MORTGAGE LENDING MASTERS, LLC",
+      "presentation_name": "MORTGAGE LENDING MASTERS, LLC",
+      "stable_key": "nmls-inst:1005474",
+      "historical_names": [],
+      "nmls": "1005474",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "mortgage lending masters llc"
+    },
+    {
+      "institution_id": "2ec137bc-44bd-5362-af6a-d8644bc1418f",
+      "slug": "mortgage-now-loans-llc",
+      "canonical_name": "MORTGAGE NOW LOANS LLC",
+      "display_name": "MORTGAGE NOW LOANS LLC",
+      "presentation_name": "MORTGAGE NOW LOANS LLC",
+      "stable_key": "nmls-inst:2487671",
+      "historical_names": [],
+      "nmls": "2487671",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "mortgage now loans llc"
+    },
+    {
+      "institution_id": "dd09424f-ab39-5b87-af9e-b85b71274e43",
+      "slug": "mortgage-solutions-fcs-inc",
+      "canonical_name": "MORTGAGE SOLUTIONS FCS INC.",
+      "display_name": "MORTGAGE SOLUTIONS FCS INC.",
+      "presentation_name": "MORTGAGE SOLUTIONS FCS INC.",
+      "stable_key": "nmls-inst:1065732",
+      "historical_names": [],
+      "nmls": "1065732",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "mortgage solutions fcs inc"
+    },
+    {
+      "institution_id": "1f43504e-c620-55ee-88ab-9b336bf63723",
+      "slug": "mutual-mortgage-lending-corp",
+      "canonical_name": "MUTUAL MORTGAGE LENDING CORP",
+      "display_name": "MUTUAL MORTGAGE LENDING CORP",
+      "presentation_name": "MUTUAL MORTGAGE LENDING CORP",
+      "stable_key": "nmls-inst:1662417",
+      "historical_names": [],
+      "nmls": "1662417",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "mutual mortgage lending corp"
+    },
+    {
+      "institution_id": "78b850b9-265d-507a-8d26-bf7252d89229",
+      "slug": "my-denver-mortgage-company",
+      "canonical_name": "MY DENVER MORTGAGE COMPANY",
+      "display_name": "MY DENVER MORTGAGE COMPANY",
+      "presentation_name": "MY DENVER MORTGAGE COMPANY",
+      "stable_key": "nmls-inst:1802268",
+      "historical_names": [],
+      "nmls": "1802268",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "my denver mortgage company"
+    },
+    {
+      "institution_id": "ca6eaf7c-8c3b-5232-998a-ade460979ea3",
+      "slug": "my-land-mortgage-llc",
+      "canonical_name": "MY LAND MORTGAGE LLC",
+      "display_name": "MY LAND MORTGAGE LLC",
+      "presentation_name": "MY LAND MORTGAGE LLC",
+      "stable_key": "nmls-inst:391343",
+      "historical_names": [],
+      "nmls": "391343",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "my land mortgage llc"
+    },
+    {
+      "institution_id": "253b14dc-50a3-57b6-aa38-02b8ab1c8788",
+      "slug": "national-choice-mortgage-inc",
+      "canonical_name": "NATIONAL CHOICE MORTGAGE INC.",
+      "display_name": "NATIONAL CHOICE MORTGAGE INC.",
+      "presentation_name": "NATIONAL CHOICE MORTGAGE INC.",
+      "stable_key": "nmls-inst:2688612",
+      "historical_names": [],
+      "nmls": "2688612",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "national choice mortgage inc"
+    },
+    {
+      "institution_id": "9661955a-27e2-52b4-ad0f-42249e438920",
+      "slug": "national-mortgage-group",
+      "canonical_name": "NATIONAL MORTGAGE GROUP",
+      "display_name": "NATIONAL MORTGAGE GROUP",
+      "presentation_name": "NATIONAL MORTGAGE GROUP",
+      "stable_key": "nmls-inst:1040637",
+      "historical_names": [],
+      "nmls": "1040637",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "national mortgage group"
+    },
+    {
+      "institution_id": "2004574b-cd74-5d94-8734-8b0d2643ab34",
+      "slug": "nations-trust-mortgage-inc",
+      "canonical_name": "NATIONS TRUST MORTGAGE INC",
+      "display_name": "NATIONS TRUST MORTGAGE INC",
+      "presentation_name": "NATIONS TRUST MORTGAGE INC",
+      "stable_key": "nmls-inst:1125367",
+      "historical_names": [],
+      "nmls": "1125367",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "nations trust mortgage inc"
+    },
+    {
+      "institution_id": "5e74725b-0036-5643-9f1c-102149f21bda",
+      "slug": "new-millennium-mortgage-co",
+      "canonical_name": "NEW MILLENNIUM MORTGAGE CO.",
+      "display_name": "NEW MILLENNIUM MORTGAGE CO.",
+      "presentation_name": "NEW MILLENNIUM MORTGAGE CO.",
+      "stable_key": "nmls-inst:331173",
+      "historical_names": [],
+      "nmls": "331173",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "new millennium mortgage co"
+    },
+    {
+      "institution_id": "b2cdea92-34e9-5d25-9092-8f11dda83c84",
+      "slug": "new-vista-funding-corporation",
+      "canonical_name": "NEW VISTA FUNDING CORPORATION",
+      "display_name": "NEW VISTA FUNDING CORPORATION",
+      "presentation_name": "NEW VISTA FUNDING CORPORATION",
+      "stable_key": "nmls-inst:2511364",
+      "historical_names": [],
+      "nmls": "2511364",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "new vista funding corporation"
+    },
+    {
+      "institution_id": "33ca7ce3-52a8-5bfb-9d76-bae30da3b916",
+      "slug": "nextres-llc",
+      "canonical_name": "NEXTRES, LLC",
+      "display_name": "NEXTRES, LLC",
+      "presentation_name": "NEXTRES, LLC",
+      "stable_key": "nmls-inst:2321794",
+      "historical_names": [],
+      "nmls": "2321794",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "nextres llc"
+    },
+    {
+      "institution_id": "c228a045-c5be-51e9-9a55-e220847a3f0f",
+      "slug": "north-point-mortgage-advisors-llc",
+      "canonical_name": "NORTH POINT MORTGAGE ADVISORS, LLC",
+      "display_name": "NORTH POINT MORTGAGE ADVISORS, LLC",
+      "presentation_name": "NORTH POINT MORTGAGE ADVISORS, LLC",
+      "stable_key": "nmls-inst:1011251",
+      "historical_names": [],
+      "nmls": "1011251",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "north point mortgage advisors llc"
+    },
+    {
+      "institution_id": "7915d856-7445-53aa-af14-8acb426d7e5a",
+      "slug": "nvr-mortgage-finance-inc",
+      "canonical_name": "NVR MORTGAGE FINANCE, INC.",
+      "display_name": "NVR MORTGAGE FINANCE, INC.",
+      "presentation_name": "NVR MORTGAGE FINANCE, INC.",
+      "stable_key": "nmls-inst:1127",
+      "historical_names": [],
+      "nmls": "1127",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "nvr mortgage finance inc"
+    },
+    {
+      "institution_id": "57daaab1-4935-56f4-8ace-209d038d49fc",
+      "slug": "obsidian-financial-services-inc",
+      "canonical_name": "OBSIDIAN FINANCIAL SERVICES, INC.",
+      "display_name": "OBSIDIAN FINANCIAL SERVICES, INC.",
+      "presentation_name": "OBSIDIAN FINANCIAL SERVICES, INC.",
+      "stable_key": "nmls-inst:1425046",
+      "historical_names": [],
+      "nmls": "1425046",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "obsidian financial services inc"
+    },
+    {
+      "institution_id": "995bd671-9f4d-5a84-82f9-bab4812ef041",
+      "slug": "onity-mortgage-corporation",
+      "canonical_name": "ONITY MORTGAGE CORPORATION",
+      "display_name": "ONITY MORTGAGE CORPORATION",
+      "presentation_name": "ONITY MORTGAGE CORPORATION",
+      "stable_key": "nmls-inst:2726",
+      "historical_names": [],
+      "nmls": "2726",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "onity mortgage corporation"
+    },
+    {
+      "institution_id": "31ee463c-1ae7-5454-a3ed-dc2b6eff37a1",
+      "slug": "oply-llc",
+      "canonical_name": "OPLY, LLC.",
+      "display_name": "OPLY, LLC.",
+      "presentation_name": "OPLY, LLC.",
+      "stable_key": "nmls-inst:2585327",
+      "historical_names": [],
+      "nmls": "2585327",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "oply llc"
+    },
+    {
+      "institution_id": "20a7aa20-6a65-5447-9447-d8f68454e8da",
+      "slug": "optimum-first-inc",
+      "canonical_name": "OPTIMUM FIRST INC.",
+      "display_name": "OPTIMUM FIRST INC.",
+      "presentation_name": "OPTIMUM FIRST INC.",
+      "stable_key": "nmls-inst:240415",
+      "historical_names": [],
+      "nmls": "240415",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "optimum first inc"
+    },
+    {
+      "institution_id": "61add5b5-e92d-5f00-82b3-da52d9089951",
+      "slug": "par-east-mortgage-co-inc",
+      "canonical_name": "PAR EAST MORTGAGE CO., INC.",
+      "display_name": "PAR EAST MORTGAGE CO., INC.",
+      "presentation_name": "PAR EAST MORTGAGE CO., INC.",
+      "stable_key": "nmls-inst:10098",
+      "historical_names": [],
+      "nmls": "10098",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "par east mortgage co inc"
+    },
+    {
+      "institution_id": "f7163fb9-450a-5890-9a97-d44739acb0b4",
+      "slug": "park-avenue-lending-llc",
+      "canonical_name": "PARK AVENUE LENDING LLC",
+      "display_name": "PARK AVENUE LENDING LLC",
+      "presentation_name": "PARK AVENUE LENDING LLC",
+      "stable_key": "nmls-inst:1251153",
+      "historical_names": [],
+      "nmls": "1251153",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "park avenue lending llc"
+    },
+    {
+      "institution_id": "c5790e32-82bb-5af8-bff9-21a0883d83e1",
+      "slug": "pd-financial-llc",
+      "canonical_name": "PD FINANCIAL, LLC",
+      "display_name": "PD FINANCIAL, LLC",
+      "presentation_name": "PD FINANCIAL, LLC",
+      "stable_key": "nmls-inst:2607933",
+      "historical_names": [],
+      "nmls": "2607933",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "pd financial llc"
+    },
+    {
+      "institution_id": "e858ff80-5c51-5c4b-96f2-e319bc594fdf",
+      "slug": "pierpoint-mortgage-llc",
+      "canonical_name": "PIERPOINT MORTGAGE, LLC",
+      "display_name": "PIERPOINT MORTGAGE, LLC",
+      "presentation_name": "PIERPOINT MORTGAGE, LLC",
+      "stable_key": "nmls-inst:112844",
+      "historical_names": [],
+      "nmls": "112844",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "pierpoint mortgage llc"
+    },
+    {
+      "institution_id": "ac638d0e-f8a7-5e66-afad-6d0f5adc841f",
+      "slug": "pmg-worldwide-inc",
+      "canonical_name": "PMG WORLDWIDE INC",
+      "display_name": "PMG WORLDWIDE INC",
+      "presentation_name": "PMG WORLDWIDE INC",
+      "stable_key": "nmls-inst:2027614",
+      "historical_names": [],
+      "nmls": "2027614",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "pmg worldwide inc"
+    },
+    {
+      "institution_id": "0f5aa5eb-495f-5170-b8a7-7ff5c74ec3ce",
+      "slug": "power-purchase-mortgage-llc",
+      "canonical_name": "POWER PURCHASE MORTGAGE, LLC",
+      "display_name": "POWER PURCHASE MORTGAGE, LLC",
+      "presentation_name": "POWER PURCHASE MORTGAGE, LLC",
+      "stable_key": "nmls-inst:1443858",
+      "historical_names": [],
+      "nmls": "1443858",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "power purchase mortgage llc"
+    },
+    {
+      "institution_id": "8d87131c-8f83-508b-a2f5-33c834714d3c",
+      "slug": "premier-lending-corp",
+      "canonical_name": "PREMIER LENDING CORP",
+      "display_name": "PREMIER LENDING CORP",
+      "presentation_name": "PREMIER LENDING CORP",
+      "stable_key": "nmls-inst:1156346",
+      "historical_names": [],
+      "nmls": "1156346",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "premier lending corp"
+    },
+    {
+      "institution_id": "b091d35a-014b-54aa-bea1-1d71c5fc48a0",
+      "slug": "prime-home-loans-inc",
+      "canonical_name": "PRIME HOME LOANS, INC.",
+      "display_name": "PRIME HOME LOANS, INC.",
+      "presentation_name": "PRIME HOME LOANS, INC.",
+      "stable_key": "nmls-inst:98975",
+      "historical_names": [],
+      "nmls": "98975",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "prime home loans inc"
+    },
+    {
+      "institution_id": "e3d336a1-9585-5f33-8e00-eec3ebf6684c",
+      "slug": "priority-1-lending-llc",
+      "canonical_name": "PRIORITY 1 LENDING, LLC",
+      "display_name": "PRIORITY 1 LENDING, LLC",
+      "presentation_name": "PRIORITY 1 LENDING, LLC",
+      "stable_key": "nmls-inst:1375378",
+      "historical_names": [],
+      "nmls": "1375378",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "priority 1 lending llc"
+    },
+    {
+      "institution_id": "eb5b13fd-fc84-5488-b54e-444e576eb459",
+      "slug": "public-trust-mortgage-llc",
+      "canonical_name": "PUBLIC TRUST MORTGAGE LLC",
+      "display_name": "PUBLIC TRUST MORTGAGE LLC",
+      "presentation_name": "PUBLIC TRUST MORTGAGE LLC",
+      "stable_key": "nmls-inst:2580240",
+      "historical_names": [],
+      "nmls": "2580240",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "public trust mortgage llc"
+    },
+    {
+      "institution_id": "c617ded4-9914-5710-a2b2-d127ff445318",
+      "slug": "quality-first-finance-corporation",
+      "canonical_name": "QUALITY FIRST FINANCE CORPORATION",
+      "display_name": "QUALITY FIRST FINANCE CORPORATION",
+      "presentation_name": "QUALITY FIRST FINANCE CORPORATION",
+      "stable_key": "nmls-inst:175847",
+      "historical_names": [],
+      "nmls": "175847",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "quality first finance corporation"
+    },
+    {
+      "institution_id": "5bee7800-fd43-553d-b40b-3a2e7bdc535b",
+      "slug": "queen-city-funding-inc",
+      "canonical_name": "QUEEN CITY FUNDING INC.",
+      "display_name": "QUEEN CITY FUNDING INC.",
+      "presentation_name": "QUEEN CITY FUNDING INC.",
+      "stable_key": "nmls-inst:52412",
+      "historical_names": [],
+      "nmls": "52412",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "queen city funding inc"
+    },
+    {
+      "institution_id": "df6d5eb9-41ec-54c4-b473-f9b0d2a1e887",
+      "slug": "quick-quote-mortgage-inc",
+      "canonical_name": "QUICK QUOTE MORTGAGE INC.",
+      "display_name": "QUICK QUOTE MORTGAGE INC.",
+      "presentation_name": "QUICK QUOTE MORTGAGE INC.",
+      "stable_key": "nmls-inst:388278",
+      "historical_names": [],
+      "nmls": "388278",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "quick quote mortgage inc"
+    },
+    {
+      "institution_id": "91a14fe8-1eb2-5974-aaf6-a564024c9e9f",
+      "slug": "regent-mortgage-corporation",
+      "canonical_name": "REGENT MORTGAGE CORPORATION",
+      "display_name": "REGENT MORTGAGE CORPORATION",
+      "presentation_name": "REGENT MORTGAGE CORPORATION",
+      "stable_key": "nmls-inst:1092255",
+      "historical_names": [],
+      "nmls": "1092255",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "regent mortgage corporation"
+    },
+    {
+      "institution_id": "e58185d3-e1a3-53af-8ffb-9048e81ed6eb",
+      "slug": "richen-financial-group-llc",
+      "canonical_name": "RICHEN FINANCIAL GROUP, LLC",
+      "display_name": "RICHEN FINANCIAL GROUP, LLC",
+      "presentation_name": "RICHEN FINANCIAL GROUP, LLC",
+      "stable_key": "nmls-inst:1799772",
+      "historical_names": [],
+      "nmls": "1799772",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "richen financial group llc"
+    },
+    {
+      "institution_id": "433fab03-b178-5d84-af2b-52a5be600f99",
+      "slug": "rmg-mortgage-group-llc",
+      "canonical_name": "RMG MORTGAGE GROUP, LLC",
+      "display_name": "RMG MORTGAGE GROUP, LLC",
+      "presentation_name": "RMG MORTGAGE GROUP, LLC",
+      "stable_key": "nmls-inst:2111",
+      "historical_names": [],
+      "nmls": "2111",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "rmg mortgage group llc"
+    },
+    {
+      "institution_id": "7dd32954-1ceb-5ebb-a031-1779185591da",
+      "slug": "rok-lending-llc",
+      "canonical_name": "ROK LENDING LLC",
+      "display_name": "ROK LENDING LLC",
+      "presentation_name": "ROK LENDING LLC",
+      "stable_key": "nmls-inst:1702520",
+      "historical_names": [],
+      "nmls": "1702520",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "rok lending llc"
+    },
+    {
+      "institution_id": "fa86bad8-f665-50b8-adc3-7c3beb7bbab9",
+      "slug": "saffron-premier-mortgage-llc",
+      "canonical_name": "SAFFRON PREMIER MORTGAGE LLC",
+      "display_name": "SAFFRON PREMIER MORTGAGE LLC",
+      "presentation_name": "SAFFRON PREMIER MORTGAGE LLC",
+      "stable_key": "nmls-inst:2620589",
+      "historical_names": [],
+      "nmls": "2620589",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "saffron premier mortgage llc"
+    },
+    {
+      "institution_id": "58be705f-a7ef-5d9a-9080-6eb8c64cbd97",
+      "slug": "sea-vista-home-loans-llc",
+      "canonical_name": "SEA VISTA HOME LOANS LLC",
+      "display_name": "SEA VISTA HOME LOANS LLC",
+      "presentation_name": "SEA VISTA HOME LOANS LLC",
+      "stable_key": "nmls-inst:1159300",
+      "historical_names": [],
+      "nmls": "1159300",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "sea vista home loans llc"
+    },
+    {
+      "institution_id": "625eed6a-1785-54a7-9943-6322fbb924b1",
+      "slug": "sky-apply-mortgage-inc",
+      "canonical_name": "SKY APPLY MORTGAGE INC",
+      "display_name": "SKY APPLY MORTGAGE INC",
+      "presentation_name": "SKY APPLY MORTGAGE INC",
+      "stable_key": "nmls-inst:1060707",
+      "historical_names": [],
+      "nmls": "1060707",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "sky apply mortgage inc"
+    },
+    {
+      "institution_id": "0e09bd78-86e0-594f-ab49-f941c92731c8",
+      "slug": "southeast-florida-residential-mortgage-corp",
+      "canonical_name": "SOUTHEAST FLORIDA RESIDENTIAL MORTGAGE CORP.",
+      "display_name": "SOUTHEAST FLORIDA RESIDENTIAL MORTGAGE CORP.",
+      "presentation_name": "SOUTHEAST FLORIDA RESIDENTIAL MORTGAGE CORP.",
+      "stable_key": "nmls-inst:1464037",
+      "historical_names": [],
+      "nmls": "1464037",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "southeast florida residential mortgage corp"
+    },
+    {
+      "institution_id": "b986c434-e606-5566-83ff-5661ea86a966",
+      "slug": "tallahassee-lenders-consortium-inc",
+      "canonical_name": "TALLAHASSEE LENDERS' CONSORTIUM, INC.",
+      "display_name": "TALLAHASSEE LENDERS' CONSORTIUM, INC.",
+      "presentation_name": "TALLAHASSEE LENDERS' CONSORTIUM, INC.",
+      "stable_key": "nmls-inst:372580",
+      "historical_names": [],
+      "nmls": "372580",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "tallahassee lenders consortium inc"
+    },
+    {
+      "institution_id": "25599124-48a9-544d-9a36-e1e71b818b74",
+      "slug": "tam-lending-center-inc",
+      "canonical_name": "TAM LENDING CENTER INC.",
+      "display_name": "TAM LENDING CENTER INC.",
+      "presentation_name": "TAM LENDING CENTER INC.",
+      "stable_key": "nmls-inst:984914",
+      "historical_names": [],
+      "nmls": "984914",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "tam lending center inc"
+    },
+    {
+      "institution_id": "7b430339-8069-5805-b74e-eb3d77809069",
+      "slug": "the-funding-store-llc",
+      "canonical_name": "THE FUNDING STORE LLC",
+      "display_name": "THE FUNDING STORE LLC",
+      "presentation_name": "THE FUNDING STORE LLC",
+      "stable_key": "nmls-inst:228206",
+      "historical_names": [],
+      "nmls": "228206",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "the funding store llc"
+    },
+    {
+      "institution_id": "ff75af79-f9c5-50aa-83fc-42775be9056c",
+      "slug": "the-okavage-group-llc",
+      "canonical_name": "THE OKAVAGE GROUP, LLC",
+      "display_name": "THE OKAVAGE GROUP, LLC",
+      "presentation_name": "THE OKAVAGE GROUP, LLC",
+      "stable_key": "nmls-inst:2024379",
+      "historical_names": [],
+      "nmls": "2024379",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "the okavage group llc"
+    },
+    {
+      "institution_id": "a137e9bf-068f-53ee-a0f5-5c6a40bdc570",
+      "slug": "the-truth-about-lending-llc",
+      "canonical_name": "THE TRUTH ABOUT LENDING LLC",
+      "display_name": "THE TRUTH ABOUT LENDING LLC",
+      "presentation_name": "THE TRUTH ABOUT LENDING LLC",
+      "stable_key": "nmls-inst:1054357",
+      "historical_names": [],
+      "nmls": "1054357",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "the truth about lending llc"
+    },
+    {
+      "institution_id": "27eda6ab-6f47-56cc-aeaa-9ab7019aa9d1",
+      "slug": "think-one-mortgage-inc",
+      "canonical_name": "THINK ONE MORTGAGE INC",
+      "display_name": "THINK ONE MORTGAGE INC",
+      "presentation_name": "THINK ONE MORTGAGE INC",
+      "stable_key": "nmls-inst:125182",
+      "historical_names": [],
+      "nmls": "125182",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "think one mortgage inc"
+    },
+    {
+      "institution_id": "ec796ff0-65fe-5337-a51e-683e1263286c",
+      "slug": "thompson-kane-and-company-inc",
+      "canonical_name": "THOMPSON KANE & COMPANY, INC.",
+      "display_name": "THOMPSON KANE & COMPANY, INC.",
+      "presentation_name": "THOMPSON KANE & COMPANY, INC.",
+      "stable_key": "nmls-inst:898428",
+      "historical_names": [],
+      "nmls": "898428",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "thompson kane and company inc"
+    },
+    {
+      "institution_id": "169cecb7-f69e-53ca-8db2-cf46eb6e9e66",
+      "slug": "top10bestlenders-com-llc",
+      "canonical_name": "TOP10BESTLENDERS.COM LLC",
+      "display_name": "TOP10BESTLENDERS.COM LLC",
+      "presentation_name": "TOP10BESTLENDERS.COM LLC",
+      "stable_key": "nmls-inst:2620807",
+      "historical_names": [],
+      "nmls": "2620807",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "top10bestlenders com llc"
+    },
+    {
+      "institution_id": "4b5cc7c7-758b-5207-8777-1a6af7e6efff",
+      "slug": "tsi-financial-services-inc",
+      "canonical_name": "TSI FINANCIAL SERVICES, INC.",
+      "display_name": "TSI FINANCIAL SERVICES, INC.",
+      "presentation_name": "TSI FINANCIAL SERVICES, INC.",
+      "stable_key": "nmls-inst:2410688",
+      "historical_names": [],
+      "nmls": "2410688",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "tsi financial services inc"
+    },
+    {
+      "institution_id": "612db710-c6e7-5d2c-bc8a-fc36194185e6",
+      "slug": "ultimate-mortgage-connection-llc",
+      "canonical_name": "ULTIMATE MORTGAGE CONNECTION LLC",
+      "display_name": "ULTIMATE MORTGAGE CONNECTION LLC",
+      "presentation_name": "ULTIMATE MORTGAGE CONNECTION LLC",
+      "stable_key": "nmls-inst:1086140",
+      "historical_names": [],
+      "nmls": "1086140",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MLD"
+      ],
+      "normalized_name": "ultimate mortgage connection llc"
+    },
+    {
+      "institution_id": "6ab370cc-5f1b-5989-bffd-d74f8aeabf3f",
+      "slug": "uptown-financial-group-inc",
+      "canonical_name": "UPTOWN FINANCIAL GROUP, INC.",
+      "display_name": "UPTOWN FINANCIAL GROUP, INC.",
+      "presentation_name": "UPTOWN FINANCIAL GROUP, INC.",
+      "stable_key": "nmls-inst:1006777",
+      "historical_names": [],
+      "nmls": "1006777",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "uptown financial group inc"
+    },
+    {
+      "institution_id": "15ab126e-2bef-57fb-89f7-97ac8fcfd221",
+      "slug": "via-lending-llc",
+      "canonical_name": "VIA LENDING LLC",
+      "display_name": "VIA LENDING LLC",
+      "presentation_name": "VIA LENDING LLC",
+      "stable_key": "nmls-inst:2504927",
+      "historical_names": [],
+      "nmls": "2504927",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "via lending llc"
+    },
+    {
+      "institution_id": "8409fb47-b03b-5d69-8395-b2dfbb590861",
+      "slug": "wemlo-llc",
+      "canonical_name": "WEMLO, LLC",
+      "display_name": "WEMLO, LLC",
+      "presentation_name": "WEMLO, LLC",
+      "stable_key": "nmls-inst:1853218",
+      "historical_names": [],
+      "nmls": "1853218",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "wemlo llc"
+    },
+    {
+      "institution_id": "b6325e5f-4992-5bc4-8467-49f82b12d561",
+      "slug": "wheeler-capital-partners-llc",
+      "canonical_name": "WHEELER CAPITAL PARTNERS LLC",
+      "display_name": "WHEELER CAPITAL PARTNERS LLC",
+      "presentation_name": "WHEELER CAPITAL PARTNERS LLC",
+      "stable_key": "nmls-inst:1008714",
+      "historical_names": [],
+      "nmls": "1008714",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase1",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "wheeler capital partners llc"
+    },
+    {
+      "institution_id": "b8892b36-282f-573b-86a3-940ef9243656",
+      "slug": "zap-mortgage-llc",
+      "canonical_name": "ZAP MORTGAGE LLC",
+      "display_name": "ZAP MORTGAGE LLC",
+      "presentation_name": "ZAP MORTGAGE LLC",
+      "stable_key": "nmls-inst:2145797",
+      "historical_names": [],
+      "nmls": "2145797",
+      "fdic": null,
+      "ncua": null,
+      "lei": null,
+      "hq_city": null,
+      "hq_state": null,
+      "depository": "NONBANK",
+      "browse_types": [
+        "nonbank"
+      ],
+      "servicer_role": "NOT ESTABLISHED",
+      "evidence": {
+        "hmda": false,
+        "cfpb": false,
+        "enforcement": false,
+        "servicer": false
+      },
+      "indexable": true,
+      "publication_source": "florida_phase2",
+      "florida_classes": [
+        "MBR"
+      ],
+      "normalized_name": "zap mortgage llc"
+    }
+  ]
+}

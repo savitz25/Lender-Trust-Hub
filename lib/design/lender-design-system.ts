@@ -54,8 +54,9 @@ export const LENDER_HERO = {
   headline: 'Verify. Compare. Finance wisely.',
   support:
     'Independent research for lenders and financing options. We surface verified public data — including NMLS records — with no paid placements and no lead fees. You decide.',
-  primaryCta: { label: 'Start your comparison', href: '/compare' },
+  primaryCta: { label: 'Research a lender', href: '/lender' },
   secondaryCta: { label: 'Explore calculators', href: '/calculators' },
+  tertiaryCta: { label: 'Start your comparison', href: '/compare' },
   philosophy: 'We cite. You decide.',
   networkLine: 'The Wealth & Finance layer of the Ask Trust Hub network.',
   chips: [
@@ -64,8 +65,8 @@ export const LENDER_HERO = {
     { id: 'no-paid', label: 'No paid placements' },
     { id: 'compare', label: 'Side-by-side comparisons' },
   ],
-  searchTitle: 'Find local lenders',
-  searchHint: 'Enter a ZIP to browse licensed lenders in your area.',
+  searchTitle: 'Explore lenders by location',
+  searchHint: 'Enter a ZIP to browse local catalog pages. This is not the national institution research product.',
 } as const;
 
 /** Phase 3 — homepage sections below the hero */
@@ -75,6 +76,14 @@ export const LENDER_TOOLS = {
   support:
     'Practical research tools for financing decisions — not a lead marketplace. Start where you need clarity.',
   items: [
+    {
+      id: 'florida-research',
+      title: 'Florida research',
+      description:
+        'Official OFR licensing, HMDA Florida activity, CFPB complaint observations, and Regulatory & Enforcement History. Not a ranking.',
+      href: '/florida',
+      cta: 'Open Florida research',
+    },
     {
       id: 'compare',
       title: 'Compare lenders',
@@ -313,6 +322,7 @@ export const LENDER_FOOTER_COLUMNS = [
     title: 'Research',
     links: [
       { href: '/local-lenders', label: 'Local Lenders' },
+      { href: '/florida', label: 'Florida Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },

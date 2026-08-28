@@ -1,0 +1,737 @@
+{
+  "cohort_version": "lend-nat-014-v1",
+  "added_at": "2026-08-27",
+  "snapshots_audited": 8447,
+  "graph_counts": {
+    "institutions": 8447,
+    "person_mlo": 0,
+    "lei": 4715,
+    "nmls": 465,
+    "fdic": 5377,
+    "cfpb_events": 458146,
+    "cfpb_labels": 2499,
+    "cfpb_bridges": 74,
+    "cfpb_attached": 195368,
+    "enforcement": 17655,
+    "snapshots": 8447,
+    "branch": 0
+  },
+  "publication_status_counts": {
+    "PUBLICATION_ELIGIBLE": 3744,
+    "PUBLICATION_HOLD": 189,
+    "IDENTITY_REVIEW": 1639,
+    "HISTORICAL_ONLY": 2875
+  },
+  "identity_tier_counts": {
+    "multi_identifier": 3042,
+    "nmls_backed": 197,
+    "sparse_unresolved": 1639,
+    "fdic_backed": 3557,
+    "lei_backed": 12
+  },
+  "content_bucket_counts": {
+    "identity_plus_hmda": 2208,
+    "identity_plus_multiple": 838,
+    "identity_only": 1828,
+    "identity_plus_cfpb": 12,
+    "identity_plus_enforcement": 3557,
+    "identity_plus_depository": 1,
+    "servicer_sparse": 3
+  },
+  "identity_confidence_counts": {
+    "confirmed": 8447
+  },
+  "current_status_counts": {
+    "unknown": 460,
+    "observed": 4429,
+    "inactive": 2876,
+    "active": 682
+  },
+  "slug_collisions_resolved": {
+    "community-state-bank": [
+      "03840bf1-961b-56f3-bbce-5ce22ef9ef46",
+      "04c3d6d7-b723-57e7-b692-038ad2df5897",
+      "1f342760-efae-50c6-a0da-e1cbde505afb",
+      "2e37d2e1-3796-5a25-a94a-d2c748659e4c",
+      "454bbdc7-c2dd-53be-92e3-a7431430a8dc",
+      "9c34b04e-f5a5-562c-8180-aa24d124fe83",
+      "b5ff0fd3-8f3d-5a85-99ce-53c4ec8b0128",
+      "b8ffe411-4f6c-5f7e-8778-508c0e3e6593",
+      "e2f2cb68-cd3b-54b8-b197-50319f89d4e0"
+    ],
+    "central-bank": [
+      "0335f80f-4877-5141-b7e4-c7a67b065ccc",
+      "0562948a-caac-59c8-9bcd-1897930c769e",
+      "098bec59-1a60-53ad-8614-b721d15e1c87",
+      "0c23e837-6ea7-5bb9-8ba7-0f8e50da2b42",
+      "75b3ed85-9442-5b89-b353-08feb450f04e",
+      "ac09fa6b-8638-57c7-9d32-5ff3847473f8",
+      "e4fbeab9-d602-5d72-b996-f18c36f3a464"
+    ],
+    "peoples-bank": [
+      "060f0aca-c275-53e3-98a4-8b7880e8f4f9",
+      "069da119-dd08-58ba-b61e-4bd8c6ae2f87",
+      "10c67f71-9072-5fd3-a0c4-3efce286ae7f",
+      "2aa016f2-e566-5c13-92a2-a3a6141bd54b",
+      "3351537f-c75e-59f5-9600-5c27d83389e8",
+      "5a50b6d6-fd26-5ea8-a3d0-d71e675c2d4a",
+      "5f46cf57-18ef-5b72-b19f-a593c7f844bf",
+      "8b9b7fda-abd7-58bf-8c3e-bb4863ccd70c",
+      "8d0db007-a5eb-5299-bb15-9cee56ab8f53",
+      "9bef139a-a36b-53f4-9fe1-0f2a31ed7ceb",
+      "9cf9dcd9-b192-5947-a566-63edc610801c",
+      "a0caecb2-6263-5f28-bf43-b44c0dde8d82",
+      "c4591074-00b1-509c-9e3f-2a59f8143483",
+      "d45fdbd5-5b85-576c-90ad-596f2347dc8e",
+      "fb8d7e1d-8219-5916-a936-d7b7ff439563"
+    ],
+    "citizens-state-bank": [
+      "05cc84fa-084e-5cff-a4e9-83f02c82146b",
+      "0761dbbc-180b-5687-8524-655840df0795",
+      "12eb2e5d-7b80-5eb3-a45e-324efd18379d",
+      "1b094d32-c67a-5909-99e3-b1e656c4a10b",
+      "33d1a272-153c-5996-9020-74c9b47112a2",
+      "3616ed46-bdaf-5fe0-b51e-17efadd8efef",
+      "46e9b59a-2954-5387-a11a-483152ab8d87",
+      "88fa304e-5b3b-58b9-8871-743eea8ac224",
+      "9b2c3bd8-4272-51ef-b3de-11ab20455a7f",
+      "a77a44fb-382c-54af-8ec5-991366a453db",
+      "aa4f176d-77d3-54e8-9cf0-49be8da8f442",
+      "ab66006f-41be-5320-97a4-056cfa596f11",
+      "b551bfb5-b300-5ea7-b7ea-6a05c9e2305d",
+      "b56ab216-1c9c-5af0-8f94-66902c26fec5",
+      "b7ac720c-82e7-54be-9850-5783b4ee87f3",
+      "e547f1ea-94c4-542e-a5e4-80adf88525dc",
+      "e84c2324-690d-58a4-b86b-2b6e05f71b33",
+      "f7a5ccb0-e250-52dc-8c54-3bde0e2d4272",
+      "fed21d24-4df4-5313-9811-a0744baddd44",
+      "ffdf75c1-a130-5d4c-920d-9f8f01e1edbb"
+    ],
+    "the-first-state-bank": [
+      "09825cd1-ef5c-51c2-bf94-560e5bebdf57",
+      "0a4f9112-700c-5afd-8f19-7d83dcc3d527",
+      "11821db0-ae6e-5bcd-a802-677b69c65bbb",
+      "36424851-0653-5208-b85c-06e8afd38f48",
+      "59a125c5-7ec0-5039-ab1e-d5f5ee0d573f",
+      "65ca9026-38bb-59e9-aa82-7f950163ecff",
+      "85301825-7510-5257-95b6-f394ebed05c9",
+      "911da9dc-10e8-54cf-9ea0-bb7e15be5dda",
+      "9161c2c1-f1ff-5983-9031-5b37f5625f9c",
+      "92029586-f725-5129-8ce1-cc638077c95f",
+      "961b4ee2-71d1-5ea9-b168-d6c077a9ca9d",
+      "b5781790-ee1c-540f-833d-ea97096e8a25",
+      "e955b846-aa7b-534c-810a-8235b4a68175",
+      "fa30eb1f-be7b-58e0-a753-044f79a5b40e"
+    ],
+    "western-bank": [
+      "0a09efb7-69e2-58aa-8ed1-ca76a73f5660",
+      "0df6c99e-d501-582a-8537-e150c5de4a6f",
+      "c3d74d6d-09d8-5c2f-9121-5742ad2da65c"
+    ],
+    "first-state-bank": [
+      "0387990f-dcc1-51f7-afff-233d7e1ecb59",
+      "0e5dd18e-7c4d-538f-9e06-32ce6d10f15e",
+      "0eceb0db-4f62-5f44-9ed1-7b3f9f01c428",
+      "169be0e6-8367-5c14-a0e5-9e634bcdca88",
+      "16ab380d-501f-54e6-ab4c-3479482b1dba",
+      "1df40202-6450-5d28-8860-356171be88d5",
+      "271f8094-bce2-537d-979d-594e3b927597",
+      "2fc48d05-b267-5546-afa8-f75cbffbf968",
+      "37126a45-2d67-51b8-a8b2-1cc15d43eb24",
+      "380dca84-cb64-5e3b-ac78-8e7a4b1befff",
+      "38f43809-2690-5174-9464-92ad77d23cb5",
+      "3a779735-46d1-59b9-9f51-d18dfe6dc4c3",
+      "3aac8091-8fe3-5095-9999-022baa9d0771",
+      "4000e1a4-418c-59b8-a89b-bf101ce499d5",
+      "495a282f-5316-55ef-b582-e404ea918c9a",
+      "508b8c92-67d1-598a-adf7-0df5d3c7ce8c",
+      "5b1b3831-5fdc-510d-9876-5794a263983c",
+      "5c634e63-2acf-5080-b442-1f1bbf14a631",
+      "5c715fa7-6227-5289-8d8d-4f20efafe130",
+      "66584705-0fa8-5410-b525-e56b994b03c9",
+      "6baa2a45-ab13-5ec4-892a-14fe79643a59",
+      "7360fd7a-3569-585b-8e33-16c4f923c55d",
+      "750c277d-4778-58ec-aaf8-e38e6a796d03",
+      "8132353f-92b5-5921-8db3-a37631bacd21",
+      "83130220-b8f4-519b-a72e-ae51cb8bae1d",
+      "836bec09-28a0-53d3-b468-fe70e81ec11e",
+      "8898c7ad-c8c7-58fc-bf33-1138179d91c1",
+      "9fc9fe7f-0c17-5970-b7c0-35ec777262c3",
+      "a624511b-91ae-52ba-a083-f65840c8c298",
+      "a9aabce2-4ff6-58b7-9211-ee99a800e7a9",
+      "b1131953-354a-5f0e-9728-9a4147aa3853",
+      "b795aeb2-3df4-5887-8b7e-9f6e3f6cab6d",
+      "bed6a446-56bc-5da4-a3af-0d9741c3b57f",
+      "c0e2e00f-604a-597e-a7a8-46d99b2c2ff1",
+      "ca77476b-3f57-5d08-a88a-1bb5cb7d27ee",
+      "cc96f5e7-981a-5854-838e-431a113088af",
+      "d0e85d5f-015f-5300-9e63-8a9f0c91ec64",
+      "d28c3709-87c3-5721-bc46-7b4d5b6e0dc3",
+      "daa822d2-27ec-513f-9b80-d004fea49342",
+      "dbfe7030-bc90-5200-a062-fb5097ec60f0",
+      "dd950f09-22bc-54d0-9932-fa4bbe97e4b6",
+      "e2cbb75e-63f7-5bd8-b218-63ff6f59e052",
+      "ea41e46c-f080-5695-9647-effab65c6296",
+      "f17a5453-3a57-5e07-8b7b-ffaec10d7d33",
+      "f5ff2f62-e400-5ab3-b5b0-32bdf2a7d693",
+      "f605e9dd-b687-585d-887c-4ecf7411fa05",
+      "f6c67cfe-ebdf-50af-968d-9dd93e379467"
+    ],
+    "the-peoples-bank": [
+      "0ebb95c6-4d56-5d2e-9e43-f6ab371709a6",
+      "0ef67610-5848-57e3-a8ae-6ab08d0952d3",
+      "1685cfbe-3954-546e-b2de-1ad2dbcbb1f5",
+      "237d850a-23c3-5d5a-82af-5600a9e99ac2",
+      "6ac70300-ebd0-5ec5-9f63-8c1fbf0ca87e",
+      "9032dc49-f389-5a77-a7af-17608b433eb6",
+      "9853254d-70cf-5ef8-8a28-9f15b789dffa",
+      "cb4b7d82-0e94-5aa1-85f6-4a33668cbf5f",
+      "e26c71b5-477f-5506-b7b1-201245db6353",
+      "e889a9b3-4b02-5899-aa16-81b75d8ab919",
+      "f3ce323a-cf39-594b-8bfb-91239ff4989d"
+    ],
+    "farmers-bank": [
+      "050f4c89-e573-5f65-8214-d40d54c0a3e4",
+      "11eefe7c-453f-5251-b7c5-8e51e8302799",
+      "7ddc6f15-45cb-5e22-a937-d06faf512abe",
+      "89bc2a3b-b4f1-5423-8d8e-4884ea14934b",
+      "cfca7b59-4857-55b9-b871-46b55cc4ba17"
+    ],
+    "citizens-bank-and-trust-company": [
+      "07c3d8de-5e38-57d8-a49a-716e97077b24",
+      "131efb75-2e3f-533f-832d-73ce6692aae4",
+      "1c105109-8852-588a-8c01-f57dc7897f2c",
+      "1e2b5416-4d78-57c5-b5e5-4999c44412f9",
+      "a00e80ad-333e-522f-8b82-b409fc1d868d",
+      "c089042d-f079-57ad-9417-3e693c6ddff6"
+    ],
+    "union-bank": [
+      "12d26433-179c-5930-9af7-d735b81cc41c",
+      "1369bb5d-b4e0-51e1-8b65-6c0309127328",
+      "29d81d1c-c803-53b1-94ed-6f61ea23367e",
+      "41cf9d74-61d6-59a8-87b0-b07d635e42ea",
+      "d4ec1887-0660-5e98-b183-caa302d52299",
+      "df04e4ce-f01f-5c3d-936f-fdedbbbf2a28"
+    ],
+    "first-community-bancshares-inc": [
+      "0793be5e-23b0-59d6-9c4c-5c11157c152e",
+      "16164496-b89a-5a05-b239-994dcf14c7cf"
+    ],
+    "mercantile-bank": [
+      "10408636-f814-5861-94ca-329dd2a38e8c",
+      "176624db-f5cd-5a1b-ac5d-a303ca1159dd",
+      "e2817caa-47fb-58d7-b667-5cbba1f3ac8d"
+    ],
+    "peoples-bcorp-inc": [
+      "08fad1c5-daac-5e36-9fc1-a900dd9592b3",
+      "19126ded-762f-5fbe-854d-3958d78df39c",
+      "8e66f5a0-4d29-5ff2-9ab0-97275429c422",
+      "9456e6a1-dcab-5fd2-b74a-5e982e3814d3"
+    ],
+    "inbank": [
+      "0b1f9f6f-f432-514d-b560-e4badaf66db6",
+      "1a046e9a-4492-5a45-9b95-36780d4bd264"
+    ],
+    "the-commercial-bank": [
+      "10a257fd-dca5-5197-8002-df7e528117af",
+      "1b8f5ba5-b644-5017-95e2-46668e8eebfd",
+      "73e40b8d-8200-5726-8a4c-7476885d687b",
+      "923217f7-3c5b-5bb6-859f-6eb1aaa73cc9"
+    ],
+    "first-commerce-bank": [
+      "1373ebde-299f-58d6-8b15-01678c9036a6",
+      "1b913840-cee2-58ad-8643-88933c922d23",
+      "65901c3f-f664-5bea-9805-daa203f5f30f",
+      "9c1da643-edfd-5256-a469-6aa0b9d6ea8d"
+    ],
+    "lone-star-bank": [
+      "02473676-1096-5c97-ad0d-dd7fd2c40030",
+      "1be078cb-e04b-5fd9-a923-1d9706d61e31"
+    ],
+    "northwest-bank": [
+      "0a6872c2-5f33-52b8-8e4c-6fabc0686ad4",
+      "1cf25b73-1cae-596e-9f6e-97841bdcb514",
+      "9ce6ccf6-ee3c-5ca6-96a1-14c266f2a30a",
+      "c3620bcd-2edd-5fc9-92c7-f3a259930262",
+      "ff4b5ba7-2e72-5334-a01b-5d9acbc3a094"
+    ],
+    "security-bank-and-trust-company": [
+      "0d067726-23fc-5968-92cb-b968169a10b0",
+      "1d6b9e4f-ebe2-594d-8a8f-fb9aad29d332",
+      "60763691-ef63-5304-bcd1-db0455d6a916"
+    ],
+    "city-bank": [
+      "100a1300-61d9-5c37-adca-560d1aae9b4f",
+      "21a5002f-a663-579e-979e-ccee967e4aed"
+    ],
+    "commercial-state-bank": [
+      "1daf9ab1-2221-5981-90a2-8e1d7f086cda",
+      "22a5f1c9-e6ca-5697-a59b-dcc61aaee16f",
+      "e02623a6-2517-59b3-9a71-0177d097130f",
+      "f4d24db5-b14c-5b70-8d85-296d86cb94f0",
+      "fe71047c-057e-5ce2-af39-217b5a432f5c"
+    ],
+    "first-financial-bank": [
+      "147a755f-9ceb-5534-9dd1-551bc719b549",
+      "22abd1ca-560c-5a84-8fd1-7ff4a9e8a5e7",
+      "69789a0f-eacf-5629-8e95-ea7da0f24a6e",
+      "a7e4e6a2-9c82-5591-bb7a-32448af81720",
+      "eaad3b32-5ff4-5d5e-bbc8-10d470e93900",
+      "ee30c81f-cad0-5b11-be9c-c6a9fa2499a4"
+    ],
+    "the-business-bank": [
+      "1308f92b-e687-596d-9298-3c2e4eedf823",
+      "22e53117-8da0-5e63-8daf-c3148c3636cb"
+    ],
+    "premier-bank": [
+      "19f22980-3a55-57c8-a18d-94c9c9f15949",
+      "2369fbea-b0a9-5a2e-bcd0-2759ff6304d4",
+      "37a18c45-c760-52e8-9a4a-bf5daaccc2e5",
+      "3b908971-c72a-598a-9c9b-a610adf0bf1c",
+      "52b7d310-ec70-5f7b-a46b-0ce348ee8c4d",
+      "85e349b7-129d-53c4-bf2a-0f4f2df6c932",
+      "b8da8eca-7580-576e-8ba9-365e9fcb35dc",
+      "e2e90580-b612-50d3-9b34-9957c468c0ac"
+    ],
+    "citizens-community-bank": [
+      "09d33078-01a7-5add-9807-bc1d0db6737e",
+      "2409d6a2-b9c7-5648-a035-adf914615549",
+      "67067cef-bd68-5904-80e2-1811973eac28",
+      "9d7454cc-534f-5837-8747-0b85e20c086e"
+    ],
+    "home-state-bank": [
+      "0a582be1-71b1-5e56-8ce2-d38629f94533",
+      "26e14298-74ab-51a8-bdb6-70f775dc7612",
+      "273fa4b1-ea25-5c42-a31c-292e1b96cbe9",
+      "9acf2e89-664f-5c7e-a14b-d1d45b16f37b",
+      "bc4d8258-8280-5bb6-831d-14eab13c953c"
+    ],
+    "peoples-bank-and-trust-company": [
+      "156e9ddc-bcd9-5b1b-afc2-c907fbf02cb5",
+      "27e09420-9718-564e-b488-546159503787",
+      "2f36bc5e-0740-5830-9835-50f2110814b5",
+      "6db551b0-3b2f-513e-9b5a-307eceba208c"
+    ],
+    "farmers-and-merchants-bank": [
+      "13c43559-044d-5d9a-87ad-b388e6a2df8c",
+      "291c87e5-9b2e-5fca-bb24-3fe145e5e00d",
+      "3b1c6ab0-1c80-567f-9b7c-067004b8c9ca",
+      "7b191a17-a40c-51bc-ae87-395a0a8c1236",
+      "81aa8907-59b4-5ff2-98ee-a239a54e014e",
+      "8a309036-f10f-5d96-8a96-1f3377125f52",
+      "985a0045-6603-5a89-b4da-f4b9c099098b",
+      "ac8eed69-9240-5930-bacf-07905a6d7978",
+      "cfda41db-6c7a-5266-9bf3-e58c383192a4",
+      "e17363b4-fe5a-57ef-879d-90f54a4ff563",
+      "e32191bb-4c51-542b-9705-0242ef2b9fa0",
+      "f59266f8-f6e7-5b56-a517-8a1b77a36258",
+      "f799d7dc-b612-59a5-8829-18ab63baabc9",
+      "fe9e4a2d-1a9f-5883-acee-c5d763d6d64e"
+    ],
+    "landmark-bank": [
+      "0ff6fcd8-cbf5-5141-a06e-dfbbddc99d9b",
+      "2947bf50-ecf3-5ee6-8418-46e2c1459345"
+    ],
+    "first-federal-savings-bank": [
+      "1c052b6e-6617-58bb-9b21-34cf2f736670",
+      "294b5936-b736-54e6-86f2-ee711bb3f01c",
+      "87ad9fe2-e51a-55f4-b864-4a4f1fadd24e",
+      "bf442ccc-ef18-5fda-9e95-ebb9fea256bd"
+    ],
+    "first-bank": [
+      "0b6511ac-6aed-594d-9d78-8e0c61f6f67c",
+      "29eae5f9-a480-5ee7-9ad8-0132762e5e10",
+      "3b65904e-9919-58e9-afeb-772d4c4c814d",
+      "4b7e617f-a533-5db4-88c9-969943157a20",
+      "543f1c1b-b17a-5e87-9357-10acee2358ec",
+      "66184365-ac53-5c3b-a0ef-cc32d1b4e7f0",
+      "67041185-e769-5fcd-b4db-2c5184731c12",
+      "80c64dd8-112a-5798-b280-c839996cd8f0",
+      "88f1d029-fa09-5d0f-9272-c3b0c071e028",
+      "a68120f6-8780-5534-92f9-63abc0905903",
+      "af74b250-88b3-5830-b868-fd3877e50c7e",
+      "b19034d4-0e49-5472-b4a4-3bd2f2c547c1",
+      "bb5fea51-1208-531c-bbee-1e83763aa335",
+      "c57c7217-6bc1-5fa9-b02f-5446e6c27c16",
+      "c5d25606-aa1a-5080-930a-c637af847b83",
+      "c6c447a9-f032-5929-a449-f4875481f2d8",
+      "ca1c88f8-499e-5b6a-b31a-f810e00910a6",
+      "f60d674e-2862-50eb-8b25-1fa3443f910c"
+    ],
+    "plaza-bank": [
+      "003a3b9e-1fe2-5d46-b6cd-753378862e94",
+      "29ed7a8c-2d4b-5019-b00c-17680687e3ac"
+    ],
+    "north-county-bank": [
+      "070fef7f-8ad8-5ecc-8488-8cb0f4d2dd0e",
+      "29f27226-c97b-57a8-a34d-90c733f1b3ec"
+    ],
+    "fidelity-bank": [
+      "05da47fa-50f9-5ce5-a642-49b9e418b9cd",
+      "2a8a50c5-3386-5dea-9d03-cbcf36f4f6b7",
+      "42268e0c-08fd-5aa5-b77f-d987ec24a92f",
+      "43ebb141-fe81-5e7d-89d3-a2623822e6b1",
+      "7d8a54be-7659-5b2c-950b-677018f25ac2",
+      "93b40b66-3a67-569d-82f8-3291edbddfad",
+      "9f8ae599-1047-5b88-911f-10ecc4587360",
+      "c5ac319f-9c4e-57cb-8bea-bdd5cd31b148"
+    ],
+    "the-community-bank": [
+      "13b09f76-21c2-567a-bbaf-175ace79b59a",
+      "2c940363-675d-5de3-8a27-6435801e5d89"
+    ],
+    "korea-exchange-bank": [
+      "0134d4d8-1025-5127-9781-dddb53f7ffa6",
+      "2f9e58b7-4617-58a5-aec8-f6cb8791198c"
+    ],
+    "first-southern-bank": [
+      "0ae2da64-34ee-5beb-a2a9-9de64415671d",
+      "306bc1a3-d72e-583e-a03f-efbaf1d2b88d",
+      "4c1e3ae6-b35e-58aa-bd11-b61972c5bdcf",
+      "5474afc1-5416-5fe0-96a6-7cf7a865d51e",
+      "ca989301-ed7f-53cc-a365-bdaf9ff6f629"
+    ],
+    "first-republic-bank": [
+      "14b6dbf4-e765-5084-9c10-78eb24563822",
+      "309cb50f-de81-5627-a8de-27796d046912"
+    ],
+    "synovus-bank": [
+      "1ced0f08-41a1-5145-b02b-22bd59afd0ee",
+      "315fdb6e-b336-5049-b0d6-dfadab1813a9"
+    ],
+    "american-bank": [
+      "0ece6500-de77-5b43-8c3c-b47c79fbd15a",
+      "329a7459-ce86-5477-87f3-489c3b2e1e5a",
+      "4908ceca-ae05-50ff-b6a4-8548f88ef431",
+      "5fbabd9d-9f23-507d-a181-0a946ddbbbee",
+      "6cd1a78c-2317-5ece-8902-8bbe5549b010",
+      "790b4086-938c-5206-9d27-38c546004104",
+      "b7b7ed50-4da1-5ab0-83e8-12d8abc7ed9d"
+    ],
+    "veterans-and-first-time-buyer-specialists": [
+      "04dba8d7-b24d-5e97-8748-84229be815ed",
+      "33045cdf-8dc7-52e2-8371-8ac348a33536"
+    ],
+    "riverbank": [
+      "12fb6f01-52ec-5c66-839b-00df0cd419ff",
+      "3324474b-eb36-5e25-90f6-5b3b295ee5a4",
+      "52356d94-8476-5fa9-a9c0-20cc4c5e2393",
+      "e3b78186-05c0-54e0-883a-ec7ff11ab441"
+    ],
+    "community-bank": [
+      "1cc6d5e4-fb5c-54a1-a689-506b1338ad6a",
+      "360dbd79-7f51-5def-8f3c-e93356e8ae66",
+      "45bd7941-d60f-5e08-8a05-788f8aab55c5",
+      "573ca596-b8e9-5687-844e-315933912918",
+      "5d588cf6-47f1-5e15-b2c3-a0cbf5b824f7",
+      "6ba3979e-9bf3-561a-a441-ffe97b8da87b",
+      "6c71b524-b890-5351-a6b4-8198f6310330",
+      "818cb27a-fdbc-5271-92bf-319d2b07e4e6",
+      "84e4fbc1-5bff-5db6-9b88-a13c535200d3",
+      "906e2a82-929e-5000-a77a-7c7ca213b40a",
+      "9f2724bd-0cb2-5525-93f9-97a3f52e48b9",
+      "e1875802-427f-53c3-8ed8-7b62e59a9ad8",
+      "e89eed75-d4bb-5386-86b9-7f20f5ba691c",
+      "fa5db130-fa10-58d1-afbc-3031eac39d67"
+    ],
+    "benchmark-bank": [
+      "1b1cc1d4-f64c-59dc-8759-28b6676711a5",
+      "36ac84f8-c743-559f-987e-02d93e63fb22",
+      "6d3f8e32-c8c6-500f-ba9e-b8cec6353cb5"
+    ],
+    "pinnacle-bank": [
+      "0ff40818-31b2-5333-a8bd-f608bb88f5b9",
+      "3762f5be-53bc-5328-bdb9-244df5f9d8e1",
+      "558dabcf-0322-5797-bf6a-c3cbfd7c1a86",
+      "8dd2ee7d-f4a8-56c2-8625-cc56fb57cd27",
+      "cdfa0e52-1c25-597b-b31f-1b5728bca335",
+      "fd729b2e-7103-506c-8178-e59abc44086d"
+    ],
+    "security-state-bank": [
+      "2b3aab78-b713-5c62-90cc-9a88b7746deb",
+      "37cb05ba-15ca-5f45-9c49-4b9b315e0467",
+      "4876b438-3826-5a3b-a757-a551bb5f5c3a",
+      "6509fbb7-0725-58bf-98d7-38006152be7e",
+      "65809b90-fdea-587b-b680-8fc23e7b8251",
+      "962ff5ee-41ab-590d-9c9e-79fd399fe2b8",
+      "97c4558a-c0b6-5049-a6d6-b5c4df993bf9",
+      "9fbf0b2d-94fc-5e4c-a803-1a7f482b020a",
+      "a57738aa-992f-5103-81c0-ac43a313022c",
+      "ab68832f-46ef-5f22-9f3b-a069e1b2a139",
+      "b644d5db-9e85-517c-8820-b5045b980111",
+      "c808bb66-8e32-5350-8279-1f8526956ca3",
+      "e490837b-fc4c-5d0e-8621-5f7a20c4061e"
+    ],
+    "first-federal-savings-and-loan-association": [
+      "09510fbb-01a5-516e-9fda-4beb9de9cab6",
+      "38c01cdd-df26-5ceb-ba95-7253fddb42fb",
+      "3a2ed6fb-89b4-5d64-90b6-64ea1df0b2e3",
+      "7654b8f5-50e3-56e8-92a3-9d804053754a"
+    ],
+    "fulton-bank": [
+      "1a25871d-c754-5958-80ea-0618bfbc24b5",
+      "38c0852d-8d71-54f1-bf40-517332f9d612"
+    ],
+    "viking-bank": [
+      "13a13fd5-1a9d-57a2-a89d-1d6475cb2aef",
+      "38e17c13-010a-50d8-b8ea-1b7aec040f5e"
+    ]
+  },
+  "slug_collision_count": 361,
+  "unique_slugs": 8447,
+  "historical_name_alias_strings": 9,
+  "routes_from_historical_names": 0,
+  "indexing_cohort_size": 180,
+  "render_cohort_size": 181,
+  "original_10": [
+    {
+      "stable_key": "nmls-inst:3030",
+      "slug": "rocket-mortgage",
+      "found": true,
+      "publication_status": "PUBLICATION_ELIGIBLE",
+      "reason": "identity_safe_with_research_content",
+      "in_indexing_cohort": true
+    },
+    {
+      "stable_key": "nmls-inst:2767",
+      "slug": "freedom-mortgage-corporation",
+      "found": true,
+      "publication_status": "PUBLICATION_ELIGIBLE",
+      "reason": "identity_safe_with_research_content",
+      "in_indexing_cohort": true
+    },
+    {
+      "stable_key": "nmls-inst:399802",
+      "slug": "bank-of-america",
+      "found": true,
+      "publication_status": "PUBLICATION_ELIGIBLE",
+      "reason": "identity_safe_with_research_content",
+      "in_indexing_cohort": true
+    },
+    {
+      "stable_key": "nmls-inst:399807",
+      "slug": "navy-federal-credit-union",
+      "found": true,
+      "publication_status": "PUBLICATION_ELIGIBLE",
+      "reason": "identity_safe_with_research_content",
+      "in_indexing_cohort": true
+    },
+    {
+      "stable_key": "gleif-lei:254900AF53CA0NLFZW89",
+      "slug": "select-portfolio-servicing",
+      "found": true,
+      "publication_status": "PUBLICATION_ELIGIBLE",
+      "reason": "identity_safe_with_research_content",
+      "in_indexing_cohort": true
+    },
+    {
+      "stable_key": "fdic-cert:16243",
+      "slug": "bank-of-eastern-oregon",
+      "found": true,
+      "publication_status": "PUBLICATION_ELIGIBLE",
+      "reason": "identity_safe_with_research_content",
+      "in_indexing_cohort": true
+    },
+    {
+      "stable_key": "gleif-lei:549300MEMWF0Y8H4PL17",
+      "slug": "ocwen-loan-servicing",
+      "found": true,
+      "publication_status": "PUBLICATION_ELIGIBLE",
+      "reason": "historical_servicer_with_confirmed_identity",
+      "in_indexing_cohort": true
+    },
+    {
+      "stable_key": "nmls-inst:2289",
+      "slug": "newrez",
+      "found": true,
+      "publication_status": "PUBLICATION_ELIGIBLE",
+      "reason": "identity_safe_with_research_content",
+      "in_indexing_cohort": true
+    },
+    {
+      "stable_key": "gleif-lei:549300QSUEE20YO86W39",
+      "slug": "specialized-loan-servicing",
+      "found": true,
+      "publication_status": "PUBLICATION_ELIGIBLE",
+      "reason": "identity_safe_with_research_content",
+      "in_indexing_cohort": true
+    },
+    {
+      "stable_key": "gleif-lei:549300KO4XT2PA011C25",
+      "slug": "phh-home-loans",
+      "found": true,
+      "publication_status": "PUBLICATION_HOLD",
+      "reason": "identity_only_insufficient_research_content",
+      "in_indexing_cohort": false
+    }
+  ],
+  "catalog_slug_overlap_in_index_cohort": [],
+  "indexing_hq_states": {
+    "NONE": 83,
+    "NC": 3,
+    "OR": 2,
+    "OH": 6,
+    "RI": 1,
+    "DE": 2,
+    "WA": 2,
+    "SD": 3,
+    "AL": 3,
+    "NY": 1,
+    "AZ": 1,
+    "PA": 4,
+    "IL": 12,
+    "AR": 3,
+    "GA": 2,
+    "IA": 3,
+    "DC": 1,
+    "MD": 1,
+    "FL": 2,
+    "NE": 2,
+    "CO": 1,
+    "MN": 5,
+    "TN": 2,
+    "TX": 4,
+    "OK": 3,
+    "MT": 1,
+    "SC": 1,
+    "MO": 4,
+    "MA": 2,
+    "KS": 2,
+    "UT": 1,
+    "LA": 1,
+    "WI": 3,
+    "CA": 4,
+    "WV": 2,
+    "PR": 1,
+    "MI": 2,
+    "KY": 1,
+    "VA": 1,
+    "MS": 1,
+    "IN": 1
+  },
+  "indexing_depository": {
+    "NONBANK": 40,
+    "FDIC": 98,
+    "NCUA": 42
+  },
+  "indexing_servicer": {
+    "NOT ESTABLISHED": 170,
+    "CONFIRMED": 9,
+    "HISTORICAL": 1
+  },
+  "title_long_or_blank": [
+    {
+      "slug": "bank-of-america",
+      "len": 78,
+      "name": "Bank of America Mortgage (DC)"
+    },
+    {
+      "slug": "navy-federal-credit-union",
+      "len": 94,
+      "name": "Navy Federal Credit Union (Jacksonville Area)"
+    },
+    {
+      "slug": "select-portfolio-servicing",
+      "len": 81,
+      "name": "Select Portfolio Servicing, Inc."
+    },
+    {
+      "slug": "bank-of-eastern-oregon",
+      "len": 71,
+      "name": "Bank of Eastern Oregon"
+    },
+    {
+      "slug": "ocwen-loan-servicing",
+      "len": 74,
+      "name": "Ocwen Loan Servicing, Llc"
+    },
+    {
+      "slug": "specialized-loan-servicing",
+      "len": 79,
+      "name": "Specialized Loan Servicing Llc"
+    },
+    {
+      "slug": "united-wholesale-mortgage",
+      "len": 74,
+      "name": "United Wholesale Mortgage"
+    },
+    {
+      "slug": "pennymac-loan-services",
+      "len": 71,
+      "name": "PennyMac Loan Services"
+    },
+    {
+      "slug": "fairway-independent-mortgage-corporation",
+      "len": 89,
+      "name": "FAIRWAY INDEPENDENT MORTGAGE CORPORATION"
+    },
+    {
+      "slug": "lakeview-loan-servicing",
+      "len": 72,
+      "name": "Lakeview Loan Servicing"
+    },
+    {
+      "slug": "carrington-mortgage-services",
+      "len": 77,
+      "name": "Carrington Mortgage Services"
+    },
+    {
+      "slug": "union-home-mortgage-corp",
+      "len": 74,
+      "name": "UNION HOME MORTGAGE CORP."
+    },
+    {
+      "slug": "state-employees-credit-union",
+      "len": 78,
+      "name": "State Employees' Credit Union"
+    },
+    {
+      "slug": "mutual-of-omaha-mortgage",
+      "len": 73,
+      "name": "Mutual of Omaha Mortgage"
+    },
+    {
+      "slug": "coastal-community-bank",
+      "len": 71,
+      "name": "Coastal Community Bank"
+    },
+    {
+      "slug": "the-huntington-national-bank",
+      "len": 77,
+      "name": "The Huntington National Bank"
+    },
+    {
+      "slug": "third-federal-savings-and-loan-association-of-cleveland",
+      "len": 104,
+      "name": "Third Federal Savings and Loan Association of Cleveland"
+    },
+    {
+      "slug": "usaa-federal-savings-bank",
+      "len": 74,
+      "name": "USAA Federal Savings Bank"
+    },
+    {
+      "slug": "first-national-bank-of-pennsylvania",
+      "len": 84,
+      "name": "First National Bank of Pennsylvania"
+    },
+    {
+      "slug": "the-federal-savings-bank",
+      "len": 73,
+      "name": "The Federal Savings Bank"
+    }
+  ],
+  "duplicate_titles_in_cohort": [],
+  "hmda_vintage_rows": 8447,
+  "cfpb_non_confirmed": 0,
+  "policy": {
+    "index_requires": [
+      "production_launch_enabled",
+      "PUBLICATION_ELIGIBLE",
+      "indexing_cohort_membership"
+    ],
+    "missing_hmda_does_not_block": true,
+    "complaint_volume_not_a_threshold": true,
+    "historical_names_are_not_routes": true
+  }
+}
