@@ -795,6 +795,10 @@ body {
   overflow-x: auto;
   max-width: 100%;
 }
+.hub-table-scroll:focus-visible {
+  outline: 2px solid var(--th-navy);
+  outline-offset: 2px;
+}
 .hub-table {
   width: 100%;
   border-collapse: collapse;

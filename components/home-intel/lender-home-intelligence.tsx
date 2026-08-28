@@ -34,7 +34,7 @@ function Story({ finding }: { finding: FeaturedStory }) {
             <CoverageBar key={series.label} value={series.value} max={finding.chart.max} label={series.label} note={series.note} />
           ))}
         </div>
-        <div className="hub-table-scroll">
+        <div className="hub-table-scroll" tabIndex={0} role="region" aria-label={finding.chart.caption}>
           <table className="hub-table hub-table--compact">
             <caption className="visually-hidden">{finding.chart.caption}</caption>
             <thead>
@@ -180,7 +180,7 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
           <h2 id="depth-title">How complete is the research?</h2>
           <p>Coverage describes whether this hub has published evidence for a family. It does not describe how trustworthy a lender is.</p>
         </div>
-        <div className="hub-table-scroll">
+        <div className="hub-table-scroll" tabIndex={0} role="region" aria-label="Evidence availability by family">
           <table className="hub-table">
             <caption>Evidence availability by family</caption>
             <thead>
@@ -267,7 +267,7 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
         </article>
         <details className="intel-disclose">
           <summary>Accessible state list</summary>
-          <div className="hub-table-scroll">
+          <div className="hub-table-scroll" tabIndex={0} role="region" aria-label="County-grain HMDA 2025 counts by jurisdiction">
             <table className="hub-table">
               <caption>
                 County-grain HMDA 2025 counts by jurisdiction. Florida links to state intelligence; other jurisdictions
@@ -350,7 +350,7 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
           <p className="intel-eyebrow">Evidence / sources / limitations</p>
           <h2 id="sources-title">Where the numbers come from</h2>
         </div>
-        <div className="hub-table-scroll">
+        <div className="hub-table-scroll" tabIndex={0} role="region" aria-label="Source ledger for homepage families">
           <table className="hub-table">
             <caption>Source ledger for homepage families</caption>
             <thead>
