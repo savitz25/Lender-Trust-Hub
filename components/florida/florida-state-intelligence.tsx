@@ -59,7 +59,7 @@ export function FloridaStateIntelligence() {
   const issueMax = Math.max(...issues.map((i) => i.n));
 
   return (
-    <main id="main-content" tabIndex={-1} className="th-shell mx-auto w-full max-w-[880px] overflow-x-clip px-4 py-8 sm:py-10">
+    <div className="th-shell mx-auto w-full max-w-[880px] overflow-x-clip px-4 py-8 sm:py-10">
       <nav aria-label="Breadcrumb" className="mb-4 text-sm text-slate-600">
         <ol className="flex flex-wrap gap-1">
           <li>
@@ -437,6 +437,6 @@ export function FloridaStateIntelligence() {
           .
         </p>
       </section>
-    </main>
+    </div>
   );
 }
