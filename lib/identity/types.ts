@@ -61,7 +61,9 @@ export type RelationshipType =
   | 'PARENT_OF'
   | 'BRAND_OF'
   | 'SUCCESSOR_TO'
-  | 'PREDECESSOR_OF';
+  | 'PREDECESSOR_OF'
+  | 'ASSOCIATED_WITH'
+  | 'BELONGS_TO';
 
 /** Minimal catalog row — never a national identity key. */
 export type CatalogRow = {
