@@ -82,6 +82,20 @@ export function runIntel004ContractTests(): Check[] {
   check('I004-other', first.findings[1]?.chart.series.some((s) => s.label.startsWith('Other reported')), 'other actions explicit');
   check('I004-tools-compare', !first.tools.some((t) => t.href === '/compare'), 'no legacy /compare CTA');
   check('I004-score-null', first.score === null && first.ranking === null, 'no score');
+  const bankAsk = first.askMarket.find((item) => item.id === 'bank-vs-nonbank')?.answer ?? '';
+  const origAsk = first.askMarket.find((item) => item.id === 'how-many-orig')?.answer ?? '';
+  const appsAsk = first.askMarket.find((item) => item.id === 'how-many-apps')?.answer ?? '';
+  const researchAsk = first.askMarket.find((item) => item.id === 'research-lender')?.answer ?? '';
+  check('I004-ask-lpi', bankAsk.includes(snapshot.lpiSnapshots.toLocaleString('en-US')) && bankAsk.includes(snapshot.depository.FDIC.toLocaleString('en-US')), 'Ask bank/nonbank uses LPI snapshot grain');
+  check('I004-ask-hmda', origAsk.includes(snapshot.originations.toLocaleString('en-US')) && appsAsk.includes(snapshot.applications.toLocaleString('en-US')), 'Ask HMDA uses county-grain snapshot');
+  check(
+    'I004-ask-search',
+    researchAsk.includes((snapshot.publicRender + snapshot.floridaPublic).toLocaleString('en-US')) &&
+      researchAsk.includes(snapshot.publicRender.toLocaleString('en-US')) &&
+      researchAsk.includes(String(snapshot.floridaPublic)),
+    'Ask search union uses publication grains',
+  );
+  check('I004-ask-count', first.askMarket.length >= 4 && first.askMarket.length <= 7, String(first.askMarket.length));
 
   const page = readFileSync(join(process.cwd(), 'app/page.tsx'), 'utf8');
   check('I004-36-src', page.includes('getLenderHomeIntel') && page.includes('LenderHomeIntelligence'), 'SSR wiring');

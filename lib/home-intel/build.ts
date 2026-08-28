@@ -432,8 +432,7 @@ export function buildLenderHomeIntel(generatedAt = '2026-08-27T00:00:00.000Z'): 
       {
         id: 'bank-vs-nonbank',
         question: 'What is the difference between a bank, credit union and nonbank lender?',
-        answer:
-          'They are different institutional and regulatory models. This page shows exclusive depository structure in 8,447 intelligence snapshots. Structure is not a quality score.',
+        answer: `They are different institutional and regulatory models. This page shows exclusive depository structure in ${fmt(snapshot.lpiSnapshots)} intelligence snapshots (FDIC ${fmt(depository.FDIC)}, NCUA ${fmt(depository.NCUA)}, nonbank ${fmt(depository.NONBANK)}, unknown ${fmt(depository.UNKNOWN)}). Structure is not a quality score.`,
         href: '#findings',
         hrefLabel: 'Institution structure story',
       },
@@ -457,7 +456,7 @@ export function buildLenderHomeIntel(generatedAt = '2026-08-27T00:00:00.000Z'): 
         id: 'research-lender',
         question: 'How can I research a lender?',
         answer:
-          'Use the controlled /lender discovery over 311 public company profiles (181 national-searchable plus 130 Florida-public). Then compare an actual Loan Estimate. Public evidence and offer economics are different questions.',
+          `Use the controlled /lender discovery over ${fmt(snapshot.publicRender + snapshot.floridaPublic)} public company profiles (${fmt(snapshot.publicRender)} national-searchable plus ${fmt(snapshot.floridaPublic)} Florida-public). Then compare an actual Loan Estimate. Public evidence and offer economics are different questions.`,
         href: '/lender',
         hrefLabel: 'Research a lender',
       },
