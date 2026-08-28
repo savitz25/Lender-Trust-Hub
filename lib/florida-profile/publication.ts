@@ -15,9 +15,9 @@ export const FLORIDA_PROFILE_GATE = {
 
 export const FLORIDA_PROFILE_QA_GATE = {
   /** Keep false. Preview/internal renderer 404s unless explicitly enabled AND not production. */
-  enabled: false,
+  enabled: false as boolean,
   pathPrefix: '/internal/florida-profile',
-} as const;
+};
 
 export function floridaProfileQaAllowed(env: {
   nodeEnv?: string;
