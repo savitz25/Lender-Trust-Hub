@@ -73,7 +73,7 @@ export function FloridaStateIntelligence() {
       </nav>
 
       <header className="min-w-0">
-        <p className="text-xs font-semibold uppercase tracking-wider text-[#0D9488]">Independent research · Florida</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-[#047857]">Independent research · Florida</p>
         <h1 className="mt-1 break-words text-2xl font-bold text-[#0A2540] sm:text-3xl">
           Florida Mortgage &amp; Lending Research
         </h1>
