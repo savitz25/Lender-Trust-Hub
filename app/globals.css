@@ -546,7 +546,7 @@ body {
 }
 .intel-eyebrow {
   margin: 0;
-  color: var(--lth-teal);
+  color: #0f5f59;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -593,7 +593,7 @@ body {
   text-decoration: none;
 }
 .intel-btn--primary {
-  background: var(--lth-teal);
+  background: #0f766e;
   color: #fff;
 }
 .intel-btn--secondary {
@@ -654,7 +654,7 @@ body {
 }
 .intel-metric__value {
   margin: 0;
-  color: var(--lth-teal);
+  color: #0f5f59;
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 750;
 }
@@ -694,7 +694,7 @@ body {
 .intel-bar__fill {
   display: block;
   height: 100%;
-  background: var(--lth-teal);
+  background: #0f766e;
 }
 .intel-legend {
   margin: 1rem 0;
@@ -762,7 +762,7 @@ body {
   font-size: 0.92rem;
 }
 .intel-text-link {
-  color: var(--lth-teal);
+  color: #0f5f59;
   font-weight: 700;
 }
 .intel-journey {
