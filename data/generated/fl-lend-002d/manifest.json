@@ -1,0 +1,223 @@
+{
+  "task": "FL-LEND-002D",
+  "uuid_namespace": "9b3c2d11-7e54-4a80-91f0-0c1d2e3f4a5b",
+  "expected": {
+    "companies": 10216,
+    "branch_nmls_prr": 6690,
+    "sponsorship_rows": 53421,
+    "dual_mld_mbr": 637
+  },
+  "public": {
+    "fl_company_nmls.csv": {
+      "filename": "fl_company_nmls.csv",
+      "relpath": "data/generated/fl-lend-002d/public/fl_company_nmls.csv",
+      "row_count": 10216,
+      "sha256": "aff92f6e9ca6bc70c38c7842c82283bd5a9b57af04634c92ac307f19fd6f837a",
+      "bytes": 934404
+    },
+    "fl_company_credentials.csv": {
+      "filename": "fl_company_credentials.csv",
+      "relpath": "data/generated/fl-lend-002d/public/fl_company_credentials.csv",
+      "row_count": 17925,
+      "sha256": "4d3f4a21a30428709c0bd73ebc70cc4b91059154644f9b9cf02c404deb6fd2d9",
+      "bytes": 3711703
+    },
+    "fl_branches.csv": {
+      "filename": "fl_branches.csv",
+      "relpath": "data/generated/fl-lend-002d/public/fl_branches.csv",
+      "row_count": 33029,
+      "sha256": "070c7d4ee55e6da2eae349814bdde2cf2eb74a376672834a02be9f61223f3594",
+      "bytes": 6454893
+    },
+    "fl_business_contacts.csv": {
+      "filename": "fl_business_contacts.csv",
+      "relpath": "data/generated/fl-lend-002d/public/fl_business_contacts.csv",
+      "row_count": 25732,
+      "sha256": "817aa5890dcd5af6d20f29c2466ce5181ec39c455b48ecbdffc9525be00fe84d",
+      "bytes": 4225595
+    }
+  },
+  "private": {
+    "fl_mlo": [
+      {
+        "filename": "fl_mlo_private_001.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_mlo_private_001.csv",
+        "row_count": 20000,
+        "sha256": "d622ac6fe173d988f446522e7857ed47bf0e580b128ab36c88847c48cc49e0d0",
+        "bytes": 2299980
+      },
+      {
+        "filename": "fl_mlo_private_002.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_mlo_private_002.csv",
+        "row_count": 20000,
+        "sha256": "dd54d90876b36b6f0b7bae2efd152ada07af36f8e3f73f2ebc26460cba2799fc",
+        "bytes": 2301197
+      },
+      {
+        "filename": "fl_mlo_private_003.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_mlo_private_003.csv",
+        "row_count": 20000,
+        "sha256": "862e56e4e0e7aedc08f3ee491889034bb95673a8e242120000bb42780ecdada2",
+        "bytes": 2298720
+      },
+      {
+        "filename": "fl_mlo_private_004.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_mlo_private_004.csv",
+        "row_count": 20000,
+        "sha256": "f940c9e32f836cf798a7ec4a1e6716d978c407203f334c7a6055b2d41cb91904",
+        "bytes": 2288576
+      },
+      {
+        "filename": "fl_mlo_private_005.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_mlo_private_005.csv",
+        "row_count": 20000,
+        "sha256": "7b113dacf4ac59565bdfd9ea85e6a3f766565d644a9cb44b882847a985d4e12f",
+        "bytes": 2299950
+      },
+      {
+        "filename": "fl_mlo_private_006.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_mlo_private_006.csv",
+        "row_count": 20000,
+        "sha256": "b535b9c626bdf2993cf869ee653f5d7039b32ac59abdc298873bf97b484c69a2",
+        "bytes": 2297890
+      },
+      {
+        "filename": "fl_mlo_private_007.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_mlo_private_007.csv",
+        "row_count": 20000,
+        "sha256": "05c7962768f394ade57c709fdc4541a6c578bea4bb6bd0a7a643324eace03185",
+        "bytes": 2302805
+      },
+      {
+        "filename": "fl_mlo_private_008.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_mlo_private_008.csv",
+        "row_count": 20000,
+        "sha256": "ddc8438558a36cd4549fc5b74d87d842277858e4223ee8d7a571944dbe85ba51",
+        "bytes": 2481546
+      },
+      {
+        "filename": "fl_mlo_private_009.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_mlo_private_009.csv",
+        "row_count": 20000,
+        "sha256": "8d69c1c8db70a41e225cb4cf40e47228d406ec95be3b2f4fef840d13bf027acb",
+        "bytes": 2672388
+      },
+      {
+        "filename": "fl_mlo_private_010.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_mlo_private_010.csv",
+        "row_count": 20000,
+        "sha256": "c9f0d67bf44314446d79223db269dca62ae90d4ea12152be19c0264ef0841b68",
+        "bytes": 2673445
+      },
+      {
+        "filename": "fl_mlo_private_011.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_mlo_private_011.csv",
+        "row_count": 9758,
+        "sha256": "ce9ba5fbdcd1d6e0d7cceed36495e10bb7aa8b9fea0d81d849023cce47c3b18f",
+        "bytes": 1305098
+      }
+    ],
+    "fl_mlo_sponsorship": [
+      {
+        "filename": "fl_mlo_sponsorship_private_001.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_mlo_sponsorship_private_001.csv",
+        "row_count": 20000,
+        "sha256": "53a2f8a99512e3555aa1497083092a7692736f40f711124ff50de16a32c2680d",
+        "bytes": 1729443
+      },
+      {
+        "filename": "fl_mlo_sponsorship_private_002.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_mlo_sponsorship_private_002.csv",
+        "row_count": 20000,
+        "sha256": "faa45c0911213336a4a471a34bf3f21daf253657bb7ba26ed07152f306031e98",
+        "bytes": 1729713
+      },
+      {
+        "filename": "fl_mlo_sponsorship_private_003.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_mlo_sponsorship_private_003.csv",
+        "row_count": 13421,
+        "sha256": "57caf2a2ded3e9788e31745481f151c28b74273cdba6110e361e730e1a4a48a9",
+        "bytes": 1159259
+      }
+    ],
+    "fl_person_contacts": [
+      {
+        "filename": "fl_person_contacts_private_001.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_person_contacts_private_001.csv",
+        "row_count": 20000,
+        "sha256": "73db815e5d6a22fc9cb3510293fad577c8204313914e2173df0b3e4d2fcb2b27",
+        "bytes": 2898347
+      },
+      {
+        "filename": "fl_person_contacts_private_002.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_person_contacts_private_002.csv",
+        "row_count": 20000,
+        "sha256": "2bf221a4f9deb4e31e9d61c9646031919b4b8839303755e3c8471002bebbf74b",
+        "bytes": 2895950
+      },
+      {
+        "filename": "fl_person_contacts_private_003.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_person_contacts_private_003.csv",
+        "row_count": 20000,
+        "sha256": "e7b981d194616681d0a9298aac5bdf60f01760b71d427b3d95909ac4c12e1f13",
+        "bytes": 2895704
+      },
+      {
+        "filename": "fl_person_contacts_private_004.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_person_contacts_private_004.csv",
+        "row_count": 20000,
+        "sha256": "a32ebc07c29b03b3fe150f2c4062423518479312a4ae4a34653ee5dfc7ae96c0",
+        "bytes": 2897325
+      },
+      {
+        "filename": "fl_person_contacts_private_005.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_person_contacts_private_005.csv",
+        "row_count": 20000,
+        "sha256": "5a7722670cb5f695418a85ab29c365ad6070e952279d3bda137060ec1ffcdd31",
+        "bytes": 2895424
+      },
+      {
+        "filename": "fl_person_contacts_private_006.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_person_contacts_private_006.csv",
+        "row_count": 20000,
+        "sha256": "a557954d1fc0b220cdfded4d552dbb78c447553a49edfe620381899af7a8f700",
+        "bytes": 2898676
+      },
+      {
+        "filename": "fl_person_contacts_private_007.csv",
+        "relpath": "data/generated/fl-lend-002d/private/fl_person_contacts_private_007.csv",
+        "row_count": 3215,
+        "sha256": "b1d268862778e09babce0ebb2cfaa305bb31f6086ebb6fa5e27a6db8b127c15a",
+        "bytes": 464356
+      }
+    ]
+  },
+  "counts": {
+    "companies": 10216,
+    "company_credentials": 17925,
+    "company_cred_by_class_clock": {
+      "MLD|monthly_full": 2805,
+      "MBR|monthly_full": 8672,
+      "MBR|nmls_active": 5062,
+      "MLS|nmls_active": 501,
+      "MLD|nmls_active": 885
+    },
+    "branch_rows": 33029,
+    "distinct_branch_nmls_prr": 6690,
+    "parent_collisions": 0,
+    "mlo_credential_rows": 209758,
+    "sponsorship_rows": 53421,
+    "business_contact_rows": 25732,
+    "person_contact_rows": 123215,
+    "dual_mld_mbr_nmls": 637,
+    "mlo_chunk_rows": 209758,
+    "spon_chunk_rows": 53421,
+    "branch_by_class_clock": {
+      "MLDB|nmls_active": 2072,
+      "MLSB|nmls_active": 3961,
+      "MBRB|nmls_active": 720,
+      "MLDB|monthly_full": 24330,
+      "MBRB|monthly_full": 1946
+    }
+  }
+}
