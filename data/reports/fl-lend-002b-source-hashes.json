@@ -1,0 +1,59 @@
+{
+  "task": "FL-LEND-002B",
+  "computed_from": "data/raw/florida/ofr-prr-141420/originals (immutable, not edited)",
+  "algorithm": "SHA-256 of full file bytes",
+  "CANONICAL_SOURCE_HASH": {
+    "Mortgage Businesses.csv": "34a9b176fdef1b8ca9c96a1aacf7884fdfe0de3af62018e1b1308759c231a72b"
+  },
+  "hash_reconciliation": {
+    "invalid_63_char_transcription": "34a9b176fdef1b8ca9c96a1aacf7884fdf0de3af62018e1b1308759c231a72b",
+    "valid_64_char_canonical": "34a9b176fdef1b8ca9c96a1aacf7884fdfe0de3af62018e1b1308759c231a72b",
+    "difference": "The 63-character string dropped one hex digit (e) after fdf. It is not a SHA-256. The 64-character digest recomputed from the original bytes is canonical."
+  },
+  "seven": [
+    {
+      "file": "Loan Originators.csv",
+      "sha256": "519fc3637497b67c2b5fde023eaf931e5844ea14fcef6609f8312c1d02995130",
+      "bytes": 17042016,
+      "provenance": "NMLS-derived OFR PRR #141420 / Ref #1341691"
+    },
+    {
+      "file": "Mortgage Businesses.csv",
+      "sha256": "34a9b176fdef1b8ca9c96a1aacf7884fdfe0de3af62018e1b1308759c231a72b",
+      "bytes": 4082748,
+      "provenance": "NMLS-derived OFR PRR #141420 / Ref #1341691",
+      "canonical": true
+    },
+    {
+      "file": "LoanOriginators_AI_Monthly (4).zip",
+      "sha256": "8547d6ac67be13d6970e249eb61133fd6b781c80c9e762f971bad2a607f94889",
+      "bytes": 3530642,
+      "provenance": "OFR website monthly; PRR package"
+    },
+    {
+      "file": "LoanOriginators_JR_Monthly (3).zip",
+      "sha256": "6180d0aad892244749cc0de3d965d410bbcb3f1c1ec0e5cf8aedec964d9e61dd",
+      "bytes": 2949815,
+      "provenance": "OFR website monthly; PRR package"
+    },
+    {
+      "file": "LoanOriginators_SZ_Monthly (4).zip",
+      "sha256": "3b73143e96dcaeb3716d3c845b99a0558355a0394f7c5935c50b7bc33ddb13e2",
+      "bytes": 1791603,
+      "provenance": "OFR website monthly; PRR package"
+    },
+    {
+      "file": "MortgageFirms_MBR-MBRB_Monthly (8).zip",
+      "sha256": "c4827b29bc9e9f3e92484e5fc5ddef5cd3090c7bce1db743e928171f71a27474",
+      "bytes": 640570,
+      "provenance": "OFR website monthly; PRR package"
+    },
+    {
+      "file": "MortgageFirms_MLD-MLDB_Monthly (7).zip",
+      "sha256": "7a194926bfffb9715a8c69bada1440a441d33d1f147361866f84530e301484f0",
+      "bytes": 1269147,
+      "provenance": "OFR website monthly; PRR package"
+    }
+  ],
+  "source_file_altered": false
+}

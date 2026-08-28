@@ -401,22 +401,7 @@ def classify_companies(cur, company_nmls: set[str]) -> dict[str, dict]:
             else:
                 inst_kind[str(r[0])] = r[1]
 
-    # Crosswalk: Florida company profiles already attached.
-    profile_nmls = {}
-    cur.execute(
-        """
-        select table_name from information_schema.tables
-        where table_schema='public' and table_name='lender_state_company_profiles'
-        """
-    )
-    if cur.fetchone():
-        cur.execute("select nmls_id, institution_id from lender_state_company_profiles")
-        for r in cur.fetchall():
-            if isinstance(r, dict):
-                profile_nmls[r["nmls_id"]] = r["institution_id"]
-            else:
-                profile_nmls[r[0]] = r[1]
-
+    # First pass is exact NMLS_INSTITUTION only. No name matching. No LEI/FDIC/profile crosswalk.
     out = {}
     for nmls_id in company_nmls:
         rec = existing.get(nmls_id)
@@ -424,26 +409,18 @@ def classify_companies(cur, company_nmls: set[str]) -> dict[str, dict]:
             kind = inst_kind.get(str(rec["entity_id"]))
             if kind and kind != "institution":
                 out[nmls_id] = {
-                    "resolution_class": "IDENTITY_CONFLICT",
+                    "resolution_class": "MULTI_ENTITY_CONFLICT",
                     "entity_id": str(rec["entity_id"]),
                     "match_method": "EXACT_NMLS_WRONG_KIND",
                     "notes": f"NMLS_INSTITUTION attached to entity_kind={kind}",
                 }
             else:
                 out[nmls_id] = {
-                    "resolution_class": "ATTACHED_EXISTING_ID",
+                    "resolution_class": "ATTACHED_EXISTING_EXACT_NMLS",
                     "entity_id": str(rec["entity_id"]),
                     "match_method": "EXACT_NMLS_INSTITUTION",
                     "notes": None,
                 }
-            continue
-        if nmls_id in profile_nmls and profile_nmls[nmls_id]:
-            out[nmls_id] = {
-                "resolution_class": "CROSSWALK_ATTACHED",
-                "entity_id": str(profile_nmls[nmls_id]),
-                "match_method": "FLORIDA_COMPANY_PROFILE",
-                "notes": None,
-            }
             continue
         out[nmls_id] = {
             "resolution_class": "UNRESOLVED_SOURCE_COMPANY_NMLS",
@@ -1241,16 +1218,19 @@ def main() -> int:
     class_report = {
         "source_company_nmls": len(company),
         "classes": dict(classes),
-        "attached_existing": classes.get("ATTACHED_EXISTING_ID", 0),
+        "attached_existing": classes.get("ATTACHED_EXISTING_EXACT_NMLS", 0),
         "crosswalk_attached": classes.get("CROSSWALK_ATTACHED", 0),
         "net_new_confirmed": classes.get("NET_NEW_CONFIRMED", 0),
         "review_required": classes.get("REVIEW_REQUIRED", 0),
-        "identity_conflict": classes.get("IDENTITY_CONFLICT", 0),
+        "identity_conflict": classes.get("IDENTITY_CONFLICT", 0) + classes.get("MULTI_ENTITY_CONFLICT", 0),
         "malformed": classes.get("MALFORMED", 0),
         "unresolved_source_company_nmls": classes.get("UNRESOLVED_SOURCE_COMPANY_NMLS", 0),
         "attachment_pct": round(
             100.0
-            * (classes.get("ATTACHED_EXISTING_ID", 0) + classes.get("CROSSWALK_ATTACHED", 0))
+            * (
+                classes.get("ATTACHED_EXISTING_EXACT_NMLS", 0)
+                + classes.get("ATTACHED_EXISTING_ID", 0)
+            )
             / len(company),
             2,
         )

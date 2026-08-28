@@ -1,60 +1,20 @@
--- FL-LEND-002 — Additive Florida OFR/NMLS regulatory graph attach.
--- Reuses the national identity spine. Does not replace it. Does not create a v2 graph.
--- Does not alter public.lenders, slugs, sitemaps, Wave-1, or lender_profile_intelligence.
--- Unresolved company NMLS values are held — never minted as automatic institutions.
+-- FL-LEND-002B — Additive Florida OFR/NMLS regulatory graph attach.
+-- Reuses the live national identity spine. Does not replace it. Does not create a v2 graph.
+-- Does not CREATE lender_state_licenses: that table already exists in Production
+-- without a matching CREATE in the intel-004 git lineage. This migration only
+-- adds columns/constraints and new observation/resolution tables.
 
--- Production already has lender_state_licenses (CREATE was not in intel-004 git).
--- IF NOT EXISTS reconstructs the table only on a fresh database.
-
-create table if not exists public.lender_state_licenses (
-  id uuid primary key,
-  jurisdiction text not null,
-  license_number text not null,
-  license_class text not null,
-  entity_class text,
-  nmls_id text,
-  ofr_status text,
-  status_effective_on date,
-  initial_approval_on date,
-  servicer_flag text,
-  firm_name text,
-  person_last text,
-  person_first text,
-  person_middle text,
-  phone text,
-  prim_address1 text,
-  prim_address2 text,
-  prim_city text,
-  prim_county text,
-  prim_state text,
-  prim_zip text,
-  mail_address1 text,
-  mail_address2 text,
-  mail_city text,
-  mail_state text,
-  mail_zip text,
-  institution_id uuid references public.lender_national_entities(id) on delete set null,
-  identifier_id uuid references public.lender_identifiers(id) on delete set null,
-  attribution_confidence text,
-  match_method text,
-  source_dataset text,
-  source_record_id text,
-  source_observed_on date,
-  raw_metadata jsonb not null default '{}'::jsonb,
-  created_at timestamptz not null default now(),
-  updated_at timestamptz not null default now(),
-  unique (jurisdiction, license_number)
-);
-
-create index if not exists idx_state_licenses_nmls
-  on public.lender_state_licenses (nmls_id);
-create index if not exists idx_state_licenses_class
-  on public.lender_state_licenses (license_class);
-create index if not exists idx_state_licenses_institution
-  on public.lender_state_licenses (institution_id);
-
-comment on table public.lender_state_licenses is
-  'Florida (and future state) regulatory credentials. One row per (jurisdiction, license_number). Classes remain distinct: MLD, MBR, MLDB, MBRB, LO, MLS, MLSB. Not an institution table.';
+do $$
+begin
+  if to_regclass('public.lender_state_licenses') is null then
+    raise exception 'FL-LEND-002B STOP: public.lender_state_licenses is missing. Introspect Production before inventing a licenses table.';
+  end if;
+  if to_regclass('public.lender_national_entities') is null
+     or to_regclass('public.lender_identifiers') is null
+     or to_regclass('public.lender_profile_intelligence') is null then
+    raise exception 'FL-LEND-002B STOP: national graph tables are missing.';
+  end if;
+end $$;
 
 alter table public.lender_state_licenses
   add column if not exists source_clock text;
@@ -62,7 +22,7 @@ alter table public.lender_state_licenses
 comment on column public.lender_state_licenses.source_clock is
   'monthly_full = OFR website extract including Expired/Terminated. nmls_active = NMLS PRR active-oriented roster. Do not collapse.';
 
--- Expand license_class check if a prior migration constrained it to MLD/MBR/MLDB/MBRB/LO.
+-- Expand license_class check if a prior constraint omitted MLS/MLSB.
 do $$
 declare
   conname text;
@@ -86,6 +46,9 @@ begin
       );
   end if;
 end $$;
+
+comment on table public.lender_state_licenses is
+  'Florida (and future state) regulatory credentials. Classes remain distinct: MLD, MBR, MLDB, MBRB, LO, MLS, MLSB. MLS is the official Florida Mortgage Lender Servicer License, not the national servicer-role evidence family.';
 
 -- Temporal observations: monthly full universe vs NMLS active-oriented roster.
 create table if not exists public.lender_state_license_observations (
@@ -139,12 +102,14 @@ create table if not exists public.lender_source_identity_resolutions (
   source_dataset text not null,
   resolution_class text not null check (
     resolution_class in (
+      'ATTACHED_EXISTING_EXACT_NMLS',
       'ATTACHED_EXISTING_ID',
       'CROSSWALK_ATTACHED',
       'MATCH_CANDIDATE_REVIEWED',
       'NET_NEW_CONFIRMED',
       'REVIEW_REQUIRED',
       'IDENTITY_CONFLICT',
+      'MULTI_ENTITY_CONFLICT',
       'MALFORMED',
       'UNRESOLVED_SOURCE_COMPANY_NMLS'
     )
@@ -177,14 +142,3 @@ create policy "Service role manage lender_source_identity_resolutions"
 
 grant all on table public.lender_source_identity_resolutions to service_role;
 revoke all on table public.lender_source_identity_resolutions from anon, authenticated, public;
-
--- RLS for reconstructed licenses table (no-op if already enabled).
-alter table public.lender_state_licenses enable row level security;
-
-drop policy if exists "Service role manage lender_state_licenses" on public.lender_state_licenses;
-create policy "Service role manage lender_state_licenses"
-  on public.lender_state_licenses for all
-  using (auth.role() = 'service_role');
-
-grant all on table public.lender_state_licenses to service_role;
-revoke all on table public.lender_state_licenses from anon, authenticated, public;
