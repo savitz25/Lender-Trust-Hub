@@ -6,7 +6,7 @@ import { SITE_URL } from '@/lib/directory/categories';
 
 const TITLE = 'National lender research';
 const DESCRIPTION =
-  'Search published national lender research profiles by name or official identifier. HMDA 2025 activity, CFPB complaint evidence, and Regulatory & Enforcement History. Independent research. Not a ranking.';
+  'Search published lender research profiles by name or official identifier, including national public profiles and the current Florida public company cohort. Independent research. Not a ranking.';
 
 export const dynamic = 'force-dynamic';
 

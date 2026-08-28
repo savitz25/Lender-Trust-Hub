@@ -2,9 +2,13 @@ import { jsonLdHasForbiddenRatings } from './jsonld';
 import { buildNationalDiscoveryJsonLd } from './discovery-jsonld';
 import { INDEXING_COHORT, getIndexingRow, getRenderRow, nationalIndexingSitemapCount } from './publication';
 import {
+  COMBINED_SEARCHABLE_COUNT,
   DISCOVERY_INDEXABLE_COUNT,
   DISCOVERY_RECORDS,
   DISCOVERY_SEARCHABLE_COUNT,
+  FLORIDA_DISCOVERY_RECORDS,
+  FLORIDA_SEARCHABLE_COUNT,
+  SEARCH_POOL,
   browseDiscovery,
   nationalPresentationName,
   parseDiscoveryQuery,
@@ -81,5 +85,50 @@ export function runDiscContractTests(): DiscResult[] {
   check('DISC28', !jsonLdHasForbiddenRatings(ld), 'discovery jsonld no ratings');
   check('DISC-gate', NATIONAL_PROFILE_GATE.mode === 'controlled_index', 'gate');
   check('DISC-no-bhc', DISCOVERY_RECORDS.every((r) => !r.stable_key.startsWith('rssd-bhc:')), 'no BHCs in search');
+  check('FLSEARCH-national', DISCOVERY_SEARCHABLE_COUNT === 181 && DISCOVERY_RECORDS.length === 181, 'national 181 intact');
+  check('FLSEARCH-fl', FLORIDA_SEARCHABLE_COUNT === 130 && FLORIDA_DISCOVERY_RECORDS.length === 130, 'florida 130');
+  check('FLSEARCH-union', COMBINED_SEARCHABLE_COUNT === 311 && SEARCH_POOL.length === 311, '311 unique');
+  const natIds = new Set(DISCOVERY_RECORDS.map((r) => r.institution_id));
+  const flIds = new Set(FLORIDA_DISCOVERY_RECORDS.map((r) => r.institution_id));
+  check('FLSEARCH-overlap', [...flIds].every((id) => !natIds.has(id)), 'national∩florida=0');
+  check(
+    'FLSEARCH-name',
+    searchDiscovery('ISLAND MORTGAGE, INC.').some((h) => h.record.slug === 'island-mortgage-inc' && h.match === 'canonical_exact'),
+    'florida exact name'
+  );
+  check(
+    'FLSEARCH-nmls',
+    searchDiscovery('NMLS 1000869')[0]?.record.slug === 'island-mortgage-inc' &&
+      searchDiscovery('NMLS 1000869')[0]?.matchedIdentifier === 'nmls',
+    'florida exact NMLS institution'
+  );
+  check(
+    'FLSEARCH-partial',
+    searchDiscovery('island mortgage').some((h) => h.record.slug === 'island-mortgage-inc'),
+    'florida partial name'
+  );
+  check(
+    'FLSEARCH-national-still',
+    searchDiscovery('NMLS 3030')[0]?.record.slug === 'rocket-mortgage',
+    'national NMLS still first-class'
+  );
+  const leak = JSON.stringify(FLORIDA_DISCOVERY_RECORDS);
+  check(
+    'FLSEARCH-leak',
+    !/raw_metadata|review_before_public|content_sha256|identity-resolution|service_role/.test(leak),
+    'florida projection public-safe'
+  );
+  check(
+    'FLSEARCH-person-branch-nmls-absent',
+    FLORIDA_DISCOVERY_RECORDS.every((r) => r.nmls && !r.stable_key.startsWith('nmls-person:') && !r.stable_key.startsWith('nmls-branch:')),
+    'only NMLS_INSTITUTION in florida search'
+  );
+  const b2 = searchDiscovery('axe capital lending');
+  const c2 = searchDiscovery('think one mortgage');
+  check(
+    'FLSEARCH-no-ofr-rank',
+    Boolean(b2[0] && c2[0] && b2[0].rank === c2[0].rank),
+    'B2 and C2 same match rank family for comparable partials'
+  );
   return out;
 }

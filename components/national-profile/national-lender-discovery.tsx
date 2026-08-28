@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import {
   BROWSE_TYPES,
+  COMBINED_SEARCHABLE_COUNT,
   DISCOVERY_INDEXABLE_COUNT,
   DISCOVERY_SEARCHABLE_COUNT,
+  FLORIDA_SEARCHABLE_COUNT,
   browseCounts,
   browseDiscovery,
   searchDiscovery,
@@ -63,8 +65,9 @@ export function NationalLenderDiscovery({
           Search published research profiles
         </h2>
         <p className="mt-1 text-sm text-slate-600">
-          Search by institution name, NMLS Institution ID, FDIC certificate, NCUA charter, or LEI. Namespaces stay
-          separate: NMLS 3030 is not FDIC 3030.
+          Search by institution name or NMLS Institution ID. National profiles also accept FDIC certificate, NCUA
+          charter, or LEI. Namespaces stay separate: NMLS 3030 is not FDIC 3030. NMLS Individual and NMLS Branch IDs
+          are not company search keys.
         </p>
         <form method="get" action="/lender" className="mt-4 space-y-3" role="search">
           {activeType ? <input type="hidden" name="type" value={activeType} /> : null}
@@ -141,8 +144,8 @@ export function NationalLenderDiscovery({
           </p>
           {hits.length === 0 ? (
             <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-5 text-sm text-slate-700">
-              <p>No currently published national lender research profile matched this search.</p>
-              <p className="mt-2">That does not mean no lender exists. Try a different spelling, an identifier such as an NMLS Institution ID, or browse by type.</p>
+              <p>No currently published research profile matched this search.</p>
+              <p className="mt-2">That does not mean no lender exists. Try a different spelling, an NMLS Institution ID, or browse by type.</p>
               <p className="mt-2">
                 <Link href="/lender" className="text-[#0D9488] underline-offset-2 hover:underline">
                   Browse published research
@@ -161,9 +164,10 @@ export function NationalLenderDiscovery({
         </section>
       ) : (
         <p className="mt-6 text-sm text-slate-600">
-          A controlled set of published national research profiles is searchable here. It is not a complete U.S.
-          lender directory and not a ranked list of {DISCOVERY_INDEXABLE_COUNT} “top” lenders. {DISCOVERY_SEARCHABLE_COUNT}{' '}
-          profiles currently have a public research page.
+          A controlled set of published research profiles is searchable here. It is not a complete U.S. lender
+          directory and not a ranked list. Currently searchable: {DISCOVERY_SEARCHABLE_COUNT} national public profiles
+          and {FLORIDA_SEARCHABLE_COUNT} Florida public profiles ({COMBINED_SEARCHABLE_COUNT} unique company profiles).
+          National indexability remains {DISCOVERY_INDEXABLE_COUNT}.
         </p>
       )}
 
@@ -180,6 +184,9 @@ function ResultCard({ hit }: { hit: DiscoveryHit }) {
   if (r.ncua) ids.push(`NCUA Charter ${r.ncua}`);
   if (r.lei && !r.nmls && !r.fdic && !r.ncua) ids.push(`LEI ${r.lei}`);
   const hq = [r.hq_city, r.hq_state].filter(Boolean).join(', ');
+  const classLabels = (r.florida_classes || []).map((c) =>
+    c === 'MBR' ? 'Mortgage Broker credential' : c === 'MLD' ? 'Mortgage Lender credential' : c
+  );
   const evidence: string[] = [];
   if (r.evidence.hmda) evidence.push('HMDA');
   if (r.evidence.cfpb) evidence.push('CFPB evidence');
@@ -198,6 +205,9 @@ function ResultCard({ hit }: { hit: DiscoveryHit }) {
         <p className="mt-1 text-sm text-slate-600">Headquarters (official depository record): {hq}</p>
       ) : null}
       {ids.length ? <p className="mt-2 break-words text-sm text-slate-700">{ids.join(' · ')}</p> : null}
+      {classLabels.length ? (
+        <p className="mt-1 break-words text-sm text-slate-600">Florida OFR {classLabels.join(' · ')}</p>
+      ) : null}
       {hit.matchedIdentifier ? (
         <p className="mt-1 text-xs text-slate-500">Matched {hit.matchedIdentifier.toUpperCase()} identifier</p>
       ) : null}

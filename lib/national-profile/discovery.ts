@@ -1,13 +1,17 @@
 /**
- * LEND-NAT-016 — bounded national discovery over render-enabled profiles only.
- * Search index is a 181-row JSON manifest. No CFPB/HMDA table scans.
+ * LEND-NAT-016 + FL-LEND-011 — bounded discovery over published profiles only.
+ * National index: 181-row JSON. Florida: 130-row publication-manifest projection.
+ * No CFPB/HMDA/state-profile table scans.
  */
 
 import searchFile from '@/docs/lend-nat-016-search-index.json';
+import floridaSearchFile from '@/docs/fl-lend-011-florida-search-index.json';
 import { nationalProfilePath } from './cohort';
 
 export const DISCOVERY_SEARCHABLE_COUNT = 181;
 export const DISCOVERY_INDEXABLE_COUNT = 180;
+export const FLORIDA_SEARCHABLE_COUNT = 130;
+export const COMBINED_SEARCHABLE_COUNT = 311;
 
 export type DiscoveryEvidence = {
   hmda: boolean;
@@ -35,6 +39,8 @@ export type DiscoveryRecord = {
   servicer_role: string;
   evidence: DiscoveryEvidence;
   indexable: boolean;
+  publication_source?: 'national' | 'florida_phase1' | 'florida_phase2';
+  florida_classes?: string[];
 };
 
 type SearchFile = {
@@ -49,6 +55,12 @@ const INDEX = searchFile as SearchFile;
 
 export const DISCOVERY_RECORDS: DiscoveryRecord[] = INDEX.rows;
 export const DISCOVERY_COHORT_VERSION = INDEX.cohort_version;
+
+type FloridaSearchFile = { contract: string; count: number; fingerprint: string; rows: DiscoveryRecord[] };
+const FLORIDA_INDEX = floridaSearchFile as FloridaSearchFile;
+export const FLORIDA_DISCOVERY_RECORDS: DiscoveryRecord[] = FLORIDA_INDEX.rows;
+export const FLORIDA_SEARCH_FINGERPRINT = FLORIDA_INDEX.fingerprint;
+export const SEARCH_POOL: DiscoveryRecord[] = [...DISCOVERY_RECORDS, ...FLORIDA_DISCOVERY_RECORDS];
 
 export const BROWSE_TYPES = [
   { id: 'bank', label: 'Banks', meaning: 'FDIC-insured depository institutions in this research set.' },
@@ -158,7 +170,7 @@ function identifierHit(record: DiscoveryRecord, kind: IdentifierKind, value: str
 export function searchDiscovery(rawQuery: string, type?: string | null): DiscoveryHit[] {
   const parsed = parseDiscoveryQuery(rawQuery);
   const typeId = type && BROWSE_TYPES.some((t) => t.id === type) ? type : null;
-  const pool = typeId ? DISCOVERY_RECORDS.filter((r) => r.browse_types.includes(typeId)) : DISCOVERY_RECORDS;
+  const pool = typeId ? SEARCH_POOL.filter((r) => r.browse_types.includes(typeId)) : SEARCH_POOL;
 
   const hits: DiscoveryHit[] = [];
   const seen = new Set<string>();
@@ -219,7 +231,7 @@ export function searchDiscovery(rawQuery: string, type?: string | null): Discove
 export function browseDiscovery(type: string): DiscoveryHit[] {
   const typeId = BROWSE_TYPES.some((t) => t.id === type) ? type : null;
   if (!typeId) return [];
-  return DISCOVERY_RECORDS.filter((r) => r.browse_types.includes(typeId))
+  return SEARCH_POOL.filter((r) => r.browse_types.includes(typeId))
     .sort((a, b) => a.presentation_name.localeCompare(b.presentation_name, 'en'))
     .map((record) => ({
       record,
@@ -232,12 +244,15 @@ export function browseDiscovery(type: string): DiscoveryHit[] {
 export function browseCounts(): Record<string, number> {
   const out: Record<string, number> = {};
   for (const t of BROWSE_TYPES) {
-    out[t.id] = DISCOVERY_RECORDS.filter((r) => r.browse_types.includes(t.id)).length;
+    out[t.id] = SEARCH_POOL.filter((r) => r.browse_types.includes(t.id)).length;
   }
   return out;
 }
 
 export function typeLabel(record: DiscoveryRecord): string {
+  if (record.publication_source === 'florida_phase1' || record.publication_source === 'florida_phase2') {
+    return 'Florida OFR-licensed company';
+  }
   if (record.depository === 'FDIC') return 'FDIC-insured bank';
   if (record.depository === 'NCUA') return 'Credit union';
   if (record.browse_types.includes('servicer') && record.depository === 'NONBANK') {
