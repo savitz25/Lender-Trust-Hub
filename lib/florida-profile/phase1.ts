@@ -41,8 +41,8 @@ export function isFloridaPhase1Slug(slug: string): boolean {
 
 export const FLORIDA_PHASE1_GATE = {
   version: FLORIDA_PHASE1_VERSION,
-  robotsIndex: false as boolean,
-  sitemap: false as boolean,
+  robotsIndex: true as boolean,
+  sitemap: true as boolean,
   search: false,
   count: FLORIDA_PHASE1_COUNT,
 };

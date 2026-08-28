@@ -7,8 +7,8 @@
   "cohort_a": 10,
   "cohort_b": 10,
   "cohort_c": 10,
-  "robots_index": false,
-  "sitemap": false,
+  "robots_index": true,
+  "sitemap": true,
   "search": false,
   "rows": [
     {
