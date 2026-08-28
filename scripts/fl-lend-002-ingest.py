@@ -26,7 +26,11 @@ from pathlib import Path
 from urllib.parse import quote, unquote, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW = ROOT / "data" / "raw" / "florida" / "ofr-prr-141420"
+_RAW_CANDIDATES = [
+    ROOT / "data" / "raw" / "florida" / "ofr-prr-141420",
+    Path(r"C:\Users\Michael.Savitsky\lender-trust-hub") / "data" / "raw" / "florida" / "ofr-prr-141420",
+]
+RAW = next((p for p in _RAW_CANDIDATES if (p / "originals" / "Mortgage Businesses.csv").exists()), _RAW_CANDIDATES[0])
 ORIG = RAW / "originals"
 EXTR = RAW / "extracted"
 DDL = ROOT / "supabase" / "migrations" / "20260828200000_florida_ofr_regulatory_graph.sql"
@@ -370,12 +374,12 @@ def probe_graph(cur) -> dict:
 
 
 def classify_companies(cur, company_nmls: set[str]) -> dict[str, dict]:
-    """Tier 1 exact NMLS_INSTITUTION. No name-only merge. Remainder held unresolved."""
-    existing = {}
+    """Exact NMLS_INSTITUTION only. No name match. Multi-entity IDs are held, not chosen."""
+    by_nmls: dict[str, set[str]] = defaultdict(set)
     for part in chunked(sorted(company_nmls), 500):
         cur.execute(
             """
-            select identifier_value, entity_id, confidence
+            select identifier_value, entity_id
             from lender_identifiers
             where identifier_type='NMLS_INSTITUTION'
               and identifier_value = any(%s)
@@ -384,12 +388,14 @@ def classify_companies(cur, company_nmls: set[str]) -> dict[str, dict]:
         )
         for r in cur.fetchall():
             if isinstance(r, dict):
-                existing[r["identifier_value"]] = r
+                val, eid = r["identifier_value"], r["entity_id"]
             else:
-                existing[r[0]] = {"identifier_value": r[0], "entity_id": r[1], "confidence": r[2]}
+                val, eid = r[0], r[1]
+            if eid:
+                by_nmls[str(val)].add(str(eid))
 
     inst_kind = {}
-    eids = [str(v["entity_id"]) for v in existing.values() if v.get("entity_id")]
+    eids = sorted({eid for s in by_nmls.values() for eid in s})
     for part in chunked(eids, 500):
         cur.execute(
             "select id, entity_kind from lender_national_entities where id = any(%s::uuid[])",
@@ -401,23 +407,31 @@ def classify_companies(cur, company_nmls: set[str]) -> dict[str, dict]:
             else:
                 inst_kind[str(r[0])] = r[1]
 
-    # First pass is exact NMLS_INSTITUTION only. No name matching. No LEI/FDIC/profile crosswalk.
     out = {}
     for nmls_id in company_nmls:
-        rec = existing.get(nmls_id)
-        if rec and rec.get("entity_id"):
-            kind = inst_kind.get(str(rec["entity_id"]))
+        eids_hit = by_nmls.get(nmls_id, set())
+        if len(eids_hit) > 1:
+            out[nmls_id] = {
+                "resolution_class": "MULTI_ENTITY_CONFLICT",
+                "entity_id": None,
+                "match_method": "EXACT_NMLS_MULTI_ENTITY",
+                "notes": "source NMLS maps to multiple entity_id; not attached",
+            }
+            continue
+        if len(eids_hit) == 1:
+            eid = next(iter(eids_hit))
+            kind = inst_kind.get(eid)
             if kind and kind != "institution":
                 out[nmls_id] = {
                     "resolution_class": "MULTI_ENTITY_CONFLICT",
-                    "entity_id": str(rec["entity_id"]),
+                    "entity_id": eid,
                     "match_method": "EXACT_NMLS_WRONG_KIND",
                     "notes": f"NMLS_INSTITUTION attached to entity_kind={kind}",
                 }
             else:
                 out[nmls_id] = {
                     "resolution_class": "ATTACHED_EXISTING_EXACT_NMLS",
-                    "entity_id": str(rec["entity_id"]),
+                    "entity_id": eid,
                     "match_method": "EXACT_NMLS_INSTITUTION",
                     "notes": None,
                 }
@@ -429,6 +443,56 @@ def classify_companies(cur, company_nmls: set[str]) -> dict[str, dict]:
             "notes": "Not minted as net-new institution.",
         }
     return out
+
+
+def attach_plan(src, resolutions: dict[str, dict], parents: dict) -> dict:
+    attached = {
+        n
+        for n, r in resolutions.items()
+        if r.get("resolution_class") == "ATTACHED_EXISTING_EXACT_NMLS" and r.get("entity_id")
+    }
+    def cred_plan(rows, klass_fn, nmls_fn):
+        attachable = unresolved = 0
+        for r in rows:
+            klass = klass_fn(r)
+            nmls_id = nmls_fn(r)
+            if not klass:
+                continue
+            if nmls_id in attached:
+                attachable += 1
+            else:
+                unresolved += 1
+        return {"attachable_rows": attachable, "unresolved_entity_rows": unresolved}
+
+    monthly_mld = [r for r in src["monthly_mld"] if (r.get("LICENSE TYPE") or "").strip() == "MLD"]
+    monthly_mbr = [r for r in src["monthly_mbr"] if (r.get("LICENSE TYPE") or "").strip() == "MBR"]
+    nmls_mls = [r for r in src["nmls_biz"] if NMLS_LICENSE_MAP.get((r.get("License Name") or "").strip()) == "MLS"]
+    nmls_fn_co = lambda r: nmls_norm(r.get("NMLS ID") or r.get("Company Id"))
+    branch_ids = set(parents["parent"])
+    parent_resolved = sum(1 for b, c in parents["parent"].items() if c in attached)
+    parent_unresolved = len(branch_ids) - parent_resolved
+    sponsor_ids = [nmls_norm(r.get("Sponsoring Company ID")) for r in src["nmls_lo"]]
+    sponsor_filled = [s for s in sponsor_ids if s]
+    sponsor_resolved = sum(1 for s in sponsor_filled if s in attached)
+    return {
+        "credentials": {
+            "MLD_monthly": cred_plan(monthly_mld, lambda r: "MLD", nmls_fn_co),
+            "MBR_monthly": cred_plan(monthly_mbr, lambda r: "MBR", nmls_fn_co),
+            "MLS_nmls": cred_plan(nmls_mls, lambda r: "MLS", lambda r: nmls_norm(r.get("Company Id"))),
+        },
+        "branches": {
+            "branch_nmls": len(branch_ids),
+            "parent_resolved": parent_resolved,
+            "parent_unresolved": parent_unresolved,
+            "multi_parent": len(parents["collisions"]),
+        },
+        "mlo": {
+            "person_nmls": len({nmls_norm(r.get("Individual Id")) for r in src["nmls_lo"] if nmls_norm(r.get("Individual Id"))}),
+            "sponsor_observations": len(sponsor_filled),
+            "sponsor_resolved": sponsor_resolved,
+            "sponsor_unresolved": len(sponsor_filled) - sponsor_resolved,
+        },
+    }
 
 
 def person_name(r: dict, last_k, first_k, mid_k) -> str:
@@ -511,7 +575,7 @@ def ingest(cur, src, resolutions: dict[str, dict], apply: bool) -> dict:
     observations = []
     rels = []
 
-    # Branch entities from NMLS roster (deterministic parent when institution exists).
+    # Branch entities only when parent Company Id is exact-resolved. Else hold.
     seen_branch = set()
     for r in src["nmls_biz"]:
         klass = NMLS_LICENSE_MAP.get((r.get("License Name") or "").strip())
@@ -520,6 +584,25 @@ def ingest(cur, src, resolutions: dict[str, dict], apply: bool) -> dict:
         if klass not in BRANCH_CLASSES or not bid or bid in seen_branch:
             continue
         seen_branch.add(bid)
+        parent_nmls = biz_parents["parent"].get(bid) or cid
+        parent_res = resolutions.get(parent_nmls or "", {})
+        parent_eid = parent_res.get("entity_id") if parent_res.get("resolution_class") == "ATTACHED_EXISTING_EXACT_NMLS" else None
+        if not parent_eid:
+            resolution_rows.append(
+                (
+                    str(gid("res", "NMLS_BRANCH", bid)),
+                    "NMLS_BRANCH",
+                    bid,
+                    SOURCE_NMLS,
+                    "UNRESOLVED_SOURCE_COMPANY_NMLS",
+                    None,
+                    "PARENT_COMPANY_UNRESOLVED",
+                    f"branch {bid} parent company {parent_nmls} not exact-attached; branch held",
+                    NMLS_AS_OF,
+                    Json({"prr": PRR, "parent_company_nmls": parent_nmls}),
+                )
+            )
+            continue
         eid = gid("branch", bid)
         iid = gid("ident", "NMLS_BRANCH", bid)
         name = (r.get("Company Name") or "").strip() or f"BRANCH {bid}"
@@ -555,8 +638,6 @@ def ingest(cur, src, resolutions: dict[str, dict], apply: bool) -> dict:
         branch_names.append(
             (str(gid("name", str(eid), name)), str(eid), "legal", name[:500], SOURCE_NMLS, f"FL|NMLS_BRANCH|{bid}", NMLS_AS_OF)
         )
-        parent_nmls = biz_parents["parent"].get(bid)
-        parent_eid = resolutions.get(parent_nmls or "", {}).get("entity_id") if parent_nmls else None
         if parent_eid:
             rels.append(
                 (
@@ -673,7 +754,7 @@ def ingest(cur, src, resolutions: dict[str, dict], apply: bool) -> dict:
                     "ASSOCIATED_WITH",
                     "confirmed",
                     SOURCE_NMLS,
-                    f"PRR {PRR} Sponsoring Company ID {sponsor}",
+                    "Sponsoring institution observed in the OFR-produced NMLS roster as of 2026-08-27.",
                     parse_date(r.get("Sponsorship Status Date")) or NMLS_AS_OF,
                     None,
                     (r.get("Sponsorship Status") or "").strip() or None,
@@ -1167,17 +1248,23 @@ def main() -> int:
     dsn = lender_dsn()
     if not dsn:
         dump(
-            "fl-lend-002-blocked.json",
+            "fl-lend-002c-blocked.json",
             {
                 "status": "BLOCKED",
-                "reason": "NATIONAL_CANONICAL_GRAPH_NOT_OPENABLE",
-                "detail": "TARGET_DATABASE_URL / .env.local for hidcrbexurginnuqgipx is not present on this host. Refusing to invent a v2 graph or write Move/Investor/Contractor databases.",
+                "reason": "LENDER_PRODUCTION_CREDENTIAL_NOT_AVAILABLE",
+                "credential_needed": "TARGET_DATABASE_URL (hidcrbexurginnuqgipx pooler URI)",
+                "live_schema_independently_verified": True,
+                "live_project_ref": REF,
                 "source_company_nmls": len(company),
-                "held_unresolved_without_production": len(company),
+                "held_unresolved_without_session": len(company),
                 "net_new_confirmed": 0,
+                "nmls_institution_live_reported": 6641,
+                "entities_live_reported": 80615,
+                "lpi_live_reported": 8447,
+                "licenses_live_reported": 72484,
             },
         )
-        print("STOP not hidcrbex — Production DSN missing. No ingest.")
+        print("STOP — Lender Production session credential not available on this host. No ingest.")
         return 2
 
     import psycopg2
@@ -1238,9 +1325,12 @@ def main() -> int:
         else None,
         "sum_ok": sum(classes.values()) == len(company),
         "pre_graph": graph["counts"],
+        "attach_plan": attach_plan(src, resolutions, parents),
     }
-    dump("fl-lend-002-company-match.json", class_report)
+    dump("fl-lend-002c-company-match.json", class_report)
     print(json.dumps(class_report, indent=2), flush=True)
+    if class_report["identity_conflict"]:
+        print("STOP MULTI_ENTITY_CONFLICT identifiers held; not arbitrarily attached.")
 
     if not apply:
         planned = ingest(cur, src, resolutions, apply=False)

@@ -22,12 +22,15 @@ alter table public.lender_state_licenses
 comment on column public.lender_state_licenses.source_clock is
   'monthly_full = OFR website extract including Expired/Terminated. nmls_active = NMLS PRR active-oriented roster. Do not collapse.';
 
--- Expand license_class check if a prior constraint omitted MLS/MLSB.
+-- License-class support: add a check only when none exists.
+-- Never DROP an existing constraint (FL-LEND-002C: no destructive DDL).
 do $$
 declare
   conname text;
+  def text;
 begin
-  select c.conname into conname
+  select c.conname, pg_get_constraintdef(c.oid)
+    into conname, def
   from pg_constraint c
   join pg_class t on t.oid = c.conrelid
   join pg_namespace n on n.oid = t.relnamespace
@@ -35,8 +38,7 @@ begin
     and t.relname = 'lender_state_licenses'
     and c.contype = 'c'
     and pg_get_constraintdef(c.oid) ilike '%license_class%';
-  if conname is not null then
-    execute format('alter table public.lender_state_licenses drop constraint %I', conname);
+  if conname is null then
     alter table public.lender_state_licenses
       add constraint lender_state_licenses_license_class_check
       check (
@@ -44,6 +46,10 @@ begin
           'MLD', 'MBR', 'MLDB', 'MBRB', 'LO', 'MLS', 'MLSB'
         )
       );
+  elsif def not ilike '%MLS%' then
+    raise exception
+      'FL-LEND-002C STOP: existing license_class check omits MLS/MLSB and DROP is forbidden. Constraint: %',
+      conname;
   end if;
 end $$;
 

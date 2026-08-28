@@ -1,0 +1,14 @@
+{
+  "status": "BLOCKED",
+  "reason": "LENDER_PRODUCTION_CREDENTIAL_NOT_AVAILABLE",
+  "credential_needed": "TARGET_DATABASE_URL (hidcrbexurginnuqgipx pooler URI)",
+  "live_schema_independently_verified": true,
+  "live_project_ref": "hidcrbexurginnuqgipx",
+  "source_company_nmls": 10216,
+  "held_unresolved_without_session": 10216,
+  "net_new_confirmed": 0,
+  "nmls_institution_live_reported": 6641,
+  "entities_live_reported": 80615,
+  "lpi_live_reported": 8447,
+  "licenses_live_reported": 72484
+}
