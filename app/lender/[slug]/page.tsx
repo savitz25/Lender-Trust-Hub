@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound, redirect } from 'next/navigation';
 import { JsonLd } from '@/components/directory/JsonLd';
+import { FloridaCompanyProfile } from '@/components/florida/florida-company-profile';
 import { NationalLenderProfile } from '@/components/national-profile/national-lender-profile';
 import { NATIONAL_PROFILE_COHORT, getCohortBySlug, nationalProfilePath } from '@/lib/national-profile/cohort';
 import { fetchNationalProfile } from '@/lib/national-profile/fetch';
@@ -17,11 +18,22 @@ import {
   nationalProfileRobotsForSlug,
   nationalProfileTitle,
 } from '@/lib/national-profile/seo';
+import { FLORIDA_PHASE1_ROWS, FLORIDA_PHASE1_GATE, getPhase1Row } from '@/lib/florida-profile/phase1';
+import { fetchPublicLenderProfile } from '@/lib/florida-profile/fetch-public';
+import { buildFloridaCompanyJsonLd } from '@/lib/florida-profile/jsonld';
 
 export const dynamic = 'force-dynamic';
 
+const PHASE1_NOINDEX = {
+  index: false,
+  follow: false,
+  googleBot: { index: false, follow: false },
+} as const;
+
 export function generateStaticParams() {
-  return NATIONAL_PROFILE_COHORT.map((row) => ({ slug: row.slug }));
+  const national = NATIONAL_PROFILE_COHORT.map((row) => ({ slug: row.slug }));
+  const florida = FLORIDA_PHASE1_ROWS.map((row) => ({ slug: row.slug }));
+  return [...national, ...florida];
 }
 
 export async function generateMetadata({
@@ -32,18 +44,36 @@ export async function generateMetadata({
   const { slug: raw } = await params;
   const slug = resolveNationalProfileSlug(raw);
   const entry = getCohortBySlug(slug);
-  if (!entry) return { title: 'Lender research not found', robots: nationalProfileRobots() };
-  const result = await fetchNationalProfile(slug);
-  if (!result) return { title: 'Lender research not found', robots: nationalProfileRobots() };
-  const name =
-    nationalPresentationName(result.profile.identity.canonical_name, result.profile.identity.display_name) ||
-    entry.displayName;
-  const title = nationalProfileTitle(name);
-  const description = nationalProfileDescriptionForSlug(name, slug);
+  if (entry) {
+    const result = await fetchNationalProfile(slug);
+    if (!result) return { title: 'Lender research not found', robots: nationalProfileRobots() };
+    const name =
+      nationalPresentationName(result.profile.identity.canonical_name, result.profile.identity.display_name) ||
+      entry.displayName;
+    const title = nationalProfileTitle(name);
+    const description = nationalProfileDescriptionForSlug(name, slug);
+    return {
+      title,
+      description,
+      robots: nationalProfileRobotsForSlug(slug),
+      alternates: { canonical: nationalProfileCanonical(slug) },
+      openGraph: { title, description, url: nationalProfileCanonical(slug) },
+    };
+  }
+  const phase1 = getPhase1Row(slug);
+  if (!phase1) return { title: 'Lender research not found', robots: nationalProfileRobots() };
+  const pub = await fetchPublicLenderProfile(slug);
+  if (!pub || pub.kind === 'national_only' || !pub.florida) {
+    return { title: 'Lender research not found', robots: nationalProfileRobots() };
+  }
+  const title = nationalProfileTitle(pub.florida.name);
+  const description = `Research ${pub.florida.name} using Florida OFR licensing and Regulatory & Enforcement History. Independent research. Not a ranking, score, or lending advice.`;
   return {
     title,
     description,
-    robots: nationalProfileRobotsForSlug(slug),
+    robots: FLORIDA_PHASE1_GATE.robotsIndex
+      ? { index: true, follow: true }
+      : PHASE1_NOINDEX,
     alternates: { canonical: nationalProfileCanonical(slug) },
     openGraph: { title, description, url: nationalProfileCanonical(slug) },
   };
@@ -58,24 +88,38 @@ export default async function NationalLenderPage({
   const slug = resolveNationalProfileSlug(raw);
   if (slug !== raw) redirect(nationalProfilePath(slug));
 
-  const result = await fetchNationalProfile(slug);
-  if (!result) notFound();
+  if (getCohortBySlug(slug)) {
+    const result = await fetchNationalProfile(slug);
+    if (!result) notFound();
+    const jsonLd = buildNationalProfileJsonLd({
+      name: nationalPresentationName(result.profile.identity.canonical_name, result.profile.identity.display_name),
+      slug,
+      identifiers: result.profile.identity.identifiers,
+    });
+    return (
+      <>
+        <JsonLd data={jsonLd} />
+        <NationalLenderProfile
+          entry={result.entry}
+          profile={result.profile}
+          fetchSource={result.source}
+          fetchMs={result.fetchMs}
+          indexable={isNationalIndexingSlug(slug)}
+        />
+      </>
+    );
+  }
 
-  const jsonLd = buildNationalProfileJsonLd({
-    name: nationalPresentationName(result.profile.identity.canonical_name, result.profile.identity.display_name),
-    slug,
-    identifiers: result.profile.identity.identifiers,
-  });
-
+  const pub = await fetchPublicLenderProfile(slug);
+  if (!pub || pub.kind === 'national_only' || !pub.florida) notFound();
+  const jsonLd = buildFloridaCompanyJsonLd(pub.florida);
   return (
     <>
       <JsonLd data={jsonLd} />
-      <NationalLenderProfile
-        entry={result.entry}
-        profile={result.profile}
-        fetchSource={result.source}
-        fetchMs={result.fetchMs}
-        indexable={isNationalIndexingSlug(slug)}
+      <FloridaCompanyProfile
+        florida={pub.florida}
+        national={pub.national ? { profile: pub.national.profile, fetchMs: pub.national.fetchMs } : null}
+        fetchMs={pub.fetchMs}
       />
     </>
   );
