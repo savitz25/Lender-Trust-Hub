@@ -785,6 +785,21 @@ body {
   color: var(--th-navy);
   font-size: 0.88rem;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.intel-chip--active {
+  background: var(--th-navy);
+  color: #fff;
+  border-color: var(--th-navy);
+}
+.intel-ask-pager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
 }
 .intel-ask-result {
   margin-top: 1.25rem;

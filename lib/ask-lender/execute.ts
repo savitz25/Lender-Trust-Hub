@@ -1,56 +1,77 @@
 import type { LenderHomeIntel } from '@/lib/home-intel/types';
 import { parseLenderAsk } from './parse';
-import type { AskExecution, AskInterpretationLine, LenderResearchQuery } from './types';
+import { ASK_GEO_NOTE, type AskExecution, type AskInterpretationLine, type LenderResearchQuery } from './types';
 
 function fmt(n: number): string {
   return n.toLocaleString('en-US');
 }
 
-function interpretation(query: LenderResearchQuery): AskInterpretationLine[] {
+export function interpretationLines(query: LenderResearchQuery): AskInterpretationLine[] {
   const lines: AskInterpretationLine[] = [{ label: 'Mode', value: query.mode.replaceAll('_', ' ') }];
   if (query.geography) {
     lines.push({
       label: 'Geography',
-      value: [query.geography.state, query.geography.county].filter(Boolean).join(' · ') || query.geography.grain,
+      value: [query.geography.state, query.geography.county, query.geography.compareCounty].filter(Boolean).join(' · ') || query.geography.grain,
     });
     lines.push({ label: 'Geography meaning', value: 'Mortgage property / census location (HMDA), not lender location' });
   }
   if (query.loanPurpose?.length) lines.push({ label: 'Mortgage purpose', value: query.loanPurpose.join(', ') });
   if (query.loanType?.length) lines.push({ label: 'Loan type', value: query.loanType.join(', ') });
   if (query.actionTaken?.length) lines.push({ label: 'HMDA action family', value: query.actionTaken.join(', ') });
-  if (query.requestedMetric) lines.push({ label: 'Metric', value: query.requestedMetric === 'most' ? 'Highest raw count (not “best”)' : query.requestedMetric });
-  lines.push({ label: 'Entity grain', value: 'Institution / research snapshot — not MLO or branch' });
+  if (query.requestedMetric) {
+    lines.push({
+      label: 'Metric',
+      value: query.requestedMetric === 'most' ? 'Highest raw count (not “best”)' : query.requestedMetric,
+    });
+  }
+  if (query.evidenceFamilies?.includes('cfpb')) lines.push({ label: 'Evidence family', value: 'CFPB mortgage complaints (confirmed bridges only)' });
+  lines.push({
+    label: 'Entity grain',
+    value: query.mode === 'entity' ? 'HMDA LEI, bridged to a public profile only when identity confirms' : 'Institution / research snapshot — not MLO or branch',
+  });
   return lines;
 }
 
 export function executeLenderAsk(raw: string, intel: LenderHomeIntel): AskExecution {
   const query = parseLenderAsk(raw);
-  const interpretationLines = interpretation(query);
-  const geographyWarning =
-    query.geography?.note ??
-    'HMDA geography is property/census location, not headquarters, branch network, or service territory.';
+  const interpretation = interpretationLines(query);
+  const geographyWarning = query.geography?.note ?? ASK_GEO_NOTE;
 
   if (query.mode === 'fail_closed') {
     const href =
       query.failClosedKind === 'county-snapshot' || query.geography?.state === 'FL' ? '/florida' : query.failClosedKind === 'entity-volume' ? '/lender' : undefined;
     return {
       query,
-      interpretation: interpretationLines,
+      interpretation,
       geographyWarning,
       headline: 'This question is fail-closed',
       body: query.failReason ?? 'Unsupported.',
       href,
       hrefLabel: href === '/florida' ? 'Open Florida intelligence' : href === '/lender' ? 'Research a published lender' : undefined,
+      failClosed: true,
     };
   }
 
   if (query.mode === 'definition') {
     return {
       query,
-      interpretation: interpretationLines,
+      interpretation,
       geographyWarning,
       headline: 'What “originated” means in HMDA',
-      body: 'On this hub, originations are HMDA action_taken = originated loans in the 2025 county-grain snapshot. That is not a closed loan from your Loan Estimate, not today’s rate, and not a recommendation.',
+      body: 'On this hub, originations are HMDA originated loans in the 2025 reporting vintage. That is not a closed loan from your Loan Estimate, not today’s rate, and not a recommendation.',
+    };
+  }
+
+  if (query.mode === 'entity' || query.mode === 'aggregate' || (query.mode === 'count' && query.geography?.grain === 'county') || (query.mode === 'comparison' && query.geography?.grain === 'county')) {
+    const encoded = encodeURIComponent(raw.trim());
+    return {
+      query,
+      interpretation,
+      geographyWarning,
+      headline: 'This question runs against HMDA observations',
+      body: 'Institution-level and county-grain answers are executed on /ask from committed HMDA files. The homepage snapshot does not invent a top-lender list.',
+      href: `/ask?q=${encoded}`,
+      hrefLabel: 'Open the Ask result',
     };
   }
 
@@ -58,7 +79,7 @@ export function executeLenderAsk(raw: string, intel: LenderHomeIntel): AskExecut
     const cfpb = intel.stateOfRecord.find((m) => m.id === 'cfpb-mortgage') ?? intel.stateOfRecord[intel.stateOfRecord.length - 1];
     return {
       query,
-      interpretation: interpretationLines,
+      interpretation,
       geographyWarning,
       headline: 'Indexed CFPB mortgage complaint records',
       body: 'A complaint is a consumer-submitted observation, not a finding of wrongdoing. Attachment to a canonical institution is incomplete. Raw complaint count does not account for lender size or mortgage volume.',
@@ -79,7 +100,7 @@ export function executeLenderAsk(raw: string, intel: LenderHomeIntel): AskExecut
   if (query.mode === 'comparison' && fl) {
     return {
       query,
-      interpretation: interpretationLines,
+      interpretation,
       geographyWarning,
       headline: 'Florida vs U.S. reported HMDA 2025 county-grain activity',
       body: 'Same vintage and county grain. This is not which market is better. Volume reflects reporting and housing activity, not lender quality.',
@@ -99,7 +120,7 @@ export function executeLenderAsk(raw: string, intel: LenderHomeIntel): AskExecut
     const value = action === 'origination' ? fl.originations : action === 'denial' ? fl.denials : fl.applications;
     return {
       query,
-      interpretation: interpretationLines,
+      interpretation,
       geographyWarning,
       headline: `Reported HMDA 2025 ${action}s for properties in Florida`,
       body: 'County-grain observations aggregated to Florida. Not lenders headquartered in Florida and not a service-territory map.',
@@ -115,7 +136,7 @@ export function executeLenderAsk(raw: string, intel: LenderHomeIntel): AskExecut
   const metric = action === 'origination' ? orig : apps;
   return {
     query,
-    interpretation: interpretationLines,
+    interpretation,
     geographyWarning,
     headline: 'Current HMDA research universe (county grain, 2025 vintage)',
     body: 'National snapshot of reported activity. Originations divided by applications is not an approval rate.',
@@ -131,10 +152,11 @@ export function executeLenderAsk(raw: string, intel: LenderHomeIntel): AskExecut
 
 export function askExamplePrompts(): string[] {
   return [
-    'How many mortgage applications are in the current research universe?',
+    'Which lenders originated the most mortgages in Florida?',
+    'Which lenders received the most applications for properties in Broward County?',
+    'Compare Broward and Palm Beach mortgage activity',
     'How many applications are for properties in Florida?',
-    'Compare Florida and U.S. mortgage activity',
-    'What does originated mean in HMDA?',
-    'Show indexed CFPB mortgage complaint coverage',
+    'Which lenders originated the most FHA mortgages in Florida?',
+    'Which lenders have the lowest rates today?',
   ];
 }

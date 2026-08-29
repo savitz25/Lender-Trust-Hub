@@ -228,7 +228,7 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
           <h2 id="ask-title">Ask questions across structured mortgage-market research</h2>
           <p>Interpretation is shown before any number. Unsupported ranking and pricing questions fail closed.</p>
         </div>
-        <AskTrustHubSearch intel={intel} />
+        <AskTrustHubSearch />
       </section>
 
       <section className="intel-section" id="compare" aria-labelledby="compare-title">
