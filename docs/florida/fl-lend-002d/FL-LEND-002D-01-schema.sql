@@ -19,6 +19,9 @@ end $$;
 alter table public.lender_state_licenses
   add column if not exists source_clock text;
 
+-- Production already expanded lender_state_licenses_license_class_check to
+-- MBR, MBRB, MLD, MLDB, LO, MLS, MLSB. Do not DROP or recreate that constraint.
+
 do $$
 declare
   conname text;

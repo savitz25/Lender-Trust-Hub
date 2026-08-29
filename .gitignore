@@ -52,6 +52,10 @@ data/raw/
 # FL-LEND-002D private person/MLO staging (never commit)
 data/generated/fl-lend-002d/private/
 
+# Handoff ZIP contains private MLO/contact data — local only
+FL-LEND-002D-PRODUCTION-HANDOFF.zip
+**/FL-LEND-002D-PRODUCTION-HANDOFF.zip
+
 # Raw HMDA LAR extracts (multi-GB) — never commit
 year_2025.csv
 state_FL-*.csv

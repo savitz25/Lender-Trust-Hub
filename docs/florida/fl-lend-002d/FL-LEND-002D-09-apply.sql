@@ -40,4 +40,4 @@ begin
   end if;
 end $$;
 
-select 'Identity gate locked: 6309 exact attach / 3907 holds / 0 conflict. Run 03–07 for exact-attached only, then 10-verify, then 03–07 again.' as instruction;
+select 'Identity gate locked: 6309 exact / 3907 holds. Order after this file: 03 04 05 06 07 10 03 04 05 06 07 10. Do not run 09 before 02.' as instruction;
