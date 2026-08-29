@@ -1,0 +1,16 @@
+{
+  "task": "FL-LEND-002D",
+  "observed_at": "2026-08-29",
+  "project_ref": "hidcrbexurginnuqgipx",
+  "method": "read-only exact join lender_identifiers.identifier_type=NMLS_INSTITUTION",
+  "SOURCE_COMPANY_NMLS": 10216,
+  "ATTACHED_EXISTING_EXACT_NMLS": 6309,
+  "UNRESOLVED_SOURCE_COMPANY_NMLS": 3907,
+  "MULTI_ENTITY_CONFLICT": 0,
+  "MALFORMED": 0,
+  "attachment_rate_pct": 61.75,
+  "sum": 10216,
+  "sum_ok": true,
+  "net_new_institutions": 0,
+  "policy": "Ingest credentials/branches/sponsorships only for the 6309 exact-attached company NMLS. Keep 3907 as UNRESOLVED_SOURCE_COMPANY_NMLS holds. Do not mint institutions."
+}

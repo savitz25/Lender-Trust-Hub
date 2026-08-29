@@ -80,4 +80,27 @@ from public.lender_source_identity_resolutions
 where source_dataset = 'FL_OFR_NMLS_PRR_141420'
   and identifier_type = 'NMLS_INSTITUTION';
 
+-- Official Production identity gate (read-only classify, 2026-08-29).
+-- Ingest only ATTACHED_EXISTING_EXACT_NMLS. Do not mint the 3,907 holds.
+do $$
+declare
+  src int; att int; unres int; conf int; mal int;
+begin
+  select
+    count(*),
+    count(*) filter (where resolution_class = 'ATTACHED_EXISTING_EXACT_NMLS'),
+    count(*) filter (where resolution_class = 'UNRESOLVED_SOURCE_COMPANY_NMLS'),
+    count(*) filter (where resolution_class = 'MULTI_ENTITY_CONFLICT'),
+    count(*) filter (where resolution_class = 'MALFORMED')
+  into src, att, unres, conf, mal
+  from public.lender_source_identity_resolutions
+  where source_dataset = 'FL_OFR_NMLS_PRR_141420'
+    and identifier_type = 'NMLS_INSTITUTION';
+  if src <> 10216 or att <> 6309 or unres <> 3907 or conf <> 0 or mal <> 0 then
+    raise exception
+      'FL-LEND-002D STOP identity gate: src=% att=% unres=% conf=% mal=% (expected 10216/6309/3907/0/0)',
+      src, att, unres, conf, mal;
+  end if;
+end $$;
+
 commit;

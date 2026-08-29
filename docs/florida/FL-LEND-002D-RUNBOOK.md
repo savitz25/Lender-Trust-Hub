@@ -29,14 +29,18 @@ Dual MLD+MBR source NMLS: **637** → one institution + two credentials after ex
    - `fl_branches.csv` → `staging_fl_ofr_branches`
    - `fl_business_contacts.csv` → `staging_fl_ofr_business_contacts`
    - private chunks in order into `staging_fl_ofr_mlos`, `staging_fl_ofr_sponsorships`, `staging_fl_ofr_person_contacts`
-4. Run `FL-LEND-002D-08-dry-run.sql`. Confirm:
-   - source companies = 10,216
-   - PRR branch NMLS = 6,690
-   - sponsorships = 53,421
-   - multi-parent = 0
-   - exact attached / unresolved / conflict / malformed **sum to 10,216**
-5. If any `MULTI_ENTITY_CONFLICT` > 0: those NMLS stay out of attach. Do not pick an entity by hand.
-6. Run `FL-LEND-002D-09-apply.sql` (guard), then **02, 03, 04, 05, 06, 07** in that order.
+4. Run `FL-LEND-002D-08-dry-run.sql`. Confirm staging counts.
+5. Official Production identity gate (already obtained, read-only, 2026-08-29):
+
+   | Class | Count |
+   | --- | ---: |
+   | SOURCE_COMPANY_NMLS | **10,216** |
+   | ATTACHED_EXISTING_EXACT_NMLS | **6,309** (61.75%) |
+   | UNRESOLVED_SOURCE_COMPANY_NMLS | **3,907** (holds — do not mint) |
+   | MULTI_ENTITY_CONFLICT | **0** |
+   | MALFORMED | **0** |
+
+6. Run `FL-LEND-002D-09-apply.sql` (guard), then **02, 03, 04, 05, 06, 07**. Script **02** will RAISE if the ledger is not 10216/6309/3907/0/0. Ingest SQL attaches **only** the 6,309 exact matches.
 7. Run `FL-LEND-002D-10-verify-idempotency.sql`. Save the result row.
 8. Run **03–07 again**. Run **10** again. Institution/branch/person/identifier/relationship/contact counts must not increase. `person_public_candidate` must stay **0**.
 9. Check `/lender/rocket-mortgage`, `/lender/bank-of-america`, `/lender/navy-federal-credit-union`, `/lender/select-portfolio-servicing`, `/lender/phh-home-loans`. No new public Florida fields required.

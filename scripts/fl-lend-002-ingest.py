@@ -1331,6 +1331,20 @@ def main() -> int:
     print(json.dumps(class_report, indent=2), flush=True)
     if class_report["identity_conflict"]:
         print("STOP MULTI_ENTITY_CONFLICT identifiers held; not arbitrarily attached.")
+    GATE_ATT, GATE_UNRES = 6309, 3907
+    if (
+        class_report["source_company_nmls"] == 10216
+        and class_report["attached_existing"] != GATE_ATT
+        or class_report["unresolved_source_company_nmls"] != GATE_UNRES
+    ):
+        print(
+            "WARN identity gate vs official 6309/3907:",
+            class_report["attached_existing"],
+            class_report["unresolved_source_company_nmls"],
+        )
+    if class_report["net_new_confirmed"]:
+        print("STOP unexpected NET_NEW_CONFIRMED")
+        return 2
 
     if not apply:
         planned = ingest(cur, src, resolutions, apply=False)

@@ -18,4 +18,26 @@ begin
   end if;
 end $$;
 
-select 'Run next: FL-LEND-002D-02-classify.sql then 03 through 07, then 10-verify. Then rerun 03-07 for idempotency.' as instruction;
+-- After 02-classify, this gate must hold before 03–07.
+do $$
+declare att int; unres int;
+begin
+  if to_regclass('public.lender_source_identity_resolutions') is null then
+    raise exception 'STOP: run 02-classify before apply';
+  end if;
+  select
+    count(*) filter (where resolution_class = 'ATTACHED_EXISTING_EXACT_NMLS'),
+    count(*) filter (where resolution_class = 'UNRESOLVED_SOURCE_COMPANY_NMLS')
+  into att, unres
+  from public.lender_source_identity_resolutions
+  where source_dataset = 'FL_OFR_NMLS_PRR_141420'
+    and identifier_type = 'NMLS_INSTITUTION';
+  if att is null then
+    raise exception 'STOP: run 02-classify first';
+  end if;
+  if att <> 6309 or unres <> 3907 then
+    raise exception 'STOP identity gate att=% unres=% expected 6309/3907; no net-new mint', att, unres;
+  end if;
+end $$;
+
+select 'Identity gate locked: 6309 exact attach / 3907 holds / 0 conflict. Run 03–07 for exact-attached only, then 10-verify, then 03–07 again.' as instruction;
