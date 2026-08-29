@@ -55,6 +55,7 @@ data/generated/fl-lend-002d/private/
 # Handoff ZIP contains private MLO/contact data — local only
 FL-LEND-002D-PRODUCTION-HANDOFF.zip
 **/FL-LEND-002D-PRODUCTION-HANDOFF.zip
+data/generated/fl-lend-002d/HANDOFF-MANIFEST.txt
 
 # Raw HMDA LAR extracts (multi-GB) — never commit
 year_2025.csv
