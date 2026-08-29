@@ -1,10 +1,7 @@
 import Link from 'next/link';
-import type { FeaturedStory, LenderHomeIntel } from '@/lib/home-intel/types';
+import type { FeaturedStory, LenderHomeIntel, TraceMetric } from '@/lib/home-intel/types';
 import { LenderHomeChecklist } from './lender-home-checklist';
-
-function dateLabel(value: string): string {
-  return value;
-}
+import { AskTrustHubSearch } from './ask-trust-hub-search';
 
 function CoverageBar({ value, max, label, note }: { value: number; max: number; label: string; note?: string }) {
   const width = max > 0 ? Math.max(2, Math.round((100 * value) / max)) : 0;
@@ -21,10 +18,42 @@ function CoverageBar({ value, max, label, note }: { value: number; max: number; 
   );
 }
 
+function ExplainFinding({ finding }: { finding: FeaturedStory }) {
+  return (
+    <details className="intel-disclose">
+      <summary>Explain this data</summary>
+      <p>
+        <strong>What am I looking at?</strong> {finding.chart.caption}
+      </p>
+      <p>
+        <strong>Why does it matter?</strong> {finding.whyItMatters}
+      </p>
+      <p>
+        <strong>Where did this come from?</strong> {finding.sourceIds.join(', ')}. Official as-of {finding.officialAsOf}.
+      </p>
+      <p>
+        <strong>Important limitation</strong>
+      </p>
+      <ul>
+        {finding.doesNotMean.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+      <details className="intel-disclose">
+        <summary>View technical provenance</summary>
+        <p>
+          Payload keys: {finding.payloadKeys.join(', ')}. Retrieved {finding.retrievedAt}. Story type {finding.storyType}.
+        </p>
+      </details>
+    </details>
+  );
+}
+
 function Story({ finding }: { finding: FeaturedStory }) {
+  const label = finding.storyType === 'GAP' ? 'GAP' : finding.storyType === 'BENCHMARK' ? 'MARKET FINDING' : finding.storyType;
   return (
     <article className="intel-finding">
-      <p className="intel-eyebrow">{finding.storyType}</p>
+      <p className="intel-eyebrow">{label}</p>
       <h3>{finding.title}</h3>
       <p>{finding.summary}</p>
       <figure>
@@ -60,118 +89,222 @@ function Story({ finding }: { finding: FeaturedStory }) {
           </table>
         </div>
       </figure>
+      <ExplainFinding finding={finding} />
+    </article>
+  );
+}
+
+function TraceMetricCard({ metric, vocab, subtitle }: { metric: TraceMetric; vocab: string; subtitle: string }) {
+  return (
+    <article className="intel-metric">
+      <p className="intel-eyebrow">{vocab}</p>
+      <p className="intel-metric__value">{metric.display}</p>
+      <h3>{metric.label}</h3>
+      <p className="intel-kicker">{subtitle}</p>
       <details className="intel-disclose">
-        <summary>Explain this chart</summary>
-        <p>
-          <strong>What am I looking at?</strong> {finding.chart.caption}
-        </p>
-        <p>
-          <strong>Why might this matter?</strong> {finding.whyItMatters}
-        </p>
-        <p>
-          <strong>What this does not mean</strong>
-        </p>
+        <summary>Trace this number</summary>
+        <p>{metric.definition}</p>
         <ul>
-          {finding.doesNotMean.map((item) => (
-            <li key={item}>{item}</li>
+          {metric.components.map((part) => (
+            <li key={part.payloadKey}>
+              {part.label}: {part.value}
+            </li>
           ))}
         </ul>
         <p>
-          Source keys: {finding.sourceIds.join(', ')}. Official as-of {dateLabel(finding.officialAsOf)} · Retrieved{' '}
-          {dateLabel(finding.retrievedAt)}.
+          Source: {metric.sourceIds.join(', ')}. Official as-of {metric.officialAsOf}. Grain: {metric.grain}.
         </p>
+        <details className="intel-disclose">
+          <summary>View technical provenance</summary>
+          <p>
+            Method: {metric.method} Payload key: <code>{metric.payloadKey}</code>. Retrieved {metric.retrievedAt}.
+          </p>
+          <ul>
+            {metric.limitations.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </details>
       </details>
     </article>
   );
 }
 
 export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
+  const byId = (id: string) => intel.stateOfRecord.find((row) => row.id === id)!;
+  const institutions = byId('institutions');
+  const published = byId('public-national');
+  const apps = byId('hmda-apps');
+  const orig = byId('hmda-orig');
+  const fl = intel.geography.find((g) => g.state === 'FL');
+  const usApps = intel.geography.reduce((s, g) => s + g.applications, 0);
+  const featured: typeof intel.geography = [];
+  for (const row of intel.geography.slice().sort((a, b) => b.applications - a.applications)) {
+    if (featured.length >= 8 && row.state !== 'FL') continue;
+    if (!featured.some((item) => item.state === row.state)) featured.push(row);
+    if (featured.length >= 9) break;
+  }
+  if (fl && !featured.some((item) => item.state === 'FL')) featured.push(fl);
+  const consumerGaps = intel.gaps.slice(0, 5);
+
   return (
     <div className="intel-home">
       <section className="intel-hero" aria-labelledby="home-title">
-        <p className="intel-eyebrow">National mortgage-market intelligence</p>
+        <p className="intel-eyebrow">Mortgage market intelligence</p>
         <h1 id="home-title">Understand the mortgage market before you choose a lender.</h1>
         <p className="intel-hero__lede">
-          Independent research on institutions, applications, originations, denials, complaints, licensing, and
-          regulatory evidence from public sources. Classes of evidence stay separate.{' '}
-          <strong>Understand the market. Research the lender. Compare the offer. You decide.</strong>
+          Research mortgage lenders and market outcomes using HMDA, consumer complaint, and regulatory records. No Trust
+          Score. No ranking. You decide.
         </p>
-        <p className="intel-hero__promise">We cite the evidence. You decide.</p>
+        <p className="intel-pulse">
+          Latest mortgage-market research includes HMDA application data through the {apps.officialAsOf} reporting vintage
+          and complaint observations retrieved {intel.sources.find((s) => s.id === 'cfpb-complaints')?.retrievedAt ?? apps.retrievedAt}.
+        </p>
         <div className="intel-hero__actions">
-          <a className="intel-btn intel-btn--primary" href="#record">
-            Explore Lending Intelligence
+          <a className="intel-btn intel-btn--primary" href="#snapshot">
+            Explore mortgage intelligence
           </a>
-          <a className="intel-btn intel-btn--secondary" href="#lookup">
+          <a className="intel-btn intel-btn--secondary" href="#research-lender">
             Research a lender
           </a>
+          <a className="intel-btn intel-btn--secondary" href="#ask">
+            Ask LenderTrustHub
+          </a>
         </div>
-        <form id="lookup" className="intel-lookup" action="/lender" method="get">
-          <p className="intel-eyebrow">Institution lookup</p>
-          <div className="intel-lookup__grid">
-            <label>
-              Name or NMLS Institution ID
-              <input name="q" type="search" autoComplete="off" />
-            </label>
-            <button className="intel-btn intel-btn--primary" type="submit">
-              Search published profiles
-            </button>
-          </div>
-          <p className="intel-kicker">
-            Search uses the existing controlled public corpus (181 national-searchable + 130 Florida-public). It does
-            not rank lenders and does not search MLOs or branches.
-          </p>
-        </form>
       </section>
 
-      <section className="intel-section" id="record" aria-labelledby="record-title">
+      <section className="intel-section" id="snapshot" aria-labelledby="snapshot-title">
         <div className="intel-heading">
-          <p className="intel-eyebrow">State of the record</p>
-          <h2 id="record-title">What is in the research universe</h2>
-          <p>These are snapshot metrics, not findings about lender quality. Each number has a grain.</p>
+          <p className="intel-eyebrow">Market snapshot</p>
+          <h2 id="snapshot-title">What this research universe currently holds</h2>
+          <p>
+            Thousands of lender identities are researched in the underlying graph. Public national research reports are
+            published through a narrower evidence gate. That is publication discipline, not a missing product.
+          </p>
         </div>
         <div className="intel-metric-rail">
-          {intel.stateOfRecord.map((metric) => (
-            <article className="intel-metric" key={metric.id}>
-              <p className="intel-metric__value">{metric.display}</p>
-              <h3>{metric.label}</h3>
-              <p className="intel-kicker">
-                Official as-of {dateLabel(metric.officialAsOf)} · Retrieved {dateLabel(metric.retrievedAt)}
-              </p>
-              <details className="intel-disclose">
-                <summary>Trace this number</summary>
-                <p>{metric.definition}</p>
-                <ul>
-                  {metric.components.map((part) => (
-                    <li key={part.payloadKey}>
-                      {part.label}: {part.value} ({part.payloadKey})
-                    </li>
-                  ))}
-                </ul>
-                <p>
-                  Grain: {metric.grain}. Method: {metric.method} Payload key: <code>{metric.payloadKey}</code>
-                </p>
-                <ul>
-                  {metric.limitations.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </details>
-            </article>
-          ))}
+          <TraceMetricCard
+            metric={institutions}
+            vocab="Research universe"
+            subtitle="Canonical institution identities in the graph"
+          />
+          <TraceMetricCard
+            metric={published}
+            vocab="Currently researched / public"
+            subtitle="Published national reports vs researched identities"
+          />
+          <TraceMetricCard metric={apps} vocab="Evidence records" subtitle="HMDA county-grain applications, 2025 vintage" />
+          <article className="intel-metric">
+            <p className="intel-eyebrow">Geography</p>
+            <p className="intel-metric__value">{intel.geography.length}</p>
+            <h3>Jurisdictions with county-grain HMDA</h3>
+            <p className="intel-kicker">Property/census geography, not lender branch maps</p>
+          </article>
+          <article className="intel-metric">
+            <p className="intel-eyebrow">Last official update</p>
+            <p className="intel-metric__value">{apps.officialAsOf}</p>
+            <h3>HMDA reporting vintage</h3>
+            <p className="intel-kicker">Complaint observations retrieved {apps.retrievedAt}</p>
+          </article>
         </div>
       </section>
 
       <section className="intel-section" id="findings" aria-labelledby="findings-title">
         <div className="intel-heading">
-          <p className="intel-eyebrow">What the data says</p>
+          <p className="intel-eyebrow">What the current data says</p>
           <h2 id="findings-title">Three national evidence stories</h2>
-          <p>Each story is a benchmark or a coverage gap. None is a ranking of lenders.</p>
+          <p>Two market findings and one coverage gap. None is a ranking of lenders.</p>
         </div>
         <div className="intel-findings">
           {intel.findings.map((finding) => (
             <Story key={finding.storyId} finding={finding} />
           ))}
         </div>
+      </section>
+
+      <section className="intel-section" id="ask" aria-labelledby="ask-title">
+        <div className="intel-heading">
+          <p className="intel-eyebrow">Ask LenderTrustHub</p>
+          <h2 id="ask-title">Ask questions across structured mortgage-market research</h2>
+          <p>Interpretation is shown before any number. Unsupported ranking and pricing questions fail closed.</p>
+        </div>
+        <AskTrustHubSearch intel={intel} />
+      </section>
+
+      <section className="intel-section" id="compare" aria-labelledby="compare-title">
+        <div className="intel-heading">
+          <p className="intel-eyebrow">Compare / explore</p>
+          <h2 id="compare-title">Compare mortgage markets</h2>
+          <p>
+            Florida vs U.S. uses the same HMDA 2025 county grain. This is not which market is better. Geography is
+            property location, not lender service territory.
+          </p>
+        </div>
+        {fl ? (
+          <div className="intel-compare">
+            <CoverageBar label="Florida applications" value={fl.applications} max={usApps} note={fl.applications.toLocaleString('en-US')} />
+            <CoverageBar label="U.S. applications (jurisdiction sum)" value={usApps} max={usApps} note={usApps.toLocaleString('en-US')} />
+            <CoverageBar label="Florida originations" value={fl.originations} max={orig.value} note={fl.originations.toLocaleString('en-US')} />
+          </div>
+        ) : null}
+        <h3>Explore mortgage activity</h3>
+        <p className="intel-legend">
+          A compact set of high-volume jurisdictions plus Florida. Darker cells have more reported county-grain
+          applications. Not a ranking. Only Florida currently has a full state intelligence page.
+        </p>
+        <div className="intel-geo-grid intel-geo-grid--compact">
+          {featured.map((row) => (
+            <a
+              key={row.state}
+              className="intel-geo-cell"
+              href={row.intelligenceHref ?? row.searchHref}
+              style={{ ['--intel-volume' as string]: String(row.volumeShare / 100) }}
+            >
+              <strong>{row.state}</strong>
+              <span className="visually-hidden">
+                {row.name}. Reported applications {row.applications.toLocaleString('en-US')}.
+                {row.intelligenceHref ? ' State intelligence.' : ' Opens national lender research — not a full state OS page.'}
+              </span>
+            </a>
+          ))}
+        </div>
+        <p>
+          <Link className="intel-text-link" href="/lender">
+            View all jurisdictions via national lender research
+          </Link>
+        </p>
+        <details className="intel-disclose">
+          <summary>Accessible full jurisdiction list</summary>
+          <div className="hub-table-scroll" tabIndex={0} role="region" aria-label="County-grain HMDA 2025 counts by jurisdiction">
+            <table className="hub-table">
+              <caption>County-grain HMDA 2025 counts. Florida opens state intelligence; others open national research.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Jurisdiction</th>
+                  <th scope="col">Applications</th>
+                  <th scope="col">Originations</th>
+                  <th scope="col">Denials</th>
+                  <th scope="col">Destination</th>
+                </tr>
+              </thead>
+              <tbody>
+                {intel.geography.map((row) => (
+                  <tr key={`list-${row.state}`}>
+                    <th scope="row">
+                      <Link href={row.intelligenceHref ?? row.searchHref}>
+                        {row.state} · {row.name}
+                      </Link>
+                    </th>
+                    <td>{row.applications.toLocaleString('en-US')}</td>
+                    <td>{row.originations.toLocaleString('en-US')}</td>
+                    <td>{row.denials.toLocaleString('en-US')}</td>
+                    <td>{row.intelligenceHref ? 'State intelligence' : 'HMDA research / lender search'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
       </section>
 
       <section className="intel-section" id="depth" aria-labelledby="depth-title">
@@ -206,124 +339,55 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
       <section className="intel-section" id="gaps" aria-labelledby="gaps-title">
         <div className="intel-heading">
           <p className="intel-eyebrow">What we don&apos;t know</p>
-          <h2 id="gaps-title">Where the record is incomplete</h2>
+          <h2 id="gaps-title">The current record is incomplete</h2>
         </div>
         <ul className="intel-plain-list">
-          {intel.gaps.map((item) => (
+          {consumerGaps.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
-        <h3>Things you may still want to verify directly</h3>
-        <ul className="intel-plain-list">
-          {intel.verifyDirectly.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="intel-section" id="explore" aria-labelledby="explore-title">
-        <div className="intel-heading">
-          <p className="intel-eyebrow">Explore the market</p>
-          <h2 id="explore-title">Reported HMDA 2025 application volume by jurisdiction</h2>
-          <p>
-            Color intensity encodes county-grain HMDA 2025 application volume aggregated to the state or territory. It
-            does not encode quality, approval likelihood, consumer risk, or lender quality. Florida is the only state
-            intelligence page on this hub today.
-          </p>
-        </div>
-        <p className="intel-legend">Legend: darker cells have more reported county-grain applications. Not a ranking.</p>
-        <div className="intel-geo-grid">
-          {intel.geography
-            .slice()
-            .sort((a, b) => a.name.localeCompare(b.name))
-            .map((row) => (
-              <a
-                key={row.state}
-                className="intel-geo-cell"
-                href={row.intelligenceHref ?? row.searchHref}
-                style={{ ['--intel-volume' as string]: String(row.volumeShare / 100) }}
-              >
-                <strong>{row.state}</strong>
-                <span className="visually-hidden">
-                  {row.name}. Reported applications {row.applications.toLocaleString('en-US')}.
-                  {row.intelligenceHref ? ' Opens Florida intelligence.' : ' Opens national lender research.'}
-                </span>
-              </a>
-            ))}
-        </div>
-        <article className="intel-florida">
-          <p className="intel-eyebrow">Florida preview</p>
-          <h3>Florida mortgage intelligence</h3>
-          <p>{intel.floridaPreview.note}</p>
-          <ul className="intel-plain-list">
-            <li>HMDA 2025 county-grain applications: {intel.floridaPreview.applications.toLocaleString('en-US')}</li>
-            <li>HMDA 2025 originations: {intel.floridaPreview.originations.toLocaleString('en-US')}</li>
-            <li>Public Florida company profiles: {intel.floridaPreview.publicProfiles}</li>
-            <li>Internal Florida company profiles: {intel.floridaPreview.internalProfiles.toLocaleString('en-US')} (not all public)</li>
-          </ul>
-          <Link className="intel-btn intel-btn--secondary" href={intel.floridaPreview.href}>
-            Explore Florida Intelligence →
-          </Link>
-        </article>
         <details className="intel-disclose">
-          <summary>Accessible state list</summary>
-          <div className="hub-table-scroll" tabIndex={0} role="region" aria-label="County-grain HMDA 2025 counts by jurisdiction">
-            <table className="hub-table">
-              <caption>
-                County-grain HMDA 2025 counts by jurisdiction. Florida links to state intelligence; other jurisdictions
-                open national lender research.
-              </caption>
-              <thead>
-                <tr>
-                  <th scope="col">Jurisdiction</th>
-                  <th scope="col">Applications</th>
-                  <th scope="col">Originations</th>
-                  <th scope="col">Denials</th>
-                </tr>
-              </thead>
-              <tbody>
-                {intel.geography.map((row) => (
-                  <tr key={`list-${row.state}`}>
-                    <th scope="row">
-                      <Link href={row.intelligenceHref ?? row.searchHref}>
-                        {row.state} · {row.name}
-                      </Link>
-                    </th>
-                    <td>{row.applications.toLocaleString('en-US')}</td>
-                    <td>{row.originations.toLocaleString('en-US')}</td>
-                    <td>{row.denials.toLocaleString('en-US')}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <summary>More methodology limitations</summary>
+          <ul className="intel-plain-list">
+            {intel.gaps.slice(5).map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <h3>Things you may still want to verify directly</h3>
+          <ul className="intel-plain-list">
+            {intel.verifyDirectly.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </details>
       </section>
 
-      <section className="intel-section" id="ask" aria-labelledby="ask-title">
+      <section className="intel-section" id="research-lender" aria-labelledby="research-title">
         <div className="intel-heading">
-          <p className="intel-eyebrow">Ask the market</p>
-          <h2 id="ask-title">Structured questions, not a chatbot</h2>
+          <p className="intel-eyebrow">Research a specific lender</p>
+          <h2 id="research-title">Look up a published institution</h2>
+          <p>
+            Search uses the controlled public corpus. It does not rank lenders and does not search MLOs or branches. A
+            researched identity without a publication gate is not turned into a thin public page.
+          </p>
         </div>
-        <div className="intel-ask">
-          {intel.askMarket.map((item) => (
-            <details key={item.id} className="intel-disclose">
-              <summary>{item.question}</summary>
-              <p>{item.answer}</p>
-              <p>
-                <Link className="intel-text-link" href={item.href}>
-                  {item.hrefLabel} <span aria-hidden="true">→</span>
-                </Link>
-              </p>
-            </details>
-          ))}
-        </div>
+        <form className="intel-lookup" action="/lender" method="get">
+          <div className="intel-lookup__grid">
+            <label htmlFor="lender-q">
+              Name or NMLS Institution ID
+              <input id="lender-q" name="q" type="search" autoComplete="off" />
+            </label>
+            <button className="intel-btn intel-btn--primary" type="submit">
+              Search published profiles
+            </button>
+          </div>
+        </form>
       </section>
 
       <section className="intel-section" id="use" aria-labelledby="use-title">
         <div className="intel-heading">
           <p className="intel-eyebrow">Use the research</p>
-          <h2 id="use-title">Act after you understand the evidence</h2>
+          <h2 id="use-title">Loan Estimates and tools after the evidence</h2>
         </div>
         <div className="intel-cta-grid">
           {intel.tools.map((tool) => (
@@ -335,19 +399,11 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
         </div>
         <h3>Research checklist</h3>
         <LenderHomeChecklist />
-        <h3>How this research was assembled</h3>
-        <ol className="intel-journey">
-          {intel.journey.map((row) => (
-            <li key={row.step}>
-              {row.step} — {row.status}
-            </li>
-          ))}
-        </ol>
       </section>
 
       <section className="intel-section" id="sources" aria-labelledby="sources-title">
         <div className="intel-heading">
-          <p className="intel-eyebrow">Evidence / sources / limitations</p>
+          <p className="intel-eyebrow">Sources / methodology</p>
           <h2 id="sources-title">Where the numbers come from</h2>
         </div>
         <div className="hub-table-scroll" tabIndex={0} role="region" aria-label="Source ledger for homepage families">
@@ -381,15 +437,18 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
             <li key={item}>{item}</li>
           ))}
         </ul>
-        <ul className="intel-plain-list">
-          {intel.limitations.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-        <p className="intel-kicker">
-          Snapshot {intel.homepagePublicationVersion}. Payload {intel.payloadFingerprint.slice(0, 12)}… Pricing homepage
-          V1: {intel.pricingHomepageV1}. Change module: {intel.changeModule.status}.
-        </p>
+        <details className="intel-disclose">
+          <summary>View technical provenance</summary>
+          <p>
+            Snapshot {intel.homepagePublicationVersion}. Contract {intel.contractVersion}. Pricing homepage:{' '}
+            {intel.pricingHomepageV1}.
+          </p>
+          <ul className="intel-plain-list">
+            {intel.limitations.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </details>
       </section>
     </div>
   );

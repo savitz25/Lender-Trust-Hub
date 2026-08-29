@@ -8,7 +8,7 @@ const isProd = process.env.VERCEL_ENV === 'production';
 
 const TITLE = 'Understand the mortgage market before you choose a lender | Lender Trust Hub';
 const DESCRIPTION =
-  'Independent mortgage-market research: institutions, HMDA applications and originations, complaint observations, licensing and regulatory evidence. No Trust Score. No ranking. You decide.';
+  'Independent mortgage-market research using HMDA, consumer complaint, and regulatory records. Ask structured questions. No Trust Score. No ranking. You decide.';
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

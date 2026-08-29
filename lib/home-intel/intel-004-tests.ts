@@ -38,6 +38,12 @@ export function runIntel004ContractTests(): Check[] {
     first.findings.map((s) => s.storyType).join(',') === 'BENCHMARK,BENCHMARK,GAP',
     first.findings.map((s) => s.storyType).join(','),
   );
+  check(
+    'I004-v11-two-market',
+    first.findings.filter((s) => s.storyType === 'BENCHMARK').length === 2 &&
+      first.findings.filter((s) => s.storyType === 'GAP').length === 1,
+    'two market findings, one GAP',
+  );
   check('I004-5', first.stateOfRecord[0]?.value === 14623, String(first.stateOfRecord[0]?.value));
   check('I004-6', first.stateOfRecord[2]?.value === 11529787 && first.stateOfRecord[3]?.value === 6793253, 'HMDA apps/orig');
   check('I004-7', first.stateOfRecord[4]?.value === 458146, 'complaints');

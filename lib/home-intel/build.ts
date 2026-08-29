@@ -466,8 +466,8 @@ export function buildLenderHomeIntel(generatedAt = '2026-08-27T00:00:00.000Z'): 
       { id: 'le', label: 'Loan Estimate Analyzer', href: '/tools/loan-estimate-analyzer', note: 'Actual offer figures. Not a HMDA benchmark of your LE unless methodology matches.' },
       { id: 'le-compare', label: 'Compare Loan Estimates', href: '/tools/compare-loan-estimates', note: 'Compare offers, not a lender winner.' },
       { id: 'calculators', label: 'Mortgage calculators', href: '/calculators', note: 'Educational estimates.' },
-      { id: 'florida', label: 'Florida Mortgage Intelligence', href: '/florida', note: 'Existing state intelligence. Unchanged in this task.' },
-      { id: 'my-lending', label: 'Save research', href: '/my-lending', note: 'Workspace for your notes. Not a lender score.' },
+      { id: 'florida', label: 'Florida Mortgage Intelligence', href: '/florida', note: 'State intelligence page. Not a ranking.' },
+      { id: 'my-lending', label: 'Saved research', href: '/my-lending', note: 'My Lending workspace. Persistence for notes — not a lender score.' },
     ],
     journey: [
       { step: 'NMLS / canonical identity', status: 'connected' },

@@ -1,6 +1,9 @@
 {
   "snapshotVersion": "lender-home-intel-snapshot-v1",
-  "homepagePublicationVersion": "intel-004-v1",
+  "homepagePublicationVersion": "intel-homepage-v1.1",
+  "cfpbOfficialAsOf": "2026-08-27",
+  "denialReasonsStatus": "DEFERRED",
+  "pricingStatus": "NOT_CURRENTLY_QUERYABLE",
   "retrievedAt": "2026-08-27",
   "hmdaOfficialAsOf": "2025",
   "hmdaSourceVintage": "HMDA 2025 reporting vintage",

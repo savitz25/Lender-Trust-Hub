@@ -733,6 +733,75 @@ body {
   gap: 0.75rem;
   margin-top: 1.5rem;
 }
+.intel-pulse {
+  margin-top: 1.25rem;
+  max-width: 42rem;
+  color: #334155;
+  font-size: 0.98rem;
+}
+.intel-ask-panel {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--th-border);
+  border-radius: var(--th-radius-card);
+  background: #fff;
+}
+.intel-ask-panel label {
+  display: block;
+  font-weight: 700;
+  color: var(--th-navy);
+}
+.intel-ask-row {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+@media (min-width: 40rem) {
+  .intel-ask-row {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+}
+.intel-ask-row input {
+  min-height: var(--th-control);
+  width: 100%;
+  border: 1px solid var(--th-border);
+  border-radius: var(--th-radius-control);
+  padding: 0 0.75rem;
+  background: #f8fafc;
+}
+.intel-ask-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.intel-chip {
+  min-height: var(--th-control);
+  padding: 0 0.85rem;
+  border: 1px solid var(--th-border);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--th-navy);
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+.intel-ask-result {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--th-border);
+}
+.intel-compare {
+  margin-top: 1.5rem;
+}
+.intel-geo-grid--compact {
+  grid-template-columns: repeat(auto-fill, minmax(4.2rem, 1fr));
+  margin-top: 1rem;
+}
+.intel-text-link {
+  color: #0f766e;
+  font-weight: 700;
+}
 .intel-plain-list {
   max-width: 46rem;
 }

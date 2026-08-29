@@ -1,5 +1,5 @@
 export const LENDER_HOME_INTEL_VERSION = 'lender-home-intel-v1' as const;
-export const LENDER_HOME_PUBLICATION_VERSION = 'intel-004-v1' as const;
+export const LENDER_HOME_PUBLICATION_VERSION = 'intel-homepage-v1.1' as const;
 
 export type HomeStoryType = 'BENCHMARK' | 'CHANGE' | 'GAP';
 export type CoverageStatus = 'strong' | 'partial' | 'limited' | 'unavailable' | 'not_yet_researched';

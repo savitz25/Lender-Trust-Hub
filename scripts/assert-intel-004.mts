@@ -1,6 +1,7 @@
+import { runAskLenderTests } from '../lib/ask-lender/ask-tests';
 import { runIntel004ContractTests } from '../lib/home-intel/intel-004-tests';
 
-const results = runIntel004ContractTests();
+const results = [...runIntel004ContractTests(), ...runAskLenderTests()];
 let failed = 0;
 for (const row of results) {
   if (row.pass) console.log(`PASS ${row.id} ${row.detail}`);
