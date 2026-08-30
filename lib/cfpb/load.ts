@@ -1,7 +1,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import type { CfpbCompanySnapshot, CfpbSnapshotFile } from './types';
-import bundledSnapshot from '@/data/cfpb/mortgage-complaints-snapshot.json';
+import bundledSnapshot from '../../data/cfpb/mortgage-complaints-snapshot.json';
 
 const SNAPSHOT_REL = join('data', 'cfpb', 'mortgage-complaints-snapshot.json');
 
