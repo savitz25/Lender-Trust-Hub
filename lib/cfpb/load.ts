@@ -1,6 +1,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import type { CfpbCompanySnapshot, CfpbSnapshotFile } from './types';
+import bundledSnapshot from '@/data/cfpb/mortgage-complaints-snapshot.json';
 
 const SNAPSHOT_REL = join('data', 'cfpb', 'mortgage-complaints-snapshot.json');
 
@@ -22,19 +23,17 @@ export function cfpbDataAvailable(): boolean {
 export function loadCfpbSnapshot(): CfpbSnapshotFile | null {
   if (cached !== undefined) return cached;
   const path = resolveSnapshotPath();
-  if (!existsSync(path)) {
-    cached = null;
-    return null;
+  if (existsSync(path)) {
+    try {
+      const raw = readFileSync(path, 'utf8');
+      cached = JSON.parse(raw) as CfpbSnapshotFile;
+      return cached;
+    } catch (err) {
+      console.warn('[cfpb] failed to load snapshot file, using bundled catalog', err);
+    }
   }
-  try {
-    const raw = readFileSync(path, 'utf8');
-    cached = JSON.parse(raw) as CfpbSnapshotFile;
-    return cached;
-  } catch (err) {
-    console.warn('[cfpb] failed to load snapshot', err);
-    cached = null;
-    return null;
-  }
+  cached = (bundledSnapshot as CfpbSnapshotFile) ?? null;
+  return cached;
 }
 
 /** Test helper / script: clear memo. */
