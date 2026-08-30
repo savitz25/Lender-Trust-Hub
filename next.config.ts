@@ -80,6 +80,22 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion', 'recharts'],
   },
+  outputFileTracingIncludes: {
+    '/api/ask': [
+      './data/hmda/national/**',
+      './data/hmda/by-state/FL/**',
+      './data/hmda/florida/**',
+      './data/cfpb/**',
+      './docs/lend-nat-016-search-index.json',
+    ],
+    '/ask': [
+      './data/hmda/national/**',
+      './data/hmda/by-state/FL/**',
+      './data/hmda/florida/**',
+      './data/cfpb/**',
+      './docs/lend-nat-016-search-index.json',
+    ],
+  },
 };
 
 export default nextConfig;

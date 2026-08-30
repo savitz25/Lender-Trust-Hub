@@ -63,8 +63,8 @@ export type AskCatalog = {
 
 let cached: AskCatalog | null = null;
 
-function read(rel: string): Record<string, string>[] {
-  const path = join(process.cwd(), ...rel.split('/'));
+function read(...parts: string[]): Record<string, string>[] {
+  const path = join(/* turbopackIgnore: true */ process.cwd(), 'data', ...parts);
   if (!existsSync(path)) return [];
   return parseCsv(readFileSync(path, 'utf8'));
 }
@@ -96,7 +96,7 @@ function aggregateFloridaCounty(rows: CountyLeiRow[]): Map<string, CountyLeiRow>
 
 export function loadAskCatalog(): AskCatalog {
   if (cached) return cached;
-  const stateRows: StateLeiRow[] = read('data/hmda/national/lender_state_summary.csv').map((r) => ({
+  const stateRows: StateLeiRow[] = read('hmda', 'national', 'lender_state_summary.csv').map((r) => ({
     year: num(r.year) || 2025,
     state: (r.state || '').trim(),
     lei: (r.lei || '').trim(),
@@ -108,7 +108,7 @@ export function loadAskCatalog(): AskCatalog {
     origUsda: num(r.orig_usda_other),
     origOther: num(r.orig_other_loan_type),
   }));
-  const countyRows: CountyLeiRow[] = read('data/hmda/by-state/FL/lender_activity_by_county.csv').map((r) => ({
+  const countyRows: CountyLeiRow[] = read('hmda', 'by-state', 'FL', 'lender_activity_by_county.csv').map((r) => ({
     year: num(r.year) || 2025,
     state: (r.state || 'FL').trim(),
     countyFips: (r.county_fips || '').trim(),
@@ -128,7 +128,7 @@ export function loadAskCatalog(): AskCatalog {
     origUsda: num(r.orig_usda_other),
     origOther: num(r.orig_other_loan_type),
   }));
-  const countyMarkets: CountyMarketRow[] = read('data/hmda/by-state/FL/county_market_summary.csv').map((r) => ({
+  const countyMarkets: CountyMarketRow[] = read('hmda', 'by-state', 'FL', 'county_market_summary.csv').map((r) => ({
     year: num(r.year) || 2025,
     state: (r.state || 'FL').trim(),
     countyFips: (r.county_fips || '').trim(),
