@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { FeaturedStory, LenderHomeIntel } from '@/lib/home-intel/types';
+import { AskTrustHubSearch } from './ask-trust-hub-search';
 import { LenderHomeChecklist } from './lender-home-checklist';
 
 function dateLabel(value: string): string {
@@ -321,6 +322,7 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
           <p className="intel-eyebrow">Ask the market</p>
           <h2 id="ask-title">Structured questions, not a chatbot</h2>
         </div>
+        <AskTrustHubSearch />
         <div className="intel-ask">
           {intel.askMarket.map((item) => (
             <details key={item.id} className="intel-disclose">

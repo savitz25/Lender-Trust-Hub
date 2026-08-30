@@ -55,6 +55,7 @@ export function runSnapshotGrainTests(): GrainCheck[] {
   check('002E-home-no-old-json', !homeBuild.includes("./snapshot.json"), 'compose uses accepted snapshot');
   check('002E-fl-no-hard-6325', !flComp.includes('6,325') && !flComp.includes('6,435'), 'no stale FL copy');
   check('002E-fl-no-no-branch', !/No Branch or MLO identity layer exists yet/.test(flComp), 'stale branch/MLO copy removed');
-  check('002E-ask-off', !homePage.includes('/ask') && !flPage.includes('/ask'), 'no Ask CTA');
+  check('002E-fl-no-ask-cta', !flPage.includes('/ask'), 'florida page is not Ask');
+  check('002E-home-snapshot-path', homePage.includes('loadLenderHomeIntel'), 'home still snapshot-loaded');
   return out;
 }

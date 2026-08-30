@@ -99,6 +99,9 @@ export function runIntel004ContractTests(): Check[] {
 
   const page = readFileSync(join(process.cwd(), 'app/page.tsx'), 'utf8');
   check('I004-36-src', page.includes('loadLenderHomeIntel') && page.includes('LenderHomeIntelligence'), 'SSR wiring');
+  const homeUi = readFileSync(join(process.cwd(), 'components/home-intel/lender-home-intelligence.tsx'), 'utf8');
+  check('I004-h1-os', homeUi.includes('Understand the mortgage market before you choose a lender'), 'Intelligence OS H1');
+  check('I004-ask-cta', homeUi.includes('AskTrustHubSearch'), 'Ask CTA in existing ask section');
   check('I004-36-src-v2', page.includes("from '@/lib/home-intel/load'") && !page.includes("from '@/lib/home-intel/build'"), 'page consumes snapshot loader');
   check('I004-36-no-stale-json', !page.includes('snapshot.json'), 'page does not import INTEL-004 JSON artifact');
   check('I004-v2-contract', snapshot.snapshotVersion === 'lender-home-intel-snapshot-v2', snapshot.snapshotVersion);
