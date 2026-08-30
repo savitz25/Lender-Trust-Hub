@@ -1,7 +1,5 @@
-import { readFileSync, existsSync } from 'node:fs';
-import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { parseCsv } from '@/lib/hmda/parse-csv';
+import gleifJson from './generated/gleif.json';
+import mappingsCsv from './generated/mappings.csv.json';
 import { DISCOVERY_RECORDS, nationalPresentationName, normalizeName } from '@/lib/national-profile/discovery';
 import { nationalProfilePath } from '@/lib/national-profile/cohort';
 import { isNationalRenderSlug } from '@/lib/national-profile/publication';
@@ -79,24 +77,13 @@ export function namesCompatible(hmdaName: string | null, profileName: string, hi
   return denom > 0 && inter.length / denom >= 0.5;
 }
 
-function resolveData(relFromHere: string): string | null {
-  const fromMeta = fileURLToPath(new URL(relFromHere, import.meta.url));
-  const fromCwd = join(process.cwd(), relFromHere.replace(/^\.\.\/\.\.\//, ''));
-  if (existsSync(fromMeta)) return fromMeta;
-  if (existsSync(fromCwd)) return fromCwd;
-  return null;
-}
-
 function loadGleif(): Record<string, string> {
-  const path = resolveData('../../data/hmda/florida/_gleif_name_cache.json');
-  if (!path) return {};
-  return JSON.parse(readFileSync(path, 'utf8')) as Record<string, string>;
+  return (gleifJson ?? {}) as Record<string, string>;
 }
 
 function loadMappings(): MappingRow[] {
-  const path = resolveData('../../data/hmda/florida/lei_to_nmls_mapping.csv');
-  if (!path) return [];
-  return parseCsv(readFileSync(path, 'utf8')).map((r) => ({
+  const rows = Array.isArray(mappingsCsv) ? (mappingsCsv as Record<string, string>[]) : [];
+  return rows.map((r) => ({
     lei: (r.lei || '').trim(),
     name: (r.institution_name_hmda || r.legal_name || r.institution_name || '').trim(),
     nmls: (r.nmls_id || '').trim(),
