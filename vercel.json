@@ -1,4 +1,12 @@
 {
+  "functions": {
+    "app/api/ask/route.ts": {
+      "includeFiles": "data/**"
+    },
+    "app/ask/page.tsx": {
+      "includeFiles": "data/**"
+    }
+  },
   "redirects": [
     {
       "source": "/calculators-hub",
