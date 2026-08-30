@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
-import { FloridaStateIntelligence } from '@/components/florida/florida-state-intelligence';
+import { FloridaStateIntelligence, FloridaStateIntelligenceUnavailable } from '@/components/florida/florida-state-intelligence';
 import { buildFloridaIntelligenceJsonLd } from '@/lib/florida-intelligence/jsonld';
+import { loadFloridaIntelligence } from '@/lib/florida-intelligence/load';
 import { FLORIDA_INTELLIGENCE_GATE } from '@/lib/florida-intelligence/publication';
 import { SITE_URL } from '@/lib/directory/categories';
 
-export const dynamic = 'force-static';
+export const dynamic = 'force-dynamic';
 
 export function generateMetadata(): Metadata {
   const url = `${SITE_URL}${FLORIDA_INTELLIGENCE_GATE.path}`;
@@ -25,11 +26,15 @@ export function generateMetadata(): Metadata {
   };
 }
 
-export default function FloridaIntelligencePage() {
+export default async function FloridaIntelligencePage() {
+  const loaded = await loadFloridaIntelligence();
+  if (loaded.status !== 'ok') {
+    return <FloridaStateIntelligenceUnavailable reason={loaded.reason} />;
+  }
   return (
     <>
-      <JsonLd data={buildFloridaIntelligenceJsonLd()} />
-      <FloridaStateIntelligence />
+      <JsonLd data={buildFloridaIntelligenceJsonLd(loaded.snapshot)} />
+      <FloridaStateIntelligence snapshot={loaded.snapshot} />
     </>
   );
 }

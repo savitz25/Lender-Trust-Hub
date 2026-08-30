@@ -6,7 +6,7 @@ import { COMBINED_SEARCHABLE_COUNT, DISCOVERY_INDEXABLE_COUNT, DISCOVERY_SEARCHA
 import { INDEXING_COHORT, RENDER_COHORT } from '@/lib/national-profile/publication';
 import { FLORIDA_PHASE1_COUNT } from '@/lib/florida-profile/phase1';
 import { FLORIDA_PHASE2_COUNT } from '@/lib/florida-profile/phase2';
-import snapshot from './snapshot.json';
+import snapshot from './accepted-snapshot.json';
 
 export type Check = { id: string; pass: boolean; detail: string };
 
@@ -98,7 +98,13 @@ export function runIntel004ContractTests(): Check[] {
   check('I004-ask-count', first.askMarket.length >= 4 && first.askMarket.length <= 7, String(first.askMarket.length));
 
   const page = readFileSync(join(process.cwd(), 'app/page.tsx'), 'utf8');
-  check('I004-36-src', page.includes('getLenderHomeIntel') && page.includes('LenderHomeIntelligence'), 'SSR wiring');
+  check('I004-36-src', page.includes('loadLenderHomeIntel') && page.includes('LenderHomeIntelligence'), 'SSR wiring');
+  check('I004-36-src-v2', page.includes("from '@/lib/home-intel/load'") && !page.includes("from '@/lib/home-intel/build'"), 'page consumes snapshot loader');
+  check('I004-36-no-stale-json', !page.includes('snapshot.json'), 'page does not import INTEL-004 JSON artifact');
+  check('I004-v2-contract', snapshot.snapshotVersion === 'lender-home-intel-snapshot-v2', snapshot.snapshotVersion);
+  check('I004-ppc', snapshot.graph.person_public_candidate === 0, String(snapshot.graph.person_public_candidate));
+  check('I004-grain-nmls', snapshot.nmlsInstitution !== snapshot.institutions, 'credential ≠ identity');
+  check('I004-fl-internal', snapshot.floridaInternal === 6267, String(snapshot.floridaInternal));
   check('I004-37-src', !page.includes('Loading lender intelligence'), 'no loading shell');
   check('I004-51-src', !page.includes('aggregateRating') && !page.includes('ratingValue'), 'no rating schema on page');
 

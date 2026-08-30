@@ -85,6 +85,22 @@ function Story({ finding }: { finding: FeaturedStory }) {
   );
 }
 
+export function LenderHomeIntelligenceUnavailable({ reason }: { reason: string }) {
+  return (
+    <div className="intel-home">
+      <section className="intel-hero" aria-labelledby="home-title">
+        <p className="intel-eyebrow">National mortgage-market intelligence</p>
+        <h1 id="home-title">Understand the mortgage market before you choose a lender.</h1>
+        <p className="intel-hero__lede">
+          The current published intelligence snapshot is unavailable. This page does not substitute live database
+          queries or stale hardcoded constants.
+        </p>
+        <p className="intel-kicker">{reason}</p>
+      </section>
+    </div>
+  );
+}
+
 export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
   return (
     <div className="intel-home">

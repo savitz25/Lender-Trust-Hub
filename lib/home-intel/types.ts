@@ -1,5 +1,43 @@
 export const LENDER_HOME_INTEL_VERSION = 'lender-home-intel-v1' as const;
 export const LENDER_HOME_PUBLICATION_VERSION = 'intel-004-v1' as const;
+export const LENDER_HOME_SNAPSHOT_CONTRACT = 'lender-home-intel-snapshot-v2' as const;
+
+export type HomeIntelSnapshotV2 = {
+  snapshotVersion: typeof LENDER_HOME_SNAPSHOT_CONTRACT | string;
+  homepagePublicationVersion: string;
+  generated_at: string;
+  retrievedAt: string;
+  hmdaOfficialAsOf: string;
+  hmdaSourceVintage: string;
+  hmdaGrain: string;
+  institutions: number;
+  lpiSnapshots: number;
+  nmlsInstitution: number;
+  publicRender: number;
+  publicIndex: number;
+  floridaPublic: number;
+  floridaInternal: number;
+  applications: number;
+  originations: number;
+  denials: number;
+  complaints: number;
+  complaintsAttached: number;
+  complaintsUnattached: number;
+  cfpbLabels: number;
+  cfpbConfirmedBridges: number;
+  depository: { FDIC: number; NCUA: number; NONBANK: number; UNKNOWN: number };
+  geography: Array<{ state: string; applications: number; originations: number; denials: number }>;
+  graph: {
+    branch_entities: number;
+    person_mlo_entities: number;
+    nmls_branch: number;
+    nmls_person: number;
+    person_public_candidate: number;
+  };
+  grains: Record<string, string>;
+  source_as_of: Record<string, string>;
+  fingerprint: string;
+};
 
 export type HomeStoryType = 'BENCHMARK' | 'CHANGE' | 'GAP';
 export type CoverageStatus = 'strong' | 'partial' | 'limited' | 'unavailable' | 'not_yet_researched';

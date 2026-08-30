@@ -1,6 +1,6 @@
 import { INDEXING_COHORT, RENDER_COHORT } from '@/lib/national-profile/publication';
 import { DISCOVERY_SEARCHABLE_COUNT } from '@/lib/national-profile/discovery';
-import { FLORIDA_SNAPSHOT } from '@/lib/florida-intelligence/snapshot';
+import { FLORIDA_LEND_005_SNAPSHOT } from '@/lib/florida-intelligence/snapshot';
 import { FLORIDA_PHASE1_COUNT, FLORIDA_PHASE1_GATE } from './phase1';
 import { FLORIDA_PHASE2_COUNT, FLORIDA_PHASE2_GATE } from './phase2';
 import type { EntityKind, IdentifierType, RelationshipType } from '@/lib/identity/types';
@@ -45,7 +45,7 @@ export function runFlidTests(): Flid[] {
   check('FLID44', DISCOVERY_SEARCHABLE_COUNT === 181 && FLORIDA_PHASE1_GATE.search === false && FLORIDA_PHASE2_GATE.search === false, 'search 181');
   check(
     'FLID45',
-    FLORIDA_SNAPSHOT.fingerprint === '616a961b7524fd5fd48ba7dcedcc553aabe9b658a586557908622912f5f08edc',
+    FLORIDA_LEND_005_SNAPSHOT.fingerprint === '616a961b7524fd5fd48ba7dcedcc553aabe9b658a586557908622912f5f08edc',
     'si fingerprint',
   );
   return out;

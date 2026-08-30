@@ -1,6 +1,6 @@
 import { INDEXING_COHORT, RENDER_COHORT } from '@/lib/national-profile/publication';
 import { DISCOVERY_SEARCHABLE_COUNT } from '@/lib/national-profile/discovery';
-import { FLORIDA_SNAPSHOT } from '@/lib/florida-intelligence/snapshot';
+import { FLORIDA_LEND_005_SNAPSHOT } from '@/lib/florida-intelligence/snapshot';
 import { FLORIDA_PHASE1_COUNT, FLORIDA_PHASE1_GATE, FLORIDA_PHASE1_ROWS } from './phase1';
 import { publicProfileLeakHits } from './public-projection';
 import { floridaCompanyJsonLdHasForbiddenRatings } from './jsonld';
@@ -30,7 +30,7 @@ export function runFlpubTests(): Flpub[] {
   check('FLPUB37', c.every((r) => r.ofr === 0), 'cohort C zero');
   check('FLPUB45', !floridaCompanyJsonLdHasForbiddenRatings({ foo: 'bar' }), 'ratings helper');
   check('FLPUB-leak-empty', publicProfileLeakHits({ name: 'x', nmls_id: '1' }).length === 0, 'no leak keys');
-  check('FLPUB48-snapshot', FLORIDA_SNAPSHOT.fingerprint === '616a961b7524fd5fd48ba7dcedcc553aabe9b658a586557908622912f5f08edc', 'si fingerprint');
+  check('FLPUB48-snapshot', FLORIDA_LEND_005_SNAPSHOT.fingerprint === '616a961b7524fd5fd48ba7dcedcc553aabe9b658a586557908622912f5f08edc', 'si fingerprint historical');
   check('FLPUB-search-off', FLORIDA_PHASE1_GATE.search === false, 'no search expansion');
   check('FLPUB-phase1-untouched', FLORIDA_PHASE1_GATE.robotsIndex === true && FLORIDA_PHASE1_GATE.sitemap === true, 'phase1 index+sitemap');
   return out;

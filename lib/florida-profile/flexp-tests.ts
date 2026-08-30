@@ -1,6 +1,6 @@
 import { INDEXING_COHORT, RENDER_COHORT } from '@/lib/national-profile/publication';
 import { DISCOVERY_SEARCHABLE_COUNT } from '@/lib/national-profile/discovery';
-import { FLORIDA_SNAPSHOT } from '@/lib/florida-intelligence/snapshot';
+import { FLORIDA_LEND_005_SNAPSHOT } from '@/lib/florida-intelligence/snapshot';
 import { FLORIDA_PHASE1_COUNT, FLORIDA_PHASE1_GATE, FLORIDA_PHASE1_ROWS } from './phase1';
 import {
   FLORIDA_PHASE2_COUNT,
@@ -62,7 +62,7 @@ export function runFlexpTests(): Flexp[] {
   check('FLEXP50', DISCOVERY_SEARCHABLE_COUNT === 181 && FLORIDA_PHASE1_GATE.search === false && FLORIDA_PHASE2_GATE.search === false, 'searchable 181');
   check('FLEXP51', RENDER_COHORT.length === 181, String(RENDER_COHORT.length));
   check('FLEXP52', INDEXING_COHORT.length === 180, String(INDEXING_COHORT.length));
-  check('FLEXP55', FLORIDA_SNAPSHOT.fingerprint === '616a961b7524fd5fd48ba7dcedcc553aabe9b658a586557908622912f5f08edc', 'si fingerprint');
+  check('FLEXP55', FLORIDA_LEND_005_SNAPSHOT.fingerprint === '616a961b7524fd5fd48ba7dcedcc553aabe9b658a586557908622912f5f08edc', 'si fingerprint historical');
   check('FLEXP62', FLORIDA_PHASE1_COUNT + FLORIDA_PHASE2_COUNT === 130, 'no 131st');
 
   return out;

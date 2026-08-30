@@ -1,11 +1,13 @@
 import { SITE_URL } from '@/lib/directory/categories';
 import { buildLenderOrganizationSchema } from '@/lib/seo/organization';
 import { FLORIDA_INTELLIGENCE_GATE } from './publication';
-import { FLORIDA_SNAPSHOT } from './snapshot';
+import { FLORIDA_SNAPSHOT, type FloridaIntelligenceSnapshot } from './snapshot';
 
-export function buildFloridaIntelligenceJsonLd(): Record<string, unknown> {
+export function buildFloridaIntelligenceJsonLd(
+  snapshot: FloridaIntelligenceSnapshot = FLORIDA_SNAPSHOT,
+): Record<string, unknown> {
   const url = `${SITE_URL}${FLORIDA_INTELLIGENCE_GATE.path}`;
-  const s = FLORIDA_SNAPSHOT;
+  const s = snapshot;
   return {
     '@context': 'https://schema.org',
     '@graph': [

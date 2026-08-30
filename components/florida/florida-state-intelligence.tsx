@@ -1,5 +1,10 @@
 import Link from 'next/link';
-import { FLORIDA_SNAPSHOT, fmtInt, fmtUsdCompact, identityPct } from '@/lib/florida-intelligence/snapshot';
+import {
+  fmtInt,
+  fmtUsdCompact,
+  identityPct,
+  type FloridaIntelligenceSnapshot,
+} from '@/lib/florida-intelligence/snapshot';
 
 function Metric({
   value,
@@ -35,8 +40,26 @@ function BarRow({ label, n, max, caption }: { label: string; n: number; max: num
   );
 }
 
-export function FloridaStateIntelligence() {
-  const s = FLORIDA_SNAPSHOT;
+export function FloridaStateIntelligenceUnavailable({ reason }: { reason: string }) {
+  return (
+    <div className="th-shell mx-auto w-full max-w-[880px] overflow-x-clip px-4 py-8 sm:py-10">
+      <header className="min-w-0">
+        <p className="text-xs font-semibold uppercase tracking-wider text-[#047857]">Independent research · Florida</p>
+        <h1 className="mt-1 break-words text-2xl font-bold text-[#0A2540] sm:text-3xl">
+          Florida Mortgage &amp; Lending Research
+        </h1>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
+          The current published Florida intelligence snapshot is unavailable. This page does not substitute live
+          database queries or stale hardcoded constants.
+        </p>
+        <p className="mt-2 text-sm text-slate-600">{reason}</p>
+      </header>
+    </div>
+  );
+}
+
+export function FloridaStateIntelligence({ snapshot }: { snapshot: FloridaIntelligenceSnapshot }) {
+  const s = snapshot;
   const L = s.licensing;
   const O = s.ofr;
   const types = [
@@ -99,7 +122,7 @@ export function FloridaStateIntelligence() {
           <Metric
             value={fmtInt(L.unique_nmls)}
             label="Unique Approved Florida company NMLS identities"
-            hint="Current Chapter 494 company denominator. Not 6,435 lenders."
+            hint={`Current Chapter 494 company denominator. Not ${fmtInt(L.approved_credentials)} unique companies.`}
           />
           <Metric
             value={fmtInt(L.approved_credentials)}
@@ -109,7 +132,7 @@ export function FloridaStateIntelligence() {
           <Metric
             value={fmtInt(L.confirmed_nmls)}
             label="Companies linked to confirmed canonical identities"
-            hint={`${identityPct()}% of 6,325. 22 remain REVIEW_REQUIRED.`}
+            hint={`${identityPct(s)}% of ${fmtInt(L.unique_nmls)}. ${fmtInt(L.held_nmls)} remain REVIEW_REQUIRED.`}
           />
         </div>
       </section>
@@ -121,7 +144,7 @@ export function FloridaStateIntelligence() {
         <p className="mt-2 text-sm leading-relaxed text-slate-600">
           <strong>{fmtInt(L.approved_credentials)} Approved company license credentials</strong> across{' '}
           <strong>{fmtInt(L.unique_nmls)} unique company NMLS identities</strong>. Credentials are not companies. Some
-          companies hold two or three credentials. Do not call this 6,435 Florida lenders.
+          companies hold two or three credentials. Do not call this {fmtInt(L.approved_credentials)} Florida lenders.
         </p>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           <div className="rounded-xl border border-slate-200 bg-white p-4">
@@ -162,6 +185,23 @@ export function FloridaStateIntelligence() {
             footprint. This page does not create county market pages.
           </li>
         </ul>
+        <div className="mt-6 grid gap-3 sm:grid-cols-3">
+          <Metric
+            value={fmtInt(s.graph.fl_branch_entities)}
+            label="Florida branch entities"
+            hint="Branch entity with an NMLS_BRANCH identifier in Florida. Not a branch license row."
+          />
+          <Metric
+            value={fmtInt(s.graph.fl_lo_nmls)}
+            label="Distinct Florida MLO NMLS identities"
+            hint={`${fmtInt(s.graph.fl_lo_license_rows)} current FL LO license rows. Person entity ≠ credential row.`}
+          />
+          <Metric
+            value={fmtInt(s.graph.fl_license_rows)}
+            label="Current Florida OFR license rows"
+            hint="Company + branch + LO credential rows. Not unique companies and not the Approved MBR/MLD hero count."
+          />
+        </div>
       </section>
 
       <section aria-labelledby="identity-heading" className="mt-10">
@@ -170,9 +210,11 @@ export function FloridaStateIntelligence() {
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-slate-600">
           Confirmed canonical company identities: <strong>{fmtInt(L.confirmed_nmls)} / {fmtInt(L.unique_nmls)}</strong>{' '}
-          ({identityPct()}%). REVIEW_REQUIRED: <strong>{fmtInt(L.held_nmls)} / {fmtInt(L.unique_nmls)}</strong> (23
-          credential rows). Those 22 are official Approved OFR records whose canonical national relationship remains
-          held for review. They are not unlicensed, invalid, or fake.
+          ({identityPct(s)}%). REVIEW_REQUIRED: <strong>{fmtInt(L.held_nmls)} / {fmtInt(L.unique_nmls)}</strong> (
+          {fmtInt(L.held_rows)} credential rows). Those {fmtInt(L.held_nmls)} are official Approved OFR records whose
+          canonical national relationship remains held for review. They are not unlicensed, invalid, or fake. The{' '}
+          {fmtInt(s.graph.unresolved_source_company_nmls)} unresolved OFR source-company identities from FL-LEND-002D
+          are a different grain and are not this Approved-roster hold count.
         </p>
       </section>
 
@@ -367,15 +409,29 @@ export function FloridaStateIntelligence() {
           Important limitations
         </h2>
         <ul className="mt-2 list-disc space-y-2 pl-5 text-sm text-slate-700">
-          <li>6,435 credentials ≠ 6,325 companies.</li>
-          <li>22 Approved company NMLS identities remain REVIEW_REQUIRED.</li>
+          <li>
+            {fmtInt(L.approved_credentials)} credentials ≠ {fmtInt(L.unique_nmls)} companies.
+          </li>
+          <li>
+            {fmtInt(L.held_nmls)} Approved company NMLS identities remain REVIEW_REQUIRED. That is not the{' '}
+            {fmtInt(s.graph.unresolved_source_company_nmls)} unresolved OFR source identities from FL-LEND-002D.
+          </li>
           <li>OFR FLAIO automated coverage begins July 2015. Pre-2015 REAL search is not in the P0 bulk corpus.</li>
-          <li>607 company orders cannot currently be safely attached to the CURRENT Approved company identity foundation.</li>
-          <li>9 company PDFs were not text extractable. Fine-dollar coverage is partial.</li>
+          <li>
+            {fmtInt(O.company_unresolved)} company orders cannot currently be safely attached to the CURRENT Approved
+            company identity foundation.
+          </li>
+          <li>
+            {fmtInt(O.non_text_company)} company PDFs were not text extractable. Fine-dollar coverage is partial.
+          </li>
           <li>CFPB complaints are consumer reports, not findings.</li>
           <li>HMDA measures lending activity/reporting, not lender quality.</li>
           <li>OFR business address/county is not service territory.</li>
-          <li>No Branch or MLO identity layer exists yet. No Trust Score, complaint score, or ranking.</li>
+          <li>
+            Branch entities ({fmtInt(s.graph.fl_branch_entities)}) are not branch license rows (
+            {fmtInt(s.graph.fl_branch_license_rows)}). Distinct FL MLO NMLS ({fmtInt(s.graph.fl_lo_nmls)}) are not LO
+            license rows ({fmtInt(s.graph.fl_lo_license_rows)}). No Trust Score, complaint score, or ranking.
+          </li>
         </ul>
       </section>
 

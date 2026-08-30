@@ -1,4 +1,4 @@
-import snapshot from './snapshot.json';
+import accepted from './accepted-snapshot.json';
 import { fingerprintLenderHomeIntel } from './fingerprint';
 import { STATE_NAMES } from './states';
 import {
@@ -6,9 +6,12 @@ import {
   LENDER_HOME_PUBLICATION_VERSION,
   type CoverageRow,
   type FeaturedStory,
+  type HomeIntelSnapshotV2,
   type LenderHomeIntel,
   type TraceMetric,
 } from './types';
+
+const ACCEPTED_SNAPSHOT = accepted as HomeIntelSnapshotV2;
 
 function fmt(n: number): string {
   return n.toLocaleString('en-US');
@@ -19,10 +22,13 @@ function pct(part: number, whole: number): number {
   return Math.round((1000 * part) / whole) / 10;
 }
 
-const depository = snapshot.depository as { FDIC: number; NCUA: number; NONBANK: number; UNKNOWN: number };
-const OTHER_ACTIONS = snapshot.applications - snapshot.originations - snapshot.denials;
-
-export function buildLenderHomeIntel(generatedAt = '2026-08-27T00:00:00.000Z'): LenderHomeIntel {
+export function buildLenderHomeIntel(
+  generatedAt = '2026-08-27T00:00:00.000Z',
+  payload: HomeIntelSnapshotV2 = ACCEPTED_SNAPSHOT,
+): LenderHomeIntel {
+  const snapshot = payload;
+  const depository = snapshot.depository;
+  const OTHER_ACTIONS = snapshot.applications - snapshot.originations - snapshot.denials;
   const maxApps = Math.max(...snapshot.geography.map((row) => row.applications));
   const stateOfRecord: TraceMetric[] = [
     {
@@ -551,8 +557,17 @@ export function buildLenderHomeIntel(generatedAt = '2026-08-27T00:00:00.000Z'): 
   return { ...draft, payloadFingerprint };
 }
 
+export function buildLenderHomeIntelFromSnapshot(
+  payload: HomeIntelSnapshotV2,
+  generatedAt?: string,
+): LenderHomeIntel {
+  return buildLenderHomeIntel(generatedAt ?? payload.generated_at, payload);
+}
+
 export function getLenderHomeIntel(): LenderHomeIntel {
   return buildLenderHomeIntel();
 }
 
-export const HMDA_OTHER_ACTIONS = OTHER_ACTIONS;
+export const ACCEPTED_HOME_SNAPSHOT = ACCEPTED_SNAPSHOT;
+export const HMDA_OTHER_ACTIONS =
+  ACCEPTED_SNAPSHOT.applications - ACCEPTED_SNAPSHOT.originations - ACCEPTED_SNAPSHOT.denials;

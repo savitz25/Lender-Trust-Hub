@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
-import { LenderHomeIntelligence } from '@/components/home-intel/lender-home-intelligence';
-import { getLenderHomeIntel } from '@/lib/home-intel/build';
+import { LenderHomeIntelligence, LenderHomeIntelligenceUnavailable } from '@/components/home-intel/lender-home-intelligence';
+import { loadLenderHomeIntel } from '@/lib/home-intel/load';
 import { SHARE_HUB } from '@/lib/seo/share-hub';
+
+export const dynamic = 'force-dynamic';
 
 const isProd = process.env.VERCEL_ENV === 'production';
 
@@ -24,8 +26,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
-  const intel = getLenderHomeIntel();
+export default async function HomePage() {
+  const loaded = await loadLenderHomeIntel();
   return (
     <>
       <JsonLd
@@ -44,7 +46,11 @@ export default function HomePage() {
           ],
         }}
       />
-      <LenderHomeIntelligence intel={intel} />
+      {loaded.status === 'ok' ? (
+        <LenderHomeIntelligence intel={loaded.intel} />
+      ) : (
+        <LenderHomeIntelligenceUnavailable reason={loaded.reason} />
+      )}
     </>
   );
 }

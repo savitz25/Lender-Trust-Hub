@@ -9,6 +9,8 @@
     "start": "next start",
     "test": "node scripts/assert-share-002.mjs && node scripts/assert-share-003.mjs && node scripts/assert-visual-004.mjs && npm run assert:ask-handoff && npm run assert:lend-nat-012 && npm run assert:lend-nat-014 && npm run assert:lend-nat-016 && npm run assert:intel-004",
     "assert:intel-004": "tsx scripts/assert-intel-004.mts",
+    "assert:florida-intel": "tsx scripts/fl-lend-005-flint.ts",
+    "assert:fl-lend-002e": "tsx scripts/assert-fl-lend-002e.mts && python scripts/fl-lend-002e-snapshot-tests.py",
     "assert:visual": "node scripts/assert-visual-004.mjs",
     "assert:ask-handoff": "tsx scripts/assert-ask-handoff.mts",
     "assert:lend-nat-012": "tsx scripts/assert-lend-nat-012.mts",
