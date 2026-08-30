@@ -10,7 +10,7 @@ export const ASK_TRUST_HUB = {
   email: 'hello@asktrusthub.com',
 } as const;
 
-export const LENDER_CONTACT_EMAIL = 'hello@lendertrusthub.com';
+export const LENDER_CONTACT_EMAIL = 'hello@asktrusthub.com';
 
 export const NETWORK_HUBS = [
   {

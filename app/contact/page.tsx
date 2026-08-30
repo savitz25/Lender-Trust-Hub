@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Mail } from 'lucide-react';
 import { LENDER_BRAND, LENDER_INDEPENDENCE_LINE, LENDER_RADIUS, LENDER_SHADOW } from '@/lib/design/lender-design-system';
 import { SITE_URL } from '@/lib/directory/categories';
+import { LENDER_CONTACT_EMAIL } from '@/lib/network/ask-trust-hub';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/contact` },
 };
 
-const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || 'hello@lendertrusthub.com';
+const CONTACT_EMAIL = LENDER_CONTACT_EMAIL;
 
 export default function ContactPage() {
   return (
