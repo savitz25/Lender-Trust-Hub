@@ -57,3 +57,8 @@ data/hmda/florida/_our_lenders_extract.json
 # National lender×county file can exceed GitHub soft limits — keep local if huge
 # (smaller national tables + by-state partitions are committed)
 data/hmda/national/lender_activity_by_county.csv
+
+# FL-LEND-002F transformed source material and execution reports are local-only.
+data/generated/fl-lend-002f/
+__pycache__/
+*.pyc
