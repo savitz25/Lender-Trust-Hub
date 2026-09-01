@@ -39,7 +39,6 @@ const LOAN_PROGRAMS = [
 
 type Props = {
   stateSlug: string;
-  countySlug: string;
   countyName: string;
   assessment: CountyQualityAssessment;
   inCounty: Lender[];
@@ -51,7 +50,6 @@ type Props = {
  */
 export function CountyIntelligenceModules({
   stateSlug,
-  countySlug,
   countyName,
   assessment,
   inCounty,

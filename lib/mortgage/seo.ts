@@ -4,7 +4,6 @@ import { SITE_URL, MORTGAGE_CATEGORY } from '@/lib/directory/categories';
 import { getStateMortgageStats } from './stateLenders';
 import { buildLenderOrganizationSchema } from '@/lib/seo/organization';
 
-const YEAR = MORTGAGE_CATEGORY.year;
 const BRAND = 'Lender Trust Hub';
 
 export function mortgageStatePath(slug: string): string {
@@ -55,7 +54,8 @@ export const HIGH_VOLUME_STATE_SLUGS = new Set([
 
 // ── Titles & descriptions (research-oriented, no “best of” listicles) ──
 
-export function buildMortgageStateTitle(stateName: string, _count?: number): string {
+export function buildMortgageStateTitle(stateName: string, count?: number): string {
+  void count;
   return `Mortgage Lenders in ${stateName} — HMDA Evidence & Local Directory | ${BRAND}`;
 }
 
@@ -79,7 +79,7 @@ export function buildMortgageHubDescription(total: number): string {
   return `National mortgage research directory: ${total} distinct companies by NMLS entity across the U.S. State hubs, county markets, HMDA evidence, and educational Loan Estimate tools. No paid placements.`;
 }
 
-export function buildMortgageCountyTitle(countyName: string, stateName: string): string {
+export function buildMortgageCountyTitle(countyName: string): string {
   return `${countyName} County Mortgage Market — Lenders, Volume & Research Tools | ${BRAND}`;
 }
 
@@ -230,7 +230,7 @@ export function buildMortgageCountyJsonLd(input: {
   description: string;
 }): Record<string, unknown> {
   const pageUrl = mortgageCountyUrl(input.stateSlug, input.countySlug);
-  const title = buildMortgageCountyTitle(input.countyName, input.stateName);
+  const title = buildMortgageCountyTitle(input.countyName);
 
   return {
     '@context': 'https://schema.org',

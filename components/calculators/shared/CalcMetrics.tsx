@@ -57,6 +57,6 @@ export function MetricCard({
   );
 }
 
-export function formatUSD(v: number, decimals = 0) {
+export function formatUSD(v: number) {
   return formatCurrency(v);
 }

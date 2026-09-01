@@ -35,6 +35,7 @@ export function BankTable({
   return (
     <div className="overflow-x-auto rounded-2xl border border-zinc-200 bg-white shadow-sm">
       <table className="w-full min-w-[720px] text-left text-sm">
+        <caption className="sr-only">FDIC-insured banks in {stateName}</caption>
         <thead className="border-b border-zinc-200 bg-zinc-50 text-xs font-semibold uppercase tracking-wide text-zinc-500">
           <tr>
             <th scope="col" className="px-4 py-3">Bank Name</th>

@@ -66,14 +66,16 @@ export function CalculatorHub({ defaultCalc }: { defaultCalc?: CalcId }) {
  }, []);
 
  useEffect(() => {
- const hash = window.location.hash.replace('#', '') as EmbedCalcId;
- if (hash && hash in calcLoaders) setActive(hash);
  const onPop = () => {
  const h = window.location.hash.replace('#', '') as EmbedCalcId;
  setActive(h && h in calcLoaders ? h : null);
  };
+ const initialSync = window.setTimeout(onPop, 0);
  window.addEventListener('popstate', onPop);
- return () => window.removeEventListener('popstate', onPop);
+ return () => {
+ window.clearTimeout(initialSync);
+ window.removeEventListener('popstate', onPop);
+ };
  }, []);
 
  const ActiveComponent = active ? CalcComponents[active] : null;
@@ -127,12 +129,12 @@ export function CalculatorHub({ defaultCalc }: { defaultCalc?: CalcId }) {
  <p className="mt-1 flex-1 text-sm text-zinc-500">
  Search vetted mortgage lenders and brokers by state/county.
  </p>
- <a
+ <Link
  href="/local-lenders"
  className="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#0A2540] hover:border-emerald-400"
  >
  Browse lenders
- </a>
+ </Link>
  </article>
  </div>
  </section>

@@ -67,7 +67,7 @@ export async function generateMetadata({
   const quality = assessCountyForPage(state, county);
   const robots = countyRobotsForTier(quality.tier);
   const segments = getCountyLenderSegments(state, county, `${countyName} County, ${stateName}`);
-  const title = buildMortgageCountyTitle(countyName, stateName);
+  const title = buildMortgageCountyTitle(countyName);
   const description = buildMortgageCountyDescription(
     countyName,
     stateName,
@@ -250,7 +250,6 @@ export default async function CountyLendersPage({
         {(quality.tier === 1 || quality.tier === 2) && (
           <CountyIntelligenceModules
             stateSlug={state}
-            countySlug={county}
             countyName={countyName}
             assessment={quality}
             inCounty={inCounty}

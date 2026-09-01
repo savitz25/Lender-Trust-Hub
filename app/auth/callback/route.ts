@@ -40,7 +40,7 @@ export async function GET(request: Request) {
   const errorUrl = lendingAuthErrorUrl(next, HUB_CANONICAL_ORIGIN);
 
   // Build redirect first; attach session cookies to THIS response
-  let response = NextResponse.redirect(successUrl);
+  const response = NextResponse.redirect(successUrl);
   const cookieStore = await cookies();
 
   const supabase = createServerClient(getSupabaseUrl()!, getSupabaseAnonKey()!, {

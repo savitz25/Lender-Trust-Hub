@@ -50,8 +50,11 @@ export default function Navbar() {
   const authReady = !ml?.loading;
 
   useEffect(() => {
-    setOpen(false);
-    setDirectoriesOpen(false);
+    const resetMenus = window.setTimeout(() => {
+      setOpen(false);
+      setDirectoriesOpen(false);
+    }, 0);
+    return () => window.clearTimeout(resetMenus);
   }, [pathname]);
 
   useEffect(() => {

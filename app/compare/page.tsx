@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Star, ShieldCheck } from 'lucide-react';
 import { lenders, type Lender } from '@/lib/mockData';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { trackLenderCompareSession } from '@/lib/analytics/ga-events';
 

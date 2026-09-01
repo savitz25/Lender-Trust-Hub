@@ -1,6 +1,5 @@
 import { cleanNmlsId } from '@/lib/verification/nmls';
 import { countLenderCatalog } from '@/lib/verification/counts';
-import { dedupeLendersByEntity } from '@/lib/verification/entity-identity';
 import type { Lender } from '@/lib/mockData';
 import type {
   CatalogCensus,

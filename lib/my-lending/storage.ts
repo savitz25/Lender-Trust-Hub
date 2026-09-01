@@ -27,8 +27,6 @@ import {
 } from '@/lib/my-lending/types';
 import {
   gateShortlistAdd,
-  getHistory,
-  getResearching,
   getShortlisted,
   lendersOnPlan,
   SHORTLIST_CAP,
@@ -745,7 +743,7 @@ export function upsertSavedLender(
       (l.planId === plan!.id || !l.planId || plan!.savedLenderIds.includes(l.id))
   );
   const ts = nowIso();
-  let desiredStatus: LenderResearchStatus =
+  const desiredStatus: LenderResearchStatus =
     input.status ?? (existing ? existing.status : 'shortlisted');
 
   let planLenders = lendersOnPlan(plan, state.savedLenders);

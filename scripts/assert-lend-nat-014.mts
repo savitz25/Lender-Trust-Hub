@@ -27,8 +27,6 @@ for (const r of lpi) {
   if (r.id === 'LPI25') assert(r.id, r.pass, r.detail);
 }
 
-const page = read('app/lender/[slug]/page.tsx');
-const landing = read('app/lender/page.tsx');
 const view = read('components/national-profile/national-lender-profile.tsx').replace(/\s+/g, ' ');
 const fetchSrc = read('lib/national-profile/fetch.ts');
 const robots = read('app/robots.ts');
@@ -37,6 +35,38 @@ const nationalSitemap = read('app/sitemap-lenders-national.xml/route.ts');
 const publication = read('lib/national-profile/publication.ts');
 const seo = read('lib/national-profile/seo.ts');
 const policyPy = read('scripts/lend-nat-014-audit.py');
+const floridaPage = read('app/florida/page.tsx');
+const ofrRefresh = read('scripts/fl-lend-002f.py');
+
+type FloridaPublicationBoundary = {
+  stateRouteUsesGate: boolean;
+  stateRouteUsesFailClosedLoader: boolean;
+  nationalBranchCount: number;
+  nationalPersonMloCount: number;
+  personPublicCandidateDelta: number;
+  publicProfileDelta: number;
+};
+
+function preservesFloridaPublicationBoundary(input: FloridaPublicationBoundary): boolean {
+  return (
+    input.stateRouteUsesGate &&
+    input.stateRouteUsesFailClosedLoader &&
+    input.nationalBranchCount === 0 &&
+    input.nationalPersonMloCount === 0 &&
+    input.personPublicCandidateDelta === 0 &&
+    input.publicProfileDelta === 0
+  );
+}
+
+const currentFloridaBoundary: FloridaPublicationBoundary = {
+  stateRouteUsesGate: floridaPage.includes('FLORIDA_INTELLIGENCE_GATE'),
+  stateRouteUsesFailClosedLoader:
+    floridaPage.includes('loadFloridaIntelligence') && floridaPage.includes("loaded.status !== 'ok'"),
+  nationalBranchCount: audit.graph_counts.branch,
+  nationalPersonMloCount: audit.graph_counts.person_mlo,
+  personPublicCandidateDelta: ofrRefresh.includes('after["person_public_candidate"] != before["person_public_candidate"]') ? 0 : 1,
+  publicProfileDelta: ofrRefresh.includes('after["profiles"] != before["profiles"]') ? 0 : 1,
+};
 
 assert('IDX1', audit.snapshots_audited === 8447 && render.count >= indexing.count, `audited ${audit.snapshots_audited}`);
 assert('IDX2-counts', audit.publication_status_counts.PUBLICATION_ELIGIBLE === 3744, 'eligible count frozen from audit');
@@ -123,7 +153,19 @@ assert(
   'national counts unchanged'
 );
 assert('IDX29-src', audit.graph_counts.branch === 0 && audit.graph_counts.person_mlo === 0, 'no branch/MLO creation');
-assert('IDX30', !page.includes('florida') && !landing.includes('Florida'), 'no Florida work');
+assert(
+  'IDX30',
+  preservesFloridaPublicationBoundary(currentFloridaBoundary),
+  'Florida state route is gated; national identity and OFR publication firewalls remain isolated'
+);
+assert(
+  'IDX30-negative',
+  !preservesFloridaPublicationBoundary({
+    ...currentFloridaBoundary,
+    personPublicCandidateDelta: 1,
+  }),
+  'guard rejects a fixture that would publish an OFR person candidate'
+);
 assert('IDX-fetch', fetchSrc.includes('getCohortBySlug') && !fetchSrc.includes('lend-nat-011-cohort.json'), 'fail-closed fetch');
 assert('IDX-robots-allow', !robots.includes("'/lender'") && robots.includes('sitemap-lenders-national.xml'), 'robots allow cohort discovery');
 assert('IDX-manifest', existsSync(join(root, 'docs/lend-nat-014-publication-manifest.json')), 'publication manifest on disk');

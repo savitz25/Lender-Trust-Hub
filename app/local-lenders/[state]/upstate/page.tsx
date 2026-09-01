@@ -14,13 +14,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.lendertrusthub.com/local-lenders/south-carolina/upstate' },
 };
 
-const CALCULATORS = [
-  { href: '/calculators/mortgage-payment', label: 'Mortgage Payment' },
-  { href: '/calculators/affordability', label: 'Affordability' },
-  { href: '/calculators/refinance', label: 'Refinance ROI' },
-  { href: '/calculators/va', label: 'VA Loan' },
-];
-
 export default function UpstateSCHubPage() {
   const greenvilleLenders = getLendersByCounty('south-carolina', 'greenville');
   const spartanburgLenders = getLendersByCounty('south-carolina', 'spartanburg');

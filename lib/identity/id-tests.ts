@@ -251,11 +251,10 @@ export function runIdentityTests(opts?: { publicLenders?: Lender[] }): IdTestRes
   );
   check('ID11', Boolean(orphan && orphan.entityId === null), 'orphan HMDA LEI preserved unattached');
 
-  let fdicAsNmls = false;
   try {
     assertIdentifierValue('NMLS_INSTITUTION', '9087-cert');
   } catch {
-    fdicAsNmls = true;
+    // Expected: an FDIC certificate cannot pass NMLS validation.
   }
   let mixed = false;
   try {

@@ -14,7 +14,6 @@ function read(p) {
 }
 
 // Walk app + components for consumer-visible scaffolding phrases
-const roots = ['app', 'components', 'lib/directory/content-clusters.ts', 'lib/mortgage/seo.ts', 'lib/fdic/seo.ts', 'lib/auto/seo.ts'];
 const badPatterns = [
   /Targets:\s*/i,
   /SEO-optimized/i,

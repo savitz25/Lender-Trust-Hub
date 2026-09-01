@@ -113,11 +113,16 @@ export function CoverageReport() {
   }, [planIdParam]);
 
   useEffect(() => {
-    refresh();
-    setHydrated(true);
+    const initialize = window.setTimeout(() => {
+      refresh();
+      setHydrated(true);
+    }, 0);
     const onStore = () => refresh();
     window.addEventListener('lth-my-lending-store', onStore);
-    return () => window.removeEventListener('lth-my-lending-store', onStore);
+    return () => {
+      window.clearTimeout(initialize);
+      window.removeEventListener('lth-my-lending-store', onStore);
+    };
   }, [refresh]);
 
   const shortlist = useMemo(() => getShortlisted(lenders), [lenders]);
@@ -128,7 +133,7 @@ export function CoverageReport() {
     [plan, shortlist, snapshots]
   );
 
-  const mailtoHref = useMemo(() => {
+  const mailtoHref = (() => {
     const subject = encodeURIComponent(
       plan?.label
         ? `Financing research: ${plan.label}`
@@ -136,7 +141,7 @@ export function CoverageReport() {
     );
     const body = encodeURIComponent(plainText);
     return `mailto:?subject=${subject}&body=${body}`;
-  }, [plainText, plan?.label]);
+  })();
 
   async function onCopy() {
     try {

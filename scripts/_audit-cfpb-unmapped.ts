@@ -2,7 +2,7 @@
  * List high-visibility directory slugs without CFPB mapping (or without snapshot data).
  */
 import { lenders } from '../lib/mockData';
-import { getCfpbMappingBySlug, getMappedCfpbSlugs } from '../lib/cfpb/mappings';
+import { getMappedCfpbSlugs } from '../lib/cfpb/mappings';
 import { getCfpbComplaintEvidenceBySlug } from '../lib/cfpb/queries';
 import { getHmdaLenderEvidenceBySlug } from '../lib/hmda';
 import { dedupeLendersByEntity } from '../lib/verification/entity-identity';

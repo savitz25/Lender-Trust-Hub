@@ -20,8 +20,9 @@ export type RequestMagicLinkResult =
 export async function requestMagicLink(
   emailRaw: string,
   nextRaw?: string | null,
-  _request?: Request | null
+  request?: Request | null
 ): Promise<RequestMagicLinkResult> {
+  void request;
   const email = emailRaw.trim().toLowerCase();
   if (!email || !email.includes('@')) {
     return { ok: false, status: 400, error: 'Enter a valid email address.' };
