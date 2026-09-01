@@ -26,6 +26,7 @@ export type AskQueryInput = {
   page?: number;
   pageSize?: number;
   overrides?: AskUrlOverrides;
+  structuredQuery?: LenderResearchQuery;
 };
 
 function fmt(n: number): string {
@@ -290,9 +291,9 @@ export function executeAskQuery(input: AskQueryInput): AskExecution {
 function executeAskQueryUnstamped(input: AskQueryInput): AskExecution {
   const started = Date.now();
   const raw = input.q ?? '';
-  const pageSize = input.pageSize && input.pageSize > 0 ? Math.min(25, input.pageSize) : ASK_PAGE_SIZE;
+  const pageSize = input.pageSize && input.pageSize > 0 ? Math.min(50, input.pageSize) : ASK_PAGE_SIZE;
   const overrides = input.overrides ?? {};
-  const parsed = applyAskOverrides(parseLenderAsk(raw), overrides);
+  const parsed = input.structuredQuery ?? applyAskOverrides(parseLenderAsk(raw), overrides);
   const intel = buildLenderHomeIntel();
 
   if (parsed.mode === 'fail_closed' || parsed.mode === 'definition' || parsed.mode === 'evidence' || (parsed.mode === 'count' && !parsed.geography?.countyFips && !parsed.loanType) || (parsed.mode === 'comparison' && parsed.geography?.grain === 'state')) {
@@ -457,15 +458,16 @@ function executeAskQueryUnstamped(input: AskQueryInput): AskExecution {
     denominatorValue = rankedRaw.reduce((s, r) => s + r.metric, 0);
     grain = 'HMDA 2025 county LEI summed to Florida (property geography)';
     method = `Sum Florida county-grain rows per LEI; sort by ${label}. State-grain files do not carry this split.`;
-  } else if (parsed.geography?.state === 'FL') {
-    const fl = catalog.stateRows.filter((r) => r.state === 'FL');
-    const rankedRaw = rankState(fl, action, loanType);
+  } else if (parsed.geography?.grain === 'state' && parsed.geography.state) {
+    const stateRows = catalog.stateRows.filter((r) => r.state === parsed.geography!.state);
+    const rankedRaw = rankState(stateRows, action, loanType);
+    const stateLabel = parsed.geography.state === 'FL' ? 'Florida' : parsed.geography.state;
     ranked = rankedRaw.map((r, i) =>
       toRow(r.lei, i + 1, r.metric, label, { applications: r.applications, originations: r.originations, denials: null }),
     );
     denominatorValue = rankedRaw.reduce((s, r) => s + r.metric, 0);
-    grain = 'HMDA 2025 state LEI · Florida (property geography)';
-    method = `Filter lender_state_summary.csv to state=FL; sort by ${label}.`;
+    grain = `HMDA 2025 state LEI · ${stateLabel} (property geography)`;
+    method = `Filter lender_state_summary.csv to state=${parsed.geography.state}; sort by ${label}.`;
   } else {
     const byLei = new Map<string, { lei: string; metric: number; applications: number; originations: number }>();
     for (const row of catalog.stateRows) {
@@ -497,8 +499,8 @@ function executeAskQueryUnstamped(input: AskQueryInput): AskExecution {
   const place =
     parsed.geography?.county != null
       ? `${parsed.geography.county} County, Florida`
-      : parsed.geography?.state === 'FL'
-        ? 'Florida'
+      : parsed.geography?.grain === 'state' && parsed.geography.state
+        ? parsed.geography.state === 'FL' ? 'Florida' : parsed.geography.state
         : 'the United States';
 
   return {
