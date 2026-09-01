@@ -40,16 +40,19 @@ export function GuidedPlanSetup() {
   const [activeLabel, setActiveLabel] = useState('My financing research');
 
   useEffect(() => {
-    const active = ensureActivePlan({ label: 'My financing research' });
-    setActiveLabel(active.label);
-    setCustomLabel(active.label);
-    setFocus(active.loanFocus ?? []);
-    setZip(active.location?.zip ?? '');
-    setStateCode(active.location?.state ?? '');
-    setNotes(active.notes ?? '');
-    const n = getLendersForPlan(active.id).length;
-    setHasShortlist(n > 0);
-    setCreateAsNew(n > 0);
+    const initialize = window.setTimeout(() => {
+      const active = ensureActivePlan({ label: 'My financing research' });
+      setActiveLabel(active.label);
+      setCustomLabel(active.label);
+      setFocus(active.loanFocus ?? []);
+      setZip(active.location?.zip ?? '');
+      setStateCode(active.location?.state ?? '');
+      setNotes(active.notes ?? '');
+      const n = getLendersForPlan(active.id).length;
+      setHasShortlist(n > 0);
+      setCreateAsNew(n > 0);
+    }, 0);
+    return () => window.clearTimeout(initialize);
   }, []);
 
   const locationLabel = useMemo(() => {

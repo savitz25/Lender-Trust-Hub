@@ -21,7 +21,7 @@ export default function RefinanceROICalc() {
  const [currentRate, setCurrentRate] = useState(7.25);
  const [newRate, setNewRate] = useState(5.75);
  const [closingCosts, setClosingCosts] = useState(4500);
- const [yearsLeft, setYearsLeft] = useState(28);
+ const [yearsLeft] = useState(28);
 
  const { currentPayment, newPayment, monthlySavings, breakevenMonths, lifetimeSavings, chartData, showCelebration } =
  useMemo(() => {

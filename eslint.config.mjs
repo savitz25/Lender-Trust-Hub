@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Generated visual-test artifact and vendored standalone calculator bundle.
+    "docs/artifacts/**",
+    "public/calculators-hub/**",
   ]),
 ]);
 

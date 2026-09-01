@@ -29,7 +29,8 @@ export function PrivateResearchNote({
   const [savedFlash, setSavedFlash] = useState(false);
 
   useEffect(() => {
-    setDraft(value ?? '');
+    const syncDraft = window.setTimeout(() => setDraft(value ?? ''), 0);
+    return () => window.clearTimeout(syncDraft);
   }, [value]);
 
   function persist() {

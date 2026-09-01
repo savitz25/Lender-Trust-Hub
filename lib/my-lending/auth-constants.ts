@@ -26,7 +26,7 @@ export const MOVE_AUTH_BRIDGE =
  * When true, emailRedirectTo / OAuth redirectTo hit this hub directly.
  * Default false → Move bridge (allowlisted Site URL) then handoff.
  */
-export function useDirectAuthRedirect(): boolean {
+export function isDirectAuthRedirect(): boolean {
   return process.env.AUTH_OAUTH_DIRECT === '1' || process.env.AUTH_OAUTH_DIRECT === 'true';
 }
 
@@ -86,7 +86,7 @@ export const PRODUCTION_SITE_ORIGIN = HUB_CANONICAL_ORIGIN;
  */
 export function authExternalRedirectUrl(nextPath: string): string {
   const next = sanitizePostLoginPath(nextPath);
-  if (useDirectAuthRedirect()) {
+  if (isDirectAuthRedirect()) {
     return `${HUB_CANONICAL_ORIGIN}${AUTH_CALLBACK_PATH}?next=${encodeURIComponent(next)}&hub=lending`;
   }
   const bridge = new URL(MOVE_AUTH_BRIDGE);

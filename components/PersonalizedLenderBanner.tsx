@@ -41,7 +41,6 @@ export function PersonalizedLenderBanner({
   const searchParams = useSearchParams();
   const router = useRouter();
   const [dismissed, setDismissed] = useState(false);
-  const [abVariant, setAbVariant] = useState<BannerVariant>(variant);
 
   const profile = useMemo(() => {
     const params: Record<string, string> = {};
@@ -51,20 +50,17 @@ export function PersonalizedLenderBanner({
     return parseLenderMatchFromParams(params);
   }, [searchParams]);
 
-  const effectiveVariant = experimentKey ? abVariant : variant;
-
-  useEffect(() => {
-    if (experimentKey) {
-      setAbVariant(resolveBannerVariant(variant, experimentKey));
-    }
-  }, [experimentKey, variant]);
+  const effectiveVariant = useMemo(
+    () => (experimentKey ? resolveBannerVariant(variant, experimentKey) : variant),
+    [experimentKey, variant]
+  );
 
   useEffect(() => {
     if (!profile) return;
     try {
       if (sessionStorage.getItem(dismissKey(profile)) === '1') {
-        setDismissed(true);
-        return;
+        const dismiss = window.setTimeout(() => setDismissed(true), 0);
+        return () => window.clearTimeout(dismiss);
       }
     } catch {
       /* ignore */

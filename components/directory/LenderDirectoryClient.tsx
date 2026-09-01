@@ -110,7 +110,8 @@ export function LenderDirectoryClient({
 
   // Reset progressive window whenever filters/search change
   useEffect(() => {
-    setVisibleCount(pageSize);
+    const resetWindow = window.setTimeout(() => setVisibleCount(pageSize), 0);
+    return () => window.clearTimeout(resetWindow);
   }, [query, pageSize]);
 
   const visible = useMemo(

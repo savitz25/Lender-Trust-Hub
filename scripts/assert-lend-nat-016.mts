@@ -22,7 +22,6 @@ const view = read('components/national-profile/national-lender-discovery.tsx');
 const hero = read('components/lender-hero.tsx');
 const ds = read('lib/design/lender-design-system.ts');
 const discovery = read('lib/national-profile/discovery.ts');
-const robots = read('app/robots.ts');
 const catalogSitemap = read('app/sitemap.ts');
 const nationalSitemap = read('app/sitemap-lenders-national.xml/route.ts');
 const profile = read('components/national-profile/national-lender-profile.tsx');

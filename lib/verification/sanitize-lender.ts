@@ -22,7 +22,7 @@ import { deriveLenderHomeLocality } from '@/lib/geo/home-locality';
  * Live CFPB evidence panels use the CCDB snapshot, not this catalog field.
  * When a real attributed review pipeline is wired, pass provenance and restore.
  */
-function stripUnsourcedReputation(raw: Lender): Pick<
+function stripUnsourcedReputation(): Pick<
   Lender,
   'rating' | 'reviewCount' | 'googleRating' | 'trustpilotRating' | 'cfpbComplaints'
 > {
@@ -63,7 +63,7 @@ export function sanitizeLender(raw: Lender): Lender {
     onTimeCloseRate: raw.onTimeCloseRate,
     provenance: null,
   });
-  const reputation = stripUnsourcedReputation(raw);
+  const reputation = stripUnsourcedReputation();
   const county = reconcileCountyFields(raw);
 
   const base: Lender = {

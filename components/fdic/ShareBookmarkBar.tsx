@@ -20,13 +20,16 @@ export function ShareBookmarkBar({
   const [canShare, setCanShare] = useState(false);
 
   useEffect(() => {
-    setCanShare(typeof navigator !== 'undefined' && !!navigator.share);
-    try {
-      const saved = JSON.parse(localStorage.getItem(BOOKMARK_KEY) || '[]') as string[];
-      setBookmarked(saved.includes(url));
-    } catch {
-      /* storage unavailable */
-    }
+    const syncCapabilities = window.setTimeout(() => {
+      setCanShare(!!navigator.share);
+      try {
+        const saved = JSON.parse(localStorage.getItem(BOOKMARK_KEY) || '[]') as string[];
+        setBookmarked(saved.includes(url));
+      } catch {
+        /* storage unavailable */
+      }
+    }, 0);
+    return () => window.clearTimeout(syncCapabilities);
   }, [url]);
 
   function toggleBookmark() {

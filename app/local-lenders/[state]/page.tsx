@@ -66,7 +66,6 @@ export async function generateMetadata({
   const stateMeta = STATE_BY_SLUG.get(slug);
   if (!stateMeta) return { title: 'Mortgage Lenders | LenderTrustHub' };
 
-  const lenders = getLendersByStateSlug(slug);
   const stats = getStateMortgageStats(slug);
   const title = buildMortgageStateTitle(stateMeta.fullName, stats.total);
   const description = buildMortgageStateDescription(

@@ -168,7 +168,8 @@ export function LoanEstimateCompare({
 
   // sessionStorage handoff from single analyzer or My Lending reopen
   useEffect(() => {
-    try {
+    const initialize = window.setTimeout(() => {
+      try {
       const reopen = consumeLeWorkspaceReopen();
       if (reopen?.type === 'comparison' && reopen.estimates?.length) {
         setForms((prev) => {
@@ -221,10 +222,12 @@ export function LoanEstimateCompare({
           A: formFromInputs(emptyLoanEstimateInputs(initialA), SLOT_LABELS.A),
         }));
       }
-    } catch {
-      /* ignore */
-    }
-    setHydrated(true);
+      } catch {
+        /* ignore */
+      }
+      setHydrated(true);
+    }, 0);
+    return () => window.clearTimeout(initialize);
   }, [initialA]);
 
   const activeSlots = SLOTS.slice(0, count);

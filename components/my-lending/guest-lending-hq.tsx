@@ -125,12 +125,15 @@ export function GuestLendingHq() {
   }, [leSort, compareSort]);
 
   useEffect(() => {
-    refresh();
-    setHydrated(true);
+    const initialize = window.setTimeout(() => {
+      refresh();
+      setHydrated(true);
+    }, 0);
     const onStore = () => refresh();
     window.addEventListener('lth-my-lending-store', onStore);
     window.addEventListener('storage', onStore);
     return () => {
+      window.clearTimeout(initialize);
       window.removeEventListener('lth-my-lending-store', onStore);
       window.removeEventListener('storage', onStore);
     };

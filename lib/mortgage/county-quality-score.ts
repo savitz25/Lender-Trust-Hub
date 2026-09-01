@@ -10,7 +10,7 @@
  */
 
 import type { Lender } from '@/lib/mockData';
-import { getCountyLenderSegments } from '@/lib/lenders';
+import { getAllCounties, getCountyLenderSegments } from '@/lib/lenders';
 import { cleanNmlsId } from '@/lib/verification/nmls';
 import { computeDataConfidence } from '@/lib/research/research-signals';
 import { MIN_MEANINGFUL_IN_COUNTY } from '@/lib/geo';
@@ -263,12 +263,7 @@ export function scoreCountyQuality(
 export function assessAllCountyQuality(
   counties?: { stateSlug: string; countySlug: string }[]
 ): CountyQualityAssessment[] {
-  const list =
-    counties ??
-    // Lazy require avoids circular import with lib/lenders.ts
-    (
-      require('@/lib/lenders') as typeof import('@/lib/lenders')
-    ).getAllCounties();
+  const list = counties ?? getAllCounties();
   return list.map((c) => scoreCountyQuality(c.stateSlug, c.countySlug));
 }
 

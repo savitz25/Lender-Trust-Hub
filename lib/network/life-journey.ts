@@ -65,7 +65,6 @@ export function resolveLifeJourney(
       : ctx.stateName || 'your market';
   const insuranceHref = buildInsuranceJourneyUrl(ctx);
   const moveHref = buildMoveJourneyUrl({ ...ctx, journey: 'relocate' });
-  const label = 'Continue your Trust journey';
 
   switch (context) {
     case 'lender-closing':

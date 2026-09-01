@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Bookmark, BookmarkCheck, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -55,20 +55,21 @@ export function SaveLenderButton({
   const [error, setError] = useState<string | null>(null);
   const [fullPanel, setFullPanel] = useState<SavedLender[] | null>(null);
 
-  function sync() {
+  const sync = useCallback(() => {
     setSaved(isLenderSaved(lenderSlug));
     setRecord(getSavedLenderOnActivePlan(lenderSlug));
-  }
+  }, [lenderSlug]);
 
   useEffect(() => {
-    sync();
+    const initialize = window.setTimeout(sync, 0);
     window.addEventListener('lth-my-lending-store', sync);
     window.addEventListener('storage', sync);
     return () => {
+      window.clearTimeout(initialize);
       window.removeEventListener('lth-my-lending-store', sync);
       window.removeEventListener('storage', sync);
     };
-  }, [lenderSlug]);
+  }, [sync]);
 
   const payload = {
     lenderSlug,

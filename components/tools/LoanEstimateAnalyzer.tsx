@@ -98,23 +98,26 @@ export function LoanEstimateAnalyzer({
   const [fromMyLending, setFromMyLending] = useState(false);
 
   useEffect(() => {
-    const reopen = consumeLeWorkspaceReopen();
-    if (reopen?.type !== 'loan-estimate') return;
-    const i = emptyLoanEstimateInputs(reopen.inputs as Partial<LoanEstimateInputs>);
-    setLoanAmount(String(i.loanAmount));
-    setInterestRate(String(i.interestRate));
-    setApr(i.apr == null ? '' : String(i.apr));
-    setOriginationCharges(String(i.originationCharges));
-    setDiscountPoints(String(i.discountPoints));
-    setLenderCredits(String(i.lenderCredits));
-    setTotalClosingCosts(
-      i.totalClosingCosts == null ? '' : String(i.totalClosingCosts)
-    );
-    setLoanType(i.loanType || 'conventional');
-    setLenderSlug(i.lenderSlug || '');
-    setCountySlug(i.countySlug || '');
-    setSubmitted(true);
-    setFromMyLending(true);
+    const initialize = window.setTimeout(() => {
+      const reopen = consumeLeWorkspaceReopen();
+      if (reopen?.type !== 'loan-estimate') return;
+      const i = emptyLoanEstimateInputs(reopen.inputs as Partial<LoanEstimateInputs>);
+      setLoanAmount(String(i.loanAmount));
+      setInterestRate(String(i.interestRate));
+      setApr(i.apr == null ? '' : String(i.apr));
+      setOriginationCharges(String(i.originationCharges));
+      setDiscountPoints(String(i.discountPoints));
+      setLenderCredits(String(i.lenderCredits));
+      setTotalClosingCosts(
+        i.totalClosingCosts == null ? '' : String(i.totalClosingCosts)
+      );
+      setLoanType(i.loanType || 'conventional');
+      setLenderSlug(i.lenderSlug || '');
+      setCountySlug(i.countySlug || '');
+      setSubmitted(true);
+      setFromMyLending(true);
+    }, 0);
+    return () => window.clearTimeout(initialize);
   }, []);
 
   const inputs = useMemo(

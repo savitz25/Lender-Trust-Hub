@@ -11,7 +11,6 @@ import {
   Building2,
   Shield,
   ArrowRight,
-  Sparkles,
   LayoutGrid,
   Table2,
   ArrowLeft,
@@ -28,7 +27,7 @@ import { BankComparison } from '@/components/fdic/BankComparison';
 import { StateEducationSections } from '@/components/fdic/StateEducationSections';
 import { CategoryCTAs } from '@/components/fdic/CategoryCTAs';
 import { US_STATES } from '@/lib/fdic/states';
-import type { FDICBank, RegulatorKey, StateFDICData, StateMeta } from '@/lib/fdic/types';
+import type { RegulatorKey, StateFDICData, StateMeta } from '@/lib/fdic/types';
 import { trackDirectoryEvent } from '@/lib/directory/analytics';
 import {
   computeExtendedStateStats,
@@ -90,7 +89,6 @@ export function FDICBanksExplorer({
   const [sort, setSort] = useState<SortKey>('name');
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
   const [visible, setVisible] = useState(PAGE_SIZE);
-  const [celebrated, setCelebrated] = useState(false);
 
   const availableCodes = useMemo(
     () => new Set(US_STATES.filter((s) => s.hasData).map((s) => s.code)),
@@ -116,10 +114,9 @@ export function FDICBanksExplorer({
 
       if (withCelebration) {
         celebrate();
-        setCelebrated(true);
       }
     },
-    [availableCodes, celebrated, router, stateSlug, selectedCode]
+    [availableCodes, router, stateSlug, selectedCode]
   );
 
   const filteredBanks = useMemo(() => {

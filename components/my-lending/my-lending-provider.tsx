@@ -80,8 +80,8 @@ export function MyLendingProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const supabase = createBrowserSupabaseClient();
     if (!supabase) {
-      setLoading(false);
-      return;
+      const finishLoading = window.setTimeout(() => setLoading(false), 0);
+      return () => window.clearTimeout(finishLoading);
     }
 
     let mounted = true;
@@ -128,16 +128,18 @@ export function MyLendingProvider({ children }: { children: ReactNode }) {
       void applyIdentity(nextUser);
     });
 
+    let authErrorTimer: number | undefined;
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const auth = params.get('auth');
       if (auth === 'error') {
-        setAuthOpen(true);
+        authErrorTimer = window.setTimeout(() => setAuthOpen(true), 0);
       }
     }
 
     return () => {
       mounted = false;
+      if (authErrorTimer !== undefined) window.clearTimeout(authErrorTimer);
       subscription.unsubscribe();
     };
   }, []);

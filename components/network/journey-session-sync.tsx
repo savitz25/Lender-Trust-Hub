@@ -54,7 +54,7 @@ export function JourneySessionSync({
   useEffect(() => {
     const sessionCtx = sessionToJourneyContext(loadResearchSession());
     const next = mergeJourneyContext(urlContext, sessionCtx);
-    setMerged(next);
+    const syncMerged = window.setTimeout(() => setMerged(next), 0);
 
     // Persist when page/URL has useful non-PII context (including route geography)
     if (hasJourneyContext(urlContext)) {
@@ -71,6 +71,7 @@ export function JourneySessionSync({
         landed_on: landedOn,
       });
     }
+    return () => window.clearTimeout(syncMerged);
   }, [urlContext, preferSrc, landedOn]);
 
   const continueCtx = useMemo(
