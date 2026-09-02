@@ -68,3 +68,7 @@ data/raw/nj_dobi/
 data/generated/nj-lend-001/occurrences.json
 data/generated/nj-lend-001/events.json
 data/generated/nj-lend-001/identity-ledgers.json
+
+# NJ-LEND-002 raw official HTML/PDF corpus — never commit large acquisitions
+data/nj-raw/
+data/generated/nj-lend-002/
