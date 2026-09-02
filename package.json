@@ -14,6 +14,7 @@
     "assert:fl-lend-002e": "tsx scripts/assert-fl-lend-002e.mts && python scripts/fl-lend-002e-snapshot-tests.py",
     "check:fl-lend-002f": "python scripts/fl-lend-002f.py check && tsx scripts/assert-fl-lend-002f.mts",
     "check:lend-cap-001": "tsx scripts/assert-lend-cap-001.mts",
+    "check:lend-cap-002": "tsx scripts/assert-lend-cap-002.mts",
     "assert:visual": "node scripts/assert-visual-004.mjs",
     "assert:ask-handoff": "tsx scripts/assert-ask-handoff.mts",
     "assert:lend-nat-012": "tsx scripts/assert-lend-nat-012.mts",

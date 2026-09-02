@@ -15,7 +15,7 @@ const page2 = executeSpecialistV2({ query: 'FHA lenders in Broward County', page
 const deep = executeSpecialistV2({ query: 'FHA lenders in Broward County', page: 999, limit: 500 }).body;
 
 check('1-contract', broward.contract === 'trusthub-specialist-execution-v2');
-check('2-version', broward.contractVersion === '2.0.0');
+check('2-version', broward.contractVersion === '2.1.0');
 check('3-schema-fp', broward.schemaFingerprint === SPECIALIST_SCHEMA_FINGERPRINT && SPECIALIST_SCHEMA_FINGERPRINT.length === 64);
 check('4-contract-fp', broward.contractFingerprint === SPECIALIST_CONTRACT_FINGERPRINT && SPECIALIST_CONTRACT_FINGERPRINT.length === 64);
 check('5-institution-branch', body('lender branches in Texas').resultState !== 'SUPPORTED_RESULTS');
