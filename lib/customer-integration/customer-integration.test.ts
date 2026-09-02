@@ -13,6 +13,10 @@ import {
   parseBusinessProfile,
   parseReplies,
 } from "./public";
+import {
+  createClaimHandoffRedirect,
+  safeBusinessWebsite,
+} from "./security";
 const ID = "1e2fa9a5-7067-52e9-8b44-4da4e71c9d47",
   SECRET = "test-secret-that-is-at-least-32-characters";
 test("Rocket institution NMLS 3030 is eligible while holds/non-institution keys are not", () => {
@@ -120,4 +124,32 @@ test("Ask outage omits overlays without failing the lender profile", async () =>
   }) as typeof fetch;
   assert.equal(await fetchBusinessProfile(ID, unavailable), null);
   assert.equal(await fetchBusinessReplies(ID, unavailable), null);
+});
+
+test("business website permits only absolute HTTP(S) URLs", () => {
+  assert.equal(safeBusinessWebsite("https://example.com"), "https://example.com/");
+  assert.equal(safeBusinessWebsite("http://example.com"), "http://example.com/");
+  for (const unsafe of [
+    "javascript:alert(1)",
+    "JaVaScRiPt:alert(1)",
+    "data:text/html,<h1>unsafe</h1>",
+    "vbscript:msgbox(1)",
+    "//evil.example",
+    "not a URL",
+    "",
+    "   ",
+  ])
+    assert.equal(safeBusinessWebsite(unsafe), null);
+});
+
+test("successful handoff redirect is private and non-indexable", async () => {
+  const response = createClaimHandoffRedirect("signed.token");
+  assert.equal(response.status, 302);
+  assert.equal(response.headers.get("cache-control"), "no-store");
+  assert.match(response.headers.get("x-robots-tag") || "", /noindex/);
+  assert.equal(
+    response.headers.get("location"),
+    "https://www.asktrusthub.com/claim/continue?handoff=signed.token",
+  );
+  assert.equal(await response.text(), "");
 });
