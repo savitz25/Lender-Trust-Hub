@@ -62,3 +62,9 @@ data/hmda/national/lender_activity_by_county.csv
 data/generated/fl-lend-002f/
 __pycache__/
 *.pyc
+
+# NJ-LEND-001 raw DOBI HTML/PDF corpus — never commit large acquisitions
+data/raw/nj_dobi/
+data/generated/nj-lend-001/occurrences.json
+data/generated/nj-lend-001/events.json
+data/generated/nj-lend-001/identity-ledgers.json

@@ -1,0 +1,48 @@
+import assert from 'node:assert/strict';
+import { existsSync, readFileSync } from 'node:fs';
+
+const migration = readFileSync('supabase/migrations/20260902120000_nj_lend_001_regulatory_event_ledger.sql', 'utf8');
+const runner = readFileSync('scripts/nj-lend-001.py', 'utf8');
+const tests = readFileSync('scripts/nj-lend-001-tests.py', 'utf8');
+const contract = readFileSync('docs/nj-dobi-regulatory-document-contract.md', 'utf8');
+const schema = readFileSync('data/contracts/nj-dobi-regulatory-document-v1.schema.json', 'utf8');
+const gitignore = readFileSync('.gitignore', 'utf8');
+const sitemap = readFileSync('app/sitemap.ts', 'utf8');
+const robots = readFileSync('app/robots.ts', 'utf8');
+const vercel = readFileSync('vercel.json', 'utf8');
+const pkg = readFileSync('package.json', 'utf8');
+
+assert.match(runner, /NJ_DOBI_OCF_ENFORCEMENT/);
+assert.match(runner, /NJ_DOBI_DEPOSITORY_ENFORCEMENT/);
+assert.match(runner, /NJ_DOBI_FINANCIAL_INSTITUTION_LIST/);
+assert.match(runner, /NJ_DOBI_LICENSEE_SEARCH_VERIFICATION/);
+assert.match(runner, /SOURCE_NOT_ACQUIRED/);
+assert.match(runner, /INDEX_ONLY/);
+assert.match(runner, /EXACT_NMLS_INSTITUTION/);
+assert.match(runner, /EXACT_NMLS_PERSON/);
+assert.match(runner, /EXACT_FDIC/);
+assert.match(runner, /UNSAFE_NAME_ALONE|NAME_ONLY_REJECTED/);
+assert.match(runner, /internal_only/);
+assert.match(runner, /baseline_only/);
+assert.match(runner, /Incapsula|CAPTCHA/);
+assert.doesNotMatch(runner, /fuzzy|levenshtein/i);
+assert.match(migration, /lender_regulatory_documents/);
+assert.match(migration, /lender_regulatory_events/);
+assert.match(migration, /lender_regulatory_event_parties/);
+assert.match(migration, /lender_source_occurrences/);
+assert.match(migration, /force row level security/i);
+assert.doesNotMatch(migration, /nj_dobi_orders|nj_dobi_entities|nj_lenders/);
+assert.doesNotMatch(migration, /grant\s+select.*(?:anon|authenticated)/i);
+assert.match(contract, /InsuranceTrustHub reuse/);
+assert.match(schema, /nj-dobi-regulatory-document-v1/);
+assert.match(gitignore, /data\/raw\/nj_dobi\//);
+assert.doesNotMatch(sitemap, /\/new-jersey['"]/);
+assert.doesNotMatch(robots, /\/new-jersey/);
+assert.equal(existsSync('app/new-jersey'), false);
+assert.equal(existsSync('.vercel/project.json'), false);
+assert.match(tests, /multi_party/);
+assert.match(tests, /index_only_no_pdf/);
+assert.match(pkg, /assert:nj-lend-001/);
+assert.match(vercel, /redirects/);
+
+console.log('NJ-LEND-001 assertions: PASS');

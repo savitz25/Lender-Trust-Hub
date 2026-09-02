@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lendertrusthub.com/contracts/nj-dobi-regulatory-document-v1.schema.json",
+  "title": "NJ DOBI regulatory document contract",
+  "description": "Implementation-neutral contract for New Jersey Department of Banking and Insurance official regulatory documents. Reusable later by InsuranceTrustHub for Division of Insurance sources. This schema does not place insurance entities into LenderTrustHub.",
+  "version": "nj-dobi-regulatory-document-v1",
+  "type": "object",
+  "required": ["source_snapshot", "source_occurrence", "canonical_document", "regulatory_event", "parties"],
+  "properties": {
+    "source_snapshot": {
+      "type": "object",
+      "required": ["division", "source_family", "source_page", "source_hash", "coverage_state", "retrieved_at"],
+      "properties": {
+        "division": {"type": "string", "description": "DOBI division or office, e.g. Office of Consumer Finance, Depository, Division of Insurance."},
+        "source_family": {"type": "string"},
+        "source_page": {"type": "string"},
+        "source_year": {"type": ["integer", "null"]},
+        "source_hash": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+        "coverage_state": {
+          "type": "string",
+          "enum": [
+            "ACQUIRED_COMPLETE",
+            "ACQUIRED_CURRENT_SNAPSHOT",
+            "ACQUIRED_PARTIAL_HISTORY",
+            "PARTIAL_SOURCE_COVERAGE",
+            "SOURCE_NOT_ACQUIRED",
+            "SOURCE_ACCESS_BLOCKED",
+            "SOURCE_AVAILABLE_BY_REQUEST",
+            "SOURCE_UNVERIFIED"
+          ]
+        },
+        "retrieved_at": {"type": "string"},
+        "source_as_of": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "source_occurrence": {
+      "type": "object",
+      "required": ["index_location", "respondent_caption", "acquisition_state"],
+      "properties": {
+        "index_location": {"type": "string"},
+        "order_number": {"type": ["string", "null"], "description": "Event identifier. Never an entity identifier."},
+        "respondent_caption": {"type": "string"},
+        "action_date": {"type": ["string", "null"]},
+        "document_link": {"type": ["string", "null"]},
+        "acquisition_state": {
+          "type": "string",
+          "enum": ["DOCUMENT_DOWNLOADED", "INDEX_ONLY", "DOCUMENT_UNAVAILABLE", "HTTP_404", "SKIPPED_EXISTING_HASH"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "canonical_document": {
+      "type": "object",
+      "required": ["canonical_document_id", "content_hash", "document_type", "source_status", "text_extraction_state"],
+      "properties": {
+        "canonical_document_id": {"type": "string"},
+        "order_number": {"type": ["string", "null"]},
+        "content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "document_type": {"type": ["string", "null"]},
+        "effective_date": {"type": ["string", "null"]},
+        "source_status": {"type": "string", "enum": ["CURRENT", "RESCINDED", "SUPERSEDED", "UNKNOWN"]},
+        "text_extraction_state": {
+          "type": "string",
+          "enum": ["EXTRACTED", "IMAGE_ONLY", "NOT_ATTEMPTED", "FAILED", "UNAVAILABLE"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "regulatory_event": {
+      "type": "object",
+      "required": ["event_id", "event_class", "event_status"],
+      "properties": {
+        "event_id": {"type": "string"},
+        "event_class": {"type": "string"},
+        "event_status": {"type": "string", "enum": ["FINAL", "PENDING", "UNKNOWN"]},
+        "civil_penalty_amount": {"type": ["number", "null"]},
+        "restitution_amount": {"type": ["number", "null"]},
+        "reimbursement_amount": {"type": ["number", "null"]},
+        "legal_citations": {"type": "array", "items": {"type": "string"}},
+        "effective_date": {"type": ["string", "null"]},
+        "end_date": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "parties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["party_type", "legal_name", "role_in_order", "match_status", "public_eligibility"],
+        "properties": {
+          "party_type": {"type": "string"},
+          "legal_name": {"type": "string"},
+          "national_identifier": {"type": ["string", "null"]},
+          "state_identifier": {"type": ["string", "null"]},
+          "role_in_order": {"type": "string"},
+          "match_status": {
+            "type": "string",
+            "enum": [
+              "EXACT",
+              "HIGH_CONFIDENCE",
+              "REVIEW_REQUIRED",
+              "CONFLICT",
+              "UNRESOLVED",
+              "UNSAFE_REJECTED",
+              "INTERNAL_ONLY_INDIVIDUAL"
+            ]
+          },
+          "public_eligibility": {
+            "type": "string",
+            "enum": ["internal_only", "review_required", "public_candidate"]
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
