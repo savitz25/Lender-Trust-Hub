@@ -7,6 +7,7 @@ import {
   SPECIALIST_SCHEMA_FINGERPRINT,
   type SpecialistResultState,
 } from './contract';
+import { executeIdentityOrEvidence } from './identity-execution';
 
 type GeographyIntent = 'PROPERTY_MARKET' | 'HEADQUARTERS' | 'BRANCH_LOCATION' | 'SERVICE_TERRITORY';
 type SpecialistRequest = {
@@ -76,10 +77,11 @@ function naturalRequest(query: string): SpecialistRequest {
   const identifier = q.match(/\b(NMLS|LEI)\s*[:#]?\s*([A-Z0-9]+)\b/i);
   return {
     query: q,
-    queryType: identifier ? 'identifier' : /complaints?\s+about/i.test(q) ? 'evidence' : 'market_cohort',
+    queryType: identifier ? 'identifier' : /\bcomplaints?\b/i.test(q) ? 'evidence' : 'market_cohort',
     entityClass: 'hmda_reporting_institution',
     identifier: identifier ? { type: identifier[1]!.toUpperCase() as 'NMLS' | 'LEI', value: identifier[2] } : undefined,
     identityName: /complaints?\s+about/i.test(q) ? q.replace(/^.*?complaints?\s+about\s+/i, '') : undefined,
+    requestedEvidence: /\bcomplaints?\b/i.test(q) ? ['CFPB_COMPLAINTS'] : undefined,
     geography: county
       ? { intent: 'PROPERTY_MARKET', ...county }
       : state.code
@@ -186,6 +188,33 @@ export function executeSpecialistV2(raw: SpecialistRequest | string) {
   } catch {
     return base('BACKEND_UNAVAILABLE', 503, interpretation, 'The committed lender market catalog could not be executed. No fallback rows were returned.');
   }
+}
+
+/**
+ * HTTP execution entry point. HMDA cohort execution remains synchronous and
+ * unchanged; only exact identity/evidence capabilities use the read-only
+ * asynchronous identity store.
+ */
+export async function executeSpecialistV2Request(raw: SpecialistRequest | string) {
+  const input = typeof raw === 'string'
+    ? naturalRequest(raw)
+    : raw.query && !raw.geography && !raw.identifier && !raw.identityName
+      ? { ...naturalRequest(raw.query), page: raw.page, limit: raw.limit, contract: raw.contract }
+      : raw;
+  const invalid = validate(input);
+  if (invalid) return base('INVALID_QUERY', 400, { queryType: input.queryType, identifier: input.identifier }, invalid);
+  if (input.identifier || input.queryType === 'identity' || input.queryType === 'evidence' || input.requestedEvidence?.includes('CFPB_COMPLAINTS')) {
+    return executeIdentityOrEvidence({
+      query: input.query,
+      queryType: input.identifier ? 'identifier' : input.queryType === 'identity' ? 'identity' : 'evidence',
+      identifier: input.identifier,
+      identityName: input.identityName,
+      requestedEvidence: input.requestedEvidence,
+      page: input.page,
+      limit: input.limit,
+    });
+  }
+  return executeSpecialistV2(input);
 }
 
 export type { SpecialistRequest };
