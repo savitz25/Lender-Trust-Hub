@@ -25,6 +25,9 @@ import { getHmdaLenderEvidenceBySlug } from '@/lib/hmda';
 import { HmdaLenderEvidencePanel } from '@/components/hmda/HmdaLenderEvidencePanel';
 import { getCfpbComplaintEvidenceBySlug } from '@/lib/cfpb';
 import { CfpbComplaintPanel } from '@/components/cfpb/CfpbComplaintPanel';
+import { ProfileCustomerLayer } from '@/components/customer-integration/profile-customer-layer';
+import { claimCtaEnabledFor, lenderClaimProfile } from '@/lib/customer-integration/eligibility';
+import { fetchBusinessProfile, fetchBusinessReplies } from '@/lib/customer-integration/public';
 import { analyzerCountyOptionSlug } from '@/lib/tools/loan-estimate-analyzer/county-option';
 import {
   buildLenderProfileDescription,
@@ -94,6 +97,13 @@ export default async function LenderProfilePage({
   const cfpbEvidence = getCfpbComplaintEvidenceBySlug(lender.slug, {
     nmlsId: lender.nmlsId,
   });
+  const claimProfile = lenderClaimProfile(slug);
+  const [businessProfile, businessReplies] = claimProfile
+    ? await Promise.all([
+        fetchBusinessProfile(claimProfile.id),
+        fetchBusinessReplies(claimProfile.id),
+      ])
+    : [null, null];
   const profileDescription = buildLenderProfileDescription(
     lender.name,
     `${lender.city}, ${lender.state}`,
@@ -307,6 +317,15 @@ export default async function LenderProfilePage({
         {hmdaEvidence && <HmdaLenderEvidencePanel evidence={hmdaEvidence} />}
 
         {cfpbEvidence && <CfpbComplaintPanel evidence={cfpbEvidence} />}
+
+        {claimProfile ? (
+          <ProfileCustomerLayer
+            slug={slug}
+            enabled={claimCtaEnabledFor(claimProfile.id)}
+            profile={businessProfile}
+            replies={businessReplies}
+          />
+        ) : null}
 
         <LoanEstimateToolsCta
           variant="profile"

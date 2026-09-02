@@ -22,6 +22,9 @@ import { FLORIDA_PHASE1_ROWS, FLORIDA_PHASE1_GATE, getPhase1Row } from '@/lib/fl
 import { FLORIDA_PHASE2_ROWS, FLORIDA_PHASE2_GATE, getPhase2Row } from '@/lib/florida-profile/phase2';
 import { fetchPublicLenderProfile } from '@/lib/florida-profile/fetch-public';
 import { buildFloridaCompanyJsonLd } from '@/lib/florida-profile/jsonld';
+import { ProfileCustomerLayer } from '@/components/customer-integration/profile-customer-layer';
+import { claimCtaEnabledFor, lenderClaimProfile } from '@/lib/customer-integration/eligibility';
+import { fetchBusinessProfile, fetchBusinessReplies } from '@/lib/customer-integration/public';
 
 export const dynamic = 'force-dynamic';
 
@@ -100,6 +103,13 @@ export default async function NationalLenderPage({
       slug,
       identifiers: result.profile.identity.identifiers,
     });
+    const claimProfile = lenderClaimProfile(slug);
+    const [businessProfile, businessReplies] = claimProfile
+      ? await Promise.all([
+          fetchBusinessProfile(claimProfile.id),
+          fetchBusinessReplies(claimProfile.id),
+        ])
+      : [null, null];
     return (
       <>
         <JsonLd data={jsonLd} />
@@ -110,6 +120,16 @@ export default async function NationalLenderPage({
           fetchMs={result.fetchMs}
           indexable={isNationalIndexingSlug(slug)}
         />
+        {claimProfile ? (
+          <div className="container mx-auto max-w-5xl px-4 pb-12">
+            <ProfileCustomerLayer
+              slug={slug}
+              enabled={claimCtaEnabledFor(claimProfile.id)}
+              profile={businessProfile}
+              replies={businessReplies}
+            />
+          </div>
+        ) : null}
       </>
     );
   }
