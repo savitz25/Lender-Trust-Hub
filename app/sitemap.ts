@@ -8,6 +8,7 @@ import { HIGH_VOLUME_STATE_SLUGS } from '@/lib/mortgage/seo';
 import { cleanNmlsId } from '@/lib/verification/nmls';
 import { catalogDistinctEntities } from '@/lib/verification';
 import { FLORIDA_INTELLIGENCE_GATE } from '@/lib/florida-intelligence/publication';
+import { NEW_JERSEY_INTELLIGENCE_GATE } from '@/lib/new-jersey-intelligence/publication';
 
 /** Meaningful lastmod for sitemap — day of generation (catalog is static build data). */
 function catalogLastMod(): Date {
@@ -23,6 +24,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/lender', priority: 0.9, changeFrequency: 'weekly' },
     ...(FLORIDA_INTELLIGENCE_GATE.sitemap
       ? [{ path: '/florida', priority: 0.88, changeFrequency: 'weekly' as const }]
+      : []),
+    ...(NEW_JERSEY_INTELLIGENCE_GATE.sitemap
+      ? [{ path: '/new-jersey', priority: 0.88, changeFrequency: 'weekly' as const }]
       : []),
     { path: '/local-lenders', priority: 0.95, changeFrequency: 'weekly' },
     { path: '/tools/loan-estimate-analyzer', priority: 0.92, changeFrequency: 'weekly' },

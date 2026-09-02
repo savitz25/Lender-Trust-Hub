@@ -31,6 +31,7 @@ const TOOL_ICONS = {
   'le-analyzer': FileSearch,
   'le-compare': Columns3,
   'florida-research': Scale,
+  'new-jersey-research': Scale,
 } as const;
 
 /**

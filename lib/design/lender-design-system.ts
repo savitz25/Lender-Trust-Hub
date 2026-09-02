@@ -85,6 +85,14 @@ export const LENDER_TOOLS = {
       cta: 'Open Florida research',
     },
     {
+      id: 'new-jersey-research',
+      title: 'New Jersey research',
+      description:
+        '2025 HMDA New Jersey activity, NJHMFA homeownership programs, and NJDOBI regulatory evidence. Not a ranking.',
+      href: '/new-jersey',
+      cta: 'Open New Jersey research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
@@ -201,6 +209,7 @@ export const LENDER_PATHWAYS = {
     'Jump into common markets, financing goals, or the tools you are most likely to need next.',
   markets: [
     { label: 'Florida', href: '/local-lenders/florida' },
+    { label: 'New Jersey research', href: '/new-jersey' },
     { label: 'California', href: '/local-lenders/california' },
     { label: 'Texas', href: '/local-lenders/texas' },
     { label: 'New York', href: '/local-lenders/new-york' },
@@ -323,6 +332,7 @@ export const LENDER_FOOTER_COLUMNS = [
     links: [
       { href: '/local-lenders', label: 'Local Lenders' },
       { href: '/florida', label: 'Florida Research' },
+      { href: '/new-jersey', label: 'New Jersey Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },

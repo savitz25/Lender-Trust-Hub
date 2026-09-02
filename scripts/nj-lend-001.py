@@ -1358,8 +1358,8 @@ def validate_repo_invariants() -> list[str]:
         errors.append("RLS not forced")
     if "grant select" in sql.lower() and "anon" in sql.lower():
         errors.append("anon grant")
-    if (ROOT / "app" / "new-jersey").exists():
-        errors.append("public /new-jersey route created")
+    if (ROOT / "app" / "new-jersey" / "[county]").exists():
+        errors.append("public /new-jersey county route created")
     if not CONTRACT_MD.exists() or not CONTRACT_SCHEMA.exists():
         errors.append("missing DOBI contract")
     return errors

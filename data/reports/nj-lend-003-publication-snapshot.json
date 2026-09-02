@@ -1,0 +1,1274 @@
+{
+  "contract_name": "lender-nj-state-intel-v1",
+  "version": "1.0.0",
+  "geography": "NJ",
+  "publication_status": "published",
+  "path": "/new-jersey",
+  "source_as_of": {
+    "hmda": "HMDA 2025",
+    "njhmfa_lenders": "2026-04-01",
+    "njhmfa_programs_limits": "2026-06-17",
+    "dobi_fi_list": "2026-09-02",
+    "dobi_enforcement": "acquired through 2022 OCF year pages; later years SOURCE_NOT_ACQUIRED"
+  },
+  "hero": {
+    "universe_label": "HMDA applications",
+    "universe_value": 318529,
+    "universe_hint": "2025 HMDA applications for properties located in New Jersey. Not a count of NJ-licensed mortgage companies.",
+    "current_label": "HMDA originations",
+    "current_value": 177325,
+    "observations_label": "DOBI unique orders",
+    "observations_value": 453,
+    "geography_label": "Counties in HMDA slice",
+    "geography_value": 21,
+    "as_of_label": "HMDA vintage",
+    "as_of_value": "2025"
+  },
+  "hmda": {
+    "year": 2025,
+    "geo_grain": "state_and_county",
+    "state_code": "NJ",
+    "source": "Committed HMDA New Jersey slice (data/hmda/new-jersey/county_market_summary_nj.csv). Properties located in New Jersey. Not a second national download.",
+    "source_as_of": "HMDA 2025",
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "applications": 318529,
+    "originations": 177325,
+    "denials": 55995,
+    "denial_rate_pct": 17.58,
+    "denial_rate_calculation": "denials / applications * 100, rounded to 2 decimals",
+    "purchase_applications": 122004,
+    "refinance_applications": 111287,
+    "purchase_pct_of_apps": 38.3,
+    "refinance_pct_of_apps": 34.94,
+    "apps_conventional": 271043,
+    "apps_fha": 36424,
+    "apps_va": 10733,
+    "apps_usda_other": 329,
+    "conventional_pct": 85.09,
+    "fha_pct": 11.44,
+    "va_pct": 3.37,
+    "usda_other_pct": 0.1,
+    "county_count": 21,
+    "all_21_counties": true,
+    "counties": [
+      {
+        "county_fips": "34001",
+        "county_name": "Atlantic",
+        "applications": 11432,
+        "originations": 6224,
+        "denials": 2147,
+        "denial_rate_pct": 18.78,
+        "purchase_applications": 4622,
+        "refinance_applications": 3761,
+        "purchase_pct_of_apps": 40.43,
+        "refinance_pct_of_apps": 32.9,
+        "apps_conventional": 9370,
+        "apps_fha": 1522,
+        "apps_va": 519,
+        "apps_usda_other": 21,
+        "conventional_pct": 81.96,
+        "fha_pct": 13.31,
+        "va_pct": 4.54
+      },
+      {
+        "county_fips": "34003",
+        "county_name": "Bergen",
+        "applications": 28715,
+        "originations": 15503,
+        "denials": 5178,
+        "denial_rate_pct": 18.03,
+        "purchase_applications": 10667,
+        "refinance_applications": 9522,
+        "purchase_pct_of_apps": 37.15,
+        "refinance_pct_of_apps": 33.16,
+        "apps_conventional": 26209,
+        "apps_fha": 2042,
+        "apps_va": 457,
+        "apps_usda_other": 7,
+        "conventional_pct": 91.27,
+        "fha_pct": 7.11,
+        "va_pct": 1.59
+      },
+      {
+        "county_fips": "34005",
+        "county_name": "Burlington",
+        "applications": 20617,
+        "originations": 11791,
+        "denials": 3558,
+        "denial_rate_pct": 17.26,
+        "purchase_applications": 7270,
+        "refinance_applications": 7708,
+        "purchase_pct_of_apps": 35.26,
+        "refinance_pct_of_apps": 37.39,
+        "apps_conventional": 16145,
+        "apps_fha": 2849,
+        "apps_va": 1590,
+        "apps_usda_other": 33,
+        "conventional_pct": 78.31,
+        "fha_pct": 13.82,
+        "va_pct": 7.71
+      },
+      {
+        "county_fips": "34007",
+        "county_name": "Camden",
+        "applications": 21015,
+        "originations": 11712,
+        "denials": 3913,
+        "denial_rate_pct": 18.62,
+        "purchase_applications": 7641,
+        "refinance_applications": 7832,
+        "purchase_pct_of_apps": 36.36,
+        "refinance_pct_of_apps": 37.27,
+        "apps_conventional": 16391,
+        "apps_fha": 3543,
+        "apps_va": 1045,
+        "apps_usda_other": 36,
+        "conventional_pct": 78.0,
+        "fha_pct": 16.86,
+        "va_pct": 4.97
+      },
+      {
+        "county_fips": "34009",
+        "county_name": "Cape May",
+        "applications": 6716,
+        "originations": 4121,
+        "denials": 1046,
+        "denial_rate_pct": 15.57,
+        "purchase_applications": 3043,
+        "refinance_applications": 2061,
+        "purchase_pct_of_apps": 45.31,
+        "refinance_pct_of_apps": 30.69,
+        "apps_conventional": 6189,
+        "apps_fha": 310,
+        "apps_va": 215,
+        "apps_usda_other": 2,
+        "conventional_pct": 92.15,
+        "fha_pct": 4.62,
+        "va_pct": 3.2
+      },
+      {
+        "county_fips": "34011",
+        "county_name": "Cumberland",
+        "applications": 5186,
+        "originations": 2744,
+        "denials": 1045,
+        "denial_rate_pct": 20.15,
+        "purchase_applications": 2171,
+        "refinance_applications": 1883,
+        "purchase_pct_of_apps": 41.86,
+        "refinance_pct_of_apps": 36.31,
+        "apps_conventional": 3461,
+        "apps_fha": 1355,
+        "apps_va": 350,
+        "apps_usda_other": 20,
+        "conventional_pct": 66.74,
+        "fha_pct": 26.13,
+        "va_pct": 6.75
+      },
+      {
+        "county_fips": "34013",
+        "county_name": "Essex",
+        "applications": 22930,
+        "originations": 11644,
+        "denials": 4413,
+        "denial_rate_pct": 19.25,
+        "purchase_applications": 8842,
+        "refinance_applications": 8566,
+        "purchase_pct_of_apps": 38.56,
+        "refinance_pct_of_apps": 37.36,
+        "apps_conventional": 19083,
+        "apps_fha": 3329,
+        "apps_va": 504,
+        "apps_usda_other": 14,
+        "conventional_pct": 83.22,
+        "fha_pct": 14.52,
+        "va_pct": 2.2
+      },
+      {
+        "county_fips": "34015",
+        "county_name": "Gloucester",
+        "applications": 13741,
+        "originations": 8040,
+        "denials": 2430,
+        "denial_rate_pct": 17.68,
+        "purchase_applications": 5150,
+        "refinance_applications": 4899,
+        "purchase_pct_of_apps": 37.48,
+        "refinance_pct_of_apps": 35.65,
+        "apps_conventional": 10689,
+        "apps_fha": 2178,
+        "apps_va": 844,
+        "apps_usda_other": 30,
+        "conventional_pct": 77.79,
+        "fha_pct": 15.85,
+        "va_pct": 6.14
+      },
+      {
+        "county_fips": "34017",
+        "county_name": "Hudson",
+        "applications": 13890,
+        "originations": 7032,
+        "denials": 2622,
+        "denial_rate_pct": 18.88,
+        "purchase_applications": 6827,
+        "refinance_applications": 4277,
+        "purchase_pct_of_apps": 49.15,
+        "refinance_pct_of_apps": 30.79,
+        "apps_conventional": 12741,
+        "apps_fha": 964,
+        "apps_va": 183,
+        "apps_usda_other": 2,
+        "conventional_pct": 91.73,
+        "fha_pct": 6.94,
+        "va_pct": 1.32
+      },
+      {
+        "county_fips": "34019",
+        "county_name": "Hunterdon",
+        "applications": 4968,
+        "originations": 2982,
+        "denials": 754,
+        "denial_rate_pct": 15.18,
+        "purchase_applications": 1769,
+        "refinance_applications": 1665,
+        "purchase_pct_of_apps": 35.61,
+        "refinance_pct_of_apps": 33.51,
+        "apps_conventional": 4494,
+        "apps_fha": 329,
+        "apps_va": 142,
+        "apps_usda_other": 3,
+        "conventional_pct": 90.46,
+        "fha_pct": 6.62,
+        "va_pct": 2.86
+      },
+      {
+        "county_fips": "34021",
+        "county_name": "Mercer",
+        "applications": 12921,
+        "originations": 7366,
+        "denials": 2120,
+        "denial_rate_pct": 16.41,
+        "purchase_applications": 5328,
+        "refinance_applications": 4635,
+        "purchase_pct_of_apps": 41.24,
+        "refinance_pct_of_apps": 35.87,
+        "apps_conventional": 11184,
+        "apps_fha": 1353,
+        "apps_va": 367,
+        "apps_usda_other": 17,
+        "conventional_pct": 86.56,
+        "fha_pct": 10.47,
+        "va_pct": 2.84
+      },
+      {
+        "county_fips": "34023",
+        "county_name": "Middlesex",
+        "applications": 26149,
+        "originations": 14147,
+        "denials": 4782,
+        "denial_rate_pct": 18.29,
+        "purchase_applications": 9761,
+        "refinance_applications": 9235,
+        "purchase_pct_of_apps": 37.33,
+        "refinance_pct_of_apps": 35.32,
+        "apps_conventional": 22873,
+        "apps_fha": 2673,
+        "apps_va": 586,
+        "apps_usda_other": 17,
+        "conventional_pct": 87.47,
+        "fha_pct": 10.22,
+        "va_pct": 2.24
+      },
+      {
+        "county_fips": "34025",
+        "county_name": "Monmouth",
+        "applications": 26425,
+        "originations": 15448,
+        "denials": 4341,
+        "denial_rate_pct": 16.43,
+        "purchase_applications": 9986,
+        "refinance_applications": 8991,
+        "purchase_pct_of_apps": 37.79,
+        "refinance_pct_of_apps": 34.02,
+        "apps_conventional": 23972,
+        "apps_fha": 1833,
+        "apps_va": 609,
+        "apps_usda_other": 11,
+        "conventional_pct": 90.72,
+        "fha_pct": 6.94,
+        "va_pct": 2.3
+      },
+      {
+        "county_fips": "34027",
+        "county_name": "Morris",
+        "applications": 17904,
+        "originations": 10494,
+        "denials": 2645,
+        "denial_rate_pct": 14.77,
+        "purchase_applications": 6894,
+        "refinance_applications": 5943,
+        "purchase_pct_of_apps": 38.51,
+        "refinance_pct_of_apps": 33.19,
+        "apps_conventional": 16252,
+        "apps_fha": 1282,
+        "apps_va": 363,
+        "apps_usda_other": 7,
+        "conventional_pct": 90.77,
+        "fha_pct": 7.16,
+        "va_pct": 2.03
+      },
+      {
+        "county_fips": "34029",
+        "county_name": "Ocean",
+        "applications": 29366,
+        "originations": 17229,
+        "denials": 4854,
+        "denial_rate_pct": 16.53,
+        "purchase_applications": 10722,
+        "refinance_applications": 10308,
+        "purchase_pct_of_apps": 36.51,
+        "refinance_pct_of_apps": 35.1,
+        "apps_conventional": 24974,
+        "apps_fha": 3134,
+        "apps_va": 1212,
+        "apps_usda_other": 46,
+        "conventional_pct": 85.04,
+        "fha_pct": 10.67,
+        "va_pct": 4.13
+      },
+      {
+        "county_fips": "34031",
+        "county_name": "Passaic",
+        "applications": 13495,
+        "originations": 6997,
+        "denials": 2716,
+        "denial_rate_pct": 20.13,
+        "purchase_applications": 4906,
+        "refinance_applications": 4804,
+        "purchase_pct_of_apps": 36.35,
+        "refinance_pct_of_apps": 35.6,
+        "apps_conventional": 11232,
+        "apps_fha": 1974,
+        "apps_va": 285,
+        "apps_usda_other": 4,
+        "conventional_pct": 83.23,
+        "fha_pct": 14.63,
+        "va_pct": 2.11
+      },
+      {
+        "county_fips": "34033",
+        "county_name": "Salem",
+        "applications": 2916,
+        "originations": 1643,
+        "denials": 505,
+        "denial_rate_pct": 17.32,
+        "purchase_applications": 1265,
+        "refinance_applications": 1032,
+        "purchase_pct_of_apps": 43.38,
+        "refinance_pct_of_apps": 35.39,
+        "apps_conventional": 2059,
+        "apps_fha": 634,
+        "apps_va": 208,
+        "apps_usda_other": 15,
+        "conventional_pct": 70.61,
+        "fha_pct": 21.74,
+        "va_pct": 7.13
+      },
+      {
+        "county_fips": "34035",
+        "county_name": "Somerset",
+        "applications": 11584,
+        "originations": 6702,
+        "denials": 1793,
+        "denial_rate_pct": 15.48,
+        "purchase_applications": 4506,
+        "refinance_applications": 3945,
+        "purchase_pct_of_apps": 38.9,
+        "refinance_pct_of_apps": 34.06,
+        "apps_conventional": 10424,
+        "apps_fha": 911,
+        "apps_va": 239,
+        "apps_usda_other": 10,
+        "conventional_pct": 89.99,
+        "fha_pct": 7.86,
+        "va_pct": 2.06
+      },
+      {
+        "county_fips": "34037",
+        "county_name": "Sussex",
+        "applications": 7410,
+        "originations": 4116,
+        "denials": 1236,
+        "denial_rate_pct": 16.68,
+        "purchase_applications": 2748,
+        "refinance_applications": 2595,
+        "purchase_pct_of_apps": 37.09,
+        "refinance_pct_of_apps": 35.02,
+        "apps_conventional": 5850,
+        "apps_fha": 1150,
+        "apps_va": 400,
+        "apps_usda_other": 10,
+        "conventional_pct": 78.95,
+        "fha_pct": 15.52,
+        "va_pct": 5.4
+      },
+      {
+        "county_fips": "34039",
+        "county_name": "Union",
+        "applications": 16330,
+        "originations": 8654,
+        "denials": 3058,
+        "denial_rate_pct": 18.73,
+        "purchase_applications": 6066,
+        "refinance_applications": 5968,
+        "purchase_pct_of_apps": 37.15,
+        "refinance_pct_of_apps": 36.55,
+        "apps_conventional": 13657,
+        "apps_fha": 2294,
+        "apps_va": 370,
+        "apps_usda_other": 9,
+        "conventional_pct": 83.63,
+        "fha_pct": 14.05,
+        "va_pct": 2.27
+      },
+      {
+        "county_fips": "34041",
+        "county_name": "Warren",
+        "applications": 4819,
+        "originations": 2736,
+        "denials": 839,
+        "denial_rate_pct": 17.41,
+        "purchase_applications": 1820,
+        "refinance_applications": 1657,
+        "purchase_pct_of_apps": 37.77,
+        "refinance_pct_of_apps": 34.38,
+        "apps_conventional": 3794,
+        "apps_fha": 765,
+        "apps_va": 245,
+        "apps_usda_other": 15,
+        "conventional_pct": 78.73,
+        "fha_pct": 15.87,
+        "va_pct": 5.08
+      }
+    ],
+    "omitted": {
+      "median_loan_amount": "Not present in the committed 2025 NJ summary extract.",
+      "interest_rate": "Not present in the committed 2025 NJ summary extract.",
+      "denial_reasons": "Not present in the committed 2025 NJ summary extract."
+    },
+    "caveat": "HMDA describes reporting institutions in the statutory HMDA universe for properties located in New Jersey. It does not describe all lending activity. Denial rate is not a quality score. Disparity does not prove discrimination."
+  },
+  "dobi": {
+    "index_occurrences": 479,
+    "unique_orders": 453,
+    "unique_documents": 211,
+    "multi_party_orders": 206,
+    "action_mix": {
+      "OTHER": 8,
+      "CONSENT_ORDER": 284,
+      "FINAL_ORDER": 47,
+      "CEASE_AND_DESIST_AND_OSC": 5,
+      "ORDER_TO_SHOW_CAUSE": 108,
+      "CEASE_AND_DESIST": 4
+    },
+    "status_mix": {
+      "UNKNOWN": 9,
+      "FINAL": 333,
+      "PENDING": 114
+    },
+    "flags": {
+      "revocations": 98,
+      "suspensions": 116,
+      "surrenders": 8,
+      "penalties": 267
+    },
+    "respondents": {
+      "institutions": 212,
+      "mortgage_companies": 94,
+      "branches": 10,
+      "individuals_held_internal": 224,
+      "party_type_counts": {
+        "MORTGAGE_COMPANY": 76,
+        "DEPOSITORY_INSTITUTION": 40,
+        "INDIVIDUAL_MLO": 80,
+        "INSTITUTION": 172,
+        "INDIVIDUAL": 141,
+        "MOTOR_VEHICLE_INSTALLMENT_SELLER": 61,
+        "HOME_REPAIR_FINANCE_COMPANY": 17,
+        "CHECK_CASHER": 103,
+        "MONEY_TRANSMITTER": 20,
+        "MORTGAGE_BROKER": 18,
+        "BRANCH": 10,
+        "SALES_FINANCE_COMPANY": 3,
+        "PAWNBROKER": 39,
+        "CONSUMER_LENDER": 4,
+        "QUALIFIED_INDIVIDUAL": 3
+      }
+    },
+    "identity": {
+      "exact_nmls_institution": 35,
+      "exact_nmls_branch": 2,
+      "exact_nmls_person_internal": 16,
+      "exact_fdic": 17,
+      "exact_state_reference": 84,
+      "unresolved": 262,
+      "unsafe_rejected": 163
+    },
+    "ocf_years": {
+      "2006": "ACQUIRED_PARTIAL_HISTORY",
+      "2007": "ACQUIRED_PARTIAL_HISTORY",
+      "2008": "ACQUIRED_PARTIAL_HISTORY",
+      "2009": "ACQUIRED_PARTIAL_HISTORY",
+      "2010": "ACQUIRED_PARTIAL_HISTORY",
+      "2011": "ACQUIRED_PARTIAL_HISTORY",
+      "2012": "ACQUIRED_PARTIAL_HISTORY",
+      "2013": "ACQUIRED_PARTIAL_HISTORY",
+      "2014": "ACQUIRED_COMPLETE",
+      "2015": "ACQUIRED_COMPLETE",
+      "2016": "ACQUIRED_COMPLETE",
+      "2017": "ACQUIRED_COMPLETE",
+      "2018": "ACQUIRED_COMPLETE",
+      "2019": "ACQUIRED_COMPLETE",
+      "2020": "ACQUIRED_COMPLETE",
+      "2021": "ACQUIRED_COMPLETE",
+      "2022": "ACQUIRED_COMPLETE",
+      "2023": "SOURCE_NOT_ACQUIRED",
+      "2024": "SOURCE_NOT_ACQUIRED",
+      "2025": "SOURCE_NOT_ACQUIRED",
+      "2026": "SOURCE_NOT_ACQUIRED"
+    },
+    "caveat": "This is the acquired DOBI enforcement corpus, not every action ever issued. 2023\u20132026 OCF year pages were SOURCE_NOT_ACQUIRED and must not be read as zero actions. Unresolved respondents are not attached to public company profiles. Individuals stay internal-only."
+  },
+  "financial_institutions": {
+    "source_rows": 114,
+    "source_url": "https://www.nj.gov/dobi/bankwebinfo.htm",
+    "source_as_of": "2026-09-02",
+    "classes": {
+      "STATE_CHARTERED_SAVINGS_BANK": 21,
+      "OUT_OF_STATE_THRIFT": 2,
+      "OUT_OF_STATE_BANK": 39,
+      "STATE_CHARTERED_BANK": 17,
+      "FEDERAL_CHARTER_BANK": 23,
+      "LIMITED_PURPOSE_TRUST": 2,
+      "FEDERAL_CHARTER_THRIFT": 4,
+      "STATE_CHARTERED_CREDIT_UNION": 6
+    },
+    "state_chartered_banks_and_savings": 38,
+    "state_chartered_credit_unions": 6,
+    "federal_charters": 27,
+    "caveat": "Charter type is not a mortgage license, not a broker license, and not NJHMFA participation. Appearance on this list is not a consumer recommendation."
+  },
+  "njhmfa": {
+    "programs": [
+      {
+        "program_key": "FIRST_TIME_HOMEBUYER_MORTGAGE",
+        "official_name": "First-Time Homebuyer Mortgage Program",
+        "program_class": "FIRST_MORTGAGE",
+        "first_time_buyer_requirement": "Yes, except Urban Target Area or Qualified Veteran waiver",
+        "loan_type_raw": "FHA/VA/USDA government-insured",
+        "dpa_available": true,
+        "participating_lender_required": true,
+        "source_effective_on": "2026-06-17",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/",
+        "amount_raw": null
+      },
+      {
+        "program_key": "HOMEWARD_BOUND",
+        "official_name": "Homeward Bound Mortgage Program",
+        "program_class": "FIRST_MORTGAGE",
+        "first_time_buyer_requirement": "Yes when paired with DPA; see official fact sheet",
+        "loan_type_raw": "FHA/VA/USDA government-insured",
+        "dpa_available": true,
+        "participating_lender_required": true,
+        "source_effective_on": "2026-06-17",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/",
+        "amount_raw": null
+      },
+      {
+        "program_key": "HFA_ADVANTAGE",
+        "official_name": "HFA Advantage Mortgage Program",
+        "program_class": "FIRST_MORTGAGE",
+        "first_time_buyer_requirement": "Yes with DPA; waived without DPA",
+        "loan_type_raw": "Conventional \u2014 Freddie Mac",
+        "dpa_available": true,
+        "participating_lender_required": true,
+        "source_effective_on": "2026-06-17",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/",
+        "amount_raw": null
+      },
+      {
+        "program_key": "DOWN_PAYMENT_ASSISTANCE",
+        "official_name": "NJHMFA Down Payment Assistance Program",
+        "program_class": "DOWN_PAYMENT_ASSISTANCE",
+        "first_time_buyer_requirement": "Yes",
+        "loan_type_raw": "Interest-free five-year forgivable second loan",
+        "dpa_available": true,
+        "participating_lender_required": true,
+        "source_effective_on": "2026-06-17",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/",
+        "amount_raw": "Up to $15,000 based upon the county of the property being purchased"
+      },
+      {
+        "program_key": "SMART_START_PLUS_FIRST_GENERATION",
+        "official_name": "Smart Start Plus / First Generation Down Payment Assistance Program",
+        "program_class": "DOWN_PAYMENT_ASSISTANCE",
+        "first_time_buyer_requirement": "First-time and first-generation",
+        "loan_type_raw": "Additional $7,000 forgivable second, must pair with DPA and NJHMFA first mortgage",
+        "dpa_available": true,
+        "participating_lender_required": true,
+        "source_effective_on": "2026-06-17",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/",
+        "amount_raw": "$7,000 plus county DPA ($17,000 or $22,000 combined)"
+      },
+      {
+        "program_key": "POLICE_AND_FIREMENS_RETIREMENT_SYSTEM_MORTGAGE",
+        "official_name": "Police and Firemen's Retirement System Mortgage Program",
+        "program_class": "FIRST_MORTGAGE",
+        "first_time_buyer_requirement": "No; at least 25% of funds for first-time buyers",
+        "loan_type_raw": "Conventional \u2014 Fannie Mae",
+        "dpa_available": false,
+        "participating_lender_required": true,
+        "source_effective_on": "2026-04-01",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/",
+        "amount_raw": "Maximum mortgage $766,550 (consumer page); 85% max LTV"
+      }
+    ],
+    "dpa": {
+      "source_effective_on": "2026-06-17",
+      "source": "Smart Start Plus / First Generation fact sheet and current NJHMFA program pages",
+      "high": {
+        "counties": [
+          "Bergen",
+          "Essex",
+          "Hudson",
+          "Hunterdon",
+          "Mercer",
+          "Middlesex",
+          "Monmouth",
+          "Morris",
+          "Ocean",
+          "Passaic",
+          "Somerset",
+          "Union"
+        ],
+        "standard_dpa": 15000,
+        "first_generation": 7000,
+        "combined": 22000,
+        "copy": "Eligible borrowers may qualify for up to $15,000 in NJHMFA Down Payment Assistance, plus $7,000 first-generation assistance where eligible (potential combined up to $22,000)."
+      },
+      "standard": {
+        "counties": [
+          "Atlantic",
+          "Burlington",
+          "Camden",
+          "Cape May",
+          "Cumberland",
+          "Gloucester",
+          "Salem",
+          "Sussex",
+          "Warren"
+        ],
+        "standard_dpa": 10000,
+        "first_generation": 7000,
+        "combined": 17000,
+        "copy": "Eligible borrowers may qualify for up to $10,000 in NJHMFA Down Payment Assistance, plus $7,000 first-generation assistance where eligible (potential combined up to $17,000)."
+      },
+      "caveat": "County of the property does not by itself qualify a borrower. Amounts are 'up to' and require program eligibility."
+    },
+    "participating_lenders": {
+      "count": 89,
+      "source_date": "2026-04-01",
+      "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/docs/hb_lender_list.pdf",
+      "source_hash": "4c07943751f0a111dcb1d93c1e13412889b8d65aa72180ffaf5ca0c105a315bd",
+      "consumer_safe_label": "Lenders appearing on NJHMFA's April 2026 participating-lender activity list",
+      "grain": "Names printed on the official activity/listing PDF. Approved participants with zero sales in the prior six months are omitted. This is not the complete current approved-lender universe.",
+      "exact_nmls_printed": 0,
+      "review_required_alias_matches_withheld_from_profiles": 26,
+      "unresolved_names_list_only": 60,
+      "names": [
+        {
+          "name": "1st 2nd Mortgage company",
+          "phone": "201-569-3469",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "1st 2nd Mortgage company of NJ",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Absolute Home Mortgage",
+          "phone": "973-237-9002",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Acre Mtg & Financial Inc.",
+          "phone": "856-810-1000",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Advisor's Mortgage Group",
+          "phone": "732-292-3133",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Affordable Mortgage Advisors",
+          "phone": "609-646-5555",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Allied Mortgage Group",
+          "phone": "856-762-2740",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "American Federal Mortgage",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "American Financial Network",
+          "phone": "909-228-7648",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "American Pacifc Mortgage Corp",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Amres Corporation",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Annie-Mac (ANMAC)",
+          "phone": "866-312-6682",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Benchmark",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Bond Street Mortgage LLC",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Cardinal Financial Company",
+          "phone": "856-561-4944",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Clifco Inc",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "CMG Mortgage Inc.",
+          "phone": "800-485-4407",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Contour Mtg. Corp",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Cornerstone First Mortgage",
+          "phone": "858-514-3600",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "CrossCountry Mortgage LLC",
+          "phone": "877-351-3400",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "DAS Acquisition Company",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Developer\u2019s Mortgage Company",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "DHI Mortgage",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Embrace Home Loans",
+          "phone": "401-846-3100",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "EMM Loans",
+          "phone": "856-793-1400",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Envoy Mortgage",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Everett Financial",
+          "phone": "972-447-5700",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Fairway Independent Mortgage",
+          "phone": "609-448-5652",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "First Alliance Home Mortgage",
+          "phone": "732-582-3338",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "First Citizens Community Bank",
+          "phone": "609-209-3800",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "First Heritage Financial LLC",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Firstrust Savings Bank",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Funding Resourse Mortgage",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Gateway Mortgage Group",
+          "phone": "856-810-1222",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Geneva Financial llc",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Greenway Mortgage Funding Corp",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Guaranteed Rate Affinity LLC",
+          "phone": "866-912-4200",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Guaranteed Rate Afnity LLC",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Guaranteed Rate, Inc.",
+          "phone": "609-481-3651",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Guild Mortgage Company LLC",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Harbor One Mortgage LLC",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "ION Bank",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Keystone Funding",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Kwik Mtg Corp",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "loanDepot.com, LLC",
+          "phone": "888-337-6888",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Lower",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Luminate Bank",
+          "phone": "952-939-7200",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Meadowbrook Fin. Mtg. Bank Corp",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Meridian Bank",
+          "phone": "609-241-7028",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Mid-Penn Bank",
+          "phone": "856-869-3250",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Millenium Home Mortgage LLC",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "MLD Mortgage, Inc.",
+          "phone": "800-203-5502",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Mortgage Country LLC",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Movement Mortgage",
+          "phone": "877-314-1499",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "My Mortgage",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Nation One Mortgage Corp",
+          "phone": "856-334-1200",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Nationwide Mortgage Bankers",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "New American Funding LLC",
+          "phone": "800-450-2010",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "NEW FED MORTGAGE CORP",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Newrez LLC",
+          "phone": "848-200-1700",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "NFM, Inc.",
+          "phone": "856-912-4748",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "NorthPointe Bank",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "NVR Mortgage",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Panorama Mortgage Group LLC",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Paramount Residential",
+          "phone": "609-281-5532",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Philadelphia Mortgage Advisors",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Pinnacle Mortgage Inc",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Presidential Bank Mortgage",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "PrimeLending, A Plains Capital",
+          "phone": "732-543-7200",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Princeton Mortgage Corporation",
+          "phone": "908-391-9587",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Prosperity Home Mortgage",
+          "phone": "877-275-1762",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Provident Bank",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Quaint Oak Mortgage",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Stellar Mortgage Corporation",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Success Mortgage Partners",
+          "phone": "855-284-2214",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Sun West Mortgage Company",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "T2 Financial LLC",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Tam Lending Center Inc.",
+          "phone": "856-795-5900",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "The Federal Savings Bank",
+          "phone": "201-225-8300",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "TJC Mortgage",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Total Mortgage Services",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "U.S. Mortgage Corp.",
+          "phone": "800-562-6715",
+          "on_numbered_recent_activity_list": true
+        },
+        {
+          "name": "Union Home Mortgage Corp",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "United Mortgage Corp",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Univest Bank & Trust Co",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "US Bank",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Valley National Bank",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "Waterstone Mortgage Corp",
+          "phone": null,
+          "on_numbered_recent_activity_list": false
+        },
+        {
+          "name": "WSFS DBA WSFS Mortgage",
+          "phone": "215-896-7679",
+          "on_numbered_recent_activity_list": true
+        }
+      ],
+      "caveat": "Participation is not an endorsement, recommendation, or quality ranking. Source ordering by loans sold is not a recommendation. Names are not attached to NMLS profiles from this list."
+    },
+    "bulletins": {
+      "count": 10,
+      "latest": "2026-10",
+      "latest_title": "Early Payment Default Policy & Invoicing Reminder",
+      "highlights": [
+        {
+          "number": "2026-8",
+          "title": "Thank you for attending NJHMFA's Annual Lender Quality Control Training",
+          "url": "https://conta.cc/4uQsHlp"
+        },
+        {
+          "number": "2026-9",
+          "title": "NJHMFA Updated Income and Purchase Price Limits",
+          "url": "https://conta.cc/4xwOWhP"
+        },
+        {
+          "number": "2026-10",
+          "title": "Early Payment Default Policy & Invoicing Reminder",
+          "url": "https://conta.cc/4fhspNI"
+        }
+      ],
+      "caveat": "A policy bulletin is not adverse evidence against participating lenders."
+    }
+  },
+  "servicer": {
+    "roster_acquired": false,
+    "annual_report_results_acquired": false,
+    "classes_documented": [
+      "NJ_MORTGAGE_SERVICER_LICENSE",
+      "RMLA_LICENSED_MORTGAGE_SERVICER_REGISTRATION"
+    ],
+    "worksheet_fields": [
+      "loans_serviced",
+      "delinquent_30",
+      "delinquent_60",
+      "delinquent_90_plus",
+      "foreclosures_commenced",
+      "nmls_id"
+    ],
+    "filing_due": "2026-05-01",
+    "copy": "New Jersey maintains a mortgage-servicer framework separate from an RMLA lender license. The 2025 annual-report worksheet distinguishes mortgage-servicer licensees from RMLA-licensed mortgage-servicer registrants. Licensee-level annual-report results (loans serviced, delinquency, foreclosures commenced) have not been acquired as a public file.",
+    "caveat": "Do not read a missing roster as zero servicers, zero delinquencies, or zero foreclosures. Delinquency is not misconduct. Foreclosure commenced is not a violation."
+  },
+  "rmla": {
+    "bulk_roster": false,
+    "coverage_state": "SOURCE_AVAILABLE_BY_REQUEST",
+    "copy": "The public RMLA pages describe how companies apply through NMLS. They are not a bulk licensee roster. Absence from an active-only search is not proof a company is unlicensed."
+  },
+  "complaints": {
+    "public_aggregates": false,
+    "coverage_state": "SOURCE_AVAILABLE_BY_REQUEST",
+    "caveat": "A complaint is not a violation. No complaint score is published."
+  },
+  "coverage": [
+    {
+      "family": "HMDA",
+      "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+      "as_of": "HMDA 2025",
+      "grain": "state and 21 counties, property location"
+    },
+    {
+      "family": "NJDOBI enforcement",
+      "coverage": "ACQUIRED_PARTIAL_HISTORY",
+      "as_of": "OCF 2014\u20132022 complete; 2023\u20132026 not acquired",
+      "grain": "index occurrences / orders / documents"
+    },
+    {
+      "family": "NJDOBI financial institutions",
+      "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+      "as_of": "2026-09-02",
+      "grain": "official current list, 114 rows"
+    },
+    {
+      "family": "RMLA licensing framework",
+      "coverage": "SOURCE_AVAILABLE_BY_REQUEST",
+      "as_of": null,
+      "grain": "application classes, not a roster"
+    },
+    {
+      "family": "Mortgage servicer framework",
+      "coverage": "SOURCE_AVAILABLE_BY_REQUEST",
+      "as_of": "2025 worksheet / 2026 filing",
+      "grain": "class distinction, not results"
+    },
+    {
+      "family": "NJHMFA programs",
+      "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+      "as_of": "2026-06-17",
+      "grain": "program families and county limits"
+    },
+    {
+      "family": "NJHMFA lender source",
+      "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+      "as_of": "2026-04-01",
+      "grain": "activity list, incomplete vs all approved"
+    },
+    {
+      "family": "NJHMFA bulletins",
+      "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+      "as_of": "2026 portal index",
+      "grain": "2026-1 through 2026-10"
+    }
+  ],
+  "gaps": [
+    "Complete machine-readable RMLA license roster",
+    "Historical RMLA status file",
+    "Complete mortgage-servicer roster",
+    "Servicer annual-report results",
+    "DOBI complaint aggregates",
+    "Exact NMLS IDs for many NJHMFA names"
+  ],
+  "profile_modules": {
+    "exact_nmls_institution_ids": 33,
+    "exact_fdic_certs": 12,
+    "exact_nj_state_references": 75,
+    "high_confidence_attached": 0,
+    "withheld_review_required": 26,
+    "withheld_unresolved": 262,
+    "individuals_not_copied_to_employer": true,
+    "populated_order_histories": 0,
+    "note": "Profile modules may note an exact identifier match. They do not publish unresolved names, review-required aliases, or individual orders on a company profile. Full order histories remain on the state corpus until a later evidence module is populated."
+  },
+  "invariants": [
+    "UNAVAILABLE_NE_ZERO",
+    "RMLA_ABSENCE_NE_UNLICENSED",
+    "NJHMFA_NE_ENDORSEMENT",
+    "NJHMFA_LIST_NE_COMPLETE_APPROVED_UNIVERSE",
+    "COMPLAINT_NE_VIOLATION",
+    "HMDA_DISPARITY_NE_DISCRIMINATION",
+    "DELINQUENCY_NE_MISCONDUCT",
+    "NO_RANKING",
+    "NO_TRUST_SCORE",
+    "NO_MLO_DIRECTORY",
+    "NO_COUNTY_ROUTES"
+  ],
+  "fingerprint": "0c0a9a68b76262ebcc408317956fd6403d484068be8827e4fa24a188e7e7b125",
+  "generated_at": "2026-09-02T21:10:02Z"
+}

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { NewJerseyProfileEvidence } from '@/components/new-jersey/nj-profile-evidence';
 import type { ProfileIntelligence } from '@/lib/identity/profile-intelligence';
 import type { NationalProfileCohortEntry } from '@/lib/national-profile/cohort';
 import { nationalPresentationName } from '@/lib/national-profile/discovery';
@@ -503,6 +504,11 @@ export function NationalLenderProfile({
               </ul>
             ) : null}
           </Card>
+
+          <NewJerseyProfileEvidence
+            nmlsInstitutionId={nmls?.identifier_value}
+            fdicCert={cert?.identifier_value}
+          />
 
           <Card title="Sources & methodology" id="sources-heading">
             <p className="text-sm text-slate-600">

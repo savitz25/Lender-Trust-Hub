@@ -473,6 +473,7 @@ export function buildLenderHomeIntel(
       { id: 'le-compare', label: 'Compare Loan Estimates', href: '/tools/compare-loan-estimates', note: 'Compare offers, not a lender winner.' },
       { id: 'calculators', label: 'Mortgage calculators', href: '/calculators', note: 'Educational estimates.' },
       { id: 'florida', label: 'Florida Mortgage Intelligence', href: '/florida', note: 'Existing state intelligence. Unchanged in this task.' },
+      { id: 'new-jersey', label: 'New Jersey Mortgage Intelligence', href: '/new-jersey', note: 'HMDA, NJHMFA, and NJDOBI evidence. Not a ranking.' },
       { id: 'my-lending', label: 'Save research', href: '/my-lending', note: 'Workspace for your notes. Not a lender score.' },
     ],
     journey: [

@@ -175,7 +175,7 @@ def test_schema_drift_and_index_only() -> None:
 def test_repo_invariants() -> None:
     errors = mod.validate_repo_invariants()
     check("contract_present", not any("contract" in e for e in errors), str(errors))
-    check("no_public_nj_route", not (ROOT / "app" / "new-jersey").exists())
+    check("no_nj_county_routes", not (ROOT / "app" / "new-jersey" / "[county]").exists())
     sql = (ROOT / "supabase/migrations/20260902120000_nj_lend_001_regulatory_event_ledger.sql").read_text(encoding="utf-8")
     check("no_nj_silo_tables", "create table" in sql.lower() and "nj_dobi_orders" not in sql)
     check("rls_forced", "force row level security" in sql)
@@ -192,7 +192,7 @@ def test_repo_invariants() -> None:
     check("raw_ignored", "data/raw/nj_dobi/" in gitignore)
     check("no_vercel_project_file", not (ROOT / ".vercel" / "project.json").exists())
     sitemap = (ROOT / "app" / "sitemap.ts").read_text(encoding="utf-8")
-    check("sitemap_no_new_jersey_state_page", "/new-jersey" not in sitemap)
+    check("sitemap_no_nj_county_pages", "/new-jersey/" not in sitemap)
     runner = (ROOT / "scripts" / "nj-lend-001.py").read_text(encoding="utf-8")
     check("no_fuzzy", "levenshtein" not in runner.lower() and "fuzzy" not in runner.lower())
     check("no_public_projection_write", "public_projection_status" not in runner or "internal_only" in runner)
