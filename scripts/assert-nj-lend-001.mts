@@ -37,7 +37,14 @@ assert.match(contract, /InsuranceTrustHub reuse/);
 assert.match(schema, /nj-dobi-regulatory-document-v1/);
 assert.match(gitignore, /data\/raw\/nj_dobi\//);
 assert.doesNotMatch(robots, /disallow:\s*['"]\/new-jersey/);
-assert.doesNotMatch(sitemap, /\/new-jersey\/[a-z]/);
+for (const countyPath of [
+  '/new-jersey/monmouth-county',
+  '/new-jersey/middlesex-county',
+  '/new-jersey/somerset-county',
+  '/new-jersey/union-county',
+]) {
+  assert.match(sitemap, new RegExp(countyPath));
+}
 assert.equal(existsSync('.vercel/project.json'), false);
 assert.match(tests, /multi_party/);
 assert.match(tests, /index_only_no_pdf/);

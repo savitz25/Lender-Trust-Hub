@@ -151,7 +151,12 @@ def test_publication_and_unavailable() -> None:
     check("no_nj_county_app_dir", not (ROOT / "app" / "new-jersey" / "[county]").exists())
     sitemap = (ROOT / "app" / "sitemap.ts").read_text(encoding="utf-8")
     robots = (ROOT / "app" / "robots.ts").read_text(encoding="utf-8")
-    check("sitemap_no_nj_county_routes", "/new-jersey/" not in sitemap)
+    check("sitemap_has_accepted_nj_county_routes", all(path in sitemap for path in [
+        "/new-jersey/monmouth-county",
+        "/new-jersey/middlesex-county",
+        "/new-jersey/somerset-county",
+        "/new-jersey/union-county",
+    ]))
     check("robots_no_new_jersey_disallow", "disallow: '/new-jersey" not in robots.lower())
     check("no_vercel_project_json", not (ROOT / ".vercel" / "project.json").exists())
     mig = (ROOT / "supabase" / "migrations" / "20260903160000_nj_lend_002_state_authority_program_market.sql").read_text(encoding="utf-8")

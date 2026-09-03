@@ -192,7 +192,12 @@ def test_repo_invariants() -> None:
     check("raw_ignored", "data/raw/nj_dobi/" in gitignore)
     check("no_vercel_project_file", not (ROOT / ".vercel" / "project.json").exists())
     sitemap = (ROOT / "app" / "sitemap.ts").read_text(encoding="utf-8")
-    check("sitemap_no_nj_county_pages", "/new-jersey/" not in sitemap)
+    check("sitemap_has_accepted_nj_county_pages", all(path in sitemap for path in [
+        "/new-jersey/monmouth-county",
+        "/new-jersey/middlesex-county",
+        "/new-jersey/somerset-county",
+        "/new-jersey/union-county",
+    ]))
     runner = (ROOT / "scripts" / "nj-lend-001.py").read_text(encoding="utf-8")
     check("no_fuzzy", "levenshtein" not in runner.lower() and "fuzzy" not in runner.lower())
     check("no_public_projection_write", "public_projection_status" not in runner or "internal_only" in runner)
