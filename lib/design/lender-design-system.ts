@@ -93,6 +93,14 @@ export const LENDER_TOOLS = {
       cta: 'Open New Jersey research',
     },
     {
+      id: 'california-research',
+      title: 'California research',
+      description:
+        '2025 HMDA California activity, CalHFA programs and approved-lender listings, and the 2024 CRMLA annual report. Not a ranking.',
+      href: '/california',
+      cta: 'Open California research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
@@ -210,7 +218,8 @@ export const LENDER_PATHWAYS = {
   markets: [
     { label: 'Florida', href: '/local-lenders/florida' },
     { label: 'New Jersey research', href: '/new-jersey' },
-    { label: 'California', href: '/local-lenders/california' },
+    { label: 'California research', href: '/california' },
+    { label: 'California catalog', href: '/local-lenders/california' },
     { label: 'Texas', href: '/local-lenders/texas' },
     { label: 'New York', href: '/local-lenders/new-york' },
     { label: 'Arizona', href: '/local-lenders/arizona' },
@@ -333,6 +342,7 @@ export const LENDER_FOOTER_COLUMNS = [
       { href: '/local-lenders', label: 'Local Lenders' },
       { href: '/florida', label: 'Florida Research' },
       { href: '/new-jersey', label: 'New Jersey Research' },
+      { href: '/california', label: 'California Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },
