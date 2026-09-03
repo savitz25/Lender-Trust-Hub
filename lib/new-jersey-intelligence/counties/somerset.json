@@ -1,0 +1,261 @@
+{
+  "contract_name": "lender-nj-county-intel-v1",
+  "version": "1.0.0",
+  "geography": "NJ",
+  "county_fips": "34035",
+  "county_name": "Somerset",
+  "county_slug": "somerset-county",
+  "path": "/new-jersey/somerset-county",
+  "publication_status": "published",
+  "parent_state_contract": "lender-nj-state-intel-v1",
+  "parent_state_fingerprint": "0c0a9a68b76262ebcc408317956fd6403d484068be8827e4fa24a188e7e7b125",
+  "ask_research_sha": "f0407c3c659886ba46522a4e023989c1641cab7d",
+  "source_as_of": {
+    "hmda": "HMDA 2025",
+    "njhmfa_dpa": "2026-06-17",
+    "njhmfa_programs": "2026-06-17",
+    "land_records": "2026-09-03",
+    "sheriff": "2026-09-03",
+    "property": "2026-04-30"
+  },
+  "source_clocks": {
+    "hmda_vintage": "2025",
+    "njhmfa_dpa_effective": "2026-06-17",
+    "land_records_last_checked": "2026-09-03",
+    "sheriff_last_checked": "2026-09-03",
+    "property_source_as_of": "2026-04-30",
+    "property_last_checked": "2026-09-03"
+  },
+  "coverage": {
+    "source_families": [
+      {
+        "family": "HMDA 2025 county slice",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "HMDA 2025",
+        "grain": "county mortgage applications for properties in Somerset County",
+        "county_specific": false,
+        "authoritative": true
+      },
+      {
+        "family": "NJHMFA DPA geography and homeownership programs",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "2026-06-17",
+        "grain": "county of the property being purchased",
+        "county_specific": false,
+        "authoritative": true
+      },
+      {
+        "family": "Somerset Acclaim land-record research access",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "2026-09-03",
+        "grain": "official search capability after free account; sessions not automated",
+        "county_specific": true,
+        "authoritative": true
+      },
+      {
+        "family": "Somerset County Parcels FeatureServer count and Tax Parcel Viewer",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "2026-04-30",
+        "grain": "documented parcel feature count plus official viewer; no owner names",
+        "county_specific": true,
+        "authoritative": true
+      },
+      {
+        "family": "Somerset sheriff-sale structured status snapshot",
+        "coverage": "SOURCE_NOT_ACQUIRED",
+        "as_of": "",
+        "grain": "no clean structured status inventory in the audited county research",
+        "county_specific": true,
+        "authoritative": false
+      }
+    ],
+    "authoritative_source_family_count": 4,
+    "county_specific_research_source_count": 2,
+    "meaningful_findings_count": 3,
+    "thin_duplicate_of_state_page": false,
+    "gate_pass": true,
+    "gate_notes": [
+      "Four authoritative source families.",
+      "Two county-specific research sources (Acclaim access, parcel/viewer context).",
+      "Sheriff structured snapshot is SOURCE_NOT_ACQUIRED and is not shown as zero sales.",
+      "Somerset senior-housing inventory is not used as a mortgage metric."
+    ]
+  },
+  "hmda": {
+    "year": 2025,
+    "geo_grain": "county",
+    "state_code": "NJ",
+    "county_fips": "34035",
+    "county_name": "Somerset",
+    "source": "Committed HMDA New Jersey slice (data/hmda/new-jersey/county_market_summary_nj.csv), Somerset County row. Properties located in Somerset County. Not a second national download.",
+    "source_as_of": "HMDA 2025",
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "applications": 11584,
+    "originations": 6702,
+    "denials": 1793,
+    "denial_rate_pct": 15.48,
+    "denial_rate_calculation": "denials / applications * 100, rounded to 2 decimals",
+    "purchase_applications": 4506,
+    "refinance_applications": 3945,
+    "purchase_pct_of_apps": 38.9,
+    "refinance_pct_of_apps": 34.06,
+    "apps_conventional": 10424,
+    "apps_fha": 911,
+    "apps_va": 239,
+    "apps_usda_other": 10,
+    "conventional_pct": 89.99,
+    "fha_pct": 7.86,
+    "va_pct": 2.06,
+    "usda_other_pct": 0.09,
+    "caveat": "HMDA describes reporting institutions in the statutory HMDA universe for properties located in this county. It does not describe all lending activity. Denial rate is denials divided by applications. It is not a quality score, approval probability, or fair-lending conclusion. Disparity does not prove discrimination."
+  },
+  "njhmfa": {
+    "dpa_group": "12_county",
+    "standard_dpa": 15000,
+    "first_generation": 7000,
+    "combined": 22000,
+    "copy": "Eligible borrowers may qualify for up to $15,000 in NJHMFA Down Payment Assistance, plus $7,000 first-generation assistance where eligible (potential combined up to $22,000).",
+    "caveat": "County of the property does not by itself qualify a borrower. Amounts are 'up to' and require program eligibility. NJHMFA participation is not an endorsement.",
+    "source_effective_on": "2026-06-17",
+    "source": "Smart Start Plus / First Generation fact sheet and current NJHMFA program pages, reused from NJ-LEND-003.",
+    "program_families": [
+      {
+        "program_key": "FIRST_TIME_HOMEBUYER_MORTGAGE",
+        "official_name": "First-Time Homebuyer Mortgage Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "HOMEWARD_BOUND",
+        "official_name": "Homeward Bound Mortgage Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "HFA_ADVANTAGE",
+        "official_name": "HFA Advantage Mortgage Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "DOWN_PAYMENT_ASSISTANCE",
+        "official_name": "NJHMFA Down Payment Assistance Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "SMART_START_PLUS_FIRST_GENERATION",
+        "official_name": "Smart Start Plus / First Generation Down Payment Assistance Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "POLICE_AND_FIREMENS_RETIREMENT_SYSTEM_MORTGAGE",
+        "official_name": "Police and Firemen's Retirement System Mortgage Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      }
+    ]
+  },
+  "land_records": {
+    "system_name": "Somerset County Clerk AcclaimWeb",
+    "operator": "Somerset County Clerk",
+    "access_class": "FREE_ACCOUNT_REQUIRED",
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "source_url": "https://liveacclaim.co.somerset.nj.us/AcclaimWeb/",
+    "info_url": "https://www.somersetcountynj.gov/government/elected-officials/county-clerk/land-records",
+    "source_as_of": "2026-09-03",
+    "what_users_can_research": [
+      "name search",
+      "book/page",
+      "instrument number",
+      "legal description",
+      "document type",
+      "consideration",
+      "record date"
+    ],
+    "not_a_title_report": true,
+    "mortgage_recording_ne_current_balance": true,
+    "lis_pendens_ne_completed_foreclosure": true,
+    "copy": "AcclaimWeb requires a free account (email activation). After that, the public can search recorded instruments by name, book/page, instrument number, legal description, document type, consideration, and record date. Sessions are not automated here. The Clerk will not run a title search. A recorded mortgage is not a current loan balance.",
+    "scrape_status": "NOT_SCRAPED"
+  },
+  "sheriff": {
+    "coverage_state": "SOURCE_NOT_ACQUIRED",
+    "source_name": "Somerset County Sheriff Sales list",
+    "source_url": "https://www.somersetcountynj.gov/government/elected-officials/sheriff-s-office/divisions/sheriff-sales",
+    "access_class": "OPEN_SEARCH_ONLY",
+    "source_as_of": "2026-09-03",
+    "listing_count": null,
+    "status_class_counts": null,
+    "completed_sale_count": null,
+    "fields_omitted": [
+      "defendant",
+      "property_address",
+      "plaintiff",
+      "buyer"
+    ],
+    "semantics": [
+      "No clean structured status snapshot was acquired.",
+      "Missing count is not zero sheriff sales.",
+      "Scheduled is not a completed sale."
+    ],
+    "copy": "Somerset County publishes a sheriff-sale list on the official Sheriff page. No clean structured status snapshot was acquired for this ticket, so this page does not show a count. Absence of a published count is not evidence of zero sheriff sales. Buyer names are not collected."
+  },
+  "property": {
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "source_name": "Somerset County Parcels FeatureServer (documented count) and Tax Parcel Viewer",
+    "source_url": "https://services2.arcgis.com/2g2XvfUywwLJoF2c/arcgis/rest/services/Somerset_County_Parcels/FeatureServer/0",
+    "viewer_url": "https://experience.arcgis.com/experience/efb1be0ae9c04804b408255ceb146c76",
+    "source_as_of": "2026-04-30",
+    "feature_count": 132911,
+    "parcel_count_ne_housing_unit_count": true,
+    "assessment_ne_appraisal": true,
+    "owner_names_published": false,
+    "daniels_law": "Owner information is redacted under Daniel's Law. This page does not publish owner names.",
+    "copy": "The county Parcels FeatureServer documented 132,911 tax-parcel features as of 2026-04-30 (last checked 2026-09-03). That is not a housing-unit or household count, and it is not a re-acquired NJGIN warehouse. The official Tax Parcel Viewer is available for interactive research. Assessment is not appraisal. Owner names are not shown."
+  },
+  "local_housing_resources": null,
+  "findings": [
+    {
+      "id": "hmda-mix",
+      "title": "2025 mortgage application mix",
+      "body": "The committed 2025 HMDA county slice recorded 11,584 applications, 6,702 originations, and 1,793 denials for properties in Somerset County (15.48% denial rate, denials ÷ applications). Purchase applications were 38.90% of applications and refinance applications were 34.06%. Conventional applications were 89.99% of the county mix, with FHA 7.86%, VA 2.06%, and USDA/other 0.09%. Denial rate is not a quality score."
+    },
+    {
+      "id": "njhmfa-dpa",
+      "title": "NJHMFA down-payment geography",
+      "body": "Somerset is in NJHMFA's 12-county group. Eligible borrowers may qualify for up to $15,000 in Down Payment Assistance, plus $7,000 first-generation assistance where eligible (potential combined up to $22,000). County of the property does not by itself establish borrower eligibility."
+    },
+    {
+      "id": "research-access",
+      "title": "Land-record research access and property context",
+      "body": "AcclaimWeb land records require a free account and are not automated here. A land-record search is not a title report. The county parcels service documented 132,911 features as of 2026-04-30; parcel count is not household count. No structured sheriff-sale status snapshot was acquired, and that gap is not published as zero sales."
+    }
+  ],
+  "lender_discovery": {
+    "state_catalog_href": "/local-lenders/new-jersey",
+    "county_catalog_href": "/local-lenders/new-jersey/somerset",
+    "program_finder_href": "/tools/program-finder",
+    "copy": "Use the New Jersey lender catalog and the existing Somerset County catalog page to research lenders. A headquarters or city listed in this county does not mean the lender serves only this county. HMDA county activity is not a New Jersey license roster. Individual mortgage loan originators are not published from this page.",
+    "hq_in_county_ne_serves_only_county": true,
+    "hmda_activity_ne_license_status": true,
+    "mlo_publication": false
+  },
+  "semantics": [
+    "HMDA != LICENSE ROSTER",
+    "DENIAL RATE != QUALITY",
+    "SHERIFF SALE SCHEDULE != COMPLETED FORECLOSURE",
+    "LIS PENDENS != COMPLETED FORECLOSURE",
+    "MORTGAGE RECORDING != CURRENT BALANCE",
+    "ASSESSMENT != APPRAISAL",
+    "PARCEL COUNT != HOUSEHOLD COUNT",
+    "NJHMFA PARTICIPATION != ENDORSEMENT",
+    "DPA COUNTY != BORROWER ELIGIBILITY",
+    "COUNTY DATA ABSENCE != ZERO"
+  ],
+  "skipped": [
+    "No Acclaim session automation.",
+    "No sheriff HTML scrape and no fabricated status counts.",
+    "Somerset senior-housing inventory is not used as a mortgage metric.",
+    "No owner names (Daniel's Law).",
+    "No municipality pages.",
+    "No best-lender ranking."
+  ],
+  "fingerprint": "728eca48cba339fc0e8001dae332d31a4a11b0ec8b4e26a624807bc3d6445eaf",
+  "generated_at": "2026-09-03T22:00:00Z"
+}

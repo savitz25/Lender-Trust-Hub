@@ -1,0 +1,278 @@
+{
+  "contract_name": "lender-nj-county-intel-v1",
+  "version": "1.0.0",
+  "geography": "NJ",
+  "county_fips": "34023",
+  "county_name": "Middlesex",
+  "county_slug": "middlesex-county",
+  "path": "/new-jersey/middlesex-county",
+  "publication_status": "published",
+  "parent_state_contract": "lender-nj-state-intel-v1",
+  "parent_state_fingerprint": "0c0a9a68b76262ebcc408317956fd6403d484068be8827e4fa24a188e7e7b125",
+  "ask_research_sha": "f0407c3c659886ba46522a4e023989c1641cab7d",
+  "source_as_of": {
+    "hmda": "HMDA 2025",
+    "njhmfa_dpa": "2026-06-17",
+    "njhmfa_programs": "2026-06-17",
+    "land_records": "2026-09-03",
+    "sheriff": "2026-09-03",
+    "property": "2026-09-03"
+  },
+  "source_clocks": {
+    "hmda_vintage": "2025",
+    "njhmfa_dpa_effective": "2026-06-17",
+    "land_records_last_checked": "2026-09-03",
+    "sheriff_last_updated_on_page": "2026-09-03 10:02:00 AM",
+    "sheriff_last_checked": "2026-09-03",
+    "property_last_checked": "2026-09-03"
+  },
+  "coverage": {
+    "source_families": [
+      {
+        "family": "HMDA 2025 county slice",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "HMDA 2025",
+        "grain": "county mortgage applications for properties in Middlesex County",
+        "county_specific": false,
+        "authoritative": true
+      },
+      {
+        "family": "NJHMFA DPA geography and homeownership programs",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "2026-06-17",
+        "grain": "county of the property being purchased",
+        "county_specific": false,
+        "authoritative": true
+      },
+      {
+        "family": "Middlesex SearchNG land-record research access",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "2026-09-03",
+        "grain": "official search capability (not a harvested instrument table)",
+        "county_specific": true,
+        "authoritative": true
+      },
+      {
+        "family": "Middlesex sheriff-sale status snapshot",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "2026-09-03",
+        "grain": "aggregated listing status counts",
+        "county_specific": true,
+        "authoritative": true
+      },
+      {
+        "family": "NJGIN parcel / MOD-IV county filter",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "2026-09-03",
+        "grain": "parcel/MOD-IV feature count; no owner names",
+        "county_specific": true,
+        "authoritative": true
+      }
+    ],
+    "authoritative_source_family_count": 5,
+    "county_specific_research_source_count": 3,
+    "meaningful_findings_count": 3,
+    "thin_duplicate_of_state_page": false,
+    "gate_pass": true,
+    "gate_notes": [
+      "Five authoritative source families.",
+      "Three county-specific research sources (SearchNG, sheriff status, NJGIN parcel count).",
+      "Zoning and site-incentive GIS were not published as a LenderTrustHub zoning product."
+    ]
+  },
+  "hmda": {
+    "year": 2025,
+    "geo_grain": "county",
+    "state_code": "NJ",
+    "county_fips": "34023",
+    "county_name": "Middlesex",
+    "source": "Committed HMDA New Jersey slice (data/hmda/new-jersey/county_market_summary_nj.csv), Middlesex County row. Properties located in Middlesex County. Not a second national download.",
+    "source_as_of": "HMDA 2025",
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "applications": 26149,
+    "originations": 14147,
+    "denials": 4782,
+    "denial_rate_pct": 18.29,
+    "denial_rate_calculation": "denials / applications * 100, rounded to 2 decimals",
+    "purchase_applications": 9761,
+    "refinance_applications": 9235,
+    "purchase_pct_of_apps": 37.33,
+    "refinance_pct_of_apps": 35.32,
+    "apps_conventional": 22873,
+    "apps_fha": 2673,
+    "apps_va": 586,
+    "apps_usda_other": 17,
+    "conventional_pct": 87.47,
+    "fha_pct": 10.22,
+    "va_pct": 2.24,
+    "usda_other_pct": 0.07,
+    "caveat": "HMDA describes reporting institutions in the statutory HMDA universe for properties located in this county. It does not describe all lending activity. Denial rate is denials divided by applications. It is not a quality score, approval probability, or fair-lending conclusion. Disparity does not prove discrimination."
+  },
+  "njhmfa": {
+    "dpa_group": "12_county",
+    "standard_dpa": 15000,
+    "first_generation": 7000,
+    "combined": 22000,
+    "copy": "Eligible borrowers may qualify for up to $15,000 in NJHMFA Down Payment Assistance, plus $7,000 first-generation assistance where eligible (potential combined up to $22,000).",
+    "caveat": "County of the property does not by itself qualify a borrower. Amounts are 'up to' and require program eligibility. NJHMFA participation is not an endorsement.",
+    "source_effective_on": "2026-06-17",
+    "source": "Smart Start Plus / First Generation fact sheet and current NJHMFA program pages, reused from NJ-LEND-003.",
+    "program_families": [
+      {
+        "program_key": "FIRST_TIME_HOMEBUYER_MORTGAGE",
+        "official_name": "First-Time Homebuyer Mortgage Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "HOMEWARD_BOUND",
+        "official_name": "Homeward Bound Mortgage Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "HFA_ADVANTAGE",
+        "official_name": "HFA Advantage Mortgage Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "DOWN_PAYMENT_ASSISTANCE",
+        "official_name": "NJHMFA Down Payment Assistance Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "SMART_START_PLUS_FIRST_GENERATION",
+        "official_name": "Smart Start Plus / First Generation Down Payment Assistance Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "POLICE_AND_FIREMENS_RETIREMENT_SYSTEM_MORTGAGE",
+        "official_name": "Police and Firemen's Retirement System Mortgage Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      }
+    ]
+  },
+  "land_records": {
+    "system_name": "Middlesex County SearchNG",
+    "operator": "Middlesex County Clerk",
+    "access_class": "OPEN_SEARCH_ONLY",
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "source_url": "https://mcrecords.co.middlesex.nj.us/recordssearch/",
+    "info_url": "https://www.middlesexcountynj.gov/government/departments/department-of-community-services/office-of-county-clerk/recording-services/land-records",
+    "source_as_of": "2026-09-03",
+    "what_users_can_research": [
+      "deeds recorded from 1929-01-01",
+      "mortgages recorded from 1950-01-01",
+      "other recorded documents from 1958-01-01",
+      "liens, assignments, trade names, maps, easements",
+      "block/lot and consideration on deeds at recording"
+    ],
+    "not_a_title_report": true,
+    "mortgage_recording_ne_current_balance": true,
+    "lis_pendens_ne_completed_foreclosure": true,
+    "copy": "The official SearchNG index covers deeds from 1929, mortgages from 1950, and other recorded documents from 1958. The Clerk cannot perform a title search. A recorded mortgage is not a current loan balance.",
+    "scrape_status": "NOT_SCRAPED"
+  },
+  "sheriff": {
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "source_name": "CivilView SalesWeb foreclosure listing (Middlesex County Sheriff)",
+    "source_url": "https://salesweb.civilview.com/Sales/SalesSearch?countyId=73",
+    "access_class": "OPEN_SEARCH_ONLY",
+    "source_as_of": "2026-09-03",
+    "last_updated_on_page": "2026-09-03 10:02:00 AM",
+    "listing_count": 175,
+    "status_class_counts": {
+      "SCHEDULED_NOT_COMPLETED": 72,
+      "ADJOURNED_NOT_COMPLETED": 53,
+      "COMPLETED_SALE": 43,
+      "REDEEMED_NOT_COMPLETED": 5,
+      "BANKRUPTCY_NOT_COMPLETED": 2
+    },
+    "status_counts": {
+      "Scheduled - Foreclosure": 72,
+      "Purchased - 3rd Party": 43,
+      "Adjourned - Defendant": 28,
+      "Adjourned - Plaintiff": 17,
+      "Adjourned - Court": 8,
+      "Redeemed": 5,
+      "Bankruptcy": 1,
+      "Bankruptcy Dismissed": 1
+    },
+    "completed_sale_count": 43,
+    "completed_sale_status_label": "Purchased - 3rd Party",
+    "fields_omitted": [
+      "defendant",
+      "property_address",
+      "plaintiff"
+    ],
+    "semantics": [
+      "Scheduled is not a completed sale.",
+      "Adjourned is not a completed sale.",
+      "Bankruptcy is not a completed sale.",
+      "Redeemed is not a completed sheriff sale.",
+      "Purchased - 3rd Party is the completed-sale status on this listing.",
+      "CivilView is a public summary listing, not an official record of title."
+    ],
+    "copy": "On the 2026-09-03 CivilView snapshot, 175 listings were present: 72 scheduled, 43 Purchased - 3rd Party (the listing's completed-sale status), 53 adjourned, 5 redeemed, and 2 bankruptcy-related. Scheduled, adjourned, redeemed, and bankruptcy statuses are not completed sales. Defendant names and property addresses are not published here."
+  },
+  "property": {
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "source_name": "NJGIN Parcels and MOD-IV Composite of NJ (Web Mercator), COUNTY='MIDDLESEX' filter",
+    "source_url": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/arcgis/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+    "source_as_of": "2026-09-03",
+    "feature_count": 243019,
+    "count_query": "where=COUNTY='MIDDLESEX'&returnCountOnly=true",
+    "parcel_count_ne_housing_unit_count": true,
+    "assessment_ne_appraisal": true,
+    "owner_names_published": false,
+    "daniels_law": "OWNER_NAME is redacted on the public web service per Daniel's Law. This page does not publish owner names.",
+    "copy": "NJGIN reports 243,019 parcel/MOD-IV features in Middlesex County. Parcel count is not a housing-unit or household count. Assessment value is not appraised market value. Owner names are not shown. County zoning and site-incentive overlays were not published as a zoning product."
+  },
+  "local_housing_resources": null,
+  "findings": [
+    {
+      "id": "hmda-mix",
+      "title": "2025 mortgage application mix",
+      "body": "The committed 2025 HMDA county slice recorded 26,149 applications, 14,147 originations, and 4,782 denials for properties in Middlesex County (18.29% denial rate, denials ÷ applications). Purchase applications were 37.33% of applications and refinance applications were 35.32%. Conventional applications were 87.47% of the county mix, with FHA 10.22%, VA 2.24%, and USDA/other 0.07%. Denial rate is not a quality score."
+    },
+    {
+      "id": "njhmfa-dpa",
+      "title": "NJHMFA down-payment geography",
+      "body": "Middlesex is in NJHMFA's 12-county group. Eligible borrowers may qualify for up to $15,000 in Down Payment Assistance, plus $7,000 first-generation assistance where eligible (potential combined up to $22,000). County of the property does not by itself establish borrower eligibility."
+    },
+    {
+      "id": "sheriff-status",
+      "title": "Sheriff-sale status snapshot, with completed-sale status labeled by the source",
+      "body": "The 2026-09-03 CivilView listing had 175 rows that reconcile as 72 scheduled + 43 Purchased - 3rd Party + 53 adjourned + 5 redeemed + 2 bankruptcy-related. Purchased - 3rd Party is this listing's completed-sale status. Scheduled, adjourned, redeemed, and bankruptcy statuses are not completed sales."
+    }
+  ],
+  "lender_discovery": {
+    "state_catalog_href": "/local-lenders/new-jersey",
+    "county_catalog_href": "/local-lenders/new-jersey/middlesex",
+    "program_finder_href": "/tools/program-finder",
+    "copy": "Use the New Jersey lender catalog and the existing Middlesex County catalog page to research lenders. A headquarters or city listed in this county does not mean the lender serves only this county. HMDA county activity is not a New Jersey license roster. Individual mortgage loan originators are not published from this page.",
+    "hq_in_county_ne_serves_only_county": true,
+    "hmda_activity_ne_license_status": true,
+    "mlo_publication": false
+  },
+  "semantics": [
+    "HMDA != LICENSE ROSTER",
+    "DENIAL RATE != QUALITY",
+    "SHERIFF SALE SCHEDULE != COMPLETED FORECLOSURE",
+    "LIS PENDENS != COMPLETED FORECLOSURE",
+    "MORTGAGE RECORDING != CURRENT BALANCE",
+    "ASSESSMENT != APPRAISAL",
+    "PARCEL COUNT != HOUSEHOLD COUNT",
+    "NJHMFA PARTICIPATION != ENDORSEMENT",
+    "DPA COUNTY != BORROWER ELIGIBILITY",
+    "COUNTY DATA ABSENCE != ZERO"
+  ],
+  "skipped": [
+    "No SearchNG scrape or deed-image harvest.",
+    "No defendant names or sheriff-sale addresses.",
+    "No owner names (Daniel's Law).",
+    "Zoning and redevelopment GIS not published as a zoning product.",
+    "No municipality pages.",
+    "No best-lender ranking."
+  ],
+  "fingerprint": "e8989dea5f691c64333b206b32e46b1ff19b203b6389060ee6ff9301c0b62938",
+  "generated_at": "2026-09-03T22:00:00Z"
+}

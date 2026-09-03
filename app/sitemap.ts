@@ -9,6 +9,7 @@ import { cleanNmlsId } from '@/lib/verification/nmls';
 import { catalogDistinctEntities } from '@/lib/verification';
 import { FLORIDA_INTELLIGENCE_GATE } from '@/lib/florida-intelligence/publication';
 import { NEW_JERSEY_INTELLIGENCE_GATE } from '@/lib/new-jersey-intelligence/publication';
+import { indexedNjCountyGates } from '@/lib/new-jersey-intelligence/counties';
 
 /** Meaningful lastmod for sitemap — day of generation (catalog is static build data). */
 function catalogLastMod(): Date {
@@ -28,6 +29,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(NEW_JERSEY_INTELLIGENCE_GATE.sitemap
       ? [{ path: '/new-jersey', priority: 0.88, changeFrequency: 'weekly' as const }]
       : []),
+    // NJ-LEND-COUNTY-001 indexed county research:
+    // /new-jersey/monmouth-county
+    // /new-jersey/middlesex-county
+    // /new-jersey/somerset-county
+    // /new-jersey/union-county
+    ...indexedNjCountyGates().map((g) => ({
+      path: g.path,
+      priority: 0.82,
+      changeFrequency: 'weekly' as const,
+    })),
     { path: '/local-lenders', priority: 0.95, changeFrequency: 'weekly' },
     { path: '/tools/loan-estimate-analyzer', priority: 0.92, changeFrequency: 'weekly' },
     { path: '/tools/compare-loan-estimates', priority: 0.92, changeFrequency: 'weekly' },

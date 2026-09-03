@@ -1,6 +1,8 @@
 'use client';
 
+import Link from 'next/link';
 import { useMemo, useState } from 'react';
+import { NJ_COUNTY_NAME_TO_PATH } from '@/lib/new-jersey-intelligence/counties/types';
 import { fmtInt, fmtPct } from '@/lib/new-jersey-intelligence/snapshot';
 
 type County = {
@@ -45,7 +47,16 @@ export function NewJerseyCountyTable({ counties }: { counties: County[] }) {
             {shown.map((c) => (
               <tr key={c.county_fips} className="border-b border-slate-100">
                 <th scope="row" className="py-2 pr-3 font-medium text-slate-800">
-                  {c.county_name}
+                  {NJ_COUNTY_NAME_TO_PATH[c.county_name] ? (
+                    <Link
+                      href={NJ_COUNTY_NAME_TO_PATH[c.county_name]}
+                      className="text-[#047857] underline underline-offset-2"
+                    >
+                      {c.county_name}
+                    </Link>
+                  ) : (
+                    c.county_name
+                  )}
                 </th>
                 <td className="py-2 pr-3 text-right tabular-nums">{fmtInt(c.applications)}</td>
                 <td className="py-2 pr-3 text-right tabular-nums">{fmtInt(c.originations)}</td>

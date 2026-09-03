@@ -192,13 +192,45 @@ export function NewJerseyStateIntelligence({ snapshot }: { snapshot: NewJerseyIn
         </p>
       </section>
 
+      <section aria-labelledby="county-pages-heading" className="mt-10">
+        <h2 id="county-pages-heading" className="text-lg font-semibold text-[#0A2540]">
+          Four-county research
+        </h2>
+        <p className="mt-2 text-sm leading-relaxed text-slate-600">
+          Dedicated mortgage and property-market research for Monmouth, Middlesex, Somerset, and Union counties. These
+          pages are not a ranking of counties or lenders.
+        </p>
+        <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-700">
+          <li>
+            <Link href="/new-jersey/monmouth-county" className="text-[#047857] underline underline-offset-2">
+              Monmouth County
+            </Link>
+          </li>
+          <li>
+            <Link href="/new-jersey/middlesex-county" className="text-[#047857] underline underline-offset-2">
+              Middlesex County
+            </Link>
+          </li>
+          <li>
+            <Link href="/new-jersey/somerset-county" className="text-[#047857] underline underline-offset-2">
+              Somerset County
+            </Link>
+          </li>
+          <li>
+            <Link href="/new-jersey/union-county" className="text-[#047857] underline underline-offset-2">
+              Union County
+            </Link>
+          </li>
+        </ul>
+      </section>
+
       <section aria-labelledby="counties-heading" className="mt-10">
         <h2 id="counties-heading" className="text-lg font-semibold text-[#0A2540]">
           21-county HMDA intelligence
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-slate-600">
-          County rows use the same 2025 HMDA extract. This page does not create county routes. High or low denial rates
-          are not best or worst counties.
+          County rows use the same 2025 HMDA extract. Monmouth, Middlesex, Somerset, and Union have dedicated county
+          research pages. High or low denial rates are not best or worst counties.
         </p>
         <NewJerseyCountyTable counties={H.counties} />
       </section>

@@ -1,0 +1,291 @@
+{
+  "contract_name": "lender-nj-county-intel-v1",
+  "version": "1.0.0",
+  "geography": "NJ",
+  "county_fips": "34039",
+  "county_name": "Union",
+  "county_slug": "union-county",
+  "path": "/new-jersey/union-county",
+  "publication_status": "published",
+  "parent_state_contract": "lender-nj-state-intel-v1",
+  "parent_state_fingerprint": "0c0a9a68b76262ebcc408317956fd6403d484068be8827e4fa24a188e7e7b125",
+  "ask_research_sha": "f0407c3c659886ba46522a4e023989c1641cab7d",
+  "source_as_of": {
+    "hmda": "HMDA 2025",
+    "njhmfa_dpa": "2026-06-17",
+    "njhmfa_programs": "2026-06-17",
+    "land_records": "2026-01-21",
+    "sheriff": "2026-09-03",
+    "local_housing_resources": "2026-01-14"
+  },
+  "source_clocks": {
+    "hmda_vintage": "2025",
+    "njhmfa_dpa_effective": "2026-06-17",
+    "land_records_index_through": "2026-01-21",
+    "land_records_last_checked": "2026-09-03",
+    "sheriff_last_checked": "2026-09-03",
+    "local_housing_source_as_of": "2026-01-14"
+  },
+  "coverage": {
+    "source_families": [
+      {
+        "family": "HMDA 2025 county slice",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "HMDA 2025",
+        "grain": "county mortgage applications for properties in Union County",
+        "county_specific": false,
+        "authoritative": true
+      },
+      {
+        "family": "NJHMFA DPA geography and homeownership programs",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "2026-06-17",
+        "grain": "county of the property being purchased",
+        "county_specific": false,
+        "authoritative": true
+      },
+      {
+        "family": "Union County Clerk land-record research access",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "2026-01-21",
+        "grain": "official search capability (not a harvested instrument table)",
+        "county_specific": true,
+        "authoritative": true
+      },
+      {
+        "family": "Union County Home Improvement Program and Senior Home Improvement Grant",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "2026-01-14",
+        "grain": "local housing / repair program rules; not mortgage products",
+        "county_specific": true,
+        "authoritative": true
+      },
+      {
+        "family": "Union sheriff-sale structured status snapshot",
+        "coverage": "SOURCE_NOT_ACQUIRED",
+        "as_of": "",
+        "grain": "no clean structured status inventory in the audited county research",
+        "county_specific": true,
+        "authoritative": false
+      },
+      {
+        "family": "NJGIN parcel count for Union County",
+        "coverage": "SOURCE_NOT_ACQUIRED",
+        "as_of": "",
+        "grain": "county parcel count was not computed in this ticket",
+        "county_specific": true,
+        "authoritative": false
+      }
+    ],
+    "authoritative_source_family_count": 4,
+    "county_specific_research_source_count": 2,
+    "meaningful_findings_count": 3,
+    "thin_duplicate_of_state_page": false,
+    "gate_pass": true,
+    "gate_notes": [
+      "Four authoritative source families.",
+      "Two county-specific research sources (Clerk search, local housing/repair programs).",
+      "Sheriff structured snapshot and parcel count are SOURCE_NOT_ACQUIRED and are not shown as zero."
+    ]
+  },
+  "hmda": {
+    "year": 2025,
+    "geo_grain": "county",
+    "state_code": "NJ",
+    "county_fips": "34039",
+    "county_name": "Union",
+    "source": "Committed HMDA New Jersey slice (data/hmda/new-jersey/county_market_summary_nj.csv), Union County row. Properties located in Union County. Not a second national download.",
+    "source_as_of": "HMDA 2025",
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "applications": 16330,
+    "originations": 8654,
+    "denials": 3058,
+    "denial_rate_pct": 18.73,
+    "denial_rate_calculation": "denials / applications * 100, rounded to 2 decimals",
+    "purchase_applications": 6066,
+    "refinance_applications": 5968,
+    "purchase_pct_of_apps": 37.15,
+    "refinance_pct_of_apps": 36.55,
+    "apps_conventional": 13657,
+    "apps_fha": 2294,
+    "apps_va": 370,
+    "apps_usda_other": 9,
+    "conventional_pct": 83.63,
+    "fha_pct": 14.05,
+    "va_pct": 2.27,
+    "usda_other_pct": 0.06,
+    "caveat": "HMDA describes reporting institutions in the statutory HMDA universe for properties located in this county. It does not describe all lending activity. Denial rate is denials divided by applications. It is not a quality score, approval probability, or fair-lending conclusion. Disparity does not prove discrimination."
+  },
+  "njhmfa": {
+    "dpa_group": "12_county",
+    "standard_dpa": 15000,
+    "first_generation": 7000,
+    "combined": 22000,
+    "copy": "Eligible borrowers may qualify for up to $15,000 in NJHMFA Down Payment Assistance, plus $7,000 first-generation assistance where eligible (potential combined up to $22,000).",
+    "caveat": "County of the property does not by itself qualify a borrower. Amounts are 'up to' and require program eligibility. NJHMFA participation is not an endorsement.",
+    "source_effective_on": "2026-06-17",
+    "source": "Smart Start Plus / First Generation fact sheet and current NJHMFA program pages, reused from NJ-LEND-003.",
+    "program_families": [
+      {
+        "program_key": "FIRST_TIME_HOMEBUYER_MORTGAGE",
+        "official_name": "First-Time Homebuyer Mortgage Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "HOMEWARD_BOUND",
+        "official_name": "Homeward Bound Mortgage Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "HFA_ADVANTAGE",
+        "official_name": "HFA Advantage Mortgage Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "DOWN_PAYMENT_ASSISTANCE",
+        "official_name": "NJHMFA Down Payment Assistance Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "SMART_START_PLUS_FIRST_GENERATION",
+        "official_name": "Smart Start Plus / First Generation Down Payment Assistance Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "POLICE_AND_FIREMENS_RETIREMENT_SYSTEM_MORTGAGE",
+        "official_name": "Police and Firemen's Retirement System Mortgage Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      }
+    ]
+  },
+  "land_records": {
+    "system_name": "Union County Clerk Public Land Records (UCPA/DocIndex)",
+    "operator": "Union County Clerk",
+    "access_class": "OPEN_SEARCH_ONLY",
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "source_url": "https://clerk.ucnj.org/UCPA/DocIndex",
+    "info_url": "https://clerk.ucnj.org/",
+    "source_as_of": "2026-01-21",
+    "what_users_can_research": [
+      "name index of recorded instruments from 1977-06-01 through 2026-01-21",
+      "published first-page images for indexed documents",
+      "paper record-room copies historically from 1857"
+    ],
+    "coverage_notes": [
+      "Current index covers 1977-06-01 forward through 2026-01-21.",
+      "Imaging of documents prior to January 1986 is incomplete and must not be treated as an index of zero.",
+      "Full-document online viewing requires a paid registered searcher."
+    ],
+    "not_a_title_report": true,
+    "mortgage_recording_ne_current_balance": true,
+    "lis_pendens_ne_completed_foreclosure": true,
+    "copy": "The Clerk's public name index covers instruments recorded from 1977-06-01 through 2026-01-21. Pre-1986 image coverage is incomplete; that is not a finding of zero older records. A land-record search is not a title report. A recorded mortgage is not a current loan balance.",
+    "scrape_status": "NOT_SCRAPED"
+  },
+  "sheriff": {
+    "coverage_state": "SOURCE_NOT_ACQUIRED",
+    "source_name": "Union County Sheriff foreclosure sales",
+    "source_url": "https://ucnj.org/sheriff/functions/sheriffs-sale-information/",
+    "access_class": "OPEN_SEARCH_ONLY",
+    "source_as_of": "2026-09-03",
+    "listing_count": null,
+    "status_class_counts": null,
+    "completed_sale_count": null,
+    "fields_omitted": [
+      "defendant",
+      "property_address",
+      "plaintiff"
+    ],
+    "semantics": [
+      "No clean structured status snapshot was acquired.",
+      "Missing count is not zero sheriff sales.",
+      "Scheduled is not a completed sale."
+    ],
+    "copy": "Union County publishes sheriff-sale information on the official Sheriff page, typically Wednesday sales. No clean structured status snapshot was acquired for this ticket, so this page does not show a count. Absence of a published count is not evidence of zero sheriff sales."
+  },
+  "property": {
+    "coverage_state": "SOURCE_NOT_ACQUIRED",
+    "source_name": "NJGIN parcel / MOD-IV county filter for Union",
+    "source_url": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/arcgis/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+    "source_as_of": "",
+    "feature_count": null,
+    "parcel_count_ne_housing_unit_count": true,
+    "assessment_ne_appraisal": true,
+    "owner_names_published": false,
+    "daniels_law": "OWNER_NAME is redacted on the public NJGIN web service per Daniel's Law. This page does not publish owner names.",
+    "copy": "A Union County parcel/MOD-IV feature count was not computed in this ticket. That gap is not published as zero parcels. Owner names are not shown."
+  },
+  "local_housing_resources": {
+    "label": "Local housing / repair resources",
+    "not_mortgage_products": true,
+    "source_as_of": "2026-01-14",
+    "source_url": "https://ucnj.org/department-of-economic-development/home-improvement-and-senior-home-improvement-grant-programs/",
+    "programs": [
+      {
+        "program_id": "union-home-improvement-program",
+        "program_name": "Union County Home Improvement Program",
+        "benefit_type": "Deferred payment loan (non-interest; repayment deferred until sale or transfer)",
+        "benefit_amount_published": "up to $24,999",
+        "eligible_property": "Owner-occupied 1- and 2-family homes",
+        "note": "CDBG-funded rehabilitation assistance in participating municipalities. Not a mortgage product and not a Union County contractor license. Amounts are as published on the county page dated 2026-01-14."
+      },
+      {
+        "program_id": "union-senior-home-improvement-grant",
+        "program_name": "Senior Home Improvement Grant",
+        "benefit_type": "Grant (does not have to be repaid)",
+        "benefit_amount_published": "capped at $10,000",
+        "eligible_property": "Same income/property guidelines as the Home Improvement Program, for eligible residents ages 62 and over",
+        "note": "Not a mortgage product. Grant availability is stated only as of the 2026-01-14 county page."
+      }
+    ]
+  },
+  "findings": [
+    {
+      "id": "hmda-mix",
+      "title": "2025 mortgage application mix",
+      "body": "The committed 2025 HMDA county slice recorded 16,330 applications, 8,654 originations, and 3,058 denials for properties in Union County (18.73% denial rate, denials ÷ applications). Purchase applications were 37.15% of applications and refinance applications were 36.55%. Conventional applications were 83.63% of the county mix, with FHA 14.05%, VA 2.27%, and USDA/other 0.06%. Denial rate is not a quality score."
+    },
+    {
+      "id": "njhmfa-dpa",
+      "title": "NJHMFA down-payment geography",
+      "body": "Union is in NJHMFA's 12-county group. Eligible borrowers may qualify for up to $15,000 in Down Payment Assistance, plus $7,000 first-generation assistance where eligible (potential combined up to $22,000). County of the property does not by itself establish borrower eligibility."
+    },
+    {
+      "id": "research-and-repair",
+      "title": "Clerk research access and local housing/repair resources",
+      "body": "The Clerk name index covers 1977-06-01 forward in the current public index; pre-1986 image coverage is incomplete and is not a zero-record finding. Union County's Home Improvement Program and Senior Home Improvement Grant are local housing/repair resources as of the 2026-01-14 county page, not mortgage products. No structured sheriff-sale status snapshot was acquired."
+    }
+  ],
+  "lender_discovery": {
+    "state_catalog_href": "/local-lenders/new-jersey",
+    "county_catalog_href": "/local-lenders/new-jersey/union",
+    "program_finder_href": "/tools/program-finder",
+    "copy": "Use the New Jersey lender catalog and the existing Union County catalog page to research lenders. A headquarters or city listed in this county does not mean the lender serves only this county. HMDA county activity is not a New Jersey license roster. Individual mortgage loan originators are not published from this page.",
+    "hq_in_county_ne_serves_only_county": true,
+    "hmda_activity_ne_license_status": true,
+    "mlo_publication": false
+  },
+  "semantics": [
+    "HMDA != LICENSE ROSTER",
+    "DENIAL RATE != QUALITY",
+    "SHERIFF SALE SCHEDULE != COMPLETED FORECLOSURE",
+    "LIS PENDENS != COMPLETED FORECLOSURE",
+    "MORTGAGE RECORDING != CURRENT BALANCE",
+    "ASSESSMENT != APPRAISAL",
+    "PARCEL COUNT != HOUSEHOLD COUNT",
+    "NJHMFA PARTICIPATION != ENDORSEMENT",
+    "DPA COUNTY != BORROWER ELIGIBILITY",
+    "COUNTY DATA ABSENCE != ZERO"
+  ],
+  "skipped": [
+    "No Clerk scrape or paid-image harvest.",
+    "No fabricated sheriff status counts.",
+    "No Union parcel count invented from NJGIN.",
+    "HIP / Senior grant not labeled as mortgage products.",
+    "No owner names (Daniel's Law).",
+    "No municipality pages.",
+    "No best-lender ranking."
+  ],
+  "fingerprint": "6d0d6c3841dd5c96fb1895a27c79741cb738a12699f10080bca223676fc4a519",
+  "generated_at": "2026-09-03T22:00:00Z"
+}

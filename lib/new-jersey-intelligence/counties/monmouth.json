@@ -1,0 +1,276 @@
+{
+  "contract_name": "lender-nj-county-intel-v1",
+  "version": "1.0.0",
+  "geography": "NJ",
+  "county_fips": "34025",
+  "county_name": "Monmouth",
+  "county_slug": "monmouth-county",
+  "path": "/new-jersey/monmouth-county",
+  "publication_status": "published",
+  "parent_state_contract": "lender-nj-state-intel-v1",
+  "parent_state_fingerprint": "0c0a9a68b76262ebcc408317956fd6403d484068be8827e4fa24a188e7e7b125",
+  "ask_research_sha": "f0407c3c659886ba46522a4e023989c1641cab7d",
+  "source_as_of": {
+    "hmda": "HMDA 2025",
+    "njhmfa_dpa": "2026-06-17",
+    "njhmfa_programs": "2026-06-17",
+    "land_records": "2026-09-03",
+    "sheriff": "2026-09-03",
+    "property": "2026-09-03"
+  },
+  "source_clocks": {
+    "hmda_vintage": "2025",
+    "njhmfa_dpa_effective": "2026-06-17",
+    "land_records_last_checked": "2026-09-03",
+    "sheriff_last_updated_on_page": "2026-09-03 10:00:00 AM",
+    "sheriff_last_checked": "2026-09-03",
+    "property_last_checked": "2026-09-03"
+  },
+  "coverage": {
+    "source_families": [
+      {
+        "family": "HMDA 2025 county slice",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "HMDA 2025",
+        "grain": "county mortgage applications for properties in Monmouth County",
+        "county_specific": false,
+        "authoritative": true
+      },
+      {
+        "family": "NJHMFA DPA geography and homeownership programs",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "2026-06-17",
+        "grain": "county of the property being purchased",
+        "county_specific": false,
+        "authoritative": true
+      },
+      {
+        "family": "Monmouth OPRS land-record research access",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "2026-09-03",
+        "grain": "official search capability (not a harvested instrument table)",
+        "county_specific": true,
+        "authoritative": true
+      },
+      {
+        "family": "Monmouth sheriff-sale status snapshot",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "2026-09-03",
+        "grain": "aggregated listing status counts",
+        "county_specific": true,
+        "authoritative": true
+      },
+      {
+        "family": "NJGIN parcel / MOD-IV county filter",
+        "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+        "as_of": "2026-09-03",
+        "grain": "parcel/MOD-IV feature count; no owner names",
+        "county_specific": true,
+        "authoritative": true
+      }
+    ],
+    "authoritative_source_family_count": 5,
+    "county_specific_research_source_count": 3,
+    "meaningful_findings_count": 3,
+    "thin_duplicate_of_state_page": false,
+    "gate_pass": true,
+    "gate_notes": [
+      "Five authoritative source families.",
+      "Three county-specific research sources (OPRS, sheriff status, NJGIN parcel count).",
+      "Three stored findings covering HMDA mix, NJHMFA DPA geography, and sheriff status."
+    ]
+  },
+  "hmda": {
+    "year": 2025,
+    "geo_grain": "county",
+    "state_code": "NJ",
+    "county_fips": "34025",
+    "county_name": "Monmouth",
+    "source": "Committed HMDA New Jersey slice (data/hmda/new-jersey/county_market_summary_nj.csv), Monmouth County row. Properties located in Monmouth County. Not a second national download.",
+    "source_as_of": "HMDA 2025",
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "applications": 26425,
+    "originations": 15448,
+    "denials": 4341,
+    "denial_rate_pct": 16.43,
+    "denial_rate_calculation": "denials / applications * 100, rounded to 2 decimals",
+    "purchase_applications": 9986,
+    "refinance_applications": 8991,
+    "purchase_pct_of_apps": 37.79,
+    "refinance_pct_of_apps": 34.02,
+    "apps_conventional": 23972,
+    "apps_fha": 1833,
+    "apps_va": 609,
+    "apps_usda_other": 11,
+    "conventional_pct": 90.72,
+    "fha_pct": 6.94,
+    "va_pct": 2.3,
+    "usda_other_pct": 0.04,
+    "caveat": "HMDA describes reporting institutions in the statutory HMDA universe for properties located in this county. It does not describe all lending activity. Denial rate is denials divided by applications. It is not a quality score, approval probability, or fair-lending conclusion. Disparity does not prove discrimination."
+  },
+  "njhmfa": {
+    "dpa_group": "12_county",
+    "standard_dpa": 15000,
+    "first_generation": 7000,
+    "combined": 22000,
+    "copy": "Eligible borrowers may qualify for up to $15,000 in NJHMFA Down Payment Assistance, plus $7,000 first-generation assistance where eligible (potential combined up to $22,000).",
+    "caveat": "County of the property does not by itself qualify a borrower. Amounts are 'up to' and require program eligibility. NJHMFA participation is not an endorsement.",
+    "source_effective_on": "2026-06-17",
+    "source": "Smart Start Plus / First Generation fact sheet and current NJHMFA program pages, reused from NJ-LEND-003.",
+    "program_families": [
+      {
+        "program_key": "FIRST_TIME_HOMEBUYER_MORTGAGE",
+        "official_name": "First-Time Homebuyer Mortgage Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "HOMEWARD_BOUND",
+        "official_name": "Homeward Bound Mortgage Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "HFA_ADVANTAGE",
+        "official_name": "HFA Advantage Mortgage Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "DOWN_PAYMENT_ASSISTANCE",
+        "official_name": "NJHMFA Down Payment Assistance Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "SMART_START_PLUS_FIRST_GENERATION",
+        "official_name": "Smart Start Plus / First Generation Down Payment Assistance Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      },
+      {
+        "program_key": "POLICE_AND_FIREMENS_RETIREMENT_SYSTEM_MORTGAGE",
+        "official_name": "Police and Firemen's Retirement System Mortgage Program",
+        "source_url": "https://www.nj.gov/dca/hmfa/homebuyers-and-renters/homebuyers/"
+      }
+    ]
+  },
+  "land_records": {
+    "system_name": "Monmouth County OPRS",
+    "operator": "Office of Records Management, Monmouth County Clerk",
+    "access_class": "OPEN_SEARCH_ONLY",
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "source_url": "https://oprs.co.monmouth.nj.us/Oprs/Index.aspx",
+    "terms_url": "https://oprs.co.monmouth.nj.us/oprs/TermsOfUse.aspx",
+    "source_as_of": "2026-09-03",
+    "what_users_can_research": [
+      "deeds",
+      "mortgages",
+      "trade names",
+      "block/lot and municipality identification",
+      "consideration / sale price on deed records where present",
+      "Tax Board MOD-IV property information",
+      "Tax Board computerized sales data"
+    ],
+    "not_a_title_report": true,
+    "mortgage_recording_ne_current_balance": true,
+    "lis_pendens_ne_completed_foreclosure": true,
+    "copy": "The official Monmouth OPRS search lets the public look up recorded deeds, mortgages, trade names, block/lot identifiers, and consideration where present, plus Tax Board MOD-IV and sales queries. A land-record search is not a title report. A recorded mortgage is not a current loan balance.",
+    "scrape_status": "NOT_SCRAPED"
+  },
+  "sheriff": {
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "source_name": "CivilView SalesWeb foreclosure listing (Monmouth County Sheriff)",
+    "source_url": "https://salesweb.civilview.com/Sales/SalesSearch?countyId=8",
+    "county_page": "https://mcsonj.org/foreclosure-sales/",
+    "access_class": "OPEN_SEARCH_ONLY",
+    "source_as_of": "2026-09-03",
+    "last_updated_on_page": "2026-09-03 10:00:00 AM",
+    "listing_count": 99,
+    "status_class_counts": {
+      "SCHEDULED_NOT_COMPLETED": 34,
+      "ADJOURNED_NOT_COMPLETED": 62,
+      "BANKRUPTCY_NOT_COMPLETED": 3,
+      "COMPLETED_SALE": 0
+    },
+    "status_counts": {
+      "Scheduled": 34,
+      "Adjournment Defendant": 38,
+      "Adjournment Plaintiff": 17,
+      "Court Ordered Defendant Adjournment": 4,
+      "Court Ordered Plaintiff Adjournment": 3,
+      "Bankrupt": 3
+    },
+    "completed_sale_count": 0,
+    "sale_schedule_note": "Sheriff sales are held every other Monday at 1:00 p.m. at the Monmouth County Sheriff's Office Public Safety Center, 2500 Kozloski Road, Freehold, NJ 07728.",
+    "fields_omitted": [
+      "defendant",
+      "property_address",
+      "plaintiff"
+    ],
+    "semantics": [
+      "Scheduled is not a completed sale.",
+      "Adjourned is not a completed sale.",
+      "Bankruptcy is not a completed sale.",
+      "No Purchased/Sold rows were present on this snapshot.",
+      "CivilView is a public summary listing, not an official record of title."
+    ],
+    "copy": "On the 2026-09-03 CivilView snapshot, 99 listings were present: 34 scheduled, 62 adjourned, 3 bankruptcy-related, and 0 completed sales. A scheduled or adjourned listing is not a completed foreclosure. Defendant names and property addresses are not published here."
+  },
+  "property": {
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "source_name": "NJGIN Parcels and MOD-IV Composite of NJ (Web Mercator), COUNTY='MONMOUTH' filter",
+    "source_url": "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/arcgis/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0",
+    "source_as_of": "2026-09-03",
+    "feature_count": 249796,
+    "count_query": "where=COUNTY='MONMOUTH'&returnCountOnly=true",
+    "parcel_count_ne_housing_unit_count": true,
+    "assessment_ne_appraisal": true,
+    "owner_names_published": false,
+    "daniels_law": "OWNER_NAME is redacted on the public web service per Daniel's Law. This page does not publish owner names.",
+    "copy": "NJGIN reports 249,796 parcel/MOD-IV features in Monmouth County. Parcel count is not a housing-unit or household count. Assessment value is not appraised market value. Owner names are not shown."
+  },
+  "local_housing_resources": null,
+  "findings": [
+    {
+      "id": "hmda-mix",
+      "title": "2025 mortgage application mix",
+      "body": "The committed 2025 HMDA county slice recorded 26,425 applications, 15,448 originations, and 4,341 denials for properties in Monmouth County (16.43% denial rate, denials ÷ applications). Purchase applications were 37.79% of applications and refinance applications were 34.02%. Conventional applications were 90.72% of the county mix, with FHA 6.94%, VA 2.30%, and USDA/other 0.04%. Denial rate is not a quality score."
+    },
+    {
+      "id": "njhmfa-dpa",
+      "title": "NJHMFA down-payment geography",
+      "body": "Monmouth is in NJHMFA's 12-county group. Eligible borrowers may qualify for up to $15,000 in Down Payment Assistance, plus $7,000 first-generation assistance where eligible (potential combined up to $22,000). County of the property does not by itself establish borrower eligibility."
+    },
+    {
+      "id": "sheriff-status",
+      "title": "Sheriff-sale status snapshot, not completed-foreclosure counts",
+      "body": "The 2026-09-03 CivilView listing had 99 rows: 34 scheduled, 62 adjourned, 3 bankrupt, and 0 completed sales. Scheduled, adjourned, and bankruptcy statuses are not completed sales. This is a status inventory, not a foreclosure marketing list."
+    }
+  ],
+  "lender_discovery": {
+    "state_catalog_href": "/local-lenders/new-jersey",
+    "county_catalog_href": "/local-lenders/new-jersey/monmouth",
+    "program_finder_href": "/tools/program-finder",
+    "copy": "Use the New Jersey lender catalog and the existing Monmouth County catalog page to research lenders. A headquarters or city listed in this county does not mean the lender serves only this county. HMDA county activity is not a New Jersey license roster. Individual mortgage loan originators are not published from this page.",
+    "hq_in_county_ne_serves_only_county": true,
+    "hmda_activity_ne_license_status": true,
+    "mlo_publication": false
+  },
+  "semantics": [
+    "HMDA != LICENSE ROSTER",
+    "DENIAL RATE != QUALITY",
+    "SHERIFF SALE SCHEDULE != COMPLETED FORECLOSURE",
+    "LIS PENDENS != COMPLETED FORECLOSURE",
+    "MORTGAGE RECORDING != CURRENT BALANCE",
+    "ASSESSMENT != APPRAISAL",
+    "PARCEL COUNT != HOUSEHOLD COUNT",
+    "NJHMFA PARTICIPATION != ENDORSEMENT",
+    "DPA COUNTY != BORROWER ELIGIBILITY",
+    "COUNTY DATA ABSENCE != ZERO"
+  ],
+  "skipped": [
+    "No OPRS scrape or deed-image harvest.",
+    "No defendant names or sheriff-sale addresses.",
+    "No owner names (Daniel's Law).",
+    "No municipality pages.",
+    "No best-lender ranking."
+  ],
+  "fingerprint": "6c2ce48cb6cdcd308cb92f51fdbd7fdca12fd2d86e2438fcfc6dc69445f1d39f",
+  "generated_at": "2026-09-03T22:00:00Z"
+}

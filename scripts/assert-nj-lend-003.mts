@@ -80,7 +80,11 @@ assert.match(s.complaints.caveat, /not a violation/i);
 assert.match(s.hmda.caveat, /does not prove discrimination/i);
 assert.doesNotMatch(ui, /Trust Score is/);
 assert.doesNotMatch(ui, /best lender|worst county/i);
-assert.doesNotMatch(sitemap, /\/new-jersey\/[a-z]/);
+assert.match(sitemap, /\/new-jersey\/monmouth-county/);
+assert.match(sitemap, /\/new-jersey\/middlesex-county/);
+assert.match(sitemap, /\/new-jersey\/somerset-county/);
+assert.match(sitemap, /\/new-jersey\/union-county/);
+assert.doesNotMatch(sitemap, /\/new-jersey\/[a-z-]+-township/);
 
 const withheld = attachNjProfileEvidence({ matchStatus: 'REVIEW_REQUIRED', nmlsInstitutionId: '3029' });
 assert.equal(withheld.status, 'WITHHELD');
