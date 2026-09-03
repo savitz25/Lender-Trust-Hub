@@ -31,7 +31,7 @@ const toolPage = read('app/tools/loan-estimate-analyzer/page.tsx');
 assert(shareHub.includes("id: 'lender'"), 'SHARE_HUB.id is lender');
 assert(shareHub.includes("host: 'www.lendertrusthub.com'"), 'SHARE_HUB.host');
 assert(shareHub.includes("origin: 'https://www.lendertrusthub.com'"), 'SHARE_HUB.origin');
-assert(shareHub.includes("ogImagePath: '/brand/lender-trust-hub-og.png'"), 'dedicated OG PNG');
+assert(shareHub.includes("ogImagePath: '/opengraph-image'"), 'dynamic canonical OG route');
 assert(shareHub.includes('ogWidth: 1200') && shareHub.includes('ogHeight: 630'), '1200×630');
 assert(shareHub.includes("twitterCard: 'summary_large_image'"), 'twitter large');
 assert(!shareHub.includes('logo-header.png'), 'share hub is not the header logo');
@@ -50,8 +50,8 @@ assert(!/https:\/\/www\.(ask|move|insurance|contractor|senior|investor)trusthub\
 assert(lenderPage.includes('www.lendertrusthub.com'), 'lender page canonical is Lender host');
 assert(toolPage.includes('www.lendertrusthub.com'), 'tool page canonical is Lender host');
 
-const card = pngSize('public/brand/lender-trust-hub-og.png');
-assert(card.width === 1200 && card.height === 630, `OG PNG is 1200×630, got ${card.width}×${card.height}`);
+const cardSource = read('app/opengraph-image.tsx');
+assert(cardSource.includes('width: 1200') && cardSource.includes('height: 630'), 'dynamic OG is 1200×630');
 
 if (failures.length) {
   console.error('SHARE-002 Lender assertions failed:');
