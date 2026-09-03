@@ -50,7 +50,14 @@ assert.match(runbook, /hidcrbexurginnuqgipx/);
 assert.match(recon, /lender_program_participations/);
 assert.match(gitignore, /data\/nj-raw\//);
 assert.doesNotMatch(robots, /disallow:\s*['"]\/new-jersey/);
-assert.doesNotMatch(sitemap, /\/new-jersey\/[a-z]/);
+for (const countyPath of [
+  '/new-jersey/monmouth-county',
+  '/new-jersey/middlesex-county',
+  '/new-jersey/somerset-county',
+  '/new-jersey/union-county',
+]) {
+  assert.match(sitemap, new RegExp(countyPath));
+}
 assert.equal(existsSync('.vercel/project.json'), false);
 assert.match(tests, /broker_ne_lender/);
 assert.match(tests, /qi_not_company/);
