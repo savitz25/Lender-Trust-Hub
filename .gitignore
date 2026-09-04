@@ -66,6 +66,9 @@ __pycache__/
 # CA-LEND-001 raw CalHFA HTML / CRMLA PDF — never commit large acquisitions
 data/raw/california/
 
+# TX-LEND-001 raw SML CSV / PDFs / program HTML — never commit large acquisitions
+data/raw/texas/
+
 # NJ-LEND-001 raw DOBI HTML/PDF corpus — never commit large acquisitions
 data/raw/nj_dobi/
 data/generated/nj-lend-001/occurrences.json

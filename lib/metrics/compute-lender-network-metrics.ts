@@ -55,6 +55,11 @@ export type LenderNetworkMetricsInput = {
   caCalhfaDirectoryRows: number;
   caCrmlaRosterCoverage: 'SOURCE_NOT_ACQUIRED';
   caCalhfaSourceAsOf: string;
+  txHmdaApplications: number;
+  txHmdaOriginations: number;
+  txSmlOrders: number;
+  txLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+  txSmlSourceAsOf: string;
   servicerEvidenceRows: number;
   licensesTotal: number;
 };
@@ -157,19 +162,32 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.licensesTotal === input.institutions) {
     throw new Error('license rows must not equal institutions');
   }
-  for (const path of ['/florida', '/new-jersey', '/california']) {
+  for (const path of ['/florida', '/new-jersey', '/california', '/texas']) {
     if (!input.publishedStateIntelligencePaths.includes(path)) {
       throw new Error(`state intelligence path missing: ${path}`);
     }
   }
-  if (input.njCountyIntelligencePages === input.publishedStateIntelligencePaths.length) {
-    throw new Error('NJ county pages must not equal published state intelligence pages');
+  if (input.publishedStateIntelligencePaths.some((p) => p.includes('-county'))) {
+    throw new Error('county routes must not be counted as state intelligence pages');
+  }
+  if (input.njCountyIntelligencePages !== 4) {
+    throw new Error('NJ county pages must remain 4');
   }
   if (input.njRmlaRosterCoverage !== 'SOURCE_AVAILABLE_BY_REQUEST') {
     throw new Error('NJ RMLA roster remains request-only');
   }
   if (input.caCrmlaRosterCoverage !== 'SOURCE_NOT_ACQUIRED') {
     throw new Error('CA CRMLA live roster remains not acquired');
+  }
+  if (input.txLiveRosterCoverage !== 'SOURCE_NOT_ACQUIRED') {
+    throw new Error('TX live mortgage-company roster remains not acquired');
+  }
+  const txCounty = input.geography.find((row) => row.state === 'TX')?.applications ?? 0;
+  if (txCounty === input.txHmdaApplications && txCounty !== 0) {
+    throw new Error('Texas county-grain national aggregate must not equal the TX state-intelligence slice');
+  }
+  if (input.txSmlOrders === input.txHmdaApplications) {
+    throw new Error('SML orders must not equal Texas HMDA applications');
   }
 }
 
@@ -181,6 +199,7 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
     input.flOfrSourceAsOf,
     input.njDobiSourceAsOf,
     input.caCalhfaSourceAsOf,
+    input.txSmlSourceAsOf,
   ]
     .filter(Boolean)
     .map((d) => d.slice(0, 10))
@@ -553,20 +572,66 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       ),
     }),
     metric({
+      key: 'tx_sml_live_roster',
+      label: 'Texas live mortgage-company roster',
+      value: null,
+      valueState: 'NOT_ACQUIRED',
+      grain: 'tx_sml_live_roster',
+      denominator: 'Live Texas mortgage-company roster — SOURCE_NOT_ACQUIRED',
+      description: 'No bulk live Texas mortgage-company roster was acquired. Complete licensed-company count is UNKNOWN, not zero.',
+      coverage: 'Texas',
+      contributingSourceSystems: ['tx_sml_nmls'],
+      sourceAsOf: input.txSmlSourceAsOf.slice(0, 10),
+      generatedAt,
+      publicationStatus: 'PUBLIC_UNKNOWN',
+      trace: commonTrace(
+        'Nothing numeric is published for the live Texas mortgage-company universe.',
+        'Not SML order rows. Not Texas HMDA applications. Not the 2024 SML dated entity count.',
+        ['tx_sml_nmls'],
+        'Texas',
+        'CURRENT_TEXAS_MORTGAGE_COMPANY_BULK_ROSTER SOURCE_NOT_ACQUIRED',
+        {
+          whyUnknown:
+            'Texas does not currently publish a Florida-OFR-style free complete mortgage-company bulk roster. NMLS Consumer Access was not scraped. Missing is not zero.',
+        },
+      ),
+    }),
+    metric({
+      key: 'tx_sml_orders',
+      label: 'Texas SML enforcement orders (acquired)',
+      value: input.txSmlOrders,
+      valueState: 'KNOWN',
+      grain: 'tx_sml_order',
+      denominator: 'SML enforcement-order CSV rows in the published Texas snapshot',
+      description: 'Acquired SML orders. Order count is not quality. Name-only rows are not a live roster.',
+      coverage: 'Texas — SML orders file',
+      contributingSourceSystems: ['tx_sml'],
+      sourceAsOf: input.txSmlSourceAsOf.slice(0, 10),
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        'SML enforcement CSV order rows.',
+        'Not the live licensed-company universe. Not HMDA. Not CFPB complaints.',
+        ['tx_sml'],
+        'Texas',
+        `SML orders file ${input.txSmlSourceAsOf.slice(0, 10)}`,
+      ),
+    }),
+    metric({
       key: 'published_state_intelligence_pages',
       label: 'Published state mortgage-intelligence pages',
       value: input.publishedStateIntelligencePaths.length,
       valueState: 'KNOWN',
       grain: 'published_state_intelligence_page',
       denominator: 'Indexable specialist state intelligence routes currently published',
-      description: 'Florida, New Jersey, and California state intelligence pages. Not a count of lenders.',
+      description: 'Florida, New Jersey, California, and Texas state intelligence pages. Not a count of lenders.',
       coverage: input.publishedStateIntelligencePaths.join(', '),
       contributingSourceSystems: ['lender-state-intel'],
       sourceAsOf: newestDocumentedSourceAsOf,
       generatedAt,
       publicationStatus: 'PUBLIC',
       trace: commonTrace(
-        'Published /florida, /new-jersey, and /california intelligence routes.',
+        'Published /florida, /new-jersey, /california, and /texas intelligence routes.',
         'Not NJ county pages and not national directory rows.',
         ['lender-state-intel'],
         input.publishedStateIntelligencePaths.join(', '),
@@ -605,6 +670,9 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
     caApps: input.caHmdaApplications,
     caCalhfa: input.caCalhfaDirectoryRows,
     caRoster: input.caCrmlaRosterCoverage,
+    txApps: input.txHmdaApplications,
+    txOrders: input.txSmlOrders,
+    txRoster: input.txLiveRosterCoverage,
     paths: input.publishedStateIntelligencePaths,
     njCounties: input.njCountyIntelligencePages,
   };
@@ -673,6 +741,13 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       crmlaRosterCoverage: input.caCrmlaRosterCoverage,
       liveCrmlaUniverse: null,
     },
+    texas: {
+      hmdaApplications: input.txHmdaApplications,
+      hmdaOriginations: input.txHmdaOriginations,
+      smlOrders: input.txSmlOrders,
+      liveRosterCoverage: input.txLiveRosterCoverage,
+      liveLicensedCompanyUniverse: null,
+    },
     publication: {
       nationalRender: input.publicRender,
       nationalIndex: input.publicIndex,
@@ -708,6 +783,10 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       },
       {
         total: 'CA CRMLA live roster = 0',
+        reason: 'SOURCE_NOT_ACQUIRED. Missing is not zero.',
+      },
+      {
+        total: 'TX live mortgage-company roster = 0',
         reason: 'SOURCE_NOT_ACQUIRED. Missing is not zero.',
       },
       {

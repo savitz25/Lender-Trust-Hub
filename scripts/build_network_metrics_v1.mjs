@@ -80,6 +80,11 @@ async function main() {
     caCalhfaDirectoryRows: pub.caCalhfaDirectoryRows,
     caCrmlaRosterCoverage: pub.caCrmlaRosterCoverage,
     caCalhfaSourceAsOf: pub.caCalhfaSourceAsOf,
+    txHmdaApplications: pub.txHmdaApplications,
+    txHmdaOriginations: pub.txHmdaOriginations,
+    txSmlOrders: pub.txSmlOrders,
+    txLiveRosterCoverage: pub.txLiveRosterCoverage,
+    txSmlSourceAsOf: pub.txSmlSourceAsOf,
     servicerEvidenceRows: prod.servicerEvidenceRows ?? 0,
     licensesTotal: prod.licensesTotal,
   };

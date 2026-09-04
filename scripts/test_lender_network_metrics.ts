@@ -50,7 +50,7 @@ function baseInput(over: Partial<LenderNetworkMetricsInput> = {}): LenderNetwork
     publicRender: 181,
     publicIndex: 180,
     floridaPublic: 130,
-    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california'],
+    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas'],
     njCountyIntelligencePages: 4,
     njHmdaApplications: 318529,
     njHmdaOriginations: 177325,
@@ -62,6 +62,11 @@ function baseInput(over: Partial<LenderNetworkMetricsInput> = {}): LenderNetwork
     caCalhfaDirectoryRows: 1414,
     caCrmlaRosterCoverage: 'SOURCE_NOT_ACQUIRED',
     caCalhfaSourceAsOf: '2026-09-03',
+    txHmdaApplications: 954534,
+    txHmdaOriginations: 524257,
+    txSmlOrders: 3981,
+    txLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED',
+    txSmlSourceAsOf: '2025-10-16',
     servicerEvidenceRows: 10,
     licensesTotal: 164965,
     ...over,
@@ -96,8 +101,11 @@ describe('lender-network-metrics-v1 grain safety', () => {
     assert.equal(metricByKey(m, 'nj_rmla_license_roster').valueState, 'REQUEST_ONLY');
     assert.equal(metricByKey(m, 'ca_crmla_live_roster').value, null);
     assert.equal(metricByKey(m, 'ca_crmla_live_roster').valueState, 'NOT_ACQUIRED');
+    assert.equal(metricByKey(m, 'tx_sml_live_roster').value, null);
+    assert.equal(metricByKey(m, 'tx_sml_live_roster').valueState, 'NOT_ACQUIRED');
     assert.match(metricByKey(m, 'nj_rmla_license_roster').trace.whyUnknown ?? '', /never render as zero/i);
     assert.match(metricByKey(m, 'ca_crmla_live_roster').trace.whyUnknown ?? '', /not bulk-acquired/i);
+    assert.match(metricByKey(m, 'tx_sml_live_roster').trace.whyUnknown ?? '', /not zero/i);
   });
 
   it('keeps Florida OFR credentials, confirmed NMLS, held, unresolved, and public cohort apart', () => {
@@ -130,7 +138,7 @@ describe('lender-network-metrics-v1 grain safety', () => {
     assert.match(m.newestDocumentedSourceAsOfNote, /not Git/i);
   });
 
-  it('requires published FL/NJ/CA paths and does not treat county pages as state pages', () => {
+  it('requires published FL/NJ/CA/TX paths and does not treat county pages as state pages', () => {
     assert.throws(
       () => computeLenderNetworkMetrics(baseInput({ publishedStateIntelligencePaths: ['/florida'] })),
       /state intelligence path missing/,
@@ -138,6 +146,15 @@ describe('lender-network-metrics-v1 grain safety', () => {
     assert.throws(
       () => computeLenderNetworkMetrics(baseInput({ njCountyIntelligencePages: 3 })),
       /NJ county pages/,
+    );
+    assert.throws(
+      () =>
+        computeLenderNetworkMetrics(
+          baseInput({
+            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/new-jersey/union-county'],
+          }),
+        ),
+      /county routes/,
     );
   });
 });

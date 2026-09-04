@@ -101,6 +101,14 @@ export const LENDER_TOOLS = {
       cta: 'Open California research',
     },
     {
+      id: 'texas-research',
+      title: 'Texas research',
+      description:
+        '2025 HMDA Texas activity, SML enforcement orders with exact NMLS identity, and TDHCA/TSAHC homebuyer programs. Not a ranking.',
+      href: '/texas',
+      cta: 'Open Texas research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
@@ -220,7 +228,8 @@ export const LENDER_PATHWAYS = {
     { label: 'New Jersey research', href: '/new-jersey' },
     { label: 'California research', href: '/california' },
     { label: 'California catalog', href: '/local-lenders/california' },
-    { label: 'Texas', href: '/local-lenders/texas' },
+    { label: 'Texas research', href: '/texas' },
+    { label: 'Texas catalog', href: '/local-lenders/texas' },
     { label: 'New York', href: '/local-lenders/new-york' },
     { label: 'Arizona', href: '/local-lenders/arizona' },
     { label: 'Illinois', href: '/local-lenders/illinois' },
@@ -343,6 +352,7 @@ export const LENDER_FOOTER_COLUMNS = [
       { href: '/florida', label: 'Florida Research' },
       { href: '/new-jersey', label: 'New Jersey Research' },
       { href: '/california', label: 'California Research' },
+      { href: '/texas', label: 'Texas Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },

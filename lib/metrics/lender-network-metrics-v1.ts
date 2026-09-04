@@ -40,6 +40,8 @@ export type MetricGrain =
   | 'nj_dobi_unique_order'
   | 'ca_crmla_live_roster'
   | 'ca_calhfa_directory_row'
+  | 'tx_sml_live_roster'
+  | 'tx_sml_order'
   | 'published_state_intelligence_page'
   | 'nj_county_intelligence_page'
   | 'servicer_role_evidence_row';
@@ -179,6 +181,13 @@ export type LenderNetworkMetricsV1 = {
     calhfaDirectoryRows: number;
     crmlaRosterCoverage: 'SOURCE_NOT_ACQUIRED';
     liveCrmlaUniverse: null;
+  };
+  texas: {
+    hmdaApplications: number;
+    hmdaOriginations: number;
+    smlOrders: number;
+    liveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+    liveLicensedCompanyUniverse: null;
   };
   publication: {
     nationalRender: number;
