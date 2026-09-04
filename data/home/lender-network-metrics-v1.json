@@ -1,9 +1,9 @@
 {
   "schemaVersion": "lender-network-metrics-v1",
-  "generatedAt": "2026-09-04T17:40:18.233Z",
+  "generatedAt": "2026-09-04T20:16:18.922Z",
   "newestDocumentedSourceAsOf": "2026-09-04",
   "newestDocumentedSourceAsOfNote": "Newest documented official source-effective date among metrics that carry a calendar sourceAsOf. Not the as-of date of every identity row, not Git time, and not deploy time.",
-  "sourceFingerprint": "d2e020441fcfd2bdc0e4a746366b136b50815b252721efe32298ccab52b745bb",
+  "sourceFingerprint": "b4515f8807fbe86f2cc541c58cb0d84ac81aee892ca652cde2f1888524d5caf6",
   "identity": {
     "institutions": 14623,
     "branches": 6682,
@@ -76,6 +76,13 @@
     "liveRosterCoverage": "SOURCE_NOT_ACQUIRED",
     "liveLicensedCompanyUniverse": null
   },
+  "arizona": {
+    "hmdaApplications": 308338,
+    "hmdaOriginations": 183374,
+    "cfpbMortgageComplaints": 10365,
+    "liveRosterCoverage": "SOURCE_NOT_ACQUIRED",
+    "liveLicensedCompanyUniverse": null
+  },
   "publication": {
     "nationalRender": 181,
     "nationalIndex": 180,
@@ -84,13 +91,14 @@
     "searchUnionIsNotNationalHeadline": true
   },
   "network": {
-    "publishedStateIntelligencePages": 5,
+    "publishedStateIntelligencePages": 6,
     "publishedStateIntelligencePaths": [
       "/florida",
       "/new-jersey",
       "/california",
       "/texas",
-      "/washington"
+      "/washington",
+      "/arizona"
     ],
     "njCountyIntelligencePages": 4
   },
@@ -124,6 +132,10 @@
       "reason": "SOURCE_NOT_ACQUIRED. Missing is not zero."
     },
     {
+      "total": "AZ live mortgage-company roster = 0",
+      "reason": "SOURCE_NOT_ACQUIRED. Missing is not zero."
+    },
+    {
       "total": "NJ RMLA roster = 0",
       "reason": "SOURCE_AVAILABLE_BY_REQUEST. Missing is not zero."
     },
@@ -135,7 +147,7 @@
   "homeProjection": {
     "snapshotVersion": "lender-home-intel-snapshot-v2",
     "homepagePublicationVersion": "intel-004-v1",
-    "generated_at": "2026-09-04T17:40:18.233Z",
+    "generated_at": "2026-09-04T20:16:18.922Z",
     "retrievedAt": "2026-09-04",
     "hmdaOfficialAsOf": "2025",
     "hmdaSourceVintage": "HMDA 2025 reporting vintage",
@@ -517,7 +529,7 @@
       "florida_ofr": "2026-08-27",
       "publication": "file-backed INTEL-004 / FL-LEND-006+008"
     },
-    "fingerprint": "d2e020441fcfd2bdc0e4a746366b136b50815b252721efe32298ccab52b745bb"
+    "fingerprint": "b4515f8807fbe86f2cc541c58cb0d84ac81aee892ca652cde2f1888524d5caf6"
   },
   "metrics": [
     {
@@ -534,7 +546,7 @@
         "lender_national_entities"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "One lender_national_entities row with entity_kind institution.",
@@ -562,7 +574,7 @@
         "nmls"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "NMLS_INSTITUTION identifier rows.",
@@ -589,7 +601,7 @@
         "lender_national_entities"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "INTERNAL",
       "trace": {
         "counts": "Branch entity rows.",
@@ -616,7 +628,7 @@
         "lender_national_entities"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "INTERNAL",
       "trace": {
         "counts": "person_mlo entity rows.",
@@ -643,7 +655,7 @@
         "lender_national_entities"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Must remain zero public person-page candidates.",
@@ -671,7 +683,7 @@
         "lend-nat-014"
       ],
       "sourceAsOf": "2026-08-27",
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Rows in the frozen national render cohort.",
@@ -699,7 +711,7 @@
         "lender_hmda_observations"
       ],
       "sourceAsOf": "2025",
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "SUM(applications) on 2025 county-grain LEI observations.",
@@ -727,7 +739,7 @@
         "lender_hmda_observations"
       ],
       "sourceAsOf": "2025",
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "SUM(originations) on 2025 county-grain rows.",
@@ -755,7 +767,7 @@
         "lender_cfpb_complaints"
       ],
       "sourceAsOf": "2026-08-26",
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "One stored mortgage complaint observation row.",
@@ -782,7 +794,7 @@
         "lender_federal_enforcement_events"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "One federal enforcement event row.",
@@ -810,7 +822,7 @@
         "lender_state_licenses"
       ],
       "sourceAsOf": "2026-08-27",
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Approved FL MBR/MLD credential rows.",
@@ -838,7 +850,7 @@
         "lender_state_licenses"
       ],
       "sourceAsOf": "2026-08-27",
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "INTERNAL",
       "trace": {
         "counts": "Distinct approved FL company NMLS with a confirmed institution_id.",
@@ -865,7 +877,7 @@
         "nj_dobi_rmla"
       ],
       "sourceAsOf": "2026-09-02",
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the complete NJ RMLA universe.",
@@ -893,7 +905,7 @@
         "nj_dobi"
       ],
       "sourceAsOf": "2026-09-02",
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC_PARTIAL",
       "trace": {
         "counts": "Unique acquired DOBI order identifiers.",
@@ -920,7 +932,7 @@
         "ca_dfpi_crmla"
       ],
       "sourceAsOf": "2026-09-03",
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the live CRMLA universe.",
@@ -948,7 +960,7 @@
         "calhfa"
       ],
       "sourceAsOf": "2026-09-03",
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "HTML directory rows on the official CalHFA approved-lender listing.",
@@ -975,7 +987,7 @@
         "tx_sml_nmls"
       ],
       "sourceAsOf": "2025-10-16",
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the live Texas mortgage-company universe.",
@@ -1003,7 +1015,7 @@
         "tx_sml"
       ],
       "sourceAsOf": "2025-10-16",
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "SML enforcement CSV order rows.",
@@ -1030,7 +1042,7 @@
         "wa_dfi_nmls"
       ],
       "sourceAsOf": "2026-09-04",
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the live Washington mortgage-company universe.",
@@ -1058,7 +1070,7 @@
         "wa_dfi"
       ],
       "sourceAsOf": "2026-09-04",
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "DFI Consumer Services bounded HTML table rows.",
@@ -1073,27 +1085,82 @@
     },
     {
       "unit": "count",
+      "key": "az_difi_live_roster",
+      "label": "Arizona live mortgage-company roster",
+      "value": null,
+      "valueState": "NOT_ACQUIRED",
+      "grain": "az_difi_live_roster",
+      "denominator": "Live Arizona mortgage-company roster — SOURCE_NOT_ACQUIRED",
+      "description": "No bulk live Arizona mortgage-company roster was acquired. Complete licensed-company count is UNKNOWN, not zero.",
+      "coverage": "Arizona",
+      "contributingSourceSystems": [
+        "az_difi_nmls"
+      ],
+      "sourceAsOf": "2026-09-04",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
+      "publicationStatus": "PUBLIC_UNKNOWN",
+      "trace": {
+        "counts": "Nothing numeric is published for the live Arizona mortgage-company universe.",
+        "doesNotCount": "Not Arizona HMDA applications. Not CFPB complaints. Not DIFI HTML table rows.",
+        "contributingSourceSystems": [
+          "az_difi_nmls"
+        ],
+        "geographicCoverage": "Arizona",
+        "sourceDates": "ARIZONA_LIVE_COMPANY_ROSTER SOURCE_NOT_ACQUIRED",
+        "generationDate": "2026-09-04",
+        "whyUnknown": "Arizona DIFI company verification is search-only. NMLS Consumer Access was not scraped. Missing is not zero."
+      }
+    },
+    {
+      "unit": "count",
+      "key": "az_cfpb_mortgage_complaints",
+      "label": "Arizona CFPB mortgage complaint rows (acquired)",
+      "value": 10365,
+      "valueState": "KNOWN",
+      "grain": "az_cfpb_mortgage_complaint_row",
+      "denominator": "CFPB mortgage product complaints with state = AZ",
+      "description": "Statewide CFPB mortgage complaint overlay. A complaint is not a violation and is not a company ranking.",
+      "coverage": "Arizona — CFPB mortgage product",
+      "contributingSourceSystems": [
+        "cfpb"
+      ],
+      "sourceAsOf": "2026-09-04",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
+      "publicationStatus": "PUBLIC",
+      "trace": {
+        "counts": "CFPB Consumer Complaint Database API, product Mortgage, state AZ.",
+        "doesNotCount": "Not a live licensed-company universe. Not HMDA. Not DIFI orders.",
+        "contributingSourceSystems": [
+          "cfpb"
+        ],
+        "geographicCoverage": "Arizona",
+        "sourceDates": "CFPB overlay retrieved 2026-09-04",
+        "generationDate": "2026-09-04"
+      }
+    },
+    {
+      "unit": "count",
       "key": "published_state_intelligence_pages",
       "label": "Published state mortgage-intelligence pages",
-      "value": 5,
+      "value": 6,
       "valueState": "KNOWN",
       "grain": "published_state_intelligence_page",
       "denominator": "Indexable specialist state intelligence routes currently published",
-      "description": "Florida, New Jersey, California, Texas, and Washington state intelligence pages. Not a count of lenders.",
-      "coverage": "/florida, /new-jersey, /california, /texas, /washington",
+      "description": "Florida, New Jersey, California, Texas, Washington, and Arizona state intelligence pages. Not a count of lenders.",
+      "coverage": "/florida, /new-jersey, /california, /texas, /washington, /arizona",
       "contributingSourceSystems": [
         "lender-state-intel"
       ],
       "sourceAsOf": "2026-09-04",
-      "generatedAt": "2026-09-04T17:40:18.233Z",
+      "generatedAt": "2026-09-04T20:16:18.922Z",
       "publicationStatus": "PUBLIC",
       "trace": {
-        "counts": "Published /florida, /new-jersey, /california, /texas, and /washington intelligence routes.",
+        "counts": "Published /florida, /new-jersey, /california, /texas, /washington, and /arizona intelligence routes.",
         "doesNotCount": "Not NJ county pages and not national directory rows.",
         "contributingSourceSystems": [
           "lender-state-intel"
         ],
-        "geographicCoverage": "/florida, /new-jersey, /california, /texas, /washington",
+        "geographicCoverage": "/florida, /new-jersey, /california, /texas, /washington, /arizona",
         "sourceDates": "Publication gates in specialist catalogs",
         "generationDate": "2026-09-04"
       }

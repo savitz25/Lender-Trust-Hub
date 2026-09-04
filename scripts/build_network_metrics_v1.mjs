@@ -90,6 +90,11 @@ async function main() {
     waDfiEnforcementRows: pub.waDfiEnforcementRows,
     waLiveRosterCoverage: pub.waLiveRosterCoverage,
     waDfiSourceAsOf: pub.waDfiSourceAsOf,
+    azHmdaApplications: pub.azHmdaApplications,
+    azHmdaOriginations: pub.azHmdaOriginations,
+    azCfpbMortgageComplaints: pub.azCfpbMortgageComplaints,
+    azLiveRosterCoverage: pub.azLiveRosterCoverage,
+    azDifiSourceAsOf: pub.azDifiSourceAsOf,
     servicerEvidenceRows: prod.servicerEvidenceRows ?? 0,
     licensesTotal: prod.licensesTotal,
   };

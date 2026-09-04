@@ -72,6 +72,9 @@ data/raw/texas/
 # WA-LEND-001 raw DFI HTML / WSHFC HTML — never commit large acquisitions
 data/raw/washington/
 
+# AZ-LEND-001 raw DIFI/NMLS/program HTML — never commit WAF challenge pages
+data/raw/arizona/
+
 # NJ-LEND-001 raw DOBI HTML/PDF corpus — never commit large acquisitions
 data/raw/nj_dobi/
 data/generated/nj-lend-001/occurrences.json

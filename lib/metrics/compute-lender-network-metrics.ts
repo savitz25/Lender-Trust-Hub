@@ -65,6 +65,11 @@ export type LenderNetworkMetricsInput = {
   waDfiEnforcementRows: number;
   waLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
   waDfiSourceAsOf: string;
+  azHmdaApplications: number;
+  azHmdaOriginations: number;
+  azCfpbMortgageComplaints: number;
+  azLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+  azDifiSourceAsOf: string;
   servicerEvidenceRows: number;
   licensesTotal: number;
 };
@@ -167,7 +172,7 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.licensesTotal === input.institutions) {
     throw new Error('license rows must not equal institutions');
   }
-  for (const path of ['/florida', '/new-jersey', '/california', '/texas', '/washington']) {
+  for (const path of ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona']) {
     if (!input.publishedStateIntelligencePaths.includes(path)) {
       throw new Error(`state intelligence path missing: ${path}`);
     }
@@ -200,6 +205,12 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.waDfiEnforcementRows === input.waHmdaApplications) {
     throw new Error('DFI enforcement rows must not equal Washington HMDA applications');
   }
+  if (input.azLiveRosterCoverage !== 'SOURCE_NOT_ACQUIRED') {
+    throw new Error('AZ live mortgage-company roster remains not acquired');
+  }
+  if (input.azCfpbMortgageComplaints === input.azHmdaApplications) {
+    throw new Error('Arizona CFPB complaints must not equal Arizona HMDA applications');
+  }
 }
 
 export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): LenderNetworkMetricsV1 {
@@ -212,6 +223,7 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
     input.caCalhfaSourceAsOf,
     input.txSmlSourceAsOf,
     input.waDfiSourceAsOf,
+    input.azDifiSourceAsOf,
   ]
     .filter(Boolean)
     .map((d) => d.slice(0, 10))
@@ -676,20 +688,66 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       ),
     }),
     metric({
+      key: 'az_difi_live_roster',
+      label: 'Arizona live mortgage-company roster',
+      value: null,
+      valueState: 'NOT_ACQUIRED',
+      grain: 'az_difi_live_roster',
+      denominator: 'Live Arizona mortgage-company roster — SOURCE_NOT_ACQUIRED',
+      description: 'No bulk live Arizona mortgage-company roster was acquired. Complete licensed-company count is UNKNOWN, not zero.',
+      coverage: 'Arizona',
+      contributingSourceSystems: ['az_difi_nmls'],
+      sourceAsOf: input.azDifiSourceAsOf.slice(0, 10),
+      generatedAt,
+      publicationStatus: 'PUBLIC_UNKNOWN',
+      trace: commonTrace(
+        'Nothing numeric is published for the live Arizona mortgage-company universe.',
+        'Not Arizona HMDA applications. Not CFPB complaints. Not DIFI HTML table rows.',
+        ['az_difi_nmls'],
+        'Arizona',
+        'ARIZONA_LIVE_COMPANY_ROSTER SOURCE_NOT_ACQUIRED',
+        {
+          whyUnknown:
+            'Arizona DIFI company verification is search-only. NMLS Consumer Access was not scraped. Missing is not zero.',
+        },
+      ),
+    }),
+    metric({
+      key: 'az_cfpb_mortgage_complaints',
+      label: 'Arizona CFPB mortgage complaint rows (acquired)',
+      value: input.azCfpbMortgageComplaints,
+      valueState: 'KNOWN',
+      grain: 'az_cfpb_mortgage_complaint_row',
+      denominator: 'CFPB mortgage product complaints with state = AZ',
+      description: 'Statewide CFPB mortgage complaint overlay. A complaint is not a violation and is not a company ranking.',
+      coverage: 'Arizona — CFPB mortgage product',
+      contributingSourceSystems: ['cfpb'],
+      sourceAsOf: input.azDifiSourceAsOf.slice(0, 10),
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        'CFPB Consumer Complaint Database API, product Mortgage, state AZ.',
+        'Not a live licensed-company universe. Not HMDA. Not DIFI orders.',
+        ['cfpb'],
+        'Arizona',
+        `CFPB overlay retrieved ${input.azDifiSourceAsOf.slice(0, 10)}`,
+      ),
+    }),
+    metric({
       key: 'published_state_intelligence_pages',
       label: 'Published state mortgage-intelligence pages',
       value: input.publishedStateIntelligencePaths.length,
       valueState: 'KNOWN',
       grain: 'published_state_intelligence_page',
       denominator: 'Indexable specialist state intelligence routes currently published',
-      description: 'Florida, New Jersey, California, Texas, and Washington state intelligence pages. Not a count of lenders.',
+      description: 'Florida, New Jersey, California, Texas, Washington, and Arizona state intelligence pages. Not a count of lenders.',
       coverage: input.publishedStateIntelligencePaths.join(', '),
       contributingSourceSystems: ['lender-state-intel'],
       sourceAsOf: newestDocumentedSourceAsOf,
       generatedAt,
       publicationStatus: 'PUBLIC',
       trace: commonTrace(
-        'Published /florida, /new-jersey, /california, /texas, and /washington intelligence routes.',
+        'Published /florida, /new-jersey, /california, /texas, /washington, and /arizona intelligence routes.',
         'Not NJ county pages and not national directory rows.',
         ['lender-state-intel'],
         input.publishedStateIntelligencePaths.join(', '),
@@ -734,6 +792,9 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
     waApps: input.waHmdaApplications,
     waOrders: input.waDfiEnforcementRows,
     waRoster: input.waLiveRosterCoverage,
+    azApps: input.azHmdaApplications,
+    azCfpb: input.azCfpbMortgageComplaints,
+    azRoster: input.azLiveRosterCoverage,
     paths: input.publishedStateIntelligencePaths,
     njCounties: input.njCountyIntelligencePages,
   };
@@ -816,6 +877,13 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       liveRosterCoverage: input.waLiveRosterCoverage,
       liveLicensedCompanyUniverse: null,
     },
+    arizona: {
+      hmdaApplications: input.azHmdaApplications,
+      hmdaOriginations: input.azHmdaOriginations,
+      cfpbMortgageComplaints: input.azCfpbMortgageComplaints,
+      liveRosterCoverage: input.azLiveRosterCoverage,
+      liveLicensedCompanyUniverse: null,
+    },
     publication: {
       nationalRender: input.publicRender,
       nationalIndex: input.publicIndex,
@@ -855,6 +923,10 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       },
       {
         total: 'TX live mortgage-company roster = 0',
+        reason: 'SOURCE_NOT_ACQUIRED. Missing is not zero.',
+      },
+      {
+        total: 'AZ live mortgage-company roster = 0',
         reason: 'SOURCE_NOT_ACQUIRED. Missing is not zero.',
       },
       {

@@ -1,0 +1,999 @@
+{
+  "contract_name": "lender-az-state-intel-v1",
+  "version": "1.0.0",
+  "geography": "AZ",
+  "publication_status": "published",
+  "path": "/arizona",
+  "generated_at": "2026-09-04T20:01:33Z",
+  "growth_classification": "INTELLIGENCE_GROWTH_HEAVY",
+  "source_as_of": {
+    "hmda": "HMDA 2025",
+    "difi_enforcement": "OPEN_HTML_TABLE_DOCUMENTED_NOT_HARVESTED",
+    "programs": "2026-09-04T20:01:33Z",
+    "cfpb": "2026-09-04T20:02:50Z",
+    "live_roster": "SOURCE_NOT_ACQUIRED"
+  },
+  "hero": {
+    "universe_label": "HMDA applications",
+    "universe_value": 308338,
+    "universe_hint": "2025 HMDA applications for properties located in Arizona. Not a count of Arizona-licensed mortgage companies.",
+    "current_label": "HMDA originations",
+    "current_value": 183374,
+    "observations_label": "CFPB Arizona mortgage complaint rows",
+    "observations_value": 10365,
+    "geography_label": "Counties in HMDA geography",
+    "geography_value": 15,
+    "as_of_label": "HMDA vintage",
+    "as_of_value": "2025"
+  },
+  "pre_ingest_baseline": {
+    "catalog_arizona_lender_rows": 32,
+    "catalog_note": "Existing /local-lenders/arizona catalog entries. Not a DIFI live roster. Trust Score fields in that catalog are not used on this intelligence page.",
+    "hmda_partition_already_in_repo": true,
+    "hmda_applications_already_present": 308338,
+    "lei_reporter_rows_already_present": 953,
+    "high_confidence_lei_maps_already_present": 141,
+    "canonical_company_vs_nmls_vs_lei": "Kept as distinct identity layers. An Arizona HMDA row is not a new organization."
+  },
+  "clock_reconciliation": {
+    "lender_canonical_source": "data/hmda/by-state/AZ/county_market_summary.csv (summed) plus data/hmda/by-state/index.json",
+    "lender_applications": 308338,
+    "lender_originations": 183374,
+    "lender_denials": 49721,
+    "ask_fallback_applications": 307379,
+    "ask_fallback_originations": 183374,
+    "ask_fallback_denials": 49376,
+    "originations_match": true,
+    "why": "Originations match (183,374). Applications and denials differ because Ask lender-v1-fallback.json is a published network-metrics snapshot, not the live county-sum of the committed Arizona HMDA partition. This ticket uses the LenderTrustHub county-sum as canonical. Ask is not modified. ATH-AZ-002 should refresh Ask from this Lender snapshot.",
+    "which_is_canonical_for_this_ticket": "LenderTrustHub committed Arizona HMDA partition",
+    "ask_is_stale_relative_to_lender_partition": true
+  },
+  "hmda": {
+    "year": 2025,
+    "geo_grain": "state_and_county",
+    "state_code": "AZ",
+    "source": "Committed HMDA Arizona partition data/hmda/by-state/AZ/county_market_summary.csv. Properties located in Arizona. Not a second national download.",
+    "source_as_of": "HMDA 2025",
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "applications": 308338,
+    "originations": 183374,
+    "denials": 49721,
+    "denial_rate_pct": 16.13,
+    "denial_rate_calculation": "denials / applications * 100, rounded to 2 decimals",
+    "purchase_applications": 133513,
+    "refinance_applications": 105498,
+    "purpose_other_applications": 69327,
+    "purchase_pct_of_apps": 43.3,
+    "refinance_pct_of_apps": 34.22,
+    "purpose_other_pct_of_apps": 22.48,
+    "apps_conventional": 224912,
+    "apps_fha": 52160,
+    "apps_va": 30364,
+    "apps_usda_other": 902,
+    "conventional_pct": 72.94,
+    "fha_pct": 16.92,
+    "va_pct": 9.85,
+    "usda_other_pct": 0.29,
+    "orig_conventional": 132955,
+    "orig_fha": 31760,
+    "orig_va": 18040,
+    "orig_usda_other": 619,
+    "county_count": 15,
+    "arizona_county_universe": 15,
+    "all_15_counties": true,
+    "counties": [
+      {
+        "county_fips": "04001",
+        "county_name": "Apache",
+        "applications": 1134,
+        "originations": 459,
+        "denials": 333,
+        "denial_rate_pct": 29.37,
+        "purchase_applications": 647,
+        "refinance_applications": 291,
+        "purpose_other_applications": 196,
+        "purchase_pct_of_apps": 57.05,
+        "refinance_pct_of_apps": 25.66,
+        "apps_conventional": 889,
+        "apps_fha": 120,
+        "apps_va": 117,
+        "apps_usda_other": 8,
+        "conventional_pct": 78.4,
+        "orig_conventional": 335,
+        "orig_fha": 61,
+        "orig_va": 57,
+        "orig_usda_other": 6
+      },
+      {
+        "county_fips": "04003",
+        "county_name": "Cochise",
+        "applications": 5081,
+        "originations": 2817,
+        "denials": 833,
+        "denial_rate_pct": 16.39,
+        "purchase_applications": 1962,
+        "refinance_applications": 2236,
+        "purpose_other_applications": 883,
+        "purchase_pct_of_apps": 38.61,
+        "refinance_pct_of_apps": 44.01,
+        "apps_conventional": 2528,
+        "apps_fha": 878,
+        "apps_va": 1610,
+        "apps_usda_other": 65,
+        "conventional_pct": 49.75,
+        "orig_conventional": 1344,
+        "orig_fha": 478,
+        "orig_va": 955,
+        "orig_usda_other": 40
+      },
+      {
+        "county_fips": "04005",
+        "county_name": "Coconino",
+        "applications": 4891,
+        "originations": 2905,
+        "denials": 783,
+        "denial_rate_pct": 16.01,
+        "purchase_applications": 2206,
+        "refinance_applications": 1711,
+        "purpose_other_applications": 974,
+        "purchase_pct_of_apps": 45.1,
+        "refinance_pct_of_apps": 34.98,
+        "apps_conventional": 4167,
+        "apps_fha": 438,
+        "apps_va": 283,
+        "apps_usda_other": 3,
+        "conventional_pct": 85.2,
+        "orig_conventional": 2494,
+        "orig_fha": 249,
+        "orig_va": 160,
+        "orig_usda_other": 2
+      },
+      {
+        "county_fips": "04007",
+        "county_name": "Gila",
+        "applications": 2477,
+        "originations": 1371,
+        "denials": 431,
+        "denial_rate_pct": 17.4,
+        "purchase_applications": 1052,
+        "refinance_applications": 941,
+        "purpose_other_applications": 484,
+        "purchase_pct_of_apps": 42.47,
+        "refinance_pct_of_apps": 37.99,
+        "apps_conventional": 1809,
+        "apps_fha": 392,
+        "apps_va": 254,
+        "apps_usda_other": 22,
+        "conventional_pct": 73.03,
+        "orig_conventional": 1020,
+        "orig_fha": 203,
+        "orig_va": 137,
+        "orig_usda_other": 11
+      },
+      {
+        "county_fips": "04009",
+        "county_name": "Graham",
+        "applications": 1452,
+        "originations": 846,
+        "denials": 275,
+        "denial_rate_pct": 18.94,
+        "purchase_applications": 608,
+        "refinance_applications": 526,
+        "purpose_other_applications": 318,
+        "purchase_pct_of_apps": 41.87,
+        "refinance_pct_of_apps": 36.23,
+        "apps_conventional": 870,
+        "apps_fha": 404,
+        "apps_va": 124,
+        "apps_usda_other": 54,
+        "conventional_pct": 59.92,
+        "orig_conventional": 471,
+        "orig_fha": 261,
+        "orig_va": 74,
+        "orig_usda_other": 40
+      },
+      {
+        "county_fips": "04011",
+        "county_name": "Greenlee",
+        "applications": 147,
+        "originations": 68,
+        "denials": 29,
+        "denial_rate_pct": 19.73,
+        "purchase_applications": 51,
+        "refinance_applications": 50,
+        "purpose_other_applications": 46,
+        "purchase_pct_of_apps": 34.69,
+        "refinance_pct_of_apps": 34.01,
+        "apps_conventional": 99,
+        "apps_fha": 40,
+        "apps_va": 2,
+        "apps_usda_other": 6,
+        "conventional_pct": 67.35,
+        "orig_conventional": 41,
+        "orig_fha": 23,
+        "orig_va": 1,
+        "orig_usda_other": 3
+      },
+      {
+        "county_fips": "04012",
+        "county_name": "La Paz",
+        "applications": 420,
+        "originations": 197,
+        "denials": 93,
+        "denial_rate_pct": 22.14,
+        "purchase_applications": 177,
+        "refinance_applications": 164,
+        "purpose_other_applications": 79,
+        "purchase_pct_of_apps": 42.14,
+        "refinance_pct_of_apps": 39.05,
+        "apps_conventional": 289,
+        "apps_fha": 68,
+        "apps_va": 59,
+        "apps_usda_other": 4,
+        "conventional_pct": 68.81,
+        "orig_conventional": 139,
+        "orig_fha": 33,
+        "orig_va": 24,
+        "orig_usda_other": 1
+      },
+      {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "applications": 185792,
+        "originations": 111789,
+        "denials": 29912,
+        "denial_rate_pct": 16.1,
+        "purchase_applications": 77090,
+        "refinance_applications": 63611,
+        "purpose_other_applications": 45091,
+        "purchase_pct_of_apps": 41.49,
+        "refinance_pct_of_apps": 34.24,
+        "apps_conventional": 144433,
+        "apps_fha": 27485,
+        "apps_va": 13825,
+        "apps_usda_other": 49,
+        "conventional_pct": 77.74,
+        "orig_conventional": 86793,
+        "orig_fha": 16710,
+        "orig_va": 8257,
+        "orig_usda_other": 29
+      },
+      {
+        "county_fips": "04015",
+        "county_name": "Mohave",
+        "applications": 11266,
+        "originations": 6605,
+        "denials": 1811,
+        "denial_rate_pct": 16.07,
+        "purchase_applications": 5041,
+        "refinance_applications": 4124,
+        "purpose_other_applications": 2101,
+        "purchase_pct_of_apps": 44.75,
+        "refinance_pct_of_apps": 36.61,
+        "apps_conventional": 7618,
+        "apps_fha": 1909,
+        "apps_va": 1632,
+        "apps_usda_other": 107,
+        "conventional_pct": 67.62,
+        "orig_conventional": 4508,
+        "orig_fha": 1095,
+        "orig_va": 924,
+        "orig_usda_other": 78
+      },
+      {
+        "county_fips": "04017",
+        "county_name": "Navajo",
+        "applications": 3878,
+        "originations": 2176,
+        "denials": 638,
+        "denial_rate_pct": 16.45,
+        "purchase_applications": 1783,
+        "refinance_applications": 1405,
+        "purpose_other_applications": 690,
+        "purchase_pct_of_apps": 45.98,
+        "refinance_pct_of_apps": 36.23,
+        "apps_conventional": 2894,
+        "apps_fha": 526,
+        "apps_va": 419,
+        "apps_usda_other": 39,
+        "conventional_pct": 74.63,
+        "orig_conventional": 1643,
+        "orig_fha": 281,
+        "orig_va": 225,
+        "orig_usda_other": 27
+      },
+      {
+        "county_fips": "04019",
+        "county_name": "Pima",
+        "applications": 40133,
+        "originations": 23249,
+        "denials": 6204,
+        "denial_rate_pct": 15.46,
+        "purchase_applications": 17849,
+        "refinance_applications": 13700,
+        "purpose_other_applications": 8584,
+        "purchase_pct_of_apps": 44.47,
+        "refinance_pct_of_apps": 34.14,
+        "apps_conventional": 27207,
+        "apps_fha": 7375,
+        "apps_va": 5534,
+        "apps_usda_other": 17,
+        "conventional_pct": 67.79,
+        "orig_conventional": 15577,
+        "orig_fha": 4364,
+        "orig_va": 3299,
+        "orig_usda_other": 9
+      },
+      {
+        "county_fips": "04021",
+        "county_name": "Pinal",
+        "applications": 29352,
+        "originations": 18081,
+        "denials": 4692,
+        "denial_rate_pct": 15.99,
+        "purchase_applications": 15491,
+        "refinance_applications": 8802,
+        "purpose_other_applications": 5059,
+        "purchase_pct_of_apps": 52.78,
+        "refinance_pct_of_apps": 29.99,
+        "apps_conventional": 17114,
+        "apps_fha": 8375,
+        "apps_va": 3531,
+        "apps_usda_other": 332,
+        "conventional_pct": 58.31,
+        "orig_conventional": 10279,
+        "orig_fha": 5427,
+        "orig_va": 2145,
+        "orig_usda_other": 230
+      },
+      {
+        "county_fips": "04023",
+        "county_name": "Santa Cruz",
+        "applications": 1787,
+        "originations": 952,
+        "denials": 325,
+        "denial_rate_pct": 18.19,
+        "purchase_applications": 665,
+        "refinance_applications": 729,
+        "purpose_other_applications": 393,
+        "purchase_pct_of_apps": 37.21,
+        "refinance_pct_of_apps": 40.79,
+        "apps_conventional": 1115,
+        "apps_fha": 409,
+        "apps_va": 202,
+        "apps_usda_other": 61,
+        "conventional_pct": 62.4,
+        "orig_conventional": 551,
+        "orig_fha": 242,
+        "orig_va": 111,
+        "orig_usda_other": 48
+      },
+      {
+        "county_fips": "04025",
+        "county_name": "Yavapai",
+        "applications": 12618,
+        "originations": 7253,
+        "denials": 2071,
+        "denial_rate_pct": 16.41,
+        "purchase_applications": 5375,
+        "refinance_applications": 4334,
+        "purpose_other_applications": 2909,
+        "purchase_pct_of_apps": 42.6,
+        "refinance_pct_of_apps": 34.35,
+        "apps_conventional": 9584,
+        "apps_fha": 1683,
+        "apps_va": 1337,
+        "apps_usda_other": 14,
+        "conventional_pct": 75.95,
+        "orig_conventional": 5490,
+        "orig_fha": 976,
+        "orig_va": 776,
+        "orig_usda_other": 11
+      },
+      {
+        "county_fips": "04027",
+        "county_name": "Yuma",
+        "applications": 7910,
+        "originations": 4606,
+        "denials": 1291,
+        "denial_rate_pct": 16.32,
+        "purchase_applications": 3516,
+        "refinance_applications": 2874,
+        "purpose_other_applications": 1520,
+        "purchase_pct_of_apps": 44.45,
+        "refinance_pct_of_apps": 36.33,
+        "apps_conventional": 4296,
+        "apps_fha": 2058,
+        "apps_va": 1435,
+        "apps_usda_other": 121,
+        "conventional_pct": 54.31,
+        "orig_conventional": 2270,
+        "orig_fha": 1357,
+        "orig_va": 895,
+        "orig_usda_other": 84
+      }
+    ],
+    "lei_reporter_rows": 953,
+    "lei_reporters_with_exact_nmls": 123,
+    "high_confidence_lei_maps": 141,
+    "index_json_applications": 308338,
+    "index_json_originations": 183374,
+    "index_json_lei_state_rows": 953,
+    "index_json_lender_county_rows": 4179,
+    "top_reporters_by_applications": [
+      {
+        "lei": "549300HW662MN1WU8550",
+        "applications": 25383,
+        "originations": 19328,
+        "institution_name": "United Wholesale Mortgage, LLC",
+        "nmls_id": "3038",
+        "our_lender_slug": "united-wholesale-mortgage",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300FGXN1K3HLB1R50",
+        "applications": 18094,
+        "originations": 13320,
+        "institution_name": "Rocket Mortgage, LLC",
+        "nmls_id": "3030",
+        "our_lender_slug": "rocket-mortgage",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300HFXTV55C2HHM89",
+        "applications": 16970,
+        "originations": 10566,
+        "institution_name": "DESERT FINANCIAL CREDIT UNION",
+        "nmls_id": "430888",
+        "our_lender_slug": "desert-financial-credit-union",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300VZVN841I2ILS84",
+        "applications": 7570,
+        "originations": 4945,
+        "institution_name": "CROSSCOUNTRY MORTGAGE, LLC",
+        "nmls_id": "3029",
+        "our_lender_slug": "crosscountry-mortgage-west-valley",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300MGPZBLQDIL7538",
+        "applications": 6835,
+        "originations": 4724,
+        "institution_name": "FAIRWAY INDEPENDENT MORTGAGE CORPORATION",
+        "nmls_id": "2909",
+        "our_lender_slug": "fairway-mortgage-augusta-sheppard",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "B4TYDEB6GKMZO031MB27",
+        "applications": 6229,
+        "originations": 2582,
+        "institution_name": "Bank of America, National Association",
+        "nmls_id": "399802",
+        "our_lender_slug": "bank-of-america-mortgage-west-valley",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300AG64NHILB7ZP05",
+        "applications": 6180,
+        "originations": 4138,
+        "institution_name": "LOANDEPOT.COM, LLC",
+        "nmls_id": "174457",
+        "our_lender_slug": "loandepot",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "RVDPPPGHCGZ40J4VQ731",
+        "applications": 5838,
+        "originations": 3232,
+        "institution_name": "PENNYMAC LOAN SERVICES, LLC",
+        "nmls_id": "35953",
+        "our_lender_slug": "pennymac",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300LYRWPSYPK6S325",
+        "applications": 4991,
+        "originations": 2123,
+        "institution_name": "FREEDOM MORTGAGE CORPORATION",
+        "nmls_id": "2767",
+        "our_lender_slug": "freedom-mortgage",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300HIVO8XPBPNVG69",
+        "applications": 4932,
+        "originations": 3413,
+        "institution_name": "NOVA FINANCIAL & INVESTMENT CORPORATION",
+        "nmls_id": "3089",
+        "our_lender_slug": "nova-home-loans-west-valley",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300FNXYY540N23N64",
+        "applications": 4922,
+        "originations": 1845,
+        "institution_name": "Newrez LLC",
+        "nmls_id": "2289",
+        "our_lender_slug": "newrez",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300AQ3T62GXDU7D76",
+        "applications": 4898,
+        "originations": 3467,
+        "institution_name": "GUILD MORTGAGE COMPANY LLC",
+        "nmls_id": "3274",
+        "our_lender_slug": "guild-mortgage-west-valley",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300PIL8LFAQ04XC20",
+        "applications": 4706,
+        "originations": 1610,
+        "institution_name": "Better Mortgage Corporation",
+        "nmls_id": "330511",
+        "our_lender_slug": "better-mortgage",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "7H6GLXDRUGQFU57RNE97",
+        "applications": 4573,
+        "originations": 2864,
+        "institution_name": "JPMorgan Chase Bank, National Association",
+        "nmls_id": "399798",
+        "our_lender_slug": "jpmorgan-chase-bank",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "5493003GQDUH26DNNH17",
+        "applications": 4421,
+        "originations": 1960,
+        "institution_name": "Navy Federal Credit Union",
+        "nmls_id": "399807",
+        "our_lender_slug": "navy-federal-jacksonville",
+        "identity": "EXACT_LEI_AND_NMLS"
+      }
+    ],
+    "denial_reasons": null,
+    "denial_reasons_coverage": "SOURCE_NOT_AVAILABLE_IN_COMMITTED_EXTRACT",
+    "caveat": "HMDA is a mortgage-application filing extract for properties located in Arizona. It is not an Arizona DIFI license roster, not a quality ranking, and the denial rate does not prove discrimination. An HMDA reporter is not an Arizona-licensed company. An Arizona office or HQ on an HMDA reporter is geography, not licensing.",
+    "omitted": {
+      "median_loan_amount": "Not present in the committed 2025 AZ county summary extract.",
+      "denial_reasons": "SOURCE_NOT_AVAILABLE_IN_COMMITTED_EXTRACT"
+    }
+  },
+  "difi_enforcement": {
+    "source": "Arizona DIFI Enforcement Actions HTML table",
+    "agency": "Arizona Department of Insurance and Financial Institutions",
+    "url": "https://difi.az.gov/enforcement-actions",
+    "grain": "enforcement_order",
+    "identity_bar": "EXACT_NMLS_OR_DIFI_LICENSE_FOR_ADVERSE_ATTACH",
+    "mixes_domains": true,
+    "http_status": 403,
+    "result": "SOURCE_ACCESS_BLOCKED",
+    "coverage_state": "OPEN_HTML_TABLE_DOCUMENTED_NOT_HARVESTED",
+    "order_rows": null,
+    "lender_relevant_rows": null,
+    "exact_nmls_rows": null,
+    "exact_difi_license_rows": null,
+    "exact_other_official_id_rows": null,
+    "review_required_rows": null,
+    "unsafe_name_only_rows": null,
+    "distinct_exact_nmls": null,
+    "name_only_identity": "UNSAFE_FOR_ADVERSE_PROFILE_ATTACH",
+    "header_documented": [
+      "Order Document",
+      "In the Matter Of",
+      "Order Type",
+      "License Type",
+      "Enforcement Type",
+      "Filed Date"
+    ],
+    "native_order_types_documented": [
+      "Consent Order",
+      "Order",
+      "Nunc Pro Tunc"
+    ],
+    "native_enforcement_types_documented": [
+      "Revocation",
+      "Withdrawal",
+      "Penalty",
+      "Merger",
+      "License Denial",
+      "Acquisition"
+    ],
+    "filter_rule": "Lender-relevant rows must use source-native License Type matching mortgage banker/broker, commercial mortgage, registered exempt, loan originator, or adjacent financial-enterprise classes. Do not infer from company name. Insurance Producer / Insurance Company / Bail Bond / Surplus Lines / Title Agent rows are INSURANCE, not Lender publication.",
+    "documented_first_page_note": "ATH-AZ-001 browser retrieval of the official table showed recent rows dominated by insurance License Type (Insurance Producer, Insurance Company, Bail Bond Agent, Surplus Lines Broker, Title Agent, Service Company) with NPN, NAIC, or SBS numbers. Automated harvest this ticket received HTTP 403/WAF. Total table size and lender-relevant row counts remain UNKNOWN, not zero.",
+    "not_a_license_roster": true,
+    "publication_eligibility": "PUBLIC_STATE_PAGE_METHOD_AND_LIMITATION_ONLY",
+    "caveat": "DIFI enforcement mixes insurance and financial-enterprise domains. The live HTML table was not bulk-harvested this ticket because of a WAF/403. Missing harvest is unknown, not zero. NOTICE is not a final order. Charges are not a final finding. Order is not a complaint. Penalty is not consumer loss. Action count is not quality. Exact NMLS or DIFI license is required for adverse profile attachment. Name-only is UNSAFE. NPN/NAIC rows are insurance identity, not mortgage NMLS."
+  },
+  "programs": {
+    "retrieved_at": "2026-09-04T20:01:33Z",
+    "pages": {
+      "adoh_home": {
+        "url": "https://housing.az.gov/",
+        "http_status": 403,
+        "bytes": 5618,
+        "sha256": null
+      },
+      "adoh_home_plus": {
+        "url": "https://housing.az.gov/general-public/home-plus",
+        "http_status": 403,
+        "bytes": 5754,
+        "sha256": null
+      },
+      "azida_homeplus": {
+        "url": "https://arizonaida.com/homeplusdpa/",
+        "http_status": 200,
+        "bytes": 181538,
+        "sha256": "d90131f12b4b97e851332d096f528745ec2d35785b31fa7d6aa9e138bbe00e36"
+      },
+      "azida_home": {
+        "url": "https://arizonaida.com/",
+        "http_status": 200,
+        "bytes": 217991,
+        "sha256": "06e1a1ca780d58143cfa513ca65c8f74072c140368d56970ed3a56a8e0fb13a0"
+      },
+      "homeplusaz": {
+        "url": "https://homeplusaz.com/home-plus-dpa/",
+        "http_status": 200,
+        "bytes": 513518,
+        "sha256": "44d4911871f164eb8e576b0f3a5b5906c48e6805d103f84b055a60d1455956eb"
+      }
+    },
+    "application_path": "HOME Plus and Arizona Is Home require a participating lender. They do not replace mortgage underwriting. Program eligibility is not approval. Phoenix / Maricopa-only programs such as Home in Five are out of scope on this state page.",
+    "items": [
+      {
+        "name": "HOME Plus",
+        "agency": "Arizona Industrial Development Authority (published via Arizona Department of Housing)",
+        "type": "first_mortgage_and_down_payment_assistance",
+        "assistance": "Statewide down-payment and closing-cost assistance paired with a 30-year fixed-rate mortgage. Official ADOH page: the only state-run statewide home-buyer DPA program in Arizona, available in every county, city, and ZIP code.",
+        "maximum": "Official Arizona IDA / Home Plus materials describe up to 4% down-payment and closing-cost assistance. Confirm current options with a participating lender.",
+        "eligibility": "Official materials: not limited to first-time buyers in all setups; income cap and credit-score rules apply as published. One borrower completes homebuyer education. Eligibility is not approval.",
+        "income_purchase_limits": "Official Home Plus materials retrieved this snapshot list a statewide borrower income cap of $155,386 as of April 6, 2026. Confirm current figures on official pages.",
+        "first_time_buyer": false,
+        "participating_lender_required": true,
+        "status": "Documented on official Arizona IDA Home Plus pages retrieved this snapshot. ADOH housing.az.gov returned 403 to the automated client; Arizona IDA pages returned HTTP 200.",
+        "source_url": "https://arizonaida.com/homeplusdpa/",
+        "source_date": "Official page retrieval 2026-09-04"
+      },
+      {
+        "name": "Arizona Is Home",
+        "agency": "Arizona Industrial Development Authority",
+        "type": "first_mortgage_and_down_payment_assistance",
+        "assistance": "Statewide first-time homebuyer program funded with tax-exempt bonds, with down-payment assistance as published by Arizona IDA.",
+        "maximum": "Confirm current assistance percentage and funding availability on official Arizona IDA / Home Plus operator pages. 2026 program materials describe an annual funding cap.",
+        "eligibility": "Official materials: first-time homebuyers. County AMI limits apply. Eligibility is not approval.",
+        "income_purchase_limits": "County AMI tables are published by Arizona IDA and change. Confirm current county figures. Not copied here as a guaranteed underwriting limit.",
+        "first_time_buyer": true,
+        "participating_lender_required": true,
+        "status": "Documented as a current statewide Arizona IDA program on official pages retrieved this snapshot.",
+        "source_url": "https://arizonaida.com/",
+        "source_date": "Official page retrieval 2026-09-04"
+      }
+    ],
+    "verified_family_count": 2,
+    "caveat": "Program terms change. Eligibility is not guaranteed approval. Headline amounts are official-page formulas, not a promise of funds. City or county local DPA is not inventoried on this state page."
+  },
+  "live_roster": {
+    "CURRENT_ARIZONA_MORTGAGE_COMPANY_BULK_ROSTER": "SOURCE_NOT_ACQUIRED",
+    "ARIZONA_LIVE_COMPANY_ROSTER": "SOURCE_NOT_ACQUIRED / OPEN_SEARCH_ONLY",
+    "live_licensed_company_denominator": "UNKNOWN",
+    "nmls_consumer_access": "OPEN_SEARCH_ONLY \u2014 not scraped",
+    "thentia": "FREE_ACCOUNT_REQUIRED / licensee login \u2014 not used",
+    "difi_csv_found": false,
+    "pages": {
+      "license_search": {
+        "url": "https://difi.az.gov/license-search",
+        "http_status": 403,
+        "bytes": 5678,
+        "looks_like_csv": false,
+        "access": "OPEN_SEARCH_ONLY (WAF 403 on automated client; official page exists)"
+      },
+      "mortgage": {
+        "url": "https://difi.az.gov/licensing/mortgage-lending",
+        "http_status": 403,
+        "bytes": 5736,
+        "looks_like_csv": false,
+        "access": "OPEN_SEARCH_ONLY / NMLS path (WAF 403 on automated client; official page exists)"
+      },
+      "financial_enterprises": {
+        "url": "https://difi.az.gov/licensing/financial-enterprises",
+        "http_status": 403,
+        "bytes": 5751,
+        "looks_like_csv": false
+      },
+      "nmls": {
+        "url": "https://www.nmlsconsumeraccess.org/",
+        "http_status": 403,
+        "bytes": 4557,
+        "looks_like_csv": false
+      },
+      "thentia": {
+        "url": "https://azdifi.portalus.thentiacloud.net",
+        "http_status": 200,
+        "bytes": 46,
+        "looks_like_csv": false
+      }
+    },
+    "caveat": "Missing live roster is unknown, not zero. Search-only is not zero. Do not display a fake current Arizona mortgage-company count. NMLS Consumer Access and Thentia were not scraped."
+  },
+  "cfpb": {
+    "source": "CFPB Consumer Complaint Database API",
+    "source_url": "https://www.consumerfinance.gov/data-research/consumer-complaints/",
+    "product": "Mortgage",
+    "geography": "AZ",
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "http_status": 200,
+    "caveat": "Complaint is not a violation. Raw complaint count is not a quality ranking and is not exposure-normalized. No company complaint rate is published without an exposure denominator.",
+    "company_rate_published": false,
+    "canonical_company_snapshot": "National CFPB company snapshot exists separately; this overlay is statewide Arizona geography and is not a company ranking. No new fuzzy adverse matching.",
+    "result": "ACQUIRED",
+    "mortgage_complaint_rows": 10365,
+    "top_issues": [
+      {
+        "key": "Loan modification,collection,foreclosure",
+        "count": 2534
+      },
+      {
+        "key": "Trouble during payment process",
+        "count": 2518
+      },
+      {
+        "key": "Loan servicing, payments, escrow account",
+        "count": 1853
+      },
+      {
+        "key": "Struggling to pay mortgage",
+        "count": 1120
+      },
+      {
+        "key": "Applying for a mortgage or refinancing an existing mortgage",
+        "count": 708
+      },
+      {
+        "key": "Closing on a mortgage",
+        "count": 484
+      },
+      {
+        "key": "Application, originator, mortgage broker",
+        "count": 468
+      },
+      {
+        "key": "Settlement process and costs",
+        "count": 215
+      }
+    ],
+    "subproduct_or_product": [
+      {
+        "key": "Conventional home mortgage",
+        "count": 2898
+      },
+      {
+        "key": "Other mortgage",
+        "count": 1923
+      },
+      {
+        "key": "Conventional fixed mortgage",
+        "count": 1692
+      },
+      {
+        "key": "FHA mortgage",
+        "count": 1420
+      },
+      {
+        "key": "VA mortgage",
+        "count": 712
+      },
+      {
+        "key": "Conventional adjustable mortgage (ARM)",
+        "count": 535
+      },
+      {
+        "key": "Other type of mortgage",
+        "count": 372
+      },
+      {
+        "key": "Home equity loan or line of credit (HELOC)",
+        "count": 321
+      }
+    ],
+    "year_trend": null,
+    "year_trend_coverage": "SOURCE_NOT_AVAILABLE_IN_THIS_BOUNDED_PASS",
+    "retrieved_at": "2026-09-04T20:02:50Z",
+    "api_last_updated": "2026-09-04T12:00:00-05:00"
+  },
+  "servicing": {
+    "result": "NO_EASY_STATEWIDE_SERVICING_REPORT",
+    "caveat": "No easy statewide mortgage-servicing performance report was acquired. DIFI mortgage classes may include servicing activity; that is not a live servicer roster."
+  },
+  "foreclosure": {
+    "STATEWIDE_STRUCTURED_FORECLOSURE_SOURCE_NOT_ACQUIRED": true,
+    "pages": {
+      "adoh": {
+        "url": "https://housing.az.gov/",
+        "http_status": 403,
+        "mentions_foreclosure": false
+      },
+      "difi_home": {
+        "url": "https://difi.az.gov/",
+        "http_status": 403,
+        "mentions_foreclosure": false
+      },
+      "azag": {
+        "url": "https://www.azag.gov/",
+        "http_status": 200,
+        "mentions_foreclosure": false
+      }
+    },
+    "consumer_page_mentions_foreclosure": false,
+    "note": "No county recorder, deed, or trustee-sale crawl was performed. Missing statewide foreclosure structure is unknown, not zero. A consumer help mention is not a structured statewide dataset."
+  },
+  "depository": {
+    "source": "Existing LenderTrustHub FDIC Arizona overlay (lib/fdic/data/arizona.json)",
+    "fdic_cert_rows": 12,
+    "identity": "FDIC CERT when source-native",
+    "caveat": "An Arizona-headquartered FDIC-insured bank is a depository overlay, not a DIFI mortgage-banker license. HMDA reporters include depositories and nonbanks. Do not call every HMDA reporter a DIFI-licensed lender.",
+    "coverage_state": "REUSED_EXISTING_NATIONAL_OVERLAY"
+  },
+  "expansion_ledger": {
+    "NET_NEW_CANONICAL_ORGANIZATIONS": 0,
+    "NET_NEW_STATE_IDENTITIES": 0,
+    "EXISTING_ORGANIZATIONS_ENRICHED": 0,
+    "NEW_EVIDENCE_ROWS": 10367,
+    "notes": {
+      "hmda": "HMDA Arizona partition was already in the repository. Displaying it on /arizona does not create new evidence rows or organizations.",
+      "lei_maps": "High-confidence LEI maps were already committed. Not net-new organizations.",
+      "enforcement": "DIFI HTML table was documented but not harvested (WAF). No enforcement rows counted as new evidence.",
+      "cfpb": "Statewide Arizona mortgage complaint overlay (10,365 rows) computed this ticket is new evidence, not organizations.",
+      "programs": "Official program families documented this ticket are new evidence items.",
+      "roster": "No DIFI/NMLS business identities were bulk-acquired, so NET_NEW_STATE_IDENTITIES is 0."
+    }
+  },
+  "regulator_matrix": [
+    {
+      "credential": "HMDA reporter",
+      "what": "Institution that filed HMDA loan/application records for Arizona property location",
+      "regulator": "CFPB / FFIEC HMDA",
+      "grain": "business",
+      "identity": "LEI",
+      "verification": "Committed HMDA Arizona partition",
+      "proves": "Reported application/origination activity in this vintage",
+      "does_not_prove": "Arizona DIFI license, current NMLS authority, or HOME Plus participation"
+    },
+    {
+      "credential": "NMLS ID",
+      "what": "Nationwide Multistate Licensing System identifier when source-native",
+      "regulator": "NMLS (system of record display; Arizona DIFI is the state regulator)",
+      "grain": "mixed_person_and_business",
+      "identity": "NMLS",
+      "verification": "NMLS Consumer Access \u2014 search only, not scraped",
+      "proves": "A stable identifier when printed by the source",
+      "does_not_prove": "Current Arizona authority by itself, or whether the ID is an institution, branch, or person"
+    },
+    {
+      "credential": "Mortgage Banker",
+      "what": "Company licensed by DIFI to make or negotiate mortgage loans as a mortgage banker",
+      "regulator": "Arizona DIFI",
+      "grain": "business",
+      "identity": "NMLS / DIFI",
+      "verification": "NMLS Consumer Access",
+      "proves": "DIFI mortgage-banker class when a live NMLS record is verified",
+      "does_not_prove": "HMDA reporter status or MLO person credential"
+    },
+    {
+      "credential": "Mortgage Broker",
+      "what": "Company licensed by DIFI to broker mortgage loans",
+      "regulator": "Arizona DIFI",
+      "grain": "business",
+      "identity": "NMLS / DIFI",
+      "verification": "NMLS Consumer Access",
+      "proves": "DIFI mortgage-broker class when a live NMLS record is verified",
+      "does_not_prove": "Mortgage-banker authority or a live company census"
+    },
+    {
+      "credential": "Commercial Mortgage Banker / Broker",
+      "what": "DIFI commercial mortgage classes, distinct from residential mortgage banker/broker",
+      "regulator": "Arizona DIFI",
+      "grain": "business",
+      "identity": "NMLS / DIFI",
+      "verification": "NMLS Consumer Access",
+      "proves": "Commercial mortgage class when a live record is verified",
+      "does_not_prove": "Residential mortgage authority"
+    },
+    {
+      "credential": "Registered Exempt Person",
+      "what": "DIFI certificate of exemption class for specified mortgage activity",
+      "regulator": "Arizona DIFI",
+      "grain": "business",
+      "identity": "NMLS / DIFI",
+      "verification": "NMLS Consumer Access",
+      "proves": "Exemption certificate class when a live record is verified",
+      "does_not_prove": "A mortgage-banker or mortgage-broker license"
+    },
+    {
+      "credential": "Loan Originator",
+      "what": "Individual originator licensed through NMLS",
+      "regulator": "Arizona DIFI via NMLS display",
+      "grain": "person",
+      "identity": "NMLS person",
+      "verification": "NMLS Consumer Access",
+      "proves": "Individual originator credential path when source-native",
+      "does_not_prove": "A company license. This site does not publish an MLO person directory"
+    },
+    {
+      "credential": "Escrow / financial enterprise (where DIFI-licensed)",
+      "what": "Adjacent DIFI financial-enterprise classes such as collection agency or sales finance",
+      "regulator": "Arizona DIFI",
+      "grain": "business",
+      "identity": "DIFI / Thentia when source-native",
+      "verification": "DIFI license search / Thentia \u2014 not scraped",
+      "proves": "That DIFI class when a live record is verified",
+      "does_not_prove": "Mortgage-banker authority. Not added into a mortgage-company total"
+    },
+    {
+      "credential": "Depository Bank / Credit Union",
+      "what": "Bank, savings bank, or credit union under a prudential charter",
+      "regulator": "FDIC / NCUA / OCC / Federal Reserve as applicable",
+      "grain": "business",
+      "identity": "FDIC CERT / NCUA / RSSD",
+      "verification": "Existing national overlay",
+      "proves": "Charter identity when source-native",
+      "does_not_prove": "DIFI mortgage-banker or mortgage-broker license"
+    },
+    {
+      "credential": "Program participating lender",
+      "what": "Appears on a HOME Plus / Arizona Is Home participating-lender path",
+      "regulator": "Arizona IDA / ADOH",
+      "grain": "business",
+      "identity": "Program listing",
+      "verification": "Official program pages",
+      "proves": "Program-participation listing as of page retrieval",
+      "does_not_prove": "DIFI license, endorsement, or TrustHub recommendation"
+    }
+  ],
+  "gaps": [
+    "No current complete Arizona mortgage-company bulk roster was acquired. Live licensed-company denominator is UNKNOWN, not zero.",
+    "Complete MLO person universe is not published and was not scraped from NMLS.",
+    "Complete current servicer roster was not acquired.",
+    "Name-only DIFI enforcement rows cannot be attached to lender profiles.",
+    "NMLS Consumer Access remains search-only. Not scraped.",
+    "Thentia remains a licensee login. Not used.",
+    "Live license status for each HMDA reporter is unknown.",
+    "No easy statewide servicing performance report was acquired.",
+    "STATEWIDE_STRUCTURED_FORECLOSURE_SOURCE_NOT_ACQUIRED. No county recorder crawl.",
+    "Company-level CFPB complaint exposure denominators are not computed.",
+    "DIFI enforcement mixes insurance and lending; insurance rows are excluded from Lender publication."
+  ],
+  "identity_rules": {
+    "EXACT_NMLS": "NMLS when source-native on a lender-relevant DIFI order row",
+    "EXACT_DIFI_LICENSE": "DIFI license number when source-native on a lender-relevant row",
+    "EXACT_OTHER_OFFICIAL_ID": "NAIC / NPN / SBS / FDIC CERT / RSSD / LEI when source-native and not used to infer DIFI authority",
+    "REVIEW_REQUIRED": "name + city without an official ID",
+    "UNSAFE": "name-only DIFI orders \u2014 not used for adverse profile attachment"
+  },
+  "semantic_guardrails": [
+    "HMDA is not a license roster",
+    "HMDA reporter is not an Arizona-licensed company",
+    "NMLS ID is not current Arizona authority by itself",
+    "MLO person is not a lender company",
+    "Application is not origination",
+    "Denial is not misconduct",
+    "Denial rate is not quality",
+    "LEI is not NMLS",
+    "Complaint is not a violation",
+    "Order is not a complaint",
+    "Name-only adverse match is unsafe",
+    "Program eligibility is not approval",
+    "Market row is not entity growth",
+    "Missing is not zero",
+    "Search-only is not zero",
+    "No Trust Score",
+    "No paid ranking"
+  ],
+  "fingerprint": "70ea63ce8cfc2d5dfcdc04f992c3a852d2de5aa89795cc26adf6438351720f8e"
+}

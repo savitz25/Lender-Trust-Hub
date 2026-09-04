@@ -44,6 +44,8 @@ export type MetricGrain =
   | 'tx_sml_order'
   | 'wa_dfi_live_roster'
   | 'wa_dfi_enforcement_row'
+  | 'az_difi_live_roster'
+  | 'az_cfpb_mortgage_complaint_row'
   | 'published_state_intelligence_page'
   | 'nj_county_intelligence_page'
   | 'servicer_role_evidence_row';
@@ -195,6 +197,13 @@ export type LenderNetworkMetricsV1 = {
     hmdaApplications: number;
     hmdaOriginations: number;
     dfiEnforcementRows: number;
+    liveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+    liveLicensedCompanyUniverse: null;
+  };
+  arizona: {
+    hmdaApplications: number;
+    hmdaOriginations: number;
+    cfpbMortgageComplaints: number;
     liveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
     liveLicensedCompanyUniverse: null;
   };

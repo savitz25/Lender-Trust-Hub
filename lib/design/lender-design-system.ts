@@ -117,6 +117,14 @@ export const LENDER_TOOLS = {
       cta: 'Open Washington research',
     },
     {
+      id: 'arizona-research',
+      title: 'Arizona research',
+      description:
+        '2025 HMDA Arizona activity, DIFI regulatory limits, CFPB mortgage complaints, and statewide HOME Plus / Arizona Is Home programs. Not a ranking.',
+      href: '/arizona',
+      cta: 'Open Arizona research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
@@ -240,8 +248,9 @@ export const LENDER_PATHWAYS = {
     { label: 'Texas catalog', href: '/local-lenders/texas' },
     { label: 'Washington research', href: '/washington' },
     { label: 'Washington catalog', href: '/local-lenders/washington' },
+    { label: 'Arizona research', href: '/arizona' },
+    { label: 'Arizona catalog', href: '/local-lenders/arizona' },
     { label: 'New York', href: '/local-lenders/new-york' },
-    { label: 'Arizona', href: '/local-lenders/arizona' },
     { label: 'Illinois', href: '/local-lenders/illinois' },
   ],
   goals: [
@@ -364,6 +373,7 @@ export const LENDER_FOOTER_COLUMNS = [
       { href: '/california', label: 'California Research' },
       { href: '/texas', label: 'Texas Research' },
       { href: '/washington', label: 'Washington Research' },
+      { href: '/arizona', label: 'Arizona Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },
