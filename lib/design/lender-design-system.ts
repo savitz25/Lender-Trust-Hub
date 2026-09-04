@@ -109,6 +109,14 @@ export const LENDER_TOOLS = {
       cta: 'Open Texas research',
     },
     {
+      id: 'washington-research',
+      title: 'Washington research',
+      description:
+        '2025 HMDA Washington activity, DFI Consumer Services enforcement with exact NMLS identity, and WSHFC homebuyer programs. Not a ranking.',
+      href: '/washington',
+      cta: 'Open Washington research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
@@ -230,6 +238,8 @@ export const LENDER_PATHWAYS = {
     { label: 'California catalog', href: '/local-lenders/california' },
     { label: 'Texas research', href: '/texas' },
     { label: 'Texas catalog', href: '/local-lenders/texas' },
+    { label: 'Washington research', href: '/washington' },
+    { label: 'Washington catalog', href: '/local-lenders/washington' },
     { label: 'New York', href: '/local-lenders/new-york' },
     { label: 'Arizona', href: '/local-lenders/arizona' },
     { label: 'Illinois', href: '/local-lenders/illinois' },
@@ -353,6 +363,7 @@ export const LENDER_FOOTER_COLUMNS = [
       { href: '/new-jersey', label: 'New Jersey Research' },
       { href: '/california', label: 'California Research' },
       { href: '/texas', label: 'Texas Research' },
+      { href: '/washington', label: 'Washington Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },

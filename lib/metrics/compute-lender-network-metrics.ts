@@ -60,6 +60,11 @@ export type LenderNetworkMetricsInput = {
   txSmlOrders: number;
   txLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
   txSmlSourceAsOf: string;
+  waHmdaApplications: number;
+  waHmdaOriginations: number;
+  waDfiEnforcementRows: number;
+  waLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+  waDfiSourceAsOf: string;
   servicerEvidenceRows: number;
   licensesTotal: number;
 };
@@ -162,7 +167,7 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.licensesTotal === input.institutions) {
     throw new Error('license rows must not equal institutions');
   }
-  for (const path of ['/florida', '/new-jersey', '/california', '/texas']) {
+  for (const path of ['/florida', '/new-jersey', '/california', '/texas', '/washington']) {
     if (!input.publishedStateIntelligencePaths.includes(path)) {
       throw new Error(`state intelligence path missing: ${path}`);
     }
@@ -189,6 +194,12 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.txSmlOrders === input.txHmdaApplications) {
     throw new Error('SML orders must not equal Texas HMDA applications');
   }
+  if (input.waLiveRosterCoverage !== 'SOURCE_NOT_ACQUIRED') {
+    throw new Error('WA live mortgage-company roster remains not acquired');
+  }
+  if (input.waDfiEnforcementRows === input.waHmdaApplications) {
+    throw new Error('DFI enforcement rows must not equal Washington HMDA applications');
+  }
 }
 
 export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): LenderNetworkMetricsV1 {
@@ -200,6 +211,7 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
     input.njDobiSourceAsOf,
     input.caCalhfaSourceAsOf,
     input.txSmlSourceAsOf,
+    input.waDfiSourceAsOf,
   ]
     .filter(Boolean)
     .map((d) => d.slice(0, 10))
@@ -618,20 +630,66 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       ),
     }),
     metric({
+      key: 'wa_dfi_live_roster',
+      label: 'Washington live mortgage-company roster',
+      value: null,
+      valueState: 'NOT_ACQUIRED',
+      grain: 'wa_dfi_live_roster',
+      denominator: 'Live Washington mortgage-company roster — SOURCE_NOT_ACQUIRED',
+      description: 'No bulk live Washington mortgage-company roster was acquired. Complete licensed-company count is UNKNOWN, not zero.',
+      coverage: 'Washington',
+      contributingSourceSystems: ['wa_dfi_nmls'],
+      sourceAsOf: input.waDfiSourceAsOf.slice(0, 10),
+      generatedAt,
+      publicationStatus: 'PUBLIC_UNKNOWN',
+      trace: commonTrace(
+        'Nothing numeric is published for the live Washington mortgage-company universe.',
+        'Not DFI HTML table rows. Not Washington HMDA applications. Not DFI year-end reported entities.',
+        ['wa_dfi_nmls'],
+        'Washington',
+        'WASHINGTON_LIVE_COMPANY_ROSTER SOURCE_NOT_ACQUIRED',
+        {
+          whyUnknown:
+            'Washington DFI company verification is search-only. NMLS Consumer Access was not scraped. Missing is not zero.',
+        },
+      ),
+    }),
+    metric({
+      key: 'wa_dfi_enforcement_rows',
+      label: 'Washington DFI Consumer Services enforcement rows (acquired)',
+      value: input.waDfiEnforcementRows,
+      valueState: 'KNOWN',
+      grain: 'wa_dfi_enforcement_row',
+      denominator: 'DFI enforcement HTML table rows in the published Washington snapshot',
+      description: 'Acquired DFI table rows. Order count is not quality. Name-only rows are not a live roster.',
+      coverage: 'Washington — DFI Consumer Services enforcement table',
+      contributingSourceSystems: ['wa_dfi'],
+      sourceAsOf: input.waDfiSourceAsOf.slice(0, 10),
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        'DFI Consumer Services bounded HTML table rows.',
+        'Not the live licensed-company universe. Not HMDA. Not CFPB complaints. Not the 2025 year-end 91-action statistic.',
+        ['wa_dfi'],
+        'Washington',
+        `DFI enforcement table retrieved ${input.waDfiSourceAsOf.slice(0, 10)}`,
+      ),
+    }),
+    metric({
       key: 'published_state_intelligence_pages',
       label: 'Published state mortgage-intelligence pages',
       value: input.publishedStateIntelligencePaths.length,
       valueState: 'KNOWN',
       grain: 'published_state_intelligence_page',
       denominator: 'Indexable specialist state intelligence routes currently published',
-      description: 'Florida, New Jersey, California, and Texas state intelligence pages. Not a count of lenders.',
+      description: 'Florida, New Jersey, California, Texas, and Washington state intelligence pages. Not a count of lenders.',
       coverage: input.publishedStateIntelligencePaths.join(', '),
       contributingSourceSystems: ['lender-state-intel'],
       sourceAsOf: newestDocumentedSourceAsOf,
       generatedAt,
       publicationStatus: 'PUBLIC',
       trace: commonTrace(
-        'Published /florida, /new-jersey, /california, and /texas intelligence routes.',
+        'Published /florida, /new-jersey, /california, /texas, and /washington intelligence routes.',
         'Not NJ county pages and not national directory rows.',
         ['lender-state-intel'],
         input.publishedStateIntelligencePaths.join(', '),
@@ -673,6 +731,9 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
     txApps: input.txHmdaApplications,
     txOrders: input.txSmlOrders,
     txRoster: input.txLiveRosterCoverage,
+    waApps: input.waHmdaApplications,
+    waOrders: input.waDfiEnforcementRows,
+    waRoster: input.waLiveRosterCoverage,
     paths: input.publishedStateIntelligencePaths,
     njCounties: input.njCountyIntelligencePages,
   };
@@ -746,6 +807,13 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       hmdaOriginations: input.txHmdaOriginations,
       smlOrders: input.txSmlOrders,
       liveRosterCoverage: input.txLiveRosterCoverage,
+      liveLicensedCompanyUniverse: null,
+    },
+    washington: {
+      hmdaApplications: input.waHmdaApplications,
+      hmdaOriginations: input.waHmdaOriginations,
+      dfiEnforcementRows: input.waDfiEnforcementRows,
+      liveRosterCoverage: input.waLiveRosterCoverage,
       liveLicensedCompanyUniverse: null,
     },
     publication: {

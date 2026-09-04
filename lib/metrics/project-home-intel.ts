@@ -7,6 +7,7 @@ const STATE_INTEL_HREF: Record<string, string> = {
   NJ: '/new-jersey',
   CA: '/california',
   TX: '/texas',
+  WA: '/washington',
 };
 
 export function projectLenderHomeIntelFromNetworkMetrics(
