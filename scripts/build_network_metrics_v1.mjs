@@ -85,6 +85,11 @@ async function main() {
     txSmlOrders: pub.txSmlOrders,
     txLiveRosterCoverage: pub.txLiveRosterCoverage,
     txSmlSourceAsOf: pub.txSmlSourceAsOf,
+    waHmdaApplications: pub.waHmdaApplications,
+    waHmdaOriginations: pub.waHmdaOriginations,
+    waDfiEnforcementRows: pub.waDfiEnforcementRows,
+    waLiveRosterCoverage: pub.waLiveRosterCoverage,
+    waDfiSourceAsOf: pub.waDfiSourceAsOf,
     servicerEvidenceRows: prod.servicerEvidenceRows ?? 0,
     licensesTotal: prod.licensesTotal,
   };

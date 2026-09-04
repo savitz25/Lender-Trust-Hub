@@ -1,0 +1,1538 @@
+{
+  "contract_name": "lender-wa-state-intel-v1",
+  "version": "1.0.0",
+  "geography": "WA",
+  "publication_status": "published",
+  "path": "/washington",
+  "generated_at": "2026-09-04T17:16:47Z",
+  "source_as_of": {
+    "hmda": "HMDA 2025",
+    "dfi_enforcement": "2026-09-04T17:15:36Z",
+    "dfi_year_end_aggregates": "2025-12-31",
+    "programs": "2026-09-04T17:16:28Z",
+    "cfpb": "2026-09-04T17:16:45Z",
+    "live_roster": "SOURCE_NOT_ACQUIRED"
+  },
+  "hero": {
+    "universe_label": "HMDA applications",
+    "universe_value": 286871,
+    "universe_hint": "2025 HMDA applications for properties located in Washington. Not a count of Washington-licensed mortgage companies.",
+    "current_label": "HMDA originations",
+    "current_value": 174653,
+    "observations_label": "DFI Consumer Services enforcement table rows",
+    "observations_value": 777,
+    "geography_label": "Counties in HMDA geography",
+    "geography_value": 39,
+    "as_of_label": "HMDA vintage",
+    "as_of_value": "2025"
+  },
+  "hmda": {
+    "year": 2025,
+    "geo_grain": "state_and_county",
+    "state_code": "WA",
+    "source": "Committed HMDA Washington partition data/hmda/by-state/WA/county_market_summary.csv. Properties located in Washington. Not a second national download.",
+    "source_as_of": "HMDA 2025",
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "applications": 286871,
+    "originations": 174653,
+    "denials": 44562,
+    "denial_rate_pct": 15.53,
+    "denial_rate_calculation": "denials / applications * 100, rounded to 2 decimals",
+    "purchase_applications": 119915,
+    "refinance_applications": 98796,
+    "purchase_pct_of_apps": 41.8,
+    "refinance_pct_of_apps": 34.44,
+    "apps_conventional": 232245,
+    "apps_fha": 28153,
+    "apps_va": 25731,
+    "apps_usda_other": 742,
+    "conventional_pct": 80.96,
+    "fha_pct": 9.81,
+    "va_pct": 8.97,
+    "usda_other_pct": 0.26,
+    "county_count": 39,
+    "washington_county_universe": 39,
+    "all_39_counties": true,
+    "counties": [
+      {
+        "county_fips": "53001",
+        "county_name": "Adams",
+        "applications": 504,
+        "originations": 269,
+        "denials": 100,
+        "denial_rate_pct": 19.84,
+        "purchase_applications": 195,
+        "refinance_applications": 191,
+        "purchase_pct_of_apps": 38.69,
+        "refinance_pct_of_apps": 37.9,
+        "apps_conventional": 347,
+        "apps_fha": 122,
+        "apps_va": 32,
+        "apps_usda_other": 3,
+        "conventional_pct": 68.85
+      },
+      {
+        "county_fips": "53003",
+        "county_name": "Asotin",
+        "applications": 811,
+        "originations": 510,
+        "denials": 99,
+        "denial_rate_pct": 12.21,
+        "purchase_applications": 322,
+        "refinance_applications": 323,
+        "purchase_pct_of_apps": 39.7,
+        "refinance_pct_of_apps": 39.83,
+        "apps_conventional": 581,
+        "apps_fha": 129,
+        "apps_va": 95,
+        "apps_usda_other": 6,
+        "conventional_pct": 71.64
+      },
+      {
+        "county_fips": "53005",
+        "county_name": "Benton",
+        "applications": 8612,
+        "originations": 5498,
+        "denials": 1200,
+        "denial_rate_pct": 13.93,
+        "purchase_applications": 4029,
+        "refinance_applications": 2843,
+        "purchase_pct_of_apps": 46.78,
+        "refinance_pct_of_apps": 33.01,
+        "apps_conventional": 6326,
+        "apps_fha": 1382,
+        "apps_va": 840,
+        "apps_usda_other": 64,
+        "conventional_pct": 73.46
+      },
+      {
+        "county_fips": "53007",
+        "county_name": "Chelan",
+        "applications": 2974,
+        "originations": 1738,
+        "denials": 523,
+        "denial_rate_pct": 17.59,
+        "purchase_applications": 1310,
+        "refinance_applications": 973,
+        "purchase_pct_of_apps": 44.05,
+        "refinance_pct_of_apps": 32.72,
+        "apps_conventional": 2549,
+        "apps_fha": 269,
+        "apps_va": 153,
+        "apps_usda_other": 3,
+        "conventional_pct": 85.71
+      },
+      {
+        "county_fips": "53009",
+        "county_name": "Clallam",
+        "applications": 2731,
+        "originations": 1689,
+        "denials": 384,
+        "denial_rate_pct": 14.06,
+        "purchase_applications": 1259,
+        "refinance_applications": 966,
+        "purchase_pct_of_apps": 46.1,
+        "refinance_pct_of_apps": 35.37,
+        "apps_conventional": 2097,
+        "apps_fha": 308,
+        "apps_va": 315,
+        "apps_usda_other": 11,
+        "conventional_pct": 76.79
+      },
+      {
+        "county_fips": "53011",
+        "county_name": "Clark",
+        "applications": 20783,
+        "originations": 12785,
+        "denials": 3183,
+        "denial_rate_pct": 15.32,
+        "purchase_applications": 8655,
+        "refinance_applications": 6434,
+        "purchase_pct_of_apps": 41.64,
+        "refinance_pct_of_apps": 30.96,
+        "apps_conventional": 17241,
+        "apps_fha": 2161,
+        "apps_va": 1367,
+        "apps_usda_other": 14,
+        "conventional_pct": 82.96
+      },
+      {
+        "county_fips": "53013",
+        "county_name": "Columbia",
+        "applications": 180,
+        "originations": 99,
+        "denials": 29,
+        "denial_rate_pct": 16.11,
+        "purchase_applications": 79,
+        "refinance_applications": 72,
+        "purchase_pct_of_apps": 43.89,
+        "refinance_pct_of_apps": 40.0,
+        "apps_conventional": 112,
+        "apps_fha": 43,
+        "apps_va": 25,
+        "apps_usda_other": 0,
+        "conventional_pct": 62.22
+      },
+      {
+        "county_fips": "53015",
+        "county_name": "Cowlitz",
+        "applications": 5326,
+        "originations": 3302,
+        "denials": 766,
+        "denial_rate_pct": 14.38,
+        "purchase_applications": 2163,
+        "refinance_applications": 1942,
+        "purchase_pct_of_apps": 40.61,
+        "refinance_pct_of_apps": 36.46,
+        "apps_conventional": 3821,
+        "apps_fha": 943,
+        "apps_va": 548,
+        "apps_usda_other": 14,
+        "conventional_pct": 71.74
+      },
+      {
+        "county_fips": "53017",
+        "county_name": "Douglas",
+        "applications": 1648,
+        "originations": 1018,
+        "denials": 264,
+        "denial_rate_pct": 16.02,
+        "purchase_applications": 719,
+        "refinance_applications": 551,
+        "purchase_pct_of_apps": 43.63,
+        "refinance_pct_of_apps": 33.43,
+        "apps_conventional": 1309,
+        "apps_fha": 218,
+        "apps_va": 118,
+        "apps_usda_other": 3,
+        "conventional_pct": 79.43
+      },
+      {
+        "county_fips": "53019",
+        "county_name": "Ferry",
+        "applications": 190,
+        "originations": 93,
+        "denials": 40,
+        "denial_rate_pct": 21.05,
+        "purchase_applications": 59,
+        "refinance_applications": 77,
+        "purchase_pct_of_apps": 31.05,
+        "refinance_pct_of_apps": 40.53,
+        "apps_conventional": 145,
+        "apps_fha": 22,
+        "apps_va": 22,
+        "apps_usda_other": 1,
+        "conventional_pct": 76.32
+      },
+      {
+        "county_fips": "53021",
+        "county_name": "Franklin",
+        "applications": 3322,
+        "originations": 2013,
+        "denials": 578,
+        "denial_rate_pct": 17.4,
+        "purchase_applications": 1430,
+        "refinance_applications": 1111,
+        "purchase_pct_of_apps": 43.05,
+        "refinance_pct_of_apps": 33.44,
+        "apps_conventional": 2500,
+        "apps_fha": 607,
+        "apps_va": 201,
+        "apps_usda_other": 14,
+        "conventional_pct": 75.26
+      },
+      {
+        "county_fips": "53023",
+        "county_name": "Garfield",
+        "applications": 101,
+        "originations": 50,
+        "denials": 25,
+        "denial_rate_pct": 24.75,
+        "purchase_applications": 48,
+        "refinance_applications": 27,
+        "purchase_pct_of_apps": 47.52,
+        "refinance_pct_of_apps": 26.73,
+        "apps_conventional": 74,
+        "apps_fha": 11,
+        "apps_va": 14,
+        "apps_usda_other": 2,
+        "conventional_pct": 73.27
+      },
+      {
+        "county_fips": "53025",
+        "county_name": "Grant",
+        "applications": 3469,
+        "originations": 2074,
+        "denials": 634,
+        "denial_rate_pct": 18.28,
+        "purchase_applications": 1636,
+        "refinance_applications": 1102,
+        "purchase_pct_of_apps": 47.16,
+        "refinance_pct_of_apps": 31.77,
+        "apps_conventional": 2482,
+        "apps_fha": 646,
+        "apps_va": 281,
+        "apps_usda_other": 60,
+        "conventional_pct": 71.55
+      },
+      {
+        "county_fips": "53027",
+        "county_name": "Grays Harbor",
+        "applications": 3407,
+        "originations": 2027,
+        "denials": 515,
+        "denial_rate_pct": 15.12,
+        "purchase_applications": 1515,
+        "refinance_applications": 1219,
+        "purchase_pct_of_apps": 44.47,
+        "refinance_pct_of_apps": 35.78,
+        "apps_conventional": 2403,
+        "apps_fha": 548,
+        "apps_va": 437,
+        "apps_usda_other": 19,
+        "conventional_pct": 70.53
+      },
+      {
+        "county_fips": "53029",
+        "county_name": "Island",
+        "applications": 4067,
+        "originations": 2506,
+        "denials": 563,
+        "denial_rate_pct": 13.84,
+        "purchase_applications": 1647,
+        "refinance_applications": 1427,
+        "purchase_pct_of_apps": 40.5,
+        "refinance_pct_of_apps": 35.09,
+        "apps_conventional": 2895,
+        "apps_fha": 290,
+        "apps_va": 873,
+        "apps_usda_other": 9,
+        "conventional_pct": 71.18
+      },
+      {
+        "county_fips": "53031",
+        "county_name": "Jefferson",
+        "applications": 1113,
+        "originations": 665,
+        "denials": 158,
+        "denial_rate_pct": 14.2,
+        "purchase_applications": 476,
+        "refinance_applications": 351,
+        "purchase_pct_of_apps": 42.77,
+        "refinance_pct_of_apps": 31.54,
+        "apps_conventional": 934,
+        "apps_fha": 71,
+        "apps_va": 108,
+        "apps_usda_other": 0,
+        "conventional_pct": 83.92
+      },
+      {
+        "county_fips": "53033",
+        "county_name": "King",
+        "applications": 69895,
+        "originations": 43300,
+        "denials": 10090,
+        "denial_rate_pct": 14.44,
+        "purchase_applications": 30239,
+        "refinance_applications": 24005,
+        "purchase_pct_of_apps": 43.26,
+        "refinance_pct_of_apps": 34.34,
+        "apps_conventional": 64713,
+        "apps_fha": 3142,
+        "apps_va": 2008,
+        "apps_usda_other": 32,
+        "conventional_pct": 92.59
+      },
+      {
+        "county_fips": "53035",
+        "county_name": "Kitsap",
+        "applications": 11783,
+        "originations": 7286,
+        "denials": 1628,
+        "denial_rate_pct": 13.82,
+        "purchase_applications": 4915,
+        "refinance_applications": 4039,
+        "purchase_pct_of_apps": 41.71,
+        "refinance_pct_of_apps": 34.28,
+        "apps_conventional": 8398,
+        "apps_fha": 930,
+        "apps_va": 2440,
+        "apps_usda_other": 15,
+        "conventional_pct": 71.27
+      },
+      {
+        "county_fips": "53037",
+        "county_name": "Kittitas",
+        "applications": 2224,
+        "originations": 1371,
+        "denials": 357,
+        "denial_rate_pct": 16.05,
+        "purchase_applications": 1066,
+        "refinance_applications": 649,
+        "purchase_pct_of_apps": 47.93,
+        "refinance_pct_of_apps": 29.18,
+        "apps_conventional": 1928,
+        "apps_fha": 202,
+        "apps_va": 93,
+        "apps_usda_other": 1,
+        "conventional_pct": 86.69
+      },
+      {
+        "county_fips": "53039",
+        "county_name": "Klickitat",
+        "applications": 830,
+        "originations": 463,
+        "denials": 129,
+        "denial_rate_pct": 15.54,
+        "purchase_applications": 358,
+        "refinance_applications": 275,
+        "purchase_pct_of_apps": 43.13,
+        "refinance_pct_of_apps": 33.13,
+        "apps_conventional": 644,
+        "apps_fha": 90,
+        "apps_va": 92,
+        "apps_usda_other": 4,
+        "conventional_pct": 77.59
+      },
+      {
+        "county_fips": "53041",
+        "county_name": "Lewis",
+        "applications": 4007,
+        "originations": 2316,
+        "denials": 710,
+        "denial_rate_pct": 17.72,
+        "purchase_applications": 1606,
+        "refinance_applications": 1451,
+        "purchase_pct_of_apps": 40.08,
+        "refinance_pct_of_apps": 36.21,
+        "apps_conventional": 2869,
+        "apps_fha": 641,
+        "apps_va": 487,
+        "apps_usda_other": 10,
+        "conventional_pct": 71.6
+      },
+      {
+        "county_fips": "53043",
+        "county_name": "Lincoln",
+        "applications": 560,
+        "originations": 325,
+        "denials": 108,
+        "denial_rate_pct": 19.29,
+        "purchase_applications": 214,
+        "refinance_applications": 208,
+        "purchase_pct_of_apps": 38.21,
+        "refinance_pct_of_apps": 37.14,
+        "apps_conventional": 410,
+        "apps_fha": 78,
+        "apps_va": 69,
+        "apps_usda_other": 3,
+        "conventional_pct": 73.21
+      },
+      {
+        "county_fips": "53045",
+        "county_name": "Mason",
+        "applications": 3525,
+        "originations": 2084,
+        "denials": 611,
+        "denial_rate_pct": 17.33,
+        "purchase_applications": 1538,
+        "refinance_applications": 1292,
+        "purchase_pct_of_apps": 43.63,
+        "refinance_pct_of_apps": 36.65,
+        "apps_conventional": 2373,
+        "apps_fha": 541,
+        "apps_va": 604,
+        "apps_usda_other": 7,
+        "conventional_pct": 67.32
+      },
+      {
+        "county_fips": "53047",
+        "county_name": "Okanogan",
+        "applications": 1168,
+        "originations": 657,
+        "denials": 221,
+        "denial_rate_pct": 18.92,
+        "purchase_applications": 461,
+        "refinance_applications": 408,
+        "purchase_pct_of_apps": 39.47,
+        "refinance_pct_of_apps": 34.93,
+        "apps_conventional": 885,
+        "apps_fha": 157,
+        "apps_va": 116,
+        "apps_usda_other": 10,
+        "conventional_pct": 75.77
+      },
+      {
+        "county_fips": "53049",
+        "county_name": "Pacific",
+        "applications": 1107,
+        "originations": 652,
+        "denials": 193,
+        "denial_rate_pct": 17.43,
+        "purchase_applications": 439,
+        "refinance_applications": 426,
+        "purchase_pct_of_apps": 39.66,
+        "refinance_pct_of_apps": 38.48,
+        "apps_conventional": 807,
+        "apps_fha": 175,
+        "apps_va": 122,
+        "apps_usda_other": 3,
+        "conventional_pct": 72.9
+      },
+      {
+        "county_fips": "53051",
+        "county_name": "Pend Oreille",
+        "applications": 711,
+        "originations": 364,
+        "denials": 135,
+        "denial_rate_pct": 18.99,
+        "purchase_applications": 286,
+        "refinance_applications": 237,
+        "purchase_pct_of_apps": 40.23,
+        "refinance_pct_of_apps": 33.33,
+        "apps_conventional": 533,
+        "apps_fha": 81,
+        "apps_va": 95,
+        "apps_usda_other": 2,
+        "conventional_pct": 74.96
+      },
+      {
+        "county_fips": "53053",
+        "county_name": "Pierce",
+        "applications": 38302,
+        "originations": 22920,
+        "denials": 6355,
+        "denial_rate_pct": 16.59,
+        "purchase_applications": 15624,
+        "refinance_applications": 13567,
+        "purchase_pct_of_apps": 40.79,
+        "refinance_pct_of_apps": 35.42,
+        "apps_conventional": 27599,
+        "apps_fha": 5074,
+        "apps_va": 5580,
+        "apps_usda_other": 49,
+        "conventional_pct": 72.06
+      },
+      {
+        "county_fips": "53055",
+        "county_name": "San Juan",
+        "applications": 634,
+        "originations": 353,
+        "denials": 124,
+        "denial_rate_pct": 19.56,
+        "purchase_applications": 233,
+        "refinance_applications": 199,
+        "purchase_pct_of_apps": 36.75,
+        "refinance_pct_of_apps": 31.39,
+        "apps_conventional": 593,
+        "apps_fha": 24,
+        "apps_va": 16,
+        "apps_usda_other": 1,
+        "conventional_pct": 93.53
+      },
+      {
+        "county_fips": "53057",
+        "county_name": "Skagit",
+        "applications": 4639,
+        "originations": 2807,
+        "denials": 743,
+        "denial_rate_pct": 16.02,
+        "purchase_applications": 1886,
+        "refinance_applications": 1528,
+        "purchase_pct_of_apps": 40.66,
+        "refinance_pct_of_apps": 32.94,
+        "apps_conventional": 3834,
+        "apps_fha": 427,
+        "apps_va": 367,
+        "apps_usda_other": 11,
+        "conventional_pct": 82.65
+      },
+      {
+        "county_fips": "53059",
+        "county_name": "Skamania",
+        "applications": 571,
+        "originations": 343,
+        "denials": 95,
+        "denial_rate_pct": 16.64,
+        "purchase_applications": 201,
+        "refinance_applications": 200,
+        "purchase_pct_of_apps": 35.2,
+        "refinance_pct_of_apps": 35.03,
+        "apps_conventional": 467,
+        "apps_fha": 66,
+        "apps_va": 38,
+        "apps_usda_other": 0,
+        "conventional_pct": 81.79
+      },
+      {
+        "county_fips": "53061",
+        "county_name": "Snohomish",
+        "applications": 32452,
+        "originations": 19763,
+        "denials": 5037,
+        "denial_rate_pct": 15.52,
+        "purchase_applications": 12630,
+        "refinance_applications": 11734,
+        "purchase_pct_of_apps": 38.92,
+        "refinance_pct_of_apps": 36.16,
+        "apps_conventional": 28280,
+        "apps_fha": 2523,
+        "apps_va": 1620,
+        "apps_usda_other": 29,
+        "conventional_pct": 87.14
+      },
+      {
+        "county_fips": "53063",
+        "county_name": "Spokane",
+        "applications": 21933,
+        "originations": 13448,
+        "denials": 3481,
+        "denial_rate_pct": 15.87,
+        "purchase_applications": 9108,
+        "refinance_applications": 7352,
+        "purchase_pct_of_apps": 41.53,
+        "refinance_pct_of_apps": 33.52,
+        "apps_conventional": 17038,
+        "apps_fha": 2609,
+        "apps_va": 2247,
+        "apps_usda_other": 39,
+        "conventional_pct": 77.68
+      },
+      {
+        "county_fips": "53065",
+        "county_name": "Stevens",
+        "applications": 1969,
+        "originations": 1054,
+        "denials": 377,
+        "denial_rate_pct": 19.15,
+        "purchase_applications": 693,
+        "refinance_applications": 756,
+        "purchase_pct_of_apps": 35.2,
+        "refinance_pct_of_apps": 38.4,
+        "apps_conventional": 1498,
+        "apps_fha": 220,
+        "apps_va": 249,
+        "apps_usda_other": 2,
+        "conventional_pct": 76.08
+      },
+      {
+        "county_fips": "53067",
+        "county_name": "Thurston",
+        "applications": 12794,
+        "originations": 7770,
+        "denials": 2019,
+        "denial_rate_pct": 15.78,
+        "purchase_applications": 4917,
+        "refinance_applications": 4709,
+        "purchase_pct_of_apps": 38.43,
+        "refinance_pct_of_apps": 36.81,
+        "apps_conventional": 8923,
+        "apps_fha": 1097,
+        "apps_va": 2760,
+        "apps_usda_other": 14,
+        "conventional_pct": 69.74
+      },
+      {
+        "county_fips": "53069",
+        "county_name": "Wahkiakum",
+        "applications": 227,
+        "originations": 125,
+        "denials": 43,
+        "denial_rate_pct": 18.94,
+        "purchase_applications": 80,
+        "refinance_applications": 98,
+        "purchase_pct_of_apps": 35.24,
+        "refinance_pct_of_apps": 43.17,
+        "apps_conventional": 159,
+        "apps_fha": 24,
+        "apps_va": 39,
+        "apps_usda_other": 5,
+        "conventional_pct": 70.04
+      },
+      {
+        "county_fips": "53071",
+        "county_name": "Walla Walla",
+        "applications": 1926,
+        "originations": 1178,
+        "denials": 288,
+        "denial_rate_pct": 14.95,
+        "purchase_applications": 762,
+        "refinance_applications": 668,
+        "purchase_pct_of_apps": 39.56,
+        "refinance_pct_of_apps": 34.68,
+        "apps_conventional": 1511,
+        "apps_fha": 226,
+        "apps_va": 181,
+        "apps_usda_other": 8,
+        "conventional_pct": 78.45
+      },
+      {
+        "county_fips": "53073",
+        "county_name": "Whatcom",
+        "applications": 7738,
+        "originations": 4775,
+        "denials": 1106,
+        "denial_rate_pct": 14.29,
+        "purchase_applications": 3340,
+        "refinance_applications": 2492,
+        "purchase_pct_of_apps": 43.16,
+        "refinance_pct_of_apps": 32.2,
+        "apps_conventional": 6679,
+        "apps_fha": 544,
+        "apps_va": 507,
+        "apps_usda_other": 8,
+        "conventional_pct": 86.31
+      },
+      {
+        "county_fips": "53075",
+        "county_name": "Whitman",
+        "applications": 1201,
+        "originations": 737,
+        "denials": 171,
+        "denial_rate_pct": 14.24,
+        "purchase_applications": 557,
+        "refinance_applications": 379,
+        "purchase_pct_of_apps": 46.38,
+        "refinance_pct_of_apps": 31.56,
+        "apps_conventional": 967,
+        "apps_fha": 127,
+        "apps_va": 103,
+        "apps_usda_other": 4,
+        "conventional_pct": 80.52
+      },
+      {
+        "county_fips": "53077",
+        "county_name": "Yakima",
+        "applications": 7437,
+        "originations": 4226,
+        "denials": 1480,
+        "denial_rate_pct": 19.9,
+        "purchase_applications": 3220,
+        "refinance_applications": 2515,
+        "purchase_pct_of_apps": 43.3,
+        "refinance_pct_of_apps": 33.82,
+        "apps_conventional": 5321,
+        "apps_fha": 1385,
+        "apps_va": 469,
+        "apps_usda_other": 262,
+        "conventional_pct": 71.55
+      }
+    ],
+    "lei_reporter_rows": 714,
+    "lei_reporters_with_exact_nmls": 128,
+    "top_reporters_by_applications": [
+      {
+        "lei": "549300KM40FP4MSQU941",
+        "applications": 21599,
+        "originations": 13589,
+        "institution_name": "Boeing Employees Credit Union",
+        "nmls_id": "409610",
+        "our_lender_slug": "boeing-employees-credit-union",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300FGXN1K3HLB1R50",
+        "applications": 14497,
+        "originations": 10611,
+        "institution_name": "Rocket Mortgage, LLC",
+        "nmls_id": "3030",
+        "our_lender_slug": "rocket-mortgage",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300HW662MN1WU8550",
+        "applications": 13770,
+        "originations": 10462,
+        "institution_name": "United Wholesale Mortgage, LLC",
+        "nmls_id": "3038",
+        "our_lender_slug": "united-wholesale-mortgage",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300AQ3T62GXDU7D76",
+        "applications": 8281,
+        "originations": 5691,
+        "institution_name": "GUILD MORTGAGE COMPANY LLC",
+        "nmls_id": "3274",
+        "our_lender_slug": "guild-mortgage-snohomish",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300GKFNPRWNS0GF29",
+        "applications": 7827,
+        "originations": 5796,
+        "institution_name": "AmeriHome Mortgage Company, LLC",
+        "nmls_id": "1120271",
+        "our_lender_slug": "amerihome-mortgage",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300DD4R4SYK5RAQ92",
+        "applications": 7472,
+        "originations": 5559,
+        "institution_name": "MOVEMENT MORTGAGE, LLC",
+        "nmls_id": "39179",
+        "our_lender_slug": "movement-mortgage-myrtle-beach",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "B4TYDEB6GKMZO031MB27",
+        "applications": 6986,
+        "originations": 3420,
+        "institution_name": "Bank of America, National Association",
+        "nmls_id": "399802",
+        "our_lender_slug": "bank-of-america-mortgage-snohomish",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300VZVN841I2ILS84",
+        "applications": 6903,
+        "originations": 4877,
+        "institution_name": "CROSSCOUNTRY MORTGAGE, LLC",
+        "nmls_id": "3029",
+        "our_lender_slug": "crosscountry-mortgage-snohomish",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "6BYL5QZYBDK8S7L73M02",
+        "applications": 6564,
+        "originations": 3524,
+        "institution_name": "U.S. Bank National Association",
+        "nmls_id": "402216",
+        "our_lender_slug": "us-bank",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "549300FNXYY540N23N64",
+        "applications": 5849,
+        "originations": 2702,
+        "institution_name": "Newrez LLC",
+        "nmls_id": "2289",
+        "our_lender_slug": "newrez",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "RVDPPPGHCGZ40J4VQ731",
+        "applications": 5091,
+        "originations": 2953,
+        "institution_name": "PENNYMAC LOAN SERVICES, LLC",
+        "nmls_id": "35953",
+        "our_lender_slug": "pennymac",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "5493003GQDUH26DNNH17",
+        "applications": 4527,
+        "originations": 2289,
+        "institution_name": "Navy Federal Credit Union",
+        "nmls_id": "399807",
+        "our_lender_slug": "navy-federal-jacksonville",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "7H6GLXDRUGQFU57RNE97",
+        "applications": 4293,
+        "originations": 2816,
+        "institution_name": "JPMorgan Chase Bank, National Association",
+        "nmls_id": "399798",
+        "our_lender_slug": "jpmorgan-chase-bank",
+        "identity": "EXACT_LEI_AND_NMLS"
+      },
+      {
+        "lei": "5493000FWM3I2HHQY149",
+        "applications": 4246,
+        "originations": 2088,
+        "institution_name": "WASHINGTON STATE EMPLOYEES CREDIT UNION",
+        "nmls_id": null,
+        "our_lender_slug": "washington-state-employees-credit-union",
+        "identity": "EXACT_LEI_MAPPED"
+      },
+      {
+        "lei": "549300LYRWPSYPK6S325",
+        "applications": 3654,
+        "originations": 1518,
+        "institution_name": "FREEDOM MORTGAGE CORPORATION",
+        "nmls_id": "2767",
+        "our_lender_slug": "freedom-mortgage",
+        "identity": "EXACT_LEI_AND_NMLS"
+      }
+    ],
+    "denial_reasons": null,
+    "denial_reasons_coverage": "Not present in the committed 2025 WA county summary extract.",
+    "caveat": "HMDA is a mortgage-application filing extract for properties located in Washington. It is not a Washington DFI license roster, not a quality ranking, and the denial rate does not prove discrimination. An HMDA reporter is not a Washington-licensed company. A Washington office or HQ on an HMDA reporter is geography, not licensing.",
+    "omitted": {
+      "median_loan_amount": "Not present in the committed 2025 WA county summary extract.",
+      "denial_reasons": "Not present in the committed 2025 WA county summary extract."
+    }
+  },
+  "dfi_enforcement": {
+    "source": "Washington DFI Division of Consumer Services enforcement-actions HTML table",
+    "agency": "Washington Department of Financial Institutions, Division of Consumer Services",
+    "url": "https://dfi.wa.gov/enforcement-actions",
+    "grain": "enforcement_order",
+    "identity_bar": "EXACT_NMLS_ONLY_FOR_ADVERSE_ATTACH",
+    "header": [
+      "Order #",
+      "Respondents",
+      "Type of Order",
+      "Act",
+      "Date Entered"
+    ],
+    "result": "ACQUIRED",
+    "coverage_state": "ACQUIRED_BOUNDED_HTML_TABLE",
+    "retrieved_at": "2026-09-04T17:15:36Z",
+    "pages_fetched": 40,
+    "order_rows": 777,
+    "exact_nmls_rows": 102,
+    "name_only_rows": 675,
+    "distinct_exact_nmls": 152,
+    "company_rows": 42,
+    "person_rows": 275,
+    "mixed_company_person_rows": 429,
+    "unresolved_class_rows": 31,
+    "name_only_identity": "UNSAFE_FOR_ADVERSE_PROFILE_ATTACH",
+    "nmls_person_vs_institution": "NOT_SOURCE_TYPED \u2014 DFI table prints NMLS # in the respondent cell. It is not labeled NMLS_INSTITUTION vs NMLS_PERSON. Exact NMLS is kept at order-event grain only. MLO people are not published as a person directory.",
+    "native_type_distinct": 17,
+    "native_type_top": [
+      {
+        "key": "Consent Order with attached Statement of Charges",
+        "count": 359
+      },
+      {
+        "key": "Consent Order",
+        "count": 165
+      },
+      {
+        "key": "Final Order with attached Statement of Charges",
+        "count": 162
+      },
+      {
+        "key": "Statement of Charges",
+        "count": 24
+      },
+      {
+        "key": "Consent Agreement",
+        "count": 18
+      },
+      {
+        "key": "Temporary Order to Cease and Desist",
+        "count": 14
+      },
+      {
+        "key": "Multi-State Agreement",
+        "count": 9
+      },
+      {
+        "key": "Final Order with attached Temporary Order to Cease and Desist",
+        "count": 6
+      },
+      {
+        "key": "Final Decision and Order",
+        "count": 6
+      },
+      {
+        "key": "Final Order to Cease and Desist",
+        "count": 3
+      },
+      {
+        "key": "Final Order",
+        "count": 2
+      },
+      {
+        "key": "Amended Final Order",
+        "count": 2
+      },
+      {
+        "key": "Order Withdrawing Temporary Order to Cease and Desist",
+        "count": 2
+      },
+      {
+        "key": "Consent Order and Order withdrawing Final Order",
+        "count": 2
+      },
+      {
+        "key": "Agreed Order",
+        "count": 1
+      },
+      {
+        "key": "Order Withdrawing Statement of Charges",
+        "count": 1
+      },
+      {
+        "key": "Order Withdrawing Final Order and Dismissing Statement of Charges",
+        "count": 1
+      }
+    ],
+    "native_act_top": [
+      {
+        "key": "Consumer Loan Act",
+        "count": 325
+      },
+      {
+        "key": "Mortgage Brokers Practices Act",
+        "count": 320
+      },
+      {
+        "key": "Escrow Agents Registration Act",
+        "count": 66
+      },
+      {
+        "key": "Check Cashers and Sellers Act",
+        "count": 46
+      },
+      {
+        "key": "Uniform Money Services Act",
+        "count": 20
+      }
+    ],
+    "order_year_trend": [
+      {
+        "year": "2013",
+        "count": 28
+      },
+      {
+        "year": "2014",
+        "count": 114
+      },
+      {
+        "year": "2015",
+        "count": 66
+      },
+      {
+        "year": "2016",
+        "count": 64
+      },
+      {
+        "year": "2017",
+        "count": 62
+      },
+      {
+        "year": "2018",
+        "count": 61
+      },
+      {
+        "year": "2019",
+        "count": 50
+      },
+      {
+        "year": "2020",
+        "count": 64
+      },
+      {
+        "year": "2021",
+        "count": 73
+      },
+      {
+        "year": "2022",
+        "count": 54
+      },
+      {
+        "year": "2023",
+        "count": 37
+      },
+      {
+        "year": "2024",
+        "count": 28
+      },
+      {
+        "year": "2025",
+        "count": 40
+      },
+      {
+        "year": "2026",
+        "count": 36
+      }
+    ],
+    "penalty_amount_present": false,
+    "not_a_license_roster": true,
+    "publication_eligibility": "PUBLIC_STATE_PAGE_AGGREGATES_ONLY",
+    "caveat": "A DFI order is not a CFPB complaint and is not a quality ranking. NOTICE is not a final order. Statement of Charges is not a final finding. Exact NMLS is required for adverse profile attachment. Name-only rows stay at event grain. This bounded HTML table is recent Consumer Services actions, not a complete historical bulk file. The 2025 year-end aggregate of 91 enforcement actions issued is a dated DFI statistic, not this table's row count."
+  },
+  "dfi_aggregates": {
+    "source": "DFI Division of Consumer Services Stats at a Glance",
+    "url": "https://dfi.wa.gov/newsletter/winter-2026-division-consumer-services/division-consumer-services-stats-glance-december",
+    "agency": "Washington Department of Financial Institutions",
+    "label": "DFI year-end reported entities",
+    "as_of": "2025-12-31",
+    "http_status": 200,
+    "not_a_live_roster": true,
+    "spring_2026_url": "https://dfi.wa.gov/newsletter/spring-2026-cs-newsletter/spring-2026-mortgage-and-consumer-loan-industry-update",
+    "spring_2026_http_status": 200,
+    "sha256": "aa810b52db3db1f50b192791c25b8bfb6ef0bbf9144c7e2c0c60b4831ef6d07e",
+    "mortgage_brokers": 354,
+    "loan_originators_active": 20126,
+    "loan_originators_inactive": 3454,
+    "consumer_loan_companies": 1104,
+    "escrow_agents": 33,
+    "money_transmitters": 242,
+    "payday_lenders": 8,
+    "check_cashers_and_sellers": 81,
+    "enforcement_actions_issued_2025": 91,
+    "complaints_received_2025": 1427,
+    "result": "ACQUIRED",
+    "coverage_state": "ACQUIRED_DATED_SNAPSHOT",
+    "caveat": "Point-in-time DFI year-end reported entities as of December 31, 2025. Not the current live Washington licensed-lender roster. Loan originators are people and are not a company count and are not a public person directory. Money transmitters and payday lenders are adjacent DFI classes, not added into a mortgage-company total.",
+    "spring_2026_as_of": "2026-05",
+    "spring_2026_note": "May 2026 DFI newsletter licensing numbers are a later dated aggregate, still not a live roster. Main-office vs branch rows are source-native and are not summed into one company denominator.",
+    "spring_2026_sha256": "994fadca59eae12b293ead8ad98dff1017e1b275b3457a63548e70084905f363",
+    "spring_2026_excerpt_present": true
+  },
+  "programs": {
+    "retrieved_at": "2026-09-04T17:16:28Z",
+    "pages": {
+      "wshfc_home": {
+        "url": "https://www.wshfc.org/",
+        "http_status": 200,
+        "bytes": 96204,
+        "sha256": "1715fd9ed28913fa1743fb16abce23edefbe6db914de45cb1e1c259499fa1ef2"
+      },
+      "wshfc_buyers": {
+        "url": "https://www.wshfc.org/buyers/",
+        "http_status": 200,
+        "bytes": 365849,
+        "sha256": "8302946e53f20f38ea5f04ae5fd34e86916e57eb9b8640326576a4b4dfbe626f"
+      },
+      "here_home": {
+        "url": "https://heretohome.org/",
+        "http_status": 200,
+        "bytes": 365849,
+        "sha256": "8302946e53f20f38ea5f04ae5fd34e86916e57eb9b8640326576a4b4dfbe626f"
+      },
+      "dpa": {
+        "url": "https://heretohome.org/downpayment-assistance/",
+        "http_status": 200,
+        "bytes": 907498,
+        "sha256": "15777b26f3f391c5f92cc4d90c5fb41fd8cc866601a8bb0fdb7531f771787b1c"
+      },
+      "home_advantage": {
+        "url": "https://heretohome.org/home-advantage/",
+        "http_status": 200,
+        "bytes": 358346,
+        "sha256": "8711e47476cb38fe8c0cac621f3282eb297b130abac33f2e28c4a789c2524165"
+      },
+      "house_key": {
+        "url": "https://heretohome.org/house-key-opportunity/",
+        "http_status": 200,
+        "bytes": 369606,
+        "sha256": "3c94ed39129f864d023abedf9e796feb4c4bfd6cd95aa47eb38b7dc62cdedc9b"
+      },
+      "covenant": {
+        "url": "https://heretohome.org/covenant/",
+        "http_status": 200,
+        "bytes": 333516,
+        "sha256": "d7c322e89349aa3e50f2515bb21afefe22ec8262fbc889ba68133099aea89b1a"
+      },
+      "veterans": {
+        "url": "https://heretohome.org/veterans/",
+        "http_status": 404,
+        "bytes": 180999,
+        "sha256": null
+      },
+      "homechoice": {
+        "url": "https://heretohome.org/homechoice/",
+        "http_status": 404,
+        "bytes": 181001,
+        "sha256": null
+      },
+      "education": {
+        "url": "https://heretohome.org/homebuyer-education/",
+        "http_status": 200,
+        "bytes": 276373,
+        "sha256": "0f375b8f529b20274166ad48f9a2288b60e8545301aac0b69c02482a2c312360"
+      }
+    },
+    "application_path": "WSHFC / Here to Home do not replace a mortgage underwriting decision. Buyers apply through a Commission-trained participating lender. Program participation is not a DFI license and is not a TrustHub endorsement. City or county local DPA is not inventoried on this state page.",
+    "items": [
+      {
+        "name": "Home Advantage / Home Advantage DPA",
+        "agency": "Washington State Housing Finance Commission",
+        "type": "first_mortgage_and_down_payment_assistance",
+        "assistance": "Commission first mortgage with down-payment assistance options described on official Here to Home pages",
+        "maximum": "Official Here to Home DPA page: Home Advantage DPA offers 3%, 4%, or 5% of the first-mortgage loan amount at 0% interest. Confirm current options with a participating lender.",
+        "eligibility": "Official page: first-time homeownership is not required for Home Advantage DPA. Owner-occupied principal residence. Household income must not exceed the official statewide cap published on the page. Homebuyer education is part of the Commission path.",
+        "income_purchase_limits": "Official DPA page lists a statewide household-income cap; confirm the current dollar figure on heretohome.org. Not restated here as a guaranteed underwriting limit.",
+        "first_time_buyer": false,
+        "participating_lender_required": true,
+        "status": "Documented on official WSHFC / Here to Home pages retrieved this snapshot.",
+        "source_url": "https://heretohome.org/downpayment-assistance/",
+        "source_date": "Official page retrieval 2026-09-04"
+      },
+      {
+        "name": "Home Advantage Needs-Based DPA",
+        "agency": "Washington State Housing Finance Commission",
+        "type": "down_payment_assistance",
+        "assistance": "Needs-based down-payment assistance paired with the Home Advantage first mortgage, as described on the official DPA page",
+        "maximum": "Official DPA page: up to $10,000 at 1% simple interest. Confirm current terms with a participating lender.",
+        "eligibility": "Lower household-income path than standard Home Advantage DPA, with county-group income figures on the official page. Eligibility is not approval.",
+        "income_purchase_limits": "Official page publishes separate King/Snohomish vs other-county income figures. Confirm current tables on heretohome.org.",
+        "first_time_buyer": false,
+        "participating_lender_required": true,
+        "status": "Documented on official Here to Home pages retrieved this snapshot.",
+        "source_url": "https://heretohome.org/downpayment-assistance/",
+        "source_date": "Official page retrieval 2026-09-04"
+      },
+      {
+        "name": "House Key Opportunity",
+        "agency": "Washington State Housing Finance Commission",
+        "type": "first_mortgage_and_down_payment_assistance",
+        "assistance": "Below-market first mortgage with House Key Opportunity DPA for eligible first-time buyers",
+        "maximum": "Official DPA page: House Key Opportunity DPA of up to $15,000 at 1% simple interest. Acquisition-cost and income limits apply.",
+        "eligibility": "Aimed at first-time buyers (or Target Area exceptions as published). Two income tests and acquisition-cost limits are described on official job aids. Confirm current county tables.",
+        "income_purchase_limits": "County-group income and acquisition-cost limits are published by WSHFC and change. Confirm on official materials; not copied here as a guarantee.",
+        "first_time_buyer": true,
+        "participating_lender_required": true,
+        "status": "Documented on official Here to Home pages retrieved this snapshot.",
+        "source_url": "https://heretohome.org/house-key-opportunity/",
+        "source_date": "Official page retrieval 2026-09-04"
+      },
+      {
+        "name": "Covenant Homeownership Program",
+        "agency": "Washington State Housing Finance Commission",
+        "type": "down_payment_assistance",
+        "assistance": "Down-payment and closing-cost assistance loan described on official Covenant pages",
+        "maximum": "Official program materials describe a 0% interest second loan; confirm current maximum and any forgiveness path on HeretoHome.org/Covenant.",
+        "eligibility": "Specialized statutory eligibility tied to the Covenant Homeownership Act study. First-time homebuyer rules and income limits apply as published. Not a general statewide DPA substitute.",
+        "income_purchase_limits": "County income limits are published on the official Covenant page. Confirm current figures.",
+        "first_time_buyer": true,
+        "participating_lender_required": true,
+        "status": "Documented on official Here to Home / Covenant pages retrieved this snapshot.",
+        "source_url": "https://heretohome.org/covenant/",
+        "source_date": "Official page retrieval 2026-09-04"
+      },
+      {
+        "name": "WSHFC Veterans down-payment assistance",
+        "agency": "Washington State Housing Finance Commission",
+        "type": "down_payment_assistance",
+        "assistance": "Veterans-specific down-payment assistance listed on the official Here to Home DPA page",
+        "maximum": "Confirm current amount and pairing rules on the official Veterans program page. Not restated here as a guaranteed dollar award.",
+        "eligibility": "Veteran / military eligibility as published by WSHFC. Program availability is not borrower approval.",
+        "income_purchase_limits": "Confirm official income/purchase rules on the Veterans page.",
+        "first_time_buyer": true,
+        "participating_lender_required": true,
+        "status": "Documented on official Here to Home pages retrieved this snapshot.",
+        "source_url": "https://heretohome.org/downpayment-assistance/",
+        "source_date": "Official page retrieval 2026-09-04"
+      },
+      {
+        "name": "HomeChoice",
+        "agency": "Washington State Housing Finance Commission",
+        "type": "down_payment_assistance",
+        "assistance": "Specialized HomeChoice assistance listed on official Here to Home pages",
+        "maximum": "Confirm current terms on the official HomeChoice page.",
+        "eligibility": "Specialized eligibility as published by WSHFC. Not a general first-time-buyer guarantee.",
+        "income_purchase_limits": "Confirm official tables.",
+        "first_time_buyer": true,
+        "participating_lender_required": true,
+        "status": "Documented on official Here to Home pages retrieved this snapshot.",
+        "source_url": "https://heretohome.org/downpayment-assistance/",
+        "source_date": "Official page retrieval 2026-09-04"
+      },
+      {
+        "name": "WSHFC homebuyer education",
+        "agency": "Washington State Housing Finance Commission",
+        "type": "homebuyer_education",
+        "assistance": "Required or recommended homebuyer education for Commission assistance programs",
+        "maximum": "Not a dollar assistance product.",
+        "eligibility": "Education completion is a program condition on official pages, not a loan approval.",
+        "income_purchase_limits": "Not a loan product.",
+        "first_time_buyer": null,
+        "participating_lender_required": false,
+        "status": "Documented on official WSHFC / Here to Home pages retrieved this snapshot.",
+        "source_url": "https://heretohome.org/homebuyer-education/",
+        "source_date": "Official page retrieval 2026-09-04"
+      }
+    ],
+    "verified_family_count": 7,
+    "caveat": "Program terms change. Eligibility is not guaranteed approval. Headline amounts are official-page formulas, not a promise of funds. Seattle / King / other local programs are out of scope."
+  },
+  "live_roster": {
+    "CURRENT_WASHINGTON_MORTGAGE_COMPANY_BULK_ROSTER": "SOURCE_NOT_ACQUIRED",
+    "WASHINGTON_LIVE_COMPANY_ROSTER": "SOURCE_NOT_ACQUIRED / OPEN_SEARCH_ONLY",
+    "live_licensed_company_denominator": "UNKNOWN",
+    "nmls_consumer_access": "OPEN_SEARCH_ONLY \u2014 not scraped",
+    "dfi_verify_license": {
+      "url": "https://dfi.wa.gov/consumers/verify-license",
+      "http_status": 200,
+      "access": "OPEN_SEARCH_ONLY"
+    },
+    "ckan": {
+      "http_status": 404,
+      "titles": [],
+      "query": "DFI mortgage broker consumer loan license roster"
+    },
+    "caveat": "Missing live roster is unknown, not zero. Search-only is not zero. Do not display a fake current license count. DFI year-end reported entities are a dated snapshot, not this live denominator. NMLS Consumer Access and the DFI licensee database were not scraped."
+  },
+  "cfpb": {
+    "source": "CFPB Consumer Complaint Database API",
+    "source_url": "https://www.consumerfinance.gov/data-research/consumer-complaints/",
+    "product": "Mortgage",
+    "geography": "WA",
+    "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
+    "http_status": 200,
+    "caveat": "Complaint is not a violation. Raw complaint count is not a quality ranking and is not exposure-normalized. No company complaint rate is published without an exposure denominator.",
+    "company_rate_published": false,
+    "canonical_company_snapshot": "National CFPB company snapshot exists separately; this overlay is statewide Washington geography and is not a company ranking. No new fuzzy adverse matching.",
+    "result": "ACQUIRED",
+    "mortgage_complaint_rows": 10340,
+    "top_issues": [
+      {
+        "key": "Loan modification,collection,foreclosure",
+        "count": 2680
+      },
+      {
+        "key": "Trouble during payment process",
+        "count": 2413
+      },
+      {
+        "key": "Loan servicing, payments, escrow account",
+        "count": 1780
+      },
+      {
+        "key": "Struggling to pay mortgage",
+        "count": 1276
+      },
+      {
+        "key": "Applying for a mortgage or refinancing an existing mortgage",
+        "count": 697
+      },
+      {
+        "key": "Closing on a mortgage",
+        "count": 422
+      },
+      {
+        "key": "Application, originator, mortgage broker",
+        "count": 417
+      },
+      {
+        "key": "Settlement process and costs",
+        "count": 216
+      }
+    ],
+    "subproduct_or_product": [
+      {
+        "key": "Credit reporting or other personal consumer reports",
+        "count": 88810
+      },
+      {
+        "key": "Credit reporting, credit repair services, or other personal consumer reports",
+        "count": 16057
+      },
+      {
+        "key": "Debt collection",
+        "count": 15208
+      },
+      {
+        "key": "Mortgage",
+        "count": 10340
+      },
+      {
+        "key": "Checking or savings account",
+        "count": 7076
+      },
+      {
+        "key": "Credit card",
+        "count": 6290
+      },
+      {
+        "key": "Credit card or prepaid card",
+        "count": 4057
+      },
+      {
+        "key": "Money transfer, virtual currency, or money service",
+        "count": 3211
+      }
+    ],
+    "year_trend": [
+      {
+        "year": 2019,
+        "count": 563
+      },
+      {
+        "year": 2020,
+        "count": 543
+      },
+      {
+        "year": 2021,
+        "count": 587
+      },
+      {
+        "year": 2022,
+        "count": 475
+      },
+      {
+        "year": 2023,
+        "count": 422
+      },
+      {
+        "year": 2024,
+        "count": 469
+      },
+      {
+        "year": 2025,
+        "count": 510
+      },
+      {
+        "year": 2026,
+        "count": 416
+      }
+    ],
+    "retrieved_at": "2026-09-04T17:16:45Z"
+  },
+  "servicing": {
+    "result": "NO_EASY_STATEWIDE_SERVICING_REPORT",
+    "dfi_exams_note": "DFI year-end stats include mortgage-servicing exam counts; that is not a loan-level statewide servicing file.",
+    "ckan": {
+      "http_status": 404,
+      "titles": [],
+      "query": "Washington mortgage servicer loan-level report"
+    },
+    "caveat": "No easy statewide servicing performance report was acquired. Consumer Loan companies may service mortgages; that class is not a live servicer roster."
+  },
+  "foreclosure": {
+    "STATEWIDE_STRUCTURED_FORECLOSURE_SOURCE_NOT_ACQUIRED": true,
+    "dfi_foreclosure_page": {
+      "url": "https://dfi.wa.gov/consumers/foreclosure",
+      "http_status": 404,
+      "mentions_foreclosure_fairness": false
+    },
+    "ckan": {
+      "http_status": 404,
+      "titles": [],
+      "query": "Washington statewide foreclosure dataset"
+    },
+    "note": "No county recorder, deed, or trustee-sale crawl was performed. Missing statewide foreclosure structure is unknown, not zero. A consumer foreclosure-help page is not a structured statewide dataset."
+  },
+  "depository": {
+    "source": "Existing LenderTrustHub FDIC Washington overlay (lib/fdic/data/washington.json)",
+    "fdic_cert_rows": 30,
+    "identity": "FDIC CERT when source-native",
+    "caveat": "A Washington-headquartered FDIC-insured bank is a depository overlay, not a DFI mortgage-broker license. HMDA reporters include depositories and nonbanks. Do not call every HMDA reporter a DFI-licensed lender. NCUA credit-union overlay is not restated as a DFI class here.",
+    "coverage_state": "REUSED_EXISTING_NATIONAL_OVERLAY"
+  },
+  "public_contacts": {
+    "policy": "Official/public business sources only. No internet enrichment. No person contact information.",
+    "dfi_orders_phone": 0,
+    "dfi_orders_email": 0,
+    "dfi_orders_website": 0,
+    "dfi_orders_address": 0,
+    "dfi_orders_contact_note": "DFI enforcement HTML table has no phone, email, website, or address fields.",
+    "caveat": "Zero contact fields from search-only license pages is a coverage gap, not a finding that Washington lenders have no phones."
+  },
+  "regulator_matrix": [
+    {
+      "credential": "HMDA reporter",
+      "what": "Institution that filed HMDA loan/application records for Washington property location",
+      "regulator": "CFPB / FFIEC HMDA",
+      "proves": "Reported application/origination activity in this vintage",
+      "does_not_prove": "Washington DFI license, current NMLS authority, or WSHFC program participation"
+    },
+    {
+      "credential": "NMLS ID",
+      "what": "Nationwide Multistate Licensing System identifier when source-native",
+      "regulator": "NMLS (system of record display; not a Washington regulator)",
+      "proves": "A stable identifier when printed by the source",
+      "does_not_prove": "Current Washington authority by itself, or whether the ID is an institution, branch, or person"
+    },
+    {
+      "credential": "Mortgage Broker",
+      "what": "Company licensed under the Mortgage Broker Practices Act",
+      "regulator": "Washington DFI Division of Consumer Services",
+      "proves": "DFI mortgage-broker class as of a stated evidence clock when a live record is verified in NMLS Consumer Access",
+      "does_not_prove": "HMDA reporter status, consumer-loan authority, or MLO person credential"
+    },
+    {
+      "credential": "Consumer Loan Company",
+      "what": "Company licensed under the Consumer Loan Act; may originate or service mortgage and non-mortgage consumer loans",
+      "regulator": "Washington DFI Division of Consumer Services",
+      "proves": "DFI consumer-loan class as of a stated evidence clock when verified in NMLS Consumer Access",
+      "does_not_prove": "That the company is only a mortgage lender, or a live company census"
+    },
+    {
+      "credential": "Mortgage Loan Originator",
+      "what": "Individual originator licensed through NMLS and sponsored as applicable",
+      "regulator": "Washington DFI via NMLS display",
+      "proves": "Individual originator credential path when source-native",
+      "does_not_prove": "A company license. This site does not publish an MLO person directory"
+    },
+    {
+      "credential": "Escrow Agent",
+      "what": "DFI-licensed escrow agent; verification may use the DFI Licensee Database rather than NMLS",
+      "regulator": "Washington DFI",
+      "proves": "Escrow-agent class when a live DFI record is verified",
+      "does_not_prove": "Mortgage-broker or consumer-loan authority"
+    },
+    {
+      "credential": "Depository Bank / Credit Union",
+      "what": "Bank, savings bank, or credit union operating under a prudential charter",
+      "regulator": "FDIC / NCUA / DFI Division of Banks or Credit Unions as applicable",
+      "proves": "Charter identity when source-native (FDIC CERT, NCUA, RSSD)",
+      "does_not_prove": "DFI mortgage-broker or consumer-loan license"
+    },
+    {
+      "credential": "Mortgage servicer activity",
+      "what": "Servicing of residential mortgage loans; often under the Consumer Loan Act when nonbank",
+      "regulator": "Washington DFI Division of Consumer Services when licensed as a consumer-loan company",
+      "proves": "Servicing activity only when a source-native license/order says so",
+      "does_not_prove": "A complete current servicer roster. No loan-level statewide servicing file was acquired"
+    },
+    {
+      "credential": "Money Transmitter",
+      "what": "DFI money-transmitter class listed on year-end stats; adjacent, not a mortgage-company substitute",
+      "regulator": "Washington DFI",
+      "proves": "Year-end reported money-transmitter count when cited as such",
+      "does_not_prove": "Mortgage-broker authority. Not added into a lender total"
+    },
+    {
+      "credential": "Program participating lender",
+      "what": "Appears on a WSHFC / Here to Home participating-lender path",
+      "regulator": "Washington State Housing Finance Commission",
+      "proves": "Program-participation listing as of page retrieval",
+      "does_not_prove": "DFI license, endorsement, or TrustHub recommendation"
+    }
+  ],
+  "gaps": [
+    "No current complete Washington mortgage-company bulk roster was acquired. Live licensed-company denominator is UNKNOWN, not zero.",
+    "Complete MLO person universe is not published and was not scraped from NMLS.",
+    "Complete current servicer roster was not acquired.",
+    "Name-only DFI enforcement rows cannot be attached to lender profiles.",
+    "DFI HTML table NMLS IDs are not source-typed as institution vs person vs branch.",
+    "NMLS Consumer Access remains search-only. Not scraped.",
+    "DFI Licensee Database remains search-only. Not scraped.",
+    "No complete state consumer-complaint census beyond CFPB mortgage overlay and DFI year-end complaint totals.",
+    "Live license status for each HMDA reporter is unknown.",
+    "No easy statewide servicing performance report was acquired.",
+    "STATEWIDE_STRUCTURED_FORECLOSURE_SOURCE_NOT_ACQUIRED. No county recorder crawl.",
+    "Company-level CFPB complaint exposure denominators are not computed.",
+    "DFI year-end reported entities as of 2025-12-31 are not a live roster."
+  ],
+  "identity_rules": {
+    "EXACT": [
+      "NMLS when source-native on the DFI order row",
+      "HMDA LEI",
+      "FDIC CERT when source-native"
+    ],
+    "EXACT_OTHER_OFFICIAL_ID": "FDIC CERT / RSSD / NCUA when source-native and not used to infer DFI authority",
+    "REVIEW_REQUIRED": "program lender names without source-native NMLS",
+    "UNSAFE": "name-only DFI orders \u2014 not used for adverse profile attachment"
+  },
+  "semantic_guardrails": [
+    "HMDA is not a license roster",
+    "HMDA reporter is not a Washington-licensed company",
+    "NMLS ID is not current Washington authority by itself",
+    "MLO person is not a lender company",
+    "DFI year-end count is not a live roster",
+    "Application is not origination",
+    "Denial is not misconduct",
+    "Denial rate is not quality",
+    "Complaint is not a violation",
+    "Order is not a complaint",
+    "Statement of Charges is not a final finding",
+    "Name-only adverse match is unsafe",
+    "Program eligibility is not approval",
+    "Missing is not zero",
+    "Search-only is not zero",
+    "No Trust Score",
+    "No paid ranking"
+  ],
+  "fingerprint": "f882a6ec7be37fd53c0c13e269578952f942ce2fc0acd0a5a731397ab1eec69d"
+}

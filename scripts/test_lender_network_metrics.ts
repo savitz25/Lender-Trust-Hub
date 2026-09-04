@@ -50,7 +50,7 @@ function baseInput(over: Partial<LenderNetworkMetricsInput> = {}): LenderNetwork
     publicRender: 181,
     publicIndex: 180,
     floridaPublic: 130,
-    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas'],
+    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington'],
     njCountyIntelligencePages: 4,
     njHmdaApplications: 318529,
     njHmdaOriginations: 177325,
@@ -67,6 +67,11 @@ function baseInput(over: Partial<LenderNetworkMetricsInput> = {}): LenderNetwork
     txSmlOrders: 3981,
     txLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED',
     txSmlSourceAsOf: '2025-10-16',
+    waHmdaApplications: 286871,
+    waHmdaOriginations: 174653,
+    waDfiEnforcementRows: 777,
+    waLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED',
+    waDfiSourceAsOf: '2026-09-04',
     servicerEvidenceRows: 10,
     licensesTotal: 164965,
     ...over,
@@ -134,11 +139,11 @@ describe('lender-network-metrics-v1 grain safety', () => {
     assert.equal(metricByKey(m, 'lenders_lending_institutions').sourceAsOf, null);
     assert.equal(metricByKey(m, 'florida_ofr_approved_company_credentials').sourceAsOf, '2026-08-27');
     assert.notEqual(metricByKey(m, 'florida_ofr_approved_company_credentials').sourceAsOf, m.generatedAt.slice(0, 10));
-    assert.equal(m.newestDocumentedSourceAsOf, '2026-09-03');
+    assert.equal(m.newestDocumentedSourceAsOf, '2026-09-04');
     assert.match(m.newestDocumentedSourceAsOfNote, /not Git/i);
   });
 
-  it('requires published FL/NJ/CA/TX paths and does not treat county pages as state pages', () => {
+  it('requires published FL/NJ/CA/TX/WA paths and does not treat county pages as state pages', () => {
     assert.throws(
       () => computeLenderNetworkMetrics(baseInput({ publishedStateIntelligencePaths: ['/florida'] })),
       /state intelligence path missing/,
@@ -151,7 +156,7 @@ describe('lender-network-metrics-v1 grain safety', () => {
       () =>
         computeLenderNetworkMetrics(
           baseInput({
-            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/new-jersey/union-county'],
+            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/new-jersey/union-county'],
           }),
         ),
       /county routes/,

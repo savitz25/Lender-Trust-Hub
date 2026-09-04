@@ -42,6 +42,8 @@ export type MetricGrain =
   | 'ca_calhfa_directory_row'
   | 'tx_sml_live_roster'
   | 'tx_sml_order'
+  | 'wa_dfi_live_roster'
+  | 'wa_dfi_enforcement_row'
   | 'published_state_intelligence_page'
   | 'nj_county_intelligence_page'
   | 'servicer_role_evidence_row';
@@ -186,6 +188,13 @@ export type LenderNetworkMetricsV1 = {
     hmdaApplications: number;
     hmdaOriginations: number;
     smlOrders: number;
+    liveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+    liveLicensedCompanyUniverse: null;
+  };
+  washington: {
+    hmdaApplications: number;
+    hmdaOriginations: number;
+    dfiEnforcementRows: number;
     liveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
     liveLicensedCompanyUniverse: null;
   };
