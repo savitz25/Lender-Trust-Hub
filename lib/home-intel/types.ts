@@ -154,4 +154,9 @@ export type LenderHomeIntel = {
   sources: SourceRow[];
   limitations: string[];
   doesNotInfer: string[];
+  freshnessClocks?: {
+    generatedAt: string;
+    newestDocumentedSourceAsOf: string | null;
+    note: string;
+  };
 };

@@ -33,7 +33,7 @@ export function buildLenderHomeIntel(
   const stateOfRecord: TraceMetric[] = [
     {
       id: 'institutions',
-      label: 'Canonical institution identities',
+      label: 'Lenders & lending institutions',
       display: fmt(snapshot.institutions),
       value: snapshot.institutions,
       unit: 'count',
@@ -143,7 +143,7 @@ export function buildLenderHomeIntel(
       grain: 'consumer-submitted CFPB mortgage product complaint observation',
       definition: 'Count of lender_cfpb_complaints rows in the mortgage product universe on this hub.',
       components: [
-        { label: 'Attached to canonical institution', value: fmt(snapshot.complaintsAttached), payloadKey: 'cfpb.attached' },
+        { label: 'Attached to a lending institution', value: fmt(snapshot.complaintsAttached), payloadKey: 'cfpb.attached' },
         { label: 'Unattached', value: fmt(snapshot.complaintsUnattached), payloadKey: 'cfpb.unattached' },
         { label: 'Confirmed source-company bridges', value: String(snapshot.cfpbConfirmedBridges), payloadKey: 'cfpb.confirmedBridges' },
       ],
@@ -245,13 +245,13 @@ export function buildLenderHomeIntel(
       storyId: 'complaint-coverage',
       storyType: 'GAP',
       title: 'Complaint evidence is extensive, but institution linkage is incomplete',
-      summary: `This hub holds ${fmt(snapshot.complaints)} CFPB mortgage complaint observations. ${fmt(snapshot.complaintsAttached)} are attached to a canonical institution; ${fmt(snapshot.complaintsUnattached)} are unattached. Confirmed source-company bridges: ${snapshot.cfpbConfirmedBridges} of ${fmt(snapshot.cfpbLabels)} labels. This is evidence coverage, not a quality ranking.`,
+      summary: `This hub holds ${fmt(snapshot.complaints)} CFPB mortgage complaint observations. ${fmt(snapshot.complaintsAttached)} are attached to a lending institution; ${fmt(snapshot.complaintsUnattached)} are unattached. Confirmed source-company bridges: ${snapshot.cfpbConfirmedBridges} of ${fmt(snapshot.cfpbLabels)} labels. This is evidence coverage, not a quality ranking.`,
       chartType: 'composition',
       chart: {
         caption: 'Attachment coverage of CFPB mortgage complaint observations. Unattached is not invalid. Attached is not a violation.',
         series: [
           {
-            label: 'Attached to a canonical institution',
+            label: 'Attached to a lending institution',
             value: snapshot.complaintsAttached,
             shareOf: snapshot.complaints,
             note: `${pct(snapshot.complaintsAttached, snapshot.complaints).toFixed(1)}% of observations`,
@@ -285,7 +285,7 @@ export function buildLenderHomeIntel(
   const coverage: CoverageRow[] = [
     {
       family: 'Institution identity',
-      display: `${fmt(snapshot.institutions)} canonical institution identities`,
+      display: `${fmt(snapshot.institutions)} lenders and lending institutions`,
       status: 'strong',
       method: 'National entity spine on the dedicated Lender database.',
       limitations: ['Identity is not a public profile.'],
@@ -454,7 +454,7 @@ export function buildLenderHomeIntel(
         id: 'what-complaint',
         question: 'What does a CFPB complaint mean?',
         answer:
-          'A complaint is a consumer-submitted observation. It is not a violation, not a TrustHub finding, and not proof of a clean record when absent. Many observations are not yet attached to a canonical institution.',
+          'A complaint is a consumer-submitted observation. It is not a violation, not a TrustHub finding, and not proof of a clean record when absent. Many observations are not yet attached to a lending institution.',
         href: '#findings',
         hrefLabel: 'Complaint coverage story',
       },
@@ -477,7 +477,7 @@ export function buildLenderHomeIntel(
       { id: 'my-lending', label: 'Save research', href: '/my-lending', note: 'Workspace for your notes. Not a lender score.' },
     ],
     journey: [
-      { step: 'NMLS / canonical identity', status: 'connected' },
+      { step: 'NMLS / institution identity', status: 'connected' },
       { step: 'State licensing / registration', status: 'partial' },
       { step: 'Depository / institution identity', status: 'partial' },
       { step: 'HMDA activity', status: 'partial' },
