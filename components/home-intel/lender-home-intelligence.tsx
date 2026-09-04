@@ -114,6 +114,13 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
           <strong>Understand the market. Research the lender. Compare the offer. You decide.</strong>
         </p>
         <p className="intel-hero__promise">We cite the evidence. You decide.</p>
+        {intel.freshnessClocks ? (
+          <p className="intel-kicker">
+            Network rollup generated {dateLabel(intel.freshnessClocks.generatedAt.slice(0, 10))}. Newest documented
+            source {dateLabel(intel.freshnessClocks.newestDocumentedSourceAsOf ?? 'varies by family')}. These are not
+            Git or deploy dates.
+          </p>
+        ) : null}
         <div className="intel-hero__actions">
           <a className="intel-btn intel-btn--primary" href="#record">
             Explore Lending Intelligence
@@ -244,8 +251,8 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
           <h2 id="explore-title">Reported HMDA 2025 application volume by jurisdiction</h2>
           <p>
             Color intensity encodes county-grain HMDA 2025 application volume aggregated to the state or territory. It
-            does not encode quality, approval likelihood, consumer risk, or lender quality. Florida is the only state
-            intelligence page on this hub today.
+            does not encode quality, approval likelihood, consumer risk, or lender quality. Florida, New Jersey, and
+            California have published state intelligence pages; other jurisdictions link to the research directory.
           </p>
         </div>
         <p className="intel-legend">Legend: darker cells have more reported county-grain applications. Not a ranking.</p>
