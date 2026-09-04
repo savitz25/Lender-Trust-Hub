@@ -16,6 +16,7 @@ export function publicationMetricInputs() {
   const caPub = read("lib/california-intelligence/publication.ts");
   const txPub = read("lib/texas-intelligence/publication.ts");
   const waPub = read("lib/washington-intelligence/publication.ts");
+  const azPub = read("lib/arizona-intelligence/publication.ts");
   const njTypes = read("lib/new-jersey-intelligence/counties/types.ts");
   const render = JSON.parse(read("docs/lend-nat-014-render-cohort.json"));
   const index = JSON.parse(read("docs/lend-nat-014-indexing-cohort.json"));
@@ -25,6 +26,7 @@ export function publicationMetricInputs() {
   const caSnap = JSON.parse(read("lib/california-intelligence/accepted-snapshot.json"));
   const txSnap = JSON.parse(read("lib/texas-intelligence/accepted-snapshot.json"));
   const waSnap = JSON.parse(read("lib/washington-intelligence/accepted-snapshot.json"));
+  const azSnap = JSON.parse(read("lib/arizona-intelligence/accepted-snapshot.json"));
   const flSnap = JSON.parse(read("lib/florida-intelligence/accepted-snapshot.json"));
 
   const flPath = flPub.match(/path:\s*'(\/[^']+)'/)?.[1];
@@ -32,7 +34,8 @@ export function publicationMetricInputs() {
   const caPath = caPub.match(/path:\s*'(\/[^']+)'/)?.[1];
   const txPath = txPub.match(/path:\s*'(\/[^']+)'/)?.[1];
   const waPath = waPub.match(/path:\s*'(\/[^']+)'/)?.[1];
-  if (!flPath || !njPath || !caPath || !txPath || !waPath) {
+  const azPath = azPub.match(/path:\s*'(\/[^']+)'/)?.[1];
+  if (!flPath || !njPath || !caPath || !txPath || !waPath || !azPath) {
     throw new Error("state intelligence publication paths missing");
   }
   if (!existsSync(join(root, "app/florida/page.tsx"))) throw new Error("Florida page missing");
@@ -40,13 +43,14 @@ export function publicationMetricInputs() {
   if (!existsSync(join(root, "app/california/page.tsx"))) throw new Error("California page missing");
   if (!existsSync(join(root, "app/texas/page.tsx"))) throw new Error("Texas page missing");
   if (!existsSync(join(root, "app/washington/page.tsx"))) throw new Error("Washington page missing");
+  if (!existsSync(join(root, "app/arizona/page.tsx"))) throw new Error("Arizona page missing");
 
   const njCountySlugs = [
     ...njTypes.match(/export const NJ_COUNTY_SLUGS[\s\S]*?\] as const/)[0].matchAll(/'([a-z-]+-county)'/g),
   ].map((m) => m[1]);
 
   return {
-    publishedStateIntelligencePaths: [flPath, njPath, caPath, txPath, waPath],
+    publishedStateIntelligencePaths: [flPath, njPath, caPath, txPath, waPath, azPath],
     njCountyIntelligencePages: njCountySlugs,
     publicRender: render.count,
     publicIndex: index.count,
@@ -71,6 +75,11 @@ export function publicationMetricInputs() {
     waDfiEnforcementRows: waSnap.hero.observations_value,
     waLiveRosterCoverage: waSnap.live_roster.CURRENT_WASHINGTON_MORTGAGE_COMPANY_BULK_ROSTER,
     waDfiSourceAsOf: waSnap.source_as_of.dfi_enforcement,
+    azHmdaApplications: azSnap.hero.universe_value,
+    azHmdaOriginations: azSnap.hero.current_value,
+    azCfpbMortgageComplaints: azSnap.cfpb.mortgage_complaint_rows,
+    azLiveRosterCoverage: azSnap.live_roster.CURRENT_ARIZONA_MORTGAGE_COMPANY_BULK_ROSTER,
+    azDifiSourceAsOf: azSnap.source_as_of.cfpb,
     flOfrSourceAsOf: flSnap.licensing.source_as_of,
     flUnresolvedSourceCompanyNmls: flSnap.graph.unresolved_source_company_nmls,
     flStateGrainApplications: flSnap.hmda.applications,

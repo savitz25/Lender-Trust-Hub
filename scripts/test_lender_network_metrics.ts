@@ -50,7 +50,7 @@ function baseInput(over: Partial<LenderNetworkMetricsInput> = {}): LenderNetwork
     publicRender: 181,
     publicIndex: 180,
     floridaPublic: 130,
-    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington'],
+    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona'],
     njCountyIntelligencePages: 4,
     njHmdaApplications: 318529,
     njHmdaOriginations: 177325,
@@ -72,6 +72,11 @@ function baseInput(over: Partial<LenderNetworkMetricsInput> = {}): LenderNetwork
     waDfiEnforcementRows: 777,
     waLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED',
     waDfiSourceAsOf: '2026-09-04',
+    azHmdaApplications: 308338,
+    azHmdaOriginations: 183374,
+    azCfpbMortgageComplaints: 10365,
+    azLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED',
+    azDifiSourceAsOf: '2026-09-04',
     servicerEvidenceRows: 10,
     licensesTotal: 164965,
     ...over,
@@ -108,9 +113,15 @@ describe('lender-network-metrics-v1 grain safety', () => {
     assert.equal(metricByKey(m, 'ca_crmla_live_roster').valueState, 'NOT_ACQUIRED');
     assert.equal(metricByKey(m, 'tx_sml_live_roster').value, null);
     assert.equal(metricByKey(m, 'tx_sml_live_roster').valueState, 'NOT_ACQUIRED');
+    assert.equal(metricByKey(m, 'az_difi_live_roster').value, null);
+    assert.equal(metricByKey(m, 'az_difi_live_roster').valueState, 'NOT_ACQUIRED');
+    assert.equal(m.arizona.liveLicensedCompanyUniverse, null);
+    assert.equal(metricByKey(m, 'az_cfpb_mortgage_complaints').value, 10365);
+    assert.notEqual(metricByKey(m, 'az_cfpb_mortgage_complaints').value, m.arizona.hmdaApplications);
     assert.match(metricByKey(m, 'nj_rmla_license_roster').trace.whyUnknown ?? '', /never render as zero/i);
     assert.match(metricByKey(m, 'ca_crmla_live_roster').trace.whyUnknown ?? '', /not bulk-acquired/i);
     assert.match(metricByKey(m, 'tx_sml_live_roster').trace.whyUnknown ?? '', /not zero/i);
+    assert.match(metricByKey(m, 'az_difi_live_roster').trace.whyUnknown ?? '', /not zero/i);
   });
 
   it('keeps Florida OFR credentials, confirmed NMLS, held, unresolved, and public cohort apart', () => {
@@ -143,7 +154,7 @@ describe('lender-network-metrics-v1 grain safety', () => {
     assert.match(m.newestDocumentedSourceAsOfNote, /not Git/i);
   });
 
-  it('requires published FL/NJ/CA/TX/WA paths and does not treat county pages as state pages', () => {
+  it('requires published FL/NJ/CA/TX/WA/AZ paths and does not treat county pages as state pages', () => {
     assert.throws(
       () => computeLenderNetworkMetrics(baseInput({ publishedStateIntelligencePaths: ['/florida'] })),
       /state intelligence path missing/,
@@ -156,7 +167,7 @@ describe('lender-network-metrics-v1 grain safety', () => {
       () =>
         computeLenderNetworkMetrics(
           baseInput({
-            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/new-jersey/union-county'],
+            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/new-jersey/union-county'],
           }),
         ),
       /county routes/,
