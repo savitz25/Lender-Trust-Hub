@@ -552,6 +552,8 @@ export function buildLenderHomeIntel(
       'No complaint-to-violation flattening.',
       'No HMDA county+state double count.',
     ],
+    evidenceInventory: [],
+    stateCards: [],
   };
 
   const payloadFingerprint = fingerprintLenderHomeIntel(draft);

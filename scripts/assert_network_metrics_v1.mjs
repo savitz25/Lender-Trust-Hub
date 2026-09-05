@@ -76,8 +76,8 @@ assert(v1.homeProjection.applications === v1.hmda.applications, "homepage HMDA m
 assert(v1.homeProjection.floridaInternal === v1.florida.confirmedNmls, "homepage FL internal from v1");
 assert(load.includes("projectLenderHomeIntelFromNetworkMetrics"), "homepage consumes v1");
 assert(load.includes("loadLenderNetworkMetrics"), "homepage loads v1");
-assert(hero.includes("Network rollup generated"), "hero generated clock");
-assert(hero.includes("newestDocumentedSourceAsOf"), "hero documented source clock");
+assert(hero.includes("Inventory projection generated"), "homepage generation clock");
+assert(hero.includes("Source as of"), "homepage source clocks");
 assert(!hero.includes("Last official update"), "no ambiguous official update");
 assert(build.includes("Lenders & lending institutions"), "build uses consumer label");
 assert(!/label: 'Canonical institution identities'/.test(build), "build dropped canonical primary label");

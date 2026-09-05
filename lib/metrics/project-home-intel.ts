@@ -1,6 +1,11 @@
 import { buildLenderHomeIntelFromSnapshot } from '@/lib/home-intel/build';
 import type { LenderHomeIntel } from '@/lib/home-intel/types';
 import type { LenderNetworkMetricsV1 } from './lender-network-metrics-v1';
+import {
+  assertPublicHomepageInventory,
+  buildLenderHomepageEvidenceInventory,
+  LENDER_HOMEPAGE_STATE_CARDS,
+} from '@/lib/home-intel/evidence-inventory';
 
 const STATE_INTEL_HREF: Record<string, string> = {
   FL: '/florida',
@@ -15,6 +20,8 @@ export function projectLenderHomeIntelFromNetworkMetrics(
   m: LenderNetworkMetricsV1,
 ): LenderHomeIntel {
   const intel = buildLenderHomeIntelFromSnapshot(m.homeProjection, m.generatedAt);
+  const evidenceInventory = buildLenderHomepageEvidenceInventory(m);
+  assertPublicHomepageInventory(evidenceInventory);
   return {
     ...intel,
     freshnessClocks: {
@@ -26,5 +33,7 @@ export function projectLenderHomeIntelFromNetworkMetrics(
       ...row,
       intelligenceHref: STATE_INTEL_HREF[row.state] ?? null,
     })),
+    evidenceInventory,
+    stateCards: LENDER_HOMEPAGE_STATE_CARDS,
   };
 }
