@@ -32,6 +32,7 @@ assert.equal(byKey.get('wa_dfi_orders')?.value, 777);
 assert.equal(byKey.get('wa_exact_nmls_orders')?.value, 102);
 assert.equal(byKey.get('az_difi_enforcement_unacquired')?.value, null);
 assert.equal(byKey.get('az_difi_enforcement_unacquired')?.publicationStatus, 'PUBLIC_LIMITATION');
+assert.equal(byKey.get('az_difi_enforcement_unacquired')?.sourceClock, 'Source date not reported');
 assert.match(byKey.get('az_difi_enforcement_unacquired')?.doesNotCount ?? '', /Zero orders/);
 assert.match(byKey.get('fdic_cert')?.doesNotCount ?? '', /NMLS IDs/);
 assert.match(byKey.get('az_programs')?.doesNotCount ?? '', /Eligible borrowers/);
@@ -77,6 +78,7 @@ assert.doesNotMatch(component, /181 national-searchable|130 Florida-public|Flori
 assert.match(component, /Source date not reported/);
 assert.match(component, /Retrieved/);
 assert.doesNotMatch(component, /Recently added|Added to TrustHub/);
+assert.doesNotMatch(component + JSON.stringify(inventory), /OPEN_HTML_TABLE_DOCUMENTED_NOT_HARVESTED/);
 assert.doesNotMatch(component, /<i aria-hidden="true">↔<\/i>/);
 assert.doesNotMatch(component, /NMLS institution<\/strong>.*↔.*State license/s);
 assert.match(component, /No universal crosswalk/);
