@@ -23,8 +23,9 @@ assert(page.includes("loadLenderHomeIntel") && page.includes("LenderHomeIntellig
 assert(page.includes("from '@/lib/home-intel/load'"), "page consumes loader");
 assert(!page.includes("from '@/lib/home-intel/build'"), "page does not import build directly");
 assert(load.includes("projectLenderHomeIntelFromNetworkMetrics"), "loader projects from v1");
-assert(hero.includes("Trace this number"), "Trace this number");
-assert(hero.includes("Network rollup generated"), "two-clock generated");
+assert(hero.includes("Trace this measure"), "Trace this measure");
+assert(hero.includes("Inventory projection generated"), "projection generation clock");
+assert(hero.includes("Source as of"), "source-as-of clock");
 assert(byKey.lenders_lending_institutions.value === v1.homeProjection.institutions, "hero institutions from v1");
 assert(v1.homeProjection.applications === 11529787, "homepage HMDA");
 assert(v1.homeProjection.complaints === 458146, "homepage complaints");

@@ -125,6 +125,56 @@ export type ToolLink = {
   note: string;
 };
 
+export type LenderEvidenceFamily =
+  | 'INSTITUTION_IDENTITY_LICENSING'
+  | 'MORTGAGE_MARKET_ACTIVITY'
+  | 'CONSUMER_COMPLAINTS'
+  | 'REGULATORY_ENFORCEMENT'
+  | 'DEPOSITORY_BANK'
+  | 'HOMEBUYER_PROGRAMS'
+  | 'BUSINESS_RELATIONSHIPS'
+  | 'PUBLIC_RESEARCH_SURFACES';
+
+export type HomepageEvidenceMeasure = {
+  key: string;
+  label: string;
+  value: number | null;
+  display: string;
+  family: LenderEvidenceFamily;
+  grain: string;
+  entityClass: string;
+  geography: string;
+  sourceSystem: string;
+  acceptedArtifact: string;
+  sourceClockLabel: 'Source as of' | 'Source clock' | 'Vintage';
+  sourceClock: string;
+  retrievedAt: string | null;
+  generatedAt: string | null;
+  definition: string;
+  counts: string;
+  doesNotCount: string;
+  publicationStatus: 'PUBLIC' | 'PUBLIC_LIMITATION';
+  researchDestination: string;
+  identityRule: string | null;
+};
+
+export type HomepageStateCard = {
+  code: 'FL' | 'NJ' | 'CA' | 'TX' | 'WA' | 'AZ';
+  name: string;
+  href: string;
+  regulators: string;
+  sourceClocks: Array<{
+    label: string;
+    sourceAsOf: string | null;
+    sourceClock?: string | null;
+    retrievedAt: string | null;
+  }>;
+  evidence: string[];
+  identityNote: string;
+  limitation: string;
+  highlights: Array<{ label: string; value: string; grain: string }>;
+};
+
 export type LenderHomeIntel = {
   contractVersion: typeof LENDER_HOME_INTEL_VERSION;
   homepagePublicationVersion: typeof LENDER_HOME_PUBLICATION_VERSION;
@@ -154,6 +204,8 @@ export type LenderHomeIntel = {
   sources: SourceRow[];
   limitations: string[];
   doesNotInfer: string[];
+  evidenceInventory: HomepageEvidenceMeasure[];
+  stateCards: HomepageStateCard[];
   freshnessClocks?: {
     generatedAt: string;
     newestDocumentedSourceAsOf: string | null;

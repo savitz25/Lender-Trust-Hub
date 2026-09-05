@@ -8,14 +8,14 @@ export const dynamic = 'force-dynamic';
 
 const isProd = process.env.VERCEL_ENV === 'production';
 
-const TITLE = 'Understand the mortgage market before you choose a lender | Lender Trust Hub';
+const TITLE = 'Mortgage lender research, licensing & public evidence | LenderTrustHub';
 const DESCRIPTION =
-  'Independent mortgage-market research: institutions, HMDA applications and originations, complaint observations, licensing and regulatory evidence. No Trust Score. No ranking. You decide.';
+  'Research mortgage lenders through NMLS and state identity, HMDA activity, CFPB complaints, enforcement, FDIC context, and homebuyer programs. No Trust Score or ranking.';
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  keywords: ['mortgage intelligence', 'lender research', 'HMDA', 'NMLS', 'public regulatory evidence'],
+  keywords: ['mortgage lender research', 'NMLS lender lookup', 'HMDA mortgage data', 'CFPB mortgage complaints', 'mortgage licensing', 'mortgage enforcement', 'first-time homebuyer programs', 'FDIC bank research'],
   alternates: { canonical: SHARE_HUB.origin },
   robots: { index: isProd, follow: isProd },
   openGraph: {
@@ -43,6 +43,9 @@ export default async function HomePage() {
             { '@type': 'Thing', name: 'HMDA mortgage applications' },
             { '@type': 'Thing', name: 'NMLS institution identity' },
             { '@type': 'Thing', name: 'CFPB mortgage complaint observations' },
+            { '@type': 'Thing', name: 'State mortgage licensing and enforcement' },
+            { '@type': 'Thing', name: 'FDIC bank identity' },
+            { '@type': 'Thing', name: 'State homebuyer programs' },
           ],
         }}
       />
