@@ -146,8 +146,10 @@ export type HomepageEvidenceMeasure = {
   geography: string;
   sourceSystem: string;
   acceptedArtifact: string;
-  sourceAsOf: string;
-  retrievedOrGeneratedAt: string | null;
+  sourceClockLabel: 'Source as of' | 'Source clock' | 'Vintage';
+  sourceClock: string;
+  retrievedAt: string | null;
+  generatedAt: string | null;
   definition: string;
   counts: string;
   doesNotCount: string;
@@ -161,7 +163,12 @@ export type HomepageStateCard = {
   name: string;
   href: string;
   regulators: string;
-  sourceAsOf: string;
+  sourceClocks: Array<{
+    label: string;
+    sourceAsOf: string | null;
+    sourceClock?: string | null;
+    retrievedAt: string | null;
+  }>;
   evidence: string[];
   identityNote: string;
   limitation: string;

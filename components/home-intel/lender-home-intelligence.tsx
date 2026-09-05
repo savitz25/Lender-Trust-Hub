@@ -15,7 +15,9 @@ function Trace({ item }: { item: HomepageEvidenceMeasure }) {
         <div><dt>Grain</dt><dd>{item.grain}</dd></div>
         <div><dt>Geography</dt><dd>{item.geography}</dd></div>
         <div><dt>Source</dt><dd>{item.sourceSystem}</dd></div>
-        <div><dt>Source as of</dt><dd>{item.sourceAsOf}</dd></div>
+        <div><dt>{item.sourceClockLabel}</dt><dd>{item.sourceClock}</dd></div>
+        {item.retrievedAt ? <div><dt>Retrieved</dt><dd>{item.retrievedAt}</dd></div> : null}
+        {item.generatedAt ? <div><dt>Snapshot generated</dt><dd>{item.generatedAt}</dd></div> : null}
         <div><dt>Accepted artifact</dt><dd><code>{item.acceptedArtifact}</code></dd></div>
         <div><dt>Counts</dt><dd>{item.counts}</dd></div>
         <div><dt>Does not count</dt><dd>{item.doesNotCount}</dd></div>
@@ -35,11 +37,13 @@ function InventoryFamily({ family, items }: { family: LenderEvidenceFamily; item
       </div>
       <div className="intel-family__measures">
         {items.map((item) => (
-          <article className={`intel-measure${item.value == null ? ' intel-measure--unknown' : ''}`} key={item.key}>
+          <article className={`intel-measure${item.publicationStatus === 'PUBLIC_LIMITATION' ? ' intel-measure--limitation' : ''}`} key={item.key}>
+            {item.publicationStatus === 'PUBLIC_LIMITATION' ? <p className="intel-measure__badge">Coverage limitation</p> : null}
             <p className="intel-measure__value">{item.display}</p>
             <h4>{item.label}</h4>
             <p>{item.grain} · {item.geography}</p>
-            <p className="intel-freshness"><span>Source as of</span> {item.sourceAsOf}</p>
+            <p className="intel-freshness"><span>{item.sourceClockLabel}</span> {item.sourceClock}</p>
+            {item.retrievedAt ? <p className="intel-freshness"><span>Retrieved</span> {item.retrievedAt}</p> : null}
             <Trace item={item} />
           </article>
         ))}
@@ -103,8 +107,11 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
 
       <section className="intel-section intel-section--dark" id="identity" aria-labelledby="identity-title">
         <div className="intel-heading"><p className="intel-eyebrow">Identity is infrastructure</p><h2 id="identity-title">One institution can appear under several official identifiers</h2><p>We connect identifiers only when accepted evidence supports the relationship. There is no fabricated universal crosswalk.</p></div>
-        <div className="intel-identity-map" role="img" aria-label="Separate official lender identity systems can connect through evidence-backed crosswalks"><div><strong>NMLS institution</strong><span>Company identity</span></div><i aria-hidden="true">↔</i><div><strong>State license</strong><span>Credential identity</span></div><i aria-hidden="true">↔</i><div><strong>HMDA LEI</strong><span>Market reporter</span></div><i aria-hidden="true">↔</i><div><strong>FDIC CERT</strong><span>Insured bank</span></div></div>
-        <div className="intel-identity-footnotes"><p><strong>Separate:</strong> branch NMLS ≠ institution NMLS · MLO ≠ company · FDIC CERT ≠ NMLS ID.</p><p><strong>Safe attribution:</strong> exact official identifiers are preferred for adverse evidence. Ambiguous name-only matches remain aggregate or withheld.</p></div>
+        <div className="intel-identity-map" aria-label="Separate official lender identity systems">
+          <div className="intel-identity-map__hub"><strong>Lender / institution research identity</strong><span>Evidence-connected only when the accepted crosswalk is exact or deterministic</span></div>
+          <div><strong>NMLS institution</strong><span>Company identifier</span></div><div><strong>State license / credential</strong><span>Regulator identifier</span></div><div><strong>HMDA LEI</strong><span>Market reporter identifier</span></div><div><strong>FDIC CERT</strong><span>Insured depository identifier</span></div><div><strong>Branch NMLS</strong><span>Branch identifier</span></div><div><strong>MLO NMLS</strong><span>Individual originator identifier</span></div>
+        </div>
+        <div className="intel-identity-footnotes"><p><strong>No universal crosswalk:</strong> relationships are shown only when accepted evidence supports an exact or deterministic crosswalk.</p><p><strong>Separate:</strong> NMLS institution ≠ branch NMLS · NMLS institution ≠ MLO NMLS · HMDA LEI ≠ NMLS ID · FDIC CERT ≠ NMLS ID · bank ≠ all lenders.</p><p><strong>Safe attribution:</strong> exact official identifiers are preferred for adverse evidence. Ambiguous name-only matches remain aggregate or withheld.</p></div>
       </section>
 
       <section className="intel-section" id="inventory" aria-labelledby="inventory-title">
@@ -118,7 +125,9 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
         <div className="intel-state-grid">{intel.stateCards.map((state) => <article className="intel-state-card" key={state.code}>
           <header><span>{state.code}</span><div><h3>{state.name}</h3><p>{state.regulators}</p></div></header>
           <div className="intel-state-card__metrics">{state.highlights.map((highlight) => <div key={highlight.label}><strong>{highlight.value}</strong><span>{highlight.label}</span><small>{highlight.grain}</small></div>)}</div>
-          <ul>{state.evidence.map((item) => <li key={item}>{item}</li>)}</ul><p><strong>Identity:</strong> {state.identityNote}</p><p className="intel-state-card__limit">{state.limitation}</p><p className="intel-freshness"><span>Source as of</span> {state.sourceAsOf}</p><Link className="intel-btn intel-btn--secondary" href={state.href}>Explore {state.name} intelligence →</Link>
+          <ul>{state.evidence.map((item) => <li key={item}>{item}</li>)}</ul><p><strong>Identity:</strong> {state.identityNote}</p><p className="intel-state-card__limit">{state.limitation}</p>
+          <dl className="intel-state-clocks">{state.sourceClocks.map((clock) => <div key={clock.label}><dt>{clock.label}</dt><dd>{clock.sourceAsOf ? <><span>Source as of</span> {clock.sourceAsOf}</> : clock.sourceClock ? <><span>Source clock</span> {clock.sourceClock}</> : <><span>Source as of</span> Source date not reported</>}{clock.retrievedAt ? <small><b>Retrieved</b> {clock.retrievedAt}</small> : null}</dd></div>)}</dl>
+          <Link className="intel-btn intel-btn--secondary" href={state.href}>Explore {state.name} intelligence →</Link>
         </article>)}</div>
       </section>
 

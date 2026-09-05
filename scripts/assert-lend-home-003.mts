@@ -16,6 +16,7 @@ const component = readFileSync('components/home-intel/lender-home-intelligence.t
 const page = readFileSync('app/page.tsx', 'utf8');
 
 assertPublicHomepageInventory(inventory);
+assert.equal(inventory.length, 29);
 assert.equal(LENDER_HOMEPAGE_STATE_CARDS.length, 6);
 assert.deepEqual(LENDER_HOMEPAGE_STATE_CARDS.map((state) => state.href), ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona']);
 assert.equal(byKey.get('state_pages')?.value, LENDER_HOMEPAGE_STATE_CARDS.length);
@@ -34,7 +35,10 @@ assert.equal(byKey.get('az_difi_enforcement_unacquired')?.publicationStatus, 'PU
 assert.match(byKey.get('az_difi_enforcement_unacquired')?.doesNotCount ?? '', /Zero orders/);
 assert.match(byKey.get('fdic_cert')?.doesNotCount ?? '', /NMLS IDs/);
 assert.match(byKey.get('az_programs')?.doesNotCount ?? '', /Eligible borrowers/);
-assert.notEqual(byKey.get('az_cfpb')?.sourceAsOf, byKey.get('az_cfpb')?.retrievedOrGeneratedAt);
+assert.notEqual(byKey.get('az_cfpb')?.sourceClock, byKey.get('az_cfpb')?.retrievedAt);
+assert.equal(byKey.get('national_institutions')?.sourceClockLabel, 'Source clock');
+assert.equal(byKey.get('fdic_cert')?.sourceClockLabel, 'Source clock');
+assert.equal(byKey.get('hmda_applications')?.sourceClockLabel, 'Vintage');
 
 for (const code of ['FL', 'NJ', 'CA', 'TX', 'WA', 'AZ']) assert.ok(LENDER_HOMEPAGE_STATE_CARDS.some((state) => state.code === code));
 for (const key of ['fl_credentials', 'nj_dobi_orders', 'ca_calhfa_rows', 'tx_sml_orders', 'wa_dfi_orders', 'az_cfpb']) assert.ok(byKey.has(key), `${key} missing`);
@@ -42,16 +46,42 @@ for (const item of inventory) {
   assert.ok(item.grain);
   assert.ok(item.sourceSystem);
   assert.ok(item.acceptedArtifact);
-  assert.ok(item.sourceAsOf);
+  assert.ok(item.sourceClock);
+  assert.ok(['PUBLIC', 'PUBLIC_LIMITATION'].includes(item.publicationStatus));
   assert.ok(item.counts);
   assert.ok(item.doesNotCount);
 }
+assert.throws(
+  () => assertPublicHomepageInventory([{ ...inventory[0], publicationStatus: 'INTERNAL' } as unknown as typeof inventory[number]]),
+  /non-public publication status/,
+);
+
+for (const state of LENDER_HOMEPAGE_STATE_CARDS) {
+  assert.ok(state.sourceClocks.length >= 2);
+  for (const clock of state.sourceClocks) {
+    assert.doesNotMatch(clock.sourceAsOf ?? '', /retrieved/i);
+    assert.doesNotMatch(clock.sourceAsOf ?? '', /varies|accepted .*snapshot/i);
+  }
+}
+const californiaDirectoryClock = LENDER_HOMEPAGE_STATE_CARDS.find((state) => state.code === 'CA')?.sourceClocks.find((clock) => clock.label === 'CalHFA directory');
+assert.equal(californiaDirectoryClock?.sourceAsOf, null);
+assert.ok(californiaDirectoryClock?.retrievedAt);
+const newJerseyEnforcementClock = LENDER_HOMEPAGE_STATE_CARDS.find((state) => state.code === 'NJ')?.sourceClocks.find((clock) => clock.label === 'DOBI enforcement corpus');
+assert.equal(newJerseyEnforcementClock?.sourceAsOf, null);
+assert.match(newJerseyEnforcementClock?.sourceClock ?? '', /acquired through/);
+assert.equal(LENDER_HOMEPAGE_STATE_CARDS.find((state) => state.code === 'AZ')?.sourceClocks.find((clock) => clock.label === 'DIFI enforcement')?.sourceAsOf, null);
 
 assert.equal(inventory.some((item) => /grand total|combined mortgage records/i.test(item.label)), false);
 assert.equal(inventory.some((item) => /private|person_mlo_entities|branch_entities/.test(item.key)), false);
 assert.doesNotMatch(component, /181 national-searchable|130 Florida-public|Florida, New Jersey, and California have published/);
-assert.match(component, /Source as of/);
+assert.match(component, /Source date not reported/);
+assert.match(component, /Retrieved/);
 assert.doesNotMatch(component, /Recently added|Added to TrustHub/);
+assert.doesNotMatch(component, /<i aria-hidden="true">↔<\/i>/);
+assert.doesNotMatch(component, /NMLS institution<\/strong>.*↔.*State license/s);
+assert.match(component, /No universal crosswalk/);
+for (const semantic of ['NMLS institution ≠ branch NMLS', 'NMLS institution ≠ MLO NMLS', 'HMDA LEI ≠ NMLS ID', 'FDIC CERT ≠ NMLS ID', 'bank ≠ all lenders']) assert.match(component, new RegExp(semantic));
+assert.match(component, /Coverage limitation/);
 assert.match(component, /No Trust Score\. No ranking\. You decide\./);
 assert.doesNotMatch(page + component, /AggregateRating/);
 assert.doesNotMatch(page + component, /paid ranking/i);
