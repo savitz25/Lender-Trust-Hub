@@ -33,6 +33,7 @@ export async function GET(
       process.env.ATH_HANDOFF_SECRET || "",
       profile,
     );
+    console.info(JSON.stringify({ event: "claim_cta_clicked", hub: "lender", profile_class: "institution", state: profile.homeState || "unknown", acquisition_source: "organic" }));
     return createClaimHandoffRedirect(token);
   } catch {
     return Response.json(
