@@ -37,6 +37,10 @@ export type LenderResearchQuery = {
   sort?: { field: string; direction: 'asc' | 'desc' };
   failReason?: string;
   failClosedKind?: string;
+  identityQuery?: string;
+  identifier?: { type: 'NMLS_INSTITUTION' | 'LEI'; value: string };
+  definitionId?: 'nmls' | 'lei' | 'hmda' | 'application' | 'origination' | 'denial' | 'cfpb' | 'institution_types';
+  coverageState?: 'KNOWN' | 'UNKNOWN' | 'PARTIAL' | 'NOT_ACQUIRED' | 'REQUEST_ONLY' | 'UNSUPPORTED';
 };
 
 export type AskInterpretationLine = { label: string; value: string };
@@ -63,6 +67,7 @@ export type AskInstitutionRow = {
   hrefLabel?: string;
   whyMatched: string[];
   nmls?: string | null;
+  evidenceAvailable?: string[];
 };
 
 export const LENDER_ASK_CONTRACT = 'lender-ask-v1' as const;

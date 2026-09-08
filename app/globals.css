@@ -747,6 +747,16 @@ body {
   font-weight: 700;
   color: var(--th-navy);
 }
+#lookup { grid-column: 1 / -1; }
+#lookup .intel-ask-panel { margin-top: 0; }
+.intel-ask-panel h3 { margin-top: 0.35rem; font-size: clamp(1.35rem, 3vw, 2rem); }
+.intel-advanced-filters { margin-top: 1rem; }
+.intel-filter-grid, .intel-interpretation-grid { display: grid; gap: 0.75rem; margin-top: 1rem; }
+.intel-filter-grid label, .intel-interpretation-grid > div { min-width: 0; padding: 0.75rem; border: 1px solid var(--th-border); border-radius: var(--th-radius-control); background: #fff; }
+.intel-filter-grid select { display: block; width: 100%; min-height: var(--th-control); margin-top: 0.35rem; padding: 0 0.5rem; border: 1px solid var(--th-border); border-radius: var(--th-radius-control); background: #fff; color: var(--th-navy); }
+.intel-interpretation-grid dt { color: #475569; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+.intel-interpretation-grid dd { margin: 0.25rem 0 0; overflow-wrap: anywhere; }
+@media (min-width: 40rem) { .intel-filter-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .intel-interpretation-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .intel-ask-row {
   display: grid;
   gap: 0.75rem;
@@ -802,6 +812,7 @@ body {
   padding-top: 1rem;
   border-top: 1px solid var(--th-border);
 }
+.intel-home { overflow-x: clip; }
 .intel-plain-list {
   max-width: 46rem;
 }

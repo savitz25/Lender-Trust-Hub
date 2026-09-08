@@ -7,7 +7,10 @@ function fmt(n: number): string {
 }
 
 export function interpretationLines(query: LenderResearchQuery): AskInterpretationLine[] {
-  const lines: AskInterpretationLine[] = [{ label: 'Mode', value: query.mode.replaceAll('_', ' ') }];
+  const lines: AskInterpretationLine[] = [{ label: 'Research type', value: query.mode.replaceAll('_', ' ') }];
+  if (query.coverageState) lines.push({ label: 'Coverage', value: query.coverageState });
+  if (query.identifier) lines.push({ label: 'Identifier', value: `${query.identifier.type === 'LEI' ? 'LEI' : 'NMLS institution ID'} ${query.identifier.value}` });
+  if (query.identityQuery && !query.identifier) lines.push({ label: 'Institution', value: query.identityQuery });
   if (query.geography) {
     lines.push({
       label: 'Geography',
@@ -53,12 +56,23 @@ export function executeLenderAsk(raw: string, intel: LenderHomeIntel): AskExecut
   }
 
   if (query.mode === 'definition') {
+    const definitions: Record<string, { title: string; body: string }> = {
+      nmls: { title: 'What an NMLS institution ID means', body: 'An NMLS institution ID identifies a licensed or registered company in the Nationwide Multistate Licensing System. Institution, branch, and person/MLO IDs are separate identity grains; the number is not a recommendation.' },
+      lei: { title: 'What an LEI means', body: 'A Legal Entity Identifier identifies a legal entity in financial reporting. LenderTrustHub uses confirmed LEI bridges for HMDA reporting identity; an LEI is not an NMLS ID or an additional institution.' },
+      hmda: { title: 'What HMDA means here', body: 'HMDA records reported mortgage applications and outcomes tied to property/census geography. The observations do not establish lender headquarters, service territory, future approval odds, price, or quality.' },
+      institution_types: { title: 'Bank, mortgage company, and broker', body: 'Depository, nonbank mortgage company, and mortgage broker are different institutional roles. A public institution profile does not represent an MLO person or branch, and role is not a quality signal.' },
+      application: { title: 'What an application means in HMDA', body: 'An application is an HMDA-reported application observation. It is distinct from an origination and a denial.' },
+      denial: { title: 'What a denial means in HMDA', body: 'A denial is an HMDA action category. It is not a finding of wrongdoing and does not by itself establish a comparable lender approval rate.' },
+      origination: { title: 'What “originated” means in HMDA', body: 'Originations are HMDA originated-loan observations in the 2025 reporting vintage. They are not today’s rate, a recommendation, or a prediction for a future applicant.' },
+      cfpb: { title: 'What a CFPB complaint observation means', body: 'A complaint is a consumer-submitted observation. It is not a finding of wrongdoing, and institution attribution requires a confirmed company bridge.' },
+    };
+    const selected = definitions[query.definitionId ?? 'origination'] ?? definitions.origination!;
     return {
       query,
       interpretation,
       geographyWarning,
-      headline: 'What “originated” means in HMDA',
-      body: 'On this hub, originations are HMDA originated loans in the 2025 reporting vintage. That is not a closed loan from your Loan Estimate, not today’s rate, and not a recommendation.',
+      headline: selected.title,
+      body: selected.body,
     };
   }
 

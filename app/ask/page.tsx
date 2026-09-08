@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AskResultView } from '@/components/ask-lender/ask-result-view';
 import { AskTrustHubSearch } from '@/components/home-intel/ask-trust-hub-search';
+import { SearchAnalytics } from '@/components/specialist-search/SearchAnalytics';
 import { executeAskQuery } from '@/lib/ask-lender/execute-query';
 
 export const dynamic = 'force-dynamic';
@@ -23,8 +24,8 @@ function one(v: string | string[] | undefined): string {
 
 export default async function AskPage({ searchParams }: Props) {
   const params = await searchParams;
-  const q = one(params.q).trim();
-  const page = Number(one(params.page) || '1') || 1;
+  const q = one(params.q).trim().slice(0, 180);
+  const page = Math.min(200, Math.max(1, Number(one(params.page) || '1') || 1));
   const result = q
     ? executeAskQuery({
         q,
@@ -40,8 +41,8 @@ export default async function AskPage({ searchParams }: Props) {
   return (
     <div className="intel-home">
       <section className="intel-hero" aria-labelledby="ask-title">
-        <p className="intel-eyebrow">Ask LenderTrustHub</p>
-        <h1 id="ask-title">Ask a mortgage-market research question</h1>
+        <p className="intel-eyebrow">LenderTrustHub specialist research</p>
+        <h1 id="ask-title">Research lenders and mortgage-market evidence</h1>
         <p className="intel-hero__lede">
           Natural language is mapped to a structured query plan. Facts come from committed HMDA observations and
           confirmed identity bridges — not from a chatbot and not from invented counts.
@@ -53,7 +54,7 @@ export default async function AskPage({ searchParams }: Props) {
           Ask form
         </h2>
         <AskTrustHubSearch initialQuery={q} />
-        {result ? <AskResultView result={result} question={q} /> : <p>Enter a question to run a deterministic research query.</p>}
+        {result ? <><SearchAnalytics resultCount={result.rows?.length ?? result.facts?.length ?? 0} dimensions={{ hub: 'lender', intent: result.query.mode, state: result.query.geography?.state, county: result.query.geography?.county, hasIdentifier: Boolean(result.query.identifier), identifierType: result.query.identifier?.type, loanType: result.query.loanType?.[0], loanPurpose: result.query.loanPurpose?.[0], action: result.query.actionTaken?.[0], evidenceFamily: result.query.evidenceFamilies?.[0], coverageState: result.query.coverageState }} /><AskResultView result={result} question={q} /></> : <p>Enter a question to run a deterministic research query.</p>}
         <p>
           <Link className="intel-text-link" href="/">
             Back to mortgage intelligence

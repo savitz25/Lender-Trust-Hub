@@ -8,20 +8,18 @@ function fmt(n: number): string {
 export function AskResultView({ result, question }: { result: AskExecution; question: string }) {
   return (
     <div className="intel-ask-result">
-      <h2>We interpreted your question as</h2>
-      <ul className="intel-plain-list">
+      <p className="intel-eyebrow">We interpreted your question as</p>
+      <dl className="intel-interpretation-grid">
         {result.interpretation.map((line) => (
-          <li key={line.label}>
-            <strong>{line.label}:</strong> {line.value}
-          </li>
+          <div key={`${line.label}-${line.value}`}><dt>{line.label}</dt><dd>{line.value}</dd><dd><Link className="intel-text-link" data-specialist-event="refine" href={`/ask?q=${encodeURIComponent(removeCriterion(question, line.label))}`} aria-label={`Remove ${line.label} criterion`}>Remove criterion</Link></dd></div>
         ))}
-      </ul>
+      </dl>
       <p className="intel-kicker">{result.geographyWarning}</p>
 
       {result.filters?.length ? (
         <div className="intel-ask-examples" role="list" aria-label="Refine this query">
           {result.filters.map((chip) => (
-            <Link key={chip.id} href={chip.href} className={chip.active ? 'intel-chip intel-chip--active' : 'intel-chip'}>
+            <Link key={chip.id} href={chip.href} data-specialist-event="refine" className={chip.active ? 'intel-chip intel-chip--active' : 'intel-chip'}>
               {chip.label}
             </Link>
           ))}
@@ -61,9 +59,10 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
             <caption className="visually-hidden">{result.headline}</caption>
             <thead>
               <tr>
-                <th scope="col">Rank</th>
+                <th scope="col">{result.query.identityQuery ? 'Identity relevance order' : 'Market activity order'}</th>
                 <th scope="col">Institution / LEI</th>
                 <th scope="col">{result.rows[0]?.metricLabel ?? 'Count'}</th>
+                <th scope="col">Why this matched</th>
                 <th scope="col">Identity</th>
                 <th scope="col">Profile</th>
               </tr>
@@ -79,7 +78,8 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
                       {row.nmls ? ` · NMLS ${row.nmls}` : null}
                     </div>
                   </th>
-                  <td>{fmt(row.metric)}</td>
+                  <td>{result.query.identityQuery ? row.metricLabel : fmt(row.metric)}</td>
+                  <td>{row.whyMatched[0]}</td>
                   <td>
                     {row.identityStatus === 'public_profile'
                       ? 'Public research profile'
@@ -91,8 +91,8 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
                   </td>
                   <td>
                     {row.href ? (
-                      <Link className="intel-text-link" href={row.href}>
-                        {row.hrefLabel ?? 'Open profile'}
+                      <Link className="intel-text-link" data-specialist-event="profile_open" href={row.href}>
+                        {row.hrefLabel ?? 'Research this lender'}
                       </Link>
                     ) : (
                       'Not a public profile'
@@ -106,15 +106,18 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
       ) : null}
 
       {result.rows?.map((row) => (
-        <details key={`why-${row.rank}-${row.lei}`} className="intel-disclose">
+        <details key={`why-${row.rank}-${row.lei}`} className="intel-disclose" data-specialist-event="trace_open">
           <summary>
-            Why this matched · {row.displayName}
+            Trace this result · {row.displayName}
           </summary>
+          <p><strong>Why this matched</strong></p>
           <ul>
             {row.whyMatched.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
+          <p><strong>Evidence available:</strong> {(row.evidenceAvailable?.length ? row.evidenceAvailable : ['institution identity']).join('; ')}.</p>
+          <p className="intel-kicker">{result.period ?? 'Committed publication manifest'} · {result.grain ?? 'institution identity'}. Property geography is not lender location or service territory.</p>
         </details>
       ))}
 
@@ -173,6 +176,14 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
       ) : null}
     </div>
   );
+}
+
+function removeCriterion(query: string, label: string): string {
+  if (/geography/i.test(label)) return query.replace(/\b(?:in|for properties in|headquartered in|serving)\s+(?:broward county|palm beach county|florida|new jersey|california|arizona)\b/gi, '').trim();
+  if (/loan type/i.test(label)) return query.replace(/\b(?:conventional|fha|va|usda)\b/gi, '').trim();
+  if (/action/i.test(label)) return query.replace(/\b(?:applications?|originations?|originated|denials?|denied)\b/gi, '').trim();
+  if (/identifier|institution/i.test(label)) return '';
+  return query;
 }
 
 function askPageHref(sharePath: string, page: number): string {
