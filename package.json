@@ -21,6 +21,7 @@
     "assert:intel-004": "tsx scripts/assert-intel-004.mts",
     "assert:lend-home-003": "tsx scripts/assert-lend-home-003.mts",
     "assert:ask-lender": "tsx scripts/assert-ask-lender.mts",
+    "check:th-search-001c": "tsx --test lib/ask-lender/th-search-001c.test.ts && npm run assert:ask-lender",
     "assert:florida-intel": "tsx scripts/fl-lend-005-flint.ts",
     "assert:fl-lend-002e": "tsx scripts/assert-fl-lend-002e.mts && python scripts/fl-lend-002e-snapshot-tests.py",
     "check:fl-lend-002f": "python scripts/fl-lend-002f.py check && tsx scripts/assert-fl-lend-002f.mts",

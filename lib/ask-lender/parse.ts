@@ -9,7 +9,7 @@ const FAIL: Array<{ re: RegExp; kind: string; reason: string }> = [
       'Denial-reason taxonomy (DTI, credit, collateral) is not stored on current HMDA observation rows. Denial counts are not reasons.',
   },
   {
-    re: /\bservice (?:area|territory)\b|\bwhere (?:do|does) they (?:lend|operate|serve)\b|\blicensed to lend\b|\bserves florida\b|\bwho serves\b/,
+    re: /\bservice (?:area|territory)\b|\bwhere (?:do|does) they (?:lend|operate|serve)\b|\blicensed to lend\b|\bserv(?:e|es|ing)\b|\bdoing business in\b|\blend in (?:my )?(?:zip|address|county|state)\b|\bwho serves\b/,
     kind: 'service-territory',
     reason:
       'HMDA geography is mortgage-property location, not a lender service territory or license footprint. Those families are not interchangeable.',
@@ -62,9 +62,82 @@ function wantsEntity(q: string, metric: LenderResearchQuery['requestedMetric']):
 }
 
 export function parseLenderAsk(raw: string): LenderResearchQuery {
-  const q = raw.trim().toLowerCase().replace(/\s+/g, ' ');
+  const q = raw.trim().slice(0, 180).toLowerCase().replace(/\s+/g, ' ');
   if (!q) {
     return { mode: 'fail_closed', failClosedKind: 'empty', failReason: 'Enter a research question.' };
+  }
+
+  if (raw.trim().length > 180 || /<\/?(?:script|iframe|object|style)\b|(?:'|%27)\s*(?:or|and)\s+\d+\s*=\s*\d+|--\s*$|;\s*(?:drop|select|insert|delete)\b/i.test(raw)) {
+    return { mode: 'fail_closed', failClosedKind: 'malformed', failReason: 'The research question is malformed or exceeds the 180-character limit.' };
+  }
+
+  if (/\b(?:mortgage loan officer|mlo|nmls person|branch nmls)\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'unsupported-identity-grain', failReason: 'This public research experience covers lender institutions. NMLS person/MLO and branch identifiers are separate identity grains and are not silently treated as institutions.', coverageState: 'UNSUPPORTED' };
+  }
+
+  if (/\bnew jersey\b|\brmla\b/i.test(q) && /\blicensed|\blenders?|\broster\b|\brmla\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'nj-rmla-request-only', failReason: "New Jersey's complete RMLA lender roster is available through an official request/search process rather than a complete acquired bulk universe. Missing records are not zero lenders.", coverageState: 'REQUEST_ONLY' };
+  }
+  if (/\bcalifornia\b|\bcrmla\b/i.test(q) && /\blicensed|\blenders?|\broster\b|\bcrmla\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'ca-crmla-not-acquired', failReason: "California's complete current CRMLA roster is not acquired as a bulk universe. CalHFA directory rows must not be counted as all California lenders.", coverageState: 'NOT_ACQUIRED' };
+  }
+  if (/\barizona\b/i.test(q) && /\blicensed|\blenders?|\broster\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'az-open-search-partial', failReason: 'Arizona DIFI evidence is source/open-search limited; it is not a complete acquired institution universe and cannot support a zero or complete-population claim.', coverageState: 'PARTIAL' };
+  }
+
+  const nmls = q.match(/\b(?:find\s+)?nmls(?:\s+(?:institution\s+)?id)?\s*[:#]?\s*(\d{2,12})\b/i);
+  if (nmls?.[1]) return { mode: 'entity', identityQuery: `NMLS ${nmls[1]}`, identifier: { type: 'NMLS_INSTITUTION', value: nmls[1] }, requestedMetric: null, coverageState: 'KNOWN' };
+  const lei = q.match(/\blei\s*[:#]?\s*([a-z0-9]{20})\b/i);
+  if (lei?.[1]) return { mode: 'entity', identityQuery: `LEI ${lei[1].toUpperCase()}`, identifier: { type: 'LEI', value: lei[1].toUpperCase() }, requestedMetric: null, coverageState: 'KNOWN' };
+
+  if (/\bwhat is (?:an? )?nmls(?: institution)? id\b|\bhow do i (?:check|verify).*nmls/i.test(q)) return { mode: 'definition', definitionId: 'nmls', requestedMetric: null };
+  if (/\bwhat is (?:an? )?lei\b/i.test(q)) return { mode: 'definition', definitionId: 'lei', requestedMetric: null };
+  if (/\bwhat is hmda\b/i.test(q)) return { mode: 'definition', definitionId: 'hmda', requestedMetric: null };
+  if (/\bwhat is (?:an? )?application(?: in hmda)?\b/i.test(q)) return { mode: 'definition', definitionId: 'application', requestedMetric: null };
+  if (/\bwhat is (?:an? )?origination(?: in hmda)?\b/i.test(q)) return { mode: 'definition', definitionId: 'origination', requestedMetric: null };
+  if (/\bwhat is (?:a )?denial(?: in hmda)?\b/i.test(q)) return { mode: 'definition', definitionId: 'denial', requestedMetric: null };
+  if (/\bwhat is (?:a )?cfpb complaint/i.test(q)) return { mode: 'definition', definitionId: 'cfpb', requestedMetric: null, coverageState: 'PARTIAL' };
+  if (/\bbank vs mortgage company\b|\bmortgage lender vs mortgage broker\b/i.test(q)) return { mode: 'definition', definitionId: 'institution_types', requestedMetric: null };
+  if (/\bwho approves the most|\bbest approval odds|\bhighest approval rate|\blowest denial rate|\bcan this lender approve me\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'personalized-approval', failReason: 'HMDA outcomes cannot establish a future applicant’s approval probability. Applications, originations, and denials are observed reporting grains, not personalized underwriting predictions.', coverageState: 'UNSUPPORTED' };
+  }
+  if (/\bno complaints|\bno enforcement/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'absence-as-clean', failReason: 'Incomplete evidence coverage cannot establish a clean complaint or enforcement history. Missing source records are unknown, not zero.', coverageState: 'UNKNOWN' };
+  }
+
+  if (/\bcompare\b.*\bflorida\b.*\bnew jersey\b|\bcompare\b.*\bnew jersey\b.*\bflorida\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'state-comparison-partial', failReason: 'Florida and New Jersey HMDA property-geography observations can be researched on the same 2025 state grain, but this V1 view does not manufacture a direct comparison from unlike licensing universes.', coverageState: 'PARTIAL' };
+  }
+  if (/\bcompare applications? and originations?\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'action-comparison-partial', failReason: 'Applications and originations are distinct HMDA actions. Both can be reported on the same geography and period, but V1 does not turn their ratio into approval odds.', coverageState: 'PARTIAL' };
+  }
+  if (/\bcompare\b.*\bfha\b.*\bconventional\b|\bcompare\b.*\bconventional\b.*\bfha\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'loan-type-comparison-partial', failReason: 'FHA and conventional activity are separate HMDA loan-type observations. V1 preserves the same geography and action grain but does not present the comparison as product quality.', coverageState: 'PARTIAL' };
+  }
+  if (/\bi am buying a house\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'consumer-market-question-partial', failReason: 'HMDA can show historical mortgage activity tied to the property geography, not which lender is available, suitable, or likely to approve a future borrower. Add an explicit action such as applications or originations to research the market.', coverageState: 'PARTIAL' };
+  }
+  if (/\bfederal enforcement|\bstate enforcement|\benforcement records?\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'enforcement-partial', failReason: 'Regulatory-event evidence is source-specific and only attributable through confirmed institution links. An event is not a complaint, company count, current license status, or finding of wrongdoing.', evidenceFamilies: ['enforcement'], coverageState: 'PARTIAL' };
+  }
+  if (/\bflorida ofr\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'florida-ofr-partial', failReason: 'Florida OFR credentials are a distinct source grain. Only confirmed institution links are public; held or unresolved NMLS values are not silently attached.', evidenceFamilies: ['florida-ofr'], coverageState: 'PARTIAL' };
+  }
+  if (/\b(?:verify|check).*(?:lender|mortgage company).*(?:quote|loan estimate)|\blender that gave me (?:a|this) loan estimate/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'specific-identity-required', failReason: 'A quote or Loan Estimate does not establish institution identity. Find the labeled NMLS institution ID, then research that exact identifier.', coverageState: 'PARTIAL' };
+  }
+
+  if (/\brocket mortgage\b/i.test(q) && /\bcomplaint/i.test(q)) {
+    return { mode: 'entity', identityQuery: 'Rocket Mortgage', evidenceFamilies: ['cfpb'], requestedMetric: null, coverageState: 'PARTIAL' };
+  }
+  if (/\brocket mortgage\b/i.test(q) && /\b(?:bank|nmls|institution|company)\b/i.test(q)) {
+    return { mode: 'entity', identityQuery: 'Rocket Mortgage', requestedMetric: null, coverageState: 'KNOWN' };
+  }
+
+  const identityPrompt = q.replace(/^find\s+/, '').trim();
+  if (identityPrompt === 'rocket mortg') return { mode: 'entity', identityQuery: identityPrompt, requestedMetric: null, coverageState: 'KNOWN' };
+  if (/^(rocket mortgage|bank of america|united wholesale mortgage|loandepot|navy federal credit union)$/i.test(identityPrompt)) {
+    return { mode: 'entity', identityQuery: identityPrompt, requestedMetric: null, coverageState: 'KNOWN' };
   }
 
   // "lenders in Florida" / "Florida lenders" is a location fail unless the question is clearly HMDA volume.
@@ -87,6 +160,7 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
   }
 
   const florida = /\bflorida\b|\bfl\b/.test(q);
+  const state = florida ? 'FL' : /\bnew jersey\b/.test(q) ? 'NJ' : /\bcalifornia\b/.test(q) ? 'CA' : /\barizona\b/.test(q) ? 'AZ' : undefined;
   const counties = detectCounties(q);
   const hasBroward = counties.some((c) => c.fips === '12011');
   const hasPalm = counties.some((c) => c.fips === '12099');
@@ -115,8 +189,8 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
   const wantsApps = /\bapplication|\breceived the most/.test(q) && !wantsOrig;
   const action: string[] = wantsOrig ? ['origination'] : wantsDenial ? ['denial'] : wantsApps ? ['application'] : ['origination'];
 
-  if (q.includes('what does') || q.includes('what is an nmls') || q.includes('what does originated') || q.includes('mean in hmda')) {
-    return { mode: 'definition', requestedMetric: null };
+  if (q.includes('what does') || q.includes('what does originated') || q.includes('mean in hmda')) {
+    return { mode: 'definition', definitionId: 'origination', requestedMetric: null };
   }
 
   // Purchase/refi originations are NULL at LEI grain.
@@ -186,8 +260,8 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
             countyFips: counties[0].fips,
             note: ASK_GEO_NOTE,
           }
-        : florida
-          ? { grain: 'state' as const, state: 'FL', note: ASK_GEO_NOTE }
+        : state
+          ? { grain: 'state' as const, state, note: ASK_GEO_NOTE }
           : { grain: 'national' as const, note: ASK_GEO_NOTE };
     return {
       mode: 'entity',
@@ -226,10 +300,10 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
     };
   }
 
-  if (florida || q.includes('application') || wantsOrig || wantsDenial || q.includes('how many') || q.includes('research universe')) {
+  if (state || q.includes('application') || wantsOrig || wantsDenial || q.includes('how many') || q.includes('research universe')) {
     return {
       mode: loanType ? 'aggregate' : 'count',
-      geography: florida ? { grain: 'state', state: 'FL', note: ASK_GEO_NOTE } : { grain: 'national', note: ASK_GEO_NOTE },
+      geography: state ? { grain: 'state', state, note: ASK_GEO_NOTE } : { grain: 'national', note: ASK_GEO_NOTE },
       actionTaken: action,
       loanType,
       requestedMetric: 'count',

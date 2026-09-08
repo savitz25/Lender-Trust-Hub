@@ -6,11 +6,11 @@ export const dynamic = 'force-dynamic';
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
-  const q = (url.searchParams.get('q') ?? '').trim();
+  const q = (url.searchParams.get('q') ?? '').trim().slice(0, 180);
   if (!q) {
     return NextResponse.json({ error: 'Missing q', contract: LENDER_ASK_CONTRACT }, { status: 400 });
   }
-  const page = Number(url.searchParams.get('page') || '1') || 1;
+  const page = Math.min(200, Math.max(1, Number(url.searchParams.get('page') || '1') || 1));
   const result = executeAskQuery({
     q,
     page,

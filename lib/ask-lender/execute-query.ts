@@ -1,7 +1,7 @@
 import { CFPB_COMPANY_MAPPINGS } from '@/lib/cfpb/mappings';
 import { loadCfpbSnapshot } from '@/lib/cfpb/load';
 import { buildLenderHomeIntel } from '@/lib/home-intel/build';
-import { DISCOVERY_RECORDS, nationalPresentationName } from '@/lib/national-profile/discovery';
+import { DISCOVERY_RECORDS, nationalPresentationName, searchDiscovery } from '@/lib/national-profile/discovery';
 import { isNationalRenderSlug } from '@/lib/national-profile/publication';
 import { nationalProfilePath } from '@/lib/national-profile/cohort';
 import { ASK_SOURCE_FILES, loadAskCatalog, metricFromCounty, metricFromState, type CountyLeiRow, type StateLeiRow } from './catalog';
@@ -107,7 +107,7 @@ function toRow(lei: string, rank: number, metric: number, label: string, extras:
   const href = profileHref(id.publicSlug);
   const why = [
     `HMDA 2025 ${label} for the requested property geography.`,
-    `Ranked by raw ${label} count. Most is volume, not a recommendation.`,
+    `Ordered by the reported raw ${label} count. Most is volume, not a recommendation.`,
     id.identityNote,
   ];
   if (id.nmls) why.push(`NMLS institution credential ${id.nmls} is shown only when the LEI identity file carries it.`);
@@ -126,6 +126,7 @@ function toRow(lei: string, rank: number, metric: number, label: string, extras:
     hrefLabel: href ? 'Public research profile' : undefined,
     whyMatched: why,
     nmls: id.nmls,
+    evidenceAvailable: ['HMDA market activity', ...(id.nmls ? ['NMLS institution identity'] : [])],
   };
 }
 
@@ -295,6 +296,62 @@ function executeAskQueryUnstamped(input: AskQueryInput): AskExecution {
   const overrides = input.overrides ?? {};
   const parsed = input.structuredQuery ?? applyAskOverrides(parseLenderAsk(raw), overrides);
   const intel = buildLenderHomeIntel();
+
+  if (parsed.mode === 'entity' && parsed.identityQuery) {
+    const hits = searchDiscovery(parsed.identityQuery).slice(0, pageSize);
+    const rows: AskInstitutionRow[] = hits.map((hit, index) => ({
+      rank: index + 1,
+      lei: hit.record.lei ?? '',
+      displayName: nationalPresentationName(hit.record.canonical_name, hit.record.display_name),
+      metric: 0,
+      metricLabel: hit.match === 'identifier' ? 'Exact institution identifier' : 'Identity relevance',
+      applications: null,
+      originations: null,
+      denials: null,
+      identityStatus: 'public_profile',
+      identityNote: 'Published lender institution identity. Branch and MLO records are excluded from this index.',
+      href: hit.href,
+      hrefLabel: 'Research this lender',
+      nmls: hit.record.nmls,
+      whyMatched: [
+        hit.match === 'identifier'
+          ? `Exact ${hit.matchedIdentifier === 'lei' ? 'LEI' : 'NMLS institution'} identifier match.`
+          : `${hit.match.replaceAll('_', ' ')} institution-name match in the bounded published profile index.`,
+        'Institution identity only; not a branch, MLO, recommendation, or quality ranking.',
+      ],
+      evidenceAvailable: [
+        'Published institution identity',
+        ...(hit.record.evidence.hmda ? ['HMDA market activity'] : []),
+        ...(hit.record.evidence.cfpb ? ['CFPB complaint observations (coverage-limited)'] : []),
+        ...(hit.record.evidence.enforcement ? ['Regulatory enforcement evidence'] : []),
+      ],
+    }));
+    const identifierLabel = parsed.identifier ? `${parsed.identifier.type === 'LEI' ? 'LEI' : 'NMLS institution ID'} ${parsed.identifier.value}` : parsed.identityQuery;
+    return {
+      query: parsed,
+      interpretation: [
+        { label: 'Research type', value: 'Institution identity' },
+        { label: parsed.identifier ? 'Identifier' : 'Institution', value: identifierLabel },
+        { label: 'Entity grain', value: 'Published lender institution — not branch or MLO' },
+      ],
+      geographyWarning: ASK_GEO_NOTE,
+      headline: rows.length ? `Published institution matches for ${identifierLabel}` : 'No matching published lender institution',
+      body: rows.length
+        ? 'Identity results come from the bounded publication index. Exact identifiers outrank name matches; this is not a quality ranking.'
+        : 'We did not find that institution identifier or name in the published research cohort. Confirm an NMLS identifier with NMLS Consumer Access.',
+      rows,
+      totalRows: rows.length,
+      page: 1,
+      pageSize,
+      pageCount: 1,
+      trace: baseTrace('Bounded published institution index; exact labeled NMLS/LEI before normalized name.', 'lender institution identity'),
+      sharePath: sharePath(raw, 1, overrides),
+      period: 'Current committed publication manifest',
+      grain: 'lender institution identity',
+      caveats: ['NMLS institution IDs, branch IDs, and person/MLO IDs are separate identity classes.'],
+      elapsedMs: Date.now() - started,
+    };
+  }
 
   if (parsed.mode === 'fail_closed' || parsed.mode === 'definition' || parsed.mode === 'evidence' || (parsed.mode === 'count' && !parsed.geography?.countyFips && !parsed.loanType) || (parsed.mode === 'comparison' && parsed.geography?.grain === 'state')) {
     const snap = executeLenderAsk(raw, intel);
@@ -508,7 +565,7 @@ function executeAskQueryUnstamped(input: AskQueryInput): AskExecution {
     interpretation: interpretationLines(parsed),
     geographyWarning: ASK_GEO_NOTE,
     headline: `HMDA reporting institutions with the most ${label} for properties in ${place}`,
-    body: `Ranked by raw ${label} in the 2025 HMDA vintage. Most is a volume count, not a recommendation. Unpublished research identities are shown at LEI grain and are not mass-published.`,
+    body: `Ordered by reported raw ${label} in the 2025 HMDA vintage. Most is a volume count, not a recommendation. Unpublished research identities are shown at LEI grain and are not mass-published.`,
     rows: slice,
     totalRows: ranked.length,
     page: safePage,

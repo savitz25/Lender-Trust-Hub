@@ -1,12 +1,16 @@
 import Link from 'next/link';
 import { askExamplePrompts } from '@/lib/ask-lender/execute';
+import { SearchShellAnalytics } from '@/components/specialist-search/SearchShellAnalytics';
 
 export function AskTrustHubSearch({ initialQuery = '' }: { initialQuery?: string }) {
   const examples = askExamplePrompts();
   return (
     <div className="intel-ask-panel">
-      <form action="/ask" method="get">
-        <label htmlFor="ask-lender-input">Ask a mortgage-market research question</label>
+      <SearchShellAnalytics />
+      <p className="intel-eyebrow">Research lenders</p>
+      <h3>What do you want to find out?</h3>
+      <form id="lender-specialist-search" action="/ask" method="get" role="search" aria-label="Research lenders">
+        <label htmlFor="ask-lender-input" className="visually-hidden">Lender research question, institution name, NMLS ID, market, county or state</label>
         <div className="intel-ask-row">
           <input
             id="ask-lender-input"
@@ -14,10 +18,12 @@ export function AskTrustHubSearch({ initialQuery = '' }: { initialQuery?: string
             type="search"
             autoComplete="off"
             defaultValue={initialQuery}
-            placeholder="Which lenders originated the most mortgages in Florida?"
+            maxLength={180}
+            required
+            placeholder="Ask a question, enter a lender, NMLS ID, market, county or state..."
           />
           <button className="intel-btn intel-btn--primary" type="submit">
-            Ask
+            Research
           </button>
         </div>
       </form>
@@ -32,6 +38,15 @@ export function AskTrustHubSearch({ initialQuery = '' }: { initialQuery?: string
           </Link>
         ))}
       </div>
+      <details className="intel-disclose intel-advanced-filters">
+        <summary>Advanced filters</summary>
+        <div className="intel-filter-grid">
+          <label>HMDA action<select name="action" form="lender-specialist-search"><option value="">As interpreted</option><option value="application">Applications</option><option value="origination">Originations</option><option value="denial">Denials</option></select></label>
+          <label>Loan type<select name="loanType" form="lender-specialist-search"><option value="">As interpreted</option><option value="conventional">Conventional</option><option value="FHA">FHA</option><option value="VA">VA</option><option value="USDA">USDA</option></select></label>
+          <label>Property geography<select name="geo" form="lender-specialist-search"><option value="">As interpreted</option><option value="FL">Florida</option><option value="broward">Broward County</option><option value="palm-beach">Palm Beach County</option></select></label>
+        </div>
+        <p className="intel-kicker">HMDA geography describes mortgaged-property activity—not lender headquarters, branches, licensing, or service territory.</p>
+      </details>
     </div>
   );
 }

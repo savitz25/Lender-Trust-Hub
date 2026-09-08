@@ -88,10 +88,7 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
           <ol><li><span>01</span> Institution & license identity</li><li><span>02</span> Market activity by geography</li><li><span>03</span> Complaints & regulatory history</li><li><span>04</span> Bank and program context</li></ol>
           <p>Availability differs by institution, state, source, and time.</p>
         </aside>
-        <form id="lookup" className="intel-lookup" action="/lender" method="get">
-          <div><p className="intel-eyebrow">Research a lender</p><h2>Search by name or NMLS Institution ID</h2><p>Search public institution profiles—not MLO people or branch records.</p></div>
-          <div className="intel-lookup__grid"><label><span className="visually-hidden">Lender name or NMLS Institution ID</span><input name="q" type="search" autoComplete="off" placeholder="Lender name or NMLS ID" /></label><button className="intel-btn intel-btn--primary" type="submit">Search lenders</button></div>
-        </form>
+        <div id="lookup"><AskTrustHubSearch /></div>
       </section>
 
       <section className="intel-section intel-section--tint" id="layers" aria-labelledby="layers-title">
@@ -149,7 +146,7 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
       </section>
 
       <section className="intel-section intel-section--tint" id="ask" aria-labelledby="ask-title">
-        <div className="intel-heading"><p className="intel-eyebrow">Ask LenderTrustHub</p><h2 id="ask-title">Start with a research question</h2><p>Ask about a lender, NMLS identity, market, complaint evidence, regulator, or program—then inspect the cited context.</p></div><AskTrustHubSearch />
+        <div className="intel-heading"><p className="intel-eyebrow">Ask LenderTrustHub</p><h2 id="ask-title">Continue with source-backed questions</h2><p>The primary research box uses this same structured engine. These examples preserve useful educational paths without creating a second search implementation.</p></div>
         <div className="intel-ask">{intel.askMarket.slice(0, 4).map((item) => <details key={item.id} className="intel-disclose"><summary>{item.question}</summary><p>{item.answer}</p><Link className="intel-text-link" href={item.href}>{item.hrefLabel} →</Link></details>)}</div>
       </section>
 
