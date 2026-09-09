@@ -70,6 +70,12 @@ export type LenderNetworkMetricsInput = {
   azCfpbMortgageComplaints: number;
   azLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
   azDifiSourceAsOf: string;
+  coHmdaApplications: number;
+  coHmdaOriginations: number;
+  coCfpbMortgageComplaints: number;
+  coDreMloRows: number;
+  coLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+  coSourceAsOf: string;
   servicerEvidenceRows: number;
   licensesTotal: number;
 };
@@ -172,7 +178,7 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.licensesTotal === input.institutions) {
     throw new Error('license rows must not equal institutions');
   }
-  for (const path of ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona']) {
+  for (const path of ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado']) {
     if (!input.publishedStateIntelligencePaths.includes(path)) {
       throw new Error(`state intelligence path missing: ${path}`);
     }
@@ -211,6 +217,19 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.azCfpbMortgageComplaints === input.azHmdaApplications) {
     throw new Error('Arizona CFPB complaints must not equal Arizona HMDA applications');
   }
+  if (input.coLiveRosterCoverage !== 'SOURCE_NOT_ACQUIRED') {
+    throw new Error('CO live mortgage-company roster remains not acquired');
+  }
+  if (input.coDreMloRows === input.coHmdaApplications) {
+    throw new Error('Colorado MLO rows must not equal Colorado HMDA applications');
+  }
+  if (input.coCfpbMortgageComplaints === input.coHmdaApplications) {
+    throw new Error('Colorado CFPB complaints must not equal Colorado HMDA applications');
+  }
+  const coCounty = input.geography.find((row) => row.state === 'CO')?.applications ?? 0;
+  if (coCounty === input.coHmdaApplications && coCounty !== 0) {
+    throw new Error('Colorado county-grain national aggregate must not equal the CO state-intelligence slice');
+  }
 }
 
 export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): LenderNetworkMetricsV1 {
@@ -224,6 +243,7 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
     input.txSmlSourceAsOf,
     input.waDfiSourceAsOf,
     input.azDifiSourceAsOf,
+    input.coSourceAsOf,
   ]
     .filter(Boolean)
     .map((d) => d.slice(0, 10))
@@ -734,20 +754,90 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       ),
     }),
     metric({
+      key: 'co_mortgage_company_live_roster',
+      label: 'Colorado live mortgage-company roster',
+      value: null,
+      valueState: 'NOT_ACQUIRED',
+      grain: 'co_mortgage_company_live_roster',
+      denominator: 'Live Colorado mortgage-company registration roster — SOURCE_NOT_ACQUIRED',
+      description:
+        'No bulk live Colorado mortgage-company registration roster was acquired. Complete registered-company count is UNKNOWN, not zero.',
+      coverage: 'Colorado',
+      contributingSourceSystems: ['co_dre_nmls'],
+      sourceAsOf: null,
+      generatedAt,
+      publicationStatus: 'PUBLIC_UNKNOWN',
+      trace: commonTrace(
+        'Nothing numeric is published for the live Colorado mortgage-company universe.',
+        'Not Colorado MLO person rows. Not HMDA applications. Not CFPB complaints.',
+        ['co_dre_nmls'],
+        'Colorado',
+        'COLORADO_LIVE_COMPANY_ROSTER SOURCE_NOT_ACQUIRED',
+        {
+          whyUnknown:
+            'Colorado mortgage companies register through NMLS. Consumer Access was not scraped. Missing is not zero.',
+        },
+      ),
+    }),
+    metric({
+      key: 'co_dre_mlo_rows',
+      label: 'Colorado DRE Mortgage Loan Originator license rows',
+      value: input.coDreMloRows,
+      valueState: 'KNOWN',
+      grain: 'co_dre_mlo_person_row',
+      denominator: 'CIM 4zse-6bnw licenseprefix = MLO',
+      description:
+        'Person-grain Colorado MLO license rows. Not lenders, not branches, and not added to national institution totals.',
+      coverage: 'Colorado — DRE MLO',
+      contributingSourceSystems: ['co_dre'],
+      sourceAsOf: input.coSourceAsOf.slice(0, 10),
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        'Colorado Information Marketplace 4zse-6bnw Mortgage Loan Originator rows.',
+        'Not mortgage companies. Not HMDA applications. Not a public person directory.',
+        ['co_dre'],
+        'Colorado',
+        `DRE MLO overlay source as of ${input.coSourceAsOf.slice(0, 10)}`,
+      ),
+    }),
+    metric({
+      key: 'co_cfpb_mortgage_complaints',
+      label: 'Colorado CFPB mortgage complaint rows (acquired)',
+      value: input.coCfpbMortgageComplaints,
+      valueState: 'KNOWN',
+      grain: 'co_cfpb_mortgage_complaint_row',
+      denominator: 'CFPB mortgage product complaints with state = CO',
+      description:
+        'Statewide CFPB mortgage complaint overlay. A complaint is not a violation and is not a DRE complaint.',
+      coverage: 'Colorado — CFPB mortgage product',
+      contributingSourceSystems: ['cfpb'],
+      sourceAsOf: null,
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        'CFPB Consumer Complaint Database API, product Mortgage, state CO.',
+        'Not a live licensed-company universe. Not HMDA. Not DRE MLO rows.',
+        ['cfpb'],
+        'Colorado',
+        'CFPB overlay retrieved; CFPB did not publish an as-of date on this extract',
+      ),
+    }),
+    metric({
       key: 'published_state_intelligence_pages',
       label: 'Published state mortgage-intelligence pages',
       value: input.publishedStateIntelligencePaths.length,
       valueState: 'KNOWN',
       grain: 'published_state_intelligence_page',
       denominator: 'Indexable specialist state intelligence routes currently published',
-      description: 'Florida, New Jersey, California, Texas, Washington, and Arizona state intelligence pages. Not a count of lenders.',
+      description: 'Florida, New Jersey, California, Texas, Washington, Arizona, and Colorado state intelligence pages. Not a count of lenders.',
       coverage: input.publishedStateIntelligencePaths.join(', '),
       contributingSourceSystems: ['lender-state-intel'],
       sourceAsOf: newestDocumentedSourceAsOf,
       generatedAt,
       publicationStatus: 'PUBLIC',
       trace: commonTrace(
-        'Published /florida, /new-jersey, /california, /texas, /washington, and /arizona intelligence routes.',
+        'Published /florida, /new-jersey, /california, /texas, /washington, /arizona, and /colorado intelligence routes.',
         'Not NJ county pages and not national directory rows.',
         ['lender-state-intel'],
         input.publishedStateIntelligencePaths.join(', '),
@@ -795,6 +885,10 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
     azApps: input.azHmdaApplications,
     azCfpb: input.azCfpbMortgageComplaints,
     azRoster: input.azLiveRosterCoverage,
+    coApps: input.coHmdaApplications,
+    coCfpb: input.coCfpbMortgageComplaints,
+    coMlo: input.coDreMloRows,
+    coRoster: input.coLiveRosterCoverage,
     paths: input.publishedStateIntelligencePaths,
     njCounties: input.njCountyIntelligencePages,
   };
@@ -884,6 +978,14 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       liveRosterCoverage: input.azLiveRosterCoverage,
       liveLicensedCompanyUniverse: null,
     },
+    colorado: {
+      hmdaApplications: input.coHmdaApplications,
+      hmdaOriginations: input.coHmdaOriginations,
+      cfpbMortgageComplaints: input.coCfpbMortgageComplaints,
+      dreMloRows: input.coDreMloRows,
+      liveRosterCoverage: input.coLiveRosterCoverage,
+      liveLicensedCompanyUniverse: null,
+    },
     publication: {
       nationalRender: input.publicRender,
       nationalIndex: input.publicIndex,
@@ -928,6 +1030,14 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       {
         total: 'AZ live mortgage-company roster = 0',
         reason: 'SOURCE_NOT_ACQUIRED. Missing is not zero.',
+      },
+      {
+        total: 'CO live mortgage-company roster = 0',
+        reason: 'SOURCE_NOT_ACQUIRED. Missing is not zero.',
+      },
+      {
+        total: `${input.coDreMloRows} Colorado MLO person rows`,
+        reason: 'Person-grain DRE licenses. Not lenders and not added to national institution totals.',
       },
       {
         total: 'NJ RMLA roster = 0',

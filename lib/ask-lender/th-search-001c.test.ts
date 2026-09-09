@@ -34,6 +34,9 @@ test('identity and market semantics are enforced by real projection paths', () =
   assert.equal(parseLenderAsk('lenders headquartered in Broward County').failClosedKind, 'lender-location');
   assert.equal(parseLenderAsk('licensed mortgage lenders in New Jersey').coverageState, 'REQUEST_ONLY');
   assert.equal(parseLenderAsk('California CRMLA lenders').coverageState, 'NOT_ACQUIRED');
+  assert.equal(parseLenderAsk('licensed mortgage lenders in Colorado').coverageState, 'NOT_ACQUIRED');
+  assert.equal(parseLenderAsk('Colorado mortgage lenders').coverageState, 'NOT_ACQUIRED');
+  assert.equal(parseLenderAsk('Colorado MLO lenders').failClosedKind, 'unsupported-identity-grain');
   assert.equal(parseLenderAsk('who approves the most mortgage applications').failClosedKind, 'personalized-approval');
 });
 

@@ -28,6 +28,8 @@ export const LENDER_GOLDEN_QUESTIONS: LenderGoldenQuestion[] = [
   { query: 'New Jersey RMLA lenders', expected: 'PARTIAL' },
   { query: 'California CRMLA lenders', expected: 'PARTIAL' },
   { query: 'Arizona mortgage lenders', expected: 'PARTIAL' },
+  { query: 'Colorado mortgage lenders', expected: 'PARTIAL' },
+  { query: 'licensed mortgage lenders in Colorado', expected: 'PARTIAL' },
   { query: 'lenders headquartered in Broward County', expected: 'UNSUPPORTED_SAFE' },
   { query: 'lenders serving Broward County', expected: 'UNSUPPORTED_SAFE' },
   { query: 'lenders doing business in Broward County', expected: 'UNSUPPORTED_SAFE' },

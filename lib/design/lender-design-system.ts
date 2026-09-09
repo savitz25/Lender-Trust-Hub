@@ -125,6 +125,14 @@ export const LENDER_TOOLS = {
       cta: 'Open Arizona research',
     },
     {
+      id: 'colorado-research',
+      title: 'Colorado research',
+      description:
+        '2025 HMDA Colorado activity, DRE Mortgage Loan Originator licensing, NMLS company-registration verification, and CHFA homebuyer resources. Not a ranking.',
+      href: '/colorado',
+      cta: 'Open Colorado research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
@@ -250,6 +258,7 @@ export const LENDER_PATHWAYS = {
     { label: 'Washington catalog', href: '/local-lenders/washington' },
     { label: 'Arizona research', href: '/arizona' },
     { label: 'Arizona catalog', href: '/local-lenders/arizona' },
+    { label: 'Colorado research', href: '/colorado' },
     { label: 'New York', href: '/local-lenders/new-york' },
     { label: 'Illinois', href: '/local-lenders/illinois' },
   ],
@@ -374,6 +383,7 @@ export const LENDER_FOOTER_COLUMNS = [
       { href: '/texas', label: 'Texas Research' },
       { href: '/washington', label: 'Washington Research' },
       { href: '/arizona', label: 'Arizona Research' },
+      { href: '/colorado', label: 'Colorado Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },
