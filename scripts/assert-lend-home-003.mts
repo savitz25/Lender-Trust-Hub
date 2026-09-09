@@ -16,9 +16,9 @@ const component = readFileSync('components/home-intel/lender-home-intelligence.t
 const page = readFileSync('app/page.tsx', 'utf8');
 
 assertPublicHomepageInventory(inventory);
-assert.equal(inventory.length, 29);
-assert.equal(LENDER_HOMEPAGE_STATE_CARDS.length, 6);
-assert.deepEqual(LENDER_HOMEPAGE_STATE_CARDS.map((state) => state.href), ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona']);
+assert.equal(inventory.length, 32);
+assert.equal(LENDER_HOMEPAGE_STATE_CARDS.length, 7);
+assert.deepEqual(LENDER_HOMEPAGE_STATE_CARDS.map((state) => state.href), ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado']);
 assert.equal(byKey.get('state_pages')?.value, LENDER_HOMEPAGE_STATE_CARDS.length);
 assert.equal(new Set(inventory.map((item) => item.family)).size, 8);
 assert.equal(Object.keys(LENDER_EVIDENCE_FAMILY_LABELS).length, 8);
@@ -41,8 +41,8 @@ assert.equal(byKey.get('national_institutions')?.sourceClockLabel, 'Source clock
 assert.equal(byKey.get('fdic_cert')?.sourceClockLabel, 'Source clock');
 assert.equal(byKey.get('hmda_applications')?.sourceClockLabel, 'Vintage');
 
-for (const code of ['FL', 'NJ', 'CA', 'TX', 'WA', 'AZ']) assert.ok(LENDER_HOMEPAGE_STATE_CARDS.some((state) => state.code === code));
-for (const key of ['fl_credentials', 'nj_dobi_orders', 'ca_calhfa_rows', 'tx_sml_orders', 'wa_dfi_orders', 'az_cfpb']) assert.ok(byKey.has(key), `${key} missing`);
+for (const code of ['FL', 'NJ', 'CA', 'TX', 'WA', 'AZ', 'CO']) assert.ok(LENDER_HOMEPAGE_STATE_CARDS.some((state) => state.code === code));
+for (const key of ['fl_credentials', 'nj_dobi_orders', 'ca_calhfa_rows', 'tx_sml_orders', 'wa_dfi_orders', 'az_cfpb', 'co_dre_mlo', 'co_cfpb', 'co_company_roster_unacquired']) assert.ok(byKey.has(key), `${key} missing`);
 for (const item of inventory) {
   assert.ok(item.grain);
   assert.ok(item.sourceSystem);
@@ -89,4 +89,12 @@ assert.doesNotMatch(page + component, /AggregateRating/);
 assert.doesNotMatch(page + component, /paid ranking/i);
 assert.doesNotMatch(page + component, /trusted lender|approved lender|safe lender|vetted lender|recommended lender/i);
 
-console.log(`LEND-HOME-003 assertions passed (${inventory.length} public inventory measures, 8 families, 6 states).`);
+const coloradoCfpbClock = LENDER_HOMEPAGE_STATE_CARDS.find((state) => state.code === 'CO')?.sourceClocks.find((clock) => clock.label === 'CFPB complaints');
+assert.equal(coloradoCfpbClock?.sourceAsOf, null);
+assert.ok(coloradoCfpbClock?.retrievedAt);
+assert.equal(byKey.get('co_company_roster_unacquired')?.value, null);
+assert.equal(byKey.get('co_company_roster_unacquired')?.publicationStatus, 'PUBLIC_LIMITATION');
+assert.notEqual(byKey.get('co_dre_mlo')?.value, byKey.get('hmda_applications')?.value);
+assert.match(byKey.get('co_dre_mlo')?.doesNotCount ?? '', /Lenders/);
+
+console.log(`LEND-HOME-003 assertions passed (${inventory.length} public inventory measures, 8 families, 7 states).`);

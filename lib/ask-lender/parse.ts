@@ -84,6 +84,9 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
   if (/\barizona\b/i.test(q) && /\blicensed|\blenders?|\broster\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'az-open-search-partial', failReason: 'Arizona DIFI evidence is source/open-search limited; it is not a complete acquired institution universe and cannot support a zero or complete-population claim.', coverageState: 'PARTIAL' };
   }
+  if (/\bcolorado\b/i.test(q) && /\blicensed|\blenders?|\broster\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'co-company-roster-not-acquired', failReason: "Colorado's mortgage-company registration roster is search-only and was not acquired as a bulk universe. DRE MLO rows are people, not lender companies, and are not returned as public lender-company search results. Missing is not zero lenders.", coverageState: 'NOT_ACQUIRED' };
+  }
 
   const nmls = q.match(/\b(?:find\s+)?nmls(?:\s+(?:institution\s+)?id)?\s*[:#]?\s*(\d{2,12})\b/i);
   if (nmls?.[1]) return { mode: 'entity', identityQuery: `NMLS ${nmls[1]}`, identifier: { type: 'NMLS_INSTITUTION', value: nmls[1] }, requestedMetric: null, coverageState: 'KNOWN' };

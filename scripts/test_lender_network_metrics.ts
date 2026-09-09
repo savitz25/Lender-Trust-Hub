@@ -50,7 +50,13 @@ function baseInput(over: Partial<LenderNetworkMetricsInput> = {}): LenderNetwork
     publicRender: 181,
     publicIndex: 180,
     floridaPublic: 130,
-    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona'],
+    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado'],
+    coHmdaApplications: 260212,
+    coHmdaOriginations: 156145,
+    coCfpbMortgageComplaints: 8627,
+    coDreMloRows: 21865,
+    coLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED',
+    coSourceAsOf: '2026-09-09',
     njCountyIntelligencePages: 4,
     njHmdaApplications: 318529,
     njHmdaOriginations: 177325,
@@ -122,6 +128,18 @@ describe('lender-network-metrics-v1 grain safety', () => {
     assert.match(metricByKey(m, 'ca_crmla_live_roster').trace.whyUnknown ?? '', /not bulk-acquired/i);
     assert.match(metricByKey(m, 'tx_sml_live_roster').trace.whyUnknown ?? '', /not zero/i);
     assert.match(metricByKey(m, 'az_difi_live_roster').trace.whyUnknown ?? '', /not zero/i);
+    assert.equal(metricByKey(m, 'co_mortgage_company_live_roster').value, null);
+    assert.equal(metricByKey(m, 'co_mortgage_company_live_roster').valueState, 'NOT_ACQUIRED');
+    assert.equal(m.colorado.liveLicensedCompanyUniverse, null);
+    assert.equal(metricByKey(m, 'co_dre_mlo_rows').value, 21865);
+    assert.notEqual(metricByKey(m, 'co_dre_mlo_rows').value, metricByKey(m, 'lenders_lending_institutions').value);
+    assert.notEqual(metricByKey(m, 'co_dre_mlo_rows').value, m.colorado.hmdaApplications);
+    assert.equal(metricByKey(m, 'co_cfpb_mortgage_complaints').value, 8627);
+    assert.notEqual(metricByKey(m, 'co_cfpb_mortgage_complaints').value, m.colorado.hmdaApplications);
+    assert.equal(m.network.publishedStateIntelligencePages, 7);
+    assert.ok(m.network.publishedStateIntelligencePaths.includes('/colorado'));
+    assert.equal(m.identity.institutions, 14623);
+    assert.match(metricByKey(m, 'co_mortgage_company_live_roster').trace.whyUnknown ?? '', /not zero/i);
   });
 
   it('keeps Florida OFR credentials, confirmed NMLS, held, unresolved, and public cohort apart', () => {
@@ -150,11 +168,15 @@ describe('lender-network-metrics-v1 grain safety', () => {
     assert.equal(metricByKey(m, 'lenders_lending_institutions').sourceAsOf, null);
     assert.equal(metricByKey(m, 'florida_ofr_approved_company_credentials').sourceAsOf, '2026-08-27');
     assert.notEqual(metricByKey(m, 'florida_ofr_approved_company_credentials').sourceAsOf, m.generatedAt.slice(0, 10));
-    assert.equal(m.newestDocumentedSourceAsOf, '2026-09-04');
+    assert.equal(m.newestDocumentedSourceAsOf, '2026-09-09');
     assert.match(m.newestDocumentedSourceAsOfNote, /not Git/i);
+    assert.equal(metricByKey(m, 'co_mortgage_company_live_roster').sourceAsOf, null);
+    assert.equal(metricByKey(m, 'co_cfpb_mortgage_complaints').sourceAsOf, null);
+    assert.equal(metricByKey(m, 'co_dre_mlo_rows').sourceAsOf, '2026-09-09');
+    assert.notEqual(metricByKey(m, 'co_dre_mlo_rows').sourceAsOf, m.generatedAt);
   });
 
-  it('requires published FL/NJ/CA/TX/WA/AZ paths and does not treat county pages as state pages', () => {
+  it('requires published FL/NJ/CA/TX/WA/AZ/CO paths and does not treat county pages as state pages', () => {
     assert.throws(
       () => computeLenderNetworkMetrics(baseInput({ publishedStateIntelligencePaths: ['/florida'] })),
       /state intelligence path missing/,
@@ -167,7 +189,7 @@ describe('lender-network-metrics-v1 grain safety', () => {
       () =>
         computeLenderNetworkMetrics(
           baseInput({
-            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/new-jersey/union-county'],
+            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/new-jersey/union-county'],
           }),
         ),
       /county routes/,

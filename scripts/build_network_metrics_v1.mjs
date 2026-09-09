@@ -95,6 +95,12 @@ async function main() {
     azCfpbMortgageComplaints: pub.azCfpbMortgageComplaints,
     azLiveRosterCoverage: pub.azLiveRosterCoverage,
     azDifiSourceAsOf: pub.azDifiSourceAsOf,
+    coHmdaApplications: pub.coHmdaApplications,
+    coHmdaOriginations: pub.coHmdaOriginations,
+    coCfpbMortgageComplaints: pub.coCfpbMortgageComplaints,
+    coDreMloRows: pub.coDreMloRows,
+    coLiveRosterCoverage: pub.coLiveRosterCoverage,
+    coSourceAsOf: pub.coSourceAsOf,
     servicerEvidenceRows: prod.servicerEvidenceRows ?? 0,
     licensesTotal: prod.licensesTotal,
   };
