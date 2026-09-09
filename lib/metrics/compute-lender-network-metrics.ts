@@ -226,6 +226,10 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.coCfpbMortgageComplaints === input.coHmdaApplications) {
     throw new Error('Colorado CFPB complaints must not equal Colorado HMDA applications');
   }
+  const coCounty = input.geography.find((row) => row.state === 'CO')?.applications ?? 0;
+  if (coCounty === input.coHmdaApplications && coCounty !== 0) {
+    throw new Error('Colorado county-grain national aggregate must not equal the CO state-intelligence slice');
+  }
 }
 
 export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): LenderNetworkMetricsV1 {

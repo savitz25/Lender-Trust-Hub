@@ -140,6 +140,31 @@ describe('lender-network-metrics-v1 grain safety', () => {
     assert.ok(m.network.publishedStateIntelligencePaths.includes('/colorado'));
     assert.equal(m.identity.institutions, 14623);
     assert.match(metricByKey(m, 'co_mortgage_company_live_roster').trace.whyUnknown ?? '', /not zero/i);
+    const withNationalCoGeo = {
+      geography: [
+        { state: 'CA', applications: 1010547, originations: 569218, denials: 174475 },
+        { state: 'FL', applications: 922758, originations: 489025, denials: 192366 },
+        { state: 'NJ', applications: 316994, originations: 177325, denials: 55453 },
+        { state: 'CO', applications: 257140, originations: 156145, denials: 39356 },
+        { state: 'XX', applications: 9279488 - 257140, originations: 5557685, denials: 1586120 },
+      ],
+    };
+    assert.equal(computeLenderNetworkMetrics(baseInput(withNationalCoGeo)).colorado.hmdaApplications, 260212);
+    assert.throws(
+      () =>
+        computeLenderNetworkMetrics(
+          baseInput({
+            geography: [
+              { state: 'CA', applications: 1010547, originations: 569218, denials: 174475 },
+              { state: 'FL', applications: 922758, originations: 489025, denials: 192366 },
+              { state: 'NJ', applications: 316994, originations: 177325, denials: 55453 },
+              { state: 'CO', applications: 260212, originations: 156145, denials: 40435 },
+              { state: 'XX', applications: 9279488 - 260212, originations: 5557685, denials: 1586120 },
+            ],
+          }),
+        ),
+      /must not equal the CO state-intelligence slice/,
+    );
   });
 
   it('keeps Florida OFR credentials, confirmed NMLS, held, unresolved, and public cohort apart', () => {

@@ -30,7 +30,11 @@ HMDA_INDEX = ROOT / "data" / "hmda" / "by-state" / "index.json"
 FDIC_CO = ROOT / "lib" / "fdic" / "data" / "colorado.json"
 CFPB_API = "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/"
 DRE_DS = "4zse-6bnw"
-GENERATED_AT = "2026-09-09T22:00:00Z"
+# Day-level actual retrieval. Do not invent 22:00Z (or any hour) to make hashes stable.
+RETRIEVED_AT = "2026-09-09"
+# Snapshot generation freeze = first CO-LEND commit clock (2026-09-09 13:49:51 -0400).
+# Distinct from retrievedAt. Not a regulatory source date. Not a fabricated 22:00Z.
+GENERATED_AT = "2026-09-09T17:49:51Z"
 REFRESH = "--refresh" in sys.argv
 CHECK = "--check" in sys.argv
 
@@ -307,7 +311,7 @@ def dre_mlo() -> dict:
         "nmls_individual_id_field": None,
         "nmls_individual_id_coverage": "NOT_SOURCE_NATIVE",
         "source_as_of": overlay["source_as_of"],
-        "retrieved_at": GENERATED_AT,
+        "retrieved_at": RETRIEVED_AT,
         "verify_path": "https://apps.colorado.gov/dre/licensing/Lookup/LicenseLookup.aspx",
         "roster_generator": "https://apps2.colorado.gov/dre/licensing/lookup/generateroster.aspx",
         "caveat": (
@@ -388,7 +392,7 @@ def cfpb_overlay() -> dict:
             "exposure-normalized. CFPB complaint != Colorado DRE complaint. No company complaint rate "
             "is published against an HMDA denominator."
         ),
-        "retrieved_at": GENERATED_AT,
+        "retrieved_at": RETRIEVED_AT,
         "api_last_updated": None,
     }
     if not REFRESH:
@@ -420,7 +424,7 @@ def cfpb_overlay() -> dict:
 
 def programs() -> dict:
     return {
-        "retrieved_at": GENERATED_AT,
+        "retrieved_at": RETRIEVED_AT,
         "verified_family_count": 2,
         "items": [
             {
@@ -519,23 +523,34 @@ def main() -> int:
             "canonical_company_vs_nmls_vs_lei": "Kept as distinct identity layers. A Colorado HMDA row is not a new organization. An MLO row is not a company.",
         },
         "clock_reconciliation": {
-            "lender_canonical_source": "data/hmda/by-state/CO/county_market_summary.csv (summed) plus data/hmda/by-state/index.json",
+            "lender_canonical_source": "data/hmda/by-state/CO/county_market_summary.csv (summed)",
             "lender_applications": hmda["applications"],
             "lender_originations": hmda["originations"],
             "lender_denials": hmda["denials"],
             "index_json_applications": hmda["index_json_applications"],
             "index_json_originations": hmda["index_json_originations"],
+            "national_production_county_grain_applications": 257140,
+            "national_production_county_grain_originations": 156145,
+            "national_production_county_grain_denials": 39356,
+            "national_production_source": "lender_hmda_observations geo_grain=county grouped by state_code, published in lender-network-metrics-v1 geography",
             "ticket_remembered_applications": 257140,
             "ticket_remembered_originations": 156145,
             "ticket_remembered_denials": 39356,
             "originations_match_index": hmda["originations"] == hmda["index_json_originations"],
+            "originations_match_national_geo": hmda["originations"] == 156145,
+            "applications_match_index": hmda["applications"] == hmda["index_json_applications"],
+            "do_not_add_national_geo_to_state_intel": True,
+            "do_not_rewrite_national_aggregate": True,
             "why": (
-                "This page uses the committed county-sum of data/hmda/by-state/CO/county_market_summary.csv. "
-                "Index.json originations match that county-sum. Index.json applications may differ from the "
-                "county-sum and from remembered reconnaissance numbers; county-sum is canonical for CO-LEND-001A. "
-                "Ask is not rewritten."
+                "Canonical for /colorado is SUM(data/hmda/by-state/CO/county_market_summary.csv) over 64 county rows. "
+                "That sum matches data/hmda/by-state/index.json CO applications and originations. "
+                "The previously published network geography CO row (257,140 / 156,145 / 39,356) is the production "
+                "lender_hmda_observations county-grain LEI aggregate, a different input from the by-state county "
+                "market summary. Originations match across both. Applications and denials do not. "
+                "Do not add the two. Do not rewrite the national county-grain total to force symmetry. "
+                "Ask is not rewritten. County-grain is not added to state-grain."
             ),
-            "which_is_canonical_for_this_ticket": "LenderTrustHub committed Colorado HMDA county partition",
+            "which_is_canonical_for_this_ticket": "Committed Colorado county_market_summary.csv county-sum",
         },
         "hmda": hmda,
         "mlo_roster": mlo,

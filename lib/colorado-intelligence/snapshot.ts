@@ -4,7 +4,7 @@ export type ColoradoIntelligenceSnapshot = typeof accepted;
 
 export const CO_SNAPSHOT_CONTRACT = 'lender-co-state-intel-v1' as const;
 export const CO_PUBLIC_FINGERPRINT =
-  '05fb30ca6da066d774b7ed3178e57acb9518c5b722def266f5f4449fedc8cb44';
+  'acb8bae197f4e815f1411d49a35342c66183304fdba7f8e88ca4a7643e6d03b3';
 export const CO_PUBLIC_PATH = '/colorado';
 
 export const COLORADO_SNAPSHOT = accepted as ColoradoIntelligenceSnapshot;
@@ -35,6 +35,23 @@ export function assertColoradoIntelligence(
   }
   if (value.hmda.denials !== 40435 || value.hmda.county_count !== 64 || !value.hmda.all_64_counties) {
     throw new Error('Colorado HMDA geography must include all 64 counties');
+  }
+  const countySumApps: number = value.hmda.applications;
+  const countySumDenials: number = value.hmda.denials;
+  if (countySumApps === 257140 || countySumDenials === 39356) {
+    throw new Error('Do not substitute the production LEI-county geography row for the county-summary sum');
+  }
+  if (value.mlo_roster.retrieved_at !== '2026-09-09' || value.cfpb.retrieved_at !== '2026-09-09') {
+    throw new Error('Colorado retrieval clocks must be the actual retrieval day, not an invented hour');
+  }
+  if (value.generated_at === value.mlo_roster.retrieved_at) {
+    throw new Error('generatedAt must remain distinct from retrievedAt');
+  }
+  if (value.generated_at.includes('22:00:00')) {
+    throw new Error('Do not invent 22:00Z as a retrieval or generation clock');
+  }
+  if (value.mlo_roster.source_as_of === value.generated_at) {
+    throw new Error('DRE source-as-of must remain distinct from generatedAt');
   }
   if (value.mlo_roster.grain !== 'PERSON' || value.mlo_roster.not_a_lender_count !== true) {
     throw new Error('MLO rows must remain person-grain and not a lender count');

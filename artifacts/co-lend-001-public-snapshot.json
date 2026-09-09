@@ -4,7 +4,7 @@
   "geography": "CO",
   "publication_status": "published",
   "path": "/colorado",
-  "generated_at": "2026-09-09T22:00:00Z",
+  "generated_at": "2026-09-09T17:49:51Z",
   "growth_classification": "INTELLIGENCE_GROWTH_HEAVY",
   "source_as_of": {
     "hmda": "HMDA 2025",
@@ -34,18 +34,26 @@
     "canonical_company_vs_nmls_vs_lei": "Kept as distinct identity layers. A Colorado HMDA row is not a new organization. An MLO row is not a company."
   },
   "clock_reconciliation": {
-    "lender_canonical_source": "data/hmda/by-state/CO/county_market_summary.csv (summed) plus data/hmda/by-state/index.json",
+    "lender_canonical_source": "data/hmda/by-state/CO/county_market_summary.csv (summed)",
     "lender_applications": 260212,
     "lender_originations": 156145,
     "lender_denials": 40435,
     "index_json_applications": 260212,
     "index_json_originations": 156145,
+    "national_production_county_grain_applications": 257140,
+    "national_production_county_grain_originations": 156145,
+    "national_production_county_grain_denials": 39356,
+    "national_production_source": "lender_hmda_observations geo_grain=county grouped by state_code, published in lender-network-metrics-v1 geography",
     "ticket_remembered_applications": 257140,
     "ticket_remembered_originations": 156145,
     "ticket_remembered_denials": 39356,
     "originations_match_index": true,
-    "why": "This page uses the committed county-sum of data/hmda/by-state/CO/county_market_summary.csv. Index.json originations match that county-sum. Index.json applications may differ from the county-sum and from remembered reconnaissance numbers; county-sum is canonical for CO-LEND-001A. Ask is not rewritten.",
-    "which_is_canonical_for_this_ticket": "LenderTrustHub committed Colorado HMDA county partition"
+    "originations_match_national_geo": true,
+    "applications_match_index": true,
+    "do_not_add_national_geo_to_state_intel": true,
+    "do_not_rewrite_national_aggregate": true,
+    "why": "Canonical for /colorado is SUM(data/hmda/by-state/CO/county_market_summary.csv) over 64 county rows. That sum matches data/hmda/by-state/index.json CO applications and originations. The previously published network geography CO row (257,140 / 156,145 / 39,356) is the production lender_hmda_observations county-grain LEI aggregate, a different input from the by-state county market summary. Originations match across both. Applications and denials do not. Do not add the two. Do not rewrite the national county-grain total to force symmetry. Ask is not rewritten. County-grain is not added to state-grain.",
+    "which_is_canonical_for_this_ticket": "Committed Colorado county_market_summary.csv county-sum"
   },
   "hmda": {
     "year": 2025,
@@ -1595,7 +1603,7 @@
     "nmls_individual_id_field": null,
     "nmls_individual_id_coverage": "NOT_SOURCE_NATIVE",
     "source_as_of": "2026-09-09",
-    "retrieved_at": "2026-09-09T22:00:00Z",
+    "retrieved_at": "2026-09-09",
     "verify_path": "https://apps.colorado.gov/dre/licensing/Lookup/LicenseLookup.aspx",
     "roster_generator": "https://apps2.colorado.gov/dre/licensing/lookup/generateroster.aspx",
     "caveat": "MLO rows are people, not lenders, not branches, and not additional national lender entities. They are not published as a person directory and are not claimable profiles. The license number is a Colorado DRE credential, not automatically an NMLS Individual ID. Absence from this roster does not mean a person is unauthorized: federally registered depository MLOs may be outside the state-licensed roster. State-license absence != unlicensed. casenumber is not proof of final discipline. Employer/entity strings are not used to mint companies.",
@@ -1638,14 +1646,14 @@
     "geography": "CO",
     "company_rate_published": false,
     "caveat": "Complaint is not a violation. Raw complaint count is not a quality ranking and is not exposure-normalized. CFPB complaint != Colorado DRE complaint. No company complaint rate is published against an HMDA denominator.",
-    "retrieved_at": "2026-09-09T22:00:00Z",
+    "retrieved_at": "2026-09-09",
     "api_last_updated": null,
     "coverage_state": "ACQUIRED_CURRENT_SNAPSHOT",
     "result": "ACQUIRED",
     "mortgage_complaint_rows": 8627
   },
   "programs": {
-    "retrieved_at": "2026-09-09T22:00:00Z",
+    "retrieved_at": "2026-09-09",
     "verified_family_count": 2,
     "items": [
       {
@@ -1818,5 +1826,5 @@
     "State-license absence inferred as unlicensed",
     "Federal depository identity collapsed into mortgage-company registration"
   ],
-  "fingerprint": "05fb30ca6da066d774b7ed3178e57acb9518c5b722def266f5f4449fedc8cb44"
+  "fingerprint": "acb8bae197f4e815f1411d49a35342c66183304fdba7f8e88ca4a7643e6d03b3"
 }
