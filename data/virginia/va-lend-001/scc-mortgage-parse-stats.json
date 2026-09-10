@@ -1,0 +1,19 @@
+{
+  "rows": 1257,
+  "by_type": {
+    "BROKER": 713,
+    "LENDER_AND_BROKER": 366,
+    "LENDER": 178
+  },
+  "distinct_mc": 1257,
+  "duplicate_mc": [],
+  "missing_mc": 0,
+  "distinct_nmls": 1257,
+  "duplicate_nmls": [],
+  "missing_nmls": 0,
+  "exact_crosswalks": 1257,
+  "unknown_type": 0,
+  "corporate_offices": 1257,
+  "additional_location_rows": 2917,
+  "blank_names": 0
+}
