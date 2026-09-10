@@ -49,6 +49,9 @@ export type MetricGrain =
   | 'co_mortgage_company_live_roster'
   | 'co_dre_mlo_person_row'
   | 'co_cfpb_mortgage_complaint_row'
+  | 'va_mortgage_company_live_roster'
+  | 'va_scc_dated_company_row'
+  | 'va_cfpb_mortgage_complaint_row'
   | 'published_state_intelligence_page'
   | 'nj_county_intelligence_page'
   | 'servicer_role_evidence_row';
@@ -215,6 +218,14 @@ export type LenderNetworkMetricsV1 = {
     hmdaOriginations: number;
     cfpbMortgageComplaints: number;
     dreMloRows: number;
+    liveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+    liveLicensedCompanyUniverse: null;
+  };
+  virginia: {
+    hmdaApplications: number;
+    hmdaOriginations: number;
+    cfpbMortgageComplaints: number;
+    sccDatedCompanyRows: number;
     liveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
     liveLicensedCompanyUniverse: null;
   };

@@ -87,6 +87,15 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
   if (/\bcolorado\b/i.test(q) && /\blicensed|\blenders?|\broster\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'co-company-roster-not-acquired', failReason: "Colorado's mortgage-company registration roster is search-only and was not acquired as a bulk universe. DRE MLO rows are people, not lender companies, and are not returned as public lender-company search results. Missing is not zero lenders.", coverageState: 'NOT_ACQUIRED' };
   }
+  if (/\bvirginia\b/i.test(q) && /\b(first[- ]time|down payment|virginia housing|closing cost|plus second)\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'va-housing-programs', failReason: 'Virginia Housing homebuyer programs are consumer assistance products, not SCC licenses. Program availability is not lender licensing. Confirm current product status on official Virginia Housing pages and the /virginia research page.', coverageState: 'PARTIAL' };
+  }
+  if (/\bvirginia\b/i.test(q) && /\bcomplaint/i.test(q) && !/\brocket mortgage\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'va-cfpb-observations', failReason: 'CFPB Virginia mortgage complaints are statewide observations. A complaint is not a violation, not SCC enforcement, and not a company ranking. Company-specific complaint research requires an exact institution identity.', coverageState: 'PARTIAL' };
+  }
+  if (/\bvirginia\b/i.test(q) && /\b(licensed|lenders?|roster|brokers?|scc)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'va-scc-dated-roster', failReason: "Virginia SCC reported mortgage brokers, lenders, and lender-and-brokers separately as of 2025-12-31. That dated roster is not current 2026 license status. NMLS Consumer Access is the current verification path. Do not answer with the 24,222 MLO person count or with HMDA application rows.", coverageState: 'PARTIAL' };
+  }
 
   const nmls = q.match(/\b(?:find\s+)?nmls(?:\s+(?:institution\s+)?id)?\s*[:#]?\s*(\d{2,12})\b/i);
   if (nmls?.[1]) return { mode: 'entity', identityQuery: `NMLS ${nmls[1]}`, identifier: { type: 'NMLS_INSTITUTION', value: nmls[1] }, requestedMetric: null, coverageState: 'KNOWN' };
@@ -163,7 +172,17 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
   }
 
   const florida = /\bflorida\b|\bfl\b/.test(q);
-  const state = florida ? 'FL' : /\bnew jersey\b/.test(q) ? 'NJ' : /\bcalifornia\b/.test(q) ? 'CA' : /\barizona\b/.test(q) ? 'AZ' : undefined;
+  const state = florida
+    ? 'FL'
+    : /\bnew jersey\b/.test(q)
+      ? 'NJ'
+      : /\bcalifornia\b/.test(q)
+        ? 'CA'
+        : /\barizona\b/.test(q)
+          ? 'AZ'
+          : /\bvirginia\b/.test(q)
+            ? 'VA'
+            : undefined;
   const counties = detectCounties(q);
   const hasBroward = counties.some((c) => c.fips === '12011');
   const hasPalm = counties.some((c) => c.fips === '12099');

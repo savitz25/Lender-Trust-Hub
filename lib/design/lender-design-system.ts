@@ -133,6 +133,14 @@ export const LENDER_TOOLS = {
       cta: 'Open Colorado research',
     },
     {
+      id: 'virginia-research',
+      title: 'Virginia research',
+      description:
+        'SCC 2025 dated mortgage broker, lender, and lender-broker licenses, NMLS current verification, 2025 HMDA, and Virginia Housing programs. Not a ranking.',
+      href: '/virginia',
+      cta: 'Open Virginia research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
@@ -259,6 +267,7 @@ export const LENDER_PATHWAYS = {
     { label: 'Arizona research', href: '/arizona' },
     { label: 'Arizona catalog', href: '/local-lenders/arizona' },
     { label: 'Colorado research', href: '/colorado' },
+    { label: 'Virginia research', href: '/virginia' },
     { label: 'New York', href: '/local-lenders/new-york' },
     { label: 'Illinois', href: '/local-lenders/illinois' },
   ],
@@ -384,6 +393,7 @@ export const LENDER_FOOTER_COLUMNS = [
       { href: '/washington', label: 'Washington Research' },
       { href: '/arizona', label: 'Arizona Research' },
       { href: '/colorado', label: 'Colorado Research' },
+      { href: '/virginia', label: 'Virginia Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },

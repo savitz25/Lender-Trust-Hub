@@ -16,9 +16,9 @@ const component = readFileSync('components/home-intel/lender-home-intelligence.t
 const page = readFileSync('app/page.tsx', 'utf8');
 
 assertPublicHomepageInventory(inventory);
-assert.equal(inventory.length, 32);
-assert.equal(LENDER_HOMEPAGE_STATE_CARDS.length, 7);
-assert.deepEqual(LENDER_HOMEPAGE_STATE_CARDS.map((state) => state.href), ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado']);
+assert.equal(inventory.length, 35);
+assert.equal(LENDER_HOMEPAGE_STATE_CARDS.length, 8);
+assert.deepEqual(LENDER_HOMEPAGE_STATE_CARDS.map((state) => state.href), ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia']);
 assert.equal(byKey.get('state_pages')?.value, LENDER_HOMEPAGE_STATE_CARDS.length);
 assert.equal(new Set(inventory.map((item) => item.family)).size, 8);
 assert.equal(Object.keys(LENDER_EVIDENCE_FAMILY_LABELS).length, 8);
@@ -97,4 +97,4 @@ assert.equal(byKey.get('co_company_roster_unacquired')?.publicationStatus, 'PUBL
 assert.notEqual(byKey.get('co_dre_mlo')?.value, byKey.get('hmda_applications')?.value);
 assert.match(byKey.get('co_dre_mlo')?.doesNotCount ?? '', /Lenders/);
 
-console.log(`LEND-HOME-003 assertions passed (${inventory.length} public inventory measures, 8 families, 7 states).`);
+console.log(`LEND-HOME-003 assertions passed (${inventory.length} public inventory measures, 8 families, ${LENDER_HOMEPAGE_STATE_CARDS.length} states).`);

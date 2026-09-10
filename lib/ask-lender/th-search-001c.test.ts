@@ -35,6 +35,13 @@ test('identity and market semantics are enforced by real projection paths', () =
   assert.equal(parseLenderAsk('licensed mortgage lenders in New Jersey').coverageState, 'REQUEST_ONLY');
   assert.equal(parseLenderAsk('California CRMLA lenders').coverageState, 'NOT_ACQUIRED');
   assert.equal(parseLenderAsk('licensed mortgage lenders in Colorado').coverageState, 'NOT_ACQUIRED');
+  assert.equal(parseLenderAsk('licensed mortgage lenders in Virginia').coverageState, 'PARTIAL');
+  assert.equal(parseLenderAsk('Is Rocket licensed in Virginia?').failClosedKind, 'va-scc-dated-roster');
+  assert.equal(parseLenderAsk('How many mortgage lenders are in Virginia?').failClosedKind, 'va-scc-dated-roster');
+  assert.equal(parseLenderAsk('Mortgage brokers in Virginia').failClosedKind, 'va-scc-dated-roster');
+  assert.notEqual(parseLenderAsk('mortgage applications in Virginia').mode, 'fail_closed');
+  assert.equal(parseLenderAsk('Virginia first-time buyer assistance').failClosedKind, 'va-housing-programs');
+  assert.equal(parseLenderAsk('Complaints against a Virginia lender').failClosedKind, 'va-cfpb-observations');
   assert.equal(parseLenderAsk('Colorado mortgage lenders').coverageState, 'NOT_ACQUIRED');
   assert.equal(parseLenderAsk('Colorado MLO lenders').failClosedKind, 'unsupported-identity-grain');
   assert.equal(parseLenderAsk('who approves the most mortgage applications').failClosedKind, 'personalized-approval');

@@ -50,13 +50,19 @@ function baseInput(over: Partial<LenderNetworkMetricsInput> = {}): LenderNetwork
     publicRender: 181,
     publicIndex: 180,
     floridaPublic: 130,
-    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado'],
+    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia'],
     coHmdaApplications: 260212,
     coHmdaOriginations: 156145,
     coCfpbMortgageComplaints: 8627,
     coDreMloRows: 21865,
     coLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED',
     coSourceAsOf: '2026-09-09',
+    vaHmdaApplications: 340304,
+    vaHmdaOriginations: 202417,
+    vaCfpbMortgageComplaints: 14563,
+    vaSccDatedCompanyRows: 1257,
+    vaLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED',
+    vaSourceAsOf: '2025-12-31',
     njCountyIntelligencePages: 4,
     njHmdaApplications: 318529,
     njHmdaOriginations: 177325,
@@ -136,8 +142,14 @@ describe('lender-network-metrics-v1 grain safety', () => {
     assert.notEqual(metricByKey(m, 'co_dre_mlo_rows').value, m.colorado.hmdaApplications);
     assert.equal(metricByKey(m, 'co_cfpb_mortgage_complaints').value, 8627);
     assert.notEqual(metricByKey(m, 'co_cfpb_mortgage_complaints').value, m.colorado.hmdaApplications);
-    assert.equal(m.network.publishedStateIntelligencePages, 7);
+    assert.equal(m.network.publishedStateIntelligencePages, 8);
     assert.ok(m.network.publishedStateIntelligencePaths.includes('/colorado'));
+    assert.ok(m.network.publishedStateIntelligencePaths.includes('/virginia'));
+    assert.equal(metricByKey(m, 'va_mortgage_company_live_roster').value, null);
+    assert.equal(m.virginia.liveLicensedCompanyUniverse, null);
+    assert.equal(metricByKey(m, 'va_scc_dated_company_rows').value, 1257);
+    assert.notEqual(metricByKey(m, 'va_scc_dated_company_rows').value, m.virginia.hmdaApplications);
+    assert.equal(metricByKey(m, 'va_cfpb_mortgage_complaints').value, 14563);
     assert.equal(m.identity.institutions, 14623);
     assert.match(metricByKey(m, 'co_mortgage_company_live_roster').trace.whyUnknown ?? '', /not zero/i);
     const withNationalCoGeo = {
@@ -214,7 +226,7 @@ describe('lender-network-metrics-v1 grain safety', () => {
       () =>
         computeLenderNetworkMetrics(
           baseInput({
-            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/new-jersey/union-county'],
+            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-jersey/union-county'],
           }),
         ),
       /county routes/,
