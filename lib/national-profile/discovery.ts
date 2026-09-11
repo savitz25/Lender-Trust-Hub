@@ -168,10 +168,10 @@ function identifierHit(record: DiscoveryRecord, kind: IdentifierKind, value: str
   return false;
 }
 
-export function searchDiscovery(rawQuery: string, type?: string | null): DiscoveryHit[] {
+export function searchDiscovery(rawQuery: string, type?: string | null, records: DiscoveryRecord[] = SEARCH_POOL): DiscoveryHit[] {
   const parsed = parseDiscoveryQuery(rawQuery);
   const typeId = type && BROWSE_TYPES.some((t) => t.id === type) ? type : null;
-  const pool = typeId ? SEARCH_POOL.filter((r) => r.browse_types.includes(typeId)) : SEARCH_POOL;
+  const pool = typeId ? records.filter((r) => r.browse_types.includes(typeId)) : records;
 
   const hits: DiscoveryHit[] = [];
   const seen = new Set<string>();

@@ -1,5 +1,6 @@
 import { ACTION_TERMS, DEPOSITORY_TERMS, FL_ASK_COUNTIES, LOAN_TYPE_TERMS, PURPOSE_TERMS } from './ontology';
 import { ASK_GEO_NOTE, type LenderResearchQuery } from './types';
+import { parseIdentityRequest } from './identifier';
 
 const FAIL: Array<{ re: RegExp; kind: string; reason: string }> = [
   {
@@ -62,13 +63,26 @@ function wantsEntity(q: string, metric: LenderResearchQuery['requestedMetric']):
 }
 
 export function parseLenderAsk(raw: string): LenderResearchQuery {
-  const q = raw.trim().slice(0, 180).toLowerCase().replace(/\s+/g, ' ');
+  const q = raw.trim().toLowerCase().replace(/\s+/g, ' ');
   if (!q) {
     return { mode: 'fail_closed', failClosedKind: 'empty', failReason: 'Enter a research question.' };
   }
 
-  if (raw.trim().length > 180 || /<\/?(?:script|iframe|object|style)\b|(?:'|%27)\s*(?:or|and)\s+\d+\s*=\s*\d+|--\s*$|;\s*(?:drop|select|insert|delete)\b/i.test(raw)) {
+  if (raw.length > 180 || /<\/?(?:script|iframe|object|style)\b|(?:'|%27)\s*(?:or|and)\s+\d+\s*=\s*\d+|--\s*$|;\s*(?:drop|select|insert|delete)\b/i.test(raw)) {
     return { mode: 'fail_closed', failClosedKind: 'malformed', failReason: 'The research question is malformed or exceeds the 180-character limit.' };
+  }
+
+  const identityRequest = parseIdentityRequest(raw);
+  if (identityRequest) {
+    const first = identityRequest.identifiers[0];
+    return {
+      mode: identityRequest.problem ? 'fail_closed' : 'entity', identityRequest,
+      identifier: first ? { type: first.type, value: first.value } : undefined,
+      identityQuery: first ? `${first.type === 'LEI' ? 'LEI' : 'NMLS'} ${first.value}` : undefined,
+      failClosedKind: identityRequest.problem ? identityRequest.problem.state === 'UNSUPPORTED' ? 'unsupported-identity-grain' : 'identifier-input' : undefined,
+      failReason: identityRequest.problem?.message, requestedMetric: null,
+      coverageState: identityRequest.problem ? 'UNSUPPORTED' : identityRequest.remainingText ? 'PARTIAL' : 'KNOWN',
+    };
   }
 
   if (/\b(?:mortgage loan officer|mlo|nmls person|branch nmls)\b/i.test(q)) {
@@ -114,11 +128,6 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
   if (/\bnew york\b/i.test(q) && /\b(licensed|bankers?|lenders?|roster|nydfs)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'ny-dfs-dated-aggregates', failReason: 'NYDFS 2024 annual-report counts (151 mortgage bankers, 439 brokers) are dated aggregates, not current September 2026 licensees. Current verification is NYDFS + NMLS Consumer Access. Do not answer with 9,769 MLOs or with HMDA application rows.', coverageState: 'PARTIAL' };
   }
-
-  const nmls = q.match(/\b(?:find\s+)?nmls(?:\s+(?:institution\s+)?id)?\s*[:#]?\s*(\d{2,12})\b/i);
-  if (nmls?.[1]) return { mode: 'entity', identityQuery: `NMLS ${nmls[1]}`, identifier: { type: 'NMLS_INSTITUTION', value: nmls[1] }, requestedMetric: null, coverageState: 'KNOWN' };
-  const lei = q.match(/\blei\s*[:#]?\s*([a-z0-9]{20})\b/i);
-  if (lei?.[1]) return { mode: 'entity', identityQuery: `LEI ${lei[1].toUpperCase()}`, identifier: { type: 'LEI', value: lei[1].toUpperCase() }, requestedMetric: null, coverageState: 'KNOWN' };
 
   if (/\bwhat is (?:an? )?nmls(?: institution)? id\b|\bhow do i (?:check|verify).*nmls/i.test(q)) return { mode: 'definition', definitionId: 'nmls', requestedMetric: null };
   if (/\bwhat is (?:an? )?lei\b/i.test(q)) return { mode: 'definition', definitionId: 'lei', requestedMetric: null };

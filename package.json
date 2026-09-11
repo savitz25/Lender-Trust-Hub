@@ -49,7 +49,8 @@
     "assert:lend-nat-003": "python scripts/lend-nat-003-hmda-attribution.py",
     "check:phase0": "node scripts/check-lender-phase0-integrity.mjs",
     "check:journey-v21": "node scripts/check-journey-v21.mjs",
-    "supabase:types": "supabase gen types typescript --linked > types/supabase.ts"
+    "supabase:types": "supabase gen types typescript --linked > types/supabase.ts",
+    "check:th-search-r1-002": "tsx --test lib/ask-lender/r1-reproduction.test.ts lib/ask-lender/r1-behavior.test.ts"
   },
   "dependencies": {
     "@radix-ui/react-slider": "^1.4.1",

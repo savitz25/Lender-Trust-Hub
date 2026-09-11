@@ -7,11 +7,11 @@ function fmt(n: number): string {
 
 export function AskResultView({ result, question }: { result: AskExecution; question: string }) {
   return (
-    <div className="intel-ask-result">
+    <div className="intel-ask-result" style={{ minWidth: 0, overflowWrap: 'anywhere' }}>
       <p className="intel-eyebrow">We interpreted your question as</p>
       <dl className="intel-interpretation-grid">
         {result.interpretation.map((line) => (
-          <div key={`${line.label}-${line.value}`}><dt>{line.label}</dt><dd>{line.value}</dd><dd><Link className="intel-text-link" data-specialist-event="refine" href={`/ask?q=${encodeURIComponent(removeCriterion(question, line.label))}`} aria-label={`Remove ${line.label} criterion`}>Remove criterion</Link></dd></div>
+          <div key={`${line.label}-${line.value}`}><dt>{line.label}</dt><dd>{line.value}</dd><dd><a className="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div>
         ))}
       </dl>
       <p className="intel-kicker">{result.geographyWarning}</p>
@@ -36,6 +36,28 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
 
       <h3>{result.headline}</h3>
       <p>{result.body}</p>
+      {result.lookup ? (
+        <section aria-label="Identifier lookup outcome" style={{ minWidth: 0, overflowWrap: 'anywhere' }}>
+          <p><strong>Searched scope:</strong> {result.lookup.scope}.</p>
+          <p><strong>Subject:</strong> requested {result.lookup.requestedClass === 'unknown' ? 'unspecified' : result.lookup.requestedClass}; resolved {result.lookup.resolvedClass}.</p>
+          {result.lookup.identifiers.map((id, index) => <div key={`${id.type}-${index}`}>
+            <p>Submitted: <code>{id.rawSpan}</code>. Complete {id.type === 'LEI' ? 'LEI' : 'NMLS'}: <code>{id.value}</code>.</p>
+            {id.normalization.map(note => <p key={note}>{note}.</p>)}
+          </div>)}
+          {result.rows?.map(row => <article key={row.institutionKey} className="intel-disclose">
+            <h4>{row.displayName}</h4>
+            <p>{row.nmls ? `NMLS ${row.nmls}` : ''}{row.lei ? ` | LEI ${row.lei}` : ''}</p>
+            <p><strong>Why this matched:</strong> {row.whyMatched.join(' ')}</p>
+            {row.href ? <Link className="intel-text-link" href={row.href} data-specialist-event="profile_open">Research this lender</Link> : null}
+          </article>)}
+          {result.lookup.conditions.length ? <div><h4>Requested conditions</h4><ul>{result.lookup.conditions.map((condition, index) => <li key={index}>
+            <strong>{condition.text}:</strong> {condition.state === 'APPLIED' ? 'Applied' : condition.state === 'CONFLICT' ? 'Conflicting' : 'Not established'}. {condition.explanation}
+          </li>)}</ul></div> : null}
+          <p><a className="intel-text-link" href="#ask-lender-input">Edit or retry this lookup</a></p>
+          {result.lookup.officialActions.map(action => <div key={action.family}><a className="intel-text-link" href={action.href} rel="noopener noreferrer" target="_blank">{action.label}</a><p>{action.instruction}</p></div>)}
+        </section>
+      ) : null}
+
       {result.period ? (
         <p className="intel-kicker">
           Source period: {result.period}. Grain: {result.grain ?? 'see trace'}.
@@ -53,7 +75,7 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
         </ul>
       ) : null}
 
-      {result.rows?.length ? (
+      {result.rows?.length && !result.lookup ? (
         <div className="hub-table-scroll" tabIndex={0} role="region" aria-label="Ask institution results">
           <table className="hub-table hub-table--compact">
             <caption className="visually-hidden">{result.headline}</caption>
@@ -116,6 +138,9 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
               <li key={item}>{item}</li>
             ))}
           </ul>
+          {row.matchEvidence?.map(evidence => <p key={evidence.family}>
+            Matched source field: {evidence.matchedField} = <code>{evidence.returnedValue}</code>. Method: exact identifier. Institution key: <code>{evidence.institutionKey}</code>. Source: {evidence.sourceReference}. Official source-as-of: {evidence.sourceAsOf ?? 'not supplied'}.
+          </p>)}
           <p><strong>Evidence available:</strong> {(row.evidenceAvailable?.length ? row.evidenceAvailable : ['institution identity']).join('; ')}.</p>
           <p className="intel-kicker">{result.period ?? 'Committed publication manifest'} · {result.grain ?? 'institution identity'}. Property geography is not lender location or service territory.</p>
         </details>
@@ -171,19 +196,11 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
 
       {result.sharePath ? (
         <p className="intel-kicker">
-          Shareable research URL (noindex): <code>{result.sharePath}</code>
+          Shareable research URL (noindex): <code style={{ overflowWrap: 'anywhere' }}>{result.sharePath}</code>
         </p>
       ) : null}
     </div>
   );
-}
-
-function removeCriterion(query: string, label: string): string {
-  if (/geography/i.test(label)) return query.replace(/\b(?:in|for properties in|headquartered in|serving)\s+(?:broward county|palm beach county|florida|new jersey|california|arizona)\b/gi, '').trim();
-  if (/loan type/i.test(label)) return query.replace(/\b(?:conventional|fha|va|usda)\b/gi, '').trim();
-  if (/action/i.test(label)) return query.replace(/\b(?:applications?|originations?|originated|denials?|denied)\b/gi, '').trim();
-  if (/identifier|institution/i.test(label)) return '';
-  return query;
 }
 
 function askPageHref(sharePath: string, page: number): string {
