@@ -1,0 +1,2538 @@
+{
+  "utc": "2026-09-11T20:20:40.671Z",
+  "origin": "https://www.lendertrusthub.com",
+  "sha": "eac8d856c1fb5af04d24966763c0fe96d7cc3e14",
+  "deployment": "dpl_6kULLtkcMT6pwkJ2ULvfs6Aqv7Cq",
+  "sourceSha256": "9fb0835fddd4426fcb7f76b392089a74e2d2f2ebfff970090498c4a4691ad149",
+  "surface": "Persistent Chrome, settled UI plus same-origin API",
+  "checks": [
+    {
+      "params": {
+        "q": "How many mortgage originations in New Jersey?"
+      },
+      "width": 1280,
+      "elapsedMs": 4365,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH TYPE\ncount\nEdit request\nGEOGRAPHY\nNJ\nEdit request\nGEOGRAPHY MEANING\nMortgage property / census location (HMDA), not lender location\nEdit request\nHMDA ACTION FAMILY\norigination\nEdit request\nMETRIC\ncount\nEdit request\nCOUNTED OBSERVATIONS\noriginations, not institutions. Source grain: county observations aggregated by jurisdiction; output: state property geography.\nEdit request\nREPORTING YEAR\n2025\nEdit request\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nOriginations\nApplications\nDenials\nAll loan types\nConventional\nFHA\nVA\nUSDA\nFlorida\nBroward\nPalm Beach\nChange interpretation\nNew Jersey originations - HMDA 2025 reporting vintage\n\nReported originations for mortgage properties in New Jersey. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.\n\nSource period: HMDA 2025 reporting vintage. Grain: county observations aggregated by jurisdiction; output: state property geography.\n\nNew Jersey originations: 177,325\nCaveats\nThese are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.\nTrace this query\n\nSelect the unique geography[state=NJ].originations. Accepted county observations already aggregated to New Jersey; no additional summation.\n\nContract: lender-ask-v1\nGrain: county observations aggregated by jurisdiction -> state\nPeriod: HMDA 2025 reporting vintage\nIdentity: Market totals are independent of profile publication and result pagination.\nPublication gate: No institution publication changes.\nIndexes: Scope NJ; action origination; field originations; availability AVAILABLE\nCache: Committed bounded source artifacts; no live regulator lookup.\nSource files: lib/home-intel/accepted-snapshot.json\nElapsed: 30 ms\nCount availability: AVAILABLE; numeric value: 177325\nScope: NJ; action: origination; source field: originations\nSource fingerprint: 913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008\nRetrieved: 2026-08-30; generated: 2026-08-30T16:22:07.696760+00:00\nReporting year is a vintage, not an exact official effective timestamp or a live check.\nQuestion: How many mortgage originations in New Jersey?\n\nShareable research URL (noindex): /ask?q=How+many+mortgage+originations+in+New+Jersey%3F\n\nBack to mortgage intelligence",
+        "width": 1280,
+        "scroll": 1280,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "count",
+            "reportingYears": [],
+            "scopeIssues": [],
+            "geography": {
+              "grain": "state",
+              "state": "NJ",
+              "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+            },
+            "actionTaken": [
+              "origination"
+            ],
+            "requestedMetric": "count"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "count"
+            },
+            {
+              "label": "Geography",
+              "value": "NJ"
+            },
+            {
+              "label": "Geography meaning",
+              "value": "Mortgage property / census location (HMDA), not lender location"
+            },
+            {
+              "label": "HMDA action family",
+              "value": "origination"
+            },
+            {
+              "label": "Metric",
+              "value": "count"
+            },
+            {
+              "label": "Counted observations",
+              "value": "originations, not institutions. Source grain: county observations aggregated by jurisdiction; output: state property geography."
+            },
+            {
+              "label": "Reporting year",
+              "value": "2025"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "New Jersey originations - HMDA 2025 reporting vintage",
+          "body": "Reported originations for mortgage properties in New Jersey. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.",
+          "countEvidence": {
+            "availability": "AVAILABLE",
+            "value": 177325,
+            "scope": "NJ",
+            "action": "origination",
+            "field": "originations",
+            "sourceFile": "lib/home-intel/accepted-snapshot.json",
+            "sourceFingerprint": "913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008",
+            "sourceGrain": "county observations aggregated by jurisdiction",
+            "outputGrain": "state",
+            "reportingYear": "2025",
+            "retrievedAt": "2026-08-30",
+            "generatedAt": "2026-08-30T16:22:07.696760+00:00",
+            "calculation": "Select the unique geography[state=NJ].originations. Accepted county observations already aggregated to New Jersey; no additional summation.",
+            "conditions": []
+          },
+          "failClosed": false,
+          "terminalState": "FOUND",
+          "facts": [
+            {
+              "label": "New Jersey originations",
+              "value": "177,325"
+            }
+          ],
+          "grain": "county observations aggregated by jurisdiction; output: state property geography",
+          "period": "HMDA 2025 reporting vintage",
+          "caveats": [
+            "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "lib/home-intel/accepted-snapshot.json"
+            ],
+            "method": "Select the unique geography[state=NJ].originations. Accepted county observations already aggregated to New Jersey; no additional summation.",
+            "indexes": [
+              "Scope NJ; action origination; field originations; availability AVAILABLE"
+            ],
+            "identityPolicy": "Market totals are independent of profile publication and result pagination.",
+            "publicationGate": "No institution publication changes.",
+            "cache": "Committed bounded source artifacts; no live regulator lookup.",
+            "grain": "county observations aggregated by jurisdiction -> state",
+            "period": "HMDA 2025 reporting vintage"
+          },
+          "filters": [
+            {
+              "id": "orig",
+              "label": "Originations",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=all&geo=NJ"
+            },
+            {
+              "id": "apps",
+              "label": "Applications",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=application&loanType=all&geo=NJ"
+            },
+            {
+              "id": "den",
+              "label": "Denials",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=denial&loanType=all&geo=NJ"
+            },
+            {
+              "id": "all-type",
+              "label": "All loan types",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=all&geo=NJ"
+            },
+            {
+              "id": "conv",
+              "label": "Conventional",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=conventional&geo=NJ"
+            },
+            {
+              "id": "fha",
+              "label": "FHA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=FHA&geo=NJ"
+            },
+            {
+              "id": "va",
+              "label": "VA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=VA&geo=NJ"
+            },
+            {
+              "id": "usda",
+              "label": "USDA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=USDA&geo=NJ"
+            },
+            {
+              "id": "fl",
+              "label": "Florida",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=all&geo=FL"
+            },
+            {
+              "id": "br",
+              "label": "Broward",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=all&geo=broward"
+            },
+            {
+              "id": "pb",
+              "label": "Palm Beach",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=all&geo=palm-beach"
+            }
+          ],
+          "sharePath": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F",
+          "elapsedMs": 27
+        }
+      }
+    },
+    {
+      "params": {
+        "q": "How many mortgage applications in New Jersey?"
+      },
+      "width": 390,
+      "elapsedMs": 753,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH TYPE\ncount\nEdit request\nGEOGRAPHY\nNJ\nEdit request\nGEOGRAPHY MEANING\nMortgage property / census location (HMDA), not lender location\nEdit request\nHMDA ACTION FAMILY\napplication\nEdit request\nMETRIC\ncount\nEdit request\nCOUNTED OBSERVATIONS\napplications, not institutions. Source grain: county observations aggregated by jurisdiction; output: state property geography.\nEdit request\nREPORTING YEAR\n2025\nEdit request\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nOriginations\nApplications\nDenials\nAll loan types\nConventional\nFHA\nVA\nUSDA\nFlorida\nBroward\nPalm Beach\nChange interpretation\nNew Jersey applications - HMDA 2025 reporting vintage\n\nReported applications for mortgage properties in New Jersey. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.\n\nSource period: HMDA 2025 reporting vintage. Grain: county observations aggregated by jurisdiction; output: state property geography.\n\nNew Jersey applications: 316,994\nCaveats\nThese are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.\nTrace this query\n\nSelect the unique geography[state=NJ].applications. Accepted county observations already aggregated to New Jersey; no additional summation.\n\nContract: lender-ask-v1\nGrain: county observations aggregated by jurisdiction -> state\nPeriod: HMDA 2025 reporting vintage\nIdentity: Market totals are independent of profile publication and result pagination.\nPublication gate: No institution publication changes.\nIndexes: Scope NJ; action application; field applications; availability AVAILABLE\nCache: Committed bounded source artifacts; no live regulator lookup.\nSource files: lib/home-intel/accepted-snapshot.json\nElapsed: 2 ms\nCount availability: AVAILABLE; numeric value: 316994\nScope: NJ; action: application; source field: applications\nSource fingerprint: 913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008\nRetrieved: 2026-08-30; generated: 2026-08-30T16:22:07.696760+00:00\nReporting year is a vintage, not an exact official effective timestamp or a live check.\nQuestion: How many mortgage applications in New Jersey?\n\nShareable research URL (noindex): /ask?q=How+many+mortgage+applications+in+New+Jersey%3F\n\nBack to mortgage intelligence",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "count",
+            "reportingYears": [],
+            "scopeIssues": [],
+            "geography": {
+              "grain": "state",
+              "state": "NJ",
+              "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+            },
+            "actionTaken": [
+              "application"
+            ],
+            "requestedMetric": "count"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "count"
+            },
+            {
+              "label": "Geography",
+              "value": "NJ"
+            },
+            {
+              "label": "Geography meaning",
+              "value": "Mortgage property / census location (HMDA), not lender location"
+            },
+            {
+              "label": "HMDA action family",
+              "value": "application"
+            },
+            {
+              "label": "Metric",
+              "value": "count"
+            },
+            {
+              "label": "Counted observations",
+              "value": "applications, not institutions. Source grain: county observations aggregated by jurisdiction; output: state property geography."
+            },
+            {
+              "label": "Reporting year",
+              "value": "2025"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "New Jersey applications - HMDA 2025 reporting vintage",
+          "body": "Reported applications for mortgage properties in New Jersey. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.",
+          "countEvidence": {
+            "availability": "AVAILABLE",
+            "value": 316994,
+            "scope": "NJ",
+            "action": "application",
+            "field": "applications",
+            "sourceFile": "lib/home-intel/accepted-snapshot.json",
+            "sourceFingerprint": "913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008",
+            "sourceGrain": "county observations aggregated by jurisdiction",
+            "outputGrain": "state",
+            "reportingYear": "2025",
+            "retrievedAt": "2026-08-30",
+            "generatedAt": "2026-08-30T16:22:07.696760+00:00",
+            "calculation": "Select the unique geography[state=NJ].applications. Accepted county observations already aggregated to New Jersey; no additional summation.",
+            "conditions": []
+          },
+          "failClosed": false,
+          "terminalState": "FOUND",
+          "facts": [
+            {
+              "label": "New Jersey applications",
+              "value": "316,994"
+            }
+          ],
+          "grain": "county observations aggregated by jurisdiction; output: state property geography",
+          "period": "HMDA 2025 reporting vintage",
+          "caveats": [
+            "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "lib/home-intel/accepted-snapshot.json"
+            ],
+            "method": "Select the unique geography[state=NJ].applications. Accepted county observations already aggregated to New Jersey; no additional summation.",
+            "indexes": [
+              "Scope NJ; action application; field applications; availability AVAILABLE"
+            ],
+            "identityPolicy": "Market totals are independent of profile publication and result pagination.",
+            "publicationGate": "No institution publication changes.",
+            "cache": "Committed bounded source artifacts; no live regulator lookup.",
+            "grain": "county observations aggregated by jurisdiction -> state",
+            "period": "HMDA 2025 reporting vintage"
+          },
+          "filters": [
+            {
+              "id": "orig",
+              "label": "Originations",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+New+Jersey%3F&action=origination&loanType=all&geo=NJ"
+            },
+            {
+              "id": "apps",
+              "label": "Applications",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+applications+in+New+Jersey%3F&action=application&loanType=all&geo=NJ"
+            },
+            {
+              "id": "den",
+              "label": "Denials",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+New+Jersey%3F&action=denial&loanType=all&geo=NJ"
+            },
+            {
+              "id": "all-type",
+              "label": "All loan types",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+applications+in+New+Jersey%3F&action=application&loanType=all&geo=NJ"
+            },
+            {
+              "id": "conv",
+              "label": "Conventional",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+New+Jersey%3F&action=application&loanType=conventional&geo=NJ"
+            },
+            {
+              "id": "fha",
+              "label": "FHA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+New+Jersey%3F&action=application&loanType=FHA&geo=NJ"
+            },
+            {
+              "id": "va",
+              "label": "VA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+New+Jersey%3F&action=application&loanType=VA&geo=NJ"
+            },
+            {
+              "id": "usda",
+              "label": "USDA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+New+Jersey%3F&action=application&loanType=USDA&geo=NJ"
+            },
+            {
+              "id": "fl",
+              "label": "Florida",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+New+Jersey%3F&action=application&loanType=all&geo=FL"
+            },
+            {
+              "id": "br",
+              "label": "Broward",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+New+Jersey%3F&action=application&loanType=all&geo=broward"
+            },
+            {
+              "id": "pb",
+              "label": "Palm Beach",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+New+Jersey%3F&action=application&loanType=all&geo=palm-beach"
+            }
+          ],
+          "sharePath": "/ask?q=How+many+mortgage+applications+in+New+Jersey%3F",
+          "elapsedMs": 0
+        }
+      }
+    },
+    {
+      "params": {
+        "q": "How many mortgage denials in New Jersey?"
+      },
+      "width": 320,
+      "elapsedMs": 458,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH TYPE\ncount\nEdit request\nGEOGRAPHY\nNJ\nEdit request\nGEOGRAPHY MEANING\nMortgage property / census location (HMDA), not lender location\nEdit request\nHMDA ACTION FAMILY\ndenial\nEdit request\nMETRIC\ncount\nEdit request\nCOUNTED OBSERVATIONS\ndenials, not institutions. Source grain: county observations aggregated by jurisdiction; output: state property geography.\nEdit request\nREPORTING YEAR\n2025\nEdit request\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nOriginations\nApplications\nDenials\nAll loan types\nConventional\nFHA\nVA\nUSDA\nFlorida\nBroward\nPalm Beach\nChange interpretation\nNew Jersey denials - HMDA 2025 reporting vintage\n\nReported denials for mortgage properties in New Jersey. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.\n\nSource period: HMDA 2025 reporting vintage. Grain: county observations aggregated by jurisdiction; output: state property geography.\n\nNew Jersey denials: 55,453\nCaveats\nThese are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.\nTrace this query\n\nSelect the unique geography[state=NJ].denials. Accepted county observations already aggregated to New Jersey; no additional summation.\n\nContract: lender-ask-v1\nGrain: county observations aggregated by jurisdiction -> state\nPeriod: HMDA 2025 reporting vintage\nIdentity: Market totals are independent of profile publication and result pagination.\nPublication gate: No institution publication changes.\nIndexes: Scope NJ; action denial; field denials; availability AVAILABLE\nCache: Committed bounded source artifacts; no live regulator lookup.\nSource files: lib/home-intel/accepted-snapshot.json\nElapsed: 1 ms\nCount availability: AVAILABLE; numeric value: 55453\nScope: NJ; action: denial; source field: denials\nSource fingerprint: 913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008\nRetrieved: 2026-08-30; generated: 2026-08-30T16:22:07.696760+00:00\nReporting year is a vintage, not an exact official effective timestamp or a live check.\nQuestion: How many mortgage denials in New Jersey?\n\nShareable research URL (noindex): /ask?q=How+many+mortgage+denials+in+New+Jersey%3F\n\nBack to mortgage intelligence",
+        "width": 320,
+        "scroll": 320,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "count",
+            "reportingYears": [],
+            "scopeIssues": [],
+            "geography": {
+              "grain": "state",
+              "state": "NJ",
+              "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+            },
+            "actionTaken": [
+              "denial"
+            ],
+            "requestedMetric": "count"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "count"
+            },
+            {
+              "label": "Geography",
+              "value": "NJ"
+            },
+            {
+              "label": "Geography meaning",
+              "value": "Mortgage property / census location (HMDA), not lender location"
+            },
+            {
+              "label": "HMDA action family",
+              "value": "denial"
+            },
+            {
+              "label": "Metric",
+              "value": "count"
+            },
+            {
+              "label": "Counted observations",
+              "value": "denials, not institutions. Source grain: county observations aggregated by jurisdiction; output: state property geography."
+            },
+            {
+              "label": "Reporting year",
+              "value": "2025"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "New Jersey denials - HMDA 2025 reporting vintage",
+          "body": "Reported denials for mortgage properties in New Jersey. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.",
+          "countEvidence": {
+            "availability": "AVAILABLE",
+            "value": 55453,
+            "scope": "NJ",
+            "action": "denial",
+            "field": "denials",
+            "sourceFile": "lib/home-intel/accepted-snapshot.json",
+            "sourceFingerprint": "913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008",
+            "sourceGrain": "county observations aggregated by jurisdiction",
+            "outputGrain": "state",
+            "reportingYear": "2025",
+            "retrievedAt": "2026-08-30",
+            "generatedAt": "2026-08-30T16:22:07.696760+00:00",
+            "calculation": "Select the unique geography[state=NJ].denials. Accepted county observations already aggregated to New Jersey; no additional summation.",
+            "conditions": []
+          },
+          "failClosed": false,
+          "terminalState": "FOUND",
+          "facts": [
+            {
+              "label": "New Jersey denials",
+              "value": "55,453"
+            }
+          ],
+          "grain": "county observations aggregated by jurisdiction; output: state property geography",
+          "period": "HMDA 2025 reporting vintage",
+          "caveats": [
+            "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "lib/home-intel/accepted-snapshot.json"
+            ],
+            "method": "Select the unique geography[state=NJ].denials. Accepted county observations already aggregated to New Jersey; no additional summation.",
+            "indexes": [
+              "Scope NJ; action denial; field denials; availability AVAILABLE"
+            ],
+            "identityPolicy": "Market totals are independent of profile publication and result pagination.",
+            "publicationGate": "No institution publication changes.",
+            "cache": "Committed bounded source artifacts; no live regulator lookup.",
+            "grain": "county observations aggregated by jurisdiction -> state",
+            "period": "HMDA 2025 reporting vintage"
+          },
+          "filters": [
+            {
+              "id": "orig",
+              "label": "Originations",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+in+New+Jersey%3F&action=origination&loanType=all&geo=NJ"
+            },
+            {
+              "id": "apps",
+              "label": "Applications",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+in+New+Jersey%3F&action=application&loanType=all&geo=NJ"
+            },
+            {
+              "id": "den",
+              "label": "Denials",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=all&geo=NJ"
+            },
+            {
+              "id": "all-type",
+              "label": "All loan types",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=all&geo=NJ"
+            },
+            {
+              "id": "conv",
+              "label": "Conventional",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=conventional&geo=NJ"
+            },
+            {
+              "id": "fha",
+              "label": "FHA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=FHA&geo=NJ"
+            },
+            {
+              "id": "va",
+              "label": "VA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=VA&geo=NJ"
+            },
+            {
+              "id": "usda",
+              "label": "USDA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=USDA&geo=NJ"
+            },
+            {
+              "id": "fl",
+              "label": "Florida",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=all&geo=FL"
+            },
+            {
+              "id": "br",
+              "label": "Broward",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=all&geo=broward"
+            },
+            {
+              "id": "pb",
+              "label": "Palm Beach",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=all&geo=palm-beach"
+            }
+          ],
+          "sharePath": "/ask?q=How+many+mortgage+denials+in+New+Jersey%3F",
+          "elapsedMs": 0
+        }
+      }
+    },
+    {
+      "params": {
+        "q": "How many mortgage originations in NJ?"
+      },
+      "width": 1280,
+      "elapsedMs": 776,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH TYPE\ncount\nEdit request\nGEOGRAPHY\nNJ\nEdit request\nGEOGRAPHY MEANING\nMortgage property / census location (HMDA), not lender location\nEdit request\nHMDA ACTION FAMILY\norigination\nEdit request\nMETRIC\ncount\nEdit request\nCOUNTED OBSERVATIONS\noriginations, not institutions. Source grain: county observations aggregated by jurisdiction; output: state property geography.\nEdit request\nREPORTING YEAR\n2025\nEdit request\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nOriginations\nApplications\nDenials\nAll loan types\nConventional\nFHA\nVA\nUSDA\nFlorida\nBroward\nPalm Beach\nChange interpretation\nNew Jersey originations - HMDA 2025 reporting vintage\n\nReported originations for mortgage properties in New Jersey. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.\n\nSource period: HMDA 2025 reporting vintage. Grain: county observations aggregated by jurisdiction; output: state property geography.\n\nNew Jersey originations: 177,325\nCaveats\nThese are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.\nTrace this query\n\nSelect the unique geography[state=NJ].originations. Accepted county observations already aggregated to New Jersey; no additional summation.\n\nContract: lender-ask-v1\nGrain: county observations aggregated by jurisdiction -> state\nPeriod: HMDA 2025 reporting vintage\nIdentity: Market totals are independent of profile publication and result pagination.\nPublication gate: No institution publication changes.\nIndexes: Scope NJ; action origination; field originations; availability AVAILABLE\nCache: Committed bounded source artifacts; no live regulator lookup.\nSource files: lib/home-intel/accepted-snapshot.json\nElapsed: 3 ms\nCount availability: AVAILABLE; numeric value: 177325\nScope: NJ; action: origination; source field: originations\nSource fingerprint: 913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008\nRetrieved: 2026-08-30; generated: 2026-08-30T16:22:07.696760+00:00\nReporting year is a vintage, not an exact official effective timestamp or a live check.\nQuestion: How many mortgage originations in NJ?\n\nShareable research URL (noindex): /ask?q=How+many+mortgage+originations+in+NJ%3F\n\nBack to mortgage intelligence",
+        "width": 1280,
+        "scroll": 1280,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "count",
+            "reportingYears": [],
+            "scopeIssues": [],
+            "geography": {
+              "grain": "state",
+              "state": "NJ",
+              "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+            },
+            "actionTaken": [
+              "origination"
+            ],
+            "requestedMetric": "count"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "count"
+            },
+            {
+              "label": "Geography",
+              "value": "NJ"
+            },
+            {
+              "label": "Geography meaning",
+              "value": "Mortgage property / census location (HMDA), not lender location"
+            },
+            {
+              "label": "HMDA action family",
+              "value": "origination"
+            },
+            {
+              "label": "Metric",
+              "value": "count"
+            },
+            {
+              "label": "Counted observations",
+              "value": "originations, not institutions. Source grain: county observations aggregated by jurisdiction; output: state property geography."
+            },
+            {
+              "label": "Reporting year",
+              "value": "2025"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "New Jersey originations - HMDA 2025 reporting vintage",
+          "body": "Reported originations for mortgage properties in New Jersey. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.",
+          "countEvidence": {
+            "availability": "AVAILABLE",
+            "value": 177325,
+            "scope": "NJ",
+            "action": "origination",
+            "field": "originations",
+            "sourceFile": "lib/home-intel/accepted-snapshot.json",
+            "sourceFingerprint": "913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008",
+            "sourceGrain": "county observations aggregated by jurisdiction",
+            "outputGrain": "state",
+            "reportingYear": "2025",
+            "retrievedAt": "2026-08-30",
+            "generatedAt": "2026-08-30T16:22:07.696760+00:00",
+            "calculation": "Select the unique geography[state=NJ].originations. Accepted county observations already aggregated to New Jersey; no additional summation.",
+            "conditions": []
+          },
+          "failClosed": false,
+          "terminalState": "FOUND",
+          "facts": [
+            {
+              "label": "New Jersey originations",
+              "value": "177,325"
+            }
+          ],
+          "grain": "county observations aggregated by jurisdiction; output: state property geography",
+          "period": "HMDA 2025 reporting vintage",
+          "caveats": [
+            "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "lib/home-intel/accepted-snapshot.json"
+            ],
+            "method": "Select the unique geography[state=NJ].originations. Accepted county observations already aggregated to New Jersey; no additional summation.",
+            "indexes": [
+              "Scope NJ; action origination; field originations; availability AVAILABLE"
+            ],
+            "identityPolicy": "Market totals are independent of profile publication and result pagination.",
+            "publicationGate": "No institution publication changes.",
+            "cache": "Committed bounded source artifacts; no live regulator lookup.",
+            "grain": "county observations aggregated by jurisdiction -> state",
+            "period": "HMDA 2025 reporting vintage"
+          },
+          "filters": [
+            {
+              "id": "orig",
+              "label": "Originations",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ%3F&action=origination&loanType=all&geo=NJ"
+            },
+            {
+              "id": "apps",
+              "label": "Applications",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ%3F&action=application&loanType=all&geo=NJ"
+            },
+            {
+              "id": "den",
+              "label": "Denials",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ%3F&action=denial&loanType=all&geo=NJ"
+            },
+            {
+              "id": "all-type",
+              "label": "All loan types",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ%3F&action=origination&loanType=all&geo=NJ"
+            },
+            {
+              "id": "conv",
+              "label": "Conventional",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ%3F&action=origination&loanType=conventional&geo=NJ"
+            },
+            {
+              "id": "fha",
+              "label": "FHA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ%3F&action=origination&loanType=FHA&geo=NJ"
+            },
+            {
+              "id": "va",
+              "label": "VA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ%3F&action=origination&loanType=VA&geo=NJ"
+            },
+            {
+              "id": "usda",
+              "label": "USDA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ%3F&action=origination&loanType=USDA&geo=NJ"
+            },
+            {
+              "id": "fl",
+              "label": "Florida",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ%3F&action=origination&loanType=all&geo=FL"
+            },
+            {
+              "id": "br",
+              "label": "Broward",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ%3F&action=origination&loanType=all&geo=broward"
+            },
+            {
+              "id": "pb",
+              "label": "Palm Beach",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ%3F&action=origination&loanType=all&geo=palm-beach"
+            }
+          ],
+          "sharePath": "/ask?q=How+many+mortgage+originations+in+NJ%3F",
+          "elapsedMs": 1
+        }
+      }
+    },
+    {
+      "params": {
+        "q": "How many mortgage originations in Florida?"
+      },
+      "width": 390,
+      "elapsedMs": 441,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH TYPE\ncount\nEdit request\nGEOGRAPHY\nFL\nEdit request\nGEOGRAPHY MEANING\nMortgage property / census location (HMDA), not lender location\nEdit request\nHMDA ACTION FAMILY\norigination\nEdit request\nMETRIC\ncount\nEdit request\nCOUNTED OBSERVATIONS\noriginations, not institutions. Source grain: county observations aggregated by jurisdiction; output: state property geography.\nEdit request\nREPORTING YEAR\n2025\nEdit request\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nOriginations\nApplications\nDenials\nAll loan types\nConventional\nFHA\nVA\nUSDA\nFlorida\nBroward\nPalm Beach\nChange interpretation\nFlorida originations - HMDA 2025 reporting vintage\n\nReported originations for mortgage properties in Florida. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.\n\nSource period: HMDA 2025 reporting vintage. Grain: county observations aggregated by jurisdiction; output: state property geography.\n\nFlorida originations: 489,025\nCaveats\nThese are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.\nTrace this query\n\nSelect the unique geography[state=FL].originations. Accepted county observations already aggregated to Florida; no additional summation.\n\nContract: lender-ask-v1\nGrain: county observations aggregated by jurisdiction -> state\nPeriod: HMDA 2025 reporting vintage\nIdentity: Market totals are independent of profile publication and result pagination.\nPublication gate: No institution publication changes.\nIndexes: Scope FL; action origination; field originations; availability AVAILABLE\nCache: Committed bounded source artifacts; no live regulator lookup.\nSource files: lib/home-intel/accepted-snapshot.json\nElapsed: 2 ms\nCount availability: AVAILABLE; numeric value: 489025\nScope: FL; action: origination; source field: originations\nSource fingerprint: 913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008\nRetrieved: 2026-08-30; generated: 2026-08-30T16:22:07.696760+00:00\nReporting year is a vintage, not an exact official effective timestamp or a live check.\nQuestion: How many mortgage originations in Florida?\n\nShareable research URL (noindex): /ask?q=How+many+mortgage+originations+in+Florida%3F\n\nBack to mortgage intelligence",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "count",
+            "reportingYears": [],
+            "scopeIssues": [],
+            "geography": {
+              "grain": "state",
+              "state": "FL",
+              "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+            },
+            "actionTaken": [
+              "origination"
+            ],
+            "requestedMetric": "count"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "count"
+            },
+            {
+              "label": "Geography",
+              "value": "FL"
+            },
+            {
+              "label": "Geography meaning",
+              "value": "Mortgage property / census location (HMDA), not lender location"
+            },
+            {
+              "label": "HMDA action family",
+              "value": "origination"
+            },
+            {
+              "label": "Metric",
+              "value": "count"
+            },
+            {
+              "label": "Counted observations",
+              "value": "originations, not institutions. Source grain: county observations aggregated by jurisdiction; output: state property geography."
+            },
+            {
+              "label": "Reporting year",
+              "value": "2025"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "Florida originations - HMDA 2025 reporting vintage",
+          "body": "Reported originations for mortgage properties in Florida. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.",
+          "countEvidence": {
+            "availability": "AVAILABLE",
+            "value": 489025,
+            "scope": "FL",
+            "action": "origination",
+            "field": "originations",
+            "sourceFile": "lib/home-intel/accepted-snapshot.json",
+            "sourceFingerprint": "913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008",
+            "sourceGrain": "county observations aggregated by jurisdiction",
+            "outputGrain": "state",
+            "reportingYear": "2025",
+            "retrievedAt": "2026-08-30",
+            "generatedAt": "2026-08-30T16:22:07.696760+00:00",
+            "calculation": "Select the unique geography[state=FL].originations. Accepted county observations already aggregated to Florida; no additional summation.",
+            "conditions": []
+          },
+          "failClosed": false,
+          "terminalState": "FOUND",
+          "facts": [
+            {
+              "label": "Florida originations",
+              "value": "489,025"
+            }
+          ],
+          "grain": "county observations aggregated by jurisdiction; output: state property geography",
+          "period": "HMDA 2025 reporting vintage",
+          "caveats": [
+            "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "lib/home-intel/accepted-snapshot.json"
+            ],
+            "method": "Select the unique geography[state=FL].originations. Accepted county observations already aggregated to Florida; no additional summation.",
+            "indexes": [
+              "Scope FL; action origination; field originations; availability AVAILABLE"
+            ],
+            "identityPolicy": "Market totals are independent of profile publication and result pagination.",
+            "publicationGate": "No institution publication changes.",
+            "cache": "Committed bounded source artifacts; no live regulator lookup.",
+            "grain": "county observations aggregated by jurisdiction -> state",
+            "period": "HMDA 2025 reporting vintage"
+          },
+          "filters": [
+            {
+              "id": "orig",
+              "label": "Originations",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=all&geo=FL"
+            },
+            {
+              "id": "apps",
+              "label": "Applications",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=application&loanType=all&geo=FL"
+            },
+            {
+              "id": "den",
+              "label": "Denials",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=denial&loanType=all&geo=FL"
+            },
+            {
+              "id": "all-type",
+              "label": "All loan types",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=all&geo=FL"
+            },
+            {
+              "id": "conv",
+              "label": "Conventional",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=conventional&geo=FL"
+            },
+            {
+              "id": "fha",
+              "label": "FHA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=FHA&geo=FL"
+            },
+            {
+              "id": "va",
+              "label": "VA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=VA&geo=FL"
+            },
+            {
+              "id": "usda",
+              "label": "USDA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=USDA&geo=FL"
+            },
+            {
+              "id": "fl",
+              "label": "Florida",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=all&geo=FL"
+            },
+            {
+              "id": "br",
+              "label": "Broward",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=all&geo=broward"
+            },
+            {
+              "id": "pb",
+              "label": "Palm Beach",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=all&geo=palm-beach"
+            }
+          ],
+          "sharePath": "/ask?q=How+many+mortgage+originations+in+Florida%3F",
+          "elapsedMs": 1
+        }
+      }
+    },
+    {
+      "params": {
+        "q": "How many mortgage applications in California?"
+      },
+      "width": 1280,
+      "elapsedMs": 1320,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH TYPE\ncount\nEdit request\nGEOGRAPHY\nCA\nEdit request\nGEOGRAPHY MEANING\nMortgage property / census location (HMDA), not lender location\nEdit request\nHMDA ACTION FAMILY\napplication\nEdit request\nMETRIC\ncount\nEdit request\nCOUNTED OBSERVATIONS\napplications, not institutions. Source grain: county observations aggregated by jurisdiction; output: state property geography.\nEdit request\nREPORTING YEAR\n2025\nEdit request\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nOriginations\nApplications\nDenials\nAll loan types\nConventional\nFHA\nVA\nUSDA\nFlorida\nBroward\nPalm Beach\nChange interpretation\nCalifornia applications - HMDA 2025 reporting vintage\n\nReported applications for mortgage properties in California. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.\n\nSource period: HMDA 2025 reporting vintage. Grain: county observations aggregated by jurisdiction; output: state property geography.\n\nCalifornia applications: 1,010,547\nCaveats\nThese are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.\nTrace this query\n\nSelect the unique geography[state=CA].applications. Accepted county observations already aggregated to California; no additional summation.\n\nContract: lender-ask-v1\nGrain: county observations aggregated by jurisdiction -> state\nPeriod: HMDA 2025 reporting vintage\nIdentity: Market totals are independent of profile publication and result pagination.\nPublication gate: No institution publication changes.\nIndexes: Scope CA; action application; field applications; availability AVAILABLE\nCache: Committed bounded source artifacts; no live regulator lookup.\nSource files: lib/home-intel/accepted-snapshot.json\nElapsed: 4 ms\nCount availability: AVAILABLE; numeric value: 1010547\nScope: CA; action: application; source field: applications\nSource fingerprint: 913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008\nRetrieved: 2026-08-30; generated: 2026-08-30T16:22:07.696760+00:00\nReporting year is a vintage, not an exact official effective timestamp or a live check.\nQuestion: How many mortgage applications in California?\n\nShareable research URL (noindex): /ask?q=How+many+mortgage+applications+in+California%3F\n\nBack to mortgage intelligence",
+        "width": 1280,
+        "scroll": 1280,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "count",
+            "reportingYears": [],
+            "scopeIssues": [],
+            "geography": {
+              "grain": "state",
+              "state": "CA",
+              "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+            },
+            "actionTaken": [
+              "application"
+            ],
+            "requestedMetric": "count"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "count"
+            },
+            {
+              "label": "Geography",
+              "value": "CA"
+            },
+            {
+              "label": "Geography meaning",
+              "value": "Mortgage property / census location (HMDA), not lender location"
+            },
+            {
+              "label": "HMDA action family",
+              "value": "application"
+            },
+            {
+              "label": "Metric",
+              "value": "count"
+            },
+            {
+              "label": "Counted observations",
+              "value": "applications, not institutions. Source grain: county observations aggregated by jurisdiction; output: state property geography."
+            },
+            {
+              "label": "Reporting year",
+              "value": "2025"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "California applications - HMDA 2025 reporting vintage",
+          "body": "Reported applications for mortgage properties in California. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.",
+          "countEvidence": {
+            "availability": "AVAILABLE",
+            "value": 1010547,
+            "scope": "CA",
+            "action": "application",
+            "field": "applications",
+            "sourceFile": "lib/home-intel/accepted-snapshot.json",
+            "sourceFingerprint": "913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008",
+            "sourceGrain": "county observations aggregated by jurisdiction",
+            "outputGrain": "state",
+            "reportingYear": "2025",
+            "retrievedAt": "2026-08-30",
+            "generatedAt": "2026-08-30T16:22:07.696760+00:00",
+            "calculation": "Select the unique geography[state=CA].applications. Accepted county observations already aggregated to California; no additional summation.",
+            "conditions": []
+          },
+          "failClosed": false,
+          "terminalState": "FOUND",
+          "facts": [
+            {
+              "label": "California applications",
+              "value": "1,010,547"
+            }
+          ],
+          "grain": "county observations aggregated by jurisdiction; output: state property geography",
+          "period": "HMDA 2025 reporting vintage",
+          "caveats": [
+            "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "lib/home-intel/accepted-snapshot.json"
+            ],
+            "method": "Select the unique geography[state=CA].applications. Accepted county observations already aggregated to California; no additional summation.",
+            "indexes": [
+              "Scope CA; action application; field applications; availability AVAILABLE"
+            ],
+            "identityPolicy": "Market totals are independent of profile publication and result pagination.",
+            "publicationGate": "No institution publication changes.",
+            "cache": "Committed bounded source artifacts; no live regulator lookup.",
+            "grain": "county observations aggregated by jurisdiction -> state",
+            "period": "HMDA 2025 reporting vintage"
+          },
+          "filters": [
+            {
+              "id": "orig",
+              "label": "Originations",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+California%3F&action=origination&loanType=all&geo=CA"
+            },
+            {
+              "id": "apps",
+              "label": "Applications",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+applications+in+California%3F&action=application&loanType=all&geo=CA"
+            },
+            {
+              "id": "den",
+              "label": "Denials",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+California%3F&action=denial&loanType=all&geo=CA"
+            },
+            {
+              "id": "all-type",
+              "label": "All loan types",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+applications+in+California%3F&action=application&loanType=all&geo=CA"
+            },
+            {
+              "id": "conv",
+              "label": "Conventional",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+California%3F&action=application&loanType=conventional&geo=CA"
+            },
+            {
+              "id": "fha",
+              "label": "FHA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+California%3F&action=application&loanType=FHA&geo=CA"
+            },
+            {
+              "id": "va",
+              "label": "VA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+California%3F&action=application&loanType=VA&geo=CA"
+            },
+            {
+              "id": "usda",
+              "label": "USDA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+California%3F&action=application&loanType=USDA&geo=CA"
+            },
+            {
+              "id": "fl",
+              "label": "Florida",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+California%3F&action=application&loanType=all&geo=FL"
+            },
+            {
+              "id": "br",
+              "label": "Broward",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+California%3F&action=application&loanType=all&geo=broward"
+            },
+            {
+              "id": "pb",
+              "label": "Palm Beach",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+in+California%3F&action=application&loanType=all&geo=palm-beach"
+            }
+          ],
+          "sharePath": "/ask?q=How+many+mortgage+applications+in+California%3F",
+          "elapsedMs": 1
+        }
+      }
+    },
+    {
+      "params": {
+        "q": "How many mortgage denials nationally?"
+      },
+      "width": 390,
+      "elapsedMs": 525,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH TYPE\ncount\nEdit request\nGEOGRAPHY\nnational\nEdit request\nGEOGRAPHY MEANING\nMortgage property / census location (HMDA), not lender location\nEdit request\nHMDA ACTION FAMILY\ndenial\nEdit request\nMETRIC\ncount\nEdit request\nCOUNTED OBSERVATIONS\ndenials, not institutions. Source grain: county observations aggregated by jurisdiction; output: national property geography.\nEdit request\nREPORTING YEAR\n2025\nEdit request\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nOriginations\nApplications\nDenials\nAll loan types\nConventional\nFHA\nVA\nUSDA\nFlorida\nBroward\nPalm Beach\nChange interpretation\nUnited States denials - HMDA 2025 reporting vintage\n\nReported denials for mortgage properties in United States. The source grain is county observations aggregated by jurisdiction; the displayed total uses national scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.\n\nSource period: HMDA 2025 reporting vintage. Grain: county observations aggregated by jurisdiction; output: national property geography.\n\nUnited States denials: 2,008,514\nCaveats\nThese are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.\nTrace this query\n\nSelect the separate national denials aggregate. Do not add jurisdiction subtotals to it.\n\nContract: lender-ask-v1\nGrain: county observations aggregated by jurisdiction -> national\nPeriod: HMDA 2025 reporting vintage\nIdentity: Market totals are independent of profile publication and result pagination.\nPublication gate: No institution publication changes.\nIndexes: Scope US; action denial; field denials; availability AVAILABLE\nCache: Committed bounded source artifacts; no live regulator lookup.\nSource files: lib/home-intel/accepted-snapshot.json\nElapsed: 1 ms\nCount availability: AVAILABLE; numeric value: 2008514\nScope: US; action: denial; source field: denials\nSource fingerprint: 913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008\nRetrieved: 2026-08-30; generated: 2026-08-30T16:22:07.696760+00:00\nReporting year is a vintage, not an exact official effective timestamp or a live check.\nQuestion: How many mortgage denials nationally?\n\nShareable research URL (noindex): /ask?q=How+many+mortgage+denials+nationally%3F\n\nBack to mortgage intelligence",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "count",
+            "reportingYears": [],
+            "scopeIssues": [],
+            "geography": {
+              "grain": "national",
+              "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+            },
+            "actionTaken": [
+              "denial"
+            ],
+            "requestedMetric": "count"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "count"
+            },
+            {
+              "label": "Geography",
+              "value": "national"
+            },
+            {
+              "label": "Geography meaning",
+              "value": "Mortgage property / census location (HMDA), not lender location"
+            },
+            {
+              "label": "HMDA action family",
+              "value": "denial"
+            },
+            {
+              "label": "Metric",
+              "value": "count"
+            },
+            {
+              "label": "Counted observations",
+              "value": "denials, not institutions. Source grain: county observations aggregated by jurisdiction; output: national property geography."
+            },
+            {
+              "label": "Reporting year",
+              "value": "2025"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "United States denials - HMDA 2025 reporting vintage",
+          "body": "Reported denials for mortgage properties in United States. The source grain is county observations aggregated by jurisdiction; the displayed total uses national scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.",
+          "countEvidence": {
+            "availability": "AVAILABLE",
+            "value": 2008514,
+            "scope": "US",
+            "action": "denial",
+            "field": "denials",
+            "sourceFile": "lib/home-intel/accepted-snapshot.json",
+            "sourceFingerprint": "913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008",
+            "sourceGrain": "county observations aggregated by jurisdiction",
+            "outputGrain": "national",
+            "reportingYear": "2025",
+            "retrievedAt": "2026-08-30",
+            "generatedAt": "2026-08-30T16:22:07.696760+00:00",
+            "calculation": "Select the separate national denials aggregate. Do not add jurisdiction subtotals to it.",
+            "conditions": []
+          },
+          "failClosed": false,
+          "terminalState": "FOUND",
+          "facts": [
+            {
+              "label": "United States denials",
+              "value": "2,008,514"
+            }
+          ],
+          "grain": "county observations aggregated by jurisdiction; output: national property geography",
+          "period": "HMDA 2025 reporting vintage",
+          "caveats": [
+            "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "lib/home-intel/accepted-snapshot.json"
+            ],
+            "method": "Select the separate national denials aggregate. Do not add jurisdiction subtotals to it.",
+            "indexes": [
+              "Scope US; action denial; field denials; availability AVAILABLE"
+            ],
+            "identityPolicy": "Market totals are independent of profile publication and result pagination.",
+            "publicationGate": "No institution publication changes.",
+            "cache": "Committed bounded source artifacts; no live regulator lookup.",
+            "grain": "county observations aggregated by jurisdiction -> national",
+            "period": "HMDA 2025 reporting vintage"
+          },
+          "filters": [
+            {
+              "id": "orig",
+              "label": "Originations",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=origination&loanType=all&geo=US"
+            },
+            {
+              "id": "apps",
+              "label": "Applications",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=application&loanType=all&geo=US"
+            },
+            {
+              "id": "den",
+              "label": "Denials",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=all&geo=US"
+            },
+            {
+              "id": "all-type",
+              "label": "All loan types",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=all&geo=US"
+            },
+            {
+              "id": "conv",
+              "label": "Conventional",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=conventional&geo=US"
+            },
+            {
+              "id": "fha",
+              "label": "FHA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=FHA&geo=US"
+            },
+            {
+              "id": "va",
+              "label": "VA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=VA&geo=US"
+            },
+            {
+              "id": "usda",
+              "label": "USDA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=USDA&geo=US"
+            },
+            {
+              "id": "fl",
+              "label": "Florida",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=all&geo=FL"
+            },
+            {
+              "id": "br",
+              "label": "Broward",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=all&geo=broward"
+            },
+            {
+              "id": "pb",
+              "label": "Palm Beach",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=all&geo=palm-beach"
+            }
+          ],
+          "sharePath": "/ask?q=How+many+mortgage+denials+nationally%3F",
+          "elapsedMs": 0
+        }
+      }
+    },
+    {
+      "params": {
+        "q": "How many mortgage applications nationally?"
+      },
+      "width": 1280,
+      "elapsedMs": 455,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH TYPE\ncount\nEdit request\nGEOGRAPHY\nnational\nEdit request\nGEOGRAPHY MEANING\nMortgage property / census location (HMDA), not lender location\nEdit request\nHMDA ACTION FAMILY\napplication\nEdit request\nMETRIC\ncount\nEdit request\nCOUNTED OBSERVATIONS\napplications, not institutions. Source grain: county observations aggregated by jurisdiction; output: national property geography.\nEdit request\nREPORTING YEAR\n2025\nEdit request\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nOriginations\nApplications\nDenials\nAll loan types\nConventional\nFHA\nVA\nUSDA\nFlorida\nBroward\nPalm Beach\nChange interpretation\nUnited States applications - HMDA 2025 reporting vintage\n\nReported applications for mortgage properties in United States. The source grain is county observations aggregated by jurisdiction; the displayed total uses national scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.\n\nSource period: HMDA 2025 reporting vintage. Grain: county observations aggregated by jurisdiction; output: national property geography.\n\nUnited States applications: 11,529,787\nCaveats\nThese are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.\nTrace this query\n\nSelect the separate national applications aggregate. Do not add jurisdiction subtotals to it.\n\nContract: lender-ask-v1\nGrain: county observations aggregated by jurisdiction -> national\nPeriod: HMDA 2025 reporting vintage\nIdentity: Market totals are independent of profile publication and result pagination.\nPublication gate: No institution publication changes.\nIndexes: Scope US; action application; field applications; availability AVAILABLE\nCache: Committed bounded source artifacts; no live regulator lookup.\nSource files: lib/home-intel/accepted-snapshot.json\nElapsed: 1 ms\nCount availability: AVAILABLE; numeric value: 11529787\nScope: US; action: application; source field: applications\nSource fingerprint: 913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008\nRetrieved: 2026-08-30; generated: 2026-08-30T16:22:07.696760+00:00\nReporting year is a vintage, not an exact official effective timestamp or a live check.\nQuestion: How many mortgage applications nationally?\n\nShareable research URL (noindex): /ask?q=How+many+mortgage+applications+nationally%3F\n\nBack to mortgage intelligence",
+        "width": 1280,
+        "scroll": 1280,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "count",
+            "reportingYears": [],
+            "scopeIssues": [],
+            "geography": {
+              "grain": "national",
+              "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+            },
+            "actionTaken": [
+              "application"
+            ],
+            "requestedMetric": "count"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "count"
+            },
+            {
+              "label": "Geography",
+              "value": "national"
+            },
+            {
+              "label": "Geography meaning",
+              "value": "Mortgage property / census location (HMDA), not lender location"
+            },
+            {
+              "label": "HMDA action family",
+              "value": "application"
+            },
+            {
+              "label": "Metric",
+              "value": "count"
+            },
+            {
+              "label": "Counted observations",
+              "value": "applications, not institutions. Source grain: county observations aggregated by jurisdiction; output: national property geography."
+            },
+            {
+              "label": "Reporting year",
+              "value": "2025"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "United States applications - HMDA 2025 reporting vintage",
+          "body": "Reported applications for mortgage properties in United States. The source grain is county observations aggregated by jurisdiction; the displayed total uses national scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.",
+          "countEvidence": {
+            "availability": "AVAILABLE",
+            "value": 11529787,
+            "scope": "US",
+            "action": "application",
+            "field": "applications",
+            "sourceFile": "lib/home-intel/accepted-snapshot.json",
+            "sourceFingerprint": "913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008",
+            "sourceGrain": "county observations aggregated by jurisdiction",
+            "outputGrain": "national",
+            "reportingYear": "2025",
+            "retrievedAt": "2026-08-30",
+            "generatedAt": "2026-08-30T16:22:07.696760+00:00",
+            "calculation": "Select the separate national applications aggregate. Do not add jurisdiction subtotals to it.",
+            "conditions": []
+          },
+          "failClosed": false,
+          "terminalState": "FOUND",
+          "facts": [
+            {
+              "label": "United States applications",
+              "value": "11,529,787"
+            }
+          ],
+          "grain": "county observations aggregated by jurisdiction; output: national property geography",
+          "period": "HMDA 2025 reporting vintage",
+          "caveats": [
+            "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "lib/home-intel/accepted-snapshot.json"
+            ],
+            "method": "Select the separate national applications aggregate. Do not add jurisdiction subtotals to it.",
+            "indexes": [
+              "Scope US; action application; field applications; availability AVAILABLE"
+            ],
+            "identityPolicy": "Market totals are independent of profile publication and result pagination.",
+            "publicationGate": "No institution publication changes.",
+            "cache": "Committed bounded source artifacts; no live regulator lookup.",
+            "grain": "county observations aggregated by jurisdiction -> national",
+            "period": "HMDA 2025 reporting vintage"
+          },
+          "filters": [
+            {
+              "id": "orig",
+              "label": "Originations",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+nationally%3F&action=origination&loanType=all&geo=US"
+            },
+            {
+              "id": "apps",
+              "label": "Applications",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+applications+nationally%3F&action=application&loanType=all&geo=US"
+            },
+            {
+              "id": "den",
+              "label": "Denials",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+nationally%3F&action=denial&loanType=all&geo=US"
+            },
+            {
+              "id": "all-type",
+              "label": "All loan types",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+applications+nationally%3F&action=application&loanType=all&geo=US"
+            },
+            {
+              "id": "conv",
+              "label": "Conventional",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+nationally%3F&action=application&loanType=conventional&geo=US"
+            },
+            {
+              "id": "fha",
+              "label": "FHA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+nationally%3F&action=application&loanType=FHA&geo=US"
+            },
+            {
+              "id": "va",
+              "label": "VA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+nationally%3F&action=application&loanType=VA&geo=US"
+            },
+            {
+              "id": "usda",
+              "label": "USDA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+nationally%3F&action=application&loanType=USDA&geo=US"
+            },
+            {
+              "id": "fl",
+              "label": "Florida",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+nationally%3F&action=application&loanType=all&geo=FL"
+            },
+            {
+              "id": "br",
+              "label": "Broward",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+nationally%3F&action=application&loanType=all&geo=broward"
+            },
+            {
+              "id": "pb",
+              "label": "Palm Beach",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+applications+nationally%3F&action=application&loanType=all&geo=palm-beach"
+            }
+          ],
+          "sharePath": "/ask?q=How+many+mortgage+applications+nationally%3F",
+          "elapsedMs": 0
+        }
+      }
+    },
+    {
+      "params": {
+        "q": "How many mortgage originations in NJ in 2024?"
+      },
+      "width": 390,
+      "elapsedMs": 669,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH TYPE\ncount\nEdit request\nGEOGRAPHY\nNJ\nEdit request\nGEOGRAPHY MEANING\nMortgage property / census location (HMDA), not lender location\nEdit request\nHMDA ACTION FAMILY\norigination\nEdit request\nMETRIC\ncount\nEdit request\nCOUNTED OBSERVATIONS\noriginations, not institutions. Source grain: not selected; output: state property geography.\nEdit request\nREPORTING YEAR\n2024\nEdit request\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nOriginations\nApplications\nDenials\nAll loan types\nConventional\nFHA\nVA\nUSDA\nFlorida\nBroward\nPalm Beach\nChange interpretation\nCount unavailable: New Jersey originations\n\nRequested reporting year 2024 is not available. This source supports 2025; no other year was substituted.\n\nSource period: HMDA 2025 reporting vintage. Grain: No source selected; output: state property geography.\n\nCaveats\nThese are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.\nRequested reporting year 2024 is not available. This source supports 2025; no other year was substituted.\nTrace this query\n\nRequested reporting year 2024 is not available. This source supports 2025; no other year was substituted.\n\nContract: lender-ask-v1\nGrain: unavailable -> state\nPeriod: HMDA 2025 reporting vintage\nIdentity: Market totals are independent of profile publication and result pagination.\nPublication gate: No institution publication changes.\nIndexes: Scope NJ; action origination; field unavailable; availability UNSUPPORTED\nCache: Committed bounded source artifacts; no live regulator lookup.\nSource files:\nElapsed: 1 ms\nCount availability: UNSUPPORTED; numeric value: unavailable\nScope: NJ; action: origination; source field: not selected\nSource fingerprint: not selected\nRetrieved: not supplied by this artifact; generated: not supplied by this artifact\nReporting year is a vintage, not an exact official effective timestamp or a live check.\nQuestion: How many mortgage originations in NJ in 2024?\n\nShareable research URL (noindex): /ask?q=How+many+mortgage+originations+in+NJ+in+2024%3F\n\nBack to mortgage intelligence",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "count",
+            "reportingYears": [
+              "2024"
+            ],
+            "scopeIssues": [],
+            "geography": {
+              "grain": "state",
+              "state": "NJ",
+              "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+            },
+            "actionTaken": [
+              "origination"
+            ],
+            "requestedMetric": "count"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "count"
+            },
+            {
+              "label": "Geography",
+              "value": "NJ"
+            },
+            {
+              "label": "Geography meaning",
+              "value": "Mortgage property / census location (HMDA), not lender location"
+            },
+            {
+              "label": "HMDA action family",
+              "value": "origination"
+            },
+            {
+              "label": "Metric",
+              "value": "count"
+            },
+            {
+              "label": "Counted observations",
+              "value": "originations, not institutions. Source grain: not selected; output: state property geography."
+            },
+            {
+              "label": "Reporting year",
+              "value": "2024"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "Count unavailable: New Jersey originations",
+          "body": "Requested reporting year 2024 is not available. This source supports 2025; no other year was substituted.",
+          "countEvidence": {
+            "availability": "UNSUPPORTED",
+            "value": null,
+            "scope": "NJ",
+            "action": "origination",
+            "field": null,
+            "sourceFile": null,
+            "sourceFingerprint": null,
+            "sourceGrain": null,
+            "outputGrain": "state",
+            "reportingYear": "2025",
+            "retrievedAt": null,
+            "generatedAt": null,
+            "calculation": "",
+            "conditions": [
+              "Requested reporting year 2024 is not available. This source supports 2025; no other year was substituted."
+            ]
+          },
+          "failClosed": true,
+          "terminalState": "UNSUPPORTED",
+          "facts": [],
+          "grain": "No source selected; output: state property geography",
+          "period": "HMDA 2025 reporting vintage",
+          "caveats": [
+            "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.",
+            "Requested reporting year 2024 is not available. This source supports 2025; no other year was substituted."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [],
+            "method": "Requested reporting year 2024 is not available. This source supports 2025; no other year was substituted.",
+            "indexes": [
+              "Scope NJ; action origination; field unavailable; availability UNSUPPORTED"
+            ],
+            "identityPolicy": "Market totals are independent of profile publication and result pagination.",
+            "publicationGate": "No institution publication changes.",
+            "cache": "Committed bounded source artifacts; no live regulator lookup.",
+            "grain": "unavailable -> state",
+            "period": "HMDA 2025 reporting vintage"
+          },
+          "filters": [
+            {
+              "id": "orig",
+              "label": "Originations",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ+in+2024%3F&action=origination&loanType=all&geo=NJ"
+            },
+            {
+              "id": "apps",
+              "label": "Applications",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ+in+2024%3F&action=application&loanType=all&geo=NJ"
+            },
+            {
+              "id": "den",
+              "label": "Denials",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ+in+2024%3F&action=denial&loanType=all&geo=NJ"
+            },
+            {
+              "id": "all-type",
+              "label": "All loan types",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ+in+2024%3F&action=origination&loanType=all&geo=NJ"
+            },
+            {
+              "id": "conv",
+              "label": "Conventional",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ+in+2024%3F&action=origination&loanType=conventional&geo=NJ"
+            },
+            {
+              "id": "fha",
+              "label": "FHA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ+in+2024%3F&action=origination&loanType=FHA&geo=NJ"
+            },
+            {
+              "id": "va",
+              "label": "VA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ+in+2024%3F&action=origination&loanType=VA&geo=NJ"
+            },
+            {
+              "id": "usda",
+              "label": "USDA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ+in+2024%3F&action=origination&loanType=USDA&geo=NJ"
+            },
+            {
+              "id": "fl",
+              "label": "Florida",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ+in+2024%3F&action=origination&loanType=all&geo=FL"
+            },
+            {
+              "id": "br",
+              "label": "Broward",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ+in+2024%3F&action=origination&loanType=all&geo=broward"
+            },
+            {
+              "id": "pb",
+              "label": "Palm Beach",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+NJ+in+2024%3F&action=origination&loanType=all&geo=palm-beach"
+            }
+          ],
+          "sharePath": "/ask?q=How+many+mortgage+originations+in+NJ+in+2024%3F",
+          "elapsedMs": 0
+        }
+      }
+    },
+    {
+      "params": {
+        "q": "How many FHA denials in NJ?"
+      },
+      "width": 320,
+      "elapsedMs": 509,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH TYPE\naggregate\nEdit request\nGEOGRAPHY\nNJ\nEdit request\nGEOGRAPHY MEANING\nMortgage property / census location (HMDA), not lender location\nEdit request\nLOAN TYPE\nFHA\nEdit request\nHMDA ACTION FAMILY\ndenial\nEdit request\nMETRIC\ncount\nEdit request\nCOUNTED OBSERVATIONS\ndenials, not institutions. Source grain: not selected; output: state property geography.\nEdit request\nREPORTING YEAR\n2025\nEdit request\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nOriginations\nApplications\nDenials\nAll loan types\nConventional\nFHA\nVA\nUSDA\nFlorida\nBroward\nPalm Beach\nChange interpretation\nCount unavailable: New Jersey FHA denials\n\nLoan-type denial counts are not supplied. The unfiltered denial total is not an answer to this request.\n\nSource period: HMDA 2025 reporting vintage. Grain: No source selected; output: state property geography.\n\nCaveats\nThese are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.\nLoan-type denial counts are not supplied. The unfiltered denial total is not an answer to this request.\nTrace this query\n\nLoan-type denial counts are not supplied. The unfiltered denial total is not an answer to this request.\n\nContract: lender-ask-v1\nGrain: unavailable -> state\nPeriod: HMDA 2025 reporting vintage\nIdentity: Market totals are independent of profile publication and result pagination.\nPublication gate: No institution publication changes.\nIndexes: Scope NJ; action denial; field unavailable; availability UNSUPPORTED\nCache: Committed bounded source artifacts; no live regulator lookup.\nSource files:\nElapsed: 1 ms\nCount availability: UNSUPPORTED; numeric value: unavailable\nScope: NJ; action: denial; source field: not selected\nSource fingerprint: not selected\nRetrieved: not supplied by this artifact; generated: not supplied by this artifact\nReporting year is a vintage, not an exact official effective timestamp or a live check.\nQuestion: How many FHA denials in NJ?\n\nShareable research URL (noindex): /ask?q=How+many+FHA+denials+in+NJ%3F\n\nBack to mortgage intelligence",
+        "width": 320,
+        "scroll": 320,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "aggregate",
+            "reportingYears": [],
+            "scopeIssues": [],
+            "geography": {
+              "grain": "state",
+              "state": "NJ",
+              "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+            },
+            "actionTaken": [
+              "denial"
+            ],
+            "loanType": [
+              "FHA"
+            ],
+            "requestedMetric": "count"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "aggregate"
+            },
+            {
+              "label": "Geography",
+              "value": "NJ"
+            },
+            {
+              "label": "Geography meaning",
+              "value": "Mortgage property / census location (HMDA), not lender location"
+            },
+            {
+              "label": "Loan type",
+              "value": "FHA"
+            },
+            {
+              "label": "HMDA action family",
+              "value": "denial"
+            },
+            {
+              "label": "Metric",
+              "value": "count"
+            },
+            {
+              "label": "Counted observations",
+              "value": "denials, not institutions. Source grain: not selected; output: state property geography."
+            },
+            {
+              "label": "Reporting year",
+              "value": "2025"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "Count unavailable: New Jersey FHA denials",
+          "body": "Loan-type denial counts are not supplied. The unfiltered denial total is not an answer to this request.",
+          "countEvidence": {
+            "availability": "UNSUPPORTED",
+            "value": null,
+            "scope": "NJ",
+            "action": "denial",
+            "field": null,
+            "sourceFile": null,
+            "sourceFingerprint": null,
+            "sourceGrain": null,
+            "outputGrain": "state",
+            "reportingYear": "2025",
+            "retrievedAt": null,
+            "generatedAt": null,
+            "calculation": "",
+            "conditions": [
+              "Loan-type denial counts are not supplied. The unfiltered denial total is not an answer to this request."
+            ]
+          },
+          "failClosed": true,
+          "terminalState": "UNSUPPORTED",
+          "facts": [],
+          "grain": "No source selected; output: state property geography",
+          "period": "HMDA 2025 reporting vintage",
+          "caveats": [
+            "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.",
+            "Loan-type denial counts are not supplied. The unfiltered denial total is not an answer to this request."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [],
+            "method": "Loan-type denial counts are not supplied. The unfiltered denial total is not an answer to this request.",
+            "indexes": [
+              "Scope NJ; action denial; field unavailable; availability UNSUPPORTED"
+            ],
+            "identityPolicy": "Market totals are independent of profile publication and result pagination.",
+            "publicationGate": "No institution publication changes.",
+            "cache": "Committed bounded source artifacts; no live regulator lookup.",
+            "grain": "unavailable -> state",
+            "period": "HMDA 2025 reporting vintage"
+          },
+          "filters": [
+            {
+              "id": "orig",
+              "label": "Originations",
+              "active": false,
+              "href": "/ask?q=How+many+FHA+denials+in+NJ%3F&action=origination&loanType=FHA&geo=NJ"
+            },
+            {
+              "id": "apps",
+              "label": "Applications",
+              "active": false,
+              "href": "/ask?q=How+many+FHA+denials+in+NJ%3F&action=application&loanType=FHA&geo=NJ"
+            },
+            {
+              "id": "den",
+              "label": "Denials",
+              "active": true,
+              "href": "/ask?q=How+many+FHA+denials+in+NJ%3F&action=denial&loanType=FHA&geo=NJ"
+            },
+            {
+              "id": "all-type",
+              "label": "All loan types",
+              "active": false,
+              "href": "/ask?q=How+many+FHA+denials+in+NJ%3F&action=denial&loanType=all&geo=NJ"
+            },
+            {
+              "id": "conv",
+              "label": "Conventional",
+              "active": false,
+              "href": "/ask?q=How+many+FHA+denials+in+NJ%3F&action=denial&loanType=conventional&geo=NJ"
+            },
+            {
+              "id": "fha",
+              "label": "FHA",
+              "active": true,
+              "href": "/ask?q=How+many+FHA+denials+in+NJ%3F&action=denial&loanType=FHA&geo=NJ"
+            },
+            {
+              "id": "va",
+              "label": "VA",
+              "active": false,
+              "href": "/ask?q=How+many+FHA+denials+in+NJ%3F&action=denial&loanType=VA&geo=NJ"
+            },
+            {
+              "id": "usda",
+              "label": "USDA",
+              "active": false,
+              "href": "/ask?q=How+many+FHA+denials+in+NJ%3F&action=denial&loanType=USDA&geo=NJ"
+            },
+            {
+              "id": "fl",
+              "label": "Florida",
+              "active": false,
+              "href": "/ask?q=How+many+FHA+denials+in+NJ%3F&action=denial&loanType=FHA&geo=FL"
+            },
+            {
+              "id": "br",
+              "label": "Broward",
+              "active": false,
+              "href": "/ask?q=How+many+FHA+denials+in+NJ%3F&action=denial&loanType=FHA&geo=broward"
+            },
+            {
+              "id": "pb",
+              "label": "Palm Beach",
+              "active": false,
+              "href": "/ask?q=How+many+FHA+denials+in+NJ%3F&action=denial&loanType=FHA&geo=palm-beach"
+            }
+          ],
+          "sharePath": "/ask?q=How+many+FHA+denials+in+NJ%3F",
+          "elapsedMs": 0
+        }
+      }
+    },
+    {
+      "params": {
+        "q": "NMLS 30 30"
+      },
+      "width": 390,
+      "elapsedMs": 446,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH SCOPE\nPublished lender institution research index (national and permitted Florida profiles)\nEdit request\nNMLS IDENTIFIER\n3030\nEdit request\n\nIdentifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.\n\nChange interpretation\nPublished institution identity found\n\nThe published source records this exact institution identity. Additional requested conditions below remain separate from identity resolution.\n\nResearch scope: Published lender institution research index (national and permitted Florida profiles).\n\nSubject: requested unspecified; resolved institution.\n\nSubmitted: NMLS 30 30. Complete NMLS: 3030.\n\nWhitespace removed within the explicitly labeled NMLS span.\n\nRocket Mortgage\n\nNMLS 3030 | LEI 549300FGXN1K3HLB1R50\n\nWhy this matched: Exact NMLS institution identifier: the published record lists 3030.\n\nResearch this lender\nRequested conditions\nNMLS 3030: Applied. Exact equality against the published institution identifier field.\n\nEdit or retry this lookup\n\nOpen NMLS Consumer Access\n\nCopy the full NMLS identifier into the official search. This link is not a live status check.\n\nSource period: Stored identity index; official identity effective/retrieval time is not supplied. Grain: institution identity.\n\nTrace this result · Rocket Mortgage\nCaveats\nNo match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person.\nTrace this query\n\nValidated complete labeled identifier; equality on the matching source field; publication gate; institution-key deduplication.\n\nContract: lender-ask-v1\nGrain: institution identity\nPeriod: Identity effective/retrieval time not supplied by these snapshots\nIdentity: NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.\nPublication gate: Existing render-approved national and Florida publication manifests only.\nIndexes: Published lender institution research index (national and permitted Florida profiles)\nCache: Committed identity snapshots; no live regulator retrieval\nSource files: docs/lend-nat-016-search-index.json; docs/fl-lend-011-florida-search-index.json\nQuestion: NMLS 30 30\n\nShareable research URL (noindex): /ask?q=NMLS+30+30\n\nBack to mortgage intelligence",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "entity",
+            "identityRequest": {
+              "rawQuestion": "NMLS 30 30",
+              "families": [
+                "NMLS_INSTITUTION"
+              ],
+              "identifiers": [
+                {
+                  "type": "NMLS_INSTITUTION",
+                  "value": "3030",
+                  "rawSpan": "NMLS 30 30",
+                  "start": 0,
+                  "end": 10,
+                  "normalization": [
+                    "Whitespace removed within the explicitly labeled NMLS span"
+                  ]
+                }
+              ],
+              "requestedClass": "unknown",
+              "remainingText": ""
+            },
+            "identifier": {
+              "type": "NMLS_INSTITUTION",
+              "value": "3030"
+            },
+            "identityQuery": "NMLS 3030",
+            "requestedMetric": null,
+            "coverageState": "KNOWN"
+          },
+          "terminalState": "FOUND",
+          "headline": "Published institution identity found",
+          "body": "The published source records this exact institution identity. Additional requested conditions below remain separate from identity resolution.",
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research scope",
+              "value": "Published lender institution research index (national and permitted Florida profiles)"
+            },
+            {
+              "label": "NMLS identifier",
+              "value": "3030"
+            }
+          ],
+          "geographyWarning": "Identifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.",
+          "rows": [
+            {
+              "rank": 1,
+              "lei": "549300FGXN1K3HLB1R50",
+              "displayName": "Rocket Mortgage",
+              "metric": 0,
+              "metricLabel": "Exact institution identifier",
+              "applications": null,
+              "originations": null,
+              "denials": null,
+              "identityStatus": "public_profile",
+              "identityNote": "Institution class is established by the permitted publication source, not by number length.",
+              "href": "/lender/rocket-mortgage",
+              "hrefLabel": "Research this lender",
+              "nmls": "3030",
+              "institutionKey": "1e2fa9a5-7067-52e9-8b44-4da4e71c9d47",
+              "resolvedClass": "institution",
+              "matchEvidence": [
+                {
+                  "method": "exact_identifier",
+                  "family": "NMLS_INSTITUTION",
+                  "requestedValue": "3030",
+                  "matchedField": "nmls",
+                  "returnedValue": "3030",
+                  "institutionKey": "1e2fa9a5-7067-52e9-8b44-4da4e71c9d47",
+                  "sourceReference": "docs/lend-nat-016-search-index.json; lend-nat-014-v1",
+                  "sourceAsOf": null,
+                  "normalization": [
+                    "Whitespace removed within the explicitly labeled NMLS span"
+                  ]
+                }
+              ],
+              "whyMatched": [
+                "Exact NMLS institution identifier: the published record lists 3030."
+              ],
+              "evidenceAvailable": [
+                "Published institution identity; other evidence was not checked by this lookup"
+              ]
+            }
+          ],
+          "totalRows": 1,
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "failClosed": false,
+          "lookup": {
+            "sourceLookup": "completed",
+            "scope": "Published lender institution research index (national and permitted Florida profiles)",
+            "requestedClass": "unknown",
+            "resolvedClass": "institution",
+            "identifiers": [
+              {
+                "type": "NMLS_INSTITUTION",
+                "value": "3030",
+                "rawSpan": "NMLS 30 30",
+                "start": 0,
+                "end": 10,
+                "normalization": [
+                  "Whitespace removed within the explicitly labeled NMLS span"
+                ]
+              }
+            ],
+            "conditions": [
+              {
+                "text": "NMLS 3030",
+                "state": "APPLIED",
+                "explanation": "Exact equality against the published institution identifier field."
+              }
+            ],
+            "officialActions": [
+              {
+                "family": "NMLS_INSTITUTION",
+                "href": "https://www.nmlsconsumeraccess.org/",
+                "label": "Open NMLS Consumer Access",
+                "instruction": "Copy the full NMLS identifier into the official search. This link is not a live status check."
+              }
+            ]
+          },
+          "period": "Stored identity index; official identity effective/retrieval time is not supplied",
+          "grain": "institution identity",
+          "sharePath": "/ask?q=NMLS+30+30",
+          "caveats": [
+            "No match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "docs/lend-nat-016-search-index.json",
+              "docs/fl-lend-011-florida-search-index.json"
+            ],
+            "method": "Validated complete labeled identifier; equality on the matching source field; publication gate; institution-key deduplication.",
+            "indexes": [
+              "Published lender institution research index (national and permitted Florida profiles)"
+            ],
+            "identityPolicy": "NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.",
+            "publicationGate": "Existing render-approved national and Florida publication manifests only.",
+            "cache": "Committed identity snapshots; no live regulator retrieval",
+            "grain": "institution identity",
+            "period": "Identity effective/retrieval time not supplied by these snapshots"
+          }
+        }
+      }
+    },
+    {
+      "params": {
+        "q": "nmls 32 51"
+      },
+      "width": 1280,
+      "elapsedMs": 462,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH SCOPE\nPublished lender institution research index (national and permitted Florida profiles)\nEdit request\nNMLS IDENTIFIER\n3251\nEdit request\n\nIdentifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.\n\nChange interpretation\nNo exact match in the published institution index\n\nThe full identifier was searched exactly and is absent from this published institution corpus. Its real-world class and license status remain unknown.\n\nResearch scope: Published lender institution research index (national and permitted Florida profiles).\n\nSubject: requested unspecified; resolved unknown.\n\nSubmitted: nmls 32 51. Complete NMLS: 3251.\n\nWhitespace removed within the explicitly labeled NMLS span.\n\nEdit or retry this lookup\n\nOpen NMLS Consumer Access\n\nCopy the full NMLS identifier into the official search. This link is not a live status check.\n\nSource period: Stored identity index; official identity effective/retrieval time is not supplied. Grain: institution identity.\n\nCaveats\nNo match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person.\nTrace this query\n\nValidated complete labeled identifier; equality on the matching source field; publication gate; institution-key deduplication.\n\nContract: lender-ask-v1\nGrain: institution identity\nPeriod: Identity effective/retrieval time not supplied by these snapshots\nIdentity: NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.\nPublication gate: Existing render-approved national and Florida publication manifests only.\nIndexes: Published lender institution research index (national and permitted Florida profiles)\nCache: Committed identity snapshots; no live regulator retrieval\nSource files: docs/lend-nat-016-search-index.json; docs/fl-lend-011-florida-search-index.json\nQuestion: nmls 32 51\n\nShareable research URL (noindex): /ask?q=nmls+32+51\n\nBack to mortgage intelligence",
+        "width": 1280,
+        "scroll": 1280,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "entity",
+            "identityRequest": {
+              "rawQuestion": "nmls 32 51",
+              "families": [
+                "NMLS_INSTITUTION"
+              ],
+              "identifiers": [
+                {
+                  "type": "NMLS_INSTITUTION",
+                  "value": "3251",
+                  "rawSpan": "nmls 32 51",
+                  "start": 0,
+                  "end": 10,
+                  "normalization": [
+                    "Whitespace removed within the explicitly labeled NMLS span"
+                  ]
+                }
+              ],
+              "requestedClass": "unknown",
+              "remainingText": ""
+            },
+            "identifier": {
+              "type": "NMLS_INSTITUTION",
+              "value": "3251"
+            },
+            "identityQuery": "NMLS 3251",
+            "requestedMetric": null,
+            "coverageState": "UNKNOWN"
+          },
+          "terminalState": "NO_MATCH",
+          "headline": "No exact match in the published institution index",
+          "body": "The full identifier was searched exactly and is absent from this published institution corpus. Its real-world class and license status remain unknown.",
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research scope",
+              "value": "Published lender institution research index (national and permitted Florida profiles)"
+            },
+            {
+              "label": "NMLS identifier",
+              "value": "3251"
+            }
+          ],
+          "geographyWarning": "Identifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.",
+          "rows": [],
+          "totalRows": 0,
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "failClosed": false,
+          "lookup": {
+            "sourceLookup": "completed",
+            "scope": "Published lender institution research index (national and permitted Florida profiles)",
+            "requestedClass": "unknown",
+            "resolvedClass": "unknown",
+            "identifiers": [
+              {
+                "type": "NMLS_INSTITUTION",
+                "value": "3251",
+                "rawSpan": "nmls 32 51",
+                "start": 0,
+                "end": 10,
+                "normalization": [
+                  "Whitespace removed within the explicitly labeled NMLS span"
+                ]
+              }
+            ],
+            "conditions": [],
+            "officialActions": [
+              {
+                "family": "NMLS_INSTITUTION",
+                "href": "https://www.nmlsconsumeraccess.org/",
+                "label": "Open NMLS Consumer Access",
+                "instruction": "Copy the full NMLS identifier into the official search. This link is not a live status check."
+              }
+            ]
+          },
+          "period": "Stored identity index; official identity effective/retrieval time is not supplied",
+          "grain": "institution identity",
+          "sharePath": "/ask?q=nmls+32+51",
+          "caveats": [
+            "No match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "docs/lend-nat-016-search-index.json",
+              "docs/fl-lend-011-florida-search-index.json"
+            ],
+            "method": "Validated complete labeled identifier; equality on the matching source field; publication gate; institution-key deduplication.",
+            "indexes": [
+              "Published lender institution research index (national and permitted Florida profiles)"
+            ],
+            "identityPolicy": "NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.",
+            "publicationGate": "Existing render-approved national and Florida publication manifests only.",
+            "cache": "Committed identity snapshots; no live regulator retrieval",
+            "grain": "institution identity",
+            "period": "Identity effective/retrieval time not supplied by these snapshots"
+          }
+        }
+      }
+    },
+    {
+      "params": {
+        "q": "Compare Broward and Palm Beach mortgage activity"
+      },
+      "width": 390,
+      "elapsedMs": 751,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH TYPE\ncomparison\nEdit request\nGEOGRAPHY\nFL · Broward · Palm Beach\nEdit request\nGEOGRAPHY MEANING\nMortgage property / census location (HMDA), not lender location\nEdit request\nHMDA ACTION FAMILY\norigination\nEdit request\nMETRIC\ncount\nEdit request\nENTITY GRAIN\nInstitution / research snapshot — not MLO or branch\nEdit request\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nOriginations\nApplications\nDenials\nAll loan types\nConventional\nFHA\nVA\nUSDA\nFlorida\nBroward\nPalm Beach\nChange interpretation\nBroward vs Palm Beach — HMDA 2025 county-grain property geography\n\nSame vintage and county grain. This is not which county is better. Volume reflects reporting and housing activity, not lender quality. Purchase/refinance figures are application purpose, not originations.\n\nSource period: HMDA 2025 reporting vintage. Grain: county market (property geography).\n\nBroward applications: 67,743\nBroward originations: 31,292\nBroward denials: 17,138\nBroward purchase-purpose applications (not originations): 27,888\nBroward refinance-purpose applications (not originations): 22,265\nPalm Beach applications: 56,484\nPalm Beach originations: 28,383\nPalm Beach denials: 12,505\nPalm Beach purchase-purpose applications (not originations): 23,718\nPalm Beach refinance-purpose applications (not originations): 17,758\nCaveats\nMost is a raw count, not best, safest, or recommended.\nHMDA is a 2025 reporting vintage, not current 2026 lending.\nProperty geography is not headquarters, branch location, or service territory.\nPublic-profile links are a publication gate. Unpublished HMDA LEIs stay unpublished.\nPurchase/refinance originations are not populated at LEI grain and are not reconstructed.\nTrace this query\n\ncounty_market_summary.csv county totals. Not LEI ranking.\n\nContract: lender-ask-v1\nGrain: HMDA 2025 county market\nPeriod: HMDA 2025 reporting vintage\nIdentity: LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.\nPublication gate: 181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.\nIndexes: in-memory LEI map; in-memory county FIPS map; lend-nat-016 LEI→public slug\nCache: module-level CSV/JSON catalogs (no new ingest, no Production write)\nSource files: data/hmda/national/lender_state_summary.csv; data/hmda/by-state/FL/lender_activity_by_county.csv; data/hmda/by-state/FL/county_market_summary.csv; data/hmda/florida/lei_to_nmls_mapping.csv; data/hmda/florida/_gleif_name_cache.json; docs/lend-nat-016-search-index.json\nElapsed: 48 ms\nQuestion: Compare Broward and Palm Beach mortgage activity\n\nShareable research URL (noindex): /ask?q=Compare+Broward+and+Palm+Beach+mortgage+activity\n\nBack to mortgage intelligence",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "comparison",
+            "geography": {
+              "grain": "county",
+              "state": "FL",
+              "county": "Broward",
+              "countyFips": "12011",
+              "compareCounty": "Palm Beach",
+              "compareCountyFips": "12099",
+              "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+            },
+            "actionTaken": [
+              "origination"
+            ],
+            "requestedMetric": "count"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "comparison"
+            },
+            {
+              "label": "Geography",
+              "value": "FL · Broward · Palm Beach"
+            },
+            {
+              "label": "Geography meaning",
+              "value": "Mortgage property / census location (HMDA), not lender location"
+            },
+            {
+              "label": "HMDA action family",
+              "value": "origination"
+            },
+            {
+              "label": "Metric",
+              "value": "count"
+            },
+            {
+              "label": "Entity grain",
+              "value": "Institution / research snapshot — not MLO or branch"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "Broward vs Palm Beach — HMDA 2025 county-grain property geography",
+          "body": "Same vintage and county grain. This is not which county is better. Volume reflects reporting and housing activity, not lender quality. Purchase/refinance figures are application purpose, not originations.",
+          "facts": [
+            {
+              "label": "Broward applications",
+              "value": "67,743"
+            },
+            {
+              "label": "Broward originations",
+              "value": "31,292"
+            },
+            {
+              "label": "Broward denials",
+              "value": "17,138"
+            },
+            {
+              "label": "Broward purchase-purpose applications (not originations)",
+              "value": "27,888"
+            },
+            {
+              "label": "Broward refinance-purpose applications (not originations)",
+              "value": "22,265"
+            },
+            {
+              "label": "Palm Beach applications",
+              "value": "56,484"
+            },
+            {
+              "label": "Palm Beach originations",
+              "value": "28,383"
+            },
+            {
+              "label": "Palm Beach denials",
+              "value": "12,505"
+            },
+            {
+              "label": "Palm Beach purchase-purpose applications (not originations)",
+              "value": "23,718"
+            },
+            {
+              "label": "Palm Beach refinance-purpose applications (not originations)",
+              "value": "17,758"
+            }
+          ],
+          "filters": [
+            {
+              "id": "orig",
+              "label": "Originations",
+              "active": true,
+              "href": "/ask?q=Compare+Broward+and+Palm+Beach+mortgage+activity&action=origination&loanType=all&geo=broward"
+            },
+            {
+              "id": "apps",
+              "label": "Applications",
+              "active": false,
+              "href": "/ask?q=Compare+Broward+and+Palm+Beach+mortgage+activity&action=application&loanType=all&geo=broward"
+            },
+            {
+              "id": "den",
+              "label": "Denials",
+              "active": false,
+              "href": "/ask?q=Compare+Broward+and+Palm+Beach+mortgage+activity&action=denial&loanType=all&geo=broward"
+            },
+            {
+              "id": "all-type",
+              "label": "All loan types",
+              "active": true,
+              "href": "/ask?q=Compare+Broward+and+Palm+Beach+mortgage+activity&action=origination&loanType=all&geo=broward"
+            },
+            {
+              "id": "conv",
+              "label": "Conventional",
+              "active": false,
+              "href": "/ask?q=Compare+Broward+and+Palm+Beach+mortgage+activity&action=origination&loanType=conventional&geo=broward"
+            },
+            {
+              "id": "fha",
+              "label": "FHA",
+              "active": false,
+              "href": "/ask?q=Compare+Broward+and+Palm+Beach+mortgage+activity&action=origination&loanType=FHA&geo=broward"
+            },
+            {
+              "id": "va",
+              "label": "VA",
+              "active": false,
+              "href": "/ask?q=Compare+Broward+and+Palm+Beach+mortgage+activity&action=origination&loanType=VA&geo=broward"
+            },
+            {
+              "id": "usda",
+              "label": "USDA",
+              "active": false,
+              "href": "/ask?q=Compare+Broward+and+Palm+Beach+mortgage+activity&action=origination&loanType=USDA&geo=broward"
+            },
+            {
+              "id": "fl",
+              "label": "Florida",
+              "active": false,
+              "href": "/ask?q=Compare+Broward+and+Palm+Beach+mortgage+activity&action=origination&loanType=all&geo=FL"
+            },
+            {
+              "id": "br",
+              "label": "Broward",
+              "active": true,
+              "href": "/ask?q=Compare+Broward+and+Palm+Beach+mortgage+activity&action=origination&loanType=all&geo=broward"
+            },
+            {
+              "id": "pb",
+              "label": "Palm Beach",
+              "active": false,
+              "href": "/ask?q=Compare+Broward+and+Palm+Beach+mortgage+activity&action=origination&loanType=all&geo=palm-beach"
+            }
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "data/hmda/national/lender_state_summary.csv",
+              "data/hmda/by-state/FL/lender_activity_by_county.csv",
+              "data/hmda/by-state/FL/county_market_summary.csv",
+              "data/hmda/florida/lei_to_nmls_mapping.csv",
+              "data/hmda/florida/_gleif_name_cache.json",
+              "docs/lend-nat-016-search-index.json"
+            ],
+            "method": "county_market_summary.csv county totals. Not LEI ranking.",
+            "indexes": [
+              "in-memory LEI map",
+              "in-memory county FIPS map",
+              "lend-nat-016 LEI→public slug"
+            ],
+            "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+            "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+            "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+            "grain": "HMDA 2025 county market",
+            "period": "HMDA 2025 reporting vintage"
+          },
+          "sharePath": "/ask?q=Compare+Broward+and+Palm+Beach+mortgage+activity",
+          "period": "HMDA 2025 reporting vintage",
+          "grain": "county market (property geography)",
+          "caveats": [
+            "Most is a raw count, not best, safest, or recommended.",
+            "HMDA is a 2025 reporting vintage, not current 2026 lending.",
+            "Property geography is not headquarters, branch location, or service territory.",
+            "Public-profile links are a publication gate. Unpublished HMDA LEIs stay unpublished.",
+            "Purchase/refinance originations are not populated at LEI grain and are not reconstructed."
+          ],
+          "elapsedMs": 138
+        }
+      }
+    },
+    {
+      "params": {
+        "q": "How many mortgage originations in New Jersey?",
+        "geo": "TX",
+        "action": "denial",
+        "loanType": ""
+      },
+      "width": 390,
+      "elapsedMs": 479,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH TYPE\ncount\nEdit request\nGEOGRAPHY\nTX\nEdit request\nGEOGRAPHY MEANING\nMortgage property / census location (HMDA), not lender location\nEdit request\nHMDA ACTION FAMILY\ndenial\nEdit request\nMETRIC\ncount\nEdit request\nCOUNTED OBSERVATIONS\ndenials, not institutions. Source grain: county observations aggregated by jurisdiction; output: state property geography.\nEdit request\nREPORTING YEAR\n2025\nEdit request\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nOriginations\nApplications\nDenials\nAll loan types\nConventional\nFHA\nVA\nUSDA\nFlorida\nBroward\nPalm Beach\nChange interpretation\nTexas denials - HMDA 2025 reporting vintage\n\nReported denials for mortgage properties in Texas. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.\n\nSource period: HMDA 2025 reporting vintage. Grain: county observations aggregated by jurisdiction; output: state property geography.\n\nTexas denials: 178,854\nCaveats\nThese are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.\nTrace this query\n\nSelect the unique geography[state=TX].denials. Accepted county observations already aggregated to Texas; no additional summation.\n\nContract: lender-ask-v1\nGrain: county observations aggregated by jurisdiction -> state\nPeriod: HMDA 2025 reporting vintage\nIdentity: Market totals are independent of profile publication and result pagination.\nPublication gate: No institution publication changes.\nIndexes: Scope TX; action denial; field denials; availability AVAILABLE\nCache: Committed bounded source artifacts; no live regulator lookup.\nSource files: lib/home-intel/accepted-snapshot.json\nElapsed: 0 ms\nCount availability: AVAILABLE; numeric value: 178854\nScope: TX; action: denial; source field: denials\nSource fingerprint: 913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008\nRetrieved: 2026-08-30; generated: 2026-08-30T16:22:07.696760+00:00\nReporting year is a vintage, not an exact official effective timestamp or a live check.\nQuestion: How many mortgage originations in New Jersey?\n\nShareable research URL (noindex): /ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=denial&geo=TX\n\nBack to mortgage intelligence",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "count",
+            "reportingYears": [],
+            "scopeIssues": [],
+            "geography": {
+              "grain": "state",
+              "state": "TX",
+              "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+            },
+            "actionTaken": [
+              "denial"
+            ],
+            "requestedMetric": "count"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "count"
+            },
+            {
+              "label": "Geography",
+              "value": "TX"
+            },
+            {
+              "label": "Geography meaning",
+              "value": "Mortgage property / census location (HMDA), not lender location"
+            },
+            {
+              "label": "HMDA action family",
+              "value": "denial"
+            },
+            {
+              "label": "Metric",
+              "value": "count"
+            },
+            {
+              "label": "Counted observations",
+              "value": "denials, not institutions. Source grain: county observations aggregated by jurisdiction; output: state property geography."
+            },
+            {
+              "label": "Reporting year",
+              "value": "2025"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "Texas denials - HMDA 2025 reporting vintage",
+          "body": "Reported denials for mortgage properties in Texas. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.",
+          "countEvidence": {
+            "availability": "AVAILABLE",
+            "value": 178854,
+            "scope": "TX",
+            "action": "denial",
+            "field": "denials",
+            "sourceFile": "lib/home-intel/accepted-snapshot.json",
+            "sourceFingerprint": "913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008",
+            "sourceGrain": "county observations aggregated by jurisdiction",
+            "outputGrain": "state",
+            "reportingYear": "2025",
+            "retrievedAt": "2026-08-30",
+            "generatedAt": "2026-08-30T16:22:07.696760+00:00",
+            "calculation": "Select the unique geography[state=TX].denials. Accepted county observations already aggregated to Texas; no additional summation.",
+            "conditions": []
+          },
+          "failClosed": false,
+          "terminalState": "FOUND",
+          "facts": [
+            {
+              "label": "Texas denials",
+              "value": "178,854"
+            }
+          ],
+          "grain": "county observations aggregated by jurisdiction; output: state property geography",
+          "period": "HMDA 2025 reporting vintage",
+          "caveats": [
+            "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "lib/home-intel/accepted-snapshot.json"
+            ],
+            "method": "Select the unique geography[state=TX].denials. Accepted county observations already aggregated to Texas; no additional summation.",
+            "indexes": [
+              "Scope TX; action denial; field denials; availability AVAILABLE"
+            ],
+            "identityPolicy": "Market totals are independent of profile publication and result pagination.",
+            "publicationGate": "No institution publication changes.",
+            "cache": "Committed bounded source artifacts; no live regulator lookup.",
+            "grain": "county observations aggregated by jurisdiction -> state",
+            "period": "HMDA 2025 reporting vintage"
+          },
+          "filters": [
+            {
+              "id": "orig",
+              "label": "Originations",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=all&geo=TX"
+            },
+            {
+              "id": "apps",
+              "label": "Applications",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=application&loanType=all&geo=TX"
+            },
+            {
+              "id": "den",
+              "label": "Denials",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=denial&loanType=all&geo=TX"
+            },
+            {
+              "id": "all-type",
+              "label": "All loan types",
+              "active": true,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=denial&loanType=all&geo=TX"
+            },
+            {
+              "id": "conv",
+              "label": "Conventional",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=denial&loanType=conventional&geo=TX"
+            },
+            {
+              "id": "fha",
+              "label": "FHA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=denial&loanType=FHA&geo=TX"
+            },
+            {
+              "id": "va",
+              "label": "VA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=denial&loanType=VA&geo=TX"
+            },
+            {
+              "id": "usda",
+              "label": "USDA",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=denial&loanType=USDA&geo=TX"
+            },
+            {
+              "id": "fl",
+              "label": "Florida",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=denial&loanType=all&geo=FL"
+            },
+            {
+              "id": "br",
+              "label": "Broward",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=denial&loanType=all&geo=broward"
+            },
+            {
+              "id": "pb",
+              "label": "Palm Beach",
+              "active": false,
+              "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=denial&loanType=all&geo=palm-beach"
+            }
+          ],
+          "sharePath": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=denial&geo=TX",
+          "elapsedMs": 0
+        }
+      }
+    }
+  ],
+  "navigation": "PASS: first interaction, Enter, typed overrides, reload, back/forward and keyboard Trace",
+  "status": "PASS"
+}
