@@ -51,7 +51,8 @@
     "check:journey-v21": "node scripts/check-journey-v21.mjs",
     "supabase:types": "supabase gen types typescript --linked > types/supabase.ts",
     "check:th-search-r1-002": "tsx --test lib/ask-lender/r1-reproduction.test.ts lib/ask-lender/r1-behavior.test.ts",
-    "check:th-search-r1-003": "tsx --test lib/ask-lender/r3-reproduction.test.ts lib/ask-lender/r3-behavior.test.ts"
+    "check:th-search-r1-003": "tsx --test lib/ask-lender/r3-reproduction.test.ts lib/ask-lender/r3-behavior.test.ts",
+    "check:th-search-r1-004": "tsx --test lib/ask-lender/r4-reproduction.test.ts lib/ask-lender/r4-behavior.test.ts"
   },
   "dependencies": {
     "@radix-ui/react-slider": "^1.4.1",

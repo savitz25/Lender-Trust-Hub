@@ -1,0 +1,163 @@
+
+> lender-trust-hub@1.0.0 check:th-search-r1-004
+> tsx --test lib/ask-lender/r4-behavior.test.ts
+
+✔ 01 NJ institution denial absence is not market zero (116.0452ms)
+✖ 02 absent county/state product denial splits (26.3582ms)
+✖ 03 state product applications absent; FL compatible alternative retained (7.1064ms)
+✔ 04 positive NJ and FL originations and ordering (5.8649ms)
+✖ 05 FHA originations and county applications use their own fields (3.1052ms)
+✔ 06 selected numeric zero vs every missing/invalid representation (21.4303ms)
+✔ 07 complete all-zero cohort is available and honest empty (1.7322ms)
+✔ 08 mixed missing selected values cannot create partial complete ranking (1.5428ms)
+✔ 09 missing secondary fields preserve selected table and null (1.6037ms)
+✔ 10 FL county aggregation excludes NJ and preserves declared keys (1.2183ms)
+✔ 11 duplicate/overlapping/mixed-year rows rejected (2.7475ms)
+✔ 12 totals before pagination and publication enrichment (1.814ms)
+✖ 13 row labels/Trace/summaries source-derived (1.6569ms)
+✔ 14 contextual all-loan values explicitly scoped, no product relabeling (9.2963ms)
+✖ 15 typed action/state/product overrides update capability and filters (3.3541ms)
+✔ 16 unsupported year/purpose/local/multi-value preserved (19.8644ms)
+✔ 17-18 recovery invokes protected scalar with NJ/action/vintage retained (2.7886ms)
+✔ 19 actual page/API same fixture and null remains unavailable in HTML (16.3602ms)
+✔ 20 missing/corrupt source and loader failure are unavailable (5.6752ms)
+✖ 21 independent raw-source controls; known-positive paths not blocked (178.1651ms)
+✔ 22 identity/scalar/compare preserved (25.7227ms)
+✔ 23 structured multi-value input and unknown states do not select first/fallback (1.8877ms)
+✔ 24 national partition sums independent institutions and no source-year coercion (2.317ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 17
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1802.3408
+
+✖ failing tests:
+
+test at lib\ask-lender\r4-behavior.test.ts:2:4132
+✖ 02 absent county/state product denial splits (26.3582ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to:
+
+  'AVAILABLE'
+      at unavailable (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:22:45)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:26:128)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'AVAILABLE',
+    expected: 'AVAILABLE',
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:4370
+✖ 03 state product applications absent; FL compatible alternative retained (7.1064ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to:
+
+  'AVAILABLE'
+      at unavailable (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:22:45)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:27:95)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'AVAILABLE',
+    expected: 'AVAILABLE',
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:5124
+✖ 05 FHA originations and county applications use their own fields (3.1052ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  26 !== 10
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:29:132)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 26,
+    expected: 10,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:8503
+✖ 13 row labels/Trace/summaries source-derived (1.6569ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /orig_fha/. Input:
+
+  'HMDA 2025 reporting vintage FHA originations; source field total_originations; property geography NJ.'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:37:112)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'HMDA 2025 reporting vintage FHA originations; source field total_originations; property geography NJ.',
+    expected: /orig_fha/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:9311
+✖ 15 typed action/state/product overrides update capability and filters (3.3541ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  101 !== 5
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:39:161)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 101,
+    expected: 5,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:12457
+✖ 21 independent raw-source controls; known-positive paths not blocked (178.1651ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  489025 !== 86736
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:44:695)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 489025,
+    expected: 86736,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

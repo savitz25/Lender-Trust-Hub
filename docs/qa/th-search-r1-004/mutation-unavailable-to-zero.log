@@ -1,0 +1,316 @@
+
+> lender-trust-hub@1.0.0 check:th-search-r1-004
+> tsx --test lib/ask-lender/r4-behavior.test.ts
+
+✖ 01 NJ institution denial absence is not market zero (39.4695ms)
+✖ 02 absent county/state product denial splits (4.8783ms)
+✖ 03 state product applications absent; FL compatible alternative retained (2.0266ms)
+✔ 04 positive NJ and FL originations and ordering (5.8583ms)
+✔ 05 FHA originations and county applications use their own fields (6.0718ms)
+✖ 06 selected numeric zero vs every missing/invalid representation (4.4319ms)
+✔ 07 complete all-zero cohort is available and honest empty (1.7256ms)
+✖ 08 mixed missing selected values cannot create partial complete ranking (1.3993ms)
+✔ 09 missing secondary fields preserve selected table and null (1.1784ms)
+✔ 10 FL county aggregation excludes NJ and preserves declared keys (1.3237ms)
+✖ 11 duplicate/overlapping/mixed-year rows rejected (2.084ms)
+✔ 12 totals before pagination and publication enrichment (2.8271ms)
+✔ 13 row labels/Trace/summaries source-derived (15.5433ms)
+✔ 14 contextual all-loan values explicitly scoped, no product relabeling (5.7159ms)
+✖ 15 typed action/state/product overrides update capability and filters (3.0029ms)
+✖ 16 unsupported year/purpose/local/multi-value preserved (1.5455ms)
+✖ 17-18 recovery invokes protected scalar with NJ/action/vintage retained (2.7522ms)
+✖ 19 actual page/API same fixture and null remains unavailable in HTML (11.9423ms)
+✖ 20 missing/corrupt source and loader failure are unavailable (2.0377ms)
+✔ 21 independent raw-source controls; known-positive paths not blocked (282.5916ms)
+✔ 22 identity/scalar/compare preserved (36.1793ms)
+✖ 23 structured multi-value input and unknown states do not select first/fallback (1.7051ms)
+✖ 24 national partition sums independent institutions and no source-year coercion (2.3009ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 10
+ℹ fail 13
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1641.6211
+
+✖ failing tests:
+
+test at lib\ask-lender\r4-behavior.test.ts:2:3697
+✖ 01 NJ institution denial absence is not market zero (39.4695ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== null
+
+      at unavailable (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:22:105)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:25:89)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:4132
+✖ 02 absent county/state product denial splits (4.8783ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== null
+
+      at unavailable (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:22:105)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:26:128)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:4370
+✖ 03 state product applications absent; FL compatible alternative retained (2.0266ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== null
+
+      at unavailable (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:22:105)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:27:95)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:5609
+✖ 06 selected numeric zero vs every missing/invalid representation (4.4319ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== null
+
+      at unavailable (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:22:105)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:30:345)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:6570
+✖ 08 mixed missing selected values cannot create partial complete ranking (1.3993ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== null
+
+      at unavailable (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:22:105)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:32:154)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:7622
+✖ 11 duplicate/overlapping/mixed-year rows rejected (2.084ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== null
+
+      at unavailable (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:22:105)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:35:110)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:9311
+✖ 15 typed action/state/product overrides update capability and filters (3.0029ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== null
+
+      at unavailable (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:22:105)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:39:385)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:9918
+✖ 16 unsupported year/purpose/local/multi-value preserved (1.5455ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== null
+
+      at unavailable (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:22:105)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:40:189)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:10508
+✖ 17-18 recovery invokes protected scalar with NJ/action/vintage retained (2.7522ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== null
+
+      at unavailable (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:22:105)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:41:638)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:11301
+✖ 19 actual page/API same fixture and null remains unavailable in HTML (11.9423ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Observed sum: unavailable/. Input:
+
+  '<div class="intel-ask-result" style="min-width:0;overflow-wrap:anywhere"><p class="intel-eyebrow">We interpreted your question as</p><dl class="intel-interpretation-grid"><div><dt>Contract</dt><dd>lender-ask-v1</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div><div><dt>Research type</dt><dd>entity</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div><div><dt>Geography</dt><dd>NJ</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div><div><dt>Geography meaning</dt><dd>Mortgage property / census location (HMDA), not lender location</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div><div><dt>HMDA action family</dt><dd>denial</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div><div><dt>Metric</dt><dd>Highest raw count (not “best”)</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div><div><dt>Entity grain</dt><dd>HMDA LEI, bridged to a public profile only when identity confirms</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div><div><dt>Reporting year</dt><dd>2025</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div><div><dt>Measure availability</dt><dd>UNSUPPORTED</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div></dl><p class="intel-kicker">HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.</p><div class="intel-ask-examples" role="list" aria-label="Refine this query"><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=origination&amp;loanType=all&amp;geo=NJ">Originations</a><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=application&amp;loanType=all&amp;geo=NJ">Applications</a><a data-specialist-event="refine" class="intel-chip intel-chip--active" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=all&amp;geo=NJ">Denials</a><a data-specialist-event="refine" class="intel-chip intel-chip--active" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=all&amp;geo=NJ">All loan types</a><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=conventional&amp;geo=NJ">Conventional</a><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=FHA&amp;geo=NJ">FHA</a><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=VA&amp;geo=NJ">VA</a><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=USDA&amp;geo=NJ">USDA</a><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=all&amp;geo=FL">Florida</a><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=all&amp;geo=broward">Broward</a><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=all&amp;geo=palm-beach">Palm Beach</a></div><details class="intel-disclose"><summary>Change interpretation</summary><p>Use the filters above or edit the question. Property geography is not converted to lender location. “Most” is not converted to “best.”</p></details><h3>Institution breakdown unavailable: New Jersey denials</h3><p>The current New Jersey institution-level file does not contain denial counts at this grain, so we cannot order lenders by that measure. This is not a finding of zero denials.</p><p class="intel-kicker">Source period: HMDA 2025 reporting vintage. Grain: state-LEI-year -&gt; institution LEI by state property geography.</p><div><h3>Caveats</h3><ul><li>An aggregate total is a separate measure; it does not identify the institutions contributing to it.</li></ul></div><p><a class="intel-text-link" href="/ask?q=How+many+mortgage+denials+in+New+Jersey+2025%3F&amp;action=denial&amp;loanType=all&amp;geo=NJ">View the New Jersey denials total</a></p><details class="intel-disclose"><summary>Trace this query</summary><p>Capability decision: The current New Jersey institution-level file does not contain denial counts at this grain, so we cannot order lenders by that measure. This is not a finding of zero denials. No ordering or cohort total was executed.</p><ul><li>Contract: lender-ask-v1</li><li>Grain: state-LEI-year -&gt; institution LEI by state property geography</li><li>Period: HMDA 2025 reporting vintage</li><li>Identity: LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.</li><li>Publication gate: 181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.</li><li>Indexes: Scope NJ; action denial; field not available; availability UNSUPPORTED</li><li>Cache: module-level CSV/JSON catalogs (no new ingest, no Production write)</li><li>Source files: lib/ask-lender/generated/state.csv.json</li><li>Elapsed: 1 ms</li><li>Institution measure availability: UNSUPPORTED; selected field: absent / not selected</li><li>Scope: NJ; action: denial; loan type: all; purpose: all</li><li>Source fingerprint: 89f62c85c6446dc13c5bcd7ec37d7db4a4c06c3607814cb4b54e31709099163b</li><li>Acquired jurisdictions: FL, NJ. Complete within source: not established.</li><li>Observed sum: 0; positive reporters: 0.</li><li>Retrieval/generation timestamps are not supplied by this artifact. Reporting year is a vintage, not a live check.</li><li>Identity enrichment is separate from mortgage count evidence: exact LEI publication mapping and committed GLEIF names do not supply mortgage volumes.</li><li>Question: Which lenders reported the most mortgage denials in New Jersey?</li></ul></details><p class="intel-kicker">Shareable research URL (noindex): <code style="overflow-wrap:anywhere">/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F</code></p></div>'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:42:505)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<div class="intel-ask-result" style="min-width:0;overflow-wrap:anywhere"><p class="intel-eyebrow">We interpreted your question as</p><dl class="intel-interpretation-grid"><div><dt>Contract</dt><dd>lender-ask-v1</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div><div><dt>Research type</dt><dd>entity</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div><div><dt>Geography</dt><dd>NJ</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div><div><dt>Geography meaning</dt><dd>Mortgage property / census location (HMDA), not lender location</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div><div><dt>HMDA action family</dt><dd>denial</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div><div><dt>Metric</dt><dd>Highest raw count (not “best”)</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div><div><dt>Entity grain</dt><dd>HMDA LEI, bridged to a public profile only when identity confirms</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div><div><dt>Reporting year</dt><dd>2025</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div><div><dt>Measure availability</dt><dd>UNSUPPORTED</dd><dd><a class="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div></dl><p class="intel-kicker">HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.</p><div class="intel-ask-examples" role="list" aria-label="Refine this query"><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=origination&amp;loanType=all&amp;geo=NJ">Originations</a><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=application&amp;loanType=all&amp;geo=NJ">Applications</a><a data-specialist-event="refine" class="intel-chip intel-chip--active" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=all&amp;geo=NJ">Denials</a><a data-specialist-event="refine" class="intel-chip intel-chip--active" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=all&amp;geo=NJ">All loan types</a><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=conventional&amp;geo=NJ">Conventional</a><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=FHA&amp;geo=NJ">FHA</a><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=VA&amp;geo=NJ">VA</a><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=USDA&amp;geo=NJ">USDA</a><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=all&amp;geo=FL">Florida</a><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=all&amp;geo=broward">Broward</a><a data-specialist-event="refine" class="intel-chip" href="/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&amp;action=denial&amp;loanType=all&amp;geo=palm-beach">Palm Beach</a></div><details class="intel-disclose"><summary>Change interpretation</summary><p>Use the filters above or edit the question. Property geography is not converted to lender location. “Most” is not converted to “best.”</p></details><h3>Institution breakdown unavailable: New Jersey denials</h3><p>The current New Jersey institution-level file does not contain denial counts at this grain, so we cannot order lenders by that measure. This is not a finding of zero denials.</p><p class="intel-kicker">Source period: HMDA 2025 reporting vintage. Grain: state-LEI-year -&gt; institution LEI by state property geography.</p><div><h3>Caveats</h3><ul><li>An aggregate total is a separate measure; it does not identify the institutions contributing to it.</li></ul></div><p><a class="intel-text-link" href="/ask?q=How+many+mortgage+denials+in+New+Jersey+2025%3F&amp;action=denial&amp;loanType=all&amp;geo=NJ">View the New Jersey denials total</a></p><details class="intel-disclose"><summary>Trace this query</summary><p>Capability decision: The current New Jersey institution-level file does not contain denial counts at this grain, so we cannot order lenders by that measure. This is not a finding of zero denials. No ordering or cohort total was executed.</p><ul><li>Contract: lender-ask-v1</li><li>Grain: state-LEI-year -&gt; institution LEI by state property geography</li><li>Period: HMDA 2025 reporting vintage</li><li>Identity: LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.</li><li>Publication gate: 181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.</li><li>Indexes: Scope NJ; action denial; field not available; availability UNSUPPORTED</li><li>Cache: module-level CSV/JSON catalogs (no new ingest, no Production write)</li><li>Source files: lib/ask-lender/generated/state.csv.json</li><li>Elapsed: 1 ms</li><li>Institution measure availability: UNSUPPORTED; selected field: absent / not selected</li><li>Scope: NJ; action: denial; loan type: all; purpose: all</li><li>Source fingerprint: 89f62c85c6446dc13c5bcd7ec37d7db4a4c06c3607814cb4b54e31709099163b</li><li>Acquired jurisdictions: FL, NJ. Complete within source: not established.</li><li>Observed sum: 0; positive reporters: 0.</li><li>Retrieval/generation timestamps are not supplied by this artifact. Reporting year is a vintage, not a live check.</li><li>Identity enrichment is separate from mortgage count evidence: exact LEI publication mapping and committed GLEIF names do not supply mortgage volumes.</li><li>Question: Which lenders reported the most mortgage denials in New Jersey?</li></ul></details><p class="intel-kicker">Shareable research URL (noindex): <code style="overflow-wrap:anywhere">/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F</code></p></div>',
+    expected: /Observed sum: unavailable/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:12029
+✖ 20 missing/corrupt source and loader failure are unavailable (2.0377ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== null
+
+      at unavailable (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:22:105)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:43:149)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:13664
+✖ 23 structured multi-value input and unknown states do not select first/fallback (1.7051ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== null
+
+      at unavailable (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:22:105)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:46:231)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r4-behavior.test.ts:2:14199
+✖ 24 national partition sums independent institutions and no source-year coercion (2.3009ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== null
+
+      at unavailable (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:22:105)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-004-work\lib\ask-lender\r4-behavior.test.ts:47:350)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

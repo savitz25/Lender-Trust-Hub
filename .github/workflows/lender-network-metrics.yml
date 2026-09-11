@@ -25,3 +25,6 @@ jobs:
         run: npm run check:th-search-r1-002
       - name: State HMDA count scope and measure integrity
         run: npm run check:th-search-r1-003
+
+      - name: Institution-volume availability regression
+        run: npm run check:th-search-r1-004

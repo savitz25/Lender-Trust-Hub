@@ -110,6 +110,7 @@ export type AskTrace = {
 };
 
 export type AskExecution = {
+  volumeEvidence?: import('./institution-volume').VolumeEvidence;
   countEvidence?: {
     availability: 'AVAILABLE' | 'UNSUPPORTED' | 'UNAVAILABLE' | 'NEEDS_CLARIFICATION';
     value: number | null; scope: string; action: string; field: string | null;

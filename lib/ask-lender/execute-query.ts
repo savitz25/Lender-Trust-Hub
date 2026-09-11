@@ -1,3 +1,4 @@
+import { selectInstitutionVolume } from './institution-volume';
 import { executeScalarCount } from './scalar-count';
 import { STATE_NAMES } from '@/lib/home-intel/states';
 import { CFPB_COMPANY_MAPPINGS } from '@/lib/cfpb/mappings';
@@ -6,7 +7,7 @@ import { buildLenderHomeIntel } from '@/lib/home-intel/build';
 import { DISCOVERY_RECORDS, nationalPresentationName, searchDiscovery } from '@/lib/national-profile/discovery';
 import { isNationalRenderSlug } from '@/lib/national-profile/publication';
 import { nationalProfilePath } from '@/lib/national-profile/cohort';
-import { ASK_SOURCE_FILES, loadAskCatalog, metricFromCounty, metricFromState, type CountyLeiRow, type StateLeiRow } from './catalog';
+import { ASK_SOURCE_FILES, loadAskCatalog } from './catalog';
 import { executeLenderAsk, interpretationLines } from './execute';
 import { displayNameForLei, identityStats, profileHref, resolveLeiIdentity } from './identity';
 import { applyAskOverrides, parseLenderAsk, type AskUrlOverrides } from './parse';
@@ -133,42 +134,6 @@ function paginate<T>(rows: T[], page: number, pageSize: number): { slice: T[]; p
   const safePage = Math.min(Math.max(1, page), pageCount);
   const start = (safePage - 1) * pageSize;
   return { slice: rows.slice(start, start + pageSize), page: safePage, pageCount };
-}
-
-function rankState(
-  rows: StateLeiRow[],
-  action: AskAction,
-  loanType: AskLoanType | undefined,
-): Array<{ lei: string; metric: number; applications: number; originations: number }> {
-  const out: Array<{ lei: string; metric: number; applications: number; originations: number }> = [];
-  for (const row of rows) {
-    const metric = metricFromState(row, action, loanType);
-    if (metric == null || metric <= 0) continue;
-    out.push({ lei: row.lei, metric, applications: row.applications, originations: row.originations });
-  }
-  out.sort((a, b) => b.metric - a.metric || a.lei.localeCompare(b.lei));
-  return out;
-}
-
-function rankCounty(
-  rows: CountyLeiRow[],
-  action: AskAction,
-  loanType: AskLoanType | undefined,
-): Array<{ lei: string; metric: number; applications: number; originations: number; denials: number }> {
-  const out: Array<{ lei: string; metric: number; applications: number; originations: number; denials: number }> = [];
-  for (const row of rows) {
-    const metric = metricFromCounty(row, action, loanType);
-    if (metric <= 0) continue;
-    out.push({
-      lei: row.lei,
-      metric,
-      applications: row.applications,
-      originations: row.originations,
-      denials: row.denials,
-    });
-  }
-  out.sort((a, b) => b.metric - a.metric || a.lei.localeCompare(b.lei));
-  return out;
 }
 
 function executeCfpbEntity(q: string, query: LenderResearchQuery, page: number, pageSize: number, overrides: AskUrlOverrides): AskExecution {
@@ -304,7 +269,7 @@ export function executeAskQuery(input: AskQueryInput): AskExecution {
   if (scalarStructured && parsed.mode === 'fail_closed') value.structuredQuery = undefined;
   const plan = value.structuredQuery ? applyAskOverrides({
     ...value.structuredQuery,
-    ...(scalarStructured ? {
+    ...((scalarStructured || structured?.mode === 'entity') ? {
       geography: value.structuredQuery.geography ?? parsed.geography,
       actionTaken: value.structuredQuery.actionTaken ?? parsed.actionTaken,
       loanPurpose: value.structuredQuery.loanPurpose ?? parsed.loanPurpose,
@@ -413,12 +378,12 @@ function executeAskQueryUnstamped(input: ValidAskInput): AskExecution {
     return result;
   }
 
-  const catalog = loadAskCatalog();
   const action = asAction(parsed);
   const loanType = asLoanType(parsed);
   const label = metricLabel(action, loanType);
 
   if (parsed.mode === 'comparison' && parsed.geography?.grain === 'county') {
+    const catalog = loadAskCatalog();
     const a = catalog.countyMarkets.find((m) => m.countyFips === parsed.geography?.countyFips);
     const b = catalog.countyMarkets.find((m) => m.countyFips === parsed.geography?.compareCountyFips);
     const facts: Array<{ label: string; value: string }> = [];
@@ -454,102 +419,66 @@ function executeAskQueryUnstamped(input: ValidAskInput): AskExecution {
     return { ...snap, query: parsed, interpretation: interpretationLines(parsed), sharePath: sharePath(raw, 1, overrides), elapsedMs: Date.now() - started };
   }
 
-  const stats = identityStats();
-  let ranked: AskInstitutionRow[] = [];
-  let grain = 'HMDA 2025 state LEI (property geography)';
-  let method = 'Sort state-grain LEI rows by raw count.';
-  let denominatorValue = 0;
-  let denominatorLabel = `${STATE_NAMES[parsed.geography?.state ?? ''] ?? parsed.geography?.state ?? 'United States'} ${label}`;
-
-  if (parsed.geography?.grain === 'county' && parsed.geography.countyFips) {
-    const rows = catalog.countyRows.filter((r) => r.countyFips === parsed.geography!.countyFips);
-    const rankedRaw = rankCounty(rows, action, loanType);
-    ranked = rankedRaw.map((r, i) =>
-      toRow(r.lei, i + 1, r.metric, label, { applications: r.applications, originations: r.originations, denials: r.denials }),
-    );
-    denominatorValue = rankedRaw.reduce((s, r) => s + r.metric, 0);
-    denominatorLabel = `${parsed.geography.county} County ${label}`;
-    grain = `HMDA 2025 county LEI · ${parsed.geography.county} County, FL (property geography)`;
-    method = `Filter lender_activity_by_county.csv to county_fips=${parsed.geography.countyFips}; sort by ${label}.`;
-  } else if (parsed.geography?.state === 'FL' && (action === 'denial' || (loanType && action === 'application'))) {
-    const rankedRaw = rankCounty([...catalog.flCountyByLei.values()], action, loanType);
-    ranked = rankedRaw.map((r, i) =>
-      toRow(r.lei, i + 1, r.metric, label, { applications: r.applications, originations: r.originations, denials: r.denials }),
-    );
-    denominatorValue = rankedRaw.reduce((s, r) => s + r.metric, 0);
-    grain = 'HMDA 2025 county LEI summed to Florida (property geography)';
-    method = `Sum Florida county-grain rows per LEI; sort by ${label}. State-grain files do not carry this split.`;
-  } else if (parsed.geography?.grain === 'state' && parsed.geography.state) {
-    const stateRows = catalog.stateRows.filter((r) => r.state === parsed.geography!.state);
-    const rankedRaw = rankState(stateRows, action, loanType);
-    const stateLabel = parsed.geography.state === 'FL' ? 'Florida' : parsed.geography.state;
-    ranked = rankedRaw.map((r, i) =>
-      toRow(r.lei, i + 1, r.metric, label, { applications: r.applications, originations: r.originations, denials: null }),
-    );
-    denominatorValue = rankedRaw.reduce((s, r) => s + r.metric, 0);
-    grain = `HMDA 2025 state LEI · ${stateLabel} (property geography)`;
-    method = `Filter lender_state_summary.csv to state=${parsed.geography.state}; sort by ${label}.`;
-  } else {
-    const byLei = new Map<string, { lei: string; metric: number; applications: number; originations: number }>();
-    for (const row of catalog.stateRows) {
-      const metric = metricFromState(row, action, loanType);
-      if (metric == null) continue;
-      const cur = byLei.get(row.lei);
-      if (!cur) byLei.set(row.lei, { lei: row.lei, metric, applications: row.applications, originations: row.originations });
-      else {
-        cur.metric += metric;
-        cur.applications += row.applications;
-        cur.originations += row.originations;
-      }
-    }
-    const rankedRaw = [...byLei.values()].filter((r) => r.metric > 0).sort((a, b) => b.metric - a.metric || a.lei.localeCompare(b.lei));
-    ranked = rankedRaw.map((r, i) =>
-      toRow(r.lei, i + 1, r.metric, label, { applications: r.applications, originations: r.originations, denials: null }),
-    );
-    denominatorValue = rankedRaw.reduce((s, r) => s + r.metric, 0);
-    denominatorLabel = `U.S. state-grain ${label} (sum of jurisdictions)`;
-    grain = 'HMDA 2025 state LEI summed across jurisdictions';
-    method = `Sum lender_state_summary.csv across states per LEI; sort by ${label}. Do not add county-grain rows.`;
+  const volume = selectInstitutionVolume(parsed);
+  const evidence = volume.evidence;
+  const place = parsed.geography?.county ? `${parsed.geography.county} County, ${STATE_NAMES[parsed.geography.state ?? ''] ?? parsed.geography.state}` : STATE_NAMES[parsed.geography?.state ?? ''] ?? 'the acquired U.S. jurisdictions';
+  const grain = `${evidence.sourceGrain ?? 'Source not selected'} -> ${evidence.outputGrain}; ${place}`;
+  const period = evidence.reportingYear ? `HMDA ${evidence.reportingYear} reporting vintage` : 'Reporting vintage not selected';
+  const trace = { ...baseTrace(evidence.calculation, grain), sourceFiles: evidence.sourceFile ? [evidence.sourceFile] : [], period,
+    indexes: [`Scope ${evidence.scope}; action ${action}; field ${evidence.field ?? 'not available'}; availability ${evidence.availability}`] };
+  const interpretation = [...interpretationLines(parsed), { label: 'Reporting year', value: parsed.reportingYears?.join(', ') || evidence.reportingYear || 'not selected' }, { label: 'Measure availability', value: evidence.availability }];
+  if (evidence.availability !== 'AVAILABLE') {
+    // Recovery is an explicit new scalar request, preserving every supported filter.
+    const scalarPlan: LenderResearchQuery = { ...parsed, mode: 'count', requestedMetric: 'count' };
+    const scalar = executeScalarCount(scalarPlan);
+    const recovery = scalar.countEvidence?.availability === 'AVAILABLE'
+      ? sharePath(`How many ${[loanType, parsed.loanPurpose?.[0], 'mortgage', label.replace(`${loanType ?? ''} `, ''), 'in', parsed.geography?.county ? `${parsed.geography.county} County` : STATE_NAMES[parsed.geography?.state ?? ''] ?? 'the United States', evidence.reportingYear].filter(Boolean).join(' ')}?`, 1, { action, loanType: loanType ?? 'all', geo: parsed.geography?.countyFips === '12011' ? 'broward' : parsed.geography?.countyFips === '12099' ? 'palm-beach' : parsed.geography?.grain === 'county' ? undefined : parsed.geography?.state ?? 'US' }) : undefined;
+    return { query: parsed, interpretation, geographyWarning: ASK_GEO_NOTE,
+      headline: `Institution breakdown ${evidence.availability === 'NEEDS_CLARIFICATION' ? 'needs clarification' : 'unavailable'}: ${place} ${label}`,
+      body: volume.message, rows: [], facts: [], failClosed: true, terminalState: evidence.availability,
+      volumeEvidence: evidence, filters: filterChips(raw, parsed, overrides), trace, period, grain,
+      href: recovery, hrefLabel: recovery ? `View the ${place} ${label} total` : undefined,
+      caveats: [...evidence.conditions, 'An aggregate total is a separate measure; it does not identify the institutions contributing to it.'],
+      sharePath: sharePath(raw, 1, overrides), elapsedMs: Date.now() - started };
   }
-
+  const stats = identityStats();
+  const ranked = volume.rows.map((r, i) => toRow(r.lei, i + 1, r.metric, label, r));
+  for (const row of ranked) row.whyMatched = [`${period} ${label}; source field ${evidence.field}; property geography ${evidence.scope}.`, `Ordered within the acquired source cohort by reported raw ${label}; not a recommendation.`, row.identityNote];
+  const denominatorValue = evidence.observedSum!;
+  const denominatorLabel = `${place} ${label} observed sum (acquired institution cohort)`;
   const { slice, page: safePage, pageCount } = paginate(ranked, input.page ?? 1, pageSize);
   const publicCount = ranked.filter((r) => r.identityStatus === 'public_profile').length;
   const holdCount = ranked.filter((r) => r.identityStatus === 'identity_hold').length;
   const unnamed = ranked.filter((r) => r.identityStatus === 'lei_only').length;
 
-  const place =
-    parsed.geography?.county != null
-      ? `${parsed.geography.county} County, Florida`
-      : parsed.geography?.grain === 'state' && parsed.geography.state
-        ? parsed.geography.state === 'FL' ? 'Florida' : parsed.geography.state
-        : 'the United States';
-
   return {
     query: parsed,
-    interpretation: interpretationLines(parsed),
+    interpretation,
     geographyWarning: ASK_GEO_NOTE,
     headline: `HMDA reporting institutions with the most ${label} for properties in ${place}`,
-    body: `Ordered by reported raw ${label} in the 2025 HMDA vintage. Most is a volume count, not a recommendation. Unpublished research identities are shown at LEI grain and are not mass-published.`,
+    body: volume.message,
+    volumeEvidence: evidence, terminalState: ranked.length ? 'FOUND' : 'NO_MATCH',
     rows: slice,
     totalRows: ranked.length,
     page: safePage,
     pageSize,
     pageCount,
     facts: [
-      { label: 'Reporting LEIs with this metric > 0', value: fmt(ranked.length) },
+      { label: 'Acquired reporting LEIs with this metric > 0', value: fmt(ranked.length) },
       { label: denominatorLabel, value: fmt(denominatorValue) },
       { label: 'Public-profile matches on this result set', value: fmt(publicCount) },
       { label: 'Identity holds (LEI/name conflict)', value: fmt(holdCount) },
       { label: 'LEI-only (no committed legal name)', value: fmt(unnamed) },
       { label: 'Committed GLEIF names (Florida cache)', value: fmt(stats.gleifCount) },
     ],
-    denominator: { label: denominatorLabel, value: denominatorValue },
+    // Observed sums are facts, not statistical denominators.
+
     filters: filterChips(raw, parsed, overrides),
-    trace: baseTrace(method, grain),
+    trace,
     sharePath: sharePath(raw, safePage, overrides),
-    period: 'HMDA 2025 reporting vintage',
+    period,
     grain,
-    caveats: entityCaveats(action, loanType, grain),
+    caveats: [...entityCaveats(action, loanType, grain).map(c => c.replaceAll('2025', evidence.reportingYear ?? 'unavailable vintage')), 'Complete ordering is limited to valid observations in this acquired file, not all institutions or all U.S. activity. Secondary measures, where supplied, are all-loan observations; missing values remain unavailable.'],
     elapsedMs: Date.now() - started,
   };
 }

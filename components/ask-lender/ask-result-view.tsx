@@ -190,6 +190,15 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
             <li>Cache: {result.trace.cache}</li>
             <li>Source files: {result.trace.sourceFiles.join('; ')}</li>
             {result.elapsedMs != null ? <li>Elapsed: {result.elapsedMs} ms</li> : null}
+            {result.volumeEvidence ? <>
+              <li>Institution measure availability: {result.volumeEvidence.availability}; selected field: {result.volumeEvidence.field ?? 'absent / not selected'}</li>
+              <li>Scope: {result.volumeEvidence.scope}; action: {result.volumeEvidence.action}; loan type: {result.volumeEvidence.loanType ?? 'all'}; purpose: {result.volumeEvidence.purpose.join(', ') || 'all'}</li>
+              <li>Source fingerprint: {result.volumeEvidence.sourceFingerprint ?? 'not selected'}</li>
+              <li>Acquired jurisdictions: {result.volumeEvidence.coverage.join(', ') || 'not established'}. Complete within source: {result.volumeEvidence.completeWithinSource ? 'yes' : 'not established'}.</li>
+              <li>Observed sum: {result.volumeEvidence.observedSum == null ? 'unavailable' : fmt(result.volumeEvidence.observedSum)}; positive reporters: {result.volumeEvidence.positiveReporters ?? 'unavailable'}.</li>
+              <li>Retrieval/generation timestamps are not supplied by this artifact. Reporting year is a vintage, not a live check.</li>
+              <li>Identity enrichment is separate from mortgage count evidence: exact LEI publication mapping and committed GLEIF names do not supply mortgage volumes.</li>
+            </> : null}
             {result.countEvidence ? <>
               <li>Count availability: {result.countEvidence.availability}; numeric value: {result.countEvidence.value ?? 'unavailable'}</li>
               <li>Scope: {result.countEvidence.scope}; action: {result.countEvidence.action}; source field: {result.countEvidence.field ?? 'not selected'}</li>

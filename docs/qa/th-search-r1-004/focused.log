@@ -1,0 +1,38 @@
+
+> lender-trust-hub@1.0.0 check:th-search-r1-004
+> tsx --test lib/ask-lender/r4-reproduction.test.ts lib/ask-lender/r4-behavior.test.ts
+
+✔ 01 NJ institution denial absence is not market zero (39.477ms)
+✔ 02 absent county/state product denial splits (6.7196ms)
+✔ 03 state product applications absent; FL compatible alternative retained (6.3716ms)
+✔ 04 positive NJ and FL originations and ordering (4.0241ms)
+✔ 05 FHA originations and county applications use their own fields (3.9509ms)
+✔ 06 selected numeric zero vs every missing/invalid representation (11.3779ms)
+✔ 07 complete all-zero cohort is available and honest empty (1.2667ms)
+✔ 08 mixed missing selected values cannot create partial complete ranking (1.2479ms)
+✔ 09 missing secondary fields preserve selected table and null (1.2425ms)
+✔ 10 FL county aggregation excludes NJ and preserves declared keys (1.1334ms)
+✔ 11 duplicate/overlapping/mixed-year rows rejected (2.6416ms)
+✔ 12 totals before pagination and publication enrichment (1.8887ms)
+✔ 13 row labels/Trace/summaries source-derived (6.0338ms)
+✔ 14 contextual all-loan values explicitly scoped, no product relabeling (5.0856ms)
+✔ 15 typed action/state/product overrides update capability and filters (2.2185ms)
+✔ 16 unsupported year/purpose/local/multi-value preserved (7.5084ms)
+✔ 17-18 recovery invokes protected scalar with NJ/action/vintage retained (1.7505ms)
+✔ 19 actual page/API same fixture and null remains unavailable in HTML (16.014ms)
+✔ 20 missing/corrupt source and loader failure are unavailable (5.3572ms)
+✔ 21 independent raw-source controls; known-positive paths not blocked (209.8171ms)
+✔ 22 identity/scalar/compare preserved (21.8037ms)
+✔ 23 structured multi-value input and unknown states do not select first/fallback (1.5683ms)
+✔ 24 national partition sums independent institutions and no source-year coercion (2.0151ms)
+✔ 25 specialist adapter preserves unavailable instead of zero-match (52.1965ms)
+✔ 26 recovery for other supported counties never overrides county to FL (2.7591ms)
+✔ reported NJ denial breakdown never becomes a market-zero fact (126.298ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1623.2766

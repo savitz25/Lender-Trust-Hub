@@ -1,0 +1,16 @@
+{
+  "at": "2026-09-11T20:51:02.265919+00:00",
+  "mutations": [
+    {
+      "mutation": "unavailable-to-zero",
+      "exitCode": 1,
+      "detected": true
+    },
+    {
+      "mutation": "ignore-product",
+      "exitCode": 1,
+      "detected": true
+    }
+  ],
+  "restoredBytes": true
+}

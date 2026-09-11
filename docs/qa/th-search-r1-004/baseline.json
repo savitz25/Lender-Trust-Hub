@@ -1,0 +1,1371 @@
+{
+  "at": "2026-09-11T20:50:04.569Z",
+  "sha": "0f933f78bb118d4f146e3f0b4c9081416f0a4400",
+  "observations": [
+    {
+      "q": "Which lenders reported the most mortgage denials in New Jersey?",
+      "result": {
+        "query": {
+          "mode": "entity",
+          "geography": {
+            "grain": "state",
+            "state": "NJ",
+            "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+          },
+          "actionTaken": [
+            "denial"
+          ],
+          "requestedMetric": "most",
+          "sort": {
+            "field": "denial",
+            "direction": "desc"
+          }
+        },
+        "interpretation": [
+          {
+            "label": "Contract",
+            "value": "lender-ask-v1"
+          },
+          {
+            "label": "Research type",
+            "value": "entity"
+          },
+          {
+            "label": "Geography",
+            "value": "NJ"
+          },
+          {
+            "label": "Geography meaning",
+            "value": "Mortgage property / census location (HMDA), not lender location"
+          },
+          {
+            "label": "HMDA action family",
+            "value": "denial"
+          },
+          {
+            "label": "Metric",
+            "value": "Highest raw count (not “best”)"
+          },
+          {
+            "label": "Entity grain",
+            "value": "HMDA LEI, bridged to a public profile only when identity confirms"
+          }
+        ],
+        "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+        "headline": "HMDA reporting institutions with the most denials for properties in NJ",
+        "body": "Ordered by reported raw denials in the 2025 HMDA vintage. Most is a volume count, not a recommendation. Unpublished research identities are shown at LEI grain and are not mass-published.",
+        "rows": [],
+        "totalRows": 0,
+        "page": 1,
+        "pageSize": 25,
+        "pageCount": 1,
+        "facts": [
+          {
+            "label": "Reporting LEIs with this metric > 0",
+            "value": "0"
+          },
+          {
+            "label": "New Jersey denials",
+            "value": "0"
+          },
+          {
+            "label": "Public-profile matches on this result set",
+            "value": "0"
+          },
+          {
+            "label": "Identity holds (LEI/name conflict)",
+            "value": "0"
+          },
+          {
+            "label": "LEI-only (no committed legal name)",
+            "value": "0"
+          },
+          {
+            "label": "Committed GLEIF names (Florida cache)",
+            "value": "745"
+          }
+        ],
+        "denominator": {
+          "label": "New Jersey denials",
+          "value": 0
+        },
+        "filters": [
+          {
+            "id": "orig",
+            "label": "Originations",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&action=origination&loanType=all&geo=NJ"
+          },
+          {
+            "id": "apps",
+            "label": "Applications",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&action=application&loanType=all&geo=NJ"
+          },
+          {
+            "id": "den",
+            "label": "Denials",
+            "active": true,
+            "href": "/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=all&geo=NJ"
+          },
+          {
+            "id": "all-type",
+            "label": "All loan types",
+            "active": true,
+            "href": "/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=all&geo=NJ"
+          },
+          {
+            "id": "conv",
+            "label": "Conventional",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=conventional&geo=NJ"
+          },
+          {
+            "id": "fha",
+            "label": "FHA",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=FHA&geo=NJ"
+          },
+          {
+            "id": "va",
+            "label": "VA",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=VA&geo=NJ"
+          },
+          {
+            "id": "usda",
+            "label": "USDA",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=USDA&geo=NJ"
+          },
+          {
+            "id": "fl",
+            "label": "Florida",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=all&geo=FL"
+          },
+          {
+            "id": "br",
+            "label": "Broward",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=all&geo=broward"
+          },
+          {
+            "id": "pb",
+            "label": "Palm Beach",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F&action=denial&loanType=all&geo=palm-beach"
+          }
+        ],
+        "trace": {
+          "contract": "lender-ask-v1",
+          "sourceFiles": [
+            "data/hmda/national/lender_state_summary.csv",
+            "data/hmda/by-state/FL/lender_activity_by_county.csv",
+            "data/hmda/by-state/FL/county_market_summary.csv",
+            "data/hmda/florida/lei_to_nmls_mapping.csv",
+            "data/hmda/florida/_gleif_name_cache.json",
+            "docs/lend-nat-016-search-index.json"
+          ],
+          "method": "Filter lender_state_summary.csv to state=NJ; sort by denials.",
+          "indexes": [
+            "in-memory LEI map",
+            "in-memory county FIPS map",
+            "lend-nat-016 LEI→public slug"
+          ],
+          "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+          "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+          "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+          "grain": "HMDA 2025 state LEI · NJ (property geography)",
+          "period": "HMDA 2025 reporting vintage"
+        },
+        "sharePath": "/ask?q=Which+lenders+reported+the+most+mortgage+denials+in+New+Jersey%3F",
+        "period": "HMDA 2025 reporting vintage",
+        "grain": "HMDA 2025 state LEI · NJ (property geography)",
+        "caveats": [
+          "Most is a raw count, not best, safest, or recommended.",
+          "HMDA is a 2025 reporting vintage, not current 2026 lending.",
+          "Property geography is not headquarters, branch location, or service territory.",
+          "Public-profile links are a publication gate. Unpublished HMDA LEIs stay unpublished.",
+          "Purchase/refinance originations are not populated at LEI grain and are not reconstructed."
+        ],
+        "elapsedMs": 91,
+        "contract": "lender-ask-v1"
+      }
+    },
+    {
+      "q": "Which lenders reported the most FHA mortgage denials in Broward County?",
+      "result": {
+        "query": {
+          "mode": "entity",
+          "geography": {
+            "grain": "county",
+            "state": "FL",
+            "county": "Broward",
+            "countyFips": "12011",
+            "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+          },
+          "actionTaken": [
+            "denial"
+          ],
+          "loanType": [
+            "FHA"
+          ],
+          "requestedMetric": "most",
+          "sort": {
+            "field": "denial",
+            "direction": "desc"
+          }
+        },
+        "interpretation": [
+          {
+            "label": "Contract",
+            "value": "lender-ask-v1"
+          },
+          {
+            "label": "Research type",
+            "value": "entity"
+          },
+          {
+            "label": "Geography",
+            "value": "FL · Broward"
+          },
+          {
+            "label": "Geography meaning",
+            "value": "Mortgage property / census location (HMDA), not lender location"
+          },
+          {
+            "label": "Loan type",
+            "value": "FHA"
+          },
+          {
+            "label": "HMDA action family",
+            "value": "denial"
+          },
+          {
+            "label": "Metric",
+            "value": "Highest raw count (not “best”)"
+          },
+          {
+            "label": "Entity grain",
+            "value": "HMDA LEI, bridged to a public profile only when identity confirms"
+          }
+        ],
+        "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+        "headline": "HMDA reporting institutions with the most FHA denials for properties in Broward County, Florida",
+        "body": "Ordered by reported raw FHA denials in the 2025 HMDA vintage. Most is a volume count, not a recommendation. Unpublished research identities are shown at LEI grain and are not mass-published.",
+        "rows": [],
+        "totalRows": 0,
+        "page": 1,
+        "pageSize": 25,
+        "pageCount": 1,
+        "facts": [
+          {
+            "label": "Reporting LEIs with this metric > 0",
+            "value": "0"
+          },
+          {
+            "label": "Broward County FHA denials",
+            "value": "0"
+          },
+          {
+            "label": "Public-profile matches on this result set",
+            "value": "0"
+          },
+          {
+            "label": "Identity holds (LEI/name conflict)",
+            "value": "0"
+          },
+          {
+            "label": "LEI-only (no committed legal name)",
+            "value": "0"
+          },
+          {
+            "label": "Committed GLEIF names (Florida cache)",
+            "value": "745"
+          }
+        ],
+        "denominator": {
+          "label": "Broward County FHA denials",
+          "value": 0
+        },
+        "filters": [
+          {
+            "id": "orig",
+            "label": "Originations",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+FHA+mortgage+denials+in+Broward+County%3F&action=origination&loanType=FHA&geo=broward"
+          },
+          {
+            "id": "apps",
+            "label": "Applications",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+FHA+mortgage+denials+in+Broward+County%3F&action=application&loanType=FHA&geo=broward"
+          },
+          {
+            "id": "den",
+            "label": "Denials",
+            "active": true,
+            "href": "/ask?q=Which+lenders+reported+the+most+FHA+mortgage+denials+in+Broward+County%3F&action=denial&loanType=FHA&geo=broward"
+          },
+          {
+            "id": "all-type",
+            "label": "All loan types",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+FHA+mortgage+denials+in+Broward+County%3F&action=denial&loanType=all&geo=broward"
+          },
+          {
+            "id": "conv",
+            "label": "Conventional",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+FHA+mortgage+denials+in+Broward+County%3F&action=denial&loanType=conventional&geo=broward"
+          },
+          {
+            "id": "fha",
+            "label": "FHA",
+            "active": true,
+            "href": "/ask?q=Which+lenders+reported+the+most+FHA+mortgage+denials+in+Broward+County%3F&action=denial&loanType=FHA&geo=broward"
+          },
+          {
+            "id": "va",
+            "label": "VA",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+FHA+mortgage+denials+in+Broward+County%3F&action=denial&loanType=VA&geo=broward"
+          },
+          {
+            "id": "usda",
+            "label": "USDA",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+FHA+mortgage+denials+in+Broward+County%3F&action=denial&loanType=USDA&geo=broward"
+          },
+          {
+            "id": "fl",
+            "label": "Florida",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+FHA+mortgage+denials+in+Broward+County%3F&action=denial&loanType=FHA&geo=FL"
+          },
+          {
+            "id": "br",
+            "label": "Broward",
+            "active": true,
+            "href": "/ask?q=Which+lenders+reported+the+most+FHA+mortgage+denials+in+Broward+County%3F&action=denial&loanType=FHA&geo=broward"
+          },
+          {
+            "id": "pb",
+            "label": "Palm Beach",
+            "active": false,
+            "href": "/ask?q=Which+lenders+reported+the+most+FHA+mortgage+denials+in+Broward+County%3F&action=denial&loanType=FHA&geo=palm-beach"
+          }
+        ],
+        "trace": {
+          "contract": "lender-ask-v1",
+          "sourceFiles": [
+            "data/hmda/national/lender_state_summary.csv",
+            "data/hmda/by-state/FL/lender_activity_by_county.csv",
+            "data/hmda/by-state/FL/county_market_summary.csv",
+            "data/hmda/florida/lei_to_nmls_mapping.csv",
+            "data/hmda/florida/_gleif_name_cache.json",
+            "docs/lend-nat-016-search-index.json"
+          ],
+          "method": "Filter lender_activity_by_county.csv to county_fips=12011; sort by FHA denials.",
+          "indexes": [
+            "in-memory LEI map",
+            "in-memory county FIPS map",
+            "lend-nat-016 LEI→public slug"
+          ],
+          "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+          "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+          "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+          "grain": "HMDA 2025 county LEI · Broward County, FL (property geography)",
+          "period": "HMDA 2025 reporting vintage"
+        },
+        "sharePath": "/ask?q=Which+lenders+reported+the+most+FHA+mortgage+denials+in+Broward+County%3F",
+        "period": "HMDA 2025 reporting vintage",
+        "grain": "HMDA 2025 county LEI · Broward County, FL (property geography)",
+        "caveats": [
+          "Most is a raw count, not best, safest, or recommended.",
+          "HMDA is a 2025 reporting vintage, not current 2026 lending.",
+          "Property geography is not headquarters, branch location, or service territory.",
+          "Public-profile links are a publication gate. Unpublished HMDA LEIs stay unpublished.",
+          "Denial counts are not denial reasons and are not a discrimination finding.",
+          "FHA splits use the corresponding orig_* / apps_* columns on the same observation grain.",
+          "Purchase/refinance originations are not populated at LEI grain and are not reconstructed."
+        ],
+        "elapsedMs": 1,
+        "contract": "lender-ask-v1"
+      }
+    },
+    {
+      "q": "Which lenders received the most FHA mortgage applications in New Jersey?",
+      "result": {
+        "query": {
+          "mode": "entity",
+          "geography": {
+            "grain": "state",
+            "state": "NJ",
+            "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+          },
+          "actionTaken": [
+            "application"
+          ],
+          "loanType": [
+            "FHA"
+          ],
+          "requestedMetric": "most",
+          "sort": {
+            "field": "application",
+            "direction": "desc"
+          }
+        },
+        "interpretation": [
+          {
+            "label": "Contract",
+            "value": "lender-ask-v1"
+          },
+          {
+            "label": "Research type",
+            "value": "entity"
+          },
+          {
+            "label": "Geography",
+            "value": "NJ"
+          },
+          {
+            "label": "Geography meaning",
+            "value": "Mortgage property / census location (HMDA), not lender location"
+          },
+          {
+            "label": "Loan type",
+            "value": "FHA"
+          },
+          {
+            "label": "HMDA action family",
+            "value": "application"
+          },
+          {
+            "label": "Metric",
+            "value": "Highest raw count (not “best”)"
+          },
+          {
+            "label": "Entity grain",
+            "value": "HMDA LEI, bridged to a public profile only when identity confirms"
+          }
+        ],
+        "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+        "headline": "HMDA reporting institutions with the most FHA applications for properties in NJ",
+        "body": "Ordered by reported raw FHA applications in the 2025 HMDA vintage. Most is a volume count, not a recommendation. Unpublished research identities are shown at LEI grain and are not mass-published.",
+        "rows": [],
+        "totalRows": 0,
+        "page": 1,
+        "pageSize": 25,
+        "pageCount": 1,
+        "facts": [
+          {
+            "label": "Reporting LEIs with this metric > 0",
+            "value": "0"
+          },
+          {
+            "label": "New Jersey FHA applications",
+            "value": "0"
+          },
+          {
+            "label": "Public-profile matches on this result set",
+            "value": "0"
+          },
+          {
+            "label": "Identity holds (LEI/name conflict)",
+            "value": "0"
+          },
+          {
+            "label": "LEI-only (no committed legal name)",
+            "value": "0"
+          },
+          {
+            "label": "Committed GLEIF names (Florida cache)",
+            "value": "745"
+          }
+        ],
+        "denominator": {
+          "label": "New Jersey FHA applications",
+          "value": 0
+        },
+        "filters": [
+          {
+            "id": "orig",
+            "label": "Originations",
+            "active": false,
+            "href": "/ask?q=Which+lenders+received+the+most+FHA+mortgage+applications+in+New+Jersey%3F&action=origination&loanType=FHA&geo=NJ"
+          },
+          {
+            "id": "apps",
+            "label": "Applications",
+            "active": true,
+            "href": "/ask?q=Which+lenders+received+the+most+FHA+mortgage+applications+in+New+Jersey%3F&action=application&loanType=FHA&geo=NJ"
+          },
+          {
+            "id": "den",
+            "label": "Denials",
+            "active": false,
+            "href": "/ask?q=Which+lenders+received+the+most+FHA+mortgage+applications+in+New+Jersey%3F&action=denial&loanType=FHA&geo=NJ"
+          },
+          {
+            "id": "all-type",
+            "label": "All loan types",
+            "active": false,
+            "href": "/ask?q=Which+lenders+received+the+most+FHA+mortgage+applications+in+New+Jersey%3F&action=application&loanType=all&geo=NJ"
+          },
+          {
+            "id": "conv",
+            "label": "Conventional",
+            "active": false,
+            "href": "/ask?q=Which+lenders+received+the+most+FHA+mortgage+applications+in+New+Jersey%3F&action=application&loanType=conventional&geo=NJ"
+          },
+          {
+            "id": "fha",
+            "label": "FHA",
+            "active": true,
+            "href": "/ask?q=Which+lenders+received+the+most+FHA+mortgage+applications+in+New+Jersey%3F&action=application&loanType=FHA&geo=NJ"
+          },
+          {
+            "id": "va",
+            "label": "VA",
+            "active": false,
+            "href": "/ask?q=Which+lenders+received+the+most+FHA+mortgage+applications+in+New+Jersey%3F&action=application&loanType=VA&geo=NJ"
+          },
+          {
+            "id": "usda",
+            "label": "USDA",
+            "active": false,
+            "href": "/ask?q=Which+lenders+received+the+most+FHA+mortgage+applications+in+New+Jersey%3F&action=application&loanType=USDA&geo=NJ"
+          },
+          {
+            "id": "fl",
+            "label": "Florida",
+            "active": false,
+            "href": "/ask?q=Which+lenders+received+the+most+FHA+mortgage+applications+in+New+Jersey%3F&action=application&loanType=FHA&geo=FL"
+          },
+          {
+            "id": "br",
+            "label": "Broward",
+            "active": false,
+            "href": "/ask?q=Which+lenders+received+the+most+FHA+mortgage+applications+in+New+Jersey%3F&action=application&loanType=FHA&geo=broward"
+          },
+          {
+            "id": "pb",
+            "label": "Palm Beach",
+            "active": false,
+            "href": "/ask?q=Which+lenders+received+the+most+FHA+mortgage+applications+in+New+Jersey%3F&action=application&loanType=FHA&geo=palm-beach"
+          }
+        ],
+        "trace": {
+          "contract": "lender-ask-v1",
+          "sourceFiles": [
+            "data/hmda/national/lender_state_summary.csv",
+            "data/hmda/by-state/FL/lender_activity_by_county.csv",
+            "data/hmda/by-state/FL/county_market_summary.csv",
+            "data/hmda/florida/lei_to_nmls_mapping.csv",
+            "data/hmda/florida/_gleif_name_cache.json",
+            "docs/lend-nat-016-search-index.json"
+          ],
+          "method": "Filter lender_state_summary.csv to state=NJ; sort by FHA applications.",
+          "indexes": [
+            "in-memory LEI map",
+            "in-memory county FIPS map",
+            "lend-nat-016 LEI→public slug"
+          ],
+          "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+          "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+          "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+          "grain": "HMDA 2025 state LEI · NJ (property geography)",
+          "period": "HMDA 2025 reporting vintage"
+        },
+        "sharePath": "/ask?q=Which+lenders+received+the+most+FHA+mortgage+applications+in+New+Jersey%3F",
+        "period": "HMDA 2025 reporting vintage",
+        "grain": "HMDA 2025 state LEI · NJ (property geography)",
+        "caveats": [
+          "Most is a raw count, not best, safest, or recommended.",
+          "HMDA is a 2025 reporting vintage, not current 2026 lending.",
+          "Property geography is not headquarters, branch location, or service territory.",
+          "Public-profile links are a publication gate. Unpublished HMDA LEIs stay unpublished.",
+          "FHA splits use the corresponding orig_* / apps_* columns on the same observation grain.",
+          "Purchase/refinance originations are not populated at LEI grain and are not reconstructed."
+        ],
+        "elapsedMs": 1,
+        "contract": "lender-ask-v1"
+      }
+    },
+    {
+      "q": "Which lenders originated the most mortgages in New Jersey?",
+      "result": {
+        "query": {
+          "mode": "entity",
+          "geography": {
+            "grain": "state",
+            "state": "NJ",
+            "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+          },
+          "actionTaken": [
+            "origination"
+          ],
+          "requestedMetric": "most",
+          "sort": {
+            "field": "origination",
+            "direction": "desc"
+          }
+        },
+        "interpretation": [
+          {
+            "label": "Contract",
+            "value": "lender-ask-v1"
+          },
+          {
+            "label": "Research type",
+            "value": "entity"
+          },
+          {
+            "label": "Geography",
+            "value": "NJ"
+          },
+          {
+            "label": "Geography meaning",
+            "value": "Mortgage property / census location (HMDA), not lender location"
+          },
+          {
+            "label": "HMDA action family",
+            "value": "origination"
+          },
+          {
+            "label": "Metric",
+            "value": "Highest raw count (not “best”)"
+          },
+          {
+            "label": "Entity grain",
+            "value": "HMDA LEI, bridged to a public profile only when identity confirms"
+          }
+        ],
+        "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+        "headline": "HMDA reporting institutions with the most originations for properties in NJ",
+        "body": "Ordered by reported raw originations in the 2025 HMDA vintage. Most is a volume count, not a recommendation. Unpublished research identities are shown at LEI grain and are not mass-published.",
+        "rows": [
+          {
+            "rank": 1,
+            "lei": "549300FGXN1K3HLB1R50",
+            "displayName": "Rocket Mortgage",
+            "metric": 12035,
+            "metricLabel": "originations",
+            "applications": 16617,
+            "originations": 12035,
+            "denials": null,
+            "identityStatus": "public_profile",
+            "identityNote": "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+            "href": "/lender/rocket-mortgage",
+            "hrefLabel": "Public research profile",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+              "NMLS institution credential 3030 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "3030",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 2,
+            "lei": "549300VZVN841I2ILS84",
+            "displayName": "Freedom Mortgage Corporation",
+            "metric": 7558,
+            "metricLabel": "originations",
+            "applications": 12042,
+            "originations": 7558,
+            "denials": null,
+            "identityStatus": "unpublished_research_identity",
+            "identityNote": "HMDA reporting institution. Not a public LenderTrustHub research profile.",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "HMDA reporting institution. Not a public LenderTrustHub research profile.",
+              "NMLS institution credential 2767 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "2767",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 3,
+            "lei": "DRMSV1Q0EKMEXLAU1P80",
+            "displayName": "Citizens Bank",
+            "metric": 7208,
+            "metricLabel": "originations",
+            "applications": 12113,
+            "originations": 7208,
+            "denials": null,
+            "identityStatus": "public_profile",
+            "identityNote": "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+            "href": "/lender/citizens-bank-nmls-433960",
+            "hrefLabel": "Public research profile",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+              "NMLS institution credential 433960 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "433960",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 4,
+            "lei": "549300HW662MN1WU8550",
+            "displayName": "United Wholesale Mortgage",
+            "metric": 7084,
+            "metricLabel": "originations",
+            "applications": 10552,
+            "originations": 7084,
+            "denials": null,
+            "identityStatus": "public_profile",
+            "identityNote": "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+            "href": "/lender/united-wholesale-mortgage",
+            "hrefLabel": "Public research profile",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+              "NMLS institution credential 3038 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "3038",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 5,
+            "lei": "03D0JEWFDFUS0SEEKG89",
+            "displayName": "TD Bank",
+            "metric": 6695,
+            "metricLabel": "originations",
+            "applications": 12532,
+            "originations": 6695,
+            "denials": null,
+            "identityStatus": "public_profile",
+            "identityNote": "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+            "href": "/lender/td-bank",
+            "hrefLabel": "Public research profile",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+              "NMLS institution credential 481428 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "481428",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 6,
+            "lei": "AD6GFRVSDT01YPT1CS68",
+            "displayName": "PNC Bank",
+            "metric": 5755,
+            "metricLabel": "originations",
+            "applications": 10815,
+            "originations": 5755,
+            "denials": null,
+            "identityStatus": "public_profile",
+            "identityNote": "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+            "href": "/lender/pnc-bank",
+            "hrefLabel": "Public research profile",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+              "NMLS institution credential 446038 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "446038",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 7,
+            "lei": "B4TYDEB6GKMZO031MB27",
+            "displayName": "Guaranteed Rate, Inc.",
+            "metric": 5136,
+            "metricLabel": "originations",
+            "applications": 12142,
+            "originations": 5136,
+            "denials": null,
+            "identityStatus": "identity_hold",
+            "identityNote": "This HMDA LEI also appears on a published profile, but the HMDA/mapping name conflicts with that profile name. No public-profile link is attached.",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "This HMDA LEI also appears on a published profile, but the HMDA/mapping name conflicts with that profile name. No public-profile link is attached.",
+              "NMLS institution credential 2611 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "2611",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 8,
+            "lei": "549300U3721PJGQZYY68",
+            "displayName": "Nationstar Mortgage LLC",
+            "metric": 4826,
+            "metricLabel": "originations",
+            "applications": 8641,
+            "originations": 4826,
+            "denials": null,
+            "identityStatus": "identity_hold",
+            "identityNote": "This HMDA LEI also appears on a published profile, but the HMDA/mapping name conflicts with that profile name. No public-profile link is attached.",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "This HMDA LEI also appears on a published profile, but the HMDA/mapping name conflicts with that profile name. No public-profile link is attached.",
+              "NMLS institution credential 2104 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "2104",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 9,
+            "lei": "549300AG64NHILB7ZP05",
+            "displayName": "PennyMac Loan Services, LLC",
+            "metric": 4334,
+            "metricLabel": "originations",
+            "applications": 6491,
+            "originations": 4334,
+            "denials": null,
+            "identityStatus": "identity_hold",
+            "identityNote": "This HMDA LEI also appears on a published profile, but the HMDA/mapping name conflicts with that profile name. No public-profile link is attached.",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "This HMDA LEI also appears on a published profile, but the HMDA/mapping name conflicts with that profile name. No public-profile link is attached.",
+              "NMLS institution credential 35953 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "35953",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 10,
+            "lei": "7H6GLXDRUGQFU57RNE97",
+            "displayName": "JPMorgan Chase Bank",
+            "metric": 3325,
+            "metricLabel": "originations",
+            "applications": 5588,
+            "originations": 3325,
+            "denials": null,
+            "identityStatus": "public_profile",
+            "identityNote": "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+            "href": "/lender/jpmorgan-chase-bank",
+            "hrefLabel": "Public research profile",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+              "NMLS institution credential 399798 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "399798",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 11,
+            "lei": "RVDPPPGHCGZ40J4VQ731",
+            "displayName": "Fairway Independent Mortgage Corporation",
+            "metric": 3144,
+            "metricLabel": "originations",
+            "applications": 6343,
+            "originations": 3144,
+            "denials": null,
+            "identityStatus": "identity_hold",
+            "identityNote": "This HMDA LEI also appears on a published profile, but the HMDA/mapping name conflicts with that profile name. No public-profile link is attached.",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "This HMDA LEI also appears on a published profile, but the HMDA/mapping name conflicts with that profile name. No public-profile link is attached.",
+              "NMLS institution credential 2909 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "2909",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 12,
+            "lei": "549300GKFNPRWNS0GF29",
+            "displayName": "AmeriHome Mortgage Company, LLC",
+            "metric": 2257,
+            "metricLabel": "originations",
+            "applications": 3798,
+            "originations": 2257,
+            "denials": null,
+            "identityStatus": "unpublished_research_identity",
+            "identityNote": "HMDA reporting institution. Not a public LenderTrustHub research profile.",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "HMDA reporting institution. Not a public LenderTrustHub research profile.",
+              "NMLS institution credential 1120271 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "1120271",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 13,
+            "lei": "54930063XGNMIXS57091",
+            "displayName": "POLICE & FIRE",
+            "metric": 2136,
+            "metricLabel": "originations",
+            "applications": 4063,
+            "originations": 2136,
+            "denials": null,
+            "identityStatus": "public_profile",
+            "identityNote": "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+            "href": "/lender/police-and-fire",
+            "hrefLabel": "Public research profile",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score."
+            ],
+            "nmls": null,
+            "evidenceAvailable": [
+              "HMDA market activity"
+            ]
+          },
+          {
+            "rank": 14,
+            "lei": "5493002N5168AC238149",
+            "displayName": "OceanFirst Bank, National Association",
+            "metric": 2071,
+            "metricLabel": "originations",
+            "applications": 2861,
+            "originations": 2071,
+            "denials": null,
+            "identityStatus": "unpublished_research_identity",
+            "identityNote": "HMDA reporting institution. Not a public LenderTrustHub research profile.",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "HMDA reporting institution. Not a public LenderTrustHub research profile."
+            ],
+            "nmls": null,
+            "evidenceAvailable": [
+              "HMDA market activity"
+            ]
+          },
+          {
+            "rank": 15,
+            "lei": "549300FNXYY540N23N64",
+            "displayName": "Newrez",
+            "metric": 1951,
+            "metricLabel": "originations",
+            "applications": 6535,
+            "originations": 1951,
+            "denials": null,
+            "identityStatus": "public_profile",
+            "identityNote": "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+            "href": "/lender/newrez",
+            "hrefLabel": "Public research profile",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+              "NMLS institution credential 2289 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "2289",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 16,
+            "lei": "549300F8C5JA44WNMI75",
+            "displayName": "AMERICAN NEIGHBORHOOD MORTGAGE ACCEPTANCE COMPANY LLC",
+            "metric": 1899,
+            "metricLabel": "originations",
+            "applications": 2861,
+            "originations": 1899,
+            "denials": null,
+            "identityStatus": "unpublished_research_identity",
+            "identityNote": "HMDA reporting institution. Not a public LenderTrustHub research profile.",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "HMDA reporting institution. Not a public LenderTrustHub research profile."
+            ],
+            "nmls": null,
+            "evidenceAvailable": [
+              "HMDA market activity"
+            ]
+          },
+          {
+            "rank": 17,
+            "lei": "254900F9ZTVTX763V835",
+            "displayName": "Advisors Mortgage Group, L.L.C.",
+            "metric": 1831,
+            "metricLabel": "originations",
+            "applications": 2323,
+            "originations": 1831,
+            "denials": null,
+            "identityStatus": "unpublished_research_identity",
+            "identityNote": "HMDA reporting institution. Not a public LenderTrustHub research profile.",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "HMDA reporting institution. Not a public LenderTrustHub research profile."
+            ],
+            "nmls": null,
+            "evidenceAvailable": [
+              "HMDA market activity"
+            ]
+          },
+          {
+            "rank": 18,
+            "lei": "KB1H1DSPRFMYMCUFXT09",
+            "displayName": "Wells Fargo Bank",
+            "metric": 1716,
+            "metricLabel": "originations",
+            "applications": 3047,
+            "originations": 1716,
+            "denials": null,
+            "identityStatus": "public_profile",
+            "identityNote": "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+            "href": "/lender/wells-fargo-bank",
+            "hrefLabel": "Public research profile",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+              "NMLS institution credential 399801 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "399801",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 19,
+            "lei": "KI0VI4JRMCIJ329YTN75",
+            "displayName": "Valley National Bank",
+            "metric": 1659,
+            "metricLabel": "originations",
+            "applications": 2510,
+            "originations": 1659,
+            "denials": null,
+            "identityStatus": "unpublished_research_identity",
+            "identityNote": "HMDA reporting institution. Not a public LenderTrustHub research profile.",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "HMDA reporting institution. Not a public LenderTrustHub research profile."
+            ],
+            "nmls": null,
+            "evidenceAvailable": [
+              "HMDA market activity"
+            ]
+          },
+          {
+            "rank": 20,
+            "lei": "549300LBCBNR1OT00651",
+            "displayName": "NATIONSTAR MORTGAGE LLC",
+            "metric": 1625,
+            "metricLabel": "originations",
+            "applications": 2406,
+            "originations": 1625,
+            "denials": null,
+            "identityStatus": "identity_hold",
+            "identityNote": "This HMDA LEI also appears on a published profile, but the HMDA/mapping name conflicts with that profile name. No public-profile link is attached.",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "This HMDA LEI also appears on a published profile, but the HMDA/mapping name conflicts with that profile name. No public-profile link is attached.",
+              "NMLS institution credential 2104 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "2104",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 21,
+            "lei": "549300DD4R4SYK5RAQ92",
+            "displayName": "Cardinal Financial Company, Limited Partnership",
+            "metric": 1579,
+            "metricLabel": "originations",
+            "applications": 2422,
+            "originations": 1579,
+            "denials": null,
+            "identityStatus": "unpublished_research_identity",
+            "identityNote": "HMDA reporting institution. Not a public LenderTrustHub research profile.",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "HMDA reporting institution. Not a public LenderTrustHub research profile.",
+              "NMLS institution credential 66247 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "66247",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 22,
+            "lei": "549300D4ZYLSQ5LMTV35",
+            "displayName": "ABSOLUTE HOME MORTGAGE CORPORATION",
+            "metric": 1569,
+            "metricLabel": "originations",
+            "applications": 2305,
+            "originations": 1569,
+            "denials": null,
+            "identityStatus": "unpublished_research_identity",
+            "identityNote": "HMDA reporting institution. Not a public LenderTrustHub research profile.",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "HMDA reporting institution. Not a public LenderTrustHub research profile."
+            ],
+            "nmls": null,
+            "evidenceAvailable": [
+              "HMDA market activity"
+            ]
+          },
+          {
+            "rank": 23,
+            "lei": "549300DE8TS4EYTPX729",
+            "displayName": "AFFORDABLE MORTGAGE ADVISORS, LLC",
+            "metric": 1545,
+            "metricLabel": "originations",
+            "applications": 2089,
+            "originations": 1545,
+            "denials": null,
+            "identityStatus": "unpublished_research_identity",
+            "identityNote": "HMDA reporting institution. Not a public LenderTrustHub research profile.",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "HMDA reporting institution. Not a public LenderTrustHub research profile."
+            ],
+            "nmls": null,
+            "evidenceAvailable": [
+              "HMDA market activity"
+            ]
+          },
+          {
+            "rank": 24,
+            "lei": "5493003GQDUH26DNNH17",
+            "displayName": "Navy Federal Credit Union",
+            "metric": 1515,
+            "metricLabel": "originations",
+            "applications": 3633,
+            "originations": 1515,
+            "denials": null,
+            "identityStatus": "public_profile",
+            "identityNote": "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+            "href": "/lender/navy-federal-credit-union",
+            "hrefLabel": "Public research profile",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+              "NMLS institution credential 399807 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "399807",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          },
+          {
+            "rank": 25,
+            "lei": "WWB2V0FCW3A0EE3ZJN75",
+            "displayName": "Manufacturers and Traders Trust Company",
+            "metric": 1501,
+            "metricLabel": "originations",
+            "applications": 2863,
+            "originations": 1501,
+            "denials": null,
+            "identityStatus": "identity_hold",
+            "identityNote": "This HMDA LEI also appears on a published profile, but the HMDA/mapping name conflicts with that profile name. No public-profile link is attached.",
+            "whyMatched": [
+              "HMDA 2025 originations for the requested property geography.",
+              "Ordered by the reported raw originations count. Most is volume, not a recommendation.",
+              "This HMDA LEI also appears on a published profile, but the HMDA/mapping name conflicts with that profile name. No public-profile link is attached.",
+              "NMLS institution credential 381076 is shown only when the LEI identity file carries it."
+            ],
+            "nmls": "381076",
+            "evidenceAvailable": [
+              "HMDA market activity",
+              "NMLS institution identity"
+            ]
+          }
+        ],
+        "totalRows": 776,
+        "page": 1,
+        "pageSize": 25,
+        "pageCount": 32,
+        "facts": [
+          {
+            "label": "Reporting LEIs with this metric > 0",
+            "value": "776"
+          },
+          {
+            "label": "New Jersey originations",
+            "value": "177,325"
+          },
+          {
+            "label": "Public-profile matches on this result set",
+            "value": "54"
+          },
+          {
+            "label": "Identity holds (LEI/name conflict)",
+            "value": "12"
+          },
+          {
+            "label": "LEI-only (no committed legal name)",
+            "value": "486"
+          },
+          {
+            "label": "Committed GLEIF names (Florida cache)",
+            "value": "745"
+          }
+        ],
+        "denominator": {
+          "label": "New Jersey originations",
+          "value": 177325
+        },
+        "filters": [
+          {
+            "id": "orig",
+            "label": "Originations",
+            "active": true,
+            "href": "/ask?q=Which+lenders+originated+the+most+mortgages+in+New+Jersey%3F&action=origination&loanType=all&geo=NJ"
+          },
+          {
+            "id": "apps",
+            "label": "Applications",
+            "active": false,
+            "href": "/ask?q=Which+lenders+originated+the+most+mortgages+in+New+Jersey%3F&action=application&loanType=all&geo=NJ"
+          },
+          {
+            "id": "den",
+            "label": "Denials",
+            "active": false,
+            "href": "/ask?q=Which+lenders+originated+the+most+mortgages+in+New+Jersey%3F&action=denial&loanType=all&geo=NJ"
+          },
+          {
+            "id": "all-type",
+            "label": "All loan types",
+            "active": true,
+            "href": "/ask?q=Which+lenders+originated+the+most+mortgages+in+New+Jersey%3F&action=origination&loanType=all&geo=NJ"
+          },
+          {
+            "id": "conv",
+            "label": "Conventional",
+            "active": false,
+            "href": "/ask?q=Which+lenders+originated+the+most+mortgages+in+New+Jersey%3F&action=origination&loanType=conventional&geo=NJ"
+          },
+          {
+            "id": "fha",
+            "label": "FHA",
+            "active": false,
+            "href": "/ask?q=Which+lenders+originated+the+most+mortgages+in+New+Jersey%3F&action=origination&loanType=FHA&geo=NJ"
+          },
+          {
+            "id": "va",
+            "label": "VA",
+            "active": false,
+            "href": "/ask?q=Which+lenders+originated+the+most+mortgages+in+New+Jersey%3F&action=origination&loanType=VA&geo=NJ"
+          },
+          {
+            "id": "usda",
+            "label": "USDA",
+            "active": false,
+            "href": "/ask?q=Which+lenders+originated+the+most+mortgages+in+New+Jersey%3F&action=origination&loanType=USDA&geo=NJ"
+          },
+          {
+            "id": "fl",
+            "label": "Florida",
+            "active": false,
+            "href": "/ask?q=Which+lenders+originated+the+most+mortgages+in+New+Jersey%3F&action=origination&loanType=all&geo=FL"
+          },
+          {
+            "id": "br",
+            "label": "Broward",
+            "active": false,
+            "href": "/ask?q=Which+lenders+originated+the+most+mortgages+in+New+Jersey%3F&action=origination&loanType=all&geo=broward"
+          },
+          {
+            "id": "pb",
+            "label": "Palm Beach",
+            "active": false,
+            "href": "/ask?q=Which+lenders+originated+the+most+mortgages+in+New+Jersey%3F&action=origination&loanType=all&geo=palm-beach"
+          }
+        ],
+        "trace": {
+          "contract": "lender-ask-v1",
+          "sourceFiles": [
+            "data/hmda/national/lender_state_summary.csv",
+            "data/hmda/by-state/FL/lender_activity_by_county.csv",
+            "data/hmda/by-state/FL/county_market_summary.csv",
+            "data/hmda/florida/lei_to_nmls_mapping.csv",
+            "data/hmda/florida/_gleif_name_cache.json",
+            "docs/lend-nat-016-search-index.json"
+          ],
+          "method": "Filter lender_state_summary.csv to state=NJ; sort by originations.",
+          "indexes": [
+            "in-memory LEI map",
+            "in-memory county FIPS map",
+            "lend-nat-016 LEI→public slug"
+          ],
+          "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+          "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+          "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+          "grain": "HMDA 2025 state LEI · NJ (property geography)",
+          "period": "HMDA 2025 reporting vintage"
+        },
+        "sharePath": "/ask?q=Which+lenders+originated+the+most+mortgages+in+New+Jersey%3F",
+        "period": "HMDA 2025 reporting vintage",
+        "grain": "HMDA 2025 state LEI · NJ (property geography)",
+        "caveats": [
+          "Most is a raw count, not best, safest, or recommended.",
+          "HMDA is a 2025 reporting vintage, not current 2026 lending.",
+          "Property geography is not headquarters, branch location, or service territory.",
+          "Public-profile links are a publication gate. Unpublished HMDA LEIs stay unpublished.",
+          "Purchase/refinance originations are not populated at LEI grain and are not reconstructed."
+        ],
+        "elapsedMs": 4,
+        "contract": "lender-ask-v1"
+      }
+    }
+  ]
+}

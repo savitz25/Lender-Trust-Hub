@@ -49,7 +49,7 @@ export function runAskLenderTests(): AskCheck[] {
   check('ASK-fl-not-branch', !/service territory|headquartered in Florida as the metric/.test(fl.headline), 'property geo');
 
   const purchase = parseLenderAsk('Which lenders originated the most purchase mortgages in Florida?');
-  check('ASK-purchase-closed', purchase.mode === 'fail_closed' && purchase.failClosedKind === 'loan-purpose-origination', purchase.failClosedKind ?? '');
+  check('ASK-purchase-closed', purchase.mode === 'entity' && Boolean(purchase.loanPurpose?.length) && executeAskQuery({ q: 'Which lenders originated the most purchase mortgages in Florida?' }).volumeEvidence?.availability === 'UNSUPPORTED', purchase.failClosedKind ?? '');
 
   const fha = parseLenderAsk('Which lenders originated the most FHA mortgages in Florida?');
   check('ASK-fha-entity', fha.mode === 'entity' && fha.loanType?.[0] === 'FHA' && fha.geography?.state === 'FL', String(fha.mode));
