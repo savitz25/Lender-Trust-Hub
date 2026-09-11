@@ -1,0 +1,37 @@
+
+> lender-trust-hub@1.0.0 check:th-search-r1-003
+> tsx --test lib/ask-lender/r3-reproduction.test.ts lib/ask-lender/r3-behavior.test.ts
+
+✔ 01-04 every jurisdiction/name/code and all three independent fields (160.3466ms)
+✔ 05 national measures are separate fields, explicit default (2.0463ms)
+✔ 06 sourced zero is successful (0.8183ms)
+✔ 07 missing and malformed selected values never coerce or substitute (4.8656ms)
+✔ 08 year mismatch and multiple years remain unresolved (2.1446ms)
+✔ 09 duplicate and mixed-grain aggregate keys rejected (0.8838ms)
+✔ 10 state/action override updates number, interpretation, trace and URL (0.63ms)
+✔ 11 filter links preserve state/action and structured form values (16.0368ms)
+✔ 12 filtered counts use actual field and unsupported split stays unavailable (3.2474ms)
+✔ 13 unknown/local geography never national; ordinary in/or are not state codes (1.6475ms)
+✔ 14 two states require clarification (0.726ms)
+✔ 15 pagination/publication cannot affect market count (1.582ms)
+✔ 16 actual page/API share same source-backed result (7.8048ms)
+✔ 17 rendered number and trace derive from same source and clock (5.7722ms)
+✔ 18 changing only NJ source changes only NJ answer (1.3266ms)
+✔ 19 NMLS grouping and LEI regressions remain exact (4.7908ms)
+✔ 20 county-volume and county comparison retained (31.3447ms)
+✔ 21 corrupt/throwing source finishes unavailable, not zero (0.9666ms)
+✔ 22 accepted source oracle independent of executor for all fields/states (57.8468ms)
+✔ 23 filtered duplicates, null and mixed years fail closed (1.8534ms)
+✔ 24 unsupported conditions before place and structured years cannot disappear (1.5707ms)
+✔ 25 supported FL product and purpose fields remain independent (2.6613ms)
+✔ 26 internal scalar adaptation preserves purpose and cannot lift a refusal (3.1985ms)
+✔ R1-003 accepted NJ measure, not national fallback (26.7979ms)
+✔ R1-003 executed overrides agree with visible plan (4.7243ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1219.0557

@@ -1,0 +1,45 @@
+
+> lender-trust-hub@1.0.0 check:lend-cap-002
+> tsx scripts/assert-lend-cap-002.mts
+
+PASS contract-version
+PASS exact-nmls
+PASS exact-nmls-public-destination
+PASS unpublished-identity
+PASS unpublished-no-route
+PASS branch-restricted
+PASS branch-not-institution
+PASS person-restricted
+PASS person-private-absent
+PASS collision
+PASS no-nmls
+PASS malformed-nmls
+PASS no-fuzzy-identifier
+PASS exact-lei
+PASS lei-nmls-bridge
+PASS no-lei
+PASS malformed-lei
+PASS rocket-bound
+PASS rocket-exact-bridge
+PASS rocket-count 7302
+PASS zero-keeps-identity
+PASS zero-not-clean
+PASS affiliate-firewall
+PASS unknown-no-evidence
+PASS typo-no-evidence
+PASS ambiguous
+PASS ranking-refused
+PASS complaint-not-wrongdoing
+PASS not-size-adjusted
+PASS identifier-evidence
+PASS bounded-pagination
+PASS page2-out-of-range
+PASS pagination-no-overlap
+PASS hmda-unchanged
+PASS hmda-2025
+PASS no-db-writes
+PASS no-profile-minting
+PASS publication-delta-zero
+PASS no-trust-score
+PASS no-paid-order
+PASS LEND-CAP-002 40 checks

@@ -1,0 +1,81 @@
+
+> lender-trust-hub@1.0.0 check:th-search-001c
+> tsx --test lib/ask-lender/th-search-001c.test.ts && npm run assert:ask-lender
+
+✔ portable contract and Lender capability states are frozen (1.3571ms)
+✔ 65+ golden questions remain deterministic and fail safely (18.7292ms)
+✔ identity and market semantics are enforced by real projection paths (3.1738ms)
+✔ shared shell, result trace, privacy analytics, and noindex contract are present (0.8205ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 599.079
+
+> lender-trust-hub@1.0.0 assert:ask-lender
+> tsx scripts/assert-ask-lender.mts
+
+PASS ASK-fail-best best
+PASS ASK-fail-safest safest
+PASS ASK-fail-trustworthy trustworthy
+PASS ASK-fail-cheapest cheapest
+PASS ASK-fail-disc discrimination
+PASS ASK-fail-rate-today live rate or ranking fail-closed
+PASS ASK-fail-lowest-today lowest rates today
+PASS ASK-fail-junk junk
+PASS ASK-fail-near near me
+PASS ASK-fail-denial-rate denial rate
+PASS ASK-fail-denial-reason denial reasons
+PASS ASK-fail-why-deny why deny
+PASS ASK-fail-territory service territory
+PASS ASK-fail-wrongdoing wrongdoing
+PASS ASK-fail-hq headquarters ≠ HMDA
+PASS ASK-most-denials-not-rate most ≠ rate
+PASS ASK-count-apps Current HMDA research universe (county grain, 2025 vintage)
+PASS ASK-fl-geo Reported HMDA 2025 applications for properties in Florida
+PASS ASK-fl-not-branch property geo
+PASS ASK-purchase-closed loan-purpose-origination
+PASS ASK-fha-entity entity
+PASS ASK-entity-florida entity
+PASS ASK-county-compare comparison
+PASS ASK-broward-not-located geo note
+PASS ASK-broward-entity entity
+PASS ASK-cfpb-not-wrongdoing complaints
+PASS ASK-public-vs-identity identity vs public
+PASS ASK-fl-rank-runs HMDA reporting institutions with the most originations for properties in Florida
+PASS ASK-fl-rank-uwm United Wholesale Mortgage 49897
+PASS ASK-fl-rank-not-best most ≠ best
+PASS ASK-fl-rank-geo HMDA 2025 state LEI · Florida (property geography)
+PASS ASK-fl-rank-period HMDA 2025 reporting vintage
+PASS ASK-fl-rank-profile-gate public_profile
+PASS ASK-fl-rank-page-size 25
+PASS ASK-fl-unlabeled-not-silent identity accounting
+PASS ASK-fl-page2 page 2 rank 26
+PASS ASK-br-rank United Wholesale Mortgage 6801
+PASS ASK-br-grain HMDA 2025 county LEI · Broward County, FL (property geography)
+PASS ASK-br-pb-facts Broward applications=67,743 | Broward originations=31,292 | Broward denials=17,138 | Broward purchase-purpose applications (not originations)=27,888 | Broward refinance-purpose applications (not originations)=22,265 | Palm Beach applications=56,484 | Palm Beach originations=28,383 | Palm Beach denials=12,505 | Palm Beach purchase-purpose applications (not originations)=23,718 | Palm Beach refinance-purpose applications (not originations)=17,758
+PASS ASK-br-pb-purpose-label purchase labeled as apps
+PASS ASK-fha-runs United Wholesale Mortgage 13216
+PASS ASK-fha-label FHA originations
+PASS ASK-contract lender-ask-v1
+PASS ASK-fha-not-hq HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.
+PASS ASK-va-runs United Wholesale Mortgage 7193
+PASS ASK-conv-runs 29438
+PASS ASK-usda-supported entity 214
+PASS ASK-rates-closed live-rate
+PASS ASK-cfpb-entity 25
+PASS ASK-cfpb-caveat wrongdoing caveat
+PASS ASK-cfpb-unattached unattached excluded
+PASS ASK-fl-us Florida vs U.S. reported HMDA 2025 county-grain activity
+PASS ASK-name-conflict LEI name conflict held
+PASS ASK-name-match UWM compatible
+PASS ASK-route-noindex ask noindex follow
+PASS ASK-robots-disallow robots /ask
+PASS ASK-not-in-sitemap sitemap omits /ask
+PASS ASK-api-exists api route
+PASS ASK-no-llm-facts no LLM facts
+PASS ASK-why-matched HMDA 2025 originations for the requested property geography. Ordered by the reported raw originations count. Most is volume, not a recommendation. Confirmed LEI
+PASS ask-lender 60 checks

@@ -1,0 +1,53 @@
+{
+  "ticket": "TH-SEARCH-R1-003",
+  "status": "CANDIDATE_VALIDATION",
+  "utc": "2026-09-11T19:51:55.099728+00:00",
+  "model": {
+    "name": "GPT-6 Astra",
+    "reasoning": "High",
+    "confirmation": "USER-CONFIRMED; no independent active-session metadata exposed"
+  },
+  "baseline": "3015d1b16f239f5eb6e662675b760b3fb51907b8",
+  "baselineDeployment": "dpl_5JSZyubLuUMZfx8WSRZnoa6zxiJu",
+  "implementationHead": null,
+  "merge": null,
+  "deployedSha": null,
+  "sourceOracle": "source-oracle.json",
+  "redBefore": "red-before.txt",
+  "sensitivity": "sensitivity.json",
+  "tests": {
+    "focused": "25 passed, zero failed/skipped",
+    "r1_002": "24 passed, zero failed/skipped",
+    "npm_test": "passed",
+    "search_001c": "passed",
+    "typecheck": "passed",
+    "lint": "zero errors; one existing pngSize unused warning",
+    "build": "passed: optimized compilation, TypeScript, static generation",
+    "customer": "6 passed",
+    "capability_001": "passed",
+    "capability_002": "40 passed"
+  },
+  "review": {
+    "method": "separate self-review of source/measure selection, raw catalog validation, override propagation, missing versus zero, rendering and read-only Ask adapter; automated PR review pending",
+    "independentHuman": false
+  },
+  "remaining": [
+    "Broader geography/discovery and licensing workflows outside scalar HMDA counts",
+    "Institution table denial/product availability and comparisons outside this ticket are not certified as fixed",
+    "Parent Ask completion and Senior-to-Move misroute remain outside this repository/ticket"
+  ],
+  "productionWrites": false,
+  "rollback": "Normal reviewed revert of ticket code and deployment; no database rollback.",
+  "browser": {
+    "candidate": "candidate-browser.json",
+    "checks": 14,
+    "status": "PASS",
+    "maxCompletionMs": 718,
+    "widths": [
+      1280,
+      390,
+      320
+    ],
+    "preview": "Normal preview URL redirected to Vercel /login; no protection bypass. See preview-access.json."
+  }
+}

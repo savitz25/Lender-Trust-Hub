@@ -1,0 +1,10 @@
+Production build exit code: 0
+✓ Compiled successfully in 21.3s
+Finished TypeScript in 33.6s ...
+Generating static pages using 7 workers (0/1804) ...
+Generating static pages using 7 workers (451/1804)
+Generating static pages using 7 workers (902/1804)
+Generating static pages using 7 workers (1353/1804)
+✓ Generating static pages using 7 workers (1804/1804) in 34.6s
+Finalizing page optimization ...
+Existing middleware/themeColor and inferred workspace-root warnings retained. Full local transcript: .r3-build.log (not committed).

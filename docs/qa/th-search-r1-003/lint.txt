@@ -1,0 +1,9 @@
+
+> lender-trust-hub@1.0.0 lint
+> eslint
+
+
+C:\Users\makei\th-search-r1-003-work\scripts\assert-share-002.mjs
+  18:10  warning  'pngSize' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 1 problem (0 errors, 1 warning)

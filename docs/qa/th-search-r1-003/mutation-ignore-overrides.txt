@@ -1,0 +1,76 @@
+✔ 01-04 every jurisdiction/name/code and all three independent fields (320.1305ms)
+✔ 05 national measures are separate fields, explicit default (3.034ms)
+✔ 06 sourced zero is successful (1.0482ms)
+✔ 07 missing and malformed selected values never coerce or substitute (9.1351ms)
+✔ 08 year mismatch and multiple years remain unresolved (3.9599ms)
+✔ 09 duplicate and mixed-grain aggregate keys rejected (1.7896ms)
+✖ 10 state/action override updates number, interpretation, trace and URL (6.1507ms)
+✔ 11 filter links preserve state/action and structured form values (19.1899ms)
+✔ 12 filtered counts use actual field and unsupported split stays unavailable (4.3796ms)
+✔ 13 unknown/local geography never national; ordinary in/or are not state codes (3.7462ms)
+✔ 14 two states require clarification (1.1296ms)
+✔ 15 pagination/publication cannot affect market count (2.6981ms)
+✔ 16 actual page/API share same source-backed result (19.5132ms)
+✔ 17 rendered number and trace derive from same source and clock (12.5067ms)
+✔ 18 changing only NJ source changes only NJ answer (3.8889ms)
+✔ 19 NMLS grouping and LEI regressions remain exact (10.5481ms)
+✔ 20 county-volume and county comparison retained (58.8372ms)
+✔ 21 corrupt/throwing source finishes unavailable, not zero (0.9835ms)
+✔ 22 accepted source oracle independent of executor for all fields/states (80.5225ms)
+✔ 23 filtered duplicates, null and mixed years fail closed (1.8709ms)
+✔ R1-003 accepted NJ measure, not national fallback (27.9224ms)
+✖ R1-003 executed overrides agree with visible plan (7.3701ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 20
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1541.9806
+
+✖ failing tests:
+
+test at lib\ask-lender\r3-behavior.test.ts:2:5195
+✖ 10 state/action override updates number, interpretation, trace and URL (6.1507ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  3202 !== 403
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-003-work\lib\ask-lender\r3-behavior.test.ts:28:190)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 3202,
+    expected: 403,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r3-reproduction.test.ts:2:1413
+✖ R1-003 executed overrides agree with visible plan (7.3701ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + '177,325'
+  - '192,366'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-003-work\lib\ask-lender\r3-reproduction.test.ts:13:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '177,325',
+    expected: '192,366',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

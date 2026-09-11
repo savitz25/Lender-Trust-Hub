@@ -1,0 +1,16 @@
+{
+  "utc": "2026-09-11T19:47:57.869212+00:00",
+  "mutations": [
+    {
+      "mutation": "national-fallback",
+      "exitCode": 1,
+      "detected": true
+    },
+    {
+      "mutation": "ignore-overrides",
+      "exitCode": 1,
+      "detected": true
+    }
+  ],
+  "restored": true
+}

@@ -1,0 +1,804 @@
+
+> lender-trust-hub@1.0.0 test
+> node scripts/assert-share-002.mjs && node scripts/assert-share-003.mjs && node scripts/assert-visual-004.mjs && npm run assert:ask-handoff && npm run assert:lend-nat-012 && npm run assert:lend-nat-014 && npm run assert:lend-nat-016 && npm run assert:intel-004 && npm run assert:lend-home-003 && npm run assert:ask-lender && npm run assert:fl-lend-002e && npm run assert:nj-lend-001 && npm run assert:nj-lend-002 && npm run assert:nj-lend-003 && npm run assert:nj-lend-county-001 && npm run assert:ca-lend-001 && npm run assert:tx-lend-001 && npm run assert:wa-lend-001 && npm run assert:az-lend-001 && npm run assert:co-lend-001 && npm run assert:va-lend-001 && npm run assert:ny-lend-001 && npm run assert:network-metrics
+
+SHARE-002 Lender assertions passed (1200×630 PNG replaced 720×217 header logo, twitter large, no localhost).
+SHARE-003 Lender assertions passed.
+VISUAL-004 Lender network-shell assertions passed.
+
+> lender-trust-hub@1.0.0 assert:ask-handoff
+> tsx scripts/assert-ask-handoff.mts
+
+PASS: parses src=ask
+PASS: mortgage_company entity
+PASS: FL state
+PASS: src required
+PASS: query not required
+PASS: query never serialized
+PASS: forbidden keys detected
+PASS: invalid state dropped
+PASS: invalid zip dropped
+PASS: script entity unsupported
+PASS: city traversal stripped
+PASS: unknown category
+PASS: Lender → mortgage_company
+PASS: Broker → mortgage_broker
+PASS: Bank → bank
+PASS: Credit union mapped to bank
+PASS: loan officer unsupported
+PASS: loan officer not converted to companies
+PASS: refinance fail closed
+PASS: refinance does not dump mortgage companies
+PASS: jumbo fail closed
+PASS: FL companies open Florida state directory
+PASS: HMDA ≠ licensed copy
+PASS: FL back label
+PASS: FL href internal
+PASS: home is Ask entry
+PASS: FL state path resolved
+PASS: profiles not bounced
+PASS: FL mortgage companies found (got 73)
+PASS: FL results are mortgage_company only
+PASS: FL results have physical_state or hmda_activity_state
+PASS: physical vs HMDA remain separately present in the set
+PASS: Tampa → Hillsborough
+PASS: Tampa is county fallback not fabricated city graph
+PASS: Tampa FHA opens Hillsborough directory
+PASS: Tampa copy is not exact office
+PASS: FHA results are HMDA-backed FHA
+PASS: county/activity match not mislabeled exact Tampa unless HQ city is Tampa
+PASS: VA Texas opens Texas directory
+PASS: VA results require HMDA VA originations
+PASS: VA Texas stays mortgage_company
+PASS: NJ brokers open NJ directory
+PASS: NJ broker back label
+PASS: NJ broker results are brokers only — no company substitution
+INFO: NJ mortgage_broker matches = 21
+PASS: Miami opens Miami-Dade directory
+PASS: exact_physical_city is actual Miami HQ
+PASS: HMDA Miami-Dade is not flattened to exact city
+PASS: no open redirect
+PASS: external host ignored
+PASS: PII not in href
+PASS: sample FL lender classifies
+PASS: HMDA reason is optional and distinct
+ASK-SEARCH-LENDER-002 Lender Ask handoff assertions passed.
+
+> lender-trust-hub@1.0.0 assert:lend-nat-012
+> tsx scripts/assert-lend-nat-012.mts
+
+PASS LPI1 one canonical profile object
+PASS LPI2 namespaces distinct
+PASS LPI3 historical Quicken names stay on Rocket
+PASS LPI4 HMDA apps from snapshot 609400
+PASS LPI5 HMDA 2025 vintage
+PASS LPI6 denial denominator is state-grain applications, never row count
+PASS LPI7 geography language is enforced in UI copy (HMDA activity observed)
+PASS LPI8 CFPB confirmed
+PASS LPI9 unresolved disclosed
+PASS LPI10 complaints ≠ enforcement
+PASS LPI11 enforcement confirmed on BofA
+PASS LPI12 Rocket none observed ≠ no history (coverage flag)
+PASS LPI13 servicer evidence-only
+PASS LPI14 Rocket not servicer
+PASS LPI15 Company not folded
+PASS LPI16 Shellpoint not Newrez
+PASS LPI17 SLS Holdings separate
+PASS LPI18 PHH not flattened
+PASS LPI19 no Trust Score/ranking in contract
+PASS LPI20 no aggregateRating/reviewRating
+PASS LPI25 controlled index; national sitemap enabled
+PASS LPI27 brand once
+PASS LPI29 no MLO/branch creation
+PASS LPI-path canonical /lender/{slug}
+PASS LPI-title title has no ranking words
+PASS LPI7 geo not branch/licensing
+PASS LPI12-ui NONE OBSERVED language
+PASS LPI19-ui hero rejects score
+PASS LPI19b no ranking copy
+PASS LPI20-src jsonld no ratings
+PASS LPI24 a11y shell
+PASS LPI25-src no blanket /lender disallow; catalog sitemap unchanged; national sitemap listed
+PASS LPI26 snapshot PK not live scans
+PASS PREV8-src fetch never loads fixture JSON
+PASS PREV8-prod production never allows fixtures
+PASS PREV8-preview preview never allows fixtures
+PASS PREV8-local local tests may use fixtures
+PASS LPI21-css mobile overflow containment
+PASS LPI28 freshness
+PASS route legacy /lender redirect removed
+PASS LPI10-ui separate sections
+PASS LPI5-ui HMDA period
+OK 25 contract tests + source assertions
+
+> lender-trust-hub@1.0.0 assert:lend-nat-014
+> tsx scripts/assert-lend-nat-014.mts
+
+PASS IDX2 index cohort is publication-eligible
+PASS IDX4 indexing slugs unique
+PASS IDX5 one institution_id per indexed profile
+PASS IDX6 /lender vs /lenders remain separate paths
+PASS IDX7 HMDA 2025 vintage on Rocket
+PASS IDX8 missing HMDA does not block the cohort
+PASS IDX9-src CFPB family only when attributed
+PASS IDX16 cohort size 180
+PASS IDX17 only cohort rows marked index
+PASS IDX18 non-index render rows are noindex
+PASS IDX18-phh PHH Home Loans remains render/noindex (HOLD)
+PASS IDX19 sitemap size = indexing cohort
+PASS IDX19b national sitemap uses /lender/{slug}
+PASS IDX20 unknown/landing helper remains fail-closed for profiles
+PASS IDX17-robots Rocket index,follow
+PASS IDX18-robots non-cohort noindex,nofollow
+PASS IDX17-off launch flag fail-closed
+PASS IDX-qa-render original 10 still render
+PASS IDX-qa-index 9 of original 10 index; PHH hold
+PASS IDX14 title/meta have no ranking claims
+PASS IDX15 no aggregateRating/reviewRating
+PASS IDX25-gate controlled index gate
+PASS IDX-cohort-version cohort version
+PASS IDX29 no MLO/branch keys in cohorts
+PASS IDX-path QA slug still resolves
+PASS IDX21-mix cohort diversity {"hmda":true,"noHmda":true,"cfpb":true,"noCfpb":true,"enf":true,"noEnf":true,"fdic":true,"ncua":true,"nonbank":true,"servicer":true,"historical":true}
+PASS IDX-slug-hygiene indexing slugs are institution slugs, not catalog locality/team clones
+PASS LPI25 controlled index; national sitemap enabled
+PASS IDX1 audited 8447
+PASS IDX2-counts eligible count frozen from audit
+PASS IDX3 historical names are not extra routes
+PASS IDX4-src collisions resolved; 8447 unique slugs
+PASS IDX5-src canonical institution_id on cohort
+PASS IDX6-src /lender sitemap separate from /lenders catalog
+PASS IDX7-src HMDA 2025 copy
+PASS IDX8-src missing HMDA does not block
+PASS IDX9-src CFPB UI remains confirmed-attribution copy
+PASS IDX10 unresolved labels not folded
+PASS IDX11 complaints ≠ enforcement
+PASS IDX12 enforcement confirmed-only / none observed language
+PASS IDX13 servicer evidence-only
+PASS IDX14-src no Trust Score
+PASS IDX15-src jsonld output has no ratings
+PASS IDX16-src cohort 180
+PASS IDX17-src index flag
+PASS IDX18-src non-cohort render is PHH hold only
+PASS IDX19-src sitemap from manifest
+PASS IDX20-src profile helper still fail-closed for unknown slugs
+PASS IDX21 390 overflow containment
+PASS IDX22 360 wrap
+PASS IDX23 320 usable padding
+PASS IDX24 skip, main, h1, table headers/captions
+PASS IDX25 snapshot PK
+PASS IDX26 sitemap/policy no evidence scans
+PASS IDX27 catalog sitemap unaffected
+PASS IDX28 national counts unchanged
+PASS IDX29-src no branch/MLO creation
+PASS IDX30 Florida state route is gated; national identity and OFR publication firewalls remain isolated
+PASS IDX30-negative guard rejects a fixture that would publish an OFR person candidate
+PASS IDX-fetch fail-closed fetch
+PASS IDX-robots-allow robots allow cohort discovery
+PASS IDX-manifest publication manifest on disk
+PASS IDX-no-mass not mass 8447 indexation
+OK 27 IDX contract tests + source assertions
+
+> lender-trust-hub@1.0.0 assert:lend-nat-016
+> tsx scripts/assert-lend-nat-016.mts
+
+PASS DISC-count searchable 181
+PASS DISC-indexable 180 frozen
+PASS DISC2 exact name
+PASS DISC3 partial name
+PASS DISC4 NMLS exact
+PASS DISC5 FDIC exact
+PASS DISC6-nmls-navy NMLS digits
+PASS DISC7 LEI exact
+PASS DISC7-prefix LEI prefix still exact
+PASS DISC7-spaced-name-not-lei 20-letter legal name with spaces is not a LEI
+PASS DISC8 namespaces parsed
+PASS DISC8b NMLS 3030 is not FDIC 3030
+PASS DISC9 historical name on same identity
+PASS DISC10 Company label does not merge onto Corporation via name-only
+PASS DISC11 bank browse
+PASS DISC12 CU browse
+PASS DISC13 nonbank browse
+PASS DISC14 servicer browse excludes NOT ESTABLISHED
+PASS DISC15 links only /lender/{slug}
+PASS DISC16 every search row is render-enabled
+PASS DISC17 PHH hold not indexed
+PASS DISC18 sitemap 180
+PASS DISC19 sitemap = cohort
+PASS DISC20 /lender path
+PASS DISC-hygiene canonical presentation for locality display artifacts
+PASS DISC-hygiene-fn presentation helper
+PASS DISC27 no ranking in results object
+PASS DISC28 discovery jsonld no ratings
+PASS DISC-gate gate
+PASS DISC-no-bhc no BHCs in search
+PASS FLSEARCH-national national 181 intact
+PASS FLSEARCH-fl florida 130
+PASS FLSEARCH-union 311 unique
+PASS FLSEARCH-overlap national∩florida=0
+PASS FLSEARCH-name florida exact name
+PASS FLSEARCH-nmls florida exact NMLS institution
+PASS FLSEARCH-partial florida partial name
+PASS FLSEARCH-national-still national NMLS still first-class
+PASS FLSEARCH-leak florida projection public-safe
+PASS FLSEARCH-person-branch-nmls-absent only NMLS_INSTITUTION in florida search
+PASS FLSEARCH-no-ofr-rank B2 and C2 same match rank family for comparable partials
+PASS DISC1 substantive /lender
+PASS DISC21 homepage national entry
+PASS DISC22 ZIP/local preserved
+PASS DISC23 HMDA education
+PASS DISC24 CFPB education
+PASS DISC25 complaints ≠ enforcement
+PASS DISC26 servicer education
+PASS DISC27-src no ranking copy
+PASS DISC28-src jsonld source
+PASS DISC29 query/facet noindex
+PASS DISC18-src 180 frozen
+PASS DISC19-src national sitemap still cohort-only
+PASS DISC20-src /lender in catalog sitemap; catalog routes remain
+PASS DISC34 bounded search index
+PASS DISC15-src result href from discovery
+PASS DISC-no-places no Google Places
+PASS DISC36 no person/branch keys
+PASS DISC37 no Florida work
+PASS DISC38 PHH in search, not extra indexables
+PASS DISC-hygiene-src profile H1 uses presentation name
+PASS DISC-a11y search a11y
+OK DISC contract + source assertions
+
+> lender-trust-hub@1.0.0 assert:intel-004
+> tsx scripts/assert-intel-004.mts
+
+PASS I004-10 31787fd802851ae28221f439990f8c43801a97f1954494183f9819f0c00ccacd
+PASS I004-11 generatedAt excluded from hash
+PASS I004-10b self-hash
+PASS I004-12 5
+PASS I004-13 trace fields
+PASS I004-14 3
+PASS I004-15 BENCHMARK,BENCHMARK,GAP
+PASS I004-5 14623
+PASS I004-6 HMDA apps/orig
+PASS I004-7 complaints
+PASS I004-8 credential ≠ identity
+PASS I004-9 2728020
+PASS I004-16 HMDA not prediction
+PASS I004-17 denial reasons deferred
+PASS I004-18 complaint semantics
+PASS I004-19 no legacy score/ranking language in headlines
+PASS I004-20 count series
+PASS I004-21 no complaint/HMDA rate
+PASS I004-22 DEFERRED
+PASS I004-23 no demographic headline
+PASS I004-24 11
+PASS I004-25 9
+PASS I004-26 FL link
+PASS I004-26b safe state routes
+PASS I004-34 UNSUPPORTED
+PASS I004-55 national render 181
+PASS I004-56 national index 180
+PASS I004-56b florida 130
+PASS I004-54 search 311 union
+PASS I004-54b 311 not a national headline
+PASS I004-geo-sum geo county-grain apps
+PASS I004-dep-sum exclusive LPI depository
+PASS I004-other other actions explicit
+PASS I004-tools-compare no legacy /compare CTA
+PASS I004-score-null no score
+PASS I004-ask-lpi Ask bank/nonbank uses LPI snapshot grain
+PASS I004-ask-hmda Ask HMDA uses county-grain snapshot
+PASS I004-ask-search Ask search union uses publication grains
+PASS I004-ask-count 7
+PASS I004-36-src SSR wiring
+PASS I004-h1-os Intelligence OS H1
+PASS I004-ask-cta Ask CTA in existing ask section
+PASS I004-36-src-v2 page consumes snapshot loader
+PASS I004-36-no-stale-json page does not import INTEL-004 JSON artifact
+PASS I004-v2-contract lender-home-intel-snapshot-v2
+PASS I004-ppc 0
+PASS I004-grain-nmls credential ≠ identity
+PASS I004-fl-internal 6267
+PASS I004-37-src no loading shell
+PASS I004-51-src no rating schema on page
+PASS intel-004 50 checks
+
+> lender-trust-hub@1.0.0 assert:lend-home-003
+> tsx scripts/assert-lend-home-003.mts
+
+LEND-HOME-003 assertions passed (38 public inventory measures, 8 families, 9 states).
+
+> lender-trust-hub@1.0.0 assert:ask-lender
+> tsx scripts/assert-ask-lender.mts
+
+PASS ASK-fail-best best
+PASS ASK-fail-safest safest
+PASS ASK-fail-trustworthy trustworthy
+PASS ASK-fail-cheapest cheapest
+PASS ASK-fail-disc discrimination
+PASS ASK-fail-rate-today live rate or ranking fail-closed
+PASS ASK-fail-lowest-today lowest rates today
+PASS ASK-fail-junk junk
+PASS ASK-fail-near near me
+PASS ASK-fail-denial-rate denial rate
+PASS ASK-fail-denial-reason denial reasons
+PASS ASK-fail-why-deny why deny
+PASS ASK-fail-territory service territory
+PASS ASK-fail-wrongdoing wrongdoing
+PASS ASK-fail-hq headquarters ≠ HMDA
+PASS ASK-most-denials-not-rate most ≠ rate
+PASS ASK-count-apps Current HMDA research universe (county grain, 2025 vintage)
+PASS ASK-fl-geo Reported HMDA 2025 applications for properties in Florida
+PASS ASK-fl-not-branch property geo
+PASS ASK-purchase-closed loan-purpose-origination
+PASS ASK-fha-entity entity
+PASS ASK-entity-florida entity
+PASS ASK-county-compare comparison
+PASS ASK-broward-not-located geo note
+PASS ASK-broward-entity entity
+PASS ASK-cfpb-not-wrongdoing complaints
+PASS ASK-public-vs-identity identity vs public
+PASS ASK-fl-rank-runs HMDA reporting institutions with the most originations for properties in Florida
+PASS ASK-fl-rank-uwm United Wholesale Mortgage 49897
+PASS ASK-fl-rank-not-best most ≠ best
+PASS ASK-fl-rank-geo HMDA 2025 state LEI · Florida (property geography)
+PASS ASK-fl-rank-period HMDA 2025 reporting vintage
+PASS ASK-fl-rank-profile-gate public_profile
+PASS ASK-fl-rank-page-size 25
+PASS ASK-fl-unlabeled-not-silent identity accounting
+PASS ASK-fl-page2 page 2 rank 26
+PASS ASK-br-rank United Wholesale Mortgage 6801
+PASS ASK-br-grain HMDA 2025 county LEI · Broward County, FL (property geography)
+PASS ASK-br-pb-facts Broward applications=67,743 | Broward originations=31,292 | Broward denials=17,138 | Broward purchase-purpose applications (not originations)=27,888 | Broward refinance-purpose applications (not originations)=22,265 | Palm Beach applications=56,484 | Palm Beach originations=28,383 | Palm Beach denials=12,505 | Palm Beach purchase-purpose applications (not originations)=23,718 | Palm Beach refinance-purpose applications (not originations)=17,758
+PASS ASK-br-pb-purpose-label purchase labeled as apps
+PASS ASK-fha-runs United Wholesale Mortgage 13216
+PASS ASK-fha-label FHA originations
+PASS ASK-contract lender-ask-v1
+PASS ASK-fha-not-hq HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.
+PASS ASK-va-runs United Wholesale Mortgage 7193
+PASS ASK-conv-runs 29438
+PASS ASK-usda-supported entity 214
+PASS ASK-rates-closed live-rate
+PASS ASK-cfpb-entity 25
+PASS ASK-cfpb-caveat wrongdoing caveat
+PASS ASK-cfpb-unattached unattached excluded
+PASS ASK-fl-us Florida vs U.S. reported HMDA 2025 county-grain activity
+PASS ASK-name-conflict LEI name conflict held
+PASS ASK-name-match UWM compatible
+PASS ASK-route-noindex ask noindex follow
+PASS ASK-robots-disallow robots /ask
+PASS ASK-not-in-sitemap sitemap omits /ask
+PASS ASK-api-exists api route
+PASS ASK-no-llm-facts no LLM facts
+PASS ASK-why-matched HMDA 2025 originations for the requested property geography. Ordered by the reported raw originations count. Most is volume, not a recommendation. Confirmed LEI
+PASS ask-lender 60 checks
+
+> lender-trust-hub@1.0.0 assert:fl-lend-002e
+> tsx scripts/assert-fl-lend-002e.mts && python scripts/fl-lend-002e-snapshot-tests.py
+
+PASS 002E 002E-n-contract lender-home-intel-snapshot-v2
+PASS 002E 002E-f-contract lender-fl-state-intel-v2
+PASS 002E 002E-n-fp 479425ed6c7878004a3fa6aba8992e017f0bfcbfdd032b76a4ae4ea76914cbb8
+PASS 002E 002E-f-fp f59ea86306e72d80ca537584e340645573a096bba225ddb93f6765befdd679e3
+PASS 002E 002E-n-fp-clock generated_at excluded
+PASS 002E 002E-f-fp-clock generated_at excluded
+PASS 002E 002E-id-nmls institution ≠ NMLS credential
+PASS 002E 002E-id-lpi institution ≠ LPI snapshot
+PASS 002E 002E-pub file-backed publication
+PASS 002E 002E-ppc person_public_candidate=0
+PASS 002E 002E-branch-entity branch entity ≠ NMLS_BRANCH slot or equal-count disclosed
+PASS 002E 002E-hmda-county national county grain
+PASS 002E 002E-fl-hmda-state FL state grain
+PASS 002E 002E-hmda-not-summed state grain ≠ national county sum
+PASS 002E 002E-creds-companies creds ≠ companies
+PASS 002E 002E-not-164936-hero hero not all rows
+PASS 002E 002E-held-not-3907 Approved hold ≠ source hold
+PASS 002E 002E-branch-grain branch entity ≠ license
+PASS 002E 002E-mlo-grain MLO nmls ≠ LO row
+PASS 002E 002E-person-mlo person_mlo ≠ LO row
+PASS 002E 002E-every-national-grain 14
+PASS 002E 002E-every-florida-grain 14
+PASS 002E 002E-home-loader home loader
+PASS 002E 002E-fl-loader florida loader
+PASS 002E 002E-no-live-sql-pages pages are not live SQL
+PASS 002E 002E-home-no-old-json compose uses accepted snapshot
+PASS 002E 002E-fl-no-hard-6325 no stale FL copy
+PASS 002E 002E-fl-no-no-branch stale branch/MLO copy removed
+PASS 002E 002E-fl-no-ask-cta florida page is not Ask
+PASS 002E 002E-home-snapshot-path home still snapshot-loaded
+PASS I004 I004-10 31787fd802851ae28221f439990f8c43801a97f1954494183f9819f0c00ccacd
+PASS I004 I004-11 generatedAt excluded from hash
+PASS I004 I004-10b self-hash
+PASS I004 I004-12 5
+PASS I004 I004-13 trace fields
+PASS I004 I004-14 3
+PASS I004 I004-15 BENCHMARK,BENCHMARK,GAP
+PASS I004 I004-5 14623
+PASS I004 I004-6 HMDA apps/orig
+PASS I004 I004-7 complaints
+PASS I004 I004-8 credential ≠ identity
+PASS I004 I004-9 2728020
+PASS I004 I004-16 HMDA not prediction
+PASS I004 I004-17 denial reasons deferred
+PASS I004 I004-18 complaint semantics
+PASS I004 I004-19 no legacy score/ranking language in headlines
+PASS I004 I004-20 count series
+PASS I004 I004-21 no complaint/HMDA rate
+PASS I004 I004-22 DEFERRED
+PASS I004 I004-23 no demographic headline
+PASS I004 I004-24 11
+PASS I004 I004-25 9
+PASS I004 I004-26 FL link
+PASS I004 I004-26b safe state routes
+PASS I004 I004-34 UNSUPPORTED
+PASS I004 I004-55 national render 181
+PASS I004 I004-56 national index 180
+PASS I004 I004-56b florida 130
+PASS I004 I004-54 search 311 union
+PASS I004 I004-54b 311 not a national headline
+PASS I004 I004-geo-sum geo county-grain apps
+PASS I004 I004-dep-sum exclusive LPI depository
+PASS I004 I004-other other actions explicit
+PASS I004 I004-tools-compare no legacy /compare CTA
+PASS I004 I004-score-null no score
+PASS I004 I004-ask-lpi Ask bank/nonbank uses LPI snapshot grain
+PASS I004 I004-ask-hmda Ask HMDA uses county-grain snapshot
+PASS I004 I004-ask-search Ask search union uses publication grains
+PASS I004 I004-ask-count 7
+PASS I004 I004-36-src SSR wiring
+PASS I004 I004-h1-os Intelligence OS H1
+PASS I004 I004-ask-cta Ask CTA in existing ask section
+PASS I004 I004-36-src-v2 page consumes snapshot loader
+PASS I004 I004-36-no-stale-json page does not import INTEL-004 JSON artifact
+PASS I004 I004-v2-contract lender-home-intel-snapshot-v2
+PASS I004 I004-ppc 0
+PASS I004 I004-grain-nmls credential ≠ identity
+PASS I004 I004-fl-internal 6267
+PASS I004 I004-37-src no loading shell
+PASS I004 I004-51-src no rating schema on page
+PASS FLINT FLINT1 6394
+PASS FLINT FLINT2 6289
+PASS FLINT FLINT3 6267
+PASS FLINT FLINT4 22
+PASS FLINT FLINT5 5013
+PASS FLINT FLINT6 1381
+PASS FLINT FLINT7 50
+PASS FLINT FLINT8 credentials ≠ companies
+PASS FLINT FLINT9 {"1":6186,"2":101,"3":2}
+PASS FLINT FLINT10 servicer rows/nmls
+PASS FLINT FLINT11 2515
+PASS FLINT FLINT12 952
+PASS FLINT FLINT13 1531
+PASS FLINT FLINT14 31
+PASS FLINT FLINT15 1
+PASS FLINT FLINT16 342
+PASS FLINT FLINT17 294
+PASS FLINT FLINT18 3
+PASS FLINT FLINT19 607
+PASS FLINT FLINT20 2515 ≠ 952
+PASS FLINT FLINT21 436
+PASS FLINT FLINT22 2047387
+PASS FLINT FLINT23 fines are attributes
+PASS FLINT FLINT24 769
+PASS FLINT FLINT25 80
+PASS FLINT FLINT26 20
+PASS FLINT FLINT27 82
+PASS FLINT FLINT28 1
+PASS FLINT FLINT29 {"UNSPECIFIED":78,"AGENCY_FINDING":458,"NOT_DISCIPLINE":23,"CONSENTED_ORDER":393}
+PASS FLINT FLINT30 consent copy is in UI
+PASS FLINT FLINT31 final-action copy is in UI
+PASS FLINT FLINT32 no complaint metric
+PASS FLINT FLINT33 held remain held
+PASS FLINT FLINT34 no name-only merges in this task
+PASS FLINT FLINT35 607 disclosed
+PASS FLINT FLINT36 2015-07
+PASS FLINT FLINT37 pre-2015 disclosed in UI
+PASS FLINT FLINT38 9
+PASS FLINT FLINT39 partial fine dollars disclosed in UI
+PASS FLINT FLINT40 HMDA FL
+PASS FLINT FLINT41 geo_grain=state AND state_code=FL
+PASS FLINT FLINT42 CFPB FL
+PASS FLINT FLINT43 COMPLAINT_REPORTED_FROM
+PASS FLINT FLINT44 federal omitted from hero
+PASS FLINT FLINT45 address ≠ territory in UI
+PASS FLINT FLINT46 f59ea86306e72d80ca537584e340645573a096bba225ddb93f6765befdd679e3
+PASS FLINT FLINT47 baseline
+PASS FLINT FLINT47b branch/MLO identity layer exists
+PASS FLINT FLINT-branch-grain branch entity ≠ license row
+PASS FLINT FLINT-mlo-grain person NMLS ≠ LO row
+PASS FLINT FLINT-license-grain all FL rows ≠ Approved company creds
+PASS FLINT FLINT-held-grain Approved hold ≠ 002D source hold
+PASS FLINT FLINT-contract lender-fl-state-intel-v2
+PASS FLINT FLINT-no-164936-hero hero is not all license rows
+PASS FLINT FLINT48 no FL profiles
+PASS FLINT FLINT49 180
+PASS FLINT FLINT50 181/180
+PASS FLINT FLINT51 no county route
+PASS FLINT FLINT52 no Google Places
+PASS FLINT FLINT-jsonld no ratings schema
+PASS FLINT FLINT-hero-lock company vs total
+PASS fl-lend-002e
+PASS n_fp 479425ed6c7878004a3fa6aba8992e017f0bfcbfdd032b76a4ae4ea76914cbb8
+PASS f_fp f59ea86306e72d80ca537584e340645573a096bba225ddb93f6765befdd679e3
+PASS n_fp_clock
+PASS f_fp_clock
+PASS n_contract
+PASS f_contract
+PASS creds_ne_companies
+PASS held_ne_3907
+PASS branch_grain
+PASS mlo_grain
+PASS ppc
+PASS not_164936_hero
+PASS pub_file
+PASS fl-lend-002e-snapshot-tests
+
+> lender-trust-hub@1.0.0 assert:nj-lend-001
+> python scripts/nj-lend-001-tests.py && tsx scripts/assert-nj-lend-001.mts
+
+PASS ocf22_count 4
+PASS ocf22_28
+PASS consent_vs_pending
+PASS penalty_not_restitution
+PASS mv_installment_class
+PASS state_ref_not_entity
+PASS order_not_entity_id
+PASS multi_party 2
+PASS individual_vs_company
+PASS exact_nmls_present
+PASS osc_pending
+PASS allegation_not_finding
+PASS revocation_flag
+PASS final_order_class
+PASS penalty_25500
+PASS mlo_class
+PASS person_nmls
+PASS pdf_url_normalized ['https://www.nj.gov/dobi/division_banking/ocf/enforcement/2022/OCF22_28.pdf', 'https://www.nj.gov/dobi/division_banking/ocf/enforcement/2022/OCF22_23.pdf']
+PASS pdf_double_enforcement_repaired [[PDF https://www.nj.gov/dobi/division_banking/ocf/enforcement/2018/e17_018529.pdf|Consent Order E17-018529]]
+PASS archive_orders ['E13-012788', 'E11-011141', 'E12-012364']
+PASS index_only_no_pdf
+PASS multi_party_archive
+PASS check_casher_or_institution
+PASS individual_not_merged_company
+PASS osc_not_final
+PASS dep_count 2
+PASS union_county
+PASS parke
+PASS dep_class
+PASS dep_pdf
+PASS exact_fdic
+PASS name_only_individual_internal
+PASS no_public_person
+PASS unsafe_individual_name
+PASS name_only_company_unresolved
+PASS exact_nmls_institution
+PASS exact_nmls_person
+PASS exact_nmls_branch
+PASS exact_state_ref
+PASS fi_rows 3
+PASS state_bank_class
+PASS main_office_not_branch
+PASS holding_company_separate
+PASS federal_cu
+PASS list_not_mortgage_activity
+PASS source_date {'legal_name': 'Amboy Bank', 'institution_class_raw': 'Commercial Banks/State', 'institution_class': 'STATE_CHARTERED_BANK', 'main_office_address': '3590 U.S. Highway No. 9', 'city': 'Old Bridge', 'state': 'NJ', 'holding_company': 'Amboy Bancorporation', 'regulator': 'New Jersey Department of Banking and Insurance', 'source_status': 'CURRENT_SNAPSHOT', 'source_url': 'https://www.nj.gov/dobi/bankwebinfo.htm', 'source_as_of': '2026-09-02', 'source_published': '2026-09-02', 'row_fingerprint': '63cf54ef82c6cba64278a311216647a71dfaf06b45baede75f640aadc6a84ade', 'public_eligibility': 'internal_only'}
+PASS missing_year_not_zero
+PASS empty_complete_distinct
+PASS order_normalize_space
+PASS amounts_separate
+PASS stable_fingerprint
+PASS sha_page
+PASS schema_drift_zero_events
+PASS http_404_state_exists
+PASS index_only_enum
+PASS contract_present []
+PASS no_nj_county_routes
+PASS no_nj_silo_tables
+PASS rls_forced
+PASS internal_only_default
+PASS nullable_entity
+PASS baseline_only
+PASS reusable_names
+PASS raw_ignored
+PASS no_vercel_project_file
+PASS sitemap_has_accepted_nj_county_pages
+PASS no_fuzzy
+PASS no_public_projection_write
+PASS modes_present
+PASS existing_hash_skip
+PASS duplicate_pdf_urls
+PASS same_order_several_pages
+PASS no_historical_alerts
+PASS license_search_no_enum
+PASS idempotent_event_ids
+PASS idempotent_fps
+PASS nj-lend-001-tests
+NJ-LEND-001 assertions: PASS
+
+> lender-trust-hub@1.0.0 assert:nj-lend-002
+> python scripts/nj-lend-002-tests.py && tsx scripts/assert-nj-lend-002.mts
+
+PASS rmla_nmls_required
+PASS rmla_no_bulk
+PASS rmla_by_request
+PASS rmla_lender_class
+PASS rmla_correspondent_class
+PASS rmla_broker_class
+PASS rmla_exempt_class
+PASS rmla_depository_class
+PASS rmla_lender_branch
+PASS rmla_correspondent_branch
+PASS rmla_broker_branch
+PASS broker_ne_lender
+PASS correspondent_ne_full
+PASS branch_ne_company
+PASS depository_ne_nonbank
+PASS qi_not_company
+PASS mlo_internal
+PASS no_public_person
+PASS company_not_public_dir
+PASS servicer_license_class
+PASS rmla_servicer_reg
+PASS servicer_ne_lender
+PASS servicer_no_public_roster
+PASS servicer_by_request
+PASS worksheet_has_nmls
+PASS worksheet_has_30
+PASS worksheet_has_60
+PASS worksheet_has_90
+PASS worksheet_has_fc
+PASS delinquency_ne_misconduct
+PASS foreclosure_ne_violation
+PASS no_servicer_ranking
+PASS hmfa_primary_count 5
+PASS hmfa_additional 3
+PASS hmfa_pfrs_subset
+PASS hmfa_no_nmls_printed
+PASS hmfa_not_endorsement
+PASS hmfa_order_not_rank
+PASS pairing_is_subset
+PASS full_list_incomplete
+PASS crosscountry_present
+PASS hmfa_no_exact_without_printed_nmls
+PASS hmfa_no_high_without_address
+PASS hmfa_no_net_new
+PASS crosscountry_review
+PASS program_first_time_homebuyer_mortgage
+PASS program_homeward_bound
+PASS program_hfa_advantage
+PASS program_down_payment_assistance
+PASS program_smart_start_plus_first_generation
+PASS program_police_and_firemens_retirement_system_mortgage
+PASS dpa_21_counties 21
+PASS dpa_all_nj
+PASS dpa_bergen_15000
+PASS dpa_salem_10000
+PASS income_21
+PASS purchase_21
+PASS no_eligibility_calc
+PASS uta_open_search
+PASS uta_no_parcel_scrape
+PASS uta_advisory
+PASS bulletins_10
+PASS latest_bulletin_2026_10
+PASS bulletin_not_adverse
+PASS hmda_year_2025
+PASS hmda_21_counties 21
+PASS hmda_apps_positive
+PASS hmda_orig_positive
+PASS hmda_denials_positive
+PASS hmda_denial_rate
+PASS hmda_purchase_refi
+PASS hmda_loan_type
+PASS hmda_median_not_invented
+PASS hmda_rate_not_invented
+PASS hmda_denial_reasons_not_invented
+PASS hmda_disparity_caveat
+PASS hmda_no_county_pages
+PASS no_event_recreate
+PASS identity_only
+PASS prior_unresolved_reported
+PASS baseline_only
+PASS no_historical_alerts
+PASS person_not_public
+PASS unavailable_ne_zero_rmla
+PASS search_absence_ne_unlicensed
+PASS open_search_only_present
+PASS no_nj_county_app_dir
+PASS sitemap_has_accepted_nj_county_routes
+PASS robots_no_new_jersey_disallow
+PASS no_vercel_project_json
+PASS migration_no_nj_silo
+PASS migration_rls
+PASS migration_no_anon_select
+PASS migration_internal_only
+PASS migration_baseline
+PASS no_fuzzy
+PASS trust_score_blocked
+PASS no_ranking_metric_fn
+PASS incapsula_not_bypassed
+
+99 passed, 0 failed
+NJ-LEND-002 assertions: PASS
+
+> lender-trust-hub@1.0.0 assert:nj-lend-003
+> tsx scripts/assert-nj-lend-003.mts
+
+NJ-LEND-003 assertions: PASS
+  HMDA 318529 apps / 177325 orig / 17.58%
+  fingerprint 0c0a9a68b76262ebcc408317956fd6403d484068be8827e4fa24a188e7e7b125
+
+> lender-trust-hub@1.0.0 assert:nj-lend-county-001
+> tsx scripts/assert-nj-lend-county-001.mts
+
+NJ-LEND-COUNTY-001 assertions: PASS
+  Monmouth 26425 apps / 15448 orig / 6c2ce48cb6cd
+  Middlesex 26149 apps / 14147 orig / e8989dea5f69
+  Somerset 11584 apps / 6702 orig / 728eca48cba3
+  Union 16330 apps / 8654 orig / 6d0d6c3841dd
+
+> lender-trust-hub@1.0.0 assert:ca-lend-001
+> tsx scripts/assert-ca-lend-001.mts
+
+CA-LEND-001 assertions: PASS
+  HMDA 1014489 apps / 569218 orig / 17.33%
+  CalHFA 1414 rows / 193 names
+  CRMLA 2024 389 licensees / 5104 branches
+  fingerprint 7dad44de48dc08f82d582dc3c2fc455d1f2fa4ee5618198d6b199adc483c5a36
+
+> lender-trust-hub@1.0.0 assert:tx-lend-001
+> tsx scripts/assert-tx-lend-001.mts
+
+TX-LEND-001 assertions: PASS
+  HMDA 954534 apps / 524257 orig / 19.22%
+  SML 3981 orders / 2493 exact NMLS / 1488 name-only
+  programs 7
+  fingerprint 879ebd3bcf3eb587882cd94b6e7fc25d22d149aa7c6fa5b4130c1610420bc48e
+
+> lender-trust-hub@1.0.0 assert:wa-lend-001
+> tsx scripts/assert-wa-lend-001.mts
+
+WA-LEND-001 assertions: PASS
+
+> lender-trust-hub@1.0.0 assert:az-lend-001
+> tsx scripts/assert-az-lend-001.mts
+
+AZ-LEND-001 assertions: PASS
+
+> lender-trust-hub@1.0.0 assert:co-lend-001
+> tsx scripts/assert-co-lend-001.mts
+
+CO-LEND-001 assertions: PASS
+
+> lender-trust-hub@1.0.0 assert:va-lend-001
+> python -X utf8 scripts/build-va-public-snapshot.py --check && tsx scripts/assert-va-lend-001.mts
+
+fingerprint check OK 1d15e78c49d24827268c9e4064ba816cf6e7ea227db8fd58a01816fec751cba9
+VA-LEND-001 publication assert: PASS
+
+> lender-trust-hub@1.0.0 assert:ny-lend-001
+> python -X utf8 scripts/ny-lend-001-tests.py && tsx scripts/assert-ny-lend-001.mts
+
+ny-lend-001-tests.py pass
+assert:ny-lend-001 pass d3a07f5b5d71
+
+> lender-trust-hub@1.0.0 assert:network-metrics
+> node scripts/assert_network_metrics_v1.mjs && node scripts/assert_homepage_intel.mjs && tsx --test scripts/test_lender_network_metrics.ts
+
+ATH-METRICS-003A PASS network metric grain and staleness gates
+ATH-METRICS-003A PASS homepage intel projection
+▶ lender-network-metrics-v1 grain safety
+  ✔ keeps institution, NMLS, branch, MLO, and public-profile grains apart (3.2531ms)
+  ✔ does not mix HMDA county and state grains or close the action funnel (0.4834ms)
+  ✔ does not convert NJ RMLA or CA CRMLA missing universes to zero (1.1527ms)
+  ✔ keeps Florida OFR credentials, confirmed NMLS, held, unresolved, and public cohort apart (0.4069ms)
+  ✔ does not mix CFPB complaints with HMDA or federal enforcement (0.3534ms)
+  ✔ uses a consumer label and two clocks (0.388ms)
+  ✔ requires published FL/NJ/CA/TX/WA/AZ/CO paths and does not treat county pages as state pages (0.2223ms)
+✔ lender-network-metrics-v1 grain safety (7.4488ms)
+ℹ tests 7
+ℹ suites 1
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 230.4156

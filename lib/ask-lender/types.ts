@@ -38,6 +38,8 @@ export type ExactMatchEvidence = {
 
 export type LenderResearchQuery = {
   mode: AskMode;
+  reportingYears?: string[];
+  scopeIssues?: string[];
   geography?: {
     grain: AskGeoGrain;
     state?: string;
@@ -108,6 +110,13 @@ export type AskTrace = {
 };
 
 export type AskExecution = {
+  countEvidence?: {
+    availability: 'AVAILABLE' | 'UNSUPPORTED' | 'UNAVAILABLE' | 'NEEDS_CLARIFICATION';
+    value: number | null; scope: string; action: string; field: string | null;
+    sourceFile: string | null; sourceFingerprint: string | null; sourceGrain: string | null;
+    outputGrain: string; reportingYear: string | null; retrievedAt: string | null; generatedAt: string | null;
+    calculation: string; conditions: string[];
+  };
   contract?: typeof LENDER_ASK_CONTRACT;
   query: LenderResearchQuery;
   interpretation: AskInterpretationLine[];

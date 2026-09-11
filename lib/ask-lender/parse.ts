@@ -1,3 +1,4 @@
+import { STATE_NAMES } from '@/lib/home-intel/states';
 import { ACTION_TERMS, DEPOSITORY_TERMS, FL_ASK_COUNTIES, LOAN_TYPE_TERMS, PURPOSE_TERMS } from './ontology';
 import { ASK_GEO_NOTE, type LenderResearchQuery } from './types';
 import { parseIdentityRequest } from './identifier';
@@ -198,28 +199,44 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
     };
   }
 
-  const florida = /\bflorida\b|\bfl\b/.test(q);
-  const state = florida
-    ? 'FL'
-    : /\bnew jersey\b/.test(q)
-      ? 'NJ'
-      : /\bcalifornia\b/.test(q)
-        ? 'CA'
-        : /\barizona\b/.test(q)
-          ? 'AZ'
-          : /\bvirginia\b/.test(q)
-            ? 'VA'
-            : /\bnew york\b/.test(q)
-              ? 'NY'
-              : undefined;
+  const states: string[] = [];
+  let unnamed = raw;
+  // Consume longest full names first: West Virginia is not also Virginia.
+  for (const [code, name] of Object.entries(STATE_NAMES).sort((a,b) => b[1].length - a[1].length)) {
+    const pattern = new RegExp(`\\b${name.replaceAll('.', '[.]')}\\b`, 'gi');
+    if (pattern.test(unnamed)) { states.push(code); unnamed = unnamed.replace(pattern, ' '); }
+  }
+  for (const code of Object.keys(STATE_NAMES)) {
+    if (new RegExp(`\\b(?:in|within|state of)\\s+${code}\\b`, 'i').test(unnamed) ||
+      (!['IN', 'OR', 'VA'].includes(code) && new RegExp(`\\b${code}\\b`).test(unnamed))) {
+      if (!states.includes(code)) states.push(code);
+    }
+  }
+  const state = states.length === 1 ? states[0] : undefined;
+  const florida = state === 'FL';
+  const reportingYears = [...new Set(raw.match(/\b(?:19|20)\d{2}\b/g) ?? [])];
+  const scopeIssues: string[] = [];
+  if (states.length > 1) scopeIssues.push('More than one jurisdiction was requested. Select one state for a scalar count.');
+  // A place phrase must be resolved; national is only the explicit/default scope.
+  const place = q.match(/\b(?:in|within|for properties in)\s+(.+?)(?:[?]|$)/)?.[1];
+  if (place) {
+    let remainder = place;
+    for (const [code, name] of Object.entries(STATE_NAMES).sort((a,b) => b[1].length - a[1].length)) remainder = remainder.replace(new RegExp(`\\b${name.replaceAll('.', '[.]')}\\b|\\b${code}\\b`, 'gi'), '');
+    remainder = remainder.replace(/\b(?:the|united states|u\.s\.?|usa|nation|nationally|nationwide|hmda|reporting|vintage|year|current|research|universe|in|and|or|applications?|originations?|denials?|mortgages?|properties|202\d)\b/g, '').replace(/[^a-z]/g, '');
+    if (remainder && !detectCounties(q).length) scopeIssues.push(`The requested place or condition "${place}" is not resolved by this count source. Select a supported state or county.`);
+  }
+  if (states.length && /\b(?:nationally|nationwide|united states|usa)\b/.test(q) && !/\bcompare\b/.test(q)) scopeIssues.push('Both state and national scope were requested. Select one scope for a scalar count.');
   const counties = detectCounties(q);
+  if (!counties.length && /\b(?:county|city|zip|radius)\b/.test(q)) scopeIssues.push('The requested local geography is not available in this count source.');
+  if (/[$]|\b(?:under|over|above|below)\s+\d|\b(?:loan amount|income|credit score|first.time|owner.occupied|investment propert)\b/.test(q)) scopeIssues.push('The requested amount, borrower or occupancy dimension is not supplied by this count source.');
+  if (counties.length && states.some(code => code !== 'FL')) scopeIssues.push('The named county is only available in the Florida county catalog; the requested state conflicts with that scope.');
   const hasBroward = counties.some((c) => c.fips === '12011');
   const hasPalm = counties.some((c) => c.fips === '12099');
 
   let loanType: string[] | undefined;
   for (const [term, value] of Object.entries(LOAN_TYPE_TERMS)) {
     const hit = term.length <= 3 ? new RegExp(`\\b${term}\\b`).test(q) : q.includes(term);
-    if (hit) loanType = [value];
+    if (hit && !(term === 'va' && /\b(?:in|within|state of)\s+va\b/.test(q) && !/\bva\s+(?:loans?|mortgages?|applications?|originations?)\b/.test(q))) loanType = [value];
   }
   let loanPurpose: string[] | undefined;
   for (const [term, value] of Object.entries(PURPOSE_TERMS)) {
@@ -238,14 +255,23 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
   const wantsOrig = Object.keys(ACTION_TERMS).some((t) => ACTION_TERMS[t] === 'origination' && q.includes(t));
   const wantsDenial = /\bdenial|\bdenied/.test(q);
   const wantsApps = /\bapplication|\breceived the most/.test(q) && !wantsOrig;
+  if ([wantsOrig, wantsDenial, /\bapplications?\b/.test(q)].filter(Boolean).length > 1) scopeIssues.push('More than one HMDA action was requested. Select a single action for a scalar count.');
   const action: string[] = wantsOrig ? ['origination'] : wantsDenial ? ['denial'] : wantsApps ? ['application'] : ['origination'];
+  // Scalar counts must not silently discard an unrecognized place or dimension.
+  let countRemainder = q;
+  const phrases = [...Object.values(STATE_NAMES), ...Object.keys(FL_ASK_COUNTIES), ...Object.keys(LOAN_TYPE_TERMS), ...Object.keys(PURPOSE_TERMS), ...Object.keys(DEPOSITORY_TERMS)];
+  for (const phrase of phrases.sort((a,b) => b.length - a.length)) countRemainder = countRemainder.replaceAll(phrase.toLowerCase(), ' ');
+  countRemainder = countRemainder.replace(/\b[A-Z]{2}\b/gi, word => states.includes(word.toUpperCase()) ? ' ' : word);
+  countRemainder = countRemainder.replace(/\b(?:how|many|what|is|are|was|were|the|a|an|of|for|in|within|and|or|by|from|during|to|show|me|give|report|reported|total|number|count|counts|mortgage|mortgages|loan|loans|applications?|originations?|originated|denials?|denied|properties|property|census|location|geography|state|county|market|activity|hmda|reporting|vintage|year|national|nationally|nationwide|united|states|us|usa|current|research|universe|received|filed|all|taken)\b|\b(?:19|20)\d{2}\b/g, ' ').replace(/[^a-z0-9$]/g, '').trim();
+  if (countRemainder) scopeIssues.push('Some requested geography or count conditions are not supported by this source. Edit the request or select a supported state/action; no broader count was substituted.');
+
 
   if (q.includes('what does') || q.includes('what does originated') || q.includes('mean in hmda')) {
     return { mode: 'definition', definitionId: 'origination', requestedMetric: null };
   }
 
   // Purchase/refi originations are NULL at LEI grain.
-  if (loanPurpose?.length && (wantsOrig || wantsEntity(q, metric) || metric === 'most')) {
+  if (loanPurpose?.length && (wantsEntity(q, metric) || metric === 'most')) {
     return {
       mode: 'fail_closed',
       failClosedKind: 'loan-purpose-origination',
@@ -347,6 +373,7 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
       actionTaken: action,
       loanType,
       loanPurpose,
+      lenderType, reportingYears, scopeIssues,
       requestedMetric: 'count',
     };
   }
@@ -354,6 +381,7 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
   if (state || q.includes('application') || wantsOrig || wantsDenial || q.includes('how many') || q.includes('research universe')) {
     return {
       mode: loanType ? 'aggregate' : 'count',
+      loanPurpose, lenderType, reportingYears, scopeIssues,
       geography: state ? { grain: 'state', state, note: ASK_GEO_NOTE } : { grain: 'national', note: ASK_GEO_NOTE },
       actionTaken: action,
       loanType,
@@ -387,9 +415,10 @@ export function applyAskOverrides(query: LenderResearchQuery, overrides: AskUrlO
   if (overrides.loanType === 'all') {
     next.loanType = undefined;
   }
-  if (overrides.geo === 'FL') {
-    next.geography = { grain: 'state', state: 'FL', note: ASK_GEO_NOTE };
+  if (overrides.geo && STATE_NAMES[overrides.geo]) {
+    next.geography = { grain: 'state', state: overrides.geo, note: ASK_GEO_NOTE };
   }
+  if (overrides.geo === 'US') next.geography = { grain: 'national', note: ASK_GEO_NOTE };
   if (overrides.geo === 'broward') {
     next.geography = { grain: 'county', state: 'FL', county: 'Broward', countyFips: '12011', note: ASK_GEO_NOTE };
   }

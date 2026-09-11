@@ -1,0 +1,203 @@
+✖ 01-04 every jurisdiction/name/code and all three independent fields (67.7532ms)
+✔ 05 national measures are separate fields, explicit default (16.4825ms)
+✖ 06 sourced zero is successful (4.3381ms)
+✖ 07 missing and malformed selected values never coerce or substitute (4.7635ms)
+✔ 08 year mismatch and multiple years remain unresolved (8.7333ms)
+✔ 09 duplicate and mixed-grain aggregate keys rejected (3.248ms)
+✖ 10 state/action override updates number, interpretation, trace and URL (2.3309ms)
+✔ 11 filter links preserve state/action and structured form values (38.558ms)
+✔ 12 filtered counts use actual field and unsupported split stays unavailable (5.1595ms)
+✔ 13 unknown/local geography never national; ordinary in/or are not state codes (3.6333ms)
+✔ 14 two states require clarification (1.2997ms)
+✔ 15 pagination/publication cannot affect market count (3.0475ms)
+✔ 16 actual page/API share same source-backed result (17.9856ms)
+✔ 17 rendered number and trace derive from same source and clock (13.5816ms)
+✖ 18 changing only NJ source changes only NJ answer (3.129ms)
+✔ 19 NMLS grouping and LEI regressions remain exact (13.26ms)
+✔ 20 county-volume and county comparison retained (62.5885ms)
+✔ 21 corrupt/throwing source finishes unavailable, not zero (0.6673ms)
+✖ 22 accepted source oracle independent of executor for all fields/states (0.8774ms)
+✔ 23 filtered duplicates, null and mixed years fail closed (1.6549ms)
+✖ R1-003 accepted NJ measure, not national fallback (29.2828ms)
+✖ R1-003 executed overrides agree with visible plan (3.9813ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 14
+ℹ fail 8
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1266.0846
+
+✖ failing tests:
+
+test at lib\ask-lender\r3-behavior.test.ts:2:2703
+✖ 01-04 every jurisdiction/name/code and all three independent fields (67.7532ms)
+  AssertionError [ERR_ASSERTION]: AK/application: Reported applications for mortgage properties in Alaska. county observations aggregated by jurisdiction observations are presented at state scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.
+
+  99991 !== 1
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-003-work\lib\ask-lender\r3-behavior.test.ts:22:280)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 99991,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r3-behavior.test.ts:2:3715
+✖ 06 sourced zero is successful (4.3381ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  99993 !== 0
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-003-work\lib\ask-lender\r3-behavior.test.ts:24:159)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 99993,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r3-behavior.test.ts:2:4056
+✖ 07 missing and malformed selected values never coerce or substitute (4.7635ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  99992 !== null
+
+      at noValue (C:\Users\makei\th-search-r1-003-work\lib\ask-lender\r3-behavior.test.ts:20:41)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-003-work\lib\ask-lender\r3-behavior.test.ts:25:282)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 99992,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r3-behavior.test.ts:2:5195
+✖ 10 state/action override updates number, interpretation, trace and URL (2.3309ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  99993 !== 403
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-003-work\lib\ask-lender\r3-behavior.test.ts:28:190)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 99993,
+    expected: 403,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r3-behavior.test.ts:2:9291
+✖ 18 changing only NJ source changes only NJ answer (3.129ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  99992 !== 717171
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-003-work\lib\ask-lender\r3-behavior.test.ts:36:206)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 99992,
+    expected: 717171,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r3-behavior.test.ts:2:10684
+✖ 22 accepted source oracle independent of executor for all fields/states (0.8774ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 11529787
+  - 19195
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-003-work\lib\ask-lender\r3-behavior.test.ts:40:156)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 11529787,
+    expected: 19195,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r3-reproduction.test.ts:2:1036
+✖ R1-003 accepted NJ measure, not national fallback (29.2828ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + '6,793,253'
+  - '177,325'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-003-work\lib\ask-lender\r3-reproduction.test.ts:8:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '6,793,253',
+    expected: '177,325',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r3-reproduction.test.ts:2:1413
+✖ R1-003 executed overrides agree with visible plan (3.9813ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + '2,008,514'
+  - '192,366'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-003-work\lib\ask-lender\r3-reproduction.test.ts:13:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '2,008,514',
+    expected: '192,366',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
