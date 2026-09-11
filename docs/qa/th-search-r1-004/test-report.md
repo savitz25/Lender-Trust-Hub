@@ -11,3 +11,13 @@ R1-002: 24 PASS. R1-003: 26 PASS. Full npm test chain PASS. Search001c PASS. Cap
 The initial regression run caught token-boundary handling for conventional mortgages, omitted geography labels, and an existing wording assertion. These were repaired, not relabeled baseline failures. Purchase-purpose parser assertions were updated because the same unsupported condition now reaches the shared capability boundary with its original state/action intact; no unsupported purpose table was enabled.
 
 Candidate and final Production browser evidence are pending. Build success alone is not a release or browser certification. Final review, PR checks, deployment identity, browser timing and remaining limitations will be recorded after execution.
+
+## Exact candidate validation
+
+Implementation commit f41e4cb8b8abe8ed4298190ac9182903fec26211: final production build and standalone typecheck PASS. Lint has zero errors and the one exact-baseline warning. Focused gate 26/26 PASS. Full npm tests and all listed supplementary gates PASS.
+
+Real persistent Chrome against the optimized local production build: 13 representative cases PASS, maximum initial completion 1,113ms. Homepage first interaction/Enter, native/API value and availability, query Trace keyboard activation, filter available/unavailable transitions, scalar recovery, refresh, back/forward, edit/Enter and preserved typed overrides PASS. 1280/390/320 overflow checks PASS; screenshots reviewed visually. The runner initially inspected the pre-navigation URL after clicking recovery; it was corrected to await the destination URL, then rerun successfully. This is a test-harness correction, not an application bypass.
+
+Preview deployment dpl_6R2Ercv4wYgTF4VGjTEgGbUWk4RS built the exact candidate. Browser navigation reaches Vercel SSO login; protected preview UI was not tested. Protection remains intact. Local optimized-build browser proof and eventual canonical Production proof are separate from preview build success.
+
+Review: a separate self-review found and fixed a county recovery URL that could have overridden Orange County to Florida; the added test proves county scope survives. Existing automated Vercel Agent Review remains pending. This is not independent human review. Secret-pattern scans of the ticket changes, QA artifacts and client chunks found no key/private-key matches; no credentials were needed or changed.

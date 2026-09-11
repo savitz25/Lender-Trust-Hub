@@ -1,0 +1,18 @@
+ATH-METRICS-003A PASS homepage intel projection
+▶ lender-network-metrics-v1 grain safety
+  ✔ keeps institution, NMLS, branch, MLO, and public-profile grains apart (3.6831ms)
+  ✔ does not mix HMDA county and state grains or close the action funnel (0.8393ms)
+  ✔ does not convert NJ RMLA or CA CRMLA missing universes to zero (2.0524ms)
+  ✔ keeps Florida OFR credentials, confirmed NMLS, held, unresolved, and public cohort apart (0.6128ms)
+  ✔ does not mix CFPB complaints with HMDA or federal enforcement (0.4022ms)
+  ✔ uses a consumer label and two clocks (0.387ms)
+  ✔ requires published FL/NJ/CA/TX/WA/AZ/CO paths and does not treat county pages as state pages (0.2436ms)
+✔ lender-network-metrics-v1 grain safety (9.8884ms)
+ℹ tests 7
+ℹ suites 1
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 292.114

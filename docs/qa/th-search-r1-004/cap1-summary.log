@@ -1,0 +1,18 @@
+PASS 57-no-quality-rank
+PASS 58-no-paid
+PASS 59-no-internal-id
+PASS 60-no-private
+PASS 61-no-person
+PASS 62-no-branch
+PASS 63-no-score
+PASS 64-no-recommendation
+PASS 65-no-db-writes
+PASS 66-publication-zero
+PASS 67-sitemap-zero
+PASS 68-v1
+PASS 69-home
+PASS 70-florida
+PASS 71-fingerprint
+PASS 72-lint-script
+PASS 73-tests-script
+PASS LEND-CAP-001 73 checks
