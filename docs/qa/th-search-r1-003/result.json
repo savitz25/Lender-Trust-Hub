@@ -1,6 +1,6 @@
 {
   "ticket": "TH-SEARCH-R1-003",
-  "status": "RELEASED_AND_VERIFIED",
+  "status": "CORRECTION_CANDIDATE_VALIDATED",
   "utc": "2026-09-11T20:05:40.424276+00:00",
   "model": {
     "name": "GPT-6 Astra",
@@ -16,7 +16,7 @@
   "redBefore": "red-before.txt",
   "sensitivity": "sensitivity.json",
   "tests": {
-    "focused": "25 passed, zero failed/skipped",
+    "focused": "26 passed, zero failed/skipped",
     "r1_002": "24 passed, zero failed/skipped",
     "npm_test": "passed",
     "search_001c": "passed",
@@ -79,5 +79,7 @@
     "matchingRows": 0
   },
   "closure": "Only TH-SEARCH-R1-003; not all Lender search/geography or Search Reliability R1.",
-  "evidenceFollowup": "This certificate records the actual implementation deployment. A subsequent evidence/test-runner-only merge may advance main; no future merge SHA is invented here."
+  "evidenceFollowup": "This certificate records the actual implementation deployment. A subsequent evidence/test-runner-only merge may advance main; no future merge SHA is invented here.",
+  "pending": "Corrected scalar interpretation production proof",
+  "countLabelReview": "count-label-review.md"
 }
