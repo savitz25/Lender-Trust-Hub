@@ -76,6 +76,9 @@ assert(byKey.va_mortgage_company_live_roster.valueState === "NOT_ACQUIRED", "VA 
 assert(v1.virginia.liveLicensedCompanyUniverse === null, "VA universe null");
 assert(byKey.va_scc_dated_company_rows.value === pub.vaSccDatedCompanyRows, "VA dated SCC rows");
 assert(byKey.va_cfpb_mortgage_complaints.value === pub.vaCfpbMortgageComplaints, "VA CFPB complaints");
+assert(byKey.ny_live_licensed_company_universe.value === null, "NY live roster is not a number");
+assert(byKey.ny_dfs_2024_licensed_mortgage_bankers.value === pub.nyDfs2024Bankers, "NY 2024 bankers");
+assert(v1.newYork.liveLicensedCompanyUniverse === null, "NY universe null");
 assert(byKey.ca_calhfa_directory_rows.value === pub.caCalhfaDirectoryRows, "CalHFA rows");
 assert(byKey.nj_dobi_unique_orders.value === pub.njDobiUniqueOrders, "NJ DOBI orders");
 assert(v1.florida.heldNmls === 22, "FL held 22");

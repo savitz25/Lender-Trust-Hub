@@ -82,6 +82,11 @@ export type LenderNetworkMetricsInput = {
   vaSccDatedCompanyRows: number;
   vaLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
   vaSourceAsOf: string;
+  nyHmdaApplications: number;
+  nyHmdaOriginations: number;
+  nyDfs2024Bankers: number;
+  nyEnforcementRows: number;
+  nyLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
   servicerEvidenceRows: number;
   licensesTotal: number;
 };
@@ -184,7 +189,7 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.licensesTotal === input.institutions) {
     throw new Error('license rows must not equal institutions');
   }
-  for (const path of ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia']) {
+  for (const path of ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york']) {
     if (!input.publishedStateIntelligencePaths.includes(path)) {
       throw new Error(`state intelligence path missing: ${path}`);
     }
@@ -244,6 +249,18 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   }
   if (input.vaSccDatedCompanyRows === input.vaHmdaApplications) {
     throw new Error('Virginia dated SCC company rows must not equal Virginia HMDA applications');
+  }
+  if (input.nyLiveRosterCoverage !== 'SOURCE_NOT_ACQUIRED') {
+    throw new Error('NY live 2026 mortgage-company roster remains not acquired');
+  }
+  if (input.nyDfs2024Bankers === input.nyHmdaApplications) {
+    throw new Error('NY DFS 2024 bankers must not equal New York HMDA applications');
+  }
+  if (input.nyEnforcementRows === input.nyHmdaApplications) {
+    throw new Error('NY DFS enforcement rows must not equal New York HMDA applications');
+  }
+  if (input.nyDfs2024Bankers === input.nyEnforcementRows) {
+    throw new Error('NY DFS 2024 bankers must not equal enforcement rows');
   }
 }
 
@@ -910,20 +927,68 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       ),
     }),
     metric({
+      key: 'ny_live_licensed_company_universe',
+      label: 'New York current licensed mortgage-company universe',
+      value: null,
+      valueState: 'NOT_ACQUIRED',
+      grain: 'ny_mortgage_company_live_roster',
+      denominator: 'Complete current NYDFS/NMLS New York mortgage banker, broker, and servicer universe',
+      description:
+        'Current 2026 license status is not manufactured from the 2024 DFS annual report. Complete current-company count is UNKNOWN, not zero.',
+      coverage: 'New York',
+      contributingSourceSystems: ['ny_dfs_nmls'],
+      sourceAsOf: null,
+      generatedAt,
+      publicationStatus: 'PUBLIC_UNKNOWN',
+      trace: commonTrace(
+        'Nothing numeric is published for the live 2026 New York mortgage-company universe.',
+        'Not the dated 2024 DFS aggregates. Not HMDA applications. Not MLOs.',
+        ['ny_dfs_nmls'],
+        'New York',
+        'CURRENT_NY_MORTGAGE_COMPANY_ROSTER OPEN_SEARCH_ONLY',
+        {
+          whyUnknown:
+            'NYDFS current company search was not bulk-exported. NMLS Consumer Access remains search-only. Missing is not zero.',
+        },
+      ),
+    }),
+    metric({
+      key: 'ny_dfs_2024_licensed_mortgage_bankers',
+      label: 'New York DFS 2024 licensed mortgage bankers',
+      value: input.nyDfs2024Bankers,
+      valueState: 'KNOWN',
+      grain: 'ny_dfs_2024_mortgage_banker_aggregate',
+      denominator: 'NYDFS 2024 Annual Report mortgage-banking supervision aggregate, end of 2024',
+      description:
+        'Dated licensed mortgage banker aggregate. Not brokers, servicers, MLOs, or current 2026 status.',
+      coverage: 'New York — DFS 2024 annual report',
+      contributingSourceSystems: ['ny_dfs'],
+      sourceAsOf: '2024-12-31',
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        'Official DFS 2024 licensed mortgage banker aggregate.',
+        'Not live 2026 licenses. Not 439 brokers. Not 9,769 MLOs. Not HMDA applications.',
+        ['ny_dfs'],
+        'New York',
+        'DFS annual-report period end of 2024',
+      ),
+    }),
+    metric({
       key: 'published_state_intelligence_pages',
       label: 'Published state mortgage-intelligence pages',
       value: input.publishedStateIntelligencePaths.length,
       valueState: 'KNOWN',
       grain: 'published_state_intelligence_page',
       denominator: 'Indexable specialist state intelligence routes currently published',
-      description: 'Florida, New Jersey, California, Texas, Washington, Arizona, Colorado, and Virginia state intelligence pages. Not a count of lenders.',
+      description: 'Florida, New Jersey, California, Texas, Washington, Arizona, Colorado, Virginia, and New York state intelligence pages. Not a count of lenders.',
       coverage: input.publishedStateIntelligencePaths.join(', '),
       contributingSourceSystems: ['lender-state-intel'],
       sourceAsOf: newestDocumentedSourceAsOf,
       generatedAt,
       publicationStatus: 'PUBLIC',
       trace: commonTrace(
-        'Published /florida, /new-jersey, /california, /texas, /washington, /arizona, and /colorado intelligence routes.',
+        'Published /florida, /new-jersey, /california, /texas, /washington, /arizona, /colorado, /virginia, and /new-york intelligence routes.',
         'Not NJ county pages and not national directory rows.',
         ['lender-state-intel'],
         input.publishedStateIntelligencePaths.join(', '),
@@ -975,6 +1040,14 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
     coCfpb: input.coCfpbMortgageComplaints,
     coMlo: input.coDreMloRows,
     coRoster: input.coLiveRosterCoverage,
+    vaApps: input.vaHmdaApplications,
+    vaCfpb: input.vaCfpbMortgageComplaints,
+    vaScc: input.vaSccDatedCompanyRows,
+    vaRoster: input.vaLiveRosterCoverage,
+    nyApps: input.nyHmdaApplications,
+    nyBankers: input.nyDfs2024Bankers,
+    nyEnf: input.nyEnforcementRows,
+    nyRoster: input.nyLiveRosterCoverage,
     paths: input.publishedStateIntelligencePaths,
     njCounties: input.njCountyIntelligencePages,
   };
@@ -1080,6 +1153,14 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       liveRosterCoverage: input.vaLiveRosterCoverage,
       liveLicensedCompanyUniverse: null,
     },
+    newYork: {
+      hmdaApplications: input.nyHmdaApplications,
+      hmdaOriginations: input.nyHmdaOriginations,
+      dfs2024Bankers: input.nyDfs2024Bankers,
+      enforcementRows: input.nyEnforcementRows,
+      liveRosterCoverage: input.nyLiveRosterCoverage,
+      liveLicensedCompanyUniverse: null,
+    },
     publication: {
       nationalRender: input.publicRender,
       nationalIndex: input.publicIndex,
@@ -1128,6 +1209,14 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       {
         total: 'CO live mortgage-company roster = 0',
         reason: 'SOURCE_NOT_ACQUIRED. Missing is not zero.',
+      },
+      {
+        total: 'VA live 2026 mortgage-company roster = 0',
+        reason: 'SOURCE_NOT_ACQUIRED. Missing is not zero. Dated SCC 2025 rows are not current licenses.',
+      },
+      {
+        total: 'NY live mortgage-company roster = 0',
+        reason: 'SOURCE_NOT_ACQUIRED. Missing is not zero. Dated 2024 DFS class aggregates are not current 2026 licenses.',
       },
       {
         total: `${input.coDreMloRows} Colorado MLO person rows`,

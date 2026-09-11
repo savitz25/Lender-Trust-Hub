@@ -45,6 +45,14 @@ test('identity and market semantics are enforced by real projection paths', () =
   assert.equal(parseLenderAsk('Colorado mortgage lenders').coverageState, 'NOT_ACQUIRED');
   assert.equal(parseLenderAsk('Colorado MLO lenders').failClosedKind, 'unsupported-identity-grain');
   assert.equal(parseLenderAsk('who approves the most mortgage applications').failClosedKind, 'personalized-approval');
+  assert.equal(parseLenderAsk('licensed mortgage bankers in New York').failClosedKind, 'ny-dfs-dated-aggregates');
+  assert.equal(parseLenderAsk('mortgage brokers in New York').failClosedKind, 'ny-broker-class');
+  assert.equal(parseLenderAsk('mortgage loan servicers in New York').failClosedKind, 'ny-servicer-class');
+  assert.equal(parseLenderAsk('mortgage loan officers in New York').failClosedKind, 'ny-mlo-person-grain');
+  assert.equal(parseLenderAsk('how many lenders are in New York?').failClosedKind, 'ny-no-combined-lenders');
+  assert.equal(parseLenderAsk('best mortgage lender in New York').failClosedKind, 'ranking');
+  assert.notEqual(parseLenderAsk('mortgage applications in New York').mode, 'fail_closed');
+  assert.equal(parseLenderAsk('complaints against lender X in New York').failClosedKind, 'ny-cfpb-observations');
 });
 
 test('shared shell, result trace, privacy analytics, and noindex contract are present', () => {

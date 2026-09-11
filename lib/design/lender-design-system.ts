@@ -141,6 +141,14 @@ export const LENDER_TOOLS = {
       cta: 'Open Virginia research',
     },
     {
+      id: 'new-york-research',
+      title: 'New York research',
+      description:
+        'NYDFS 2024 dated mortgage banker, broker, servicer, and MLO classes, 2026 licensing activity, enforcement actions, and 2025 HMDA. Not a ranking.',
+      href: '/new-york',
+      cta: 'Open New York research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
@@ -268,6 +276,7 @@ export const LENDER_PATHWAYS = {
     { label: 'Arizona catalog', href: '/local-lenders/arizona' },
     { label: 'Colorado research', href: '/colorado' },
     { label: 'Virginia research', href: '/virginia' },
+    { label: 'New York research', href: '/new-york' },
     { label: 'New York', href: '/local-lenders/new-york' },
     { label: 'Illinois', href: '/local-lenders/illinois' },
   ],
@@ -394,6 +403,7 @@ export const LENDER_FOOTER_COLUMNS = [
       { href: '/arizona', label: 'Arizona Research' },
       { href: '/colorado', label: 'Colorado Research' },
       { href: '/virginia', label: 'Virginia Research' },
+      { href: '/new-york', label: 'New York Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },
