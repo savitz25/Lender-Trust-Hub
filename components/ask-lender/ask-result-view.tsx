@@ -38,10 +38,11 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
       <p>{result.body}</p>
       {result.lookup ? (
         <section aria-label="Identifier lookup outcome" style={{ minWidth: 0, overflowWrap: 'anywhere' }}>
-          <p><strong>Searched scope:</strong> {result.lookup.scope}.</p>
+          <p><strong>Research scope:</strong> {result.lookup.scope}.</p>
+          {result.lookup.sourceLookup === 'not_run' ? <p>No institution lookup was run for this request.</p> : null}
           <p><strong>Subject:</strong> requested {result.lookup.requestedClass === 'unknown' ? 'unspecified' : result.lookup.requestedClass}; resolved {result.lookup.resolvedClass}.</p>
           {result.lookup.identifiers.map((id, index) => <div key={`${id.type}-${index}`}>
-            <p>Submitted: <code>{id.rawSpan}</code>. Complete {id.type === 'LEI' ? 'LEI' : 'NMLS'}: <code>{id.value}</code>.</p>
+            <p>Submitted: <code>{id.rawSpan}</code>. {result.lookup!.sourceLookup === 'not_run' ? 'Unconfirmed span' : `Complete ${id.type === 'LEI' ? 'LEI' : 'NMLS'}`}: <code>{id.value}</code>.</p>
             {id.normalization.map(note => <p key={note}>{note}.</p>)}
           </div>)}
           {result.rows?.map(row => <article key={row.institutionKey} className="intel-disclose">

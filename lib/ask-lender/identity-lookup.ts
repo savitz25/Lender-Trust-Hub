@@ -48,22 +48,23 @@ function conditions(request: IdentityRequest, input: ValidAskInput): IdentityCon
 export function lookupOutcome(state: LookupState, message: string, input: ValidAskInput, query: LenderResearchQuery, request?: IdentityRequest): AskExecution {
   const ids = request?.identifiers ?? [];
   const requestedConditions = request ? conditions(request, input) : [];
+  const sourceLookup = request?.problem || state === 'INVALID' || !ids.length ? 'not_run' : state === 'UNAVAILABLE' ? 'attempted' : 'completed';
   const params = new URLSearchParams({ q: input.q });
   for (const [key, value] of Object.entries(input.overrides)) if (value) params.set(key, value);
   const headings: Record<LookupState, string> = { FOUND: 'Published institution identity found', NO_MATCH: 'No exact match in the published institution index', IDENTIFIER_REQUIRED: 'Enter an identifier to continue', NEEDS_CLARIFICATION: 'Clarify the identifier before searching', CONFLICT: 'The identifiers do not establish one institution', UNSUPPORTED: 'This subject requires a different verification path', INVALID: 'Edit this research request', UNAVAILABLE: 'Institution lookup is temporarily unavailable' };
   return {
     query: { ...query, coverageState: state === 'UNAVAILABLE' || state === 'NO_MATCH' || state === 'CONFLICT' ? 'UNKNOWN' : state === 'FOUND' && requestedConditions.length ? 'PARTIAL' : query.coverageState }, terminalState: state, headline: headings[state], body: message,
-    interpretation: [{ label: 'Searched scope', value: SCOPE }, ...ids.map(id => ({ label: id.type === 'LEI' ? 'LEI' : 'NMLS identifier', value: id.value }))],
+    interpretation: [{ label: 'Research scope', value: SCOPE }, ...ids.map(id => ({ label: `${sourceLookup === 'not_run' ? 'Unconfirmed ' : ''}${id.type === 'LEI' ? 'LEI' : 'NMLS identifier'}`, value: id.value }))],
     geographyWarning: 'Identifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.',
     rows: [], ...(state === 'UNAVAILABLE' ? {} : { totalRows: 0 }), page: 1, pageSize: input.pageSize, pageCount: 1,
     failClosed: state === 'INVALID' || state === 'UNAVAILABLE' || state === 'UNSUPPORTED',
-    lookup: { scope: SCOPE, requestedClass: request?.requestedClass ?? 'unknown', resolvedClass: 'unknown', identifiers: ids, conditions: requestedConditions, officialActions: (request?.families ?? []).map(family => ({
+    lookup: { sourceLookup, scope: SCOPE, requestedClass: request?.requestedClass ?? 'unknown', resolvedClass: 'unknown', identifiers: ids, conditions: requestedConditions, officialActions: (request?.families ?? []).map(family => ({
       family, href: family === 'LEI' ? 'https://search.gleif.org/' : 'https://www.nmlsconsumeraccess.org/', label: family === 'LEI' ? 'Verify with GLEIF' : 'Open NMLS Consumer Access', instruction: `Copy the full ${family === 'LEI' ? 'LEI' : 'NMLS'} identifier into the official search. This link is not a live status check.`,
     })) },
     period: 'Stored identity index; official identity effective/retrieval time is not supplied', grain: 'institution identity',
     sharePath: input.q.length <= 180 ? `/ask?${params}` : undefined,
     caveats: ['No match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person.'],
-    trace: { contract: LENDER_ASK_CONTRACT, sourceFiles: ['docs/lend-nat-016-search-index.json', 'docs/fl-lend-011-florida-search-index.json'], method: 'Validated complete labeled identifier; equality on the matching source field; publication gate; institution-key deduplication.', indexes: [SCOPE], identityPolicy: 'NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.', publicationGate: 'Existing render-approved national and Florida publication manifests only.', cache: 'Committed identity snapshots; no live regulator retrieval', grain: 'institution identity', period: 'Identity effective/retrieval time not supplied by these snapshots' },
+    trace: { contract: LENDER_ASK_CONTRACT, sourceFiles: ['docs/lend-nat-016-search-index.json', 'docs/fl-lend-011-florida-search-index.json'], method: sourceLookup === 'not_run' ? 'No source lookup executed. Correct or clarify the request before institution lookup.' : sourceLookup === 'attempted' ? 'Lookup attempted, but source or match validation failed. No completed identity finding is reported.' : 'Validated complete labeled identifier; equality on the matching source field; publication gate; institution-key deduplication.', indexes: [SCOPE], identityPolicy: 'NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.', publicationGate: 'Existing render-approved national and Florida publication manifests only.', cache: 'Committed identity snapshots; no live regulator retrieval', grain: 'institution identity', period: 'Identity effective/retrieval time not supplied by these snapshots' },
   };
 }
 

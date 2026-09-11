@@ -61,6 +61,12 @@ test('05: independent numeric tokens require clarification before source lookup'
   const source = t.mock.method(lenderIdentitySource, 'load', () => { throw Error('must not run'); });
   for (const q of ['NMLS 32, 51', 'NMLS 32 / 51', 'NMLS 32 and 51', 'NMLS 32 51 2025', 'NMLS 32 - 51', 'NMLS 32 or 51']) assert.equal(run(q).terminalState, 'NEEDS_CLARIFICATION', q);
   assert.equal(source.mock.callCount(), 0);
+  const result = run('NMLS 32, 51');
+  assert.equal(result.lookup?.sourceLookup, 'not_run');
+  assert.match(result.trace!.method, /No source lookup executed/);
+  const html = renderToStaticMarkup(React.createElement(AskResultView, { result, question: 'NMLS 32, 51' }));
+  assert.match(html, /Unconfirmed span/);
+  assert.doesNotMatch(html, /Complete NMLS/);
 });
 test('06: verified pairs, conflicting pairs and repeated labels remain distinct', t => {
   fixtures(t);
