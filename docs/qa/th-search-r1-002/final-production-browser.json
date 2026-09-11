@@ -1,0 +1,1455 @@
+{
+  "utc": "2026-09-11T19:02:09.031Z",
+  "surface": "Persistent Chrome via local CDP; ordinary page interactions",
+  "origin": "https://www.lendertrusthub.com",
+  "sha": "d698900abe1e211fccb424e8d1743ab5a4c45a2a",
+  "deployment": "dpl_3pdT5aruJp3i3vK5xfozjutLN5iE",
+  "checks": [
+    {
+      "q": "NMLS 3030",
+      "elapsedMs": 4417,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH SCOPE\nPublished lender institution research index (national and permitted Florida profiles)\nEdit request\nNMLS IDENTIFIER\n3030\nEdit request\n\nIdentifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.\n\nChange interpretation\nPublished institution identity found\n\nThe published source records this exact institution identity. Additional requested conditions below remain separate from identity resolution.\n\nResearch scope: Published lender institution research index (national and permitted Florida profiles).\n\nSubject: requested unspecified; resolved institution.\n\nSubmitted: NMLS 3030. Complete NMLS: 3030.\n\nRocket Mortgage\n\nNMLS 3030 | LEI 549300FGXN1K3HLB1R50\n\nWhy this matched: Exact NMLS institution identifier: the published record lists 3030.\n\nResearch this lender\nRequested conditions\nNMLS 3030: Applied. Exact equality against the published institution identifier field.\n\nEdit or retry this lookup\n\nOpen NMLS Consumer Access\n\nCopy the full NMLS identifier into the official search. This link is not a live status check.\n\nSource period: Stored identity index; official identity effective/retrieval time is not supplied. Grain: institution identity.\n\nTrace this result · Rocket Mortgage\nCaveats\nNo match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person.\nTrace this query\n\nShareable research URL (noindex): /ask?q=NMLS+3030\n\nBack to mortgage intelligence",
+        "width": 1280,
+        "scroll": 1280,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "entity",
+            "identityRequest": {
+              "rawQuestion": "NMLS 3030",
+              "families": [
+                "NMLS_INSTITUTION"
+              ],
+              "identifiers": [
+                {
+                  "type": "NMLS_INSTITUTION",
+                  "value": "3030",
+                  "rawSpan": "NMLS 3030",
+                  "start": 0,
+                  "end": 9,
+                  "normalization": []
+                }
+              ],
+              "requestedClass": "unknown",
+              "remainingText": ""
+            },
+            "identifier": {
+              "type": "NMLS_INSTITUTION",
+              "value": "3030"
+            },
+            "identityQuery": "NMLS 3030",
+            "requestedMetric": null,
+            "coverageState": "KNOWN"
+          },
+          "terminalState": "FOUND",
+          "headline": "Published institution identity found",
+          "body": "The published source records this exact institution identity. Additional requested conditions below remain separate from identity resolution.",
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research scope",
+              "value": "Published lender institution research index (national and permitted Florida profiles)"
+            },
+            {
+              "label": "NMLS identifier",
+              "value": "3030"
+            }
+          ],
+          "geographyWarning": "Identifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.",
+          "rows": [
+            {
+              "rank": 1,
+              "lei": "549300FGXN1K3HLB1R50",
+              "displayName": "Rocket Mortgage",
+              "metric": 0,
+              "metricLabel": "Exact institution identifier",
+              "applications": null,
+              "originations": null,
+              "denials": null,
+              "identityStatus": "public_profile",
+              "identityNote": "Institution class is established by the permitted publication source, not by number length.",
+              "href": "/lender/rocket-mortgage",
+              "hrefLabel": "Research this lender",
+              "nmls": "3030",
+              "institutionKey": "1e2fa9a5-7067-52e9-8b44-4da4e71c9d47",
+              "resolvedClass": "institution",
+              "matchEvidence": [
+                {
+                  "method": "exact_identifier",
+                  "family": "NMLS_INSTITUTION",
+                  "requestedValue": "3030",
+                  "matchedField": "nmls",
+                  "returnedValue": "3030",
+                  "institutionKey": "1e2fa9a5-7067-52e9-8b44-4da4e71c9d47",
+                  "sourceReference": "docs/lend-nat-016-search-index.json; lend-nat-014-v1",
+                  "sourceAsOf": null,
+                  "normalization": []
+                }
+              ],
+              "whyMatched": [
+                "Exact NMLS institution identifier: the published record lists 3030."
+              ],
+              "evidenceAvailable": [
+                "Published institution identity; other evidence was not checked by this lookup"
+              ]
+            }
+          ],
+          "totalRows": 1,
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "failClosed": false,
+          "lookup": {
+            "sourceLookup": "completed",
+            "scope": "Published lender institution research index (national and permitted Florida profiles)",
+            "requestedClass": "unknown",
+            "resolvedClass": "institution",
+            "identifiers": [
+              {
+                "type": "NMLS_INSTITUTION",
+                "value": "3030",
+                "rawSpan": "NMLS 3030",
+                "start": 0,
+                "end": 9,
+                "normalization": []
+              }
+            ],
+            "conditions": [
+              {
+                "text": "NMLS 3030",
+                "state": "APPLIED",
+                "explanation": "Exact equality against the published institution identifier field."
+              }
+            ],
+            "officialActions": [
+              {
+                "family": "NMLS_INSTITUTION",
+                "href": "https://www.nmlsconsumeraccess.org/",
+                "label": "Open NMLS Consumer Access",
+                "instruction": "Copy the full NMLS identifier into the official search. This link is not a live status check."
+              }
+            ]
+          },
+          "period": "Stored identity index; official identity effective/retrieval time is not supplied",
+          "grain": "institution identity",
+          "sharePath": "/ask?q=NMLS+3030",
+          "caveats": [
+            "No match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "docs/lend-nat-016-search-index.json",
+              "docs/fl-lend-011-florida-search-index.json"
+            ],
+            "method": "Validated complete labeled identifier; equality on the matching source field; publication gate; institution-key deduplication.",
+            "indexes": [
+              "Published lender institution research index (national and permitted Florida profiles)"
+            ],
+            "identityPolicy": "NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.",
+            "publicationGate": "Existing render-approved national and Florida publication manifests only.",
+            "cache": "Committed identity snapshots; no live regulator retrieval",
+            "grain": "institution identity",
+            "period": "Identity effective/retrieval time not supplied by these snapshots"
+          }
+        }
+      }
+    },
+    {
+      "q": "NMLS 30 30",
+      "elapsedMs": 2872,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH SCOPE\nPublished lender institution research index (national and permitted Florida profiles)\nEdit request\nNMLS IDENTIFIER\n3030\nEdit request\n\nIdentifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.\n\nChange interpretation\nPublished institution identity found\n\nThe published source records this exact institution identity. Additional requested conditions below remain separate from identity resolution.\n\nResearch scope: Published lender institution research index (national and permitted Florida profiles).\n\nSubject: requested unspecified; resolved institution.\n\nSubmitted: NMLS 30 30. Complete NMLS: 3030.\n\nWhitespace removed within the explicitly labeled NMLS span.\n\nRocket Mortgage\n\nNMLS 3030 | LEI 549300FGXN1K3HLB1R50\n\nWhy this matched: Exact NMLS institution identifier: the published record lists 3030.\n\nResearch this lender\nRequested conditions\nNMLS 3030: Applied. Exact equality against the published institution identifier field.\n\nEdit or retry this lookup\n\nOpen NMLS Consumer Access\n\nCopy the full NMLS identifier into the official search. This link is not a live status check.\n\nSource period: Stored identity index; official identity effective/retrieval time is not supplied. Grain: institution identity.\n\nTrace this result · Rocket Mortgage\nCaveats\nNo match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person.\nTrace this query\n\nShareable research URL (noindex): /ask?q=NMLS+30+30\n\nBack to mortgage intelligence",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "entity",
+            "identityRequest": {
+              "rawQuestion": "NMLS 30 30",
+              "families": [
+                "NMLS_INSTITUTION"
+              ],
+              "identifiers": [
+                {
+                  "type": "NMLS_INSTITUTION",
+                  "value": "3030",
+                  "rawSpan": "NMLS 30 30",
+                  "start": 0,
+                  "end": 10,
+                  "normalization": [
+                    "Whitespace removed within the explicitly labeled NMLS span"
+                  ]
+                }
+              ],
+              "requestedClass": "unknown",
+              "remainingText": ""
+            },
+            "identifier": {
+              "type": "NMLS_INSTITUTION",
+              "value": "3030"
+            },
+            "identityQuery": "NMLS 3030",
+            "requestedMetric": null,
+            "coverageState": "KNOWN"
+          },
+          "terminalState": "FOUND",
+          "headline": "Published institution identity found",
+          "body": "The published source records this exact institution identity. Additional requested conditions below remain separate from identity resolution.",
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research scope",
+              "value": "Published lender institution research index (national and permitted Florida profiles)"
+            },
+            {
+              "label": "NMLS identifier",
+              "value": "3030"
+            }
+          ],
+          "geographyWarning": "Identifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.",
+          "rows": [
+            {
+              "rank": 1,
+              "lei": "549300FGXN1K3HLB1R50",
+              "displayName": "Rocket Mortgage",
+              "metric": 0,
+              "metricLabel": "Exact institution identifier",
+              "applications": null,
+              "originations": null,
+              "denials": null,
+              "identityStatus": "public_profile",
+              "identityNote": "Institution class is established by the permitted publication source, not by number length.",
+              "href": "/lender/rocket-mortgage",
+              "hrefLabel": "Research this lender",
+              "nmls": "3030",
+              "institutionKey": "1e2fa9a5-7067-52e9-8b44-4da4e71c9d47",
+              "resolvedClass": "institution",
+              "matchEvidence": [
+                {
+                  "method": "exact_identifier",
+                  "family": "NMLS_INSTITUTION",
+                  "requestedValue": "3030",
+                  "matchedField": "nmls",
+                  "returnedValue": "3030",
+                  "institutionKey": "1e2fa9a5-7067-52e9-8b44-4da4e71c9d47",
+                  "sourceReference": "docs/lend-nat-016-search-index.json; lend-nat-014-v1",
+                  "sourceAsOf": null,
+                  "normalization": [
+                    "Whitespace removed within the explicitly labeled NMLS span"
+                  ]
+                }
+              ],
+              "whyMatched": [
+                "Exact NMLS institution identifier: the published record lists 3030."
+              ],
+              "evidenceAvailable": [
+                "Published institution identity; other evidence was not checked by this lookup"
+              ]
+            }
+          ],
+          "totalRows": 1,
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "failClosed": false,
+          "lookup": {
+            "sourceLookup": "completed",
+            "scope": "Published lender institution research index (national and permitted Florida profiles)",
+            "requestedClass": "unknown",
+            "resolvedClass": "institution",
+            "identifiers": [
+              {
+                "type": "NMLS_INSTITUTION",
+                "value": "3030",
+                "rawSpan": "NMLS 30 30",
+                "start": 0,
+                "end": 10,
+                "normalization": [
+                  "Whitespace removed within the explicitly labeled NMLS span"
+                ]
+              }
+            ],
+            "conditions": [
+              {
+                "text": "NMLS 3030",
+                "state": "APPLIED",
+                "explanation": "Exact equality against the published institution identifier field."
+              }
+            ],
+            "officialActions": [
+              {
+                "family": "NMLS_INSTITUTION",
+                "href": "https://www.nmlsconsumeraccess.org/",
+                "label": "Open NMLS Consumer Access",
+                "instruction": "Copy the full NMLS identifier into the official search. This link is not a live status check."
+              }
+            ]
+          },
+          "period": "Stored identity index; official identity effective/retrieval time is not supplied",
+          "grain": "institution identity",
+          "sharePath": "/ask?q=NMLS+30+30",
+          "caveats": [
+            "No match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "docs/lend-nat-016-search-index.json",
+              "docs/fl-lend-011-florida-search-index.json"
+            ],
+            "method": "Validated complete labeled identifier; equality on the matching source field; publication gate; institution-key deduplication.",
+            "indexes": [
+              "Published lender institution research index (national and permitted Florida profiles)"
+            ],
+            "identityPolicy": "NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.",
+            "publicationGate": "Existing render-approved national and Florida publication manifests only.",
+            "cache": "Committed identity snapshots; no live regulator retrieval",
+            "grain": "institution identity",
+            "period": "Identity effective/retrieval time not supplied by these snapshots"
+          }
+        }
+      }
+    },
+    {
+      "name": "320-overflow",
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH SCOPE\nPublished lender institution research index (national and permitted Florida profiles)\nEdit request\nNMLS IDENTIFIER\n3030\nEdit request\n\nIdentifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.\n\nChange interpretation\nPublished institution identity found\n\nThe published source records this exact institution identity. Additional requested conditions below remain separate from identity resolution.\n\nResearch scope: Published lender institution research index (national and permitted Florida profiles).\n\nSubject: requested unspecified; resolved institution.\n\nSubmitted: NMLS 30 30. Complete NMLS: 3030.\n\nWhitespace removed within the explicitly labeled NMLS span.\n\nRocket Mortgage\n\nNMLS 3030 | LEI 549300FGXN1K3HLB1R50\n\nWhy this matched: Exact NMLS institution identifier: the published record lists 3030.\n\nResearch this lender\nRequested conditions\nNMLS 3030: Applied. Exact equality against the published institution identifier field.\n\nEdit or retry this lookup\n\nOpen NMLS Consumer Access\n\nCopy the full NMLS identifier into the official search. This link is not a live status check.\n\nSource period: Stored identity index; official identity effective/retrieval time is not supplied. Grain: institution identity.\n\nTrace this result · Rocket Mortgage\n\nWhy this matched\n\nExact NMLS institution identifier: the published record lists 3030.\n\nMatched source field: nmls = 3030. Method: exact identifier. Institution key: 1e2fa9a5-7067-52e9-8b44-4da4e71c9d47. Source: docs/lend-nat-016-search-index.json; lend-nat-014-v1. Official source-as-of: not supplied.\n\nEvidence available: Published institution identity; other evidence was not checked by this lookup.\n\nStored identity index; official identity effective/retrieval time is not supplied · institution identity. Property geography is not lender location or service territory.\n\nCaveats\nNo match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person.\nTrace this query\n\nShareable research URL (noindex): /ask?q=NMLS+30+30\n\nBack to mortgage intelligence",
+        "width": 320,
+        "scroll": 320,
+        "robots": "noindex, follow"
+      }
+    },
+    {
+      "q": "NMLS 3251",
+      "elapsedMs": 735,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH SCOPE\nPublished lender institution research index (national and permitted Florida profiles)\nEdit request\nNMLS IDENTIFIER\n3251\nEdit request\n\nIdentifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.\n\nChange interpretation\nNo exact match in the published institution index\n\nThe full identifier was searched exactly and is absent from this published institution corpus. Its real-world class and license status remain unknown.\n\nResearch scope: Published lender institution research index (national and permitted Florida profiles).\n\nSubject: requested unspecified; resolved unknown.\n\nSubmitted: NMLS 3251. Complete NMLS: 3251.\n\nEdit or retry this lookup\n\nOpen NMLS Consumer Access\n\nCopy the full NMLS identifier into the official search. This link is not a live status check.\n\nSource period: Stored identity index; official identity effective/retrieval time is not supplied. Grain: institution identity.\n\nCaveats\nNo match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person.\nTrace this query\n\nShareable research URL (noindex): /ask?q=NMLS+3251\n\nBack to mortgage intelligence",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "entity",
+            "identityRequest": {
+              "rawQuestion": "NMLS 3251",
+              "families": [
+                "NMLS_INSTITUTION"
+              ],
+              "identifiers": [
+                {
+                  "type": "NMLS_INSTITUTION",
+                  "value": "3251",
+                  "rawSpan": "NMLS 3251",
+                  "start": 0,
+                  "end": 9,
+                  "normalization": []
+                }
+              ],
+              "requestedClass": "unknown",
+              "remainingText": ""
+            },
+            "identifier": {
+              "type": "NMLS_INSTITUTION",
+              "value": "3251"
+            },
+            "identityQuery": "NMLS 3251",
+            "requestedMetric": null,
+            "coverageState": "UNKNOWN"
+          },
+          "terminalState": "NO_MATCH",
+          "headline": "No exact match in the published institution index",
+          "body": "The full identifier was searched exactly and is absent from this published institution corpus. Its real-world class and license status remain unknown.",
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research scope",
+              "value": "Published lender institution research index (national and permitted Florida profiles)"
+            },
+            {
+              "label": "NMLS identifier",
+              "value": "3251"
+            }
+          ],
+          "geographyWarning": "Identifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.",
+          "rows": [],
+          "totalRows": 0,
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "failClosed": false,
+          "lookup": {
+            "sourceLookup": "completed",
+            "scope": "Published lender institution research index (national and permitted Florida profiles)",
+            "requestedClass": "unknown",
+            "resolvedClass": "unknown",
+            "identifiers": [
+              {
+                "type": "NMLS_INSTITUTION",
+                "value": "3251",
+                "rawSpan": "NMLS 3251",
+                "start": 0,
+                "end": 9,
+                "normalization": []
+              }
+            ],
+            "conditions": [],
+            "officialActions": [
+              {
+                "family": "NMLS_INSTITUTION",
+                "href": "https://www.nmlsconsumeraccess.org/",
+                "label": "Open NMLS Consumer Access",
+                "instruction": "Copy the full NMLS identifier into the official search. This link is not a live status check."
+              }
+            ]
+          },
+          "period": "Stored identity index; official identity effective/retrieval time is not supplied",
+          "grain": "institution identity",
+          "sharePath": "/ask?q=NMLS+3251",
+          "caveats": [
+            "No match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "docs/lend-nat-016-search-index.json",
+              "docs/fl-lend-011-florida-search-index.json"
+            ],
+            "method": "Validated complete labeled identifier; equality on the matching source field; publication gate; institution-key deduplication.",
+            "indexes": [
+              "Published lender institution research index (national and permitted Florida profiles)"
+            ],
+            "identityPolicy": "NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.",
+            "publicationGate": "Existing render-approved national and Florida publication manifests only.",
+            "cache": "Committed identity snapshots; no live regulator retrieval",
+            "grain": "institution identity",
+            "period": "Identity effective/retrieval time not supplied by these snapshots"
+          }
+        }
+      }
+    },
+    {
+      "q": "nmls 32 51",
+      "elapsedMs": 531,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH SCOPE\nPublished lender institution research index (national and permitted Florida profiles)\nEdit request\nNMLS IDENTIFIER\n3251\nEdit request\n\nIdentifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.\n\nChange interpretation\nNo exact match in the published institution index\n\nThe full identifier was searched exactly and is absent from this published institution corpus. Its real-world class and license status remain unknown.\n\nResearch scope: Published lender institution research index (national and permitted Florida profiles).\n\nSubject: requested unspecified; resolved unknown.\n\nSubmitted: nmls 32 51. Complete NMLS: 3251.\n\nWhitespace removed within the explicitly labeled NMLS span.\n\nEdit or retry this lookup\n\nOpen NMLS Consumer Access\n\nCopy the full NMLS identifier into the official search. This link is not a live status check.\n\nSource period: Stored identity index; official identity effective/retrieval time is not supplied. Grain: institution identity.\n\nCaveats\nNo match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person.\nTrace this query\n\nShareable research URL (noindex): /ask?q=nmls+32+51\n\nBack to mortgage intelligence",
+        "width": 1280,
+        "scroll": 1280,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "entity",
+            "identityRequest": {
+              "rawQuestion": "nmls 32 51",
+              "families": [
+                "NMLS_INSTITUTION"
+              ],
+              "identifiers": [
+                {
+                  "type": "NMLS_INSTITUTION",
+                  "value": "3251",
+                  "rawSpan": "nmls 32 51",
+                  "start": 0,
+                  "end": 10,
+                  "normalization": [
+                    "Whitespace removed within the explicitly labeled NMLS span"
+                  ]
+                }
+              ],
+              "requestedClass": "unknown",
+              "remainingText": ""
+            },
+            "identifier": {
+              "type": "NMLS_INSTITUTION",
+              "value": "3251"
+            },
+            "identityQuery": "NMLS 3251",
+            "requestedMetric": null,
+            "coverageState": "UNKNOWN"
+          },
+          "terminalState": "NO_MATCH",
+          "headline": "No exact match in the published institution index",
+          "body": "The full identifier was searched exactly and is absent from this published institution corpus. Its real-world class and license status remain unknown.",
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research scope",
+              "value": "Published lender institution research index (national and permitted Florida profiles)"
+            },
+            {
+              "label": "NMLS identifier",
+              "value": "3251"
+            }
+          ],
+          "geographyWarning": "Identifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.",
+          "rows": [],
+          "totalRows": 0,
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "failClosed": false,
+          "lookup": {
+            "sourceLookup": "completed",
+            "scope": "Published lender institution research index (national and permitted Florida profiles)",
+            "requestedClass": "unknown",
+            "resolvedClass": "unknown",
+            "identifiers": [
+              {
+                "type": "NMLS_INSTITUTION",
+                "value": "3251",
+                "rawSpan": "nmls 32 51",
+                "start": 0,
+                "end": 10,
+                "normalization": [
+                  "Whitespace removed within the explicitly labeled NMLS span"
+                ]
+              }
+            ],
+            "conditions": [],
+            "officialActions": [
+              {
+                "family": "NMLS_INSTITUTION",
+                "href": "https://www.nmlsconsumeraccess.org/",
+                "label": "Open NMLS Consumer Access",
+                "instruction": "Copy the full NMLS identifier into the official search. This link is not a live status check."
+              }
+            ]
+          },
+          "period": "Stored identity index; official identity effective/retrieval time is not supplied",
+          "grain": "institution identity",
+          "sharePath": "/ask?q=nmls+32+51",
+          "caveats": [
+            "No match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "docs/lend-nat-016-search-index.json",
+              "docs/fl-lend-011-florida-search-index.json"
+            ],
+            "method": "Validated complete labeled identifier; equality on the matching source field; publication gate; institution-key deduplication.",
+            "indexes": [
+              "Published lender institution research index (national and permitted Florida profiles)"
+            ],
+            "identityPolicy": "NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.",
+            "publicationGate": "Existing render-approved national and Florida publication manifests only.",
+            "cache": "Committed identity snapshots; no live regulator retrieval",
+            "grain": "institution identity",
+            "period": "Identity effective/retrieval time not supplied by these snapshots"
+          }
+        }
+      }
+    },
+    {
+      "q": "NMLS 32, 51",
+      "elapsedMs": 860,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH SCOPE\nPublished lender institution research index (national and permitted Florida profiles)\nEdit request\nUNCONFIRMED NMLS IDENTIFIER\n32\nEdit request\n\nIdentifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.\n\nChange interpretation\nClarify the identifier before searching\n\nSeparate numbers are ambiguous. Enter one complete identifier, or a labeled NMLS and LEI pair.\n\nResearch scope: Published lender institution research index (national and permitted Florida profiles).\n\nNo institution lookup was run for this request.\n\nSubject: requested unspecified; resolved unknown.\n\nSubmitted: NMLS 32. Unconfirmed span: 32.\n\nRequested conditions\n51: Not established. This additional name, location, or condition was not established by exact identifier equality. The result is identity-only, not a match to this condition.\n\nEdit or retry this lookup\n\nOpen NMLS Consumer Access\n\nCopy the full NMLS identifier into the official search. This link is not a live status check.\n\nSource period: Stored identity index; official identity effective/retrieval time is not supplied. Grain: institution identity.\n\nCaveats\nNo match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person.\nTrace this query\n\nShareable research URL (noindex): /ask?q=NMLS+32%2C+51\n\nBack to mortgage intelligence",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "fail_closed",
+            "identityRequest": {
+              "rawQuestion": "NMLS 32, 51",
+              "families": [
+                "NMLS_INSTITUTION"
+              ],
+              "identifiers": [
+                {
+                  "type": "NMLS_INSTITUTION",
+                  "value": "32",
+                  "rawSpan": "NMLS 32",
+                  "start": 0,
+                  "end": 7,
+                  "normalization": []
+                }
+              ],
+              "requestedClass": "unknown",
+              "remainingText": "51",
+              "problem": {
+                "state": "NEEDS_CLARIFICATION",
+                "message": "Separate numbers are ambiguous. Enter one complete identifier, or a labeled NMLS and LEI pair."
+              }
+            },
+            "identifier": {
+              "type": "NMLS_INSTITUTION",
+              "value": "32"
+            },
+            "identityQuery": "NMLS 32",
+            "failClosedKind": "identifier-input",
+            "failReason": "Separate numbers are ambiguous. Enter one complete identifier, or a labeled NMLS and LEI pair.",
+            "requestedMetric": null,
+            "coverageState": "UNSUPPORTED"
+          },
+          "terminalState": "NEEDS_CLARIFICATION",
+          "headline": "Clarify the identifier before searching",
+          "body": "Separate numbers are ambiguous. Enter one complete identifier, or a labeled NMLS and LEI pair.",
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research scope",
+              "value": "Published lender institution research index (national and permitted Florida profiles)"
+            },
+            {
+              "label": "Unconfirmed NMLS identifier",
+              "value": "32"
+            }
+          ],
+          "geographyWarning": "Identifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.",
+          "rows": [],
+          "totalRows": 0,
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "failClosed": false,
+          "lookup": {
+            "sourceLookup": "not_run",
+            "scope": "Published lender institution research index (national and permitted Florida profiles)",
+            "requestedClass": "unknown",
+            "resolvedClass": "unknown",
+            "identifiers": [
+              {
+                "type": "NMLS_INSTITUTION",
+                "value": "32",
+                "rawSpan": "NMLS 32",
+                "start": 0,
+                "end": 7,
+                "normalization": []
+              }
+            ],
+            "conditions": [
+              {
+                "text": "51",
+                "state": "UNSUPPORTED",
+                "explanation": "This additional name, location, or condition was not established by exact identifier equality. The result is identity-only, not a match to this condition."
+              }
+            ],
+            "officialActions": [
+              {
+                "family": "NMLS_INSTITUTION",
+                "href": "https://www.nmlsconsumeraccess.org/",
+                "label": "Open NMLS Consumer Access",
+                "instruction": "Copy the full NMLS identifier into the official search. This link is not a live status check."
+              }
+            ]
+          },
+          "period": "Stored identity index; official identity effective/retrieval time is not supplied",
+          "grain": "institution identity",
+          "sharePath": "/ask?q=NMLS+32%2C+51",
+          "caveats": [
+            "No match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "docs/lend-nat-016-search-index.json",
+              "docs/fl-lend-011-florida-search-index.json"
+            ],
+            "method": "No source lookup executed. Correct or clarify the request before institution lookup.",
+            "indexes": [
+              "Published lender institution research index (national and permitted Florida profiles)"
+            ],
+            "identityPolicy": "NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.",
+            "publicationGate": "Existing render-approved national and Florida publication manifests only.",
+            "cache": "Committed identity snapshots; no live regulator retrieval",
+            "grain": "institution identity",
+            "period": "Identity effective/retrieval time not supplied by these snapshots"
+          }
+        }
+      }
+    },
+    {
+      "q": "NMLS lookup",
+      "elapsedMs": 503,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH SCOPE\nPublished lender institution research index (national and permitted Florida profiles)\nEdit request\n\nIdentifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.\n\nChange interpretation\nEnter an identifier to continue\n\nEnter a complete NMLS identifier.\n\nResearch scope: Published lender institution research index (national and permitted Florida profiles).\n\nNo institution lookup was run for this request.\n\nSubject: requested unspecified; resolved unknown.\n\nRequested conditions\nNMLS: Not established. This additional name, location, or condition was not established by exact identifier equality. The result is identity-only, not a match to this condition.\n\nEdit or retry this lookup\n\nOpen NMLS Consumer Access\n\nCopy the full NMLS identifier into the official search. This link is not a live status check.\n\nSource period: Stored identity index; official identity effective/retrieval time is not supplied. Grain: institution identity.\n\nCaveats\nNo match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person.\nTrace this query\n\nShareable research URL (noindex): /ask?q=NMLS+lookup\n\nBack to mortgage intelligence",
+        "width": 1280,
+        "scroll": 1280,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "fail_closed",
+            "identityRequest": {
+              "rawQuestion": "NMLS lookup",
+              "families": [
+                "NMLS_INSTITUTION"
+              ],
+              "identifiers": [],
+              "requestedClass": "unknown",
+              "remainingText": "NMLS",
+              "problem": {
+                "state": "IDENTIFIER_REQUIRED",
+                "message": "Enter a complete NMLS identifier."
+              }
+            },
+            "failClosedKind": "identifier-input",
+            "failReason": "Enter a complete NMLS identifier.",
+            "requestedMetric": null,
+            "coverageState": "UNSUPPORTED"
+          },
+          "terminalState": "IDENTIFIER_REQUIRED",
+          "headline": "Enter an identifier to continue",
+          "body": "Enter a complete NMLS identifier.",
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research scope",
+              "value": "Published lender institution research index (national and permitted Florida profiles)"
+            }
+          ],
+          "geographyWarning": "Identifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.",
+          "rows": [],
+          "totalRows": 0,
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "failClosed": false,
+          "lookup": {
+            "sourceLookup": "not_run",
+            "scope": "Published lender institution research index (national and permitted Florida profiles)",
+            "requestedClass": "unknown",
+            "resolvedClass": "unknown",
+            "identifiers": [],
+            "conditions": [
+              {
+                "text": "NMLS",
+                "state": "UNSUPPORTED",
+                "explanation": "This additional name, location, or condition was not established by exact identifier equality. The result is identity-only, not a match to this condition."
+              }
+            ],
+            "officialActions": [
+              {
+                "family": "NMLS_INSTITUTION",
+                "href": "https://www.nmlsconsumeraccess.org/",
+                "label": "Open NMLS Consumer Access",
+                "instruction": "Copy the full NMLS identifier into the official search. This link is not a live status check."
+              }
+            ]
+          },
+          "period": "Stored identity index; official identity effective/retrieval time is not supplied",
+          "grain": "institution identity",
+          "sharePath": "/ask?q=NMLS+lookup",
+          "caveats": [
+            "No match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "docs/lend-nat-016-search-index.json",
+              "docs/fl-lend-011-florida-search-index.json"
+            ],
+            "method": "No source lookup executed. Correct or clarify the request before institution lookup.",
+            "indexes": [
+              "Published lender institution research index (national and permitted Florida profiles)"
+            ],
+            "identityPolicy": "NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.",
+            "publicationGate": "Existing render-approved national and Florida publication manifests only.",
+            "cache": "Committed identity snapshots; no live regulator retrieval",
+            "grain": "institution identity",
+            "period": "Identity effective/retrieval time not supplied by these snapshots"
+          }
+        }
+      }
+    },
+    {
+      "q": "NMLS person 3030",
+      "elapsedMs": 370,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH SCOPE\nPublished lender institution research index (national and permitted Florida profiles)\nEdit request\nUNCONFIRMED NMLS IDENTIFIER\n3030\nEdit request\n\nIdentifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.\n\nChange interpretation\nThis subject requires a different verification path\n\nThis search covers published lender institutions. Person/MLO and branch requests must be verified separately in NMLS Consumer Access.\n\nResearch scope: Published lender institution research index (national and permitted Florida profiles).\n\nNo institution lookup was run for this request.\n\nSubject: requested person; resolved unknown.\n\nSubmitted: NMLS person 3030. Unconfirmed span: 3030.\n\nEdit or retry this lookup\n\nOpen NMLS Consumer Access\n\nCopy the full NMLS identifier into the official search. This link is not a live status check.\n\nSource period: Stored identity index; official identity effective/retrieval time is not supplied. Grain: institution identity.\n\nCaveats\nNo match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person.\nTrace this query\n\nShareable research URL (noindex): /ask?q=NMLS+person+3030\n\nBack to mortgage intelligence",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "fail_closed",
+            "identityRequest": {
+              "rawQuestion": "NMLS person 3030",
+              "families": [
+                "NMLS_INSTITUTION"
+              ],
+              "identifiers": [
+                {
+                  "type": "NMLS_INSTITUTION",
+                  "value": "3030",
+                  "rawSpan": "NMLS person 3030",
+                  "start": 0,
+                  "end": 16,
+                  "normalization": []
+                }
+              ],
+              "requestedClass": "person",
+              "remainingText": "",
+              "problem": {
+                "state": "UNSUPPORTED",
+                "message": "This search covers published lender institutions. Person/MLO and branch requests must be verified separately in NMLS Consumer Access."
+              }
+            },
+            "identifier": {
+              "type": "NMLS_INSTITUTION",
+              "value": "3030"
+            },
+            "identityQuery": "NMLS 3030",
+            "failClosedKind": "unsupported-identity-grain",
+            "failReason": "This search covers published lender institutions. Person/MLO and branch requests must be verified separately in NMLS Consumer Access.",
+            "requestedMetric": null,
+            "coverageState": "UNSUPPORTED"
+          },
+          "terminalState": "UNSUPPORTED",
+          "headline": "This subject requires a different verification path",
+          "body": "This search covers published lender institutions. Person/MLO and branch requests must be verified separately in NMLS Consumer Access.",
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research scope",
+              "value": "Published lender institution research index (national and permitted Florida profiles)"
+            },
+            {
+              "label": "Unconfirmed NMLS identifier",
+              "value": "3030"
+            }
+          ],
+          "geographyWarning": "Identifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.",
+          "rows": [],
+          "totalRows": 0,
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "failClosed": true,
+          "lookup": {
+            "sourceLookup": "not_run",
+            "scope": "Published lender institution research index (national and permitted Florida profiles)",
+            "requestedClass": "person",
+            "resolvedClass": "unknown",
+            "identifiers": [
+              {
+                "type": "NMLS_INSTITUTION",
+                "value": "3030",
+                "rawSpan": "NMLS person 3030",
+                "start": 0,
+                "end": 16,
+                "normalization": []
+              }
+            ],
+            "conditions": [],
+            "officialActions": [
+              {
+                "family": "NMLS_INSTITUTION",
+                "href": "https://www.nmlsconsumeraccess.org/",
+                "label": "Open NMLS Consumer Access",
+                "instruction": "Copy the full NMLS identifier into the official search. This link is not a live status check."
+              }
+            ]
+          },
+          "period": "Stored identity index; official identity effective/retrieval time is not supplied",
+          "grain": "institution identity",
+          "sharePath": "/ask?q=NMLS+person+3030",
+          "caveats": [
+            "No match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "docs/lend-nat-016-search-index.json",
+              "docs/fl-lend-011-florida-search-index.json"
+            ],
+            "method": "No source lookup executed. Correct or clarify the request before institution lookup.",
+            "indexes": [
+              "Published lender institution research index (national and permitted Florida profiles)"
+            ],
+            "identityPolicy": "NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.",
+            "publicationGate": "Existing render-approved national and Florida publication manifests only.",
+            "cache": "Committed identity snapshots; no live regulator retrieval",
+            "grain": "institution identity",
+            "period": "Identity effective/retrieval time not supplied by these snapshots"
+          }
+        }
+      }
+    },
+    {
+      "q": "NMLS branch 3030",
+      "elapsedMs": 426,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH SCOPE\nPublished lender institution research index (national and permitted Florida profiles)\nEdit request\nUNCONFIRMED NMLS IDENTIFIER\n3030\nEdit request\n\nIdentifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.\n\nChange interpretation\nThis subject requires a different verification path\n\nThis search covers published lender institutions. Person/MLO and branch requests must be verified separately in NMLS Consumer Access.\n\nResearch scope: Published lender institution research index (national and permitted Florida profiles).\n\nNo institution lookup was run for this request.\n\nSubject: requested branch; resolved unknown.\n\nSubmitted: NMLS branch 3030. Unconfirmed span: 3030.\n\nEdit or retry this lookup\n\nOpen NMLS Consumer Access\n\nCopy the full NMLS identifier into the official search. This link is not a live status check.\n\nSource period: Stored identity index; official identity effective/retrieval time is not supplied. Grain: institution identity.\n\nCaveats\nNo match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person.\nTrace this query\n\nShareable research URL (noindex): /ask?q=NMLS+branch+3030\n\nBack to mortgage intelligence",
+        "width": 1280,
+        "scroll": 1280,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "fail_closed",
+            "identityRequest": {
+              "rawQuestion": "NMLS branch 3030",
+              "families": [
+                "NMLS_INSTITUTION"
+              ],
+              "identifiers": [
+                {
+                  "type": "NMLS_INSTITUTION",
+                  "value": "3030",
+                  "rawSpan": "NMLS branch 3030",
+                  "start": 0,
+                  "end": 16,
+                  "normalization": []
+                }
+              ],
+              "requestedClass": "branch",
+              "remainingText": "",
+              "problem": {
+                "state": "UNSUPPORTED",
+                "message": "This search covers published lender institutions. Person/MLO and branch requests must be verified separately in NMLS Consumer Access."
+              }
+            },
+            "identifier": {
+              "type": "NMLS_INSTITUTION",
+              "value": "3030"
+            },
+            "identityQuery": "NMLS 3030",
+            "failClosedKind": "unsupported-identity-grain",
+            "failReason": "This search covers published lender institutions. Person/MLO and branch requests must be verified separately in NMLS Consumer Access.",
+            "requestedMetric": null,
+            "coverageState": "UNSUPPORTED"
+          },
+          "terminalState": "UNSUPPORTED",
+          "headline": "This subject requires a different verification path",
+          "body": "This search covers published lender institutions. Person/MLO and branch requests must be verified separately in NMLS Consumer Access.",
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research scope",
+              "value": "Published lender institution research index (national and permitted Florida profiles)"
+            },
+            {
+              "label": "Unconfirmed NMLS identifier",
+              "value": "3030"
+            }
+          ],
+          "geographyWarning": "Identifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.",
+          "rows": [],
+          "totalRows": 0,
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "failClosed": true,
+          "lookup": {
+            "sourceLookup": "not_run",
+            "scope": "Published lender institution research index (national and permitted Florida profiles)",
+            "requestedClass": "branch",
+            "resolvedClass": "unknown",
+            "identifiers": [
+              {
+                "type": "NMLS_INSTITUTION",
+                "value": "3030",
+                "rawSpan": "NMLS branch 3030",
+                "start": 0,
+                "end": 16,
+                "normalization": []
+              }
+            ],
+            "conditions": [],
+            "officialActions": [
+              {
+                "family": "NMLS_INSTITUTION",
+                "href": "https://www.nmlsconsumeraccess.org/",
+                "label": "Open NMLS Consumer Access",
+                "instruction": "Copy the full NMLS identifier into the official search. This link is not a live status check."
+              }
+            ]
+          },
+          "period": "Stored identity index; official identity effective/retrieval time is not supplied",
+          "grain": "institution identity",
+          "sharePath": "/ask?q=NMLS+branch+3030",
+          "caveats": [
+            "No match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "docs/lend-nat-016-search-index.json",
+              "docs/fl-lend-011-florida-search-index.json"
+            ],
+            "method": "No source lookup executed. Correct or clarify the request before institution lookup.",
+            "indexes": [
+              "Published lender institution research index (national and permitted Florida profiles)"
+            ],
+            "identityPolicy": "NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.",
+            "publicationGate": "Existing render-approved national and Florida publication manifests only.",
+            "cache": "Committed identity snapshots; no live regulator retrieval",
+            "grain": "institution identity",
+            "period": "Identity effective/retrieval time not supplied by these snapshots"
+          }
+        }
+      }
+    },
+    {
+      "q": "NMLS 3030 licensed in California",
+      "elapsedMs": 408,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH SCOPE\nPublished lender institution research index (national and permitted Florida profiles)\nEdit request\nNMLS IDENTIFIER\n3030\nEdit request\n\nIdentifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.\n\nChange interpretation\nPublished institution identity found\n\nThe published source records this exact institution identity. Additional requested conditions below remain separate from identity resolution.\n\nResearch scope: Published lender institution research index (national and permitted Florida profiles).\n\nSubject: requested unspecified; resolved institution.\n\nSubmitted: NMLS 3030. Complete NMLS: 3030.\n\nRocket Mortgage\n\nNMLS 3030 | LEI 549300FGXN1K3HLB1R50\n\nWhy this matched: Exact NMLS institution identifier: the published record lists 3030.\n\nResearch this lender\nRequested conditions\nNMLS 3030: Applied. Exact equality against the published institution identifier field.\nlicensed in California: Not established. Current state licensing was not checked. Institution identity does not establish this licensing condition; use official verification.\n\nEdit or retry this lookup\n\nOpen NMLS Consumer Access\n\nCopy the full NMLS identifier into the official search. This link is not a live status check.\n\nSource period: Stored identity index; official identity effective/retrieval time is not supplied. Grain: institution identity.\n\nTrace this result · Rocket Mortgage\nCaveats\nNo match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person.\nTrace this query\n\nShareable research URL (noindex): /ask?q=NMLS+3030+licensed+in+California\n\nBack to mortgage intelligence",
+        "width": 390,
+        "scroll": 390,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "entity",
+            "identityRequest": {
+              "rawQuestion": "NMLS 3030 licensed in California",
+              "families": [
+                "NMLS_INSTITUTION"
+              ],
+              "identifiers": [
+                {
+                  "type": "NMLS_INSTITUTION",
+                  "value": "3030",
+                  "rawSpan": "NMLS 3030",
+                  "start": 0,
+                  "end": 9,
+                  "normalization": []
+                }
+              ],
+              "requestedClass": "unknown",
+              "remainingText": "licensed in California"
+            },
+            "identifier": {
+              "type": "NMLS_INSTITUTION",
+              "value": "3030"
+            },
+            "identityQuery": "NMLS 3030",
+            "requestedMetric": null,
+            "coverageState": "PARTIAL"
+          },
+          "terminalState": "FOUND",
+          "headline": "Published institution identity found",
+          "body": "The published source records this exact institution identity. Additional requested conditions below remain separate from identity resolution.",
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research scope",
+              "value": "Published lender institution research index (national and permitted Florida profiles)"
+            },
+            {
+              "label": "NMLS identifier",
+              "value": "3030"
+            }
+          ],
+          "geographyWarning": "Identifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.",
+          "rows": [
+            {
+              "rank": 1,
+              "lei": "549300FGXN1K3HLB1R50",
+              "displayName": "Rocket Mortgage",
+              "metric": 0,
+              "metricLabel": "Exact institution identifier",
+              "applications": null,
+              "originations": null,
+              "denials": null,
+              "identityStatus": "public_profile",
+              "identityNote": "Institution class is established by the permitted publication source, not by number length.",
+              "href": "/lender/rocket-mortgage",
+              "hrefLabel": "Research this lender",
+              "nmls": "3030",
+              "institutionKey": "1e2fa9a5-7067-52e9-8b44-4da4e71c9d47",
+              "resolvedClass": "institution",
+              "matchEvidence": [
+                {
+                  "method": "exact_identifier",
+                  "family": "NMLS_INSTITUTION",
+                  "requestedValue": "3030",
+                  "matchedField": "nmls",
+                  "returnedValue": "3030",
+                  "institutionKey": "1e2fa9a5-7067-52e9-8b44-4da4e71c9d47",
+                  "sourceReference": "docs/lend-nat-016-search-index.json; lend-nat-014-v1",
+                  "sourceAsOf": null,
+                  "normalization": []
+                }
+              ],
+              "whyMatched": [
+                "Exact NMLS institution identifier: the published record lists 3030."
+              ],
+              "evidenceAvailable": [
+                "Published institution identity; other evidence was not checked by this lookup"
+              ]
+            }
+          ],
+          "totalRows": 1,
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "failClosed": false,
+          "lookup": {
+            "sourceLookup": "completed",
+            "scope": "Published lender institution research index (national and permitted Florida profiles)",
+            "requestedClass": "unknown",
+            "resolvedClass": "institution",
+            "identifiers": [
+              {
+                "type": "NMLS_INSTITUTION",
+                "value": "3030",
+                "rawSpan": "NMLS 3030",
+                "start": 0,
+                "end": 9,
+                "normalization": []
+              }
+            ],
+            "conditions": [
+              {
+                "text": "NMLS 3030",
+                "state": "APPLIED",
+                "explanation": "Exact equality against the published institution identifier field."
+              },
+              {
+                "text": "licensed in California",
+                "state": "UNSUPPORTED",
+                "explanation": "Current state licensing was not checked. Institution identity does not establish this licensing condition; use official verification."
+              }
+            ],
+            "officialActions": [
+              {
+                "family": "NMLS_INSTITUTION",
+                "href": "https://www.nmlsconsumeraccess.org/",
+                "label": "Open NMLS Consumer Access",
+                "instruction": "Copy the full NMLS identifier into the official search. This link is not a live status check."
+              }
+            ]
+          },
+          "period": "Stored identity index; official identity effective/retrieval time is not supplied",
+          "grain": "institution identity",
+          "sharePath": "/ask?q=NMLS+3030+licensed+in+California",
+          "caveats": [
+            "No match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "docs/lend-nat-016-search-index.json",
+              "docs/fl-lend-011-florida-search-index.json"
+            ],
+            "method": "Validated complete labeled identifier; equality on the matching source field; publication gate; institution-key deduplication.",
+            "indexes": [
+              "Published lender institution research index (national and permitted Florida profiles)"
+            ],
+            "identityPolicy": "NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.",
+            "publicationGate": "Existing render-approved national and Florida publication manifests only.",
+            "cache": "Committed identity snapshots; no live regulator retrieval",
+            "grain": "institution identity",
+            "period": "Identity effective/retrieval time not supplied by these snapshots"
+          }
+        }
+      }
+    },
+    {
+      "q": "LEI 549300FGXN1K3HLB1R50",
+      "elapsedMs": 352,
+      "ui": {
+        "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH SCOPE\nPublished lender institution research index (national and permitted Florida profiles)\nEdit request\nLEI\n549300FGXN1K3HLB1R50\nEdit request\n\nIdentifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.\n\nChange interpretation\nPublished institution identity found\n\nThe published source records this exact institution identity. Additional requested conditions below remain separate from identity resolution.\n\nResearch scope: Published lender institution research index (national and permitted Florida profiles).\n\nSubject: requested unspecified; resolved institution.\n\nSubmitted: LEI 549300FGXN1K3HLB1R50. Complete LEI: 549300FGXN1K3HLB1R50.\n\nRocket Mortgage\n\nNMLS 3030 | LEI 549300FGXN1K3HLB1R50\n\nWhy this matched: Exact LEI identifier: the published record lists 549300FGXN1K3HLB1R50.\n\nResearch this lender\nRequested conditions\nLEI 549300FGXN1K3HLB1R50: Applied. Exact equality against the published institution identifier field.\n\nEdit or retry this lookup\n\nVerify with GLEIF\n\nCopy the full LEI identifier into the official search. This link is not a live status check.\n\nSource period: Stored identity index; official identity effective/retrieval time is not supplied. Grain: institution identity.\n\nTrace this result · Rocket Mortgage\nCaveats\nNo match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person.\nTrace this query\n\nShareable research URL (noindex): /ask?q=LEI+549300FGXN1K3HLB1R50\n\nBack to mortgage intelligence",
+        "width": 1280,
+        "scroll": 1280,
+        "robots": "noindex, follow"
+      },
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "entity",
+            "identityRequest": {
+              "rawQuestion": "LEI 549300FGXN1K3HLB1R50",
+              "families": [
+                "LEI"
+              ],
+              "identifiers": [
+                {
+                  "type": "LEI",
+                  "value": "549300FGXN1K3HLB1R50",
+                  "rawSpan": "LEI 549300FGXN1K3HLB1R50",
+                  "start": 0,
+                  "end": 24,
+                  "normalization": []
+                }
+              ],
+              "requestedClass": "unknown",
+              "remainingText": ""
+            },
+            "identifier": {
+              "type": "LEI",
+              "value": "549300FGXN1K3HLB1R50"
+            },
+            "identityQuery": "LEI 549300FGXN1K3HLB1R50",
+            "requestedMetric": null,
+            "coverageState": "KNOWN"
+          },
+          "terminalState": "FOUND",
+          "headline": "Published institution identity found",
+          "body": "The published source records this exact institution identity. Additional requested conditions below remain separate from identity resolution.",
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research scope",
+              "value": "Published lender institution research index (national and permitted Florida profiles)"
+            },
+            {
+              "label": "LEI",
+              "value": "549300FGXN1K3HLB1R50"
+            }
+          ],
+          "geographyWarning": "Identifier equality establishes identity only. It does not establish current licensing, service territory, or lender quality.",
+          "rows": [
+            {
+              "rank": 1,
+              "lei": "549300FGXN1K3HLB1R50",
+              "displayName": "Rocket Mortgage",
+              "metric": 0,
+              "metricLabel": "Exact institution identifier",
+              "applications": null,
+              "originations": null,
+              "denials": null,
+              "identityStatus": "public_profile",
+              "identityNote": "Institution class is established by the permitted publication source, not by number length.",
+              "href": "/lender/rocket-mortgage",
+              "hrefLabel": "Research this lender",
+              "nmls": "3030",
+              "institutionKey": "1e2fa9a5-7067-52e9-8b44-4da4e71c9d47",
+              "resolvedClass": "institution",
+              "matchEvidence": [
+                {
+                  "method": "exact_identifier",
+                  "family": "LEI",
+                  "requestedValue": "549300FGXN1K3HLB1R50",
+                  "matchedField": "lei",
+                  "returnedValue": "549300FGXN1K3HLB1R50",
+                  "institutionKey": "1e2fa9a5-7067-52e9-8b44-4da4e71c9d47",
+                  "sourceReference": "docs/lend-nat-016-search-index.json; lend-nat-014-v1",
+                  "sourceAsOf": null,
+                  "normalization": []
+                }
+              ],
+              "whyMatched": [
+                "Exact LEI identifier: the published record lists 549300FGXN1K3HLB1R50."
+              ],
+              "evidenceAvailable": [
+                "Published institution identity; other evidence was not checked by this lookup"
+              ]
+            }
+          ],
+          "totalRows": 1,
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "failClosed": false,
+          "lookup": {
+            "sourceLookup": "completed",
+            "scope": "Published lender institution research index (national and permitted Florida profiles)",
+            "requestedClass": "unknown",
+            "resolvedClass": "institution",
+            "identifiers": [
+              {
+                "type": "LEI",
+                "value": "549300FGXN1K3HLB1R50",
+                "rawSpan": "LEI 549300FGXN1K3HLB1R50",
+                "start": 0,
+                "end": 24,
+                "normalization": []
+              }
+            ],
+            "conditions": [
+              {
+                "text": "LEI 549300FGXN1K3HLB1R50",
+                "state": "APPLIED",
+                "explanation": "Exact equality against the published institution identifier field."
+              }
+            ],
+            "officialActions": [
+              {
+                "family": "LEI",
+                "href": "https://search.gleif.org/",
+                "label": "Verify with GLEIF",
+                "instruction": "Copy the full LEI identifier into the official search. This link is not a live status check."
+              }
+            ]
+          },
+          "period": "Stored identity index; official identity effective/retrieval time is not supplied",
+          "grain": "institution identity",
+          "sharePath": "/ask?q=LEI+549300FGXN1K3HLB1R50",
+          "caveats": [
+            "No match in this corpus does not mean an identifier is invalid or unlicensed. A miss does not establish whether it belongs to an institution, branch, or person."
+          ],
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "docs/lend-nat-016-search-index.json",
+              "docs/fl-lend-011-florida-search-index.json"
+            ],
+            "method": "Validated complete labeled identifier; equality on the matching source field; publication gate; institution-key deduplication.",
+            "indexes": [
+              "Published lender institution research index (national and permitted Florida profiles)"
+            ],
+            "identityPolicy": "NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.",
+            "publicationGate": "Existing render-approved national and Florida publication manifests only.",
+            "cache": "Committed identity snapshots; no live regulator retrieval",
+            "grain": "institution identity",
+            "period": "Identity effective/retrieval time not supplied by these snapshots"
+          }
+        }
+      }
+    },
+    {
+      "name": "structured HMDA edit/reload",
+      "width": 1280,
+      "focus": {
+        "focused": true,
+        "outline": "auto"
+      },
+      "query": {
+        "mode": "entity",
+        "geography": {
+          "grain": "county",
+          "state": "FL",
+          "county": "Broward",
+          "countyFips": "12011",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "actionTaken": [
+          "application"
+        ],
+        "loanType": [
+          "FHA"
+        ],
+        "requestedMetric": "most",
+        "sort": {
+          "field": "application",
+          "direction": "desc"
+        }
+      },
+      "firstIdentity": "549300HW662MN1WU8550"
+    },
+    {
+      "name": "structured HMDA edit/reload",
+      "width": 390,
+      "focus": {
+        "focused": true,
+        "outline": "auto"
+      },
+      "query": {
+        "mode": "entity",
+        "geography": {
+          "grain": "county",
+          "state": "FL",
+          "county": "Broward",
+          "countyFips": "12011",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "actionTaken": [
+          "application"
+        ],
+        "loanType": [
+          "FHA"
+        ],
+        "requestedMetric": "most",
+        "sort": {
+          "field": "application",
+          "direction": "desc"
+        }
+      },
+      "firstIdentity": "549300HW662MN1WU8550"
+    },
+    {
+      "name": "structured HMDA edit/reload",
+      "width": 320,
+      "focus": {
+        "focused": true,
+        "outline": "auto"
+      },
+      "query": {
+        "mode": "entity",
+        "geography": {
+          "grain": "county",
+          "state": "FL",
+          "county": "Broward",
+          "countyFips": "12011",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "actionTaken": [
+          "application"
+        ],
+        "loanType": [
+          "FHA"
+        ],
+        "requestedMetric": "most",
+        "sort": {
+          "field": "application",
+          "direction": "desc"
+        }
+      },
+      "firstIdentity": "549300HW662MN1WU8550"
+    }
+  ],
+  "status": "PASS"
+}

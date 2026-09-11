@@ -1,0 +1,54 @@
+{
+  "recordedUTC": "2026-09-11T19:04:36.876498+00:00",
+  "focusedTests": 24,
+  "originalRedRegressions": 4,
+  "traceRedRegression": 1,
+  "mutationsDetected": 3,
+  "results": [
+    {
+      "command": "npm run check:th-search-r1-002",
+      "exitCode": 0,
+      "output": "focused-final.txt"
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "output": "typecheck-trace.txt"
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 0,
+      "output": "lint-final.txt"
+    },
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "output": "regression-release.txt"
+    },
+    {
+      "command": "npm run check:lend-cap-001 and check:lend-cap-002",
+      "exitCode": 0,
+      "output": "capabilities.txt"
+    },
+    {
+      "command": "npm run check:ath-cust-net-001b",
+      "exitCode": 0,
+      "output": "customer.txt"
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "output": "build-summary.txt"
+    }
+  ],
+  "baseline": {
+    "sha": "8ea55825d3a4cc5ef4d8aabd80f7c2e8348ee1ed",
+    "typecheckExit": 0,
+    "lintExit": 0,
+    "lintWarnings": 1
+  },
+  "notes": [
+    "Lint warning is unchanged unused pngSize in scripts/assert-share-002.mjs.",
+    "Full npm test ran on the core implementation head; the trace-only follow-up passed focused tests, typecheck, lint, build and complete browser suite."
+  ]
+}

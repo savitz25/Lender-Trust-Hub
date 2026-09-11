@@ -1,0 +1,12 @@
+{
+  "utc": "2026-09-11T18:49:34.436086+00:00",
+  "candidate": "63351907e3ae85e2f3de275ce2ab01cdd59803e5",
+  "stagedTextSecretPatternMatches": 0,
+  "localCompiledClientFiles": 73,
+  "localClientSecretOrFixturePatternMatches": 0,
+  "credentialsReadOrChanged": 0,
+  "productionDataWrites": 0,
+  "previewProtection": "unchanged; no bypass used; browser SSO unavailable",
+  "reviewMethod": "separate builder diff review plus passing Vercel Agent Review; no independent human review",
+  "limitations": "Pattern scans are not a claim to detect every possible secret. No server credentials were needed for this static-public-source repair."
+}

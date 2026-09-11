@@ -1,0 +1,92 @@
+{
+  "utc": "2026-09-11T19:02:28.337Z",
+  "sha": "d698900abe1e211fccb424e8d1743ab5a4c45a2a",
+  "deployment": "dpl_3pdT5aruJp3i3vK5xfozjutLN5iE",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/ask?q=NMLS%203251",
+      "status": 200
+    },
+    {
+      "path": "/lender/rocket-mortgage",
+      "status": 200
+    },
+    {
+      "path": "/calculators",
+      "status": 200
+    },
+    {
+      "path": "/compare",
+      "status": 200
+    },
+    {
+      "path": "/tools/compare-loan-estimates",
+      "status": 200
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200
+    }
+  ],
+  "comparison": {
+    "mode": "comparison",
+    "facts": [
+      {
+        "label": "Broward applications",
+        "value": "67,743"
+      },
+      {
+        "label": "Broward originations",
+        "value": "31,292"
+      },
+      {
+        "label": "Broward denials",
+        "value": "17,138"
+      },
+      {
+        "label": "Broward purchase-purpose applications (not originations)",
+        "value": "27,888"
+      },
+      {
+        "label": "Broward refinance-purpose applications (not originations)",
+        "value": "22,265"
+      },
+      {
+        "label": "Palm Beach applications",
+        "value": "56,484"
+      },
+      {
+        "label": "Palm Beach originations",
+        "value": "28,383"
+      },
+      {
+        "label": "Palm Beach denials",
+        "value": "12,505"
+      },
+      {
+        "label": "Palm Beach purchase-purpose applications (not originations)",
+        "value": "23,718"
+      },
+      {
+        "label": "Palm Beach refinance-purpose applications (not originations)",
+        "value": "17,758"
+      }
+    ]
+  },
+  "clientScan": {
+    "files": 17,
+    "secretOrFixtureMatches": 0
+  },
+  "bareHost": {
+    "status": 308,
+    "location": "https://www.lendertrusthub.com/ask?q=NMLS%203030"
+  }
+}

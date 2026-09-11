@@ -1,0 +1,15 @@
+Command: npm run build
+Observed exit code: 0
+Source: local build-trace.txt (full transcript retained locally)
+
+✓ Compiled successfully in 16.6s
+Finished TypeScript in 30.4s ...
+Collecting page data using 7 workers ...
+Generating static pages using 7 workers (0/1804) ...
+Generating static pages using 7 workers (451/1804)
+Generating static pages using 7 workers (902/1804)
+Generating static pages using 7 workers (1353/1804)
+✓ Generating static pages using 7 workers (1804/1804) in 37.7s
+Finalizing page optimization ...
+
+Existing warnings: workspace root inferred from parent lockfile; middleware convention deprecated; metadata themeColor belongs in viewport. No configuration was weakened.
