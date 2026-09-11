@@ -1,0 +1,5 @@
+{
+  "base": "efb7a875d6e1009b7107c81ca0e70a9f5bfbcf11",
+  "exit": 1,
+  "failure": "Missing not_run status and unconfirmed-span presentation assertion detected"
+}

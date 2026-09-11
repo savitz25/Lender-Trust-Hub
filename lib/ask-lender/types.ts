@@ -133,6 +133,7 @@ export type AskExecution = {
   elapsedMs?: number;
   terminalState?: LookupState;
   lookup?: {
+    sourceLookup: 'not_run' | 'attempted' | 'completed';
     scope: string; requestedClass: IdentityClass; resolvedClass: IdentityClass;
     identifiers: IdentifierSpan[]; conditions: IdentityCondition[];
     officialActions: Array<{ family: IdentifierFamily; href: string; label: string; instruction: string }>;
