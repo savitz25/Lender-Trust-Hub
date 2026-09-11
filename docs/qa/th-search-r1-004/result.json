@@ -1,13 +1,18 @@
 {
   "ticket": "TH-SEARCH-R1-004",
-  "status": "READY_FOR_REVIEW",
+  "status": "RELEASED_AND_VERIFIED",
   "model": "GPT-6 Astra / High",
   "confirmation": "USER-CONFIRMED",
   "baseline": "0f933f78bb118d4f146e3f0b4c9081416f0a4400",
   "candidate": "f41e4cb8b8abe8ed4298190ac9182903fec26211",
-  "merge": null,
-  "deployment": null,
-  "at": "2026-09-11T21:02:40.335102+00:00",
+  "merge": "870532c7d083a733f4f689fab7b68a434ad04628",
+  "deployment": {
+    "id": "dpl_EeH66to9CF2h2zuXkGFiRaqFPZxe",
+    "sha": "870532c7d083a733f4f689fab7b68a434ad04628",
+    "alias": "www.lendertrusthub.com",
+    "state": "READY"
+  },
+  "at": "2026-09-11T21:10:59.172067+00:00",
   "tests": {
     "focused": 26,
     "r1-002": 24,
@@ -35,10 +40,48 @@
       ],
       "navigation": "PASS"
     },
-    "production": "pending",
+    "production": {
+      "file": "production-browser.json",
+      "pass": true,
+      "cases": 13,
+      "maxMs": 4623,
+      "widths": [
+        1280,
+        390,
+        320
+      ],
+      "navigation": [
+        "available -> unavailable -> reload -> scalar recovery -> back -> available -> back/forward passed",
+        "edit/Enter preserved explicit action override and NJ"
+      ]
+    },
     "preview": "SSO login; protected UI skipped without bypass"
   },
-  "review": "Separate self-review completed; existing CI/Vercel automated review pending. Not independent human review.",
-  "closure": "Awaiting automated review, merge and canonical Production proof.",
-  "pr": "https://github.com/savitz25/Lender-Trust-Hub/pull/31"
+  "review": "Separate self-review plus Vercel Agent Review success on runtime candidate f41e4cb at 2026-09-11T21:05:56Z; no inline findings. Not independent human review.",
+  "closure": "TH-SEARCH-R1-004 only. No broader search/geography or parent routing closure.",
+  "pr": "https://github.com/savitz25/Lender-Trust-Hub/pull/31",
+  "prHead": "fc3b19eb2199d33ab410ccab0c8cbb12f69b2c05",
+  "runtimeMain": "870532c7d083a733f4f689fab7b68a434ad04628",
+  "evidenceFollowup": "Documentation and QA scripts only; final follow-up SHA/deployment will be reported after they exist.",
+  "productionSmoke": {
+    "file": "production-smoke.json",
+    "routesPassed": 10,
+    "canonicalRedirect": "308; query preserved"
+  },
+  "runtimeLogs": {
+    "deployment": "dpl_EeH66to9CF2h2zuXkGFiRaqFPZxe",
+    "since": "2026-09-11T21:09:00Z",
+    "levels": [
+      "error",
+      "fatal"
+    ],
+    "groupBy": "route",
+    "returnedCountRows": 0
+  },
+  "remaining": [
+    "Protected preview UI requires SSO and was not bypassed; local optimized-build and canonical Production browser proof passed.",
+    "Separate acquired NJ county-LEI data is not an existing institution runtime aggregation path; new source-capability onboarding remains separate.",
+    "One exact-baseline unused pngSize lint warning; existing build metadata/middleware warnings.",
+    "Broader name/licensing, geography, rates/shares and parent Ask/Senior routing remain outside scope."
+  ]
 }

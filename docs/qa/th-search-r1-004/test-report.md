@@ -21,3 +21,15 @@ Real persistent Chrome against the optimized local production build: 13 represen
 Preview deployment dpl_6R2Ercv4wYgTF4VGjTEgGbUWk4RS built the exact candidate. Browser navigation reaches Vercel SSO login; protected preview UI was not tested. Protection remains intact. Local optimized-build browser proof and eventual canonical Production proof are separate from preview build success.
 
 Review: a separate self-review found and fixed a county recovery URL that could have overridden Orange County to Florida; the added test proves county scope survives. Existing automated Vercel Agent Review remains pending. This is not independent human review. Secret-pattern scans of the ticket changes, QA artifacts and client chunks found no key/private-key matches; no credentials were needed or changed.
+
+## Canonical Production proof
+
+PR #31 merged normally at 2026-09-11T21:07:06Z as 870532c7d083a733f4f689fab7b68a434ad04628. Implementation f41e4cb was separately self-reviewed and passed Vercel Agent Review at 21:05:56Z with no inline findings. PR head fc3b19e adds evidence and browser synchronization; both preview builds and CI passed before merge.
+
+Canonical www.lendertrusthub.com was verified READY on dpl_EeH66to9CF2h2zuXkGFiRaqFPZxe with exact merge SHA. The real Production browser suite passes all 13 cases, maximum initial completion 4,623ms. Native/API availability and source fingerprints agree; supported numeric tables, unsupported breakdowns, scalar recovery, NMLS positive/miss and comparison remain correct. Keyboard first interaction, filters, Trace, refresh, history, query edits and 1280/390/320 overflow checks pass. Production screenshots and the full machine-readable observations are retained.
+
+Ten route smoke checks pass (home, Ask, published Rocket profile, FL/NJ state surfaces, calculators, comparison, admin sign-in, robots and sitemap). Bare-host 308 redirects to www and preserves the question. Vercel error/fatal logs grouped by route returned zero rows for this deployment since 21:09:00Z.
+
+Observed current source controls: NJ institution denials remain explicitly unavailable in the selected state-LEI runtime file; scalar recovery returns the independently sourced 55,453. NJ institution originations sum to 177,325; FL FHA originations 86,736; Broward institution applications 67,620; FL county-derived institution denials 192,366. These are pinned-source observations, not hardcoded product values. The distinct Broward scalar/comparison application aggregate remains 67,743 under its existing source contract.
+
+TH-SEARCH-R1-004 is released and verified. A documentation/QA-only follow-up will record this evidence; its future SHA is deliberately not invented here. No database rollback is needed: rollback is a normal reviewed revert/deployment of this ticket's runtime changes only.
