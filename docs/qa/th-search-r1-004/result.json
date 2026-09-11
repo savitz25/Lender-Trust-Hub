@@ -1,0 +1,44 @@
+{
+  "ticket": "TH-SEARCH-R1-004",
+  "status": "READY_FOR_REVIEW",
+  "model": "GPT-6 Astra / High",
+  "confirmation": "USER-CONFIRMED",
+  "baseline": "0f933f78bb118d4f146e3f0b4c9081416f0a4400",
+  "candidate": "f41e4cb8b8abe8ed4298190ac9182903fec26211",
+  "merge": null,
+  "deployment": null,
+  "at": "2026-09-11T21:02:40.335102+00:00",
+  "tests": {
+    "focused": 26,
+    "r1-002": 24,
+    "r1-003": 26,
+    "mutationsDetected": 2,
+    "npmTest": "PASS",
+    "capability001": 73,
+    "capability002": 40,
+    "customer": 6,
+    "typecheck": "PASS",
+    "lint": "0 errors; 1 exact-baseline warning",
+    "finalBuild": "PASS"
+  },
+  "browser": {
+    "baseline": "baseline-browser.json",
+    "candidate": {
+      "file": "candidate-browser.json",
+      "pass": true,
+      "cases": 13,
+      "maxMs": 1113,
+      "widths": [
+        1280,
+        390,
+        320
+      ],
+      "navigation": "PASS"
+    },
+    "production": "pending",
+    "preview": "SSO login; protected UI skipped without bypass"
+  },
+  "review": "Separate self-review completed; existing CI/Vercel automated review pending. Not independent human review.",
+  "closure": "Awaiting automated review, merge and canonical Production proof.",
+  "pr": "https://github.com/savitz25/Lender-Trust-Hub/pull/31"
+}

@@ -1,0 +1,1446 @@
+{
+  "at": "2026-09-11T21:01:01.673Z",
+  "sha": "f41e4cb8b8abe8ed4298190ac9182903fec26211",
+  "deployment": "local-production-build",
+  "origin": "http://localhost:3044",
+  "sourceFingerprints": {
+    "state": "0f145c107279e04f7acf444e45d1bc8f0d3e22fee27d6bb4ed0c0b3a1cc254a3",
+    "county": "6206f982b860bb9ac9c3c8c4b333d436372b6fa755df294854720c0a1ad453cb"
+  },
+  "observations": [
+    {
+      "id": "nj-denial",
+      "q": "Which lenders reported the most mortgage denials in New Jersey?",
+      "expected": "UNSUPPORTED",
+      "ms": 1113,
+      "status": 200,
+      "query": {
+        "mode": "entity",
+        "geography": {
+          "grain": "state",
+          "state": "NJ",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "reportingYears": [],
+        "scopeIssues": [],
+        "actionTaken": [
+          "denial"
+        ],
+        "requestedMetric": "most",
+        "sort": {
+          "field": "denial",
+          "direction": "desc"
+        }
+      },
+      "evidence": {
+        "availability": "UNSUPPORTED",
+        "scope": "NJ",
+        "action": "denial",
+        "loanType": null,
+        "purpose": [],
+        "field": null,
+        "sourceFile": "lib/ask-lender/generated/state.csv.json",
+        "sourceFingerprint": "0f145c107279e04f7acf444e45d1bc8f0d3e22fee27d6bb4ed0c0b3a1cc254a3",
+        "sourceGrain": "state-LEI-year",
+        "outputGrain": "institution LEI by state property geography",
+        "reportingYear": "2025",
+        "retrievedAt": null,
+        "generatedAt": null,
+        "coverage": [
+          "AK",
+          "AL",
+          "AR",
+          "AZ",
+          "CA",
+          "CO",
+          "CT",
+          "DC",
+          "DE",
+          "FL",
+          "GA",
+          "GU",
+          "HI",
+          "IA",
+          "ID",
+          "IL",
+          "IN",
+          "KS",
+          "KY",
+          "LA",
+          "MA",
+          "MD",
+          "ME",
+          "MI",
+          "MN",
+          "MO",
+          "MS",
+          "MT",
+          "NC",
+          "ND",
+          "NE",
+          "NH",
+          "NJ",
+          "NM",
+          "NV",
+          "NY",
+          "OH",
+          "OK",
+          "OR",
+          "PA",
+          "PR",
+          "RI",
+          "SC",
+          "SD",
+          "TN",
+          "TX",
+          "UT",
+          "VA",
+          "VI",
+          "VT",
+          "WA",
+          "WI",
+          "WV",
+          "WY"
+        ],
+        "completeWithinSource": false,
+        "eligibleInstitutions": null,
+        "positiveReporters": null,
+        "observedSum": null,
+        "calculation": "Capability decision: The current New Jersey institution-level file does not contain denial counts at this grain, so we cannot order lenders by that measure. This is not a finding of zero denials. No ordering or cohort total was executed.",
+        "conditions": []
+      },
+      "terminalState": "UNSUPPORTED",
+      "headline": "Institution breakdown unavailable: New Jersey denials",
+      "body": "The current New Jersey institution-level file does not contain denial counts at this grain, so we cannot order lenders by that measure. This is not a finding of zero denials.",
+      "facts": [],
+      "href": "/ask?q=How+many+mortgage+denials+in+New+Jersey+2025%3F&action=denial&loanType=all&geo=NJ",
+      "trace": {
+        "contract": "lender-ask-v1",
+        "sourceFiles": [
+          "lib/ask-lender/generated/state.csv.json"
+        ],
+        "method": "Capability decision: The current New Jersey institution-level file does not contain denial counts at this grain, so we cannot order lenders by that measure. This is not a finding of zero denials. No ordering or cohort total was executed.",
+        "indexes": [
+          "Scope NJ; action denial; field not available; availability UNSUPPORTED"
+        ],
+        "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+        "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+        "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+        "grain": "state-LEI-year -> institution LEI by state property geography; New Jersey",
+        "period": "HMDA 2025 reporting vintage"
+      },
+      "rendered": true,
+      "overflow": false
+    },
+    {
+      "id": "broward-fha-denial",
+      "q": "Which lenders reported the most FHA mortgage denials in Broward County?",
+      "expected": "UNSUPPORTED",
+      "ms": 201,
+      "status": 200,
+      "query": {
+        "mode": "entity",
+        "geography": {
+          "grain": "county",
+          "state": "FL",
+          "county": "Broward",
+          "countyFips": "12011",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "reportingYears": [],
+        "scopeIssues": [],
+        "actionTaken": [
+          "denial"
+        ],
+        "loanType": [
+          "FHA"
+        ],
+        "requestedMetric": "most",
+        "sort": {
+          "field": "denial",
+          "direction": "desc"
+        }
+      },
+      "evidence": {
+        "availability": "UNSUPPORTED",
+        "scope": "12011",
+        "action": "denial",
+        "loanType": "FHA",
+        "purpose": [],
+        "field": null,
+        "sourceFile": "lib/ask-lender/generated/county.csv.json",
+        "sourceFingerprint": "6206f982b860bb9ac9c3c8c4b333d436372b6fa755df294854720c0a1ad453cb",
+        "sourceGrain": "county-LEI-year",
+        "outputGrain": "institution LEI by county property geography",
+        "reportingYear": "2025",
+        "retrievedAt": null,
+        "generatedAt": null,
+        "coverage": [
+          "FL"
+        ],
+        "completeWithinSource": false,
+        "eligibleInstitutions": null,
+        "positiveReporters": null,
+        "observedSum": null,
+        "calculation": "Capability decision: The current Florida institution-level file does not contain FHA denial counts at this grain, so we cannot order lenders by that measure. This is not a finding of zero denials. No ordering or cohort total was executed.",
+        "conditions": []
+      },
+      "terminalState": "UNSUPPORTED",
+      "headline": "Institution breakdown unavailable: Broward County, Florida FHA denials",
+      "body": "The current Florida institution-level file does not contain FHA denial counts at this grain, so we cannot order lenders by that measure. This is not a finding of zero denials.",
+      "facts": [],
+      "trace": {
+        "contract": "lender-ask-v1",
+        "sourceFiles": [
+          "lib/ask-lender/generated/county.csv.json"
+        ],
+        "method": "Capability decision: The current Florida institution-level file does not contain FHA denial counts at this grain, so we cannot order lenders by that measure. This is not a finding of zero denials. No ordering or cohort total was executed.",
+        "indexes": [
+          "Scope 12011; action denial; field not available; availability UNSUPPORTED"
+        ],
+        "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+        "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+        "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+        "grain": "county-LEI-year -> institution LEI by county property geography; Broward County, Florida",
+        "period": "HMDA 2025 reporting vintage"
+      },
+      "rendered": true,
+      "overflow": false
+    },
+    {
+      "id": "nj-fha-apps",
+      "q": "Which lenders received the most FHA mortgage applications in New Jersey?",
+      "expected": "UNSUPPORTED",
+      "ms": 212,
+      "status": 200,
+      "query": {
+        "mode": "entity",
+        "geography": {
+          "grain": "state",
+          "state": "NJ",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "reportingYears": [],
+        "scopeIssues": [],
+        "actionTaken": [
+          "application"
+        ],
+        "loanType": [
+          "FHA"
+        ],
+        "requestedMetric": "most",
+        "sort": {
+          "field": "application",
+          "direction": "desc"
+        }
+      },
+      "evidence": {
+        "availability": "UNSUPPORTED",
+        "scope": "NJ",
+        "action": "application",
+        "loanType": "FHA",
+        "purpose": [],
+        "field": null,
+        "sourceFile": "lib/ask-lender/generated/state.csv.json",
+        "sourceFingerprint": "0f145c107279e04f7acf444e45d1bc8f0d3e22fee27d6bb4ed0c0b3a1cc254a3",
+        "sourceGrain": "state-LEI-year",
+        "outputGrain": "institution LEI by state property geography",
+        "reportingYear": "2025",
+        "retrievedAt": null,
+        "generatedAt": null,
+        "coverage": [
+          "AK",
+          "AL",
+          "AR",
+          "AZ",
+          "CA",
+          "CO",
+          "CT",
+          "DC",
+          "DE",
+          "FL",
+          "GA",
+          "GU",
+          "HI",
+          "IA",
+          "ID",
+          "IL",
+          "IN",
+          "KS",
+          "KY",
+          "LA",
+          "MA",
+          "MD",
+          "ME",
+          "MI",
+          "MN",
+          "MO",
+          "MS",
+          "MT",
+          "NC",
+          "ND",
+          "NE",
+          "NH",
+          "NJ",
+          "NM",
+          "NV",
+          "NY",
+          "OH",
+          "OK",
+          "OR",
+          "PA",
+          "PR",
+          "RI",
+          "SC",
+          "SD",
+          "TN",
+          "TX",
+          "UT",
+          "VA",
+          "VI",
+          "VT",
+          "WA",
+          "WI",
+          "WV",
+          "WY"
+        ],
+        "completeWithinSource": false,
+        "eligibleInstitutions": null,
+        "positiveReporters": null,
+        "observedSum": null,
+        "calculation": "Capability decision: The current New Jersey institution-level file does not contain FHA application counts at this grain, so we cannot order lenders by that measure. This is not a finding of zero applications. No ordering or cohort total was executed.",
+        "conditions": []
+      },
+      "terminalState": "UNSUPPORTED",
+      "headline": "Institution breakdown unavailable: New Jersey FHA applications",
+      "body": "The current New Jersey institution-level file does not contain FHA application counts at this grain, so we cannot order lenders by that measure. This is not a finding of zero applications.",
+      "facts": [],
+      "trace": {
+        "contract": "lender-ask-v1",
+        "sourceFiles": [
+          "lib/ask-lender/generated/state.csv.json"
+        ],
+        "method": "Capability decision: The current New Jersey institution-level file does not contain FHA application counts at this grain, so we cannot order lenders by that measure. This is not a finding of zero applications. No ordering or cohort total was executed.",
+        "indexes": [
+          "Scope NJ; action application; field not available; availability UNSUPPORTED"
+        ],
+        "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+        "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+        "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+        "grain": "state-LEI-year -> institution LEI by state property geography; New Jersey",
+        "period": "HMDA 2025 reporting vintage"
+      },
+      "rendered": true,
+      "overflow": false
+    },
+    {
+      "id": "nj-orig",
+      "q": "Which lenders originated the most mortgages in New Jersey?",
+      "expected": "AVAILABLE",
+      "value": 177325,
+      "ms": 257,
+      "status": 200,
+      "query": {
+        "mode": "entity",
+        "geography": {
+          "grain": "state",
+          "state": "NJ",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "reportingYears": [],
+        "scopeIssues": [],
+        "actionTaken": [
+          "origination"
+        ],
+        "requestedMetric": "most",
+        "sort": {
+          "field": "origination",
+          "direction": "desc"
+        }
+      },
+      "evidence": {
+        "availability": "AVAILABLE",
+        "scope": "NJ",
+        "action": "origination",
+        "loanType": null,
+        "purpose": [],
+        "field": "total_originations",
+        "sourceFile": "lib/ask-lender/generated/state.csv.json",
+        "sourceFingerprint": "0f145c107279e04f7acf444e45d1bc8f0d3e22fee27d6bb4ed0c0b3a1cc254a3",
+        "sourceGrain": "state-LEI-year",
+        "outputGrain": "institution LEI by state property geography",
+        "reportingYear": "2025",
+        "retrievedAt": null,
+        "generatedAt": null,
+        "coverage": [
+          "AK",
+          "AL",
+          "AR",
+          "AZ",
+          "CA",
+          "CO",
+          "CT",
+          "DC",
+          "DE",
+          "FL",
+          "GA",
+          "GU",
+          "HI",
+          "IA",
+          "ID",
+          "IL",
+          "IN",
+          "KS",
+          "KY",
+          "LA",
+          "MA",
+          "MD",
+          "ME",
+          "MI",
+          "MN",
+          "MO",
+          "MS",
+          "MT",
+          "NC",
+          "ND",
+          "NE",
+          "NH",
+          "NJ",
+          "NM",
+          "NV",
+          "NY",
+          "OH",
+          "OK",
+          "OR",
+          "PA",
+          "PR",
+          "RI",
+          "SC",
+          "SD",
+          "TN",
+          "TX",
+          "UT",
+          "VA",
+          "VI",
+          "VT",
+          "WA",
+          "WI",
+          "WV",
+          "WY"
+        ],
+        "completeWithinSource": true,
+        "eligibleInstitutions": 776,
+        "positiveReporters": 776,
+        "observedSum": 177325,
+        "calculation": "Select lib/ask-lender/generated/state.csv.json; 2025; NJ; field total_originations. Validate every selected observation, group disjoint state-LEI-year keys by LEI, sum within the acquired cohort, retain positive values, order descending (LEI tie-break). Totals precede pagination. No county and state rows are combined.",
+        "conditions": []
+      },
+      "terminalState": "FOUND",
+      "rows": 776,
+      "headline": "HMDA reporting institutions with the most originations for properties in New Jersey",
+      "body": "Ordered by reported raw counts within the acquired institution cohort. Most is volume, not a recommendation.",
+      "facts": [
+        {
+          "label": "Acquired reporting LEIs with this metric > 0",
+          "value": "776"
+        },
+        {
+          "label": "New Jersey originations observed sum (acquired institution cohort)",
+          "value": "177,325"
+        },
+        {
+          "label": "Public-profile matches on this result set",
+          "value": "54"
+        },
+        {
+          "label": "Identity holds (LEI/name conflict)",
+          "value": "12"
+        },
+        {
+          "label": "LEI-only (no committed legal name)",
+          "value": "486"
+        },
+        {
+          "label": "Committed GLEIF names (Florida cache)",
+          "value": "745"
+        }
+      ],
+      "firstRow": {
+        "rank": 1,
+        "lei": "549300FGXN1K3HLB1R50",
+        "displayName": "Rocket Mortgage",
+        "metric": 12035,
+        "metricLabel": "originations",
+        "applications": 16617,
+        "originations": 12035,
+        "denials": null,
+        "identityStatus": "public_profile",
+        "identityNote": "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+        "href": "/lender/rocket-mortgage",
+        "hrefLabel": "Public research profile",
+        "whyMatched": [
+          "HMDA 2025 reporting vintage originations; source field total_originations; property geography NJ.",
+          "Ordered within the acquired source cohort by reported raw originations; not a recommendation.",
+          "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score."
+        ],
+        "nmls": "3030",
+        "evidenceAvailable": [
+          "HMDA market activity",
+          "NMLS institution identity"
+        ]
+      },
+      "trace": {
+        "contract": "lender-ask-v1",
+        "sourceFiles": [
+          "lib/ask-lender/generated/state.csv.json"
+        ],
+        "method": "Select lib/ask-lender/generated/state.csv.json; 2025; NJ; field total_originations. Validate every selected observation, group disjoint state-LEI-year keys by LEI, sum within the acquired cohort, retain positive values, order descending (LEI tie-break). Totals precede pagination. No county and state rows are combined.",
+        "indexes": [
+          "Scope NJ; action origination; field total_originations; availability AVAILABLE"
+        ],
+        "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+        "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+        "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+        "grain": "state-LEI-year -> institution LEI by state property geography; New Jersey",
+        "period": "HMDA 2025 reporting vintage"
+      },
+      "rendered": true,
+      "overflow": false
+    },
+    {
+      "id": "fl-fha-orig",
+      "q": "Which lenders originated the most FHA mortgages in Florida?",
+      "expected": "AVAILABLE",
+      "value": 86736,
+      "ms": 214,
+      "status": 200,
+      "query": {
+        "mode": "entity",
+        "geography": {
+          "grain": "state",
+          "state": "FL",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "reportingYears": [],
+        "scopeIssues": [],
+        "actionTaken": [
+          "origination"
+        ],
+        "loanType": [
+          "FHA"
+        ],
+        "requestedMetric": "most",
+        "sort": {
+          "field": "origination",
+          "direction": "desc"
+        }
+      },
+      "evidence": {
+        "availability": "AVAILABLE",
+        "scope": "FL",
+        "action": "origination",
+        "loanType": "FHA",
+        "purpose": [],
+        "field": "orig_fha",
+        "sourceFile": "lib/ask-lender/generated/state.csv.json",
+        "sourceFingerprint": "0f145c107279e04f7acf444e45d1bc8f0d3e22fee27d6bb4ed0c0b3a1cc254a3",
+        "sourceGrain": "state-LEI-year",
+        "outputGrain": "institution LEI by state property geography",
+        "reportingYear": "2025",
+        "retrievedAt": null,
+        "generatedAt": null,
+        "coverage": [
+          "AK",
+          "AL",
+          "AR",
+          "AZ",
+          "CA",
+          "CO",
+          "CT",
+          "DC",
+          "DE",
+          "FL",
+          "GA",
+          "GU",
+          "HI",
+          "IA",
+          "ID",
+          "IL",
+          "IN",
+          "KS",
+          "KY",
+          "LA",
+          "MA",
+          "MD",
+          "ME",
+          "MI",
+          "MN",
+          "MO",
+          "MS",
+          "MT",
+          "NC",
+          "ND",
+          "NE",
+          "NH",
+          "NJ",
+          "NM",
+          "NV",
+          "NY",
+          "OH",
+          "OK",
+          "OR",
+          "PA",
+          "PR",
+          "RI",
+          "SC",
+          "SD",
+          "TN",
+          "TX",
+          "UT",
+          "VA",
+          "VI",
+          "VT",
+          "WA",
+          "WI",
+          "WV",
+          "WY"
+        ],
+        "completeWithinSource": true,
+        "eligibleInstitutions": 1794,
+        "positiveReporters": 529,
+        "observedSum": 86736,
+        "calculation": "Select lib/ask-lender/generated/state.csv.json; 2025; FL; field orig_fha. Validate every selected observation, group disjoint state-LEI-year keys by LEI, sum within the acquired cohort, retain positive values, order descending (LEI tie-break). Totals precede pagination. No county and state rows are combined.",
+        "conditions": []
+      },
+      "terminalState": "FOUND",
+      "rows": 529,
+      "headline": "HMDA reporting institutions with the most FHA originations for properties in Florida",
+      "body": "Ordered by reported raw counts within the acquired institution cohort. Most is volume, not a recommendation.",
+      "facts": [
+        {
+          "label": "Acquired reporting LEIs with this metric > 0",
+          "value": "529"
+        },
+        {
+          "label": "Florida FHA originations observed sum (acquired institution cohort)",
+          "value": "86,736"
+        },
+        {
+          "label": "Public-profile matches on this result set",
+          "value": "42"
+        },
+        {
+          "label": "Identity holds (LEI/name conflict)",
+          "value": "10"
+        },
+        {
+          "label": "LEI-only (no committed legal name)",
+          "value": "243"
+        },
+        {
+          "label": "Committed GLEIF names (Florida cache)",
+          "value": "745"
+        }
+      ],
+      "firstRow": {
+        "rank": 1,
+        "lei": "549300HW662MN1WU8550",
+        "displayName": "United Wholesale Mortgage",
+        "metric": 13216,
+        "metricLabel": "FHA originations",
+        "applications": 71405,
+        "originations": 49897,
+        "denials": null,
+        "identityStatus": "public_profile",
+        "identityNote": "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+        "href": "/lender/united-wholesale-mortgage",
+        "hrefLabel": "Public research profile",
+        "whyMatched": [
+          "HMDA 2025 reporting vintage FHA originations; source field orig_fha; property geography FL.",
+          "Ordered within the acquired source cohort by reported raw FHA originations; not a recommendation.",
+          "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score."
+        ],
+        "nmls": "3038",
+        "evidenceAvailable": [
+          "HMDA market activity",
+          "NMLS institution identity"
+        ]
+      },
+      "trace": {
+        "contract": "lender-ask-v1",
+        "sourceFiles": [
+          "lib/ask-lender/generated/state.csv.json"
+        ],
+        "method": "Select lib/ask-lender/generated/state.csv.json; 2025; FL; field orig_fha. Validate every selected observation, group disjoint state-LEI-year keys by LEI, sum within the acquired cohort, retain positive values, order descending (LEI tie-break). Totals precede pagination. No county and state rows are combined.",
+        "indexes": [
+          "Scope FL; action origination; field orig_fha; availability AVAILABLE"
+        ],
+        "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+        "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+        "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+        "grain": "state-LEI-year -> institution LEI by state property geography; Florida",
+        "period": "HMDA 2025 reporting vintage"
+      },
+      "rendered": true,
+      "overflow": false
+    },
+    {
+      "id": "broward-apps",
+      "q": "Which lenders received the most applications for properties in Broward County?",
+      "expected": "AVAILABLE",
+      "value": 67620,
+      "ms": 205,
+      "status": 200,
+      "query": {
+        "mode": "entity",
+        "geography": {
+          "grain": "county",
+          "state": "FL",
+          "county": "Broward",
+          "countyFips": "12011",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "reportingYears": [],
+        "scopeIssues": [],
+        "actionTaken": [
+          "application"
+        ],
+        "requestedMetric": "most",
+        "sort": {
+          "field": "application",
+          "direction": "desc"
+        }
+      },
+      "evidence": {
+        "availability": "AVAILABLE",
+        "scope": "12011",
+        "action": "application",
+        "loanType": null,
+        "purpose": [],
+        "field": "applications",
+        "sourceFile": "lib/ask-lender/generated/county.csv.json",
+        "sourceFingerprint": "6206f982b860bb9ac9c3c8c4b333d436372b6fa755df294854720c0a1ad453cb",
+        "sourceGrain": "county-LEI-year",
+        "outputGrain": "institution LEI by county property geography",
+        "reportingYear": "2025",
+        "retrievedAt": null,
+        "generatedAt": null,
+        "coverage": [
+          "FL"
+        ],
+        "completeWithinSource": true,
+        "eligibleInstitutions": 670,
+        "positiveReporters": 670,
+        "observedSum": 67620,
+        "calculation": "Select lib/ask-lender/generated/county.csv.json; 2025; 12011; field applications. Validate every selected observation, group disjoint county-LEI-year keys by LEI, sum within the acquired cohort, retain positive values, order descending (LEI tie-break). Totals precede pagination. No county and state rows are combined.",
+        "conditions": []
+      },
+      "terminalState": "FOUND",
+      "rows": 670,
+      "headline": "HMDA reporting institutions with the most applications for properties in Broward County, Florida",
+      "body": "Ordered by reported raw counts within the acquired institution cohort. Most is volume, not a recommendation.",
+      "facts": [
+        {
+          "label": "Acquired reporting LEIs with this metric > 0",
+          "value": "670"
+        },
+        {
+          "label": "Broward County, Florida applications observed sum (acquired institution cohort)",
+          "value": "67,620"
+        },
+        {
+          "label": "Public-profile matches on this result set",
+          "value": "54"
+        },
+        {
+          "label": "Identity holds (LEI/name conflict)",
+          "value": "12"
+        },
+        {
+          "label": "LEI-only (no committed legal name)",
+          "value": "370"
+        },
+        {
+          "label": "Committed GLEIF names (Florida cache)",
+          "value": "745"
+        }
+      ],
+      "firstRow": {
+        "rank": 1,
+        "lei": "549300HW662MN1WU8550",
+        "displayName": "United Wholesale Mortgage",
+        "metric": 6801,
+        "metricLabel": "applications",
+        "applications": 6801,
+        "originations": 4462,
+        "denials": 1342,
+        "identityStatus": "public_profile",
+        "identityNote": "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+        "href": "/lender/united-wholesale-mortgage",
+        "hrefLabel": "Public research profile",
+        "whyMatched": [
+          "HMDA 2025 reporting vintage applications; source field applications; property geography 12011.",
+          "Ordered within the acquired source cohort by reported raw applications; not a recommendation.",
+          "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score."
+        ],
+        "nmls": "3038",
+        "evidenceAvailable": [
+          "HMDA market activity",
+          "NMLS institution identity"
+        ]
+      },
+      "trace": {
+        "contract": "lender-ask-v1",
+        "sourceFiles": [
+          "lib/ask-lender/generated/county.csv.json"
+        ],
+        "method": "Select lib/ask-lender/generated/county.csv.json; 2025; 12011; field applications. Validate every selected observation, group disjoint county-LEI-year keys by LEI, sum within the acquired cohort, retain positive values, order descending (LEI tie-break). Totals precede pagination. No county and state rows are combined.",
+        "indexes": [
+          "Scope 12011; action application; field applications; availability AVAILABLE"
+        ],
+        "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+        "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+        "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+        "grain": "county-LEI-year -> institution LEI by county property geography; Broward County, Florida",
+        "period": "HMDA 2025 reporting vintage"
+      },
+      "rendered": true,
+      "overflow": false
+    },
+    {
+      "id": "fl-denial",
+      "q": "Which lenders reported the most mortgage denials in Florida?",
+      "expected": "AVAILABLE",
+      "value": 192366,
+      "ms": 228,
+      "status": 200,
+      "query": {
+        "mode": "entity",
+        "geography": {
+          "grain": "state",
+          "state": "FL",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "reportingYears": [],
+        "scopeIssues": [],
+        "actionTaken": [
+          "denial"
+        ],
+        "requestedMetric": "most",
+        "sort": {
+          "field": "denial",
+          "direction": "desc"
+        }
+      },
+      "evidence": {
+        "availability": "AVAILABLE",
+        "scope": "FL",
+        "action": "denial",
+        "loanType": null,
+        "purpose": [],
+        "field": "denials",
+        "sourceFile": "lib/ask-lender/generated/county.csv.json",
+        "sourceFingerprint": "6206f982b860bb9ac9c3c8c4b333d436372b6fa755df294854720c0a1ad453cb",
+        "sourceGrain": "county-LEI-year",
+        "outputGrain": "institution LEI by state property geography",
+        "reportingYear": "2025",
+        "retrievedAt": null,
+        "generatedAt": null,
+        "coverage": [
+          "FL"
+        ],
+        "completeWithinSource": true,
+        "eligibleInstitutions": 1797,
+        "positiveReporters": 763,
+        "observedSum": 192366,
+        "calculation": "Select lib/ask-lender/generated/county.csv.json; 2025; FL; field denials. Validate every selected observation, group disjoint county-LEI-year keys by LEI, sum within the acquired cohort, retain positive values, order descending (LEI tie-break). Totals precede pagination. No county and state rows are combined.",
+        "conditions": []
+      },
+      "terminalState": "FOUND",
+      "rows": 763,
+      "headline": "HMDA reporting institutions with the most denials for properties in Florida",
+      "body": "Ordered by reported raw counts within the acquired institution cohort. Most is volume, not a recommendation.",
+      "facts": [
+        {
+          "label": "Acquired reporting LEIs with this metric > 0",
+          "value": "763"
+        },
+        {
+          "label": "Florida denials observed sum (acquired institution cohort)",
+          "value": "192,366"
+        },
+        {
+          "label": "Public-profile matches on this result set",
+          "value": "55"
+        },
+        {
+          "label": "Identity holds (LEI/name conflict)",
+          "value": "12"
+        },
+        {
+          "label": "LEI-only (no committed legal name)",
+          "value": "405"
+        },
+        {
+          "label": "Committed GLEIF names (Florida cache)",
+          "value": "745"
+        }
+      ],
+      "firstRow": {
+        "rank": 1,
+        "lei": "549300HW662MN1WU8550",
+        "displayName": "United Wholesale Mortgage",
+        "metric": 10901,
+        "metricLabel": "denials",
+        "applications": 71405,
+        "originations": 49897,
+        "denials": 10901,
+        "identityStatus": "public_profile",
+        "identityNote": "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score.",
+        "href": "/lender/united-wholesale-mortgage",
+        "hrefLabel": "Public research profile",
+        "whyMatched": [
+          "HMDA 2025 reporting vintage denials; source field denials; property geography FL.",
+          "Ordered within the acquired source cohort by reported raw denials; not a recommendation.",
+          "Confirmed LEI match to a published national research profile. Publication is a gate, not a quality score."
+        ],
+        "nmls": "3038",
+        "evidenceAvailable": [
+          "HMDA market activity",
+          "NMLS institution identity"
+        ]
+      },
+      "trace": {
+        "contract": "lender-ask-v1",
+        "sourceFiles": [
+          "lib/ask-lender/generated/county.csv.json"
+        ],
+        "method": "Select lib/ask-lender/generated/county.csv.json; 2025; FL; field denials. Validate every selected observation, group disjoint county-LEI-year keys by LEI, sum within the acquired cohort, retain positive values, order descending (LEI tie-break). Totals precede pagination. No county and state rows are combined.",
+        "indexes": [
+          "Scope FL; action denial; field denials; availability AVAILABLE"
+        ],
+        "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+        "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+        "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+        "grain": "county-LEI-year -> institution LEI by state property geography; Florida",
+        "period": "HMDA 2025 reporting vintage"
+      },
+      "rendered": true,
+      "overflow": false
+    },
+    {
+      "id": "year",
+      "q": "Which lenders originated the most mortgages in New Jersey 2024?",
+      "expected": "UNSUPPORTED",
+      "ms": 203,
+      "status": 200,
+      "query": {
+        "mode": "entity",
+        "geography": {
+          "grain": "state",
+          "state": "NJ",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "reportingYears": [
+          "2024"
+        ],
+        "scopeIssues": [],
+        "actionTaken": [
+          "origination"
+        ],
+        "requestedMetric": "most",
+        "sort": {
+          "field": "origination",
+          "direction": "desc"
+        }
+      },
+      "evidence": {
+        "availability": "UNSUPPORTED",
+        "scope": "NJ",
+        "action": "origination",
+        "loanType": null,
+        "purpose": [],
+        "field": null,
+        "sourceFile": "lib/ask-lender/generated/state.csv.json",
+        "sourceFingerprint": "0f145c107279e04f7acf444e45d1bc8f0d3e22fee27d6bb4ed0c0b3a1cc254a3",
+        "sourceGrain": "state-LEI-year",
+        "outputGrain": "institution LEI by state property geography",
+        "reportingYear": "2025",
+        "retrievedAt": null,
+        "generatedAt": null,
+        "coverage": [
+          "AK",
+          "AL",
+          "AR",
+          "AZ",
+          "CA",
+          "CO",
+          "CT",
+          "DC",
+          "DE",
+          "FL",
+          "GA",
+          "GU",
+          "HI",
+          "IA",
+          "ID",
+          "IL",
+          "IN",
+          "KS",
+          "KY",
+          "LA",
+          "MA",
+          "MD",
+          "ME",
+          "MI",
+          "MN",
+          "MO",
+          "MS",
+          "MT",
+          "NC",
+          "ND",
+          "NE",
+          "NH",
+          "NJ",
+          "NM",
+          "NV",
+          "NY",
+          "OH",
+          "OK",
+          "OR",
+          "PA",
+          "PR",
+          "RI",
+          "SC",
+          "SD",
+          "TN",
+          "TX",
+          "UT",
+          "VA",
+          "VI",
+          "VT",
+          "WA",
+          "WI",
+          "WV",
+          "WY"
+        ],
+        "completeWithinSource": false,
+        "eligibleInstitutions": null,
+        "positiveReporters": null,
+        "observedSum": null,
+        "calculation": "Capability decision: Requested year 2024 is unavailable in this 2025 institution file. No different vintage was substituted. No ordering or cohort total was executed.",
+        "conditions": []
+      },
+      "terminalState": "UNSUPPORTED",
+      "headline": "Institution breakdown unavailable: New Jersey originations",
+      "body": "Requested year 2024 is unavailable in this 2025 institution file. No different vintage was substituted.",
+      "facts": [],
+      "trace": {
+        "contract": "lender-ask-v1",
+        "sourceFiles": [
+          "lib/ask-lender/generated/state.csv.json"
+        ],
+        "method": "Capability decision: Requested year 2024 is unavailable in this 2025 institution file. No different vintage was substituted. No ordering or cohort total was executed.",
+        "indexes": [
+          "Scope NJ; action origination; field not available; availability UNSUPPORTED"
+        ],
+        "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+        "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+        "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+        "grain": "state-LEI-year -> institution LEI by state property geography; New Jersey",
+        "period": "HMDA 2025 reporting vintage"
+      },
+      "rendered": true,
+      "overflow": false
+    },
+    {
+      "id": "purpose",
+      "q": "Which lenders originated the most purchase mortgages in New Jersey?",
+      "expected": "UNSUPPORTED",
+      "ms": 140,
+      "status": 200,
+      "query": {
+        "mode": "entity",
+        "geography": {
+          "grain": "state",
+          "state": "NJ",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "reportingYears": [],
+        "scopeIssues": [],
+        "loanPurpose": [
+          "purchase"
+        ],
+        "actionTaken": [
+          "origination"
+        ],
+        "requestedMetric": "most",
+        "sort": {
+          "field": "origination",
+          "direction": "desc"
+        }
+      },
+      "evidence": {
+        "availability": "UNSUPPORTED",
+        "scope": "NJ",
+        "action": "origination",
+        "loanType": null,
+        "purpose": [
+          "purchase"
+        ],
+        "field": null,
+        "sourceFile": null,
+        "sourceFingerprint": null,
+        "sourceGrain": null,
+        "outputGrain": "institution LEI by state property geography",
+        "reportingYear": null,
+        "retrievedAt": null,
+        "generatedAt": null,
+        "coverage": [],
+        "completeWithinSource": false,
+        "eligibleInstitutions": null,
+        "positiveReporters": null,
+        "observedSum": null,
+        "calculation": "Capability decision: This institution file does not provide the requested purpose, lender-class, or derived-measure breakdown. No broader table was substituted. No ordering or cohort total was executed.",
+        "conditions": []
+      },
+      "terminalState": "UNSUPPORTED",
+      "headline": "Institution breakdown unavailable: New Jersey originations",
+      "body": "This institution file does not provide the requested purpose, lender-class, or derived-measure breakdown. No broader table was substituted.",
+      "facts": [],
+      "trace": {
+        "contract": "lender-ask-v1",
+        "sourceFiles": [],
+        "method": "Capability decision: This institution file does not provide the requested purpose, lender-class, or derived-measure breakdown. No broader table was substituted. No ordering or cohort total was executed.",
+        "indexes": [
+          "Scope NJ; action origination; field not available; availability UNSUPPORTED"
+        ],
+        "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+        "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+        "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+        "grain": "Source not selected -> institution LEI by state property geography; New Jersey",
+        "period": "Reporting vintage not selected"
+      },
+      "rendered": true,
+      "overflow": false
+    },
+    {
+      "id": "identity-positive",
+      "q": "NMLS 30 30",
+      "expected": "FOUND",
+      "ms": 133,
+      "status": 200,
+      "query": {
+        "mode": "entity",
+        "identityRequest": {
+          "rawQuestion": "NMLS 30 30",
+          "families": [
+            "NMLS_INSTITUTION"
+          ],
+          "identifiers": [
+            {
+              "type": "NMLS_INSTITUTION",
+              "value": "3030",
+              "rawSpan": "NMLS 30 30",
+              "start": 0,
+              "end": 10,
+              "normalization": [
+                "Whitespace removed within the explicitly labeled NMLS span"
+              ]
+            }
+          ],
+          "requestedClass": "unknown",
+          "remainingText": ""
+        },
+        "identifier": {
+          "type": "NMLS_INSTITUTION",
+          "value": "3030"
+        },
+        "identityQuery": "NMLS 3030",
+        "requestedMetric": null,
+        "coverageState": "KNOWN"
+      },
+      "terminalState": "FOUND",
+      "rows": 1,
+      "headline": "Published institution identity found",
+      "body": "The published source records this exact institution identity. Additional requested conditions below remain separate from identity resolution.",
+      "firstRow": {
+        "rank": 1,
+        "lei": "549300FGXN1K3HLB1R50",
+        "displayName": "Rocket Mortgage",
+        "metric": 0,
+        "metricLabel": "Exact institution identifier",
+        "applications": null,
+        "originations": null,
+        "denials": null,
+        "identityStatus": "public_profile",
+        "identityNote": "Institution class is established by the permitted publication source, not by number length.",
+        "href": "/lender/rocket-mortgage",
+        "hrefLabel": "Research this lender",
+        "nmls": "3030",
+        "institutionKey": "1e2fa9a5-7067-52e9-8b44-4da4e71c9d47",
+        "resolvedClass": "institution",
+        "matchEvidence": [
+          {
+            "method": "exact_identifier",
+            "family": "NMLS_INSTITUTION",
+            "requestedValue": "3030",
+            "matchedField": "nmls",
+            "returnedValue": "3030",
+            "institutionKey": "1e2fa9a5-7067-52e9-8b44-4da4e71c9d47",
+            "sourceReference": "docs/lend-nat-016-search-index.json; lend-nat-014-v1",
+            "sourceAsOf": null,
+            "normalization": [
+              "Whitespace removed within the explicitly labeled NMLS span"
+            ]
+          }
+        ],
+        "whyMatched": [
+          "Exact NMLS institution identifier: the published record lists 3030."
+        ],
+        "evidenceAvailable": [
+          "Published institution identity; other evidence was not checked by this lookup"
+        ]
+      },
+      "trace": {
+        "contract": "lender-ask-v1",
+        "sourceFiles": [
+          "docs/lend-nat-016-search-index.json",
+          "docs/fl-lend-011-florida-search-index.json"
+        ],
+        "method": "Validated complete labeled identifier; equality on the matching source field; publication gate; institution-key deduplication.",
+        "indexes": [
+          "Published lender institution research index (national and permitted Florida profiles)"
+        ],
+        "identityPolicy": "NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.",
+        "publicationGate": "Existing render-approved national and Florida publication manifests only.",
+        "cache": "Committed identity snapshots; no live regulator retrieval",
+        "grain": "institution identity",
+        "period": "Identity effective/retrieval time not supplied by these snapshots"
+      },
+      "rendered": true,
+      "overflow": false
+    },
+    {
+      "id": "identity-miss",
+      "q": "nmls 32 51",
+      "expected": "NO_MATCH",
+      "ms": 136,
+      "status": 200,
+      "query": {
+        "mode": "entity",
+        "identityRequest": {
+          "rawQuestion": "nmls 32 51",
+          "families": [
+            "NMLS_INSTITUTION"
+          ],
+          "identifiers": [
+            {
+              "type": "NMLS_INSTITUTION",
+              "value": "3251",
+              "rawSpan": "nmls 32 51",
+              "start": 0,
+              "end": 10,
+              "normalization": [
+                "Whitespace removed within the explicitly labeled NMLS span"
+              ]
+            }
+          ],
+          "requestedClass": "unknown",
+          "remainingText": ""
+        },
+        "identifier": {
+          "type": "NMLS_INSTITUTION",
+          "value": "3251"
+        },
+        "identityQuery": "NMLS 3251",
+        "requestedMetric": null,
+        "coverageState": "UNKNOWN"
+      },
+      "terminalState": "NO_MATCH",
+      "rows": 0,
+      "headline": "No exact match in the published institution index",
+      "body": "The full identifier was searched exactly and is absent from this published institution corpus. Its real-world class and license status remain unknown.",
+      "trace": {
+        "contract": "lender-ask-v1",
+        "sourceFiles": [
+          "docs/lend-nat-016-search-index.json",
+          "docs/fl-lend-011-florida-search-index.json"
+        ],
+        "method": "Validated complete labeled identifier; equality on the matching source field; publication gate; institution-key deduplication.",
+        "indexes": [
+          "Published lender institution research index (national and permitted Florida profiles)"
+        ],
+        "identityPolicy": "NMLS and LEI are separate fields. A pair must exist on the same verified institution. No name fallback.",
+        "publicationGate": "Existing render-approved national and Florida publication manifests only.",
+        "cache": "Committed identity snapshots; no live regulator retrieval",
+        "grain": "institution identity",
+        "period": "Identity effective/retrieval time not supplied by these snapshots"
+      },
+      "rendered": true,
+      "overflow": false
+    },
+    {
+      "id": "scalar",
+      "q": "How many mortgage denials in New Jersey?",
+      "expected": "SCALAR",
+      "value": 55453,
+      "ms": 124,
+      "status": 200,
+      "query": {
+        "mode": "count",
+        "reportingYears": [],
+        "scopeIssues": [],
+        "geography": {
+          "grain": "state",
+          "state": "NJ",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "actionTaken": [
+          "denial"
+        ],
+        "requestedMetric": "count"
+      },
+      "evidence": {
+        "availability": "AVAILABLE",
+        "value": 55453,
+        "scope": "NJ",
+        "action": "denial",
+        "field": "denials",
+        "sourceFile": "lib/home-intel/accepted-snapshot.json",
+        "sourceFingerprint": "913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008",
+        "sourceGrain": "county observations aggregated by jurisdiction",
+        "outputGrain": "state",
+        "reportingYear": "2025",
+        "retrievedAt": "2026-08-30",
+        "generatedAt": "2026-08-30T16:22:07.696760+00:00",
+        "calculation": "Select the unique geography[state=NJ].denials. Accepted county observations already aggregated to New Jersey; no additional summation.",
+        "conditions": []
+      },
+      "terminalState": "FOUND",
+      "headline": "New Jersey denials - HMDA 2025 reporting vintage",
+      "body": "Reported denials for mortgage properties in New Jersey. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.",
+      "facts": [
+        {
+          "label": "New Jersey denials",
+          "value": "55,453"
+        }
+      ],
+      "trace": {
+        "contract": "lender-ask-v1",
+        "sourceFiles": [
+          "lib/home-intel/accepted-snapshot.json"
+        ],
+        "method": "Select the unique geography[state=NJ].denials. Accepted county observations already aggregated to New Jersey; no additional summation.",
+        "indexes": [
+          "Scope NJ; action denial; field denials; availability AVAILABLE"
+        ],
+        "identityPolicy": "Market totals are independent of profile publication and result pagination.",
+        "publicationGate": "No institution publication changes.",
+        "cache": "Committed bounded source artifacts; no live regulator lookup.",
+        "grain": "county observations aggregated by jurisdiction -> state",
+        "period": "HMDA 2025 reporting vintage"
+      },
+      "rendered": true,
+      "overflow": false
+    },
+    {
+      "id": "comparison",
+      "q": "Compare Broward and Palm Beach mortgage applications",
+      "expected": "COMPARISON",
+      "ms": 135,
+      "status": 200,
+      "query": {
+        "mode": "comparison",
+        "geography": {
+          "grain": "county",
+          "state": "FL",
+          "county": "Broward",
+          "countyFips": "12011",
+          "compareCounty": "Palm Beach",
+          "compareCountyFips": "12099",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "actionTaken": [
+          "application"
+        ],
+        "requestedMetric": "count"
+      },
+      "headline": "Broward vs Palm Beach — HMDA 2025 county-grain property geography",
+      "body": "Same vintage and county grain. This is not which county is better. Volume reflects reporting and housing activity, not lender quality. Purchase/refinance figures are application purpose, not originations.",
+      "facts": [
+        {
+          "label": "Broward applications",
+          "value": "67,743"
+        },
+        {
+          "label": "Broward originations",
+          "value": "31,292"
+        },
+        {
+          "label": "Broward denials",
+          "value": "17,138"
+        },
+        {
+          "label": "Broward purchase-purpose applications (not originations)",
+          "value": "27,888"
+        },
+        {
+          "label": "Broward refinance-purpose applications (not originations)",
+          "value": "22,265"
+        },
+        {
+          "label": "Palm Beach applications",
+          "value": "56,484"
+        },
+        {
+          "label": "Palm Beach originations",
+          "value": "28,383"
+        },
+        {
+          "label": "Palm Beach denials",
+          "value": "12,505"
+        },
+        {
+          "label": "Palm Beach purchase-purpose applications (not originations)",
+          "value": "23,718"
+        },
+        {
+          "label": "Palm Beach refinance-purpose applications (not originations)",
+          "value": "17,758"
+        }
+      ],
+      "trace": {
+        "contract": "lender-ask-v1",
+        "sourceFiles": [
+          "data/hmda/national/lender_state_summary.csv",
+          "data/hmda/by-state/FL/lender_activity_by_county.csv",
+          "data/hmda/by-state/FL/county_market_summary.csv",
+          "data/hmda/florida/lei_to_nmls_mapping.csv",
+          "data/hmda/florida/_gleif_name_cache.json",
+          "docs/lend-nat-016-search-index.json"
+        ],
+        "method": "county_market_summary.csv county totals. Not LEI ranking.",
+        "indexes": [
+          "in-memory LEI map",
+          "in-memory county FIPS map",
+          "lend-nat-016 LEI→public slug"
+        ],
+        "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+        "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+        "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+        "grain": "HMDA 2025 county market",
+        "period": "HMDA 2025 reporting vintage"
+      },
+      "rendered": true,
+      "overflow": false
+    }
+  ],
+  "navigation": [
+    "available -> unavailable -> reload -> scalar recovery -> back -> available -> back/forward passed",
+    "edit/Enter preserved explicit action override and NJ"
+  ],
+  "failures": [],
+  "pass": true,
+  "finishedAt": "2026-09-11T21:01:12.355Z"
+}

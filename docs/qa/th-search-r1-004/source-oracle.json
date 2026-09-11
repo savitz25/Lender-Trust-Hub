@@ -1,0 +1,228 @@
+{
+  "at": "2026-09-11T20:43:43.892020+00:00",
+  "baseline": "0f933f78bb118d4f146e3f0b4c9081416f0a4400",
+  "sources": {
+    "state": {
+      "file": "lib\\ask-lender\\generated\\state.csv.json",
+      "rawSha256": "0f145c107279e04f7acf444e45d1bc8f0d3e22fee27d6bb4ed0c0b3a1cc254a3",
+      "rows": 36402,
+      "years": [
+        "2025"
+      ],
+      "states": [
+        "AK",
+        "AL",
+        "AR",
+        "AZ",
+        "CA",
+        "CO",
+        "CT",
+        "DC",
+        "DE",
+        "FL",
+        "GA",
+        "GU",
+        "HI",
+        "IA",
+        "ID",
+        "IL",
+        "IN",
+        "KS",
+        "KY",
+        "LA",
+        "MA",
+        "MD",
+        "ME",
+        "MI",
+        "MN",
+        "MO",
+        "MS",
+        "MT",
+        "NC",
+        "ND",
+        "NE",
+        "NH",
+        "NJ",
+        "NM",
+        "NV",
+        "NY",
+        "OH",
+        "OK",
+        "OR",
+        "PA",
+        "PR",
+        "RI",
+        "SC",
+        "SD",
+        "TN",
+        "TX",
+        "UT",
+        "VA",
+        "VI",
+        "VT",
+        "WA",
+        "WI",
+        "WV",
+        "WY"
+      ],
+      "fields": [
+        "institution_name",
+        "lei",
+        "orig_conventional",
+        "orig_conventional_pct",
+        "orig_fha",
+        "orig_fha_pct",
+        "orig_other_loan_type",
+        "orig_usda_other",
+        "orig_va",
+        "orig_va_pct",
+        "priority_market",
+        "state",
+        "top_counties_served",
+        "total_applications",
+        "total_originations",
+        "year"
+      ],
+      "duplicateKeys": 0,
+      "selectedControls": {
+        "NJ": {
+          "total_applications": 318280,
+          "total_originations": 177325,
+          "applications": null,
+          "originations": null,
+          "denials": null,
+          "orig_fha": 18073,
+          "apps_fha": null
+        },
+        "FL": {
+          "total_applications": 927616,
+          "total_originations": 489025,
+          "applications": null,
+          "originations": null,
+          "denials": null,
+          "orig_fha": 86736,
+          "apps_fha": null
+        }
+      }
+    },
+    "county": {
+      "file": "lib\\ask-lender\\generated\\county.csv.json",
+      "rawSha256": "6206f982b860bb9ac9c3c8c4b333d436372b6fa755df294854720c0a1ad453cb",
+      "rows": 22359,
+      "years": [
+        "2025"
+      ],
+      "states": [
+        "FL"
+      ],
+      "fields": [
+        "applications",
+        "apps_conventional",
+        "apps_fha",
+        "apps_other_loan_type",
+        "apps_usda_other",
+        "apps_va",
+        "county_fips",
+        "county_name",
+        "denials",
+        "institution_name",
+        "lei",
+        "market_share_orig_pct",
+        "orig_conventional",
+        "orig_fha",
+        "orig_other_loan_type",
+        "orig_usda_other",
+        "orig_va",
+        "originations",
+        "priority_market",
+        "state",
+        "year"
+      ],
+      "duplicateKeys": 0,
+      "selectedControls": {
+        "NJ": {
+          "total_applications": null,
+          "total_originations": null,
+          "applications": null,
+          "originations": null,
+          "denials": null,
+          "orig_fha": null,
+          "apps_fha": null
+        },
+        "FL": {
+          "total_applications": null,
+          "total_originations": null,
+          "applications": 922758,
+          "originations": 489025,
+          "denials": 192366,
+          "orig_fha": 86736,
+          "apps_fha": 154697
+        }
+      }
+    },
+    "markets": {
+      "file": "lib\\ask-lender\\generated\\markets.csv.json",
+      "rawSha256": "0a5f8ed92b286fb7460b218e907031b0109c67274d69841849ffbc83a6b6a9c7",
+      "rows": 67,
+      "years": [
+        "2025"
+      ],
+      "states": [
+        "FL"
+      ],
+      "fields": [
+        "apps_conventional",
+        "apps_conventional_pct",
+        "apps_fha",
+        "apps_fha_pct",
+        "apps_other_loan_type",
+        "apps_usda_other",
+        "apps_va",
+        "apps_va_pct",
+        "county_fips",
+        "county_name",
+        "denial_count",
+        "denial_rate_pct",
+        "orig_conventional",
+        "orig_conventional_pct",
+        "orig_fha",
+        "orig_fha_pct",
+        "orig_other_loan_type",
+        "orig_usda_other",
+        "orig_va",
+        "orig_va_pct",
+        "priority_market",
+        "purchase_count",
+        "purchase_pct_of_apps",
+        "purpose_other_count",
+        "refinance_count",
+        "refinance_pct_of_apps",
+        "state",
+        "total_applications",
+        "total_originations",
+        "year"
+      ],
+      "duplicateKeys": 0,
+      "selectedControls": {
+        "NJ": {
+          "total_applications": null,
+          "total_originations": null,
+          "applications": null,
+          "originations": null,
+          "denials": null,
+          "orig_fha": null,
+          "apps_fha": null
+        },
+        "FL": {
+          "total_applications": 928427,
+          "total_originations": 489025,
+          "applications": null,
+          "originations": null,
+          "denials": null,
+          "orig_fha": 86736,
+          "apps_fha": 155553
+        }
+      }
+    }
+  }
+}

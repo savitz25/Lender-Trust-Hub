@@ -236,11 +236,11 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
   let loanType: string[] | undefined;
   for (const [term, value] of Object.entries(LOAN_TYPE_TERMS)) {
     const hit = term.length <= 3 ? new RegExp(`\\b${term}\\b`).test(q) : q.includes(term);
-    if (hit && !(term === 'va' && /\b(?:in|within|state of)\s+va\b/.test(q) && !/\bva\s+(?:loans?|mortgages?|applications?|originations?)\b/.test(q))) loanType = [value];
+    if (hit && !(term === 'va' && /\b(?:in|within|state of)\s+va\b/.test(q) && !/\bva\s+(?:loans?|mortgages?|applications?|originations?)\b/.test(q))) loanType = [...new Set([...(loanType ?? []), value])];
   }
   let loanPurpose: string[] | undefined;
   for (const [term, value] of Object.entries(PURPOSE_TERMS)) {
-    if (q.includes(term)) loanPurpose = [value];
+    if (q.includes(term)) loanPurpose = [...new Set([...(loanPurpose ?? []), value])];
   }
   let lenderType: string[] | undefined;
   for (const [term, value] of Object.entries(DEPOSITORY_TERMS)) {
@@ -260,32 +260,14 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
   // Scalar counts must not silently discard an unrecognized place or dimension.
   let countRemainder = q;
   const phrases = [...Object.values(STATE_NAMES), ...Object.keys(FL_ASK_COUNTIES), ...Object.keys(LOAN_TYPE_TERMS), ...Object.keys(PURPOSE_TERMS), ...Object.keys(DEPOSITORY_TERMS)];
-  for (const phrase of phrases.sort((a,b) => b.length - a.length)) countRemainder = countRemainder.replaceAll(phrase.toLowerCase(), ' ');
+  for (const phrase of phrases.sort((a,b) => b.length - a.length)) countRemainder = countRemainder.replace(new RegExp(`\\b${phrase.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'g'), ' ');
   countRemainder = countRemainder.replace(/\b[A-Z]{2}\b/gi, word => states.includes(word.toUpperCase()) ? ' ' : word);
-  countRemainder = countRemainder.replace(/\b(?:how|many|what|is|are|was|were|the|a|an|of|for|in|within|and|or|by|from|during|to|show|me|give|report|reported|total|number|count|counts|mortgage|mortgages|loan|loans|applications?|originations?|originated|denials?|denied|properties|property|census|location|geography|state|county|market|activity|hmda|reporting|vintage|year|national|nationally|nationwide|united|states|us|usa|current|research|universe|received|filed|all|taken)\b|\b(?:19|20)\d{2}\b/g, ' ').replace(/[^a-z0-9$]/g, '').trim();
+  countRemainder = countRemainder.replace(/\b(?:which|lenders?|institutions?|most|highest|volume|how|many|what|is|are|was|were|the|a|an|of|for|in|within|and|or|by|from|during|to|show|me|give|report|reported|total|number|count|counts|mortgage|mortgages|loan|loans|applications?|originations?|originated|denials?|denied|properties|property|census|location|geography|state|county|market|activity|hmda|reporting|vintage|year|national|nationally|nationwide|united|states|us|usa|current|research|universe|received|filed|all|taken)\b|\b(?:19|20)\d{2}\b/g, ' ').replace(/[^a-z0-9$]/g, '').trim();
   if (countRemainder) scopeIssues.push('Some requested geography or count conditions are not supported by this source. Edit the request or select a supported state/action; no broader count was substituted.');
 
 
   if (q.includes('what does') || q.includes('what does originated') || q.includes('mean in hmda')) {
     return { mode: 'definition', definitionId: 'origination', requestedMetric: null };
-  }
-
-  // Purchase/refi originations are NULL at LEI grain.
-  if (loanPurpose?.length && (wantsEntity(q, metric) || metric === 'most')) {
-    return {
-      mode: 'fail_closed',
-      failClosedKind: 'loan-purpose-origination',
-      failReason:
-        'Purchase and refinance originations are not populated on 2025 LEI-grain HMDA summaries. County-market purchase_count is application purpose, not an origination ranking. No reconstructed product ranking.',
-      geography: counties[0]
-        ? { grain: 'county', state: 'FL', county: counties[0].name, countyFips: counties[0].fips, note: ASK_GEO_NOTE }
-        : florida
-          ? { grain: 'state', state: 'FL', note: ASK_GEO_NOTE }
-          : { grain: 'national', note: ASK_GEO_NOTE },
-      loanPurpose,
-      loanType,
-      requestedMetric: metric,
-    };
   }
 
   const entity = wantsEntity(q, metric);
@@ -328,6 +310,7 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
   }
 
   if (entity) {
+    if (counties.length > 1) scopeIssues.push('Select one county for an institution ordering; no multi-county comparison was executed.');
     const geo =
       counties[0] != null
         ? {
@@ -343,6 +326,7 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
     return {
       mode: 'entity',
       geography: geo,
+      reportingYears, scopeIssues, loanPurpose,
       actionTaken: action,
       loanType,
       lenderType,

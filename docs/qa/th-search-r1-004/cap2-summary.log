@@ -1,0 +1,18 @@
+PASS unknown-no-evidence
+PASS typo-no-evidence
+PASS ambiguous
+PASS ranking-refused
+PASS complaint-not-wrongdoing
+PASS not-size-adjusted
+PASS identifier-evidence
+PASS bounded-pagination
+PASS page2-out-of-range
+PASS pagination-no-overlap
+PASS hmda-unchanged
+PASS hmda-2025
+PASS no-db-writes
+PASS no-profile-minting
+PASS publication-delta-zero
+PASS no-trust-score
+PASS no-paid-order
+PASS LEND-CAP-002 40 checks

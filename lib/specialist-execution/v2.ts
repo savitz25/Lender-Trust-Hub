@@ -141,6 +141,7 @@ export function executeSpecialistV2(raw: SpecialistRequest | string) {
   };
   try {
     const result = executeAskQuery({ q: input.query ?? 'structured HMDA property-market query', page: input.page ?? 1, pageSize: Math.min(input.limit ?? 25, 50), structuredQuery });
+    if (result.volumeEvidence && result.volumeEvidence.availability !== 'AVAILABLE') return base(result.volumeEvidence.availability === 'UNAVAILABLE' ? 'BACKEND_UNAVAILABLE' : result.volumeEvidence.availability === 'NEEDS_CLARIFICATION' ? 'CLARIFICATION_REQUIRED' : 'UNSUPPORTED_CAPABILITY', result.volumeEvidence.availability === 'UNAVAILABLE' ? 503 : 422, interpretation, result.body);
     const rows = (result.rows ?? []).map((row) => ({
       displayName: row.displayName,
       lei: row.lei,

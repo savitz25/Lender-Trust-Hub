@@ -1,0 +1,38 @@
+node.exe : node:internal/modules/run_main:107
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (node:internal/modules/run_main:107:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Unavailable denial field must not produce a numeric denominator
++ actual - expected
+
++ {
++   label: 'New Jersey denials',
++   value: 0
++ }
+- undefined
+
+    at assert (C:\Users\makei\th-search-r1-004-work\scripts\r4-baseprobe.ts:7:8)
+    at Object.<anonymous> (C:\Users\makei\th-search-r1-004-work\scripts\r4-baseprobe.ts:7:124)
+    at Module._compile (node:internal/modules/cjs/loader:1872:14)
+    at Object.transformer (C:\Users\makei\th-search-r1-004-work\node_modules\tsx\dist\register-CptX03bE.cjs:9:3252)
+    at Module.load (node:internal/modules/cjs/loader:1594:32)
+    at Module._load (node:internal/modules/cjs/loader:1396:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at loadCJSModuleWithModuleLoad (node:internal/modules/esm/translators:372:15)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:244:9)
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: { label: 'New Jersey denials', value: 0 },
+  expected: undefined,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

@@ -1,0 +1,18 @@
+PASS ASK-fha-not-hq HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.
+PASS ASK-va-runs United Wholesale Mortgage 7193
+PASS ASK-conv-runs 29438
+PASS ASK-usda-supported entity 214
+PASS ASK-rates-closed live-rate
+PASS ASK-cfpb-entity 25
+PASS ASK-cfpb-caveat wrongdoing caveat
+PASS ASK-cfpb-unattached unattached excluded
+PASS ASK-fl-us Florida vs U.S. reported HMDA 2025 county-grain activity
+PASS ASK-name-conflict LEI name conflict held
+PASS ASK-name-match UWM compatible
+PASS ASK-route-noindex ask noindex follow
+PASS ASK-robots-disallow robots /ask
+PASS ASK-not-in-sitemap sitemap omits /ask
+PASS ASK-api-exists api route
+PASS ASK-no-llm-facts no LLM facts
+PASS ASK-why-matched HMDA 2025 reporting vintage originations; source field total_originations; property geography FL. Ordered within the acquired source cohort by reported raw orig
+PASS ask-lender 60 checks
