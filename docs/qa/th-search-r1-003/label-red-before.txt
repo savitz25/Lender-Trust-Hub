@@ -36,9 +36,9 @@
 test at lib\ask-lender\r3-behavior.test.ts:2:13530
 ✖ 27 scalar interpretation names counted observations, not institution grain (15.5819ms)
   AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
-  
+
     assert.ok(!r.interpretation.some(line=>line.label==='Entity grain'))
-  
+
       at TestContext.<anonymous> (C:\Users\makei\th-search-r1-003-work\lib\ask-lender\r3-behavior.test.ts:48:148)
       at Test.runInAsyncScope (node:async_hooks:227:14)
       at Test.run (node:internal/test_runner/test:1382:25)
