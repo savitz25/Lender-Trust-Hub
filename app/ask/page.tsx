@@ -1,3 +1,4 @@
+import { askInputFromParams } from '@/lib/ask-lender/request';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AskResultView } from '@/components/ask-lender/ask-result-view';
@@ -17,26 +18,12 @@ type Props = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-function one(v: string | string[] | undefined): string {
-  if (Array.isArray(v)) return v[0] ?? '';
-  return v ?? '';
-}
-
 export default async function AskPage({ searchParams }: Props) {
   const params = await searchParams;
-  const q = one(params.q).trim().slice(0, 180);
-  const page = Math.min(200, Math.max(1, Number(one(params.page) || '1') || 1));
-  const result = q
-    ? executeAskQuery({
-        q,
-        page,
-        overrides: {
-          action: one(params.action) || null,
-          loanType: one(params.loanType) || null,
-          geo: one(params.geo) || null,
-        },
-      })
-    : null;
+  const input = askInputFromParams(params);
+  const q = typeof input.q === 'string' ? input.q : '';
+  const result = Object.keys(params).length ? executeAskQuery(input) : null;
+  const selected = (key: 'action' | 'loanType' | 'geo') => typeof input.overrides?.[key] === 'string' ? input.overrides[key] as string : '';
 
   return (
     <div className="intel-home">
@@ -53,7 +40,7 @@ export default async function AskPage({ searchParams }: Props) {
         <h2 id="ask-form-title" className="visually-hidden">
           Ask form
         </h2>
-        <AskTrustHubSearch initialQuery={q} />
+        <AskTrustHubSearch key={result?.sharePath ?? q} initialQuery={q} overrides={{ action: selected('action'), loanType: selected('loanType'), geo: selected('geo') }} />
         {result ? <><SearchAnalytics resultCount={result.rows?.length ?? result.facts?.length ?? 0} dimensions={{ hub: 'lender', intent: result.query.mode, state: result.query.geography?.state, county: result.query.geography?.county, hasIdentifier: Boolean(result.query.identifier), identifierType: result.query.identifier?.type, loanType: result.query.loanType?.[0], loanPurpose: result.query.loanPurpose?.[0], action: result.query.actionTaken?.[0], evidenceFamily: result.query.evidenceFamilies?.[0], coverageState: result.query.coverageState }} /><AskResultView result={result} question={q} /></> : <p>Enter a question to run a deterministic research query.</p>}
         <p>
           <Link className="intel-text-link" href="/">

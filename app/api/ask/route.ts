@@ -1,3 +1,4 @@
+import { askInputFromParams } from '@/lib/ask-lender/request';
 import { NextResponse } from 'next/server';
 import { executeAskQuery } from '@/lib/ask-lender/execute-query';
 import { LENDER_ASK_CONTRACT } from '@/lib/ask-lender/types';
@@ -6,19 +7,12 @@ export const dynamic = 'force-dynamic';
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
-  const q = (url.searchParams.get('q') ?? '').trim().slice(0, 180);
-  if (!q) {
-    return NextResponse.json({ error: 'Missing q', contract: LENDER_ASK_CONTRACT }, { status: 400 });
+  const params: Record<string, string | string[]> = {};
+  for (const key of new Set(url.searchParams.keys())) {
+    const values = url.searchParams.getAll(key);
+    params[key] = values.length === 1 ? values[0] : values;
   }
-  const page = Math.min(200, Math.max(1, Number(url.searchParams.get('page') || '1') || 1));
-  const result = executeAskQuery({
-    q,
-    page,
-    overrides: {
-      action: url.searchParams.get('action'),
-      loanType: url.searchParams.get('loanType'),
-      geo: url.searchParams.get('geo'),
-    },
-  });
-  return NextResponse.json({ contract: LENDER_ASK_CONTRACT, ...result });
+  const result = executeAskQuery(askInputFromParams(params));
+  const status = result.terminalState === 'INVALID' ? 400 : result.terminalState === 'UNAVAILABLE' ? 503 : 200;
+  return NextResponse.json({ contract: LENDER_ASK_CONTRACT, ...result }, { status });
 }

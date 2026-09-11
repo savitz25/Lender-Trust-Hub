@@ -1,0 +1,44 @@
+{
+  "ticket": "TH-SEARCH-R1-002",
+  "status": "CANDIDATE_TESTED_RELEASE_PENDING",
+  "builder": {
+    "model": "GPT-6 Astra",
+    "reasoning": "High",
+    "confirmation": "USER-CONFIRMED"
+  },
+  "baseline": {
+    "sha": "8ea55825d3a4cc5ef4d8aabd80f7c2e8348ee1ed",
+    "deployment": "dpl_EQdTctvnUGZ9ExiqLu78qCJRpx9o"
+  },
+  "sourceSnapshot": {
+    "positiveNmls": "3030",
+    "name": "Rocket Mortgage",
+    "lei": "549300FGXN1K3HLB1R50",
+    "live3251": "NO_MATCH in baseline published corpus; not an invalid-license conclusion"
+  },
+  "tests": {
+    "redBefore": 4,
+    "focusedPassed": 24,
+    "mutationsDetected": 3,
+    "npmTest": "PASS",
+    "typecheckBase": "PASS",
+    "typecheckCandidate": "PASS",
+    "lint": "PASS; one existing unused-variable warning",
+    "localBuild": "PASS"
+  },
+  "officialLinks": {
+    "nmls": "Official documented generic origin; browser 403, no challenge bypass",
+    "lei": "GLEIF generic search HTTP 200"
+  },
+  "review": {
+    "method": "separate builder self-review; no independent human review"
+  },
+  "release": null,
+  "remaining": [
+    "NJ count fallback",
+    "general geography/count correctness",
+    "name-plus-state-license workflow",
+    "name/DBA engine"
+  ],
+  "productionWrites": 0
+}

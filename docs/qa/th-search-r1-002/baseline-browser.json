@@ -1,0 +1,376 @@
+{
+  "utc": "2026-09-11T18:21:46.086Z",
+  "sha": "8ea55825d3a4cc5ef4d8aabd80f7c2e8348ee1ed",
+  "deployment": "dpl_EQdTctvnUGZ9ExiqLu78qCJRpx9o",
+  "checks": [
+    {
+      "q": "nmls 32 51",
+      "ui": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nRemove criterion\nRESEARCH TYPE\nInstitution identity\nRemove criterion\nIDENTIFIER\nNMLS institution ID 32\nRemove criterion\nENTITY GRAIN\nPublished lender institution — not branch or MLO\nRemove criterion\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nChange interpretation\nNo matching published lender institution\n\nWe did not find that institution identifier or name in the published research cohort. Confirm an NMLS identifier with NMLS Consumer Access.\n\nSource period: Current committed publication manifest. Grain: lender institution identity.\n\nCaveats\nNMLS institution IDs, branch IDs, and person/MLO IDs are separate identity classes.\nTrace this query\n\nShareable research URL (noindex): /ask?q=nmls+32+51\n\nBack to mortgage intelligence",
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "entity",
+            "identityQuery": "NMLS 32",
+            "identifier": {
+              "type": "NMLS_INSTITUTION",
+              "value": "32"
+            },
+            "requestedMetric": null,
+            "coverageState": "KNOWN"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "Institution identity"
+            },
+            {
+              "label": "Identifier",
+              "value": "NMLS institution ID 32"
+            },
+            {
+              "label": "Entity grain",
+              "value": "Published lender institution — not branch or MLO"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "No matching published lender institution",
+          "body": "We did not find that institution identifier or name in the published research cohort. Confirm an NMLS identifier with NMLS Consumer Access.",
+          "rows": [],
+          "totalRows": 0,
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "data/hmda/national/lender_state_summary.csv",
+              "data/hmda/by-state/FL/lender_activity_by_county.csv",
+              "data/hmda/by-state/FL/county_market_summary.csv",
+              "data/hmda/florida/lei_to_nmls_mapping.csv",
+              "data/hmda/florida/_gleif_name_cache.json",
+              "docs/lend-nat-016-search-index.json"
+            ],
+            "method": "Bounded published institution index; exact labeled NMLS/LEI before normalized name.",
+            "indexes": [
+              "in-memory LEI map",
+              "in-memory county FIPS map",
+              "lend-nat-016 LEI→public slug"
+            ],
+            "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+            "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+            "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+            "grain": "lender institution identity",
+            "period": "HMDA 2025 reporting vintage"
+          },
+          "sharePath": "/ask?q=nmls+32+51",
+          "period": "Current committed publication manifest",
+          "grain": "lender institution identity",
+          "caveats": [
+            "NMLS institution IDs, branch IDs, and person/MLO IDs are separate identity classes."
+          ],
+          "elapsedMs": 22
+        }
+      }
+    },
+    {
+      "q": "NMLS 3251",
+      "ui": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nRemove criterion\nRESEARCH TYPE\nInstitution identity\nRemove criterion\nIDENTIFIER\nNMLS institution ID 3251\nRemove criterion\nENTITY GRAIN\nPublished lender institution — not branch or MLO\nRemove criterion\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nChange interpretation\nNo matching published lender institution\n\nWe did not find that institution identifier or name in the published research cohort. Confirm an NMLS identifier with NMLS Consumer Access.\n\nSource period: Current committed publication manifest. Grain: lender institution identity.\n\nCaveats\nNMLS institution IDs, branch IDs, and person/MLO IDs are separate identity classes.\nTrace this query\n\nShareable research URL (noindex): /ask?q=NMLS+3251\n\nBack to mortgage intelligence",
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "entity",
+            "identityQuery": "NMLS 3251",
+            "identifier": {
+              "type": "NMLS_INSTITUTION",
+              "value": "3251"
+            },
+            "requestedMetric": null,
+            "coverageState": "KNOWN"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "Institution identity"
+            },
+            {
+              "label": "Identifier",
+              "value": "NMLS institution ID 3251"
+            },
+            {
+              "label": "Entity grain",
+              "value": "Published lender institution — not branch or MLO"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "No matching published lender institution",
+          "body": "We did not find that institution identifier or name in the published research cohort. Confirm an NMLS identifier with NMLS Consumer Access.",
+          "rows": [],
+          "totalRows": 0,
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "data/hmda/national/lender_state_summary.csv",
+              "data/hmda/by-state/FL/lender_activity_by_county.csv",
+              "data/hmda/by-state/FL/county_market_summary.csv",
+              "data/hmda/florida/lei_to_nmls_mapping.csv",
+              "data/hmda/florida/_gleif_name_cache.json",
+              "docs/lend-nat-016-search-index.json"
+            ],
+            "method": "Bounded published institution index; exact labeled NMLS/LEI before normalized name.",
+            "indexes": [
+              "in-memory LEI map",
+              "in-memory county FIPS map",
+              "lend-nat-016 LEI→public slug"
+            ],
+            "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+            "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+            "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+            "grain": "lender institution identity",
+            "period": "HMDA 2025 reporting vintage"
+          },
+          "sharePath": "/ask?q=NMLS+3251",
+          "period": "Current committed publication manifest",
+          "grain": "lender institution identity",
+          "caveats": [
+            "NMLS institution IDs, branch IDs, and person/MLO IDs are separate identity classes."
+          ],
+          "elapsedMs": 1
+        }
+      }
+    },
+    {
+      "q": "NMLS 3030",
+      "ui": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nRemove criterion\nRESEARCH TYPE\nInstitution identity\nRemove criterion\nIDENTIFIER\nNMLS institution ID 3030\nRemove criterion\nENTITY GRAIN\nPublished lender institution — not branch or MLO\nRemove criterion\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nChange interpretation\nPublished institution matches for NMLS institution ID 3030\n\nIdentity results come from the bounded publication index. Exact identifiers outrank name matches; this is not a quality ranking.\n\nSource period: Current committed publication manifest. Grain: lender institution identity.\n\nPublished institution matches for NMLS institution ID 3030\nIdentity relevance order\tInstitution / LEI\tExact institution identifier\tWhy this matched\tIdentity\tProfile\n1\tRocket Mortgage\nLEI 549300FGXN1K3HLB1R50 · NMLS 3030\n\tExact institution identifier\tExact NMLS institution identifier match.\tPublic research profile\tResearch this lender\nTrace this result · Rocket Mortgage\nCaveats\nNMLS institution IDs, branch IDs, and person/MLO IDs are separate identity classes.\nTrace this query\n\nShareable research URL (noindex): /ask?q=NMLS+3030\n\nBack to mortgage intelligence",
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "entity",
+            "identityQuery": "NMLS 3030",
+            "identifier": {
+              "type": "NMLS_INSTITUTION",
+              "value": "3030"
+            },
+            "requestedMetric": null,
+            "coverageState": "KNOWN"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "Institution identity"
+            },
+            {
+              "label": "Identifier",
+              "value": "NMLS institution ID 3030"
+            },
+            {
+              "label": "Entity grain",
+              "value": "Published lender institution — not branch or MLO"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "Published institution matches for NMLS institution ID 3030",
+          "body": "Identity results come from the bounded publication index. Exact identifiers outrank name matches; this is not a quality ranking.",
+          "rows": [
+            {
+              "rank": 1,
+              "lei": "549300FGXN1K3HLB1R50",
+              "displayName": "Rocket Mortgage",
+              "metric": 0,
+              "metricLabel": "Exact institution identifier",
+              "applications": null,
+              "originations": null,
+              "denials": null,
+              "identityStatus": "public_profile",
+              "identityNote": "Published lender institution identity. Branch and MLO records are excluded from this index.",
+              "href": "/lender/rocket-mortgage",
+              "hrefLabel": "Research this lender",
+              "nmls": "3030",
+              "whyMatched": [
+                "Exact NMLS institution identifier match.",
+                "Institution identity only; not a branch, MLO, recommendation, or quality ranking."
+              ],
+              "evidenceAvailable": [
+                "Published institution identity",
+                "HMDA market activity",
+                "CFPB complaint observations (coverage-limited)"
+              ]
+            }
+          ],
+          "totalRows": 1,
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "data/hmda/national/lender_state_summary.csv",
+              "data/hmda/by-state/FL/lender_activity_by_county.csv",
+              "data/hmda/by-state/FL/county_market_summary.csv",
+              "data/hmda/florida/lei_to_nmls_mapping.csv",
+              "data/hmda/florida/_gleif_name_cache.json",
+              "docs/lend-nat-016-search-index.json"
+            ],
+            "method": "Bounded published institution index; exact labeled NMLS/LEI before normalized name.",
+            "indexes": [
+              "in-memory LEI map",
+              "in-memory county FIPS map",
+              "lend-nat-016 LEI→public slug"
+            ],
+            "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+            "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+            "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+            "grain": "lender institution identity",
+            "period": "HMDA 2025 reporting vintage"
+          },
+          "sharePath": "/ask?q=NMLS+3030",
+          "period": "Current committed publication manifest",
+          "grain": "lender institution identity",
+          "caveats": [
+            "NMLS institution IDs, branch IDs, and person/MLO IDs are separate identity classes."
+          ],
+          "elapsedMs": 1
+        }
+      }
+    },
+    {
+      "q": "NMLS 30 30",
+      "ui": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nRemove criterion\nRESEARCH TYPE\nInstitution identity\nRemove criterion\nIDENTIFIER\nNMLS institution ID 30\nRemove criterion\nENTITY GRAIN\nPublished lender institution — not branch or MLO\nRemove criterion\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nChange interpretation\nNo matching published lender institution\n\nWe did not find that institution identifier or name in the published research cohort. Confirm an NMLS identifier with NMLS Consumer Access.\n\nSource period: Current committed publication manifest. Grain: lender institution identity.\n\nCaveats\nNMLS institution IDs, branch IDs, and person/MLO IDs are separate identity classes.\nTrace this query\n\nShareable research URL (noindex): /ask?q=NMLS+30+30\n\nBack to mortgage intelligence",
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "entity",
+            "identityQuery": "NMLS 30",
+            "identifier": {
+              "type": "NMLS_INSTITUTION",
+              "value": "30"
+            },
+            "requestedMetric": null,
+            "coverageState": "KNOWN"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "Institution identity"
+            },
+            {
+              "label": "Identifier",
+              "value": "NMLS institution ID 30"
+            },
+            {
+              "label": "Entity grain",
+              "value": "Published lender institution — not branch or MLO"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "No matching published lender institution",
+          "body": "We did not find that institution identifier or name in the published research cohort. Confirm an NMLS identifier with NMLS Consumer Access.",
+          "rows": [],
+          "totalRows": 0,
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "trace": {
+            "contract": "lender-ask-v1",
+            "sourceFiles": [
+              "data/hmda/national/lender_state_summary.csv",
+              "data/hmda/by-state/FL/lender_activity_by_county.csv",
+              "data/hmda/by-state/FL/county_market_summary.csv",
+              "data/hmda/florida/lei_to_nmls_mapping.csv",
+              "data/hmda/florida/_gleif_name_cache.json",
+              "docs/lend-nat-016-search-index.json"
+            ],
+            "method": "Bounded published institution index; exact labeled NMLS/LEI before normalized name.",
+            "indexes": [
+              "in-memory LEI map",
+              "in-memory county FIPS map",
+              "lend-nat-016 LEI→public slug"
+            ],
+            "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+            "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+            "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+            "grain": "lender institution identity",
+            "period": "HMDA 2025 reporting vintage"
+          },
+          "sharePath": "/ask?q=NMLS+30+30",
+          "period": "Current committed publication manifest",
+          "grain": "lender institution identity",
+          "caveats": [
+            "NMLS institution IDs, branch IDs, and person/MLO IDs are separate identity classes."
+          ],
+          "elapsedMs": 1
+        }
+      }
+    },
+    {
+      "q": "NMLS 3030 licensed in California",
+      "ui": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nRemove criterion\nRESEARCH TYPE\nfail closed\nRemove criterion\nCOVERAGE\nNOT_ACQUIRED\nRemove criterion\nENTITY GRAIN\nInstitution / research snapshot — not MLO or branch\nRemove criterion\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nChange interpretation\nThis question is fail-closed\n\nCalifornia's complete current CRMLA roster is not acquired as a bulk universe. CalHFA directory rows must not be counted as all California lenders.\n\nSource period: HMDA 2025. Grain: see trace.\n\nCaveats\nCalifornia's complete current CRMLA roster is not acquired as a bulk universe. CalHFA directory rows must not be counted as all California lenders.\n\nShareable research URL (noindex): /ask?q=NMLS+3030+licensed+in+California\n\nBack to mortgage intelligence",
+      "api": {
+        "status": 200,
+        "data": {
+          "contract": "lender-ask-v1",
+          "query": {
+            "mode": "fail_closed",
+            "failClosedKind": "ca-crmla-not-acquired",
+            "failReason": "California's complete current CRMLA roster is not acquired as a bulk universe. CalHFA directory rows must not be counted as all California lenders.",
+            "coverageState": "NOT_ACQUIRED"
+          },
+          "interpretation": [
+            {
+              "label": "Contract",
+              "value": "lender-ask-v1"
+            },
+            {
+              "label": "Research type",
+              "value": "fail closed"
+            },
+            {
+              "label": "Coverage",
+              "value": "NOT_ACQUIRED"
+            },
+            {
+              "label": "Entity grain",
+              "value": "Institution / research snapshot — not MLO or branch"
+            }
+          ],
+          "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+          "headline": "This question is fail-closed",
+          "body": "California's complete current CRMLA roster is not acquired as a bulk universe. CalHFA directory rows must not be counted as all California lenders.",
+          "failClosed": true,
+          "sharePath": "/ask?q=NMLS+3030+licensed+in+California",
+          "elapsedMs": 2,
+          "period": "HMDA 2025",
+          "caveats": [
+            "California's complete current CRMLA roster is not acquired as a bulk universe. CalHFA directory rows must not be counted as all California lenders."
+          ]
+        }
+      }
+    }
+  ]
+}

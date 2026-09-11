@@ -1,0 +1,17 @@
+{
+  "utc": "2026-09-11T18:34:25.508Z",
+  "checks": [
+    {
+      "requested": "https://www.nmlsconsumeraccess.org/",
+      "url": "https://www.nmlsconsumeraccess.org/",
+      "status": 403,
+      "text": "Security service blocked access. No challenge bypass attempted."
+    },
+    {
+      "requested": "https://search.gleif.org/",
+      "url": "https://search.gleif.org/#/search/",
+      "status": 200,
+      "text": "This Website uses Cookies\n\nWe use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you\u2019ve provided to them or that they\u2019ve collected from your use of their services. You consent to our cookies if you continue to use our website.\n\nFor further information, please consult our Privacy Policy.\n\nWe recommend keeping cookies enabled to enhance your experience on our website.\n\nShow details\nALLOW ALL COOKIES\nUSE NECESSARY COOKIES ONLY\nHow to use\nChallenge LEI Data\nAbout LEI Data\nRegister\nLogin\nLEI Search\nSearch LEI Records\nExpert Mode\nPlease start typing to see suggestions.\nApply filters:\nClear filters\nImprint\n\u00b7\nTerms\n\u00b7\nLEI Data Terms of Use\n\u00b7\nPrivacy Policy\n\u00b7\nCookies\n\u00b7\nSitemap"
+    }
+  ]
+}

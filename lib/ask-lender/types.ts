@@ -17,6 +17,25 @@ export type AskIdentityStatus =
   | 'lei_only'
   | 'identity_hold';
 
+export type IdentifierFamily = 'NMLS_INSTITUTION' | 'LEI';
+export type IdentityClass = 'institution' | 'person' | 'branch' | 'unknown';
+export type LookupState = 'FOUND' | 'NO_MATCH' | 'IDENTIFIER_REQUIRED' | 'NEEDS_CLARIFICATION' | 'CONFLICT' | 'UNSUPPORTED' | 'INVALID' | 'UNAVAILABLE';
+export type IdentifierSpan = { type: IdentifierFamily; value: string; rawSpan: string; start: number; end: number; normalization: string[] };
+export type IdentityRequest = {
+  rawQuestion: string;
+  families: IdentifierFamily[];
+  identifiers: IdentifierSpan[];
+  requestedClass: IdentityClass;
+  remainingText: string;
+  problem?: { state: LookupState; message: string };
+};
+export type IdentityCondition = { text: string; state: 'APPLIED' | 'NEEDS_CLARIFICATION' | 'UNSUPPORTED' | 'CONFLICT'; explanation: string };
+export type ExactMatchEvidence = {
+  method: 'exact_identifier'; family: IdentifierFamily; requestedValue: string;
+  matchedField: 'nmls' | 'lei'; returnedValue: string; institutionKey: string;
+  sourceReference: string; sourceAsOf: string | null; normalization: string[];
+};
+
 export type LenderResearchQuery = {
   mode: AskMode;
   geography?: {
@@ -39,6 +58,7 @@ export type LenderResearchQuery = {
   failClosedKind?: string;
   identityQuery?: string;
   identifier?: { type: 'NMLS_INSTITUTION' | 'LEI'; value: string };
+  identityRequest?: IdentityRequest;
   definitionId?: 'nmls' | 'lei' | 'hmda' | 'application' | 'origination' | 'denial' | 'cfpb' | 'institution_types';
   coverageState?: 'KNOWN' | 'UNKNOWN' | 'PARTIAL' | 'NOT_ACQUIRED' | 'REQUEST_ONLY' | 'UNSUPPORTED';
 };
@@ -68,6 +88,9 @@ export type AskInstitutionRow = {
   whyMatched: string[];
   nmls?: string | null;
   evidenceAvailable?: string[];
+  institutionKey?: string;
+  resolvedClass?: IdentityClass;
+  matchEvidence?: ExactMatchEvidence[];
 };
 
 export const LENDER_ASK_CONTRACT = 'lender-ask-v1' as const;
@@ -108,6 +131,12 @@ export type AskExecution = {
   sharePath?: string;
   failClosed?: boolean;
   elapsedMs?: number;
+  terminalState?: LookupState;
+  lookup?: {
+    scope: string; requestedClass: IdentityClass; resolvedClass: IdentityClass;
+    identifiers: IdentifierSpan[]; conditions: IdentityCondition[];
+    officialActions: Array<{ family: IdentifierFamily; href: string; label: string; instruction: string }>;
+  };
 };
 
 export const ASK_PAGE_SIZE = 25;

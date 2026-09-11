@@ -1,0 +1,20 @@
+{
+  "utc": "2026-09-11T18:42:05.437Z",
+  "checks": [
+    {
+      "mutation": "first-group truncation",
+      "detected": true,
+      "exit": 1
+    },
+    {
+      "mutation": "false source explanation",
+      "detected": true,
+      "exit": 1
+    },
+    {
+      "mutation": "person/branch class bypass",
+      "detected": true,
+      "exit": 1
+    }
+  ]
+}

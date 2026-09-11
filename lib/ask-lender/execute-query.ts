@@ -21,13 +21,9 @@ import {
   type LenderResearchQuery,
 } from './types';
 
-export type AskQueryInput = {
-  q: string;
-  page?: number;
-  pageSize?: number;
-  overrides?: AskUrlOverrides;
-  structuredQuery?: LenderResearchQuery;
-};
+import { validateAskInput, type AskQueryInput, type ValidAskInput } from './request';
+import { executeIdentityLookup, lookupOutcome } from './identity-lookup';
+export type { AskQueryInput } from './request';
 
 function fmt(n: number): string {
   return n.toLocaleString('en-US');
@@ -286,10 +282,26 @@ function stampContract(result: AskExecution): AskExecution {
 }
 
 export function executeAskQuery(input: AskQueryInput): AskExecution {
-  return stampContract(executeAskQueryUnstamped(input));
+  const checked = validateAskInput(input);
+  if ('error' in checked) {
+    const safe = { q: typeof input.q === 'string' ? input.q : '', page: 1, pageSize: 25, overrides: {} };
+    return stampContract(lookupOutcome('INVALID', checked.error, safe, { mode: 'fail_closed', failClosedKind: 'invalid-request', coverageState: 'UNSUPPORTED' }));
+  }
+  const value = checked.value;
+  const parsed = applyAskOverrides(parseLenderAsk(value.q), value.overrides);
+  const structured = value.structuredQuery;
+  if (structured && (structured.identifier || structured.identityQuery || structured.identityRequest)) {
+    const other = parseLenderAsk(structured.identityQuery ?? `${structured.identifier?.type === 'LEI' ? 'LEI' : 'NMLS'} ${structured.identifier?.value ?? ''}`);
+    if (!parsed.identityRequest || other.identityRequest?.problem || other.identifier?.type !== parsed.identifier?.type || other.identifier?.value !== parsed.identifier?.value || (structured.identifier && (structured.identifier.type !== parsed.identifier?.type || structured.identifier.value !== parsed.identifier?.value))) {
+      return stampContract(lookupOutcome('INVALID', 'Structured identity fields must agree with the complete labeled question.', value, parsed, parsed.identityRequest));
+    }
+  }
+  if (parsed.identityRequest) return stampContract(executeIdentityLookup(value, parsed, parsed.identityRequest));
+  if (parsed.failClosedKind === 'malformed' || parsed.failClosedKind === 'unsupported-identity-grain') value.structuredQuery = undefined;
+  return stampContract(executeAskQueryUnstamped(value));
 }
 
-function executeAskQueryUnstamped(input: AskQueryInput): AskExecution {
+function executeAskQueryUnstamped(input: ValidAskInput): AskExecution {
   const started = Date.now();
   const raw = input.q ?? '';
   const pageSize = input.pageSize && input.pageSize > 0 ? Math.min(50, input.pageSize) : ASK_PAGE_SIZE;
