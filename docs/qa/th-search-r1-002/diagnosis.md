@@ -41,3 +41,16 @@ Review method: separate builder diff review of parser boundaries, equality, publ
 This ticket does not fix the separately reported NJ national-count fallback, broad geography/count correctness, the full name-plus-California-license workflow, complaint research, or name/DBA matching. Those remain explicitly open. No migrations, data writes, credentials, production configuration or other hub edits are required. Rollback is a normal reviewed revert/deployment of this ticket's implementation only.
 
 Local settled-browser certification passed 14 checks at 1280/390/320, including first interaction, Trace keyboard operation, query correction, typed HMDA override persistence, reload and back/forward. The first harness attempt waited for network-idle while unrelated calculator/directory prefetches continued; direct observation confirmed the lookup itself rendered in 359 ms. The corrected bounded gate waits for the hydrated visible result, not unrelated prefetch completion.
+
+
+## Final release follow-up
+
+PR #24 merged the core repair as `efb7a875d6e1009b7107c81ca0e70a9f5bfbcf11`. Its canonical production deployment `dpl_EBKK8wgNzmfDzSyVWCH4HQjEcEVD` passed 14 settled-browser checks; clean/spaced 3251 both returned NO_MATCH for the complete value, while clean/spaced 3030 and its LEI resolved to the same institution. The source lookup was not a live license-status check.
+
+Final presentation review identified a narrower defect in clarification states: a partial candidate was labeled Complete, and generic Trace wording described lookup steps that did not run. PR #25 adds sourceLookup = not_run / attempted / completed, unconfirmed-span wording, and an explicit no-query Trace. Its regression failed on the prior implementation and passed after repair (`trace-red-before.json`). The final candidate `cd85318328f84861fbfabc081c4e7551ea6e084b` passed 24 focused tests, TypeScript, lint and build; its local production build passed the strengthened 14-check browser suite. PR #25 merged as `d698900abe1e211fccb424e8d1743ab5a4c45a2a`.
+
+Both PRs passed the normal CI, both configured preview builds and Vercel Agent Review, with no inline findings. Protected preview UI was not exercised because normal browser SSO was unavailable. Protection was not disabled, no bypass link/token was used, and official-site restrictions were respected. Local production-build browser checks supplied the pre-release UI proof; canonical production checks supply the live release proof. No independent human review is claimed.
+
+Revert plan: revert the two implementation merge commits through a reviewed PR/deployment. Do not revert Move or unrelated Lender work. No database rollback is required.
+
+Final canonical runtime `d698900abe1e211fccb424e8d1743ab5a4c45a2a`, deployment `dpl_3pdT5aruJp3i3vK5xfozjutLN5iE`, passed 14 real production browser checks on 2026-09-11 (`final-production-browser.json`). Eight public-route checks returned HTTP 200; the bare hostname redirects to www preserving the query; county comparison remains functional. Seventeen live client JavaScript files had zero secret/service-role/fixture pattern matches (`final-production-smoke.json`). The final error/fatal runtime log query returned no entries. Documentation-only follow-up commits may advance main; this SHA identifies the certified runtime code. Only TH-SEARCH-R1-002 is closed.

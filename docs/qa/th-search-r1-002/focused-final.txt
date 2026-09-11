@@ -1,0 +1,40 @@
+
+> lender-trust-hub@1.0.0 check:th-search-r1-002
+> tsx --test lib/ask-lender/r1-reproduction.test.ts lib/ask-lender/r1-behavior.test.ts
+
+lender_identity_lookup_unavailable { stage: 'source_or_match_contract' }
+lender_identity_lookup_unavailable { stage: 'source_or_match_contract' }
+lender_identity_lookup_unavailable { stage: 'source_or_match_contract' }
+lender_identity_lookup_unavailable { stage: 'source_or_match_contract' }
+✔ 01: grouped 3251 selects full fixture, never the 32 distractor (5.6912ms)
+✔ 02: grouped 3030 retains the institution, not the 30 distractor (0.742ms)
+✔ 03: allowed labels, case, # and whitespace preserve complete values (0.917ms)
+✔ 04: company, ZIP, year, amount and state text are separate conditions (0.9203ms)
+✔ 05: independent numeric tokens require clarification before source lookup (9.6766ms)
+✔ 06: verified pairs, conflicting pairs and repeated labels remain distinct (0.8793ms)
+✔ 07: malformed, overlong, leading-zero or partial IDs never execute (0.5172ms)
+✔ 08: LEI remains case-normalized alphanumeric and never numeric NMLS (0.2412ms)
+✔ 09: person and branch traps do not return the institution fixture (0.3867ms)
+✔ 10: exact misses and unpublished holds never fall back or expose a profile (0.3697ms)
+✔ 11: verified duplicate observations deduplicate; distinct keys need clarification (8.7841ms)
+✔ 12: source fields, explanations and exact-match evidence agree (1.0611ms)
+✔ 13: identifier-bearing California and New Jersey licensing remain partial (0.4616ms)
+✔ 14: additional names, locations, pricing and typed HMDA overrides are accounted for (0.5316ms)
+✔ 15: actual native page and API have identical fixture identity contracts (9.8006ms)
+✔ 16: homepage and query edit form preserve raw identifiers and typed selections (4.2854ms)
+✔ 17: every lookup terminal panel has useful text, edit and official actions (10.8021ms)
+✔ 18: official action never invents COMPANY or other unresolved class (0.7604ms)
+✔ 19: missing/corrupt source or load failure completes unavailable, never zero (1.7384ms)
+✔ 20: non-identity HMDA, comparisons, definitions and input validation remain distinct (51.0131ms)
+✔ R1: full spaced NMLS reaches the same parsed identifier (2.6142ms)
+✔ R1: verified published positive survives grouped formatting (5.99ms)
+✔ R1: licensing coverage does not erase explicit identity (1.0124ms)
+✔ R1: API cannot truncate away a conflicting suffix (4.8913ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 980.3378

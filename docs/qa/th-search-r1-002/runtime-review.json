@@ -1,0 +1,11 @@
+{
+  "utc": "2026-09-11T19:03:52.756101+00:00",
+  "deployment": "dpl_3pdT5aruJp3i3vK5xfozjutLN5iE",
+  "since": "2026-09-11T19:01:00Z",
+  "levels": [
+    "error",
+    "fatal"
+  ],
+  "groupedRoutes": [],
+  "findings": "No error/fatal entries returned in the production verification window."
+}

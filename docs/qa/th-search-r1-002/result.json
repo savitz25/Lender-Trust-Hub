@@ -1,6 +1,6 @@
 {
   "ticket": "TH-SEARCH-R1-002",
-  "status": "CANDIDATE_TESTED_RELEASE_PENDING",
+  "status": "RELEASED_AND_VERIFIED",
   "builder": {
     "model": "GPT-6 Astra",
     "reasoning": "High",
@@ -24,21 +24,182 @@
     "typecheckBase": "PASS",
     "typecheckCandidate": "PASS",
     "lint": "PASS; one existing unused-variable warning",
-    "localBuild": "PASS"
+    "localBuild": "PASS",
+    "capability1": "PASS",
+    "capability2": "PASS",
+    "customerHandoff": "PASS",
+    "npmTestExactCandidate": "PASS",
+    "exactCandidateLocalBuild": "PASS",
+    "localClientFilesScanned": 73,
+    "secretOrFixturePatternMatches": 0,
+    "traceRedBefore": "Detected on exact core merge; clean gate passes"
   },
   "officialLinks": {
     "nmls": "Official documented generic origin; browser 403, no challenge bypass",
     "lei": "GLEIF generic search HTTP 200"
   },
   "review": {
-    "method": "separate builder self-review; no independent human review"
+    "method": "separate builder self-review and existing Vercel Agent Review check",
+    "automatedReview": "PASS",
+    "inlineFindings": 0,
+    "independentHumanReview": false
   },
-  "release": null,
+  "release": {
+    "merge": "d698900abe1e211fccb424e8d1743ab5a4c45a2a",
+    "coreMerge": "efb7a875d6e1009b7107c81ca0e70a9f5bfbcf11",
+    "deployment": "dpl_3pdT5aruJp3i3vK5xfozjutLN5iE",
+    "alias": "https://www.lendertrusthub.com",
+    "prs": [
+      24,
+      25
+    ],
+    "browser": "final-production-browser.json",
+    "smoke": "final-production-smoke.json",
+    "note": "These identify the verified runtime code. A subsequent documentation-only commit records this evidence and may advance main without application changes."
+  },
   "remaining": [
     "NJ count fallback",
     "general geography/count correctness",
     "name-plus-state-license workflow",
     "name/DBA engine"
   ],
-  "productionWrites": 0
+  "productionWrites": 0,
+  "candidate": {
+    "sha": "cd85318328f84861fbfabc081c4e7551ea6e084b",
+    "coreHead": "63351907e3ae85e2f3de275ce2ab01cdd59803e5",
+    "localBrowser": "final-candidate-browser.json",
+    "browserChecks": 14,
+    "previewBuild": "PASS on both configured projects",
+    "previewBrowser": "NOT EXECUTED: normal SSO unavailable; no bypass used"
+  },
+  "implementationMerge": "efb7a875d6e1009b7107c81ca0e70a9f5bfbcf11",
+  "verifiedAtUTC": "2026-09-11T19:02:09.031Z",
+  "browser": {
+    "checksPassed": 14,
+    "widths": [
+      1280,
+      390,
+      320
+    ],
+    "maxLookupCompletionMs": 4417,
+    "firstInteraction": "PASS",
+    "keyboardTrace": "PASS",
+    "overridesEditReloadBackForward": "PASS",
+    "observations": [
+      {
+        "query": "NMLS 3030",
+        "normalized": {
+          "type": "NMLS_INSTITUTION",
+          "value": "3030"
+        },
+        "state": "FOUND",
+        "count": 1,
+        "sourceLookup": "completed",
+        "resolvedClass": "institution"
+      },
+      {
+        "query": "NMLS 30 30",
+        "normalized": {
+          "type": "NMLS_INSTITUTION",
+          "value": "3030"
+        },
+        "state": "FOUND",
+        "count": 1,
+        "sourceLookup": "completed",
+        "resolvedClass": "institution"
+      },
+      {
+        "query": "NMLS 3251",
+        "normalized": {
+          "type": "NMLS_INSTITUTION",
+          "value": "3251"
+        },
+        "state": "NO_MATCH",
+        "count": 0,
+        "sourceLookup": "completed",
+        "resolvedClass": "unknown"
+      },
+      {
+        "query": "nmls 32 51",
+        "normalized": {
+          "type": "NMLS_INSTITUTION",
+          "value": "3251"
+        },
+        "state": "NO_MATCH",
+        "count": 0,
+        "sourceLookup": "completed",
+        "resolvedClass": "unknown"
+      },
+      {
+        "query": "NMLS 32, 51",
+        "normalized": {
+          "type": "NMLS_INSTITUTION",
+          "value": "32"
+        },
+        "state": "NEEDS_CLARIFICATION",
+        "count": 0,
+        "sourceLookup": "not_run",
+        "resolvedClass": "unknown"
+      },
+      {
+        "query": "NMLS lookup",
+        "normalized": null,
+        "state": "IDENTIFIER_REQUIRED",
+        "count": 0,
+        "sourceLookup": "not_run",
+        "resolvedClass": "unknown"
+      },
+      {
+        "query": "NMLS person 3030",
+        "normalized": {
+          "type": "NMLS_INSTITUTION",
+          "value": "3030"
+        },
+        "state": "UNSUPPORTED",
+        "count": 0,
+        "sourceLookup": "not_run",
+        "resolvedClass": "unknown"
+      },
+      {
+        "query": "NMLS branch 3030",
+        "normalized": {
+          "type": "NMLS_INSTITUTION",
+          "value": "3030"
+        },
+        "state": "UNSUPPORTED",
+        "count": 0,
+        "sourceLookup": "not_run",
+        "resolvedClass": "unknown"
+      },
+      {
+        "query": "NMLS 3030 licensed in California",
+        "normalized": {
+          "type": "NMLS_INSTITUTION",
+          "value": "3030"
+        },
+        "state": "FOUND",
+        "count": 1,
+        "sourceLookup": "completed",
+        "resolvedClass": "institution"
+      },
+      {
+        "query": "LEI 549300FGXN1K3HLB1R50",
+        "normalized": {
+          "type": "LEI",
+          "value": "549300FGXN1K3HLB1R50"
+        },
+        "state": "FOUND",
+        "count": 1,
+        "sourceLookup": "completed",
+        "resolvedClass": "institution"
+      }
+    ]
+  },
+  "security": {
+    "productionClientFiles": 17,
+    "secretOrFixturePatternMatches": 0,
+    "noProductionDataWrites": true,
+    "previewProtectionUnchanged": true
+  },
+  "closureScope": "Only TH-SEARCH-R1-002. General lender discovery, LTH-03, complaints, geography/count correctness, Ask preview/completion and Search Reliability R1 remain open."
 }
