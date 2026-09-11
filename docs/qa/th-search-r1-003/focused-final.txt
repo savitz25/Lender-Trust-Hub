@@ -1,0 +1,37 @@
+
+> lender-trust-hub@1.0.0 check:th-search-r1-003
+> tsx --test lib/ask-lender/r3-reproduction.test.ts lib/ask-lender/r3-behavior.test.ts
+
+✔ 01-04 every jurisdiction/name/code and all three independent fields (271.8028ms)
+✔ 05 national measures are separate fields, explicit default (4.4203ms)
+✔ 06 sourced zero is successful (1.641ms)
+✔ 07 missing and malformed selected values never coerce or substitute (12.1082ms)
+✔ 08 year mismatch and multiple years remain unresolved (4.2053ms)
+✔ 09 duplicate and mixed-grain aggregate keys rejected (2.8033ms)
+✔ 10 state/action override updates number, interpretation, trace and URL (1.5061ms)
+✔ 11 filter links preserve state/action and structured form values (26.1122ms)
+✔ 12 filtered counts use actual field and unsupported split stays unavailable (8.5413ms)
+✔ 13 unknown/local geography never national; ordinary in/or are not state codes (7.844ms)
+✔ 14 two states require clarification (3.4057ms)
+✔ 15 pagination/publication cannot affect market count (4.7248ms)
+✔ 16 actual page/API share same source-backed result (24.2097ms)
+✔ 17 rendered number and trace derive from same source and clock (12.2187ms)
+✔ 18 changing only NJ source changes only NJ answer (3.5581ms)
+✔ 19 NMLS grouping and LEI regressions remain exact (10.2079ms)
+✔ 20 county-volume and county comparison retained (46.7018ms)
+✔ 21 corrupt/throwing source finishes unavailable, not zero (0.8654ms)
+✔ 22 accepted source oracle independent of executor for all fields/states (73.1575ms)
+✔ 23 filtered duplicates, null and mixed years fail closed (1.3199ms)
+✔ 24 unsupported conditions before place and structured years cannot disappear (1.4752ms)
+✔ 25 supported FL product and purpose fields remain independent (2.9302ms)
+✔ 26 internal scalar adaptation preserves purpose and cannot lift a refusal (3.3647ms)
+✔ R1-003 accepted NJ measure, not national fallback (37.4304ms)
+✔ R1-003 executed overrides agree with visible plan (5.8915ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1459.516

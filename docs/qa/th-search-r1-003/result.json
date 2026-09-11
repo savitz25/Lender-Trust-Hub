@@ -1,7 +1,7 @@
 {
   "ticket": "TH-SEARCH-R1-003",
-  "status": "CANDIDATE_VALIDATION",
-  "utc": "2026-09-11T19:51:55.099728+00:00",
+  "status": "RELEASED_AND_VERIFIED",
+  "utc": "2026-09-11T20:05:40.424276+00:00",
   "model": {
     "name": "GPT-6 Astra",
     "reasoning": "High",
@@ -9,9 +9,9 @@
   },
   "baseline": "3015d1b16f239f5eb6e662675b760b3fb51907b8",
   "baselineDeployment": "dpl_5JSZyubLuUMZfx8WSRZnoa6zxiJu",
-  "implementationHead": null,
-  "merge": null,
-  "deployedSha": null,
+  "implementationHead": "1a2ee72bf466b57f5052585f98e9aaabb31382f7",
+  "merge": "116d581487622131648c50d49cb6e29948332645",
+  "deployedSha": "116d581487622131648c50d49cb6e29948332645",
   "sourceOracle": "source-oracle.json",
   "redBefore": "red-before.txt",
   "sensitivity": "sensitivity.json",
@@ -28,7 +28,7 @@
     "capability_002": "40 passed"
   },
   "review": {
-    "method": "separate self-review of source/measure selection, raw catalog validation, override propagation, missing versus zero, rendering and read-only Ask adapter; automated PR review pending",
+    "method": "Separate builder self-review plus Vercel Agent Review SUCCESS on final PR head; zero inline review findings. No independent human review.",
     "independentHuman": false
   },
   "remaining": [
@@ -39,15 +39,45 @@
   "productionWrites": false,
   "rollback": "Normal reviewed revert of ticket code and deployment; no database rollback.",
   "browser": {
-    "candidate": "candidate-browser.json",
+    "candidate": "final-candidate-browser.json",
     "checks": 14,
     "status": "PASS",
-    "maxCompletionMs": 718,
+    "maxCompletionMs": 782,
     "widths": [
       1280,
       390,
       320
     ],
-    "preview": "Normal preview URL redirected to Vercel /login; no protection bypass. See preview-access.json."
-  }
+    "preview": "Normal preview URL redirected to Vercel /login; no protection bypass. See preview-access.json.",
+    "production": {
+      "artifact": "production-browser.json",
+      "checks": 14,
+      "status": "PASS",
+      "maxCompletionMs": 5444,
+      "sourceSha256": "9fb0835fddd4426fcb7f76b392089a74e2d2f2ebfff970090498c4a4691ad149"
+    }
+  },
+  "initialImplementationHead": "1865d85b10fb95bb329b41c225490bd0274fd727",
+  "pr": "https://github.com/savitz25/Lender-Trust-Hub/pull/27",
+  "security": {
+    "clientBundlesScanned": 73,
+    "credentialPatternMatches": 0,
+    "noProductionDataWrites": true,
+    "noOtherRepoEdits": true
+  },
+  "deployment": "dpl_A4r8MdJvpZsLtqEy6snfT5J2o2ch",
+  "alias": "https://www.lendertrusthub.com",
+  "productionSmoke": "production-smoke.json",
+  "sourceCanonicalJsonSha256": "913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008",
+  "runtimeLogs": {
+    "since": "2026-09-11T20:03:00Z",
+    "levels": [
+      "error",
+      "fatal"
+    ],
+    "groupBy": "route",
+    "matchingRows": 0
+  },
+  "closure": "Only TH-SEARCH-R1-003; not all Lender search/geography or Search Reliability R1.",
+  "evidenceFollowup": "This certificate records the actual implementation deployment. A subsequent evidence/test-runner-only merge may advance main; no future merge SHA is invented here."
 }
