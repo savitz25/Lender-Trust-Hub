@@ -16,9 +16,9 @@ const component = readFileSync('components/home-intel/lender-home-intelligence.t
 const page = readFileSync('app/page.tsx', 'utf8');
 
 assertPublicHomepageInventory(inventory);
-assert.equal(inventory.length, 35);
-assert.equal(LENDER_HOMEPAGE_STATE_CARDS.length, 8);
-assert.deepEqual(LENDER_HOMEPAGE_STATE_CARDS.map((state) => state.href), ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia']);
+assert.equal(inventory.length, 38);
+assert.equal(LENDER_HOMEPAGE_STATE_CARDS.length, 9);
+assert.deepEqual(LENDER_HOMEPAGE_STATE_CARDS.map((state) => state.href), ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york']);
 assert.equal(byKey.get('state_pages')?.value, LENDER_HOMEPAGE_STATE_CARDS.length);
 assert.equal(new Set(inventory.map((item) => item.family)).size, 8);
 assert.equal(Object.keys(LENDER_EVIDENCE_FAMILY_LABELS).length, 8);
@@ -41,8 +41,8 @@ assert.equal(byKey.get('national_institutions')?.sourceClockLabel, 'Source clock
 assert.equal(byKey.get('fdic_cert')?.sourceClockLabel, 'Source clock');
 assert.equal(byKey.get('hmda_applications')?.sourceClockLabel, 'Vintage');
 
-for (const code of ['FL', 'NJ', 'CA', 'TX', 'WA', 'AZ', 'CO']) assert.ok(LENDER_HOMEPAGE_STATE_CARDS.some((state) => state.code === code));
-for (const key of ['fl_credentials', 'nj_dobi_orders', 'ca_calhfa_rows', 'tx_sml_orders', 'wa_dfi_orders', 'az_cfpb', 'co_dre_mlo', 'co_cfpb', 'co_company_roster_unacquired']) assert.ok(byKey.has(key), `${key} missing`);
+for (const code of ['FL', 'NJ', 'CA', 'TX', 'WA', 'AZ', 'CO', 'VA', 'NY']) assert.ok(LENDER_HOMEPAGE_STATE_CARDS.some((state) => state.code === code));
+for (const key of ['fl_credentials', 'nj_dobi_orders', 'ca_calhfa_rows', 'tx_sml_orders', 'wa_dfi_orders', 'az_cfpb', 'co_dre_mlo', 'co_cfpb', 'co_company_roster_unacquired', 'va_scc_dated_rows', 'ny_dfs_2024_bankers', 'ny_enforcement', 'ny_live_roster_unacquired']) assert.ok(byKey.has(key), `${key} missing`);
 for (const item of inventory) {
   assert.ok(item.grain);
   assert.ok(item.sourceSystem);
@@ -96,5 +96,10 @@ assert.equal(byKey.get('co_company_roster_unacquired')?.value, null);
 assert.equal(byKey.get('co_company_roster_unacquired')?.publicationStatus, 'PUBLIC_LIMITATION');
 assert.notEqual(byKey.get('co_dre_mlo')?.value, byKey.get('hmda_applications')?.value);
 assert.match(byKey.get('co_dre_mlo')?.doesNotCount ?? '', /Lenders/);
+assert.equal(byKey.get('ny_live_roster_unacquired')?.value, null);
+assert.equal(byKey.get('ny_live_roster_unacquired')?.publicationStatus, 'PUBLIC_LIMITATION');
+assert.equal(byKey.get('ny_dfs_2024_bankers')?.value, 151);
+assert.equal(byKey.get('ny_enforcement')?.value, 198);
+assert.notEqual(byKey.get('ny_dfs_2024_bankers')?.value, byKey.get('ny_enforcement')?.value);
 
 console.log(`LEND-HOME-003 assertions passed (${inventory.length} public inventory measures, 8 families, ${LENDER_HOMEPAGE_STATE_CARDS.length} states).`);

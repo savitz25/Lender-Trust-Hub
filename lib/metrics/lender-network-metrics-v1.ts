@@ -52,6 +52,8 @@ export type MetricGrain =
   | 'va_mortgage_company_live_roster'
   | 'va_scc_dated_company_row'
   | 'va_cfpb_mortgage_complaint_row'
+  | 'ny_dfs_2024_mortgage_banker_aggregate'
+  | 'ny_mortgage_company_live_roster'
   | 'published_state_intelligence_page'
   | 'nj_county_intelligence_page'
   | 'servicer_role_evidence_row';
@@ -226,6 +228,14 @@ export type LenderNetworkMetricsV1 = {
     hmdaOriginations: number;
     cfpbMortgageComplaints: number;
     sccDatedCompanyRows: number;
+    liveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+    liveLicensedCompanyUniverse: null;
+  };
+  newYork: {
+    hmdaApplications: number;
+    hmdaOriginations: number;
+    dfs2024Bankers: number;
+    enforcementRows: number;
     liveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
     liveLicensedCompanyUniverse: null;
   };

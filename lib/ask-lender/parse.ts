@@ -96,6 +96,24 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
   if (/\bvirginia\b/i.test(q) && /\b(licensed|lenders?|roster|brokers?|scc)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'va-scc-dated-roster', failReason: "Virginia SCC reported mortgage brokers, lenders, and lender-and-brokers separately as of 2025-12-31. That dated roster is not current 2026 license status. NMLS Consumer Access is the current verification path. Do not answer with the 24,222 MLO person count or with HMDA application rows.", coverageState: 'PARTIAL' };
   }
+  if (/\bnew york\b/i.test(q) && /\b(loan officers?|mlos?|mortgage loan originat)/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'ny-mlo-person-grain', failReason: 'New York MLOs are a person grain. The 9,769 end-of-2024 DFS MLO aggregate is not a lender-company count and is not a current 2026 person directory. NMLS Consumer Access is the current verification path.', coverageState: 'PARTIAL' };
+  }
+  if (/\bnew york\b/i.test(q) && /\bhow many lenders\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'ny-no-combined-lenders', failReason: 'Do not add 151 licensed mortgage bankers and 439 registered mortgage brokers into one New York lender count. Those are dated end-of-2024 DFS class aggregates, not a current roster.', coverageState: 'PARTIAL' };
+  }
+  if (/\bnew york\b/i.test(q) && /\bbrokers?\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'ny-broker-class', failReason: 'New York mortgage brokers are a separate NYDFS class from mortgage bankers. Current broker registration is NMLS/NYDFS search-only. The 439 end-of-2024 aggregate is not current 2026 status.', coverageState: 'PARTIAL' };
+  }
+  if (/\bnew york\b/i.test(q) && /\bservicers?\b/i.test(q) && !/\bhmda|\bapplication|\boriginat/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'ny-servicer-class', failReason: 'New York mortgage loan servicers are a separate NYDFS class from mortgage bankers. Current servicer registration is search-only. The 36 end-of-2024 aggregate is not current 2026 status.', coverageState: 'PARTIAL' };
+  }
+  if (/\bnew york\b/i.test(q) && /\bcomplaint/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'ny-cfpb-observations', failReason: 'CFPB New York mortgage complaints are statewide observations. A complaint is not a violation, not NYDFS enforcement, and not a company ranking. Company-specific complaint research requires an exact institution identity.', coverageState: 'PARTIAL' };
+  }
+  if (/\bnew york\b/i.test(q) && /\b(licensed|bankers?|lenders?|roster|nydfs)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'ny-dfs-dated-aggregates', failReason: 'NYDFS 2024 annual-report counts (151 mortgage bankers, 439 brokers) are dated aggregates, not current September 2026 licensees. Current verification is NYDFS + NMLS Consumer Access. Do not answer with 9,769 MLOs or with HMDA application rows.', coverageState: 'PARTIAL' };
+  }
 
   const nmls = q.match(/\b(?:find\s+)?nmls(?:\s+(?:institution\s+)?id)?\s*[:#]?\s*(\d{2,12})\b/i);
   if (nmls?.[1]) return { mode: 'entity', identityQuery: `NMLS ${nmls[1]}`, identifier: { type: 'NMLS_INSTITUTION', value: nmls[1] }, requestedMetric: null, coverageState: 'KNOWN' };
@@ -182,7 +200,9 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
           ? 'AZ'
           : /\bvirginia\b/.test(q)
             ? 'VA'
-            : undefined;
+            : /\bnew york\b/.test(q)
+              ? 'NY'
+              : undefined;
   const counties = detectCounties(q);
   const hasBroward = counties.some((c) => c.fips === '12011');
   const hasPalm = counties.some((c) => c.fips === '12099');

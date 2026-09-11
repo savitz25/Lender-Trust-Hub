@@ -75,6 +75,9 @@ data/raw/washington/
 # AZ-LEND-001 raw DIFI/NMLS/program HTML — never commit WAF challenge pages
 data/raw/arizona/
 
+# NY-LEND-001 raw Weekly Bulletin / enforcement HTML — parsed JSON is committed
+artifacts/ny-lend-001/*.html
+
 # NJ-LEND-001 raw DOBI HTML/PDF corpus — never commit large acquisitions
 data/raw/nj_dobi/
 data/generated/nj-lend-001/occurrences.json

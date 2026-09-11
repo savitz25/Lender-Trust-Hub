@@ -93,6 +93,11 @@ const input = {
   vaSccDatedCompanyRows: pub.vaSccDatedCompanyRows,
   vaLiveRosterCoverage: pub.vaLiveRosterCoverage,
   vaSourceAsOf: pub.vaSourceAsOf,
+  nyHmdaApplications: pub.nyHmdaApplications,
+  nyHmdaOriginations: pub.nyHmdaOriginations,
+  nyDfs2024Bankers: pub.nyDfs2024Bankers,
+  nyEnforcementRows: pub.nyEnforcementRows,
+  nyLiveRosterCoverage: pub.nyLiveRosterCoverage,
   servicerEvidenceRows: 10,
   licensesTotal: 164965,
 };

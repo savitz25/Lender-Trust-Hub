@@ -1,0 +1,1760 @@
+[
+  {
+    "bulletin": "wb20260102",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 11
+  },
+  {
+    "bulletin": "wb20260102",
+    "heading": "Application to assume inactive status as a registered mortgage broker pursuant to Article 12-D of the Banking Law approved:",
+    "kind": "broker_inactive",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260102",
+    "heading": "License issued to engage in the business as a Mortgage Banker Branch under Article 12-D of the New York State Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260102",
+    "heading": "Certificate to engage in the business of a Mortgage Broker Branch surrendered:",
+    "kind": "broker_branch_surrendered",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260102",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260109",
+    "heading": "Application to engage in the business of a Mortgage Broker under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260109",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 21
+  },
+  {
+    "bulletin": "wb20260109",
+    "heading": "License issued to engage in the business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 6
+  },
+  {
+    "bulletin": "wb20260109",
+    "heading": "License to engage in the business of a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 9
+  },
+  {
+    "bulletin": "wb20260109",
+    "heading": "Mortgage Banker License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260109",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 4
+  },
+  {
+    "bulletin": "wb20260116",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 5
+  },
+  {
+    "bulletin": "wb20260116",
+    "heading": "Application to establish a Mortgage Broker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260116",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 52
+  },
+  {
+    "bulletin": "wb20260116",
+    "heading": "License to engage in the business of a Mortgage Banker surrendered:",
+    "kind": "banker_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260116",
+    "heading": "License to engage in the business of a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 10
+  },
+  {
+    "bulletin": "wb20260116",
+    "heading": "Certificate to engage in the business of a Mortgage Broker Branch surrendered:",
+    "kind": "broker_branch_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260116",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 9
+  },
+  {
+    "bulletin": "wb20260123",
+    "heading": "Application to engage in the business of a Mortgage Broker under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260123",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 14
+  },
+  {
+    "bulletin": "wb20260123",
+    "heading": "Application to establish a Mortgage Broker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260123",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 33
+  },
+  {
+    "bulletin": "wb20260123",
+    "heading": "License issued to engage in the business of a Mortgage Banker under Article 12-D of the New York Banking Law:",
+    "kind": "banker_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260123",
+    "heading": "License to engage in the business of a Mortgage Banker surrendered:",
+    "kind": "banker_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260123",
+    "heading": "Certificate to engage in the business of a Mortgage Broker surrendered:",
+    "kind": "broker_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260123",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260130",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 34
+  },
+  {
+    "bulletin": "wb20260130",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 4
+  },
+  {
+    "bulletin": "wb20260130",
+    "heading": "Certificate issued to engage in the business as a Mortgage Broker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "broker_branch_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260130",
+    "heading": "License to engage in the business of a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260130",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 21
+  },
+  {
+    "bulletin": "wb20260206",
+    "heading": "Application to engage in business of a Mortgage Broker under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260206",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 38
+  },
+  {
+    "bulletin": "wb20260206",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260206",
+    "heading": "Certificate issued to engage in business as a Mortgage Broker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "broker_branch_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260206",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260206",
+    "heading": "Certificate to engage in business as a Mortgage Loan Servicer Branch surrendered:",
+    "kind": "servicer_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260206",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260206",
+    "heading": "Mortgage Broker Branch Certificate Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260206",
+    "heading": "Mortgage Loan Servicer Branch Certificate Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260213",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 4
+  },
+  {
+    "bulletin": "wb20260213",
+    "heading": "Application to establish a Mortgage Broker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260213",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 34
+  },
+  {
+    "bulletin": "wb20260213",
+    "heading": "Certificate to engage in the business of a Mortgage Broker surrendered:",
+    "kind": "broker_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260213",
+    "heading": "License to engage in the business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260220",
+    "heading": "Application to engage in the business as a Mortgage Broker under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260220",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260220",
+    "heading": "Application to engage in the business of a Mortgage Broker under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260220",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260220",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 22
+  },
+  {
+    "bulletin": "wb20260220",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260220",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260220",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 0
+  },
+  {
+    "bulletin": "wb20260227",
+    "heading": "Application to engage in business as a Mortgage Broker under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260227",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260227",
+    "heading": "Application to establish a Mortgage Broker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260227",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 26
+  },
+  {
+    "bulletin": "wb20260227",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 5
+  },
+  {
+    "bulletin": "wb20260227",
+    "heading": "Certificate issued to engage in business as a Mortgage Broker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "broker_branch_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260227",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260227",
+    "heading": "Mortgage Banker License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260227",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260306",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 5
+  },
+  {
+    "bulletin": "wb20260306",
+    "heading": "Application to establish a Mortgage Broker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260306",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 28
+  },
+  {
+    "bulletin": "wb20260306",
+    "heading": "Certificate issued to engage in the business as a Mortgage Loan Servicer under Article 12-D of the New York Banking Law:",
+    "kind": "servicer_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260306",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 9
+  },
+  {
+    "bulletin": "wb20260306",
+    "heading": "Certificate to engage in business as a Mortgage Broker surrendered:",
+    "kind": "broker_surrendered",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260306",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260306",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260306",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260306",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 4
+  },
+  {
+    "bulletin": "wb20260313",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260313",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 59
+  },
+  {
+    "bulletin": "wb20260313",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 5
+  },
+  {
+    "bulletin": "wb20260313",
+    "heading": "Certificate issued to engage in business as a Mortgage Broker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "broker_branch_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260313",
+    "heading": "License to engage in business as a Mortgage Banker surrendered:",
+    "kind": "banker_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260313",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 6
+  },
+  {
+    "bulletin": "wb20260313",
+    "heading": "Mortgage Broker Certificate Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260313",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260313",
+    "heading": "Mortgage Loan Servicer Branch Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260313",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 111
+  },
+  {
+    "bulletin": "wb20260313",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260320",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 7
+  },
+  {
+    "bulletin": "wb20260320",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 79
+  },
+  {
+    "bulletin": "wb20260320",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 4
+  },
+  {
+    "bulletin": "wb20260320",
+    "heading": "Certificate issued to engage in business as a Mortgage Broker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "broker_branch_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260320",
+    "heading": "License to engage in business as a Mortgage Banker surrendered, corrected. Effective date from December 23, 2025 to December 31, 2025:",
+    "kind": "banker_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260320",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered, corrected. Effective date from December 23, 2025 to December 31, 2025:",
+    "kind": "banker_branch_surrendered",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260320",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260320",
+    "heading": "Mortgage Banker License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260320",
+    "heading": "Mortgage Broker Certificate Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260320",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260320",
+    "heading": "Mortgage Broker Branch Certificate Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260320",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260320",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 5
+  },
+  {
+    "bulletin": "wb20260327",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260327",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 33
+  },
+  {
+    "bulletin": "wb20260327",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260327",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260327",
+    "heading": "Mortgage Broker Certificate Name Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260327",
+    "heading": "Mortgage Broker Certificate Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260327",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260327",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 52
+  },
+  {
+    "bulletin": "wb20260327",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260403",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260403",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 63
+  },
+  {
+    "bulletin": "wb20260403",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 8
+  },
+  {
+    "bulletin": "wb20260403",
+    "heading": "Certificate issued to engage in business as a Mortgage Broker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "broker_branch_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260403",
+    "heading": "License to engage in business of a Mortgage Banker surrendered:",
+    "kind": "banker_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260403",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 4
+  },
+  {
+    "bulletin": "wb20260403",
+    "heading": "Mortgage Broker Certificate Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260403",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260403",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260410",
+    "heading": "Application to engage in the business of a Mortgage Broker under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260410",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 5
+  },
+  {
+    "bulletin": "wb20260410",
+    "heading": "Application to establish a Mortgage Broker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260410",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 43
+  },
+  {
+    "bulletin": "wb20260410",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260410",
+    "heading": "Certificate to engage in business as a Mortgage Loan Servicer surrendered:",
+    "kind": "servicer_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260410",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260410",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 52
+  },
+  {
+    "bulletin": "wb20260410",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260417",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260417",
+    "heading": "Mortgage Banker License Name Change Received:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260417",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 41
+  },
+  {
+    "bulletin": "wb20260417",
+    "heading": "Certificate issued to engage in business as a Mortgage Broker under Article 12-D of the New York Banking Law:",
+    "kind": "broker_issued",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260417",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260417",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260417",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260417",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 25
+  },
+  {
+    "bulletin": "wb20260417",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 10
+  },
+  {
+    "bulletin": "wb20260424",
+    "heading": "Application to engage in the business of a Mortgage Broker under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260424",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260424",
+    "heading": "Article 12-E Applications Received.",
+    "kind": "mlo_application_received",
+    "count": 41
+  },
+  {
+    "bulletin": "wb20260424",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 5
+  },
+  {
+    "bulletin": "wb20260424",
+    "heading": "Certificate issued to engage in business as a Mortgage Broker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "broker_branch_issued",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260424",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260424",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 0
+  },
+  {
+    "bulletin": "wb20260501",
+    "heading": "Application to engage in business as a Mortgage Broker under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260501",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260501",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 33
+  },
+  {
+    "bulletin": "wb20260501",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260501",
+    "heading": "Certificate to engage in the business of a Mortgage Broker surrendered:",
+    "kind": "broker_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260501",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260501",
+    "heading": "Certificate to engage in business as a Mortgage Broker Branch surrendered:",
+    "kind": "broker_branch_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260501",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260501",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260508",
+    "heading": "Application to engage in business as a Mortgage Broker under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260508",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260508",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 50
+  },
+  {
+    "bulletin": "wb20260508",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260508",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260508",
+    "heading": "Mortgage Banker License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260508",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260508",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 69
+  },
+  {
+    "bulletin": "wb20260508",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260515",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 39
+  },
+  {
+    "bulletin": "wb20260515",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260515",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260515",
+    "heading": "Mortgage Banker License Name Changes:",
+    "kind": "address_or_name_change",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260515",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260515",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260522",
+    "heading": "Application to engage in business as a Mortgage Banker under Article 12-D of the New York Banking Law received:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260522",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 38
+  },
+  {
+    "bulletin": "wb20260522",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260522",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260522",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 5
+  },
+  {
+    "bulletin": "wb20260522",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260529",
+    "heading": "Application to engage in business as a Mortgage Banker under Article 12-D of the New York Banking Law received:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260529",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260529",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 26
+  },
+  {
+    "bulletin": "wb20260529",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260529",
+    "heading": "Mortgage Broker Certificate Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260529",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260605",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 52
+  },
+  {
+    "bulletin": "wb20260605",
+    "heading": "Certificate issued to engage in business as a Mortgage Broker under Article 12-D of the New York Banking Law:",
+    "kind": "broker_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260605",
+    "heading": "License to engage in business as a Mortgage Banker surrendered:",
+    "kind": "banker_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260605",
+    "heading": "Certificate to engage in business as a Mortgage Broker surrendered:",
+    "kind": "broker_surrendered",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260605",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260605",
+    "heading": "issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "other_mortgage",
+    "count": 0
+  },
+  {
+    "bulletin": "wb20260612",
+    "heading": "Application to engage in business as a Mortgage Broker under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260612",
+    "heading": "Application to engage in business as a Mortgage Loan Servicer under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260612",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260612",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 37
+  },
+  {
+    "bulletin": "wb20260612",
+    "heading": "Certificate issued to engage in business as a Mortgage Broker under Article 12-D of the New York Banking Law:",
+    "kind": "broker_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260612",
+    "heading": "License to engage in business as a Mortgage Banker surrendered:",
+    "kind": "banker_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260612",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 4
+  },
+  {
+    "bulletin": "wb20260612",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 4
+  },
+  {
+    "bulletin": "wb20260612",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260619",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 23
+  },
+  {
+    "bulletin": "wb20260619",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260619",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260619",
+    "heading": "Certificate to engage in business as a Mortgage Broker Branch surrendered:",
+    "kind": "broker_branch_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260619",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260626",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 51
+  },
+  {
+    "bulletin": "wb20260626",
+    "heading": "License issued to engage in the business as a Mortgage Banker Branch under Article 12-D of the New York State Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260626",
+    "heading": "Certificate to engage in the business of a Mortgage Loan Servicer surrendered:",
+    "kind": "servicer_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260626",
+    "heading": "Mortgage Broker Branch Certificate Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260626",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York State Banking Law.",
+    "kind": "mlo_approval",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260626",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 50
+  },
+  {
+    "bulletin": "wb20260703",
+    "heading": "Application to engage in the business of a Mortgage Broker under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260703",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260703",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 35
+  },
+  {
+    "bulletin": "wb20260703",
+    "heading": "Certificate issued to engage in business as a Mortgage Broker under Article 12-D of the New York Banking Law:",
+    "kind": "broker_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260703",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260710",
+    "heading": "Application to establish a Mortgage Broker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260710",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 28
+  },
+  {
+    "bulletin": "wb20260710",
+    "heading": "Certificate to engage in business as a Mortgage Broker surrendered:",
+    "kind": "broker_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260710",
+    "heading": "Certificate to engage in business as a Mortgage Loan Servicer surrendered:",
+    "kind": "servicer_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260710",
+    "heading": "Certificate to engage in business as a Mortgage Broker Branch surrendered:",
+    "kind": "broker_branch_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260710",
+    "heading": "Mortgage Banker License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260710",
+    "heading": "Mortgage Broker Certificate Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260717",
+    "heading": "Application to engage in business as a Mortgage Broker under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260717",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260717",
+    "heading": "Application to establish a Mortgage Broker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260717",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 41
+  },
+  {
+    "bulletin": "wb20260717",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260717",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260717",
+    "heading": "Certificate to engage in business as a Mortgage Broker Branch surrendered:",
+    "kind": "broker_branch_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260717",
+    "heading": "Mortgage Banker Name Change received:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260717",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260717",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 82
+  },
+  {
+    "bulletin": "wb20260717",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 0
+  },
+  {
+    "bulletin": "wb20260724",
+    "heading": "Application to engage in business as a Mortgage Broker under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260724",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260724",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 35
+  },
+  {
+    "bulletin": "wb20260724",
+    "heading": "Certificate issued to engage in business as a Mortgage Broker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "broker_branch_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260724",
+    "heading": "License to engage in business as a Mortgage Banker surrendered:",
+    "kind": "banker_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260724",
+    "heading": "License to engage in business as a Mortgage Banker branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260724",
+    "heading": "Certificate to engage in business as a Mortgage Broker surrendered:",
+    "kind": "broker_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260724",
+    "heading": "Certificate to engage in business as a Mortgage Broker Branch surrendered:",
+    "kind": "broker_branch_surrendered",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260724",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 40
+  },
+  {
+    "bulletin": "wb20260724",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 4
+  },
+  {
+    "bulletin": "wb20260731",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 6
+  },
+  {
+    "bulletin": "wb20260731",
+    "heading": "Mortgage Banker License Name Change Received:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260731",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 46
+  },
+  {
+    "bulletin": "wb20260731",
+    "heading": "Application to assume inactive status as a registered mortgage broker pursuant to Article 12-D of the Banking Law approved:",
+    "kind": "broker_inactive",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260731",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260731",
+    "heading": "Certificate issued to engage in business as a Mortgage Broker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "broker_branch_issued",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260731",
+    "heading": "Certificate to engage in business as a Mortgage Broker surrendered:",
+    "kind": "broker_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260731",
+    "heading": "License to engage in business as a Mortgage Banker branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 5
+  },
+  {
+    "bulletin": "wb20260731",
+    "heading": "Mortgage Broker Certificate Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260731",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260731",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 10
+  },
+  {
+    "bulletin": "wb20260807",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 5
+  },
+  {
+    "bulletin": "wb20260807",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 5
+  },
+  {
+    "bulletin": "wb20260807",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 16
+  },
+  {
+    "bulletin": "wb20260807",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260807",
+    "heading": "Certificate to engage in business as a Mortgage Loan Servicer surrendered:",
+    "kind": "servicer_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260807",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 6
+  },
+  {
+    "bulletin": "wb20260807",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260807",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260814",
+    "heading": "Application to engage in business as a Mortgage Broker under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260814",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260814",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 17
+  },
+  {
+    "bulletin": "wb20260814",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 6
+  },
+  {
+    "bulletin": "wb20260814",
+    "heading": "Certificate to engage in business as a Mortgage Broker surrendered:",
+    "kind": "broker_surrendered",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260814",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260814",
+    "heading": "Mortgage Banker Name Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260814",
+    "heading": "Mortgage Banker License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260814",
+    "heading": "Mortgage Broker Certificate Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260814",
+    "heading": "Mortgage Loan Servicer Certificate Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260814",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 4
+  },
+  {
+    "bulletin": "wb20260814",
+    "heading": "Approvals issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "mlo_approval",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260814",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260821",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260821",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 24
+  },
+  {
+    "bulletin": "wb20260821",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 5
+  },
+  {
+    "bulletin": "wb20260821",
+    "heading": "Certificate to engage in the business of a Mortgage Broker surrendered:",
+    "kind": "broker_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260821",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 5
+  },
+  {
+    "bulletin": "wb20260821",
+    "heading": "Mortgage Banker License Name Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260821",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260821",
+    "heading": "Applications for licensing as a Mortgage Loan Originator under Article 12-E of the New York Banking Law, WITHDRAWN. The individuals listed may not engage in mortgage loan origination activity in New York State or on New York State residenti",
+    "kind": "mlo_withdrawal",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260828",
+    "heading": "Application to engage in business as a Mortgage Broker under Article 12-D of the New York Banking Law received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260828",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260828",
+    "heading": "Application to establish a Mortgage Broker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260828",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 18
+  },
+  {
+    "bulletin": "wb20260828",
+    "heading": "License to engage in the business of a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260828",
+    "heading": "issued to engage in the business of mortgage loan origination under Article 12-E of the New York Banking Law.",
+    "kind": "other_mortgage",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260904",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 5
+  },
+  {
+    "bulletin": "wb20260904",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 3
+  },
+  {
+    "bulletin": "wb20260904",
+    "heading": "License to engage in business as a Mortgage Banker Branch surrendered:",
+    "kind": "banker_branch_surrendered",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260904",
+    "heading": "Mortgage Broker Certificate Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260904",
+    "heading": "Mortgage Banker Branch License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260911",
+    "heading": "Application to engage in the business of a Mortgage Banker under Article 12-D of the New York Banking Law received:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260911",
+    "heading": "Application to establish a Mortgage Banker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260911",
+    "heading": "Application to establish a Mortgage Broker's Branch received for examination:",
+    "kind": "other_mortgage_application",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260911",
+    "heading": "Article 12-E Applications Received. Individuals listed may not engage in mortgage loan origination activities prior to the approval of their application for licensing. They must also complete all required education, testing and bonding requ",
+    "kind": "mlo_approval",
+    "count": 25
+  },
+  {
+    "bulletin": "wb20260911",
+    "heading": "License issued to engage in business as a Mortgage Banker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "banker_branch_issued",
+    "count": 2
+  },
+  {
+    "bulletin": "wb20260911",
+    "heading": "Certificate issued to engage in business as a Mortgage Broker Branch under Article 12-D of the New York Banking Law:",
+    "kind": "broker_branch_issued",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260911",
+    "heading": "Mortgage Banker Name Change:",
+    "kind": "address_or_name_change",
+    "count": 1
+  },
+  {
+    "bulletin": "wb20260911",
+    "heading": "Mortgage Banker License Address Changes:",
+    "kind": "address_or_name_change",
+    "count": 1
+  }
+]
