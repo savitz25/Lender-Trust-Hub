@@ -1,0 +1,11 @@
+{
+  "utc": "2026-09-11T20:05:40.424276+00:00",
+  "deployment": "dpl_A4r8MdJvpZsLtqEy6snfT5J2o2ch",
+  "since": "2026-09-11T20:03:00Z",
+  "levels": [
+    "error",
+    "fatal"
+  ],
+  "groupBy": "route",
+  "matchingRows": 0
+}
