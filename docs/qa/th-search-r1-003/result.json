@@ -1,7 +1,7 @@
 {
   "ticket": "TH-SEARCH-R1-003",
-  "status": "CORRECTION_CANDIDATE_VALIDATED",
-  "utc": "2026-09-11T20:05:40.424276+00:00",
+  "status": "RELEASED_AND_VERIFIED",
+  "utc": "2026-09-11T20:22:02.013517+00:00",
   "model": {
     "name": "GPT-6 Astra",
     "reasoning": "High",
@@ -9,9 +9,9 @@
   },
   "baseline": "3015d1b16f239f5eb6e662675b760b3fb51907b8",
   "baselineDeployment": "dpl_5JSZyubLuUMZfx8WSRZnoa6zxiJu",
-  "implementationHead": "1a2ee72bf466b57f5052585f98e9aaabb31382f7",
-  "merge": "116d581487622131648c50d49cb6e29948332645",
-  "deployedSha": "116d581487622131648c50d49cb6e29948332645",
+  "implementationHead": "df212b512261ab9c92a19c397238a0cc0b5ef4f3",
+  "merge": "eac8d856c1fb5af04d24966763c0fe96d7cc3e14",
+  "deployedSha": "eac8d856c1fb5af04d24966763c0fe96d7cc3e14",
   "sourceOracle": "source-oracle.json",
   "redBefore": "red-before.txt",
   "sensitivity": "sensitivity.json",
@@ -50,27 +50,28 @@
     ],
     "preview": "Normal preview URL redirected to Vercel /login; no protection bypass. See preview-access.json.",
     "production": {
-      "artifact": "production-browser.json",
+      "artifact": "final-runtime-browser.json",
       "checks": 14,
       "status": "PASS",
-      "maxCompletionMs": 5444,
-      "sourceSha256": "9fb0835fddd4426fcb7f76b392089a74e2d2f2ebfff970090498c4a4691ad149"
+      "maxCompletionMs": 4365,
+      "sourceSha256": "9fb0835fddd4426fcb7f76b392089a74e2d2f2ebfff970090498c4a4691ad149",
+      "countedObservationLabelVerified": true
     }
   },
   "initialImplementationHead": "1865d85b10fb95bb329b41c225490bd0274fd727",
-  "pr": "https://github.com/savitz25/Lender-Trust-Hub/pull/27",
+  "pr": "https://github.com/savitz25/Lender-Trust-Hub/pull/29",
   "security": {
     "clientBundlesScanned": 73,
     "credentialPatternMatches": 0,
     "noProductionDataWrites": true,
     "noOtherRepoEdits": true
   },
-  "deployment": "dpl_A4r8MdJvpZsLtqEy6snfT5J2o2ch",
+  "deployment": "dpl_6kULLtkcMT6pwkJ2ULvfs6Aqv7Cq",
   "alias": "https://www.lendertrusthub.com",
-  "productionSmoke": "production-smoke.json",
+  "productionSmoke": "final-runtime-smoke.json",
   "sourceCanonicalJsonSha256": "913061d5da375f0a46ba28377a3216c8650aaab86c95b91db0d67821cfa0d008",
   "runtimeLogs": {
-    "since": "2026-09-11T20:03:00Z",
+    "since": "2026-09-11T20:19:00Z",
     "levels": [
       "error",
       "fatal"
@@ -80,6 +81,12 @@
   },
   "closure": "Only TH-SEARCH-R1-003; not all Lender search/geography or Search Reliability R1.",
   "evidenceFollowup": "This certificate records the actual implementation deployment. A subsequent evidence/test-runner-only merge may advance main; no future merge SHA is invented here.",
-  "pending": "Corrected scalar interpretation production proof",
-  "countLabelReview": "count-label-review.md"
+  "countLabelReview": "count-label-review.md",
+  "coreImplementationHead": "1a2ee72bf466b57f5052585f98e9aaabb31382f7",
+  "coreMerge": "116d581487622131648c50d49cb6e29948332645",
+  "prs": [
+    "https://github.com/savitz25/Lender-Trust-Hub/pull/27",
+    "https://github.com/savitz25/Lender-Trust-Hub/pull/28",
+    "https://github.com/savitz25/Lender-Trust-Hub/pull/29"
+  ]
 }
