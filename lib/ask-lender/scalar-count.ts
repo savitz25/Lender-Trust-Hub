@@ -37,7 +37,7 @@ export function executeScalarCount(query: LenderResearchQuery): AskExecution {
     const period = evidence.reportingYear ? `HMDA ${evidence.reportingYear} reporting vintage` : 'Reporting vintage unavailable';
     const calculation = evidence.calculation || message;
     return {
-      query, interpretation: [...interpretationLines(query), { label: 'Reporting year', value: query.reportingYears?.join(', ') || evidence.reportingYear || 'unavailable' }], geographyWarning: ASK_GEO_NOTE,
+      query, interpretation: [...interpretationLines(query).map(line => line.label === 'Entity grain' ? { label: 'Counted observations', value: `${action}s, not institutions. Source grain: ${evidence.sourceGrain ?? 'not selected'}; output: ${evidence.outputGrain} property geography.` } : line), { label: 'Reporting year', value: query.reportingYears?.join(', ') || evidence.reportingYear || 'unavailable' }], geographyWarning: ASK_GEO_NOTE,
       headline: available ? `${label} - ${period}` : `Count ${evidence.availability === 'NEEDS_CLARIFICATION' ? 'needs clarification' : 'unavailable'}: ${label}`,
       body: message, countEvidence: evidence, failClosed: !available,
       terminalState: evidence.availability === 'AVAILABLE' ? 'FOUND' : evidence.availability,
@@ -105,7 +105,7 @@ export function executeScalarCount(query: LenderResearchQuery): AskExecution {
       evidence.calculation = `Sum ${evidence.field} across ${selected.length} unique ${evidence.sourceGrain} rows for ${scope}, reporting year ${evidence.reportingYear}. No publication or pagination filter; no other source grain added.`;
     }
     evidence.value = value; evidence.availability = 'AVAILABLE';
-    return finish(`Reported ${action}s for mortgage properties in ${name}. ${evidence.sourceGrain} observations are presented at ${evidence.outputGrain} scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.`);
+    return finish(`Reported ${action}s for mortgage properties in ${name}. The source grain is ${evidence.sourceGrain}; the displayed total uses ${evidence.outputGrain} scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.`);
   } catch (error) {
     evidence.value = null; evidence.availability = 'UNAVAILABLE';
     return finish(error instanceof CountSourceError ? error.message : 'The requested source could not be checked. Retry later; no count was substituted.');

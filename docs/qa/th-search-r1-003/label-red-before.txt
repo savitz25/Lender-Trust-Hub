@@ -1,0 +1,55 @@
+✔ 01-04 every jurisdiction/name/code and all three independent fields (252.8804ms)
+✔ 05 national measures are separate fields, explicit default (1.9414ms)
+✔ 06 sourced zero is successful (0.6849ms)
+✔ 07 missing and malformed selected values never coerce or substitute (6.641ms)
+✔ 08 year mismatch and multiple years remain unresolved (1.717ms)
+✔ 09 duplicate and mixed-grain aggregate keys rejected (1.0042ms)
+✔ 10 state/action override updates number, interpretation, trace and URL (0.8656ms)
+✔ 11 filter links preserve state/action and structured form values (11.2667ms)
+✔ 12 filtered counts use actual field and unsupported split stays unavailable (2.1544ms)
+✔ 13 unknown/local geography never national; ordinary in/or are not state codes (1.4767ms)
+✔ 14 two states require clarification (0.4171ms)
+✔ 15 pagination/publication cannot affect market count (0.7883ms)
+✔ 16 actual page/API share same source-backed result (8.0635ms)
+✔ 17 rendered number and trace derive from same source and clock (5.146ms)
+✔ 18 changing only NJ source changes only NJ answer (1.3905ms)
+✔ 19 NMLS grouping and LEI regressions remain exact (5.0537ms)
+✔ 20 county-volume and county comparison retained (29.3345ms)
+✔ 21 corrupt/throwing source finishes unavailable, not zero (1.0735ms)
+✔ 22 accepted source oracle independent of executor for all fields/states (66.3954ms)
+✔ 23 filtered duplicates, null and mixed years fail closed (1.1047ms)
+✔ 24 unsupported conditions before place and structured years cannot disappear (1.9949ms)
+✔ 25 supported FL product and purpose fields remain independent (2.8572ms)
+✔ 26 internal scalar adaptation preserves purpose and cannot lift a refusal (2.8535ms)
+✖ 27 scalar interpretation names counted observations, not institution grain (15.5819ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 23
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1823.0362
+
+✖ failing tests:
+
+test at lib\ask-lender\r3-behavior.test.ts:2:13530
+✖ 27 scalar interpretation names counted observations, not institution grain (15.5819ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(!r.interpretation.some(line=>line.label==='Entity grain'))
+  
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-003-work\lib\ask-lender\r3-behavior.test.ts:48:148)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

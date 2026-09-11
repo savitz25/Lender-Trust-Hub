@@ -1,0 +1,38 @@
+
+> lender-trust-hub@1.0.0 check:th-search-r1-003
+> tsx --test lib/ask-lender/r3-reproduction.test.ts lib/ask-lender/r3-behavior.test.ts
+
+✔ 01-04 every jurisdiction/name/code and all three independent fields (169.4798ms)
+✔ 05 national measures are separate fields, explicit default (1.3824ms)
+✔ 06 sourced zero is successful (0.5475ms)
+✔ 07 missing and malformed selected values never coerce or substitute (4.3709ms)
+✔ 08 year mismatch and multiple years remain unresolved (1.6463ms)
+✔ 09 duplicate and mixed-grain aggregate keys rejected (1.6041ms)
+✔ 10 state/action override updates number, interpretation, trace and URL (1.0365ms)
+✔ 11 filter links preserve state/action and structured form values (11.3008ms)
+✔ 12 filtered counts use actual field and unsupported split stays unavailable (2.9913ms)
+✔ 13 unknown/local geography never national; ordinary in/or are not state codes (1.6769ms)
+✔ 14 two states require clarification (0.5041ms)
+✔ 15 pagination/publication cannot affect market count (0.9181ms)
+✔ 16 actual page/API share same source-backed result (6.0732ms)
+✔ 17 rendered number and trace derive from same source and clock (4.7627ms)
+✔ 18 changing only NJ source changes only NJ answer (1.4038ms)
+✔ 19 NMLS grouping and LEI regressions remain exact (5.0769ms)
+✔ 20 county-volume and county comparison retained (33.0353ms)
+✔ 21 corrupt/throwing source finishes unavailable, not zero (0.758ms)
+✔ 22 accepted source oracle independent of executor for all fields/states (58.4555ms)
+✔ 23 filtered duplicates, null and mixed years fail closed (1.1006ms)
+✔ 24 unsupported conditions before place and structured years cannot disappear (1.4406ms)
+✔ 25 supported FL product and purpose fields remain independent (1.6388ms)
+✔ 26 internal scalar adaptation preserves purpose and cannot lift a refusal (1.9001ms)
+✔ 27 scalar interpretation names counted observations, not institution grain (0.7806ms)
+✔ R1-003 accepted NJ measure, not national fallback (38.0754ms)
+✔ R1-003 executed overrides agree with visible plan (5.7999ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1130.7932
