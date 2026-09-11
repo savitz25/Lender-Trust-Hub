@@ -38,6 +38,12 @@ test('identity and market semantics are enforced by real projection paths', () =
   assert.equal(parseLenderAsk('licensed mortgage lenders in Virginia').coverageState, 'PARTIAL');
   assert.equal(parseLenderAsk('Is Rocket licensed in Virginia?').failClosedKind, 'va-scc-dated-roster');
   assert.equal(parseLenderAsk('How many mortgage lenders are in Virginia?').failClosedKind, 'va-scc-dated-roster');
+  assert.equal(parseLenderAsk('licensed mortgage lenders in Illinois').failClosedKind, 'il-idfpr-nmls-search-only');
+  assert.equal(parseLenderAsk('how many lenders are in Illinois?').failClosedKind, 'il-no-combined-lenders');
+  assert.equal(parseLenderAsk('best mortgage lender in Illinois').failClosedKind, 'ranking');
+  assert.notEqual(parseLenderAsk('mortgage applications in Illinois').mode, 'fail_closed');
+  assert.equal(parseLenderAsk('complaints against a lender in Illinois').failClosedKind, 'il-cfpb-observations');
+  assert.equal(parseLenderAsk('Who is serving Chicago in Illinois?').failClosedKind, 'il-mailing-ne-service');
   assert.equal(parseLenderAsk('Mortgage brokers in Virginia').failClosedKind, 'va-scc-dated-roster');
   assert.notEqual(parseLenderAsk('mortgage applications in Virginia').mode, 'fail_closed');
   assert.equal(parseLenderAsk('Virginia first-time buyer assistance').failClosedKind, 'va-housing-programs');

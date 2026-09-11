@@ -112,6 +112,10 @@ async function main() {
     nyDfs2024Bankers: pub.nyDfs2024Bankers,
     nyEnforcementRows: pub.nyEnforcementRows,
     nyLiveRosterCoverage: pub.nyLiveRosterCoverage,
+    ilHmdaApplications: pub.ilHmdaApplications,
+    ilHmdaOriginations: pub.ilHmdaOriginations,
+    ilFdicInstitutions: pub.ilFdicInstitutions,
+    ilLiveRosterCoverage: pub.ilLiveRosterCoverage,
     servicerEvidenceRows: prod.servicerEvidenceRows ?? 0,
     licensesTotal: prod.licensesTotal,
   };

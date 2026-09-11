@@ -50,7 +50,7 @@ function baseInput(over: Partial<LenderNetworkMetricsInput> = {}): LenderNetwork
     publicRender: 181,
     publicIndex: 180,
     floridaPublic: 130,
-    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york'],
+    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois'],
     coHmdaApplications: 260212,
     coHmdaOriginations: 156145,
     coCfpbMortgageComplaints: 8627,
@@ -68,6 +68,10 @@ function baseInput(over: Partial<LenderNetworkMetricsInput> = {}): LenderNetwork
     nyDfs2024Bankers: 151,
     nyEnforcementRows: 198,
     nyLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED',
+    ilHmdaApplications: 394488,
+    ilHmdaOriginations: 231788,
+    ilFdicInstitutions: 387,
+    ilLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED',
     njCountyIntelligencePages: 4,
     njHmdaApplications: 318529,
     njHmdaOriginations: 177325,
@@ -147,10 +151,13 @@ describe('lender-network-metrics-v1 grain safety', () => {
     assert.notEqual(metricByKey(m, 'co_dre_mlo_rows').value, m.colorado.hmdaApplications);
     assert.equal(metricByKey(m, 'co_cfpb_mortgage_complaints').value, 8627);
     assert.notEqual(metricByKey(m, 'co_cfpb_mortgage_complaints').value, m.colorado.hmdaApplications);
-    assert.equal(m.network.publishedStateIntelligencePages, 9);
+    assert.equal(m.network.publishedStateIntelligencePages, 10);
     assert.ok(m.network.publishedStateIntelligencePaths.includes('/colorado'));
     assert.ok(m.network.publishedStateIntelligencePaths.includes('/virginia'));
     assert.ok(m.network.publishedStateIntelligencePaths.includes('/new-york'));
+    assert.ok(m.network.publishedStateIntelligencePaths.includes('/illinois'));
+    assert.equal(m.illinois.hmdaApplications, 394488);
+    assert.equal(m.illinois.liveLicensedCompanyUniverse, null);
     assert.equal(metricByKey(m, 'ny_dfs_2024_licensed_mortgage_bankers').value, 151);
     assert.equal(metricByKey(m, 'ny_live_licensed_company_universe').value, null);
     assert.equal(metricByKey(m, 'va_mortgage_company_live_roster').value, null);
@@ -242,7 +249,7 @@ describe('lender-network-metrics-v1 grain safety', () => {
       () =>
         computeLenderNetworkMetrics(
           baseInput({
-            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/new-jersey/union-county'],
+            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/new-jersey/union-county'],
           }),
         ),
       /county routes/,

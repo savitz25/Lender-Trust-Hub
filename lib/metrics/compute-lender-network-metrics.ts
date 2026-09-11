@@ -87,6 +87,10 @@ export type LenderNetworkMetricsInput = {
   nyDfs2024Bankers: number;
   nyEnforcementRows: number;
   nyLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+  ilHmdaApplications: number;
+  ilHmdaOriginations: number;
+  ilFdicInstitutions: number;
+  ilLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
   servicerEvidenceRows: number;
   licensesTotal: number;
 };
@@ -189,7 +193,7 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.licensesTotal === input.institutions) {
     throw new Error('license rows must not equal institutions');
   }
-  for (const path of ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york']) {
+  for (const path of ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois']) {
     if (!input.publishedStateIntelligencePaths.includes(path)) {
       throw new Error(`state intelligence path missing: ${path}`);
     }
@@ -261,6 +265,15 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   }
   if (input.nyDfs2024Bankers === input.nyEnforcementRows) {
     throw new Error('NY DFS 2024 bankers must not equal enforcement rows');
+  }
+  if (input.ilLiveRosterCoverage !== 'SOURCE_NOT_ACQUIRED') {
+    throw new Error('IL live mortgage-company roster remains not acquired');
+  }
+  if (input.ilHmdaApplications === input.ilFdicInstitutions) {
+    throw new Error('Illinois HMDA applications must not equal FDIC institution rows');
+  }
+  if (input.ilHmdaApplications === input.ilHmdaOriginations) {
+    throw new Error('Illinois HMDA applications must not equal originations');
   }
 }
 
@@ -953,6 +966,32 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       ),
     }),
     metric({
+      key: 'il_live_licensed_company_universe',
+      label: 'Illinois current licensed mortgage-company universe',
+      value: null,
+      valueState: 'NOT_ACQUIRED',
+      grain: 'il_mortgage_company_live_roster',
+      denominator: 'Complete current IDFPR/NMLS Illinois mortgage-company universe',
+      description:
+        'Current Illinois mortgage-company licensing is search-only. Missing is not zero and is not HMDA or FDIC.',
+      coverage: 'Illinois',
+      contributingSourceSystems: ['il_idfpr_nmls'],
+      sourceAsOf: null,
+      generatedAt,
+      publicationStatus: 'PUBLIC_UNKNOWN',
+      trace: commonTrace(
+        'Nothing numeric is published for the live Illinois mortgage-company universe.',
+        'Not HMDA applications. Not FDIC depositories.',
+        ['il_idfpr_nmls'],
+        'Illinois',
+        'CURRENT_IL_MORTGAGE_COMPANY_ROSTER OPEN_SEARCH_ONLY',
+        {
+          whyUnknown:
+            'IDFPR mortgage-company licensing was not bulk-exported. NMLS Consumer Access remains search-only. Missing is not zero.',
+        },
+      ),
+    }),
+    metric({
       key: 'ny_dfs_2024_licensed_mortgage_bankers',
       label: 'New York DFS 2024 licensed mortgage bankers',
       value: input.nyDfs2024Bankers,
@@ -981,14 +1020,14 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       valueState: 'KNOWN',
       grain: 'published_state_intelligence_page',
       denominator: 'Indexable specialist state intelligence routes currently published',
-      description: 'Florida, New Jersey, California, Texas, Washington, Arizona, Colorado, Virginia, and New York state intelligence pages. Not a count of lenders.',
+      description: 'Florida, New Jersey, California, Texas, Washington, Arizona, Colorado, Virginia, New York, and Illinois state intelligence pages. Not a count of lenders.',
       coverage: input.publishedStateIntelligencePaths.join(', '),
       contributingSourceSystems: ['lender-state-intel'],
       sourceAsOf: newestDocumentedSourceAsOf,
       generatedAt,
       publicationStatus: 'PUBLIC',
       trace: commonTrace(
-        'Published /florida, /new-jersey, /california, /texas, /washington, /arizona, /colorado, /virginia, and /new-york intelligence routes.',
+        'Published /florida, /new-jersey, /california, /texas, /washington, /arizona, /colorado, /virginia, /new-york, and /illinois intelligence routes.',
         'Not NJ county pages and not national directory rows.',
         ['lender-state-intel'],
         input.publishedStateIntelligencePaths.join(', '),
@@ -1048,6 +1087,10 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
     nyBankers: input.nyDfs2024Bankers,
     nyEnf: input.nyEnforcementRows,
     nyRoster: input.nyLiveRosterCoverage,
+    ilApps: input.ilHmdaApplications,
+    ilOrigs: input.ilHmdaOriginations,
+    ilFdic: input.ilFdicInstitutions,
+    ilRoster: input.ilLiveRosterCoverage,
     paths: input.publishedStateIntelligencePaths,
     njCounties: input.njCountyIntelligencePages,
   };
@@ -1161,6 +1204,13 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       liveRosterCoverage: input.nyLiveRosterCoverage,
       liveLicensedCompanyUniverse: null,
     },
+    illinois: {
+      hmdaApplications: input.ilHmdaApplications,
+      hmdaOriginations: input.ilHmdaOriginations,
+      fdicInstitutions: input.ilFdicInstitutions,
+      liveRosterCoverage: input.ilLiveRosterCoverage,
+      liveLicensedCompanyUniverse: null,
+    },
     publication: {
       nationalRender: input.publicRender,
       nationalIndex: input.publicIndex,
@@ -1217,6 +1267,10 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       {
         total: 'NY live mortgage-company roster = 0',
         reason: 'SOURCE_NOT_ACQUIRED. Missing is not zero. Dated 2024 DFS class aggregates are not current 2026 licenses.',
+      },
+      {
+        total: 'IL live mortgage-company roster = 0',
+        reason: 'SOURCE_NOT_ACQUIRED. Missing is not zero. HMDA applications and FDIC banks are not current Illinois mortgage companies.',
       },
       {
         total: `${input.coDreMloRows} Colorado MLO person rows`,
