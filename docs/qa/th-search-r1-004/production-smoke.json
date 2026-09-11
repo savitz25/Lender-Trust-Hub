@@ -1,0 +1,53 @@
+{
+  "at": "2026-09-11T21:09:38.604Z",
+  "sha": "870532c7d083a733f4f689fab7b68a434ad04628",
+  "deployment": "dpl_EeH66to9CF2h2zuXkGFiRaqFPZxe",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/ask",
+      "status": 200
+    },
+    {
+      "path": "/lender/rocket-mortgage",
+      "status": 200
+    },
+    {
+      "path": "/florida",
+      "status": 200
+    },
+    {
+      "path": "/new-jersey",
+      "status": 200
+    },
+    {
+      "path": "/calculators",
+      "status": 200
+    },
+    {
+      "path": "/compare",
+      "status": 200
+    },
+    {
+      "path": "/admin/login",
+      "status": 200
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200
+    }
+  ],
+  "canonical": {
+    "status": 308,
+    "host": "www.lendertrusthub.com",
+    "queryPreserved": true
+  },
+  "status": "PASS"
+}

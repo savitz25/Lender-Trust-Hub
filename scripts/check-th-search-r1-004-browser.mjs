@@ -27,7 +27,7 @@ const cases=[
 const b=await chromium.connectOverCDP(cdp),p=await b.contexts()[0].newPage();p.setDefaultTimeout(25000);
 const out={at:new Date().toISOString(),sha,deployment,origin,sourceFingerprints:{state:hash(state),county:hash(county)},observations:[],navigation:[],failures:[]};
 async function settled(){await p.locator('.intel-ask-result h3').first().waitFor();}
-async function api(){return p.evaluate(async()=>{const r=await fetch('/api/ask'+location.search);return {status:r.status,result:await r.json()};});}
+async function api(){return p.evaluate(async()=>{const r=await fetch('/api/ask'+location.search,{signal:AbortSignal.timeout(15000)});return {status:r.status,result:await r.json()};});}
 async function overflow(){assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'horizontal overflow');}
 try {
  for(let i=0;i<cases.length;i++){
