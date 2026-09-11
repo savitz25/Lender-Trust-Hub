@@ -1,3 +1,4 @@
+import { STATE_NAMES } from '@/lib/home-intel/states';
 import type { AskUrlOverrides } from './parse';
 import type { LenderResearchQuery } from './types';
 
@@ -14,7 +15,7 @@ export function validateAskInput(input: AskQueryInput): { value: ValidAskInput }
   const page = integer(input.page, 1, 200), pageSize = integer(input.pageSize, 25, 50);
   if (page == null || pageSize == null) return { error: 'Use a whole page number from 1–200 and a page size from 1–50.' };
   const overrides: AskUrlOverrides = {};
-  const enums = { action: ['', 'application', 'origination', 'denial'], loanType: ['', 'all', 'conventional', 'FHA', 'VA', 'USDA'], geo: ['', 'FL', 'broward', 'palm-beach'] };
+  const enums = { action: ['', 'application', 'origination', 'denial'], loanType: ['', 'all', 'conventional', 'FHA', 'VA', 'USDA'], geo: ['', 'US', ...Object.keys(STATE_NAMES), 'broward', 'palm-beach'] };
   for (const key of ['action', 'loanType', 'geo'] as const) {
     const value = input.overrides?.[key];
     if (value != null && (typeof value !== 'string' || !enums[key].includes(value))) return { error: `Choose one supported ${key} filter.` };

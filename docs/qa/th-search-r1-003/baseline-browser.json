@@ -1,0 +1,478 @@
+[
+  {
+    "q": "How many mortgage originations in New Jersey?",
+    "utc": "2026-09-11T19:35:41.347Z",
+    "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH TYPE\ncount\nEdit request\nGEOGRAPHY\nNJ\nEdit request\nGEOGRAPHY MEANING\nMortgage property / census location (HMDA), not lender location\nEdit request\nHMDA ACTION FAMILY\norigination\nEdit request\nMETRIC\ncount\nEdit request\nENTITY GRAIN\nInstitution / research snapshot — not MLO or branch\nEdit request\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nOriginations\nApplications\nDenials\nAll loan types\nConventional\nFHA\nVA\nUSDA\nFlorida\nBroward\nPalm Beach\nChange interpretation\nCurrent HMDA research universe (county grain, 2025 vintage)\n\nNational snapshot of reported activity. Originations divided by applications is not an approval rate.\n\nSource period: HMDA 2025 reporting vintage. Grain: state.\n\nHMDA 2025 originations: 6,793,253\nGrain: HMDA 2025 county-grain LEI observation\nOfficial as-of: 2025\nTrace this query\n\nShareable research URL (noindex): /ask?q=How+many+mortgage+originations+in+New+Jersey%3F\n\nBack to mortgage intelligence",
+    "api": {
+      "contract": "lender-ask-v1",
+      "query": {
+        "mode": "count",
+        "geography": {
+          "grain": "state",
+          "state": "NJ",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "actionTaken": [
+          "origination"
+        ],
+        "requestedMetric": "count"
+      },
+      "interpretation": [
+        {
+          "label": "Contract",
+          "value": "lender-ask-v1"
+        },
+        {
+          "label": "Research type",
+          "value": "count"
+        },
+        {
+          "label": "Geography",
+          "value": "NJ"
+        },
+        {
+          "label": "Geography meaning",
+          "value": "Mortgage property / census location (HMDA), not lender location"
+        },
+        {
+          "label": "HMDA action family",
+          "value": "origination"
+        },
+        {
+          "label": "Metric",
+          "value": "count"
+        },
+        {
+          "label": "Entity grain",
+          "value": "Institution / research snapshot — not MLO or branch"
+        }
+      ],
+      "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+      "headline": "Current HMDA research universe (county grain, 2025 vintage)",
+      "body": "National snapshot of reported activity. Originations divided by applications is not an approval rate.",
+      "facts": [
+        {
+          "label": "HMDA 2025 originations",
+          "value": "6,793,253"
+        },
+        {
+          "label": "Grain",
+          "value": "HMDA 2025 county-grain LEI observation"
+        },
+        {
+          "label": "Official as-of",
+          "value": "2025"
+        }
+      ],
+      "sharePath": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F",
+      "elapsedMs": 31,
+      "period": "HMDA 2025 reporting vintage",
+      "grain": "state",
+      "filters": [
+        {
+          "id": "orig",
+          "label": "Originations",
+          "active": true,
+          "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=all"
+        },
+        {
+          "id": "apps",
+          "label": "Applications",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=application&loanType=all"
+        },
+        {
+          "id": "den",
+          "label": "Denials",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=denial&loanType=all"
+        },
+        {
+          "id": "all-type",
+          "label": "All loan types",
+          "active": true,
+          "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=all"
+        },
+        {
+          "id": "conv",
+          "label": "Conventional",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=conventional"
+        },
+        {
+          "id": "fha",
+          "label": "FHA",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=FHA"
+        },
+        {
+          "id": "va",
+          "label": "VA",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=VA"
+        },
+        {
+          "id": "usda",
+          "label": "USDA",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=USDA"
+        },
+        {
+          "id": "fl",
+          "label": "Florida",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=all&geo=FL"
+        },
+        {
+          "id": "br",
+          "label": "Broward",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=all&geo=broward"
+        },
+        {
+          "id": "pb",
+          "label": "Palm Beach",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+New+Jersey%3F&action=origination&loanType=all&geo=palm-beach"
+        }
+      ],
+      "trace": {
+        "contract": "lender-ask-v1",
+        "sourceFiles": [
+          "data/hmda/national/lender_state_summary.csv",
+          "data/hmda/by-state/FL/lender_activity_by_county.csv",
+          "data/hmda/by-state/FL/county_market_summary.csv",
+          "data/hmda/florida/lei_to_nmls_mapping.csv",
+          "data/hmda/florida/_gleif_name_cache.json",
+          "docs/lend-nat-016-search-index.json"
+        ],
+        "method": "Homepage intelligence snapshot (no institution ranking).",
+        "indexes": [
+          "in-memory LEI map",
+          "in-memory county FIPS map",
+          "lend-nat-016 LEI→public slug"
+        ],
+        "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+        "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+        "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+        "grain": "state",
+        "period": "HMDA 2025 reporting vintage"
+      }
+    }
+  },
+  {
+    "q": "How many mortgage denials nationally?",
+    "utc": "2026-09-11T19:35:42.910Z",
+    "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH TYPE\ncount\nEdit request\nGEOGRAPHY\nnational\nEdit request\nGEOGRAPHY MEANING\nMortgage property / census location (HMDA), not lender location\nEdit request\nHMDA ACTION FAMILY\ndenial\nEdit request\nMETRIC\ncount\nEdit request\nENTITY GRAIN\nInstitution / research snapshot — not MLO or branch\nEdit request\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nOriginations\nApplications\nDenials\nAll loan types\nConventional\nFHA\nVA\nUSDA\nFlorida\nBroward\nPalm Beach\nChange interpretation\nCurrent HMDA research universe (county grain, 2025 vintage)\n\nNational snapshot of reported activity. Originations divided by applications is not an approval rate.\n\nSource period: HMDA 2025 reporting vintage. Grain: national.\n\nHMDA 2025 county-grain applications: 11,529,787\nGrain: HMDA 2025 county-grain LEI observation, summed to national\nOfficial as-of: 2025\nTrace this query\n\nShareable research URL (noindex): /ask?q=How+many+mortgage+denials+nationally%3F\n\nBack to mortgage intelligence",
+    "api": {
+      "contract": "lender-ask-v1",
+      "query": {
+        "mode": "count",
+        "geography": {
+          "grain": "national",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "actionTaken": [
+          "denial"
+        ],
+        "requestedMetric": "count"
+      },
+      "interpretation": [
+        {
+          "label": "Contract",
+          "value": "lender-ask-v1"
+        },
+        {
+          "label": "Research type",
+          "value": "count"
+        },
+        {
+          "label": "Geography",
+          "value": "national"
+        },
+        {
+          "label": "Geography meaning",
+          "value": "Mortgage property / census location (HMDA), not lender location"
+        },
+        {
+          "label": "HMDA action family",
+          "value": "denial"
+        },
+        {
+          "label": "Metric",
+          "value": "count"
+        },
+        {
+          "label": "Entity grain",
+          "value": "Institution / research snapshot — not MLO or branch"
+        }
+      ],
+      "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+      "headline": "Current HMDA research universe (county grain, 2025 vintage)",
+      "body": "National snapshot of reported activity. Originations divided by applications is not an approval rate.",
+      "facts": [
+        {
+          "label": "HMDA 2025 county-grain applications",
+          "value": "11,529,787"
+        },
+        {
+          "label": "Grain",
+          "value": "HMDA 2025 county-grain LEI observation, summed to national"
+        },
+        {
+          "label": "Official as-of",
+          "value": "2025"
+        }
+      ],
+      "sharePath": "/ask?q=How+many+mortgage+denials+nationally%3F",
+      "elapsedMs": 1,
+      "period": "HMDA 2025 reporting vintage",
+      "grain": "national",
+      "filters": [
+        {
+          "id": "orig",
+          "label": "Originations",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=origination&loanType=all"
+        },
+        {
+          "id": "apps",
+          "label": "Applications",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=application&loanType=all"
+        },
+        {
+          "id": "den",
+          "label": "Denials",
+          "active": true,
+          "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=all"
+        },
+        {
+          "id": "all-type",
+          "label": "All loan types",
+          "active": true,
+          "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=all"
+        },
+        {
+          "id": "conv",
+          "label": "Conventional",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=conventional"
+        },
+        {
+          "id": "fha",
+          "label": "FHA",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=FHA"
+        },
+        {
+          "id": "va",
+          "label": "VA",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=VA"
+        },
+        {
+          "id": "usda",
+          "label": "USDA",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=USDA"
+        },
+        {
+          "id": "fl",
+          "label": "Florida",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=all&geo=FL"
+        },
+        {
+          "id": "br",
+          "label": "Broward",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=all&geo=broward"
+        },
+        {
+          "id": "pb",
+          "label": "Palm Beach",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+denials+nationally%3F&action=denial&loanType=all&geo=palm-beach"
+        }
+      ],
+      "trace": {
+        "contract": "lender-ask-v1",
+        "sourceFiles": [
+          "data/hmda/national/lender_state_summary.csv",
+          "data/hmda/by-state/FL/lender_activity_by_county.csv",
+          "data/hmda/by-state/FL/county_market_summary.csv",
+          "data/hmda/florida/lei_to_nmls_mapping.csv",
+          "data/hmda/florida/_gleif_name_cache.json",
+          "docs/lend-nat-016-search-index.json"
+        ],
+        "method": "Homepage intelligence snapshot (no institution ranking).",
+        "indexes": [
+          "in-memory LEI map",
+          "in-memory county FIPS map",
+          "lend-nat-016 LEI→public slug"
+        ],
+        "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+        "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+        "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+        "grain": "national",
+        "period": "HMDA 2025 reporting vintage"
+      }
+    }
+  },
+  {
+    "q": "How many mortgage originations in Florida?",
+    "utc": "2026-09-11T19:35:44.556Z",
+    "text": "LENDERTRUSTHUB SPECIALIST RESEARCH\n\nResearch lenders and mortgage-market evidence\n\nNatural language is mapped to a structured query plan. Facts come from committed HMDA observations and confirmed identity bridges — not from a chatbot and not from invented counts.\n\nThis page is shareable and noindex. It is not a public ranking product.\n\nAsk form\n\nRESEARCH LENDERS\n\nWhat do you want to find out?\nLender research question, institution name, NMLS ID, market, county or state\nResearch\n\nUp to 180 characters. Longer requests are rejected without shortening identifiers.\n\nThis is not a chatbot. Natural language is mapped to a structured query plan. Institution results come from committed HMDA observations and confirmed identity bridges — not invented answers.\n\nWhich lenders originated the most mortgages in Florida?\nWhich lenders received the most applications for properties in Broward County?\nCompare Broward and Palm Beach mortgage activity\nHow many applications are for properties in Florida?\nWhich lenders originated the most FHA mortgages in Florida?\nWhich lenders have the lowest rates today?\nAdvanced filters\n\nWE INTERPRETED YOUR QUESTION AS\n\nCONTRACT\nlender-ask-v1\nEdit request\nRESEARCH TYPE\ncount\nEdit request\nGEOGRAPHY\nFL\nEdit request\nGEOGRAPHY MEANING\nMortgage property / census location (HMDA), not lender location\nEdit request\nHMDA ACTION FAMILY\norigination\nEdit request\nMETRIC\ncount\nEdit request\nENTITY GRAIN\nInstitution / research snapshot — not MLO or branch\nEdit request\n\nHMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.\n\nOriginations\nApplications\nDenials\nAll loan types\nConventional\nFHA\nVA\nUSDA\nFlorida\nBroward\nPalm Beach\nChange interpretation\nReported HMDA 2025 originations for properties in Florida\n\nCounty-grain observations aggregated to Florida. Not lenders headquartered in Florida and not a service-territory map.\n\nSource period: HMDA 2025 reporting vintage. Grain: state.\n\nFlorida originations: 489,025\n\nFlorida mortgage intelligence\n\nTrace this query\n\nShareable research URL (noindex): /ask?q=How+many+mortgage+originations+in+Florida%3F\n\nBack to mortgage intelligence",
+    "api": {
+      "contract": "lender-ask-v1",
+      "query": {
+        "mode": "count",
+        "geography": {
+          "grain": "state",
+          "state": "FL",
+          "note": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory."
+        },
+        "actionTaken": [
+          "origination"
+        ],
+        "requestedMetric": "count"
+      },
+      "interpretation": [
+        {
+          "label": "Contract",
+          "value": "lender-ask-v1"
+        },
+        {
+          "label": "Research type",
+          "value": "count"
+        },
+        {
+          "label": "Geography",
+          "value": "FL"
+        },
+        {
+          "label": "Geography meaning",
+          "value": "Mortgage property / census location (HMDA), not lender location"
+        },
+        {
+          "label": "HMDA action family",
+          "value": "origination"
+        },
+        {
+          "label": "Metric",
+          "value": "count"
+        },
+        {
+          "label": "Entity grain",
+          "value": "Institution / research snapshot — not MLO or branch"
+        }
+      ],
+      "geographyWarning": "HMDA geography is the property/census location tied to the application — not lender headquarters, branch location, or service territory.",
+      "headline": "Reported HMDA 2025 originations for properties in Florida",
+      "body": "County-grain observations aggregated to Florida. Not lenders headquartered in Florida and not a service-territory map.",
+      "facts": [
+        {
+          "label": "Florida originations",
+          "value": "489,025"
+        }
+      ],
+      "href": "/florida",
+      "hrefLabel": "Florida mortgage intelligence",
+      "sharePath": "/ask?q=How+many+mortgage+originations+in+Florida%3F",
+      "elapsedMs": 1,
+      "period": "HMDA 2025 reporting vintage",
+      "grain": "state",
+      "filters": [
+        {
+          "id": "orig",
+          "label": "Originations",
+          "active": true,
+          "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=all&geo=FL"
+        },
+        {
+          "id": "apps",
+          "label": "Applications",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=application&loanType=all&geo=FL"
+        },
+        {
+          "id": "den",
+          "label": "Denials",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=denial&loanType=all&geo=FL"
+        },
+        {
+          "id": "all-type",
+          "label": "All loan types",
+          "active": true,
+          "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=all&geo=FL"
+        },
+        {
+          "id": "conv",
+          "label": "Conventional",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=conventional&geo=FL"
+        },
+        {
+          "id": "fha",
+          "label": "FHA",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=FHA&geo=FL"
+        },
+        {
+          "id": "va",
+          "label": "VA",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=VA&geo=FL"
+        },
+        {
+          "id": "usda",
+          "label": "USDA",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=USDA&geo=FL"
+        },
+        {
+          "id": "fl",
+          "label": "Florida",
+          "active": true,
+          "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=all&geo=FL"
+        },
+        {
+          "id": "br",
+          "label": "Broward",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=all&geo=broward"
+        },
+        {
+          "id": "pb",
+          "label": "Palm Beach",
+          "active": false,
+          "href": "/ask?q=How+many+mortgage+originations+in+Florida%3F&action=origination&loanType=all&geo=palm-beach"
+        }
+      ],
+      "trace": {
+        "contract": "lender-ask-v1",
+        "sourceFiles": [
+          "data/hmda/national/lender_state_summary.csv",
+          "data/hmda/by-state/FL/lender_activity_by_county.csv",
+          "data/hmda/by-state/FL/county_market_summary.csv",
+          "data/hmda/florida/lei_to_nmls_mapping.csv",
+          "data/hmda/florida/_gleif_name_cache.json",
+          "docs/lend-nat-016-search-index.json"
+        ],
+        "method": "Homepage intelligence snapshot (no institution ranking).",
+        "indexes": [
+          "in-memory LEI map",
+          "in-memory county FIPS map",
+          "lend-nat-016 LEI→public slug"
+        ],
+        "identityPolicy": "LEI is the HMDA grain. Public-profile links require an exact LEI match to the national publication cohort and a compatible legal name. Name-only matching is not used.",
+        "publicationGate": "181 national render / 180 index / 130 Florida public. Unpublished identities stay unpublished.",
+        "cache": "module-level CSV/JSON catalogs (no new ingest, no Production write)",
+        "grain": "state",
+        "period": "HMDA 2025 reporting vintage"
+      }
+    }
+  }
+]

@@ -1,0 +1,56 @@
+✖ R1-003 accepted NJ measure, not national fallback (46.1756ms)
+✖ R1-003 executed overrides agree with visible plan (1.941ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1196.6808
+
+✖ failing tests:
+
+test at lib\ask-lender\r3-reproduction.test.ts:2:1036
+✖ R1-003 accepted NJ measure, not national fallback (46.1756ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + '6,793,253'
+  - '177,325'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-003-work\lib\ask-lender\r3-reproduction.test.ts:8:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '6,793,253',
+    expected: '177,325',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\ask-lender\r3-reproduction.test.ts:2:1413
+✖ R1-003 executed overrides agree with visible plan (1.941ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + '6,793,253'
+  - '192,366'
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-003-work\lib\ask-lender\r3-reproduction.test.ts:13:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '6,793,253',
+    expected: '192,366',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

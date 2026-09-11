@@ -1,0 +1,44 @@
+{
+  "sha256": "9fb0835fddd4426fcb7f76b392089a74e2d2f2ebfff970090498c4a4691ad149",
+  "metadata": {
+    "snapshotVersion": "lender-home-intel-snapshot-v2",
+    "fingerprint": "479425ed6c7878004a3fa6aba8992e017f0bfcbfdd032b76a4ae4ea76914cbb8",
+    "hmdaSourceVintage": "HMDA 2025 reporting vintage",
+    "hmdaOfficialAsOf": "2025",
+    "hmdaGrain": "county",
+    "retrievedAt": "2026-08-30",
+    "generated_at": "2026-08-30T16:22:07.696760+00:00"
+  },
+  "national": {
+    "applications": 11529787,
+    "originations": 6793253,
+    "denials": 2008514
+  },
+  "states": [
+    {
+      "state": "CA",
+      "applications": 1010547,
+      "originations": 569218,
+      "denials": 174475
+    },
+    {
+      "state": "FL",
+      "applications": 922758,
+      "originations": 489025,
+      "denials": 192366
+    },
+    {
+      "state": "NJ",
+      "applications": 316994,
+      "originations": 177325,
+      "denials": 55453
+    },
+    {
+      "state": "TX",
+      "applications": 943136,
+      "originations": 524257,
+      "denials": 178854
+    }
+  ],
+  "jurisdictions": 54
+}

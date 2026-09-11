@@ -23,3 +23,5 @@ jobs:
         run: npx --yes tsx --test scripts/test_lender_network_metrics.ts
       - name: Exact NMLS and LEI request integrity
         run: npm run check:th-search-r1-002
+      - name: State HMDA count scope and measure integrity
+        run: npm run check:th-search-r1-003

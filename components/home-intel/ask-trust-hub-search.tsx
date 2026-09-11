@@ -1,3 +1,4 @@
+import { STATE_NAMES } from '@/lib/home-intel/states';
 import { ASK_QUERY_LIMIT } from '@/lib/ask-lender/request';
 import type { AskUrlOverrides } from '@/lib/ask-lender/parse';
 import Link from 'next/link';
@@ -46,7 +47,7 @@ export function AskTrustHubSearch({ initialQuery = '', overrides = {} }: { initi
         <div className="intel-filter-grid">
           <label>HMDA action<select name="action" defaultValue={overrides.action ?? ''} form="lender-specialist-search"><option value="">As interpreted</option><option value="application">Applications</option><option value="origination">Originations</option><option value="denial">Denials</option></select></label>
           <label>Loan type<select name="loanType" defaultValue={overrides.loanType ?? ''} form="lender-specialist-search"><option value="">As interpreted</option><option value="all">All loan types</option><option value="conventional">Conventional</option><option value="FHA">FHA</option><option value="VA">VA</option><option value="USDA">USDA</option></select></label>
-          <label>Property geography<select name="geo" defaultValue={overrides.geo ?? ''} form="lender-specialist-search"><option value="">As interpreted</option><option value="FL">Florida</option><option value="broward">Broward County</option><option value="palm-beach">Palm Beach County</option></select></label>
+          <label>Property geography<select name="geo" defaultValue={overrides.geo ?? ''} form="lender-specialist-search"><option value="">As interpreted</option><option value="US">United States</option>{Object.entries(STATE_NAMES).map(([code, name]) => <option key={code} value={code}>{name}</option>)}<option value="broward">Broward County</option><option value="palm-beach">Palm Beach County</option></select></label>
         </div>
         <p className="intel-kicker">HMDA geography describes mortgaged-property activity—not lender headquarters, branches, licensing, or service territory.</p>
       </details>

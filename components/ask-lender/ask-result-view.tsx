@@ -190,6 +190,13 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
             <li>Cache: {result.trace.cache}</li>
             <li>Source files: {result.trace.sourceFiles.join('; ')}</li>
             {result.elapsedMs != null ? <li>Elapsed: {result.elapsedMs} ms</li> : null}
+            {result.countEvidence ? <>
+              <li>Count availability: {result.countEvidence.availability}; numeric value: {result.countEvidence.value ?? 'unavailable'}</li>
+              <li>Scope: {result.countEvidence.scope}; action: {result.countEvidence.action}; source field: {result.countEvidence.field ?? 'not selected'}</li>
+              <li>Source fingerprint: {result.countEvidence.sourceFingerprint ?? 'not selected'}</li>
+              <li>Retrieved: {result.countEvidence.retrievedAt ?? 'not supplied by this artifact'}; generated: {result.countEvidence.generatedAt ?? 'not supplied by this artifact'}</li>
+              <li>Reporting year is a vintage, not an exact official effective timestamp or a live check.</li>
+            </> : null}
             <li>Question: {question}</li>
           </ul>
         </details>

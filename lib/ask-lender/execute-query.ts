@@ -1,3 +1,5 @@
+import { executeScalarCount } from './scalar-count';
+import { STATE_NAMES } from '@/lib/home-intel/states';
 import { CFPB_COMPANY_MAPPINGS } from '@/lib/cfpb/mappings';
 import { loadCfpbSnapshot } from '@/lib/cfpb/load';
 import { buildLenderHomeIntel } from '@/lib/home-intel/build';
@@ -60,7 +62,7 @@ function sharePath(q: string, page: number, overrides: AskUrlOverrides): string 
 
 function filterChips(q: string, query: LenderResearchQuery, overrides: AskUrlOverrides): AskFilterChip[] {
   const action = asAction(query);
-  const geo = query.geography?.countyFips === '12011' ? 'broward' : query.geography?.countyFips === '12099' ? 'palm-beach' : query.geography?.state === 'FL' ? 'FL' : '';
+  const geo = query.geography?.countyFips === '12011' ? 'broward' : query.geography?.countyFips === '12099' ? 'palm-beach' : query.geography?.state ?? (query.geography?.grain === 'national' ? 'US' : '');
   const loan = asLoanType(query) ?? 'all';
   const chip = (id: string, label: string, next: AskUrlOverrides, active: boolean): AskFilterChip => ({
     id,
@@ -298,7 +300,12 @@ export function executeAskQuery(input: AskQueryInput): AskExecution {
   }
   if (parsed.identityRequest) return stampContract(executeIdentityLookup(value, parsed, parsed.identityRequest));
   if (parsed.failClosedKind === 'malformed' || parsed.failClosedKind === 'unsupported-identity-grain') value.structuredQuery = undefined;
-  return stampContract(executeAskQueryUnstamped(value));
+  const plan = value.structuredQuery ? applyAskOverrides({
+    ...value.structuredQuery,
+    reportingYears: [...new Set([...(parsed.reportingYears ?? []), ...(value.structuredQuery.reportingYears ?? [])])],
+    scopeIssues: [...(parsed.scopeIssues ?? []), ...(value.structuredQuery.scopeIssues ?? [])],
+  }, value.overrides) : parsed;
+  return stampContract(executeAskQueryUnstamped({ ...value, structuredQuery: plan }));
 }
 
 function executeAskQueryUnstamped(input: ValidAskInput): AskExecution {
@@ -307,6 +314,10 @@ function executeAskQueryUnstamped(input: ValidAskInput): AskExecution {
   const pageSize = input.pageSize && input.pageSize > 0 ? Math.min(50, input.pageSize) : ASK_PAGE_SIZE;
   const overrides = input.overrides ?? {};
   const parsed = input.structuredQuery ?? applyAskOverrides(parseLenderAsk(raw), overrides);
+  if (parsed.mode === 'count' || parsed.mode === 'aggregate') {
+    const result = executeScalarCount(parsed);
+    return { ...result, filters: filterChips(raw, parsed, overrides), sharePath: sharePath(raw, 1, overrides), elapsedMs: Date.now() - started };
+  }
   const intel = buildLenderHomeIntel();
 
   if (parsed.mode === 'entity' && parsed.identityQuery) {
@@ -365,14 +376,14 @@ function executeAskQueryUnstamped(input: ValidAskInput): AskExecution {
     };
   }
 
-  if (parsed.mode === 'fail_closed' || parsed.mode === 'definition' || parsed.mode === 'evidence' || (parsed.mode === 'count' && !parsed.geography?.countyFips && !parsed.loanType) || (parsed.mode === 'comparison' && parsed.geography?.grain === 'state')) {
+  if (parsed.mode === 'fail_closed' || parsed.mode === 'definition' || parsed.mode === 'evidence' || (parsed.mode === 'comparison' && parsed.geography?.grain === 'state')) {
     const snap = executeLenderAsk(raw, intel);
     // Re-parse after overrides for fail_closed kinds that URL cannot lift.
     if (parsed.mode === 'fail_closed') {
       const fail = executeLenderAsk(raw, intel);
       return { ...fail, query: parsed, interpretation: interpretationLines(parsed), failClosed: true, sharePath: sharePath(raw, 1, overrides), elapsedMs: Date.now() - started, period: 'HMDA 2025', grain: parsed.geography?.grain, caveats: [parsed.failReason ?? fail.body] };
     }
-    if (parsed.mode === 'definition' || parsed.mode === 'evidence' || (parsed.mode === 'comparison' && parsed.geography?.grain === 'state') || (parsed.mode === 'count' && parsed.geography?.grain !== 'county' && !parsed.loanType)) {
+    if (parsed.mode === 'definition' || parsed.mode === 'evidence' || (parsed.mode === 'comparison' && parsed.geography?.grain === 'state')) {
       return {
         ...snap,
         query: parsed,
@@ -429,74 +440,6 @@ function executeAskQueryUnstamped(input: ValidAskInput): AskExecution {
     };
   }
 
-  if ((parsed.mode === 'count' || parsed.mode === 'aggregate') && parsed.geography?.grain === 'county') {
-    const market = catalog.countyMarkets.find((m) => m.countyFips === parsed.geography?.countyFips);
-    const value = action === 'origination' ? market?.originations : action === 'denial' ? market?.denials : market?.applications;
-    const facts = [
-      { label: `${parsed.geography?.county} ${label}`, value: market ? fmt(value ?? 0) : 'unavailable' },
-      { label: 'Grain', value: 'HMDA 2025 county market (property geography)' },
-    ];
-    if (loanType && market) {
-      const typeOrig = loanType === 'FHA' ? market.origFha : loanType === 'VA' ? market.origVa : loanType === 'conventional' ? market.origConventional : loanType === 'USDA' ? market.origUsda : null;
-      if (typeOrig != null && action === 'origination') facts[0] = { label: `${parsed.geography?.county} ${label}`, value: fmt(typeOrig) };
-    }
-    if (parsed.loanPurpose?.includes('purchase') && market?.purchaseApps != null) {
-      facts.push({ label: 'Purchase-purpose applications (not originations)', value: fmt(market.purchaseApps) });
-    }
-    return {
-      query: parsed,
-      interpretation: interpretationLines(parsed),
-      geographyWarning: ASK_GEO_NOTE,
-      headline: `Reported HMDA 2025 ${label} for properties in ${parsed.geography?.county} County, Florida`,
-      body: 'County-grain market totals. Not lenders located in the county and not a service-territory map.',
-      facts,
-      href: '/florida',
-      hrefLabel: 'Florida mortgage intelligence',
-      filters: filterChips(raw, parsed, overrides),
-      trace: baseTrace('county_market_summary.csv', 'HMDA 2025 county market'),
-      sharePath: sharePath(raw, 1, overrides),
-      period: 'HMDA 2025 reporting vintage',
-      grain: 'county market (property geography)',
-      caveats: entityCaveats(action, loanType, 'county market'),
-      elapsedMs: Date.now() - started,
-    };
-  }
-
-  if ((parsed.mode === 'count' || parsed.mode === 'aggregate') && parsed.loanType && parsed.geography?.state === 'FL') {
-    const fl = catalog.stateRows.filter((r) => r.state === 'FL');
-    let total = 0;
-    for (const row of fl) {
-      const v = metricFromState(row, action, loanType);
-      if (v != null) total += v;
-    }
-    if (action === 'application' || action === 'denial') {
-      total = 0;
-      for (const row of catalog.flCountyByLei.values()) total += metricFromCounty(row, action, loanType);
-    }
-    return {
-      query: parsed,
-      interpretation: interpretationLines(parsed),
-      geographyWarning: ASK_GEO_NOTE,
-      headline: `Reported HMDA 2025 ${label} for properties in Florida`,
-      body: action === 'origination' && loanType
-        ? `Sum of ${loanType} origination splits on Florida state-grain LEI rows. Not a ranking of “best” ${loanType} lenders.`
-        : 'Florida property-geography total from committed HMDA observations.',
-      facts: [
-        { label: `Florida ${label}`, value: fmt(total) },
-        { label: 'LEI rows', value: fmt(fl.length) },
-      ],
-      href: '/florida',
-      hrefLabel: 'Florida mortgage intelligence',
-      filters: filterChips(raw, parsed, overrides),
-      trace: baseTrace('lender_state_summary.csv FL rows (origination splits) or county-sum for applications/denials.', action === 'origination' ? 'state LEI' : 'county LEI summed to Florida'),
-      sharePath: sharePath(raw, 1, overrides),
-      period: 'HMDA 2025 reporting vintage',
-      grain: action === 'origination' ? 'state LEI' : 'county LEI summed to Florida',
-      caveats: entityCaveats(action, loanType, 'state'),
-      elapsedMs: Date.now() - started,
-    };
-  }
-
   if (parsed.mode !== 'entity') {
     const snap = executeLenderAsk(raw, intel);
     return { ...snap, query: parsed, interpretation: interpretationLines(parsed), sharePath: sharePath(raw, 1, overrides), elapsedMs: Date.now() - started };
@@ -507,7 +450,7 @@ function executeAskQueryUnstamped(input: ValidAskInput): AskExecution {
   let grain = 'HMDA 2025 state LEI (property geography)';
   let method = 'Sort state-grain LEI rows by raw count.';
   let denominatorValue = 0;
-  let denominatorLabel = `Florida ${label}`;
+  let denominatorLabel = `${STATE_NAMES[parsed.geography?.state ?? ''] ?? parsed.geography?.state ?? 'United States'} ${label}`;
 
   if (parsed.geography?.grain === 'county' && parsed.geography.countyFips) {
     const rows = catalog.countyRows.filter((r) => r.countyFips === parsed.geography!.countyFips);
