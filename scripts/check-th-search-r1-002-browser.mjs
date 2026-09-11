@@ -23,7 +23,8 @@ async function capture(q, started) {
   assert.ok(ui.text.includes(data.headline), q);
   for (const id of data.lookup?.identifiers ?? []) assert.ok(ui.text.includes(id.value));
   for (const row of data.rows ?? []) { assert.ok(ui.text.includes(row.displayName)); assert.ok(ui.text.includes(row.whyMatched[0])); }
-  for (const row of data.rows ?? []) for (const evidence of row.matchEvidence ?? []) { assert.equal(evidence.returnedValue, row[evidence.matchedField]); assert.equal(evidence.requestedValue, evidence.returnedValue); }
+  for (const row of data.rows ?? []) for (const evidence of row.matchEvidence ?? []) { assert.equal(evidence.returnedValue, row[evidence.matchedField]); assert.equal(evidence.requestedValue, evidence.returnedValue); assert.ok(row.whyMatched.some(why => why.includes(`record lists ${evidence.returnedValue}.`))); }
+  if (data.lookup?.sourceLookup === 'not_run') { assert.ok(ui.text.includes('No institution lookup was run')); assert.ok(!ui.text.includes('Complete NMLS:')); }
   for (const condition of data.lookup?.conditions ?? []) assert.ok(ui.text.includes(condition.text));
   for (const action of data.lookup?.officialActions ?? []) assert.ok(await page.locator(`a[href="${action.href}"]`).count());
   const elapsedMs = Date.now() - started; assert.ok(elapsedMs < 25000, `completion budget ${q}: ${elapsedMs}`);
