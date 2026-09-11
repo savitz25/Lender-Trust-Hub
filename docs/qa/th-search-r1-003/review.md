@@ -9,3 +9,5 @@ The older executeLenderAsk snapshot helper remains used for definitions/evidence
 R1-002 exact identifiers/publication are unchanged and their focused suite passes. The parent adapter was inspected read-only; it consumes the retained headline/body/facts/query/trace fields. No other repository was edited. Existing counts are mortgage observations, not institutions; publication eligibility and pagination do not enter scalar aggregation.
 
 No new official links were constructed. Existing Edit request and typed filter URLs retain the actual geography/action. County comparisons and institution rankings retain their executors; this ticket does not certify their entire methodology or every unsupported dimension.
+
+Final adapter follow-up: a scalar structured plan now inherits omitted raw geography/action/product/purpose/lender-class fields, retains explicit years/ambiguities, and cannot lift a parser refusal. The new focused regression passes; the existing v2 institution-table adapter is unchanged.

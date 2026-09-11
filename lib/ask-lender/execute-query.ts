@@ -300,8 +300,17 @@ export function executeAskQuery(input: AskQueryInput): AskExecution {
   }
   if (parsed.identityRequest) return stampContract(executeIdentityLookup(value, parsed, parsed.identityRequest));
   if (parsed.failClosedKind === 'malformed' || parsed.failClosedKind === 'unsupported-identity-grain') value.structuredQuery = undefined;
+  const scalarStructured = structured?.mode === 'count' || structured?.mode === 'aggregate';
+  if (scalarStructured && parsed.mode === 'fail_closed') value.structuredQuery = undefined;
   const plan = value.structuredQuery ? applyAskOverrides({
     ...value.structuredQuery,
+    ...(scalarStructured ? {
+      geography: value.structuredQuery.geography ?? parsed.geography,
+      actionTaken: value.structuredQuery.actionTaken ?? parsed.actionTaken,
+      loanPurpose: value.structuredQuery.loanPurpose ?? parsed.loanPurpose,
+      loanType: value.structuredQuery.loanType ?? parsed.loanType,
+      lenderType: value.structuredQuery.lenderType ?? parsed.lenderType,
+    } : {}),
     reportingYears: [...new Set([...(parsed.reportingYears ?? []), ...(value.structuredQuery.reportingYears ?? [])])],
     scopeIssues: [...(parsed.scopeIssues ?? []), ...(value.structuredQuery.scopeIssues ?? [])],
   }, value.overrides) : parsed;

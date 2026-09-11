@@ -16,13 +16,16 @@
   "redBefore": "red-before.txt",
   "sensitivity": "sensitivity.json",
   "tests": {
-    "focused": "24 passed, zero failed/skipped",
+    "focused": "25 passed, zero failed/skipped",
     "r1_002": "24 passed, zero failed/skipped",
     "npm_test": "passed",
     "search_001c": "passed",
     "typecheck": "passed",
     "lint": "zero errors; one existing pngSize unused warning",
-    "build": "passed: optimized compilation, TypeScript, static generation"
+    "build": "passed: optimized compilation, TypeScript, static generation",
+    "customer": "6 passed",
+    "capability_001": "passed",
+    "capability_002": "40 passed"
   },
   "review": {
     "method": "separate self-review of source/measure selection, raw catalog validation, override propagation, missing versus zero, rendering and read-only Ask adapter; automated PR review pending",
@@ -45,6 +48,6 @@
       390,
       320
     ],
-    "preview": "Not yet available; local production build certified before PR"
+    "preview": "Normal preview URL redirected to Vercel /login; no protection bypass. See preview-access.json."
   }
 }

@@ -1,0 +1,18 @@
+
+> lender-trust-hub@1.0.0 check:ath-cust-net-001b
+> tsx --test lib/customer-integration/customer-integration.test.ts
+
+✔ Rocket institution NMLS 3030 is eligible while holds/non-institution keys are not (1.3358ms)
+✔ signed v2 handoff binds institution class and expires (0.6768ms)
+✔ hub-scoped Layer C and approved response fail closed on mismatch (0.5365ms)
+✔ Ask outage omits overlays without failing the lender profile (0.5558ms)
+✔ business website permits only absolute HTTP(S) URLs (0.2378ms)
+✔ successful handoff redirect is private and non-indexable (18.1396ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 458.1866
