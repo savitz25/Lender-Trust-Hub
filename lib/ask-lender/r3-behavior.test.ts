@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import snapshot from '../home-intel/accepted-snapshot.json';
+import {ILLINOIS_SNAPSHOT} from '../illinois-intelligence/snapshot';
 import {STATE_NAMES} from '../home-intel/states';
 import {executeAskQuery} from './execute-query';
 import {countSources} from './scalar-count';
@@ -14,7 +15,7 @@ import type {AskExecution} from './types';
 Object.assign(globalThis,{React});
 const actions=['application','origination','denial'] as const;
 const fixture=()=>({...snapshot,applications:99991,originations:99992,denials:99993,geography:Object.keys(STATE_NAMES).map((state,i)=>({state,applications:i*100+1,originations:i*100+2,denials:i*100+3}))});
-function source(t:TestContext){const data=fixture();t.mock.method(countSources,'snapshot',()=>data);return data;}
+function source(t:TestContext){const data=fixture();t.mock.method(countSources,'snapshot',()=>data);t.mock.method(countSources,'publishedStateHmda',()=>null);return data;}
 const run=(q:string,overrides={})=>executeAskQuery({q,overrides});
 const value=(r:AskExecution)=>r.countEvidence?.value;
 function noValue(r:AskExecution){assert.equal(value(r),null);assert.notEqual(r.countEvidence?.availability,'AVAILABLE');assert.equal(r.facts?.length,0);}
@@ -37,7 +38,12 @@ test('18 changing only NJ source changes only NJ answer',t=>{const data=source(t
 test('19 NMLS grouping and LEI regressions remain exact',()=>{for(const q of ['NMLS 3030','NMLS 30 30','LEI 549300FGXN1K3HLB1R50'])assert.equal(run(q).rows?.[0]?.nmls,'3030');assert.equal(run('nmls 32 51').query.identifier?.value,'3251');});
 test('20 county-volume and county comparison retained',()=>{const r=run('How many applications in Broward County?');assert.equal(value(r),67743);const cmp=run('Compare Broward and Palm Beach mortgage activity');assert.ok(cmp.facts?.some(f=>f.label==='Palm Beach applications'&&f.value==='56,484'));assert.ok(run('Which lenders received the most applications for properties in Broward County?').rows?.length);});
 test('21 corrupt/throwing source finishes unavailable, not zero',t=>{t.mock.method(countSources,'snapshot',()=>{throw Error('Source unavailable.');});noValue(run('How many originations in NJ?'));});
-test('22 accepted source oracle independent of executor for all fields/states',()=>{for(const row of snapshot.geography)for(const action of actions)assert.equal(value(run(`How many ${action}s in ${row.state}?`)),row[`${action}s`]);});
+test('22 accepted source oracle independent of executor for all fields/states',()=>{
+  for(const row of snapshot.geography)for(const action of actions){
+    const expected=row.state==='IL'?ILLINOIS_SNAPSHOT.hmda[`${action}s`]:row[`${action}s`];
+    assert.equal(value(run(`How many ${action}s in ${row.state}?`)),expected,`${row.state}/${action}`);
+  }
+});
 test('23 filtered duplicates, null and mixed years fail closed',t=>{source(t);const records=[{state:'NJ',year:'2025',lei:'a',orig_fha:'9'}];t.mock.method(countSources,'state',()=>records);records.push({...records[0]});noValue(run('How many FHA originations in NJ?'));records.pop();records[0].year='2024';noValue(run('How many FHA originations in NJ?'));records[0].year='2025';records[0].orig_fha='';noValue(run('How many FHA originations in NJ?'));});
 
 test('24 unsupported conditions before place and structured years cannot disappear',t=>{source(t);for(const q of ['Atlantis mortgage originations','How many originations under $500000 in NJ?','How many originations in NJ and nationally?','How many applications and denials in NJ?'])noValue(run(q));const r=executeAskQuery({q:'How many originations in NJ in 2024?',structuredQuery:{mode:'count',geography:{grain:'state',state:'NJ',note:'fixture'},actionTaken:['origination']}});noValue(r);});

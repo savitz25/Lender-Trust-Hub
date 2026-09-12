@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import snapshot from '@/lib/home-intel/accepted-snapshot.json';
+import { ILLINOIS_SNAPSHOT } from '@/lib/illinois-intelligence/snapshot';
 import stateRows from './generated/state.csv.json';
 import countyRows from './generated/county.csv.json';
 import markets from './generated/markets.csv.json';
@@ -7,8 +8,40 @@ import { STATE_NAMES } from '@/lib/home-intel/states';
 import { interpretationLines } from './execute';
 import { ASK_GEO_NOTE, LENDER_ASK_CONTRACT, type AskExecution, type LenderResearchQuery } from './types';
 
+export type PublishedStateHmda = {
+  contract: string;
+  applications: number;
+  originations: number;
+  denials: number;
+  fingerprint: string;
+  generatedAt: string | null;
+  retrievedAt: string | null;
+  sourceFile: string;
+  sourceGrain: string;
+};
+
+function illinoisPublishedHmda(): PublishedStateHmda {
+  return {
+    contract: ILLINOIS_SNAPSHOT.contract_name,
+    applications: ILLINOIS_SNAPSHOT.hmda.applications,
+    originations: ILLINOIS_SNAPSHOT.hmda.originations,
+    denials: ILLINOIS_SNAPSHOT.hmda.denials,
+    fingerprint: ILLINOIS_SNAPSHOT.fingerprint,
+    generatedAt: ILLINOIS_SNAPSHOT.generated_at,
+    retrievedAt: ILLINOIS_SNAPSHOT.hmda.retrieved_at,
+    sourceFile: 'lib/illinois-intelligence/accepted-snapshot.json',
+    sourceGrain: 'county_market_summary county totals for Illinois property geography',
+  };
+}
+
 // Static, bounded source seam. Tests replace it in memory; no I/O or production writes.
-export const countSources = { snapshot: (): unknown => snapshot, state: (): unknown => stateRows, county: (): unknown => countyRows, markets: (): unknown => markets };
+export const countSources = {
+  snapshot: (): unknown => snapshot,
+  state: (): unknown => stateRows,
+  county: (): unknown => countyRows,
+  markets: (): unknown => markets,
+  publishedStateHmda: (state: string): PublishedStateHmda | null => (state === 'IL' ? illinoisPublishedHmda() : null),
+};
 class CountSourceError extends Error {}
 type RecordRow = Record<string, unknown>;
 function object(v: unknown): RecordRow { if (!v || typeof v !== 'object' || Array.isArray(v)) throw new CountSourceError('Required source metadata is unavailable.'); return v as RecordRow; }
@@ -62,6 +95,17 @@ export function executeScalarCount(query: LenderResearchQuery): AskExecution {
     if (query.reportingYears?.length && (query.reportingYears.length !== 1 || query.reportingYears[0] !== evidence.reportingYear)) return unsupported(`Requested reporting year ${query.reportingYears.join(', ')} is not available. This source supports ${evidence.reportingYear}; no other year was substituted.`);
     let value: number;
     if (!loan && !purpose && geo.grain !== 'county') {
+      const published = geo.grain === 'state' ? countSources.publishedStateHmda(scope) : null;
+      if (published) {
+        evidence.sourceFile = published.sourceFile;
+        evidence.sourceFingerprint = published.fingerprint;
+        evidence.sourceGrain = published.sourceGrain;
+        evidence.retrievedAt = published.retrievedAt;
+        evidence.generatedAt = published.generatedAt;
+        evidence.field = `${action}s`;
+        value = count(published[evidence.field as 'applications' | 'originations' | 'denials']);
+        evidence.calculation = `Select ${published.contract} hmda.${evidence.field} for Illinois property geography. Same measure as /illinois. Not the home-intel material LEI-county cell rollup.`;
+      } else {
       evidence.sourceFile = 'lib/home-intel/accepted-snapshot.json'; evidence.sourceFingerprint = fingerprint(accepted);
       evidence.sourceGrain = 'county observations aggregated by jurisdiction';
       evidence.retrievedAt = typeof accepted.retrievedAt === 'string' ? accepted.retrievedAt : null;
@@ -76,6 +120,7 @@ export function executeScalarCount(query: LenderResearchQuery): AskExecution {
       evidence.field = `${action}s`;
       value = count(selected[evidence.field]);
       evidence.calculation = geo.grain === 'state' ? `Select the unique geography[state=${scope}].${evidence.field}. Accepted county observations already aggregated to ${name}; no additional summation.` : `Select the separate national ${evidence.field} aggregate. Do not add jurisdiction subtotals to it.`;
+      }
     } else {
       if (loan && !['conventional','FHA','VA','USDA','other'].includes(loan)) return unsupported('This loan-type dimension is unavailable.');
       if (purpose && (!['purchase','refinance'].includes(purpose) || action !== 'application' || loan)) return unsupported('Only uncombined purchase/refinance application-purpose counts are available; purpose originations and combined splits are not supplied.');
@@ -105,6 +150,9 @@ export function executeScalarCount(query: LenderResearchQuery): AskExecution {
       evidence.calculation = `Sum ${evidence.field} across ${selected.length} unique ${evidence.sourceGrain} rows for ${scope}, reporting year ${evidence.reportingYear}. No publication or pagination filter; no other source grain added.`;
     }
     evidence.value = value; evidence.availability = 'AVAILABLE';
+    if (evidence.sourceFile === 'lib/illinois-intelligence/accepted-snapshot.json') {
+      evidence.conditions.push('Same HMDA 2025 Illinois-property measure as /illinois. Material LEI-county cells are a smaller subset and are not this answer.');
+    }
     return finish(`Reported ${action}s for mortgage properties in ${name}. The source grain is ${evidence.sourceGrain}; the displayed total uses ${evidence.outputGrain} scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.`);
   } catch (error) {
     evidence.value = null; evidence.availability = 'UNAVAILABLE';

@@ -219,10 +219,15 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
     if (pattern.test(unnamed)) { states.push(code); unnamed = unnamed.replace(pattern, ' '); }
   }
   for (const code of Object.keys(STATE_NAMES)) {
-    if (new RegExp(`\\b(?:in|within|state of)\\s+${code}\\b`, 'i').test(unnamed) ||
-      (!['IN', 'OR', 'VA'].includes(code) && new RegExp(`\\b${code}\\b`).test(unnamed))) {
-      if (!states.includes(code)) states.push(code);
-    }
+    const preceded = new RegExp(`\\b(?:in|within|state of)\\s+${code}\\b`);
+    const precededCi = new RegExp(`\\b(?:in|within|state of)\\s+${code}\\b`, 'i');
+    const bare = new RegExp(`\\b${code}\\b`);
+    // IN/OR/VA as English or loan-type tokens are not jurisdictions. Require the
+    // two-letter code itself; full names were already consumed above.
+    const hit = ['IN', 'OR', 'VA'].includes(code)
+      ? preceded.test(unnamed) || preceded.test(raw)
+      : precededCi.test(unnamed) || bare.test(unnamed);
+    if (hit && !states.includes(code)) states.push(code);
   }
   const state = states.length === 1 ? states[0] : undefined;
   const florida = state === 'FL';
