@@ -19,6 +19,8 @@ jobs:
         run: node scripts/assert_network_metrics_v1.mjs
       - name: Homepage consumes v1
         run: node scripts/assert_homepage_intel.mjs
+      - name: Reproduce accepted metrics and reconcile source grains
+        run: npm run check:metrics-r2-03
       - name: Grain-safety unit tests
         run: npx --yes tsx --test scripts/test_lender_network_metrics.ts
       - name: Exact NMLS and LEI request integrity

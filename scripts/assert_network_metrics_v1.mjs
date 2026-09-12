@@ -16,6 +16,8 @@ const assert = (c, m) => {
 const v1 = JSON.parse(read("data/home/lender-network-metrics-v1.json"));
 const byKey = Object.fromEntries(v1.metrics.map((m) => [m.key, m]));
 const pub = publicationMetricInputs();
+const census = JSON.parse(read("data/home/lender-metric-census-r2-03.json"));
+const flClock = census.floridaSourceClocks.map(r => r.source_observed_on).sort().at(-1);
 const load = read("lib/home-intel/load.ts");
 const hero = read("components/home-intel/lender-home-intelligence.tsx");
 const build = read("lib/home-intel/build.ts");
@@ -95,7 +97,7 @@ assert(hero.includes("Source as of"), "homepage source clocks");
 assert(!hero.includes("Last official update"), "no ambiguous official update");
 assert(build.includes("Lenders & lending institutions"), "build uses consumer label");
 assert(!/label: 'Canonical institution identities'/.test(build), "build dropped canonical primary label");
-assert(byKey.florida_ofr_approved_company_credentials.sourceAsOf === pub.flOfrSourceAsOf, "FL sourceAsOf");
+assert(byKey.florida_ofr_approved_company_credentials.sourceAsOf === flClock, "FL sourceAsOf");
 assert(byKey.florida_ofr_approved_company_credentials.sourceAsOf !== v1.generatedAt.slice(0, 10), "FL sourceAsOf != generatedAt");
 assert(byKey.cfpb_mortgage_complaint_observations.sourceAsOf === "2026-08-26", "CFPB sourceAsOf");
 assert(v1.generatedAt.startsWith("2026-"), "generatedAt");

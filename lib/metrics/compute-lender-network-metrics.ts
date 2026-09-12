@@ -91,7 +91,7 @@ export type LenderNetworkMetricsInput = {
   ilHmdaOriginations: number;
   ilFdicInstitutions: number;
   ilLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
-  servicerEvidenceRows: number;
+  servicerEvidenceRows: number | null;
   licensesTotal: number;
 };
 
@@ -169,9 +169,9 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.fdicCert === input.depository.FDIC && input.fdicCert === input.institutions) {
     throw new Error('FDIC_CERT identifiers must not be used as the institution universe');
   }
-  const caCounty = input.geography.find((row) => row.state === 'CA')?.applications ?? 0;
-  const njCounty = input.geography.find((row) => row.state === 'NJ')?.applications ?? 0;
-  const flCounty = input.geography.find((row) => row.state === 'FL')?.applications ?? 0;
+  const caCounty = input.geography.find((row) => row.state === 'CA')?.applications;
+  const njCounty = input.geography.find((row) => row.state === 'NJ')?.applications;
+  const flCounty = input.geography.find((row) => row.state === 'FL')?.applications;
   if (caCounty === input.caHmdaApplications) {
     throw new Error('California county-grain national aggregate must not equal the CA state-intelligence slice');
   }
@@ -213,8 +213,8 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.txLiveRosterCoverage !== 'SOURCE_NOT_ACQUIRED') {
     throw new Error('TX live mortgage-company roster remains not acquired');
   }
-  const txCounty = input.geography.find((row) => row.state === 'TX')?.applications ?? 0;
-  if (txCounty === input.txHmdaApplications && txCounty !== 0) {
+  const txCounty = input.geography.find((row) => row.state === 'TX')?.applications;
+  if (txCounty === input.txHmdaApplications && txCounty !== undefined) {
     throw new Error('Texas county-grain national aggregate must not equal the TX state-intelligence slice');
   }
   if (input.txSmlOrders === input.txHmdaApplications) {
@@ -241,8 +241,8 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.coCfpbMortgageComplaints === input.coHmdaApplications) {
     throw new Error('Colorado CFPB complaints must not equal Colorado HMDA applications');
   }
-  const coCounty = input.geography.find((row) => row.state === 'CO')?.applications ?? 0;
-  if (coCounty === input.coHmdaApplications && coCounty !== 0) {
+  const coCounty = input.geography.find((row) => row.state === 'CO')?.applications;
+  if (coCounty === input.coHmdaApplications && coCounty !== undefined) {
     throw new Error('Colorado county-grain national aggregate must not equal the CO state-intelligence slice');
   }
   if (input.vaLiveRosterCoverage !== 'SOURCE_NOT_ACQUIRED') {
@@ -331,7 +331,7 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       publicationStatus: 'PUBLIC',
       trace: commonTrace(
         'One lender_national_entities row with entity_kind institution.',
-        'Not NMLS IDs, not branches, not MLOs, not the 181/180 public cohort, not the 311 search union.',
+        'Not NMLS IDs, not branches, not MLOs, not the public render/index cohorts or search union.',
         ['lender_national_entities'],
         'National identity graph; headquarters is not service territory',
         'Production graph observation. Not an official NMLS census date, not Git time, not deploy time.',
@@ -429,7 +429,7 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       valueState: 'KNOWN',
       grain: 'national_render_profile',
       denominator: 'File-backed lend-nat-014 national render cohort',
-      description: 'Controlled national publication cohort. Not the 14,623 identity universe.',
+      description: 'Controlled national publication cohort. Not the canonical institution universe.',
       coverage: 'National publication policy',
       contributingSourceSystems: ['lend-nat-014'],
       sourceAsOf: '2026-08-27',
@@ -542,10 +542,10 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       publicationStatus: 'PUBLIC',
       trace: commonTrace(
         'Approved FL MBR/MLD credential rows.',
-        'Not confirmed NMLS identities. Not the 130 Florida public profiles. Not MLOs.',
+        'Not confirmed NMLS identities. Not the Florida public profile cohort. Not MLOs.',
         ['florida_ofr'],
         'Florida OFR Chapter 494 company credentials',
-        `FL_OFR_CH494 source_as_of ${input.flOfrSourceAsOf.slice(0, 10)}`,
+        `Newest Florida ledger source observation ${input.flOfrSourceAsOf.slice(0, 10)}; distinct source clocks in reconciliation.florida.sourceClocks`,
       ),
     }),
     metric({
@@ -566,7 +566,7 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
         'Not held NMLS. Not unresolved source-company NMLS. Not public Florida profiles.',
         ['florida_ofr'],
         'Florida',
-        `FL_OFR_CH494 source_as_of ${input.flOfrSourceAsOf.slice(0, 10)}`,
+        `Newest Florida ledger source observation ${input.flOfrSourceAsOf.slice(0, 10)}; distinct source clocks in reconciliation.florida.sourceClocks`,
       ),
     }),
     metric({
@@ -1007,7 +1007,7 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       publicationStatus: 'PUBLIC',
       trace: commonTrace(
         'Official DFS 2024 licensed mortgage banker aggregate.',
-        'Not live 2026 licenses. Not 439 brokers. Not 9,769 MLOs. Not HMDA applications.',
+        'Not live 2026 licenses. Not broker or MLO class populations. Not HMDA applications.',
         ['ny_dfs'],
         'New York',
         'DFS annual-report period end of 2024',
@@ -1226,7 +1226,7 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
     rejectedTotals: [
       {
         total: `${searchUnion} combined public search`,
-        reason: '181 national-searchable plus 130 Florida-public. Not a national lender census.',
+        reason: 'Publication-gated national and Florida profiles. Not a national lender census.',
       },
       {
         total: `${input.personMlo} person_mlo identities`,
@@ -1242,7 +1242,7 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       },
       {
         total: `${input.hmdaStateGrainApplications} state-grain HMDA applications`,
-        reason: 'Must not be added to county-grain 11,529,787.',
+        reason: 'Must not be added to the national county-by-LEI application total.',
       },
       {
         total: 'CA CRMLA live roster = 0',

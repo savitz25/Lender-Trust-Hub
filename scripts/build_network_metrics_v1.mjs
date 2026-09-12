@@ -2,31 +2,28 @@
  * Build lender-network-metrics-v1 from production + publication-gated catalogs.
  * Does not write intelligence snapshots and does not touch AskTrustHub.
  */
-import { spawnSync } from "node:child_process";
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { publicationMetricInputs } from "./publication_metric_inputs.mjs";
 
+import { reconcile } from "./reconcile_network_metrics.mjs";
+import { createHash } from "node:crypto";
+
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 async function main() {
-  const py = spawnSync("python", ["scripts/export_lender_metric_inputs.py"], {
-    cwd: root,
-    encoding: "utf8",
-    maxBuffer: 20 * 1024 * 1024,
-  });
-  if (py.status !== 0) {
-    throw new Error(`export failed: ${py.stderr || py.stdout}`);
-  }
-  const prod = JSON.parse(py.stdout);
+  const out = join(root, "data/home/lender-network-metrics-v1.json");
+  const check = process.argv.includes("--check");
+  const previous = check ? JSON.parse(readFileSync(out, "utf8")) : null;
+  const prod = JSON.parse(readFileSync(join(root, "data/home/lender-metric-census-r2-03.json"), "utf8"));
   const pub = publicationMetricInputs();
   const { computeLenderNetworkMetrics } = await import(
     pathToFileURL(join(root, "lib/metrics/compute-lender-network-metrics.ts")).href
   );
 
   const input = {
-    generatedAt: new Date().toISOString(),
+    generatedAt: previous?.generatedAt ?? new Date().toISOString(),
     institutions: prod.identity.institutions,
     branches: prod.identity.branches,
     personMlo: prod.identity.person_mlo,
@@ -62,7 +59,7 @@ async function main() {
     flConfirmedNmls: prod.florida.confirmed_nmls,
     flHeldNmls: prod.florida.held_nmls,
     flSre: prod.florida.sre,
-    flOfrSourceAsOf: pub.flOfrSourceAsOf,
+    flOfrSourceAsOf: prod.floridaSourceClocks.map(r => r.source_observed_on).sort().at(-1),
     flUnresolvedSourceCompanyNmls: pub.flUnresolvedSourceCompanyNmls,
     flStateGrainApplications: pub.flStateGrainApplications,
     publicRender: pub.publicRender,
@@ -116,13 +113,23 @@ async function main() {
     ilHmdaOriginations: pub.ilHmdaOriginations,
     ilFdicInstitutions: pub.ilFdicInstitutions,
     ilLiveRosterCoverage: pub.ilLiveRosterCoverage,
-    servicerEvidenceRows: prod.servicerEvidenceRows ?? 0,
+    servicerEvidenceRows: prod.servicerEvidenceRows,
     licensesTotal: prod.licensesTotal,
   };
 
-  const manifest = computeLenderNetworkMetrics(input);
-  const out = join(root, "data/home/lender-network-metrics-v1.json");
-  writeFileSync(out, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
+  function validateInput(value, path = 'input') {
+    if (value === undefined) throw new Error(`Missing accepted metric input: ${path}`);
+    if (typeof value === 'number' && (!Number.isSafeInteger(value) || value < 0)) throw new Error(`Invalid count: ${path}`);
+    if (value && typeof value === 'object') for (const [key, item] of Object.entries(value)) validateInput(item, `${path}.${key}`);
+  }
+  validateInput(input);
+  const manifest = reconcile(computeLenderNetworkMetrics(input), prod, path => readFileSync(join(root,path), "utf8"));
+  manifest.sourceFingerprint = createHash("sha256").update(JSON.stringify({ input, reconciliation: manifest.reconciliation, homepage: manifest.homepage })).digest("hex");
+  manifest.homeProjection.fingerprint = manifest.sourceFingerprint;
+  const serialized = `${JSON.stringify(manifest, null, 2)}\n`;
+  if (check) {
+    if (readFileSync(out, "utf8").replace(/\r\n/g, "\n") !== serialized) throw new Error("Network metrics stale; run npm run build:network-metrics");
+  } else writeFileSync(out, serialized, "utf8");
   console.log(
     JSON.stringify(
       {

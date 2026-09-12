@@ -67,7 +67,7 @@ export function buildLenderHomeIntel(
       denominator: snapshot.publicRender,
       grain: 'controlled national publication cohort',
       definition:
-        'National render cohort (181) and index cohort (180). Not the 14,623 identity universe and not the 311 combined search union.',
+        'National render and index publication cohorts. Distinct from the identity universe and combined search union.',
       components: [
         { label: 'National render', value: fmt(snapshot.publicRender), payloadKey: 'publication.nationalRender' },
         { label: 'National index', value: fmt(snapshot.publicIndex), payloadKey: 'publication.nationalIndex' },
@@ -79,7 +79,7 @@ export function buildLenderHomeIntel(
       method: 'Frozen lend-nat-014 render/index JSON plus Florida Phase 1+2 publication manifests.',
       payloadKey: 'publication.nationalRender',
       limitations: [
-        '311 combined public search is 181 national-searchable plus 130 Florida-public with zero overlap. It is not a national lender total.',
+        'The combined public search cohort is a publication surface, not a national lender total.',
       ],
     },
     {
@@ -167,7 +167,7 @@ export function buildLenderHomeIntel(
       summary: `Among ${fmt(snapshot.lpiSnapshots)} national intelligence snapshots, exclusive depository structure splits into FDIC-insured banks, NCUA credit unions, nonbank mortgage companies, and snapshots where depository identity is still unknown. These are different institutional and regulatory models — not a ranking.`,
       chartType: 'composition',
       chart: {
-        caption: `Exclusive depository structure in ${fmt(snapshot.lpiSnapshots)} lender_profile_intelligence snapshots. Not the 14,623 identity universe and not the 181 public profiles.`,
+        caption: `Exclusive depository structure in ${fmt(snapshot.lpiSnapshots)} lender_profile_intelligence snapshots. Separate from the canonical identity universe and public profile cohort.`,
         series: [
           { label: 'FDIC-insured banks', value: depository.FDIC, shareOf: snapshot.lpiSnapshots },
           { label: 'NCUA credit unions', value: depository.NCUA, shareOf: snapshot.lpiSnapshots },
@@ -181,9 +181,9 @@ export function buildLenderHomeIntel(
         'A bank, a credit union, and a nonbank mortgage company are licensed and supervised differently. Reading public evidence starts with knowing which structure you are looking at.',
       doesNotMean: [
         'One type is better, safer, or recommended.',
-        'These four buckets partition all 14,623 canonical identities.',
+        'These profile buckets partition all canonical identities.',
         'Overlapping broker / holding-company / servicer classifications can be added into this pie.',
-        'The 181 public national profiles are the national market.',
+        'Public national profiles represent the entire national market.',
       ],
       sourceIds: ['lpi-011'],
       officialAsOf: snapshot.retrievedAt,
@@ -406,8 +406,8 @@ export function buildLenderHomeIntel(
     })),
     floridaPreview: {
       href: '/florida',
-      applications: snapshot.geography.find((row) => row.state === 'FL')?.applications ?? 0,
-      originations: snapshot.geography.find((row) => row.state === 'FL')?.originations ?? 0,
+      applications: requiredState(snapshot, 'FL').applications,
+      originations: requiredState(snapshot, 'FL').originations,
       publicProfiles: snapshot.floridaPublic,
       internalProfiles: snapshot.floridaInternal,
       note: 'Florida is the enhanced state intelligence page. It is not a ranking. MLO and branch profiles remain unpublished.',
@@ -519,8 +519,8 @@ export function buildLenderHomeIntel(
         agency: 'SeniorTrustHub/LenderTrustHub derived snapshots',
         officialAsOf: snapshot.retrievedAt,
         retrievedAt: snapshot.retrievedAt,
-        usedFor: 'Exclusive depository composition on 8,447 snapshots',
-        limitation: 'Snapshot grain, not all 14,623 identities.',
+        usedFor: 'Exclusive depository composition of the accepted profile snapshots',
+        limitation: 'Profile snapshot grain, not the canonical institution universe.',
       },
       {
         id: 'publication-014',
@@ -528,7 +528,7 @@ export function buildLenderHomeIntel(
         agency: 'LenderTrustHub publication policy',
         officialAsOf: snapshot.retrievedAt,
         retrievedAt: snapshot.retrievedAt,
-        usedFor: '181/180 public national cohort',
+        usedFor: 'Publication-gated national render/index cohorts',
         limitation: 'Publication freeze. Not a market census.',
       },
       {
@@ -558,6 +558,12 @@ export function buildLenderHomeIntel(
 
   const payloadFingerprint = fingerprintLenderHomeIntel(draft);
   return { ...draft, payloadFingerprint };
+}
+
+function requiredState(snapshot: HomeIntelSnapshotV2, state: string) {
+  const row = snapshot.geography.find((entry) => entry.state === state);
+  if (!row) throw new Error(`Missing accepted HMDA state partition: ${state}`);
+  return row;
 }
 
 export function buildLenderHomeIntelFromSnapshot(

@@ -4,7 +4,6 @@ import type { LenderNetworkMetricsV1 } from './lender-network-metrics-v1';
 import {
   assertPublicHomepageInventory,
   buildLenderHomepageEvidenceInventory,
-  LENDER_HOMEPAGE_STATE_CARDS,
 } from '@/lib/home-intel/evidence-inventory';
 
 const STATE_INTEL_HREF: Record<string, string> = {
@@ -16,6 +15,8 @@ const STATE_INTEL_HREF: Record<string, string> = {
   AZ: '/arizona',
   CO: '/colorado',
   VA: '/virginia',
+  NY: '/new-york',
+  IL: '/illinois',
 };
 
 export function projectLenderHomeIntelFromNetworkMetrics(
@@ -36,6 +37,6 @@ export function projectLenderHomeIntelFromNetworkMetrics(
       intelligenceHref: STATE_INTEL_HREF[row.state] ?? null,
     })),
     evidenceInventory,
-    stateCards: LENDER_HOMEPAGE_STATE_CARDS,
+    stateCards: m.homepage!.stateCards,
   };
 }

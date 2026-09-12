@@ -1,3 +1,5 @@
+import type { HomepageEvidenceMeasure, HomepageStateCard } from '../home-intel/types';
+import type { ReconciliationContract } from './state-metric-contract';
 /**
  * lender-network-metrics-v1
  * Specialist-owned public metric contract. Grains never mix.
@@ -260,6 +262,9 @@ export type LenderNetworkMetricsV1 = {
     njCountyIntelligencePages: number;
   };
   rejectedTotals: Array<{ total: string; reason: string }>;
+  contractRevision?: "ATH-METRICS-R2-03";
+  reconciliation?: ReconciliationContract;
+  homepage?: { evidenceInventory: HomepageEvidenceMeasure[]; stateCards: HomepageStateCard[] };
   homeProjection: HomeIntelSnapshotProjection;
   metrics: LenderNetworkMetric[];
 };
