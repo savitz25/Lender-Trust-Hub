@@ -98,6 +98,10 @@ const input = {
   nyDfs2024Bankers: pub.nyDfs2024Bankers,
   nyEnforcementRows: pub.nyEnforcementRows,
   nyLiveRosterCoverage: pub.nyLiveRosterCoverage,
+  ilHmdaApplications: pub.ilHmdaApplications,
+  ilHmdaOriginations: pub.ilHmdaOriginations,
+  ilFdicInstitutions: pub.ilFdicInstitutions,
+  ilLiveRosterCoverage: pub.ilLiveRosterCoverage,
   servicerEvidenceRows: 10,
   licensesTotal: 164965,
 };

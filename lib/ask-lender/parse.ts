@@ -129,6 +129,18 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
   if (/\bnew york\b/i.test(q) && /\b(licensed|bankers?|lenders?|roster|nydfs)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'ny-dfs-dated-aggregates', failReason: 'NYDFS 2024 annual-report counts (151 mortgage bankers, 439 brokers) are dated aggregates, not current September 2026 licensees. Current verification is NYDFS + NMLS Consumer Access. Do not answer with 9,769 MLOs or with HMDA application rows.', coverageState: 'PARTIAL' };
   }
+  if (/\billinois\b|\bidfpr\b/i.test(q) && /\bhow many lenders\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'il-no-combined-lenders', failReason: 'Illinois does not have an acquired current mortgage-company census. Do not answer with HMDA application rows or FDIC depository counts as Illinois lenders. Current verification is IDFPR + NMLS Consumer Access.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if (/\billinois\b|\bidfpr\b/i.test(q) && /\bcomplaint/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'il-cfpb-observations', failReason: 'CFPB Illinois mortgage complaints were not acquired as a bulk count. Missing is not zero. A complaint is not a violation. Company-specific research requires an exact institution identity.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if (/\billinois\b|\bidfpr\b/i.test(q) && /\b(licensed|lenders?|roster|bankers?|brokers?)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'il-idfpr-nmls-search-only', failReason: 'Current Illinois mortgage-company licensing is IDFPR/NMLS search-only. No bulk roster was acquired. Search-only is not zero lenders. HMDA applications and FDIC banks are not that census.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if (/\billinois\b/i.test(q) && /\b(chicago|cook county|serving)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'il-mailing-ne-service', failReason: 'Illinois HMDA geography is property location, not service territory, headquarters, or a Chicago/Cook license census. This statewide page does not publish local Illinois lender routes.', coverageState: 'UNSUPPORTED' };
+  }
 
   if (/\bwhat is (?:an? )?nmls(?: institution)? id\b|\bhow do i (?:check|verify).*nmls/i.test(q)) return { mode: 'definition', definitionId: 'nmls', requestedMetric: null };
   if (/\bwhat is (?:an? )?lei\b/i.test(q)) return { mode: 'definition', definitionId: 'lei', requestedMetric: null };

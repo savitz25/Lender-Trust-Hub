@@ -2,6 +2,7 @@ import { ARIZONA_SNAPSHOT } from '@/lib/arizona-intelligence/snapshot';
 import { COLORADO_SNAPSHOT } from '@/lib/colorado-intelligence/snapshot';
 import { VIRGINIA_SNAPSHOT } from '@/lib/virginia-intelligence/snapshot';
 import { NEW_YORK_SNAPSHOT } from '@/lib/new-york-intelligence/snapshot';
+import { ILLINOIS_SNAPSHOT } from '@/lib/illinois-intelligence/snapshot';
 import { CALIFORNIA_SNAPSHOT } from '@/lib/california-intelligence/snapshot';
 import { FLORIDA_SNAPSHOT } from '@/lib/florida-intelligence/snapshot';
 import { NEW_JERSEY_SNAPSHOT } from '@/lib/new-jersey-intelligence/snapshot';
@@ -217,6 +218,25 @@ export const LENDER_HOMEPAGE_STATE_CARDS: HomepageStateCard[] = [
       { label: 'DFS enforcement observations', value: fmt(NEW_YORK_SNAPSHOT.enforcement.observation_rows), grain: 'action observations' },
     ],
   },
+  {
+    code: 'IL',
+    name: 'Illinois',
+    href: '/illinois',
+    regulators: 'IDFPR · NMLS · HMDA/FFIEC · FDIC · CFPB',
+    sourceClocks: [
+      { label: 'HMDA vintage', sourceAsOf: '2025', retrievedAt: null },
+      { label: 'FDIC overlay', sourceAsOf: ILLINOIS_SNAPSHOT.fdic.source_as_of, retrievedAt: ILLINOIS_SNAPSHOT.fdic.retrieved_at },
+      { label: 'Current mortgage-company roster', sourceAsOf: null, retrievedAt: null },
+    ],
+    evidence: ['HMDA 2025 Illinois market activity', 'FDIC depository overlay', 'IDFPR/NMLS search-only current licensing'],
+    identityNote: 'Current IDFPR/NMLS company roster is search-only. HMDA applications are not lenders. FDIC banks are not IDFPR mortgage bankers.',
+    limitation: 'No Chicago/Cook intelligence routes. Missing roster is not zero companies.',
+    highlights: [
+      { label: 'HMDA applications', value: fmt(ILLINOIS_SNAPSHOT.hmda.applications), grain: '2025 applications' },
+      { label: 'HMDA originations', value: fmt(ILLINOIS_SNAPSHOT.hmda.originations), grain: '2025 originations' },
+      { label: 'FDIC depositories', value: fmt(ILLINOIS_SNAPSHOT.fdic.institution_rows), grain: 'existing overlay institutions' },
+    ],
+  },
 ];
 
 export function buildLenderHomepageEvidenceInventory(metrics: LenderNetworkMetricsV1): HomepageEvidenceMeasure[] {
@@ -262,7 +282,10 @@ export function buildLenderHomepageEvidenceInventory(metrics: LenderNetworkMetri
     measure({ key: 'ny_dfs_2024_bankers', label: 'New York DFS 2024 licensed mortgage bankers', value: NEW_YORK_SNAPSHOT.dfs_2024_aggregates.licensed_mortgage_bankers, family: 'INSTITUTION_IDENTITY_LICENSING', grain: 'dated DFS class aggregate', entityClass: 'New York licensed mortgage banker', geography: 'New York', sourceSystem: 'NYDFS 2024 Annual Report', acceptedArtifact: 'lib/new-york-intelligence/accepted-snapshot.json', sourceAsOf: NEW_YORK_SNAPSHOT.dfs_2024_aggregates.source_as_of, retrievedAt: NEW_YORK_SNAPSHOT.retrieved_at, definition: 'Dated end-of-2024 licensed mortgage banker aggregate.', counts: 'One DFS class aggregate, not brokers, servicers, or MLOs.', doesNotCount: 'Current 2026 licensees, unique consumer lenders, or 151+439.', researchDestination: '/new-york', identityRule: 'NMLS Company ID when source-native. Name-only fill is forbidden.' }),
     measure({ key: 'ny_enforcement', label: 'New York DFS mortgage enforcement observations', value: NEW_YORK_SNAPSHOT.enforcement.observation_rows, family: 'REGULATORY_ENFORCEMENT', grain: 'enforcement-action observation', entityClass: 'company, person, or mixed subject', geography: 'New York', sourceSystem: 'NYDFS Mortgage Banking Enforcement Actions', acceptedArtifact: 'lib/new-york-intelligence/accepted-snapshot.json', sourceAsOf: NEW_YORK_SNAPSHOT.enforcement.date_max, retrievedAt: NEW_YORK_SNAPSHOT.retrieved_at, definition: 'Rows in the official Mortgage Banking Enforcement Actions HTML table.', counts: 'Dated action observations.', doesNotCount: 'Unique companies, convictions, or a quality score.', researchDestination: '/new-york', identityRule: 'No NAIC/NMLS column; name-only adverse attachment is UNSAFE.' }),
     measure({ key: 'ny_live_roster_unacquired', label: 'New York current 2026 mortgage-company roster', value: null, family: 'INSTITUTION_IDENTITY_LICENSING', grain: 'potential current NMLS company registration', entityClass: 'New York mortgage banker, broker, or servicer', geography: 'New York', sourceSystem: 'NYDFS / NMLS Consumer Access', acceptedArtifact: 'lib/new-york-intelligence/accepted-snapshot.json', sourceAsOf: 'SOURCE_NOT_ACQUIRED', generatedAt: NEW_YORK_SNAPSHOT.generated_at, definition: 'No clean official bulk current company roster was acquired.', counts: 'No numeric evidence total; this is an explicit coverage limitation.', doesNotCount: 'Zero companies or that the 2024 aggregates are current.', publicationStatus: 'PUBLIC_LIMITATION', researchDestination: '/new-york', identityRule: 'Current verification requires NYDFS + NMLS Consumer Access.' }),
-    measure({ key: 'state_pages', label: 'Published state intelligence pages', value: LENDER_HOMEPAGE_STATE_CARDS.length, family: 'PUBLIC_RESEARCH_SURFACES', grain: 'published state intelligence page', entityClass: 'public research surface', geography: 'FL, NJ, CA, TX, WA, AZ, CO, VA, NY', sourceSystem: 'Accepted state publication contracts', acceptedArtifact: 'LENDER_HOMEPAGE_STATE_CARDS', sourceAsOf: 'varies by state and evidence family', generatedAt: generated, definition: 'Live state intelligence destinations in the homepage state model.', counts: 'Published state pages derived from the same model rendered below.', doesNotCount: 'States with only national search results or a rating of research depth.', researchDestination: '#states', identityRule: null }),
+    measure({ key: 'il_hmda_apps', label: 'Illinois HMDA 2025 applications', value: ILLINOIS_SNAPSHOT.hmda.applications, family: 'MORTGAGE_MARKET_ACTIVITY', grain: 'county-grain HMDA application observation', entityClass: 'mortgage application', geography: 'Illinois property location', sourceSystem: 'CFPB HMDA', acceptedArtifact: 'lib/illinois-intelligence/accepted-snapshot.json', sourceAsOf: '2025', retrievedAt: ILLINOIS_SNAPSHOT.hmda.retrieved_at, definition: 'Applications for properties in Illinois.', counts: 'HMDA applications, not lenders.', doesNotCount: 'Illinois mortgage companies, FDIC banks, or current licenses.', researchDestination: '/illinois', identityRule: 'Property geography is not headquarters or license jurisdiction.' }),
+    measure({ key: 'il_fdic', label: 'Illinois FDIC depository institutions', value: ILLINOIS_SNAPSHOT.fdic.institution_rows, family: 'DEPOSITORY_BANK', grain: 'FDIC-insured depository overlay row', entityClass: 'depository institution', geography: 'Illinois', sourceSystem: 'FDIC', acceptedArtifact: 'lib/fdic/data/illinois.json', sourceAsOf: ILLINOIS_SNAPSHOT.fdic.source_as_of, retrievedAt: ILLINOIS_SNAPSHOT.fdic.retrieved_at, definition: 'Existing FDIC Illinois overlay.', counts: 'Depository institutions in the overlay.', doesNotCount: 'IDFPR mortgage bankers or HMDA lenders.', researchDestination: '/illinois', identityRule: 'FDIC CERT is not an IDFPR mortgage license.' }),
+    measure({ key: 'il_live_roster_unacquired', label: 'Illinois current mortgage-company roster', value: null, family: 'INSTITUTION_IDENTITY_LICENSING', grain: 'potential current NMLS company registration', entityClass: 'Illinois mortgage company', geography: 'Illinois', sourceSystem: 'IDFPR / NMLS Consumer Access', acceptedArtifact: 'lib/illinois-intelligence/accepted-snapshot.json', sourceAsOf: 'SOURCE_NOT_ACQUIRED', generatedAt: ILLINOIS_SNAPSHOT.generated_at, definition: 'No bulk current Illinois mortgage-company roster was acquired.', counts: 'No numeric evidence total; this is an explicit coverage limitation.', doesNotCount: 'Zero companies or that HMDA/FDIC counts are that census.', publicationStatus: 'PUBLIC_LIMITATION', researchDestination: '/illinois', identityRule: 'Current verification requires IDFPR + NMLS Consumer Access.' }),
+    measure({ key: 'state_pages', label: 'Published state intelligence pages', value: LENDER_HOMEPAGE_STATE_CARDS.length, family: 'PUBLIC_RESEARCH_SURFACES', grain: 'published state intelligence page', entityClass: 'public research surface', geography: 'FL, NJ, CA, TX, WA, AZ, CO, VA, NY, IL', sourceSystem: 'Accepted state publication contracts', acceptedArtifact: 'LENDER_HOMEPAGE_STATE_CARDS', sourceAsOf: 'varies by state and evidence family', generatedAt: generated, definition: 'Live state intelligence destinations in the homepage state model.', counts: 'Published state pages derived from the same model rendered below.', doesNotCount: 'States with only national search results or a rating of research depth.', researchDestination: '#states', identityRule: null }),
     measure({ key: 'nj_county_pages', label: 'Published New Jersey county intelligence pages', value: metrics.network.njCountyIntelligencePages, family: 'PUBLIC_RESEARCH_SURFACES', grain: 'published county intelligence page', entityClass: 'public local research surface', geography: 'New Jersey', sourceSystem: 'Accepted network publication contract', acceptedArtifact: nationalArtifact, sourceAsOf: 'varies by county evidence module', generatedAt: generated, definition: 'Published New Jersey county research surfaces in the accepted network contract.', counts: 'County intelligence pages.', doesNotCount: 'County license systems, lenders, applications, or statewide coverage.', researchDestination: '/new-jersey', identityRule: null }),
   ];
 }
@@ -272,7 +295,7 @@ export function assertPublicHomepageInventory(inventory: HomepageEvidenceMeasure
   const keys = new Set(inventory.map((item) => item.key));
   if (keys.size !== inventory.length) throw new Error('Homepage evidence inventory keys must be unique');
   if (inventory.some((item) => !allowedPublicationStatuses.has(item.publicationStatus))) throw new Error('Homepage evidence inventory contains a non-public publication status');
-  if (LENDER_HOMEPAGE_STATE_CARDS.length !== 9) throw new Error('Homepage must publish exactly the nine accepted state intelligence cards');
+  if (LENDER_HOMEPAGE_STATE_CARDS.length !== 10) throw new Error('Homepage must publish exactly the ten accepted state intelligence cards');
   if (!inventory.some((item) => item.key === 'wa_dfi_orders') || !inventory.some((item) => item.key === 'az_difi_enforcement_unacquired')) throw new Error('State enforcement semantics missing');
   if (inventory.some((item) => /person_mlo|branch_entities|private/i.test(item.key))) throw new Error('Internal person, branch, or private counts cannot publish');
   if (inventory.some((item) => /grand total|mortgage records/i.test(item.label))) throw new Error('Cross-grain totals cannot publish');
