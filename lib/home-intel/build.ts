@@ -406,8 +406,8 @@ export function buildLenderHomeIntel(
     })),
     floridaPreview: {
       href: '/florida',
-      applications: snapshot.geography.find((row) => row.state === 'FL')?.applications ?? 0,
-      originations: snapshot.geography.find((row) => row.state === 'FL')?.originations ?? 0,
+      applications: requiredState(snapshot, 'FL').applications,
+      originations: requiredState(snapshot, 'FL').originations,
       publicProfiles: snapshot.floridaPublic,
       internalProfiles: snapshot.floridaInternal,
       note: 'Florida is the enhanced state intelligence page. It is not a ranking. MLO and branch profiles remain unpublished.',
@@ -558,6 +558,12 @@ export function buildLenderHomeIntel(
 
   const payloadFingerprint = fingerprintLenderHomeIntel(draft);
   return { ...draft, payloadFingerprint };
+}
+
+function requiredState(snapshot: HomeIntelSnapshotV2, state: string) {
+  const row = snapshot.geography.find((entry) => entry.state === state);
+  if (!row) throw new Error(`Missing accepted HMDA state partition: ${state}`);
+  return row;
 }
 
 export function buildLenderHomeIntelFromSnapshot(

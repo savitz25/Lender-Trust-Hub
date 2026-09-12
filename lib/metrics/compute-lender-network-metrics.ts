@@ -91,7 +91,7 @@ export type LenderNetworkMetricsInput = {
   ilHmdaOriginations: number;
   ilFdicInstitutions: number;
   ilLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
-  servicerEvidenceRows: number;
+  servicerEvidenceRows: number | null;
   licensesTotal: number;
 };
 
@@ -169,9 +169,9 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.fdicCert === input.depository.FDIC && input.fdicCert === input.institutions) {
     throw new Error('FDIC_CERT identifiers must not be used as the institution universe');
   }
-  const caCounty = input.geography.find((row) => row.state === 'CA')?.applications ?? 0;
-  const njCounty = input.geography.find((row) => row.state === 'NJ')?.applications ?? 0;
-  const flCounty = input.geography.find((row) => row.state === 'FL')?.applications ?? 0;
+  const caCounty = input.geography.find((row) => row.state === 'CA')?.applications;
+  const njCounty = input.geography.find((row) => row.state === 'NJ')?.applications;
+  const flCounty = input.geography.find((row) => row.state === 'FL')?.applications;
   if (caCounty === input.caHmdaApplications) {
     throw new Error('California county-grain national aggregate must not equal the CA state-intelligence slice');
   }
@@ -213,8 +213,8 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.txLiveRosterCoverage !== 'SOURCE_NOT_ACQUIRED') {
     throw new Error('TX live mortgage-company roster remains not acquired');
   }
-  const txCounty = input.geography.find((row) => row.state === 'TX')?.applications ?? 0;
-  if (txCounty === input.txHmdaApplications && txCounty !== 0) {
+  const txCounty = input.geography.find((row) => row.state === 'TX')?.applications;
+  if (txCounty === input.txHmdaApplications && txCounty !== undefined) {
     throw new Error('Texas county-grain national aggregate must not equal the TX state-intelligence slice');
   }
   if (input.txSmlOrders === input.txHmdaApplications) {
@@ -241,8 +241,8 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.coCfpbMortgageComplaints === input.coHmdaApplications) {
     throw new Error('Colorado CFPB complaints must not equal Colorado HMDA applications');
   }
-  const coCounty = input.geography.find((row) => row.state === 'CO')?.applications ?? 0;
-  if (coCounty === input.coHmdaApplications && coCounty !== 0) {
+  const coCounty = input.geography.find((row) => row.state === 'CO')?.applications;
+  if (coCounty === input.coHmdaApplications && coCounty !== undefined) {
     throw new Error('Colorado county-grain national aggregate must not equal the CO state-intelligence slice');
   }
   if (input.vaLiveRosterCoverage !== 'SOURCE_NOT_ACQUIRED') {
@@ -545,7 +545,7 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
         'Not confirmed NMLS identities. Not the 130 Florida public profiles. Not MLOs.',
         ['florida_ofr'],
         'Florida OFR Chapter 494 company credentials',
-        `FL_OFR_CH494 source_as_of ${input.flOfrSourceAsOf.slice(0, 10)}`,
+        `Newest Florida ledger source observation ${input.flOfrSourceAsOf.slice(0, 10)}; distinct source clocks in reconciliation.florida.sourceClocks`,
       ),
     }),
     metric({
@@ -566,7 +566,7 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
         'Not held NMLS. Not unresolved source-company NMLS. Not public Florida profiles.',
         ['florida_ofr'],
         'Florida',
-        `FL_OFR_CH494 source_as_of ${input.flOfrSourceAsOf.slice(0, 10)}`,
+        `Newest Florida ledger source observation ${input.flOfrSourceAsOf.slice(0, 10)}; distinct source clocks in reconciliation.florida.sourceClocks`,
       ),
     }),
     metric({

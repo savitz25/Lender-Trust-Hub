@@ -9,5 +9,8 @@ export function loadLenderNetworkMetrics(): LenderNetworkMetricsV1 {
   if (snap.schemaVersion !== LENDER_NETWORK_METRICS_VERSION) {
     throw new Error(`Unexpected network metrics version: ${snap.schemaVersion}`);
   }
+  if (snap.contractRevision !== 'ATH-METRICS-R2-03' || !snap.homepage || !snap.reconciliation || snap.reconciliation.florida.unexplainedDelta !== 0) {
+    throw new Error('Missing or unreconciled generated network metrics');
+  }
   return snap;
 }

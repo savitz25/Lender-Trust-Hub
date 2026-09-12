@@ -37,7 +37,7 @@ function InventoryFamily({ family, items }: { family: LenderEvidenceFamily; item
       </div>
       <div className="intel-family__measures">
         {items.map((item) => (
-          <article className={`intel-measure${item.publicationStatus === 'PUBLIC_LIMITATION' ? ' intel-measure--limitation' : ''}`} key={item.key}>
+          <article className={`intel-measure${item.publicationStatus === 'PUBLIC_LIMITATION' ? ' intel-measure--limitation' : ''}`} key={item.key} data-metric-key={item.key}>
             {item.publicationStatus === 'PUBLIC_LIMITATION' ? <p className="intel-measure__badge">Coverage limitation</p> : null}
             <p className="intel-measure__value">{item.display}</p>
             <h4>{item.label}</h4>
@@ -99,7 +99,7 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
 
       <section className="intel-section" id="scale" aria-labelledby="scale-title">
         <div className="intel-heading"><p className="intel-eyebrow">Network scale</p><h2 id="scale-title">Large official datasets—without a fake grand total</h2><p>Each headline stays in its own source-native grain. These figures must not be added together.</p></div>
-        <div className="intel-scale-band">{nationalScale.map((item) => <article key={item.key}><p className="intel-measure__value">{item.display}</p><h3>{item.label}</h3><p>{item.grain}</p><Trace item={item} /></article>)}</div>
+        <div className="intel-scale-band">{nationalScale.map((item) => <article key={item.key} data-metric-key={item.key}><p className="intel-measure__value">{item.display}</p><h3>{item.label}</h3><p>{item.grain}</p><Trace item={item} /></article>)}</div>
       </section>
 
       <section className="intel-section intel-section--dark" id="identity" aria-labelledby="identity-title">
@@ -118,7 +118,7 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
       </section>
 
       <section className="intel-section intel-section--tint" id="states" aria-labelledby="states-title">
-        <div className="intel-heading intel-heading--wide"><p className="intel-eyebrow">Six state intelligence surfaces</p><h2 id="states-title">Regulators, evidence depth, and source clocks differ by state</h2><p>These are research destinations, not ratings. Application volume does not determine their order or visual weight.</p></div>
+        <div className="intel-heading intel-heading--wide"><p className="intel-eyebrow">{intel.stateCards.length} state intelligence surfaces</p><h2 id="states-title">Regulators, evidence depth, and source clocks differ by state</h2><p>These are research destinations, not ratings. Application volume does not determine their order or visual weight.</p></div>
         <div className="intel-state-grid">{intel.stateCards.map((state) => <article className="intel-state-card" key={state.code}>
           <header><span>{state.code}</span><div><h3>{state.name}</h3><p>{state.regulators}</p></div></header>
           <div className="intel-state-card__metrics">{state.highlights.map((highlight) => <div key={highlight.label}><strong>{highlight.value}</strong><span>{highlight.label}</span><small>{highlight.grain}</small></div>)}</div>
