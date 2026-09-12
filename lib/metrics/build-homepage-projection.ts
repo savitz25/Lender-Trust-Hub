@@ -201,7 +201,7 @@ export function buildLenderHomepageStateCards(metrics: LenderNetworkMetricsV1): 
     ],
     evidence: ['DFS 2024 dated class aggregates', '2026 Weekly Bulletin activity', 'Mortgage enforcement actions', 'HMDA market activity', 'FDIC depository overlay'],
     identityNote: 'Current NYDFS/NMLS company roster is search-only. 2024 aggregates are not current 2026 licenses.',
-    limitation: 'Banker, broker, servicer, and MLO stay separate. Do not add 151 + 439. MLOs are people, not companies.',
+    limitation: 'Banker, broker, servicer, and MLO stay separate. Do not add banker and broker classes. MLOs are people, not companies.',
     highlights: [
       { label: 'DFS bankers end of 2024', value: fmt(NEW_YORK_SNAPSHOT.dfs_2024_aggregates.licensed_mortgage_bankers), grain: 'dated class aggregate' },
       { label: 'HMDA applications', value: fmt(NEW_YORK_SNAPSHOT.hmda.applications), grain: '2025 applications' },

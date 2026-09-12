@@ -140,7 +140,7 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
       </section>
 
       <section className="intel-section" id="programs" aria-labelledby="programs-title">
-        <div className="intel-heading"><p className="intel-eyebrow">Homebuyer program intelligence</p><h2 id="programs-title">Research programs before assuming eligibility</h2><p>Accepted state artifacts document program families in five states. A program’s existence does not mean a borrower qualifies, funding is available, or a lender participates.</p></div>
+        <div className="intel-heading"><p className="intel-eyebrow">Homebuyer program intelligence</p><h2 id="programs-title">Research programs before assuming eligibility</h2><p>Accepted state artifacts document program families in {new Set(intel.evidenceInventory.filter((item) => item.family === 'HOMEBUYER_PROGRAMS').map((item) => item.geography)).size} states. A program’s existence does not mean a borrower qualifies, funding is available, or a lender participates.</p></div>
         <div className="intel-program-band">{['nj_programs', 'ca_programs', 'tx_programs', 'wa_programs', 'az_programs'].map((key) => { const item = intel.evidenceInventory.find((entry) => entry.key === key); return item ? <article key={key}><strong>{item.display}</strong><span>{item.geography}</span><p>{item.label}</p></article> : null; })}</div>
         <Link className="intel-btn intel-btn--secondary" href="/tools/program-finder">Explore the program finder →</Link>
       </section>
