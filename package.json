@@ -21,7 +21,7 @@
     "assert:co-lend-001": "tsx scripts/assert-co-lend-001.mts",
     "assert:va-lend-001": "python -X utf8 scripts/build-va-public-snapshot.py --check && tsx scripts/assert-va-lend-001.mts",
     "assert:ny-lend-001": "python -X utf8 scripts/ny-lend-001-tests.py && tsx scripts/assert-ny-lend-001.mts",
-    "assert:il-lend-001": "python -X utf8 scripts/il-lend-001-tests.py && tsx scripts/assert-il-lend-001.mts",
+    "assert:il-lend-001": "python -X utf8 scripts/build-il-public-snapshot.py --check && python -X utf8 scripts/il-lend-001-tests.py && tsx scripts/assert-il-lend-001.mts",
     "assert:intel-004": "tsx scripts/assert-intel-004.mts",
     "assert:lend-home-003": "tsx scripts/assert-lend-home-003.mts",
     "assert:ask-lender": "tsx scripts/assert-ask-lender.mts",

@@ -59,7 +59,9 @@ export function IllinoisStateIntelligence({ snapshot }: { snapshot: IllinoisInte
           No Chicago, Cook County, or other local Illinois lender pages are published from this statewide page.
         </p>
         <p className="mt-2 text-xs text-slate-500">
-          Snapshot {s.contract_name} · fingerprint {s.fingerprint.slice(0, 12)} · retrieved {s.retrieved_at}
+          Snapshot {s.contract_name} · fingerprint {s.fingerprint.slice(0, 12)} · HMDA vintage {s.hmda.source_as_of} ·
+          FDIC overlay as of {s.fdic.source_as_of}. Original retrieval instants for those reused artifacts are not
+          recorded. Page generated {s.generated_at} is not a source retrieval date.
         </p>
       </header>
 
@@ -80,8 +82,11 @@ export function IllinoisStateIntelligence({ snapshot }: { snapshot: IllinoisInte
           HMDA 2025 Illinois
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-slate-600">
-          {fmtInt(H.applications)} applications, {fmtInt(H.originations)} originations, {fmtInt(H.denials)} denials (
-          {fmtPct(H.denial_rate_pct)} of applications). Purchase {fmtInt(H.purchase_applications)}, refinance{' '}
+          {fmtInt(H.applications)} applications, {fmtInt(H.originations)} originations, {fmtInt(H.denials)} denials as{' '}
+          {fmtPct(H.denials_as_pct_of_total_applications)} of {fmtInt(H.denial_pct_denominator_total_applications)} total
+          applications (numerator {fmtInt(H.denial_pct_numerator_denial_observations)} denial observations ÷ denominator{' '}
+          {fmtInt(H.denial_pct_denominator_total_applications)} total HMDA applications; not a decision-based denial rate
+          and not lender quality). Purchase {fmtInt(H.purchase_applications)}, refinance{' '}
           {fmtInt(H.refinance_applications)}, other purpose {fmtInt(H.purpose_other_applications)}. Conventional{' '}
           {fmtInt(H.apps_conventional)}, FHA {fmtInt(H.apps_fha)}, VA {fmtInt(H.apps_va)}, USDA/other {fmtInt(H.apps_usda_other)}.
           Mix bars are application shares, not quality.

@@ -4,7 +4,7 @@ export type IllinoisIntelligenceSnapshot = typeof accepted;
 
 export const IL_SNAPSHOT_CONTRACT = 'lender-il-state-intel-v1' as const;
 export const IL_PUBLIC_FINGERPRINT =
-  'c6da4761a11c6fccff22fbadb1eac1d2158b2756bfcf6823d622454ddbc5c03d';
+  '06c7f10b4756076b57da54c64306fb50fc9666a379855d1e262591652a9f70a4';
 export const IL_PUBLIC_PATH = '/illinois';
 
 export const ILLINOIS_SNAPSHOT = accepted as IllinoisIntelligenceSnapshot;
@@ -30,6 +30,16 @@ export function assertIllinoisIntelligence(
   }
   if (value.hmda.county_count !== 102) throw new Error('Illinois HMDA county rows drifted');
   if (value.hmda.denials !== 66742) throw new Error('Illinois HMDA denials drifted');
+  if (value.retrieved_at != null) throw new Error('HMDA/FDIC retrieval instant is UNKNOWN; do not use ticket build time');
+  if (value.hmda.retrieved_at != null || value.fdic.retrieved_at != null) {
+    throw new Error('Do not invent a retrieval timestamp for reused HMDA/FDIC artifacts');
+  }
+  if ('denial_rate_pct' in value.hmda) throw new Error('denial_rate_pct is too broad');
+  if (value.hmda.denials_as_pct_of_total_applications !== 16.92) {
+    throw new Error('Illinois denials-as-pct-of-total-applications drifted');
+  }
+  if (value.hmda.denial_pct_numerator_denial_observations !== 66742) throw new Error('denial numerator drifted');
+  if (value.hmda.denial_pct_denominator_total_applications !== 394488) throw new Error('denial denominator drifted');
   if (value.hero.universe_value === value.fdic.institution_rows) {
     throw new Error('Do not headline FDIC banks as HMDA applications');
   }
