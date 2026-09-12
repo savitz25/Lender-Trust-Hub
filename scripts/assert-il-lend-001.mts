@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { parseLenderAsk } from '../lib/ask-lender/parse';
+import { executeAskQuery } from '../lib/ask-lender/execute-query';
+import homeIntel from '../lib/home-intel/accepted-snapshot.json';
 import { ILLINOIS_INTELLIGENCE_GATE } from '../lib/illinois-intelligence/publication';
 import { assertIllinoisIntelligence, IL_PUBLIC_FINGERPRINT, IL_PUBLIC_PATH } from '../lib/illinois-intelligence/snapshot';
 import { buildIllinoisIntelligenceJsonLd, ilJsonLdHasForbiddenRatings } from '../lib/illinois-intelligence/jsonld';
@@ -65,4 +67,37 @@ assert.ok(metrics.network.publishedStateIntelligencePaths.includes('/illinois'))
 assert.ok(metrics.network.publishedStateIntelligencePaths.includes('/new-york'));
 assert.equal(metrics.illinois.liveLicensedCompanyUniverse, null);
 assert.equal(metrics.illinois.hmdaApplications, 394488);
+
+const genericIlApps = homeIntel.geography.find((row) => row.state === 'IL')?.applications;
+assert.equal(genericIlApps, 390786);
+const appQueries = [
+  'How many mortgage applications were reported for Illinois properties in 2025?',
+  'How many mortgage applications in Illinois in 2025?',
+  'HMDA applications in Illinois',
+  'mortgage applications in Illinois',
+];
+for (const q of appQueries) {
+  const result = executeAskQuery({ q });
+  assert.equal(result.countEvidence?.value, s.hmda.applications, q);
+  assert.equal(result.countEvidence?.field, 'applications', q);
+  assert.equal(result.countEvidence?.sourceFile, 'lib/illinois-intelligence/accepted-snapshot.json', q);
+  assert.notEqual(result.countEvidence?.value, genericIlApps, `Ask must not reuse the LEI-cell rollup for ${q}`);
+}
+const origs = executeAskQuery({ q: 'How many originations were reported for Illinois properties in 2025?' });
+assert.equal(origs.countEvidence?.value, 231788);
+assert.equal(origs.countEvidence?.field, 'originations');
+const licensed = executeAskQuery({ q: 'How many lenders are licensed in Illinois?' });
+assert.equal(licensed.failClosed, true);
+assert.ok(['il-no-combined-lenders', 'il-idfpr-nmls-search-only'].includes(licensed.failClosedKind ?? licensed.query.failClosedKind ?? ''));
+assert.equal(licensed.countEvidence?.value ?? null, null);
+const vaIl = executeAskQuery({ q: 'VA mortgage applications in Illinois' });
+assert.deepEqual(vaIl.query.loanType, ['VA']);
+assert.equal(vaIl.query.geography?.state, 'IL');
+assert.notEqual(vaIl.query.geography?.state, 'VA');
+const nmls = executeAskQuery({ q: 'NMLS 30 30' });
+assert.equal(nmls.rows?.[0]?.nmls, '3030');
+const fhaNj = executeAskQuery({ q: 'How many FHA originations in New Jersey?' });
+assert.equal(fhaNj.countEvidence?.field, 'orig_fha');
+assert.equal(parseLenderAsk('Best mortgage lender in Illinois').failClosedKind, 'ranking');
+assert.equal(s.fingerprint, '06c7f10b4756076b57da54c64306fb50fc9666a379855d1e262591652a9f70a4');
 console.log('assert:il-lend-001 pass', s.fingerprint.slice(0, 12));
