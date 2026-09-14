@@ -76,7 +76,19 @@ export function executeLenderAsk(raw: string, intel: LenderHomeIntel): AskExecut
     };
   }
 
-  if (query.mode === 'entity' || query.mode === 'aggregate' || (query.mode === 'count' && query.geography?.grain === 'county') || (query.mode === 'comparison' && query.geography?.grain === 'county')) {
+  // TH-SEARCH-R1-015: a plain state-scoped count (e.g. "lenders in New Jersey",
+  // "mortgage lenders in Texas") must not silently fall through to the generic
+  // national snapshot below just because this lightweight homepage executor has no
+  // state-specific branch of its own (it only special-cases Florida). Hand any non-FL
+  // state-grain count off to /ask, which already resolves any acquired state via
+  // scalar-count.ts -- the same real-data path used everywhere else.
+  if (
+    query.mode === 'entity' ||
+    query.mode === 'aggregate' ||
+    (query.mode === 'count' && query.geography?.grain === 'county') ||
+    (query.mode === 'count' && query.geography?.grain === 'state' && query.geography.state !== 'FL') ||
+    (query.mode === 'comparison' && query.geography?.grain === 'county')
+  ) {
     const encoded = encodeURIComponent(raw.trim());
     return {
       query,

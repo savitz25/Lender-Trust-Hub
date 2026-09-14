@@ -10,7 +10,7 @@ import { nationalProfilePath } from '@/lib/national-profile/cohort';
 import { ASK_SOURCE_FILES, loadAskCatalog } from './catalog';
 import { executeLenderAsk, interpretationLines } from './execute';
 import { displayNameForLei, identityStats, profileHref, resolveLeiIdentity } from './identity';
-import { applyAskOverrides, parseLenderAsk, type AskUrlOverrides } from './parse';
+import { applyAskOverrides, NJ_RMLA_COVERAGE_NOTE, parseLenderAsk, type AskUrlOverrides } from './parse';
 import {
   ASK_GEO_NOTE,
   ASK_PAGE_SIZE,
@@ -438,7 +438,11 @@ function executeAskQueryUnstamped(input: ValidAskInput): AskExecution {
       body: volume.message, rows: [], facts: [], failClosed: true, terminalState: evidence.availability,
       volumeEvidence: evidence, filters: filterChips(raw, parsed, overrides), trace, period, grain,
       href: recovery, hrefLabel: recovery ? `View the ${place} ${label} total` : undefined,
-      caveats: [...evidence.conditions, 'An aggregate total is a separate measure; it does not identify the institutions contributing to it.'],
+      caveats: [
+        ...(parsed.coverageState === 'REQUEST_ONLY' && parsed.geography?.state === 'NJ' ? [NJ_RMLA_COVERAGE_NOTE] : []),
+        ...evidence.conditions,
+        'An aggregate total is a separate measure; it does not identify the institutions contributing to it.',
+      ],
       sharePath: sharePath(raw, 1, overrides), elapsedMs: Date.now() - started };
   }
   const stats = identityStats();
@@ -478,7 +482,11 @@ function executeAskQueryUnstamped(input: ValidAskInput): AskExecution {
     sharePath: sharePath(raw, safePage, overrides),
     period,
     grain,
-    caveats: [...entityCaveats(action, loanType, grain).map(c => c.replaceAll('2025', evidence.reportingYear ?? 'unavailable vintage')), 'Complete ordering is limited to valid observations in this acquired file, not all institutions or all U.S. activity. Secondary measures, where supplied, are all-loan observations; missing values remain unavailable.'],
+    caveats: [
+      ...(parsed.coverageState === 'REQUEST_ONLY' && parsed.geography?.state === 'NJ' ? [NJ_RMLA_COVERAGE_NOTE] : []),
+      ...entityCaveats(action, loanType, grain).map(c => c.replaceAll('2025', evidence.reportingYear ?? 'unavailable vintage')),
+      'Complete ordering is limited to valid observations in this acquired file, not all institutions or all U.S. activity. Secondary measures, where supplied, are all-loan observations; missing values remain unavailable.',
+    ],
     elapsedMs: Date.now() - started,
   };
 }

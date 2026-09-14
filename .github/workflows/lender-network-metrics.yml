@@ -30,3 +30,6 @@ jobs:
 
       - name: Institution-volume availability regression
         run: npm run check:th-search-r1-004
+
+      - name: NJ roster refusal degrades to a caveat, not a blanket refusal
+        run: npm run check:th-search-r1-015
