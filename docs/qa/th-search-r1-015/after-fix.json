@@ -1,0 +1,163 @@
+{
+  "q": "lenders in New Jersey",
+  "surface_ask": {
+    "mode": "count",
+    "failClosed": false,
+    "coverageState": "REQUEST_ONLY",
+    "headline": "New Jersey originations - HMDA 2025 reporting vintage",
+    "body": "Reported originations for mortgage properties in New Jersey. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-terr",
+    "facts": [
+      {
+        "label": "New Jersey originations",
+        "value": "177,325"
+      }
+    ],
+    "caveats": [
+      "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.",
+      "New Jersey's complete RMLA-licensed lender roster is not acquired as a bulk universe. This is real reported HMDA mortgage activity, not a state licensing census. Missing roster records are not zero lenders."
+    ]
+  },
+  "surface_home": {
+    "mode": "count",
+    "failClosed": false,
+    "headline": "This question runs against HMDA observations",
+    "body": "Institution-level and county-grain answers are executed on /ask from committed HMDA files. The homepage snapshot does not invent a top-lender list.",
+    "href": "/ask?q=lenders%20in%20New%20Jersey"
+  }
+}
+{
+  "q": "lender in new jersey",
+  "surface_ask": {
+    "mode": "count",
+    "failClosed": false,
+    "coverageState": "REQUEST_ONLY",
+    "headline": "New Jersey originations - HMDA 2025 reporting vintage",
+    "body": "Reported originations for mortgage properties in New Jersey. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-terr",
+    "facts": [
+      {
+        "label": "New Jersey originations",
+        "value": "177,325"
+      }
+    ],
+    "caveats": [
+      "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.",
+      "New Jersey's complete RMLA-licensed lender roster is not acquired as a bulk universe. This is real reported HMDA mortgage activity, not a state licensing census. Missing roster records are not zero lenders."
+    ]
+  },
+  "surface_home": {
+    "mode": "count",
+    "failClosed": false,
+    "headline": "This question runs against HMDA observations",
+    "body": "Institution-level and county-grain answers are executed on /ask from committed HMDA files. The homepage snapshot does not invent a top-lender list.",
+    "href": "/ask?q=lender%20in%20new%20jersey"
+  }
+}
+{
+  "q": "mortgage lenders in Texas",
+  "surface_ask": {
+    "mode": "count",
+    "failClosed": false,
+    "headline": "Texas originations - HMDA 2025 reporting vintage",
+    "body": "Reported originations for mortgage properties in Texas. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory",
+    "facts": [
+      {
+        "label": "Texas originations",
+        "value": "524,257"
+      }
+    ],
+    "caveats": [
+      "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory."
+    ]
+  },
+  "surface_home": {
+    "mode": "count",
+    "failClosed": false,
+    "headline": "This question runs against HMDA observations",
+    "body": "Institution-level and county-grain answers are executed on /ask from committed HMDA files. The homepage snapshot does not invent a top-lender list.",
+    "href": "/ask?q=mortgage%20lenders%20in%20Texas"
+  }
+}
+{
+  "q": "mortgage companies in Florida",
+  "surface_ask": {
+    "mode": "count",
+    "failClosed": false,
+    "headline": "Florida originations - HMDA 2025 reporting vintage",
+    "body": "Reported originations for mortgage properties in Florida. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territo",
+    "facts": [
+      {
+        "label": "Florida originations",
+        "value": "489,025"
+      }
+    ],
+    "caveats": [
+      "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory."
+    ]
+  },
+  "surface_home": {
+    "mode": "count",
+    "failClosed": false,
+    "headline": "Reported HMDA 2025 originations for properties in Florida",
+    "body": "County-grain observations aggregated to Florida. Not lenders headquartered in Florida and not a service-territory map.",
+    "href": "/florida",
+    "facts": [
+      {
+        "label": "Florida originations",
+        "value": "489,025"
+      }
+    ]
+  }
+}
+{
+  "q": "which lenders in New Jersey",
+  "surface_ask": {
+    "mode": "entity",
+    "failClosed": false,
+    "coverageState": "REQUEST_ONLY",
+    "headline": "HMDA reporting institutions with the most originations for properties in New Jersey",
+    "body": "Ordered by reported raw counts within the acquired institution cohort. Most is volume, not a recommendation.",
+    "facts": [
+      {
+        "label": "Acquired reporting LEIs with this metric > 0",
+        "value": "776"
+      },
+      {
+        "label": "New Jersey originations observed sum (acquired institution cohort)",
+        "value": "177,325"
+      },
+      {
+        "label": "Public-profile matches on this result set",
+        "value": "54"
+      },
+      {
+        "label": "Identity holds (LEI/name conflict)",
+        "value": "12"
+      },
+      {
+        "label": "LEI-only (no committed legal name)",
+        "value": "486"
+      },
+      {
+        "label": "Committed GLEIF names (Florida cache)",
+        "value": "745"
+      }
+    ],
+    "totalRows": 776,
+    "caveats": [
+      "New Jersey's complete RMLA-licensed lender roster is not acquired as a bulk universe. This is real reported HMDA mortgage activity, not a state licensing census. Missing roster records are not zero lenders.",
+      "Most is a raw count, not best, safest, or recommended.",
+      "HMDA is a 2025 reporting vintage, not current 2026 lending.",
+      "Property geography is not headquarters, branch location, or service territory.",
+      "Public-profile links are a publication gate. Unpublished HMDA LEIs stay unpublished.",
+      "Purchase/refinance originations are not populated at LEI grain and are not reconstructed.",
+      "Complete ordering is limited to valid observations in this acquired file, not all institutions or all U.S. activity. Secondary measures, where supplied, are all-loan observations; missing values remain unavailable."
+    ]
+  },
+  "surface_home": {
+    "mode": "entity",
+    "failClosed": false,
+    "headline": "This question runs against HMDA observations",
+    "body": "Institution-level and county-grain answers are executed on /ask from committed HMDA files. The homepage snapshot does not invent a top-lender list.",
+    "href": "/ask?q=which%20lenders%20in%20New%20Jersey"
+  }
+}

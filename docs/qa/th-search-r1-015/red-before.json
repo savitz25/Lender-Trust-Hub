@@ -1,0 +1,129 @@
+{
+  "q": "lenders in New Jersey",
+  "surface_ask": {
+    "mode": "fail_closed",
+    "failClosed": true,
+    "failClosedKind": "nj-rmla-request-only",
+    "coverageState": "REQUEST_ONLY",
+    "headline": "This question is fail-closed",
+    "body": "New Jersey's complete RMLA lender roster is available through an official request/search process rather than a complete acquired bulk universe. Missing records are not zero lenders.",
+    "caveats": [
+      "New Jersey's complete RMLA lender roster is available through an official request/search process rather than a complete acquired bulk universe. Missing records are not zero lenders."
+    ]
+  },
+  "surface_home": {
+    "mode": "fail_closed",
+    "failClosed": true,
+    "failClosedKind": "nj-rmla-request-only",
+    "headline": "This question is fail-closed",
+    "body": "New Jersey's complete RMLA lender roster is available through an official request/search process rather than a complete acquired bulk universe. Missing records are not zero lenders."
+  }
+}
+{
+  "q": "lender in new jersey",
+  "surface_ask": {
+    "mode": "fail_closed",
+    "failClosed": true,
+    "failClosedKind": "nj-rmla-request-only",
+    "coverageState": "REQUEST_ONLY",
+    "headline": "This question is fail-closed",
+    "body": "New Jersey's complete RMLA lender roster is available through an official request/search process rather than a complete acquired bulk universe. Missing records are not zero lenders.",
+    "caveats": [
+      "New Jersey's complete RMLA lender roster is available through an official request/search process rather than a complete acquired bulk universe. Missing records are not zero lenders."
+    ]
+  },
+  "surface_home": {
+    "mode": "fail_closed",
+    "failClosed": true,
+    "failClosedKind": "nj-rmla-request-only",
+    "headline": "This question is fail-closed",
+    "body": "New Jersey's complete RMLA lender roster is available through an official request/search process rather than a complete acquired bulk universe. Missing records are not zero lenders."
+  }
+}
+{
+  "q": "mortgage lenders in Texas",
+  "surface_ask": {
+    "mode": "count",
+    "failClosed": false,
+    "headline": "Texas originations - HMDA 2025 reporting vintage",
+    "body": "Reported originations for mortgage properties in Texas. The source grain is county observations aggregated by jurisdiction; the displayed total uses state scope. Not lenders headquartered here and not a service-territory",
+    "facts": [
+      {
+        "label": "Texas originations",
+        "value": "524,257"
+      }
+    ],
+    "caveats": [
+      "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory."
+    ]
+  },
+  "surface_home": {
+    "mode": "count",
+    "failClosed": false,
+    "headline": "Current HMDA research universe (county grain, 2025 vintage)",
+    "body": "National snapshot of reported activity. Originations divided by applications is not an approval rate.",
+    "facts": [
+      {
+        "label": "HMDA 2025 originations",
+        "value": "6,793,253"
+      },
+      {
+        "label": "Grain",
+        "value": "HMDA 2025 county-grain LEI observation"
+      },
+      {
+        "label": "Official as-of",
+        "value": "2025"
+      }
+    ]
+  }
+}
+{
+  "q": "mortgage companies in Florida",
+  "surface_ask": {
+    "mode": "count",
+    "failClosed": true,
+    "headline": "Count needs clarification: Florida originations",
+    "body": "Some requested geography or count conditions are not supported by this source. Edit the request or select a supported state/action; no broader count was substituted.",
+    "facts": [],
+    "caveats": [
+      "These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.",
+      "Some requested geography or count conditions are not supported by this source. Edit the request or select a supported state/action; no broader count was substituted.",
+      "Some requested geography or count conditions are not supported by this source. Edit the request or select a supported state/action; no broader count was substituted."
+    ]
+  },
+  "surface_home": {
+    "mode": "count",
+    "failClosed": false,
+    "headline": "Reported HMDA 2025 originations for properties in Florida",
+    "body": "County-grain observations aggregated to Florida. Not lenders headquartered in Florida and not a service-territory map.",
+    "href": "/florida",
+    "facts": [
+      {
+        "label": "Florida originations",
+        "value": "489,025"
+      }
+    ]
+  }
+}
+{
+  "q": "which lenders in New Jersey",
+  "surface_ask": {
+    "mode": "fail_closed",
+    "failClosed": true,
+    "failClosedKind": "nj-rmla-request-only",
+    "coverageState": "REQUEST_ONLY",
+    "headline": "This question is fail-closed",
+    "body": "New Jersey's complete RMLA lender roster is available through an official request/search process rather than a complete acquired bulk universe. Missing records are not zero lenders.",
+    "caveats": [
+      "New Jersey's complete RMLA lender roster is available through an official request/search process rather than a complete acquired bulk universe. Missing records are not zero lenders."
+    ]
+  },
+  "surface_home": {
+    "mode": "fail_closed",
+    "failClosed": true,
+    "failClosedKind": "nj-rmla-request-only",
+    "headline": "This question is fail-closed",
+    "body": "New Jersey's complete RMLA lender roster is available through an official request/search process rather than a complete acquired bulk universe. Missing records are not zero lenders."
+  }
+}

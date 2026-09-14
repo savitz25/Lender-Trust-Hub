@@ -6,6 +6,7 @@ import countyRows from './generated/county.csv.json';
 import markets from './generated/markets.csv.json';
 import { STATE_NAMES } from '@/lib/home-intel/states';
 import { interpretationLines } from './execute';
+import { NJ_RMLA_COVERAGE_NOTE } from './parse';
 import { ASK_GEO_NOTE, LENDER_ASK_CONTRACT, type AskExecution, type LenderResearchQuery } from './types';
 
 export type PublishedStateHmda = {
@@ -76,7 +77,11 @@ export function executeScalarCount(query: LenderResearchQuery): AskExecution {
       terminalState: evidence.availability === 'AVAILABLE' ? 'FOUND' : evidence.availability,
       facts: available ? [{ label, value: evidence.value!.toLocaleString('en-US') }] : [],
       grain: `${evidence.sourceGrain ?? 'No source selected'}; output: ${evidence.outputGrain} property geography`, period,
-      caveats: ['These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.', ...evidence.conditions],
+      caveats: [
+        'These are mortgage observations, not numbers of institutions, lender headquarters, licensing, or service territory.',
+        ...(query.coverageState === 'REQUEST_ONLY' && geo?.state === 'NJ' ? [NJ_RMLA_COVERAGE_NOTE] : []),
+        ...evidence.conditions,
+      ],
       trace: { contract: LENDER_ASK_CONTRACT, sourceFiles: evidence.sourceFile ? [evidence.sourceFile] : [], method: calculation,
         indexes: [`Scope ${scope}; action ${action}; field ${evidence.field ?? 'unavailable'}; availability ${evidence.availability}`],
         identityPolicy: 'Market totals are independent of profile publication and result pagination.', publicationGate: 'No institution publication changes.',

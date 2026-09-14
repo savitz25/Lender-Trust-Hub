@@ -63,7 +63,14 @@ function wantsEntity(q: string, metric: LenderResearchQuery['requestedMetric']):
   return false;
 }
 
-export function parseLenderAsk(raw: string): LenderResearchQuery {
+// TH-SEARCH-R1-015: exact caveat text attached (never used to block execution) when a
+// question names New Jersey plus licensing/lender/roster language. Shared by
+// scalar-count.ts and execute-query.ts's institution ranking so both real-answer paths
+// carry the same fact instead of two independently-drifting copies.
+export const NJ_RMLA_COVERAGE_NOTE =
+  "New Jersey's complete RMLA-licensed lender roster is not acquired as a bulk universe. This is real reported HMDA mortgage activity, not a state licensing census. Missing roster records are not zero lenders.";
+
+function parseLenderAskCore(raw: string): LenderResearchQuery {
   const q = raw.trim().toLowerCase().replace(/\s+/g, ' ');
   if (!q) {
     return { mode: 'fail_closed', failClosedKind: 'empty', failReason: 'Enter a research question.' };
@@ -90,9 +97,10 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
     return { mode: 'fail_closed', failClosedKind: 'unsupported-identity-grain', failReason: 'This public research experience covers lender institutions. NMLS person/MLO and branch identifiers are separate identity grains and are not silently treated as institutions.', coverageState: 'UNSUPPORTED' };
   }
 
-  if (/\bnew jersey\b|\brmla\b/i.test(q) && /\blicensed|\blenders?|\broster\b|\brmla\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
-    return { mode: 'fail_closed', failClosedKind: 'nj-rmla-request-only', failReason: "New Jersey's complete RMLA lender roster is available through an official request/search process rather than a complete acquired bulk universe. Missing records are not zero lenders.", coverageState: 'REQUEST_ONLY' };
-  }
+  // New Jersey has no acquired complete RMLA-licensed lender roster, but real federal
+  // HMDA institution/scalar data for NJ IS acquired (see scalar-count.ts, institution-volume.ts).
+  // TH-SEARCH-R1-015: a missing roster must degrade to a caveat on that real data, never a
+  // blanket refusal of the whole question. See NJ_RMLA_COVERAGE_NOTE / parseLenderAsk below.
   if (/\bcalifornia\b|\bcrmla\b/i.test(q) && /\blicensed|\blenders?|\broster\b|\bcrmla\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'ca-crmla-not-acquired', failReason: "California's complete current CRMLA roster is not acquired as a bulk universe. CalHFA directory rows must not be counted as all California lenders.", coverageState: 'NOT_ACQUIRED' };
   }
@@ -279,7 +287,12 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
   const phrases = [...Object.values(STATE_NAMES), ...Object.keys(FL_ASK_COUNTIES), ...Object.keys(LOAN_TYPE_TERMS), ...Object.keys(PURPOSE_TERMS), ...Object.keys(DEPOSITORY_TERMS)];
   for (const phrase of phrases.sort((a,b) => b.length - a.length)) countRemainder = countRemainder.replace(new RegExp(`\\b${phrase.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'g'), ' ');
   countRemainder = countRemainder.replace(/\b[A-Z]{2}\b/gi, word => states.includes(word.toUpperCase()) ? ' ' : word);
-  countRemainder = countRemainder.replace(/\b(?:which|lenders?|institutions?|most|highest|volume|how|many|what|is|are|was|were|the|a|an|of|for|in|within|and|or|by|from|during|to|show|me|give|report|reported|total|number|count|counts|mortgage|mortgages|loan|loans|applications?|originations?|originated|denials?|denied|properties|property|census|location|geography|state|county|market|activity|hmda|reporting|vintage|year|national|nationally|nationwide|united|states|us|usa|current|research|universe|received|filed|all|taken)\b|\b(?:19|20)\d{2}\b/g, ' ').replace(/[^a-z0-9$]/g, '').trim();
+  // TH-SEARCH-R1-015: "companies" is a plain-language synonym for "lenders" here (see
+  // the addendum's "mortgage companies in Florida" ground-truth case). Without it, this
+  // scalar-count remainder check treated "companies" as an unsupported condition and
+  // fail-closed a question the homepage's own FL branch already answers correctly --
+  // exactly the two-surfaces divergence this ticket exists to close.
+  countRemainder = countRemainder.replace(/\b(?:which|lenders?|companies|company|institutions?|most|highest|volume|how|many|what|is|are|was|were|the|a|an|of|for|in|within|and|or|by|from|during|to|show|me|give|report|reported|total|number|count|counts|mortgage|mortgages|loan|loans|applications?|originations?|originated|denials?|denied|properties|property|census|location|geography|state|county|market|activity|hmda|reporting|vintage|year|national|nationally|nationwide|united|states|us|usa|current|research|universe|received|filed|all|taken)\b|\b(?:19|20)\d{2}\b/g, ' ').replace(/[^a-z0-9$]/g, '').trim();
   if (countRemainder) scopeIssues.push('Some requested geography or count conditions are not supported by this source. Edit the request or select a supported state/action; no broader count was substituted.');
 
 
@@ -395,6 +408,27 @@ export function parseLenderAsk(raw: string): LenderResearchQuery {
     failClosedKind: 'unsupported',
     failReason: 'That question is not a supported deterministic Ask query. Try a count, Florida or county property geography, an origination ranking, complaint coverage, or a definition.',
   };
+}
+
+// TH-SEARCH-R1-015: New Jersey previously hard-refused any question naming NJ plus
+// licensed/lender(s)/roster/RMLA language, even though real acquired HMDA institution
+// and scalar data for NJ answers most of those questions (parseLenderAskCore already
+// resolves such a question to a real 'entity' or 'count' plan once nothing upstream of
+// this point short-circuits it). Rather than reintroducing an early hard block, this
+// wrapper lets the real question execute and attaches the roster limitation as a
+// non-blocking coverage caveat on the real result -- see NJ_RMLA_COVERAGE_NOTE and its
+// use in scalar-count.ts / execute-query.ts. Only fires when the resolved geography is
+// NJ (not merely because "new jersey" appears in the text) and the mode is a real,
+// executable result (never overrides an existing fail_closed for some other reason).
+export function parseLenderAsk(raw: string): LenderResearchQuery {
+  const result = parseLenderAskCore(raw);
+  if (result.mode === 'fail_closed' || result.coverageState) return result;
+  const q = raw.trim().toLowerCase().replace(/\s+/g, ' ');
+  const mentionsNjRoster = /\bnew jersey\b|\brmla\b/i.test(q) && /\blicensed\b|\blenders?\b|\broster\b|\brmla\b/i.test(q);
+  if (mentionsNjRoster && result.geography?.state === 'NJ') {
+    return { ...result, coverageState: 'REQUEST_ONLY' };
+  }
+  return result;
 }
 
 export type AskUrlOverrides = {
