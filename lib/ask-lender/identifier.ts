@@ -6,7 +6,10 @@ import type { IdentityRequest, IdentifierSpan } from './types';
  * A four-digit trailing year is ambiguous. Never choose grouping by database hits.
  */
 export function parseIdentityRequest(raw: string): IdentityRequest | undefined {
-  const labels = [...raw.matchAll(/\b(nmls(?:\s+(?:institution|company|organization|branch|person|individual))?(?:\s+id)?|lei(?:\s+id)?)\b\s*[:#]?\s*/gi)];
+  // TH-ARCH-P0-001: an optional single filler word ("number"/"no."/"code") between the label and
+  // the value -- "NMLS number 12345" -- must normalize the same as "NMLS 12345"; the filler word
+  // itself must never become (or block) the captured value.
+  const labels = [...raw.matchAll(/\b(nmls(?:\s+(?:institution|company|organization|branch|person|individual))?(?:\s+id)?|lei(?:\s+id)?)\b(?:\s+(?:number|no\.?|code))?\s*[:#]?\s*/gi)];
   if (!labels.length) return undefined;
   if (/^\s*(?:what is|how do i (?:check|verify))\b/i.test(raw) && !/\d/.test(raw)) return undefined;
   const requestedClass = /\b(?:persons?|people|individuals?|mlos?|loan officers?|mortgage loan originators?)\b/i.test(raw)

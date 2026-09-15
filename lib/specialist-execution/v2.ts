@@ -1,4 +1,5 @@
 import { executeAskQuery } from '@/lib/ask-lender/execute-query';
+import { parseIdentityRequest } from '@/lib/ask-lender/identifier';
 import { ASK_GEO_NOTE, type AskAction, type AskLoanType, type LenderResearchQuery } from '@/lib/ask-lender/types';
 import {
   SPECIALIST_CONTRACT,
@@ -74,12 +75,22 @@ function naturalRequest(query: string): SpecialistRequest {
   const county = Object.entries(COUNTY).find(([name]) => lower.includes(name))?.[1];
   const loanType: AskLoanType | undefined = /\bfha\b/i.test(q) ? 'FHA' : /\bva\b/i.test(q) ? 'VA' : /\busda\b/i.test(q) ? 'USDA' : /\bconventional\b/i.test(q) ? 'conventional' : /\bother loan/i.test(q) ? 'other' : undefined;
   const action: AskAction = /\bdenial|denied\b/i.test(q) ? 'denial' : /\bapplication|applied\b/i.test(q) ? 'application' : 'origination';
-  const identifier = q.match(/\b(NMLS|LEI)\s*[:#]?\s*([A-Z0-9]+)\b/i);
+  // TH-ARCH-P0-001: delegate to the authoritative, R1-hardened Lender identifier parser
+  // (ask-lender/identifier.ts, already used by this repo's own /ask flow) instead of a bespoke
+  // regex here. That bespoke regex could mis-capture a label word ("NMLS number 12345" ->
+  // "NUMBER") and had none of parseIdentityRequest's ambiguity/leading-zero/partial-identifier
+  // guards. Only an unambiguous, single, clean identifier span is treated as an identifier here;
+  // anything parseIdentityRequest itself flags as a problem (ambiguous grouping, multiple
+  // identifiers, etc.) falls through to the existing market_cohort/evidence handling below rather
+  // than being forced into identity execution.
+  const identityRequest = parseIdentityRequest(q);
+  const identifierSpan = identityRequest && !identityRequest.problem && identityRequest.identifiers.length === 1 ? identityRequest.identifiers[0] : undefined;
+  const identifier = identifierSpan ? { type: identifierSpan.type === 'LEI' ? 'LEI' as const : 'NMLS' as const, value: identifierSpan.value } : undefined;
   return {
     query: q,
     queryType: identifier ? 'identifier' : /\bcomplaints?\b/i.test(q) ? 'evidence' : 'market_cohort',
     entityClass: 'hmda_reporting_institution',
-    identifier: identifier ? { type: identifier[1]!.toUpperCase() as 'NMLS' | 'LEI', value: identifier[2] } : undefined,
+    identifier,
     identityName: /complaints?\s+about/i.test(q) ? q.replace(/^.*?complaints?\s+about\s+/i, '') : undefined,
     requestedEvidence: /\bcomplaints?\b/i.test(q) ? ['CFPB_COMPLAINTS'] : undefined,
     geography: county
