@@ -125,8 +125,14 @@ export function executeSpecialistV2(raw: SpecialistRequest | string) {
   const invalid = validate(input);
   const interpretation = { queryType: input.queryType, entityClass: input.entityClass, geography: input.geography, action: input.action, loanType: input.loanType, loanPurpose: input.loanPurpose, requestedMetric: input.requestedMetric, identifier: input.identifier, identityName: input.identityName };
   if (invalid) return base('INVALID_QUERY', 400, interpretation, invalid);
-  if (input.identifier) return base('UNSUPPORTED_CAPABILITY', 422, interpretation, `Exact ${input.identifier.type} was understood but identity execution is deferred to LEND-CAP-002. No fuzzy or cohort fallback was used.`);
-  if (input.queryType === 'evidence' && input.identityName) return base('UNSUPPORTED_CAPABILITY', 422, interpretation, 'The named lender was understood, but identity-bound CFPB complaint execution is deferred to LEND-CAP-002. General complaint coverage is not attached to this lender.');
+  // TH-ARCH-P0-002: LEND-CAP-002 shipped (2026-09-01) -- exact NMLS/LEI identity and identity-bound
+  // CFPB complaint evidence are real, live, database-backed capabilities today (see
+  // identity-execution.ts / identity-store.ts). This synchronous function specifically doesn't
+  // execute them -- it's the HMDA cohort/market path only; the network HTTP route
+  // (executeSpecialistV2Request, below) already routes these query types to the async identity
+  // executor instead of reaching here. The message reflects that routing, not an unbuilt capability.
+  if (input.identifier) return base('UNSUPPORTED_CAPABILITY', 422, interpretation, `Exact ${input.identifier.type} identity execution is live but requires the async identity-aware entry point (executeSpecialistV2Request), not this synchronous HMDA cohort path. No fuzzy or cohort fallback was used.`);
+  if (input.queryType === 'evidence' && input.identityName) return base('UNSUPPORTED_CAPABILITY', 422, interpretation, 'Identity-bound CFPB complaint evidence is live but requires the async identity-aware entry point (executeSpecialistV2Request), not this synchronous HMDA cohort path. General complaint coverage is not attached to this lender.');
   if (input.loanPurpose) return base('UNSUPPORTED_CAPABILITY', 422, interpretation, 'Purchase/refinance splits are not supported at the requested LEI grain and were not reconstructed.');
   if (input.requestedMetric && input.requestedMetric !== 'count') return base('UNSUPPORTED_CAPABILITY', 422, interpretation, `${input.requestedMetric} requires a compatible numerator and denominator and was not fabricated from raw counts.`);
   if (input.geography?.intent === 'BRANCH_LOCATION') return base('PUBLICATION_RESTRICTED', 422, interpretation, 'Branch cohorts are not public in this contract. Branch is not institution and was not inferred from HMDA property geography.');
