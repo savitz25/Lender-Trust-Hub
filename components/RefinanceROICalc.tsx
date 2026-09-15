@@ -127,7 +127,7 @@ export default function RefinanceROICalc() {
  </ResponsiveContainer>
  </div>
 
- <MatchLenderButton filters={{ loanType: 'Refinance' }} label="Match Me to Refinance Lenders" />
+ <MatchLenderButton filters={{ loanType: 'Refinance' }} label="Explore Refinance Lenders" />
  </CardContent>
  </Card>
  );

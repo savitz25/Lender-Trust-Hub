@@ -14,7 +14,7 @@ import { TrustMark } from '@/components/network/trust-mark';
 export const metadata: Metadata = {
   title: 'Methodology — How Lender Trust Hub Researches Mortgage Lenders',
   description:
-    'Lender Trust Hub methodology under The Ask Trust Hub Standard: NMLS context, Trust Score inputs and limits, CFPB signals, close-time honesty, coverage scope. No paid rankings. Not a lender.',
+    'Lender Trust Hub methodology under The Ask Trust Hub Standard: NMLS context, evidence sources and limits, CFPB signals, close-time honesty, coverage scope. No paid rankings, no Trust Score. Not a lender.',
   alternates: { canonical: 'https://www.lendertrusthub.com/methodology' },
 };
 
@@ -30,14 +30,14 @@ const PIPELINE = [
     body: '“Verified” means we surface NMLS-related company/individual identifiers and licensing context when available. Review counts and star ratings from Google or similar platforms are third-party signals — not NMLS fields. Official NMLS records always win over our summary.',
   },
   {
-    verb: 'DISCLOSE',
-    title: 'Independence and educational limits',
-    body: 'We are not a lender, broker, or loan originator. Calculators are educational estimates. Trust Scores and County Experience Scores are research aids — not credit decisions, rate quotes, or approvals.',
+    verb: 'EXPLAIN',
+    title: 'What the evidence means and does not mean',
+    body: 'Evidence chips and NMLS status are explained in plain language before you see them — what source they come from, what they can and cannot tell you. No Trust Score, ranking, or grade is calculated. Calculators are educational estimates, not credit decisions, rate quotes, or approvals.',
   },
   {
-    verb: 'SCORE',
-    title: 'Research Score + Data Confidence + NMLS status',
-    body: 'See scoring section below. Scores are not for sale. Near-identical high scores were a product bug — Research Score is recalibrated per entity. It never predicts approval, rate, or closing speed.',
+    verb: 'DISCLOSE',
+    title: 'Independence and educational limits',
+    body: 'We are not a lender, broker, or loan originator. This hub does not create a proprietary provider score, grade, or ranking. See the evidence section below for exactly what is and is not shown.',
   },
   {
     verb: 'UPDATE',
@@ -77,7 +77,7 @@ export default function MethodologyPage() {
           This hub inherits{' '}
           <strong className="text-[#0A2540]">The Ask Trust Hub Standard</strong>
           {' — '}
-          SOURCE → VERIFY → DISCLOSE → SCORE → UPDATE → YOU DECIDE.
+          SOURCE → VERIFY → EXPLAIN → DISCLOSE → UPDATE → YOU DECIDE.
         </p>
         <p className="mt-2">
           <a
@@ -160,18 +160,11 @@ export default function MethodologyPage() {
           </li>
         </ul>
         <p className="mt-4 text-sm leading-relaxed text-zinc-600">
-          An optional technical composite still exists for methodology transparency (factor weights
-          below). It is not presented as a ranking score on directory cards.
+          No TrustHub-created score, point allocation, or weighted grade is calculated or published
+          for any lender — not as a single total and not broken into per-factor points. What you see
+          on a profile is the underlying evidence itself: NMLS status, HMDA/CFPB panel matches,
+          attributed third-party ratings, and licensed locality — each labeled with its source.
         </p>
-        <h3 className="mt-6 font-semibold text-[#0A2540]">Optional composite factor weights</h3>
-        <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-zinc-600">
-          <li>NMLS identity evidence — up to 28 points</li>
-          <li>Third-party reputation (volume-weighted) — up to 26</li>
-          <li>CFPB complaint pattern (not a finding of fault; not size-normalized) — up to 16</li>
-          <li>BBB grade when independently sourced — up to 12 (seed grades not scored)</li>
-          <li>Licensed locality completeness — up to 12</li>
-          <li>Loan type disclosure — up to 6</li>
-        </ul>
         <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50/50 p-5">
           <h3 className="font-semibold text-[#0A2540]">What evidence chips do not mean</h3>
           <p className="mt-2 text-sm leading-relaxed text-zinc-700">

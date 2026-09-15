@@ -76,20 +76,12 @@ export function ResearchScoreDisplay({
       <p className="mt-4 text-xs leading-relaxed text-zinc-600">{s.doesNotMeasure}</p>
       <details className="mt-3 text-xs text-zinc-500">
         <summary className="cursor-pointer font-medium text-[#0A2540]">
-          Optional: technical composite factors (not a public grade)
+          Evidence detail (no score or point allocation)
         </summary>
-        <p className="mt-2 text-zinc-600">
-          Internal composite for methodology transparency only. We do not present this as a
-          ranking score on cards.
-        </p>
         <ul className="mt-2 space-y-1">
           {s.factors.map((f) => (
             <li key={f.id}>
-              <span className="font-medium text-zinc-700">
-                {f.label}: {f.points}/{f.maxPoints}
-              </span>
-              {' — '}
-              {f.detail}
+              <span className="font-medium text-zinc-700">{f.label}:</span> {f.detail}
             </li>
           ))}
         </ul>

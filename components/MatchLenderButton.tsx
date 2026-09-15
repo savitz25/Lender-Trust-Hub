@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 export function MatchLenderButton({
   filters = {},
   className,
-  label = 'Match Me to Local Lenders',
+  label = 'Explore Lenders in This Area',
   onNavigate,
 }: {
   filters?: LenderFilters;
