@@ -9,7 +9,7 @@ import { LeadCaptureForm } from '@/components/directory/LeadCaptureForm';
 
 export function CalcMatchCTA({
  profile,
- label = 'Match Me to Local Lenders',
+ label = 'Explore Lenders in This Area',
 }: {
  profile: CalcMatchProfile;
  label?: string;
