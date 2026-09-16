@@ -2,6 +2,7 @@ import { STATE_NAMES } from '@/lib/home-intel/states';
 import { ACTION_TERMS, DEPOSITORY_TERMS, FL_ASK_COUNTIES, LOAN_TYPE_TERMS, PURPOSE_TERMS } from './ontology';
 import { ASK_GEO_NOTE, type LenderResearchQuery } from './types';
 import { parseIdentityRequest } from './identifier';
+import { HMDA_STATE_CONFIGS } from '@/lib/hmda/states';
 
 const FAIL: Array<{ re: RegExp; kind: string; reason: string }> = [
   {
@@ -54,6 +55,25 @@ function detectCounties(q: string): Array<{ name: string; fips: string }> {
     }
   }
   return found;
+}
+
+// TH-DISCOVERY-GEN-001: a named county anywhere in the acquired 50-state HMDA config (not just
+// Florida's own FL_ASK_COUNTIES list) is a genuine [OPTIONAL GEOGRAPHY] signal that the requested
+// specificity is a city/county, not a bare state -- the same signal Florida county recognition
+// already uses to distinguish "mortgage companies in Florida" (an established state-level scalar-
+// count ground truth) from a local browse request. Exact county-grain institution data is only
+// acquired for Florida (institution-volume.ts), so a non-Florida county match is used only to
+// trigger DISCOVERY mode; the existing entity geography fallback below already resolves to real
+// state-level institution rows for that state when no Florida county was matched -- a genuine,
+// clearly-labeled broader result, never a fabricated county-specific claim.
+function detectAnyMajorCounty(q: string): { state: string } | undefined {
+  for (const [code, config] of Object.entries(HMDA_STATE_CONFIGS)) {
+    for (const slug of config.majorCountySlugs) {
+      const phrase = slug.replace(/-/g, '[- ]');
+      if (new RegExp(`\\b${phrase}\\b`, 'i').test(q)) return { state: code };
+    }
+  }
+  return undefined;
 }
 
 function wantsEntity(q: string, metric: LenderResearchQuery['requestedMetric']): boolean {
@@ -253,6 +273,17 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   const bareCityRecognized = !states.length && /\bmiami\b/.test(q);
   if (bareCityRecognized) states.push('FL');
   const state = states.length === 1 ? states[0] : undefined;
+  // TH-DISCOVERY-GEN-001: generalizes the Miami-only bare-city recognition above to every state's
+  // own acquired major-county list (see detectAnyMajorCounty) -- "lender in Dallas Texas" names a
+  // real county-level place. Only used as a DISCOVERY-mode trigger, and only when the state is
+  // ALSO already explicitly resolved (unlike the Miami case, which infers the state from no
+  // mention at all): a bare city/place name alone is not used to guess a state, because a county
+  // name can genuinely exist in more than one state (e.g. a real Houston County, Georgia would
+  // otherwise get silently substituted for Houston, Texas from "lenders in Houston" alone --
+  // exactly the false-locality outcome this doctrine forbids). Exact county-grain institution
+  // data is Florida-only, so the existing entity geography fallback further below resolves this
+  // to real, broader state-level institution rows for the state the consumer actually named.
+  const nonFloridaCounty = state && state !== 'FL' ? detectAnyMajorCounty(q) : undefined;
   const florida = state === 'FL';
   const reportingYears = [...new Set(raw.match(/\b(?:19|20)\d{2}\b/g) ?? [])];
   const scopeIssues: string[] = [];
@@ -264,7 +295,8 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   // Only guards the two new entity triggers (broker(s), and Miami's bare-city companies/lenders);
   // every other scopeIssues push and the scalar-count path itself stay exactly as strict as before.
   const entityLikely =
-    /\bbrokers?\b/.test(q) || (bareCityRecognized && /\b(?:companies|company|lenders?|brokers?)\b/.test(q));
+    /\bbrokers?\b/.test(q) ||
+    ((bareCityRecognized || Boolean(nonFloridaCounty)) && /\b(?:companies|company|lenders?|brokers?)\b/.test(q));
   if (states.length > 1) scopeIssues.push('More than one jurisdiction was requested. Select one state for a scalar count.');
   // A place phrase must be resolved; national is only the explicit/default scope.
   const place = q.match(/\b(?:in|within|for properties in)\s+(.+?)(?:[?]|$)/)?.[1];
