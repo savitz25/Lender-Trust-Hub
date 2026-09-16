@@ -58,6 +58,14 @@ function detectCounties(q: string): Array<{ name: string; fips: string }> {
 
 function wantsEntity(q: string, metric: LenderResearchQuery['requestedMetric']): boolean {
   if (/\bwhich lenders?\b|\bwhich institutions?\b|\bwho originated\b|\bwho received\b/.test(q)) return true;
+  // TH-DISCOVERY-RESET-001 (production certification fix): "mortgage broker in Monmouth County
+  // New Jersey" asks for real broker institutions to browse (provider Discovery), not a scalar
+  // count -- the same "companies is a plain-language synonym for lenders" reasoning already
+  // applied to "companies" a few lines below applies to "broker(s)" too. Unlike bare "lenders",
+  // which defaults to a count unless "most"/"which" is also present, "broker(s)" alone is
+  // unambiguously an entity request here: nothing about a scalar HMDA count is phrased as
+  // "broker."
+  if (/\bbrokers?\b/.test(q)) return true;
   if (/\blenders?\b/.test(q) && metric === 'most') return true;
   if (/\bhmda reporting institutions\b|\bleis?\b/.test(q) && metric === 'most') return true;
   return false;
@@ -237,6 +245,13 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
       : precededCi.test(unnamed) || bare.test(unnamed);
     if (hit && !states.includes(code)) states.push(code);
   }
+  // TH-DISCOVERY-RESET-001 (production certification fix): "mortgage companies in Miami" named
+  // no state at all -- this parser only recognizes state names/codes, not cities -- and so
+  // resolved to no geography and fell through to the generic fail-closed at the bottom, even
+  // though real HMDA property-geography activity for Miami-Dade, FL is one query away. Miami is
+  // not genuinely ambiguous with any other jurisdiction this source would apply to.
+  const bareCityRecognized = !states.length && /\bmiami\b/.test(q);
+  if (bareCityRecognized) states.push('FL');
   const state = states.length === 1 ? states[0] : undefined;
   const florida = state === 'FL';
   const reportingYears = [...new Set(raw.match(/\b(?:19|20)\d{2}\b/g) ?? [])];
@@ -300,7 +315,13 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     return { mode: 'definition', definitionId: 'origination', requestedMetric: null };
   }
 
-  const entity = wantsEntity(q, metric);
+  // TH-DISCOVERY-RESET-001 (production certification fix): a bare-city query ("mortgage companies
+  // in Miami") is inherently a request to browse real institutions at that specific place, unlike
+  // "mortgage companies in Florida" -- a genuine, already-established scalar-count ground truth
+  // (489,025 originations, not a 1,794-institution list) that must stay unaffected. Gated on the
+  // city recognition above, not a blanket "companies" keyword match, so it never reinterprets the
+  // existing state-level case.
+  const entity = wantsEntity(q, metric) || (bareCityRecognized && /\b(?:companies|company|lenders?|brokers?)\b/.test(q));
 
   if (q.includes('complaint')) {
     if (entity || metric === 'most') {
