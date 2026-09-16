@@ -50,7 +50,7 @@ function baseInput(over: Partial<LenderNetworkMetricsInput> = {}): LenderNetwork
     publicRender: 181,
     publicIndex: 180,
     floridaPublic: 130,
-    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois'],
+    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon'],
     coHmdaApplications: 260212,
     coHmdaOriginations: 156145,
     coCfpbMortgageComplaints: 8627,
@@ -72,6 +72,10 @@ function baseInput(over: Partial<LenderNetworkMetricsInput> = {}): LenderNetwork
     ilHmdaOriginations: 231788,
     ilFdicInstitutions: 387,
     ilLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED',
+    orHmdaApplications: 146902,
+    orHmdaOriginations: 89073,
+    orFdicInstitutions: 14,
+    orLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED',
     njCountyIntelligencePages: 4,
     njHmdaApplications: 318529,
     njHmdaOriginations: 177325,
@@ -151,7 +155,9 @@ describe('lender-network-metrics-v1 grain safety', () => {
     assert.notEqual(metricByKey(m, 'co_dre_mlo_rows').value, m.colorado.hmdaApplications);
     assert.equal(metricByKey(m, 'co_cfpb_mortgage_complaints').value, 8627);
     assert.notEqual(metricByKey(m, 'co_cfpb_mortgage_complaints').value, m.colorado.hmdaApplications);
-    assert.equal(m.network.publishedStateIntelligencePages, 10);
+    assert.equal(m.network.publishedStateIntelligencePages, 11);
+    assert.ok(m.network.publishedStateIntelligencePaths.includes('/oregon'));
+    assert.equal(m.oregon.hmdaApplications, 146902);
     assert.ok(m.network.publishedStateIntelligencePaths.includes('/colorado'));
     assert.ok(m.network.publishedStateIntelligencePaths.includes('/virginia'));
     assert.ok(m.network.publishedStateIntelligencePaths.includes('/new-york'));
@@ -249,7 +255,7 @@ describe('lender-network-metrics-v1 grain safety', () => {
       () =>
         computeLenderNetworkMetrics(
           baseInput({
-            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/new-jersey/union-county'],
+            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/new-jersey/union-county'],
           }),
         ),
       /county routes/,

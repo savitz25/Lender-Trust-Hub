@@ -249,6 +249,13 @@ export type LenderNetworkMetricsV1 = {
     liveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
     liveLicensedCompanyUniverse: null;
   };
+  oregon: {
+    hmdaApplications: number;
+    hmdaOriginations: number;
+    fdicInstitutions: number;
+    liveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+    liveLicensedCompanyUniverse: null;
+  };
   publication: {
     nationalRender: number;
     nationalIndex: number;

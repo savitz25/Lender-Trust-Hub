@@ -1,9 +1,9 @@
 {
   "schemaVersion": "lender-network-metrics-v1",
-  "generatedAt": "2026-09-12T22:48:10.535Z",
+  "generatedAt": "2026-09-16T23:40:41.772Z",
   "newestDocumentedSourceAsOf": "2026-09-09",
   "newestDocumentedSourceAsOfNote": "Newest documented official source-effective date among metrics that carry a calendar sourceAsOf. Not the as-of date of every identity row, not Git time, and not deploy time.",
-  "sourceFingerprint": "0d6dc909edfec5882b9324b85dd8453ea3d30f9d653c4612cabc91f012a00f05",
+  "sourceFingerprint": "5d8f9ad7d383b13ac5ca33885de482822c9d23df2efbcd21767eb1626147fa2d",
   "identity": {
     "institutions": 14623,
     "branches": 6682,
@@ -114,6 +114,13 @@
     "liveRosterCoverage": "SOURCE_NOT_ACQUIRED",
     "liveLicensedCompanyUniverse": null
   },
+  "oregon": {
+    "hmdaApplications": 146902,
+    "hmdaOriginations": 89073,
+    "fdicInstitutions": 14,
+    "liveRosterCoverage": "SOURCE_NOT_ACQUIRED",
+    "liveLicensedCompanyUniverse": null
+  },
   "publication": {
     "nationalRender": 181,
     "nationalIndex": 180,
@@ -122,7 +129,7 @@
     "searchUnionIsNotNationalHeadline": true
   },
   "network": {
-    "publishedStateIntelligencePages": 10,
+    "publishedStateIntelligencePages": 11,
     "publishedStateIntelligencePaths": [
       "/florida",
       "/new-jersey",
@@ -133,7 +140,8 @@
       "/colorado",
       "/virginia",
       "/new-york",
-      "/illinois"
+      "/illinois",
+      "/oregon"
     ],
     "njCountyIntelligencePages": 4
   },
@@ -202,7 +210,7 @@
   "homeProjection": {
     "snapshotVersion": "lender-home-intel-snapshot-v2",
     "homepagePublicationVersion": "intel-004-v1",
-    "generated_at": "2026-09-12T22:48:10.535Z",
+    "generated_at": "2026-09-16T23:40:41.772Z",
     "retrievedAt": "2026-09-12T22:23:12.376570+00:00",
     "hmdaOfficialAsOf": "2025",
     "hmdaSourceVintage": "HMDA 2025 reporting vintage",
@@ -584,7 +592,7 @@
       "florida_ofr": "2026-08-30",
       "publication": "file-backed INTEL-004 / FL-LEND-006+008"
     },
-    "fingerprint": "0d6dc909edfec5882b9324b85dd8453ea3d30f9d653c4612cabc91f012a00f05"
+    "fingerprint": "5d8f9ad7d383b13ac5ca33885de482822c9d23df2efbcd21767eb1626147fa2d"
   },
   "metrics": [
     {
@@ -601,7 +609,7 @@
         "lender_national_entities"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "One lender_national_entities row with entity_kind institution.",
@@ -611,7 +619,7 @@
         ],
         "geographicCoverage": "National identity graph; headquarters is not service territory",
         "sourceDates": "Production graph observation. Not an official NMLS census date, not Git time, not deploy time.",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -629,7 +637,7 @@
         "nmls"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "NMLS_INSTITUTION identifier rows.",
@@ -639,7 +647,7 @@
         ],
         "geographicCoverage": "National",
         "sourceDates": "Production graph observation",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -656,7 +664,7 @@
         "lender_national_entities"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "INTERNAL",
       "trace": {
         "counts": "Branch entity rows.",
@@ -666,7 +674,7 @@
         ],
         "geographicCoverage": "National",
         "sourceDates": "Production graph observation",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -683,7 +691,7 @@
         "lender_national_entities"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "INTERNAL",
       "trace": {
         "counts": "person_mlo entity rows.",
@@ -693,7 +701,7 @@
         ],
         "geographicCoverage": "National",
         "sourceDates": "Production graph observation",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -710,7 +718,7 @@
         "lender_national_entities"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Must remain zero public person-page candidates.",
@@ -720,7 +728,7 @@
         ],
         "geographicCoverage": "National",
         "sourceDates": "Publication policy",
-        "generationDate": "2026-09-12",
+        "generationDate": "2026-09-16",
         "currentActiveRule": "person_public_candidate = 0"
       }
     },
@@ -738,7 +746,7 @@
         "lend-nat-014"
       ],
       "sourceAsOf": "2026-08-27",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Rows in the frozen national render cohort.",
@@ -748,7 +756,7 @@
         ],
         "geographicCoverage": "National publication cohort",
         "sourceDates": "lend-nat-014 added_at 2026-08-27",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -766,7 +774,7 @@
         "lender_hmda_observations"
       ],
       "sourceAsOf": "2025",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "SUM(applications) on 2025 county-grain LEI observations.",
@@ -776,7 +784,7 @@
         ],
         "geographicCoverage": "National county grain; do not add state-grain rows",
         "sourceDates": "HMDA 2025 reporting vintage",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -794,7 +802,7 @@
         "lender_hmda_observations"
       ],
       "sourceAsOf": "2025",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "SUM(originations) on 2025 county-grain rows.",
@@ -804,7 +812,7 @@
         ],
         "geographicCoverage": "National county grain",
         "sourceDates": "HMDA 2025 reporting vintage",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -822,7 +830,7 @@
         "lender_cfpb_complaints"
       ],
       "sourceAsOf": "2026-08-26",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "One stored mortgage complaint observation row.",
@@ -832,7 +840,7 @@
         ],
         "geographicCoverage": "National complaint file as stored on this hub",
         "sourceDates": "max(source_observed_at) 2026-08-26",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -849,7 +857,7 @@
         "lender_federal_enforcement_events"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "One federal enforcement event row.",
@@ -859,7 +867,7 @@
         ],
         "geographicCoverage": "Federal agencies as stored",
         "sourceDates": "Production graph observation; issued_on varies by event",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -877,7 +885,7 @@
         "lender_state_licenses"
       ],
       "sourceAsOf": "2026-08-30",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Approved FL MBR/MLD credential rows.",
@@ -887,7 +895,7 @@
         ],
         "geographicCoverage": "Florida OFR Chapter 494 company credentials",
         "sourceDates": "Newest Florida ledger source observation 2026-08-30; distinct source clocks in reconciliation.florida.sourceClocks",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -905,7 +913,7 @@
         "lender_state_licenses"
       ],
       "sourceAsOf": "2026-08-30",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "INTERNAL",
       "trace": {
         "counts": "Distinct approved FL company NMLS with a confirmed institution_id.",
@@ -915,7 +923,7 @@
         ],
         "geographicCoverage": "Florida",
         "sourceDates": "Newest Florida ledger source observation 2026-08-30; distinct source clocks in reconciliation.florida.sourceClocks",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -932,7 +940,7 @@
         "nj_dobi_rmla"
       ],
       "sourceAsOf": "2026-09-02",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the complete NJ RMLA universe.",
@@ -942,7 +950,7 @@
         ],
         "geographicCoverage": "New Jersey",
         "sourceDates": "NJ-LEND snapshot as_of 2026-09-02",
-        "generationDate": "2026-09-12",
+        "generationDate": "2026-09-16",
         "whyUnknown": "Public RMLA pages are application guidance, not a bulk roster. UNKNOWN must never render as zero."
       }
     },
@@ -960,7 +968,7 @@
         "nj_dobi"
       ],
       "sourceAsOf": "2026-09-02",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC_PARTIAL",
       "trace": {
         "counts": "Unique acquired DOBI order identifiers.",
@@ -970,7 +978,7 @@
         ],
         "geographicCoverage": "New Jersey",
         "sourceDates": "NJ DOBI FI list 2026-09-02; later OCF years not acquired",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -987,7 +995,7 @@
         "ca_dfpi_crmla"
       ],
       "sourceAsOf": "2026-09-03",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the live CRMLA universe.",
@@ -997,7 +1005,7 @@
         ],
         "geographicCoverage": "California",
         "sourceDates": "live_crmla_roster SOURCE_NOT_ACQUIRED",
-        "generationDate": "2026-09-12",
+        "generationDate": "2026-09-16",
         "whyUnknown": "Live CRMLA roster was not bulk-acquired. CalHFA directory rows are program-participation observations, not the licensed universe."
       }
     },
@@ -1015,7 +1023,7 @@
         "calhfa"
       ],
       "sourceAsOf": "2026-09-03",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "HTML directory rows on the official CalHFA approved-lender listing.",
@@ -1025,7 +1033,7 @@
         ],
         "geographicCoverage": "California",
         "sourceDates": "CalHFA directory retrieved 2026-09-03",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -1042,7 +1050,7 @@
         "tx_sml_nmls"
       ],
       "sourceAsOf": "2025-10-16",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the live Texas mortgage-company universe.",
@@ -1052,7 +1060,7 @@
         ],
         "geographicCoverage": "Texas",
         "sourceDates": "CURRENT_TEXAS_MORTGAGE_COMPANY_BULK_ROSTER SOURCE_NOT_ACQUIRED",
-        "generationDate": "2026-09-12",
+        "generationDate": "2026-09-16",
         "whyUnknown": "Texas does not currently publish a Florida-OFR-style free complete mortgage-company bulk roster. NMLS Consumer Access was not scraped. Missing is not zero."
       }
     },
@@ -1070,7 +1078,7 @@
         "tx_sml"
       ],
       "sourceAsOf": "2025-10-16",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "SML enforcement CSV order rows.",
@@ -1080,7 +1088,7 @@
         ],
         "geographicCoverage": "Texas",
         "sourceDates": "SML orders file 2025-10-16",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -1097,7 +1105,7 @@
         "wa_dfi_nmls"
       ],
       "sourceAsOf": "2026-09-04",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the live Washington mortgage-company universe.",
@@ -1107,7 +1115,7 @@
         ],
         "geographicCoverage": "Washington",
         "sourceDates": "WASHINGTON_LIVE_COMPANY_ROSTER SOURCE_NOT_ACQUIRED",
-        "generationDate": "2026-09-12",
+        "generationDate": "2026-09-16",
         "whyUnknown": "Washington DFI company verification is search-only. NMLS Consumer Access was not scraped. Missing is not zero."
       }
     },
@@ -1125,7 +1133,7 @@
         "wa_dfi"
       ],
       "sourceAsOf": "2026-09-04",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "DFI Consumer Services bounded HTML table rows.",
@@ -1135,7 +1143,7 @@
         ],
         "geographicCoverage": "Washington",
         "sourceDates": "DFI enforcement table retrieved 2026-09-04",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -1152,7 +1160,7 @@
         "az_difi_nmls"
       ],
       "sourceAsOf": "2026-09-04",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the live Arizona mortgage-company universe.",
@@ -1162,7 +1170,7 @@
         ],
         "geographicCoverage": "Arizona",
         "sourceDates": "ARIZONA_LIVE_COMPANY_ROSTER SOURCE_NOT_ACQUIRED",
-        "generationDate": "2026-09-12",
+        "generationDate": "2026-09-16",
         "whyUnknown": "Arizona DIFI company verification is search-only. NMLS Consumer Access was not scraped. Missing is not zero."
       }
     },
@@ -1180,7 +1188,7 @@
         "cfpb"
       ],
       "sourceAsOf": "2026-09-04",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "CFPB Consumer Complaint Database API, product Mortgage, state AZ.",
@@ -1190,7 +1198,7 @@
         ],
         "geographicCoverage": "Arizona",
         "sourceDates": "CFPB overlay retrieved 2026-09-04",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -1207,7 +1215,7 @@
         "co_dre_nmls"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the live Colorado mortgage-company universe.",
@@ -1217,7 +1225,7 @@
         ],
         "geographicCoverage": "Colorado",
         "sourceDates": "COLORADO_LIVE_COMPANY_ROSTER SOURCE_NOT_ACQUIRED",
-        "generationDate": "2026-09-12",
+        "generationDate": "2026-09-16",
         "whyUnknown": "Colorado mortgage companies register through NMLS. Consumer Access was not scraped. Missing is not zero."
       }
     },
@@ -1235,7 +1243,7 @@
         "co_dre"
       ],
       "sourceAsOf": "2026-09-09",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Colorado Information Marketplace 4zse-6bnw Mortgage Loan Originator rows.",
@@ -1245,7 +1253,7 @@
         ],
         "geographicCoverage": "Colorado",
         "sourceDates": "DRE MLO overlay source as of 2026-09-09",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -1262,7 +1270,7 @@
         "cfpb"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "CFPB Consumer Complaint Database API, product Mortgage, state CO.",
@@ -1272,7 +1280,7 @@
         ],
         "geographicCoverage": "Colorado",
         "sourceDates": "CFPB overlay retrieved; CFPB did not publish an as-of date on this extract",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -1289,7 +1297,7 @@
         "va_scc_nmls"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the live 2026 Virginia mortgage-company universe.",
@@ -1299,7 +1307,7 @@
         ],
         "geographicCoverage": "Virginia",
         "sourceDates": "VIRGINIA_LIVE_COMPANY_ROSTER SOURCE_NOT_ACQUIRED",
-        "generationDate": "2026-09-12",
+        "generationDate": "2026-09-16",
         "whyUnknown": "SCC points current mortgage-license records to NMLS Consumer Access. That search was not scraped. Missing is not zero."
       }
     },
@@ -1317,7 +1325,7 @@
         "va_scc"
       ],
       "sourceAsOf": "2025-12-31",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Official SCC 2025 mortgage-company list rows with exact MC and NMLS identifiers.",
@@ -1327,7 +1335,7 @@
         ],
         "geographicCoverage": "Virginia",
         "sourceDates": "SCC roster as of 2025-12-31",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -1344,7 +1352,7 @@
         "cfpb"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "CFPB Consumer Complaint Database API, product Mortgage, state VA.",
@@ -1354,7 +1362,7 @@
         ],
         "geographicCoverage": "Virginia",
         "sourceDates": "CFPB overlay retrieved; CFPB did not publish an as-of date on this extract",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
@@ -1371,7 +1379,7 @@
         "ny_dfs_nmls"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the live 2026 New York mortgage-company universe.",
@@ -1381,7 +1389,7 @@
         ],
         "geographicCoverage": "New York",
         "sourceDates": "CURRENT_NY_MORTGAGE_COMPANY_ROSTER OPEN_SEARCH_ONLY",
-        "generationDate": "2026-09-12",
+        "generationDate": "2026-09-16",
         "whyUnknown": "NYDFS current company search was not bulk-exported. NMLS Consumer Access remains search-only. Missing is not zero."
       }
     },
@@ -1399,7 +1407,7 @@
         "il_idfpr_nmls"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the live Illinois mortgage-company universe.",
@@ -1409,7 +1417,7 @@
         ],
         "geographicCoverage": "Illinois",
         "sourceDates": "CURRENT_IL_MORTGAGE_COMPANY_ROSTER OPEN_SEARCH_ONLY",
-        "generationDate": "2026-09-12",
+        "generationDate": "2026-09-16",
         "whyUnknown": "IDFPR mortgage-company licensing was not bulk-exported. NMLS Consumer Access remains search-only. Missing is not zero."
       }
     },
@@ -1427,7 +1435,7 @@
         "ny_dfs"
       ],
       "sourceAsOf": "2024-12-31",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Official DFS 2024 licensed mortgage banker aggregate.",
@@ -1437,34 +1445,34 @@
         ],
         "geographicCoverage": "New York",
         "sourceDates": "DFS annual-report period end of 2024",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     },
     {
       "unit": "count",
       "key": "published_state_intelligence_pages",
       "label": "Published state mortgage-intelligence pages",
-      "value": 10,
+      "value": 11,
       "valueState": "KNOWN",
       "grain": "published_state_intelligence_page",
       "denominator": "Indexable specialist state intelligence routes currently published",
-      "description": "Florida, New Jersey, California, Texas, Washington, Arizona, Colorado, Virginia, New York, and Illinois state intelligence pages. Not a count of lenders.",
-      "coverage": "/florida, /new-jersey, /california, /texas, /washington, /arizona, /colorado, /virginia, /new-york, /illinois",
+      "description": "Florida, New Jersey, California, Texas, Washington, Arizona, Colorado, Virginia, New York, Illinois, and Oregon state intelligence pages. Not a count of lenders.",
+      "coverage": "/florida, /new-jersey, /california, /texas, /washington, /arizona, /colorado, /virginia, /new-york, /illinois, /oregon",
       "contributingSourceSystems": [
         "lender-state-intel"
       ],
       "sourceAsOf": "2026-09-09",
-      "generatedAt": "2026-09-12T22:48:10.535Z",
+      "generatedAt": "2026-09-16T23:40:41.772Z",
       "publicationStatus": "PUBLIC",
       "trace": {
-        "counts": "Published /florida, /new-jersey, /california, /texas, /washington, /arizona, /colorado, /virginia, /new-york, and /illinois intelligence routes.",
+        "counts": "Published /florida, /new-jersey, /california, /texas, /washington, /arizona, /colorado, /virginia, /new-york, /illinois, and /oregon intelligence routes.",
         "doesNotCount": "Not NJ county pages and not national directory rows.",
         "contributingSourceSystems": [
           "lender-state-intel"
         ],
-        "geographicCoverage": "/florida, /new-jersey, /california, /texas, /washington, /arizona, /colorado, /virginia, /new-york, /illinois",
+        "geographicCoverage": "/florida, /new-jersey, /california, /texas, /washington, /arizona, /colorado, /virginia, /new-york, /illinois, /oregon",
         "sourceDates": "Publication gates in specialist catalogs",
-        "generationDate": "2026-09-12"
+        "generationDate": "2026-09-16"
       }
     }
   ],
@@ -1490,7 +1498,7 @@
         "sourceClockLabel": "Source clock",
         "sourceClock": "varies by contributing source",
         "retrievedAt": null,
-        "generatedAt": "2026-09-12T22:48:10.535Z",
+        "generatedAt": "2026-09-16T23:40:41.772Z",
         "publicationStatus": "PUBLIC"
       },
       {
@@ -1512,7 +1520,7 @@
         "sourceClockLabel": "Source clock",
         "sourceClock": "varies by contributing source",
         "retrievedAt": null,
-        "generatedAt": "2026-09-12T22:48:10.535Z",
+        "generatedAt": "2026-09-16T23:40:41.772Z",
         "publicationStatus": "PUBLIC"
       },
       {
@@ -1534,7 +1542,7 @@
         "sourceClockLabel": "Vintage",
         "sourceClock": "HMDA 2025",
         "retrievedAt": null,
-        "generatedAt": "2026-09-12T22:48:10.535Z",
+        "generatedAt": "2026-09-16T23:40:41.772Z",
         "publicationStatus": "PUBLIC"
       },
       {
@@ -1556,7 +1564,7 @@
         "sourceClockLabel": "Vintage",
         "sourceClock": "HMDA 2025",
         "retrievedAt": null,
-        "generatedAt": "2026-09-12T22:48:10.535Z",
+        "generatedAt": "2026-09-16T23:40:41.772Z",
         "publicationStatus": "PUBLIC"
       },
       {
@@ -1578,7 +1586,7 @@
         "sourceClockLabel": "Vintage",
         "sourceClock": "HMDA 2025",
         "retrievedAt": null,
-        "generatedAt": "2026-09-12T22:48:10.535Z",
+        "generatedAt": "2026-09-16T23:40:41.772Z",
         "publicationStatus": "PUBLIC"
       },
       {
@@ -1600,7 +1608,7 @@
         "sourceClockLabel": "Source clock",
         "sourceClock": "Snapshot observed 2026-08-26",
         "retrievedAt": null,
-        "generatedAt": "2026-09-12T22:48:10.535Z",
+        "generatedAt": "2026-09-16T23:40:41.772Z",
         "publicationStatus": "PUBLIC"
       },
       {
@@ -1622,7 +1630,7 @@
         "sourceClockLabel": "Source clock",
         "sourceClock": "varies by source event",
         "retrievedAt": null,
-        "generatedAt": "2026-09-12T22:48:10.535Z",
+        "generatedAt": "2026-09-16T23:40:41.772Z",
         "publicationStatus": "PUBLIC"
       },
       {
@@ -1644,7 +1652,7 @@
         "sourceClockLabel": "Source clock",
         "sourceClock": "accepted identity snapshot",
         "retrievedAt": null,
-        "generatedAt": "2026-09-12T22:48:10.535Z",
+        "generatedAt": "2026-09-16T23:40:41.772Z",
         "publicationStatus": "PUBLIC"
       },
       {
@@ -2330,13 +2338,79 @@
         "generatedAt": "2026-09-12T13:37:08Z"
       },
       {
+        "key": "or_hmda_apps",
+        "label": "Oregon HMDA 2025 applications",
+        "value": 146902,
+        "family": "MORTGAGE_MARKET_ACTIVITY",
+        "grain": "county-grain HMDA application observation",
+        "entityClass": "mortgage application",
+        "geography": "Oregon property location",
+        "sourceSystem": "CFPB HMDA",
+        "acceptedArtifact": "lib/oregon-intelligence/accepted-snapshot.json",
+        "definition": "Applications for properties in Oregon.",
+        "counts": "HMDA applications, not lenders.",
+        "doesNotCount": "Oregon mortgage companies, FDIC banks, OHCS Flex lenders, or current licenses.",
+        "researchDestination": "/oregon",
+        "identityRule": "Property geography is not headquarters or license jurisdiction.",
+        "display": "146,902",
+        "sourceClockLabel": "Vintage",
+        "sourceClock": "2025",
+        "retrievedAt": null,
+        "generatedAt": null,
+        "publicationStatus": "PUBLIC"
+      },
+      {
+        "key": "or_fdic",
+        "label": "Oregon FDIC depository institutions",
+        "value": 14,
+        "family": "DEPOSITORY_BANK",
+        "grain": "FDIC-insured depository overlay row",
+        "entityClass": "depository institution",
+        "geography": "Oregon",
+        "sourceSystem": "FDIC",
+        "acceptedArtifact": "lib/fdic/data/oregon.json",
+        "definition": "Existing FDIC Oregon overlay.",
+        "counts": "Depository institutions in the overlay.",
+        "doesNotCount": "DFR mortgage bankers or HMDA lenders.",
+        "researchDestination": "/oregon",
+        "identityRule": "FDIC CERT is not a DFR mortgage license.",
+        "display": "14",
+        "sourceClockLabel": "Source as of",
+        "sourceClock": "2026-06-26",
+        "retrievedAt": null,
+        "generatedAt": null,
+        "publicationStatus": "PUBLIC"
+      },
+      {
+        "key": "or_live_roster_unacquired",
+        "label": "Oregon current mortgage-company roster",
+        "value": null,
+        "family": "INSTITUTION_IDENTITY_LICENSING",
+        "grain": "potential current NMLS company registration",
+        "entityClass": "Oregon mortgage company",
+        "geography": "Oregon",
+        "sourceSystem": "DFR / NMLS Consumer Access",
+        "acceptedArtifact": "lib/oregon-intelligence/accepted-snapshot.json",
+        "definition": "No bulk current Oregon mortgage-company roster was acquired.",
+        "counts": "No numeric evidence total; this is an explicit coverage limitation.",
+        "doesNotCount": "Zero companies or that HMDA/FDIC/OHCS counts are that census.",
+        "publicationStatus": "PUBLIC_LIMITATION",
+        "researchDestination": "/oregon",
+        "identityRule": "Current verification requires DFR + NMLS Consumer Access.",
+        "display": "Not acquired",
+        "sourceClockLabel": "Source clock",
+        "sourceClock": "SOURCE_NOT_ACQUIRED",
+        "retrievedAt": null,
+        "generatedAt": "2026-09-16T23:32:20Z"
+      },
+      {
         "key": "state_pages",
         "label": "Published state intelligence pages",
-        "value": 10,
+        "value": 11,
         "family": "PUBLIC_RESEARCH_SURFACES",
         "grain": "published state intelligence page",
         "entityClass": "public research surface",
-        "geography": "FL, NJ, CA, TX, WA, AZ, CO, VA, NY, IL",
+        "geography": "FL, NJ, CA, TX, WA, AZ, CO, VA, NY, IL, OR",
         "sourceSystem": "Accepted state publication contracts",
         "acceptedArtifact": "LENDER_HOMEPAGE_STATE_CARDS",
         "definition": "Live state intelligence destinations in the homepage state model.",
@@ -2344,11 +2418,11 @@
         "doesNotCount": "States with only national search results or a rating of research depth.",
         "researchDestination": "#states",
         "identityRule": null,
-        "display": "10",
+        "display": "11",
         "sourceClockLabel": "Source clock",
         "sourceClock": "varies by state and evidence family",
         "retrievedAt": null,
-        "generatedAt": "2026-09-12T22:48:10.535Z",
+        "generatedAt": "2026-09-16T23:40:41.772Z",
         "publicationStatus": "PUBLIC"
       },
       {
@@ -2370,7 +2444,7 @@
         "sourceClockLabel": "Source clock",
         "sourceClock": "varies by county evidence module",
         "retrievedAt": null,
-        "generatedAt": "2026-09-12T22:48:10.535Z",
+        "generatedAt": "2026-09-16T23:40:41.772Z",
         "publicationStatus": "PUBLIC"
       }
     ],
@@ -2857,6 +2931,55 @@
           {
             "label": "FDIC depositories",
             "value": "387",
+            "grain": "existing overlay institutions"
+          }
+        ]
+      },
+      {
+        "code": "OR",
+        "name": "Oregon",
+        "href": "/oregon",
+        "regulators": "DFR · NMLS · HMDA/FFIEC · FDIC · OHCS · CFPB",
+        "sourceClocks": [
+          {
+            "label": "HMDA vintage",
+            "sourceAsOf": "2025",
+            "retrievedAt": null
+          },
+          {
+            "label": "FDIC overlay",
+            "sourceAsOf": "2026-06-26",
+            "retrievedAt": null
+          },
+          {
+            "label": "Current mortgage-company roster",
+            "sourceAsOf": null,
+            "retrievedAt": null
+          }
+        ],
+        "evidence": [
+          "HMDA 2025 Oregon market activity",
+          "FDIC depository overlay",
+          "DFR mortgage orders",
+          "OHCS Flex Lending approved lenders",
+          "DFR/NMLS search-only current licensing"
+        ],
+        "identityNote": "Current DFR/NMLS company roster is search-only. HMDA applications are not lenders. OHCS Flex lenders are not the license universe.",
+        "limitation": "No Portland/Multnomah intelligence routes. Missing roster is not zero companies.",
+        "highlights": [
+          {
+            "label": "HMDA applications",
+            "value": "146,902",
+            "grain": "2025 applications"
+          },
+          {
+            "label": "HMDA originations",
+            "value": "89,073",
+            "grain": "2025 originations"
+          },
+          {
+            "label": "FDIC depositories",
+            "value": "14",
             "grain": "existing overlay institutions"
           }
         ]

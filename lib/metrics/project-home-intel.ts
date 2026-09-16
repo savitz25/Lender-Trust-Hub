@@ -17,6 +17,7 @@ const STATE_INTEL_HREF: Record<string, string> = {
   VA: '/virginia',
   NY: '/new-york',
   IL: '/illinois',
+  OR: '/oregon',
 };
 
 export function projectLenderHomeIntelFromNetworkMetrics(

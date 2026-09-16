@@ -1,0 +1,194 @@
+{
+  "source": "OHCS Flex Lending approved lenders SharePoint list",
+  "listUrl": "/ohcs/homeownership/homebuyers/Lists/flexlendingapprovedlenders",
+  "pageUrl": "https://www.oregon.gov/ohcs/homeownership/homebuyers/pages/flex-lending.aspx",
+  "sourceModifiedAt": "2026-09-14T21:47:53Z",
+  "retrievedAt": "2026-09-16T21:00:00Z",
+  "rows": [
+    {
+      "title": "Directors Mortgage",
+      "products": "FirstHome, NextStep",
+      "counties": "Benton, Clackamas, Coos, Deschutes, Douglas, Hood River, Jackson, Lane, Lincoln, Multnomah, Washington, Yamhill",
+      "phone": "503-636-6000",
+      "modified": "2024-12-26T23:07:43Z",
+      "nmls": null
+    },
+    {
+      "title": "Guild Mortgage",
+      "products": "FirstHome, NextStep",
+      "counties": "Benton, Clackamas, Clatsop, Columbia, Coos, Crook, Deschutes, Jackson, Josephine, Klamath, Lane, Lincoln, Linn, Marion, Multnomah, Tillamook, Umatilla, Union, Wasco, Washington, Yamhill",
+      "phone": "503-452-0001",
+      "modified": "2025-01-28T18:24:54Z",
+      "nmls": null
+    },
+    {
+      "title": "Fairway Independent Mortgage",
+      "products": "FirstHome, NextStep",
+      "counties": "Clackamas, Clatsop, Deschutes, Jackson, Marion, Multnomah, Union, Washington, Yamhill",
+      "phone": "866-912-4800",
+      "modified": "2024-12-26T23:07:50Z",
+      "nmls": null
+    },
+    {
+      "title": "Landmark Professional Mortgage",
+      "products": "FirstHome, NextStep",
+      "counties": "Deschutes, Lane, Lincoln, Linn, Marion, Polk, Umatilla",
+      "phone": "503-581-8100",
+      "modified": "2024-12-26T23:06:02Z",
+      "nmls": null
+    },
+    {
+      "title": "Prime Lending",
+      "products": "FirstHome, NextStep",
+      "counties": "Clackamas, Deschutes, Multnomah",
+      "phone": "503-716-3722",
+      "modified": "2024-12-26T23:08:18Z",
+      "nmls": null
+    },
+    {
+      "title": "Rate",
+      "products": "FirstHome, NextStep",
+      "counties": "Clackamas, Deschutes, Marion, Multnomah",
+      "phone": "503-914-2755",
+      "modified": "2025-01-22T21:38:25Z",
+      "nmls": null
+    },
+    {
+      "title": "CrossCountry Mortgage",
+      "products": "FirstHome, NextStep",
+      "counties": "Benton, Clackamas, Jackson, Lane, Lincoln, Multnomah",
+      "phone": "877-351-3400",
+      "modified": "2025-02-10T18:01:54Z",
+      "nmls": null
+    },
+    {
+      "title": "New American Funding",
+      "products": "FirstHome, NextStep",
+      "counties": "Clackamas, Crook, Deschutes, Jackson, Klamath",
+      "phone": "503-506-0419",
+      "modified": "2025-04-29T17:40:13Z",
+      "nmls": null
+    },
+    {
+      "title": "Evergreen Home Loans",
+      "products": "FirstHome, NextStep",
+      "counties": "Clackamas, Crook, Deschutes, Jackson, Lincoln, Multnomah, Washington, Yamhill",
+      "phone": "877-242-2014",
+      "modified": "2025-03-20T23:39:02Z",
+      "nmls": null
+    },
+    {
+      "title": "CMG Financial",
+      "products": "FirstHome, NextStep",
+      "counties": "Clackamas, Deschutes, Jackson, Lane, Marion, Umatilla",
+      "phone": "800-501-2001",
+      "modified": "2025-02-10T18:02:05Z",
+      "nmls": null
+    },
+    {
+      "title": "Washington Trust Bank",
+      "products": "FirstHome, NextStep",
+      "counties": "Deschutes, Multnomah",
+      "phone": "800-788-4578",
+      "modified": "2025-03-21T20:26:10Z",
+      "nmls": null
+    },
+    {
+      "title": "Sunflower Bank fka Guardian Mortgage",
+      "products": "NextStep",
+      "counties": "Clackamas",
+      "phone": "360-624-7917",
+      "modified": "2025-08-29T17:20:17Z",
+      "nmls": null
+    },
+    {
+      "title": "Movement Mortgage",
+      "products": "FirstHome, NextStep",
+      "counties": "Benton, Clackamas, Deschutes, Jackson, Linn, Marion",
+      "phone": "877-314-1499",
+      "modified": "2025-02-10T17:59:41Z",
+      "nmls": null
+    },
+    {
+      "title": "American Pacific Mortgage",
+      "products": "FirstHome, NextStep",
+      "counties": "Benton, Clackamas, Deschutes, Douglas, Jackson, Lane, Marion, Multnomah, Umatilla, Washington, Yamhill",
+      "phone": "<div class=\"ExternalClassE4C9931BF37D4DE28D9B16B6D8D3F2E6\">844-645-04\u200b<span id=\"ms-rterangecursor-start\"></span><span id=\"ms-rterangecursor-end\"></span>04\u200b\u200b<br></div>",
+      "modified": "2026-07-06T15:46:22Z",
+      "nmls": null
+    },
+    {
+      "title": "Banner Bank",
+      "products": "FirstHome, NextStep",
+      "counties": "Baker, Clackamas, Columbia, Coos, Douglas, Jackson, Josephine, Lane, Morrow, Multnomah, Umatilla, Union, Washington",
+      "phone": "866-722-5110",
+      "modified": "2024-12-26T23:07:16Z",
+      "nmls": null
+    },
+    {
+      "title": "Columbia Bank fka Umpqua",
+      "products": "FirstHome, NextStep",
+      "counties": "Clackamas, Coos, Deschutes, Douglas, Jackson, Klamath, Lane, Lincoln, Linn, Marion, Umatilla, Washington",
+      "phone": "844-645-1507",
+      "modified": "2025-08-29T17:23:31Z",
+      "nmls": null
+    },
+    {
+      "title": "1st Security Bank of WA",
+      "products": "FirstHome, NextStep",
+      "counties": "Lincoln, Malheur, Tillamook, Waldport",
+      "phone": "<div class=\"ExternalClassAFD68C677ED9465D83CA5AD5ED71E34D\">360-823-4425<br></div>",
+      "modified": "2026-03-24T22:21:32Z",
+      "nmls": null
+    },
+    {
+      "title": "Loan Depot",
+      "products": "FirstHome, NextStep",
+      "counties": "Deschutes, Jackson, Lane, Linn, Malheur, Marion",
+      "phone": "<div class=\"ExternalClass77B6033168CA43FD95218CE2727BD12B\">458-215-3590\u200b<span id=\"ms-rterangecursor-start\"></span><span id=\"ms-rterangecursor-end\"></span><br></div>",
+      "modified": "2026-07-06T15:48:09Z",
+      "nmls": null
+    },
+    {
+      "title": "Union Home Mortgage",
+      "products": "NextStep",
+      "counties": "Clackamas, Benton, Hood River",
+      "phone": "877-846-4968",
+      "modified": "2024-12-31T22:22:25Z",
+      "nmls": null
+    },
+    {
+      "title": "Kind Lending",
+      "products": "FirstHome, NextStep",
+      "counties": "Coos, Douglas, Lane",
+      "phone": "714-844-1000",
+      "modified": "2025-05-27T22:06:57Z",
+      "nmls": null
+    },
+    {
+      "title": "Prosperity Home Mortgage",
+      "products": "FirstHome, NextStep",
+      "counties": "Clackamas, Marion, Multnomah",
+      "phone": "877-275-1762",
+      "modified": "2025-11-06T22:28:43Z",
+      "nmls": null
+    },
+    {
+      "title": "Residential Mortgage LLC",
+      "products": null,
+      "counties": "Grants Pass",
+      "phone": "541-218-6923",
+      "modified": "2026-03-19T19:16:00Z",
+      "nmls": null
+    },
+    {
+      "title": "Bayshore Mortgage",
+      "products": null,
+      "counties": null,
+      "phone": "<div class=\"ExternalClass2501E38E9F7D42AEA0A805F664E7E0F8\">410-882-1777<span id=\"ms-rterangecursor-start\"></span><span id=\"ms-rterangecursor-end\"></span><br></div>",
+      "modified": "2026-07-06T15:51:46Z",
+      "nmls": null
+    }
+  ],
+  "nameOnly": true
+}
