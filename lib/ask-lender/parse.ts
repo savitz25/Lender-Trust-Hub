@@ -256,10 +256,19 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   const florida = state === 'FL';
   const reportingYears = [...new Set(raw.match(/\b(?:19|20)\d{2}\b/g) ?? [])];
   const scopeIssues: string[] = [];
+  // TH-DISCOVERY-RESET-001 (production certification fix): a preliminary, metric-independent
+  // version of the entity check below -- the scopeIssues pushes immediately following this were
+  // designed for the scalar-count path ("this place/county isn't a supported *count* scope") and
+  // otherwise fed straight into selectInstitutionVolume's `conditions.length` check, hard-blocking
+  // the real institution rows that entity mode already correctly falls back to state grain for.
+  // Only guards the two new entity triggers (broker(s), and Miami's bare-city companies/lenders);
+  // every other scopeIssues push and the scalar-count path itself stay exactly as strict as before.
+  const entityLikely =
+    /\bbrokers?\b/.test(q) || (bareCityRecognized && /\b(?:companies|company|lenders?|brokers?)\b/.test(q));
   if (states.length > 1) scopeIssues.push('More than one jurisdiction was requested. Select one state for a scalar count.');
   // A place phrase must be resolved; national is only the explicit/default scope.
   const place = q.match(/\b(?:in|within|for properties in)\s+(.+?)(?:[?]|$)/)?.[1];
-  if (place) {
+  if (place && !entityLikely) {
     let remainder = place;
     for (const [code, name] of Object.entries(STATE_NAMES).sort((a,b) => b[1].length - a[1].length)) remainder = remainder.replace(new RegExp(`\\b${name.replaceAll('.', '[.]')}\\b|\\b${code}\\b`, 'gi'), '');
     remainder = remainder.replace(/\b(?:the|united states|u\.s\.?|usa|nation|nationally|nationwide|hmda|reporting|vintage|year|current|research|universe|in|and|or|applications?|originations?|denials?|mortgages?|properties|202\d)\b/g, '').replace(/[^a-z]/g, '');
@@ -267,7 +276,7 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   }
   if (states.length && /\b(?:nationally|nationwide|united states|usa)\b/.test(q) && !/\bcompare\b/.test(q)) scopeIssues.push('Both state and national scope were requested. Select one scope for a scalar count.');
   const counties = detectCounties(q);
-  if (!counties.length && /\b(?:county|city|zip|radius)\b/.test(q)) scopeIssues.push('The requested local geography is not available in this count source.');
+  if (!counties.length && !entityLikely && /\b(?:county|city|zip|radius)\b/.test(q)) scopeIssues.push('The requested local geography is not available in this count source.');
   if (/[$]|\b(?:under|over|above|below)\s+\d|\b(?:loan amount|income|credit score|first.time|owner.occupied|investment propert)\b/.test(q)) scopeIssues.push('The requested amount, borrower or occupancy dimension is not supplied by this count source.');
   if (counties.length && states.some(code => code !== 'FL')) scopeIssues.push('The named county is only available in the Florida county catalog; the requested state conflicts with that scope.');
   const hasBroward = counties.some((c) => c.fips === '12011');
@@ -308,7 +317,7 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   // fail-closed a question the homepage's own FL branch already answers correctly --
   // exactly the two-surfaces divergence this ticket exists to close.
   countRemainder = countRemainder.replace(/\b(?:which|lenders?|companies|company|institutions?|most|highest|volume|how|many|what|is|are|was|were|the|a|an|of|for|in|within|and|or|by|from|during|to|show|me|give|report|reported|total|number|count|counts|mortgage|mortgages|loan|loans|applications?|originations?|originated|denials?|denied|properties|property|census|location|geography|state|county|market|activity|hmda|reporting|vintage|year|national|nationally|nationwide|united|states|us|usa|current|research|universe|received|filed|all|taken)\b|\b(?:19|20)\d{2}\b/g, ' ').replace(/[^a-z0-9$]/g, '').trim();
-  if (countRemainder) scopeIssues.push('Some requested geography or count conditions are not supported by this source. Edit the request or select a supported state/action; no broader count was substituted.');
+  if (countRemainder && !entityLikely) scopeIssues.push('Some requested geography or count conditions are not supported by this source. Edit the request or select a supported state/action; no broader count was substituted.');
 
 
   if (q.includes('what does') || q.includes('what does originated') || q.includes('mean in hmda')) {
@@ -321,7 +330,7 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   // (489,025 originations, not a 1,794-institution list) that must stay unaffected. Gated on the
   // city recognition above, not a blanket "companies" keyword match, so it never reinterprets the
   // existing state-level case.
-  const entity = wantsEntity(q, metric) || (bareCityRecognized && /\b(?:companies|company|lenders?|brokers?)\b/.test(q));
+  const entity = wantsEntity(q, metric) || entityLikely;
 
   if (q.includes('complaint')) {
     if (entity || metric === 'most') {
