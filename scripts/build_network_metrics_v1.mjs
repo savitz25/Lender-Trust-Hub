@@ -122,6 +122,12 @@ async function main() {
     paFdicInstitutions: pub.paFdicInstitutions,
     paCfpbMortgageComplaints: pub.paCfpbMortgageComplaints,
     paLiveRosterCoverage: pub.paLiveRosterCoverage,
+    ncHmdaApplications: pub.ncHmdaApplications,
+    ncHmdaOriginations: pub.ncHmdaOriginations,
+    ncFdicInstitutions: pub.ncFdicInstitutions,
+    ncCfpbMortgageComplaints: pub.ncCfpbMortgageComplaints,
+    ncNccobMortgageLenderRows: pub.ncNccobMortgageLenderRows,
+    ncLiveRosterCoverage: pub.ncLiveRosterCoverage,
     servicerEvidenceRows: prod.servicerEvidenceRows,
     licensesTotal: prod.licensesTotal,
   };

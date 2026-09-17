@@ -3,6 +3,7 @@ import snapshot from '@/lib/home-intel/accepted-snapshot.json';
 import { ILLINOIS_SNAPSHOT } from '@/lib/illinois-intelligence/snapshot';
 import { OREGON_SNAPSHOT } from '@/lib/oregon-intelligence/snapshot';
 import { PENNSYLVANIA_SNAPSHOT } from '@/lib/pennsylvania-intelligence/snapshot';
+import { NORTH_CAROLINA_SNAPSHOT } from '@/lib/north-carolina-intelligence/snapshot';
 import stateRows from './generated/state.csv.json';
 import countyRows from './generated/county.csv.json';
 import markets from './generated/markets.csv.json';
@@ -65,6 +66,20 @@ function pennsylvaniaPublishedHmda(): PublishedStateHmda {
   };
 }
 
+function northCarolinaPublishedHmda(): PublishedStateHmda {
+  return {
+    contract: NORTH_CAROLINA_SNAPSHOT.contract_name,
+    applications: NORTH_CAROLINA_SNAPSHOT.hmda.applications,
+    originations: NORTH_CAROLINA_SNAPSHOT.hmda.originations,
+    denials: NORTH_CAROLINA_SNAPSHOT.hmda.denials,
+    fingerprint: NORTH_CAROLINA_SNAPSHOT.fingerprint,
+    generatedAt: NORTH_CAROLINA_SNAPSHOT.generated_at,
+    retrievedAt: NORTH_CAROLINA_SNAPSHOT.hmda.retrieved_at,
+    sourceFile: 'lib/north-carolina-intelligence/accepted-snapshot.json',
+    sourceGrain: 'county_market_summary county totals for North Carolina property geography',
+  };
+}
+
 // Static, bounded source seam. Tests replace it in memory; no I/O or production writes.
 export const countSources = {
   snapshot: (): unknown => snapshot,
@@ -78,7 +93,9 @@ export const countSources = {
         ? oregonPublishedHmda()
         : state === 'PA'
           ? pennsylvaniaPublishedHmda()
-          : null,
+          : state === 'NC'
+            ? northCarolinaPublishedHmda()
+            : null,
 };
 class CountSourceError extends Error {}
 type RecordRow = Record<string, unknown>;
@@ -200,6 +217,9 @@ export function executeScalarCount(query: LenderResearchQuery): AskExecution {
     }
     if (evidence.sourceFile === 'lib/pennsylvania-intelligence/accepted-snapshot.json') {
       evidence.conditions.push('Same HMDA 2025 Pennsylvania-property measure as /pennsylvania. Material LEI-county cells are a smaller subset and are not this answer.');
+    }
+    if (evidence.sourceFile === 'lib/north-carolina-intelligence/accepted-snapshot.json') {
+      evidence.conditions.push('Same HMDA 2025 North Carolina-property measure as /north-carolina. Material LEI-county cells are a smaller subset and are not this answer.');
     }
     return finish(`Reported ${action}s for mortgage properties in ${name}. The source grain is ${evidence.sourceGrain}; the displayed total uses ${evidence.outputGrain} scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.`);
   } catch (error) {

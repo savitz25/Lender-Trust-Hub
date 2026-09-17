@@ -1,0 +1,17 @@
+{
+  "pages": 81,
+  "parsed_rows": 1965,
+  "distinct_licenses": 1380,
+  "by_type": {
+    "Mortgage Lender": 640,
+    "Mortgage Broker": 574,
+    "Mortgage Origination Support Registration": 104,
+    "Mortgage Servicer": 62
+  },
+  "services_loan_yes": 277,
+  "distinct_nmls": 1376,
+  "nccob_nmls_both": 1380,
+  "dba_populated": 483,
+  "reverse_certificates": 112,
+  "mlo_official_matching": 24612
+}

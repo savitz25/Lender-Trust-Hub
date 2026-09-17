@@ -173,6 +173,14 @@ export const LENDER_TOOLS = {
       cta: 'Open Pennsylvania research',
     },
     {
+      id: 'north-carolina-research',
+      title: 'North Carolina research',
+      description:
+        '2025 HMDA North Carolina activity, NCCOB current license classes, CFPB 2025 mortgage complaints, and NCCOB mortgage enforcement. Not a ranking or a combined lenders census.',
+      href: '/north-carolina',
+      cta: 'Open North Carolina research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
@@ -434,6 +442,7 @@ export const LENDER_FOOTER_COLUMNS = [
       { href: '/illinois', label: 'Illinois Research' },
       { href: '/oregon', label: 'Oregon Research' },
       { href: '/pennsylvania', label: 'Pennsylvania Research' },
+      { href: '/north-carolina', label: 'North Carolina Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },

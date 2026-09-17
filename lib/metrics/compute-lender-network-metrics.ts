@@ -100,6 +100,12 @@ export type LenderNetworkMetricsInput = {
   paFdicInstitutions: number;
   paCfpbMortgageComplaints: number;
   paLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+  ncHmdaApplications: number;
+  ncHmdaOriginations: number;
+  ncFdicInstitutions: number;
+  ncCfpbMortgageComplaints: number;
+  ncNccobMortgageLenderRows: number;
+  ncLiveRosterCoverage: 'ACQUIRED_CURRENT_COMPANY_SHOW_ALL';
   servicerEvidenceRows: number | null;
   licensesTotal: number;
 };
@@ -202,7 +208,13 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.licensesTotal === input.institutions) {
     throw new Error('license rows must not equal institutions');
   }
-  for (const path of ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania']) {
+  if (input.ncNccobMortgageLenderRows === input.ncHmdaApplications) {
+    throw new Error('NCCOB Mortgage Lender licenses must not equal North Carolina HMDA applications');
+  }
+  if (input.ncNccobMortgageLenderRows === input.ncCfpbMortgageComplaints) {
+    throw new Error('NCCOB Mortgage Lender licenses must not equal North Carolina CFPB complaints');
+  }
+  for (const path of ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania', '/north-carolina']) {
     if (!input.publishedStateIntelligencePaths.includes(path)) {
       throw new Error(`state intelligence path missing: ${path}`);
     }
@@ -1029,14 +1041,14 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       valueState: 'KNOWN',
       grain: 'published_state_intelligence_page',
       denominator: 'Indexable specialist state intelligence routes currently published',
-      description: 'Florida, New Jersey, California, Texas, Washington, Arizona, Colorado, Virginia, New York, Illinois, Oregon, and Pennsylvania state intelligence pages. Not a count of lenders.',
+      description: 'Florida, New Jersey, California, Texas, Washington, Arizona, Colorado, Virginia, New York, Illinois, Oregon, Pennsylvania, and North Carolina state intelligence pages. Not a count of lenders.',
       coverage: input.publishedStateIntelligencePaths.join(', '),
       contributingSourceSystems: ['lender-state-intel'],
       sourceAsOf: newestDocumentedSourceAsOf,
       generatedAt,
       publicationStatus: 'PUBLIC',
       trace: commonTrace(
-        'Published /florida, /new-jersey, /california, /texas, /washington, /arizona, /colorado, /virginia, /new-york, /illinois, /oregon, and /pennsylvania intelligence routes.',
+        'Published /florida, /new-jersey, /california, /texas, /washington, /arizona, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, and /north-carolina intelligence routes.',
         'Not NJ county pages and not national directory rows.',
         ['lender-state-intel'],
         input.publishedStateIntelligencePaths.join(', '),
@@ -1235,6 +1247,15 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       liveRosterCoverage: input.paLiveRosterCoverage,
       liveLicensedCompanyUniverse: null,
     },
+    northCarolina: {
+      hmdaApplications: input.ncHmdaApplications,
+      hmdaOriginations: input.ncHmdaOriginations,
+      fdicInstitutions: input.ncFdicInstitutions,
+      cfpbMortgageComplaints: input.ncCfpbMortgageComplaints,
+      nccobMortgageLenderRows: input.ncNccobMortgageLenderRows,
+      liveRosterCoverage: input.ncLiveRosterCoverage,
+      liveLicensedCompanyUniverse: null,
+    },
     publication: {
       nationalRender: input.publicRender,
       nationalIndex: input.publicIndex,
@@ -1299,6 +1320,10 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       {
         total: `${input.coDreMloRows} Colorado MLO person rows`,
         reason: 'Person-grain DRE licenses. Not lenders and not added to national institution totals.',
+      },
+      {
+        total: 'NC mixed current licensed entities = 1380',
+        reason: 'Four NCCOB classes together. Not a North Carolina lenders census. Do not add 640+574+62+104.',
       },
       {
         total: 'NJ RMLA roster = 0',

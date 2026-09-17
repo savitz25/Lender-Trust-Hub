@@ -1,0 +1,41 @@
+{
+  "official_records_found": 723,
+  "documents": 723,
+  "distinct_dockets": 693,
+  "unique_matters_docket_identity": 693,
+  "document_is_not_matter": true,
+  "do_not_dedupe_by_respondent_name": true,
+  "order_date_min": "2000-02-09",
+  "order_date_max": "2026-09-01",
+  "five_year_window_label": "Click [Search] to show all orders for the past 5 years.",
+  "documents_order_date_on_or_after_2021_09_17": 417,
+  "action_types": {
+    "Consent Order": 451,
+    "Order and Decision": 165,
+    "Voluntary Surrender and Order": 86,
+    "Consent Order and Settlement Agreement": 9,
+    "Notice of Hearing": 3,
+    "Amend Order and Decision": 3,
+    "Revocation Order": 2,
+    "Order": 1,
+    "Cease and Desist Order": 1,
+    "Order Allowing Waiver of Hearing and Revocation of License": 1,
+    "Order Allowing Withdrawal of Appeal": 1
+  },
+  "respondent_kind_inferred_counts": {
+    "person_name_pattern": 581,
+    "company_name_pattern": 136,
+    "other_or_untyped": 6
+  },
+  "respondent_kind_is_not_license_class": true,
+  "exact_enforcement_nmls_attachments": 0,
+  "exact_enforcement_nccob_attachments": 0,
+  "grid_columns": [
+    "Order Date",
+    "Individual/Company",
+    "Type of Action",
+    "Docket Number"
+  ],
+  "endpoint": "https://www.nccob.gov/Online/NMLS/CommissionOrderListing.aspx",
+  "display": "Name on the Order"
+}

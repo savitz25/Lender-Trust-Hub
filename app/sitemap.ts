@@ -19,6 +19,7 @@ import { NEW_YORK_INTELLIGENCE_GATE } from '@/lib/new-york-intelligence/publicat
 import { ILLINOIS_INTELLIGENCE_GATE } from '@/lib/illinois-intelligence/publication';
 import { OREGON_INTELLIGENCE_GATE } from '@/lib/oregon-intelligence/publication';
 import { PENNSYLVANIA_INTELLIGENCE_GATE } from '@/lib/pennsylvania-intelligence/publication';
+import { NORTH_CAROLINA_INTELLIGENCE_GATE } from '@/lib/north-carolina-intelligence/publication';
 import { indexedNjCountyGates } from '@/lib/new-jersey-intelligence/counties';
 
 /** Meaningful lastmod for sitemap — day of generation (catalog is static build data). */
@@ -68,6 +69,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       : []),
     ...(PENNSYLVANIA_INTELLIGENCE_GATE.sitemap
       ? [{ path: '/pennsylvania', priority: 0.88, changeFrequency: 'weekly' as const }]
+      : []),
+    ...(NORTH_CAROLINA_INTELLIGENCE_GATE.sitemap
+      ? [{ path: '/north-carolina', priority: 0.88, changeFrequency: 'weekly' as const }]
       : []),
     // NJ-LEND-COUNTY-001 indexed county research:
     // /new-jersey/monmouth-county
