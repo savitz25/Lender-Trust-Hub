@@ -59,7 +59,8 @@ assert.match(ui, /Banker != broker/);
 assert.match(ui, /Search-only is not zero/);
 assert.doesNotMatch(ui, /\/new-york\/manhattan|\/new-york\/brooklyn/);
 assert.equal(parseLenderAsk('licensed mortgage bankers in New York').failClosedKind, 'ny-dfs-dated-aggregates');
-assert.equal(parseLenderAsk('mortgage brokers in New York').failClosedKind, 'ny-broker-class');
+// TH-DISCOVERY-PARITY-001A: bare "mortgage brokers in New York" now defaults to DISCOVERY.
+assert.equal(parseLenderAsk('mortgage brokers in New York').mode, 'entity');
 assert.equal(parseLenderAsk('mortgage loan servicers in New York').failClosedKind, 'ny-servicer-class');
 assert.equal(parseLenderAsk('mortgage loan officers in New York').failClosedKind, 'ny-mlo-person-grain');
 assert.equal(parseLenderAsk('how many lenders are in New York?').failClosedKind, 'ny-no-combined-lenders');

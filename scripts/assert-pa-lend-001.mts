@@ -52,11 +52,16 @@ assert.notEqual(parseLenderAsk('HMDA applications Pennsylvania 2025').mode, 'fai
 assert.equal(parseLenderAsk('CFPB mortgage complaints Pennsylvania').failClosedKind, 'pa-cfpb-observations');
 assert.equal(parseLenderAsk('mortgage loan originator Pennsylvania').failClosedKind, 'pa-mlo-search-only');
 assert.equal(parseLenderAsk('mortgage servicer Pennsylvania').failClosedKind, 'pa-servicer-search-only');
-assert.equal(parseLenderAsk('Pennsylvania mortgage broker').failClosedKind, 'pa-broker-search-only');
+// TH-DISCOVERY-PARITY-001A: bare "Pennsylvania mortgage broker" now defaults to DISCOVERY.
+assert.equal(parseLenderAsk('Pennsylvania mortgage broker').mode, 'entity');
 assert.equal(parseLenderAsk('PHFA participating lenders').failClosedKind, 'pa-phfa-program');
 assert.equal(parseLenderAsk('Pennsylvania DoBS mortgage enforcement').failClosedKind, 'pa-dobs-orders');
-assert.equal(parseLenderAsk('mortgage lender Philadelphia').failClosedKind, 'pa-no-local');
-assert.equal(parseLenderAsk('mortgage lender Pittsburgh').failClosedKind, 'pa-no-local');
+// TH-DISCOVERY-PARITY-001A: the Pennsylvania-specific "pa-no-local" gate (which hard-
+// refused the bare mention of Philadelphia/Pittsburgh/Allegheny/Montgomery) was removed
+// -- it blocked ordinary discovery queries. These now default to DISCOVERY like every
+// other city/state combination, returning real state-grain institution results.
+assert.equal(parseLenderAsk('mortgage lender Philadelphia').mode, 'entity');
+assert.equal(parseLenderAsk('mortgage lender Pittsburgh').mode, 'entity');
 assert.doesNotMatch(claim, /pa-open-data|pa-dobs-nmls/);
 assert.match(searchCaps, /pennsylvania-roster/);
 assert.equal(paJsonLdHasForbiddenRatings(buildPennsylvaniaIntelligenceJsonLd(s)), false);

@@ -24,7 +24,16 @@ const FAIL: Array<{ re: RegExp; kind: string; reason: string }> = [
       'This Ask layer does not rank lenders by headquarters, branch location, or “Florida lenders.” Property-geography questions must say originated/applied for properties in that place.',
   },
   { re: /\bbest\b|\btop lender|\brecommended\b/, kind: 'ranking', reason: 'LenderTrustHub does not rank “best” lenders. Most is a volume count, not a recommendation.' },
-  { re: /\bsafest\b|\bmost trustworthy\b|\btrust score\b/, kind: 'safety', reason: 'There is no safety or Trust Score ranking on this hub.' },
+  {
+    // TH-DISCOVERY-PARITY-001A: "lender(s) FOR <borrower characteristic>" (bad credit,
+    // first-time homebuyer, self-employed, veteran, low income) asks this Ask layer to
+    // personally match a lender to the consumer's own situation -- a recommendation,
+    // not a request to browse real HMDA-reporting institutions at a place.
+    re: /\b(?:lenders?|mortgage lenders?|mortgage compan(?:y|ies)|mortgage brokers?)\s+for\s+(?:bad credit|poor credit|no credit|first.time|self.employed|veterans?|low income)\b/,
+    kind: 'borrower-profile-matching',
+    reason: 'This Ask layer does not match lenders to a borrower profile or qualification. Name a place to browse real reporting institutions there instead.',
+  },
+  { re: /\bsafest\b|\btrustworthy\b|\btrust score\b|\bis this lender (?:safe|good|legit)\b/, kind: 'safety', reason: 'There is no safety or Trust Score ranking on this hub.' },
   { re: /\bdiscriminat/, kind: 'discrimination', reason: 'Denial counts are not a finding of discrimination.' },
   { re: /\bwrongdoing\b|\bviolat|\bfraud\b|\bscam\b|\billegal\b/, kind: 'wrongdoing', reason: 'A complaint or HMDA outcome is not a finding of wrongdoing.' },
   { re: /\bjunk fee|\bgouging|\bripoff\b|\bcheapest\b|\bmost affordable\b/, kind: 'pricing-rhetoric', reason: 'There is no consumer pricing dataset on this Ask layer. Cheapest is not inferred from HMDA volume.' },
@@ -34,6 +43,17 @@ const FAIL: Array<{ re: RegExp; kind: string; reason: string }> = [
     reason: 'HMDA is a 2025 reporting vintage, not today’s advertised rate sheet. Historical HMDA is not a live mortgage-rate feed.',
   },
   { re: /\bnear me\b|\bnearby\b|\bclosest\b/, kind: 'proximity', reason: 'HMDA geography is property/census location, not branch proximity.' },
+  {
+    // TH-DISCOVERY-PARITY-001A: an unresolvable, personalized/deictic place
+    // reference ("my county", "my area", "my state", "my zip") must not be
+    // silently broadened to a national provider cohort as if it answered the
+    // question -- that would present national results as if they meant the
+    // consumer's own (unknown to this system) location, a false-locality
+    // risk. Name an actual city, county or state instead.
+    re: /\bmy (?:county|area|state|zip|zip code|neighborhood|region|address|location|city|town)\b/,
+    kind: 'personalized-location',
+    reason: "This Ask layer does not know your location. \"My county\"/\"my area\" cannot be resolved to an actual place -- name a specific city, county or state.",
+  },
   {
     re: /\bhighest denial rate\b|\bdenial rates?\b/,
     kind: 'denial-rate',
@@ -76,7 +96,7 @@ function detectAnyMajorCounty(q: string): { state: string } | undefined {
   return undefined;
 }
 
-function wantsEntity(q: string, metric: LenderResearchQuery['requestedMetric']): boolean {
+function wantsEntity(q: string, metric: LenderResearchQuery['requestedMetric'], explicitAggregateWording = false): boolean {
   if (/\bwhich lenders?\b|\bwhich institutions?\b|\bwho originated\b|\bwho received\b/.test(q)) return true;
   // TH-DISCOVERY-RESET-001 (production certification fix): "mortgage broker in Monmouth County
   // New Jersey" asks for real broker institutions to browse (provider Discovery), not a scalar
@@ -84,8 +104,10 @@ function wantsEntity(q: string, metric: LenderResearchQuery['requestedMetric']):
   // applied to "companies" a few lines below applies to "broker(s)" too. Unlike bare "lenders",
   // which defaults to a count unless "most"/"which" is also present, "broker(s)" alone is
   // unambiguously an entity request here: nothing about a scalar HMDA count is phrased as
-  // "broker."
-  if (/\bbrokers?\b/.test(q)) return true;
+  // "broker." TH-DISCOVERY-PARITY-001A: except when EXPLICIT aggregate wording is also present
+  // ("count of mortgage brokers in New Jersey") -- that combination is a real, if unusual,
+  // scalar-count request and must not be overridden just because "broker" also appears.
+  if (/\bbrokers?\b/.test(q) && !explicitAggregateWording) return true;
   if (/\blenders?\b/.test(q) && metric === 'most') return true;
   if (/\bhmda reporting institutions\b|\bleis?\b/.test(q) && metric === 'most') return true;
   return false;
@@ -129,13 +151,21 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   // HMDA institution/scalar data for NJ IS acquired (see scalar-count.ts, institution-volume.ts).
   // TH-SEARCH-R1-015: a missing roster must degrade to a caveat on that real data, never a
   // blanket refusal of the whole question. See NJ_RMLA_COVERAGE_NOTE / parseLenderAsk below.
-  if (/\bcalifornia\b|\bcrmla\b/i.test(q) && /\blicensed|\blenders?|\broster\b|\bcrmla\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+  // TH-DISCOVERY-PARITY-001A: these state-specific "no bulk roster acquired" guards
+  // originally treated a bare "lenders?"/"brokers?"/"bankers?" mention as equally
+  // roster-requesting as "licensed"/"roster" itself, so an ordinary discovery query
+  // ("lenders in Illinois", "mortgage broker in Pennsylvania") hard fail-closed with
+  // zero results instead of falling through to the real HMDA-institution entity
+  // results every other state already gets. Now requires an EXPLICIT roster/licensing
+  // signal word (licensed, registered, roster, or the state's own regulator acronym) --
+  // matching this file's existing "aggregate wording" vs "bare provider term" distinction.
+  if (/\bcalifornia\b|\bcrmla\b/i.test(q) && /\blicensed\b|\bregistered\b|\broster\b|\bcrmla\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'ca-crmla-not-acquired', failReason: "California's complete current CRMLA roster is not acquired as a bulk universe. CalHFA directory rows must not be counted as all California lenders.", coverageState: 'NOT_ACQUIRED' };
   }
-  if (/\barizona\b/i.test(q) && /\blicensed|\blenders?|\broster\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+  if (/\barizona\b/i.test(q) && /\blicensed\b|\bregistered\b|\broster\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'az-open-search-partial', failReason: 'Arizona DIFI evidence is source/open-search limited; it is not a complete acquired institution universe and cannot support a zero or complete-population claim.', coverageState: 'PARTIAL' };
   }
-  if (/\bcolorado\b/i.test(q) && /\blicensed|\blenders?|\broster\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+  if (/\bcolorado\b/i.test(q) && /\blicensed\b|\bregistered\b|\broster\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'co-company-roster-not-acquired', failReason: "Colorado's mortgage-company registration roster is search-only and was not acquired as a bulk universe. DRE MLO rows are people, not lender companies, and are not returned as public lender-company search results. Missing is not zero lenders.", coverageState: 'NOT_ACQUIRED' };
   }
   if (/\bvirginia\b/i.test(q) && /\b(first[- ]time|down payment|virginia housing|closing cost|plus second)\b/i.test(q)) {
@@ -144,7 +174,7 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   if (/\bvirginia\b/i.test(q) && /\bcomplaint/i.test(q) && !/\brocket mortgage\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'va-cfpb-observations', failReason: 'CFPB Virginia mortgage complaints are statewide observations. A complaint is not a violation, not SCC enforcement, and not a company ranking. Company-specific complaint research requires an exact institution identity.', coverageState: 'PARTIAL' };
   }
-  if (/\bvirginia\b/i.test(q) && /\b(licensed|lenders?|roster|brokers?|scc)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+  if (/\bvirginia\b/i.test(q) && /\b(licensed|registered|roster|scc|how many)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'va-scc-dated-roster', failReason: "Virginia SCC reported mortgage brokers, lenders, and lender-and-brokers separately as of 2025-12-31. That dated roster is not current 2026 license status. NMLS Consumer Access is the current verification path. Do not answer with the 24,222 MLO person count or with HMDA application rows.", coverageState: 'PARTIAL' };
   }
   if (/\bnew york\b/i.test(q) && /\b(loan officers?|mlos?|mortgage loan originat)/i.test(q)) {
@@ -153,7 +183,7 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   if (/\bnew york\b/i.test(q) && /\bhow many lenders\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'ny-no-combined-lenders', failReason: 'Do not add 151 licensed mortgage bankers and 439 registered mortgage brokers into one New York lender count. Those are dated end-of-2024 DFS class aggregates, not a current roster.', coverageState: 'PARTIAL' };
   }
-  if (/\bnew york\b/i.test(q) && /\bbrokers?\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+  if (/\bnew york\b/i.test(q) && /\bbrokers?\b/i.test(q) && /\blicensed\b|\bregistered\b|\broster\b|\bnydfs\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'ny-broker-class', failReason: 'New York mortgage brokers are a separate NYDFS class from mortgage bankers. Current broker registration is NMLS/NYDFS search-only. The 439 end-of-2024 aggregate is not current 2026 status.', coverageState: 'PARTIAL' };
   }
   if (/\bnew york\b/i.test(q) && /\bservicers?\b/i.test(q) && !/\bhmda|\bapplication|\boriginat/i.test(q)) {
@@ -162,7 +192,7 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   if (/\bnew york\b/i.test(q) && /\bcomplaint/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'ny-cfpb-observations', failReason: 'CFPB New York mortgage complaints are statewide observations. A complaint is not a violation, not NYDFS enforcement, and not a company ranking. Company-specific complaint research requires an exact institution identity.', coverageState: 'PARTIAL' };
   }
-  if (/\bnew york\b/i.test(q) && /\b(licensed|bankers?|lenders?|roster|nydfs)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended\b/i.test(q)) {
+  if (/\bnew york\b/i.test(q) && /\b(licensed|registered|roster|nydfs|how many)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'ny-dfs-dated-aggregates', failReason: 'NYDFS 2024 annual-report counts (151 mortgage bankers, 439 brokers) are dated aggregates, not current September 2026 licensees. Current verification is NYDFS + NMLS Consumer Access. Do not answer with 9,769 MLOs or with HMDA application rows.', coverageState: 'PARTIAL' };
   }
   if (/\billinois\b|\bidfpr\b/i.test(q) && /\bhow many lenders\b/i.test(q)) {
@@ -171,10 +201,16 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   if (/\billinois\b|\bidfpr\b/i.test(q) && /\bcomplaint/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'il-cfpb-observations', failReason: 'CFPB Illinois mortgage complaints were not acquired as a bulk count. Missing is not zero. A complaint is not a violation. Company-specific research requires an exact institution identity.', coverageState: 'NOT_ACQUIRED' };
   }
-  if (/\billinois\b|\bidfpr\b/i.test(q) && /\b(licensed|lenders?|roster|bankers?|brokers?)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended\b/i.test(q)) {
+  if (/\billinois\b|\bidfpr\b/i.test(q) && /\b(licensed|registered|roster|how many)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'il-idfpr-nmls-search-only', failReason: 'Current Illinois mortgage-company licensing is IDFPR/NMLS search-only. No bulk roster was acquired. Search-only is not zero lenders. HMDA applications and FDIC banks are not that census.', coverageState: 'NOT_ACQUIRED' };
   }
-  if (/\billinois\b/i.test(q) && /\b(chicago|cook county|serving)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+  // TH-DISCOVERY-PARITY-001A: previously fired on the bare mention of "Chicago"/"Cook
+  // County" alone, hard-refusing an ordinary discovery query ("lenders in Chicago
+  // Illinois") that should broaden to real Illinois state-grain institution results
+  // (like every other city/state combination already does) instead of dead-ending.
+  // Now requires the actual service-territory CLAIM language ("serving"), not just the
+  // city name -- an explicit "who is serving Chicago" question stays correctly refused.
+  if (/\billinois\b/i.test(q) && /\bserving\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'il-mailing-ne-service', failReason: 'Illinois HMDA geography is property location, not service territory, headquarters, or a Chicago/Cook license census. This statewide page does not publish local Illinois lender routes.', coverageState: 'UNSUPPORTED' };
   }
   if (/\boregon\b|\bodfr\b|\bdfr\b/i.test(q) && /\bhow many lenders\b/i.test(q)) {
@@ -195,10 +231,12 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   if (/\b(ohcs|flex lending|firsthome|nextstep)\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'or-ohcs-program', failReason: 'OHCS Flex Lending approved lenders are program participants, not the Oregon DFR/NMLS mortgage-license universe. Featured or top-producing OHCS labels are not LenderTrustHub rankings. Names were not merged onto NMLS identities.', coverageState: 'PARTIAL' };
   }
-  if (/\boregon\b/i.test(q) && /\b(portland|multnomah)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
-    return { mode: 'fail_closed', failClosedKind: 'or-no-local', failReason: 'Oregon HMDA geography is property location, not service territory, headquarters, or a Portland/Multnomah license census. This statewide page does not publish local Oregon lender routes.', coverageState: 'UNSUPPORTED' };
-  }
-  if ((/\boregon\b/i.test(q) || /\bdfr\b/i.test(q)) && /\b(licensed|lenders?|roster|bankers?|brokers?)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended|\bohcs|\bflex\b/i.test(q)) {
+  // TH-DISCOVERY-PARITY-001A: removed the bare "Portland"/"Multnomah" mention trigger --
+  // it hard-refused ordinary discovery ("mortgage broker in Portland Oregon") instead of
+  // broadening to real Oregon state-grain institution results. A genuine service-
+  // territory CLAIM ("who is serving Portland") is still caught by the general
+  // service-territory FAIL pattern above.
+  if ((/\boregon\b/i.test(q) || /\bdfr\b/i.test(q)) && /\b(licensed|registered|roster|how many)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended|\bohcs|\bflex\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'or-nmls-search-only', failReason: 'Current Oregon mortgage-company licensing is DFR/NMLS search-only. No bulk roster was acquired. Search-only is not zero lenders. HMDA applications, HMDA LEIs, FDIC banks, and OHCS Flex lenders are not that census.', coverageState: 'NOT_ACQUIRED' };
   }
   if (/\bpennsylvania\b|\bdobs\b|\bpa dobs\b/i.test(q) && /\bhow many lenders\b/i.test(q)) {
@@ -219,13 +257,16 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   if (/\bpennsylvania\b/i.test(q) && /\bservicers?\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'pa-servicer-search-only', failReason: 'Pennsylvania mortgage servicers are a separate DoBS class from mortgage lenders. Current NMLS servicer verification is search-only. Do not add servicers to the lender denominator.', coverageState: 'NOT_ACQUIRED' };
   }
-  if (/\bpennsylvania\b/i.test(q) && /\bbrokers?\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+  if (/\bpennsylvania\b/i.test(q) && /\bbrokers?\b/i.test(q) && /\blicensed\b|\bregistered\b|\broster\b|\bdobs\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'pa-broker-search-only', failReason: 'Pennsylvania mortgage brokers are a separate DoBS class from mortgage lenders. Current NMLS broker verification is search-only. Search-only is not zero brokers.', coverageState: 'NOT_ACQUIRED' };
   }
-  if (/\b(philadelphia|pittsburgh|allegheny|montgomery)\b/i.test(q) && /\b(mortgage|lender|broker|phfa|dobs)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
-    return { mode: 'fail_closed', failClosedKind: 'pa-no-local', failReason: 'Pennsylvania HMDA geography is property location, not service territory, headquarters, or a Philadelphia/Pittsburgh license census. This statewide page does not publish local Pennsylvania lender routes. PHFA county physical presence is not county-only lending eligibility.', coverageState: 'UNSUPPORTED' };
-  }
-  if ((/\bpennsylvania\b/i.test(q) || /\bdobs\b/i.test(q)) && /\b(licensed|lenders?|roster|bankers?)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended|\bphfa\b/i.test(q)) {
+  // TH-DISCOVERY-PARITY-001A: removed the bare Philadelphia/Pittsburgh/Allegheny/
+  // Montgomery mention trigger -- it hard-refused ordinary discovery ("home lender near
+  // Philadelphia") instead of broadening to real Pennsylvania state-grain institution
+  // results. A genuine service-territory CLAIM is still caught by the general
+  // service-territory FAIL pattern above; PHFA-specific questions are still caught by
+  // the PHFA program guard above.
+  if ((/\bpennsylvania\b/i.test(q) || /\bdobs\b/i.test(q)) && /\b(licensed|registered|roster|how many)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended|\bphfa\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'pa-nmls-search-only', failReason: 'Current Pennsylvania mortgage-company licensing is DoBS/NMLS search-only. No bulk NMLS roster was acquired. Search-only is not zero lenders. HMDA applications, Open Data class rows, FDIC banks, and PHFA participants are not that census.', coverageState: 'NOT_ACQUIRED' };
   }
 
@@ -264,6 +305,13 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   }
   if (/\b(?:verify|check).*(?:lender|mortgage company).*(?:quote|loan estimate)|\blender that gave me (?:a|this) loan estimate/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'specific-identity-required', failReason: 'A quote or Loan Estimate does not establish institution identity. Find the labeled NMLS institution ID, then research that exact identifier.', coverageState: 'PARTIAL' };
+  }
+  // TH-DISCOVERY-PARITY-001A: "how do I check/verify if a lender/mortgage company is
+  // licensed" asks about a verification PROCESS, not a request to browse companies --
+  // it must stay a how-to guidance question, not fall into the new, broader provider-
+  // discovery default below just because it names "mortgage company"/"lender".
+  if (/\bhow (?:do|can) i (?:check|verify)\b.{0,30}\b(?:lender|mortgage compan(?:y|ies))\b.{0,20}\b(?:licens|regist)/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'verification-howto', failReason: 'Use the labeled NMLS institution ID with NMLS Consumer Access to verify current license status. This Ask layer does not itself certify licensing.', coverageState: 'PARTIAL' };
   }
 
   if (/\brocket mortgage\b/i.test(q) && /\bcomplaint/i.test(q)) {
@@ -345,9 +393,35 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   // the real institution rows that entity mode already correctly falls back to state grain for.
   // Only guards the two new entity triggers (broker(s), and Miami's bare-city companies/lenders);
   // every other scopeIssues push and the scalar-count path itself stay exactly as strict as before.
+  // TH-DISCOVERY-PARITY-001A: ordinary provider-category vocabulary ("lender(s)",
+  // "mortgage lender(s)", "mortgage compan(y|ies)", "home loan compan(y|ies)", "home
+  // lender(s)", "mortgage broker(s)") is a consumer DISCOVERY request by default -- a
+  // request to browse real HMDA-reporting institutions -- regardless of whether a
+  // city/county was also named. This supersedes TH-SEARCH-R1-015's narrower default
+  // (bare "[provider term] in <state>" fell through to a scalar HMDA count unless a
+  // Miami/major-county match, "which"/"most" wording, or "broker(s)" was also present):
+  // "home loan company in Texas" and "mortgage company in California" had no county
+  // match and no "most"/"which", so they fell through to the count branch below and
+  // dead-ended with zero providers whenever the extra wrapper words ("looking for",
+  // "I need a") also tripped the count path's unsupported-remainder guard. Aggregate/
+  // count mode now requires EXPLICIT aggregate wording (how many, number of, count,
+  // applications, originations, denials, market share, compare) -- the mere existence
+  // of HMDA count data for a state must not turn an ordinary provider query into one.
+  const explicitAggregateWording =
+    q.includes('how many') ||
+    q.includes('number of') ||
+    /\bcounts?\b/.test(q) ||
+    /\bapplications?\b/.test(q) ||
+    /\borigina(?:tions?|ted|ting)\b/.test(q) ||
+    /\bdenials?\b|\bdenied\b/.test(q) ||
+    q.includes('market share') ||
+    q.includes('compare');
+  const providerCategoryPresent =
+    /\b(?:lenders?|mortgage lenders?|mortgage compan(?:y|ies)|home loan compan(?:y|ies)|home lenders?|mortgage brokers?|home loans?|refinance compan(?:y|ies)|refinance lenders?|loan specialists?|banks? for (?:a )?home loans?)\b/.test(q);
   const entityLikely =
-    /\bbrokers?\b/.test(q) ||
-    ((bareCityRecognized || Boolean(nonFloridaCounty)) && /\b(?:companies|company|lenders?|brokers?)\b/.test(q));
+    (/\bbrokers?\b/.test(q) && !explicitAggregateWording) ||
+    ((bareCityRecognized || Boolean(nonFloridaCounty)) && /\b(?:companies|company|lenders?|brokers?)\b/.test(q)) ||
+    (providerCategoryPresent && !explicitAggregateWording);
   if (states.length > 1) scopeIssues.push('More than one jurisdiction was requested. Select one state for a scalar count.');
   // A place phrase must be resolved; national is only the explicit/default scope.
   const place = q.match(/\b(?:in|within|for properties in)\s+(.+?)(?:[?]|$)/)?.[1];
@@ -413,7 +487,7 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   // (489,025 originations, not a 1,794-institution list) that must stay unaffected. Gated on the
   // city recognition above, not a blanket "companies" keyword match, so it never reinterprets the
   // existing state-level case.
-  const entity = wantsEntity(q, metric) || entityLikely;
+  const entity = wantsEntity(q, metric, explicitAggregateWording) || entityLikely;
 
   if (q.includes('complaint')) {
     if (entity || metric === 'most') {
