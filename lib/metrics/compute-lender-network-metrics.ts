@@ -95,6 +95,11 @@ export type LenderNetworkMetricsInput = {
   orHmdaOriginations: number;
   orFdicInstitutions: number;
   orLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+  paHmdaApplications: number;
+  paHmdaOriginations: number;
+  paFdicInstitutions: number;
+  paCfpbMortgageComplaints: number;
+  paLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
   servicerEvidenceRows: number | null;
   licensesTotal: number;
 };
@@ -197,7 +202,7 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.licensesTotal === input.institutions) {
     throw new Error('license rows must not equal institutions');
   }
-  for (const path of ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon']) {
+  for (const path of ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania']) {
     if (!input.publishedStateIntelligencePaths.includes(path)) {
       throw new Error(`state intelligence path missing: ${path}`);
     }
@@ -1024,14 +1029,14 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       valueState: 'KNOWN',
       grain: 'published_state_intelligence_page',
       denominator: 'Indexable specialist state intelligence routes currently published',
-      description: 'Florida, New Jersey, California, Texas, Washington, Arizona, Colorado, Virginia, New York, Illinois, and Oregon state intelligence pages. Not a count of lenders.',
+      description: 'Florida, New Jersey, California, Texas, Washington, Arizona, Colorado, Virginia, New York, Illinois, Oregon, and Pennsylvania state intelligence pages. Not a count of lenders.',
       coverage: input.publishedStateIntelligencePaths.join(', '),
       contributingSourceSystems: ['lender-state-intel'],
       sourceAsOf: newestDocumentedSourceAsOf,
       generatedAt,
       publicationStatus: 'PUBLIC',
       trace: commonTrace(
-        'Published /florida, /new-jersey, /california, /texas, /washington, /arizona, /colorado, /virginia, /new-york, /illinois, and /oregon intelligence routes.',
+        'Published /florida, /new-jersey, /california, /texas, /washington, /arizona, /colorado, /virginia, /new-york, /illinois, /oregon, and /pennsylvania intelligence routes.',
         'Not NJ county pages and not national directory rows.',
         ['lender-state-intel'],
         input.publishedStateIntelligencePaths.join(', '),
@@ -1220,6 +1225,14 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       hmdaOriginations: input.orHmdaOriginations,
       fdicInstitutions: input.orFdicInstitutions,
       liveRosterCoverage: input.orLiveRosterCoverage,
+      liveLicensedCompanyUniverse: null,
+    },
+    pennsylvania: {
+      hmdaApplications: input.paHmdaApplications,
+      hmdaOriginations: input.paHmdaOriginations,
+      fdicInstitutions: input.paFdicInstitutions,
+      cfpbMortgageComplaints: input.paCfpbMortgageComplaints,
+      liveRosterCoverage: input.paLiveRosterCoverage,
       liveLicensedCompanyUniverse: null,
     },
     publication: {

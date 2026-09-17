@@ -117,6 +117,11 @@ async function main() {
     orHmdaOriginations: pub.orHmdaOriginations,
     orFdicInstitutions: pub.orFdicInstitutions,
     orLiveRosterCoverage: pub.orLiveRosterCoverage,
+    paHmdaApplications: pub.paHmdaApplications,
+    paHmdaOriginations: pub.paHmdaOriginations,
+    paFdicInstitutions: pub.paFdicInstitutions,
+    paCfpbMortgageComplaints: pub.paCfpbMortgageComplaints,
+    paLiveRosterCoverage: pub.paLiveRosterCoverage,
     servicerEvidenceRows: prod.servicerEvidenceRows,
     licensesTotal: prod.licensesTotal,
   };

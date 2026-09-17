@@ -1,0 +1,65 @@
+{
+  "retrievedAt": "2026-09-17T16:45:12Z",
+  "cfpb": {
+    "retrievedAt": "2026-09-17T16:45:12Z",
+    "source": "CFPB Consumer Complaint Database API",
+    "product": "Mortgage",
+    "state": "PA",
+    "period": "2025-01-01/2025-12-31",
+    "calendar_year": 2025,
+    "period_complete": true,
+    "api_total": 849,
+    "rows_acquired": 900,
+    "distinct_ids": 100,
+    "narratives_stored": 0,
+    "complaint_is_not_finding": true,
+    "company_name_is_not_nmls": true
+  },
+  "coveo": {
+    "totalCount": 1525,
+    "rows": 1525,
+    "retrievedAt": "2026-09-17T16:45:12Z"
+  },
+  "phfa": {
+    "retrievedAt": "2026-09-17T16:45:12Z",
+    "sourceUrl": "https://www.phfa.org/forms/participating_lenders/pl_fulllist.pdf",
+    "sourceUpdatedAt": "2026-09-17T11:55:08",
+    "pages": 11,
+    "row_count": 111,
+    "distinct_count": 92,
+    "phfa_is_not_dobs_license": true,
+    "top_designation_is_not_trusthub_ranking": true,
+    "statewide_origination": true
+  },
+  "open_data": {
+    "hits": 5,
+    "titles": [
+      {
+        "name": "Non-Depository Licensee Information Current Banking and Securities",
+        "id": "tyxc-jyug",
+        "attribution": "Department of Banking and Securities"
+      },
+      {
+        "name": "Map - Non-Depository Licensee Information Current Banking and Securities",
+        "id": "jyri-aptv",
+        "attribution": "Department of Banking and Securities"
+      },
+      {
+        "name": "Fine Wine & Good Spirits Retail Stores Sales by County, Annual, FY 2016-17 to Current, Liquor Control Board",
+        "id": "fhz7-8ncd",
+        "attribution": "Pennsylvania Liquor Control Board"
+      },
+      {
+        "name": "Pennsylvania Professional Licensee Data County State",
+        "id": "fwj2-whnj",
+        "attribution": "Department of State"
+      },
+      {
+        "name": "Sales, Use & Hotel Occupancy Tax Licenses and Certificates Current Monthly County Revenue",
+        "id": "ugeq-ckxd",
+        "attribution": "Department of Revenue"
+      }
+    ],
+    "retrievedAt": "2026-09-17T16:45:12Z"
+  }
+}

@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import snapshot from '@/lib/home-intel/accepted-snapshot.json';
 import { ILLINOIS_SNAPSHOT } from '@/lib/illinois-intelligence/snapshot';
 import { OREGON_SNAPSHOT } from '@/lib/oregon-intelligence/snapshot';
+import { PENNSYLVANIA_SNAPSHOT } from '@/lib/pennsylvania-intelligence/snapshot';
 import stateRows from './generated/state.csv.json';
 import countyRows from './generated/county.csv.json';
 import markets from './generated/markets.csv.json';
@@ -50,6 +51,20 @@ function oregonPublishedHmda(): PublishedStateHmda {
   };
 }
 
+function pennsylvaniaPublishedHmda(): PublishedStateHmda {
+  return {
+    contract: PENNSYLVANIA_SNAPSHOT.contract_name,
+    applications: PENNSYLVANIA_SNAPSHOT.hmda.applications,
+    originations: PENNSYLVANIA_SNAPSHOT.hmda.originations,
+    denials: PENNSYLVANIA_SNAPSHOT.hmda.denials,
+    fingerprint: PENNSYLVANIA_SNAPSHOT.fingerprint,
+    generatedAt: PENNSYLVANIA_SNAPSHOT.generated_at,
+    retrievedAt: PENNSYLVANIA_SNAPSHOT.hmda.retrieved_at,
+    sourceFile: 'lib/pennsylvania-intelligence/accepted-snapshot.json',
+    sourceGrain: 'county_market_summary county totals for Pennsylvania property geography',
+  };
+}
+
 // Static, bounded source seam. Tests replace it in memory; no I/O or production writes.
 export const countSources = {
   snapshot: (): unknown => snapshot,
@@ -57,7 +72,13 @@ export const countSources = {
   county: (): unknown => countyRows,
   markets: (): unknown => markets,
   publishedStateHmda: (state: string): PublishedStateHmda | null =>
-    state === 'IL' ? illinoisPublishedHmda() : state === 'OR' ? oregonPublishedHmda() : null,
+    state === 'IL'
+      ? illinoisPublishedHmda()
+      : state === 'OR'
+        ? oregonPublishedHmda()
+        : state === 'PA'
+          ? pennsylvaniaPublishedHmda()
+          : null,
 };
 class CountSourceError extends Error {}
 type RecordRow = Record<string, unknown>;
@@ -176,6 +197,9 @@ export function executeScalarCount(query: LenderResearchQuery): AskExecution {
     }
     if (evidence.sourceFile === 'lib/oregon-intelligence/accepted-snapshot.json') {
       evidence.conditions.push('Same HMDA 2025 Oregon-property measure as /oregon. Material LEI-county cells are a smaller subset and are not this answer.');
+    }
+    if (evidence.sourceFile === 'lib/pennsylvania-intelligence/accepted-snapshot.json') {
+      evidence.conditions.push('Same HMDA 2025 Pennsylvania-property measure as /pennsylvania. Material LEI-county cells are a smaller subset and are not this answer.');
     }
     return finish(`Reported ${action}s for mortgage properties in ${name}. The source grain is ${evidence.sourceGrain}; the displayed total uses ${evidence.outputGrain} scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.`);
   } catch (error) {

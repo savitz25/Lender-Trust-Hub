@@ -1,0 +1,83 @@
+{
+  "retrievedAt": "2026-09-17T16:47:17Z",
+  "sourceLastModified": "2026-09-01T06:50:23Z",
+  "dataset": "tyxc-jyug",
+  "datasetName": "Non-Depository Licensee Information Current Banking and Securities",
+  "total_rows": 32597,
+  "by_type": {
+    "Mortgage Originator": 22272,
+    "Installment Seller": 2595,
+    "Mortgage Broker": 863,
+    "Mortgage Lender Branch": 2071,
+    "Sales Finance": 1580,
+    "Credit Services Loan Broker": 110,
+    "Money Transmitter": 211,
+    "Partially Exempt": 150,
+    "Mortgage Lender": 626,
+    "Collector Repossessor": 275,
+    "Consumer Discount Company": 300,
+    "Mortgage Broker Branch": 158,
+    "Mortgage Servicing": 264,
+    "Mortgage Servicing Branch": 114,
+    "Consumer Discount Company Branch": 213,
+    "Debt Management Services Branch": 28,
+    "Check Casher Branch": 63,
+    "Mortgage Discount Company Branch": 5,
+    "Partially Exempt Branch": 16,
+    "Retail Grocery Store Check Casher": 74,
+    "Debt Settlement Services": 38,
+    "Mortgage Originator Sole Proprietor": 14,
+    "Retail Grocery Store Check Casher Branch": 312,
+    "Debt Management Services - NPL": 15,
+    "Check Casher": 125,
+    "Pawnbroker Branch": 13,
+    "Debt Management Services - NPL Branch": 37,
+    "Mortgage Discount Company": 6,
+    "Pawnbroker": 33,
+    "Debt Management Services": 12,
+    "Debt Settlement Services Branch": 4
+  },
+  "mortgage_classes": {
+    "Mortgage Lender": {
+      "rows": 626,
+      "distinct_principal_license": 626
+    },
+    "Mortgage Broker": {
+      "rows": 863,
+      "distinct_principal_license": 863
+    },
+    "Mortgage Servicing": {
+      "rows": 264,
+      "distinct_principal_license": 264
+    },
+    "Mortgage Discount Company": {
+      "rows": 6,
+      "distinct_principal_license": 6
+    },
+    "Mortgage Originator": {
+      "rows": 22272,
+      "distinct_principal_license": 22272
+    },
+    "Mortgage Originator Sole Proprietor": {
+      "rows": 14,
+      "distinct_principal_license": 14
+    },
+    "Mortgage Lender Branch": {
+      "rows": 2071,
+      "distinct_principal_license": 2070
+    },
+    "Mortgage Broker Branch": {
+      "rows": 158,
+      "distinct_principal_license": 158
+    },
+    "Mortgage Servicing Branch": {
+      "rows": 114,
+      "distinct_principal_license": 114
+    }
+  },
+  "includes_nmls_mortgage_classes": true,
+  "is_not_nmls_consumer_access_census": true,
+  "principal_license_is_not_automatically_nmls": true,
+  "mixed_non_depository_denominator": 32597,
+  "dobs_28450_is_not_this_table": true
+}
