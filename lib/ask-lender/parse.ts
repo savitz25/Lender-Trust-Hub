@@ -231,6 +231,9 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   if ((/\bpennsylvania\b/i.test(q) || /\bdobs\b/i.test(q)) && /\b(licensed|lenders?|roster|bankers?)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended|\bphfa\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'pa-nmls-search-only', failReason: 'Current Pennsylvania mortgage-company licensing is DoBS/NMLS search-only. No bulk NMLS roster was acquired. Search-only is not zero lenders. HMDA applications, Open Data class rows, FDIC banks, and PHFA participants are not that census.', coverageState: 'NOT_ACQUIRED' };
   }
+  if (/\bnccob\s+license\b/i.test(q) || (/\b[LBR]-\d{4,}\b/.test(q) && /\b(nccob|north carolina)\b/i.test(q))) {
+    return { mode: 'fail_closed', failClosedKind: 'nc-nccob-license-identity', failReason: 'An exact NCCOB license number is distinct from an NMLS Unique ID and outranks geography. This page does not mint public lender profiles from the Show All roster. Verify current status on NCCOB Licensee Search; do not treat the number as an NMLS ID or as a Charlotte/Raleigh local census.', coverageState: 'PARTIAL' };
+  }
   if (/\bnorth carolina\b|\bnccob\b/i.test(q) && /\bhow many lenders\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'nc-no-combined-lenders', failReason: 'Do not add 640 current NCCOB Mortgage Lender licenses, 574 brokers, 62 servicers, and 104 MOSR rows into one North Carolina lenders count. The mixed 1,380 current licensed entities are not mortgage companies. HMDA applications, HMDA LEIs, FDIC banks, CFPB complaints, reverse-mortgage certificates, and NCHFA participants are not that census.', coverageState: 'PARTIAL' };
   }
@@ -251,6 +254,9 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   }
   if (/\bnorth carolina\b|\bnccob\b/i.test(q) && /\bmosr\b|origination support/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'nc-mosr-class', failReason: 'Mortgage Origination Support Registration is a separate NCCOB class (104 current rows). MOSR is not a mortgage lender and is not an MLO person.', coverageState: 'PARTIAL' };
+  }
+  if ((/\bnorth carolina\b/i.test(q) || /\bnccob\b/i.test(q)) && /\breverse mortgage\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'nc-reverse-class', failReason: 'North Carolina reverse-mortgage certificates are a separate NCCOB list (112 RM numbers). Reverse authorization is not a generic Mortgage Lender license and is not added to the 640 current lender class.', coverageState: 'PARTIAL' };
   }
   if (/\b(charlotte|raleigh|durham|greensboro|wake|mecklenburg)\b/i.test(q) && /\b(mortgage|lender|broker|nchfa|nccob)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'nc-no-local', failReason: 'North Carolina HMDA geography is property location, not service territory, headquarters, or a Charlotte/Raleigh license census. This statewide page does not publish local North Carolina lender routes.', coverageState: 'UNSUPPORTED' };
