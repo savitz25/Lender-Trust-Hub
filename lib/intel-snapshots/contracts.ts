@@ -9,8 +9,9 @@ export const COLORADO_SNAPSHOT_CONTRACT = 'lender-co-state-intel-v1' as const;
 export const VIRGINIA_SNAPSHOT_CONTRACT = 'lender-va-state-intel-v1' as const;
 export const NEW_YORK_SNAPSHOT_CONTRACT = 'lender-ny-state-intel-v1' as const;
 export const ILLINOIS_SNAPSHOT_CONTRACT = 'lender-il-state-intel-v1' as const;
+export const OREGON_SNAPSHOT_CONTRACT = 'lender-or-state-intel-v1' as const;
 
-export type SnapshotGeography = 'NATIONAL' | 'FL' | 'NJ' | 'CA' | 'TX' | 'WA' | 'AZ' | 'CO' | 'VA' | 'NY' | 'IL';
+export type SnapshotGeography = 'NATIONAL' | 'FL' | 'NJ' | 'CA' | 'TX' | 'WA' | 'AZ' | 'CO' | 'VA' | 'NY' | 'IL' | 'OR';
 export type SnapshotPublicationStatus = 'draft' | 'published' | 'superseded';
 
 export type SnapshotLoadSource = 'published' | 'superseded' | 'accepted_artifact';

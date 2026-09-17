@@ -1,0 +1,122 @@
+{
+  "documentRows": 10,
+  "distinctCases": 10,
+  "actions": [
+    [
+      "Mortgage",
+      10
+    ]
+  ],
+  "types": [
+    [
+      "Consent Order",
+      5
+    ],
+    [
+      "Final",
+      3
+    ],
+    [
+      "Order to Cease and Desist and Consent to Entry of Order",
+      1
+    ],
+    [
+      "Order of Exemption",
+      1
+    ]
+  ],
+  "dateMin": "2015-11-02T08:00:00Z",
+  "dateMax": "2024-08-21T07:00:00Z",
+  "rows": [
+    {
+      "id": 6798,
+      "caseNumber": "M-24-0053",
+      "action": "Mortgage",
+      "type": "Consent Order",
+      "orderDate": "2024-08-21T07:00:00Z",
+      "name": "Network For Oregon Affordable Housing",
+      "fileRef": "/AdminOrders/actions_2024/20240821-network-oregon-affordable-housing-m-24-0053.pdf"
+    },
+    {
+      "id": 8001,
+      "caseNumber": "M-15-0121",
+      "action": "Mortgage",
+      "type": "Consent Order",
+      "orderDate": "2015-11-02T08:00:00Z",
+      "name": "Henry, Russell Roger",
+      "fileRef": "/AdminOrders/enf-orders2015/20151102-henryr-m-15-0121.pdf"
+    },
+    {
+      "id": 8002,
+      "caseNumber": "M-15-0119",
+      "action": "Mortgage",
+      "type": "Consent Order",
+      "orderDate": "2015-11-24T08:00:00Z",
+      "name": "Plum Tree Mortgage",
+      "fileRef": "/AdminOrders/enf-orders2015/20151124-plumtree-m-15-0119.pdf"
+    },
+    {
+      "id": 8003,
+      "caseNumber": "M-15-0117",
+      "action": "Mortgage",
+      "type": "Final",
+      "orderDate": "2015-12-12T08:00:00Z",
+      "name": "Vina Investments, LLC",
+      "fileRef": "/AdminOrders/enf-orders2015/20151212-vina-investments-m-15-0117.pdf"
+    },
+    {
+      "id": 8004,
+      "caseNumber": "M-15-0107",
+      "action": "Mortgage",
+      "type": "Consent Order",
+      "orderDate": "2015-12-21T08:00:00Z",
+      "name": "Commerce Home Mortgage, Inc.",
+      "fileRef": "/AdminOrders/enf-orders2015/20151221-commerce-home-m-15-0107.pdf"
+    },
+    {
+      "id": 8005,
+      "caseNumber": "M-15-0122",
+      "action": "Mortgage",
+      "type": "Order to Cease and Desist and Consent to Entry of Order",
+      "orderDate": "2015-12-23T08:00:00Z",
+      "name": "Gooi Mortgage, Inc.",
+      "fileRef": "/AdminOrders/enf-orders2015/20151223-gooi-m-15-0122.pdf"
+    },
+    {
+      "id": 8006,
+      "caseNumber": "M-15-0139",
+      "action": "Mortgage",
+      "type": "Order of Exemption",
+      "orderDate": "2015-12-24T08:00:00Z",
+      "name": "Heart to Heart Church",
+      "fileRef": "/AdminOrders/enf-orders2015/20151224-heart2heart-m-15-0139.pdf"
+    },
+    {
+      "id": 8122,
+      "caseNumber": "M-16-0346",
+      "action": "Mortgage",
+      "type": "Final",
+      "orderDate": "2016-12-14T08:00:00Z",
+      "name": "Peterson Funding LLC",
+      "fileRef": "/AdminOrders/enf-orders2016/20161214-peterson-funding-m-16-0346.pdf"
+    },
+    {
+      "id": 8123,
+      "caseNumber": "M-16-0298",
+      "action": "Mortgage",
+      "type": "Consent Order",
+      "orderDate": "2016-12-14T08:00:00Z",
+      "name": "Portland Funding, LLC",
+      "fileRef": "/AdminOrders/enf-orders2016/20161214-portland-funding-m-16-0298.pdf"
+    },
+    {
+      "id": 8124,
+      "caseNumber": "M-16-0343",
+      "action": "Mortgage",
+      "type": "Final",
+      "orderDate": "2016-12-20T08:00:00Z",
+      "name": "Solis-Rodriguez, Erika and Zaman, Aktar",
+      "fileRef": "/AdminOrders/enf-orders2016/20161220-solis-rodriguez-m-16-0343.pdf"
+    }
+  ]
+}

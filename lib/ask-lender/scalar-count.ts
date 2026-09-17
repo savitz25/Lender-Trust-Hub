@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import snapshot from '@/lib/home-intel/accepted-snapshot.json';
 import { ILLINOIS_SNAPSHOT } from '@/lib/illinois-intelligence/snapshot';
+import { OREGON_SNAPSHOT } from '@/lib/oregon-intelligence/snapshot';
 import stateRows from './generated/state.csv.json';
 import countyRows from './generated/county.csv.json';
 import markets from './generated/markets.csv.json';
@@ -35,13 +36,28 @@ function illinoisPublishedHmda(): PublishedStateHmda {
   };
 }
 
+function oregonPublishedHmda(): PublishedStateHmda {
+  return {
+    contract: OREGON_SNAPSHOT.contract_name,
+    applications: OREGON_SNAPSHOT.hmda.applications,
+    originations: OREGON_SNAPSHOT.hmda.originations,
+    denials: OREGON_SNAPSHOT.hmda.denials,
+    fingerprint: OREGON_SNAPSHOT.fingerprint,
+    generatedAt: OREGON_SNAPSHOT.generated_at,
+    retrievedAt: OREGON_SNAPSHOT.hmda.retrieved_at,
+    sourceFile: 'lib/oregon-intelligence/accepted-snapshot.json',
+    sourceGrain: 'county_market_summary county totals for Oregon property geography',
+  };
+}
+
 // Static, bounded source seam. Tests replace it in memory; no I/O or production writes.
 export const countSources = {
   snapshot: (): unknown => snapshot,
   state: (): unknown => stateRows,
   county: (): unknown => countyRows,
   markets: (): unknown => markets,
-  publishedStateHmda: (state: string): PublishedStateHmda | null => (state === 'IL' ? illinoisPublishedHmda() : null),
+  publishedStateHmda: (state: string): PublishedStateHmda | null =>
+    state === 'IL' ? illinoisPublishedHmda() : state === 'OR' ? oregonPublishedHmda() : null,
 };
 class CountSourceError extends Error {}
 type RecordRow = Record<string, unknown>;
@@ -109,7 +125,7 @@ export function executeScalarCount(query: LenderResearchQuery): AskExecution {
         evidence.generatedAt = published.generatedAt;
         evidence.field = `${action}s`;
         value = count(published[evidence.field as 'applications' | 'originations' | 'denials']);
-        evidence.calculation = `Select ${published.contract} hmda.${evidence.field} for Illinois property geography. Same measure as /illinois. Not the home-intel material LEI-county cell rollup.`;
+        evidence.calculation = `Select ${published.contract} hmda.${evidence.field} for ${name} property geography. Same measure as the published specialist state page. Not the home-intel material LEI-county cell rollup.`;
       } else {
       evidence.sourceFile = 'lib/home-intel/accepted-snapshot.json'; evidence.sourceFingerprint = fingerprint(accepted);
       evidence.sourceGrain = 'county observations aggregated by jurisdiction';
@@ -157,6 +173,9 @@ export function executeScalarCount(query: LenderResearchQuery): AskExecution {
     evidence.value = value; evidence.availability = 'AVAILABLE';
     if (evidence.sourceFile === 'lib/illinois-intelligence/accepted-snapshot.json') {
       evidence.conditions.push('Same HMDA 2025 Illinois-property measure as /illinois. Material LEI-county cells are a smaller subset and are not this answer.');
+    }
+    if (evidence.sourceFile === 'lib/oregon-intelligence/accepted-snapshot.json') {
+      evidence.conditions.push('Same HMDA 2025 Oregon-property measure as /oregon. Material LEI-county cells are a smaller subset and are not this answer.');
     }
     return finish(`Reported ${action}s for mortgage properties in ${name}. The source grain is ${evidence.sourceGrain}; the displayed total uses ${evidence.outputGrain} scope. Not lenders headquartered here and not a service-territory or licensing map. This is historical activity, not an approval rate or recommendation.`);
   } catch (error) {

@@ -113,6 +113,10 @@ async function main() {
     ilHmdaOriginations: pub.ilHmdaOriginations,
     ilFdicInstitutions: pub.ilFdicInstitutions,
     ilLiveRosterCoverage: pub.ilLiveRosterCoverage,
+    orHmdaApplications: pub.orHmdaApplications,
+    orHmdaOriginations: pub.orHmdaOriginations,
+    orFdicInstitutions: pub.orFdicInstitutions,
+    orLiveRosterCoverage: pub.orLiveRosterCoverage,
     servicerEvidenceRows: prod.servicerEvidenceRows,
     licensesTotal: prod.licensesTotal,
   };

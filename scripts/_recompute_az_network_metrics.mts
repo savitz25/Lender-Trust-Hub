@@ -102,6 +102,10 @@ const input = {
   ilHmdaOriginations: pub.ilHmdaOriginations,
   ilFdicInstitutions: pub.ilFdicInstitutions,
   ilLiveRosterCoverage: pub.ilLiveRosterCoverage,
+  orHmdaApplications: pub.orHmdaApplications,
+  orHmdaOriginations: pub.orHmdaOriginations,
+  orFdicInstitutions: pub.orFdicInstitutions,
+  orLiveRosterCoverage: pub.orLiveRosterCoverage,
   servicerEvidenceRows: 10,
   licensesTotal: 164965,
 };

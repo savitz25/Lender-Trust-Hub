@@ -177,6 +177,30 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   if (/\billinois\b/i.test(q) && /\b(chicago|cook county|serving)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'il-mailing-ne-service', failReason: 'Illinois HMDA geography is property location, not service territory, headquarters, or a Chicago/Cook license census. This statewide page does not publish local Illinois lender routes.', coverageState: 'UNSUPPORTED' };
   }
+  if (/\boregon\b|\bodfr\b|\bdfr\b/i.test(q) && /\bhow many lenders\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'or-no-combined-lenders', failReason: 'Oregon does not have an acquired current mortgage-company census. Do not answer with HMDA applications, HMDA LEIs, FDIC banks, or OHCS Flex Lending participants as Oregon lenders. Current verification is DFR + NMLS Consumer Access.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if ((/\boregon\b/i.test(q) || /\bdfr\b/i.test(q)) && /\bcomplaints?\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'or-complaints-not-acquired', failReason: 'Oregon DFR/NMLS mortgage complaints were not acquired as a bulk count. Missing is not zero. A complaint is not a violation and is not a DFR administrative order. Company-specific research requires an exact NMLS identity.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if ((/\boregon\b/i.test(q) || /\bdfr\b/i.test(q)) && /\b(enforcement|administrative order|notices and orders|dfr case|m-\d{2}-\d{4})\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'or-dfr-mortgage-orders', failReason: 'Oregon DFR Mortgage-classified administrative orders are mixed mortgage matters. A document is not a unique case. Name-only attachment is unsafe. This is not a company quality score. Confirm the official Notices and orders system and /oregon.', coverageState: 'PARTIAL' };
+  }
+  if (/\boregon\b/i.test(q) && /\b(loan originators?|mlos?)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat(?:ion|ions|ed)\b|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'or-mlo-search-only', failReason: 'Oregon mortgage loan originators are a person grain. No bulk MLO roster was acquired. Search-only is not zero. An MLO is not a mortgage company. Verify on NMLS Consumer Access.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if (/\boregon\b/i.test(q) && /\bservicers?\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'or-servicer-search-only', failReason: 'Oregon mortgage servicer licensing is a separate DFR license from origination. No bulk servicer roster was acquired. Search-only is not zero. Do not add servicers to the mortgage-company denominator.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if (/\b(ohcs|flex lending|firsthome|nextstep)\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'or-ohcs-program', failReason: 'OHCS Flex Lending approved lenders are program participants, not the Oregon DFR/NMLS mortgage-license universe. Featured or top-producing OHCS labels are not LenderTrustHub rankings. Names were not merged onto NMLS identities.', coverageState: 'PARTIAL' };
+  }
+  if (/\boregon\b/i.test(q) && /\b(portland|multnomah)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'or-no-local', failReason: 'Oregon HMDA geography is property location, not service territory, headquarters, or a Portland/Multnomah license census. This statewide page does not publish local Oregon lender routes.', coverageState: 'UNSUPPORTED' };
+  }
+  if ((/\boregon\b/i.test(q) || /\bdfr\b/i.test(q)) && /\b(licensed|lenders?|roster|bankers?|brokers?)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended|\bohcs|\bflex\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'or-nmls-search-only', failReason: 'Current Oregon mortgage-company licensing is DFR/NMLS search-only. No bulk roster was acquired. Search-only is not zero lenders. HMDA applications, HMDA LEIs, FDIC banks, and OHCS Flex lenders are not that census.', coverageState: 'NOT_ACQUIRED' };
+  }
 
   if (/\bwhat is (?:an? )?nmls(?: institution)? id\b|\bhow do i (?:check|verify).*nmls/i.test(q)) return { mode: 'definition', definitionId: 'nmls', requestedMetric: null };
   if (/\bwhat is (?:an? )?lei\b/i.test(q)) return { mode: 'definition', definitionId: 'lei', requestedMetric: null };
