@@ -15,6 +15,11 @@ type SnapshotRow = {
   publication_status: 'published' | 'superseded';
 };
 
+/**
+ * Published/superseded intelligence snapshots are PUBLIC_READ SELECT (anon+auth).
+ * Prefer service_role when present (BFF). Never write with the anon key.
+ * Wave 0 L1 did not revoke this SELECT; missing keys fail closed to accepted artifacts.
+ */
 function snapshotClient() {
   const url = getSupabaseUrl();
   const service = getSupabaseServiceRoleKey();

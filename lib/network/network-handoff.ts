@@ -134,6 +134,10 @@ export type CreateHandoffResult =
   | { ok: true; code: string; redirectUrl: string }
   | { ok: false; status: number; error: string };
 
+/**
+ * TRUST-SEC-001 / D1: insert is SERVICE_ROLE_ONLY (BFF).
+ * Browser never writes `network_auth_handoffs`. Do not restore anon/auth grants.
+ */
 export async function createNetworkHandoff(params: {
   userId: string;
   fromHub: NetworkHubId;
@@ -192,6 +196,10 @@ export type ConsumeHandoffResult =
   | { ok: true; userId: string; destinationPath: string }
   | { ok: false; status: number; error: string };
 
+/**
+ * TRUST-SEC-001 / D1: consume_network_auth_handoff is SERVICE_ROLE_ONLY.
+ * Call only from this server module (complete route). Never from client/anon.
+ */
 export async function consumeNetworkHandoff(
   code: string,
   toHub: NetworkHubId
