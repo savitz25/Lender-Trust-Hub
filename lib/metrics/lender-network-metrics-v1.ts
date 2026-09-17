@@ -264,6 +264,15 @@ export type LenderNetworkMetricsV1 = {
     liveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
     liveLicensedCompanyUniverse: null;
   };
+  northCarolina: {
+    hmdaApplications: number;
+    hmdaOriginations: number;
+    fdicInstitutions: number;
+    cfpbMortgageComplaints: number;
+    nccobMortgageLenderRows: number;
+    liveRosterCoverage: 'ACQUIRED_CURRENT_COMPANY_SHOW_ALL';
+    liveLicensedCompanyUniverse: null;
+  };
   publication: {
     nationalRender: number;
     nationalIndex: number;

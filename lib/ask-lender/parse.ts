@@ -210,7 +210,10 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   if ((/\bpennsylvania\b/i.test(q) || /\bdobs\b/i.test(q)) && /\b(enforcement|consent (?:agreement|order)|order to show cause|cease and desist)\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'pa-dobs-orders', failReason: 'DoBS enforcement orders are a mixed Department-wide catalog. A mortgage-specific census was not acquired. A document is not a unique matter. Order to Show Cause is not a final finding. Confirm official DoBS Enforcement Orders and /pennsylvania.', coverageState: 'PARTIAL' };
   }
-  if (/\b(phfa|participating lenders?)\b/i.test(q) || (/\bpennsylvania\b/i.test(q) && /\bhousing finance\b/i.test(q))) {
+  if (/\bnchfa\b/i.test(q) || (/\bnorth carolina\b|\bnccob\b/i.test(q) && /\b(participating lenders?|housing finance|preferred loan officer)\b/i.test(q))) {
+    return { mode: 'fail_closed', failClosedKind: 'nc-nchfa-program', failReason: 'NCHFA participating lenders are a housing-program network, not the NCCOB mortgage-license universe. The public finder is a radius search, not a bulk census. NCHFA “preferred loan officer” and “top lender” awards are Agency program language, not LenderTrustHub rankings. Names were not attached to NMLS by name alone.', coverageState: 'PARTIAL' };
+  }
+  if (/\bphfa\b/i.test(q) || (/\bpennsylvania\b/i.test(q) && /\b(participating lenders?|housing finance)\b/i.test(q))) {
     return { mode: 'fail_closed', failClosedKind: 'pa-phfa-program', failReason: 'PHFA participating lenders are a housing-program network, not the DoBS/NMLS mortgage-license universe. County physical presence is not county-only eligibility. PHFA Top designations are not LenderTrustHub rankings.', coverageState: 'PARTIAL' };
   }
   if (/\bpennsylvania\b/i.test(q) && /\b(loan originators?|mlos?|mortgage originator)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat(?:ion|ions|ed)\b|\bdenial|\bproperty/i.test(q)) {
@@ -227,6 +230,33 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   }
   if ((/\bpennsylvania\b/i.test(q) || /\bdobs\b/i.test(q)) && /\b(licensed|lenders?|roster|bankers?)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended|\bphfa\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'pa-nmls-search-only', failReason: 'Current Pennsylvania mortgage-company licensing is DoBS/NMLS search-only. No bulk NMLS roster was acquired. Search-only is not zero lenders. HMDA applications, Open Data class rows, FDIC banks, and PHFA participants are not that census.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if (/\bnorth carolina\b|\bnccob\b/i.test(q) && /\bhow many lenders\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'nc-no-combined-lenders', failReason: 'Do not add 640 current NCCOB Mortgage Lender licenses, 574 brokers, 62 servicers, and 104 MOSR rows into one North Carolina lenders count. The mixed 1,380 current licensed entities are not mortgage companies. HMDA applications, HMDA LEIs, FDIC banks, CFPB complaints, reverse-mortgage certificates, and NCHFA participants are not that census.', coverageState: 'PARTIAL' };
+  }
+  if ((/\bnorth carolina\b/i.test(q) || /\bnccob\b/i.test(q)) && /\bcomplaints?\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'nc-cfpb-observations', failReason: 'CFPB 2025 North Carolina mortgage complaints are consumer submissions (920 distinct IDs), not findings and not NCCOB orders. NCCOB bulk mortgage complaints are intake-only / not public. Company name is not an NMLS identity.', coverageState: 'PARTIAL' };
+  }
+  if ((/\bnorth carolina\b/i.test(q) || /\bnccob\b/i.test(q)) && /\b(enforcement|consent order|cease and desist|revocation|suspension)\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'nc-nccob-orders', failReason: 'NCCOB Mortgage Enforcement Actions listed 723 documents across 693 distinct docket numbers. A document is not a unique matter. A consent order is not a criminal conviction. Person respondents are not company-lender matters. The grid did not publish NCCOB license or NMLS IDs, so name-only attachment is unsafe. Confirm official NCCOB Mortgage Enforcement Actions and /north-carolina.', coverageState: 'PARTIAL' };
+  }
+  if (/\bnorth carolina\b/i.test(q) && /\b(loan originators?|mlos?|mortgage originator)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat(?:ion|ions|ed)\b|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'nc-mlo-matching', failReason: 'North Carolina mortgage loan originators are a person grain. NCCOB Show All reports 24,612 official matching records; distinct NCCOB/NMLS person IDs were not fully paged. An MLO is not a mortgage company and is not added to the 1,380 current company entities.', coverageState: 'PARTIAL' };
+  }
+  if (/\bnorth carolina\b/i.test(q) && /\bservicers?\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'nc-servicer-class', failReason: 'North Carolina mortgage servicers are a separate NCCOB class. Current Show All lists 62 Mortgage Servicer licenses. A Services Loan flag is not the servicer census. Do not add servicers to the 640 lender denominator.', coverageState: 'PARTIAL' };
+  }
+  if (/\bnorth carolina\b/i.test(q) && /\bbrokers?\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'nc-broker-class', failReason: 'North Carolina mortgage brokers are a separate NCCOB class. Current Show All lists 574 Mortgage Broker licenses. Do not add brokers to the 640 lender denominator.', coverageState: 'PARTIAL' };
+  }
+  if (/\bnorth carolina\b|\bnccob\b/i.test(q) && /\bmosr\b|origination support/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'nc-mosr-class', failReason: 'Mortgage Origination Support Registration is a separate NCCOB class (104 current rows). MOSR is not a mortgage lender and is not an MLO person.', coverageState: 'PARTIAL' };
+  }
+  if (/\b(charlotte|raleigh|durham|greensboro|wake|mecklenburg)\b/i.test(q) && /\b(mortgage|lender|broker|nchfa|nccob)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'nc-no-local', failReason: 'North Carolina HMDA geography is property location, not service territory, headquarters, or a Charlotte/Raleigh license census. This statewide page does not publish local North Carolina lender routes.', coverageState: 'UNSUPPORTED' };
+  }
+  if ((/\bnorth carolina\b/i.test(q) || /\bnccob\b/i.test(q)) && /\b(licensed|lenders?|roster|bankers?)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended|\bnchfa\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'nc-nccob-lender-class', failReason: 'Current NCCOB Show All lists 640 Mortgage Lender licenses as a separate class. That is not 574 brokers, 62 servicers, 104 MOSR rows, 24,612 MLO matching records, 112 reverse-mortgage certificates, HMDA applications, FDIC banks, or NCHFA participants, and it is not a combined North Carolina lenders census.', coverageState: 'PARTIAL' };
   }
 
   if (/\bwhat is (?:an? )?nmls(?: institution)? id\b|\bhow do i (?:check|verify).*nmls/i.test(q)) return { mode: 'definition', definitionId: 'nmls', requestedMetric: null };
