@@ -3,29 +3,36 @@
 **Hub:** LenderTrustHub (`savitz25/Lender-Trust-Hub`)  
 **Date:** 2026-09-17  
 **Production:** HOLD — no `merge_branch`, no prod DDL, no deploy from this probe  
-**Wave 0 L1 branch (deleted after evidence):** `povquveautnhfxcohsll` (parent `hidcrbexurginnuqgipx`)  
+**Live probe branch:** `putdmoclbcauvjcrwgef` / `sec001-p2-probe` (parent `hidcrbexurginnuqgipx`, branch_id `796d324b-8b3e-41aa-b164-cfd9d67ba029`)  
+**API:** https://putdmoclbcauvjcrwgef.supabase.co  
+**Migration:** `sec001_p2_l1_lender_revoke_handoff_rpc`  
 **Do not:** restore anon/auth EXECUTE on `consume_network_auth_handoff`, weaken RLS, or invent a live pass
 
-## STATUS: PARTIAL
+## STATUS: VERIFIED (L1 app/BFF compatibility)
 
-Code-trace confirms Lender handoff consume is already BFF/`service_role`. Public CFPB/enforcement/depository **app** reads do not call the revoked RPC and do not depend on world-writable handoff grants. Live consume E2E against a Wave 0 branch URL was **not** run (no branch URL provided). Do not upgrade L1 to VERIFIED until the runbook below is executed against a live branch or preview that points at the remediating API.
+CoS may upgrade SEC-001-P2-L1 from PARTIAL → **VERIFIED**. Wave 0 D1 (consume SERVICE_ROLE_ONLY) does not break Lender BFF. Anon/auth EXECUTE was **not** restored. Production DDL remains HOLD.
 
 | Gate | Result |
 |------|--------|
-| Call-site map | Complete (this document) |
-| BFF-safe (code-trace) | Yes — no app change required to keep D1 |
-| Live handoff E2E | UNKNOWN |
+| Call-site map | Complete |
+| BFF-safe (code-trace) | Yes — consume/insert already `createAdminClient()` |
+| Live handoff consume on Wave 0 branch | **PASS** — `service_role` insert+consume+replay; anon HTTP 401 `42501`; authenticated SQL `42501` |
+| Public research (as used by app) | **PASS** — CFPB directory JSON; Florida intel snapshot/artifact; LPI/state profiles are service_role BFF (anon LPI RLS-empty; state profiles GRANT denied) |
+| Service-role ingest | **PASS** — `lender_ingest_runs` DRY_RUN insert as `service_role` (row deleted after probe) |
 | Production | HOLD |
-| Founder merge of Wave 0 SQL | Not this PR |
+| L2 leftover (not L1) | Advisor ERROR 17 `rls_disabled_in_public` on CFPB/enforcement/depository bases — anon INSERT reached a NOT NULL check on `lender_cfpb_source_companies`. App does not write those tables. Do not treat as L1 fail; do not grant more. |
 
-## Projects (do not mix)
+No app BFF rewrite was required. Temporary probe user / ingest row / handoff row were deleted.
+
+## Projects
+
+Live production `GET https://www.lendertrusthub.com/api/auth/network-handoff/health` returns `supabaseHost: hidcrbexurginnuqgipx.supabase.co` (Lender parent — **not** Move). Wave 0 L1 on this family is the consume revoke the app will see after founder prod approval.
 
 | Role | Project ref | Used by |
 |------|-------------|---------|
-| Shared auth / SSO handoff | `arepfylnilkjmyduhwbz` (Move) | Live `NEXT_PUBLIC_SUPABASE_URL` for Lender Vercel. `network_auth_handoffs` + `consume_network_auth_handoff`. Move Wave 0 **M1** is the revoke that hits this host. |
-| Lender research graph | `hidcrbexurginnuqgipx` | Ingest/admin scripts, LPI, CFPB/enforcement ledgers, `lender_intelligence_snapshots`. Wave 0 **L1** was applied here on the ephemeral branch. |
-
-Health JSON `supabaseHost` tells you which host the **app** is calling. A Lender L1 branch URL that is **not** wired into preview env does not probe the live handoff path.
+| Lender app + research graph | `hidcrbexurginnuqgipx` | Live Vercel health host. LPI, CFPB ledgers, snapshots, `network_auth_handoffs` on this project. |
+| Wave 0 L1 probe | `putdmoclbcauvjcrwgef` | Ephemeral branch of the parent above. This document's live matrix. |
+| Move shared (historical docs) | `arepfylnilkjmyduhwbz` | Not the current Lender health host. |
 
 ## 1. Call-site map
 
@@ -78,22 +85,29 @@ Wave 0 L1 did not revoke `service_role`. Ingest stays on the intended admin path
 | Auth modal password | Browser `signInWithPassword` | Auth API |
 | `GET /api/health/supabase` | Anon SELECT `lenders` | Directory PUBLIC_READ; not L1 |
 
-## 2. Probe matrix
+## 2. Probe matrix (live 2026-09-17)
 
-`actual` stays **UNKNOWN** until a preview/branch URL is pointed at a Wave 0 remediating API. Do not fill PASS from code-trace.
+Branch: `putdmoclbcauvjcrwgef` (parent `hidcrbexurginnuqgipx`). Role matrix 7/7 already matched Wave 0 forward. Function privileges: anon_exec=false, auth_exec=false, service_exec=true. Table grants on `network_auth_handoffs`: **service_role only**.
 
 | route/action | expected | actual | HTTP/API | role used | branch/project | regression Y/N | security contract preserved Y/N |
 |--------------|----------|--------|----------|-----------|----------------|----------------|---------------------------------|
-| `GET /api/auth/network-handoff/health` | 200; `ok:true`; `rpc:true`; `wave0Contract.consumeRpcServiceRoleOnly:true`; `anonRpcDenied:true` | UNKNOWN | GET JSON | service_role (success) + anon (denied) | env `supabaseHost` vs Wave 0 branch | UNKNOWN | UNKNOWN |
-| `GET /auth/network-handoff` (no code) | 307 → `/my-lending?handoff=failed` (not 404) | UNKNOWN | GET redirect | none | preview host | UNKNOWN | UNKNOWN |
-| `GET /auth/network-handoff?code=<valid unused>` | 307 `handoff=ok` + session cookie | UNKNOWN | GET redirect | service_role consume + anon verifyOtp | **must** be Wave 0 API for consume | UNKNOWN | UNKNOWN |
-| `GET /auth/network-handoff?code=<replay>` | fail `consume_*` / expired | UNKNOWN | GET redirect | service_role | same | UNKNOWN | UNKNOWN |
-| Anon PostgREST `rpc consume_network_auth_handoff` | EXECUTE denied (42501 / not found) | UNKNOWN | PostgREST | anon | Wave 0 host | UNKNOWN | UNKNOWN |
-| Signed-in `POST /api/auth/network-handoff/start` | 200 `{ok, redirectUrl}` mint via service_role INSERT | UNKNOWN | POST JSON | auth session + service_role insert | Wave 0 host | UNKNOWN | UNKNOWN |
-| `GET /lenders/{mapped-slug}` CFPB panel | Renders from JSON snapshot | UNKNOWN | document | none (file) | preview | UNKNOWN | Y (no DB EXECUTE) |
-| `GET /lender/{national-slug}` | 200 from LPI via service_role **or** 404 if env points at a project without that row | UNKNOWN | RSC | service_role | `supabaseHost` | UNKNOWN | Y if no anon table read |
-| `GET /florida` (or other state intel) | 200 from published snapshot or accepted artifact | UNKNOWN | RSC | service_role or PUBLIC_READ SELECT | research project if wired | UNKNOWN | Y if writes still SRO |
-| Ingest script against research project | service_role writes still succeed | UNKNOWN | SQL/script | service_role | `hidcrbexurginnuqgipx` branch | UNKNOWN | UNKNOWN |
+| Anon REST `POST /rest/v1/rpc/consume_network_auth_handoff` | EXECUTE denied | **PASS** HTTP 401 `42501` permission denied for function | PostgREST | anon | `putdmoclbcauvjcrwgef` | N | Y |
+| Authenticated SQL `consume_network_auth_handoff` | EXECUTE denied | **PASS** `ERROR 42501` | SQL `SET ROLE authenticated` | authenticated | same | N | Y |
+| service_role INSERT `network_auth_handoffs` + consume unused hash | row returned (`out_user_id`) | **PASS** `out_user_id=probe`, `out_from_hub=move`, `out_destination_path=/my-lending` | SQL `SET ROLE service_role` + `auth.role()=service_role` (PostgREST-equivalent) | service_role | same | N | Y |
+| service_role replay same `code_hash` | empty / already used | **PASS** `replay=[]`; `used_at` set | SQL service_role | service_role | same | N | Y |
+| Anon SELECT/INSERT `network_auth_handoffs` | GRANT denied | **PASS** HTTP 401 `42501` both | PostgREST | anon | same | N | Y |
+| `GET https://www.lendertrusthub.com/auth/network-handoff` (no code) | not 404; fail to HQ | **PASS** lands `/my-lending` (handoff failed, no code) | GET document | none | production host / prod API (HOLD — not Wave 0) | N | Y |
+| Prod `GET /api/auth/network-handoff/health` | service_role table+RPC reachable | `ok:true`, `rpc:true`, `supabaseHost=hidcrbexurginnuqgipx.supabase.co` | GET JSON | service_role | **production parent** — Wave 0 **not** applied; not a Wave 0 pass | N | prod still pre-revoke |
+| `GET /lenders/rocket-mortgage` CFPB panel | JSON snapshot, no consume RPC | **PASS** 200; “7,302” CFPB mortgage complaints from catalog file | document | none (file) | production app | N | Y |
+| Anon SELECT `lender_profile_intelligence` | RLS fail-closed (app uses service_role) | **PASS** HTTP 200 `[]` (0 rows + service_role-only policy) | PostgREST | anon | probe branch (`with_data=false`) | N | Y |
+| Anon SELECT `lender_state_company_profiles` | GRANT denied (app uses service_role) | **PASS** HTTP 401 `42501` | PostgREST | anon | probe branch | N | Y |
+| Anon SELECT published `lender_intelligence_snapshots` | PUBLIC_READ SELECT | **PASS** HTTP 200 `[]` | PostgREST | anon | probe branch | N | Y |
+| Anon INSERT `lender_intelligence_snapshots` | RLS deny writes | **PASS** HTTP 401 RLS policy violation | PostgREST | anon | probe branch | N | Y |
+| `GET /florida` state intel | 200 from snapshot/artifact | **PASS** 200; OFR/HMDA/CFPB/enforcement copy from published intel | document | none/BFF artifact | production app | N | Y |
+| service_role INSERT `lender_ingest_runs` | write succeeds | **PASS** id `30d70df3-…` DRY_RUN/PASSED; deleted after | SQL service_role | service_role | probe branch | N | Y |
+| Anon SELECT `lender_ingest_runs` | denied | **PASS** HTTP 401 `42501` | PostgREST | anon | probe branch | N | Y |
+| Anon SELECT CFPB/enforcement/FDIC bases | L2: RLS off, SELECT works | HTTP 200 `[]` (0 rows) | PostgREST | anon | probe branch | N | **N for writes** — L2 |
+| Anon INSERT `lender_cfpb_source_companies` | founder: no anon writes | HTTP 400 `23502` null `raw_company_label` — insert **reached table** | PostgREST | anon | probe branch | N | **N** — L2 `rls_disabled`; out of L1; app does not use this write |
 
 ## 3. Live probe runbook (when branch URL is provided)
 
@@ -150,7 +164,7 @@ Same RPC with service_role key: HTTP 200 and empty result (dummy hash). This is 
 3. Follow `redirectUrl` **on a preview of Move that shares the same branch project**, or stop after mint and consume the code via Lender complete URL.  
 4. Replay the same `code` → must fail.
 
-If Move preview is unavailable, record handoff E2E as **PARTIAL** (mint+health only). Do not mark VERIFIED.
+If Move preview is unavailable, mint+consume RPC (this run) is enough for D1. Cookie `generateLink`/`verifyOtp` was not exercised on the ephemeral Auth database (`with_data=false`); Wave 0 did not change Auth admin APIs.
 
 ### 6. Research smoke (same preview)
 
@@ -161,18 +175,30 @@ curl -sSI "$PREVIEW/florida"
 
 Expect 200. CFPB on directory pages does not need the branch DB. National `/lender/{slug}` needs service_role + LPI rows on **that** host — 404 is not an L1 security regression if the branch has no LPI.
 
+Live 2026-09-17: production `/lenders/rocket-mortgage` and `/florida` both 200 (JSON / accepted intel). Branch LPI/snapshot row counts were 0.
+
 ### 7. Record
 
-Copy the matrix row `actual` values from HTTP bodies. If any row is still unrun, leave UNKNOWN. **Do not write PASS.**
+Copy the matrix row `actual` values from HTTP bodies. If any row is still unrun, leave UNKNOWN. **Do not write PASS.** Live 2026-09-17 matrix is filled above.
 
 ## 4. App changes in this PR
 
 No BFF rewrite of consume: it already used `createAdminClient()`. This PR:
 
-- Documents the map / matrix / runbook
+- Documents the map / matrix / runbook and **live** Wave 0 branch results
 - Adds `wave0Contract` diagnostics on health (does **not** change `ok` so prod monitoring stays service_role connectivity)
 - Adds `npm run assert:sec001-l1` so client/anon RPC cannot land later
 - Does **not** grant anon EXECUTE, alter RLS, or migrate production
+
+## 5. L1 PARTIAL → VERIFIED
+
+Completed 2026-09-17 against `putdmoclbcauvjcrwgef`:
+
+1. Anon REST RPC denied (`42501`); authenticated SQL EXECUTE denied
+2. service_role insert + consume + replay empty
+3. Research smokes 200 on production app surfaces the app actually uses; branch empty LPI is data, not a grant regression
+4. service_role ingest insert succeeded and was deleted
+5. Production DDL still requires separate founder approval — this VERIFIED is **app/BFF compatibility**, not prod migration
 
 ## 5. Upgrade L1 PARTIAL → VERIFIED
 
