@@ -50,7 +50,7 @@ function baseInput(over: Partial<LenderNetworkMetricsInput> = {}): LenderNetwork
     publicRender: 181,
     publicIndex: 180,
     floridaPublic: 130,
-    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon'],
+    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania'],
     coHmdaApplications: 260212,
     coHmdaOriginations: 156145,
     coCfpbMortgageComplaints: 8627,
@@ -76,6 +76,11 @@ function baseInput(over: Partial<LenderNetworkMetricsInput> = {}): LenderNetwork
     orHmdaOriginations: 89073,
     orFdicInstitutions: 14,
     orLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED',
+    paHmdaApplications: 444887,
+    paHmdaOriginations: 271254,
+    paFdicInstitutions: 110,
+    paCfpbMortgageComplaints: 849,
+    paLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED',
     njCountyIntelligencePages: 4,
     njHmdaApplications: 318529,
     njHmdaOriginations: 177325,
@@ -155,8 +160,9 @@ describe('lender-network-metrics-v1 grain safety', () => {
     assert.notEqual(metricByKey(m, 'co_dre_mlo_rows').value, m.colorado.hmdaApplications);
     assert.equal(metricByKey(m, 'co_cfpb_mortgage_complaints').value, 8627);
     assert.notEqual(metricByKey(m, 'co_cfpb_mortgage_complaints').value, m.colorado.hmdaApplications);
-    assert.equal(m.network.publishedStateIntelligencePages, 11);
+    assert.equal(m.network.publishedStateIntelligencePages, 12);
     assert.ok(m.network.publishedStateIntelligencePaths.includes('/oregon'));
+    assert.ok(m.network.publishedStateIntelligencePaths.includes('/pennsylvania'));
     assert.equal(m.oregon.hmdaApplications, 146902);
     assert.ok(m.network.publishedStateIntelligencePaths.includes('/colorado'));
     assert.ok(m.network.publishedStateIntelligencePaths.includes('/virginia'));
@@ -255,7 +261,7 @@ describe('lender-network-metrics-v1 grain safety', () => {
       () =>
         computeLenderNetworkMetrics(
           baseInput({
-            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/new-jersey/union-county'],
+            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania', '/new-jersey/union-county'],
           }),
         ),
       /county routes/,

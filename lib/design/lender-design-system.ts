@@ -165,6 +165,14 @@ export const LENDER_TOOLS = {
       cta: 'Open Oregon research',
     },
     {
+      id: 'pennsylvania-research',
+      title: 'Pennsylvania research',
+      description:
+        '2025 HMDA Pennsylvania activity, DoBS/NMLS class separation, CFPB 2025 mortgage complaints, and PHFA participating lenders. Not a ranking or a current NMLS census.',
+      href: '/pennsylvania',
+      cta: 'Open Pennsylvania research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
@@ -295,6 +303,7 @@ export const LENDER_PATHWAYS = {
     { label: 'New York research', href: '/new-york' },
     { label: 'Illinois research', href: '/illinois' },
     { label: 'Oregon research', href: '/oregon' },
+    { label: 'Pennsylvania research', href: '/pennsylvania' },
     { label: 'New York', href: '/local-lenders/new-york' },
     { label: 'Illinois', href: '/local-lenders/illinois' },
   ],
@@ -424,6 +433,7 @@ export const LENDER_FOOTER_COLUMNS = [
       { href: '/new-york', label: 'New York Research' },
       { href: '/illinois', label: 'Illinois Research' },
       { href: '/oregon', label: 'Oregon Research' },
+      { href: '/pennsylvania', label: 'Pennsylvania Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },

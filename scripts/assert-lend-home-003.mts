@@ -16,9 +16,9 @@ const component = readFileSync('components/home-intel/lender-home-intelligence.t
 const page = readFileSync('app/page.tsx', 'utf8');
 
 assertPublicHomepageInventory(inventory);
-assert.equal(inventory.length, 44);
-assert.equal(LENDER_HOMEPAGE_STATE_CARDS.length, 11);
-assert.deepEqual(LENDER_HOMEPAGE_STATE_CARDS.map((state) => state.href), ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon']);
+assert.equal(inventory.length, 47);
+assert.equal(LENDER_HOMEPAGE_STATE_CARDS.length, 12);
+assert.deepEqual(LENDER_HOMEPAGE_STATE_CARDS.map((state) => state.href), ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania']);
 assert.equal(byKey.get('state_pages')?.value, LENDER_HOMEPAGE_STATE_CARDS.length);
 assert.equal(new Set(inventory.map((item) => item.family)).size, 8);
 assert.equal(Object.keys(LENDER_EVIDENCE_FAMILY_LABELS).length, 8);

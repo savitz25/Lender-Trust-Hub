@@ -1,0 +1,755 @@
+{
+  "results": [
+    {
+      "resource": {
+        "name": "Non-Depository Licensee Information Current Banking and Securities",
+        "id": "tyxc-jyug",
+        "resource_name": null,
+        "parent_fxf": [],
+        "description": "This dataset contains summary information on Non-Depository Licensees currently regulated by Pennsylvania Department of Banking and Securities.  Publishing this data will enable users to determine if a licensee is regulated by the state and where they are located.",
+        "attribution": "Department of Banking and Securities",
+        "attribution_link": null,
+        "contact_email": null,
+        "type": "dataset",
+        "updatedAt": "2026-09-01T06:50:22.000Z",
+        "createdAt": "2021-10-27T19:53:07.000Z",
+        "metadata_updated_at": "2025-06-30T14:06:21.000Z",
+        "data_updated_at": "2026-09-01T06:50:22.000Z",
+        "page_views": {
+          "page_views_last_week": 35,
+          "page_views_last_month": 118,
+          "page_views_total": 2290,
+          "page_views_last_week_log": 5.169925001442312,
+          "page_views_last_month_log": 6.894817763307944,
+          "page_views_total_log": 11.161761743304675
+        },
+        "columns_name": [
+          "Georeferenced Latitude & Longitude",
+          "Zip Code",
+          "State",
+          "Non Depository License Type",
+          "Principal License",
+          "Licensee Name",
+          "Address 1",
+          "Address 2",
+          "Phone Number",
+          "US House Districts for PA 2019",
+          "City"
+        ],
+        "columns_field_name": [
+          "georeferenced_latitude_longitude",
+          "zip_code",
+          "state",
+          "non_depository_license_type",
+          "principal_license",
+          "licensee_name",
+          "address_1",
+          "address_2",
+          "phone_number",
+          ":@computed_region_3x3q_vpda",
+          "city"
+        ],
+        "columns_datatype": [
+          "Point",
+          "Text",
+          "Text",
+          "Text",
+          "Text",
+          "Text",
+          "Text",
+          "Text",
+          "Text",
+          "Number",
+          "Text"
+        ],
+        "columns_description": [
+          "A georeferenced Latitude & Longitude point of the Non Depository Licensee geocoded from the address. These points can be used to create visualizations such as maps.",
+          "Zip code of the physical address of the Licensee.",
+          "A 2 character State initials where the Licensee resides. ",
+          "This represents the type of Non Depository License being regulated. ",
+          "A 4 or 5 numerical characters for a principal license. 3 numeric character extension at the end of the license number for a branch license. (e.g. 91906, 91906.001)",
+          "The Name of the Licensee.",
+          "First line of the physical address of the Licensee. ",
+          "Second line of the physical address of the Licensee. ",
+          "Phone number of the physical address of the Licensee.",
+          "This column was automatically created in order to record in what polygon from the dataset 'US House Districts for PA 2019' (3x3q-vpda) the point in column 'georeferenced_latitude_longitude' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+          "City portion of the physical address of the Licensee. "
+        ],
+        "columns_format": [
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ],
+        "download_count": 953,
+        "provenance": "official",
+        "lens_view_type": "tabular",
+        "lens_display_type": "table",
+        "locked": false,
+        "backend": "nbe",
+        "blob_mime_type": null,
+        "hide_from_data_json": false,
+        "publication_date": "2021-10-27T20:32:19.000Z"
+      },
+      "classification": {
+        "categories": [],
+        "tags": [],
+        "domain_category": "Government Efficiency & Citizen Engagement",
+        "domain_tags": [
+          "regulated",
+          "address",
+          "banking",
+          "banking and securities",
+          "entity name",
+          "license number",
+          "licensee",
+          "license type",
+          "non-depository",
+          "entity type"
+        ],
+        "domain_metadata": [
+          {
+            "key": "Data-Management_Business-Owner",
+            "value": "Office of Administration (OA)"
+          },
+          {
+            "key": "Data-Management_Update-Frequency",
+            "value": "Daily"
+          }
+        ]
+      },
+      "metadata": {
+        "domain": "data.pa.gov",
+        "license": "Public Domain U.S. Government"
+      },
+      "permalink": "https://data.pa.gov/d/tyxc-jyug",
+      "link": "https://data.pa.gov/Government-Efficiency-Citizen-Engagement/Non-Depository-Licensee-Information-Current-Bankin/tyxc-jyug",
+      "owner": {
+        "id": "6jh9-ydjy",
+        "user_type": "interactive",
+        "display_name": "Jere Matthews"
+      },
+      "creator": {
+        "id": "6jh9-ydjy",
+        "user_type": "interactive",
+        "display_name": "Jere Matthews"
+      }
+    },
+    {
+      "resource": {
+        "name": "Map - Non-Depository Licensee Information Current Banking and Securities",
+        "id": "jyri-aptv",
+        "resource_name": null,
+        "parent_fxf": [
+          "tyxc-jyug"
+        ],
+        "description": "This dataset contains summary information on Non-Depository Licensees currently regulated by Pennsylvania Department of Banking and Securities.  Publishing this data will enable users to determine if a licensee is regulated by the state and where they are located.",
+        "attribution": "Department of Banking and Securities",
+        "attribution_link": null,
+        "contact_email": null,
+        "type": "map",
+        "updatedAt": "2026-09-01T06:50:22.000Z",
+        "createdAt": "2021-10-28T15:04:00.000Z",
+        "metadata_updated_at": "2021-10-29T18:10:51.000Z",
+        "data_updated_at": "2026-09-01T06:50:22.000Z",
+        "page_views": {
+          "page_views_last_week": 5,
+          "page_views_last_month": 32,
+          "page_views_total": 441,
+          "page_views_last_week_log": 2.584962500721156,
+          "page_views_last_month_log": 5.044394119358453,
+          "page_views_total_log": 8.787902559391432
+        },
+        "columns_name": [],
+        "columns_field_name": [],
+        "columns_datatype": [],
+        "columns_description": [],
+        "columns_format": [],
+        "download_count": 2,
+        "provenance": "official",
+        "lens_view_type": "tabular",
+        "lens_display_type": "visualization_canvas_map",
+        "locked": false,
+        "backend": "nbe",
+        "blob_mime_type": null,
+        "hide_from_data_json": false,
+        "publication_date": "2021-10-29T18:10:51.000Z"
+      },
+      "classification": {
+        "categories": [],
+        "tags": [],
+        "domain_category": "Government Efficiency & Citizen Engagement",
+        "domain_tags": [],
+        "domain_metadata": [
+          {
+            "key": "Data-Management_Business-Owner",
+            "value": "Office of Administration (OA)"
+          },
+          {
+            "key": "Data-Management_Update-Frequency",
+            "value": "Daily"
+          }
+        ]
+      },
+      "metadata": {
+        "domain": "data.pa.gov",
+        "license": "Public Domain U.S. Government"
+      },
+      "permalink": "https://data.pa.gov/d/jyri-aptv",
+      "link": "https://data.pa.gov/Government-Efficiency-Citizen-Engagement/Map-Non-Depository-Licensee-Information-Current-Ba/jyri-aptv",
+      "owner": {
+        "id": "6jh9-ydjy",
+        "user_type": "interactive",
+        "display_name": "Jere Matthews"
+      },
+      "creator": {
+        "id": "6jh9-ydjy",
+        "user_type": "interactive",
+        "display_name": "Jere Matthews"
+      }
+    },
+    {
+      "resource": {
+        "name": "Fine Wine & Good Spirits Retail Stores Sales by County, Annual, FY 2016-17 to Current, Liquor Control Board",
+        "id": "fhz7-8ncd",
+        "resource_name": null,
+        "parent_fxf": [],
+        "description": "This dataset contains dollar sales by county for Fine Wine & Good Spirits retail stores for fiscal years 2016-17, 2017-18 and 2018-19 (July 1 through June 30).  Dollar amounts reflect sales of wine, spirits and accessories, including the 18% liquor tax, but excluding state and local sales taxes.  Dollar amounts include sales to individual consumers and licensees transacted at all retail locations open during a fiscal year, but exclude sales from licensee service centers and FWGS.com; licensee wholesale transactions taking place outside of retail stores; and Lottery ticket sales.",
+        "attribution": "Pennsylvania Liquor Control Board",
+        "attribution_link": "https://www.lcb.pa.gov/About-Us/News-and-Reports/Pages/Annual-Reports.aspx",
+        "contact_email": null,
+        "type": "dataset",
+        "updatedAt": "2026-04-21T14:22:38.000Z",
+        "createdAt": "2020-02-07T13:57:01.000Z",
+        "metadata_updated_at": "2026-04-21T14:22:38.000Z",
+        "data_updated_at": "2020-02-07T14:22:52.000Z",
+        "page_views": {
+          "page_views_last_week": 29,
+          "page_views_last_month": 454,
+          "page_views_total": 6302,
+          "page_views_last_week_log": 4.906890595608519,
+          "page_views_last_month_log": 8.829722735086058,
+          "page_views_total_log": 12.621822947394202
+        },
+        "columns_name": [
+          "County",
+          "Pennsylvania County Code",
+          "FIPS County Code",
+          "Latitude",
+          "Fiscal Year",
+          "FIPS State Code",
+          "Sales",
+          "Pa Senatorial Districts (2017-01)",
+          "Municipality Boundary",
+          "Georeferenced County location",
+          "Pa School Districts (2017)",
+          "Pa House Districts (2017-01)",
+          "Longitude",
+          "Pennsylvania County Boundaries"
+        ],
+        "columns_field_name": [
+          "county",
+          "pennsylvania_county_code",
+          "fips_county_code",
+          "latitude",
+          "fiscal_year",
+          "fips_state_code",
+          "sales",
+          ":@computed_region_d3gw_znnf",
+          ":@computed_region_amqz_jbr4",
+          "new_georeferenced_column",
+          ":@computed_region_rayf_jjgk",
+          ":@computed_region_r6rf_p9et",
+          "longitude",
+          ":@computed_region_nmsq_hqvv"
+        ],
+        "columns_datatype": [
+          "Text",
+          "Text",
+          "Text",
+          "Number",
+          "Text",
+          "Text",
+          "Number",
+          "Number",
+          "Number",
+          "Point",
+          "Number",
+          "Number",
+          "Number",
+          "Number"
+        ],
+        "columns_description": [
+          "Pennsylvania county in which PLCB-operated Fine Wine & Good Spirits stores are located and their corresponding sales occurred.",
+          "Numerical value (1-67) assigned to Pennsylvania counties in alphabetical order.",
+          "Federal Information Processing Standards codes developed by the National Institute of Standards and Technology for use in computer systems by non-military American government agencies and government contractors.",
+          "Generic Latitude point within each county to assist in the creation of visualizations such as maps.",
+          "The period of July 1 through June 30 in the denoted years.",
+          "Federal Information Processing Standards codes developed by the National Institute of Standards and Technology for use in computer systems by non-military American government agencies and government contractors.",
+          "Dollar sales by county for Fine Wine & Good Spirits retail stores by fiscal year.  Dollar amounts reflect sales of wine, spirits and accessories, including the 18% liquor tax, but excluding state and local sales taxes.  Dollar amounts include sales to individual consumers and licensees transacted at all retail locations open during a fiscal year, but exclude sales from licensee service centers and FWGS.com; licensee wholesale transactions taking place outside of retail stores; and Lottery ticket sales.",
+          "",
+          "",
+          "Generic Latitude and Longitude point within each county to assist in the creation of visualizations such as maps.",
+          "",
+          "",
+          "Generic Longitude point within each county to assist in the creation of visualizations such as maps.",
+          ""
+        ],
+        "columns_format": [
+          {},
+          {},
+          {},
+          {
+            "precision": "6",
+            "align": "right"
+          },
+          {},
+          {},
+          {
+            "precisionStyle": "currency",
+            "currencyStyle": "USD",
+            "precision": "0",
+            "align": "right"
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {
+            "precision": "6",
+            "align": "right"
+          },
+          {}
+        ],
+        "download_count": 310,
+        "provenance": "official",
+        "lens_view_type": "tabular",
+        "lens_display_type": "table",
+        "locked": false,
+        "backend": "nbe",
+        "blob_mime_type": null,
+        "hide_from_data_json": false,
+        "publication_date": "2020-02-07T14:23:03.000Z"
+      },
+      "classification": {
+        "categories": [],
+        "tags": [],
+        "domain_category": "Government & Community",
+        "domain_tags": [
+          "state stores",
+          "lcb",
+          "fw&gs",
+          "alcohol",
+          "drink",
+          "spirits",
+          "wine",
+          "plcb",
+          "liquor"
+        ],
+        "domain_metadata": [
+          {
+            "key": "Data-Management_Business-Owner",
+            "value": "Pennsylvania Liquor Control Board"
+          },
+          {
+            "key": "Data-Management_Update-Frequency",
+            "value": "Quarterly"
+          }
+        ]
+      },
+      "metadata": {
+        "domain": "data.pa.gov",
+        "license": "Public Domain"
+      },
+      "permalink": "https://data.pa.gov/d/fhz7-8ncd",
+      "link": "https://data.pa.gov/Government-Community/Fine-Wine-Good-Spirits-Retail-Stores-Sales-by-Coun/fhz7-8ncd",
+      "owner": {
+        "id": "s9q8-jynp",
+        "user_type": "interactive",
+        "display_name": "John Long"
+      },
+      "creator": {
+        "id": "s9q8-jynp",
+        "user_type": "interactive",
+        "display_name": "John Long"
+      }
+    },
+    {
+      "resource": {
+        "name": "Pennsylvania Professional Licensee Data County State",
+        "id": "fwj2-whnj",
+        "resource_name": null,
+        "parent_fxf": [],
+        "description": "This dataset contains counts of professional licensees per each licensed occupation and is broken down by County of licensee. \n*Appearances of non-Pennsylvania counties in the data are due to practitioners that are either licensed to practice in Pennsylvania but live out of state or own a facility in Pennsylvania but live out of state. \n\n**Appearances of null values in the data are due to the county field being an optional field for a license application and the county does not auto populate based on the address at this point in time.",
+        "attribution": "Department of State",
+        "attribution_link": null,
+        "contact_email": null,
+        "type": "dataset",
+        "updatedAt": "2025-07-01T15:14:24.000Z",
+        "createdAt": "2020-01-22T19:49:24.000Z",
+        "metadata_updated_at": "2025-07-01T15:14:24.000Z",
+        "data_updated_at": "2022-07-01T18:29:02.000Z",
+        "page_views": {
+          "page_views_last_week": 61,
+          "page_views_last_month": 256,
+          "page_views_total": 5117,
+          "page_views_last_week_log": 5.954196310386876,
+          "page_views_last_month_log": 8.005624549193879,
+          "page_views_total_log": 12.321364432039447
+        },
+        "columns_name": [
+          "County FIPS Code",
+          "Georeferenced Latitude & Longitude",
+          "State FIPS Code",
+          "Active Licensees Count",
+          "LicenseType",
+          "US House Districts for PA 2019",
+          "PA County Boundaries Spatial Data Current Transportation",
+          "Board Name",
+          "Profession Name",
+          "County Name",
+          "County Code"
+        ],
+        "columns_field_name": [
+          "fips_county_code_text_column",
+          "latitude",
+          "fips_state_code_text_column",
+          "active_count",
+          "licensetype",
+          ":@computed_region_3x3q_vpda",
+          ":@computed_region_4fjn_fq7k",
+          "boardname",
+          "professionname",
+          "shortcountyname",
+          "county_code_text_column"
+        ],
+        "columns_datatype": [
+          "Text",
+          "Point",
+          "Text",
+          "Number",
+          "Text",
+          "Number",
+          "Number",
+          "Text",
+          "Text",
+          "Text",
+          "Text"
+        ],
+        "columns_description": [
+          "The FIPS county code is a five-digit Federal Information Processing Standard (FIPS) code (FIPS 6-4) which uniquely identifies counties and county equivalents in the United States, certain U.S. possessions, and certain freely associated states. This is the 3-digit part of the 5-digit county FIPS code specifically standing for the county.",
+          "If the Latitude and Longitude point is null, then the county is outside of Pennsylvania or unknown. This is a generic point for latitude and longitude in each county to give the ability to create visualizations such as map layers. The latitude and longitude for the state of Pennsylvanian will fall to the south east of Pennsylvania actually in Maryland so that the information for a statewide total can also be displayed on a map layer without affecting information in another county.",
+          "These are the first 2 digits of the 5-digit Federal Information Processing Standard (FIPS) code that designate the State association. Each State has its own 2-digit number and each County within the state has its own 3-digit number which are combined into a 5-digit number to uniquely identify every US county. For more technical details : Federal Information Processing Standards Publications (FIPS PUBS) are issued by the National Institute of Standards and Technology (NIST) after approval by the Secretary of Commerce pursuant to Section 111 (d) of the Federal Property and Administrative Services Act of 1949 as amended by the Computer Security Act of 1987, Public Law 100-235. Federal Information Processing Standard (FIPS) 6-4, Counties and Equivalent Entities of the U.S., Its Possessions, and Associated Areas -- 90 Aug 31 , provides the names and codes that represent the counties and other entities treated as equivalent legal and/or statistical subdivisions of the 50 States, the District of Columbia, and the possessions and freely associated areas of the United States. Counties are considered to be the \"first-order subdivisions\" of each State and statistically equivalent entity, regardless of their local designations (county, parish, borough, etc.). Information gathered from census data - https://www.census.gov/library/reference/code-lists/ansi.html",
+          "Number of Licensees per County by each License Type ",
+          "Type of Professional License granted by the Professional Licensing Board ",
+          "This column was automatically created in order to record in what polygon from the dataset 'US House Districts for PA 2019' (3x3q-vpda) the point in column 'latitude' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+          "This column was automatically created in order to record in what polygon from the dataset 'PA County Boundaries Spatial Data Current Transportation' (4fjn-fq7k) the point in column 'latitude' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+          "Name of Professional Licensing Board ",
+          "Name of Licensed Profession ",
+          "Name of County in which the Licensee is located ",
+          "State County Code "
+        ],
+        "columns_format": [
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ],
+        "download_count": 887,
+        "provenance": "official",
+        "lens_view_type": "tabular",
+        "lens_display_type": "table",
+        "locked": false,
+        "backend": "nbe",
+        "blob_mime_type": null,
+        "hide_from_data_json": false,
+        "publication_date": "2022-07-01T18:29:09.000Z"
+      },
+      "classification": {
+        "categories": [],
+        "tags": [],
+        "domain_category": "Workforce and Economy",
+        "domain_tags": [
+          "occupation",
+          "licensee",
+          "job",
+          "economy",
+          "economic",
+          "dos",
+          "development",
+          "workforce",
+          "state",
+          "professional"
+        ],
+        "domain_metadata": [
+          {
+            "key": "Data-Management_Business-Owner",
+            "value": "Department of State (DOS)"
+          },
+          {
+            "key": "Data-Management_Update-Frequency",
+            "value": "Other"
+          }
+        ]
+      },
+      "metadata": {
+        "domain": "data.pa.gov",
+        "license": "Public Domain U.S. Government"
+      },
+      "permalink": "https://data.pa.gov/d/fwj2-whnj",
+      "link": "https://data.pa.gov/Workforce-and-Economy/Pennsylvania-Professional-Licensee-Data-County-Sta/fwj2-whnj",
+      "owner": {
+        "id": "6jh9-ydjy",
+        "user_type": "interactive",
+        "display_name": "Jere Matthews"
+      },
+      "creator": {
+        "id": "6jh9-ydjy",
+        "user_type": "interactive",
+        "display_name": "Jere Matthews"
+      }
+    },
+    {
+      "resource": {
+        "name": "Sales, Use & Hotel Occupancy Tax Licenses and Certificates Current Monthly County Revenue",
+        "id": "ugeq-ckxd",
+        "resource_name": null,
+        "parent_fxf": [],
+        "description": "This dataset contains the list of sales tax licenses, exemption and wholesaler certificates as maintained by the Department of Revenue (DOR) that are active.  For the purposes of this dataset, active status indicates vendors that currently have filing requirements with DOR, as well as valid exemption and wholesaler certificates.\r\nThis list is intended to be refreshed monthly, removing the licenses that are cancelled or expire without renewal, and adding new licenses once they are approved.  The addresses provided are supposed to be the physical location where the taxable sales happen or taxable service provided.  The DOR generally does not validate the location address, so there may be misspelled items.\r\nSales, use and hotel occupancy tax licenses must be prominently displayed at the place of business, at each location, photocopies are acceptable.  This list also contains exempt organizations that have a current valid exemption number issued by the Department.  Exemption numbers must be provided on exemption certificates when purchasing items or services that would be otherwise taxable. \r\nFor the taxpayer\u2019s convenience, the Department of Revenue allows taxpayers to either report each location\u2019s sales under a unique license number, or consolidate the entire entity\u2019s sales under a single license number.  For that reason, you may see some large chains appear to have only one license, where others have multiple licenses.  Similarly, you will find licenses/certificates with out of state addresses provided by the applicant.\r\nIn order to reduce fraud, a portion of the license number / exemption certificate number was masked. If you suspect someone is selling taxable items, providing a taxable service or otherwise not remitting sales tax, use this link to Report Tax Fraud.  Tips can be left anonymously, but supporting documentation is helpful.\r\nMore information about licenses & certificates: PA Code, Article II Sales & Use Tax.\r\nPA Department of Revenue website: https://www.revenue.pa.gov.  \r\nCommon questions:\r\n\u2022\tWhy are there out of state/out of country licenses?  We allow taxpayers to photocopy licenses, so taxpayers could keep the original license where their records are kept, and post a copy in each PA location.  Another reason would be mail order or delivery-based companies.  These companies do not maintain a PA address, but could ship to PA or travel into PA to deliver their taxable product or perform their taxable service. \r\n\u2022\tDoes this list contain every volunteer fire company in PA?  Only if the volunteer fire company applied for an exemption certificate to purchase items without paying sales tax.  An exempt entity that does not hold an exemption certificate could pay the sales tax on the purchase, then file a petition for refund on the tax paid.\r\n\u2022\tWhat is a \u201ctransient vendor\u201d?  In general, someone who temporarily brings taxable items into PA for retail sale, but does not maintain a location.  For a more detailed definition, see the PA Code link above.\r\n\u2022\tWhat is a \u201cwholesaler certificate\u201d?  A wholesale certificate allows sales of otherwise taxable items at the wholesale level; they are not permitted to sell anything at retail.  The tax will be collected when the item is sold at retail.  Wholesaler certificates are issued primarily to manufacturers and distributors.",
+        "attribution": "Department of Revenue",
+        "attribution_link": null,
+        "contact_email": null,
+        "type": "dataset",
+        "updatedAt": "2026-09-15T03:09:33.000Z",
+        "createdAt": "2017-08-10T18:29:08.000Z",
+        "metadata_updated_at": "2026-04-01T17:09:58.000Z",
+        "data_updated_at": "2026-09-15T03:09:33.000Z",
+        "page_views": {
+          "page_views_last_week": 1250,
+          "page_views_last_month": 5827,
+          "page_views_total": 134344,
+          "page_views_last_week_log": 10.28886607416582,
+          "page_views_last_month_log": 12.508785162064513,
+          "page_views_total_log": 17.035583103123678
+        },
+        "columns_name": [
+          "Postal Code",
+          "Country",
+          "State",
+          "City",
+          "County",
+          "License Type",
+          "Expiration Date",
+          "Georeferenced Latitude & Longitude",
+          "PA State Senate Districts 2016 Health",
+          "US House Districts for PA 2019 Health",
+          "Street Address",
+          "Account Number",
+          "Trade Name ",
+          "Legal Name",
+          "Municipality Boundary 2",
+          "Pennsylvania County Boundaries 2",
+          "Pa Senatorial Districts (2017-01) 2",
+          "Pa School Districts (2017) 2",
+          "Pa House Districts (2017-01) 2",
+          "PA State House Districts 2016 Health",
+          "US House Districts for PA 2019",
+          "PA County Boundaries Spatial Data Current Transportation"
+        ],
+        "columns_field_name": [
+          "postal_code",
+          "country",
+          "state",
+          "city",
+          "county",
+          "license_type",
+          "expiration_date",
+          "georeferenced_latitude_longitude_points",
+          ":@computed_region_75dh_jrw3",
+          ":@computed_region_gbji_5m4q",
+          "street_address",
+          "account",
+          "trade_name",
+          "legal_name",
+          ":@computed_region_amqz_jbr4",
+          ":@computed_region_nmsq_hqvv",
+          ":@computed_region_d3gw_znnf",
+          ":@computed_region_rayf_jjgk",
+          ":@computed_region_r6rf_p9et",
+          ":@computed_region_its3_bt6a",
+          ":@computed_region_3x3q_vpda",
+          ":@computed_region_4fjn_fq7k"
+        ],
+        "columns_datatype": [
+          "Text",
+          "Text",
+          "Text",
+          "Text",
+          "Text",
+          "Text",
+          "Calendar date",
+          "Point",
+          "Number",
+          "Number",
+          "Text",
+          "Text",
+          "Text",
+          "Text",
+          "Number",
+          "Number",
+          "Number",
+          "Number",
+          "Number",
+          "Number",
+          "Number",
+          "Number"
+        ],
+        "columns_description": [
+          "Postal Code of the location where the license/certificate will be used as provided on the application",
+          "Country of the location where the license/certificate will be used as provided on the application",
+          "State of the location where the license/certificate will be used as provided on the application.",
+          "City of the location where the license/certificate will be used as provided on the application.",
+          "County of the location where the license/certificate will be used as provided on the application.  ",
+          "License or Certificate type that was requested on the application. Sales tax licenses can be broken into Retail, Wholesale, Transient Vendor or Promoters.  Exemption certificates can be broken down into Volunteer Fire companies, Religious organizations, Charitable organizations, Non-Profit educational organizations, Relief associations, Veterans organizations, School Districts or Miscellaneous.",
+          "Expiration date of the license or certificate.  Most licenses or certificates must be renewed every 5 years, but some are permanent, indicated by the date 12/31/9999.  Transient vendor licenses expire January 31 of the year following the year initially applied, then renewed every year afterwards.",
+          "Georeferenced column for the latitude and longitude created from the address for use in mapping visuals",
+          "This column was automatically created in order to record in what polygon from the dataset 'PA State Senate Districts 2016 Health' (75dh-jrw3) the point in column 'georeferenced_latitude_longitude_points' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+          "This column was automatically created in order to record in what polygon from the dataset 'US House Districts for PA 2019 Health' (gbji-5m4q) the point in column 'georeferenced_latitude_longitude_points' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+          "Street address of the location where the license/certificate will be used as provided on the application.",
+          "Account number used to track the sales tax purchases or number of the certificate provided by the Department of Revenue (DOR).  Account numbers are eight (8) digits in length.  Accounts starting with 00 through 74 or 80 through 99 are sales tax licenses broken down into types in the column License or Certificate type.  Accounts starting with 75 are exemption certificates, also broken down in the License or Certificate type column.  Accounts starting with 76 are school district exemption certificates.\n2 Number suppression to protect the Account number.",
+          "Trade Name of the location where the license/certificate will be used as provided on the application",
+          "Legal Name of the entity or individual registering as provided on the application",
+          "This column was automatically created in order to record in what polygon from the dataset 'Municipality Boundary' (amqz-jbr4) the point in column 'georeferenced_latitude_longitude_points' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+          "This column was automatically created in order to record in what polygon from the dataset 'Pennsylvania County Boundaries' (nmsq-hqvv) the point in column 'georeferenced_latitude_longitude_points' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+          "This column was automatically created in order to record in what polygon from the dataset 'Pa Senatorial Districts (2017-01)' (d3gw-znnf) the point in column 'georeferenced_latitude_longitude_points' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+          "This column was automatically created in order to record in what polygon from the dataset 'Pa School Districts (2017)' (rayf-jjgk) the point in column 'georeferenced_latitude_longitude_points' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+          "This column was automatically created in order to record in what polygon from the dataset 'Pa House Districts (2017-01)' (r6rf-p9et) the point in column 'georeferenced_latitude_longitude_points' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+          "This column was automatically created in order to record in what polygon from the dataset 'PA State House Districts 2016 Health' (its3-bt6a) the point in column 'georeferenced_latitude_longitude_points' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+          "This column was automatically created in order to record in what polygon from the dataset 'US House Districts for PA 2019' (3x3q-vpda) the point in column 'georeferenced_latitude_longitude_points' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+          "This column was automatically created in order to record in what polygon from the dataset 'PA County Boundaries Spatial Data Current Transportation' (4fjn-fq7k) the point in column 'georeferenced_latitude_longitude_points' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens."
+        ],
+        "columns_format": [
+          {
+            "displayStyle": "plain",
+            "align": "left"
+          },
+          {
+            "displayStyle": "plain",
+            "align": "left"
+          },
+          {},
+          {},
+          {
+            "displayStyle": "plain",
+            "align": "left"
+          },
+          {
+            "displayStyle": "plain",
+            "align": "left"
+          },
+          {
+            "view": "date",
+            "align": "left"
+          },
+          {},
+          {},
+          {},
+          {},
+          {
+            "displayStyle": "plain",
+            "align": "left"
+          },
+          {
+            "displayStyle": "plain",
+            "align": "left"
+          },
+          {
+            "displayStyle": "plain",
+            "align": "left"
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ],
+        "download_count": 6468,
+        "provenance": "official",
+        "lens_view_type": "tabular",
+        "lens_display_type": "table",
+        "locked": false,
+        "backend": "nbe",
+        "blob_mime_type": null,
+        "hide_from_data_json": false,
+        "publication_date": "2026-03-05T16:02:12.000Z"
+      },
+      "classification": {
+        "categories": [],
+        "tags": [],
+        "domain_category": "Licenses & Certificates",
+        "domain_tags": [
+          "dor",
+          "certificate",
+          "sales tax",
+          "revenue",
+          "licensee",
+          "hotel occupancy",
+          "exemption"
+        ],
+        "domain_metadata": [
+          {
+            "key": "Data-Management_Business-Owner",
+            "value": "Department of Revenue (DOR)"
+          },
+          {
+            "key": "Data-Management_Update-Frequency",
+            "value": "Weekly"
+          }
+        ]
+      },
+      "metadata": {
+        "domain": "data.pa.gov",
+        "license": "Public Domain U.S. Government"
+      },
+      "permalink": "https://data.pa.gov/d/ugeq-ckxd",
+      "link": "https://data.pa.gov/Licenses-Certificates/Sales-Use-Hotel-Occupancy-Tax-Licenses-and-Certifi/ugeq-ckxd",
+      "owner": {
+        "id": "6jh9-ydjy",
+        "user_type": "interactive",
+        "display_name": "Jere Matthews"
+      },
+      "creator": {
+        "id": "6jh9-ydjy",
+        "user_type": "interactive",
+        "display_name": "Jere Matthews"
+      }
+    }
+  ],
+  "resultSetSize": 5,
+  "timings": {
+    "serviceMillis": 29,
+    "searchMillis": [
+      17,
+      7
+    ]
+  },
+  "warnings": []
+}

@@ -201,6 +201,33 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   if ((/\boregon\b/i.test(q) || /\bdfr\b/i.test(q)) && /\b(licensed|lenders?|roster|bankers?|brokers?)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended|\bohcs|\bflex\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'or-nmls-search-only', failReason: 'Current Oregon mortgage-company licensing is DFR/NMLS search-only. No bulk roster was acquired. Search-only is not zero lenders. HMDA applications, HMDA LEIs, FDIC banks, and OHCS Flex lenders are not that census.', coverageState: 'NOT_ACQUIRED' };
   }
+  if (/\bpennsylvania\b|\bdobs\b|\bpa dobs\b/i.test(q) && /\bhow many lenders\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'pa-no-combined-lenders', failReason: 'Pennsylvania does not have an acquired current NMLS mortgage-company census. Do not answer with HMDA applications, HMDA LEIs, FDIC banks, PHFA participants, Open Data class rows, or the mixed DoBS ~28,450 non-bank figure as Pennsylvania lenders.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if ((/\bpennsylvania\b/i.test(q) || /\bdobs\b/i.test(q)) && /\bcomplaints?\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'pa-cfpb-observations', failReason: 'CFPB 2025 Pennsylvania mortgage complaints are consumer submissions (849 distinct IDs), not findings and not DoBS orders. DoBS bulk mortgage complaints are intake-only / not public. Company name is not an NMLS identity.', coverageState: 'PARTIAL' };
+  }
+  if ((/\bpennsylvania\b/i.test(q) || /\bdobs\b/i.test(q)) && /\b(enforcement|consent (?:agreement|order)|order to show cause|cease and desist)\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'pa-dobs-orders', failReason: 'DoBS enforcement orders are a mixed Department-wide catalog. A mortgage-specific census was not acquired. A document is not a unique matter. Order to Show Cause is not a final finding. Confirm official DoBS Enforcement Orders and /pennsylvania.', coverageState: 'PARTIAL' };
+  }
+  if (/\b(phfa|participating lenders?)\b/i.test(q) || (/\bpennsylvania\b/i.test(q) && /\bhousing finance\b/i.test(q))) {
+    return { mode: 'fail_closed', failClosedKind: 'pa-phfa-program', failReason: 'PHFA participating lenders are a housing-program network, not the DoBS/NMLS mortgage-license universe. County physical presence is not county-only eligibility. PHFA Top designations are not LenderTrustHub rankings.', coverageState: 'PARTIAL' };
+  }
+  if (/\bpennsylvania\b/i.test(q) && /\b(loan originators?|mlos?|mortgage originator)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat(?:ion|ions|ed)\b|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'pa-mlo-search-only', failReason: 'Pennsylvania mortgage loan originators are a person grain. Current NMLS MLO verification is search-only. An MLO is not a mortgage company. Open Data originator rows are not an NMLS ID census.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if (/\bpennsylvania\b/i.test(q) && /\bservicers?\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'pa-servicer-search-only', failReason: 'Pennsylvania mortgage servicers are a separate DoBS class from mortgage lenders. Current NMLS servicer verification is search-only. Do not add servicers to the lender denominator.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if (/\bpennsylvania\b/i.test(q) && /\bbrokers?\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'pa-broker-search-only', failReason: 'Pennsylvania mortgage brokers are a separate DoBS class from mortgage lenders. Current NMLS broker verification is search-only. Search-only is not zero brokers.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if (/\b(philadelphia|pittsburgh|allegheny|montgomery)\b/i.test(q) && /\b(mortgage|lender|broker|phfa|dobs)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'pa-no-local', failReason: 'Pennsylvania HMDA geography is property location, not service territory, headquarters, or a Philadelphia/Pittsburgh license census. This statewide page does not publish local Pennsylvania lender routes. PHFA county physical presence is not county-only lending eligibility.', coverageState: 'UNSUPPORTED' };
+  }
+  if ((/\bpennsylvania\b/i.test(q) || /\bdobs\b/i.test(q)) && /\b(licensed|lenders?|roster|bankers?)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended|\bphfa\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'pa-nmls-search-only', failReason: 'Current Pennsylvania mortgage-company licensing is DoBS/NMLS search-only. No bulk NMLS roster was acquired. Search-only is not zero lenders. HMDA applications, Open Data class rows, FDIC banks, and PHFA participants are not that census.', coverageState: 'NOT_ACQUIRED' };
+  }
 
   if (/\bwhat is (?:an? )?nmls(?: institution)? id\b|\bhow do i (?:check|verify).*nmls/i.test(q)) return { mode: 'definition', definitionId: 'nmls', requestedMetric: null };
   if (/\bwhat is (?:an? )?lei\b/i.test(q)) return { mode: 'definition', definitionId: 'lei', requestedMetric: null };

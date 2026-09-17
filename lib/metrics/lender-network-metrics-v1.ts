@@ -256,6 +256,14 @@ export type LenderNetworkMetricsV1 = {
     liveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
     liveLicensedCompanyUniverse: null;
   };
+  pennsylvania: {
+    hmdaApplications: number;
+    hmdaOriginations: number;
+    fdicInstitutions: number;
+    cfpbMortgageComplaints: number;
+    liveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+    liveLicensedCompanyUniverse: null;
+  };
   publication: {
     nationalRender: number;
     nationalIndex: number;
