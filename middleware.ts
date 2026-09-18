@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import { updateSession } from '@/lib/supabase/middleware';
+import { normalizedPublishedStatePath } from '@/lib/seo/published-state-path';
 
 /**
  * Edge middleware:
@@ -10,6 +11,12 @@ const ADMIN_COOKIE = 'lth_admin_session';
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const statePath = normalizedPublishedStatePath(pathname);
+  if (statePath) {
+    const url = request.nextUrl.clone();
+    url.pathname = statePath;
+    return NextResponse.redirect(url, 308);
+  }
 
   if (pathname.startsWith('/admin')) {
     const isLogin = pathname === '/admin/login';
