@@ -1,6 +1,15 @@
 export type GoldenOutcome = 'PASS' | 'PARTIAL' | 'UNSUPPORTED_SAFE' | 'FAIL';
 export type LenderGoldenQuestion = { query: string; expected: GoldenOutcome };
 
+// TH-DISCOVERY-PARITY-001A: six bare "[provider term] in <state>" entries below
+// (no explicit roster/licensing/"how many" wording) moved from PARTIAL to PASS.
+// They previously hit a state-specific "no bulk roster acquired" guard that
+// hard fail-closed on the mere mention of "lenders"/"brokers", instead of
+// falling through to real entity/discovery results like every other state.
+// The SAME state-specific roster caveat still applies -- and still returns
+// PARTIAL -- when the query actually asks about the roster/license census
+// explicitly (see the adjacent "licensed ..."/"how many ..." entries, unchanged).
+
 export const LENDER_GOLDEN_QUESTIONS: LenderGoldenQuestion[] = [
   { query: 'NMLS 3030', expected: 'PASS' }, { query: 'Find NMLS 3030', expected: 'PASS' },
   { query: 'NMLS ID 3030', expected: 'PASS' }, { query: 'NMLS institution ID 3030', expected: 'PASS' },
@@ -27,26 +36,26 @@ export const LENDER_GOLDEN_QUESTIONS: LenderGoldenQuestion[] = [
   { query: 'licensed mortgage lenders in New Jersey', expected: 'PARTIAL' },
   { query: 'New Jersey RMLA lenders', expected: 'PARTIAL' },
   { query: 'California CRMLA lenders', expected: 'PARTIAL' },
-  { query: 'Arizona mortgage lenders', expected: 'PARTIAL' },
-  { query: 'Colorado mortgage lenders', expected: 'PARTIAL' },
+  { query: 'Arizona mortgage lenders', expected: 'PASS' },
+  { query: 'Colorado mortgage lenders', expected: 'PASS' },
   { query: 'licensed mortgage lenders in Colorado', expected: 'PARTIAL' },
   { query: 'licensed mortgage lenders in Virginia', expected: 'PARTIAL' },
   { query: 'Is Rocket licensed in Virginia?', expected: 'PARTIAL' },
   { query: 'How many mortgage lenders are in Virginia?', expected: 'PARTIAL' },
-  { query: 'Mortgage brokers in Virginia', expected: 'PARTIAL' },
+  { query: 'Mortgage brokers in Virginia', expected: 'PASS' },
   { query: 'mortgage applications in Virginia', expected: 'PASS' },
   { query: 'Virginia first-time buyer assistance', expected: 'PARTIAL' },
   { query: 'Complaints against a Virginia lender', expected: 'PARTIAL' },
-  { query: 'mortgage lenders in New York', expected: 'PARTIAL' },
+  { query: 'mortgage lenders in New York', expected: 'PASS' },
   { query: 'licensed mortgage bankers in New York', expected: 'PARTIAL' },
-  { query: 'mortgage brokers in New York', expected: 'PARTIAL' },
+  { query: 'mortgage brokers in New York', expected: 'PASS' },
   { query: 'mortgage loan servicers in New York', expected: 'PARTIAL' },
   { query: 'mortgage loan officers in New York', expected: 'PARTIAL' },
   { query: 'how many lenders are in New York?', expected: 'PARTIAL' },
   { query: 'best mortgage lender in New York', expected: 'UNSUPPORTED_SAFE' },
   { query: 'mortgage applications in New York', expected: 'PASS' },
   { query: 'complaints against lender X in New York', expected: 'PARTIAL' },
-  { query: 'mortgage lenders in Illinois', expected: 'PARTIAL' },
+  { query: 'mortgage lenders in Illinois', expected: 'PASS' },
   { query: 'licensed mortgage lenders in Illinois', expected: 'PARTIAL' },
   { query: 'how many lenders are in Illinois?', expected: 'PARTIAL' },
   { query: 'best mortgage lender in Illinois', expected: 'UNSUPPORTED_SAFE' },

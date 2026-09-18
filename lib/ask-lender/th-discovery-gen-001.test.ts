@@ -24,8 +24,13 @@ for (const [query, expectedState] of [
     assert.equal(r.geography?.state, expectedState);
   });
 
-test('"mortgage companies in Florida" stays the established state-level scalar-count ground truth', () => {
-  const r = parseLenderAsk('mortgage companies in Florida');
+// TH-DISCOVERY-PARITY-001A superseded this: "mortgage companies in Florida" (no explicit
+// aggregate wording) now defaults to DISCOVERY like every other state, not a scalar
+// count -- see parity-001a.test.ts for the full provider-category-defaults-to-discovery
+// coverage and r15-reproduction.test.ts for this exact case's real-institution-list
+// assertions. The scalar count stays reachable with explicit aggregate wording.
+test('"how many mortgage companies operate in Florida" (explicit aggregate wording) stays a scalar count', () => {
+  const r = parseLenderAsk('how many mortgage companies operate in Florida');
   assert.equal(r.mode, 'count');
   assert.equal(r.geography?.state, 'FL');
 });

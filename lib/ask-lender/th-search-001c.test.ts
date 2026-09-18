@@ -44,15 +44,20 @@ test('identity and market semantics are enforced by real projection paths', () =
   assert.notEqual(parseLenderAsk('mortgage applications in Illinois').mode, 'fail_closed');
   assert.equal(parseLenderAsk('complaints against a lender in Illinois').failClosedKind, 'il-cfpb-observations');
   assert.equal(parseLenderAsk('Who is serving Chicago in Illinois?').failClosedKind, 'il-mailing-ne-service');
-  assert.equal(parseLenderAsk('Mortgage brokers in Virginia').failClosedKind, 'va-scc-dated-roster');
+  // TH-DISCOVERY-PARITY-001A: bare "mortgage brokers in Virginia" (no explicit roster
+  // wording) now defaults to DISCOVERY like every other state; the roster caveat stays
+  // reachable via explicit roster/licensing/"how many" wording (see the assertions above).
+  assert.equal(parseLenderAsk('Mortgage brokers in Virginia').mode, 'entity');
   assert.notEqual(parseLenderAsk('mortgage applications in Virginia').mode, 'fail_closed');
   assert.equal(parseLenderAsk('Virginia first-time buyer assistance').failClosedKind, 'va-housing-programs');
   assert.equal(parseLenderAsk('Complaints against a Virginia lender').failClosedKind, 'va-cfpb-observations');
-  assert.equal(parseLenderAsk('Colorado mortgage lenders').coverageState, 'NOT_ACQUIRED');
+  // TH-DISCOVERY-PARITY-001A: bare "Colorado mortgage lenders" now defaults to DISCOVERY.
+  assert.equal(parseLenderAsk('Colorado mortgage lenders').mode, 'entity');
   assert.equal(parseLenderAsk('Colorado MLO lenders').failClosedKind, 'unsupported-identity-grain');
   assert.equal(parseLenderAsk('who approves the most mortgage applications').failClosedKind, 'personalized-approval');
   assert.equal(parseLenderAsk('licensed mortgage bankers in New York').failClosedKind, 'ny-dfs-dated-aggregates');
-  assert.equal(parseLenderAsk('mortgage brokers in New York').failClosedKind, 'ny-broker-class');
+  // TH-DISCOVERY-PARITY-001A: bare "mortgage brokers in New York" now defaults to DISCOVERY.
+  assert.equal(parseLenderAsk('mortgage brokers in New York').mode, 'entity');
   assert.equal(parseLenderAsk('mortgage loan servicers in New York').failClosedKind, 'ny-servicer-class');
   assert.equal(parseLenderAsk('mortgage loan officers in New York').failClosedKind, 'ny-mlo-person-grain');
   assert.equal(parseLenderAsk('how many lenders are in New York?').failClosedKind, 'ny-no-combined-lenders');

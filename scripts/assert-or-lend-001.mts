@@ -73,7 +73,11 @@ assert.equal(parseLenderAsk('OHCS approved lender').failClosedKind, 'or-ohcs-pro
 assert.equal(parseLenderAsk('Flex Lending Oregon').failClosedKind, 'or-ohcs-program');
 assert.equal(parseLenderAsk('Oregon mortgage enforcement').failClosedKind, 'or-dfr-mortgage-orders');
 assert.equal(parseLenderAsk('Oregon DFR case M-24-0053').failClosedKind, 'or-dfr-mortgage-orders');
-assert.equal(parseLenderAsk('Who is serving Portland in Oregon?').failClosedKind, 'or-no-local');
+// TH-DISCOVERY-PARITY-001A: the Oregon-specific "or-no-local" gate (which hard-refused
+// the bare mention of "Portland"/"Multnomah") was removed -- it blocked ordinary
+// discovery queries too. A genuine service-territory claim like this one is now caught
+// by the general service-territory guard instead, with the same fail-closed outcome.
+assert.equal(parseLenderAsk('Who is serving Portland in Oregon?').failClosedKind, 'service-territory');
 assert.equal(parseLenderAsk('licensed mortgage lenders in New York').failClosedKind, 'ny-dfs-dated-aggregates');
 assert.doesNotMatch(claim, /oregon-roster|or-dfr-nmls/);
 assert.match(searchCaps, /oregon-roster/);
