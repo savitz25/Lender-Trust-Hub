@@ -305,6 +305,36 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   if ((/\bnorth carolina\b/i.test(q) || /\bnccob\b/i.test(q)) && /\b(licensed|lenders?|roster|bankers?)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended|\bnchfa\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'nc-nccob-lender-class', failReason: 'Current NCCOB Show All lists 640 Mortgage Lender licenses as a separate class. That is not 574 brokers, 62 servicers, 104 MOSR rows, 24,612 MLO matching records, 112 reverse-mortgage certificates, HMDA applications, FDIC banks, or NCHFA participants, and it is not a combined North Carolina lenders census.', coverageState: 'PARTIAL' };
   }
+  if (/\bohio\b|\bdfi\b|\brmla\b/i.test(q) && /\bhow many lenders\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'oh-no-combined-lenders', failReason: 'Ohio does not have an acquired current RMLA company census. Do not answer with HMDA applications, HMDA LEIs, FDIC banks, OHFA names, CFPB complaints, MLOs, branches, or brokers as Ohio lenders. Current verification is DFI + NMLS Consumer Access. Search-only is not zero.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if ((/\bohio\b/i.test(q) || /\bdfi\b/i.test(q)) && /\bcomplaints?\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'oh-cfpb-observations', failReason: 'CFPB 2025 Ohio mortgage complaints are consumer submissions (610 distinct IDs), not findings and not DFI enforcement. DFI bulk mortgage complaints are intake-only / not public. Company name is not an NMLS identity.', coverageState: 'PARTIAL' };
+  }
+  if ((/\bohio\b/i.test(q) || /\bdfi\b/i.test(q)) && /\b(enforcement|consent order|civil judgment|attorney general)\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'oh-dfi-enforcement', failReason: 'Ohio DFI/AG/civil-judgment mortgage enforcement is search-only in this snapshot. A DFI action is not an Attorney General action and not a civil judgment. A person action is not a company action. Absence from the database is not a clean history. Confirm official DFI sources and /ohio.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if (/\bohfa\b/i.test(q) || (/\bohio\b/i.test(q) && /\b(participating lenders?|housing finance|find a lender)\b/i.test(q))) {
+    return { mode: 'fail_closed', failClosedKind: 'oh-ohfa-program', failReason: 'OHFA Find A Lender county pages listed 2,095 lender-county observations and 85 distinct names across 88 counties. Distinct names are not exact companies. OHFA participation is not DFI licensure and not a TrustHub endorsement. Names were not attached to NMLS.', coverageState: 'PARTIAL' };
+  }
+  if (/\bohio\b/i.test(q) && /\b(loan originators?|mlos?|mortgage originator)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat(?:ion|ions|ed)\b|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'oh-mlo-search-only', failReason: 'Ohio mortgage loan originators are a person grain. Current NMLS MLO verification is search-only. An MLO is not an RMLA company. Search-only is not zero.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if (/\bohio\b/i.test(q) && /\bservicers?\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'oh-servicer-activity', failReason: 'Ohio RMLA company registration can include servicing as an activity. Servicing is not a separate acquired company census and is not added to a lender denominator. Current verification is NMLS Consumer Access.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if (/\bohio\b/i.test(q) && /\bbrokers?\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'oh-broker-activity', failReason: 'Ohio RMLA company registration can include brokering as an activity. Brokering is not a separate acquired company census. Do not add brokers as extra companies.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if (/\bohio (?:mortgage )?license\b|\brm\.?\d/i.test(q) && /\b(ohio|dfi|rmla)\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'oh-dfi-license-identity', failReason: 'An exact Ohio DFI license/registration identifier is distinct from an NMLS Unique ID and outranks geography. This page does not mint public lender profiles. Verify current status on NMLS Consumer Access; do not treat the number as a USDOT, LEI, or Columbus/Cleveland local census.', coverageState: 'PARTIAL' };
+  }
+  if (/\b(columbus|cleveland|cincinnati|toledo|dayton|akron)\b/i.test(q) && /\b(mortgage|lender|broker|ohfa|dfi|rmla)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'oh-no-local', failReason: 'Ohio HMDA geography is property location, not service territory, headquarters, or a Columbus/Cleveland license census. This statewide page does not publish local Ohio lender routes.', coverageState: 'UNSUPPORTED' };
+  }
+  if ((/\bohio\b/i.test(q) || /\bdfi\b/i.test(q) || /\brmla\b/i.test(q)) && (/\brmla\b/i.test(q) || /\b(licensed|lenders?|roster|registered|companies)\b/i.test(q)) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended|\bohfa\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'oh-rmla-search-only', failReason: 'Current Ohio RMLA company registration is DFI/NMLS search-only. No bulk roster was acquired. Search-only is not zero companies. HMDA applications, HMDA LEIs, FDIC banks, OHFA names, and MLOs are not that census.', coverageState: 'NOT_ACQUIRED' };
+  }
 
   if (/\bwhat is (?:an? )?nmls(?: institution)? id\b|\bhow do i (?:check|verify).*nmls/i.test(q)) return { mode: 'definition', definitionId: 'nmls', requestedMetric: null };
   if (/\bwhat is (?:an? )?lei\b/i.test(q)) return { mode: 'definition', definitionId: 'lei', requestedMetric: null };

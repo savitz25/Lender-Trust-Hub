@@ -181,6 +181,14 @@ export const LENDER_TOOLS = {
       cta: 'Open North Carolina research',
     },
     {
+      id: 'ohio-research',
+      title: 'Ohio research',
+      description:
+        '2025 HMDA Ohio activity, DFI/NMLS RMLA verification, CFPB 2025 mortgage complaints, and OHFA participating-lender county lists. Not a ranking or a current RMLA census.',
+      href: '/ohio',
+      cta: 'Open Ohio research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
@@ -443,6 +451,7 @@ export const LENDER_FOOTER_COLUMNS = [
       { href: '/oregon', label: 'Oregon Research' },
       { href: '/pennsylvania', label: 'Pennsylvania Research' },
       { href: '/north-carolina', label: 'North Carolina Research' },
+      { href: '/ohio', label: 'Ohio Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },

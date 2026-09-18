@@ -7,6 +7,7 @@ import {ILLINOIS_SNAPSHOT} from '../illinois-intelligence/snapshot';
 import {OREGON_SNAPSHOT} from '../oregon-intelligence/snapshot';
 import {PENNSYLVANIA_SNAPSHOT} from '../pennsylvania-intelligence/snapshot';
 import {NORTH_CAROLINA_SNAPSHOT} from '../north-carolina-intelligence/snapshot';
+import {OHIO_SNAPSHOT} from '../ohio-intelligence/snapshot';
 import {STATE_NAMES} from '../home-intel/states';
 import {executeAskQuery} from './execute-query';
 import {countSources} from './scalar-count';
@@ -43,7 +44,7 @@ test('20 county-volume and county comparison retained',()=>{const r=run('How man
 test('21 corrupt/throwing source finishes unavailable, not zero',t=>{t.mock.method(countSources,'snapshot',()=>{throw Error('Source unavailable.');});noValue(run('How many originations in NJ?'));});
 test('22 accepted source oracle independent of executor for all fields/states',()=>{
   for(const row of snapshot.geography)for(const action of actions){
-    const expected=row.state==='IL'?ILLINOIS_SNAPSHOT.hmda[`${action}s`]:row.state==='OR'?OREGON_SNAPSHOT.hmda[`${action}s`]:row.state==='PA'?PENNSYLVANIA_SNAPSHOT.hmda[`${action}s`]:row.state==='NC'?NORTH_CAROLINA_SNAPSHOT.hmda[`${action}s`]:row[`${action}s`];
+    const expected=row.state==='IL'?ILLINOIS_SNAPSHOT.hmda[`${action}s`]:row.state==='OR'?OREGON_SNAPSHOT.hmda[`${action}s`]:row.state==='PA'?PENNSYLVANIA_SNAPSHOT.hmda[`${action}s`]:row.state==='NC'?NORTH_CAROLINA_SNAPSHOT.hmda[`${action}s`]:row.state==='OH'?OHIO_SNAPSHOT.hmda[`${action}s`]:row[`${action}s`];
     assert.equal(value(run(`How many ${action}s in ${row.state}?`)),expected,`${row.state}/${action}`);
   }
 });

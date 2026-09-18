@@ -1,0 +1,6102 @@
+[
+  {
+    "complaint_id": "11556515",
+    "date_received": "2025-01-15T12:23:55.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11548353",
+    "date_received": "2025-01-15T09:56:47.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "Zillow Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11529773",
+    "date_received": "2025-01-14T15:22:30.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11527195",
+    "date_received": "2025-01-14T18:38:39.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "MOHELA",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11526461",
+    "date_received": "2025-01-14T19:21:35.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "Village Capital & Investment LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11505160",
+    "date_received": "2025-01-13T17:26:16.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Closing on a mortgage",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11503327",
+    "date_received": "2025-01-13T18:12:28.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "NEW YORK COMMUNITY BANCORP INC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11500969",
+    "date_received": "2025-01-13T19:17:47.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11499472",
+    "date_received": "2025-01-13T21:33:09.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11497455",
+    "date_received": "2025-01-13T04:12:44.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Madison Management Services, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11490482",
+    "date_received": "2025-01-12T15:20:01.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11470451",
+    "date_received": "2025-01-10T06:28:03.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Struggling to pay mortgage",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11470209",
+    "date_received": "2025-01-10T18:21:40.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11466371",
+    "date_received": "2025-01-10T20:13:33.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11464511",
+    "date_received": "2025-01-10T21:50:17.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "LAND HOME FINANCIAL SERVICES",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11455627",
+    "date_received": "2025-01-09T17:59:50.000Z",
+    "product": "Mortgage",
+    "sub_product": "Manufactured home loan",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11455052",
+    "date_received": "2025-01-09T17:47:03.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11453444",
+    "date_received": "2025-01-09T20:31:59.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11436208",
+    "date_received": "2025-01-08T03:24:01.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11433721",
+    "date_received": "2025-01-08T14:49:31.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Fay Servicing, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11430761",
+    "date_received": "2025-01-08T10:15:20.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11428594",
+    "date_received": "2025-01-08T10:07:09.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11428519",
+    "date_received": "2025-01-08T18:59:54.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11427848",
+    "date_received": "2025-01-08T10:18:15.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "KEYCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11417170",
+    "date_received": "2025-01-07T14:48:24.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11415772",
+    "date_received": "2025-01-07T14:50:55.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "TRIAD FINANCIAL SERVICES, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11397325",
+    "date_received": "2025-01-06T23:43:40.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11395202",
+    "date_received": "2025-01-07T02:36:27.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11391092",
+    "date_received": "2025-01-05T20:26:08.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11375241",
+    "date_received": "2025-01-03T15:34:15.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "NEW YORK COMMUNITY BANCORP INC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11374995",
+    "date_received": "2025-01-02T13:39:15.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11364067",
+    "date_received": "2025-01-04T01:43:09.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11345938",
+    "date_received": "2025-01-01T11:10:17.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Struggling to pay mortgage",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11880533",
+    "date_received": "2025-01-31T14:41:59.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11871562",
+    "date_received": "2025-01-31T16:12:50.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "PENNYMAC LOAN SERVICES, LLC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11871327",
+    "date_received": "2025-01-28T20:19:14.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "RoundPoint Mortgage Servicing LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11851530",
+    "date_received": "2025-01-29T21:55:23.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11833136",
+    "date_received": "2025-01-29T17:21:18.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Incorrect information on your report",
+    "company": "KEYCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11831241",
+    "date_received": "2025-01-29T17:51:57.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Fay Servicing, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11817218",
+    "date_received": "2025-01-28T06:17:51.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11786938",
+    "date_received": "2025-01-27T15:23:51.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11778281",
+    "date_received": "2025-01-26T11:00:24.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "NVR INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11776677",
+    "date_received": "2025-01-26T21:55:36.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11761042",
+    "date_received": "2025-01-24T16:01:52.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11755810",
+    "date_received": "2025-01-24T19:38:49.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Mortgage Research Center, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11749910",
+    "date_received": "2025-01-22T16:17:58.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11727797",
+    "date_received": "2025-01-24T19:37:16.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "BANK OF AMERICA, NATIONAL ASSOCIATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11721899",
+    "date_received": "2025-01-21T22:42:17.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11719466",
+    "date_received": "2025-01-23T21:31:02.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11713500",
+    "date_received": "2025-01-24T00:23:43.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Click n' Close, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11711547",
+    "date_received": "2025-01-24T01:35:19.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "NEW YORK COMMUNITY BANCORP INC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11691986",
+    "date_received": "2025-01-22T18:04:24.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "RELIANCE FIRST CAPITAL LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11677791",
+    "date_received": "2025-01-17T15:57:42.000Z",
+    "product": "Mortgage",
+    "sub_product": "Manufactured home loan",
+    "issue": "Trouble during payment process",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11630748",
+    "date_received": "2025-01-19T03:13:38.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "SN SERVICING CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11596215",
+    "date_received": "2025-01-21T17:41:19.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "PNC Bank N.A.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11595536",
+    "date_received": "2025-01-20T11:39:02.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "NEW YORK COMMUNITY BANCORP INC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11594720",
+    "date_received": "2025-01-18T13:59:39.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Struggling to pay mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11583675",
+    "date_received": "2025-01-16T15:22:08.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "PENNYMAC LOAN SERVICES, LLC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11576113",
+    "date_received": "2025-01-16T15:34:02.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11565874",
+    "date_received": "2025-01-16T14:51:50.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11560344",
+    "date_received": "2025-01-17T14:07:05.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Incorrect information on your report",
+    "company": "KEYCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12070906",
+    "date_received": "2025-02-12T17:38:43.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12056537",
+    "date_received": "2025-02-12T00:48:31.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12052977",
+    "date_received": "2025-02-12T20:57:01.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "NVR INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12051406",
+    "date_received": "2025-02-13T21:33:26.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12035989",
+    "date_received": "2025-02-11T17:15:12.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Data Mortgage Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12021298",
+    "date_received": "2025-02-10T16:59:58.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12007414",
+    "date_received": "2025-02-09T18:23:29.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12007151",
+    "date_received": "2025-02-09T19:10:49.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12002000",
+    "date_received": "2025-02-09T01:36:36.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11988157",
+    "date_received": "2025-02-07T10:28:37.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11976615",
+    "date_received": "2025-02-06T14:41:15.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11970265",
+    "date_received": "2025-02-06T19:21:02.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11962899",
+    "date_received": "2025-02-07T01:47:20.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Incorrect information on your report",
+    "company": "Capstone Private Mortgage Holdings Limited",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11955514",
+    "date_received": "2025-02-05T14:42:44.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11930190",
+    "date_received": "2025-02-04T16:17:51.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11930154",
+    "date_received": "2025-02-04T16:52:02.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "WELLS FARGO & COMPANY",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11913990",
+    "date_received": "2025-02-03T08:38:08.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11910658",
+    "date_received": "2025-02-03T20:43:26.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "11888384",
+    "date_received": "2025-02-01T19:13:37.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "LD Holdings Group, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12248709",
+    "date_received": "2025-02-28T01:36:56.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12246864",
+    "date_received": "2025-02-28T06:03:56.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12244855",
+    "date_received": "2025-02-28T20:53:13.000Z",
+    "product": "Mortgage",
+    "sub_product": "Manufactured home loan",
+    "issue": "Trouble during payment process",
+    "company": "21ST MORTGAGE CORP.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12237387",
+    "date_received": "2025-02-27T15:48:08.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "FORD MOTOR CREDIT CO.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12226583",
+    "date_received": "2025-02-26T10:05:59.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12225036",
+    "date_received": "2025-02-26T21:52:24.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12220784",
+    "date_received": "2025-02-27T01:17:38.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "VANDERBILT MORTGAGE & FINANCE, INC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12215496",
+    "date_received": "2025-02-25T13:20:26.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12208651",
+    "date_received": "2025-02-25T20:02:52.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "WELLS FARGO & COMPANY",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12204627",
+    "date_received": "2025-02-25T23:11:57.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12191687",
+    "date_received": "2025-02-24T17:22:49.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12166986",
+    "date_received": "2025-02-21T19:03:58.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12151870",
+    "date_received": "2025-02-20T18:07:34.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12142335",
+    "date_received": "2025-02-19T10:39:57.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12126488",
+    "date_received": "2025-02-19T00:57:25.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "Brightfunders, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12118001",
+    "date_received": "2025-02-18T17:21:09.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12115326",
+    "date_received": "2025-02-15T10:05:22.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12107060",
+    "date_received": "2025-02-17T18:15:46.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "NEW YORK COMMUNITY BANCORP INC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12106913",
+    "date_received": "2025-02-17T18:34:55.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "M&T BANK CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12105901",
+    "date_received": "2025-02-17T19:55:57.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Mortgage Research Center, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12093390",
+    "date_received": "2025-02-15T13:57:52.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12491330",
+    "date_received": "2025-03-14T13:06:42.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "Peer Advisors, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12489473",
+    "date_received": "2025-03-14T14:31:16.000Z",
+    "product": "Mortgage",
+    "sub_product": "Other type of mortgage",
+    "issue": "Trouble during payment process",
+    "company": "JPMORGAN CHASE & CO.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12460320",
+    "date_received": "2025-03-13T10:20:05.000Z",
+    "product": "Mortgage",
+    "sub_product": "USDA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "PNC Bank N.A.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12457788",
+    "date_received": "2025-03-13T14:44:16.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12435817",
+    "date_received": "2025-03-13T02:07:15.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12426829",
+    "date_received": "2025-03-11T15:21:09.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12420523",
+    "date_received": "2025-03-11T13:29:09.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12410970",
+    "date_received": "2025-03-10T18:45:26.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "PLANET HOME LENDING, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12404172",
+    "date_received": "2025-03-11T00:19:06.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12402743",
+    "date_received": "2025-03-11T00:20:59.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12395663",
+    "date_received": "2025-03-09T19:09:32.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12377185",
+    "date_received": "2025-03-08T01:55:50.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "PENNYMAC LOAN SERVICES, LLC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12368440",
+    "date_received": "2025-03-07T19:06:13.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12365996",
+    "date_received": "2025-03-07T20:34:53.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12365692",
+    "date_received": "2025-03-07T21:01:28.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12349907",
+    "date_received": "2025-03-06T20:51:26.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "M&T BANK CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12343996",
+    "date_received": "2025-03-07T02:17:14.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12341855",
+    "date_received": "2025-03-05T23:28:48.000Z",
+    "product": "Mortgage",
+    "sub_product": "USDA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "PENNYMAC LOAN SERVICES, LLC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12290611",
+    "date_received": "2025-03-03T16:20:40.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12284877",
+    "date_received": "2025-03-02T14:15:26.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Mortgage Research Center, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12277493",
+    "date_received": "2025-03-01T18:11:02.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12277172",
+    "date_received": "2025-03-01T18:18:20.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12274564",
+    "date_received": "2025-03-02T00:31:55.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "OFG BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12718406",
+    "date_received": "2025-03-28T22:46:10.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12711385",
+    "date_received": "2025-03-28T16:47:49.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12687862",
+    "date_received": "2025-03-27T13:26:08.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Acra Intermediate Holdings, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12682179",
+    "date_received": "2025-03-27T20:53:08.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Brightfunders, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12663851",
+    "date_received": "2025-03-26T11:47:36.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12658894",
+    "date_received": "2025-03-24T22:32:28.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12658774",
+    "date_received": "2025-03-24T22:13:33.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CARRINGTON MORTGAGE SERVICES, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12655531",
+    "date_received": "2025-03-25T00:40:48.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12654756",
+    "date_received": "2025-03-24T23:28:24.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "SERVICEMAC, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12654682",
+    "date_received": "2025-03-25T00:51:24.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12641083",
+    "date_received": "2025-03-25T21:41:15.000Z",
+    "product": "Mortgage",
+    "sub_product": "Reverse mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12632887",
+    "date_received": "2025-03-26T02:30:45.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12625399",
+    "date_received": "2025-03-24T12:59:45.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12620930",
+    "date_received": "2025-03-24T18:25:32.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "JPMORGAN CHASE & CO.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12620667",
+    "date_received": "2025-03-25T12:51:52.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Union Home Mortgage Corp",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12607524",
+    "date_received": "2025-03-21T21:26:14.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "MUTUAL OF OMAHA MORTGAGE, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12606476",
+    "date_received": "2025-03-21T23:31:19.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12597934",
+    "date_received": "2025-03-21T14:38:55.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "RoundPoint Mortgage Servicing LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12596360",
+    "date_received": "2025-03-21T16:07:19.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "BANK OF AMERICA, NATIONAL ASSOCIATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12590976",
+    "date_received": "2025-03-21T20:13:20.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12587570",
+    "date_received": "2025-03-20T22:41:39.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12581141",
+    "date_received": "2025-03-20T13:31:15.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12574720",
+    "date_received": "2025-03-20T13:27:28.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12569367",
+    "date_received": "2025-03-19T16:04:14.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Problem with a company's investigation into an existing problem",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12536175",
+    "date_received": "2025-03-18T15:52:42.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13002145",
+    "date_received": "2025-04-15T21:12:13.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Struggling to pay mortgage",
+    "company": "PNC Bank N.A.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12989200",
+    "date_received": "2025-04-15T04:53:28.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12986477",
+    "date_received": "2025-04-14T21:32:44.000Z",
+    "product": "Mortgage",
+    "sub_product": "Reverse mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12986094",
+    "date_received": "2025-04-14T19:07:04.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "PENNYMAC LOAN SERVICES, LLC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12973844",
+    "date_received": "2025-04-15T11:17:56.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12945265",
+    "date_received": "2025-04-11T09:41:50.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Struggling to pay mortgage",
+    "company": "Fay Servicing, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12909215",
+    "date_received": "2025-04-10T01:36:25.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12896111",
+    "date_received": "2025-04-09T23:43:16.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12875921",
+    "date_received": "2025-04-08T15:01:54.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12874290",
+    "date_received": "2025-04-08T15:48:55.000Z",
+    "product": "Mortgage",
+    "sub_product": "Other type of mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12841290",
+    "date_received": "2025-04-05T20:42:41.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "TFS FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12827469",
+    "date_received": "2025-04-04T10:58:30.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Click n' Close, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12816247",
+    "date_received": "2025-04-04T13:22:33.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "12789950",
+    "date_received": "2025-04-01T19:35:49.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "SN SERVICING CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13257952",
+    "date_received": "2025-04-30T21:13:45.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13256837",
+    "date_received": "2025-04-30T12:56:18.000Z",
+    "product": "Mortgage",
+    "sub_product": "Other type of mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mortgage Research Center, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13254150",
+    "date_received": "2025-04-30T11:46:49.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "PENNYMAC LOAN SERVICES, LLC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13230416",
+    "date_received": "2025-04-29T20:17:42.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13221321",
+    "date_received": "2025-04-28T22:48:13.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "WELLS FARGO & COMPANY",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13214534",
+    "date_received": "2025-04-28T14:33:28.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13212994",
+    "date_received": "2025-04-28T20:09:23.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13210680",
+    "date_received": "2025-04-28T16:09:12.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "INDEPENDENCE HOME LOANS LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13199125",
+    "date_received": "2025-04-27T08:50:58.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "BANK OF AMERICA, NATIONAL ASSOCIATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13183513",
+    "date_received": "2025-04-25T21:45:04.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13157076",
+    "date_received": "2025-04-24T17:38:17.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13143260",
+    "date_received": "2025-04-23T17:10:07.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13137303",
+    "date_received": "2025-04-24T00:24:56.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13101734",
+    "date_received": "2025-04-21T18:31:15.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "KEYCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13093895",
+    "date_received": "2025-04-21T15:28:58.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13091249",
+    "date_received": "2025-04-21T15:58:53.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13086972",
+    "date_received": "2025-04-20T11:36:59.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13068356",
+    "date_received": "2025-04-19T23:42:33.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13058814",
+    "date_received": "2025-04-18T20:33:20.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13021551",
+    "date_received": "2025-04-16T22:14:55.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13021088",
+    "date_received": "2025-04-16T18:37:01.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13015051",
+    "date_received": "2025-04-16T20:49:06.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "NEW YORK COMMUNITY BANCORP INC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13515348",
+    "date_received": "2025-05-14T15:26:12.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "WELLS FARGO & COMPANY",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13509552",
+    "date_received": "2025-05-14T10:12:24.000Z",
+    "product": "Mortgage",
+    "sub_product": "Other type of mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13500620",
+    "date_received": "2025-05-14T16:18:46.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13497487",
+    "date_received": "2025-05-13T15:40:07.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "NORTHERN OHIO INVESTMENT COMPANY",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13496294",
+    "date_received": "2025-05-13T16:13:49.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13470605",
+    "date_received": "2025-05-12T02:40:29.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13468672",
+    "date_received": "2025-05-12T19:08:25.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "SERVICEMAC, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13458003",
+    "date_received": "2025-05-12T16:02:06.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "AMERISAVE MORTGAGE CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13444626",
+    "date_received": "2025-05-10T12:44:36.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "NAVY FEDERAL CREDIT UNION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13417183",
+    "date_received": "2025-05-08T15:26:10.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13416861",
+    "date_received": "2025-05-08T18:22:57.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13415306",
+    "date_received": "2025-05-08T21:12:00.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13406758",
+    "date_received": "2025-05-08T22:19:58.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13398629",
+    "date_received": "2025-05-08T14:42:21.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "LAKE MICHIGAN CREDIT UNION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13373133",
+    "date_received": "2025-05-06T16:22:17.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13355339",
+    "date_received": "2025-05-06T13:39:40.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "CITIBANK, N.A.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13352470",
+    "date_received": "2025-05-06T02:45:49.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13335851",
+    "date_received": "2025-05-05T14:40:12.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13307441",
+    "date_received": "2025-05-02T18:31:25.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CARRINGTON MORTGAGE SERVICES, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13297278",
+    "date_received": "2025-05-01T17:08:56.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13295786",
+    "date_received": "2025-05-02T18:38:15.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13295504",
+    "date_received": "2025-05-02T21:12:39.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13288377",
+    "date_received": "2025-05-01T18:00:35.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Problem with a company's investigation into an existing problem",
+    "company": "LoanCare, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13281268",
+    "date_received": "2025-05-01T12:08:43.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13901464",
+    "date_received": "2025-05-20T21:20:54.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13825343",
+    "date_received": "2025-05-31T15:35:29.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13821190",
+    "date_received": "2025-05-31T19:32:46.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13816398",
+    "date_received": "2025-05-30T21:39:40.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13811636",
+    "date_received": "2025-05-30T14:50:19.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13810711",
+    "date_received": "2025-05-30T13:57:07.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13807829",
+    "date_received": "2025-05-30T15:37:58.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13793905",
+    "date_received": "2025-05-29T08:46:17.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "TOP FLITE FINANCIAL INC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13781132",
+    "date_received": "2025-05-29T20:47:18.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13763802",
+    "date_received": "2025-05-27T17:08:33.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13741525",
+    "date_received": "2025-05-27T19:29:03.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13703814",
+    "date_received": "2025-05-25T15:04:06.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13681890",
+    "date_received": "2025-05-23T13:45:09.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13661058",
+    "date_received": "2025-05-22T20:49:56.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13644483",
+    "date_received": "2025-05-21T11:35:23.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "CARRINGTON MORTGAGE SERVICES, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13643040",
+    "date_received": "2025-05-21T16:13:33.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13623109",
+    "date_received": "2025-05-20T13:53:30.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "Data Mortgage Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13617439",
+    "date_received": "2025-05-20T14:55:54.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Better Mortgage, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13590882",
+    "date_received": "2025-05-19T18:58:34.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CARRINGTON MORTGAGE SERVICES, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13572794",
+    "date_received": "2025-05-17T15:09:51.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14088510",
+    "date_received": "2025-06-15T14:01:10.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14045291",
+    "date_received": "2025-06-11T21:45:14.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Fairway Independent Mortgage Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14026916",
+    "date_received": "2025-06-11T13:24:28.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "PNC Bank N.A.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14023956",
+    "date_received": "2025-06-11T16:19:38.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "NEXA Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14012211",
+    "date_received": "2025-06-11T17:43:01.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Fay Servicing, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13994626",
+    "date_received": "2025-06-10T20:12:42.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Problem with a company's investigation into an existing problem",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13961083",
+    "date_received": "2025-06-08T16:50:16.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Problem with a company's investigation into an existing problem",
+    "company": "Community Loan Servicing, LLC (formerly known as Bayview Loan Servicing, LLC)",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13959501",
+    "date_received": "2025-06-09T01:19:40.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13923515",
+    "date_received": "2025-06-05T13:05:24.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "Fidelity National Financial, Inc",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13916817",
+    "date_received": "2025-06-05T21:29:37.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13913338",
+    "date_received": "2025-06-05T21:51:34.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13899618",
+    "date_received": "2025-06-04T04:40:30.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13891600",
+    "date_received": "2025-06-04T16:32:40.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13863342",
+    "date_received": "2025-06-03T17:48:15.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Problem with a company's investigation into an existing problem",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13847348",
+    "date_received": "2025-06-02T18:47:54.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "FCI Lender Services Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13845266",
+    "date_received": "2025-06-02T04:08:27.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "FIRST COMMONWEALTH FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13844772",
+    "date_received": "2025-06-02T12:29:54.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "CARRINGTON MORTGAGE SERVICES, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13833562",
+    "date_received": "2025-06-02T00:07:07.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "13831776",
+    "date_received": "2025-06-01T14:51:27.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Fay Servicing, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14366047",
+    "date_received": "2025-06-30T15:38:17.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "BROKER SOLUTIONS, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14346812",
+    "date_received": "2025-06-28T14:08:17.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "PENNYMAC LOAN SERVICES, LLC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14337960",
+    "date_received": "2025-06-27T15:17:40.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14313853",
+    "date_received": "2025-06-26T19:29:50.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14311126",
+    "date_received": "2025-06-26T20:11:19.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Problem with a company's investigation into an existing problem",
+    "company": "Figure Technologies, Inc",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14281793",
+    "date_received": "2025-06-25T22:48:34.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "LoanCare, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14275660",
+    "date_received": "2025-06-25T04:09:27.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14275286",
+    "date_received": "2025-06-25T13:35:42.000Z",
+    "product": "Mortgage",
+    "sub_product": "Reverse mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14263455",
+    "date_received": "2025-06-24T20:59:10.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14256199",
+    "date_received": "2025-06-24T10:17:22.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14251509",
+    "date_received": "2025-06-24T15:16:38.000Z",
+    "product": "Mortgage",
+    "sub_product": "USDA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14236573",
+    "date_received": "2025-06-23T20:04:32.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14205184",
+    "date_received": "2025-06-20T15:14:06.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "Brightfunders, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14178467",
+    "date_received": "2025-06-19T14:17:58.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14177629",
+    "date_received": "2025-06-19T14:52:19.000Z",
+    "product": "Mortgage",
+    "sub_product": "Reverse mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "South River Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14153487",
+    "date_received": "2025-06-18T17:20:40.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14150313",
+    "date_received": "2025-06-18T19:22:21.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14136966",
+    "date_received": "2025-06-17T02:05:55.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14132483",
+    "date_received": "2025-06-17T13:27:47.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14132398",
+    "date_received": "2025-06-17T15:22:19.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14109160",
+    "date_received": "2025-06-16T17:57:18.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14106971",
+    "date_received": "2025-06-16T21:23:45.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14106836",
+    "date_received": "2025-06-16T21:02:08.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14105763",
+    "date_received": "2025-06-16T10:52:38.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14098060",
+    "date_received": "2025-06-16T14:14:48.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "21636268",
+    "date_received": "2025-07-05T08:45:32.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Your Favorite Lenders, Inc",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14665875",
+    "date_received": "2025-07-15T19:18:16.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14649363",
+    "date_received": "2025-07-14T15:44:55.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "MIDFIRST BANK",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14641105",
+    "date_received": "2025-07-14T23:32:36.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14624071",
+    "date_received": "2025-07-13T03:21:29.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "WELLS FARGO & COMPANY",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14620909",
+    "date_received": "2025-07-13T22:06:55.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Figure Technologies, Inc",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14597472",
+    "date_received": "2025-07-11T16:39:22.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "Village Capital & Investment LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14573934",
+    "date_received": "2025-07-10T18:11:27.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14561860",
+    "date_received": "2025-07-10T19:24:03.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14546653",
+    "date_received": "2025-07-09T16:34:05.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "INDEPENDENCE HOME LOANS LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14545715",
+    "date_received": "2025-07-09T17:35:41.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "LAKEVIEW LOAN SERVICING, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14540659",
+    "date_received": "2025-07-09T19:39:37.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "THRIVE MORTGAGE, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14534341",
+    "date_received": "2025-07-08T23:04:24.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14506134",
+    "date_received": "2025-07-07T18:20:05.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "PNC Bank N.A.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14470335",
+    "date_received": "2025-07-04T13:33:40.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "LoanCare, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14443921",
+    "date_received": "2025-07-03T18:49:12.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14421068",
+    "date_received": "2025-07-02T17:20:29.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14395214",
+    "date_received": "2025-07-01T10:25:14.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15006213",
+    "date_received": "2025-07-31T10:13:25.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "BSI Financial Holdings, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14996988",
+    "date_received": "2025-07-31T20:24:38.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14994720",
+    "date_received": "2025-07-31T20:05:55.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14986388",
+    "date_received": "2025-07-30T23:48:12.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "KEYCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14971129",
+    "date_received": "2025-07-30T20:38:36.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "TFS FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14931975",
+    "date_received": "2025-07-28T13:36:37.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14920947",
+    "date_received": "2025-07-28T22:16:41.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "United Shore Financial Services, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14874859",
+    "date_received": "2025-07-25T23:03:42.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14857962",
+    "date_received": "2025-07-24T20:12:23.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Hanna Holdings Inc",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14842785",
+    "date_received": "2025-07-23T12:43:07.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14841783",
+    "date_received": "2025-07-23T13:29:03.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14836199",
+    "date_received": "2025-07-23T18:55:36.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "M&T BANK CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14820810",
+    "date_received": "2025-07-24T01:11:55.000Z",
+    "product": "Mortgage",
+    "sub_product": "Other type of mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14820793",
+    "date_received": "2025-07-24T01:05:07.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Fay Servicing, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14812834",
+    "date_received": "2025-07-22T09:43:34.000Z",
+    "product": "Mortgage",
+    "sub_product": "Manufactured home loan",
+    "issue": "Trouble during payment process",
+    "company": "TAMMAC HOLDINGS CORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14808606",
+    "date_received": "2025-07-22T14:43:05.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "PNC Bank N.A.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14779796",
+    "date_received": "2025-07-21T13:37:03.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14714138",
+    "date_received": "2025-07-17T17:10:43.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "PRIMARY RESIDENTIAL MORTGAGE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14708632",
+    "date_received": "2025-07-17T21:53:59.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "WESBANCO BANK, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14685496",
+    "date_received": "2025-07-16T17:54:42.000Z",
+    "product": "Mortgage",
+    "sub_product": "Other type of mortgage",
+    "issue": "Trouble during payment process",
+    "company": "ROYAL UNITED MORTGAGE LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14680606",
+    "date_received": "2025-07-16T21:51:23.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14679770",
+    "date_received": "2025-07-16T22:09:02.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14676527",
+    "date_received": "2025-07-16T23:15:43.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15319292",
+    "date_received": "2025-08-15T11:52:15.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15314362",
+    "date_received": "2025-08-15T15:22:38.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15309590",
+    "date_received": "2025-08-15T18:50:17.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Cornerstone First Mortgage, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15309270",
+    "date_received": "2025-08-15T19:26:05.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15293519",
+    "date_received": "2025-08-14T15:50:08.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "WESBANCO BANK, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15291337",
+    "date_received": "2025-08-14T15:37:26.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15274476",
+    "date_received": "2025-08-13T13:31:13.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15240548",
+    "date_received": "2025-08-12T02:31:28.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15236705",
+    "date_received": "2025-08-12T13:50:13.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15234092",
+    "date_received": "2025-08-12T17:48:42.000Z",
+    "product": "Mortgage",
+    "sub_product": "Other type of mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Paramount GR Holdings, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15232573",
+    "date_received": "2025-08-12T16:33:20.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "JPMORGAN CHASE & CO.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15211675",
+    "date_received": "2025-08-11T16:26:21.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15207673",
+    "date_received": "2025-08-11T19:53:22.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15175928",
+    "date_received": "2025-08-08T13:30:58.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "PNC Bank N.A.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15156639",
+    "date_received": "2025-08-07T20:12:53.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15149953",
+    "date_received": "2025-08-07T14:21:56.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15147043",
+    "date_received": "2025-08-07T18:12:45.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "BesTitle Agency, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15141909",
+    "date_received": "2025-08-08T01:39:30.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15104664",
+    "date_received": "2025-08-06T08:53:22.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15100358",
+    "date_received": "2025-08-05T11:21:20.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15097401",
+    "date_received": "2025-08-05T17:00:53.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15075101",
+    "date_received": "2025-08-04T19:41:18.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Better Mortgage, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15073128",
+    "date_received": "2025-08-04T16:48:41.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15067103",
+    "date_received": "2025-08-04T22:00:54.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Problem with a company's investigation into an existing problem",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15053798",
+    "date_received": "2025-08-02T09:05:35.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15053075",
+    "date_received": "2025-08-03T23:04:03.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15043851",
+    "date_received": "2025-08-01T16:15:32.000Z",
+    "product": "Mortgage",
+    "sub_product": "USDA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Union Home Mortgage Corp",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15040461",
+    "date_received": "2025-08-01T17:17:33.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Fay Servicing, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "14989416",
+    "date_received": "2025-08-01T00:40:32.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15681995",
+    "date_received": "2025-08-29T18:39:37.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "FourLeaf Federal Credit Union",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15618713",
+    "date_received": "2025-08-29T20:24:16.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "KEYCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15618425",
+    "date_received": "2025-08-29T18:28:56.000Z",
+    "product": "Mortgage",
+    "sub_product": "Other type of mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15610558",
+    "date_received": "2025-08-30T07:05:54.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15594230",
+    "date_received": "2025-08-28T02:33:18.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "CARRINGTON MORTGAGE SERVICES, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15588591",
+    "date_received": "2025-08-28T13:42:56.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15580072",
+    "date_received": "2025-08-28T20:19:26.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "NVR INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15559057",
+    "date_received": "2025-08-27T20:34:43.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Nexus Nova LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15549917",
+    "date_received": "2025-08-27T17:48:29.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15500064",
+    "date_received": "2025-08-25T17:58:21.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "RUOFF MORTGAGE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15498686",
+    "date_received": "2025-08-25T18:04:09.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "WELLS FARGO & COMPANY",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15489939",
+    "date_received": "2025-08-25T23:23:38.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15475990",
+    "date_received": "2025-08-23T18:43:34.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "M&T BANK CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15475279",
+    "date_received": "2025-08-23T20:19:18.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15474774",
+    "date_received": "2025-08-23T23:48:24.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "West Capital Lending, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15449959",
+    "date_received": "2025-08-22T20:02:30.000Z",
+    "product": "Mortgage",
+    "sub_product": "USDA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "PLANET HOME LENDING, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15436964",
+    "date_received": "2025-08-21T19:35:44.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15382339",
+    "date_received": "2025-08-19T11:45:32.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15374007",
+    "date_received": "2025-08-19T19:53:43.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15364447",
+    "date_received": "2025-08-18T22:33:00.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15348160",
+    "date_received": "2025-08-18T16:20:25.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "DOLLAR MUTUAL BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15304283",
+    "date_received": "2025-08-16T01:10:03.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "HILLTOP HOLDINGS, INC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15943471",
+    "date_received": "2025-09-15T18:01:48.000Z",
+    "product": "Mortgage",
+    "sub_product": "Reverse mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Peer Advisors, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15914948",
+    "date_received": "2025-09-12T16:32:01.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "United Shore Financial Services, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15882259",
+    "date_received": "2025-09-11T13:44:03.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15872611",
+    "date_received": "2025-09-11T19:10:01.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Closing on a mortgage",
+    "company": "PNC Bank N.A.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15867158",
+    "date_received": "2025-09-11T22:33:13.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "WELLS FARGO & COMPANY",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15860495",
+    "date_received": "2025-09-11T01:23:05.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15829242",
+    "date_received": "2025-09-09T16:07:51.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15816407",
+    "date_received": "2025-09-09T23:00:58.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15809320",
+    "date_received": "2025-09-09T16:16:45.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15799850",
+    "date_received": "2025-09-08T17:18:18.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Problem with a company's investigation into an existing problem",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15791120",
+    "date_received": "2025-09-08T23:39:07.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Neighborhood Capital Funding, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15768209",
+    "date_received": "2025-09-06T15:36:34.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Chrysalis Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15765273",
+    "date_received": "2025-09-07T01:42:03.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15747941",
+    "date_received": "2025-09-05T13:50:32.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15706860",
+    "date_received": "2025-09-03T04:07:52.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15705941",
+    "date_received": "2025-09-03T09:12:09.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "JPMORGAN CHASE & CO.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15705212",
+    "date_received": "2025-09-03T05:59:52.000Z",
+    "product": "Mortgage",
+    "sub_product": "USDA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "PNC Bank N.A.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15703742",
+    "date_received": "2025-09-03T10:50:25.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15676798",
+    "date_received": "2025-09-02T15:24:02.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15670772",
+    "date_received": "2025-09-02T18:59:14.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15664571",
+    "date_received": "2025-09-03T00:49:21.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15663085",
+    "date_received": "2025-09-03T00:40:34.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "RUOFF MORTGAGE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17970873",
+    "date_received": "2025-09-30T22:57:00.000Z",
+    "product": "Mortgage",
+    "sub_product": "Other type of mortgage",
+    "issue": "Trouble during payment process",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16274403",
+    "date_received": "2025-09-30T14:41:26.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16272669",
+    "date_received": "2025-09-30T14:53:59.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16247587",
+    "date_received": "2025-09-29T13:25:05.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16244514",
+    "date_received": "2025-09-29T17:18:21.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16243140",
+    "date_received": "2025-09-29T16:54:54.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Union Home Mortgage Corp",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16240075",
+    "date_received": "2025-09-29T19:20:42.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16232305",
+    "date_received": "2025-09-29T01:06:53.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "United Shore Financial Services, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16228378",
+    "date_received": "2025-09-28T14:42:42.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16201204",
+    "date_received": "2025-09-26T18:15:53.000Z",
+    "product": "Mortgage",
+    "sub_product": "Manufactured home loan",
+    "issue": "Trouble during payment process",
+    "company": "Fay Servicing, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16200620",
+    "date_received": "2025-09-26T17:23:37.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16198621",
+    "date_received": "2025-09-26T19:43:46.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16186799",
+    "date_received": "2025-09-25T03:08:33.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "LoanCare, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16163116",
+    "date_received": "2025-09-24T05:15:21.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Union Home Mortgage Corp",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16143602",
+    "date_received": "2025-09-25T01:45:11.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "M&T BANK CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16141198",
+    "date_received": "2025-09-25T04:18:20.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "FCI Lender Services Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16136070",
+    "date_received": "2025-09-23T21:37:33.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "PARAMOUNT RESIDENTIAL MORTGAGE GROUP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16129512",
+    "date_received": "2025-09-23T17:06:26.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Union Home Mortgage Corp",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16122413",
+    "date_received": "2025-09-23T20:55:58.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16122347",
+    "date_received": "2025-09-23T21:00:48.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Hanna Holdings Inc",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16112276",
+    "date_received": "2025-09-21T22:17:01.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "SN SERVICING CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16103969",
+    "date_received": "2025-09-23T23:50:19.000Z",
+    "product": "Mortgage",
+    "sub_product": "USDA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "HILLTOP HOLDINGS, INC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16094181",
+    "date_received": "2025-09-23T16:30:09.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Problem with fraud alerts or security freezes",
+    "company": "FIRST FINANCIAL BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16093547",
+    "date_received": "2025-09-21T16:25:01.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16086088",
+    "date_received": "2025-09-19T09:12:41.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "JPMORGAN CHASE & CO.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16084378",
+    "date_received": "2025-09-22T20:34:42.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Problem with a company's investigation into an existing problem",
+    "company": "Union Home Mortgage Corp",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16080820",
+    "date_received": "2025-09-22T22:13:20.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "VERITAS FUNDING, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16080813",
+    "date_received": "2025-09-22T21:44:59.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16065997",
+    "date_received": "2025-09-20T01:48:03.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Union Home Mortgage Corp",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16060260",
+    "date_received": "2025-09-19T13:13:34.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16057167",
+    "date_received": "2025-09-19T16:35:22.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16052914",
+    "date_received": "2025-09-19T17:24:10.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Fay Servicing, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16041542",
+    "date_received": "2025-09-19T11:32:59.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16039763",
+    "date_received": "2025-09-19T03:45:41.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16034299",
+    "date_received": "2025-09-18T13:23:21.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "TRUIST FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16025397",
+    "date_received": "2025-09-18T17:31:11.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16025105",
+    "date_received": "2025-09-18T18:00:00.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "CARRINGTON MORTGAGE SERVICES, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16019502",
+    "date_received": "2025-09-18T20:49:27.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "REMAX",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16016781",
+    "date_received": "2025-09-18T22:43:47.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "PENNYMAC LOAN SERVICES, LLC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15994327",
+    "date_received": "2025-09-17T19:49:06.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "RELIANCE FIRST CAPITAL LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15966094",
+    "date_received": "2025-09-16T13:11:57.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "15960259",
+    "date_received": "2025-09-16T16:16:22.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "PLANET HOME LENDING, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16604079",
+    "date_received": "2025-10-15T16:09:50.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "TFS FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16578737",
+    "date_received": "2025-10-14T02:53:47.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16544525",
+    "date_received": "2025-10-13T20:01:23.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "FCI Lender Services Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16540235",
+    "date_received": "2025-10-13T20:46:21.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16519788",
+    "date_received": "2025-10-11T19:37:59.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "JPMORGAN CHASE & CO.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16485560",
+    "date_received": "2025-10-09T14:31:28.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16484757",
+    "date_received": "2025-10-09T20:54:58.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16474122",
+    "date_received": "2025-10-09T17:21:44.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "WELLS FARGO & COMPANY",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16447132",
+    "date_received": "2025-10-08T17:09:46.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Click n' Close, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16410711",
+    "date_received": "2025-10-07T20:58:56.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16387409",
+    "date_received": "2025-10-06T18:35:18.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Union Home Mortgage Corp",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16356564",
+    "date_received": "2025-10-03T13:15:18.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16350014",
+    "date_received": "2025-10-03T16:57:02.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Village Capital & Investment LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16331093",
+    "date_received": "2025-10-02T11:16:44.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16329712",
+    "date_received": "2025-10-02T13:54:05.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16327023",
+    "date_received": "2025-10-02T16:21:41.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16320652",
+    "date_received": "2025-10-02T21:06:38.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "JPMORGAN CHASE & CO.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16313768",
+    "date_received": "2025-10-03T05:18:27.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Consumer Real Estate Finance Co.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16298312",
+    "date_received": "2025-10-01T12:43:47.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16287882",
+    "date_received": "2025-10-02T01:53:43.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16285051",
+    "date_received": "2025-10-01T14:33:15.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16931428",
+    "date_received": "2025-10-30T05:54:48.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Fay Servicing, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16926458",
+    "date_received": "2025-10-30T14:29:24.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Dovenmuehle Mortgage, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16920206",
+    "date_received": "2025-10-30T18:39:24.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "NAVY FEDERAL CREDIT UNION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16911236",
+    "date_received": "2025-10-30T00:41:18.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Problem with a company's investigation into an existing problem",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16908246",
+    "date_received": "2025-10-29T09:00:05.000Z",
+    "product": "Mortgage",
+    "sub_product": "USDA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "CARRINGTON MORTGAGE SERVICES, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16896393",
+    "date_received": "2025-10-29T19:08:47.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16895621",
+    "date_received": "2025-10-29T20:41:13.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "PLANET HOME LENDING, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16895082",
+    "date_received": "2025-10-29T18:48:22.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16885315",
+    "date_received": "2025-10-29T00:36:13.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "NEW YORK COMMUNITY BANCORP INC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16873830",
+    "date_received": "2025-10-28T15:33:56.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16866300",
+    "date_received": "2025-10-28T18:19:34.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16863220",
+    "date_received": "2025-10-28T21:05:12.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16821323",
+    "date_received": "2025-10-25T21:52:22.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16812456",
+    "date_received": "2025-10-24T09:00:23.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16809149",
+    "date_received": "2025-10-24T14:26:48.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Hanna Holdings Inc",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16777702",
+    "date_received": "2025-10-23T14:17:17.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16764952",
+    "date_received": "2025-10-22T19:59:23.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16756546",
+    "date_received": "2025-10-22T13:54:57.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16739947",
+    "date_received": "2025-10-22T13:02:43.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16738361",
+    "date_received": "2025-10-21T14:05:20.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16730204",
+    "date_received": "2025-10-22T00:58:23.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "AMERISAVE MORTGAGE CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16728731",
+    "date_received": "2025-10-21T02:19:12.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16727253",
+    "date_received": "2025-10-21T08:56:20.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "LAKEVIEW LOAN SERVICING, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16726714",
+    "date_received": "2025-10-21T12:43:20.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16710540",
+    "date_received": "2025-10-20T02:36:17.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16707859",
+    "date_received": "2025-10-20T12:58:07.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16701502",
+    "date_received": "2025-10-20T19:20:17.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16688125",
+    "date_received": "2025-10-18T09:04:44.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16657765",
+    "date_received": "2025-10-17T18:09:54.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16655051",
+    "date_received": "2025-10-17T19:36:01.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16622508",
+    "date_received": "2025-10-16T23:43:50.000Z",
+    "product": "Mortgage",
+    "sub_product": "Manufactured home loan",
+    "issue": "Closing on a mortgage",
+    "company": "21ST MORTGAGE CORP.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17271314",
+    "date_received": "2025-11-15T20:10:18.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "JPMORGAN CHASE & CO.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17264201",
+    "date_received": "2025-11-14T09:31:47.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Improper use of your report",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17254937",
+    "date_received": "2025-11-14T16:56:59.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "LoanCare, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17249763",
+    "date_received": "2025-11-14T20:19:49.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17228797",
+    "date_received": "2025-11-13T15:23:01.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "BANK OF AMERICA, NATIONAL ASSOCIATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17228223",
+    "date_received": "2025-11-13T19:07:03.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Acrisure Mortgage Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17225664",
+    "date_received": "2025-11-13T17:55:07.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "MIDFIRST BANK",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17219848",
+    "date_received": "2025-11-13T20:27:55.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CARRINGTON MORTGAGE SERVICES, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17168756",
+    "date_received": "2025-11-11T18:04:50.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "CARRINGTON MORTGAGE SERVICES, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17158175",
+    "date_received": "2025-11-12T00:29:39.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17153536",
+    "date_received": "2025-11-10T16:35:16.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "Visio Financial Services Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17142175",
+    "date_received": "2025-11-10T19:25:32.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Improper use of your report",
+    "company": "MortgageOne, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17102932",
+    "date_received": "2025-11-07T16:18:55.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "CARRINGTON MORTGAGE SERVICES, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17097920",
+    "date_received": "2025-11-07T19:59:36.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "WELLS FARGO & COMPANY",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17047794",
+    "date_received": "2025-11-05T15:28:00.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "WESBANCO BANK, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17020718",
+    "date_received": "2025-11-04T16:32:18.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "FourLeaf Federal Credit Union",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17012488",
+    "date_received": "2025-11-04T22:13:39.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "PENNYMAC LOAN SERVICES, LLC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "16972527",
+    "date_received": "2025-11-03T01:47:32.000Z",
+    "product": "Mortgage",
+    "sub_product": "Other type of mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "Innovative Mortgage Services, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18749483",
+    "date_received": "2025-11-21T14:39:07.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CMG Financial Services, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18665219",
+    "date_received": "2025-11-21T14:43:34.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17996252",
+    "date_received": "2025-11-28T14:52:37.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17980022",
+    "date_received": "2025-11-22T16:54:37.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17969108",
+    "date_received": "2025-11-26T18:01:39.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17952729",
+    "date_received": "2025-11-26T17:03:11.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "BSI Financial Holdings, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17934074",
+    "date_received": "2025-11-26T23:21:37.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17930296",
+    "date_received": "2025-11-26T17:21:42.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17901139",
+    "date_received": "2025-11-24T21:27:58.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CARRINGTON MORTGAGE SERVICES, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17877596",
+    "date_received": "2025-11-24T22:29:04.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17851963",
+    "date_received": "2025-11-22T10:08:57.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17849866",
+    "date_received": "2025-11-24T14:24:57.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Union Home Mortgage Corp",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17849852",
+    "date_received": "2025-11-24T14:47:58.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Union Home Mortgage Corp",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17849842",
+    "date_received": "2025-11-24T15:38:33.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Union Home Mortgage Corp",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17477093",
+    "date_received": "2025-11-24T16:50:29.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "NAVY FEDERAL CREDIT UNION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17453710",
+    "date_received": "2025-11-23T22:34:17.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "LAKEVIEW LOAN SERVICING, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17433446",
+    "date_received": "2025-11-21T16:33:45.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17433405",
+    "date_received": "2025-11-20T10:01:25.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17429615",
+    "date_received": "2025-11-21T11:06:49.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17409278",
+    "date_received": "2025-11-20T10:15:13.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17400761",
+    "date_received": "2025-11-21T06:00:03.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "CARRINGTON MORTGAGE SERVICES, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17369907",
+    "date_received": "2025-11-19T16:34:38.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Village Capital & Investment LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17358322",
+    "date_received": "2025-11-19T22:18:55.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17334382",
+    "date_received": "2025-11-18T15:53:53.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "PENNYMAC LOAN SERVICES, LLC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17332105",
+    "date_received": "2025-11-18T17:07:08.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17330844",
+    "date_received": "2025-11-18T17:44:49.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Struggling to pay mortgage",
+    "company": "NAVY FEDERAL CREDIT UNION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17314829",
+    "date_received": "2025-11-18T00:20:52.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17303096",
+    "date_received": "2025-11-17T18:20:29.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "JPMORGAN CHASE & CO.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17298741",
+    "date_received": "2025-11-17T18:56:03.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Union Home Mortgage Corp",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17291780",
+    "date_received": "2025-11-17T15:20:37.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17287326",
+    "date_received": "2025-11-17T01:31:57.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "GUARANTEED RATE INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17282215",
+    "date_received": "2025-11-16T14:12:01.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "AmeriHome Mortgage Company, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "19038921",
+    "date_received": "2025-12-01T16:31:12.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18127461",
+    "date_received": "2025-12-03T17:39:22.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18125367",
+    "date_received": "2025-12-03T18:09:58.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18069481",
+    "date_received": "2025-12-03T16:01:04.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18062472",
+    "date_received": "2025-12-01T14:51:20.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18061136",
+    "date_received": "2025-12-01T20:58:54.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18058772",
+    "date_received": "2025-12-15T23:24:23.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18056842",
+    "date_received": "2025-12-15T22:17:16.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18055984",
+    "date_received": "2025-12-15T21:46:09.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18047886",
+    "date_received": "2025-12-15T18:27:35.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18045590",
+    "date_received": "2025-12-15T17:35:53.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18030648",
+    "date_received": "2025-12-15T00:42:32.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Problem with a company's investigation into an existing problem",
+    "company": "PENNYMAC LOAN SERVICES, LLC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18018350",
+    "date_received": "2025-12-13T14:53:34.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Rocket Mortgage, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17996420",
+    "date_received": "2025-12-10T21:26:44.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17991375",
+    "date_received": "2025-12-12T16:06:34.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "MIDFIRST BANK",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17989720",
+    "date_received": "2025-12-01T19:42:01.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Problem with a company's investigation into an existing problem",
+    "company": "WESBANCO BANK, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17976834",
+    "date_received": "2025-12-12T02:40:59.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Union Home Mortgage Corp",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17972346",
+    "date_received": "2025-12-11T22:41:57.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "TFS FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17969816",
+    "date_received": "2025-12-11T21:26:44.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17947648",
+    "date_received": "2025-12-11T06:50:26.000Z",
+    "product": "Mortgage",
+    "sub_product": "USDA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17942817",
+    "date_received": "2025-12-11T00:38:44.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17934351",
+    "date_received": "2025-12-10T20:24:29.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17933254",
+    "date_received": "2025-12-09T23:19:16.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "JPMORGAN CHASE & CO.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17928030",
+    "date_received": "2025-12-10T18:07:14.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "HSBC NORTH AMERICA HOLDINGS INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17887095",
+    "date_received": "2025-12-09T17:16:59.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "CARRINGTON MORTGAGE SERVICES, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17885170",
+    "date_received": "2025-12-09T16:50:19.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Selene Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17882707",
+    "date_received": "2025-12-09T16:13:57.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17879294",
+    "date_received": "2025-12-09T15:22:30.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17878849",
+    "date_received": "2025-12-09T15:14:18.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "RCS Recovery Services, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17878533",
+    "date_received": "2025-12-09T15:01:43.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "Veripro Solutions Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17803278",
+    "date_received": "2025-12-06T21:28:58.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "MIDFIRST BANK",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17798914",
+    "date_received": "2025-12-06T14:48:16.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17778293",
+    "date_received": "2025-12-05T18:43:39.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "RoundPoint Mortgage Servicing LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17776451",
+    "date_received": "2025-12-05T17:44:19.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17772167",
+    "date_received": "2025-12-05T15:33:32.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Problem with a company's investigation into an existing problem",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17770020",
+    "date_received": "2025-12-05T13:56:49.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "KEYCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17758274",
+    "date_received": "2025-12-04T22:19:44.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Union Home Mortgage Corp",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "17756020",
+    "date_received": "2025-12-04T19:51:00.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18398208",
+    "date_received": "2025-12-31T23:38:13.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18395849",
+    "date_received": "2025-12-31T18:21:51.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "PLANET HOME LENDING, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18388711",
+    "date_received": "2025-12-31T03:27:21.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "DOLLAR MUTUAL BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18379311",
+    "date_received": "2025-12-30T20:31:14.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "SOFI TECHNOLOGIES, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18368502",
+    "date_received": "2025-12-30T14:22:15.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18358891",
+    "date_received": "2025-12-29T22:57:38.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18354294",
+    "date_received": "2025-12-29T22:15:27.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "Consumer Real Estate Finance Co.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18353875",
+    "date_received": "2025-12-29T22:07:24.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18348508",
+    "date_received": "2025-12-29T19:39:48.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18348066",
+    "date_received": "2025-12-29T19:16:59.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18340447",
+    "date_received": "2025-12-29T14:49:31.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "PENTAGON FEDERAL CREDIT UNION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18330539",
+    "date_received": "2025-12-28T19:57:22.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Valon Technologies, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18329447",
+    "date_received": "2025-12-28T17:53:36.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "CrossCountry Mortgage LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18324106",
+    "date_received": "2025-12-28T02:36:48.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "FIFTH THIRD FINANCIAL CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18319346",
+    "date_received": "2025-12-27T17:03:28.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "LoanCare, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18304749",
+    "date_received": "2025-12-26T21:34:09.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "United Shore Financial Services, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18287348",
+    "date_received": "2025-12-26T01:10:12.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Unable to get your credit report or credit score",
+    "company": "SN SERVICING CORPORATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18276059",
+    "date_received": "2025-12-24T19:40:05.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18272863",
+    "date_received": "2025-12-24T15:01:46.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "PNC Bank N.A.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18256048",
+    "date_received": "2025-12-23T19:50:33.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18229981",
+    "date_received": "2025-12-22T21:25:53.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "CITIZENS FINANCIAL GROUP, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18225841",
+    "date_received": "2025-12-22T19:25:17.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Incorrect information on your report",
+    "company": "Freedom Mortgage Company",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18222713",
+    "date_received": "2025-12-21T10:05:56.000Z",
+    "product": "Mortgage",
+    "sub_product": "Other type of mortgage",
+    "issue": "Trouble during payment process",
+    "company": "BANK OF AMERICA, NATIONAL ASSOCIATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18200781",
+    "date_received": "2025-12-20T20:40:35.000Z",
+    "product": "Mortgage",
+    "sub_product": "Other type of mortgage",
+    "issue": "Trouble during payment process",
+    "company": "SELECT PORTFOLIO SERVICING, INC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18185384",
+    "date_received": "2025-12-19T21:32:04.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18163145",
+    "date_received": "2025-12-19T02:33:49.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "PENNYMAC LOAN SERVICES, LLC.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18163013",
+    "date_received": "2025-12-19T02:47:23.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Applying for a mortgage or refinancing an existing mortgage",
+    "company": "Chrysalis Holdings LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18151751",
+    "date_received": "2025-12-18T19:27:42.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18150416",
+    "date_received": "2025-12-18T18:58:19.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "Mr. Cooper Group Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18147976",
+    "date_received": "2025-12-18T17:46:08.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18145786",
+    "date_received": "2025-12-18T16:42:09.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Ocwen Financial Corporation",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18129350",
+    "date_received": "2025-12-18T01:13:51.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "BANK OF AMERICA, NATIONAL ASSOCIATION",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18114083",
+    "date_received": "2025-12-17T17:13:28.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "HUNTINGTON NATIONAL BANK, THE",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18112060",
+    "date_received": "2025-12-17T16:36:44.000Z",
+    "product": "Mortgage",
+    "sub_product": "FHA mortgage",
+    "issue": "Struggling to pay mortgage",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18104902",
+    "date_received": "2025-12-17T12:36:24.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Closing on a mortgage",
+    "company": "Union Home Mortgage Corp",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18104436",
+    "date_received": "2025-12-17T12:23:04.000Z",
+    "product": "Mortgage",
+    "sub_product": "VA mortgage",
+    "issue": "Trouble during payment process",
+    "company": "MIDFIRST BANK",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18097278",
+    "date_received": "2025-12-17T02:59:39.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18096236",
+    "date_received": "2025-12-17T02:15:00.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "CMG Financial Services, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18077541",
+    "date_received": "2025-12-16T16:05:06.000Z",
+    "product": "Mortgage",
+    "sub_product": "Home equity loan or line of credit (HELOC)",
+    "issue": "Trouble during payment process",
+    "company": "U.S. BANCORP",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18072864",
+    "date_received": "2025-12-16T14:35:10.000Z",
+    "product": "Mortgage",
+    "sub_product": "Conventional home mortgage",
+    "issue": "Trouble during payment process",
+    "company": "BSI Financial Holdings, Inc.",
+    "state": "OH",
+    "has_narrative": false
+  },
+  {
+    "complaint_id": "18069203",
+    "date_received": "2025-12-16T10:55:35.000Z",
+    "product": "Mortgage",
+    "sub_product": "Manufactured home loan",
+    "issue": "Struggling to pay mortgage",
+    "company": "Shellpoint Partners, LLC",
+    "state": "OH",
+    "has_narrative": false
+  }
+]

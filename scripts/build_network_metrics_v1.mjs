@@ -128,6 +128,11 @@ async function main() {
     ncCfpbMortgageComplaints: pub.ncCfpbMortgageComplaints,
     ncNccobMortgageLenderRows: pub.ncNccobMortgageLenderRows,
     ncLiveRosterCoverage: pub.ncLiveRosterCoverage,
+    ohHmdaApplications: pub.ohHmdaApplications,
+    ohHmdaOriginations: pub.ohHmdaOriginations,
+    ohFdicInstitutions: pub.ohFdicInstitutions,
+    ohCfpbMortgageComplaints: pub.ohCfpbMortgageComplaints,
+    ohLiveRosterCoverage: pub.ohLiveRosterCoverage,
     servicerEvidenceRows: prod.servicerEvidenceRows,
     licensesTotal: prod.licensesTotal,
   };
