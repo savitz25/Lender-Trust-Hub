@@ -273,6 +273,14 @@ export type LenderNetworkMetricsV1 = {
     liveRosterCoverage: 'ACQUIRED_CURRENT_COMPANY_SHOW_ALL';
     liveLicensedCompanyUniverse: null;
   };
+  ohio: {
+    hmdaApplications: number;
+    hmdaOriginations: number;
+    fdicInstitutions: number;
+    cfpbMortgageComplaints: number;
+    liveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
+    liveLicensedCompanyUniverse: null;
+  };
   publication: {
     nationalRender: number;
     nationalIndex: number;

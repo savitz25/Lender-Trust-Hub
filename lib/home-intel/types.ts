@@ -159,7 +159,7 @@ export type HomepageEvidenceMeasure = {
 };
 
 export type HomepageStateCard = {
-  code: 'FL' | 'NJ' | 'CA' | 'TX' | 'WA' | 'AZ' | 'CO' | 'VA' | 'NY' | 'IL' | 'OR' | 'PA' | 'NC';
+  code: 'FL' | 'NJ' | 'CA' | 'TX' | 'WA' | 'AZ' | 'CO' | 'VA' | 'NY' | 'IL' | 'OR' | 'PA' | 'NC' | 'OH';
   name: string;
   href: string;
   regulators: string;

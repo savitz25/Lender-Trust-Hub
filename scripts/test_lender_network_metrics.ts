@@ -50,7 +50,7 @@ function baseInput(over: Partial<LenderNetworkMetricsInput> = {}): LenderNetwork
     publicRender: 181,
     publicIndex: 180,
     floridaPublic: 130,
-    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania', '/north-carolina'],
+    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania', '/north-carolina', '/ohio'],
     coHmdaApplications: 260212,
     coHmdaOriginations: 156145,
     coCfpbMortgageComplaints: 8627,
@@ -87,6 +87,11 @@ function baseInput(over: Partial<LenderNetworkMetricsInput> = {}): LenderNetwork
     ncCfpbMortgageComplaints: 920,
     ncNccobMortgageLenderRows: 640,
     ncLiveRosterCoverage: 'ACQUIRED_CURRENT_COMPANY_SHOW_ALL',
+    ohHmdaApplications: 460825,
+    ohHmdaOriginations: 276279,
+    ohFdicInstitutions: 157,
+    ohCfpbMortgageComplaints: 610,
+    ohLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED',
     njCountyIntelligencePages: 4,
     njHmdaApplications: 318529,
     njHmdaOriginations: 177325,
@@ -166,10 +171,11 @@ describe('lender-network-metrics-v1 grain safety', () => {
     assert.notEqual(metricByKey(m, 'co_dre_mlo_rows').value, m.colorado.hmdaApplications);
     assert.equal(metricByKey(m, 'co_cfpb_mortgage_complaints').value, 8627);
     assert.notEqual(metricByKey(m, 'co_cfpb_mortgage_complaints').value, m.colorado.hmdaApplications);
-    assert.equal(m.network.publishedStateIntelligencePages, 13);
+    assert.equal(m.network.publishedStateIntelligencePages, 14);
     assert.ok(m.network.publishedStateIntelligencePaths.includes('/oregon'));
     assert.ok(m.network.publishedStateIntelligencePaths.includes('/pennsylvania'));
     assert.ok(m.network.publishedStateIntelligencePaths.includes('/north-carolina'));
+    assert.ok(m.network.publishedStateIntelligencePaths.includes('/ohio'));
     assert.equal(m.northCarolina.hmdaApplications, 484454);
     assert.equal(m.northCarolina.liveLicensedCompanyUniverse, null);
     assert.equal(m.northCarolina.nccobMortgageLenderRows, 640);
@@ -271,7 +277,7 @@ describe('lender-network-metrics-v1 grain safety', () => {
       () =>
         computeLenderNetworkMetrics(
           baseInput({
-            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania', '/north-carolina', '/new-jersey/union-county'],
+            publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania', '/north-carolina', '/ohio', '/new-jersey/union-county'],
           }),
         ),
       /county routes/,

@@ -106,6 +106,11 @@ export type LenderNetworkMetricsInput = {
   ncCfpbMortgageComplaints: number;
   ncNccobMortgageLenderRows: number;
   ncLiveRosterCoverage: 'ACQUIRED_CURRENT_COMPANY_SHOW_ALL';
+  ohHmdaApplications: number;
+  ohHmdaOriginations: number;
+  ohFdicInstitutions: number;
+  ohCfpbMortgageComplaints: number;
+  ohLiveRosterCoverage: 'SOURCE_NOT_ACQUIRED';
   servicerEvidenceRows: number | null;
   licensesTotal: number;
 };
@@ -214,7 +219,7 @@ export function assertGrainSafety(input: LenderNetworkMetricsInput): void {
   if (input.ncNccobMortgageLenderRows === input.ncCfpbMortgageComplaints) {
     throw new Error('NCCOB Mortgage Lender licenses must not equal North Carolina CFPB complaints');
   }
-  for (const path of ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania', '/north-carolina']) {
+  for (const path of ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/arizona', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania', '/north-carolina', '/ohio']) {
     if (!input.publishedStateIntelligencePaths.includes(path)) {
       throw new Error(`state intelligence path missing: ${path}`);
     }
@@ -1048,7 +1053,7 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       generatedAt,
       publicationStatus: 'PUBLIC',
       trace: commonTrace(
-        'Published /florida, /new-jersey, /california, /texas, /washington, /arizona, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, and /north-carolina intelligence routes.',
+        'Published /florida, /new-jersey, /california, /texas, /washington, /arizona, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, /north-carolina, and /ohio intelligence routes.',
         'Not NJ county pages and not national directory rows.',
         ['lender-state-intel'],
         input.publishedStateIntelligencePaths.join(', '),
@@ -1254,6 +1259,14 @@ export function computeLenderNetworkMetrics(input: LenderNetworkMetricsInput): L
       cfpbMortgageComplaints: input.ncCfpbMortgageComplaints,
       nccobMortgageLenderRows: input.ncNccobMortgageLenderRows,
       liveRosterCoverage: input.ncLiveRosterCoverage,
+      liveLicensedCompanyUniverse: null,
+    },
+    ohio: {
+      hmdaApplications: input.ohHmdaApplications,
+      hmdaOriginations: input.ohHmdaOriginations,
+      fdicInstitutions: input.ohFdicInstitutions,
+      cfpbMortgageComplaints: input.ohCfpbMortgageComplaints,
+      liveRosterCoverage: input.ohLiveRosterCoverage,
       liveLicensedCompanyUniverse: null,
     },
     publication: {
