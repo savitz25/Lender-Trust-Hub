@@ -417,7 +417,7 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     q.includes('market share') ||
     q.includes('compare');
   const providerCategoryPresent =
-    /\b(?:lenders?|mortgage lenders?|mortgage compan(?:y|ies)|home loan compan(?:y|ies)|home lenders?|mortgage brokers?|home loans?|refinance compan(?:y|ies)|refinance lenders?|loan specialists?|banks? for (?:a )?home loans?)\b/.test(q);
+    /\b(?:lenders?|mortgage lenders?|mortgage compan(?:y|ies)|home loan compan(?:y|ies)|home lenders?|mortgage brokers?|home loans?|refinanc(?:e|ing) compan(?:y|ies)|refinanc(?:e|ing) lenders?|loan specialists?|banks? for (?:a )?home loans?|home financing compan(?:y|ies)|home financing|financing compan(?:y|ies))\b/.test(q);
   const entityLikely =
     (/\bbrokers?\b/.test(q) && !explicitAggregateWording) ||
     ((bareCityRecognized || Boolean(nonFloridaCounty)) && /\b(?:companies|company|lenders?|brokers?)\b/.test(q)) ||
@@ -457,6 +457,32 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     ? 'most'
     : 'count';
   if (q.includes('share') || q.includes('percent')) metric = 'share';
+
+  // TH-DISCOVERY-PARITY-001A-REVIEW: "refinance lender", "refinance company", and
+  // "bank for a home loan" name ordinary DISCOVERY vocabulary -- "refinance"/"bank"
+  // here describe why the consumer wants a lender, not a deliberate request to see
+  // the institution file broken down by loan PURPOSE or lender CLASS (a breakdown
+  // institution-volume.ts's file genuinely does not support -- see its own
+  // `loanPurpose?.length || lenderType?.length` UNSUPPORTED guard). Only a genuine
+  // pre-existing ranking trigger (brokers, Miami/major-county + companies/lenders,
+  // or explicit "which"/"most" wording) legitimately asks for that breakdown; the
+  // new bare provider-category default must not carry it, or an ordinary discovery
+  // query silently inherits an unsupported filter and dead-ends at execution.
+  // NOTE: deliberately NOT reusing entityLikely's bareCityRecognized/nonFloridaCounty
+  // or bare-"brokers" clauses here -- those answer "should this trigger entity/
+  // discovery mode at all" (a geography-grain question), which is orthogonal to "did
+  // the consumer ask for a purpose/lender-class BREAKDOWN" (an intent question). A
+  // county being recognized (e.g. "refinance lenders near Denver Colorado") must not
+  // by itself flip "refinance" from vocabulary into a preserved filter. Only explicit
+  // ranking wording (which/most) or a loanType (FHA/VA/conventional/USDA -- itself a
+  // supported institution-level filter, so combining it with a purpose/depository
+  // word signals deliberate structured filtering, e.g. "FHA purchase mortgage
+  // companies") count as genuine intent to see that breakdown (see
+  // r15-behavior.test.ts's "'companies' synonym fix does not swallow a real
+  // unsupported condition").
+  const genuineRankingIntent =
+    wantsEntity(q, metric, explicitAggregateWording) ||
+    Boolean(loanType?.length);
 
   const wantsOrig = Object.keys(ACTION_TERMS).some((t) => ACTION_TERMS[t] === 'origination' && q.includes(t));
   const wantsDenial = /\bdenial|\bdenied/.test(q);
@@ -543,10 +569,16 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     return {
       mode: 'entity',
       geography: geo,
-      reportingYears, scopeIssues, loanPurpose,
+      reportingYears, scopeIssues,
+      // Dropped (not merely deprioritized) unless a genuine ranking trigger asked
+      // for this breakdown -- institution-volume.ts hard-UNSUPPORTEDs the whole
+      // institution list the moment either is present, so carrying them through
+      // for the bare discovery default silently turns "refinance lender" into a
+      // zero-result execution failure instead of an ordinary browseable list.
+      loanPurpose: genuineRankingIntent ? loanPurpose : undefined,
+      lenderType: genuineRankingIntent ? lenderType : undefined,
       actionTaken: action,
       loanType,
-      lenderType,
       requestedMetric: 'most',
       sort: { field: action[0] ?? 'origination', direction: 'desc' },
     };

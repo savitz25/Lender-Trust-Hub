@@ -67,6 +67,49 @@ test('fresh generalization corpus: real, non-empty results appear immediately fo
   }
 });
 
+// TH-DISCOVERY-PARITY-001A-REVIEW (Vercel finding on PR #48): "refinance lender",
+// "refinance company", and "bank for a home loan" PARSED as entity/discovery but
+// still failed CLOSED at execution with zero provider rows -- institution-volume.ts
+// hard-UNSUPPORTEDs the whole institution list whenever a loanPurpose or lenderType
+// filter is present, and "refinance"/"bank" were being attached as exactly that kind
+// of filter even for plain discovery phrasing. Parser mode alone is not enough --
+// these assert REAL, BROWSEABLE PROVIDER ROWS all the way through execution.
+const REFINANCE_BANK_SYNONYM_CASES = [
+  'refinance lender',
+  'refinance company',
+  'refinancing lender',
+  'refinancing company',
+  'bank for a home loan',
+  'home loan bank',
+  'home financing company',
+  'refinance lender in Texas',
+  'refinance company in Florida',
+  'bank for a home loan in Texas',
+  'refinance lenders near Denver Colorado',
+  'home financing company in New Jersey',
+];
+
+test(`execution-layer: ${REFINANCE_BANK_SYNONYM_CASES.length} refinance/bank discovery synonyms return real, non-empty provider rows`, () => {
+  for (const q of REFINANCE_BANK_SYNONYM_CASES) {
+    const r = executeAskQuery({ q });
+    assert.notEqual(r.failClosed, true, `expected real results, got failClosed for: "${q}"`);
+    assert.equal(r.query.mode, 'entity', `expected entity mode for: "${q}"`);
+    assert.equal(r.volumeEvidence?.availability, 'AVAILABLE', `expected AVAILABLE institution volume for: "${q}"`);
+    assert.ok((r.totalRows ?? 0) > 0, `expected non-empty totalRows for: "${q}"`);
+  }
+});
+
+test('execution-layer: a genuine explicit ranking/filter request for refinance-specific institution data still honestly discloses unavailability (not silently faked)', () => {
+  const r = executeAskQuery({ q: 'which lenders did the most refinance originations' });
+  assert.equal(r.failClosed, true);
+  assert.equal(r.volumeEvidence?.availability, 'NEEDS_CLARIFICATION');
+});
+
+test('execution-layer: a combined loanType+purpose structured filter still honestly fails closed (does not get swallowed by the discovery default)', () => {
+  const r = executeAskQuery({ q: 'FHA purchase mortgage companies in Florida' });
+  assert.equal(r.failClosed, true);
+});
+
 // Aggregate wording must still route to a scalar count for the SAME provider vocabulary
 // -- proves the classifier distinguishes intent, not just vocabulary.
 const AGGREGATE_NEGATIVE_CASES = [
@@ -74,6 +117,11 @@ const AGGREGATE_NEGATIVE_CASES = [
   'number of mortgage companies in Florida',
   'how many home loan companies operate in Colorado',
   'count of mortgage brokers in New Jersey',
+  'how many refinance loans',
+  'number of mortgage originations',
+  'count of applications',
+  'mortgage denials in Texas',
+  'compare originations',
 ];
 
 test('aggregate wording on the same provider vocabulary still routes to a scalar count', () => {
