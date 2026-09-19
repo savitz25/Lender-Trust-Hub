@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { ShortlistFullPanel } from '@/components/my-lending/shortlist-full-panel';
 import { WorkspaceSaveToast } from '@/components/my-lending/workspace-save-toast';
 import {
+  getMyLendingStorageUserId,
   getSavedLenderOnActivePlan,
   isLenderSaved,
   removeSavedLender,
@@ -55,6 +56,7 @@ function SaveLenderControl({
   defaultStatus = 'shortlisted',
 }: Props) {
   const ml = useMyLendingOptional();
+  const hasProvider = Boolean(ml);
   const waiting = Boolean(ml?.loading || ml?.workspaceStorage.syncStatus === 'syncing');
   const owner = ml?.user?.id ?? null;
   const [pending, setPending] = useState<{ owner: string | null } | null>(null);
@@ -105,6 +107,16 @@ function SaveLenderControl({
       return;
     }
     setError(null);
+    if (hasProvider && getMyLendingStorageUserId() !== owner) {
+      setError('Account changed. Nothing was saved. Please try Save again.');
+      return;
+    }
+    // A second activation can arrive before React renders the first Save.
+    // Do not rewrite the same record or schedule another cloud push.
+    if (getSavedLenderOnActivePlan(lenderSlug)) {
+      sync();
+      return;
+    }
     const res = shortlistLender({ lenderSlug, lenderName, nmlsId, loanTypes,
       profilePath: `/lenders/${lenderSlug}`, licenseSummary: nmlsId ? `NMLS #${nmlsId}` : undefined,
       status: defaultStatus });
@@ -128,7 +140,7 @@ function SaveLenderControl({
           ? `${lenderName} saved as Researching`
           : `${lenderName} shortlisted`
     );
-  }, [waiting, owner, lenderSlug, lenderName, nmlsId, loanTypes, defaultStatus, sync, showToast]);
+  }, [waiting, owner, hasProvider, lenderSlug, lenderName, nmlsId, loanTypes, defaultStatus, sync, showToast]);
 
   useEffect(() => {
     if (!pending) return;
