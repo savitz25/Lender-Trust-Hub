@@ -1,0 +1,507 @@
+{
+ "frozenAt": "2026-09-19T00:19:18.532Z",
+ "note": "Frozen before any evaluation of the R1-019C matcher against these records. Small diagnostic samples; no statistical claim.",
+ "r19aLenderSample": {
+  "source": "Conumers-Trust-Hub origin/main docs/qa/th-search-r1-019a/holdout-frozen.json (hubs.lender.drawn), copied unchanged",
+  "askFrozenAt": "2026-09-18T16:47:03.805Z",
+  "askMethod": "Fixed (scope,page,row) positions from each hub cohort operation; pages [2,7], rows [0,2,4,6,8]; two state scopes per hub (Senior: four county scopes at page 2, because county cohorts have fewer than 7 pages). Drawn before any name matching was evaluated.",
+  "sha256OfAskFile": "c1a50e2990cb3257223a4f6d663274d60211b17df423ba7218de8f0e0a1ffdf5",
+  "records": [
+   {
+    "key": "lei:7H6GLXDRUGQFU57RNE97",
+    "name": "JPMorgan Chase Bank",
+    "scope": "FL",
+    "page": 2,
+    "row": 0
+   },
+   {
+    "key": "lei:549300VN9E1DEKF26E34",
+    "name": "Space Coast Credit Union",
+    "scope": "FL",
+    "page": 2,
+    "row": 2
+   },
+   {
+    "key": "lei:549300FNXYY540N23N64",
+    "name": "Newrez",
+    "scope": "FL",
+    "page": 2,
+    "row": 4
+   },
+   {
+    "key": "lei:549300LYRWPSYPK6S325",
+    "name": "Guild Mortgage Company LLC",
+    "scope": "FL",
+    "page": 2,
+    "row": 6
+   },
+   {
+    "key": "lei:254900DTLHVWQ7NP7R34",
+    "name": "CMG Mortgage, Inc.",
+    "scope": "FL",
+    "page": 2,
+    "row": 8
+   },
+   {
+    "key": "lei:549300YIQ7S7Z8PIHE53",
+    "name": "AmeriSave Mortgage",
+    "scope": "FL",
+    "page": 7,
+    "row": 0
+   },
+   {
+    "key": "lei:54930030S6J5KOL5LJ73",
+    "name": "FAIRWINDS CREDIT UNION",
+    "scope": "FL",
+    "page": 7,
+    "row": 2
+   },
+   {
+    "key": "lei:549300J7I82PNDVU8H22",
+    "name": "OCMBC, INC.",
+    "scope": "FL",
+    "page": 7,
+    "row": 4
+   },
+   {
+    "key": "lei:549300Y5Y88FQLI7VE83",
+    "name": "DEEPHAVEN MORTGAGE LLC",
+    "scope": "FL",
+    "page": 7,
+    "row": 6
+   },
+   {
+    "key": "lei:549300NOCASXPA34X033",
+    "name": "Lakeview Loan Servicing",
+    "scope": "FL",
+    "page": 7,
+    "row": 8
+   },
+   {
+    "key": "lei:549300DD5QQUHO6PCH70",
+    "name": "Movement Mortgage, LLC",
+    "scope": "TX",
+    "page": 2,
+    "row": 0
+   },
+   {
+    "key": "lei:RVDPPPGHCGZ40J4VQ731",
+    "name": "Fairway Independent Mortgage Corporation",
+    "scope": "TX",
+    "page": 2,
+    "row": 2
+   },
+   {
+    "key": "lei:549300121SF0K2LN2804",
+    "name": "PRIMELENDING, A PLAINSCAPITAL COMPANY",
+    "scope": "TX",
+    "page": 2,
+    "row": 4
+   },
+   {
+    "key": "lei:G5AHTAP80NWA3Q8RDC78",
+    "name": "Frost Bank",
+    "scope": "TX",
+    "page": 2,
+    "row": 6
+   },
+   {
+    "key": "lei:549300E2UX99HKDBR481",
+    "name": "Broker Solutions, Inc.",
+    "scope": "TX",
+    "page": 2,
+    "row": 8
+   },
+   {
+    "key": "lei:54930043BMDE130FJ617",
+    "name": "PROVIDENT FUNDING ASSOCIATES, L.P.",
+    "scope": "TX",
+    "page": 7,
+    "row": 0
+   },
+   {
+    "key": "lei:549300KOAKQX3BEWWT56",
+    "name": "CLM MORTGAGE, INC.",
+    "scope": "TX",
+    "page": 7,
+    "row": 2
+   },
+   {
+    "key": "lei:549300DMYENRV818D594",
+    "name": "SWBC MORTGAGE CORPORATION",
+    "scope": "TX",
+    "page": 7,
+    "row": 4
+   },
+   {
+    "key": "lei:54930021WPEXNHYZUL09",
+    "name": "PLANET HOME LENDING, LLC",
+    "scope": "TX",
+    "page": 7,
+    "row": 6
+   },
+   {
+    "key": "lei:549300PIL8LFAQ04XC20",
+    "name": "Better Mortgage Corporation",
+    "scope": "TX",
+    "page": 7,
+    "row": 8
+   }
+  ]
+ },
+ "additional": {
+  "method": "Fixed positions over the sources: published profiles sorted by institution_id, index % 16 === 7; named HMDA LEIs sorted by LEI, index % 37 === 11.",
+  "records": [
+   {
+    "key": "fdic-cert:22971",
+    "name": "First Secure State Bank",
+    "expect": {
+     "nmls": null,
+     "lei": null,
+     "slug": "first-secure-state-bank"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "fdic-cert:2468",
+    "name": "Northwestern Bank",
+    "expect": {
+     "nmls": null,
+     "lei": "254900YAD0R5TBY92Y41",
+     "slug": "northwestern-bank"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "ncua-charter:68714",
+    "name": "MARSHLAND",
+    "expect": {
+     "nmls": null,
+     "lei": "254900G9IPJDT4OZYN57",
+     "slug": "marshland"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "ncua-charter:22520",
+    "name": "MTC",
+    "expect": {
+     "nmls": null,
+     "lei": "549300WDLOVGUYVTS727",
+     "slug": "mtc"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "ncua-charter:9007",
+    "name": "CLEARVIEW",
+    "expect": {
+     "nmls": null,
+     "lei": "549300BHPLBG0CXKTL06",
+     "slug": "clearview"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "fdic-cert:11178",
+    "name": "Transpecos Banks, SSB",
+    "expect": {
+     "nmls": null,
+     "lei": "254900E5EHQD56Y9WV93",
+     "slug": "transpecos-banks-ssb"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "gleif-lei:5493000IIYWBLONJVJ30",
+    "name": "Roundpoint Mortgage Servicing Llc",
+    "expect": {
+     "nmls": null,
+     "lei": "5493000IIYWBLONJVJ30",
+     "slug": "roundpoint-mortgage-servicing-llc"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "nmls-inst:984914",
+    "name": "TAM LENDING CENTER INC.",
+    "expect": {
+     "nmls": "984914",
+     "lei": null,
+     "slug": "tam-lending-center-inc"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "ncua-charter:8111",
+    "name": "RANDOLPH-BROOKS",
+    "expect": {
+     "nmls": null,
+     "lei": "549300LU6Y2TXG48QY48",
+     "slug": "randolph-brooks"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "nmls-inst:2104",
+    "name": "Mr. Cooper",
+    "expect": {
+     "nmls": "2104",
+     "lei": "549300LBCBNR1OT00651",
+     "slug": "mr-cooper"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "nmls-inst:1273251",
+    "name": "GOOI MORTGAGE, INC.",
+    "expect": {
+     "nmls": "1273251",
+     "lei": null,
+     "slug": "gooi-mortgage-inc"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "fdic-cert:16396",
+    "name": "Lafayette State Bank",
+    "expect": {
+     "nmls": null,
+     "lei": "549300WT3BKLLJV4I440",
+     "slug": "lafayette-state-bank"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "nmls-inst:1853218",
+    "name": "WEMLO, LLC",
+    "expect": {
+     "nmls": "1853218",
+     "lei": null,
+     "slug": "wemlo-llc"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "fdic-cert:10194",
+    "name": "Pine River State Bank",
+    "expect": {
+     "nmls": null,
+     "lei": "5493003VXRP1TSRJCM25",
+     "slug": "pine-river-state-bank"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "nmls-inst:417636",
+    "name": "Suncoast Credit Union",
+    "expect": {
+     "nmls": "417636",
+     "lei": "549300TOOOOW36EX6R40",
+     "slug": "suncoast-credit-union"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "ncua-charter:63194",
+    "name": "IDAHO CENTRAL",
+    "expect": {
+     "nmls": null,
+     "lei": "5493001PXRJMPLXPG540",
+     "slug": "idaho-central"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "nmls-inst:1774964",
+    "name": "IREX SALES CORPORATION",
+    "expect": {
+     "nmls": "1774964",
+     "lei": null,
+     "slug": "irex-sales-corporation"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "nmls-inst:1065732",
+    "name": "MORTGAGE SOLUTIONS FCS INC.",
+    "expect": {
+     "nmls": "1065732",
+     "lei": null,
+     "slug": "mortgage-solutions-fcs-inc"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "nmls-inst:128501",
+    "name": "MORTGAGE AMERICA, INC.",
+    "expect": {
+     "nmls": "128501",
+     "lei": null,
+     "slug": "mortgage-america-inc"
+    },
+    "source": "published_profile"
+   },
+   {
+    "key": "lei:25490018IFQOT83Q7H49",
+    "name": "GO MORTGAGE, LLC",
+    "expect": {
+     "lei": "25490018IFQOT83Q7H49"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:254900FDPG829O6VBB05",
+    "name": "EASTSIDE FUNDING, LLC",
+    "expect": {
+     "lei": "254900FDPG829O6VBB05"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:2WHM8VNJH63UN14OL754",
+    "name": "The Huntington National Bank",
+    "expect": {
+     "lei": "2WHM8VNJH63UN14OL754"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:5493001SXWZ4OFP8Z903",
+    "name": "CrossCountry Mortgage, LLC",
+    "expect": {
+     "lei": "5493001SXWZ4OFP8Z903"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:54930044OSTKOJMHF287",
+    "name": "Capital Bank, National Association",
+    "expect": {
+     "lei": "54930044OSTKOJMHF287"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:5493006HAFES1LQ18W28",
+    "name": "River Bank & Trust",
+    "expect": {
+     "lei": "5493006HAFES1LQ18W28"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:5493008RNHC5I1E3IZ56",
+    "name": "Broadview Federal Credit Union",
+    "expect": {
+     "lei": "5493008RNHC5I1E3IZ56"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:549300BR7OTD25RTS027",
+    "name": "BankFirst Financial Services",
+    "expect": {
+     "lei": "549300BR7OTD25RTS027"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:549300DG3IV05V4C4E03",
+    "name": "EUSTIS MORTGAGE CORPORATION",
+    "expect": {
+     "lei": "549300DG3IV05V4C4E03"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:549300G4ESSS6M0MEG51",
+    "name": "ORIGINPOINT LLC",
+    "expect": {
+     "lei": "549300G4ESSS6M0MEG51"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:549300III1DMY3SLAW56",
+    "name": "Countybank",
+    "expect": {
+     "lei": "549300III1DMY3SLAW56"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:549300KM40FP4MSQU941",
+    "name": "Boeing Employees Credit Union",
+    "expect": {
+     "lei": "549300KM40FP4MSQU941"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:549300MGPZBLQDIL7538",
+    "name": "PrimeLending, a PlainsCapital Company",
+    "expect": {
+     "lei": "549300MGPZBLQDIL7538"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:549300PC4MFWQBNVKG88",
+    "name": "V.I.P. MORTGAGE, INC.",
+    "expect": {
+     "lei": "549300PC4MFWQBNVKG88"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:549300RN01LBYR8ZVX74",
+    "name": "LOWER, LLC",
+    "expect": {
+     "lei": "549300RN01LBYR8ZVX74"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:549300TLGCPJTEG3WN76",
+    "name": "EastRise Federal Credit Union",
+    "expect": {
+     "lei": "549300TLGCPJTEG3WN76"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:549300VNBQD8FDHF7563",
+    "name": "MORTGAGE INVESTORS GROUP, INC.",
+    "expect": {
+     "lei": "549300VNBQD8FDHF7563"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:549300YB1H2FRI6JPM51",
+    "name": "LAKE MICHIGAN CREDIT UNION",
+    "expect": {
+     "lei": "549300YB1H2FRI6JPM51"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:8AI385EP1ZJCMUOZ8022",
+    "name": "Landmark National Bank",
+    "expect": {
+     "lei": "8AI385EP1ZJCMUOZ8022"
+    },
+    "source": "hmda_reporting_institution"
+   },
+   {
+    "key": "lei:LDVFX8JEECFFE8HRWA73",
+    "name": "First National Bank of Omaha",
+    "expect": {
+     "lei": "LDVFX8JEECFFE8HRWA73"
+    },
+    "source": "hmda_reporting_institution"
+   }
+  ]
+ }
+}
