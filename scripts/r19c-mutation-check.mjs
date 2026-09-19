@@ -25,7 +25,7 @@ const mutations = [
     find: '  const matches = matchNames(requestedName);', replace: "  const matches = matchNames(requestedName).length ? matchNames(requestedName) : SEARCH_POOL.filter((r) => normalizeName(r.presentation_name).startsWith(normalizeName(requestedName).split(' ')[0] ?? '~')).slice(0, 1);" },
   // Review-1 corrections, each re-broken.
   { id: 'D_KEYWORD_GATE_RESTORED', file: 'lib/name-candidates/request-shape.ts', why: 'A vocabulary word alone (Charter, Branch, LEI) is again treated as an identifier/branch request.',
-    find: '  const request = parseIdentityRequest(text);', replace: '  if (/charter|branch|lei|nmls/i.test(text)) return true; const request = parseIdentityRequest(text);' },
+    find: '  if (!request) return false; // no identifier LABEL at all: vocabulary alone never makes an identifier request', replace: '  if (/charter|branch|originator|lei|nmls/i.test(text)) return true; if (!request) return false;' },
   { id: 'E_PARSER_ENTITY_DROPS_CONDITIONS', file: 'lib/name-candidates/native.ts', why: 'The parser-entity shortcut returns no conditions again, so "Rocket Mortgage company in Texas" silently loses Texas.',
     find: "    return decide(parsed.identityQuery, 'PARSER_ENTITY_NAME', residual ? [residual] : []);", replace: "    return { name: parsed.identityQuery, basis: 'PARSER_ENTITY_NAME', unresolvedConditions: [] };" },
   { id: 'F_UNREACHABLE_NEXT_PAGE', file: 'lib/name-candidates/engine.ts', why: 'hasMore ignores the reachable window again, advertising a page that cannot be fetched.',

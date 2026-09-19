@@ -1,140 +1,152 @@
 {
- "contract": "lender-name-candidates-v1",
- "contractVersion": "1.0.0",
- "schemaFingerprint": "68c0309822e19742fd7f0ff2d3a8772fbfc580a5f5c013c574f2ea12da0ae74d",
- "resultState": "AMBIGUOUS_EXACT_NAME",
- "name": {
-  "supplied": "Randolph-Brooks FCU",
-  "normalized": "randolph brooks fcu",
-  "predicateApplied": true,
-  "predicate": "Institution source names equal to, beginning with, or containing every distinctive word of the supplied name (case, punctuation, terminal legal form and FCU normalized). Applied to the whole catalog before paging."
- },
- "scope": {
-  "searched": [
-   {
-    "code": "published_profiles",
-    "meaning": "Published lender institution profiles (national research cohort and permitted Florida OFR-licensed companies)."
-   },
-   {
-    "code": "hmda_reporting_institutions",
-    "meaning": "HMDA reporting institutions named in the committed GLEIF / curated identity files. Most have no standalone profile."
-   }
-  ],
-  "excluded": [
-   "NMLS person/MLO records",
-   "NMLS branch records",
-   "held or unpublished profile projections",
-   "institutions known only to the exact-identifier research store",
-   "claim and account data"
-  ],
-  "meaning": "Institution grain only. A candidate is a name match, not a verified identity relationship or a regulatory finding."
- },
- "source": {
-  "version": {
-   "profiles": "docs/lend-nat-016-search-index.json; lend-nat-014-v1",
-   "hmdaIdentity": "gleif:745; curated-mappings:76",
-   "fingerprint": "6a92189a9aa04614c99a2ac0b6006fcee542b58dd19402f741cdbcea47ec28ff"
-  },
-  "counts": {
-   "publishedProfiles": 311,
-   "hmdaOnly": 663,
-   "identityHold": 12
-  },
-  "clock": {
-   "label": "Source as-of date",
-   "value": null,
-   "note": "The committed identity files do not carry an as-of date; none is invented."
-  }
- },
- "candidates": [
-  {
-   "stableKey": "lender:ncua-charter:8111",
-   "displayName": "RANDOLPH-BROOKS",
-   "entityType": "Credit union",
-   "match": {
-    "method": "ABBREVIATION_NORMALIZED",
-    "field": "hmda_reporter_name",
-    "value": "RANDOLPH-BROOKS FEDERAL CREDIT UNION",
-    "sourceLabel": "HMDA reporter legal name (GLEIF / curated HMDA identity file)",
-    "explanation": "The names are equal under a search-form rule (FCU = Federal Credit Union). This is not a documented legal alias.",
-    "isDocumentedSourceName": true
-   },
-   "identifiers": [
-    {
-     "label": "LEI",
-     "value": "549300LU6Y2TXG48QY48"
-    }
-   ],
-   "publicationState": "public_profile",
-   "action": {
-    "type": "PROFILE",
-    "label": "Open LenderTrustHub profile",
-    "url": "https://www.lendertrusthub.com/lender/randolph-brooks"
-   },
-   "source": {
-    "reference": "docs/lend-nat-016-search-index.json; lend-nat-014-v1",
-    "clock": {
-     "label": "Source as-of date",
-     "value": null
-    }
-   }
-  },
-  {
-   "stableKey": "lender:nmls-inst:583215",
-   "displayName": "Randolph-Brooks Federal Credit Union",
-   "entityType": "Nonbank mortgage company",
-   "match": {
-    "method": "ABBREVIATION_NORMALIZED",
-    "field": "canonical_name",
-    "value": "Randolph-Brooks Federal Credit Union",
-    "sourceLabel": "published profile canonical name",
-    "explanation": "The names are equal under a search-form rule (FCU = Federal Credit Union). This is not a documented legal alias.",
-    "isDocumentedSourceName": true
-   },
-   "identifiers": [
-    {
-     "label": "NMLS",
-     "value": "583215"
-    }
-   ],
-   "publicationState": "public_profile",
-   "action": {
-    "type": "PROFILE",
-    "label": "Open LenderTrustHub profile",
-    "url": "https://www.lendertrusthub.com/lender/randolph-brooks-federal-credit-union"
-   },
-   "source": {
-    "reference": "docs/lend-nat-016-search-index.json; lend-nat-014-v1",
-    "clock": {
-     "label": "Source as-of date",
-     "value": null
-    }
-   }
-  }
- ],
- "pagination": {
+ "request": {
+  "operation": "name_candidates",
+  "name": "Randolph-Brooks FCU",
   "page": 1,
-  "limit": 2,
-  "returned": 2,
-  "total": 2,
-  "hasMore": false,
-  "truncated": false,
-  "maxPage": 40
+  "limit": 2
  },
- "continuation": {
-  "label": "Search this name on LenderTrustHub",
-  "url": "https://www.lendertrusthub.com/ask?q=Randolph-Brooks%20FCU"
- },
- "limitations": [
-  "More than one distinct institution carries this exact name. They are separate records; choose by identifier.",
-  "A candidate is a name match. It is not a verified identity relationship, a license or status finding, a recommendation, or complaint evidence.",
-  "Institutions known to LenderTrustHub only through an exact NMLS/LEI research lookup are not searchable by name; a miss here does not mean an identifier is invalid.",
-  "total counts candidate records for this name. It is not market activity."
- ],
- "diagnostics": {
-  "executionEngine": "lender-name-candidates-v1",
-  "dbReads": 0,
-  "dbWrites": 0,
-  "networkCalls": 0
+ "status": 200,
+ "body": {
+  "contract": "lender-name-candidates-v1",
+  "contractVersion": "1.0.0",
+  "schemaFingerprint": "09e9764c94ec410bfb6426c890ab85c527004af61bbd958d27767842f3489a4b",
+  "resultState": "AMBIGUOUS_EXACT_NAME",
+  "name": {
+   "supplied": "Randolph-Brooks FCU",
+   "normalized": "randolph brooks fcu",
+   "predicateApplied": true,
+   "predicate": "Institution source names equal to, beginning with, or containing every distinctive word of the supplied name (case, punctuation, terminal legal form and FCU normalized). Applied to the whole catalog before paging."
+  },
+  "scope": {
+   "searched": [
+    {
+     "code": "published_profiles",
+     "meaning": "Published lender institution profiles (national research cohort and permitted Florida OFR-licensed companies)."
+    },
+    {
+     "code": "hmda_reporting_institutions",
+     "meaning": "HMDA reporting institutions named in the committed GLEIF / curated identity files. Most have no standalone profile."
+    }
+   ],
+   "excluded": [
+    "NMLS person/MLO records",
+    "NMLS branch records",
+    "held or unpublished profile projections",
+    "institutions known only to the exact-identifier research store",
+    "claim and account data"
+   ],
+   "meaning": "Institution grain only. A candidate is a name match, not a verified identity relationship or a regulatory finding."
+  },
+  "source": {
+   "version": {
+    "profiles": "docs/lend-nat-016-search-index.json; lend-nat-014-v1",
+    "hmdaIdentity": "gleif:745; curated-mappings:76",
+    "fingerprint": "6a92189a9aa04614c99a2ac0b6006fcee542b58dd19402f741cdbcea47ec28ff"
+   },
+   "counts": {
+    "publishedProfiles": 311,
+    "hmdaOnly": 663,
+    "identityHold": 12
+   },
+   "clock": {
+    "label": "Source as-of date",
+    "value": null,
+    "note": "The committed identity files do not carry an as-of date; none is invented."
+   }
+  },
+  "candidates": [
+   {
+    "stableKey": "lender:ncua-charter:8111",
+    "displayName": "RANDOLPH-BROOKS",
+    "entityType": "Credit union",
+    "match": {
+     "method": "ABBREVIATION_NORMALIZED",
+     "field": "hmda_reporter_name",
+     "value": "RANDOLPH-BROOKS FEDERAL CREDIT UNION",
+     "sourceLabel": "HMDA reporter legal name (GLEIF / curated HMDA identity file)",
+     "explanation": "The names are equal under a search-form rule (FCU = Federal Credit Union). This is not a documented legal alias.",
+     "isDocumentedSourceName": true
+    },
+    "identifiers": [
+     {
+      "label": "LEI",
+      "value": "549300LU6Y2TXG48QY48"
+     }
+    ],
+    "publicationState": "public_profile",
+    "action": {
+     "type": "PROFILE",
+     "label": "Open LenderTrustHub profile",
+     "url": "https://www.lendertrusthub.com/lender/randolph-brooks"
+    },
+    "source": {
+     "reference": "docs/lend-nat-016-search-index.json; lend-nat-014-v1",
+     "clock": {
+      "label": "Source as-of date",
+      "value": null
+     }
+    }
+   },
+   {
+    "stableKey": "lender:nmls-inst:583215",
+    "displayName": "Randolph-Brooks Federal Credit Union",
+    "entityType": "Nonbank mortgage company",
+    "match": {
+     "method": "ABBREVIATION_NORMALIZED",
+     "field": "canonical_name",
+     "value": "Randolph-Brooks Federal Credit Union",
+     "sourceLabel": "published profile canonical name",
+     "explanation": "The names are equal under a search-form rule (FCU = Federal Credit Union). This is not a documented legal alias.",
+     "isDocumentedSourceName": true
+    },
+    "identifiers": [
+     {
+      "label": "NMLS",
+      "value": "583215"
+     }
+    ],
+    "publicationState": "public_profile",
+    "action": {
+     "type": "PROFILE",
+     "label": "Open LenderTrustHub profile",
+     "url": "https://www.lendertrusthub.com/lender/randolph-brooks-federal-credit-union"
+    },
+    "source": {
+     "reference": "docs/lend-nat-016-search-index.json; lend-nat-014-v1",
+     "clock": {
+      "label": "Source as-of date",
+      "value": null
+     }
+    }
+   }
+  ],
+  "pagination": {
+   "page": 1,
+   "limit": 2,
+   "returned": 2,
+   "total": 2,
+   "reachable": 2,
+   "hasMore": false,
+   "truncated": false,
+   "outOfRange": false,
+   "pageCount": 1,
+   "window": 200
+  },
+  "continuation": {
+   "label": "Search this name on LenderTrustHub",
+   "url": "https://www.lendertrusthub.com/ask?q=Randolph-Brooks%20FCU"
+  },
+  "limitations": [
+   "More than one distinct institution carries this exact name. They are separate records; choose by identifier.",
+   "A candidate is a name match. It is not a verified identity relationship, a license or status finding, a recommendation, or complaint evidence.",
+   "Institutions known to LenderTrustHub only through an exact NMLS/LEI research lookup are not searchable by name; a miss here does not mean an identifier is invalid.",
+   "total counts candidate records for this name. It is not market activity."
+  ],
+  "diagnostics": {
+   "executionEngine": "lender-name-candidates-v1",
+   "dbReads": 0,
+   "dbWrites": 0,
+   "networkCalls": 0
+  }
  }
 }

@@ -1,16 +1,16 @@
 {
- "ranAt": "2026-09-19T00:28:39.019Z",
+ "ranAt": "2026-09-19T12:58:20.299Z",
  "base": "http://localhost:3131",
  "note": "Harness compatibility only. Ask is unmodified and does not call this operation yet.",
  "askGuardSource": "Ask checkout lib/network/name-candidates/adapters.ts rowRelatesToName (imported read-only)",
- "passed": 59,
+ "passed": 63,
  "failed": 0,
  "failures": [],
  "perName": [
   {
    "name": "BMO Bank",
    "status": 200,
-   "ms": 109,
+   "ms": 96,
    "state": "CANDIDATES",
    "total": 1,
    "hasMore": false,
@@ -29,7 +29,7 @@
   {
    "name": "bmo",
    "status": 200,
-   "ms": 41,
+   "ms": 13,
    "state": "CANDIDATES",
    "total": 1,
    "hasMore": false,
@@ -48,7 +48,7 @@
   {
    "name": "Alliant Credit Union",
    "status": 200,
-   "ms": 27,
+   "ms": 29,
    "state": "CANDIDATES",
    "total": 1,
    "hasMore": false,
@@ -67,7 +67,7 @@
   {
    "name": "Randolph-Brooks FCU",
    "status": 200,
-   "ms": 19,
+   "ms": 13,
    "state": "AMBIGUOUS_EXACT_NAME",
    "total": 2,
    "hasMore": false,
@@ -92,7 +92,7 @@
   {
    "name": "Rocket Mortgage",
    "status": 200,
-   "ms": 20,
+   "ms": 12,
    "state": "CANDIDATES",
    "total": 1,
    "hasMore": false,
@@ -111,7 +111,7 @@
   {
    "name": "rocket mortgage llc",
    "status": 200,
-   "ms": 28,
+   "ms": 10,
    "state": "CANDIDATES",
    "total": 1,
    "hasMore": false,
@@ -130,7 +130,7 @@
   {
    "name": "Guild Mortgage",
    "status": 200,
-   "ms": 40,
+   "ms": 22,
    "state": "CANDIDATES",
    "total": 1,
    "hasMore": false,
@@ -149,7 +149,7 @@
   {
    "name": "Frost Bank",
    "status": 200,
-   "ms": 32,
+   "ms": 16,
    "state": "CANDIDATES",
    "total": 1,
    "hasMore": false,
@@ -168,7 +168,7 @@
   {
    "name": "First",
    "status": 200,
-   "ms": 34,
+   "ms": 16,
    "state": "CANDIDATES",
    "total": 74,
    "hasMore": true,
@@ -234,7 +234,7 @@
   {
    "name": "VIP Mortgage Inc",
    "status": 200,
-   "ms": 22,
+   "ms": 11,
    "state": "CANDIDATES",
    "total": 1,
    "hasMore": false,
@@ -259,7 +259,7 @@
   {
    "name": "Zzqx Nonexistent Lending",
    "status": 200,
-   "ms": 31,
+   "ms": 16,
    "state": "NO_MATCH",
    "total": 0,
    "hasMore": false,
@@ -270,7 +270,7 @@
   {
    "name": "Altura Credit Union",
    "status": 200,
-   "ms": 40,
+   "ms": 17,
    "state": "NO_MATCH",
    "total": 0,
    "hasMore": false,

@@ -6,6 +6,66 @@ call the new operation. No database, schema, data, publication or environment ch
 Baseline `origin/main` `f69194245199ac8013dbbebc63f5820eb769e043` (unchanged at the final build, so
 no reconciliation commit). Branch `th-search-r1-019c-lender-name-candidates`.
 
+## 0. Review 1 corrections (reviewed head `fec563b`, outcome CHANGES_REQUESTED)
+
+The one-engine design, in-memory approved catalog, candidate/evidence separation, unchanged v2 contract,
+source-backed methods and real profile/official actions are preserved. The frozen samples were not changed.
+
+| # | Finding | Correction | Tests / mutation |
+|---|---|---|---|
+| 1 | Keyword gates (`charter`, `branch`, 20-char shape…) rejected organization names before the catalog | `request-shape.ts`: only validated **label + value** syntax (existing `parseIdentityRequest`) is an identifier request; a malformed labeled number stays an identifier attempt and never touches the catalog. People/branches are excluded by the institution-only catalog, not by vocabulary. Native decision rewritten to be structural and engine-backed: no `SENTENCE_START` / `NOT_A_NAME` word lists. A text is a name when the engine says its distinctive words name an institution, when the whole text equals a source name, or when no other reading understood it. Partial names do not need exact equality. | R1, R1b · mutation D |
+| 2 | Parser-entity shortcut dropped conditions; `fullName()` swallowed catalog errors | Conditions are computed from the ORIGINAL text and the validated URL overrides on every route (parser-entity, candidate-only, URL-filtered) and listed as **NOT APPLIED**; no HMDA geography is converted into an institution location. A catalog failure returns `unavailable` to the decision, which selects the name operation → `UNAVAILABLE` with the name kept, and no cohort is run. | R2, R2b · mutations E, G |
+| 3 | `hasMore` could advertise page 41 that was invalid | ONE policy: `CANDIDATE_WINDOW = 200` best-ranked candidates are reachable for any page size; `hasMore`, `pageCount` and request validation are all computed against that window; `truncated` + a "not exhaustive, refine the name" limitation beyond it; a beyond-end page is empty with `outOfRange: true`, never a repeat. Native and service share it. | R3 · mutation F |
+| 4 | Scope language / Altura | A miss says "WITHIN THE SEARCHED SCOPE … not a finding that no such institution exists". The response for an excluded real institution is byte-identical to a nonexistent name: nothing about restricted rows is revealed. L1-P decision block below. Nothing was enumerated or authorized. | R4 |
+| 5 | Disputed LEIs | Policy documented + negative tests: the HMDA reporter stays findable under its own key and LEI; no profile, NMLS or bridge is attached through the disputed relationship; no profile card repeats the disputed LEI. Raw data untouched. | R5 |
+| 6 | CI / browser / handoff | `check:th-search-r1-019c` added to the PR workflow; headless Playwright with real Enter and clicks; canonical link checked separately. | see §7 |
+
+Found by the protected regressions during this pass (and fixed before return): moving the name hook ahead
+of identifier lookup let `NMLS -3251` reach the name catalog — R1-002 test 07 failed. `isIdentifierAttempt()`
+now keeps malformed labeled numbers on the existing identifier path (R1b asserts the catalog is not touched).
+
+### L1-P — owner decision block (NOT authorized; nothing was built or enumerated)
+
+**Question.** May LenderTrustHub expose a name-searchable, institution-only projection of records that today
+are reachable only by exact NMLS/LEI (`lender_national_entities` via `lender_identifiers`)?
+
+**How `internal_only` is enforced today.** RLS is enabled on every identity-graph table with a single
+policy per table, "Service role manage …" (`supabase/migrations/20260826120000_national_institution_identity_spine.sql`).
+There is no anon/authenticated policy, so the browser can never read them. The only reader is the server-side
+`canonicalExactIdentityStore` (`lib/specialist-execution/identity-store.ts`), which issues an **equality** lookup
+on `identifier_value` (limit 10). `public_projection_status` defaults to `internal_only` (allowed values
+`internal_only | bridged | projected`) and is a label, not the enforcement. `docs/LEND-CAP-002-IMPLEMENTATION-AUDIT.md`
+is the accepted policy: public destinations come from file-backed manifests; exact identifier execution may
+return a research identity without a route. **That policy is what would need an explicit amendment** — it
+authorizes exact-key resolution and says nothing that permits name enumeration.
+
+**Smallest eligible projection proposed for review** (a committed, file-backed manifest like the existing
+ones — no RLS/grant change, no client access, no per-request table scan):
+- include: `entity_kind = 'institution'`; at least one `NMLS_INSTITUTION` or `LEI` identifier;
+  `source_dataset` in an independently public family already served by exact research (`public_catalog`, HMDA/GLEIF);
+  no open row in `lender_identity_conflicts`; no review hold;
+- fields: stable entity key, source legal/display name with provenance, NMLS/LEI, `observed_at` where present,
+  recorded business location only where the source family already permits it, research-by-identifier and
+  official-registry actions;
+- exclude: `NMLS_PERSON`, `NMLS_BRANCH`, unresolved or mixed classes, claim/account/contact/private fields,
+  disputed relationships;
+- semantics: discoverability ≠ profile, endorsement, current-license statement or complaint bridge.
+The engine already accepts such rows as `unpublished_research_identity` with no code change to matching.
+
+**Unresolved acceptance cases kept on the backlog:** Altura Credit Union (NMLS 401403) and AnnieMac Home
+Mortgage (NMLS 338923), verified only through the public exact-identifier operation. No row was copied, no
+brand→legal-name bridge invented. Whether any other specific name exists in the internal graph was not
+checked, because a name lookup there is the unapproved enumeration.
+
+### Disputed profile/LEI relationships — current policy
+
+An `identity_hold` means: a published profile carries an LEI whose HMDA/GLEIF legal name is a different
+institution. It is a hold on the RELATIONSHIP, not on either record. So (a) the HMDA reporter is an
+independently public record and stays discoverable under `hmda-lei:<LEI>` with its own name and LEI;
+(b) it gets no profile link, no NMLS and no bridge from the disputed profile; (c) the published profile
+stays discoverable by its own names but its card omits the disputed LEI; (d) a hold is never treated as
+permission to publish a held profile. No merge by name or address similarity. Data repair is separately scoped.
+
 ## 1. What was wrong (reproduced on the unchanged base — `baseline-f691942.json`)
 
 - **Native `/ask` refused ordinary names.** Only five hardcoded famous names were treated as
@@ -104,6 +164,8 @@ app/api/specialist-execution/name-candidates/v1/route.ts
 
 ## 5. Frozen holdout (single bounded runs, committed catalog, no live hub)
 
+Run 3 (review 1, corrected engine, single run) is identical to run 2 in every cell; runs 1–3 are all preserved.
+
 `holdout-frozen.json`: the R1-019A Lender sample copied UNCHANGED (sha256 of the Ask file recorded) plus
 39 records drawn by fixed positions from the sources before any evaluation. Expected identity = the
 record's own key. Both runs preserved: run 1 found one defect; run 2 follows the general fix.
@@ -125,10 +187,11 @@ paging to be reached. Small diagnostic samples; no statistical claim.
 
 ## 6. Tests, mutations, regressions
 
-- `npm run check:th-search-r1-019c` → 22 new + 8 existing identity-execution tests = **30/30**.
-- Mutations (`mutation-report.json`), each DETECTED and restored byte-identical (sha1), gate clean after:
-  exact-only candidates restored (13 tests fail), name filter dropped (9), candidate matching attaching
-  complaints (test 18).
+- `npm run check:th-search-r1-019c` → 30 candidate tests + 8 existing identity-execution tests = **38/38**. The gate
+  now runs in the PR workflow (`.github/workflows/lender-network-metrics.yml`).
+- Mutations (`mutation-report.json`), **7/7 DETECTED**, each restored byte-identical (sha1), gate clean after:
+  A exact-only candidates, B name filter dropped, C candidates attaching complaints, D keyword gate restored,
+  E parser-entity route dropping conditions, F unreachable next page, G source failure treated as "not a name".
 - Existing gates on this branch: R1-002 24, R1-003 26, R1-004 26, R1-015 106, TH-SEARCH-001C 4,
   customer-integration 6, `assert:ask-lender`, `lend-cap-002`, `th-p0-lender-01`, `ask-handoff`,
   lend-nat 002/002b/012/014/016, phase0, journey-v21, metrics-r2-03, network-metrics, intel-004,
@@ -141,12 +204,28 @@ paging to be reached. Small diagnostic samples; no statistical claim.
 
 Production was NOT changed; these are local results against committed read-only sources.
 
-- **Consumer harness** (`consumer-harness.json`, real HTTP): 59/59. Contract/version/fingerprint pinned,
+- **Consumer harness** (`consumer-harness.json`, real HTTP, re-run on the corrected build): 63/63, now including
+  following `hasMore` with limit 1 to the exact end, a flagged empty beyond-end page, a rejected page past the
+  window, malformed identifier attempts refused and a person request returning `NO_MATCH`. Contract/version/fingerprint pinned,
   name-filter echo proven, all six states, GET = POST, paging without overlap, `no-store`, unknown fields
   rejected, identifiers/people refused, v2 identity-name still exact and its fingerprint unchanged.
   19–110 ms per call. It imports Ask's CURRENT relevance guard read-only: one candidate form would be
   rejected by Ask today (`VIP Mortgage Inc` → `V.I.P. MORTGAGE, INC.`) — see §8.
-- **Native browser:** `BMO Bank` submitted from the real form → 1 candidate, NMLS 401052, no identifier
+- **Headless browser, review 1** (`browser-playwright.json`; Playwright 1.62 Chromium, fresh context per viewport,
+  deviceScaleFactor 1, 1280 and 390; `scripts/r19c-browser.mjs`). Text was TYPED and submitted with a REAL Enter
+  (`keydown.isTrusted === true` recorded); links and Next were REAL mouse clicks. BMO Bank → NMLS 401052;
+  result action click → `/lender/bmo-bank`; Back and refresh keep the search. Keyword-shaped organizations
+  (nonproduction fixture `keyword-shapes`): `Branch River Bank`, `Charter Bank` found; partial `Branch River` → both
+  Branch River records. `Rocket Mortgage company in Texas` → "Not applied: in Texas". Miss keeps the name.
+  Controlled outage (fixture `source-unavailable`): "We could not search for “BMO Bank” right now", `/api/ask` 503.
+  Capped window (fixture `large-window`, 230 matches): 8 pages walked by clicking Next, 200 distinct records,
+  last pager "Page 8 of 8", no Next offered, "not exhaustive" disclosed. `NMLS 3030`, a Texas cohort and a
+  definition stay on their existing paths. 320 px: page does not overflow in 5 states. No console errors.
+  Fixtures are refused when `VERCEL_ENV=production` (test R6).
+- **Canonical link, checked separately (not the local build):** `https://www.lendertrusthub.com/lender/bmo-bank`
+  and `/lender/rocket-mortgage` → HTTP 200 at 2026-09-19T12:58Z. The local build has no database credentials, so
+  every profile page 404s there; that local 404 is not evidence about the destination either way.
+- **Earlier native browser pass (first submission, superseded for interaction claims):** `BMO Bank` submitted from the real form → 1 candidate, NMLS 401052, no identifier
   prompt. Result action clicked → `/lender/bmo-bank`. `First` → 74 records; pager Next (clicked) →
   page 2, rank 26, "name candidate records"; refresh keeps page 2; History Back restores the prior
   query; editing the box starts clean. 25 rows on page 2: 6 profile links, 19 official GLEIF links ending
@@ -170,9 +249,10 @@ Production was NOT changed; these are local results against committed read-only 
 
 `POST|GET https://www.lendertrusthub.com/api/specialist-execution/name-candidates/v1`
 contract `lender-name-candidates-v1`, version `1.0.0`, schemaFingerprint
-`68c0309822e19742fd7f0ff2d3a8772fbfc580a5f5c013c574f2ea12da0ae74d`. Request:
-`{ "operation": "name_candidates", "name": "<2-120 chars>", "page": 1-40, "limit": 1-25 }` (nothing else).
-Exact fixtures: `fixture-response-{ambiguous,research-row,no-match,restricted}.json`.
+`09e9764c94ec410bfb6426c890ab85c527004af61bbd958d27767842f3489a4b` (changed in review 1: pagination keys joined the
+schema; no consumer pins it yet). Request:
+`{ "operation": "name_candidates", "name": "<2-120 chars>", "page": 1..ceil(200/limit), "limit": 1-25 }` (nothing else).
+Exact fixtures (request + status + body): `fixture-response-{ambiguous,research-row,no-match,restricted,last-page}.json`.
 
 1. New adapter call; keep v2 for identifier/evidence. Pin contract + version + this fingerprint.
 2. `nameFilterApplied = name.predicateApplied === true && name.supplied === <sent>`.
@@ -183,7 +263,10 @@ Exact fixtures: `fixture-response-{ambiguous,research-row,no-match,restricted}.j
    method `EXACT_NORMALIZED_NAME|LEGAL_SUFFIX_NORMALIZED|ABBREVIATION_NORMALIZED → NORMALIZED_NAME`,
    `DOCUMENTED_HISTORICAL_NAME → DOCUMENTED_ALIAS` (WITH the returned value), `WORD_PREFIX|DISTINCTIVE_TOKENS
    → PREFIX_OR_TOKEN`, `DERIVED_SLUG_FORM → HUB_NAME_MATCH`. Never relabel to pass a guard.
-5. `pagination.hasMore` / `page`; `total` is exact (`truncated: false`); `continuation.url` = native search.
+5. Paging: follow `pagination.hasMore` only. `total` is the exact match count; `reachable = min(total, 200)`;
+   `truncated: true` means the list is NOT exhaustive (show the refine message, use `continuation.url`);
+   `outOfRange: true` is an empty page past the end. Never compute a next page from `total`.
+   `NO_MATCH` is a miss within `scope.searched` only — present it as such, not as "no such lender".
 6. Actions: `PROFILE` (lendertrusthub.com) or `OFFICIAL_IDENTIFIER_VERIFICATION` (`search.gleif.org`, LEI in
    the URL hash) — Ask's `OFFICIAL_ORIGINS.lender` needs that origin, and its URL sanitizer must keep the hash.
 7. Ask's `rowRelatesToName` rejects hub full-name methods whose tokens differ only by initialism

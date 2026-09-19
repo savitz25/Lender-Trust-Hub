@@ -330,6 +330,7 @@ test('R2b a catalog failure is never "proof" a text is not a name: the name oper
   assert.ok(d, 'still a name request'); assert.equal(d.basis, 'NAME_SHAPED_SOURCE_UNAVAILABLE'); assert.equal(d.name, q);
   const r = executeNativeNameCandidates({ q, page: 1, pageSize: 25, overrides: {} }, parsed, d, boom);
   assert.equal(r.terminalState, 'UNAVAILABLE'); assert.equal(r.nameCandidates?.state, 'UNAVAILABLE'); assert.match(r.headline, /Guild Mortgage Company LLC/);
+  assert.equal(loads, 2, 'the failing source was consulted once to decide and once to execute -- never bypassed');
   assert.deepEqual(r.rows, []); assert.equal(r.volumeEvidence, undefined, 'no broad directory / cohort request was executed instead'); assert.doesNotMatch(JSON.stringify(r), /secret/);
   // a text with no distinctive word does not depend on the catalog, so its real cohort reading is unaffected by the outage
   assert.equal(decideNativeNameSearch('mortgage lenders in Texas', parseLenderAsk('mortgage lenders in Texas'), boom), null);

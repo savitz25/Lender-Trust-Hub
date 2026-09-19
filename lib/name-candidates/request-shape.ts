@@ -24,7 +24,7 @@ export function hasGenuineLabeledIdentifier(text: string): boolean {
  */
 export function isIdentifierAttempt(text: string): boolean {
   const request = parseIdentityRequest(text);
-  if (!request) return false;
+  if (!request) return false; // no identifier LABEL at all: vocabulary alone never makes an identifier request
   if (request.identifiers.some((id) => /[0-9]/.test(id.value))) return true;
   return request.identifiers.length === 0 && request.problem?.state === 'INVALID';
 }
