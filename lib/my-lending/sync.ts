@@ -11,6 +11,7 @@
 import type { MyLendingState } from '@/lib/my-lending/types';
 import {
   getMyLendingStorageUserId,
+  getMyLendingStorageGeneration,
   getStateMaxUpdatedAt,
   isMyLendingStateEmpty,
   loadState,
@@ -22,6 +23,7 @@ import type { Json } from '@/types/supabase';
 export type SyncPullResult =
   | 'applied_remote'
   | 'kept_local'
+  | 'confirmed_local'
   | 'pushed_local'
   | 'empty'
   | 'skipped'
@@ -45,6 +47,8 @@ export async function pullMyLendingWorkspace(
 ): Promise<SyncPullResult> {
   if (!userId) return 'skipped';
   if (getMyLendingStorageUserId() !== userId) return 'skipped';
+  const generation = getMyLendingStorageGeneration();
+  const current = () => getMyLendingStorageUserId() === userId && getMyLendingStorageGeneration() === generation;
 
   const supabase = createBrowserSupabaseClient();
   if (!supabase) return 'skipped';
@@ -56,6 +60,7 @@ export async function pullMyLendingWorkspace(
       .eq('user_id', userId)
       .maybeSingle();
 
+    if (!current()) return 'skipped';
     if (error) {
       // Table missing or RLS — foundation only
       if (typeof console !== 'undefined') {
@@ -64,6 +69,9 @@ export async function pullMyLendingWorkspace(
       return 'error';
     }
 
+    // The request may finish after sign-out or an account switch. Never apply
+    // another owner's payload to the now-active workspace.
+    if (getMyLendingStorageUserId() !== userId) return 'skipped';
     const local = loadState();
     const localTs = getStateMaxUpdatedAt(local);
     const remotePayload = data ? asWorkspacePayload(data.payload) : null;
@@ -77,12 +85,17 @@ export async function pullMyLendingWorkspace(
 
     if (!isMyLendingStateEmpty(local) && (!remotePayload || localTs > remoteTs)) {
       const push = await pushMyLendingWorkspace(userId, local);
+      if (!current()) return 'skipped';
       return push === 'ok' ? 'pushed_local' : push === 'skipped' ? 'kept_local' : 'error';
     }
 
     if (isMyLendingStateEmpty(local) && !remotePayload) return 'empty';
+    // Equal timestamps alone are not a receipt. Only exact matching research
+    // can restore confirmation without writing or replacing the local copy.
+    if (remotePayload && JSON.stringify(remotePayload) === JSON.stringify(local)) return 'confirmed_local';
     return 'kept_local';
   } catch (e) {
+    if (!current()) return 'skipped';
     if (typeof console !== 'undefined') console.warn('[my-lending-sync] pull failed', e);
     return 'error';
   }
@@ -94,9 +107,11 @@ export async function pushMyLendingWorkspace(
   state?: MyLendingState
 ): Promise<SyncPushResult> {
   if (!userId) return 'skipped';
-  if (getMyLendingStorageUserId() && getMyLendingStorageUserId() !== userId) {
+  if (getMyLendingStorageUserId() !== userId) {
     return 'skipped';
   }
+  const generation = getMyLendingStorageGeneration();
+  const current = () => getMyLendingStorageUserId() === userId && getMyLendingStorageGeneration() === generation;
 
   const supabase = createBrowserSupabaseClient();
   if (!supabase) return 'skipped';
@@ -115,6 +130,9 @@ export async function pushMyLendingWorkspace(
       { onConflict: 'user_id' }
     );
 
+    // The dispatched request may have completed for the old owner. This does
+    // not roll it back; it only withholds acknowledgment from the new context.
+    if (!current()) return 'skipped';
     if (error) {
       if (typeof console !== 'undefined') {
         console.info('[my-lending-sync] push skipped:', error.message);
@@ -123,6 +141,7 @@ export async function pushMyLendingWorkspace(
     }
     return 'ok';
   } catch (e) {
+    if (!current()) return 'skipped';
     if (typeof console !== 'undefined') console.warn('[my-lending-sync] push failed', e);
     return 'error';
   }
@@ -131,11 +150,16 @@ export async function pushMyLendingWorkspace(
 /** Debounced push used by storage after local save when signed in. */
 let pushTimer: ReturnType<typeof setTimeout> | null = null;
 
-export function scheduleMyLendingCloudPush(userId: string, state: MyLendingState): void {
+export function scheduleMyLendingCloudPush(userId: string, state: MyLendingState, onResult?: (result: SyncPushResult) => void): void {
   if (!userId) return;
+  const generation = getMyLendingStorageGeneration();
   if (pushTimer) clearTimeout(pushTimer);
   pushTimer = setTimeout(() => {
     pushTimer = null;
-    void pushMyLendingWorkspace(userId, state);
+    if (getMyLendingStorageUserId() !== userId || getMyLendingStorageGeneration() !== generation) {
+      onResult?.('skipped');
+      return;
+    }
+    void pushMyLendingWorkspace(userId, state).then(result => onResult?.(result));
   }, 800);
 }

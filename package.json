@@ -4,6 +4,9 @@
   "description": "LenderTrustHub.com \u2014 Independent directory of verified mortgage lenders with interactive calculators",
   "private": true,
   "scripts": {
+    "check:v2-save": "tsx --test scripts/test-v2-save.ts && node --test scripts/test-v2-save-sync.mjs",
+    "qa:v2-save": "node scripts/qa-v2-save.mjs",
+    "test:v2-save:browser": "node scripts/test-v2-save-browser.mjs",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
@@ -86,6 +89,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "esbuild": "0.28.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
     "tailwindcss": "^4",

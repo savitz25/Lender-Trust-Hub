@@ -13,6 +13,8 @@ import type { User } from '@supabase/supabase-js';
 import { createBrowserSupabaseClient } from '@/lib/supabase/client';
 import {
   getMyLendingStorageMode,
+  getMyLendingStorageUserId,
+  getMyLendingStorageGeneration,
   registerMyLendingCloudPush,
   setMyLendingStorageIdentity,
 } from '@/lib/my-lending/storage';
@@ -66,15 +68,23 @@ export function MyLendingProvider({ children }: { children: ReactNode }) {
   });
 
   useEffect(() => {
+    let mounted = true;
+    let latestPush = 0;
     registerMyLendingCloudPush((userId, state) => {
-      scheduleMyLendingCloudPush(userId, state);
+      const generation = getMyLendingStorageGeneration();
+      const operation = ++latestPush;
+      scheduleMyLendingCloudPush(userId, state, result => {
+        if (!mounted || operation !== latestPush || getMyLendingStorageUserId() !== userId ||
+          getMyLendingStorageGeneration() !== generation || result === 'skipped') return;
+        setWorkspaceStorage(prev => ({ ...prev, mode: 'signed_in', syncStatus: result === 'ok' ? 'synced' : 'error' }));
+      });
       setWorkspaceStorage((prev) => ({
         ...prev,
         mode: 'signed_in',
-        syncStatus: prev.syncStatus === 'error' ? 'error' : 'synced',
+        syncStatus: 'idle',
       }));
     });
-    return () => registerMyLendingCloudPush(null);
+    return () => { mounted = false; registerMyLendingCloudPush(null); };
   }, []);
 
   useEffect(() => {
@@ -85,41 +95,49 @@ export function MyLendingProvider({ children }: { children: ReactNode }) {
     }
 
     let mounted = true;
+    let identityVersion = 0;
+    let authEventReceived = false;
 
     async function applyIdentity(nextUser: User | null) {
+      if (!mounted) return;
+      const version = ++identityVersion;
+      setLoading(true);
       const { mode } = setMyLendingStorageIdentity(nextUser?.id ?? null);
       if (!nextUser) {
         if (!mounted) return;
         setWorkspaceStorage({ mode: 'guest', syncStatus: 'local_only' });
+        setLoading(false);
         return;
       }
       if (!mounted) return;
       setWorkspaceStorage({ mode, syncStatus: 'syncing' });
       const result = await pullMyLendingWorkspace(nextUser.id);
-      if (!mounted) return;
+      if (!mounted || version !== identityVersion) return;
       setWorkspaceStorage({
         mode: getMyLendingStorageMode(),
         syncStatus:
           result === 'error'
             ? 'error'
-            : result === 'skipped'
-              ? 'local_only'
-              : 'synced',
+            : result === 'applied_remote' || result === 'pushed_local' || result === 'confirmed_local'
+              ? 'synced'
+              : 'local_only',
         lastPull: result,
       });
+      setLoading(false);
     }
 
-    supabase.auth.getUser().then(({ data }) => {
-      if (!mounted) return;
+    supabase.auth.getUser().then(({ data, error }) => {
+      if (!mounted || authEventReceived || error) return;
       const next = data.user ?? null;
       setUser(next);
-      setLoading(false);
       void applyIdentity(next);
-    });
+    }).catch(() => { /* Keep unresolved auth pending; Save offers a timed retry. */ });
 
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event, session) => {
+      if (!mounted) return;
+      authEventReceived = true;
       const nextUser = session?.user ?? null;
       setUser(nextUser);
       if (event === 'SIGNED_IN' && nextUser) {
@@ -139,6 +157,7 @@ export function MyLendingProvider({ children }: { children: ReactNode }) {
 
     return () => {
       mounted = false;
+      identityVersion++;
       if (authErrorTimer !== undefined) window.clearTimeout(authErrorTimer);
       subscription.unsubscribe();
     };

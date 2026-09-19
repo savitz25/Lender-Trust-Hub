@@ -55,6 +55,9 @@ function emptyState(): MyLendingState {
 
 /** Active identity for storage namespace (null = guest device store). */
 let activeUserId: string | null = null;
+// Distinguishes A -> guest/B -> A from the original A session's context.
+let identityGeneration = 0;
+export function getMyLendingStorageGeneration(): number { return identityGeneration; }
 
 /** Optional cloud push after successful local save (signed-in only). */
 let cloudPushHandler:
@@ -188,6 +191,7 @@ export function setMyLendingStorageIdentity(userId: string | null): {
   }
 
   activeUserId = next;
+  identityGeneration++;
   dispatchChange();
   return { mode: next ? 'signed_in' : 'guest', seededFromGuest };
 }
@@ -733,7 +737,10 @@ export function upsertSavedLender(
   if (!plan) {
     plan = ensureActivePlan({ label: 'My financing research' });
     Object.assign(state, loadState());
-    plan = getActivePlan(state)!;
+    plan = getActivePlan(state);
+    if (!plan) {
+      return { ok: false, error: getLastSaveError() ?? 'Could not save My Lending on this device. Please try again.' };
+    }
   }
 
   const profilePath = input.profilePath || `/lenders/${input.lenderSlug}`;
