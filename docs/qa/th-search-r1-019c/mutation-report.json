@@ -1,7 +1,7 @@
 {
- "generatedAt": "2026-09-19T00:18:24.310Z",
+ "generatedAt": "2026-09-19T12:45:56.473Z",
  "cleanBefore": {
-  "pass": 21,
+  "pass": 29,
   "fail": 0,
   "failing": []
  },
@@ -12,6 +12,7 @@
    "detected": true,
    "failedTests": [
     "01",
+    "01b",
     "02",
     "03",
     "04",
@@ -23,7 +24,11 @@
     "15",
     "18",
     "20",
-    "21"
+    "21",
+    "R1",
+    "R2",
+    "R3",
+    "R5"
    ],
    "restoredByteIdentical": true
   },
@@ -40,7 +45,14 @@
     "10",
     "13",
     "15",
-    "21"
+    "16",
+    "20",
+    "21",
+    "R1",
+    "R1b",
+    "R2",
+    "R4",
+    "R5"
    ],
    "restoredByteIdentical": true
   },
@@ -52,10 +64,47 @@
     "18"
    ],
    "restoredByteIdentical": true
+  },
+  {
+   "id": "D_KEYWORD_GATE_RESTORED",
+   "why": "A vocabulary word alone (Charter, Branch, LEI) is again treated as an identifier/branch request.",
+   "detected": true,
+   "failedTests": [
+    "R1",
+    "R1b"
+   ],
+   "restoredByteIdentical": true
+  },
+  {
+   "id": "E_PARSER_ENTITY_DROPS_CONDITIONS",
+   "why": "The parser-entity shortcut returns no conditions again, so \"Rocket Mortgage company in Texas\" silently loses Texas.",
+   "detected": true,
+   "failedTests": [
+    "R2"
+   ],
+   "restoredByteIdentical": true
+  },
+  {
+   "id": "F_UNREACHABLE_NEXT_PAGE",
+   "why": "hasMore ignores the reachable window again, advertising a page that cannot be fetched.",
+   "detected": true,
+   "failedTests": [
+    "R3"
+   ],
+   "restoredByteIdentical": true
+  },
+  {
+   "id": "G_SOURCE_FAILURE_BECOMES_NOT_A_NAME",
+   "why": "A catalog failure is treated as proof the text is not a name, so an unrelated cohort would run.",
+   "detected": true,
+   "failedTests": [
+    "R2b"
+   ],
+   "restoredByteIdentical": true
   }
  ],
  "cleanAfter": {
-  "pass": 21,
+  "pass": 29,
   "fail": 0,
   "failing": []
  }
