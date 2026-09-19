@@ -1,0 +1,282 @@
+{
+ "ranAt": "2026-09-19T13:30:51.202Z",
+ "base": "http://localhost:3131",
+ "note": "Harness compatibility only. Ask is unmodified and does not call this operation yet.",
+ "askGuardSource": "Ask checkout lib/network/name-candidates/adapters.ts rowRelatesToName (imported read-only)",
+ "passed": 63,
+ "failed": 0,
+ "failures": [],
+ "perName": [
+  {
+   "name": "BMO Bank",
+   "status": 200,
+   "ms": 176,
+   "state": "CANDIDATES",
+   "total": 1,
+   "hasMore": false,
+   "first": [
+    "BMO Bank [EXACT_NORMALIZED_NAME; public_profile; NMLS 401052, LEI 3Y4U8VZURTYWI1W2K376]"
+   ],
+   "askGuard": [
+    {
+     "key": "lender:nmls-inst:401052",
+     "method": "EXACT_NORMALIZED_NAME",
+     "admittedByCurrentAskGuard": true
+    }
+   ],
+   "rejectedByCurrentAskGuard": []
+  },
+  {
+   "name": "bmo",
+   "status": 200,
+   "ms": 27,
+   "state": "CANDIDATES",
+   "total": 1,
+   "hasMore": false,
+   "first": [
+    "BMO Bank [WORD_PREFIX; public_profile; NMLS 401052, LEI 3Y4U8VZURTYWI1W2K376]"
+   ],
+   "askGuard": [
+    {
+     "key": "lender:nmls-inst:401052",
+     "method": "WORD_PREFIX",
+     "admittedByCurrentAskGuard": true
+    }
+   ],
+   "rejectedByCurrentAskGuard": []
+  },
+  {
+   "name": "Alliant Credit Union",
+   "status": 200,
+   "ms": 34,
+   "state": "CANDIDATES",
+   "total": 1,
+   "hasMore": false,
+   "first": [
+    "Alliant Credit Union [EXACT_NORMALIZED_NAME; public_profile; NMLS 197185, LEI 549300T94GSH3C4U5M59]"
+   ],
+   "askGuard": [
+    {
+     "key": "lender:nmls-inst:197185",
+     "method": "EXACT_NORMALIZED_NAME",
+     "admittedByCurrentAskGuard": true
+    }
+   ],
+   "rejectedByCurrentAskGuard": []
+  },
+  {
+   "name": "Randolph-Brooks FCU",
+   "status": 200,
+   "ms": 27,
+   "state": "AMBIGUOUS_EXACT_NAME",
+   "total": 2,
+   "hasMore": false,
+   "first": [
+    "RANDOLPH-BROOKS [ABBREVIATION_NORMALIZED; public_profile; LEI 549300LU6Y2TXG48QY48]",
+    "Randolph-Brooks Federal Credit Union [ABBREVIATION_NORMALIZED; public_profile; NMLS 583215]"
+   ],
+   "askGuard": [
+    {
+     "key": "lender:ncua-charter:8111",
+     "method": "ABBREVIATION_NORMALIZED",
+     "admittedByCurrentAskGuard": true
+    },
+    {
+     "key": "lender:nmls-inst:583215",
+     "method": "ABBREVIATION_NORMALIZED",
+     "admittedByCurrentAskGuard": true
+    }
+   ],
+   "rejectedByCurrentAskGuard": []
+  },
+  {
+   "name": "Rocket Mortgage",
+   "status": 200,
+   "ms": 23,
+   "state": "CANDIDATES",
+   "total": 1,
+   "hasMore": false,
+   "first": [
+    "Rocket Mortgage [EXACT_NORMALIZED_NAME; public_profile; NMLS 3030, LEI 549300FGXN1K3HLB1R50]"
+   ],
+   "askGuard": [
+    {
+     "key": "lender:nmls-inst:3030",
+     "method": "EXACT_NORMALIZED_NAME",
+     "admittedByCurrentAskGuard": true
+    }
+   ],
+   "rejectedByCurrentAskGuard": []
+  },
+  {
+   "name": "rocket mortgage llc",
+   "status": 200,
+   "ms": 18,
+   "state": "CANDIDATES",
+   "total": 1,
+   "hasMore": false,
+   "first": [
+    "Rocket Mortgage [EXACT_NORMALIZED_NAME; public_profile; NMLS 3030, LEI 549300FGXN1K3HLB1R50]"
+   ],
+   "askGuard": [
+    {
+     "key": "lender:nmls-inst:3030",
+     "method": "EXACT_NORMALIZED_NAME",
+     "admittedByCurrentAskGuard": true
+    }
+   ],
+   "rejectedByCurrentAskGuard": []
+  },
+  {
+   "name": "Guild Mortgage",
+   "status": 200,
+   "ms": 20,
+   "state": "CANDIDATES",
+   "total": 1,
+   "hasMore": false,
+   "first": [
+    "Guild Mortgage Company LLC [LEGAL_SUFFIX_NORMALIZED; identity_hold; LEI 549300LYRWPSYPK6S325]"
+   ],
+   "askGuard": [
+    {
+     "key": "lender:hmda-lei:549300LYRWPSYPK6S325",
+     "method": "LEGAL_SUFFIX_NORMALIZED",
+     "admittedByCurrentAskGuard": true
+    }
+   ],
+   "rejectedByCurrentAskGuard": []
+  },
+  {
+   "name": "Frost Bank",
+   "status": 200,
+   "ms": 26,
+   "state": "CANDIDATES",
+   "total": 1,
+   "hasMore": false,
+   "first": [
+    "Frost Bank [EXACT_NORMALIZED_NAME; unpublished_research_identity; LEI G5AHTAP80NWA3Q8RDC78]"
+   ],
+   "askGuard": [
+    {
+     "key": "lender:hmda-lei:G5AHTAP80NWA3Q8RDC78",
+     "method": "EXACT_NORMALIZED_NAME",
+     "admittedByCurrentAskGuard": true
+    }
+   ],
+   "rejectedByCurrentAskGuard": []
+  },
+  {
+   "name": "First",
+   "status": 200,
+   "ms": 34,
+   "state": "CANDIDATES",
+   "total": 74,
+   "hasMore": true,
+   "first": [
+    "First American Bank [WORD_PREFIX; unpublished_research_identity; LEI XC7Z0BA39TU7L1AKOJ12]",
+    "First American Bank and Trust [WORD_PREFIX; public_profile; LEI 549300Z78KW88BIQNR50]",
+    "First Bank [WORD_PREFIX; unpublished_research_identity; LEI 254900L67A0ZTJRS6614]"
+   ],
+   "askGuard": [
+    {
+     "key": "lender:hmda-lei:XC7Z0BA39TU7L1AKOJ12",
+     "method": "WORD_PREFIX",
+     "admittedByCurrentAskGuard": true
+    },
+    {
+     "key": "lender:fdic-cert:8149",
+     "method": "WORD_PREFIX",
+     "admittedByCurrentAskGuard": true
+    },
+    {
+     "key": "lender:hmda-lei:254900L67A0ZTJRS6614",
+     "method": "WORD_PREFIX",
+     "admittedByCurrentAskGuard": true
+    },
+    {
+     "key": "lender:hmda-lei:549300IQ5NY7CSJLZW53",
+     "method": "WORD_PREFIX",
+     "admittedByCurrentAskGuard": true
+    },
+    {
+     "key": "lender:fdic-cert:3702",
+     "method": "WORD_PREFIX",
+     "admittedByCurrentAskGuard": true
+    },
+    {
+     "key": "lender:nmls-inst:503941",
+     "method": "WORD_PREFIX",
+     "admittedByCurrentAskGuard": true
+    },
+    {
+     "key": "lender:hmda-lei:549300RZFHIGIM84KN09",
+     "method": "WORD_PREFIX",
+     "admittedByCurrentAskGuard": true
+    },
+    {
+     "key": "lender:hmda-lei:5493003V40VGM7YDFM54",
+     "method": "WORD_PREFIX",
+     "admittedByCurrentAskGuard": true
+    },
+    {
+     "key": "lender:hmda-lei:549300L44U62O7WHRR78",
+     "method": "WORD_PREFIX",
+     "admittedByCurrentAskGuard": true
+    },
+    {
+     "key": "lender:hmda-lei:549300T67186NPGCHI50",
+     "method": "WORD_PREFIX",
+     "admittedByCurrentAskGuard": true
+    }
+   ],
+   "rejectedByCurrentAskGuard": []
+  },
+  {
+   "name": "VIP Mortgage Inc",
+   "status": 200,
+   "ms": 27,
+   "state": "CANDIDATES",
+   "total": 1,
+   "hasMore": false,
+   "first": [
+    "V.I.P. MORTGAGE, INC. [EXACT_NORMALIZED_NAME; unpublished_research_identity; LEI 549300PC4MFWQBNVKG88]"
+   ],
+   "askGuard": [
+    {
+     "key": "lender:hmda-lei:549300PC4MFWQBNVKG88",
+     "method": "EXACT_NORMALIZED_NAME",
+     "admittedByCurrentAskGuard": false
+    }
+   ],
+   "rejectedByCurrentAskGuard": [
+    {
+     "key": "lender:hmda-lei:549300PC4MFWQBNVKG88",
+     "method": "EXACT_NORMALIZED_NAME",
+     "admittedByCurrentAskGuard": false
+    }
+   ]
+  },
+  {
+   "name": "Zzqx Nonexistent Lending",
+   "status": 200,
+   "ms": 31,
+   "state": "NO_MATCH",
+   "total": 0,
+   "hasMore": false,
+   "first": [],
+   "askGuard": [],
+   "rejectedByCurrentAskGuard": []
+  },
+  {
+   "name": "Altura Credit Union",
+   "status": 200,
+   "ms": 29,
+   "state": "NO_MATCH",
+   "total": 0,
+   "hasMore": false,
+   "first": [],
+   "askGuard": [],
+   "rejectedByCurrentAskGuard": []
+  }
+ ]
+}

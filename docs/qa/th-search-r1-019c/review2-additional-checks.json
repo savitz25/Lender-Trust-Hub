@@ -1,0 +1,69 @@
+{
+ "malformed:NMLS -3251": {
+  "status": 422,
+  "state": "RESTRICTED_SCOPE",
+  "dbReads": 0,
+  "candidates": 0
+ },
+ "malformed:NMLS 32.51": {
+  "status": 422,
+  "state": "RESTRICTED_SCOPE",
+  "dbReads": 0,
+  "candidates": 0
+ },
+ "malformed:NMLS +3251": {
+  "status": 422,
+  "state": "RESTRICTED_SCOPE",
+  "dbReads": 0,
+  "candidates": 0
+ },
+ "malformed:NMLS 3e3": {
+  "status": 422,
+  "state": "RESTRICTED_SCOPE",
+  "dbReads": 0,
+  "candidates": 0
+ },
+ "guild": {
+  "stableKey": "lender:hmda-lei:549300LYRWPSYPK6S325",
+  "displayName": "Guild Mortgage Company LLC",
+  "entityType": "HMDA reporting institution",
+  "match": {
+   "method": "LEGAL_SUFFIX_NORMALIZED",
+   "field": "hmda_reporter_name",
+   "value": "Guild Mortgage Company LLC",
+   "sourceLabel": "HMDA reporter legal name (GLEIF / curated HMDA identity file)",
+   "explanation": "The names are equal once a terminal legal-form word (LLC, Inc., N.A. ...) is ignored.",
+   "isDocumentedSourceName": true
+  },
+  "identifiers": [
+   {
+    "label": "LEI",
+    "value": "549300LYRWPSYPK6S325"
+   }
+  ],
+  "publicationState": "identity_hold",
+  "action": {
+   "type": "OFFICIAL_IDENTIFIER_VERIFICATION",
+   "label": "Verify this LEI with GLEIF (official registry)",
+   "url": "https://search.gleif.org/#/record/549300LYRWPSYPK6S325"
+  },
+  "source": {
+   "reference": "lib/ask-lender/generated/gleif.json; lib/ask-lender/generated/mappings.csv.json",
+   "clock": {
+    "label": "Source as-of date",
+    "value": null
+   }
+  }
+ },
+ "freedom": [
+  "Freedom Mortgage",
+  "Freedom Mortgage Corporation",
+  "FREEDOM FINANCIAL SERVICES, INC.",
+  "FREEDOM FIRST"
+ ],
+ "crossBridge": false,
+ "alturaVsGenericLimitations": true,
+ "alturaState": "NO_MATCH",
+ "anniemacState": "NO_MATCH",
+ "annieMacLegalNameFound": true
+}
