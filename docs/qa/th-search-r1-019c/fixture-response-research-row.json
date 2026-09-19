@@ -1,0 +1,107 @@
+{
+ "contract": "lender-name-candidates-v1",
+ "contractVersion": "1.0.0",
+ "schemaFingerprint": "68c0309822e19742fd7f0ff2d3a8772fbfc580a5f5c013c574f2ea12da0ae74d",
+ "resultState": "CANDIDATES",
+ "name": {
+  "supplied": "Frost Bank",
+  "normalized": "frost bank",
+  "predicateApplied": true,
+  "predicate": "Institution source names equal to, beginning with, or containing every distinctive word of the supplied name (case, punctuation, terminal legal form and FCU normalized). Applied to the whole catalog before paging."
+ },
+ "scope": {
+  "searched": [
+   {
+    "code": "published_profiles",
+    "meaning": "Published lender institution profiles (national research cohort and permitted Florida OFR-licensed companies)."
+   },
+   {
+    "code": "hmda_reporting_institutions",
+    "meaning": "HMDA reporting institutions named in the committed GLEIF / curated identity files. Most have no standalone profile."
+   }
+  ],
+  "excluded": [
+   "NMLS person/MLO records",
+   "NMLS branch records",
+   "held or unpublished profile projections",
+   "institutions known only to the exact-identifier research store",
+   "claim and account data"
+  ],
+  "meaning": "Institution grain only. A candidate is a name match, not a verified identity relationship or a regulatory finding."
+ },
+ "source": {
+  "version": {
+   "profiles": "docs/lend-nat-016-search-index.json; lend-nat-014-v1",
+   "hmdaIdentity": "gleif:745; curated-mappings:76",
+   "fingerprint": "6a92189a9aa04614c99a2ac0b6006fcee542b58dd19402f741cdbcea47ec28ff"
+  },
+  "counts": {
+   "publishedProfiles": 311,
+   "hmdaOnly": 663,
+   "identityHold": 12
+  },
+  "clock": {
+   "label": "Source as-of date",
+   "value": null,
+   "note": "The committed identity files do not carry an as-of date; none is invented."
+  }
+ },
+ "candidates": [
+  {
+   "stableKey": "lender:hmda-lei:G5AHTAP80NWA3Q8RDC78",
+   "displayName": "Frost Bank",
+   "entityType": "HMDA reporting institution",
+   "match": {
+    "method": "EXACT_NORMALIZED_NAME",
+    "field": "hmda_reporter_name",
+    "value": "Frost Bank",
+    "sourceLabel": "HMDA reporter legal name (GLEIF / curated HMDA identity file)",
+    "explanation": "The entered name equals this source name after case, spacing and punctuation normalization.",
+    "isDocumentedSourceName": true
+   },
+   "identifiers": [
+    {
+     "label": "LEI",
+     "value": "G5AHTAP80NWA3Q8RDC78"
+    }
+   ],
+   "publicationState": "unpublished_research_identity",
+   "action": {
+    "type": "OFFICIAL_IDENTIFIER_VERIFICATION",
+    "label": "Verify this LEI with GLEIF (official registry)",
+    "url": "https://search.gleif.org/#/record/G5AHTAP80NWA3Q8RDC78"
+   },
+   "source": {
+    "reference": "lib/ask-lender/generated/gleif.json; lib/ask-lender/generated/mappings.csv.json",
+    "clock": {
+     "label": "Source as-of date",
+     "value": null
+    }
+   }
+  }
+ ],
+ "pagination": {
+  "page": 1,
+  "limit": 10,
+  "returned": 1,
+  "total": 1,
+  "hasMore": false,
+  "truncated": false,
+  "maxPage": 40
+ },
+ "continuation": {
+  "label": "Search this name on LenderTrustHub",
+  "url": "https://www.lendertrusthub.com/ask?q=Frost%20Bank"
+ },
+ "limitations": [
+  "A candidate is a name match. It is not a verified identity relationship, a license or status finding, a recommendation, or complaint evidence.",
+  "Institutions known to LenderTrustHub only through an exact NMLS/LEI research lookup are not searchable by name; a miss here does not mean an identifier is invalid.",
+  "total counts candidate records for this name. It is not market activity."
+ ],
+ "diagnostics": {
+  "executionEngine": "lender-name-candidates-v1",
+  "dbReads": 0,
+  "dbWrites": 0,
+  "networkCalls": 0
+ }
+}
