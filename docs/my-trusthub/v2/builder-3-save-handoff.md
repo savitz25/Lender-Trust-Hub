@@ -61,4 +61,3 @@ Neither result certifies parent My TrustHub synchronization.
 Actual local `/lenders/1st-priority-mortgage` guest Save and reload passed; this does not certify the separate localhost incident or a cloud account journey.
 
 Local Save is verified within the evidence environments above. Legacy account Save is **NOT VERIFIED live**. Parent My TrustHub sync is **NOT VERIFIED**. Production mutations: **NONE**.
-

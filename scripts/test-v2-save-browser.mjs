@@ -85,7 +85,7 @@ if (process.argv.includes('--provider')) {
  await until(state+'.length===1');
  console.log('B3-08 PASS blocked fresh storage honest error and recovery');
 
- 
+
  await reset(); evaluate('window.b3.auth(null,true)'); await delay(100); click();
  evaluate("window.b3.render('different-profile')"); await delay(100); evaluate('window.b3.auth(null,false)'); await delay(100);
  assert.equal(evaluate(state).length,0);
@@ -101,7 +101,7 @@ if (process.argv.includes('--provider')) {
  await until('window.b3.storage.loadState().savedLenders.length===1');
  assert.equal(evaluate(state).length,0);
  console.log('B3-05/06 PASS MOCKED initial auth resolution saves only in owner namespace');
- 
+
  for(const width of [1440,390,320]){
    await reset(); browser('set','viewport',String(width),'900');
    browser('focus','button');
