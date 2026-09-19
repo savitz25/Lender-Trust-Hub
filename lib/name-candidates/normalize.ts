@@ -17,9 +17,22 @@ export function normalizeCandidateName(raw: string): string {
     .replace(/\s+/g, ' ');
 }
 
+/**
+ * Tokens of a name. A run of single letters is one initialism: "V.I.P." / "V I P" / "VIP" and
+ * "U.S." / "US" are the same search form. (Search form only -- never an alias or identity claim.)
+ */
 export function candidateTokens(raw: string): string[] {
   const normalized = normalizeCandidateName(raw);
-  return normalized ? normalized.split(' ') : [];
+  if (!normalized) return [];
+  const out: string[] = [];
+  let run = '';
+  const flush = () => { if (run) { out.push(run); run = ''; } };
+  for (const token of normalized.split(' ')) {
+    if (token.length === 1 && /\p{L}/u.test(token)) { run += token; continue; }
+    flush(); out.push(token);
+  }
+  flush();
+  return out;
 }
 
 /** TERMINAL legal-form words. Removed only from the END of a name, never from the middle. */

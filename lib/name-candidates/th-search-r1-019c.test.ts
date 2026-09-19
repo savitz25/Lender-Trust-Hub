@@ -56,6 +56,14 @@ test('01 full, lowercase, legal-suffix and punctuation variants recover the SAME
   assert.equal(first('1st Source Bank')?.institution.displayName, '1st Source Bank', 'numbers are kept');
 });
 
+test('01b dotted / spaced initialisms are the same search form as the joined letters (found by holdout run 1: V.I.P. vs VIP)', () => {
+  const cat = [inst('V.I.P. Mortgage, Inc.'), inst('U.S. Prairie Bank, N.A.'), inst('VIPER Lending')];
+  const top = (q: string) => searchNameCandidates(cat, q).candidates[0];
+  for (const q of ['VIP MORTGAGE INC', 'V.I.P. Mortgage', 'v i p mortgage', 'vip mortgage']) { assert.equal(top(q)?.institution.displayName, 'V.I.P. Mortgage, Inc.', q); assert.ok(top(q)!.rank <= 3, q); }
+  assert.equal(top('US Prairie Bank')?.institution.displayName, 'U.S. Prairie Bank, N.A.');
+  assert.equal(top('U S Prairie Bank NA')?.institution.displayName, 'U.S. Prairie Bank, N.A.');
+});
+
 test('02 a short distinctive prefix returns the actually related institutions -- several Allied records, whole words only', () => {
   const got = keys('Allied');
   assert.deepEqual([...got].sort(), ['Allied First Federal Credit Union', 'Allied Home Lending, LLC', 'Allied Mortgage Group Inc.', 'Alliedbank Mortgage', 'First Allied Bank, N.A.'].sort());
