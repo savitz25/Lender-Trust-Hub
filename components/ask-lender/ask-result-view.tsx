@@ -7,7 +7,7 @@ function fmt(n: number): string {
 
 export function AskResultView({ result, question }: { result: AskExecution; question: string }) {
   return (
-    <div className="intel-ask-result" style={{ minWidth: 0, overflowWrap: 'anywhere' }}>
+    <div className="intel-ask-result" style={{ minWidth: 0, overflowWrap: 'anywhere' }} data-name-candidates-state={result.nameCandidates?.state} data-searched-name={result.nameCandidates?.suppliedName}>
       <p className="intel-eyebrow">We interpreted your question as</p>
       <dl className="intel-interpretation-grid">
         {result.interpretation.map((line) => (
@@ -82,7 +82,7 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
             <caption className="visually-hidden">{result.headline}</caption>
             <thead>
               <tr>
-                <th scope="col">{result.query.identityQuery ? 'Identity relevance order' : 'Market activity order'}</th>
+                <th scope="col">{result.nameCandidates ? 'Name match order' : result.query.identityQuery ? 'Identity relevance order' : 'Market activity order'}</th>
                 <th scope="col">Institution / LEI</th>
                 <th scope="col">{result.rows[0]?.metricLabel ?? 'Count'}</th>
                 <th scope="col">Why this matched</th>
@@ -117,6 +117,8 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
                       <Link className="intel-text-link" data-specialist-event="profile_open" href={row.href}>
                         {row.hrefLabel ?? 'Research this lender'}
                       </Link>
+                    ) : row.officialHref ? (
+                      <>No LenderTrustHub profile. <a className="intel-text-link" href={row.officialHref} rel="noopener noreferrer" target="_blank" data-specialist-event="official_verification_open">{row.officialLabel ?? 'Verify with the official registry'}</a></>
                     ) : (
                       'Not a public profile'
                     )}
@@ -151,7 +153,7 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
         <nav className="intel-ask-pager" aria-label="Result pages">
           {result.page && result.page > 1 ? <Link href={askPageHref(result.sharePath, result.page - 1)}>Previous</Link> : <span>Previous</span>}
           <span>
-            Page {result.page} of {result.pageCount} · {fmt(result.totalRows)} reporting institutions
+            Page {result.page} of {result.pageCount} · {fmt(result.totalRows)} {result.nameCandidates ? 'name candidate records' : 'reporting institutions'}
           </span>
           {result.page && result.page < result.pageCount ? <Link href={askPageHref(result.sharePath, result.page + 1)}>Next</Link> : <span>Next</span>}
         </nav>
