@@ -733,7 +733,10 @@ export function upsertSavedLender(
   if (!plan) {
     plan = ensureActivePlan({ label: 'My financing research' });
     Object.assign(state, loadState());
-    plan = getActivePlan(state)!;
+    plan = getActivePlan(state);
+    if (!plan) {
+      return { ok: false, error: getLastSaveError() ?? 'Could not save My Lending on this device. Please try again.' };
+    }
   }
 
   const profilePath = input.profilePath || `/lenders/${input.lenderSlug}`;

@@ -64,6 +64,9 @@ export async function pullMyLendingWorkspace(
       return 'error';
     }
 
+    // The request may finish after sign-out or an account switch. Never apply
+    // another owner's payload to the now-active workspace.
+    if (getMyLendingStorageUserId() !== userId) return 'skipped';
     const local = loadState();
     const localTs = getStateMaxUpdatedAt(local);
     const remotePayload = data ? asWorkspacePayload(data.payload) : null;
@@ -94,7 +97,7 @@ export async function pushMyLendingWorkspace(
   state?: MyLendingState
 ): Promise<SyncPushResult> {
   if (!userId) return 'skipped';
-  if (getMyLendingStorageUserId() && getMyLendingStorageUserId() !== userId) {
+  if (getMyLendingStorageUserId() !== userId) {
     return 'skipped';
   }
 
