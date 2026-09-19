@@ -264,13 +264,14 @@ export function executeAskQuery(input: AskQueryInput): AskExecution {
       return stampContract(lookupOutcome('INVALID', 'Structured identity fields must agree with the complete labeled question.', value, parsed, parsed.identityRequest));
     }
   }
-  if (parsed.identityRequest) return stampContract(executeIdentityLookup(value, parsed, parsed.identityRequest));
   // TH-SEARCH-R1-019C: an ordinary institution NAME runs the shared candidate engine (the same one the
   // network operation uses). Identifiers above keep precedence; a structured plan from a caller is not reinterpreted.
   if (!structured) {
-    const nameDecision = decideNativeNameSearch(value.q, parsed);
+    // `parsed` already has URL overrides applied; the decision sees the parser's reading of the TEXT and lists the overrides as conditions.
+    const nameDecision = decideNativeNameSearch(value.q, parseLenderAsk(value.q), undefined, value.overrides);
     if (nameDecision) return stampContract(executeNativeNameCandidates(value, parsed, nameDecision));
   }
+  if (parsed.identityRequest) return stampContract(executeIdentityLookup(value, parsed, parsed.identityRequest));
   if (parsed.failClosedKind === 'malformed' || parsed.failClosedKind === 'unsupported-identity-grain') value.structuredQuery = undefined;
   const scalarStructured = structured?.mode === 'count' || structured?.mode === 'aggregate';
   if (scalarStructured && parsed.mode === 'fail_closed') value.structuredQuery = undefined;

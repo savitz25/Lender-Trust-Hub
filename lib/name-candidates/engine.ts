@@ -67,6 +67,12 @@ export type CandidateSearchResult = {
   page: number;
   limit: number;
   hasMore: boolean;
+  /** Candidates reachable through paging: min(total, CANDIDATE_WINDOW). Ranking is applied BEFORE this cap. */
+  reachable: number;
+  /** True when more candidates matched than the bounded window exposes. The customer must refine the name. */
+  truncated: boolean;
+  /** The requested page starts beyond the reachable window. It is an empty page, never a repeat of the last one. */
+  outOfRange: boolean;
   /** More than one DISTINCT institution key matched at full-name strength. */
   exactNameAmbiguous: boolean;
   catalogSize: number;
@@ -74,7 +80,13 @@ export type CandidateSearchResult = {
 
 export const CANDIDATE_DEFAULT_LIMIT = 10;
 export const CANDIDATE_MAX_LIMIT = 25;
-export const CANDIDATE_MAX_PAGE = 40;
+/**
+ * ONE bounded paging policy for every caller. At most CANDIDATE_WINDOW best-ranked candidates are
+ * reachable, whatever the page size; `hasMore` and page counts are computed against that window, so a
+ * next page is never advertised unless it can be fetched. Beyond the window the result says `truncated`.
+ */
+export const CANDIDATE_WINDOW = 200;
+export const maxCandidatePage = (limit: number) => Math.max(1, Math.ceil(CANDIDATE_WINDOW / limit));
 export const CANDIDATE_NAME_MAX_LENGTH = 120;
 const MIN_PARTIAL_TOKEN = 3;
 
@@ -133,9 +145,9 @@ export function searchNameCandidates(
 ): CandidateSearchResult {
   const suppliedName = (rawName ?? '').trim();
   const limit = Math.min(Math.max(1, Math.trunc(options.limit ?? CANDIDATE_DEFAULT_LIMIT)), CANDIDATE_MAX_LIMIT);
-  const page = Math.min(Math.max(1, Math.trunc(options.page ?? 1)), CANDIDATE_MAX_PAGE);
+  const page = Math.max(1, Math.trunc(options.page ?? 1));
   const normalizedName = normalizeCandidateName(suppliedName);
-  const empty = { suppliedName, normalizedName, candidates: [], total: 0, page, limit, hasMore: false, exactNameAmbiguous: false, catalogSize: catalog.length };
+  const empty = { suppliedName, normalizedName, candidates: [], total: 0, page, limit, hasMore: false, reachable: 0, truncated: false, outOfRange: false, exactNameAmbiguous: false, catalogSize: catalog.length };
   if (!normalizedName || suppliedName.length > CANDIDATE_NAME_MAX_LENGTH) return { ...empty, predicateApplied: false };
 
   const query = prepare(suppliedName);
@@ -156,11 +168,13 @@ export function searchNameCandidates(
     || a.institution.institutionKey.localeCompare(b.institution.institutionKey, 'en'));
 
   const start = (page - 1) * limit;
+  const reachable = Math.min(all.length, CANDIDATE_WINDOW);
   const fullNameKeys = new Set(all.filter((c) => c.rank <= 3).map((c) => c.institution.institutionKey));
   return {
     suppliedName, normalizedName, predicateApplied: true,
-    candidates: all.slice(start, start + limit),
-    total: all.length, page, limit, hasMore: start + limit < all.length,
+    candidates: all.slice(0, reachable).slice(start, start + limit),
+    total: all.length, page, limit, hasMore: start + limit < reachable,
+    reachable, truncated: all.length > reachable, outOfRange: reachable > 0 && start >= reachable,
     exactNameAmbiguous: fullNameKeys.size > 1,
     catalogSize: catalog.length,
   };

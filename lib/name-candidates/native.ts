@@ -5,67 +5,128 @@
  * AskExecution the page and /api/ask already render. Matching and scope live in engine.ts /
  * catalog.ts and are shared, unchanged, with the network operation.
  *
- * Protected and untouched: labeled identifiers (strongest precedence), HMDA counts, property
- * geography, definitions, licensing and evidence questions, personal-advice refusals. A name result
- * never carries complaint or status evidence.
+ * The decision is STRUCTURAL, not a word blacklist:
+ *   - validated label + value identifiers keep strongest precedence (parser's identityRequest);
+ *   - what the existing parser explicitly CAPTURED as a definition or evidence request is protected;
+ *   - otherwise a text is a name attempt when the ENGINE itself says its distinctive words name an
+ *     institution (or the whole text equals a source name), or when no other reading understood it.
+ * Vocabulary alone ("Charter", "Branch", "Best", "First") never rejects or forces a name.
+ * Every condition the customer supplied but a name search cannot apply is kept and shown.
  */
 import type { AskExecution, AskInstitutionRow, LenderResearchQuery } from '@/lib/ask-lender/types';
 import { LENDER_ASK_CONTRACT } from '@/lib/ask-lender/types';
 import type { ValidAskInput } from '@/lib/ask-lender/request';
+import type { AskUrlOverrides } from '@/lib/ask-lender/parse';
+import { STATE_NAMES } from '@/lib/home-intel/states';
 import { GLEIF_RECORD_URL, loadCandidateCatalog, type CandidateCatalog } from './catalog';
-import { CANDIDATE_MAX_LIMIT, MATCH_METHODS, searchNameCandidates, type MatchMethod } from './engine';
+import { CANDIDATE_MAX_LIMIT, CANDIDATE_WINDOW, MATCH_METHODS, searchNameCandidates, type MatchMethod } from './engine';
+import { candidateTokens, distinctiveTokens } from './normalize';
+import { hasGenuineLabeledIdentifier } from './request-shape';
 
 export type NativeNameDecision = {
   name: string;
-  basis: 'PARSER_ENTITY_NAME' | 'BARE_NAME' | 'QUOTED_NAME' | 'FULL_SOURCE_NAME_OVER_OTHER_READING';
-  /** Explicit conditions the customer typed that a name search does not apply. Shown, never silently dropped. */
+  basis: 'PARSER_ENTITY_NAME' | 'ONLY_READING' | 'QUOTED_NAME' | 'FULL_SOURCE_NAME' | 'DISTINCTIVE_WORDS_NAME_AN_INSTITUTION' | 'NAME_SHAPED_SOURCE_UNAVAILABLE';
+  /** Conditions the customer supplied that a name search does not apply. Shown as NOT APPLIED, never silently dropped. */
   unresolvedConditions: string[];
 };
 
 const LEAD_VERB = /^(?:please\s+)?(?:find|research|look\s*up|lookup|search(?:\s+for)?|show(?:\s+me)?)\s+/i;
-const SENTENCE_START = /^(?:how|what|which|who|whom|whose|where|when|why|is|are|was|were|does|do|did|can|could|should|would|will|i|im|i'm|we|my|our|need|want|looking|compare|list|tell|help|best|top|cheapest|lowest)\b/i;
-const NOT_A_NAME = /\b(?:how many|number of|counts?|applications?|originations?|originated|denials?|denied|market share|rates?|apr|complaints?|enforcement|violations?|lawsuits?|licens\w*|reviews?|near me|my area|my county|vs|versus)\b/i;
-const IDENTIFIER_SHAPED = /\b(?:nmls|lei|fdic|ncua)\b|^[\d\s#-]+$|^[A-Za-z0-9]{20}$/i;
+/** "<name> in|near|around|serving <place>": an explicit location CONDITION attached to a name. */
 const LOCATIVE_SPLIT = /^(.+?)\s+(in|near|around|serving)\s+(.+)$/i;
 const FULL_NAME_RANK = 4;
+const MAX_NAME_WORDS = 10;
 
-function nameShaped(text: string): boolean {
-  if (text.length < 2 || text.length > 120 || text.includes('?')) return false;
-  if (SENTENCE_START.test(text) || NOT_A_NAME.test(text) || IDENTIFIER_SHAPED.test(text)) return false;
-  return text.split(/\s+/).length <= 10;
+type Probe = 'full_name' | 'candidates' | 'none' | 'unavailable';
+function probeEngine(text: string, catalog: () => CandidateCatalog): Probe {
+  let institutions;
+  try { institutions = catalog().institutions; } catch { return 'unavailable'; } // a failed source is NOT evidence that a text is not a name
+  const top = searchNameCandidates(institutions, text, { limit: 1 }).candidates[0];
+  return !top ? 'none' : top.rank <= FULL_NAME_RANK ? 'full_name' : 'candidates';
 }
 
-/**
- * `parsed` is the existing parser's reading. It wins unless (a) nothing else understood the text, or
- * (b) the WHOLE text is an institution's source name. A category or place reading is never overridden
- * by a partial match, so "Texas mortgage lenders" stays a cohort question.
- */
-export function decideNativeNameSearch(raw: string, parsed: LenderResearchQuery, catalog: () => CandidateCatalog = loadCandidateCatalog): NativeNameDecision | null {
-  if (parsed.identityRequest || parsed.identifier) return null; // exact identifiers keep strongest precedence
+/** Words of the text that could distinguish an institution, excluding geography the parser already consumed as a place. */
+function decisionDistinctive(text: string, parsed: LenderResearchQuery): string[] {
+  const geo = parsed.geography;
+  const place = new Set(candidateTokens([geo?.state ? STATE_NAMES[geo.state] : '', geo?.state ?? '', geo?.county ?? ''].join(' ')));
+  return distinctiveTokens(candidateTokens(text)).filter((token) => !place.has(token));
+}
+
+function overrideConditions(overrides: AskUrlOverrides | undefined): string[] {
+  const out: string[] = [];
+  if (overrides?.action) out.push(`filter action: ${overrides.action}`);
+  if (overrides?.loanType) out.push(`filter loan type: ${overrides.loanType}`);
+  if (overrides?.geo) out.push(`filter geography: ${overrides.geo}`);
+  return out;
+}
+
+/** What the customer typed besides the name, for a name the parser extracted on its own ("Rocket Mortgage company in Texas"). */
+function residualCondition(original: string, name: string): string | null {
+  const index = original.toLowerCase().indexOf(name.toLowerCase());
+  if (index < 0) return null;
+  const rest = `${original.slice(0, index)} ${original.slice(index + name.length)}`.replace(LEAD_VERB, ' ').replace(/[.!?\s]+$/, '').trim().replace(/\s+/g, ' ');
+  const words = rest.split(' ').filter(Boolean);
+  while (words.length && distinctiveTokens(candidateTokens(words[0]!)).length === 0 && !/^(?:in|near|around|serving)$/i.test(words[0]!)) words.shift();
+  return words.length ? words.join(' ') : null;
+}
+
+export function decideNativeNameSearch(
+  raw: string, parsed: LenderResearchQuery,
+  catalog: () => CandidateCatalog = loadCandidateCatalog, overrides?: AskUrlOverrides,
+): NativeNameDecision | null {
+  // Protected captures of the existing parser.
+  // Validated label + value syntax is an identifier request. A label WORD with no valid value ("LEI Financial Group",
+  // "NMLS Lending Corp") is not: it may still be a name, but only if the engine actually finds that institution.
+  if (hasGenuineLabeledIdentifier(raw ?? '')) return null;
+  const labelWordOnly = Boolean(parsed.identityRequest || parsed.identifier);
   if (parsed.evidenceFamilies?.length || parsed.mode === 'definition' || parsed.mode === 'evidence') return null;
-  if (parsed.mode === 'entity' && parsed.identityQuery) return { name: parsed.identityQuery, basis: 'PARSER_ENTITY_NAME', unresolvedConditions: [] };
-  if (parsed.mode === 'fail_closed' && parsed.failClosedKind === 'malformed') return null;
+  if (parsed.mode === 'fail_closed' && (parsed.failClosedKind === 'malformed' || parsed.failClosedKind === 'empty')) return null;
 
-  const trimmed = (raw ?? '').trim().replace(/\s+/g, ' ');
-  const quoted = trimmed.match(/^["“]([^"”]{2,120})["”]$/)?.[1]?.trim();
-  if (quoted && !IDENTIFIER_SHAPED.test(quoted)) return { name: quoted, basis: 'QUOTED_NAME', unresolvedConditions: [] };
-
-  const text = trimmed.replace(LEAD_VERB, '').replace(/[.!\s]+$/, '').trim();
-  const fullName = (candidate: string) => {
-    try { return searchNameCandidates(catalog().institutions, candidate, { limit: 1 }).candidates.some((c) => c.rank <= FULL_NAME_RANK); } catch { return false; }
+  const original = (raw ?? '').trim().replace(/\s+/g, ' ');
+  const filters = overrideConditions(overrides);
+  const decide = (name: string, basis: NativeNameDecision['basis'], conditions: string[]): NativeNameDecision => {
+    const all = [...conditions];
+    // Geography the parser resolved from the text but that is neither part of the name nor already listed.
+    const state = parsed.geography?.state ? STATE_NAMES[parsed.geography.state] : null;
+    const place = parsed.geography?.county ?? state;
+    if (place && !name.toLowerCase().includes(place.toLowerCase()) && !all.some((c) => c.toLowerCase().includes(place.toLowerCase()))) all.push(`location: ${place}`);
+    return { name, basis, unresolvedConditions: [...all, ...filters] };
   };
 
-  // "<institution name> in <place>": a name with an explicit location condition. The name is searched; the
-  // condition stays visible as not applied (HMDA geography is property location, not lender location).
-  const split = text.match(LOCATIVE_SPLIT);
-  if (split && nameShaped(split[1]!) && fullName(split[1]!)) {
-    return { name: split[1]!.trim(), basis: 'FULL_SOURCE_NAME_OVER_OTHER_READING', unresolvedConditions: [`${split[2]} ${split[3]}`] };
+  // The parser itself extracted an institution name. Conditions come from the ORIGINAL text, not from the parser's name.
+  if (parsed.mode === 'entity' && parsed.identityQuery && !labelWordOnly) {
+    const residual = residualCondition(original, parsed.identityQuery);
+    return decide(parsed.identityQuery, 'PARSER_ENTITY_NAME', residual ? [residual] : []);
   }
-  if (!nameShaped(text) || /\s(?:in|near|around|serving)\s/i.test(` ${text} `)) return null;
 
-  const nothingElseUnderstoodIt = parsed.mode === 'fail_closed' && parsed.failClosedKind === 'unsupported';
-  if (nothingElseUnderstoodIt) return { name: text, basis: 'BARE_NAME', unresolvedConditions: [] };
-  return fullName(text) ? { name: text, basis: 'FULL_SOURCE_NAME_OVER_OTHER_READING', unresolvedConditions: [] } : null;
+  const quoted = original.match(/^["“]([^"”]{2,120})["”]$/)?.[1]?.trim();
+  if (quoted) return hasGenuineLabeledIdentifier(quoted) ? null : decide(quoted, 'QUOTED_NAME', []);
+
+  let text = original.replace(LEAD_VERB, '').replace(/[.!\s]+$/, '').trim();
+  if (text.length < 2 || text.length > 120 || text.includes('?') || text.split(' ').length > MAX_NAME_WORDS + 4) return null;
+
+  const conditions: string[] = [];
+  const split = text.match(LOCATIVE_SPLIT);
+  if (split) {
+    const left = probeEngine(split[1]!, catalog);
+    const leftDistinctive = decisionDistinctive(split[1]!, { ...parsed, geography: undefined }).length > 0;
+    // Only a name on the left makes this "<name> in <place>"; otherwise it is ordinary location research ("lenders in Texas").
+    if (left === 'full_name' || ((left === 'candidates' || left === 'unavailable') && leftDistinctive)) { text = split[1]!.trim(); conditions.push(`${split[2]} ${split[3]}`); }
+    else return null;
+  }
+  if (text.split(' ').length > MAX_NAME_WORDS) return null;
+
+  const probe = probeEngine(text, catalog);
+  const distinctive = decisionDistinctive(text, parsed).length > 0;
+  const onlyReading = parsed.mode === 'fail_closed' && parsed.failClosedKind === 'unsupported';
+  if (probe === 'full_name') return decide(text, 'FULL_SOURCE_NAME', conditions);
+  if (probe === 'candidates' && distinctive) return decide(text, 'DISTINCTIVE_WORDS_NAME_AN_INSTITUTION', conditions);
+  if (labelWordOnly) return null; // no institution carries these words: the existing identifier-input guidance applies
+  // The source failed. An organization-shaped text is still a NAME request: it fails as SOURCE_UNAVAILABLE with
+  // the name kept -- it is never quietly re-run as an unrelated cohort.
+  if (probe === 'unavailable' && (distinctive || onlyReading)) return decide(text, 'NAME_SHAPED_SOURCE_UNAVAILABLE', conditions);
+  // Nothing else understood the text: search it as a name; a miss keeps the name for refinement.
+  if (onlyReading) return decide(text, 'ONLY_READING', conditions);
+  return null;
 }
 
 const METHOD_LABEL: Record<MatchMethod, string> = {
@@ -95,7 +156,7 @@ export function executeNativeNameCandidates(input: ValidAskInput, parsed: Lender
     { label: 'Entity grain', value: 'Lender institution — not branch or MLO' },
     ...decision.unresolvedConditions.map((value) => ({ label: 'Not applied', value })),
   ];
-  const conditionCaveats = decision.unresolvedConditions.map((value) => `"${value}" was not applied. Candidates are matched by name only; HMDA geography is the property location, not where a lender is located or licensed.`);
+  const conditionCaveats = decision.unresolvedConditions.map((value) => `NOT APPLIED: "${value}". Candidates are matched by name only. HMDA geography is the property location, not where a lender is located or licensed, so no institution location, loan type or action filter was inferred.`);
 
   let catalog: CandidateCatalog;
   try { catalog = loadCatalog(); } catch {
@@ -133,7 +194,7 @@ export function executeNativeNameCandidates(input: ValidAskInput, parsed: Lender
       evidenceAvailable: [institution.entityType],
     };
   });
-  const pageCount = Math.max(1, Math.ceil(result.total / result.limit));
+  const pageCount = Math.max(1, Math.ceil(result.reachable / result.limit)); // the SAME bounded window the network operation pages over
   const found = result.total > 0;
   return {
     query, interpretation,
@@ -143,11 +204,15 @@ export function executeNativeNameCandidates(input: ValidAskInput, parsed: Lender
       : `No institution name matched “${decision.name}”`,
     body: found
       ? 'These are name candidates from published lender profiles and HMDA reporting institutions. Similarly named records are separate institutions unless an identifier says otherwise. Counts here are candidate records, not market activity.'
-      : 'Your name was kept. Check the spelling, try a shorter distinctive part of the name, or research a labeled NMLS or LEI. Institutions known only through an exact identifier lookup are not searchable by name, so a miss does not mean an institution does not exist.',
+      : 'Your name was kept. Nothing matched within the searched sources: published lender profiles and HMDA reporting institutions. That is not a finding that no such institution exists. Check the spelling, try a shorter distinctive part of the name, or research a labeled NMLS or LEI.',
     rows, totalRows: result.total, page: result.page, pageSize: result.limit, pageCount, sharePath,
-    nameCandidates: { suppliedName: decision.name, state: found ? (result.exactNameAmbiguous ? 'AMBIGUOUS_EXACT_NAME' : 'CANDIDATES') : 'NO_MATCH', total: result.total, unresolvedConditions: decision.unresolvedConditions },
+    nameCandidates: { suppliedName: decision.name, state: found ? (result.exactNameAmbiguous ? 'AMBIGUOUS_EXACT_NAME' : 'CANDIDATES') : 'NO_MATCH', total: result.total, unresolvedConditions: decision.unresolvedConditions, reachable: result.reachable, truncated: result.truncated },
     period: 'Committed identity files (no as-of date supplied by the source)', grain: 'lender institution name candidates',
-    caveats: [...conditionCaveats, 'NMLS institution IDs, branch IDs, and person/MLO IDs are separate identity classes. People and branches are not searchable by name.'],
+    caveats: [...conditionCaveats,
+      ...(result.truncated ? [`More than ${CANDIDATE_WINDOW} institutions matched. Only the ${CANDIDATE_WINDOW} strongest matches can be paged through; add a distinctive word to narrow the name. This list is not exhaustive.`] : []),
+      ...(result.outOfRange ? ['This page is past the end of the reachable candidates. No records were repeated.'] : []),
+      'A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists.',
+      'NMLS institution IDs, branch IDs, and person/MLO IDs are separate identity classes. People and branches are not searchable by name.'],
     trace: trace('Name predicate applied to the whole institution catalog before paging: exact/normalized, historical, legal-form and FCU search forms, then word-prefix and distinctive-word candidates.', [catalog.sourceVersion.profiles, 'lib/ask-lender/generated/gleif.json', 'lib/ask-lender/generated/mappings.csv.json']),
     elapsedMs: Date.now() - started,
   };

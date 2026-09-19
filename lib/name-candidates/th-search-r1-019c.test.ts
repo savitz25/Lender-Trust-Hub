@@ -156,7 +156,7 @@ test('12 a source failure is SOURCE_UNAVAILABLE / UNAVAILABLE -- never a miss --
   const boom = () => { throw new Error('secret internal detail'); };
   const op = executeNameCandidates({ name: 'Allied' }, boom);
   assert.equal(op.status, 503); assert.equal(op.body.resultState, 'SOURCE_UNAVAILABLE'); assert.equal(op.body.name.supplied, 'Allied'); assert.doesNotMatch(JSON.stringify(op.body), /secret internal detail/);
-  const native = executeNativeNameCandidates({ q: 'Allied', page: 1, pageSize: 25, overrides: {} }, parseLenderAsk('Allied'), { name: 'Allied', basis: 'BARE_NAME', unresolvedConditions: [] }, boom);
+  const native = executeNativeNameCandidates({ q: 'Allied', page: 1, pageSize: 25, overrides: {} }, parseLenderAsk('Allied'), { name: 'Allied', basis: 'ONLY_READING', unresolvedConditions: [] }, boom);
   assert.equal(native.terminalState, 'UNAVAILABLE'); assert.equal(native.nameCandidates?.state, 'UNAVAILABLE'); assert.match(native.headline, /Allied/); assert.match(native.body, /not a “no match”/);
 });
 
@@ -165,8 +165,8 @@ test('13 the network operation validates input, refuses identifiers/people/branc
   assert.deepEqual(state({ name: 'Allied' }), [200, 'CANDIDATES']);
   assert.deepEqual(state({ name: 'Union Trust Bank' }), [200, 'AMBIGUOUS_EXACT_NAME']);
   assert.deepEqual(state({ name: 'zzqx nonexistent' }), [200, 'NO_MATCH']);
-  assert.deepEqual(state({ name: 'NMLS 3030' }), [422, 'RESTRICTED_SCOPE']); assert.deepEqual(state({ name: '3030' }), [422, 'RESTRICTED_SCOPE']); assert.deepEqual(state({ name: 'John Smith loan officer' }), [422, 'RESTRICTED_SCOPE']);
-  for (const bad of [{}, { name: 5 }, { name: 'A' }, { name: 'x'.repeat(200) }, { name: 'Allied', page: 0 }, { name: 'Allied', limit: 500 }, { name: 'Allied', page: 1.5 }, { name: 'Allied', url: 'https://evil.example' }, { name: 'Allied', rows: [] }, { name: 'Allied', sql: 'select 1' }, { name: 'Allied', operation: 'evidence' }]) assert.deepEqual(state(bad), [400, 'INVALID_REQUEST'], JSON.stringify(bad));
+  assert.deepEqual(state({ name: 'NMLS 3030' }), [422, 'RESTRICTED_SCOPE']); // keyword-shaped names and people: see R1 / R1b
+  for (const bad of [{}, { name: 5 }, { name: 'A' }, { name: 'x'.repeat(200) }, { name: 'Allied', page: 0 }, { name: 'Allied', page: 21, limit: 10 }, { name: 'Allied', limit: 500 }, { name: 'Allied', page: 1.5 }, { name: 'Allied', url: 'https://evil.example' }, { name: 'Allied', rows: [] }, { name: 'Allied', sql: 'select 1' }, { name: 'Allied', operation: 'evidence' }]) assert.deepEqual(state(bad), [400, 'INVALID_REQUEST'], JSON.stringify(bad));
   const ok = executeNameCandidates({ operation: 'name_candidates', name: '  Allied ', page: 1, limit: 2 }, fx).body as unknown as { contract: string; schemaFingerprint: string; name: { supplied: string; predicateApplied: boolean }; pagination: { returned: number; total: number; hasMore: boolean }; candidates: Array<{ stableKey: string; match: { value: string; field: string; method: string } }> };
   assert.equal(ok.contract, NAME_CANDIDATES_CONTRACT); assert.equal(ok.schemaFingerprint, NAME_CANDIDATES_SCHEMA_FINGERPRINT);
   assert.deepEqual(ok.name.supplied, 'Allied'); assert.equal(ok.name.predicateApplied, true);
@@ -178,7 +178,7 @@ test('13 the network operation validates input, refuses identifiers/people/branc
 test('14 native Ask and the network operation use the same matcher and scope for equivalent inputs', () => {
   for (const q of ['Allied', 'Union Trust Bank', 'Summit', 'Randolph-Brooks FCU', 'zzqx nonexistent']) {
     const op = executeNameCandidates({ name: q, limit: 25 }, fx).body as unknown as { candidates: Array<{ stableKey: string }>; pagination: { total: number } | null };
-    const native = executeNativeNameCandidates({ q, page: 1, pageSize: 25, overrides: {} }, parseLenderAsk(q), { name: q, basis: 'BARE_NAME', unresolvedConditions: [] }, fx);
+    const native = executeNativeNameCandidates({ q, page: 1, pageSize: 25, overrides: {} }, parseLenderAsk(q), { name: q, basis: 'ONLY_READING', unresolvedConditions: [] }, fx);
     assert.deepEqual(native.rows!.map((r) => `lender:${r.institutionKey}`), op.candidates.map((c) => c.stableKey), q);
     assert.equal(native.totalRows, op.pagination?.total ?? 0, q);
   }
@@ -208,7 +208,7 @@ test('17 an explicit location condition on a name stays visible as NOT applied; 
   const d = decideNativeNameSearch('Florida Capital Bank in Texas', parseLenderAsk('Florida Capital Bank in Texas'), fx)!;
   assert.equal(d.name, 'Florida Capital Bank'); assert.deepEqual(d.unresolvedConditions, ['in Texas']);
   const r = executeNativeNameCandidates({ q: 'Florida Capital Bank in Texas', page: 1, pageSize: 25, overrides: {} }, parseLenderAsk('Florida Capital Bank in Texas'), d, fx);
-  assert.ok(r.interpretation.some((line) => line.label === 'Not applied' && line.value === 'in Texas')); assert.ok(r.caveats!.some((c) => /was not applied/.test(c)));
+  assert.ok(r.interpretation.some((line) => line.label === 'Not applied' && line.value === 'in Texas')); assert.ok(r.caveats!.some((c) => /NOT APPLIED: "in Texas"/.test(c)));
   assert.equal(decideNativeNameSearch('Florida Capital Bank', parseLenderAsk('Florida Capital Bank'), fx)?.name, 'Florida Capital Bank');
   assert.equal(decideNativeNameSearch('mortgage lenders in Florida', parseLenderAsk('mortgage lenders in Florida'), fx), null);
 });
@@ -256,4 +256,141 @@ test('21 rendered native result: candidates table, inline research row with offi
   const frost = html('Frost Bank'); assert.match(frost, /Unpublished research identity/); assert.match(frost, /No LenderTrustHub profile/); assert.match(frost, /search\.gleif\.org/); assert.doesNotMatch(frost, /href="\/lender\/frost/);
   const many = html('First', 10); assert.match(many, /name candidate records/); assert.doesNotMatch(many, /reporting institutions<\/span>/);
   const miss = html('Zzqx Nonexistent Lending'); assert.match(miss, /data-name-candidates-state="NO_MATCH"/); assert.match(miss, /Zzqx Nonexistent Lending/);
+});
+
+// ================================================================ REVIEW 1 CORRECTIONS (reviewed head fec563b)
+// ---------------------------------------------------------------- finding 1: no keyword gates
+const KEYWORD_SHAPED = ['Charter Bank', 'Branch River Bank', 'Originator Home Loans', 'LEI Financial Group', 'NMLS Lending Corp', 'Cert Capital Mortgage', 'Best Bank', 'First Person Lending', 'Abcdefghijklmnopqrst'];
+const KEYWORD_CATALOG = () => catalogOf([...KEYWORD_SHAPED.map((n) => inst(n)), inst('Branch River Savings'), inst('Which Way Lending')]);
+
+test('R1 organization names built from identifier / person / branch VOCABULARY reach the catalog and are found (no keyword gate)', () => {
+  for (const q of KEYWORD_SHAPED) {
+    const op = executeNameCandidates({ name: q }, KEYWORD_CATALOG);
+    assert.equal(op.status, 200, q); assert.notEqual(op.body.resultState, 'RESTRICTED_SCOPE', q);
+    assert.equal((op.body.candidates as Array<{ displayName: string }>)[0]?.displayName, q, `${q} is found by its exact name`);
+    const d = decideNativeNameSearch(q, parseLenderAsk(q), KEYWORD_CATALOG);
+    assert.equal(d?.name, q, `native also treats "${q}" as a name`);
+  }
+  // ordinary PARTIAL names retrieve candidates: exact source-name equality is not a prerequisite for attempting a name search
+  const partial = executeNameCandidates({ name: 'Branch River' }, KEYWORD_CATALOG).body.candidates as Array<{ displayName: string }>;
+  assert.deepEqual(partial.map((c) => c.displayName).sort(), ['Branch River Bank', 'Branch River Savings']);
+  assert.equal(decideNativeNameSearch('Branch River', parseLenderAsk('Branch River'), KEYWORD_CATALOG)?.name, 'Branch River');
+  assert.equal(decideNativeNameSearch('Which Way', parseLenderAsk('Which Way'), KEYWORD_CATALOG)?.name, 'Which Way', 'an interrogative-looking first word does not reject a name');
+});
+
+test('R1b genuine labeled identifiers stay protected by validated label + value syntax; people and branches are unsearchable by construction', () => {
+  for (const q of ['NMLS 3030', 'NMLS #3030', 'nmls id: 3030', 'LEI 549300FGXN1K3HLB1R50', 'NMLS branch 123456', 'Find NMLS 3030']) {
+    const op = executeNameCandidates({ name: q }, KEYWORD_CATALOG); assert.deepEqual([op.status, op.body.resultState], [422, 'RESTRICTED_SCOPE'], q);
+  }
+  // a label with no valid value, a bare number and a 20-letter word are NOT identifiers: they are searched as names
+  for (const q of ['NMLS Lending Corp', 'LEI Financial Group', 'Abcdefghijklmnopqrst', '3030']) assert.notEqual(executeNameCandidates({ name: q }, KEYWORD_CATALOG).body.resultState, 'RESTRICTED_SCOPE', q);
+  // A person or branch request simply finds nothing: the catalog holds institutions only.
+  for (const q of ['Jane Doe loan officer', 'John Smith MLO', 'Springfield branch office']) assert.equal(executeNameCandidates({ name: q }, KEYWORD_CATALOG).body.resultState, 'NO_MATCH', q);
+  const real = loadCandidateCatalog().institutions;
+  assert.ok(real.every((i) => !/person|mlo|branch/i.test(i.entityType) && !/^nmls-(?:person|branch)/i.test(i.institutionKey)), 'no person/branch grain exists in the real catalog');
+  assert.equal(executeAskQuery({ q: 'NMLS 3030' }).nameCandidates, undefined); assert.equal(executeAskQuery({ q: 'NMLS branch 123456' }).nameCandidates, undefined);
+});
+
+// ---------------------------------------------------------------- finding 2: conditions survive every name route
+test('R2 conditions are preserved on EVERY native name route: parser-entity name, candidate-only name, URL-filtered request', () => {
+  // (a) the parser extracts only "Rocket Mortgage" from this text -- the Texas condition must survive
+  const a = executeAskQuery({ q: 'Rocket Mortgage company in Texas' });
+  assert.ok(a.nameCandidates); assert.deepEqual(a.nameCandidates!.unresolvedConditions, ['in Texas']);
+  assert.ok(a.rows!.some((r) => r.nmls === '3030')); assert.ok(a.interpretation.some((l) => l.label === 'Not applied' && l.value === 'in Texas'));
+  assert.ok(a.caveats!.some((c) => /NOT APPLIED: "in Texas"/.test(c))); assert.equal(a.query.geography, undefined, 'HMDA property geography is not converted into an institution location');
+  assert.equal(a.query.coverageState, 'PARTIAL');
+  // (b) an ordinary candidate-only name with a location
+  const b = executeAskQuery({ q: 'Guild Mortgage in Texas' });
+  assert.equal(b.nameCandidates?.suppliedName, 'Guild Mortgage'); assert.deepEqual(b.nameCandidates!.unresolvedConditions, ['in Texas']); assert.ok(b.rows!.every((r) => /guild/i.test(r.displayName)));
+  // (c) validated URL filters are listed, not silently dropped or applied
+  const c = executeAskQuery({ q: 'BMO Bank', overrides: { action: 'denial', loanType: 'FHA', geo: 'TX' } });
+  assert.deepEqual(c.nameCandidates!.unresolvedConditions, ['filter action: denial', 'filter loan type: FHA', 'filter geography: TX']);
+  assert.ok(c.rows!.some((r) => r.nmls === '401052')); assert.equal(c.rows!.every((r) => r.applications === null && r.denials === null), true, 'no HMDA measure is attached to a name candidate');
+  // contrasts: a true HMDA cohort and a ranking question stay what they are, with their geography APPLIED
+  const cohort = executeAskQuery({ q: 'mortgage lenders in Texas' });
+  assert.equal(cohort.nameCandidates, undefined); assert.equal(cohort.query.geography?.state, 'TX'); assert.ok((cohort.rows?.length ?? 0) > 0); assert.ok(cohort.rows!.some((r) => r.metric > 0), 'real market rows');
+  const ranking = executeAskQuery({ q: 'Which lenders originated the most mortgages in Texas' });
+  assert.equal(ranking.nameCandidates, undefined); assert.equal(ranking.query.geography?.state, 'TX');
+  // a place INSIDE a name is the name, not a condition
+  const inside = decideNativeNameSearch('Florida Capital Bank', parseLenderAsk('Florida Capital Bank'), fx)!;
+  assert.equal(inside.name, 'Florida Capital Bank'); assert.deepEqual(inside.unresolvedConditions, []);
+});
+
+test('R2b a catalog failure is never "proof" a text is not a name: the name operation is selected and ends SOURCE unavailable, with no cohort run', () => {
+  let loads = 0; const boom = () => { loads += 1; throw new Error('secret'); };
+  const q = 'Guild Mortgage Company LLC';
+  const parsed = parseLenderAsk(q);
+  assert.notEqual(parsed.failClosedKind, 'unsupported', 'precondition: the parser has an ALTERNATE (cohort) reading of this name');
+  const d = decideNativeNameSearch(q, parsed, boom)!;
+  assert.ok(d, 'still a name request'); assert.equal(d.basis, 'NAME_SHAPED_SOURCE_UNAVAILABLE'); assert.equal(d.name, q);
+  const r = executeNativeNameCandidates({ q, page: 1, pageSize: 25, overrides: {} }, parsed, d, boom);
+  assert.equal(r.terminalState, 'UNAVAILABLE'); assert.equal(r.nameCandidates?.state, 'UNAVAILABLE'); assert.match(r.headline, /Guild Mortgage Company LLC/);
+  assert.deepEqual(r.rows, []); assert.equal(r.volumeEvidence, undefined, 'no broad directory / cohort request was executed instead'); assert.doesNotMatch(JSON.stringify(r), /secret/);
+  // a text with no distinctive word does not depend on the catalog, so its real cohort reading is unaffected by the outage
+  assert.equal(decideNativeNameSearch('mortgage lenders in Texas', parseLenderAsk('mortgage lenders in Texas'), boom), null);
+});
+
+// ---------------------------------------------------------------- finding 3: one coherent bounded paging policy
+test('R3 paging never advertises an unreachable page: window, last page, beyond-end, changed limits, native = service', () => {
+  const big = catalogOf(Array.from({ length: 230 }, (_, i) => inst(`Summit Ridge ${i} Lending`)));
+  const op = (body: Record<string, unknown>) => { const r = executeNameCandidates({ name: 'Summit Ridge', ...body }, () => big); return { status: r.status, p: r.body.pagination as unknown as { total: number; reachable: number; hasMore: boolean; truncated: boolean; outOfRange: boolean; pageCount: number; returned: number }, n: (r.body.candidates as unknown[]).length, limitations: r.body.limitations }; };
+  // limit 1: the old defect (page 40 said hasMore, page 41 was invalid)
+  assert.deepEqual([op({ limit: 1, page: 40 }).p.hasMore, op({ limit: 1, page: 41 }).status, op({ limit: 1, page: 41 }).n], [true, 200, 1]);
+  const last1 = op({ limit: 1, page: 200 }); assert.deepEqual([last1.p.hasMore, last1.n, last1.p.pageCount, last1.p.truncated, last1.p.total, last1.p.reachable], [false, 1, 200, true, 230, 200]);
+  assert.equal(op({ limit: 1, page: 201 }).status, 400, 'a page past the window is rejected, not silently repeated');
+  assert.ok(last1.limitations.some((l) => /not exhaustive/.test(l)), 'a capped window never claims exhaustion');
+  // ordinary size and 25
+  assert.deepEqual([op({ limit: 10 }).p.pageCount, op({ limit: 10, page: 20 }).p.hasMore, op({ limit: 10, page: 20 }).n, op({ limit: 10, page: 21 }).status], [20, false, 10, 400]);
+  assert.deepEqual([op({ limit: 25 }).p.pageCount, op({ limit: 25, page: 8 }).p.hasMore, op({ limit: 25, page: 8 }).n, op({ limit: 25, page: 9 }).status], [8, false, 25, 400]);
+  // following hasMore reaches exactly the window, with distinct keys, whatever the limit
+  for (const limit of [1, 7, 10, 25]) {
+    const keys: string[] = []; let page = 1; let more = true;
+    while (more) { const r = executeNameCandidates({ name: 'Summit Ridge', page, limit }, () => big); assert.equal(r.status, 200, `limit ${limit} page ${page} advertised by hasMore must be fetchable`); keys.push(...(r.body.candidates as Array<{ stableKey: string }>).map((c) => c.stableKey)); more = (r.body.pagination as unknown as { hasMore: boolean }).hasMore; page += 1; }
+    assert.equal(keys.length, 200, `limit ${limit}`); assert.equal(new Set(keys).size, 200, `limit ${limit}: distinct stable keys`);
+  }
+  // a small set: exact last page and a beyond-end request (valid page number, empty, flagged -- never a repeat)
+  const small = catalogOf(Array.from({ length: 74 }, (_, i) => inst(`Harbor ${i} Bank`)));
+  const at = (page: number, limit: number) => { const r = executeNameCandidates({ name: 'Harbor', page, limit }, () => small); return [r.status, (r.body.candidates as unknown[]).length, (r.body.pagination as unknown as { hasMore: boolean }).hasMore, (r.body.pagination as unknown as { outOfRange: boolean }).outOfRange, (r.body.pagination as unknown as { truncated: boolean }).truncated]; };
+  assert.deepEqual(at(74, 1), [200, 1, false, false, false]); assert.deepEqual(at(75, 1), [200, 0, false, true, false]); assert.deepEqual(at(3, 25), [200, 24, false, false, false]); assert.deepEqual(at(4, 25), [200, 0, false, true, false]);
+  // strongest matches come first, BEFORE any cap
+  const ranked = catalogOf([...Array.from({ length: 230 }, (_, i) => inst(`Anchor ${i} Pinnacle Lending`)), inst('Pinnacle')]);
+  assert.equal((executeNameCandidates({ name: 'Pinnacle', limit: 1 }, () => ranked).body.candidates as Array<{ displayName: string }>)[0]!.displayName, 'Pinnacle');
+  // native agrees with the service on the page count and the reachable window
+  for (const pageSize of [1, 10, 25]) {
+    const native = executeNativeNameCandidates({ q: 'Summit Ridge', page: 1, pageSize, overrides: {} }, parseLenderAsk('Summit Ridge'), { name: 'Summit Ridge', basis: 'ONLY_READING', unresolvedConditions: [] }, () => big);
+    assert.equal(native.pageCount, op({ limit: pageSize }).p.pageCount, `pageSize ${pageSize}`); assert.equal(native.nameCandidates?.truncated, true); assert.ok(native.caveats!.some((c) => /not exhaustive/.test(c)));
+  }
+  const nativeLast = executeNativeNameCandidates({ q: 'Summit Ridge', page: 8, pageSize: 25, overrides: {} }, parseLenderAsk('Summit Ridge'), { name: 'Summit Ridge', basis: 'ONLY_READING', unresolvedConditions: [] }, () => big);
+  assert.equal(nativeLast.rows!.length, 25); assert.equal(nativeLast.page, nativeLast.pageCount, 'the pager offers no page after the last reachable one');
+});
+
+// ---------------------------------------------------------------- finding 4: truthful source scope
+test('R4 a miss is a miss WITHIN THE SEARCHED SOURCES; no per-name "restricted record" message exists', () => {
+  const miss = executeNameCandidates({ name: 'Altura Credit Union' });
+  assert.equal(miss.body.resultState, 'NO_MATCH'); assert.ok((miss.body.limitations as string[]).some((l) => /WITHIN THE SEARCHED SCOPE/.test(l) && /not a finding that no such institution exists/.test(l)));
+  const generic = executeNameCandidates({ name: 'Zzqx Nonexistent Lending' });
+  assert.deepEqual(miss.body.limitations, generic.body.limitations, 'an excluded real institution and a nonexistent one are indistinguishable: nothing about restricted rows is revealed');
+  const native = executeAskQuery({ q: 'Altura Credit Union' }); assert.match(native.body, /within the searched sources/i); assert.match(native.body, /not a finding that no such institution exists/i);
+});
+
+// ---------------------------------------------------------------- finding 5: disputed LEI relationships
+test('R5 a disputed profile/LEI relationship is never bridged; the independently public HMDA reporter stays findable on its own', () => {
+  const real = loadCandidateCatalog().institutions;
+  const held = real.filter((i) => i.publicationState === 'identity_hold');
+  assert.equal(held.length, 12);
+  for (const row of held) {
+    assert.equal(row.profilePath, null, `${row.displayName}: no profile is attached through the disputed LEI`); assert.equal(row.nmls, null, 'no identifier is borrowed from the differently named profile');
+    assert.ok(row.lei && row.institutionKey === `hmda-lei:${row.lei}`, 'the HMDA reporter keeps its OWN LEI and its own key');
+    assert.ok(!real.some((p) => p.publicationState === 'public_profile' && p.lei === row.lei), 'no published profile card repeats the disputed LEI');
+  }
+  // Guild Mortgage's LEI sits on the Freedom Mortgage profile in the index: searching one must never return the other.
+  const guild = searchNameCandidates(real, 'Guild Mortgage', { limit: 25 }).candidates;
+  assert.ok(guild.length >= 1 && guild.every((c) => /guild/i.test(c.institution.displayName)) && !guild.some((c) => /freedom/i.test(c.institution.displayName)));
+  assert.equal(guild[0]!.institution.publicationState, 'identity_hold'); assert.equal(guild[0]!.institution.profilePath, null);
+  const freedom = searchNameCandidates(real, 'Freedom Mortgage', { limit: 25 }).candidates;
+  assert.ok(freedom.some((c) => c.institution.publicationState === 'public_profile' && c.institution.profilePath), 'the published profile itself is still discoverable');
+  assert.ok(freedom.every((c) => !/guild/i.test(c.institution.displayName)) && freedom.every((c) => c.institution.lei !== guild[0]!.institution.lei), 'the false bridge is not reproduced');
+  // identity_hold is not blanket permission to publish: a held row offers only the official registry, never a Lender profile
+  const view = (executeNameCandidates({ name: 'Guild Mortgage' }).body.candidates as Array<{ publicationState: string; action: { type: string } | null }>)[0]!;
+  assert.deepEqual([view.publicationState, view.action?.type], ['identity_hold', 'OFFICIAL_IDENTIFIER_VERIFICATION']);
 });

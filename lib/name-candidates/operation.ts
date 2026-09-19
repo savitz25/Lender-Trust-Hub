@@ -8,7 +8,8 @@
  */
 import { createHash } from 'node:crypto';
 import { CATALOG_SCOPE, GLEIF_RECORD_URL, loadCandidateCatalog, type CandidateCatalog } from './catalog';
-import { CANDIDATE_DEFAULT_LIMIT, CANDIDATE_MAX_LIMIT, CANDIDATE_MAX_PAGE, CANDIDATE_NAME_MAX_LENGTH, MATCH_METHODS, searchNameCandidates, type NameCandidate } from './engine';
+import { CANDIDATE_DEFAULT_LIMIT, CANDIDATE_MAX_LIMIT, CANDIDATE_NAME_MAX_LENGTH, CANDIDATE_WINDOW, MATCH_METHODS, maxCandidatePage, searchNameCandidates, type NameCandidate } from './engine';
+import { hasGenuineLabeledIdentifier } from './request-shape';
 
 export const NAME_CANDIDATES_CONTRACT = 'lender-name-candidates-v1' as const;
 export const NAME_CANDIDATES_VERSION = '1.0.0' as const;
@@ -23,6 +24,7 @@ const schema = {
   response: ['contract', 'contractVersion', 'schemaFingerprint', 'resultState', 'name', 'scope', 'source', 'candidates', 'pagination', 'continuation', 'limitations', 'diagnostics'],
   candidate: ['stableKey', 'displayName', 'entityType', 'match', 'identifiers', 'publicationState', 'action', 'source'],
   match: ['method', 'field', 'value', 'sourceLabel', 'explanation', 'isDocumentedSourceName'],
+  pagination: ['page', 'limit', 'returned', 'total', 'reachable', 'hasMore', 'truncated', 'outOfRange', 'pageCount', 'window'],
   resultStates: NAME_CANDIDATE_RESULT_STATES,
   matchMethods: Object.keys(MATCH_METHODS),
 } as const;
@@ -30,9 +32,6 @@ export const NAME_CANDIDATES_SCHEMA_FINGERPRINT = createHash('sha256').update(JS
 
 export type NameCandidatesRequest = { operation?: unknown; name?: unknown; page?: unknown; limit?: unknown; [key: string]: unknown };
 
-/** An identifier, a person or a branch is not an institution-name search. Those keep their own protected operations. */
-const IDENTIFIER_SHAPED = /^(?:\s*(?:nmls|lei|fdic|ncua|charter|cert)\b|[\d\s#-]+$|[A-Za-z0-9]{20}$)/i;
-const PERSON_OR_BRANCH = /\b(?:loan officer|mlo|branch(?:es)?|originator)\b/i;
 
 function candidateView(candidate: NameCandidate) {
   const { institution, matchedName } = candidate;
@@ -94,13 +93,18 @@ export function executeNameCandidates(request: NameCandidatesRequest, loadCatalo
   if (typeof request.name !== 'string') return invalid('name must be a string.');
   const supplied = request.name.trim();
   if (supplied.length < 2 || supplied.length > CANDIDATE_NAME_MAX_LENGTH) return invalid(`name must be 2-${CANDIDATE_NAME_MAX_LENGTH} characters.`, supplied.slice(0, CANDIDATE_NAME_MAX_LENGTH));
-  for (const [key, max] of [['page', CANDIDATE_MAX_PAGE], ['limit', CANDIDATE_MAX_LIMIT]] as const) {
-    const value = request[key];
-    if (value !== undefined && (!Number.isInteger(value) || (value as number) < 1 || (value as number) > max)) return invalid(`${key} must be an integer from 1 to ${max}.`, supplied);
-  }
-  if (IDENTIFIER_SHAPED.test(supplied) || PERSON_OR_BRANCH.test(supplied)) {
+  const limitValue = request.limit;
+  if (limitValue !== undefined && (!Number.isInteger(limitValue) || (limitValue as number) < 1 || (limitValue as number) > CANDIDATE_MAX_LIMIT)) return invalid(`limit must be an integer from 1 to ${CANDIDATE_MAX_LIMIT}.`, supplied);
+  const limit = (limitValue as number | undefined) ?? CANDIDATE_DEFAULT_LIMIT;
+  const maxPage = maxCandidatePage(limit);
+  const pageValue = request.page;
+  if (pageValue !== undefined && (!Number.isInteger(pageValue) || (pageValue as number) < 1 || (pageValue as number) > maxPage)) return invalid(`page must be an integer from 1 to ${maxPage} for limit ${limit} (at most ${CANDIDATE_WINDOW} candidates are reachable).`, supplied);
+  // ONLY validated label + value syntax is an identifier request. Vocabulary alone ("Charter Bank",
+  // "Branch River Bank") is an ordinary name and reaches the catalog. People and branches are excluded by the
+  // institution-only catalog itself, not by keywords.
+  if (hasGenuineLabeledIdentifier(supplied)) {
     return base('RESTRICTED_SCOPE', 422, { ...blank, supplied }, {
-      limitations: ['This operation searches institution NAMES only. Identifiers use the exact-identifier operation; NMLS person/MLO and branch records are not searchable by name.'],
+      limitations: ['This text carries a labeled NMLS or LEI value. Identifiers use the exact-identifier operation; this operation searches institution NAMES only.'],
     });
   }
 
@@ -110,18 +114,19 @@ export function executeNameCandidates(request: NameCandidatesRequest, loadCatalo
     return base('SOURCE_UNAVAILABLE', 503, { ...blank, supplied }, { limitations: ['The institution name sources could not be verified. This is not a "no match" result; retry.'] });
   }
 
-  const result = searchNameCandidates(catalog.institutions, supplied, { page: request.page as number | undefined, limit: (request.limit as number | undefined) ?? CANDIDATE_DEFAULT_LIMIT });
+  const result = searchNameCandidates(catalog.institutions, supplied, { page: pageValue as number | undefined, limit });
   const name = { supplied: result.suppliedName, normalized: result.normalizedName, predicateApplied: result.predicateApplied };
   if (!result.predicateApplied) return invalid('name has no searchable letters or digits.', supplied);
-  const pagination = { page: result.page, limit: result.limit, returned: result.candidates.length, total: result.total, hasMore: result.hasMore, truncated: false, maxPage: CANDIDATE_MAX_PAGE };
+  const pagination = { page: result.page, limit: result.limit, returned: result.candidates.length, total: result.total, reachable: result.reachable, hasMore: result.hasMore, truncated: result.truncated, outOfRange: result.outOfRange, pageCount: Math.max(1, Math.ceil(result.reachable / result.limit)), window: CANDIDATE_WINDOW };
   const continuation = { label: 'Search this name on LenderTrustHub', url: `${LENDER_ORIGIN}/ask?q=${encodeURIComponent(result.suppliedName)}` };
   const common = [
     'A candidate is a name match. It is not a verified identity relationship, a license or status finding, a recommendation, or complaint evidence.',
     'Institutions known to LenderTrustHub only through an exact NMLS/LEI research lookup are not searchable by name; a miss here does not mean an identifier is invalid.',
     'total counts candidate records for this name. It is not market activity.',
+    ...(result.truncated ? [`More than ${CANDIDATE_WINDOW} institutions matched. Only the ${CANDIDATE_WINDOW} strongest matches are reachable; add a distinctive word to narrow the name. The list is not exhaustive.`] : []),
   ];
   if (result.total === 0) {
-    return base('NO_MATCH', 200, name, { pagination, continuation, limitations: ['No institution name in the searched scope matched. Nothing was substituted.', ...common.slice(1)] }, catalog);
+    return base('NO_MATCH', 200, name, { pagination, continuation, limitations: ['No institution name matched WITHIN THE SEARCHED SCOPE (scope.searched). This is not a finding that no such institution exists. Nothing was substituted.', ...common.slice(1)] }, catalog);
   }
   return base(result.exactNameAmbiguous ? 'AMBIGUOUS_EXACT_NAME' : 'CANDIDATES', 200, name, {
     candidates: result.candidates.map(candidateView), pagination, continuation,

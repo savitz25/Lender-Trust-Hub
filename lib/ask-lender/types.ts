@@ -146,7 +146,7 @@ export type AskExecution = {
   elapsedMs?: number;
   terminalState?: LookupState;
   /** TH-SEARCH-R1-019C: present when the result is an institution NAME candidate search. `total` counts candidate records, never market activity. */
-  nameCandidates?: { suppliedName: string; state: 'CANDIDATES' | 'AMBIGUOUS_EXACT_NAME' | 'NO_MATCH' | 'UNAVAILABLE'; total: number | null; unresolvedConditions: string[] };
+  nameCandidates?: { suppliedName: string; state: 'CANDIDATES' | 'AMBIGUOUS_EXACT_NAME' | 'NO_MATCH' | 'UNAVAILABLE'; total: number | null; unresolvedConditions: string[]; reachable?: number; truncated?: boolean };
   lookup?: {
     sourceLookup: 'not_run' | 'attempted' | 'completed';
     scope: string; requestedClass: IdentityClass; resolvedClass: IdentityClass;
