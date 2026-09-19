@@ -1,0 +1,84 @@
+{
+ "request": {
+  "operation": "name_candidates",
+  "name": "Zzqx Nonexistent Lending"
+ },
+ "status": 200,
+ "body": {
+  "contract": "lender-name-candidates-v1",
+  "contractVersion": "1.0.0",
+  "schemaFingerprint": "09e9764c94ec410bfb6426c890ab85c527004af61bbd958d27767842f3489a4b",
+  "resultState": "NO_MATCH",
+  "name": {
+   "supplied": "Zzqx Nonexistent Lending",
+   "normalized": "zzqx nonexistent lending",
+   "predicateApplied": true,
+   "predicate": "Institution source names equal to, beginning with, or containing every distinctive word of the supplied name (case, punctuation, terminal legal form and FCU normalized). Applied to the whole catalog before paging."
+  },
+  "scope": {
+   "searched": [
+    {
+     "code": "published_profiles",
+     "meaning": "Published lender institution profiles (national research cohort and permitted Florida OFR-licensed companies)."
+    },
+    {
+     "code": "hmda_reporting_institutions",
+     "meaning": "HMDA reporting institutions named in the committed GLEIF / curated identity files. Most have no standalone profile."
+    }
+   ],
+   "excluded": [
+    "NMLS person/MLO records",
+    "NMLS branch records",
+    "held or unpublished profile projections",
+    "institutions known only to the exact-identifier research store",
+    "claim and account data"
+   ],
+   "meaning": "Institution grain only. A candidate is a name match, not a verified identity relationship or a regulatory finding."
+  },
+  "source": {
+   "version": {
+    "profiles": "docs/lend-nat-016-search-index.json; lend-nat-014-v1",
+    "hmdaIdentity": "gleif:745; curated-mappings:76",
+    "fingerprint": "6a92189a9aa04614c99a2ac0b6006fcee542b58dd19402f741cdbcea47ec28ff"
+   },
+   "counts": {
+    "publishedProfiles": 311,
+    "hmdaOnly": 663,
+    "identityHold": 12
+   },
+   "clock": {
+    "label": "Source as-of date",
+    "value": null,
+    "note": "The committed identity files do not carry an as-of date; none is invented."
+   }
+  },
+  "candidates": [],
+  "pagination": {
+   "page": 1,
+   "limit": 10,
+   "returned": 0,
+   "total": 0,
+   "reachable": 0,
+   "hasMore": false,
+   "truncated": false,
+   "outOfRange": false,
+   "pageCount": 1,
+   "window": 200
+  },
+  "continuation": {
+   "label": "Search this name on LenderTrustHub",
+   "url": "https://www.lendertrusthub.com/ask?q=Zzqx%20Nonexistent%20Lending"
+  },
+  "limitations": [
+   "No institution name matched WITHIN THE SEARCHED SCOPE (scope.searched). This is not a finding that no such institution exists. Nothing was substituted.",
+   "Institutions known to LenderTrustHub only through an exact NMLS/LEI research lookup are not searchable by name; a miss here does not mean an identifier is invalid.",
+   "total counts candidate records for this name. It is not market activity."
+  ],
+  "diagnostics": {
+   "executionEngine": "lender-name-candidates-v1",
+   "dbReads": 0,
+   "dbWrites": 0,
+   "networkCalls": 0
+  }
+ }
+}

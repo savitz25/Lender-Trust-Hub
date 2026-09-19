@@ -1,0 +1,34 @@
+{
+ "Randolph-Brooks FCU": {
+  "state": "AMBIGUOUS_EXACT_NAME",
+  "headline": "2 institution records with a name like “Randolph-Brooks FCU” — more than one institution carries this name",
+  "rows": [
+   "RANDOLPH-BROOKS",
+   "Randolph-Brooks Federal Credit Union"
+  ]
+ },
+ "Alliant Credit Union": {
+  "state": "CANDIDATES",
+  "headline": "1 institution record with a name like “Alliant Credit Union”",
+  "rows": [
+   "Alliant Credit Union"
+  ]
+ },
+ "VIP Mortgage Inc": {
+  "state": "CANDIDATES",
+  "headline": "1 institution record with a name like “VIP Mortgage Inc”",
+  "rows": [
+   "V.I.P. MORTGAGE, INC."
+  ]
+ },
+ "paginationLimit1": {
+  "page41": {
+   "status": 200,
+   "hasMore": true,
+   "returned": 1
+  },
+  "page201": {
+   "status": 400
+  }
+ }
+}

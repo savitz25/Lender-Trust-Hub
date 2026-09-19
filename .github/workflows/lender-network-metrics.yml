@@ -33,3 +33,6 @@ jobs:
 
       - name: NJ roster refusal degrades to a caveat, not a blanket refusal
         run: npm run check:th-search-r1-015
+
+      - name: Institution name candidates - one engine, evidence stays exact (TH-SEARCH-R1-019C)
+        run: npm run check:th-search-r1-019c

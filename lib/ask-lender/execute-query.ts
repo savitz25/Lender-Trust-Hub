@@ -5,6 +5,7 @@ import { CFPB_COMPANY_MAPPINGS } from '@/lib/cfpb/mappings';
 import { loadCfpbSnapshot } from '@/lib/cfpb/load';
 import { buildLenderHomeIntel } from '@/lib/home-intel/build';
 import { DISCOVERY_RECORDS, nationalPresentationName, searchDiscovery } from '@/lib/national-profile/discovery';
+import { decideNativeNameSearch, executeNativeNameCandidates } from '@/lib/name-candidates/native';
 import { isNationalRenderSlug } from '@/lib/national-profile/publication';
 import { nationalProfilePath } from '@/lib/national-profile/cohort';
 import { ASK_SOURCE_FILES, loadAskCatalog } from './catalog';
@@ -262,6 +263,13 @@ export function executeAskQuery(input: AskQueryInput): AskExecution {
     if (!parsed.identityRequest || other.identityRequest?.problem || other.identifier?.type !== parsed.identifier?.type || other.identifier?.value !== parsed.identifier?.value || (structured.identifier && (structured.identifier.type !== parsed.identifier?.type || structured.identifier.value !== parsed.identifier?.value))) {
       return stampContract(lookupOutcome('INVALID', 'Structured identity fields must agree with the complete labeled question.', value, parsed, parsed.identityRequest));
     }
+  }
+  // TH-SEARCH-R1-019C: an ordinary institution NAME runs the shared candidate engine (the same one the
+  // network operation uses). Identifiers above keep precedence; a structured plan from a caller is not reinterpreted.
+  if (!structured) {
+    // `parsed` already has URL overrides applied; the decision sees the parser's reading of the TEXT and lists the overrides as conditions.
+    const nameDecision = decideNativeNameSearch(value.q, parseLenderAsk(value.q), undefined, value.overrides);
+    if (nameDecision) return stampContract(executeNativeNameCandidates(value, parsed, nameDecision));
   }
   if (parsed.identityRequest) return stampContract(executeIdentityLookup(value, parsed, parsed.identityRequest));
   if (parsed.failClosedKind === 'malformed' || parsed.failClosedKind === 'unsupported-identity-grain') value.structuredQuery = undefined;

@@ -1,0 +1,489 @@
+{
+ "ranAt": "2026-09-19T12:57:33.220Z",
+ "tool": "Playwright headless Chromium; fresh context per viewport; deviceScaleFactor 1; real keyboard + mouse events",
+ "viewports": {
+  "390": {
+   "bmoPositive": {
+    "typed": "BMO Bank",
+    "submittedBy": "real keyboard Enter",
+    "enterEventTrusted": "true",
+    "state": "CANDIDATES",
+    "searched": "BMO Bank",
+    "headline": "1 institution record with a name like “BMO Bank”",
+    "rows": [
+     "BMO Bank"
+    ],
+    "firstRow": "1 BMO Bank LEI 3Y4U8VZURTYWI1W2K376 · NMLS 401052 Same name The entered name equals this source name after case, spacing and punctuation normalization. Matched published profile canonical name: “BMO Bank”. Public researc",
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "BMO Bank",
+    "overflow": false
+   },
+   "resultActionClick": {
+    "clickedBy": "real mouse click",
+    "navigatedTo": "/lender/bmo-bank",
+    "href": "/lender/bmo-bank",
+    "localStatusNote": "local build has no database credentials; see canonicalLinkCheck for the separate production check"
+   },
+   "afterHistoryBack": {
+    "state": "CANDIDATES",
+    "searched": "BMO Bank",
+    "headline": "1 institution record with a name like “BMO Bank”",
+    "rows": [
+     "BMO Bank"
+    ],
+    "firstRow": "1 BMO Bank LEI 3Y4U8VZURTYWI1W2K376 · NMLS 401052 Same name The entered name equals this source name after case, spacing and punctuation normalization. Matched published profile canonical name: “BMO Bank”. Public researc",
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "BMO Bank",
+    "overflow": false
+   },
+   "afterRefresh": {
+    "state": "CANDIDATES",
+    "searched": "BMO Bank",
+    "headline": "1 institution record with a name like “BMO Bank”",
+    "rows": [
+     "BMO Bank"
+    ],
+    "firstRow": "1 BMO Bank LEI 3Y4U8VZURTYWI1W2K376 · NMLS 401052 Same name The entered name equals this source name after case, spacing and punctuation normalization. Matched published profile canonical name: “BMO Bank”. Public researc",
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "BMO Bank",
+    "overflow": false
+   },
+   "keywordShapedOrganization": {
+    "typed": "Branch River Bank",
+    "submittedBy": "real keyboard Enter",
+    "enterEventTrusted": "true",
+    "state": "CANDIDATES",
+    "searched": "Branch River Bank",
+    "headline": "2 institution records with a name like “Branch River Bank”",
+    "rows": [
+     "Branch River Bank",
+     "Branch River Savings"
+    ],
+    "firstRow": "1 Branch River Bank Same name The entered name equals this source name after case, spacing and punctuation normalization. Matched fixture name: “Branch River Bank”. Unpublished research identity Not a public profile",
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "Branch River Bank",
+    "overflow": false
+   },
+   "keywordShapedCharter": {
+    "typed": "Charter Bank",
+    "submittedBy": "real keyboard Enter",
+    "enterEventTrusted": "true",
+    "state": "CANDIDATES",
+    "searched": "Charter Bank",
+    "headline": "1 institution record with a name like “Charter Bank”",
+    "rows": [
+     "Charter Bank"
+    ],
+    "firstRow": "1 Charter Bank Same name The entered name equals this source name after case, spacing and punctuation normalization. Matched fixture name: “Charter Bank”. Unpublished research identity Not a public profile",
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "Charter Bank",
+    "overflow": false
+   },
+   "keywordPartial": {
+    "typed": "Branch River",
+    "submittedBy": "real keyboard Enter",
+    "enterEventTrusted": "true",
+    "state": "CANDIDATES",
+    "searched": "Branch River",
+    "headline": "2 institution records with a name like “Branch River”",
+    "rows": [
+     "Branch River Bank",
+     "Branch River Savings"
+    ],
+    "firstRow": "1 Branch River Bank Name begins with The source name begins with the entered words. Matched fixture name: “Branch River Bank”. Unpublished research identity Not a public profile",
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "Branch River",
+    "overflow": false
+   },
+   "retainedCondition": {
+    "typed": "Rocket Mortgage company in Texas",
+    "submittedBy": "real keyboard Enter",
+    "enterEventTrusted": "true",
+    "state": "CANDIDATES",
+    "searched": "Rocket Mortgage",
+    "headline": "1 institution record with a name like “Rocket Mortgage”",
+    "rows": [
+     "Rocket Mortgage"
+    ],
+    "firstRow": "1 Rocket Mortgage LEI 549300FGXN1K3HLB1R50 · NMLS 3030 Same name The entered name equals this source name after case, spacing and punctuation normalization. Matched published profile canonical name: “Rocket Mortgage”. Pu",
+    "notApplied": [
+     "in Texas"
+    ],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "NOT APPLIED: \"in Texas\". Candidates are matched by name only. HMDA geography is the property location, not where a lender is located or licensed, so no institution location, loan type or action filter was inferred.",
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "Rocket Mortgage company in Texas",
+    "overflow": false
+   },
+   "miss": {
+    "typed": "Zzqx Nonexistent Lending",
+    "submittedBy": "real keyboard Enter",
+    "enterEventTrusted": "true",
+    "state": "NO_MATCH",
+    "searched": "Zzqx Nonexistent Lending",
+    "headline": "No institution name matched “Zzqx Nonexistent Lending”",
+    "rows": [],
+    "firstRow": null,
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "Zzqx Nonexistent Lending",
+    "overflow": false
+   },
+   "editAfterMiss": {
+    "typed": "Alliant Credit Union",
+    "submittedBy": "real keyboard Enter",
+    "enterEventTrusted": "true",
+    "state": "CANDIDATES",
+    "searched": "Alliant Credit Union",
+    "headline": "1 institution record with a name like “Alliant Credit Union”",
+    "rows": [
+     "Alliant Credit Union"
+    ],
+    "firstRow": "1 Alliant Credit Union LEI 549300T94GSH3C4U5M59 · NMLS 197185 Same name The entered name equals this source name after case, spacing and punctuation normalization. Matched published profile canonical name: “Alliant Credi",
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "Alliant Credit Union",
+    "overflow": false
+   },
+   "sourceUnavailable": {
+    "typed": "BMO Bank",
+    "submittedBy": "real keyboard Enter",
+    "enterEventTrusted": "true",
+    "state": "UNAVAILABLE",
+    "searched": "BMO Bank",
+    "headline": "We could not search for “BMO Bank” right now",
+    "rows": [],
+    "firstRow": null,
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [],
+    "input": "BMO Bank",
+    "overflow": false
+   },
+   "sourceUnavailableApiStatus": 503,
+   "multiPageToCap": {
+    "headline": "230 institution records with a name like “Summit Ridge”",
+    "pagesWalkedByClickingNext": 8,
+    "distinctRecordsSeen": 200,
+    "lastPager": "Previous Page 8 of 8 · 230 name candidate records Next",
+    "lastPageRows": 25,
+    "nextOfferedOnLastPage": false,
+    "truncationDisclosed": true
+   },
+   "protectedPaths": {
+    "NMLS 3030": {
+     "nameSearch": false,
+     "headline": "Published institution identity found"
+    },
+    "mortgage lenders in Texas": {
+     "nameSearch": false,
+     "headline": "HMDA reporting institutions with the most originations for properties in Texas"
+    },
+    "What is an NMLS ID?": {
+     "nameSearch": false,
+     "headline": "What an NMLS institution ID means"
+    }
+   }
+  },
+  "1280": {
+   "bmoPositive": {
+    "typed": "BMO Bank",
+    "submittedBy": "real keyboard Enter",
+    "enterEventTrusted": "true",
+    "state": "CANDIDATES",
+    "searched": "BMO Bank",
+    "headline": "1 institution record with a name like “BMO Bank”",
+    "rows": [
+     "BMO Bank"
+    ],
+    "firstRow": "1 BMO Bank LEI 3Y4U8VZURTYWI1W2K376 · NMLS 401052 Same name The entered name equals this source name after case, spacing and punctuation normalization. Matched published profile canonical name: “BMO Bank”. Public researc",
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "BMO Bank",
+    "overflow": false
+   },
+   "resultActionClick": {
+    "clickedBy": "real mouse click",
+    "navigatedTo": "/lender/bmo-bank",
+    "href": "/lender/bmo-bank",
+    "localStatusNote": "local build has no database credentials; see canonicalLinkCheck for the separate production check"
+   },
+   "afterHistoryBack": {
+    "state": "CANDIDATES",
+    "searched": "BMO Bank",
+    "headline": "1 institution record with a name like “BMO Bank”",
+    "rows": [
+     "BMO Bank"
+    ],
+    "firstRow": "1 BMO Bank LEI 3Y4U8VZURTYWI1W2K376 · NMLS 401052 Same name The entered name equals this source name after case, spacing and punctuation normalization. Matched published profile canonical name: “BMO Bank”. Public researc",
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "BMO Bank",
+    "overflow": false
+   },
+   "afterRefresh": {
+    "state": "CANDIDATES",
+    "searched": "BMO Bank",
+    "headline": "1 institution record with a name like “BMO Bank”",
+    "rows": [
+     "BMO Bank"
+    ],
+    "firstRow": "1 BMO Bank LEI 3Y4U8VZURTYWI1W2K376 · NMLS 401052 Same name The entered name equals this source name after case, spacing and punctuation normalization. Matched published profile canonical name: “BMO Bank”. Public researc",
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "BMO Bank",
+    "overflow": false
+   },
+   "keywordShapedOrganization": {
+    "typed": "Branch River Bank",
+    "submittedBy": "real keyboard Enter",
+    "enterEventTrusted": "true",
+    "state": "CANDIDATES",
+    "searched": "Branch River Bank",
+    "headline": "2 institution records with a name like “Branch River Bank”",
+    "rows": [
+     "Branch River Bank",
+     "Branch River Savings"
+    ],
+    "firstRow": "1 Branch River Bank Same name The entered name equals this source name after case, spacing and punctuation normalization. Matched fixture name: “Branch River Bank”. Unpublished research identity Not a public profile",
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "Branch River Bank",
+    "overflow": false
+   },
+   "keywordShapedCharter": {
+    "typed": "Charter Bank",
+    "submittedBy": "real keyboard Enter",
+    "enterEventTrusted": "true",
+    "state": "CANDIDATES",
+    "searched": "Charter Bank",
+    "headline": "1 institution record with a name like “Charter Bank”",
+    "rows": [
+     "Charter Bank"
+    ],
+    "firstRow": "1 Charter Bank Same name The entered name equals this source name after case, spacing and punctuation normalization. Matched fixture name: “Charter Bank”. Unpublished research identity Not a public profile",
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "Charter Bank",
+    "overflow": false
+   },
+   "keywordPartial": {
+    "typed": "Branch River",
+    "submittedBy": "real keyboard Enter",
+    "enterEventTrusted": "true",
+    "state": "CANDIDATES",
+    "searched": "Branch River",
+    "headline": "2 institution records with a name like “Branch River”",
+    "rows": [
+     "Branch River Bank",
+     "Branch River Savings"
+    ],
+    "firstRow": "1 Branch River Bank Name begins with The source name begins with the entered words. Matched fixture name: “Branch River Bank”. Unpublished research identity Not a public profile",
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "Branch River",
+    "overflow": false
+   },
+   "retainedCondition": {
+    "typed": "Rocket Mortgage company in Texas",
+    "submittedBy": "real keyboard Enter",
+    "enterEventTrusted": "true",
+    "state": "CANDIDATES",
+    "searched": "Rocket Mortgage",
+    "headline": "1 institution record with a name like “Rocket Mortgage”",
+    "rows": [
+     "Rocket Mortgage"
+    ],
+    "firstRow": "1 Rocket Mortgage LEI 549300FGXN1K3HLB1R50 · NMLS 3030 Same name The entered name equals this source name after case, spacing and punctuation normalization. Matched published profile canonical name: “Rocket Mortgage”. Pu",
+    "notApplied": [
+     "in Texas"
+    ],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "NOT APPLIED: \"in Texas\". Candidates are matched by name only. HMDA geography is the property location, not where a lender is located or licensed, so no institution location, loan type or action filter was inferred.",
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "Rocket Mortgage company in Texas",
+    "overflow": false
+   },
+   "miss": {
+    "typed": "Zzqx Nonexistent Lending",
+    "submittedBy": "real keyboard Enter",
+    "enterEventTrusted": "true",
+    "state": "NO_MATCH",
+    "searched": "Zzqx Nonexistent Lending",
+    "headline": "No institution name matched “Zzqx Nonexistent Lending”",
+    "rows": [],
+    "firstRow": null,
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "Zzqx Nonexistent Lending",
+    "overflow": false
+   },
+   "editAfterMiss": {
+    "typed": "Alliant Credit Union",
+    "submittedBy": "real keyboard Enter",
+    "enterEventTrusted": "true",
+    "state": "CANDIDATES",
+    "searched": "Alliant Credit Union",
+    "headline": "1 institution record with a name like “Alliant Credit Union”",
+    "rows": [
+     "Alliant Credit Union"
+    ],
+    "firstRow": "1 Alliant Credit Union LEI 549300T94GSH3C4U5M59 · NMLS 197185 Same name The entered name equals this source name after case, spacing and punctuation normalization. Matched published profile canonical name: “Alliant Credi",
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [
+     "A miss or a short list applies only to the searched sources (published lender profiles and HMDA reporting institutions). It is not a finding that no such institution exists."
+    ],
+    "input": "Alliant Credit Union",
+    "overflow": false
+   },
+   "sourceUnavailable": {
+    "typed": "BMO Bank",
+    "submittedBy": "real keyboard Enter",
+    "enterEventTrusted": "true",
+    "state": "UNAVAILABLE",
+    "searched": "BMO Bank",
+    "headline": "We could not search for “BMO Bank” right now",
+    "rows": [],
+    "firstRow": null,
+    "notApplied": [],
+    "pager": null,
+    "hasNext": false,
+    "caveats": [],
+    "input": "BMO Bank",
+    "overflow": false
+   },
+   "sourceUnavailableApiStatus": 503,
+   "multiPageToCap": {
+    "headline": "230 institution records with a name like “Summit Ridge”",
+    "pagesWalkedByClickingNext": 8,
+    "distinctRecordsSeen": 200,
+    "lastPager": "Previous Page 8 of 8 · 230 name candidate records Next",
+    "lastPageRows": 25,
+    "nextOfferedOnLastPage": false,
+    "truncationDisclosed": true
+   },
+   "protectedPaths": {
+    "NMLS 3030": {
+     "nameSearch": false,
+     "headline": "Published institution identity found"
+    },
+    "mortgage lenders in Texas": {
+     "nameSearch": false,
+     "headline": "HMDA reporting institutions with the most originations for properties in Texas"
+    },
+    "What is an NMLS ID?": {
+     "nameSearch": false,
+     "headline": "What an NMLS institution ID means"
+    }
+   }
+  }
+ },
+ "overflow320": {
+  "candidates74": {
+   "innerWidth": 320,
+   "docScrollWidth": 320,
+   "pageOverflows": false,
+   "tableInsideOwnScroller": true
+  },
+  "cappedWindow": {
+   "innerWidth": 320,
+   "docScrollWidth": 320,
+   "pageOverflows": false,
+   "tableInsideOwnScroller": true
+  },
+  "miss": {
+   "innerWidth": 320,
+   "docScrollWidth": 320,
+   "pageOverflows": false,
+   "tableInsideOwnScroller": false
+  },
+  "unavailable": {
+   "innerWidth": 320,
+   "docScrollWidth": 320,
+   "pageOverflows": false,
+   "tableInsideOwnScroller": false
+  },
+  "condition": {
+   "innerWidth": 320,
+   "docScrollWidth": 320,
+   "pageOverflows": false,
+   "tableInsideOwnScroller": true
+  }
+ },
+ "consoleErrors": []
+}

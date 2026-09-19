@@ -59,6 +59,7 @@
     "supabase:types": "supabase gen types typescript --linked > types/supabase.ts",
     "check:th-search-r1-002": "tsx --test lib/ask-lender/r1-reproduction.test.ts lib/ask-lender/r1-behavior.test.ts",
     "check:th-search-r1-003": "tsx --test lib/ask-lender/r3-reproduction.test.ts lib/ask-lender/r3-behavior.test.ts",
+    "check:th-search-r1-019c": "tsx --test lib/name-candidates/th-search-r1-019c.test.ts lib/specialist-execution/identity-execution.test.ts",
     "check:th-search-r1-004": "tsx --test lib/ask-lender/r4-reproduction.test.ts lib/ask-lender/r4-behavior.test.ts",
     "check:th-search-r1-015": "tsx --test lib/ask-lender/r15-reproduction.test.ts lib/ask-lender/r15-behavior.test.ts lib/ask-lender/r1-reproduction.test.ts lib/ask-lender/r1-behavior.test.ts lib/ask-lender/r3-reproduction.test.ts lib/ask-lender/r3-behavior.test.ts lib/ask-lender/r4-reproduction.test.ts lib/ask-lender/r4-behavior.test.ts lib/ask-lender/th-discovery-gen-001.test.ts",
     "check:metrics-r2-03": "tsx scripts/build_network_metrics_v1.mjs --check && tsx --test scripts/test_metrics_r2_03.mjs"
