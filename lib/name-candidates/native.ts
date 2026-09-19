@@ -21,7 +21,7 @@ import { STATE_NAMES } from '@/lib/home-intel/states';
 import { GLEIF_RECORD_URL, loadCandidateCatalog, type CandidateCatalog } from './catalog';
 import { CANDIDATE_MAX_LIMIT, CANDIDATE_WINDOW, MATCH_METHODS, searchNameCandidates, type MatchMethod } from './engine';
 import { candidateTokens, distinctiveTokens } from './normalize';
-import { hasGenuineLabeledIdentifier } from './request-shape';
+import { hasGenuineLabeledIdentifier, isIdentifierAttempt } from './request-shape';
 
 export type NativeNameDecision = {
   name: string;
@@ -76,7 +76,7 @@ export function decideNativeNameSearch(
   // Protected captures of the existing parser.
   // Validated label + value syntax is an identifier request. A label WORD with no valid value ("LEI Financial Group",
   // "NMLS Lending Corp") is not: it may still be a name, but only if the engine actually finds that institution.
-  if (hasGenuineLabeledIdentifier(raw ?? '')) return null;
+  if (isIdentifierAttempt(raw ?? '')) return null; // genuine OR malformed identifier input: existing handling, catalog untouched
   const labelWordOnly = Boolean(parsed.identityRequest || parsed.identifier);
   if (parsed.evidenceFamilies?.length || parsed.mode === 'definition' || parsed.mode === 'evidence') return null;
   if (parsed.mode === 'fail_closed' && (parsed.failClosedKind === 'malformed' || parsed.failClosedKind === 'empty')) return null;

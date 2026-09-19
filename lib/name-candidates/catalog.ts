@@ -18,6 +18,7 @@ import { loadLeiIdentityIndex } from '@/lib/ask-lender/identity';
 import { nationalPresentationName, typeLabel } from '@/lib/national-profile/discovery';
 import { nationalProfilePath } from '@/lib/national-profile/cohort';
 import type { CatalogInstitution, CatalogName } from './engine';
+import { activeNameCandidateFixture, fixtureInstitutions } from './fixtures';
 
 /** Official LEI registry record. The only action offered for an institution that has no LenderTrustHub profile. */
 export const GLEIF_RECORD_URL = 'https://search.gleif.org/#/record/' as const;
@@ -41,6 +42,12 @@ let cached: CandidateCatalog | null = null;
 
 /** Throws when an approved source fails its own contract. Callers report UNAVAILABLE -- never a miss. */
 export function loadCandidateCatalog(): CandidateCatalog {
+  // Nonproduction only (refused when VERCEL_ENV=production); never cached, so it cannot leak into a real catalog.
+  const fixture = activeNameCandidateFixture();
+  if (fixture) {
+    const institutions = fixtureInstitutions(fixture);
+    return { institutions, sourceVersion: { profiles: `NONPRODUCTION FIXTURE ${fixture}`, hmdaIdentity: 'fixture', fingerprint: `fixture:${fixture}` }, counts: { publishedProfiles: 0, hmdaOnly: institutions.length, identityHold: 0 } };
+  }
   if (cached) return cached;
   const snapshot = lenderIdentitySource.load();
   if (!snapshot || !Array.isArray(snapshot.entries) || snapshot.expectedCount < 1 || snapshot.entries.length !== snapshot.expectedCount) throw new Error('candidate_catalog_profile_source');

@@ -10,6 +10,7 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { searchNameCandidates, type CatalogInstitution, type CatalogName } from './engine';
 import { loadCandidateCatalog, type CandidateCatalog } from './catalog';
+import { activeNameCandidateFixture } from './fixtures';
 import { executeNameCandidates, NAME_CANDIDATES_CONTRACT, NAME_CANDIDATES_SCHEMA_FINGERPRINT } from './operation';
 import { decideNativeNameSearch, executeNativeNameCandidates } from './native';
 import { parseLenderAsk } from '../ask-lender/parse';
@@ -282,6 +283,10 @@ test('R1b genuine labeled identifiers stay protected by validated label + value 
   for (const q of ['NMLS 3030', 'NMLS #3030', 'nmls id: 3030', 'LEI 549300FGXN1K3HLB1R50', 'NMLS branch 123456', 'Find NMLS 3030']) {
     const op = executeNameCandidates({ name: q }, KEYWORD_CATALOG); assert.deepEqual([op.status, op.body.resultState], [422, 'RESTRICTED_SCOPE'], q);
   }
+  // malformed identifier ATTEMPTS keep the identifier handling and never touch the name catalog
+  let touched = 0; const spy = () => { touched += 1; return KEYWORD_CATALOG(); };
+  for (const q of ['NMLS 32.51', 'NMLS -3251', 'NMLS +3251', 'NMLS 3e3', 'NMLS 1234567890123']) { assert.equal(decideNativeNameSearch(q, parseLenderAsk(q), spy), null, q); assert.equal(executeNameCandidates({ name: q }, spy).body.resultState, 'RESTRICTED_SCOPE', q); }
+  assert.equal(touched, 0);
   // a label with no valid value, a bare number and a 20-letter word are NOT identifiers: they are searched as names
   for (const q of ['NMLS Lending Corp', 'LEI Financial Group', 'Abcdefghijklmnopqrst', '3030']) assert.notEqual(executeNameCandidates({ name: q }, KEYWORD_CATALOG).body.resultState, 'RESTRICTED_SCOPE', q);
   // A person or branch request simply finds nothing: the catalog holds institutions only.
@@ -393,4 +398,12 @@ test('R5 a disputed profile/LEI relationship is never bridged; the independently
   // identity_hold is not blanket permission to publish: a held row offers only the official registry, never a Lender profile
   const view = (executeNameCandidates({ name: 'Guild Mortgage' }).body.candidates as Array<{ publicationState: string; action: { type: string } | null }>)[0]!;
   assert.deepEqual([view.publicationState, view.action?.type], ['identity_hold', 'OFFICIAL_IDENTIFIER_VERIFICATION']);
+});
+
+test('R6 catalog fixtures are nonproduction only: off by default, refused in production, unknown values ignored', () => {
+  assert.equal(activeNameCandidateFixture({}), null);
+  assert.equal(activeNameCandidateFixture({ LENDER_NAME_CANDIDATES_FIXTURE: 'large-window' }), 'large-window');
+  assert.equal(activeNameCandidateFixture({ LENDER_NAME_CANDIDATES_FIXTURE: 'large-window', VERCEL_ENV: 'production' }), null);
+  assert.equal(activeNameCandidateFixture({ LENDER_NAME_CANDIDATES_FIXTURE: 'https://evil.example' }), null);
+  assert.equal(loadCandidateCatalog().counts.publishedProfiles, 311, 'this test process uses the real catalog');
 });

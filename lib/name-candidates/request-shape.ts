@@ -16,3 +16,15 @@ export function hasGenuineLabeledIdentifier(text: string): boolean {
     ? /^[A-Z0-9]{20}$/.test(id.value) && /[0-9]/.test(id.value)
     : /^[0-9]{2,12}$/.test(id.value)));
 }
+
+/**
+ * A label followed by something numeric or signed ("NMLS 32.51", "NMLS -3251", "NMLS 3e3") is a MALFORMED
+ * IDENTIFIER ATTEMPT: it keeps the existing identifier-input handling and never touches the name catalog.
+ * A label word followed only by words ("LEI Financial Group", "NMLS Lending Corp") is not an attempt.
+ */
+export function isIdentifierAttempt(text: string): boolean {
+  const request = parseIdentityRequest(text);
+  if (!request) return false;
+  if (request.identifiers.some((id) => /[0-9]/.test(id.value))) return true;
+  return request.identifiers.length === 0 && request.problem?.state === 'INVALID';
+}

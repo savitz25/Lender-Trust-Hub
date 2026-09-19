@@ -9,7 +9,7 @@
 import { createHash } from 'node:crypto';
 import { CATALOG_SCOPE, GLEIF_RECORD_URL, loadCandidateCatalog, type CandidateCatalog } from './catalog';
 import { CANDIDATE_DEFAULT_LIMIT, CANDIDATE_MAX_LIMIT, CANDIDATE_NAME_MAX_LENGTH, CANDIDATE_WINDOW, MATCH_METHODS, maxCandidatePage, searchNameCandidates, type NameCandidate } from './engine';
-import { hasGenuineLabeledIdentifier } from './request-shape';
+import { isIdentifierAttempt } from './request-shape';
 
 export const NAME_CANDIDATES_CONTRACT = 'lender-name-candidates-v1' as const;
 export const NAME_CANDIDATES_VERSION = '1.0.0' as const;
@@ -102,7 +102,7 @@ export function executeNameCandidates(request: NameCandidatesRequest, loadCatalo
   // ONLY validated label + value syntax is an identifier request. Vocabulary alone ("Charter Bank",
   // "Branch River Bank") is an ordinary name and reaches the catalog. People and branches are excluded by the
   // institution-only catalog itself, not by keywords.
-  if (hasGenuineLabeledIdentifier(supplied)) {
+  if (isIdentifierAttempt(supplied)) {
     return base('RESTRICTED_SCOPE', 422, { ...blank, supplied }, {
       limitations: ['This text carries a labeled NMLS or LEI value. Identifiers use the exact-identifier operation; this operation searches institution NAMES only.'],
     });
