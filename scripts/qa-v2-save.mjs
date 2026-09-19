@@ -39,7 +39,7 @@ const mocks = {
       getUser: () => new Promise(done => window.b3.resolveInitial = user => done({data:{user:user?{id:user}:null},error:null})),
       onAuthStateChange: callback => {window.b3.emitAuth = id => callback('SIGNED_IN',id?{user:{id}}:null);return {data:{subscription:{unsubscribe(){}}}};}
     },
-    from: () => ({select(){return this},eq(){return this},maybeSingle(){return new Promise(done=>window.b3.resolvePull=payload=>done({data:payload?{payload,client_updated_at:'2099-01-01T00:00:00Z'}:null,error:null}))},upsert(payload){window.b3.cloud.push(payload);return Promise.resolve({error:null})}})
+    from: () => ({select(){return this},eq(){return this},maybeSingle(){return new Promise(done=>window.b3.resolvePull=payload=>done({data:payload?{payload,client_updated_at:'2099-01-01T00:00:00Z'}:null,error:null}))},upsert(payload){window.b3.cloud.push(payload);return window.b3.delayPush ? new Promise(done=>window.b3.finishPush=()=>done({error:null})) : Promise.resolve({error:null})}})
   }; }`,
   'next/link': "import React from 'react'; export default function Link(props) { return React.createElement('a',props); }",
   '@/components/my-lending/my-lending-provider': 'export const useMyLendingOptional = () => window.b3.context;',

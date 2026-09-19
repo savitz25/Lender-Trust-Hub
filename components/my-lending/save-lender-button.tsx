@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { useMyLendingOptional } from './my-lending-provider';
 import Link from 'next/link';
 import { Bookmark, BookmarkCheck, Trash2 } from 'lucide-react';
@@ -66,6 +66,13 @@ function SaveLenderControl({
   const [toast, setToast] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [fullPanel, setFullPanel] = useState<SavedLender[] | null>(null);
+  const disclosureId = useId();
+  const accountConfirmed = Boolean(owner && !ml?.loading &&
+    getMyLendingStorageUserId() === owner && ml?.workspaceStorage.syncStatus === 'synced');
+  const disclosure = accountConfirmed ? 'Saved to your Lending account'
+    : ml?.workspaceStorage.syncStatus === 'error'
+      ? 'Saved on this device — account sync unavailable'
+      : 'Saved on this device';
 
   const sync = useCallback(() => {
     setSaved(isLenderSaved(lenderSlug));
@@ -196,7 +203,7 @@ function SaveLenderControl({
         </Button>
       ) : (
         <div className="flex flex-wrap items-center gap-2">
-          <Button type="button" variant="outline" size={size} aria-pressed="true">
+          <Button type="button" variant="outline" size={size} aria-pressed="true" aria-describedby={disclosureId}>
             <BookmarkCheck className="h-4 w-4" aria-hidden />
             {size === 'sm' ? 'Saved' : 'In My Lending'}
           </Button>
@@ -232,6 +239,7 @@ function SaveLenderControl({
           )}
         </div>
       )}
+      {saved ? <p id={disclosureId} role="status" className="max-w-64 text-xs">{disclosure}</p> : null}
 
       <WorkspaceSaveToast
         open={Boolean(toast)}

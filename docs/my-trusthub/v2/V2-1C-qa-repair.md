@@ -1,0 +1,11 @@
+# V2-1C Lender disclosure and stale acknowledgment repair
+
+Base PR #52: `315093be109796c9dd170e80a936ecd10e9cff7d`. Production HOLD.
+
+Persistent saved-state disclosure now survives reload and is linked by `aria-describedby` to a `role=status`. A confirmed legacy Lending workspace says `Saved to your Lending account`, never My TrustHub. Guest/unconfirmed local state says `Saved on this device`; cloud error retains the device copy with sync-unavailable text. Exact remote/local research equality can restore account confirmation; equal timestamps alone cannot.
+
+The initiating storage owner AND identity-generation are captured before cloud work. Post-await checks reject late acknowledgment after A -> B, A -> guest, or A -> guest -> A. Result `skipped` means stale/unavailable acknowledgment, NOT server rollback. The dispatched row retains owner A. New owner data is neither cleared nor rewritten; a new operation requires a fresh context. The debounce also captures generation, so stale queued work never dispatches under a later session. The provider no longer reports synced on scheduling; it waits for successful current-generation/current-operation acknowledgment. Stale completion cannot update B's success state.
+
+Executed: `check:v2-save` 10 PASS (3 storage + 7 real storage/sync-module cases with mocked provider/timers); typecheck PASS; changed-file lint PASS using installed ESLint directly; full build PASS with existing themeColor/middleware warnings; diff check PASS. Browser loopback: existing full control matrix, reload/device/accessibility at 1440/390/320, owner-confirmed reload, real provider delayed auth/pull, A-to-B late push with no B success/write PASS. Auth/cloud MOCKED; no real provider/RLS validation. Existing timeout and blocked-storage retry cases preserved. An extra npx lint launcher stalled; the installed CLI completed without rule changes.
+
+No localhost-auth investigation/configuration change. No parent Save, Project, Watch, new account or research retirement. Supabase/React/browser guidance informed post-await owner isolation and persistent accessible state. Ready for Builder 4 independent re-QA; no independent closure claimed by repair author. Exact pushed SHA is in PR handoff. No Lender V2-3 adapter added.

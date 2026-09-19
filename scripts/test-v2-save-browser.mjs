@@ -41,7 +41,16 @@ if (process.argv.includes('--provider')) {
   await until('window.b3.cloud.length===1');
   assert.equal(evaluate('window.b3.cloud[0].user_id'),'owner-a');
   assert.equal(evaluate('window.b3.cloud[0].payload.savedLenders.length'),1);
+  await until("window.b3.observed.workspaceStorage.syncStatus==='synced'");
+  assert.equal(evaluate("document.querySelector('[role=status]').textContent"),'Saved to your Lending account');
   console.log('B3-L05/06 PASS real provider/control/storage/sync; MOCKED Supabase delayed auth and workspace pull');
+
+  browser('reload'); await until('Boolean(window.b3.resolveInitial)');
+  evaluate("window.b3.resolveInitial('owner-a')"); await until('Boolean(window.b3.resolvePull)');
+  evaluate('window.b3.resolvePull(window.b3.storage.loadState())');
+  await until("document.querySelector('[role=status]')?.textContent==='Saved to your Lending account'");
+  assert.equal(evaluate('window.b3.storage.loadState().savedLenders.length'),1);
+  console.log('V2-1C PASS reload with server-confirmed legacy account is not mislabeled device-only');
 
   await reset(); await until('Boolean(window.b3.resolveInitial)');
   evaluate("window.b3.emitAuth('owner-a')");
@@ -55,6 +64,23 @@ if (process.argv.includes('--provider')) {
   assert.equal(evaluate('window.b3.storage.getMyLendingStorageUserId()'),null);
   assert.equal(evaluate('window.b3.observed.user'),null);
   console.log('B3-L07 PASS stale getUser and stale cloud pull cannot restore/write previous owner after sign-out');
+
+  await reset(); await until('Boolean(window.b3.resolveInitial)');
+  evaluate("window.b3.resolveInitial('owner-a');window.b3.delayPush=true");
+  await until('Boolean(window.b3.resolvePull)'); evaluate('window.b3.resolvePull(null)');
+  await until('window.b3.observed.loading===false'); click();
+  await until('Boolean(window.b3.finishPush)');
+  assert.notEqual(evaluate('window.b3.observed.workspaceStorage.syncStatus'),'synced');
+  evaluate("window.b3.emitAuth('owner-b')");
+  await until("window.b3.storage.getMyLendingStorageUserId()==='owner-b'");
+  evaluate('window.b3.resolvePull(null)'); await until('window.b3.observed.loading===false');
+  evaluate('window.b3.finishPush()'); await delay(100);
+  assert.equal(evaluate('window.b3.storage.loadState().savedLenders.length'),0);
+  assert.notEqual(evaluate('window.b3.observed.workspaceStorage.syncStatus'),'synced');
+  assert.equal(evaluate("document.querySelector('button').getAttribute('aria-pressed')"),null);
+  assert.equal(evaluate('window.b3.cloud.length'),1);
+  assert.equal(evaluate('window.b3.cloud[0].user_id'),'owner-a');
+  console.log('V2-1C PASS late old-owner push cannot mark B synced/Saved or write B research');
  } finally { browser('close'); }
 } else try {
  await reset();
@@ -63,6 +89,9 @@ if (process.argv.includes('--provider')) {
  assert.equal(evaluate(state)[0].lenderSlug,'b3-fixture');
  browser('reload'); await until("document.querySelector('button')?.textContent.includes('In My')");
  assert.equal(evaluate(state).length,1);
+ assert.equal(evaluate("document.querySelector('[role=status]')?.textContent"),'Saved on this device');
+ assert.equal(evaluate("document.querySelector('button').getAttribute('aria-describedby')===document.querySelector('[role=status]').id"),true);
+ assert.equal(evaluate("document.body.textContent.includes('My TrustHub')"),false);
  console.log('B3-01/02/09 PASS browser keyboard immediate Save and real reload persistence');
 
  await reset();
@@ -119,6 +148,8 @@ if (process.argv.includes('--provider')) {
 
  for(const width of [1440,390,320]){
    await reset(); browser('set','viewport',String(width),'900');
+   click(); await until(state+'.length===1'); browser('reload');
+   await until("document.querySelector('[role=status]')?.textContent==='Saved on this device'");
    browser('focus','button');
    assert.equal(evaluate("document.activeElement===document.querySelector('button')"),true);
    assert.equal(evaluate('document.documentElement.scrollWidth<=innerWidth'),true);
