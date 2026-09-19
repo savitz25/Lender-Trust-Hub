@@ -6,7 +6,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 
 const PASS = new RegExp('ℹ pass (' + '[0-9]+)');
 const FAIL = new RegExp('ℹ fail (' + '[0-9]+)');
-const FAILED_TEST = new RegExp('^✖ ([0-9][0-9]) ', 'gm');
+const FAILED_TEST = new RegExp('^✖ ([0-9R][0-9a-z]+) ', 'gm');
 const run = () => {
   const r = spawnSync('npx', ['tsx', '--test', 'lib/name-candidates/th-search-r1-019c.test.ts'], { encoding: 'utf8', shell: true });
   const out = r.stdout + r.stderr;
@@ -23,6 +23,15 @@ const mutations = [
   // First occurrence of this line is inside executeComplaintEvidence.
   { id: 'C_CANDIDATES_ATTACH_COMPLAINTS', file: 'lib/specialist-execution/identity-execution.ts', why: 'Complaint evidence attaches on a loose (prefix) name match instead of the exact accepted identity.',
     find: '  const matches = matchNames(requestedName);', replace: "  const matches = matchNames(requestedName).length ? matchNames(requestedName) : SEARCH_POOL.filter((r) => normalizeName(r.presentation_name).startsWith(normalizeName(requestedName).split(' ')[0] ?? '~')).slice(0, 1);" },
+  // Review-1 corrections, each re-broken.
+  { id: 'D_KEYWORD_GATE_RESTORED', file: 'lib/name-candidates/request-shape.ts', why: 'A vocabulary word alone (Charter, Branch, LEI) is again treated as an identifier/branch request.',
+    find: '  const request = parseIdentityRequest(text);', replace: '  if (/charter|branch|lei|nmls/i.test(text)) return true; const request = parseIdentityRequest(text);' },
+  { id: 'E_PARSER_ENTITY_DROPS_CONDITIONS', file: 'lib/name-candidates/native.ts', why: 'The parser-entity shortcut returns no conditions again, so "Rocket Mortgage company in Texas" silently loses Texas.',
+    find: "    return decide(parsed.identityQuery, 'PARSER_ENTITY_NAME', residual ? [residual] : []);", replace: "    return { name: parsed.identityQuery, basis: 'PARSER_ENTITY_NAME', unresolvedConditions: [] };" },
+  { id: 'F_UNREACHABLE_NEXT_PAGE', file: 'lib/name-candidates/engine.ts', why: 'hasMore ignores the reachable window again, advertising a page that cannot be fetched.',
+    find: 'hasMore: start + limit < reachable,', replace: 'hasMore: start + limit < all.length,' },
+  { id: 'G_SOURCE_FAILURE_BECOMES_NOT_A_NAME', file: 'lib/name-candidates/native.ts', why: 'A catalog failure is treated as proof the text is not a name, so an unrelated cohort would run.',
+    find: "  try { institutions = catalog().institutions; } catch { return 'unavailable'; }", replace: "  try { institutions = catalog().institutions; } catch { return 'none'; }" },
 ];
 
 const report = { generatedAt: new Date().toISOString(), cleanBefore: run(), mutations: [], cleanAfter: null };
