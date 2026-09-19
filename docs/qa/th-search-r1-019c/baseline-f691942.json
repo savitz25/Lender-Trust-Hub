@@ -1,0 +1,171 @@
+{
+ "probedAt": "2026-09-19T00:06:11.480Z",
+ "results": [
+  {
+   "q": "BMO Bank",
+   "nativeMode": "fail_closed",
+   "nativeFailKind": "unsupported",
+   "nativeIdentityQuery": null,
+   "nativeRows": [],
+   "nativeHeadline": "This question is fail-closed",
+   "serviceState": "EXACT_IDENTITY",
+   "serviceIdentity": "BMO Bank"
+  },
+  {
+   "q": "bmo bank",
+   "nativeMode": "fail_closed",
+   "nativeFailKind": "unsupported",
+   "nativeIdentityQuery": null,
+   "nativeRows": [],
+   "nativeHeadline": "This question is fail-closed",
+   "serviceState": "EXACT_IDENTITY",
+   "serviceIdentity": "BMO Bank"
+  },
+  {
+   "q": "Alliant Credit Union",
+   "nativeMode": "fail_closed",
+   "nativeFailKind": "unsupported",
+   "nativeIdentityQuery": null,
+   "nativeRows": [],
+   "nativeHeadline": "This question is fail-closed",
+   "serviceState": "EXACT_IDENTITY",
+   "serviceIdentity": "Alliant Credit Union"
+  },
+  {
+   "q": "Randolph-Brooks FCU",
+   "nativeMode": "fail_closed",
+   "nativeFailKind": "unsupported",
+   "nativeIdentityQuery": null,
+   "nativeRows": [],
+   "nativeHeadline": "This question is fail-closed",
+   "serviceState": "NO_CONFIDENT_MATCH",
+   "serviceIdentity": null
+  },
+  {
+   "q": "Randolph-Brooks Federal Credit Union",
+   "nativeMode": "fail_closed",
+   "nativeFailKind": "unsupported",
+   "nativeIdentityQuery": null,
+   "nativeRows": [],
+   "nativeHeadline": "This question is fail-closed",
+   "serviceState": "EXACT_IDENTITY",
+   "serviceIdentity": "Randolph-Brooks Federal Credit Union"
+  },
+  {
+   "q": "Rocket Mortgage",
+   "nativeMode": "entity",
+   "nativeFailKind": null,
+   "nativeIdentityQuery": "rocket mortgage",
+   "nativeRows": [
+    "Rocket Mortgage"
+   ],
+   "nativeHeadline": "Published institution matches for rocket mortgage",
+   "serviceState": "EXACT_IDENTITY",
+   "serviceIdentity": "Rocket Mortgage"
+  },
+  {
+   "q": "rocket mortgage llc",
+   "nativeMode": "fail_closed",
+   "nativeFailKind": "unsupported",
+   "nativeIdentityQuery": null,
+   "nativeRows": [],
+   "nativeHeadline": "This question is fail-closed",
+   "serviceState": "NO_CONFIDENT_MATCH",
+   "serviceIdentity": null
+  },
+  {
+   "q": "\"BMO Bank\"",
+   "nativeMode": "fail_closed",
+   "nativeFailKind": "unsupported",
+   "nativeIdentityQuery": null,
+   "nativeRows": [],
+   "nativeHeadline": "This question is fail-closed",
+   "serviceState": "EXACT_IDENTITY",
+   "serviceIdentity": "BMO Bank"
+  },
+  {
+   "q": "Find BMO Bank",
+   "nativeMode": "fail_closed",
+   "nativeFailKind": "unsupported",
+   "nativeIdentityQuery": null,
+   "nativeRows": [],
+   "nativeHeadline": "This question is fail-closed",
+   "serviceState": "EXACT_IDENTITY",
+   "serviceIdentity": "BMO Bank"
+  },
+  {
+   "q": "Research Alliant Credit Union",
+   "nativeMode": "fail_closed",
+   "nativeFailKind": "unsupported",
+   "nativeIdentityQuery": null,
+   "nativeRows": [],
+   "nativeHeadline": "This question is fail-closed",
+   "serviceState": "EXACT_IDENTITY",
+   "serviceIdentity": "Alliant Credit Union"
+  },
+  {
+   "q": "Guild Mortgage Company LLC",
+   "nativeMode": "entity",
+   "nativeFailKind": null,
+   "nativeIdentityQuery": null,
+   "nativeRows": [
+    "Rocket Mortgage",
+    "United Wholesale Mortgage",
+    "Freedom Mortgage Corporation"
+   ],
+   "nativeHeadline": "HMDA reporting institutions with the most originations for properties in the acq",
+   "serviceState": "NO_CONFIDENT_MATCH",
+   "serviceIdentity": null
+  },
+  {
+   "q": "Guild Mortgage",
+   "nativeMode": "fail_closed",
+   "nativeFailKind": "unsupported",
+   "nativeIdentityQuery": null,
+   "nativeRows": [],
+   "nativeHeadline": "This question is fail-closed",
+   "serviceState": "NO_CONFIDENT_MATCH",
+   "serviceIdentity": null
+  },
+  {
+   "q": "Frost Bank",
+   "nativeMode": "fail_closed",
+   "nativeFailKind": "unsupported",
+   "nativeIdentityQuery": null,
+   "nativeRows": [],
+   "nativeHeadline": "This question is fail-closed",
+   "serviceState": "NO_CONFIDENT_MATCH",
+   "serviceIdentity": null
+  },
+  {
+   "q": "Movement Mortgage",
+   "nativeMode": "fail_closed",
+   "nativeFailKind": "unsupported",
+   "nativeIdentityQuery": null,
+   "nativeRows": [],
+   "nativeHeadline": "This question is fail-closed",
+   "serviceState": "NO_CONFIDENT_MATCH",
+   "serviceIdentity": null
+  },
+  {
+   "q": "Allied",
+   "nativeMode": "fail_closed",
+   "nativeFailKind": "unsupported",
+   "nativeIdentityQuery": null,
+   "nativeRows": [],
+   "nativeHeadline": "This question is fail-closed",
+   "serviceState": "NO_CONFIDENT_MATCH",
+   "serviceIdentity": null
+  },
+  {
+   "q": "Altura Credit Union",
+   "nativeMode": "fail_closed",
+   "nativeFailKind": "unsupported",
+   "nativeIdentityQuery": null,
+   "nativeRows": [],
+   "nativeHeadline": "This question is fail-closed",
+   "serviceState": "NO_CONFIDENT_MATCH",
+   "serviceIdentity": null
+  }
+ ]
+}
