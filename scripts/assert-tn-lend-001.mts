@@ -62,7 +62,16 @@ for (const o of E.orders) {
     assert.equal(o.titleAsPublished, null);
   }
 }
-assert.doesNotMatch(derived + JSON.stringify(s), /Zakaryan|Stansbery|Drinnon|Hatfield|Whidden/i);
+// Names withheld from committed data are checked against the local (gitignored) manifest when present.
+const manifestPath = 'data/raw/tennessee/private/orders-manifest.json';
+if (existsSync(manifestPath)) {
+  const titles: Array<{ title: string }> = JSON.parse(readFileSync(manifestPath, 'utf8'));
+  const withheld = E.orders.filter((o) => o.respondentClass !== 'COMPANY').map((o) => titles[Number(o.id.split(':')[2]) - 1]?.title ?? '');
+  for (const title of withheld) {
+    const surname = title.replace(/^.*?[-–]\s*/, '').split(/[ ,]/).filter(Boolean).pop() ?? '';
+    if (surname.length > 3) assert.equal((derived + JSON.stringify(s)).includes(surname), false, 'withheld respondent leaked');
+  }
+}
 
 // HMDA reused, not a license census.
 const apps = hmdaRows.slice(1).reduce((n, r) => n + col(r, 'total_applications'), 0);
