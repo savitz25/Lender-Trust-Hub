@@ -143,6 +143,42 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     };
   }
 
+  // MA-LEND-001: Massachusetts Division of Banks licensee files (as of 2026-06-30) and the DOB
+  // enforcement table. Lender, broker, and MLO are separate units and are never summed. Boston,
+  // Worcester, and Springfield filter the one statewide DOB population. Bare "lenders in
+  // Massachusetts" discovery still falls through to HMDA institutions; explicit licensing words,
+  // brokers, originators, enforcement, and DOB complaints get the DOB answer.
+  const maState = /\bmassachusetts\b/i.test(q);
+  const maCity = /\b(boston|worcester)\b/i.test(q) || (maState && /\bspringfield\b/i.test(q));
+  const maHmda = /\bhmda|\bapplications?\b|\boriginations?\b|\boriginated\b|\bdenial|\bproperty|\bproperties\b/i.test(q);
+  const maRanking = /\bbest|\bsafest|\bvetted|\brecommended|\btop\b/i.test(q);
+  if ((maState || maCity) && !maRanking) {
+    if (/\b(enforcement|consent orders?|cease|settlement agreement|show cause|suspension|revocation|regulatory actions?|disciplin)/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'ma-dob-enforcement', failReason: 'Massachusetts Division of Banks enforcement table, 2021-2026: 33 mortgage-related actions (24 consent orders, 3 settlement agreements, 2 temporary orders to cease and desist, 2 orders of suspension, 2 orders of revocation, 2 orders to show cause). Each is one DOB action under its DOB name; a temporary or show-cause order is not a final order and a consent order is not a TrustHub finding. Actions link to a company only where DOB printed its NMLS number (16 links). Individual loan-originator respondents are counted, not named. Earlier years are not included. See /massachusetts and the DOB enforcement page.', coverageState: 'PARTIAL' };
+    }
+    if (/\bcomplaints?\b/i.test(q) && /\b(dob|division of banks|state|regulator)\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'ma-dob-complaints', failReason: 'The Massachusetts Division of Banks Consumer Assistance Unit takes complaints about licensed mortgage lenders, brokers, and loan originators, but DOB does not publish complaint records by company. Not acquired; request only. That is not a zero-complaint finding, and CFPB complaints are a separate federal dataset, not DOB findings. A complaint is not a violation.', coverageState: 'REQUEST_ONLY' };
+    }
+    if (maState && /\bdenial rates?\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'ma-hmda-denials', failReason: 'HMDA 2025 Massachusetts: 34,840 denials out of 216,396 applications for properties in Massachusetts (16.10% of all applications). That is a statewide share of applications, not a lender-level rate and not lender quality. HMDA activity is not the DOB license list.', coverageState: 'PARTIAL' };
+    }
+    if (!maHmda && /\bloan originators?\b|\bmlos?\b|\bmortgage originators?\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'ma-dob-mlo-person-grain', failReason: 'The Massachusetts Division of Banks loan originator file (as of 2026-06-30) lists 10,397 rows for 10,395 individual NMLS IDs. Originators are people, not companies, and are not added to lender or broker counts. The file names a sponsoring company only by name, so originators are not linked to companies here, and this site does not publish originator pages. Verify an individual on NMLS Consumer Access.', coverageState: 'PARTIAL' };
+    }
+    if (/\b(?:mc|ml|mb)\s?-?\d{2,}\b|\blicen[cs]e (?:number|no\.?|#)/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'ma-dob-license-identity', failReason: 'Massachusetts company license numbers (MC, ML, MB) come from the Division of Banks lender and broker files as of 2026-06-30. Use the exact lookup on /massachusetts with the license number or NMLS company ID; there is no name matching. MLO license numbers are people and are verified on NMLS Consumer Access.', coverageState: 'KNOWN' };
+    }
+    if (maCity && !maHmda && /\b(mortgage|lenders?|brokers?)\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'ma-city-filter', failReason: 'Boston, Worcester, and Springfield are not separate licensing systems; they filter the statewide Massachusetts Division of Banks files (as of 2026-06-30). Companies with a DOB-listed main office or licensed branch address there: Boston 13 lender-file and 18 broker-file companies; Worcester 10 and 14; Springfield 1 and 3. An address is not a service area, and lender and broker counts are not added together. See /massachusetts.', coverageState: 'PARTIAL' };
+    }
+    if (maState && !maHmda && /\bbrokers?\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'ma-dob-broker-file', failReason: 'The Massachusetts Division of Banks mortgage broker file (as of 2026-06-30) lists 453 companies by NMLS company ID, plus 1,133 branch license rows and 83 trade-name rows (1,669 rows). 192 of those companies also hold a mortgage lender license. A broker license is not a lender license, and brokers are not added to the 298 lender-file companies. See /massachusetts.', coverageState: 'KNOWN' };
+    }
+    if (maState && !maHmda && /\b(licensed|licensees?|roster|registered|how many|division of banks|dob)\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'ma-dob-lender-file', failReason: 'Massachusetts Division of Banks files as of 2026-06-30: 298 companies hold a mortgage lender license and 453 hold a mortgage broker license (192 hold both; 559 distinct companies across the two files). Those are separate licenses and there is no single Massachusetts lenders total: banks and credit unions lend without these licenses, and 10,395 loan originators are people, not companies. HMDA applications are not this list. See /massachusetts.', coverageState: 'KNOWN' };
+    }
+  }
+
   if (/\b(?:mortgage loan officer|mlo|nmls person|branch nmls)\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'unsupported-identity-grain', failReason: 'This public research experience covers lender institutions. NMLS person/MLO and branch identifiers are separate identity grains and are not silently treated as institutions.', coverageState: 'UNSUPPORTED' };
   }

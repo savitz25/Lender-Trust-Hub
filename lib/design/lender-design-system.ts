@@ -197,6 +197,14 @@ export const LENDER_TOOLS = {
       cta: 'Open Georgia research',
     },
     {
+      id: 'massachusetts-research',
+      title: 'Massachusetts research',
+      description:
+        'Division of Banks mortgage lender, broker, and loan originator licensee files as of June 30, 2026, plus DOB mortgage enforcement actions. Lender, broker, and originator counts stay separate. Not a ranking.',
+      href: '/massachusetts',
+      cta: 'Open Massachusetts research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
@@ -460,6 +468,7 @@ export const LENDER_FOOTER_COLUMNS = [
       { href: '/pennsylvania', label: 'Pennsylvania Research' },
       { href: '/north-carolina', label: 'North Carolina Research' },
       { href: '/ohio', label: 'Ohio Research' },
+      { href: '/massachusetts', label: 'Massachusetts Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },

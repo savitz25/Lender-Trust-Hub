@@ -1,0 +1,100 @@
+{
+  "lender": {
+    "source_title": "Mortgage Lender licensee data as of June 30, 2026",
+    "source_url": "https://www.mass.gov/doc/mortgage-lender-licensee-list/download",
+    "source_sha256": "acf3f7206d9181242990b8af8e61dddcbdd1fa28978f6797e4265f00d20d2abe",
+    "source_file": "data/raw/massachusetts/dob-mortgage-lender-2026-06-30.xlsx",
+    "source_as_of": "2026-06-30",
+    "retrieved_at": "2026-09-24T14:43:49Z",
+    "columns": [
+      "Company ID",
+      "Company Name",
+      "Branch ID",
+      "Street Address",
+      "City",
+      "State",
+      "Postal Code",
+      "License Number",
+      "License Name"
+    ],
+    "total_rows": 1614,
+    "company_license_rows": 298,
+    "distinct_company_nmls_ids": 298,
+    "branch_license_rows": 1205,
+    "distinct_nmls_branch_ids": 1205,
+    "trade_name_rows": 111,
+    "distinct_license_numbers_raw": 337,
+    "company_rows_main_office_in_ma": 21,
+    "branch_rows_in_ma": 277,
+    "companies_with_multiple_names": 0,
+    "license_prefix_counts": {
+      "MC": 1345,
+      "ML": 267,
+      "MLO": 1,
+      "mc": 1
+    },
+    "source_anomaly_rows": {
+      "LOWERCASE_LICENSE_PREFIX": 1,
+      "MLO_PREFIX_ON_COMPANY_FILE_ROW": 1
+    },
+    "fields_not_in_source": [
+      "issue_date",
+      "expiration_date",
+      "license_status",
+      "dba_text"
+    ]
+  },
+  "broker": {
+    "source_title": "Mortgage Broker licensee data as of June 30, 2026",
+    "source_url": "https://www.mass.gov/doc/mortgage-broker-licensee-list/download",
+    "source_sha256": "3c54397c292f4b47ecc3571c24e52a253b8fff5b92b8d7ebaf00885f2775f306",
+    "source_file": "data/raw/massachusetts/dob-mortgage-broker-2026-06-30.xlsx",
+    "source_as_of": "2026-06-30",
+    "retrieved_at": "2026-09-24T14:43:49Z",
+    "columns": [
+      "Company ID",
+      "Company Name",
+      "Branch ID",
+      "Street Address",
+      "City",
+      "State",
+      "Postal Code",
+      "License Number",
+      "License Name"
+    ],
+    "total_rows": 1669,
+    "company_license_rows": 453,
+    "distinct_company_nmls_ids": 453,
+    "branch_license_rows": 1133,
+    "distinct_nmls_branch_ids": 1133,
+    "trade_name_rows": 83,
+    "distinct_license_numbers_raw": 491,
+    "company_rows_main_office_in_ma": 160,
+    "branch_rows_in_ma": 302,
+    "companies_with_multiple_names": 0,
+    "license_prefix_counts": {
+      "MB": 329,
+      "MC": 1339,
+      "mc": 1
+    },
+    "source_anomaly_rows": {
+      "LOWERCASE_LICENSE_PREFIX": 1
+    },
+    "fields_not_in_source": [
+      "issue_date",
+      "expiration_date",
+      "license_status",
+      "dba_text"
+    ]
+  },
+  "cross_file": {
+    "distinct_company_nmls_ids_any_file": 559,
+    "companies_holding_lender_and_broker": 192,
+    "companies_lender_only": 106,
+    "companies_broker_only": 261,
+    "distinct_nmls_branch_ids_any_file": 1265,
+    "nmls_branch_ids_on_both_files": 1073,
+    "company_nmls_ids_also_on_mlo_file": 0,
+    "same_license_number_on_lender_and_broker_main_rows": 192
+  }
+}
