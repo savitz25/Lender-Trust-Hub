@@ -179,6 +179,37 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     }
   }
 
+  // TN-LEND-001: TDFI regulates mortgage lenders, brokers, servicers, and MLOs and verifies them through
+  // NMLS Consumer Access; no Tennessee license roster is published, so no Tennessee licensee count exists.
+  // Bare "lenders in Tennessee" discovery still falls through to HMDA institutions.
+  const tnState = /\btennessee\b|\btdfi\b/i.test(q);
+  const tnCity = /\b(nashville|memphis|knoxville|chattanooga)\b/i.test(q);
+  const tnHmda = /\bhmda|\bapplications?\b|\boriginations?\b|\boriginated\b|\bdenials?\b|\bproperty|\bproperties\b/i.test(q);
+  const tnRanking = /\bbest|\bsafest|\bvetted|\brecommended|\btop\b/i.test(q);
+  if ((tnState || tnCity) && !tnRanking) {
+    if (/\b(enforcement|discipline|disciplinary|orders?|consent|cease|revocation|revoked|suspension|penalt)/i.test(q) && !tnHmda) {
+      return { mode: 'fail_closed', failClosedKind: 'tn-tdfi-enforcement', failReason: 'TDFI publishes Emergency Orders and Final Orders on its Enforcement Actions page. The page links 10 order documents (2011, 2014, 2019-2023); 1 is confirmed mortgage-related from its text: Atlas Mortgage Partners, LLC, a former Tennessee mortgage lender (license No. 112542), in an Initial Order entered September 30, 2020 that TDFI lists as a Final Order. 4 could not be classified, and 5 are check cashing or similar. 2024, 2025, and 2026 are listed without published pages, so they are unknown, not zero. No order printed an NMLS ID, so none is attached to an NMLS profile. See /tennessee.', coverageState: 'PARTIAL' };
+    }
+    if (/\bcomplaints?\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'tn-tdfi-complaints', failReason: 'TDFI Consumer Resources takes formal written complaints about the institutions it regulates, including mortgage companies, but does not publish complaint records by company (request only). That is not a zero-complaint finding. CFPB complaints are a separate federal dataset, and a complaint is not a violation. See /tennessee.', coverageState: 'REQUEST_ONLY' };
+    }
+    if (!tnHmda && /\bloan originators?\b|\bmlos?\b|\bmortgage originators?\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'tn-mlo-person-grain', failReason: 'Tennessee mortgage loan originators are individuals licensed by TDFI and verified on NMLS Consumer Access. No Tennessee MLO list was acquired, so there is no count here, and originators are never added to company counts. This site does not publish originator pages.', coverageState: 'NOT_ACQUIRED' };
+    }
+    if (tnCity && !tnHmda && /\b(mortgage|lenders?|brokers?|servicers?)\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'tn-city-context', failReason: 'Nashville, Memphis, Knoxville, and Chattanooga are not separate licensing systems. TDFI licenses mortgage companies statewide and verifies them through NMLS Consumer Access, and no Tennessee roster was acquired, so there is no city licensee count. HMDA activity by county is on /tennessee.', coverageState: 'PARTIAL' };
+    }
+    if (tnState && !tnHmda && /\bservicers?\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'tn-servicer-license', failReason: 'A Tennessee mortgage loan servicer license is separate from lender and broker licenses under the Tennessee Residential Lending, Brokerage and Servicing Act. TDFI verifies it through NMLS Consumer Access; no Tennessee servicer list was acquired, so there is no count here. Servicers are not added to lender counts.', coverageState: 'NOT_ACQUIRED' };
+    }
+    if (tnState && !tnHmda && /\bbrokers?\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'tn-broker-license', failReason: 'A Tennessee mortgage loan broker license is separate from lender and servicer licenses. TDFI verifies brokers through NMLS Consumer Access; no Tennessee broker list was acquired, so there is no count here. Brokers are not added to lender counts.', coverageState: 'NOT_ACQUIRED' };
+    }
+    if (tnState && !tnHmda && /\b(licensed|licensees?|license|roster|registered|how many|tdfi)\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'tn-tdfi-licensing', failReason: 'TDFI licenses mortgage lenders, mortgage loan brokers, mortgage loan servicers, and mortgage loan originators as separate licenses. Companies file through NMLS, and TDFI sends the public to NMLS Consumer Access to verify them. TDFI publishes no downloadable roster, so there is no Tennessee licensee count and no combined Tennessee lenders total. HMDA applications are not licensees. See /tennessee.', coverageState: 'NOT_ACQUIRED' };
+    }
+  }
+
   if (/\b(?:mortgage loan officer|mlo|nmls person|branch nmls)\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'unsupported-identity-grain', failReason: 'This public research experience covers lender institutions. NMLS person/MLO and branch identifiers are separate identity grains and are not silently treated as institutions.', coverageState: 'UNSUPPORTED' };
   }

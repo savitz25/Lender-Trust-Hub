@@ -1,0 +1,562 @@
+{
+  "contract_name": "lender-tn-state-intel-v1",
+  "version": "1.0.0",
+  "ticket": "TN-LEND-001",
+  "geography": "TN",
+  "publication_status": "published",
+  "path": "/tennessee",
+  "generated_at": "2026-09-24T19:48:00Z",
+  "source_as_of": {
+    "tdfi_licensing": "NMLS Consumer Access (live search; no bulk file)",
+    "tdfi_enforcement": "order entry dates per document; index retrieved 2026-09-24T17:08:00Z",
+    "hmda": "HMDA 2025",
+    "fdic": "2026-06-26"
+  },
+  "regulators": {
+    "name": "Tennessee Department of Financial Institutions",
+    "short": "TDFI",
+    "division": "Compliance Division",
+    "statute": "Tennessee Residential Lending, Brokerage and Servicing Act (Tenn. Code Ann. § 45-13-201(a))",
+    "regulated": "https://www.tn.gov/tdfi/who-we-regulate.html",
+    "mortgage": "https://www.tn.gov/tdfi/mortgage-consumer-lending/mortgage.html",
+    "mlo": "https://www.tn.gov/tdfi/mortgage-consumer-lending/mlo.html",
+    "enforcement": "https://www.tn.gov/tdfi/enforcement-actions.html",
+    "complaints": "https://www.tn.gov/tdfi/consumer-resources.html",
+    "complaintForm": "https://stateoftennessee.formstack.com/forms/consumer_complaint",
+    "reverseMortgage": "https://www.tn.gov/tdfi/mortgage-consumer-lending/mortgage/reverse-mortgage.html",
+    "nonprofitExemption": "https://www.tn.gov/tdfi/mortgage-consumer-lending/mortgage/mort-non-profit.html",
+    "nmls": "https://www.nmlsconsumeraccess.org/",
+    "nmls_role": "TDFI requires mortgage filings through NMLS and points public verification of mortgage companies and MLOs to NMLS Consumer Access. NMLS is licensing infrastructure, not the Tennessee regulator."
+  },
+  "licenses": {
+    "classes": [
+      {
+        "id": "lender",
+        "label": "Mortgage lender",
+        "grain": "company license",
+        "roster": "NOT_ACQUIRED",
+        "rows": null
+      },
+      {
+        "id": "broker",
+        "label": "Mortgage loan broker",
+        "grain": "company license",
+        "roster": "NOT_ACQUIRED",
+        "rows": null
+      },
+      {
+        "id": "servicer",
+        "label": "Mortgage loan servicer",
+        "grain": "company license",
+        "roster": "NOT_ACQUIRED",
+        "rows": null
+      },
+      {
+        "id": "mlo",
+        "label": "Mortgage loan originator",
+        "grain": "individual license",
+        "roster": "NOT_ACQUIRED",
+        "rows": null
+      },
+      {
+        "id": "branch",
+        "label": "Branch",
+        "grain": "location under a company",
+        "roster": "NOT_ACQUIRED",
+        "rows": null
+      }
+    ],
+    "verification": "NMLS Consumer Access (KNOWN)",
+    "bulkRoster": "NOT_ACQUIRED — TDFI's regulated-entities page sends mortgage companies and MLOs to NMLS Consumer Access; no Tennessee export was found",
+    "consumerAccessScraped": false,
+    "adjacentCategoriesDeferred": [
+      "Reverse Mortgage authority",
+      "Nonprofit exempt from mortgage licensing"
+    ],
+    "no_combined_total": true
+  },
+  "existing_coverage_audit": {
+    "observedAt": "2026-09-24T19:42:36Z",
+    "method": "Read-only exact NMLS lookups of the curated Tennessee LEI-to-NMLS rows against production GET /api/specialist-execution/v2?q=NMLS {id}. No writes.",
+    "curatedRows": 250,
+    "distinctNmls": 177,
+    "exactIdentityPublicProfile": 51,
+    "exactIdentityUnpublishedResearch": 122,
+    "publicationRestrictedPerson": 1,
+    "noConfidentMatch": 3,
+    "scope": "Curated HMDA reporters only; not a census of Tennessee-licensed companies."
+  },
+  "enforcement": {
+    "coverage_state": "PARTIAL",
+    "indexStatement": "Emergency Orders and Final Orders issued as a result of a formal administrative action may be published on this website. These Orders have been subject to the opportunity for a hearing.",
+    "yearsListedOnIndex": [
+      2026,
+      2025,
+      2024,
+      2023,
+      2022,
+      2021,
+      2020,
+      2019,
+      2014,
+      2011
+    ],
+    "yearsWithPublishedPages": [
+      2023,
+      2022,
+      2021,
+      2020,
+      2019,
+      2014,
+      2011
+    ],
+    "yearsListedWithoutPages": [
+      2026,
+      2025,
+      2024
+    ],
+    "ordersListed": 10,
+    "ordersRetrieved": 9,
+    "licenseClassCounts": {
+      "LICENSE_CLASS_NOT_DETERMINED": 4,
+      "MORTGAGE_LENDER": 1,
+      "NON_MORTGAGE_BY_TITLE": 5
+    },
+    "mortgageRelatedOrders": 1,
+    "exactNmlsAttachments": 0,
+    "exactTennesseeLicenseNumbersPrinted": 1,
+    "nameOnlyAttachments": 0,
+    "ocrPerformed": false,
+    "personNamesPublished": false,
+    "orders": [
+      {
+        "id": "TDFI-ENF:2023:1",
+        "grain": "TDFI_ENFORCEMENT_ORDER_DOCUMENT",
+        "indexYear": 2023,
+        "titleAsPublished": null,
+        "respondent": null,
+        "respondentClass": "PERSON_OR_SOLE_PROPRIETOR",
+        "nameWithheld": true,
+        "orderTypeFromTitle": "Final Order",
+        "licenseClass": "LICENSE_CLASS_NOT_DETERMINED",
+        "tennesseeLicenseNumber": null,
+        "nmlsPrinted": null,
+        "apdDocket": null,
+        "orderEntered": null,
+        "initialOrderLanguage": false,
+        "textLayer": false,
+        "pdfPages": 11,
+        "pdfSha256": "255692a0a96f5b5e822771ee736c82f8838698f14919d198b4afdae64cc03d3f",
+        "sourceUrl": null,
+        "yearPage": "https://www.tn.gov/content/tn/tdfi/enforcement-actions/2023-enforcement-actions.html",
+        "retrievalStatus": "RETRIEVED",
+        "attachment": "STANDALONE"
+      },
+      {
+        "id": "TDFI-ENF:2022:2",
+        "grain": "TDFI_ENFORCEMENT_ORDER_DOCUMENT",
+        "indexYear": 2022,
+        "titleAsPublished": null,
+        "respondent": null,
+        "respondentClass": "PERSON_OR_SOLE_PROPRIETOR",
+        "nameWithheld": true,
+        "orderTypeFromTitle": "Final Order of Dismissal",
+        "licenseClass": "LICENSE_CLASS_NOT_DETERMINED",
+        "tennesseeLicenseNumber": null,
+        "nmlsPrinted": null,
+        "apdDocket": "03.06-215129J",
+        "orderEntered": "September 19, 2022",
+        "initialOrderLanguage": true,
+        "textLayer": true,
+        "pdfPages": 5,
+        "pdfSha256": "992bbbbbdd3d9bea7fab214b7c58376f7e0bd4b1acf141652e198517bb670458",
+        "sourceUrl": null,
+        "yearPage": "https://www.tn.gov/content/tn/tdfi/enforcement-actions/2022-enforcement-actions.html",
+        "retrievalStatus": "RETRIEVED",
+        "attachment": "STANDALONE"
+      },
+      {
+        "id": "TDFI-ENF:2022:3",
+        "grain": "TDFI_ENFORCEMENT_ORDER_DOCUMENT",
+        "indexYear": 2022,
+        "titleAsPublished": "Blue 4 Group-Agreed Order of Dismissal",
+        "respondent": "Blue 4 Group",
+        "respondentClass": "COMPANY",
+        "nameWithheld": false,
+        "orderTypeFromTitle": "Agreed Order of Dismissal",
+        "licenseClass": "LICENSE_CLASS_NOT_DETERMINED",
+        "tennesseeLicenseNumber": null,
+        "nmlsPrinted": null,
+        "apdDocket": "03.00-212059J",
+        "orderEntered": null,
+        "initialOrderLanguage": false,
+        "textLayer": true,
+        "pdfPages": 4,
+        "pdfSha256": "483ea5328a522cda2b94f4821ec3c2de0bc185f3e1a646d3191c6ace93849332",
+        "sourceUrl": "https://www.tn.gov/content/dam/tn/financialinstitutions/archive/legal-division-docs/enforcement-actions/Blue%204%20Group-Agreed%20Order%20of%20Dismissal.pdf",
+        "yearPage": "https://www.tn.gov/content/tn/tdfi/enforcement-actions/2022-enforcement-actions.html",
+        "retrievalStatus": "RETRIEVED",
+        "attachment": "STANDALONE"
+      },
+      {
+        "id": "TDFI-ENF:2021:4",
+        "grain": "TDFI_ENFORCEMENT_ORDER_DOCUMENT",
+        "indexYear": 2021,
+        "titleAsPublished": null,
+        "respondent": null,
+        "respondentClass": "OUT_OF_SCOPE",
+        "nameWithheld": true,
+        "orderTypeFromTitle": "Final Order",
+        "licenseClass": "NON_MORTGAGE_BY_TITLE",
+        "tennesseeLicenseNumber": null,
+        "nmlsPrinted": null,
+        "apdDocket": null,
+        "orderEntered": null,
+        "initialOrderLanguage": false,
+        "textLayer": false,
+        "pdfPages": 13,
+        "pdfSha256": "f4c9b34d7706192c3396ceb6546b70c026dbfeeaee8b9fe7683753197d34bf7d",
+        "sourceUrl": null,
+        "yearPage": "https://www.tn.gov/content/tn/tdfi/enforcement-actions/2021-enforcement-actions.html",
+        "retrievalStatus": "RETRIEVED",
+        "attachment": "STANDALONE"
+      },
+      {
+        "id": "TDFI-ENF:2021:5",
+        "grain": "TDFI_ENFORCEMENT_ORDER_DOCUMENT",
+        "indexYear": 2021,
+        "titleAsPublished": "Agreed Order of Dismissal-Tennessee's Best Finance, LLC",
+        "respondent": "Tennessee's Best Finance, LLC",
+        "respondentClass": "COMPANY",
+        "nameWithheld": false,
+        "orderTypeFromTitle": "Agreed Order of Dismissal",
+        "licenseClass": "LICENSE_CLASS_NOT_DETERMINED",
+        "tennesseeLicenseNumber": null,
+        "nmlsPrinted": null,
+        "apdDocket": "03.00-210453J",
+        "orderEntered": null,
+        "initialOrderLanguage": false,
+        "textLayer": true,
+        "pdfPages": 2,
+        "pdfSha256": "98c515db4861b66296b76e99b5bd7c953635589c8cf17f94d9cbe20cd7e886a0",
+        "sourceUrl": "https://www.tn.gov/content/dam/tn/financialinstitutions/archive/legal-division-docs/enforcement-actions/TDFI%20v.%20Tennessee%27s%20Best%20Finance%20LLC_Case%20Number%2003.00-210453J_Agreed%20Order%20of%20Dismissal_8-17-2021.pdf",
+        "yearPage": "https://www.tn.gov/content/tn/tdfi/enforcement-actions/2021-enforcement-actions.html",
+        "retrievalStatus": "RETRIEVED",
+        "attachment": "STANDALONE"
+      },
+      {
+        "id": "TDFI-ENF:2020:6",
+        "grain": "TDFI_ENFORCEMENT_ORDER_DOCUMENT",
+        "indexYear": 2020,
+        "titleAsPublished": "Final Order-Atlas Mortgage Partners, LLC",
+        "respondent": "Atlas Mortgage Partners, LLC",
+        "respondentClass": "COMPANY",
+        "nameWithheld": false,
+        "orderTypeFromTitle": "Final Order",
+        "licenseClass": "MORTGAGE_LENDER",
+        "tennesseeLicenseNumber": "112542",
+        "nmlsPrinted": null,
+        "apdDocket": "03.06-200381J",
+        "orderEntered": "September 30, 2020",
+        "initialOrderLanguage": true,
+        "textLayer": true,
+        "pdfPages": 12,
+        "pdfSha256": "70c8b95087dd4d53b4dabf009ceaf0777e71052891bed68372e357f30a243312",
+        "sourceUrl": "https://www.tn.gov/content/dam/tn/financialinstitutions/legal-division-docs/final-orders/Atlas%20Mortgage%20Partners%20LLC%20-Fnal.pdf",
+        "yearPage": "https://www.tn.gov/content/tn/tdfi/enforcement-actions/2020-enforcement-actions1.html",
+        "retrievalStatus": "RETRIEVED",
+        "attachment": "STANDALONE"
+      },
+      {
+        "id": "TDFI-ENF:2020:7",
+        "grain": "TDFI_ENFORCEMENT_ORDER_DOCUMENT",
+        "indexYear": 2020,
+        "titleAsPublished": null,
+        "respondent": null,
+        "respondentClass": "OUT_OF_SCOPE",
+        "nameWithheld": true,
+        "orderTypeFromTitle": "Final Order",
+        "licenseClass": "NON_MORTGAGE_BY_TITLE",
+        "tennesseeLicenseNumber": null,
+        "nmlsPrinted": null,
+        "apdDocket": "03.00-151165J",
+        "orderEntered": null,
+        "initialOrderLanguage": false,
+        "textLayer": true,
+        "pdfPages": 12,
+        "pdfSha256": "c48ef291fe68895a8d00b572094de0997d1f954f3c99e8fade6a3f28780225e4",
+        "sourceUrl": null,
+        "yearPage": "https://www.tn.gov/content/tn/tdfi/enforcement-actions/2020-enforcement-actions1.html",
+        "retrievalStatus": "RETRIEVED",
+        "attachment": "STANDALONE"
+      },
+      {
+        "id": "TDFI-ENF:2019:8",
+        "grain": "TDFI_ENFORCEMENT_ORDER_DOCUMENT",
+        "indexYear": 2019,
+        "titleAsPublished": null,
+        "respondent": null,
+        "respondentClass": "OUT_OF_SCOPE",
+        "nameWithheld": true,
+        "orderTypeFromTitle": "Final Order",
+        "licenseClass": "NON_MORTGAGE_BY_TITLE",
+        "tennesseeLicenseNumber": null,
+        "nmlsPrinted": null,
+        "apdDocket": null,
+        "orderEntered": null,
+        "initialOrderLanguage": false,
+        "textLayer": false,
+        "pdfPages": 13,
+        "pdfSha256": "0c562c6755c1c84571bf720c566f01ae20af6237d0cf296a8d6e15b67afab544",
+        "sourceUrl": null,
+        "yearPage": "https://www.tn.gov/content/tn/tdfi/enforcement-actions/ea-2019.html",
+        "retrievalStatus": "RETRIEVED",
+        "attachment": "STANDALONE"
+      },
+      {
+        "id": "TDFI-ENF:2014:9",
+        "grain": "TDFI_ENFORCEMENT_ORDER_DOCUMENT",
+        "indexYear": 2014,
+        "titleAsPublished": null,
+        "respondent": null,
+        "respondentClass": "OUT_OF_SCOPE",
+        "nameWithheld": true,
+        "orderTypeFromTitle": "Emergency Cease and Desist",
+        "licenseClass": "NON_MORTGAGE_BY_TITLE",
+        "tennesseeLicenseNumber": null,
+        "nmlsPrinted": null,
+        "apdDocket": null,
+        "orderEntered": null,
+        "initialOrderLanguage": false,
+        "textLayer": false,
+        "pdfPages": null,
+        "pdfSha256": null,
+        "sourceUrl": null,
+        "yearPage": "https://www.tn.gov/content/tn/tdfi/enforcement-actions/ea-2014.html",
+        "retrievalStatus": "SOURCE_404",
+        "attachment": "STANDALONE"
+      },
+      {
+        "id": "TDFI-ENF:2011:10",
+        "grain": "TDFI_ENFORCEMENT_ORDER_DOCUMENT",
+        "indexYear": 2011,
+        "titleAsPublished": null,
+        "respondent": null,
+        "respondentClass": "OUT_OF_SCOPE",
+        "nameWithheld": true,
+        "orderTypeFromTitle": "Order (title as published)",
+        "licenseClass": "NON_MORTGAGE_BY_TITLE",
+        "tennesseeLicenseNumber": null,
+        "nmlsPrinted": null,
+        "apdDocket": null,
+        "orderEntered": null,
+        "initialOrderLanguage": false,
+        "textLayer": false,
+        "pdfPages": 14,
+        "pdfSha256": "5cafc13751bd9a28c32ab3033fa653cee26f9fa9a863f17f06676c5ffb282584",
+        "sourceUrl": null,
+        "yearPage": "https://www.tn.gov/content/tn/tdfi/enforcement-actions/2011-ea.html",
+        "retrievalStatus": "RETRIEVED",
+        "attachment": "STANDALONE"
+      }
+    ],
+    "caveat": "Each row is one order document linked from the TDFI Enforcement Actions pages. Order titles are kept as TDFI published them. An Initial Order states it is not a Final Order until the appeal period passes. A dismissal is not a finding. License class comes only from the order text; scanned orders without a text layer were not OCR'd, so their class is not determined. No order printed an NMLS ID, so none is attached to an NMLS profile. 2024-2026 are listed on the index without published pages; that is unknown, not zero."
+  },
+  "hmda": {
+    "year": 2025,
+    "source": "Committed HMDA 2025 Tennessee partition data/hmda/by-state/TN/county_market_summary.csv (reused; not re-ingested).",
+    "source_as_of": "HMDA 2025",
+    "retrieved_at": null,
+    "coverage_state": "KNOWN",
+    "applications": 302219,
+    "originations": 175419,
+    "denials": 51413,
+    "denials_as_pct_of_total_applications": 17.01,
+    "purchase_applications": 140324,
+    "refinance_applications": 104060,
+    "purpose_other_applications": 57835,
+    "apps_conventional": 217408,
+    "apps_fha": 48616,
+    "apps_va": 33258,
+    "apps_usda_other": 2937,
+    "county_count": 95,
+    "top_counties": [
+      {
+        "county_fips": "47037",
+        "county_name": "Davidson",
+        "applications": 28026,
+        "originations": 16327,
+        "denials": 4572
+      },
+      {
+        "county_fips": "47157",
+        "county_name": "Shelby",
+        "applications": 27019,
+        "originations": 14545,
+        "denials": 5613
+      },
+      {
+        "county_fips": "47093",
+        "county_name": "",
+        "applications": 22068,
+        "originations": 13458,
+        "denials": 3195
+      },
+      {
+        "county_fips": "47065",
+        "county_name": "",
+        "applications": 16589,
+        "originations": 9713,
+        "denials": 2685
+      },
+      {
+        "county_fips": "47149",
+        "county_name": "",
+        "applications": 15758,
+        "originations": 9517,
+        "denials": 2515
+      },
+      {
+        "county_fips": "47125",
+        "county_name": "",
+        "applications": 13811,
+        "originations": 8303,
+        "denials": 2043
+      },
+      {
+        "county_fips": "47187",
+        "county_name": "",
+        "applications": 13253,
+        "originations": 8206,
+        "denials": 1823
+      },
+      {
+        "county_fips": "47165",
+        "county_name": "",
+        "applications": 10475,
+        "originations": 6454,
+        "denials": 1488
+      },
+      {
+        "county_fips": "47189",
+        "county_name": "",
+        "applications": 8395,
+        "originations": 5307,
+        "denials": 1150
+      },
+      {
+        "county_fips": "47163",
+        "county_name": "",
+        "applications": 7192,
+        "originations": 4205,
+        "denials": 1217
+      }
+    ],
+    "distinct_leis": 1141,
+    "index_json_applications": 302219,
+    "curated_lei_to_nmls_rows": 250,
+    "curated_distinct_nmls": 177,
+    "lei_nmls_bridge": "REUSED_EXISTING_CURATED_MAP_ONLY — no new NMLS↔LEI bridge in this ticket",
+    "application_is_not_lender": true,
+    "lei_is_not_tn_license": true
+  },
+  "complaints": {
+    "intake": "KNOWN",
+    "intakeNote": "TDFI Consumer Resources requires a formal written complaint (online form).",
+    "providerLevelRows": null,
+    "capability": "REQUEST_ONLY",
+    "historicalConsumersStatementUsedAsCount": false,
+    "complaint_is_not_finding": true
+  },
+  "depository": {
+    "source": "Existing LenderTrustHub FDIC Tennessee overlay (lib/fdic/data/tennessee.json)",
+    "fdic_rows": 109,
+    "source_as_of": "2026-06-26",
+    "not_in_mortgage_license_counts": true
+  },
+  "identity": {
+    "company": "NMLS company ID is the identity. TDFI publishes no separate company roster, so no Tennessee company is created here.",
+    "person": "MLO verification is NMLS Consumer Access. No person pages.",
+    "enforcement": "Attached only with a printed NMLS ID or an accepted Tennessee-license-to-NMLS bridge. None exists, so every order is standalone.",
+    "rejected_joins": [
+      "Name-only company match",
+      "Name-only adverse attachment",
+      "Tennessee license number to NMLS without an accepted bridge"
+    ]
+  },
+  "expansion_ledger": {
+    "NET_NEW_CANONICAL_ORGANIZATIONS": 0,
+    "NET_NEW_PUBLIC_LENDER_PROFILES": 0,
+    "NET_NEW_PUBLIC_PERSON_PAGES": 0,
+    "NEW_STANDALONE_ENFORCEMENT_EVENTS": 10,
+    "GRAPH_WRITES": 0,
+    "CLAIM_ELIGIBILITY_BROADENED": false
+  },
+  "capability_matrix": [
+    {
+      "capability": "TDFI mortgage regulation (lender, broker, servicer, MLO)",
+      "state": "KNOWN"
+    },
+    {
+      "capability": "NMLS Consumer Access verification",
+      "state": "KNOWN"
+    },
+    {
+      "capability": "Tennessee bulk mortgage license roster",
+      "state": "NOT_ACQUIRED"
+    },
+    {
+      "capability": "Tennessee MLO bulk population",
+      "state": "NOT_ACQUIRED"
+    },
+    {
+      "capability": "Tennessee branch census",
+      "state": "NOT_ACQUIRED"
+    },
+    {
+      "capability": "TDFI enforcement orders linked 2011-2023",
+      "state": "PARTIAL"
+    },
+    {
+      "capability": "TDFI enforcement 2024-2026",
+      "state": "UNKNOWN"
+    },
+    {
+      "capability": "License class of scanned orders",
+      "state": "UNKNOWN"
+    },
+    {
+      "capability": "TDFI provider-level complaints",
+      "state": "REQUEST_ONLY"
+    },
+    {
+      "capability": "HMDA 2025 Tennessee activity",
+      "state": "KNOWN"
+    },
+    {
+      "capability": "Reverse mortgage and nonprofit exemption lists",
+      "state": "NOT_ACQUIRED"
+    },
+    {
+      "capability": "Name-only enforcement attachment",
+      "state": "UNSUPPORTED"
+    },
+    {
+      "capability": "Combined Tennessee lender total",
+      "state": "UNSUPPORTED"
+    }
+  ],
+  "semantic_guardrails": [
+    "lender != broker != servicer != MLO != branch",
+    "license != HMDA activity; HMDA LEI != NMLS",
+    "Initial Order != Final Order until it becomes final",
+    "dismissal != finding; complaint != finding",
+    "missing != zero; unknown year != zero orders",
+    "no combined Tennessee lender total; no ranking; no Trust Score"
+  ],
+  "noCombinedDenominator": true,
+  "noLocalRoutes": true,
+  "no_ranking": true,
+  "no_trust_score": true,
+  "fingerprint": "cb713c0a555163348f74e4679e66182cd55739b079178a469dd5d39e9ce1d66a"
+}

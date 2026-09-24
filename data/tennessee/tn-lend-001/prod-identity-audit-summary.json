@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-09-24T19:42:36Z",
+  "method": "Read-only exact NMLS lookups of the curated Tennessee LEI-to-NMLS rows against production GET /api/specialist-execution/v2?q=NMLS {id}. No writes.",
+  "curatedRows": 250,
+  "distinctNmls": 177,
+  "exactIdentityPublicProfile": 51,
+  "exactIdentityUnpublishedResearch": 122,
+  "publicationRestrictedPerson": 1,
+  "noConfidentMatch": 3,
+  "scope": "Curated HMDA reporters only; not a census of Tennessee-licensed companies."
+}
