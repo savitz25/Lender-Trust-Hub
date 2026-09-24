@@ -205,6 +205,14 @@ export const LENDER_TOOLS = {
       cta: 'Open Massachusetts research',
     },
     {
+      id: 'tennessee-research',
+      title: 'Tennessee research',
+      description:
+        'TDFI licenses mortgage lenders, brokers, servicers, and loan originators separately and verifies them on NMLS Consumer Access. TDFI enforcement orders and 2025 HMDA activity. Not a Tennessee lender count or a ranking.',
+      href: '/tennessee',
+      cta: 'Open Tennessee research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
@@ -469,6 +477,7 @@ export const LENDER_FOOTER_COLUMNS = [
       { href: '/north-carolina', label: 'North Carolina Research' },
       { href: '/ohio', label: 'Ohio Research' },
       { href: '/massachusetts', label: 'Massachusetts Research' },
+      { href: '/tennessee', label: 'Tennessee Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },

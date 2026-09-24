@@ -27,4 +27,11 @@ test('OH-LEND-001 mixed-case statewide paths normalize', () => {
   assert.equal(normalizedPublishedStatePath('/oHiO'), '/ohio');
   assert.equal(normalizedPublishedStatePath('/ohio'), null);
   assert.equal(normalizedPublishedStatePath('/Ohio/columbus'), null);
+  // TN-LEND-001: Tennessee, plus the earlier Georgia and Massachusetts pages that were missing here.
+  assert.equal(normalizedPublishedStatePath('/Tennessee'), '/tennessee');
+  assert.equal(normalizedPublishedStatePath('/TENNESSEE'), '/tennessee');
+  assert.equal(normalizedPublishedStatePath('/tennessee'), null);
+  assert.equal(normalizedPublishedStatePath('/Tennessee/nashville'), null);
+  assert.equal(normalizedPublishedStatePath('/Massachusetts'), '/massachusetts');
+  assert.equal(normalizedPublishedStatePath('/Georgia'), '/georgia');
 });
