@@ -69,6 +69,8 @@ function residualCondition(original: string, name: string): string | null {
   return words.length ? words.join(' ') : null;
 }
 
+const CITY_CONTEXT_KINDS = new Set(['tn-city-context', 'ma-city-filter']);
+
 export function decideNativeNameSearch(
   raw: string, parsed: LenderResearchQuery,
   catalog: () => CandidateCatalog = loadCandidateCatalog, overrides?: AskUrlOverrides,
@@ -116,6 +118,10 @@ export function decideNativeNameSearch(
   if (text.split(' ').length > MAX_NAME_WORDS) return null;
 
   const probe = probeEngine(text, catalog);
+  // TN-LEND-001: "mortgage lender Knoxville" is a city question the parser already answered as geography
+  // context; a word that also appears in an institution's name does not turn it into a name search.
+  // An exact full institution name still wins.
+  if (probe !== 'full_name' && parsed.mode === 'fail_closed' && CITY_CONTEXT_KINDS.has(parsed.failClosedKind ?? '')) return null;
   const distinctive = decisionDistinctive(text, parsed).length > 0;
   const onlyReading = parsed.mode === 'fail_closed' && parsed.failClosedKind === 'unsupported';
   if (probe === 'full_name') return decide(text, 'FULL_SOURCE_NAME', conditions);

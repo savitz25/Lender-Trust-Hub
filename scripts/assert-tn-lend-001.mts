@@ -1,6 +1,9 @@
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { parseLenderAsk } from '../lib/ask-lender/parse';
+import { countSources } from '../lib/ask-lender/scalar-count';
+import { decideNativeNameSearch } from '../lib/name-candidates/native';
+import { MASSACHUSETTS_SNAPSHOT } from '../lib/massachusetts-intelligence/snapshot';
 import { TENNESSEE_INTELLIGENCE_GATE } from '../lib/tennessee-intelligence/publication';
 import { assertTennesseeIntelligence, TN_PUBLIC_FINGERPRINT, TENNESSEE_SNAPSHOT } from '../lib/tennessee-intelligence/snapshot';
 import { buildTennesseeIntelligenceJsonLd, tnJsonLdHasForbiddenRatings } from '../lib/tennessee-intelligence/jsonld';
@@ -108,6 +111,17 @@ for (const q of ['Tennessee mortgage applications', 'mortgage originations Tenne
 assert.equal(ask('mortgage lender Tennessee').mode, 'entity');
 assert.equal(kind('best mortgage lender Tennessee'), 'ranking');
 assert.doesNotMatch(ask('how many lenders in Tennessee').failReason ?? '', /\d{3,}/);
+
+// Ask answers HMDA from the same snapshot as the page (no second denominator); cities stay geography.
+for (const [state, snap] of [['TN', s], ['MA', MASSACHUSETTS_SNAPSHOT]] as const) {
+  const published = countSources.publishedStateHmda(state);
+  assert.ok(published, `${state} published HMDA seam`);
+  assert.equal(published!.applications, snap.hmda.applications);
+  assert.equal(published!.denials, snap.hmda.denials);
+}
+for (const q of ['mortgage lender Knoxville', 'mortgage lender Nashville', 'mortgage broker Memphis']) {
+  assert.equal(decideNativeNameSearch(q, parseLenderAsk(q)), null, `${q} must not become a name search`);
+}
 
 // Earlier states still route as before.
 assert.equal(kind('how many lenders in Massachusetts'), 'ma-dob-lender-file');
