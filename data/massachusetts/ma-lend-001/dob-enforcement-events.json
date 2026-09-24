@@ -1,0 +1,1530 @@
+{
+ "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+ "source_sha256": "93e875c32be925b1e225dc868d7b1edd8e99a1db0623f5d584b29bd84c6288e0",
+ "source_file_committed": false,
+ "retrieved_at": "2026-09-24T14:45:46Z",
+ "window_section_years": [
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "filter": "Entity Type mentions Mortgage Lender, Mortgage Broker, Mortgage Loan Originator, or Mortgage Servicer",
+ "all_table_rows_on_page": 617,
+ "events": [
+  {
+   "event_id": "MA-DOB-ENF:2026-08-12:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2026",
+   "action_date": "2026-08-12",
+   "action_date_raw": "8/12/2026",
+   "regulatory_action_raw": "Settlement Agreement and Consent Order",
+   "docket_numbers": [],
+   "action_families": [
+    "CONSENT_ORDER",
+    "SETTLEMENT_AGREEMENT"
+   ],
+   "entity_type_raw": "Mortgage Lender and Debt Collector",
+   "entity_type_classes": [
+    "MORTGAGE_LENDER",
+    "DEBT_COLLECTOR"
+   ],
+   "respondent_text_withheld": false,
+   "respondent_text_as_published": "NewRez, LLC, NMLS 3013",
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "NewRez, LLC",
+     "nmls_printed": "3013",
+     "nmls_printed_raw": [
+      "3013"
+     ],
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": "NMLS:3013",
+     "in_dob_lender_file_2026_06_30": true,
+     "in_dob_broker_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/settlement-agreement-and-consent-order-newrez-llc",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2026-04-09:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2026",
+   "action_date": "2026-04-09",
+   "action_date_raw": "4/9/2026",
+   "regulatory_action_raw": "Consent Order",
+   "docket_numbers": [],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Lender and Mortgage Broker",
+   "entity_type_classes": [
+    "MORTGAGE_LENDER",
+    "MORTGAGE_BROKER"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "Homespire Mortgage Corporation",
+     "nmls_printed": null,
+     "nmls_printed_raw": [],
+     "attachment": "AMBIGUOUS_MULTI_PARTY_NMLS",
+     "attached_identity": null,
+     "in_dob_lender_file_2026_06_30": false,
+     "in_dob_broker_file_2026_06_30": false
+    },
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "AMBIGUOUS_MULTI_PARTY_NMLS",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/homespire-mortgage-corp-michael-jonathan-rappaport-consent-order",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2025-07-15:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2025",
+   "action_date": "2025-07-15",
+   "action_date_raw": "7/15/2025",
+   "regulatory_action_raw": "Consent Order , 2025-011",
+   "docket_numbers": [
+    "2025-011"
+   ],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Loan Originator",
+   "entity_type_classes": [
+    "MORTGAGE_LOAN_ORIGINATOR"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/marla-taher-abdulnoor-consent-order",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2025-07-03:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2025",
+   "action_date": "2025-07-03",
+   "action_date_raw": "7/3/2025",
+   "regulatory_action_raw": "Consent Order , 2025-006",
+   "docket_numbers": [
+    "2025-006"
+   ],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Loan Originator",
+   "entity_type_classes": [
+    "MORTGAGE_LOAN_ORIGINATOR"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/consent-order-anthony-jacob-soss",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2025-05-08:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2025",
+   "action_date": "2025-05-08",
+   "action_date_raw": "5/8/2025",
+   "regulatory_action_raw": "Consent Order , 2025-006",
+   "docket_numbers": [
+    "2025-006"
+   ],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Loan Originator",
+   "entity_type_classes": [
+    "MORTGAGE_LOAN_ORIGINATOR"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/chad-smith-consent-order",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2025-05-02:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2025",
+   "action_date": "2025-05-02",
+   "action_date_raw": "5/2/2025",
+   "regulatory_action_raw": "Consent Order , 2025-009",
+   "docket_numbers": [
+    "2025-009"
+   ],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Broker and Mortgage Lender",
+   "entity_type_classes": [
+    "MORTGAGE_LENDER",
+    "MORTGAGE_BROKER"
+   ],
+   "respondent_text_withheld": false,
+   "respondent_text_as_published": "Extreme Loans, LLC NMLS 2025962",
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "Extreme Loans, LLC",
+     "nmls_printed": "2025962",
+     "nmls_printed_raw": [
+      "2025962"
+     ],
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": "NMLS:2025962",
+     "in_dob_lender_file_2026_06_30": false,
+     "in_dob_broker_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/extreme-loans-llc-consent-order",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2025-05-01:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2025",
+   "action_date": "2025-05-01",
+   "action_date_raw": "5/1/2025",
+   "regulatory_action_raw": "Consent Order , 2025-008",
+   "docket_numbers": [
+    "2025-008"
+   ],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Broker",
+   "entity_type_classes": [
+    "MORTGAGE_BROKER"
+   ],
+   "respondent_text_withheld": false,
+   "respondent_text_as_published": "Bankrate, LLC NMLS 1427381",
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "Bankrate, LLC",
+     "nmls_printed": "1427381",
+     "nmls_printed_raw": [
+      "1427381"
+     ],
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": "NMLS:1427381",
+     "in_dob_lender_file_2026_06_30": false,
+     "in_dob_broker_file_2026_06_30": true
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/consent-order-bankrate-llc",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2025-04-14:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2025",
+   "action_date": "2025-04-14",
+   "action_date_raw": "04/14/2025",
+   "regulatory_action_raw": "Consent Order , 2025-005",
+   "docket_numbers": [
+    "2025-005"
+   ],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Lender and Mortgage Broker",
+   "entity_type_classes": [
+    "MORTGAGE_LENDER",
+    "MORTGAGE_BROKER"
+   ],
+   "respondent_text_withheld": false,
+   "respondent_text_as_published": "Mutual of Omaha Mortgage, Inc. NMLS 1025894",
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "Mutual of Omaha Mortgage, Inc.",
+     "nmls_printed": "1025894",
+     "nmls_printed_raw": [
+      "1025894"
+     ],
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": "NMLS:1025894",
+     "in_dob_lender_file_2026_06_30": true,
+     "in_dob_broker_file_2026_06_30": true
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/consent-order-mutual-of-omaha-april-14-2025",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2025-03-06:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2025",
+   "action_date": "2025-03-06",
+   "action_date_raw": "03/06/2025",
+   "regulatory_action_raw": "Consent Order , 2025-004",
+   "docket_numbers": [
+    "2025-004"
+   ],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Loan Originator",
+   "entity_type_classes": [
+    "MORTGAGE_LOAN_ORIGINATOR"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": true
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/consent-order-david-pickering-362025",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2025-01-27:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2025",
+   "action_date": "2025-01-27",
+   "action_date_raw": "01/27/2025",
+   "regulatory_action_raw": "Consent Order , 2025-002",
+   "docket_numbers": [
+    "2025-002"
+   ],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Loan Originator",
+   "entity_type_classes": [
+    "MORTGAGE_LOAN_ORIGINATOR"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": true
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/anthony-focca-consent-order",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2024-12-31:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2024",
+   "action_date": "2024-12-31",
+   "action_date_raw": "12/31/2024",
+   "regulatory_action_raw": "Consent Order",
+   "docket_numbers": [],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Broker, Mortgage Lender, & Mortgage Servicer",
+   "entity_type_classes": [
+    "MORTGAGE_LENDER",
+    "MORTGAGE_BROKER",
+    "MORTGAGE_SERVICER"
+   ],
+   "respondent_text_withheld": false,
+   "respondent_text_as_published": "Bayview Asset Management, LLC (and affiliates) NMLS 102563",
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "Bayview Asset Management, LLC (and affiliates)",
+     "nmls_printed": "102563",
+     "nmls_printed_raw": [
+      "102563"
+     ],
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": "NMLS:102563",
+     "in_dob_lender_file_2026_06_30": false,
+     "in_dob_broker_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/bayview-asset-management-llc-and-affiliates-consent-order",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2023-10-03:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2023",
+   "action_date": "2023-10-03",
+   "action_date_raw": "10/03/2023",
+   "regulatory_action_raw": "Order of Suspension 2023-002",
+   "docket_numbers": [
+    "2023-002"
+   ],
+   "action_families": [
+    "ORDER_OF_SUSPENSION"
+   ],
+   "entity_type_raw": "Mortgage Lender",
+   "entity_type_classes": [
+    "MORTGAGE_LENDER"
+   ],
+   "respondent_text_withheld": false,
+   "respondent_text_as_published": "Guaranty Home Mortgage Corporation NMLS 135462",
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "Guaranty Home Mortgage Corporation",
+     "nmls_printed": "135462",
+     "nmls_printed_raw": [
+      "135462"
+     ],
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": "NMLS:135462",
+     "in_dob_lender_file_2026_06_30": false,
+     "in_dob_broker_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/order/guaranty-home-mortgage-corporation-suspension",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2023-04-20:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2023",
+   "action_date": "2023-04-20",
+   "action_date_raw": "04/20/2023",
+   "regulatory_action_raw": "Order of Suspension 2023-001",
+   "docket_numbers": [
+    "2023-001"
+   ],
+   "action_families": [
+    "ORDER_OF_SUSPENSION"
+   ],
+   "entity_type_raw": "Mortgage Lender and Mortgage Broker",
+   "entity_type_classes": [
+    "MORTGAGE_LENDER",
+    "MORTGAGE_BROKER"
+   ],
+   "respondent_text_withheld": false,
+   "respondent_text_as_published": "Celebrity Home Loans, LLC NMLS 227765",
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "Celebrity Home Loans, LLC",
+     "nmls_printed": "227765",
+     "nmls_printed_raw": [
+      "227765"
+     ],
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": "NMLS:227765",
+     "in_dob_lender_file_2026_06_30": false,
+     "in_dob_broker_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/order/celebrity-home-loans-llc-order-of-suspension",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2023-01-26:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2023",
+   "action_date": "2023-01-26",
+   "action_date_raw": "01/26/2023",
+   "regulatory_action_raw": "Consent Order 2022-007",
+   "docket_numbers": [
+    "2022-007"
+   ],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Lender and Mortgage Broker",
+   "entity_type_classes": [
+    "MORTGAGE_LENDER",
+    "MORTGAGE_BROKER"
+   ],
+   "respondent_text_withheld": false,
+   "respondent_text_as_published": "Broker Solutions, Inc. NMLS 6606",
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "Broker Solutions, Inc.",
+     "nmls_printed": "6606",
+     "nmls_printed_raw": [
+      "6606"
+     ],
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": "NMLS:6606",
+     "in_dob_lender_file_2026_06_30": true,
+     "in_dob_broker_file_2026_06_30": true
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/broker-solutions-inc-consent-order",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2022-12-30:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2022",
+   "action_date": "2022-12-30",
+   "action_date_raw": "12/30/2022",
+   "regulatory_action_raw": "Consent Order 2022-010",
+   "docket_numbers": [
+    "2022-010"
+   ],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Lender, Mortgage Broker, and Third Party Loan Servicer",
+   "entity_type_classes": [
+    "MORTGAGE_LENDER",
+    "MORTGAGE_BROKER",
+    "MORTGAGE_SERVICER"
+   ],
+   "respondent_text_withheld": false,
+   "respondent_text_as_published": "loanDepot.com, LLC NMLS 174457",
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "loanDepot.com, LLC",
+     "nmls_printed": "174457",
+     "nmls_printed_raw": [
+      "174457"
+     ],
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": "NMLS:174457",
+     "in_dob_lender_file_2026_06_30": true,
+     "in_dob_broker_file_2026_06_30": true
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/loandepotcom-llc-consent-order",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2022-09-06:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2022",
+   "action_date": "2022-09-06",
+   "action_date_raw": "09/06/2022",
+   "regulatory_action_raw": "Consent Order 2022-002",
+   "docket_numbers": [
+    "2022-002"
+   ],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Lender and Mortgage Broker",
+   "entity_type_classes": [
+    "MORTGAGE_LENDER",
+    "MORTGAGE_BROKER"
+   ],
+   "respondent_text_withheld": false,
+   "respondent_text_as_published": "Kind Lending, LLC NMLS 3925",
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "Kind Lending, LLC",
+     "nmls_printed": "3925",
+     "nmls_printed_raw": [
+      "3925"
+     ],
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": "NMLS:3925",
+     "in_dob_lender_file_2026_06_30": true,
+     "in_dob_broker_file_2026_06_30": true
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/kind-lending-llc-consent-order",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2022-03-09:2",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2022",
+   "action_date": "2022-03-09",
+   "action_date_raw": "03/09/2022",
+   "regulatory_action_raw": "Consent Order 2021-003",
+   "docket_numbers": [
+    "2021-003"
+   ],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Lender and Mortgage Broker",
+   "entity_type_classes": [
+    "MORTGAGE_LENDER",
+    "MORTGAGE_BROKER"
+   ],
+   "respondent_text_withheld": false,
+   "respondent_text_as_published": "CrossCountry Mortgage, LLC NMLS 3029",
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "CrossCountry Mortgage, LLC",
+     "nmls_printed": "3029",
+     "nmls_printed_raw": [
+      "3029"
+     ],
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": "NMLS:3029",
+     "in_dob_lender_file_2026_06_30": true,
+     "in_dob_broker_file_2026_06_30": true
+    }
+   ],
+   "related_raw": "Supersedes and replaces November 30, 2021 Temporary Order to Cease and Desist",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": true,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/consent-order-cross-country-mortgage-llc",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2022-03-09:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2022",
+   "action_date": "2022-03-09",
+   "action_date_raw": "03/09/2022",
+   "regulatory_action_raw": "Settlement Agreement 2021-003",
+   "docket_numbers": [
+    "2021-003"
+   ],
+   "action_families": [
+    "SETTLEMENT_AGREEMENT"
+   ],
+   "entity_type_raw": "Mortgage Lender and Mortgage Broker",
+   "entity_type_classes": [
+    "MORTGAGE_LENDER",
+    "MORTGAGE_BROKER"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": true
+    }
+   ],
+   "related_raw": "Supersedes and replaces November 30, 2021 Temporary Order to Cease and Desist",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": true,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/settlement/settlement-agreement-andrew-marquis",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2022-02-07:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2022",
+   "action_date": "2022-02-07",
+   "action_date_raw": "02/07/2022",
+   "regulatory_action_raw": "Consent Order 2021-006",
+   "docket_numbers": [
+    "2021-006"
+   ],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Broker and Mortgage Lender",
+   "entity_type_classes": [
+    "MORTGAGE_LENDER",
+    "MORTGAGE_BROKER"
+   ],
+   "respondent_text_withheld": false,
+   "respondent_text_as_published": "Mutual of Omaha Mortgage, Inc. NMLS 1025894",
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "Mutual of Omaha Mortgage, Inc.",
+     "nmls_printed": "1025894",
+     "nmls_printed_raw": [
+      "1025894"
+     ],
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": "NMLS:1025894",
+     "in_dob_lender_file_2026_06_30": true,
+     "in_dob_broker_file_2026_06_30": true
+    }
+   ],
+   "related_raw": "Supersedes and Replaces 1/4/2022 Temporary Cease and Desist Order; terminated 4/14/2025",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": true,
+    "terminated_note": true
+   },
+   "order_url": "https://www.mass.gov/consent-order/mutual-of-omaha-mortgage-inc-consent-order",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2022-02-02:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2022",
+   "action_date": "2022-02-02",
+   "action_date_raw": "02/02/2022",
+   "regulatory_action_raw": "Settlement Agreement and Consent Orde r",
+   "docket_numbers": [],
+   "action_families": [
+    "CONSENT_ORDER",
+    "SETTLEMENT_AGREEMENT"
+   ],
+   "entity_type_raw": "Mortgage Loan Originator",
+   "entity_type_classes": [
+    "MORTGAGE_LOAN_ORIGINATOR"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": false,
+     "attachment": "NO_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": false
+    },
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": false,
+     "attachment": "NO_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": false
+    },
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": false,
+     "attachment": "NO_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/settlement-agreement-and-consent-order-danny-yen-wendy-yen-and-dat-yen",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2022-01-06:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2022",
+   "action_date": "2022-01-06",
+   "action_date_raw": "01/06/2022",
+   "regulatory_action_raw": "Consent Order",
+   "docket_numbers": [],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Loan Originator",
+   "entity_type_classes": [
+    "MORTGAGE_LOAN_ORIGINATOR"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/consent-order-brian-brown",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2022-01-04:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2022",
+   "action_date": "2022-01-04",
+   "action_date_raw": "01/04/2022",
+   "regulatory_action_raw": "Temporary Cease and Desist Order and Notice of Administrative Penalty 2021-006",
+   "docket_numbers": [
+    "2021-006"
+   ],
+   "action_families": [
+    "TEMPORARY_ORDER_TO_CEASE_AND_DESIST",
+    "NOTICE_OF_ADMINISTRATIVE_PENALTY"
+   ],
+   "entity_type_raw": "Mortgage Broker and Mortgage Lender",
+   "entity_type_classes": [
+    "MORTGAGE_LENDER",
+    "MORTGAGE_BROKER"
+   ],
+   "respondent_text_withheld": false,
+   "respondent_text_as_published": "Mutual of Omaha Mortgage, Inc. NMLS 1025894",
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "Mutual of Omaha Mortgage, Inc.",
+     "nmls_printed": "1025894",
+     "nmls_printed_raw": [
+      "1025894"
+     ],
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": "NMLS:1025894",
+     "in_dob_lender_file_2026_06_30": true,
+     "in_dob_broker_file_2026_06_30": true
+    }
+   ],
+   "related_raw": "Superseded and Replaced by 2/7/2022 Consent Order",
+   "status_semantics": {
+    "temporary_order": true,
+    "became_final_note": false,
+    "superseded_note": true,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/cease-order/mutual-of-omaha-order-to-cease-and-desist",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2022-01-03:3",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2022",
+   "action_date": "2022-01-03",
+   "action_date_raw": "01/03/2022",
+   "regulatory_action_raw": "Consent Order",
+   "docket_numbers": [],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Loan Originator",
+   "entity_type_classes": [
+    "MORTGAGE_LOAN_ORIGINATOR"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": true
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/consent-order-chad-baker",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2022-01-03:2",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2022",
+   "action_date": "2022-01-03",
+   "action_date_raw": "01/03/2022",
+   "regulatory_action_raw": "Consent Order",
+   "docket_numbers": [],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Loan Originator",
+   "entity_type_classes": [
+    "MORTGAGE_LOAN_ORIGINATOR"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/consent-order-michael-rakeman",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2022-01-03:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2022",
+   "action_date": "2022-01-03",
+   "action_date_raw": "01/03/2022",
+   "regulatory_action_raw": "Consent Order",
+   "docket_numbers": [],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Loan Originator",
+   "entity_type_classes": [
+    "MORTGAGE_LOAN_ORIGINATOR"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/consent-order-kevin-heckemeyer",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2021-12-30:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2021",
+   "action_date": "2021-12-30",
+   "action_date_raw": "12/30/2021",
+   "regulatory_action_raw": "Consent Order",
+   "docket_numbers": [],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Loan Originator",
+   "entity_type_classes": [
+    "MORTGAGE_LOAN_ORIGINATOR"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/consent-order-michael-hamalak",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2021-11-30:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2021",
+   "action_date": "2021-11-30",
+   "action_date_raw": "11/30/2021",
+   "regulatory_action_raw": "Temporary Order to Cease and Desist and Notice of Administrative Penalty",
+   "docket_numbers": [],
+   "action_families": [
+    "TEMPORARY_ORDER_TO_CEASE_AND_DESIST",
+    "NOTICE_OF_ADMINISTRATIVE_PENALTY"
+   ],
+   "entity_type_raw": "Mortgage Lender, Mortgage Broker, and Mortgage Loan Originator",
+   "entity_type_classes": [
+    "MORTGAGE_LENDER",
+    "MORTGAGE_BROKER",
+    "MORTGAGE_LOAN_ORIGINATOR"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "CrossCountry Mortgage, LLC",
+     "nmls_printed": "3029",
+     "nmls_printed_raw": [
+      "3029"
+     ],
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": "NMLS:3029",
+     "in_dob_lender_file_2026_06_30": true,
+     "in_dob_broker_file_2026_06_30": true
+    },
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": true
+    }
+   ],
+   "related_raw": "Superseded and replaced by March 9, 2022 Consent Order and March 9, 2022 Settlement Agreement",
+   "status_semantics": {
+    "temporary_order": true,
+    "became_final_note": false,
+    "superseded_note": true,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/temporary-order-to-cease-and-desist/temporary-order-to-cease-and-desist-crosscountry-mortgage-llc-and-andrew-l-marquis",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2021-06-02:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2021",
+   "action_date": "2021-06-02",
+   "action_date_raw": "06/02/2021",
+   "regulatory_action_raw": "Consent Order 2021-005",
+   "docket_numbers": [
+    "2021-005"
+   ],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Broker",
+   "entity_type_classes": [
+    "MORTGAGE_BROKER"
+   ],
+   "respondent_text_withheld": false,
+   "respondent_text_as_published": "Boston Common Mortgage, Inc. NMLS 1916",
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "Boston Common Mortgage, Inc.",
+     "nmls_printed": "1916",
+     "nmls_printed_raw": [
+      "1916"
+     ],
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": "NMLS:1916",
+     "in_dob_lender_file_2026_06_30": false,
+     "in_dob_broker_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/consent-order/boston-common-mortgage-inc-consent-order#order",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2021-05-24:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2021",
+   "action_date": "2021-05-24",
+   "action_date_raw": "05/24/2021",
+   "regulatory_action_raw": "Order of Revocation 2021-001",
+   "docket_numbers": [
+    "2021-001"
+   ],
+   "action_families": [
+    "ORDER_OF_REVOCATION"
+   ],
+   "entity_type_raw": "Mortgage Loan Originator",
+   "entity_type_classes": [
+    "MORTGAGE_LOAN_ORIGINATOR"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/order/order-of-revocation-of-mortgage-loan-originator-cristobal-l-garcia",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2021-05-17:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2021",
+   "action_date": "2021-05-17",
+   "action_date_raw": "05/17/2021",
+   "regulatory_action_raw": "Order of Revocation 2021-003",
+   "docket_numbers": [
+    "2021-003"
+   ],
+   "action_families": [
+    "ORDER_OF_REVOCATION"
+   ],
+   "entity_type_raw": "Mortgage Loan Originator",
+   "entity_type_classes": [
+    "MORTGAGE_LOAN_ORIGINATOR"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/order/order-of-revocation-of-mortgage-loan-originator-brad-a-bowling",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2021-05-06:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2021",
+   "action_date": "2021-05-06",
+   "action_date_raw": "05/06/2021",
+   "regulatory_action_raw": "Consent Order 2020-009",
+   "docket_numbers": [
+    "2020-009"
+   ],
+   "action_families": [
+    "CONSENT_ORDER"
+   ],
+   "entity_type_raw": "Mortgage Broker",
+   "entity_type_classes": [
+    "MORTGAGE_BROKER"
+   ],
+   "respondent_text_withheld": false,
+   "respondent_text_as_published": "Liberty Lending Corporation NMLS 5453",
+   "parties": [
+    {
+     "respondent_class": "COMPANY",
+     "name_as_published": "Liberty Lending Corporation",
+     "nmls_printed": "5453",
+     "nmls_printed_raw": [
+      "5453"
+     ],
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": "NMLS:5453",
+     "in_dob_lender_file_2026_06_30": false,
+     "in_dob_broker_file_2026_06_30": true
+    }
+   ],
+   "related_raw": "This Consent Order was terminated on January 26, 2024",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": true
+   },
+   "order_url": "https://www.mass.gov/consent-order/consent-order-liberty-lending-corporation",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2021-03-31:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2021",
+   "action_date": "2021-03-31",
+   "action_date_raw": "03/31/2021",
+   "regulatory_action_raw": "Order to Show Cause 2021-001",
+   "docket_numbers": [
+    "2021-001"
+   ],
+   "action_families": [
+    "ORDER_TO_SHOW_CAUSE"
+   ],
+   "entity_type_raw": "Mortgage Loan Originator",
+   "entity_type_classes": [
+    "MORTGAGE_LOAN_ORIGINATOR"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/order/order-to-show-cause-cristobal-l-garcia",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  },
+  {
+   "event_id": "MA-DOB-ENF:2021-03-16:1",
+   "grain": "DOB_ENFORCEMENT_TABLE_ROW",
+   "section_year": "2021",
+   "action_date": "2021-03-16",
+   "action_date_raw": "03/16/2021",
+   "regulatory_action_raw": "Order to Show Cause 2021-003",
+   "docket_numbers": [
+    "2021-003"
+   ],
+   "action_families": [
+    "ORDER_TO_SHOW_CAUSE"
+   ],
+   "entity_type_raw": "Mortgage Loan Originator",
+   "entity_type_classes": [
+    "MORTGAGE_LOAN_ORIGINATOR"
+   ],
+   "respondent_text_withheld": true,
+   "respondent_text_as_published": null,
+   "parties": [
+    {
+     "respondent_class": "PERSON",
+     "name_as_published": null,
+     "name_withheld": true,
+     "nmls_printed": null,
+     "nmls_printed_present": true,
+     "attachment": "EXACT_NMLS_PRINTED",
+     "attached_identity": null,
+     "person_identity_withheld": true,
+     "in_dob_mlo_file_2026_06_30": false
+    }
+   ],
+   "related_raw": "",
+   "status_semantics": {
+    "temporary_order": false,
+    "became_final_note": false,
+    "superseded_note": false,
+    "supersedes_note": false,
+    "terminated_note": false
+   },
+   "order_url": "https://www.mass.gov/order/brad-a-bowling-order-to-show-cause",
+   "source_page": "https://www.mass.gov/info-details/enforcement-actions-issued-by-the-division-of-banks",
+   "legal_semantics": "DOB table metadata only. Order text not parsed; admission, denial, and settlement-only language is UNKNOWN at this layer. Not a TrustHub finding."
+  }
+ ]
+}

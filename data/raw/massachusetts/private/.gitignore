@@ -1,0 +1,4 @@
+# MA-LEND-001: person-grain and page captures stay local.
+# The MLO roster names individuals; the public repo keeps only derived counts + SHA-256.
+*
+!.gitignore

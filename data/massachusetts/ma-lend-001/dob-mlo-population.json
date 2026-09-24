@@ -1,0 +1,36 @@
+{
+  "grain": "PERSON_LICENSE_ROW",
+  "source_title": "Mortgage Loan Originator licensee list as of June 30, 2026",
+  "source_url": "https://www.mass.gov/doc/mortgage-loan-originator-licensee-list/download",
+  "source_sha256": "fd3bcdb3f764c4ca541217d05585ac111bbf73bfd59e89a10e0d9a4abb4713b7",
+  "source_file_committed": false,
+  "source_file_note": "Person-grain file names individuals; kept out of the public repository. Re-download from DOB and compare SHA-256.",
+  "source_as_of": "2026-06-30",
+  "retrieved_at": "2026-09-24T14:43:49Z",
+  "columns": [
+    "Company Name (if applicable)",
+    "Loan Originator Last Name",
+    "Loan Originator First Name",
+    "Loan Originator Middle Name",
+    "NMLS ID",
+    "License Number"
+  ],
+  "rows": 10397,
+  "distinct_person_nmls_ids": 10395,
+  "nmls_ids_on_more_than_one_row": 2,
+  "rows_missing_nmls_id": 0,
+  "rows_with_sponsoring_company_name": 9489,
+  "rows_without_sponsoring_company_name": 908,
+  "distinct_sponsoring_company_names": 654,
+  "rows_license_digits_ne_nmls_id": 9,
+  "rows_license_number_with_internal_space": 35,
+  "rows_lowercase_license_prefix": 28,
+  "fields_not_in_source": [
+    "issue_date",
+    "expiration_date",
+    "license_status",
+    "sponsoring_company_nmls_id"
+  ],
+  "sponsor_company_join": "UNSUPPORTED \u2014 the file gives a company NAME, not a company NMLS ID; no name join to companies",
+  "public_person_pages": "NONE \u2014 person grain is preserved as a research population, not published"
+}

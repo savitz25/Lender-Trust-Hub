@@ -1,0 +1,60 @@
+{
+  "observed_at": "2026-09-24T14:46:59Z",
+  "method": "Read-only exact NMLS lookups against production GET /api/specialist-execution/v2?q=NMLS {id} (queryType identifier, matchMethod exact_key). No writes.",
+  "companies": {
+    "queried": 559,
+    "exact_identity_public_profile": 27,
+    "exact_identity_unpublished_research": 409,
+    "no_confident_match": 123,
+    "lender_file": {
+      "exact_identity_public_profile": 26,
+      "exact_identity_unpublished_research": 253,
+      "no_confident_match": 19
+    },
+    "broker_file": {
+      "exact_identity_public_profile": 16,
+      "exact_identity_unpublished_research": 324,
+      "no_confident_match": 113
+    },
+    "public_profile_nmls_ids": [
+      "1043",
+      "1058",
+      "1168",
+      "2229",
+      "2250",
+      "2289",
+      "2611",
+      "2726",
+      "2756",
+      "2767",
+      "3030",
+      "3038",
+      "3925",
+      "6606",
+      "35953",
+      "53112",
+      "125182",
+      "130829",
+      "174457",
+      "330511",
+      "1025894",
+      "1121636",
+      "1121650",
+      "1124061",
+      "1464945",
+      "1717824",
+      "2101891"
+    ]
+  },
+  "mlo_sample": {
+    "sample": "250 individual NMLS IDs chosen by sha256('ma-lend-001:'+id) order (deterministic)",
+    "queried": 250,
+    "exact_person_mlo_restricted": 184,
+    "no_confident_match": 66,
+    "note": "Sample only; not a full person reconciliation. Person IDs are not committed."
+  },
+  "local_catalog": {
+    "note": "lib/mockData catalog is a legacy directory, not the identity graph; Massachusetts rows there are illustrative and not used as evidence."
+  },
+  "interpretation": "DOB rows are credential evidence on existing NMLS identities where they exist. No canonical organizations or public profiles are created from DOB rows; unmatched NMLS IDs stay research identities in this snapshot."
+}
