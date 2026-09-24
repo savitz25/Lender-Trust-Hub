@@ -5,6 +5,8 @@ import { OREGON_SNAPSHOT } from '@/lib/oregon-intelligence/snapshot';
 import { PENNSYLVANIA_SNAPSHOT } from '@/lib/pennsylvania-intelligence/snapshot';
 import { NORTH_CAROLINA_SNAPSHOT } from '@/lib/north-carolina-intelligence/snapshot';
 import { OHIO_SNAPSHOT } from '@/lib/ohio-intelligence/snapshot';
+import { MASSACHUSETTS_SNAPSHOT } from '@/lib/massachusetts-intelligence/snapshot';
+import { TENNESSEE_SNAPSHOT } from '@/lib/tennessee-intelligence/snapshot';
 import stateRows from './generated/state.csv.json';
 import countyRows from './generated/county.csv.json';
 import markets from './generated/markets.csv.json';
@@ -95,6 +97,36 @@ function ohioPublishedHmda(): PublishedStateHmda {
   };
 }
 
+// MA-LEND-001 / TN-LEND-001: the state pages publish county_market_summary totals; Ask answers from the
+// same snapshot so the page and Ask never show two different application or denial totals.
+function massachusettsPublishedHmda(): PublishedStateHmda {
+  return {
+    contract: MASSACHUSETTS_SNAPSHOT.contract_name,
+    applications: MASSACHUSETTS_SNAPSHOT.hmda.applications,
+    originations: MASSACHUSETTS_SNAPSHOT.hmda.originations,
+    denials: MASSACHUSETTS_SNAPSHOT.hmda.denials,
+    fingerprint: MASSACHUSETTS_SNAPSHOT.fingerprint,
+    generatedAt: MASSACHUSETTS_SNAPSHOT.generated_at,
+    retrievedAt: MASSACHUSETTS_SNAPSHOT.hmda.retrieved_at,
+    sourceFile: 'lib/massachusetts-intelligence/accepted-snapshot.json',
+    sourceGrain: 'county_market_summary county totals for Massachusetts property geography',
+  };
+}
+
+function tennesseePublishedHmda(): PublishedStateHmda {
+  return {
+    contract: TENNESSEE_SNAPSHOT.contract_name,
+    applications: TENNESSEE_SNAPSHOT.hmda.applications,
+    originations: TENNESSEE_SNAPSHOT.hmda.originations,
+    denials: TENNESSEE_SNAPSHOT.hmda.denials,
+    fingerprint: TENNESSEE_SNAPSHOT.fingerprint,
+    generatedAt: TENNESSEE_SNAPSHOT.generated_at,
+    retrievedAt: TENNESSEE_SNAPSHOT.hmda.retrieved_at,
+    sourceFile: 'lib/tennessee-intelligence/accepted-snapshot.json',
+    sourceGrain: 'county_market_summary county totals for Tennessee property geography',
+  };
+}
+
 // Static, bounded source seam. Tests replace it in memory; no I/O or production writes.
 export const countSources = {
   snapshot: (): unknown => snapshot,
@@ -112,7 +144,11 @@ export const countSources = {
             ? northCarolinaPublishedHmda()
             : state === 'OH'
               ? ohioPublishedHmda()
-              : null,
+              : state === 'MA'
+                ? massachusettsPublishedHmda()
+                : state === 'TN'
+                  ? tennesseePublishedHmda()
+                  : null,
 };
 class CountSourceError extends Error {}
 type RecordRow = Record<string, unknown>;
