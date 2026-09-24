@@ -189,6 +189,14 @@ export const LENDER_TOOLS = {
       cta: 'Open Ohio research',
     },
     {
+      id: 'georgia-research',
+      title: 'Georgia research',
+      description:
+        'Georgia DBF mortgage licensing is verified on NMLS Consumer Access. Brokers, lenders, branches, and originators stay separate. Not a Georgia lender census.',
+      href: '/georgia',
+      cta: 'Open Georgia research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
