@@ -305,6 +305,18 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   if ((/\bnorth carolina\b/i.test(q) || /\bnccob\b/i.test(q)) && /\b(licensed|lenders?|roster|bankers?)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty|\bbest|\bsafest|\bvetted|\brecommended|\bnchfa\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'nc-nccob-lender-class', failReason: 'Current NCCOB Show All lists 640 Mortgage Lender licenses as a separate class. That is not 574 brokers, 62 servicers, 104 MOSR rows, 24,612 MLO matching records, 112 reverse-mortgage certificates, HMDA applications, FDIC banks, or NCHFA participants, and it is not a combined North Carolina lenders census.', coverageState: 'PARTIAL' };
   }
+  if (/\bgeorgia\b|\bdbf\b/i.test(q) && /\b(how many lenders|georgia lenders)\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'ga-no-combined-lenders', failReason: 'Georgia does not have an acquired DBF company census. Mortgage brokers, mortgage lenders, branches, and mortgage loan originators are different grains. Verify a company or person by NMLS ID. Do not answer with HMDA applications or a combined Georgia lenders total.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if (/\bgeorgia\b/i.test(q) && /\b(enforcement|final order|regulatory action|cease)\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'ga-dbf-orders-on-nmls', failReason: 'Georgia DBF final orders for mortgage licensees are published on NMLS Consumer Access, not as a bulk list on the department site. This hub did not copy those orders and will not attach an action by name. Search the NMLS ID.', coverageState: 'NOT_ACQUIRED' };
+  }
+  if (/\bgeorgia\b/i.test(q) && /\b(complaint|complaints)\b/i.test(q) && /\b(dbf|department of banking)\b/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'ga-dbf-complaints-not-public', failReason: 'Georgia DBF does not publicly release complaint-level records about licensees. That is not a zero-complaint finding.', coverageState: 'UNSUPPORTED' };
+  }
+  if (/\b(atlanta)\b/i.test(q) && /\b(mortgage|lender|broker)\b/i.test(q) && !/\bhmda|\bapplication|\boriginat|\bdenial|\bproperty/i.test(q)) {
+    return { mode: 'fail_closed', failClosedKind: 'ga-no-local-census', failReason: 'Atlanta is not a Georgia mortgage-license census. HMDA geography is property location, not a city license. This statewide page does not publish an Atlanta lender route.', coverageState: 'UNSUPPORTED' };
+  }
   if (/\bohio\b|\bdfi\b|\brmla\b/i.test(q) && /\bhow many lenders\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'oh-no-combined-lenders', failReason: 'Ohio does not have an acquired current RMLA company census. Do not answer with HMDA applications, HMDA LEIs, FDIC banks, OHFA names, CFPB complaints, MLOs, branches, or brokers as Ohio lenders. Current verification is DFI + NMLS Consumer Access. Search-only is not zero.', coverageState: 'NOT_ACQUIRED' };
   }
