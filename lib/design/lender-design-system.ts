@@ -213,6 +213,14 @@ export const LENDER_TOOLS = {
       cta: 'Open Tennessee research',
     },
     {
+      id: 'nevada-research',
+      title: 'Nevada research',
+      description:
+        'The Division of Mortgage Lending licenses mortgage companies, loan originators, and servicers through NMLS and commercial-only, escrow, and exempt classes through its SRS portal. MLD enforcement orders since 2012 and 2025 HMDA activity. Not a Nevada lender count or a ranking.',
+      href: '/nevada',
+      cta: 'Open Nevada research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
@@ -478,6 +486,7 @@ export const LENDER_FOOTER_COLUMNS = [
       { href: '/ohio', label: 'Ohio Research' },
       { href: '/massachusetts', label: 'Massachusetts Research' },
       { href: '/tennessee', label: 'Tennessee Research' },
+      { href: '/nevada', label: 'Nevada Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },

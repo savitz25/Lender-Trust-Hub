@@ -32,6 +32,11 @@ test('OH-LEND-001 mixed-case statewide paths normalize', () => {
   assert.equal(normalizedPublishedStatePath('/TENNESSEE'), '/tennessee');
   assert.equal(normalizedPublishedStatePath('/tennessee'), null);
   assert.equal(normalizedPublishedStatePath('/Tennessee/nashville'), null);
+  // NV-LEND-001
+  assert.equal(normalizedPublishedStatePath('/Nevada'), '/nevada');
+  assert.equal(normalizedPublishedStatePath('/NEVADA'), '/nevada');
+  assert.equal(normalizedPublishedStatePath('/nevada'), null);
+  assert.equal(normalizedPublishedStatePath('/Nevada/las-vegas'), null);
   assert.equal(normalizedPublishedStatePath('/Massachusetts'), '/massachusetts');
   assert.equal(normalizedPublishedStatePath('/Georgia'), '/georgia');
 });
