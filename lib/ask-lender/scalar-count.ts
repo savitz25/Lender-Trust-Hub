@@ -7,6 +7,7 @@ import { NORTH_CAROLINA_SNAPSHOT } from '@/lib/north-carolina-intelligence/snaps
 import { OHIO_SNAPSHOT } from '@/lib/ohio-intelligence/snapshot';
 import { MASSACHUSETTS_SNAPSHOT } from '@/lib/massachusetts-intelligence/snapshot';
 import { TENNESSEE_SNAPSHOT } from '@/lib/tennessee-intelligence/snapshot';
+import { NEVADA_SNAPSHOT } from '@/lib/nevada-intelligence/snapshot';
 import stateRows from './generated/state.csv.json';
 import countyRows from './generated/county.csv.json';
 import markets from './generated/markets.csv.json';
@@ -127,6 +128,20 @@ function tennesseePublishedHmda(): PublishedStateHmda {
   };
 }
 
+function nevadaPublishedHmda(): PublishedStateHmda {
+  return {
+    contract: NEVADA_SNAPSHOT.contract_name,
+    applications: NEVADA_SNAPSHOT.hmda.applications,
+    originations: NEVADA_SNAPSHOT.hmda.originations,
+    denials: NEVADA_SNAPSHOT.hmda.denials,
+    fingerprint: NEVADA_SNAPSHOT.fingerprint,
+    generatedAt: NEVADA_SNAPSHOT.generated_at,
+    retrievedAt: NEVADA_SNAPSHOT.hmda.retrieved_at,
+    sourceFile: 'lib/nevada-intelligence/accepted-snapshot.json',
+    sourceGrain: 'county_market_summary county totals for Nevada property geography',
+  };
+}
+
 // Static, bounded source seam. Tests replace it in memory; no I/O or production writes.
 export const countSources = {
   snapshot: (): unknown => snapshot,
@@ -148,7 +163,9 @@ export const countSources = {
                 ? massachusettsPublishedHmda()
                 : state === 'TN'
                   ? tennesseePublishedHmda()
-                  : null,
+                  : state === 'NV'
+                    ? nevadaPublishedHmda()
+                    : null,
 };
 class CountSourceError extends Error {}
 type RecordRow = Record<string, unknown>;

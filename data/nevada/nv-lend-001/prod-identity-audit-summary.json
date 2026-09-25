@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-09-25T18:49:06Z",
+  "method": "Read-only exact NMLS lookups of the curated Nevada LEI-to-NMLS rows against production GET /api/specialist-execution/v2?q=NMLS {id}. No writes.",
+  "curatedRows": 160,
+  "distinctNmls": 112,
+  "exactIdentityPublicProfile": 43,
+  "exactIdentityUnpublishedResearch": 66,
+  "publicationRestrictedPerson": 0,
+  "noConfidentMatch": 3,
+  "otherStates": {},
+  "scope": "Curated HMDA reporters only; not a census of Nevada-licensed companies."
+}

@@ -210,6 +210,47 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     }
   }
 
+  // NV-LEND-001: the Nevada Division of Mortgage Lending (MLD) licenses mortgage companies, MLOs, mortgage servicers
+  // and supplemental servicers through NMLS, and commercial-only companies and MLOs, escrow agencies and agents, and
+  // exempt registrations through its own SRS portal. Both are search-only, so no Nevada licensee count exists.
+  // Bare "lenders in Nevada" discovery still falls through to HMDA institutions.
+  const nvState = /\bnevada\b|\bmld\b|\bdivision of mortgage lending\b/i.test(q);
+  const nvCity = /\b(las vegas|reno)\b/i.test(q) || (nvState && /\bhenderson\b/i.test(q));
+  const nvHmda = /\bhmda|\bapplications?\b|\boriginations?\b|\boriginated\b|\bdenials?\b|\bproperty|\bproperties\b/i.test(q);
+  const nvRanking = /\bbest|\bsafest|\bvetted|\brecommended|\btop\b/i.test(q);
+  if ((nvState || nvCity) && !nvRanking) {
+    if (/\b(enforcement|discipline|disciplinary|orders?|consent|cease|revocation|revoked|suspension|penalt)/i.test(q) && !nvHmda) {
+      return { mode: 'fail_closed', failClosedKind: 'nv-mld-enforcement', failReason: 'The Nevada Division of Mortgage Lending publishes a Summary of Enforcement Actions by year. Its 2012-2026 pages list 189 rows (188 order documents): 94 consent orders, 55 final orders, 30 cease-and-desist orders, and 10 other or unlabeled rows, under NRS 645B (132), 645F (36), 645A (14), and 645E (7) as MLD printed them. 52 rows name only a company, 57 a company and an individual, and 80 only an individual; individuals are not named here. A consent order is a settlement, and an index row is not a finding on its own. Order text was read for 2019-2026 only; a row links to a LenderTrustHub identity only where the order prints the company’s NMLS ID and it matches exactly. MLD lists no proposed consent orders as of 2026-09-25. See /nevada.', coverageState: 'PARTIAL' };
+    }
+    if (/\bcomplaints?\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'nv-mld-complaints', failReason: 'MLD’s Compliance Investigation Unit takes complaints about mortgage companies, loan originators, servicers, escrow agencies and agents, and covered service providers by online form, email, mail, or fax, but does not publish complaint records by company (request only). That is not a zero-complaint finding. CFPB complaints are a separate federal dataset, and a complaint is not a violation. See /nevada.', coverageState: 'REQUEST_ONLY' };
+    }
+    if (nvState && /\bdenial rates?\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'nv-hmda-denials', failReason: 'HMDA 2025 Nevada: 20,655 denials out of 119,768 applications for properties in Nevada (17.25% of all applications). That is a statewide share of applications, not a lender-level rate and not lender quality. HMDA activity is not the MLD license list.', coverageState: 'PARTIAL' };
+    }
+    if (!nvHmda && /\bcommercial[- ]only\b|\bcommercial mortgage\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'nv-commercial-only', failReason: 'Nevada Commercial Only Mortgage Company and Commercial Only Mortgage Loan Originator licenses are separate MLD classes verified on MLD’s SRS public search, not NMLS Consumer Access. A commercial-only license is not consumer mortgage authority. No commercial-only roster was acquired, so there is no count here, and these licenses are never added to mortgage company counts. See /nevada.', coverageState: 'NOT_ACQUIRED' };
+    }
+    if (!nvHmda && /\bescrow\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'nv-escrow', failReason: 'Nevada escrow agencies (companies) and escrow agents (individuals) are licensed by MLD under NRS 645A and verified on MLD’s SRS public search. They are not mortgage companies or loan originators, and no escrow roster was acquired, so there is no count here. This site does not publish escrow agent pages. See /nevada.', coverageState: 'NOT_ACQUIRED' };
+    }
+    if (!nvHmda && /\bloan originators?\b|\bmlos?\b|\bmortgage originators?\b|\bmortgage agents?\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'nv-mlo-person-grain', failReason: 'Nevada mortgage loan originators (formerly mortgage agents) are individuals licensed by MLD and verified on NMLS Consumer Access. No Nevada MLO list was acquired, so there is no count here, and originators are never added to company counts. This site does not publish originator pages.', coverageState: 'NOT_ACQUIRED' };
+    }
+    if (nvCity && !nvHmda && /\b(mortgage|lenders?|brokers?|servicers?|compan(?:y|ies))\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'nv-city-context', failReason: 'Las Vegas, Reno, and Henderson are not separate licensing systems. MLD licenses mortgage companies statewide and verifies them through NMLS Consumer Access, and no Nevada roster was acquired, so there is no city licensee count. HMDA activity by county is on /nevada.', coverageState: 'PARTIAL' };
+    }
+    if (nvState && !nvHmda && /\bservicers?\b|\bservicing\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'nv-servicer-license', failReason: 'A Nevada Mortgage Servicer license, and the Supplemental Mortgage Servicer license for companies that already hold a mortgage company license, are separate MLD classes under NRS 645F, verified on NMLS Consumer Access. No Nevada servicer list was acquired, so there is no count here. Servicers are not added to mortgage company counts. See /nevada.', coverageState: 'NOT_ACQUIRED' };
+    }
+    if (nvState && !nvHmda && /\bbrokers?\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'nv-broker-license', failReason: 'Nevada no longer issues a separate mortgage broker license: brokering and lending are both done under the MLD Mortgage Company license (NRS 645B), and older enforcement orders print the former Mortgage Broker class. Verification is NMLS Consumer Access; no Nevada roster was acquired, so there is no broker count here. See /nevada.', coverageState: 'NOT_ACQUIRED' };
+    }
+    if (nvState && !nvHmda && /\b(licensed|licensees?|license|roster|registered|how many|mld|division of mortgage lending|mortgage compan(?:y|ies))\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'nv-mld-licensing', failReason: 'The Nevada Division of Mortgage Lending licenses mortgage companies, mortgage loan originators, mortgage servicers, and supplemental mortgage servicers through NMLS, and commercial-only mortgage companies and originators, escrow agencies and agents, and exempt company registrations through its own SRS portal. Each is a separate license, and one company can hold several and stay one company. MLD sends the public to NMLS Consumer Access or the SRS search to verify a licensee and publishes no downloadable roster, so there is no Nevada licensee count and no combined Nevada lenders total. HMDA applications are not licensees. See /nevada.', coverageState: 'NOT_ACQUIRED' };
+    }
+  }
+
   if (/\b(?:mortgage loan officer|mlo|nmls person|branch nmls)\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'unsupported-identity-grain', failReason: 'This public research experience covers lender institutions. NMLS person/MLO and branch identifiers are separate identity grains and are not silently treated as institutions.', coverageState: 'UNSUPPORTED' };
   }
