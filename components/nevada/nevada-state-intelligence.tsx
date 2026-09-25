@@ -21,7 +21,7 @@ function Official({ href, label }: { href: string; label: string }) {
 
 function LicenseTable({ rows, system }: { rows: NevadaIntelligenceSnapshot['licenses']['nmls_classes']; system: string }) {
   return (
-    <div className="mt-3 overflow-x-auto">
+    <div className="mt-3 overflow-x-auto" tabIndex={0} role="region" aria-label={`License classes verified on ${system}`}>
       <table className="w-full min-w-[520px] text-left text-sm text-slate-700">
         <thead className="text-xs uppercase text-slate-500">
           <tr>
@@ -220,7 +220,7 @@ export function NevadaStateIntelligence({ snapshot }: { snapshot: NevadaIntellig
           <Official href={R.enforcement} label="MLD Summary of Enforcement Actions" /> ·{' '}
           <Official href={R.proposedConsentOrders} label="Proposed consent orders" />
         </p>
-        <div className="mt-4 overflow-x-auto">
+        <div className="mt-4 overflow-x-auto" tabIndex={0} role="region" aria-label="MLD enforcement index rows">
           <table className="w-full min-w-[720px] text-left text-sm text-slate-700">
             <caption className="sr-only">MLD enforcement index rows, newest first</caption>
             <thead className="text-xs uppercase text-slate-500">
