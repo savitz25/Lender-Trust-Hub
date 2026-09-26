@@ -21,7 +21,7 @@ import { STATE_NAMES } from '@/lib/home-intel/states';
 import { GLEIF_RECORD_URL, loadCandidateCatalog, type CandidateCatalog } from './catalog';
 import { CANDIDATE_MAX_LIMIT, CANDIDATE_WINDOW, MATCH_METHODS, searchNameCandidates, type MatchMethod } from './engine';
 import { candidateTokens, distinctiveTokens } from './normalize';
-import { hasGenuineLabeledIdentifier, isIdentifierAttempt } from './request-shape';
+import { hasGenuineLabeledIdentifier, isBareNumericOnlyInput, isIdentifierAttempt } from './request-shape';
 
 export type NativeNameDecision = {
   name: string;
@@ -78,6 +78,9 @@ export function decideNativeNameSearch(
   // Protected captures of the existing parser.
   // Validated label + value syntax is an identifier request. A label WORD with no valid value ("LEI Financial Group",
   // "NMLS Lending Corp") is not: it may still be a name, but only if the engine actually finds that institution.
+  // Bare digits are not an institution name and are not an inferred NMLS id. Return before any
+  // catalog probe or ONLY_READING fallback so the parser's fail-closed result stays in place.
+  if (isBareNumericOnlyInput(raw ?? '')) return null;
   if (isIdentifierAttempt(raw ?? '')) return null; // genuine OR malformed identifier input: existing handling, catalog untouched
   const labelWordOnly = Boolean(parsed.identityRequest || parsed.identifier);
   if (parsed.evidenceFamilies?.length || parsed.mode === 'definition' || parsed.mode === 'evidence') return null;
@@ -104,11 +107,13 @@ export function decideNativeNameSearch(
   if (quoted) return hasGenuineLabeledIdentifier(quoted) ? null : decide(quoted, 'QUOTED_NAME', []);
 
   let text = original.replace(LEAD_VERB, '').replace(/[.!\s]+$/, '').trim();
+  if (isBareNumericOnlyInput(text)) return null;
   if (text.length < 2 || text.length > 120 || text.includes('?') || text.split(' ').length > MAX_NAME_WORDS + 4) return null;
 
   const conditions: string[] = [];
   const split = text.match(LOCATIVE_SPLIT);
   if (split) {
+    if (isBareNumericOnlyInput(split[1]!)) return null;
     const left = probeEngine(split[1]!, catalog);
     const leftDistinctive = decisionDistinctive(split[1]!, { ...parsed, geography: undefined }).length > 0;
     // Only a name on the left makes this "<name> in <place>"; otherwise it is ordinary location research ("lenders in Texas").
