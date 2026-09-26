@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-09-26T15:08:30Z",
+  "method": "Read-only exact NMLS lookups of the curated Minnesota LEI-to-NMLS rows against production GET /api/specialist-execution/v2?q=NMLS {id}. No writes.",
+  "curatedRows": 126,
+  "distinctNmls": 101,
+  "exactIdentityPublicProfile": 39,
+  "exactIdentityUnpublishedResearch": 58,
+  "publicationRestrictedPerson": 1,
+  "noConfidentMatch": 3,
+  "scope": "Curated HMDA reporters only; not a census of Minnesota-licensed companies."
+}

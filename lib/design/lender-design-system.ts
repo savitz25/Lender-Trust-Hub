@@ -221,6 +221,14 @@ export const LENDER_TOOLS = {
       cta: 'Open Nevada research',
     },
     {
+      id: 'minnesota-research',
+      title: 'Minnesota research',
+      description:
+        'The Department of Commerce licenses residential mortgage originators, servicers, and loan originators, verified on NMLS Consumer Access. Commerce mortgage enforcement actions since 2022 and 2025 HMDA activity. Not a Minnesota lender count or a ranking.',
+      href: '/minnesota',
+      cta: 'Open Minnesota research',
+    },
+    {
       id: 'compare',
       title: 'Compare lenders',
       description:
@@ -487,6 +495,7 @@ export const LENDER_FOOTER_COLUMNS = [
       { href: '/massachusetts', label: 'Massachusetts Research' },
       { href: '/tennessee', label: 'Tennessee Research' },
       { href: '/nevada', label: 'Nevada Research' },
+      { href: '/minnesota', label: 'Minnesota Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },

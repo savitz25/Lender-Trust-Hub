@@ -1,0 +1,74 @@
+{
+ "retrievedAt": "2026-09-26T15:05:00Z",
+ "licenseLookup": {
+  "url": "https://mn.gov/commerce/licensing/license-lookup/",
+  "sha256": "253d32dfc514cbeb2b9aba4dee4c628f0719014b426cf382b733e68e9f1703b9",
+  "mortgageEntries": {
+   "Mortgage Originator and Servicer Companies, Residential": "https://www.nmlsconsumeraccess.org/",
+   "Mortgage Loan Originators, Individuals": "https://www.nmlsconsumeraccess.org/"
+  },
+  "note": "Commerce's License Lookup sends both mortgage license classes to NMLS Consumer Access; Commerce publishes no downloadable mortgage roster. Other mn.gov/commerce pages returned a bot-manager CAPTCHA to automated requests and were not retrieved."
+ },
+ "statutes": {
+  "58.03": {
+   "url": "https://www.revisor.mn.gov/statutes/cite/58.03",
+   "edition": "2025 Minnesota Statutes",
+   "sha256": "0dac2198a09f325b70526bf9cf145a4b859bc3cbe43f1ad71eeb7584431b69e6",
+   "text": {
+    "classes": "The commissioner may issue the following classes of license under this chapter: (1) a residential mortgage originator license; and (2) a residential mortgage servicer license."
+   }
+  },
+  "58.04": {
+   "url": "https://www.revisor.mn.gov/statutes/cite/58.04",
+   "edition": "2025 Minnesota Statutes",
+   "sha256": "c1a2188bb8d9b18d054c92e49fbe0ef75979f53db60380ee2a1ea59585b29604",
+   "text": {
+    "originator_required": "(a) No person shall act as a residential mortgage originator, or make residential mortgage loans without first obtaining a license from the commissioner according to the licensing procedures provided in this chapter.",
+    "business_form": "(b) A licensee must be either a partnership, limited liability partnership, association, limited liability company, corporation, or other form of business organization, and must have and maintain a surety bond in the amounts prescribed under section 58.08 .",
+    "financial_institution_exempt": "(2) a financial institution as defined in section 58.02, subdivision 10 ;"
+   }
+  },
+  "58.08": {
+   "url": "https://www.revisor.mn.gov/statutes/cite/58.08",
+   "edition": "2025 Minnesota Statutes",
+   "sha256": "0777b12dadfa1bf6028c7b94f9b138cd4eaa6044dd4cdbc05ce080ec2027d3d6",
+   "text": {
+    "originator_bond": "An applicant for a residential mortgage originator license must file with the department a surety bond in the amount of $125,000, issued by an insurance company authorized to do so in this state."
+   }
+  },
+  "58.09": {
+   "url": "https://www.revisor.mn.gov/statutes/cite/58.09",
+   "edition": "2025 Minnesota Statutes",
+   "sha256": "dd5b5363afb50e4649e78815075a5e418ec3eed043b8ca06809b542b6c24738c",
+   "text": {
+    "term": "Licenses for residential mortgage originators and residential mortgage servicers issued under this chapter expire on December 31 and are renewable on January 1 of each year after that date."
+   }
+  },
+  "58.12": {
+   "url": "https://www.revisor.mn.gov/statutes/cite/58.12",
+   "edition": "2025 Minnesota Statutes",
+   "sha256": "003abb1932c48f33c65e152e121e8f1790d2cf95f35d81ab421e09d158427fd9",
+   "text": {
+    "powers": "(1) bar a person from engaging in residential mortgage origination or servicing; (2) deny, suspend, or revoke a residential mortgage originator or a servicer license; (3) censure a licensee; (4) impose a civil penalty as provided for in section 45.027, subdivision 6 ; or (5) revoke an exemption or certificate of exemption."
+   }
+  },
+  "58A.03": {
+   "url": "https://www.revisor.mn.gov/statutes/cite/58A.03",
+   "edition": "2025 Minnesota Statutes",
+   "sha256": "2e80643cedc2759293bd975a131497a13a4714f443bc313e7b8926fdf68aef0d",
+   "text": {
+    "mlo_required": "An individual, unless specifically exempted from this chapter under subdivision 2, shall not engage in the business of a mortgage loan originator with respect to a dwelling located in this state without first obtaining and maintaining a license under this chapter.",
+    "mlo_employed": "An individual may not engage in the mortgage loan business unless the individual is employed and supervised by an entity which is either licensed or exempt from licensing under chapter 58.",
+    "mlo_nmls": "A licensed mortgage loan originator must register with and maintain a valid unique identifier issued by the Nationwide Multistate Licensing System and Registry."
+   }
+  },
+  "58A.045": {
+   "url": "https://www.revisor.mn.gov/statutes/cite/58A.045",
+   "edition": "2025 Minnesota Statutes",
+   "sha256": "9dba0860a3d98939d3c7c533500659c2e91aa9dfc6f3b64a9ab8424ff54dbfa6",
+   "text": {
+    "term": "Licenses for mortgage loan originators issued under this chapter expire on December 31 and are renewable on January 1 of each year after that date."
+   }
+  }
+ }
+}

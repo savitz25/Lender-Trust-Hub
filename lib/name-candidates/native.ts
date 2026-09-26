@@ -69,7 +69,7 @@ function residualCondition(original: string, name: string): string | null {
   return words.length ? words.join(' ') : null;
 }
 
-const CITY_CONTEXT_KINDS = new Set(['tn-city-context', 'nv-city-context', 'ma-city-filter']);
+const CITY_CONTEXT_KINDS = new Set(['tn-city-context', 'nv-city-context', 'mn-city-context', 'ma-city-filter']);
 
 export function decideNativeNameSearch(
   raw: string, parsed: LenderResearchQuery,
