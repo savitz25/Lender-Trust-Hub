@@ -13,6 +13,7 @@ import { loadCandidateCatalog, type CandidateCatalog } from './catalog';
 import { activeNameCandidateFixture } from './fixtures';
 import { executeNameCandidates, NAME_CANDIDATES_CONTRACT, NAME_CANDIDATES_SCHEMA_FINGERPRINT } from './operation';
 import { decideNativeNameSearch, executeNativeNameCandidates } from './native';
+import { isBareNumericOnlyInput } from './request-shape';
 import { parseLenderAsk } from '../ask-lender/parse';
 import { executeAskQuery } from '../ask-lender/execute-query';
 import { executeIdentityOrEvidence } from '../specialist-execution/identity-execution';
@@ -203,6 +204,46 @@ test('16 real question types are NOT turned into literal name searches; identifi
   const exact = executeAskQuery({ q: 'NMLS 3030' }); assert.equal(exact.nameCandidates, undefined); assert.equal(exact.terminalState, 'FOUND');
   const exactMiss = executeAskQuery({ q: 'NMLS 99999999' }); assert.equal(exactMiss.nameCandidates, undefined); assert.equal(exactMiss.terminalState, 'NO_MATCH');
   assert.equal(executeAskQuery({ q: 'NMLS #3,030' }).nameCandidates, undefined, 'formatted identifier input keeps the identifier path');
+});
+
+test('MN-LEND-001R bare numeric input stays fail-closed through the production name seam', () => {
+  const parsed = parseLenderAsk('2229');
+  assert.notEqual(parsed.mode, 'entity', 'parser already leaves bare digits non-entity');
+  assert.equal(decideNativeNameSearch('2229', parsed), null, 'native-name decision must not adopt bare digits');
+  const bare = executeAskQuery({ q: '2229' });
+  assert.notEqual(bare.query.mode, 'entity');
+  assert.equal(bare.query.identityQuery, undefined);
+  assert.equal(bare.nameCandidates, undefined);
+  assert.equal(bare.failClosed, true);
+  assert.equal(bare.interpretation.some((line) => line.value === 'Institution name search'), false);
+
+  const withState = executeAskQuery({ q: '2229 Minnesota' });
+  const parsedState = parseLenderAsk('2229 Minnesota');
+  assert.equal(decideNativeNameSearch('2229 Minnesota', parsedState), null);
+  assert.equal(withState.nameCandidates, undefined);
+  assert.notEqual(withState.query.identityQuery, '2229');
+  assert.notEqual(withState.query.identityQuery, '2229 Minnesota');
+  assert.equal(withState.query.mode, parsedState.mode);
+
+  for (const q of ['NMLS 2229', 'NMLS 2229 Minnesota']) {
+    const labeled = executeAskQuery({ q });
+    assert.equal(labeled.query.mode, 'entity', q);
+    assert.equal(labeled.query.identifier?.type, 'NMLS_INSTITUTION', q);
+    assert.equal(labeled.query.identifier?.value, '2229', q);
+    assert.equal(labeled.nameCandidates, undefined, q);
+  }
+
+  const known = executeAskQuery({ q: 'Rocket Mortgage' });
+  assert.equal(known.query.mode, 'entity');
+  assert.ok(known.nameCandidates, 'an ordinary institution name still searches');
+  assert.equal(isBareNumericOnlyInput('2229'), true);
+  assert.equal(isBareNumericOnlyInput('  2229  '), true);
+  assert.equal(isBareNumericOnlyInput('1st National Bank'), false);
+  assert.equal(isBareNumericOnlyInput('Mortgage 1 LLC'), false);
+  assert.equal(isBareNumericOnlyInput('NMLS 2229'), false);
+  assert.equal(isBareNumericOnlyInput('2229 Minnesota'), false);
+  assert.notEqual(decideNativeNameSearch('1st National Bank', parseLenderAsk('1st National Bank')), null);
+  assert.notEqual(decideNativeNameSearch('Mortgage 1 LLC', parseLenderAsk('Mortgage 1 LLC')), null);
 });
 
 test('17 an explicit location condition on a name stays visible as NOT applied; a place inside a name is just the name', () => {
