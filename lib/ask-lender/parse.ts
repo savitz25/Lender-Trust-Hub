@@ -251,6 +251,37 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     }
   }
 
+  // MN-LEND-001: the Minnesota Department of Commerce licenses residential mortgage originators and servicers
+  // (companies, Minn. Stat. ch. 58) and mortgage loan originators (individuals, ch. 58A). License Lookup sends both to
+  // NMLS Consumer Access, so no Minnesota licensee count exists. Bare "lenders in Minnesota" still falls through to HMDA.
+  const mnState = /\bminnesota\b|\bminnesota department of commerce\b/i.test(q);
+  const mnCity = /\b(minneapolis|st\.? paul|saint paul|duluth)\b/i.test(q) || (mnState && /\brochester\b/i.test(q));
+  const mnHmda = /\bhmda|\bapplications?\b|\boriginations?\b|\boriginated\b|\bdenials?\b|\bproperty|\bproperties\b/i.test(q);
+  const mnRanking = /\bbest|\bsafest|\bvetted|\brecommended|\btop\b/i.test(q);
+  if ((mnState || mnCity) && !mnRanking) {
+    if (/\b(enforcement|discipline|disciplinary|orders?|consent|cease|revocation|revoked|suspension|penalt)/i.test(q) && !mnHmda) {
+      return { mode: 'fail_closed', failClosedKind: 'mn-commerce-enforcement', failReason: 'The Minnesota Department of Commerce publishes enforcement actions in its CARDS search. Filtered to Commerce’s Mortgage industry type and signed 2022-01-01 to 2026-09-26, it returns 50 actions (2022: 14, 2023: 4, 2024: 11, 2025: 13, 2026: 8): 37 against companies and 13 against individuals, who are not named here. Action types are shown as Commerce publishes them, and a consent order is a settlement. An action links to a LenderTrustHub identity only where the order prints the company’s NMLS ID and it matches exactly (5 actions); nothing is matched by name. See /minnesota.', coverageState: 'KNOWN' };
+    }
+    if (/\bcomplaints?\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'mn-commerce-complaints', failReason: 'The Minnesota Department of Commerce takes consumer complaints about mortgage originators, servicers and loan originators, but does not publish complaint records or outcomes by company (request only). That is not a zero-complaint finding. CFPB complaints are a separate federal dataset, and a complaint is not a violation. See /minnesota.', coverageState: 'REQUEST_ONLY' };
+    }
+    if (mnState && /\bdenial rates?\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'mn-hmda-denials', failReason: 'HMDA 2025 Minnesota: 24,801 denials out of 184,549 applications for properties in Minnesota (13.44% of all applications). That is a statewide share of applications, not a lender-level rate and not lender quality. HMDA activity is not the Commerce license list.', coverageState: 'PARTIAL' };
+    }
+    if (!mnHmda && /\bloan originators?\b|\bmlos?\b|\bloan officers?\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'mn-mlo-person-grain', failReason: 'Minnesota mortgage loan originators are individuals licensed by the Department of Commerce under Minn. Stat. ch. 58A and verified on NMLS Consumer Access. No Minnesota MLO list was acquired, so there is no count here, and loan originators are never added to company counts. This site does not publish loan originator pages.', coverageState: 'NOT_ACQUIRED' };
+    }
+    if (mnCity && !mnHmda && /\b(mortgage|lenders?|brokers?|servicers?|originators?|compan(?:y|ies))\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'mn-city-context', failReason: 'Minneapolis, St. Paul, Rochester, and Duluth are not separate licensing systems. The Minnesota Department of Commerce licenses residential mortgage originators and servicers statewide and verifies them through NMLS Consumer Access, and no Minnesota roster was acquired, so there is no city licensee count. HMDA activity by county is on /minnesota.', coverageState: 'PARTIAL' };
+    }
+    if (mnState && !mnHmda && /\bservicers?\b|\bservicing\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'mn-servicer-license', failReason: 'A Minnesota Residential Mortgage Servicer license is a separate Commerce company license under Minn. Stat. ch. 58, verified on NMLS Consumer Access. No Minnesota servicer list was acquired, so there is no count here. Servicers are not added to originator counts, and one company holding both licenses stays one company. See /minnesota.', coverageState: 'NOT_ACQUIRED' };
+    }
+    if (mnState && !mnHmda && /\b(licensed|licensees?|license|roster|registered|how many|commerce|originators?|brokers?|mortgage compan(?:y|ies))\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'mn-commerce-licensing', failReason: 'The Minnesota Department of Commerce licenses residential mortgage originators and residential mortgage servicers (companies, Minn. Stat. ch. 58) and mortgage loan originators (individuals, ch. 58A). Each is a separate license, and one company can hold several and stay one company. Banks and credit unions are exempt from the company licenses. Commerce sends the public to NMLS Consumer Access to verify a licensee and publishes no downloadable roster, so there is no Minnesota licensee count and no combined Minnesota lenders total. HMDA applications are not licensees. See /minnesota.', coverageState: 'NOT_ACQUIRED' };
+    }
+  }
+
   if (/\b(?:mortgage loan officer|mlo|nmls person|branch nmls)\b/i.test(q)) {
     return { mode: 'fail_closed', failClosedKind: 'unsupported-identity-grain', failReason: 'This public research experience covers lender institutions. NMLS person/MLO and branch identifiers are separate identity grains and are not silently treated as institutions.', coverageState: 'UNSUPPORTED' };
   }
