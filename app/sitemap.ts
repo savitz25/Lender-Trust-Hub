@@ -97,6 +97,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(MINNESOTA_INTELLIGENCE_GATE.sitemap
       ? [{ path: '/minnesota', priority: 0.88, changeFrequency: 'weekly' as const }]
       : []),
+    { path: '/michigan', priority: 0.88, changeFrequency: 'weekly' },
     // NJ-LEND-COUNTY-001 indexed county research:
     // /new-jersey/monmouth-county
     // /new-jersey/middlesex-county
