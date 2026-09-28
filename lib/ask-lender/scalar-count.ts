@@ -172,6 +172,7 @@ function michiganPublishedHmda(): PublishedStateHmda {
   };
 }
 
+
 // Static, bounded source seam. Tests replace it in memory; no I/O or production writes.
 export const countSources = {
   snapshot: (): unknown => snapshot,

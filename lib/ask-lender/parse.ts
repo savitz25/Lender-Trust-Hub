@@ -23,7 +23,7 @@ const FAIL: Array<{ re: RegExp; kind: string; reason: string }> = [
     reason:
       'This Ask layer does not rank lenders by headquarters, branch location, or “Florida lenders.” Property-geography questions must say originated/applied for properties in that place.',
   },
-  { re: /\bbest\b|\btop lender|\brecommended\b|\btop[- ]rated\b|\bhighest rated\b|#1\b|\bnumber one\b|\bpaid ranking\b|\bsponsored ranking\b|\baggregateRating\b|\bratingValue\b/i, kind: 'ranking', reason: 'LenderTrustHub does not rank or recommend lenders. Most is a volume count, not a recommendation.' },
+  { re: /\bbest\b|\btop lender|\brecommend(?:ed)?\b|\btop[- ]rated\b|\bhighest[- ]rated\b|#1\b|\bnumber one\b|\bpaid ranking\b|\bsponsored ranking\b|\baggregateRating\b|\bratingValue\b/i, kind: 'ranking', reason: 'LenderTrustHub does not rank or recommend lenders. Most is a volume count, not a recommendation.' },
   {
     // TH-DISCOVERY-PARITY-001A: "lender(s) FOR <borrower characteristic>" (bad credit,
     // first-time homebuyer, self-employed, veteran, low income) asks this Ask layer to
@@ -33,7 +33,7 @@ const FAIL: Array<{ re: RegExp; kind: string; reason: string }> = [
     kind: 'borrower-profile-matching',
     reason: 'This Ask layer does not match lenders to a borrower profile or qualification. Name a place to browse real reporting institutions there instead.',
   },
-  { re: /\bsafest\b|\btrustworthy\b|\btrust score\b|\bis this lender (?:safe|good|legit)\b/, kind: 'safety', reason: 'There is no safety or Trust Score ranking on this hub.' },
+  { re: /\bsafest\b|\btrustworthy\b|\bmost trusted\b|\btrust score\b|\bis this lender (?:safe|good|legit)\b/, kind: 'safety', reason: 'There is no safety or Trust Score ranking on this hub.' },
   { re: /\bdiscriminat/, kind: 'discrimination', reason: 'Denial counts are not a finding of discrimination.' },
   { re: /\bwrongdoing\b|\bviolat|\bfraud\b|\bscam\b|\billegal\b/, kind: 'wrongdoing', reason: 'A complaint or HMDA outcome is not a finding of wrongdoing.' },
   { re: /\bjunk fee|\bgouging|\bripoff\b|\bcheapest\b|\bmost affordable\b/, kind: 'pricing-rhetoric', reason: 'There is no consumer pricing dataset on this Ask layer. Cheapest is not inferred from HMDA volume.' },
@@ -141,6 +141,18 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
       failReason: identityRequest.problem?.message, requestedMetric: null,
       coverageState: identityRequest.problem ? 'UNSUPPORTED' : identityRequest.remainingText ? 'PARTIAL' : 'KNOWN',
     };
+  }
+
+  // CT-LEND-001: labeled NMLS identifiers above retain exact-identity precedence.
+  const ctState = /\bconnecticut\b|\bct dob\b/i.test(q);
+  const ctCity = /\b(hartford|new haven|stamford|bridgeport)\b/i.test(q);
+  const ctHmda = /\bhmda\b|\bapplications?\b|\boriginations?\b|\boriginated\b|\bdenials?\b|\bproperty\b|\bproperties\b/i.test(q);
+  const ctRanking = /\bbest\b|\bsafest\b|\brecommend\b|\btop[- ]rated\b|\bhighest[- ]rated\b|#1\b|\bnumber one\b|\bmost trustworthy\b|\bmost trusted\b|\btrust score\b|\baggregateRating\b|\bratingValue\b|\bpaid ranking\b|\bsponsored ranking\b/i.test(q);
+  if ((ctState || ctCity) && !ctRanking) {
+    if (/\benforcement\b|\bdisciplin|\borders?\b|\bconsent\b|\brevok|\bpenalt/i.test(q) && !ctHmda) return { mode: 'fail_closed', failClosedKind: 'ct-dob-enforcement', failReason: 'Connecticut DOB publishes mortgage orders. The /connecticut page reviews 11 selected 2022–2026 respondent rows, not a complete enforcement census. All 11 print exact NMLS IDs; one matches an existing hub identity. No name-only adverse joins or Connecticut-license attachments were made. Consent-order allegations are not automatically findings.', coverageState: 'PARTIAL' };
+    if (/\bcomplaints?\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'ct-dob-complaints', failReason: 'Connecticut DOB accepts mortgage complaints, but provider-level rows were not acquired and outcomes are request-only. A complaint is not a violation. See /connecticut.', coverageState: 'REQUEST_ONLY' };
+    if (ctCity && !ctHmda && /\bmortgage\b|\blenders?\b|\bbrokers?\b|\bservicers?\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'ct-city-context', failReason: 'Hartford, New Haven, Stamford, and Bridgeport are search context, not separate licensing populations. DOB publishes statewide license workbooks. A listed address is not a service area. See /connecticut.', coverageState: 'PARTIAL' };
+    if (ctState && !ctHmda && /\b(licensed|licensees?|license|roster|registered|registration|how many|banking|correspondent|lenders?|servicers?|brokers?|mortgage compan(?:y|ies)|mlos?)\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'ct-dob-licensing', failReason: 'Connecticut DOB September 2, 2026 lists: lender 448 company and 1,119 branch licenses; broker 290 and 55; correspondent lender 22 and 3; servicer 75 and 20. These are separate license classes, not one Connecticut lender population. The files print state license numbers but no NMLS field, so zero exact roster-to-NMLS bridges were possible. Verify current status through NMLS Consumer Access; HMDA activity is not a licensing census. See /connecticut.', coverageState: 'KNOWN' };
   }
 
   // MI-LEND-001: labeled identifiers above retain exact-identity precedence. Bare digits never
