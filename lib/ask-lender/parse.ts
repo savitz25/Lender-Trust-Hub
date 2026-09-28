@@ -23,7 +23,7 @@ const FAIL: Array<{ re: RegExp; kind: string; reason: string }> = [
     reason:
       'This Ask layer does not rank lenders by headquarters, branch location, or “Florida lenders.” Property-geography questions must say originated/applied for properties in that place.',
   },
-  { re: /\bbest\b|\btop lender|\brecommended\b/, kind: 'ranking', reason: 'LenderTrustHub does not rank “best” lenders. Most is a volume count, not a recommendation.' },
+  { re: /\bbest\b|\btop lender|\brecommended\b|\btop[- ]rated\b|\bhighest rated\b|#1\b|\bnumber one\b|\bpaid ranking\b|\bsponsored ranking\b|\baggregateRating\b|\bratingValue\b/i, kind: 'ranking', reason: 'LenderTrustHub does not rank or recommend lenders. Most is a volume count, not a recommendation.' },
   {
     // TH-DISCOVERY-PARITY-001A: "lender(s) FOR <borrower characteristic>" (bad credit,
     // first-time homebuyer, self-employed, veteran, low income) asks this Ask layer to
@@ -141,6 +141,27 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
       failReason: identityRequest.problem?.message, requestedMetric: null,
       coverageState: identityRequest.problem ? 'UNSUPPORTED' : identityRequest.remainingText ? 'PARTIAL' : 'KNOWN',
     };
+  }
+
+  // MI-LEND-001: labeled identifiers above retain exact-identity precedence. Bare digits never
+  // become a company name. Ordinary lender discovery still falls through to HMDA institutions.
+  const miState = /\bmichigan\b|\bdifs\b/i.test(q);
+  const miCity = /\b(detroit|grand rapids|lansing|ann arbor)\b/i.test(q);
+  const miHmda = /\bhmda|\bapplications?\b|\boriginations?\b|\boriginated\b|\bdenials?\b|\bproperty\b|\bproperties\b/i.test(q);
+  const miRanking = /\bbest\b|\bsafest\b|\brecommended\b|\bmost trustworthy\b|\btop[- ]rated\b|\bhighest rated\b|#1\b|\bnumber one\b|\btrust score\b|\bpaid ranking\b|\bsponsored ranking\b/i.test(q);
+  if ((miState || miCity) && !miRanking) {
+    if (/\benforcement\b|\bdisciplin|\borders?\b|\bconsent\b|\brevok|\bpenalt/i.test(q) && !miHmda) {
+      return { mode: 'fail_closed', failClosedKind: 'mi-difs-enforcement', failReason: 'DIFS publishes mortgage final decisions and orders. The /michigan page reviews eight selected mortgage-related documents in a 2022-01-01 through 2026-09-28 window: seven company orders and one individual order. This is not a complete enforcement census. Printed Michigan license and NMLS IDs are kept separate; no event is joined to a hub company by name. A stipulation does not mean every allegation was admitted.', coverageState: 'PARTIAL' };
+    }
+    if (/\bcomplaints?\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'mi-difs-complaints', failReason: 'DIFS accepts mortgage complaints, but provider-level complaint rows were not acquired and outcomes are request-only. A complaint is not an adjudicated violation; missing records are not zero complaints. See /michigan.', coverageState: 'REQUEST_ONLY' };
+    }
+    if (miCity && !miHmda && /\bmortgage\b|\blenders?\b|\bbrokers?\b|\bservicers?\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'mi-city-context', failReason: 'DIFS regulates mortgage activity statewide. Detroit, Grand Rapids, Lansing, and Ann Arbor are search context, not separate licensing systems. The DIFS locator verifies entities, but no Michigan roster or city licensee count was acquired. See /michigan.', coverageState: 'PARTIAL' };
+    }
+    if (miState && !miHmda && /\b(licensed|licensees?|license|roster|registered|registration|how many|difs|authority|servicers?|brokers?|mortgage compan(?:y|ies)|mlos?)\b/i.test(q)) {
+      return { mode: 'fail_closed', failClosedKind: 'mi-difs-licensing', failReason: 'DIFS licenses or registers first- and second-mortgage broker, lender, and servicer activity. Company, person/MLO, branch, and exemption are separate grains. DIFS offers live verification, but no official bulk roster was acquired: rows are unknown, not zero. NMLS identity is not a DIFS license, and HMDA activity is not a license census. See /michigan.', coverageState: 'NOT_ACQUIRED' };
+    }
   }
 
   // MA-LEND-001: Massachusetts Division of Banks licensee files (as of 2026-06-30) and the DOB
