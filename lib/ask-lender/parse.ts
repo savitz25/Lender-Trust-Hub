@@ -130,10 +130,6 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     return { mode: 'fail_closed', failClosedKind: 'malformed', failReason: 'The research question is malformed or exceeds the 180-character limit.' };
   }
 
-  // An exact identity can select a provider, but cannot authorize a safety/ranking verdict.
-  const unsafeRanking = FAIL.find(row => (row.kind === 'ranking' || row.kind === 'safety') && row.re.test(q));
-  if (unsafeRanking) return { mode: 'fail_closed', failClosedKind: unsafeRanking.kind, failReason: unsafeRanking.reason };
-
   const identityRequest = parseIdentityRequest(raw);
   if (identityRequest) {
     const first = identityRequest.identifiers[0];

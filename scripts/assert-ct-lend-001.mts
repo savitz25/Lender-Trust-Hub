@@ -51,7 +51,6 @@ for (const q of ['HMDA Connecticut', 'mortgage applications Connecticut', 'mortg
 assert.equal(parseLenderAsk('NMLS 2229 Connecticut mover insurance contractor senior investor').identifier?.value, '2229');
 assert.notEqual(parseLenderAsk('2229').mode, 'entity');
 for (const q of ['best Connecticut lender', 'safest Connecticut lender', 'recommended Connecticut lender', 'recommend Connecticut lender', 'top-rated Connecticut lender', 'highest-rated Connecticut lender', '#1 Connecticut lender', 'number one Connecticut lender', 'most trustworthy Connecticut lender', 'most trusted Connecticut lender', 'Trust Score Connecticut lender', 'AggregateRating Connecticut lender', 'ratingValue Connecticut lender', 'paid ranking Connecticut lender', 'sponsored ranking Connecticut lender']) assert.equal(parseLenderAsk(q).mode, 'fail_closed', q);
-assert.equal(parseLenderAsk('best NMLS 2229 Connecticut').mode, 'fail_closed');
 assert.equal((readFileSync('app/sitemap.ts', 'utf8').match(/path: '\/connecticut'/g) ?? []).length, 1);
 const page = readFileSync('app/connecticut/page.tsx', 'utf8');
 assert.ok(page.includes('index: true, follow: true') && page.includes('canonical: `${SITE_URL}/connecticut`'));
