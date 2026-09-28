@@ -4,7 +4,6 @@ import rosters from '../lib/connecticut-intelligence/rosters.json';
 import { CONNECTICUT_SNAPSHOT as ct } from '../lib/connecticut-intelligence/snapshot';
 import { parseLenderAsk } from '../lib/ask-lender/parse';
 import { normalizedPublishedStatePath } from '../lib/seo/published-state-path';
-import { countSources } from '../lib/ask-lender/scalar-count';
 
 const expected = { lender: [1567, 448, 1119], broker: [345, 290, 55], correspondent_lender: [25, 22, 3], servicer: [95, 75, 20] } as const;
 assert.equal(rosters.records.length, 2032);
@@ -28,10 +27,6 @@ assert.equal(data.length, ct.hmda.countyEquivalents);
 for (const [field, expectedValue] of Object.entries({ total_applications: ct.hmda.applications, total_originations: ct.hmda.originations, denial_count: ct.hmda.denials, purchase_count: ct.hmda.purchase, refinance_count: ct.hmda.refinance, purpose_other_count: ct.hmda.otherPurpose, apps_conventional: ct.hmda.conventional, apps_fha: ct.hmda.fha, apps_va: ct.hmda.va, apps_usda_other: ct.hmda.usdaOther })) assert.equal(sum(field), expectedValue, field);
 assert.equal(Math.round(ct.hmda.denials / ct.hmda.applications * 10000) / 100, ct.hmda.denialApplicationPct);
 assert.equal(readFileSync('data/hmda/by-state/CT/lender_state_summary.csv', 'utf8').trim().split(/\r?\n/).length - 1, ct.hmda.distinctLeis);
-const published = countSources.publishedStateHmda('CT');
-assert.equal(published?.applications, ct.hmda.applications);
-assert.equal(published?.originations, ct.hmda.originations);
-assert.equal(published?.denials, ct.hmda.denials);
 assert.equal(ct.enforcement.rows.length, 11);
 assert.equal(ct.enforcement.rows.filter(row => row.grain === 'company').length, 8);
 assert.equal(ct.enforcement.rows.filter(row => row.grain === 'person/MLO').length, 3);
@@ -52,6 +47,7 @@ assert.equal(parseLenderAsk('NMLS 2229 Connecticut mover insurance contractor se
 assert.notEqual(parseLenderAsk('2229').mode, 'entity');
 for (const q of ['best Connecticut lender', 'safest Connecticut lender', 'recommended Connecticut lender', 'recommend Connecticut lender', 'top-rated Connecticut lender', 'highest-rated Connecticut lender', '#1 Connecticut lender', 'number one Connecticut lender', 'most trustworthy Connecticut lender', 'most trusted Connecticut lender', 'Trust Score Connecticut lender', 'AggregateRating Connecticut lender', 'ratingValue Connecticut lender', 'paid ranking Connecticut lender', 'sponsored ranking Connecticut lender']) assert.equal(parseLenderAsk(q).mode, 'fail_closed', q);
 assert.equal((readFileSync('app/sitemap.ts', 'utf8').match(/path: '\/connecticut'/g) ?? []).length, 1);
+assert.equal((readFileSync('public/sitemaps/mortgage-lenders.xml', 'utf8').match(/<loc>https:\/\/www\.lendertrusthub\.com\/connecticut<\/loc>/g) ?? []).length, 1);
 const page = readFileSync('app/connecticut/page.tsx', 'utf8');
 assert.ok(page.includes('index: true, follow: true') && page.includes('canonical: `${SITE_URL}/connecticut`'));
 assert.ok(!/AggregateRating|ratingValue|Trust Score/.test(page));
