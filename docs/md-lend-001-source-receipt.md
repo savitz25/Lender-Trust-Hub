@@ -1,0 +1,11 @@
+# MD-LEND-001 source receipt
+
+Retrieved 2026-09-29. [Maryland OFR's license-search page](https://labor.maryland.gov/finance/industry/licsearch.shtml) sends consumers to NMLS Consumer Access for mortgage brokers, lenders, loan originators and servicers. It says NMLS is not maintained directly by OFR. No clean OFR statewide mortgage roster or structured export was acquired. Counts by license class, branch/company grain, license status, printed NMLS IDs and state-roster-to-NMLS matches are NOT_ACQUIRED, not zero. No protected enumeration was attempted.
+
+[OFR's November 2023 location advisory](https://labor.maryland.gov/finance/advisories/advisory-licensedlocation.shtml) says separate branch licensure ended July 1, 2023 for covered nonbank classes including mortgage lenders. Approved locations are a different grain and available from OFR on request.
+
+The existing 2025 HMDA Maryland-property county slice at `data/hmda/by-state/MD/county_market_summary.csv` was summed across 24 county-equivalent rows. Its 708 LEIs are from `lender_state_summary.csv`. These are HMDA activity, not OFR licensees. No national HMDA re-ingest occurred.
+
+[OFR annual enforcement indexes](https://www.labor.maryland.gov/finance/consumers/enforcement.shtml) for 2022–2025 were reviewed for mortgage-labeled entries. Eight mortgage-relevant indexed actions from 2022–2024 are preserved with source documents. The 2025 index contains no mortgage-labeled entry; no 2026 annual index was available. One 2022 individual MLO order prints NMLS 51106. Other PDFs are largely scans, so identifiers and case numbers not cleanly extracted are null. The 2022 Phantom Ventures document prints case numbers LABOR-CFR-76-22-01260 and CFR-FY2020-0034. The action list is not a complete respondent or enforcement census. No adverse order was joined to a canonical company.
+
+[OFR complaint instructions](https://labor.maryland.gov/finance/consumers/comphow.shtml) establish intake and individual closing letters, but no public provider-level complaint corpus was acquired. Outcomes are REQUEST_ONLY/NOT_ACQUIRED. The [June 8, 2026 exemption advisory](https://labor.maryland.gov/finance/advisories/advisory-ind-exemptionmortgagelenderinstallmentloanlicensure.shtml) is regulatory context only; it is not provider-level enforcement.

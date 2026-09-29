@@ -143,6 +143,19 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     };
   }
 
+  // MD-LEND-001: labeled NMLS identifiers above keep exact-identity precedence.
+  const mdState = /\bmaryland\b|\bmd ofr\b|\bmaryland ofr\b/i.test(q);
+  const mdCity = /\b(baltimore|annapolis|frederick|rockville)\b/i.test(q);
+  const mdHmda = /\bhmda\b|\bapplications?\b|\boriginations?\b|\boriginated\b|\bdenials?\b/i.test(q);
+  const mdRanking = /\bbest\b|\bsafest\b|\brecommended\b|\bmost trustworthy\b|\btop[- ]rated\b|\bhighest[- ]rated\b|#1\b|\bnumber one\b|\btrust score\b|\baggregaterating\b|\bratingvalue\b|\bpaid ranking\b|\bsponsored ranking\b/i.test(q);
+  if ((mdState || mdCity) && !mdRanking) {
+    if (!mdHmda && /\b\d{4,8}\b/.test(q) && !/\b(nmls|lei|license)\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'md-untyped-number', failReason: 'That number has no label. Specify NMLS or an exact Maryland license; no identity was inferred. See /maryland.', coverageState: 'NOT_ACQUIRED' };
+    if (/\benforcement\b|\bdisciplin|\borders?\b|\bconsent\b|\brevok|\bpenalt/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'md-ofr-enforcement', failReason: 'Maryland OFR publishes mortgage-related orders. The /maryland page preserves eight indexed 2022?2024 actions in a 2022?2026 review window, with consent, summary and final status separate. One individual order prints an exact NMLS ID; no company adverse attachment or name-only join was made. The June 2026 licensing advisory is policy context, not an action against a provider.', coverageState: 'PARTIAL' };
+    if (/\bcomplaints?\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'md-ofr-complaints', failReason: 'Maryland OFR accepts mortgage-related consumer complaints, but provider-level rows were NOT_ACQUIRED and outcomes are request-only. A complaint is not an enforcement finding. See /maryland.', coverageState: 'REQUEST_ONLY' };
+    if (mdCity && !mdHmda && /\bmortgage\b|\blenders?\b|\bbrokers?\b|\bservicers?\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'md-city-context', failReason: 'Baltimore, Annapolis, Frederick and Rockville are geography only, not separate mortgage license populations. Verify statewide OFR authority through NMLS Consumer Access. See /maryland.', coverageState: 'NOT_ACQUIRED' };
+    if (mdState && !mdHmda && /\bmortgage\b|\blenders?\b|\bbrokers?\b|\bservicers?\b|\blicen[cs]e\b|\bofr\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'md-ofr-licensing', failReason: 'Maryland OFR directs consumers to NMLS Consumer Access for mortgage lender, broker, servicer and MLO authorization. A bulk state roster and class counts were NOT_ACQUIRED; missing is not zero. Maryland licenses, NMLS identities and HMDA activity are separate. See /maryland.', coverageState: 'NOT_ACQUIRED' };
+  }
+
   // CT-LEND-001: labeled NMLS identifiers above retain exact-identity precedence.
   const ctState = /\bconnecticut\b|\bct dob\b/i.test(q);
   const ctCity = /\b(hartford|new haven|stamford|bridgeport)\b/i.test(q);

@@ -33,6 +33,7 @@
     "assert:mn-lend-001": "python -X utf8 scripts/build-mn-public-snapshot.py --check && tsx scripts/assert-mn-lend-001.mts",
     "assert:mi-lend-001": "tsx scripts/assert-mi-lend-001.mts",
     "assert:ct-lend-001": "tsx scripts/assert-ct-lend-001.mts",
+    "assert:md-lend-001": "tsx scripts/assert-md-lend-001.mts",
     "assert:intel-004": "tsx scripts/assert-intel-004.mts",
     "assert:lend-home-003": "tsx scripts/assert-lend-home-003.mts",
     "assert:ask-lender": "tsx scripts/assert-ask-lender.mts",

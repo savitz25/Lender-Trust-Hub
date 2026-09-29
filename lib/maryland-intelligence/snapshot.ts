@@ -1,0 +1,45 @@
+/** MD-LEND-001: OFR verification, accepted 2025 HMDA, and bounded order index. */
+export const MARYLAND_SNAPSHOT = {
+  path: '/maryland',
+  generatedAt: '2026-09-29T13:00:00Z',
+  retrievedAt: '2026-09-29',
+  regulator: 'Maryland Department of Labor, Office of Financial Regulation',
+  sources: {
+    licensing: 'https://labor.maryland.gov/finance/industry/licsearch.shtml',
+    locations: 'https://labor.maryland.gov/finance/advisories/advisory-licensedlocation.shtml',
+    nmls: 'https://www.nmlsconsumeraccess.org/',
+    advisory: 'https://labor.maryland.gov/finance/advisories/advisory-ind-exemptionmortgagelenderinstallmentloanlicensure.shtml',
+    complaints: 'https://labor.maryland.gov/finance/consumers/comphow.shtml',
+    enforcement: 'https://www.labor.maryland.gov/finance/consumers/enforcement.shtml',
+  },
+  licensing: {
+    coverage: 'VERIFICATION_ONLY', rows: null, asOf: null,
+    classes: ['mortgage lender', 'mortgage broker', 'mortgage servicer', 'mortgage loan originator/person'] as const,
+    branchLocations: 'REQUEST_ONLY',
+    rowsWithPrintedNmls: null, distinctNmls: null, exactExistingCanonicalMatches: null, unmatchedRows: null,
+  },
+  hmda: {
+    year: 2025, source: 'data/hmda/by-state/MD/county_market_summary.csv',
+    applications: 225524, originations: 125573, denials: 41888, denialApplicationPct: 18.57,
+    distinctLeis: 708, countyEquivalents: 24,
+    purchase: 91302, refinance: 80504, otherPurpose: 53718,
+    conventional: 166206, fha: 34831, va: 23892, usdaOther: 595,
+  },
+  enforcement: {
+    window: ['2022-01-01', '2026-09-29'], retrievedAt: '2026-09-29',
+    scope: 'Eight mortgage-relevant OFR index actions, including mortgage-assistance relief services; 2025 index has no mortgage-labeled entry and no 2026 annual index was available. Document extraction is partial; index classifications are preserved.',
+    rows: [
+      { date: '2022-01-15', respondent: 'Brian Schiele', grain: 'person/MLO', action: 'Settlement Agreement and Consent Order', status: 'consent', activity: 'Mortgage Loan Originating', nmls: '51106', license: null, caseNumber: null, url: 'https://www.labor.maryland.gov/finance/consumers/pdf/Schiele_51106__v2.pdf' },
+      { date: '2022-02-02', respondent: 'Danny Yen d/b/a Real Estate Educational Services; Wendy Yen; Dat Yen a/k/a Pat Yen', grain: 'multiple respondents', action: 'Settlement Agreement and Consent Order', status: 'consent', activity: 'Mortgage Loan Originating', nmls: null, license: null, caseNumber: null, url: 'https://www.labor.maryland.gov/finance/consumers/pdf/Danny_Yen_REES.pdf' },
+      { date: '2022-07-13', respondent: 'Phantom Ventures Inc. d/b/a Direct Services-Financial Counseling Group.com; Payam P. Mantivar; Veck Matin', grain: 'company and people', action: 'Settlement Agreement and Consent Order', status: 'consent', activity: 'Mortgage Assistance Relief Services', nmls: null, license: null, caseNumber: 'LABOR-CFR-76-22-01260 / CFR-FY2020-0034', url: 'https://www.labor.maryland.gov/finance/consumers/pdf/PhantomDirectServices.pdf' },
+      { date: '2023-12-05', respondent: 'Alhasane Aguibo Soumah', grain: 'person', action: 'Summary Order to Cease and Desist', status: 'summary; final disposition not established', activity: 'Mortgage Lending', nmls: null, license: null, caseNumber: null, url: 'https://www.labor.maryland.gov/finance/consumers/pdf/soumah2023.pdf' },
+      { date: '2024-03-11', respondent: 'Southwest Consulting d/b/a Home Matters', grain: 'company', action: 'Final Order', status: 'final', activity: 'Mortgage Assistance Relief Services', nmls: null, license: null, caseNumber: null, url: 'https://www.labor.maryland.gov/finance/consumers/frfy2023-homematters.pdf' },
+      { date: '2024-06-11', respondent: 'Stephen Boyd Trye', grain: 'person/MLO', action: 'Settlement Agreement and Consent Order', status: 'consent', activity: 'Mortgage Lending', nmls: null, license: null, caseNumber: null, url: 'https://www.labor.maryland.gov/finance/consumers/frfy2024trye.pdf' },
+      { date: '2024-08-20', respondent: 'Legal Justice Law Center PC t/a Olympia Law Group; Matin Rajabov', grain: 'company and person', action: 'Final Order', status: 'final', activity: 'Mortgage Lending, Loan Modification', nmls: null, license: null, caseNumber: null, url: 'https://www.labor.maryland.gov/finance/consumers/frfy2024-olympialaw.pdf' },
+      { date: '2024-12-11', respondent: 'Michael Cooper', grain: 'person/MLO', action: 'Final Order', status: 'final', activity: 'Mortgage Loan Originating', nmls: null, license: null, caseNumber: null, url: 'https://www.labor.maryland.gov/finance/consumers/frfy2024-michaelcooper.pdf' },
+    ],
+    exactCanonicalAttachments: 0, nameOnlyAdverseJoins: 0,
+  },
+  complaints: { intake: 'KNOWN', providerRows: null, outcomes: 'REQUEST_ONLY/NOT_ACQUIRED' },
+  newCanonicalOrganizations: 0, graphWrites: 0, claimEligibilityChanges: 0,
+} as const;
