@@ -143,6 +143,19 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     };
   }
 
+  // WI-LEND-001: labeled NMLS identifiers above keep exact-identity precedence.
+  const wiState = /\bwisconsin\b|\bwi dfi\b|\bwisconsin dfi\b/i.test(q);
+  const wiCity = /\b(milwaukee|madison|green bay|kenosha)\b/i.test(q);
+  const wiHmda = /\bhmda\b|\bapplications?\b|\boriginations?\b|\boriginated\b|\bdenials?\b/i.test(q);
+  const wiRanking = /\bbest\b|\bsafest\b|\brecommend\w*\b|\bmost trustworthy\b|\btop[- ]rated\b|\bhighest[- ]rated\b|#1\b|\bnumber one\b|\btrust score\b|\baggregaterating\b|\bratingvalue\b|\bpaid ranking\b|\bsponsored ranking\b/i.test(q);
+  if ((wiState || wiCity) && !wiRanking) {
+    if (!wiHmda && /\b\d{4,8}\b/.test(q) && !/\b(nmls|lei|license)\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'wi-untyped-number', failReason: 'That number has no label. Specify NMLS or an exact Wisconsin license; no identity was inferred. See /wisconsin.', coverageState: 'NOT_ACQUIRED' };
+    if (/\benforcement\b|\bdisciplin|\borders?\b|\bconsent\b|\brevok|\bpenalt/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'wi-dfi-enforcement', failReason: 'Wisconsin DFI announced two selected multistate mortgage-servicing settlements in the 2022–2026 review window, not a complete enforcement census. One announcement prints NMLS 3013, but no canonical company adverse attachment was made. Other orders were NOT_ACQUIRED; no name-only join or unqualified allegation-to-finding conversion. See /wisconsin.', coverageState: 'PARTIAL' };
+    if (/\bcomplaints?\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'wi-dfi-complaints', failReason: 'Wisconsin DFI accepts mortgage banking complaints; public provider-level rows were NOT_ACQUIRED and outcomes are request-only. A complaint is not an enforcement finding. See /wisconsin.', coverageState: 'REQUEST_ONLY' };
+    if (wiCity && !wiHmda && /\bmortgage\b|\blenders?\b|\bbrokers?\b|\bservicers?\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'wi-city-context', failReason: 'Milwaukee, Madison, Green Bay and Kenosha are geography only, not separate mortgage-license populations. Verify statewide DFI authority through NMLS Consumer Access. See /wisconsin.', coverageState: 'NOT_ACQUIRED' };
+    if (wiState && !wiHmda && /\bmortgage\b|\blenders?\b|\bbrokers?\b|\bservicers?\b|\blicen[cs]e\b|\bdfi\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'wi-dfi-licensing', failReason: 'Wisconsin DFI directs consumers to NMLS Consumer Access for mortgage banker, broker and MLO license verification. Banker and broker branches are separate licenses; servicing is included in DFI’s Mortgage Banker License description, with no separate servicer class listed. A statewide roster and class counts were NOT_ACQUIRED; missing is not zero. Wisconsin licenses, NMLS identities and HMDA activity are separate. See /wisconsin.', coverageState: 'NOT_ACQUIRED' };
+  }
+
   // MD-LEND-001: labeled NMLS identifiers above keep exact-identity precedence.
   const mdState = /\bmaryland\b|\bmd ofr\b|\bmaryland ofr\b/i.test(q);
   const mdCity = /\b(baltimore|annapolis|frederick|rockville)\b/i.test(q);
