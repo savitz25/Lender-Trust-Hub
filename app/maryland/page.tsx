@@ -18,7 +18,7 @@ export default function MarylandPage() {
     <p className="mt-5 text-lg text-slate-700">The Maryland Department of Labor Office of Financial Regulation regulates mortgage lending activity. A Maryland license, NMLS identity and HMDA property activity are separate facts. This page does not rank lenders.</p>
 
     <section className="mt-10 grid gap-4 sm:grid-cols-3" aria-label="Maryland evidence summary">
-      <div className="rounded-xl border p-5"><p className="text-sm text-slate-600">OFR licensing</p><p className="mt-2 text-2xl font-bold">Live verification</p><p className="mt-2 text-sm">Company, person and branch grains stay separate. Statewide roster rows NOT_ACQUIRED.</p></div>
+      <div className="rounded-xl border p-5"><p className="text-sm text-slate-600">OFR licensing</p><p className="mt-2 text-2xl font-bold">Live verification</p><p className="mt-2 text-sm">Company, person and approved-location grains stay separate. Statewide roster rows NOT_ACQUIRED.</p></div>
       <div className="rounded-xl border p-5"><p className="text-sm text-slate-600">2025 HMDA applications</p><p className="mt-2 text-2xl font-bold">{fmt(md.hmda.applications)}</p><p className="mt-2 text-sm">Maryland-property activity, not an OFR license census.</p></div>
       <div className="rounded-xl border p-5"><p className="text-sm text-slate-600">OFR index actions</p><p className="mt-2 text-2xl font-bold">{md.enforcement.rows.length}</p><p className="mt-2 text-sm">Bounded mortgage-relevant 2022–2026 index review; not a full respondent census.</p></div>
     </section>
