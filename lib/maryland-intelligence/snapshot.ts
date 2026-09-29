@@ -1,7 +1,7 @@
 /** MD-LEND-001: OFR verification, accepted 2025 HMDA, and bounded order index. */
 export const MARYLAND_SNAPSHOT = {
   path: '/maryland',
-  generatedAt: '2026-09-29T13:00:00Z',
+  generatedAt: '2026-09-29T13:27:12Z',
   retrievedAt: '2026-09-29',
   regulator: 'Maryland Department of Labor, Office of Financial Regulation',
   sources: {
