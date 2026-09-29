@@ -87,3 +87,6 @@ data/generated/nj-lend-001/identity-ledgers.json
 # NJ-LEND-002 raw official HTML/PDF corpus — never commit large acquisitions
 data/nj-raw/
 data/generated/nj-lend-002/
+
+# IN-LEND-001 raw DFI listing/detail HTML, SOS admin-action index and order PDFs — parsed public JSON is committed; person-level raw stays here
+data/raw/indiana/

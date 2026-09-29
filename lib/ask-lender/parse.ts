@@ -143,6 +143,24 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     };
   }
 
+  // IN-LEND-001: labeled NMLS identifiers above keep exact-identity precedence. DFI lender ≠ SOS loan broker.
+  const inState = /\bindiana\b|\bin dfi\b|\bindiana dfi\b|\bindiana securities\b/i.test(q);
+  const inCity = /\b(indianapolis|fort wayne|evansville|south bend)\b/i.test(q);
+  const inHmda = /\bhmda\b|\bapplications?\b|\boriginations?\b|\boriginated\b|\bdenials?\b/i.test(q);
+  const inRanking = /\bbest\b|\bsafest\b|\brecommend\w*\b|\bmost trustworthy\b|\btop[- ]rated\b|\bhighest[- ]rated\b|#1\b|\bnumber one\b|\btrust score\b|\baggregaterating\b|\bratingvalue\b|\bpaid ranking\b|\bsponsored ranking\b/i.test(q);
+  if ((inState || inCity) && !inRanking) {
+    const inBroker = /\bloan brokers?\b|\bmortgage brokers?\b|\bbrokers?\b|\bsecurities\b/i.test(q);
+    if (!inHmda && /\b\d{4,8}\b/.test(q) && !/\b(nmls|lei|license)\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'in-untyped-number', failReason: 'That number has no label. Specify NMLS or an exact Indiana DFI license number; no identity was inferred. See /indiana.', coverageState: 'NOT_ACQUIRED' };
+    if (/\benforcement\b|\bdisciplin|\borders?\b|\bconsent\b|\brevok|\bpenalt|\bsettlement/i.test(q)) {
+      if (inBroker) return { mode: 'fail_closed', failClosedKind: 'in-sos-loan-broker-enforcement', failReason: 'The Indiana Securities Division index lists 12 Loan Broker Act orders dated 2022–2026, all against companies. Each prints the company NMLS ID, and 7 match existing research identities exactly. Individual respondents are withheld. The index is not exhaustive, and these are not DFI actions. See /indiana.', coverageState: 'PARTIAL' };
+      return { mode: 'fail_closed', failClosedKind: 'in-mortgage-enforcement', failReason: 'Indiana splits enforcement. The Securities Division issued 12 Loan Broker Act company orders dated 2022–2026. DFI publishes no mortgage order index, so DFI order rows are NOT_ACQUIRED. One multistate NewRez (NMLS 3013) servicing settlement lists Indiana at $61,686.09 of a $15.5 million multistate total. No name-only adverse joins. See /indiana.', coverageState: 'PARTIAL' };
+    }
+    if (/\bcomplaints?\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'in-complaints', failReason: 'Indiana DFI takes lending complaints, and the Securities Division takes loan-broker complaints. Public provider-level rows are NOT_ACQUIRED, and outcomes are request-only. A complaint is not an enforcement finding. See /indiana.', coverageState: 'REQUEST_ONLY' };
+    if (inCity && !inHmda && /\bmortgage\b|\blenders?\b|\bbrokers?\b|\bservicers?\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'in-city-context', failReason: 'Indianapolis, Fort Wayne, Evansville and South Bend are geography only, not separate license populations. Indiana licensing is statewide and split: DFI licenses mortgage lenders, and the Securities Division licenses loan brokers. See /indiana.', coverageState: 'NOT_ACQUIRED' };
+    if (inState && !inHmda && inBroker) return { mode: 'fail_closed', failClosedKind: 'in-sos-loan-broker', failReason: 'The Indiana Securities Division (not DFI) licenses loan brokers, loan broker branch offices and their MLOs through NMLS. The Loan Broker, branch and MLO rosters were NOT_ACQUIRED; missing is not zero. Verify in NMLS Consumer Access. A loan broker is not a DFI mortgage lender. See /indiana.', coverageState: 'NOT_ACQUIRED' };
+    if (inState && !inHmda && /\bmortgage\b|\blenders?\b|\bservicers?\b|\blicen[cs]e\b|\bdfi\b|\bcompany\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'in-dfi-licensing', failReason: 'Indiana DFI lists 489 active Mortgage Lender company licenses, frozen with Indiana license numbers. DFI prints no NMLS IDs, so there are no roster NMLS bridges. The listing has no separate servicer class, and the DFI MLO roster was NOT_ACQUIRED. Loan brokers are licensed separately by the Securities Division. HMDA activity is not a license census. See /indiana.', coverageState: 'PARTIAL' };
+  }
+
   // WI-LEND-001: labeled NMLS identifiers above keep exact-identity precedence.
   const wiState = /\bwisconsin\b|\bwi dfi\b|\bwisconsin dfi\b/i.test(q);
   const wiCity = /\b(milwaukee|madison|green bay|kenosha)\b/i.test(q);
