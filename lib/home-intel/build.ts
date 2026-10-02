@@ -1,3 +1,4 @@
+import { publishedStateHref } from './published-states';
 import accepted from './accepted-snapshot.json';
 import { fingerprintLenderHomeIntel } from './fingerprint';
 import { STATE_NAMES } from './states';
@@ -401,7 +402,7 @@ export function buildLenderHomeIntel(
       originations: row.originations,
       denials: row.denials,
       volumeShare: pct(row.applications, maxApps),
-      intelligenceHref: row.state === 'FL' ? '/florida' : null,
+      intelligenceHref: publishedStateHref(row.state),
       searchHref: '/lender',
     })),
     floridaPreview: {
