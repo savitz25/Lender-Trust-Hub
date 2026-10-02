@@ -1,3 +1,4 @@
+import { publishedStateHref } from './published-states';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { buildLenderHomeIntel, HMDA_OTHER_ACTIONS } from './build';
@@ -62,7 +63,7 @@ export function runIntel004ContractTests(): Check[] {
   check('I004-24', first.coverage.length >= 11, String(first.coverage.length));
   check('I004-25', first.gaps.length >= 8, String(first.gaps.length));
   check('I004-26', first.geography.every((g) => g.state !== 'FL' || g.intelligenceHref === '/florida'), 'FL link');
-  check('I004-26b', first.geography.filter((g) => g.state !== 'FL').every((g) => g.searchHref === '/lender' && g.intelligenceHref === null), 'safe state routes');
+  check('I004-26b', first.geography.every((g) => g.searchHref === '/lender' && g.intelligenceHref === publishedStateHref(g.state)), 'published states route to their own page; others to national research');
   check('I004-34', first.changeModule.status === 'UNSUPPORTED', first.changeModule.status);
   check('I004-55', RENDER_COHORT.length === 181 && DISCOVERY_SEARCHABLE_COUNT === 181, 'national render 181');
   check('I004-56', INDEXING_COHORT.length === 180 && DISCOVERY_INDEXABLE_COUNT === 180, 'national index 180');

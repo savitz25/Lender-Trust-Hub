@@ -179,10 +179,11 @@ export function executeLenderAsk(raw: string, intel: LenderHomeIntel): AskExecut
 export function askExamplePrompts(): string[] {
   return [
     'Which lenders originated the most mortgages in Florida?',
-    'Which lenders received the most applications for properties in Broward County?',
+    'Which lenders originated the most mortgages in Michigan?',
+    'Which lenders received the most applications for properties in Maryland?',
     'Compare Broward and Palm Beach mortgage activity',
-    'How many applications are for properties in Florida?',
-    'Which lenders originated the most FHA mortgages in Florida?',
+    'How many applications are for properties in Indiana?',
+    'Which lenders originated the most FHA mortgages in Tennessee?',
     'Which lenders have the lowest rates today?',
   ];
 }

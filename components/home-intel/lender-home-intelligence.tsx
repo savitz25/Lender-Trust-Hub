@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { LENDER_EVIDENCE_FAMILY_LABELS } from '@/lib/home-intel/evidence-inventory';
 import type { HomepageEvidenceMeasure, LenderEvidenceFamily, LenderHomeIntel } from '@/lib/home-intel/types';
+import { PUBLISHED_STATE_COUNT, PUBLISHED_STATES, RECENT_PUBLISHED_STATES } from '@/lib/home-intel/published-states';
 import { AskTrustHubSearch } from './ask-trust-hub-search';
 import { LenderHomeChecklist } from './lender-home-checklist';
 
@@ -64,7 +65,13 @@ export function LenderHomeIntelligenceUnavailable({ reason }: { reason: string }
 }
 
 export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
-  const inventoryByFamily = new Map(FAMILY_ORDER.map((family) => [family, intel.evidenceInventory.filter((item) => item.family === family)]));
+  // The published-state measure follows the local published-state list, not the hand-built card set.
+  const evidenceInventory = intel.evidenceInventory.map((item) => item.key === 'state_pages' ? { ...item, value: PUBLISHED_STATE_COUNT, display: String(PUBLISHED_STATE_COUNT), geography: PUBLISHED_STATES.map((state) => state.code).join(' · ') } : item);
+  const inventoryByFamily = new Map(FAMILY_ORDER.map((family) => [family, evidenceInventory.filter((item) => item.family === family)]));
+  const depthMetrics = ['national_institutions', 'hmda_applications', 'cfpb_complaints', 'federal_enforcement']
+    .map((key) => evidenceInventory.find((item) => item.key === key)).filter(Boolean) as HomepageEvidenceMeasure[];
+  const cardCodes = new Set<string>(intel.stateCards.map((state) => state.code));
+  const moreStates = PUBLISHED_STATES.filter((state) => !cardCodes.has(state.code));
   const nationalScale = ['national_institutions', 'hmda_applications', 'hmda_originations', 'cfpb_complaints', 'federal_enforcement']
     .map((key) => intel.evidenceInventory.find((item) => item.key === key)).filter(Boolean) as HomepageEvidenceMeasure[];
 
@@ -89,6 +96,15 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
           <p>Availability differs by institution, state, source, and time.</p>
         </aside>
         <div id="lookup"><AskTrustHubSearch /></div>
+      </section>
+
+      <section className="intel-section" id="footprint" aria-labelledby="footprint-title">
+        <div className="intel-heading intel-heading--wide"><p className="intel-eyebrow">Research footprint</p><h2 id="footprint-title">{PUBLISHED_STATE_COUNT} states with published mortgage intelligence</h2><p>Each state page is built from that state&rsquo;s own regulator, licensing, enforcement, and HMDA evidence. Coverage keeps expanding state by state.</p></div>
+        <div className="intel-scale-band"><article><p className="intel-measure__value">{PUBLISHED_STATE_COUNT}</p><h3>Published state intelligence pages</h3><p>published state page</p></article>{depthMetrics.map((item) => <article key={item.key}><p className="intel-measure__value">{item.display}</p><h3>{item.label}</h3><p>{item.grain}</p></article>)}</div>
+        <p className="intel-semantic-note">These are different kinds of records and are never added into one total.</p>
+        <p className="intel-kicker"><strong>Newest state pages:</strong></p>
+        <div className="intel-ask-examples" role="list">{RECENT_PUBLISHED_STATES.slice(0, 6).map((state) => <Link key={state.slug} role="listitem" className="intel-chip" href={state.href} title={state.recentSummary}>{state.name}</Link>)}</div>
+        <div className="intel-hero__actions"><a className="intel-btn intel-btn--primary" href="#states">Explore all {PUBLISHED_STATE_COUNT} states</a><a className="intel-text-link intel-hero__text-link" href="#inventory">See the evidence inventory →</a></div>
       </section>
 
       <section className="intel-section intel-section--tint" id="layers" aria-labelledby="layers-title">
@@ -118,7 +134,7 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
       </section>
 
       <section className="intel-section intel-section--tint" id="states" aria-labelledby="states-title">
-        <div className="intel-heading intel-heading--wide"><p className="intel-eyebrow">{intel.stateCards.length} state intelligence surfaces</p><h2 id="states-title">Regulators, evidence depth, and source clocks differ by state</h2><p>These are research destinations, not ratings. Application volume does not determine their order or visual weight.</p></div>
+        <div className="intel-heading intel-heading--wide"><p className="intel-eyebrow">{PUBLISHED_STATE_COUNT} states with published intelligence</p><h2 id="states-title">Regulators, evidence depth, and source clocks differ by state</h2><p>These are research destinations, not ratings. Application volume does not determine their order or visual weight.</p></div>
         <div className="intel-state-grid">{intel.stateCards.map((state) => <article className="intel-state-card" key={state.code}>
           <header><span>{state.code}</span><div><h3>{state.name}</h3><p>{state.regulators}</p></div></header>
           <div className="intel-state-card__metrics">{state.highlights.map((highlight) => <div key={highlight.label}><strong>{highlight.value}</strong><span>{highlight.label}</span><small>{highlight.grain}</small></div>)}</div>
@@ -126,6 +142,7 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
           <dl className="intel-state-clocks">{state.sourceClocks.map((clock) => <div key={clock.label}><dt>{clock.label}</dt><dd>{clock.sourceAsOf ? <><span>Source as of</span> {clock.sourceAsOf}</> : clock.sourceClock ? <><span>Source clock</span> {clock.sourceClock}</> : <><span>Source as of</span> Source date not reported</>}{clock.retrievedAt ? <small><b>Retrieved</b> {clock.retrievedAt}</small> : null}</dd></div>)}</dl>
           <Link className="intel-btn intel-btn--secondary" href={state.href}>Explore {state.name} intelligence →</Link>
         </article>)}</div>
+        {moreStates.length ? <><h3>More published states</h3><div className="intel-cta-grid">{moreStates.map((state) => <Link className="intel-cta" href={state.href} key={state.slug}><strong>{state.name}{state.recentSummary ? ' · new' : ''}</strong><span>{state.recentSummary ?? `${state.name} mortgage licensing and lending intelligence`}</span></Link>)}</div></> : null}
       </section>
 
       <section className="intel-section" id="market" aria-labelledby="market-title">
