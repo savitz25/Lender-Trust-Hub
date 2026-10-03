@@ -284,6 +284,7 @@ export default async function LenderProfilePage({
               lenderName={lender.name}
               nmlsId={lender.nmlsId}
               loanTypes={lender.loanTypes}
+              parentHandoff
             />
             {lender.phone && (
               <a
