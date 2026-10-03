@@ -23,9 +23,9 @@ let store: Store;
 let catalog: Catalog;
 
 test.before(async () => {
-  oneClick = await import('./one-click.ts');
-  store = await import('./storage.ts');
-  catalog = await import('../lenders.ts');
+  oneClick = await import('./one-click');
+  store = await import('./storage');
+  catalog = await import('../lenders');
 });
 
 const gate = { broad: false, canary: true };

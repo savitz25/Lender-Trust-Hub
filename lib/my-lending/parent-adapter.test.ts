@@ -45,8 +45,8 @@ test.before(async () => {
     window: new EventTarget(),
     localStorage: storageShim,
   });
-  adapter = await import('./parent-adapter.ts');
-  lendingStore = await import('./storage.ts');
+  adapter = await import('./parent-adapter');
+  lendingStore = await import('./storage');
 });
 
 const profile = {

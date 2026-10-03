@@ -117,10 +117,13 @@ export function canaryAllows(slug: string, gate: OneClickGate): boolean {
   return LENDER_CANARIES.some((item) => item.slug === slug);
 }
 
+type PublicationDenyReason = Extract<MarketplacePublication, { ok: false }>['reason'];
+type BindingDenyReason = Extract<BindingDecision, { eligible: false }>['reason'];
+
 export type ClickSaveResult = {
   device: DeviceProfileSaveResult['device'];
   parent: 'off' | 'saved' | 'already_saved' | 'denied';
-  denyReason?: BindingDecision extends { eligible: false; reason: infer R } ? R : never | MarketplacePublication extends { ok: false; reason: infer R } ? R : never | 'sync_off' | 'signed_out' | 'page_closed';
+  denyReason?: PublicationDenyReason | BindingDenyReason | 'sync_off' | 'signed_out' | 'page_closed';
   watchCreated: false;
   message: string;
   pending: true;
