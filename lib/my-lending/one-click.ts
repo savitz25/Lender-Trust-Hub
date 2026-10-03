@@ -20,9 +20,9 @@ export const NMLS_NAMESPACE = 'nmls';
 export const LENDER_PROFILE_CLASS = 'marketplace_company';
 
 export const LENDER_CANARIES = [
-  { slug: 'pacific-trust-mortgage', nmls: '1984721', name: 'Pacific Trust Mortgage' },
-  { slug: 'metro-home-finance', nmls: '2239104', name: 'Metro Home Finance' },
-  { slug: 'lone-star-lending', nmls: '1673842', name: 'Lone Star Lending' },
+  { slug: 'freedom-mortgage', nmls: '2767', name: 'Freedom Mortgage' },
+  { slug: 'loandepot', nmls: '174457', name: 'loanDepot' },
+  { slug: 'guaranteed-rate', nmls: '2611', name: 'Guaranteed Rate' },
 ] as const;
 
 export type CanaryProfile = (typeof LENDER_CANARIES)[number];

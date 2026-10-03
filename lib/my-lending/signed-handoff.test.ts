@@ -85,7 +85,7 @@ test('A/H eligible marketplace company creates one signed handoff for the catalo
   const now = Date.now();
   const pair = keys();
   const mock = parentMock(now);
-  const slug = 'pacific-trust-mortgage';
+  const slug = 'freedom-mortgage';
   const staged = await handoff.stageParentHandoff({
     slug, intent: 'save', pageOpen: true, signedIn: true, gate,
     claimedNmls: '0000000', claimedReturnPath: '/lenders/other', claimedEntityId: 'uuid', claimedName: 'Other',
@@ -101,8 +101,8 @@ test('A/H eligible marketplace company creates one signed handoff for the catalo
   assert.equal(clean.watchCreated, false);
   assert.equal(mock.calls.length, 2);
   const body = JSON.parse(mock.calls[0]!.body) as { input: { returnTask: { returnPath: string; profile: { nativeId: string } } } };
-  assert.equal(body.input.returnTask.profile.nativeId, 'nmls:1984721');
-  assert.equal(body.input.returnTask.returnPath, '/lenders/pacific-trust-mortgage');
+  assert.equal(body.input.returnTask.profile.nativeId, 'nmls:2767');
+  assert.equal(body.input.returnTask.returnPath, '/lenders/freedom-mortgage');
   const request = new Request('https://www.asktrusthub.com/api/my-trusthub/profile-save', {
     method: 'POST', headers: { [assertion.ASSERTION_HEADER]: mock.calls[0]!.assertion }, body: mock.calls[0]!.body,
   });
@@ -116,14 +116,14 @@ test('B/C/D missing NMLS, unpublished, and wrong class stay on the device', asyn
   const pair = keys();
   let called = false;
   const parent = async () => { called = true; return { ok: false as const }; };
-  const row = catalog.getLenderBySlug('pacific-trust-mortgage');
+  const row = catalog.getLenderBySlug('freedom-mortgage');
   assert.ok(row);
   const missing = await handoff.stageParentHandoff({
     slug: row!.slug, intent: 'save', pageOpen: true, signedIn: true, gate,
   }, { catalog: [{ ...row!, nmlsId: '' }], now: () => now, key: pair.privateKey, parent });
   const unpublished = await handoff.stageParentHandoff({
-    slug: 'pacific-trust-mortgage', intent: 'save', pageOpen: true, signedIn: true, gate,
-  }, { catalog: catalog.lenders.filter((item) => item.slug !== 'pacific-trust-mortgage'), now: () => now, key: pair.privateKey, parent });
+    slug: 'freedom-mortgage', intent: 'save', pageOpen: true, signedIn: true, gate,
+  }, { catalog: catalog.lenders.filter((item) => item.slug !== 'freedom-mortgage'), now: () => now, key: pair.privateKey, parent });
   const wrong = await handoff.stageParentHandoff({
     slug: row!.slug, intent: 'save', pageOpen: true, signedIn: true, gate, profileClass: 'national_institution',
   }, { catalog: catalog.lenders, now: () => now, key: pair.privateKey, parent });
@@ -142,10 +142,10 @@ test('E/F tampered NMLS and return path are rejected before signing', async () =
   let called = false;
   const parent = async () => { called = true; return { ok: false as const }; };
   const nmls = await handoff.stageParentHandoff({
-    slug: 'pacific-trust-mortgage', intent: 'save', pageOpen: true, signedIn: true, gate, claimedNmls: '3030',
+    slug: 'freedom-mortgage', intent: 'save', pageOpen: true, signedIn: true, gate, claimedNmls: '3030',
   }, { catalog: catalog.lenders, now: () => now, key: pair.privateKey, parent });
   const path = await handoff.stageParentHandoff({
-    slug: 'pacific-trust-mortgage', intent: 'save', pageOpen: true, signedIn: true, gate, claimedReturnPath: '/lender/pacific-trust-mortgage',
+    slug: 'freedom-mortgage', intent: 'save', pageOpen: true, signedIn: true, gate, claimedReturnPath: '/lender/freedom-mortgage',
   }, { catalog: catalog.lenders, now: () => now, key: pair.privateKey, parent });
   assert.equal(nmls.state, 'local_only');
   assert.equal(path.state, 'local_only');
@@ -159,7 +159,7 @@ test('G unsigned manifest is rejected and an absent signer does not call Ask', a
   let called = false;
   const parent = async () => { called = true; return { ok: false as const }; };
   const unsigned = await handoff.stageParentHandoff({
-    slug: 'pacific-trust-mortgage', intent: 'save', pageOpen: true, signedIn: true, gate,
+    slug: 'freedom-mortgage', intent: 'save', pageOpen: true, signedIn: true, gate,
   }, { catalog: catalog.lenders, now: () => now, parent });
   assert.equal(unsigned.state, 'local_only');
   if (unsigned.state === 'local_only') assert.equal(unsigned.reason, 'unsigned');
@@ -170,16 +170,16 @@ test('G unsigned manifest is rejected and an absent signer does not call Ask', a
 
 test('I/J source publication fails closed for a missing or review-only identity', () => {
   assert.equal(source.lenderPublication('nmls:0000001', catalog.lenders), null);
-  assert.equal(source.lenderPublication('nmls:1984721', catalog.lenders)?.canonicalSlug, 'pacific-trust-mortgage');
-  assert.equal(oneClick.classifyAskBinding('nmls:1984721', []).eligible, false);
+  assert.equal(source.lenderPublication('nmls:2767', catalog.lenders)?.canonicalSlug, 'freedom-mortgage');
+  assert.equal(oneClick.classifyAskBinding('nmls:2767', []).eligible, false);
   const accepted = {
     id: 'binding-1', networkEntityId: 'entity-1', status: 'review_required', profileClass: 'marketplace_company',
-    nativeId: 'nmls:1984721', namespace: 'nmls', sourceIdentifier: '1984721', jurisdiction: 'US', entityStatus: 'active',
+    nativeId: 'nmls:2767', namespace: 'nmls', sourceIdentifier: '2767', jurisdiction: 'US', entityStatus: 'active',
   };
-  const review = oneClick.classifyAskBinding('nmls:1984721', [accepted]);
+  const review = oneClick.classifyAskBinding('nmls:2767', [accepted]);
   assert.equal(review.eligible, false);
   if (!review.eligible) assert.equal(review.reason, 'review_required');
-  const ambiguous = oneClick.classifyAskBinding('nmls:1984721', [accepted, { ...accepted, id: 'binding-2', status: 'accepted' }]);
+  const ambiguous = oneClick.classifyAskBinding('nmls:2767', [accepted, { ...accepted, id: 'binding-2', status: 'accepted' }]);
   assert.equal(ambiguous.eligible, false);
 });
 
@@ -188,9 +188,9 @@ test('K/L/M repeated Save is one identity and Unsave is a separate signed intent
   const pair = keys();
   const mock = parentMock(now);
   const deps = { catalog: catalog.lenders, now: () => now, key: pair.privateKey, parent: mock.parent, browserBinding: browser };
-  const first = await handoff.stageParentHandoff({ slug: 'metro-home-finance', intent: 'save', pageOpen: true, signedIn: true, gate }, deps);
-  const second = await handoff.stageParentHandoff({ slug: 'metro-home-finance', intent: 'save', pageOpen: true, signedIn: true, gate }, deps);
-  const removed = await handoff.stageParentHandoff({ slug: 'metro-home-finance', intent: 'unsave', pageOpen: true, signedIn: true, gate }, deps);
+  const first = await handoff.stageParentHandoff({ slug: 'loandepot', intent: 'save', pageOpen: true, signedIn: true, gate }, deps);
+  const second = await handoff.stageParentHandoff({ slug: 'loandepot', intent: 'save', pageOpen: true, signedIn: true, gate }, deps);
+  const removed = await handoff.stageParentHandoff({ slug: 'loandepot', intent: 'unsave', pageOpen: true, signedIn: true, gate }, deps);
   assert.equal(first.state, 'continue');
   assert.equal(second.state, 'continue');
   assert.equal(removed.state, 'continue');
@@ -205,7 +205,7 @@ test('N no Watch field is staged', async () => {
   const pair = keys();
   const mock = parentMock(now);
   await handoff.stageParentHandoff({
-    slug: 'lone-star-lending', intent: 'save', pageOpen: true, signedIn: true, gate,
+    slug: 'guaranteed-rate', intent: 'save', pageOpen: true, signedIn: true, gate,
   }, { catalog: catalog.lenders, now: () => now, key: pair.privateKey, parent: mock.parent, browserBinding: browser });
   assert.equal(mock.calls.some((call) => call.body.includes('watch')), false);
 });
@@ -216,23 +216,23 @@ test('O signed-out Save stages save_signin and does not require a second identit
   const mock = parentMock(now);
   const deps = { catalog: catalog.lenders, now: () => now, key: pair.privateKey, parent: mock.parent, browserBinding: browser };
   const guest = await handoff.stageParentHandoff({
-    slug: 'pacific-trust-mortgage', intent: 'save', pageOpen: true, signedIn: false, gate,
+    slug: 'freedom-mortgage', intent: 'save', pageOpen: true, signedIn: false, gate,
   }, deps);
   assert.equal(guest.state, 'continue');
   if (guest.state === 'continue') assert.equal(guest.intent, 'save_signin');
   const after = await handoff.stageParentHandoff({
-    slug: 'pacific-trust-mortgage', intent: 'save', pageOpen: true, signedIn: true, gate,
+    slug: 'freedom-mortgage', intent: 'save', pageOpen: true, signedIn: true, gate,
   }, deps);
   assert.equal(after.state, 'continue');
   if (after.state === 'continue') assert.equal(after.intent, 'save');
   const identities = mock.calls.filter((call) => call.body.includes('prepareGuestProfileTransfer')).map((call) => JSON.parse(call.body).input.returnTask.profile.nativeId);
-  assert.deepEqual(identities, ['nmls:1984721', 'nmls:1984721']);
+  assert.deepEqual(identities, ['nmls:2767', 'nmls:2767']);
 });
 
 test('P abandoned handoff resumes once and a sent ticket does not navigate again', () => {
   const store = { getItem: (k: string) => memory.get(k) ?? null, setItem: (k: string, v: string) => { memory.set(k, v); }, removeItem: (k: string) => { memory.delete(k); } };
   const ticket = {
-    slug: 'pacific-trust-mortgage',
+    slug: 'freedom-mortgage',
     target: 'https://www.asktrusthub.com/my/profile-save',
     continuationRef: 'c'.repeat(43),
     intent: 'save_signin' as const,
@@ -256,10 +256,10 @@ test('production gate and a closed page do not call Ask', async () => {
   const parent = async () => { called = true; return { ok: false as const }; };
   const deps = { catalog: catalog.lenders, now: () => now, key: pair.privateKey, parent, browserBinding: browser };
   const production = await handoff.stageParentHandoff({
-    slug: 'pacific-trust-mortgage', intent: 'save', pageOpen: true, signedIn: true, gate: oneClick.productionParentGate(),
+    slug: 'freedom-mortgage', intent: 'save', pageOpen: true, signedIn: true, gate: oneClick.productionParentGate(),
   }, deps);
   const closed = await handoff.stageParentHandoff({
-    slug: 'pacific-trust-mortgage', intent: 'save', pageOpen: false, signedIn: true, gate,
+    slug: 'freedom-mortgage', intent: 'save', pageOpen: false, signedIn: true, gate,
   }, deps);
   assert.equal(production.state, 'local_only');
   if (production.state === 'local_only') assert.equal(production.reason, 'sync_off');
@@ -277,7 +277,7 @@ test('R My Lending plans are unchanged by a parent stage', async () => {
   const pair = keys();
   const mock = parentMock(now);
   await handoff.stageParentHandoff({
-    slug: 'pacific-trust-mortgage', intent: 'save', pageOpen: true, signedIn: true, gate,
+    slug: 'freedom-mortgage', intent: 'save', pageOpen: true, signedIn: true, gate,
   }, { catalog: catalog.lenders, now: () => now, key: pair.privateKey, parent: mock.parent, browserBinding: browser });
   const after = store.loadState();
   assert.equal(after.plans.every((plan) => (plan.calculatorSnapshots ?? []).length === 0), true);
@@ -291,7 +291,7 @@ test('source rejects a tampered NMLS and accepts the catalog profile', async () 
   const pair = keys();
   const ask = { kid: 'ask-test', pem: pair.privateKey.pem };
   const verify = { kid: 'ask-test', pem: pair.publicKey.pem };
-  const publication = source.lenderPublication('nmls:1984721', catalog.lenders, now);
+  const publication = source.lenderPublication('nmls:2767', catalog.lenders, now);
   assert.ok(publication);
   const rebuilt = manifest.lenderManifest(publication!.canonicalSlug, publication!.identity.nativeId);
   const goodBody = JSON.stringify({
