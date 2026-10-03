@@ -73,13 +73,25 @@ test('published NMLS profile is eligible and missing, unpublished, and wrong cla
   }
   const found = catalog.getLenderBySlug(row.slug);
   assert.ok(found);
-  assert.equal(oneClick.assessMarketplaceProfile(row.slug, 'marketplace_company', [{ ...found!, nmlsId: '' }]).reason, 'missing_nmls');
-  assert.equal(oneClick.assessMarketplaceProfile('not-a-published-lender', 'marketplace_company', catalog.lenders).reason, 'unpublished');
-  assert.equal(oneClick.assessMarketplaceProfile(row.slug, 'national_institution', catalog.lenders).reason, 'wrong_class');
+  const missingNmls = oneClick.assessMarketplaceProfile(row.slug, 'marketplace_company', [{ ...found!, nmlsId: '' }]);
+  const unpublished = oneClick.assessMarketplaceProfile('not-a-published-lender', 'marketplace_company', catalog.lenders);
+  const wrongClass = oneClick.assessMarketplaceProfile(row.slug, 'national_institution', catalog.lenders);
+  assert.equal(missingNmls.ok, false);
+  assert.equal(unpublished.ok, false);
+  assert.equal(wrongClass.ok, false);
+  if (!missingNmls.ok) assert.equal(missingNmls.reason, 'missing_nmls');
+  if (!unpublished.ok) assert.equal(unpublished.reason, 'unpublished');
+  if (!wrongClass.ok) assert.equal(wrongClass.reason, 'wrong_class');
   const binding = accepted();
-  assert.equal(oneClick.classifyAskBinding(binding.nativeId, []).reason, 'missing');
-  assert.equal(oneClick.classifyAskBinding(binding.nativeId, [binding, { ...binding, id: 'binding-2' }]).reason, 'ambiguous');
-  assert.equal(oneClick.classifyAskBinding(binding.nativeId, [{ ...binding, status: 'review_required' }]).reason, 'review_required');
+  const missingBinding = oneClick.classifyAskBinding(binding.nativeId, []);
+  const ambiguous = oneClick.classifyAskBinding(binding.nativeId, [binding, { ...binding, id: 'binding-2' }]);
+  const review = oneClick.classifyAskBinding(binding.nativeId, [{ ...binding, status: 'review_required' }]);
+  assert.equal(missingBinding.eligible, false);
+  assert.equal(ambiguous.eligible, false);
+  assert.equal(review.eligible, false);
+  if (!missingBinding.eligible) assert.equal(missingBinding.reason, 'missing');
+  if (!ambiguous.eligible) assert.equal(ambiguous.reason, 'ambiguous');
+  if (!review.eligible) assert.equal(review.reason, 'review_required');
 });
 
 test('exact accepted binding saves one parent row and a repeat does not add another', () => {

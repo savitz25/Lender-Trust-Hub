@@ -158,7 +158,7 @@ export function clickProfileSave(input: {
   const device = deviceFirstProfileSave({
     lenderSlug: input.lenderSlug,
     lenderName: input.lenderName,
-    nmlsId: input.nmlsId,
+    nmlsId: input.nmlsId ?? undefined,
     profilePath: `/lenders/${input.lenderSlug}`,
   }).device;
   const base = {
