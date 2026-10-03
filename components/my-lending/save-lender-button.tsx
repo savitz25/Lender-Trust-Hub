@@ -1,27 +1,22 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
-import Link from 'next/link';
-import { Bookmark, BookmarkCheck, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ShortlistFullPanel } from '@/components/my-lending/shortlist-full-panel';
 import { WorkspaceSaveToast } from '@/components/my-lending/workspace-save-toast';
+import { profileSaveLabel } from '@/lib/my-lending/account-presentation';
 import {
-  getSavedLenderOnActivePlan,
+  acknowledgeDeviceSave,
+  deviceFirstProfileSave,
+  deviceFirstProfileUnsave,
+} from '@/lib/my-lending/parent-adapter';
+import {
   isLenderSaved,
-  removeSavedLender,
   saveAsResearching,
-  shortlistLender,
   shortlistReplacing,
   shortlistWithDemoteOldest,
-  updateSavedLenderStatus,
 } from '@/lib/my-lending/storage';
-import {
-  LENDER_STATUS_OPTIONS,
-  MY_LENDING_PATH,
-  type LenderResearchStatus,
-  type SavedLender,
-} from '@/lib/my-lending/types';
+import { type LenderResearchStatus, type SavedLender } from '@/lib/my-lending/types';
 import { cn } from '@/lib/utils';
 import { trackMyLendingSave } from '@/lib/analytics/ga-events';
 
@@ -50,14 +45,12 @@ export function SaveLenderButton({
   defaultStatus = 'shortlisted',
 }: Props) {
   const [saved, setSaved] = useState(false);
-  const [record, setRecord] = useState<SavedLender | null>(null);
   const [toast, setToast] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [fullPanel, setFullPanel] = useState<SavedLender[] | null>(null);
 
   const sync = useCallback(() => {
     setSaved(isLenderSaved(lenderSlug));
-    setRecord(getSavedLenderOnActivePlan(lenderSlug));
   }, [lenderSlug]);
 
   useEffect(() => {
@@ -87,101 +80,42 @@ export function SaveLenderButton({
 
   function onSave() {
     setError(null);
-    const res = shortlistLender({ ...payload, status: defaultStatus });
-    if (!res.ok) {
-      if (res.reason === 'shortlist_full' && res.shortlisted) {
-        setFullPanel(res.shortlisted);
-        setError(res.error);
+    const res = deviceFirstProfileSave({ ...payload, status: defaultStatus });
+    if (!res.device.ok) {
+      if (res.device.reason === 'shortlist_full' && res.device.shortlisted) {
+        setFullPanel(res.device.shortlisted);
+        setError(res.device.error);
         return;
       }
-      setError(res.error);
+      setError(res.device.error);
       return;
     }
     sync();
-    if (!res.alreadySaved) {
+    if (!res.device.alreadySaved) {
       trackMyLendingSave({ slug: lenderSlug });
     }
-    showToast(
-      res.alreadySaved
-        ? 'Already in My Lending'
-        : res.lender.status === 'researching'
-          ? `${lenderName} saved as Researching`
-          : `${lenderName} shortlisted`
-    );
+    showToast(res.device.alreadySaved ? 'Already saved on this device' : 'Saved on this device');
   }
 
-  function onRemove() {
-    removeSavedLender(lenderSlug);
+  function onUnsave() {
+    setError(null);
+    deviceFirstProfileUnsave({ lenderSlug, nmlsId });
     sync();
-    showToast('Removed from My Lending');
-  }
-
-  function onStatus(status: LenderResearchStatus) {
-    if (!record) return;
-    const res = updateSavedLenderStatus(record.id, status);
-    if (!res.ok) {
-      if (res.reason === 'shortlist_full' && res.shortlisted) {
-        setFullPanel(res.shortlisted);
-        setError(res.error);
-        return;
-      }
-      setError(res.error);
-      return;
-    }
-    sync();
+    showToast('Removed on this device');
   }
 
   return (
     <div className={cn('relative', className)}>
-      {!saved ? (
-        <Button
-          type="button"
-          variant="trust"
-          size={size}
-          onClick={onSave}
-          aria-label="Save to My Lending"
-        >
-          <Bookmark className="h-4 w-4" aria-hidden />
-          {size === 'sm' ? 'Save' : 'Save to My Lending'}
-        </Button>
-      ) : (
-        <div className="flex flex-wrap items-center gap-2">
-          <Button type="button" variant="outline" size={size} aria-pressed="true">
-            <BookmarkCheck className="h-4 w-4" aria-hidden />
-            {size === 'sm' ? 'Saved' : 'In My Lending'}
-          </Button>
-          {record && size !== 'sm' ? (
-            <>
-              <label className="sr-only" htmlFor={`ml-status-${lenderSlug}`}>
-                Status
-              </label>
-              <select
-                id={`ml-status-${lenderSlug}`}
-                value={record.status}
-                onChange={(e) => onStatus(e.target.value as LenderResearchStatus)}
-                className="h-10 rounded-lg border border-zinc-200 bg-white px-2 text-sm"
-              >
-                {LENDER_STATUS_OPTIONS.map((s) => (
-                  <option key={s.id} value={s.id}>
-                    {s.label}
-                  </option>
-                ))}
-              </select>
-              <Button type="button" variant="ghost" size="sm" onClick={onRemove} className="text-rose-700">
-                <Trash2 className="h-4 w-4" aria-hidden />
-                Remove
-              </Button>
-            </>
-          ) : (
-            <Link
-              href={MY_LENDING_PATH}
-              className="text-xs font-semibold text-emerald-800 underline-offset-2 hover:underline"
-            >
-              My Lending
-            </Link>
-          )}
-        </div>
-      )}
+      <Button
+        type="button"
+        variant={saved ? 'outline' : 'trust'}
+        size={size}
+        onClick={saved ? onUnsave : onSave}
+        aria-pressed={saved}
+        aria-label={profileSaveLabel(saved)}
+      >
+        {profileSaveLabel(saved)}
+      </Button>
 
       <WorkspaceSaveToast
         open={Boolean(toast)}
@@ -209,8 +143,9 @@ export function SaveLenderButton({
             setFullPanel(null);
             setError(null);
             if (res.ok) {
+              acknowledgeDeviceSave(payload, res);
               sync();
-              showToast(`${lenderName} shortlisted`);
+              showToast('Saved on this device');
             } else setError(res.error);
           }}
           onReplace={(slug) => {
@@ -218,8 +153,9 @@ export function SaveLenderButton({
             setFullPanel(null);
             setError(null);
             if (res.ok) {
+              acknowledgeDeviceSave(payload, res);
               sync();
-              showToast(`${lenderName} shortlisted`);
+              showToast('Saved on this device');
             } else setError(res.error);
           }}
           onSaveAsResearching={() => {
@@ -227,8 +163,9 @@ export function SaveLenderButton({
             setFullPanel(null);
             setError(null);
             if (res.ok) {
+              acknowledgeDeviceSave(payload, res);
               sync();
-              showToast(`${lenderName} saved as Researching`);
+              showToast('Saved on this device');
             } else setError(res.error);
           }}
         />

@@ -60,6 +60,7 @@ import {
 import { ShortlistFullPanel } from '@/components/my-lending/shortlist-full-panel';
 import { PrivateResearchNote } from '@/components/my-lending/private-research-note';
 import { RemoveConfirmButton } from '@/components/my-lending/remove-confirm-button';
+import { MyTrustHubWorkspaceNote } from '@/components/my-lending/my-trusthub-account-entry';
 import { useMyLendingOptional } from '@/components/my-lending/my-lending-provider';
 import { TrustMark } from '@/components/network/trust-mark';
 import { Button } from '@/components/ui/button';
@@ -246,6 +247,7 @@ export function GuestLendingHq() {
   const accountStrip = ml?.user ? (
     <div className="flex flex-col gap-3 rounded-2xl border border-emerald-100 bg-white px-4 py-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
       <div>
+        <MyTrustHubWorkspaceNote />
         <p className="text-sm text-zinc-600">
           Signed in as{' '}
           <span className="font-medium text-[#0A2540]">{ml.user.email}</span>
@@ -275,6 +277,7 @@ export function GuestLendingHq() {
   ) : (
     <div className="flex flex-col gap-3 rounded-2xl border border-emerald-200 bg-emerald-50/40 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
       <div>
+        <MyTrustHubWorkspaceNote />
         <p className="text-sm font-medium text-[#0A2540]">Sign in (optional)</p>
         <p className="mt-1 text-sm text-zinc-600">
           Guest mode keeps research on this device only. Sign in for a multi-device workspace

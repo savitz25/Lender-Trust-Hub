@@ -10,6 +10,7 @@ import {
   LendingGoogleSignInButton,
 } from '@/components/my-lending/social-sign-in-buttons';
 import { createBrowserSupabaseClient } from '@/lib/supabase/client';
+import { lendingAccountPresentation } from '@/lib/my-lending/account-presentation';
 import { cn } from '@/lib/utils';
 
 export function AuthModal() {
@@ -24,10 +25,13 @@ export function AuthModal() {
 
   if (!authOpen) return null;
 
+  const presentation = lendingAccountPresentation();
   const contextCopy =
-    authContext === 'lender'
-      ? 'Sign in to save this lender to My Lending and sync across devices.'
-      : 'Sign in to open Lending HQ and sync your saved research.';
+    presentation.mode === 'my_trusthub'
+      ? presentation.signInBody
+      : authContext === 'lender'
+        ? presentation.signInBodyLender
+        : presentation.signInBodyWorkspace;
 
   async function sendMagicLink(e: React.FormEvent) {
     e.preventDefault();
@@ -111,10 +115,10 @@ export function AuthModal() {
         </button>
 
         <p className="text-xs font-semibold uppercase tracking-wider text-emerald-800">
-          My Lending
+          {presentation.mode === 'my_trusthub' ? presentation.accountLabel : 'My Lending'}
         </p>
         <h2 id="auth-modal-title" className="mt-1 text-xl font-semibold text-[#0A2540]">
-          Sign in to Lending HQ
+          {presentation.signInTitle}
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-zinc-600">{contextCopy}</p>
         <p className="mt-2 text-xs leading-relaxed text-zinc-500">

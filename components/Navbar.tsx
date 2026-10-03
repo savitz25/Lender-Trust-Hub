@@ -10,6 +10,7 @@ import { SwitchHubMenu } from '@/components/switch-hub-menu';
 import { useMyLendingOptional } from '@/components/my-lending/my-lending-provider';
 import { FDIC_CATEGORY, MORTGAGE_CATEGORY, AUTO_CATEGORY } from '@/lib/directory/categories';
 import { LENDER_HEADER_NAV } from '@/lib/design/lender-design-system';
+import { MyTrustHubAccountEntry } from '@/components/my-lending/my-trusthub-account-entry';
 import { guestSavedCount } from '@/lib/my-lending/storage';
 import { cn } from '@/lib/utils';
 
@@ -198,11 +199,13 @@ export default function Navbar() {
         </nav>
 
         <div className="th-header-actions">
+          <MyTrustHubAccountEntry />
           {myLendingDesktop}
           <SwitchHubMenu />
         </div>
 
         <div className="th-header-mobile-actions">
+          <MyTrustHubAccountEntry variant="icon" />
           <Link
             href="/my-lending"
             className="th-btn-icon"
@@ -278,6 +281,7 @@ export default function Navbar() {
                   {item.label}
                 </Link>
               ))}
+              <MyTrustHubAccountEntry variant="drawer" />
               <Link
                 href="/my-lending"
                 className="th-drawer-link"
