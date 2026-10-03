@@ -17,9 +17,12 @@ export function profileSaveLabel(saved: boolean): typeof PROFILE_SAVE_LABEL | ty
   return saved ? PROFILE_SAVED_LABEL : PROFILE_SAVE_LABEL;
 }
 
-/** Explicit opt-in. Unset or any other value stays off. */
+/**
+ * Available in the production rollout. Set the env value to 0 to hide it.
+ * This flag does not turn on parent sync.
+ */
 export function lenderMyTrustHubAccountEntryEnabled(): boolean {
-  return process.env.NEXT_PUBLIC_LENDER_MY_TRUSTHUB_ACCOUNT_ENTRY === '1';
+  return process.env.NEXT_PUBLIC_LENDER_MY_TRUSTHUB_ACCOUNT_ENTRY !== '0';
 }
 
 export type LendingAccountPresentation =

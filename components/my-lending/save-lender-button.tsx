@@ -94,7 +94,11 @@ export function SaveLenderButton({
     if (!res.device.alreadySaved) {
       trackMyLendingSave({ slug: lenderSlug });
     }
-    showToast(res.device.alreadySaved ? 'Already saved on this device' : 'Saved on this device');
+    showToast(
+      res.device.alreadySaved
+        ? 'Already saved on this device'
+        : 'Saved on this device. Sign in to My TrustHub to sync this lender.',
+    );
   }
 
   function onUnsave() {

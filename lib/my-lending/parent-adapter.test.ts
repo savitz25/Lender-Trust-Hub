@@ -156,20 +156,19 @@ test('native identity is the numeric NMLS, not the slug or display name', () => 
   assert.equal(source.includes('asktrusthub'), false);
 });
 
-test('My TrustHub entry is prepared and stays off unless the flag is exactly 1', () => {
-  assert.equal(lenderMyTrustHubAccountEntryEnabled(), false);
-  assert.equal(lendingAccountPresentation().mode, 'legacy');
-  process.env.NEXT_PUBLIC_LENDER_MY_TRUSTHUB_ACCOUNT_ENTRY = '1';
+test('My TrustHub entry is on for the rollout and hides only when the flag is 0', () => {
+  assert.equal(lenderMyTrustHubAccountEntryEnabled(), true);
+  assert.equal(lendingAccountPresentation().mode, 'my_trusthub');
   const on = lendingAccountPresentation();
-  assert.equal(on.mode, 'my_trusthub');
   if (on.mode === 'my_trusthub') {
     assert.equal(on.accountLabel, 'My TrustHub');
     assert.equal(on.workspaceLabel, 'My Lending');
     assert.match(on.signInBody, /does not ask you to open a separate Lender account/);
     assert.equal(on.signInBody.includes('Sign in to save this lender to My Lending'), false);
   }
-  process.env.NEXT_PUBLIC_LENDER_MY_TRUSTHUB_ACCOUNT_ENTRY = 'true';
+  process.env.NEXT_PUBLIC_LENDER_MY_TRUSTHUB_ACCOUNT_ENTRY = '0';
   assert.equal(lenderMyTrustHubAccountEntryEnabled(), false);
+  assert.equal(lendingAccountPresentation().mode, 'legacy');
 });
 
 test('search, national profile path, calculator, and compare surfaces stay in place', () => {
