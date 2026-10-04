@@ -70,6 +70,7 @@ test('shared shell, result trace, privacy analytics, and noindex contract are pr
   const root = join(__dirname, '..', '..');
   const shell = readFileSync(join(root, 'components/home-intel/ask-trust-hub-search.tsx'), 'utf8');
   const result = readFileSync(join(root, 'components/ask-lender/ask-result-view.tsx'), 'utf8');
+  const cards = readFileSync(join(root, 'components/ask-lender/lender-result-card.tsx'), 'utf8');
   const page = readFileSync(join(root, 'app/ask/page.tsx'), 'utf8');
   const analytics = readFileSync(join(root, 'components/specialist-search/SearchAnalytics.tsx'), 'utf8');
   assert.match(shell, /What do you want to find out/);
@@ -77,6 +78,7 @@ test('shared shell, result trace, privacy analytics, and noindex contract are pr
   assert.match(shell, /Research/);
   assert.match(result, /Why this matched/);
   assert.match(result, /Trace this result/);
+  assert.match(cards, /View lender profile/);
   assert.match(result, /Research this lender/);
   assert.match(page, /index: false/);
   assert.doesNotMatch(analytics, /rawQuery|\bq:/);
