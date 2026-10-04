@@ -11,9 +11,13 @@ const REAL = 'http://localhost:3131', KEYWORDS = 'http://localhost:3132', LARGE 
 
 const snapshot = () => {
   const root = document.querySelector('[data-name-candidates-state]');
-  const rows = [...document.querySelectorAll('.hub-table tbody tr')].map((tr) => tr.querySelector('th').childNodes[0].textContent.trim());
+  const cards = [...document.querySelectorAll('[data-ask-card]')];
+  const rows = cards.length
+    ? cards.map((card) => card.querySelector('h4')?.textContent?.trim() ?? '')
+    : [...document.querySelectorAll('.hub-table tbody tr')].map((tr) => tr.querySelector('th').childNodes[0].textContent.trim());
   const notApplied = [...document.querySelectorAll('.intel-interpretation-grid dt')].filter((x) => x.textContent === 'Not applied').map((x) => x.nextElementSibling.textContent);
-  return { state: root?.dataset.nameCandidatesState ?? null, searched: root?.dataset.searchedName ?? null, headline: document.querySelector('.intel-ask-result h3')?.textContent ?? null, rows, firstRow: document.querySelector('.hub-table tbody tr')?.innerText.replace(/\s+/g, ' ').slice(0, 220) ?? null, notApplied, pager: document.querySelector('.intel-ask-pager')?.innerText.replace(/\s+/g, ' ') ?? null, hasNext: [...document.querySelectorAll('.intel-ask-pager a')].some((a) => /next/i.test(a.textContent)), caveats: [...document.querySelectorAll('.intel-ask-result li')].map((li) => li.textContent).filter((t) => /NOT APPLIED|not exhaustive|searched sources/i.test(t)), input: document.querySelector('#ask-lender-input')?.value ?? null, overflow: document.documentElement.scrollWidth > window.innerWidth + 1 };
+  const first = cards[0] ?? document.querySelector('.hub-table tbody tr');
+  return { state: root?.dataset.nameCandidatesState ?? null, searched: root?.dataset.searchedName ?? null, headline: document.querySelector('.intel-ask-result h3')?.textContent ?? null, rows, firstRow: first?.innerText.replace(/\s+/g, ' ').slice(0, 220) ?? null, notApplied, pager: document.querySelector('.intel-ask-pager')?.innerText.replace(/\s+/g, ' ') ?? null, hasNext: [...document.querySelectorAll('.intel-ask-pager a')].some((a) => /next/i.test(a.textContent)), caveats: [...document.querySelectorAll('.intel-ask-result li')].map((li) => li.textContent).filter((t) => /NOT APPLIED|not exhaustive|searched sources/i.test(t)), input: document.querySelector('#ask-lender-input')?.value ?? null, overflow: document.documentElement.scrollWidth > window.innerWidth + 1 };
 };
 
 async function typeAndEnter(page, base, text) {
@@ -37,8 +41,8 @@ for (const [label, viewport] of [['1280', { width: 1280, height: 900 }], ['390',
   const v = {};
   v.bmoPositive = await typeAndEnter(page, REAL, 'BMO Bank');
   // result action: REAL click. Locally there is no database, so every profile page 404s -- recorded, not claimed as a working destination.
-  const href = await page.getAttribute('.hub-table tbody tr a[data-specialist-event="profile_open"]', 'href');
-  await Promise.all([page.waitForURL(/\/lender\//), page.click('.hub-table tbody tr a[data-specialist-event="profile_open"]')]);
+  const href = await page.getAttribute('[data-ask-card] a[data-specialist-event="profile_open"]:not([aria-hidden="true"])', 'href');
+  await Promise.all([page.waitForURL(/\/lender\//), page.click('[data-ask-card] a[data-specialist-event="profile_open"]:not([aria-hidden="true"])')]);
   v.resultActionClick = { clickedBy: 'real mouse click', navigatedTo: new URL(page.url()).pathname, href, localStatusNote: 'local build has no database credentials; see canonicalLinkCheck for the separate production check' };
   await page.goBack({ waitUntil: 'load' });
   v.afterHistoryBack = await page.evaluate(snapshot);

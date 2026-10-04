@@ -1,20 +1,66 @@
 import Link from 'next/link';
 import type { AskExecution } from '@/lib/ask-lender/types';
+import { isIdentityDiscovery } from '@/components/ask-lender/identity-discovery';
+import { LenderResultCard } from '@/components/ask-lender/lender-result-card';
 
 function fmt(n: number): string {
   return n.toLocaleString('en-US');
 }
 
-export function AskResultView({ result, question }: { result: AskExecution; question: string }) {
+function IdentityCardList({ result }: { result: AskExecution }) {
+  if (!result.rows?.length) return null;
   return (
-    <div className="intel-ask-result" style={{ minWidth: 0, overflowWrap: 'anywhere' }} data-name-candidates-state={result.nameCandidates?.state} data-searched-name={result.nameCandidates?.suppliedName}>
-      <p className="intel-eyebrow">We interpreted your question as</p>
-      <dl className="intel-interpretation-grid">
-        {result.interpretation.map((line) => (
-          <div key={`${line.label}-${line.value}`}><dt>{line.label}</dt><dd>{line.value}</dd><dd><a className="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div>
-        ))}
-      </dl>
-      <p className="intel-kicker">{result.geographyWarning}</p>
+    <ul className="grid list-none gap-3 p-0" data-ask-identity-cards>
+      {result.rows.map((row) => (
+        <li key={`${row.rank}-${row.institutionKey || row.lei || row.displayName}`} className="min-w-0">
+          <LenderResultCard row={row} period={result.period} grain={result.grain} geographyWarning={result.geographyWarning} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function LookupSection({ result }: { result: AskExecution }) {
+  if (!result.lookup) return null;
+  return (
+    <section aria-label="Identifier lookup outcome" style={{ minWidth: 0, overflowWrap: 'anywhere' }}>
+      <p><strong>Research scope:</strong> {result.lookup.scope}.</p>
+      {result.lookup.sourceLookup === 'not_run' ? <p>No institution lookup was run for this request.</p> : null}
+      <p><strong>Subject:</strong> requested {result.lookup.requestedClass === 'unknown' ? 'unspecified' : result.lookup.requestedClass}; resolved {result.lookup.resolvedClass}.</p>
+      {result.lookup.identifiers.map((id, index) => <div key={`${id.type}-${index}`}>
+        <p>Submitted: <code>{id.rawSpan}</code>. {result.lookup!.sourceLookup === 'not_run' ? 'Unconfirmed span' : `Complete ${id.type === 'LEI' ? 'LEI' : 'NMLS'}`}: <code>{id.value}</code>.</p>
+        {id.normalization.map(note => <p key={note}>{note}.</p>)}
+      </div>)}
+      <IdentityCardList result={result} />
+      {result.lookup.conditions.length ? <div><h4>Requested conditions</h4><ul>{result.lookup.conditions.map((condition, index) => <li key={index}>
+        <strong>{condition.text}:</strong> {condition.state === 'APPLIED' ? 'Applied' : condition.state === 'CONFLICT' ? 'Conflicting' : 'Not established'}. {condition.explanation}
+      </li>)}</ul></div> : null}
+      <p><a className="intel-text-link" href="#ask-lender-input">Edit or retry this lookup</a></p>
+      {result.lookup.officialActions.map(action => <div key={action.family}><a className="intel-text-link" href={action.href} rel="noopener noreferrer" target="_blank">{action.label}</a><p>{action.instruction}</p></div>)}
+    </section>
+  );
+}
+
+export function AskResultView({ result, question }: { result: AskExecution; question: string }) {
+  const identity = isIdentityDiscovery(result);
+  return (
+    <div className="intel-ask-result" style={{ minWidth: 0, overflowWrap: 'anywhere' }} data-name-candidates-state={result.nameCandidates?.state} data-searched-name={result.nameCandidates?.suppliedName} data-ask-presentation={identity ? 'cards' : 'research'}>
+      {identity ? (
+        <>
+          <h3>{result.headline}</h3>
+          <p className="intel-kicker">{result.geographyWarning}</p>
+        </>
+      ) : (
+        <>
+          <p className="intel-eyebrow">We interpreted your question as</p>
+          <dl className="intel-interpretation-grid">
+            {result.interpretation.map((line) => (
+              <div key={`${line.label}-${line.value}`}><dt>{line.label}</dt><dd>{line.value}</dd><dd><a className="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div>
+            ))}
+          </dl>
+          <p className="intel-kicker">{result.geographyWarning}</p>
+        </>
+      )}
 
       {result.filters?.length ? (
         <div className="intel-ask-examples" role="list" aria-label="Refine this query">
@@ -26,47 +72,28 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
         </div>
       ) : null}
 
-      <details className="intel-disclose">
-        <summary>Change interpretation</summary>
-        <p>
-          Use the filters above or edit the question. Property geography is not converted to lender location. “Most” is
-          not converted to “best.”
-        </p>
-      </details>
+      {identity ? null : (
+        <details className="intel-disclose">
+          <summary>Change interpretation</summary>
+          <p>
+            Use the filters above or edit the question. Property geography is not converted to lender location. “Most” is
+            not converted to “best.”
+          </p>
+        </details>
+      )}
 
-      <h3>{result.headline}</h3>
-      <p>{result.body}</p>
-      {result.lookup ? (
-        <section aria-label="Identifier lookup outcome" style={{ minWidth: 0, overflowWrap: 'anywhere' }}>
-          <p><strong>Research scope:</strong> {result.lookup.scope}.</p>
-          {result.lookup.sourceLookup === 'not_run' ? <p>No institution lookup was run for this request.</p> : null}
-          <p><strong>Subject:</strong> requested {result.lookup.requestedClass === 'unknown' ? 'unspecified' : result.lookup.requestedClass}; resolved {result.lookup.resolvedClass}.</p>
-          {result.lookup.identifiers.map((id, index) => <div key={`${id.type}-${index}`}>
-            <p>Submitted: <code>{id.rawSpan}</code>. {result.lookup!.sourceLookup === 'not_run' ? 'Unconfirmed span' : `Complete ${id.type === 'LEI' ? 'LEI' : 'NMLS'}`}: <code>{id.value}</code>.</p>
-            {id.normalization.map(note => <p key={note}>{note}.</p>)}
-          </div>)}
-          {result.rows?.map(row => <article key={row.institutionKey} className="intel-disclose">
-            <h4>{row.displayName}</h4>
-            <p>{row.nmls ? `NMLS ${row.nmls}` : ''}{row.lei ? ` | LEI ${row.lei}` : ''}</p>
-            <p><strong>Why this matched:</strong> {row.whyMatched.join(' ')}</p>
-            {row.href ? <Link className="intel-text-link" href={row.href} data-specialist-event="profile_open">Research this lender</Link> : null}
-          </article>)}
-          {result.lookup.conditions.length ? <div><h4>Requested conditions</h4><ul>{result.lookup.conditions.map((condition, index) => <li key={index}>
-            <strong>{condition.text}:</strong> {condition.state === 'APPLIED' ? 'Applied' : condition.state === 'CONFLICT' ? 'Conflicting' : 'Not established'}. {condition.explanation}
-          </li>)}</ul></div> : null}
-          <p><a className="intel-text-link" href="#ask-lender-input">Edit or retry this lookup</a></p>
-          {result.lookup.officialActions.map(action => <div key={action.family}><a className="intel-text-link" href={action.href} rel="noopener noreferrer" target="_blank">{action.label}</a><p>{action.instruction}</p></div>)}
-        </section>
-      ) : null}
+      {identity ? null : <h3>{result.headline}</h3>}
+      {identity ? null : <p>{result.body}</p>}
+      {result.lookup ? <LookupSection result={result} /> : null}
 
-      {result.period ? (
+      {identity || !result.period ? null : (
         <p className="intel-kicker">
           Source period: {result.period}. Grain: {result.grain ?? 'see trace'}.
           {result.denominator ? ` Denominator: ${result.denominator.label} ${fmt(result.denominator.value)}.` : ''}
         </p>
-      ) : null}
+      )}
 
-      {result.facts?.length ? (
+      {identity || !result.facts?.length ? null : (
         <ul className="intel-plain-list">
           {result.facts.map((f) => (
             <li key={f.label}>
@@ -74,9 +101,11 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
             </li>
           ))}
         </ul>
-      ) : null}
+      )}
 
-      {result.rows?.length && !result.lookup ? (
+      {identity && !result.lookup ? <IdentityCardList result={result} /> : null}
+
+      {!identity && result.rows?.length && !result.lookup ? (
         <div className="hub-table-scroll" tabIndex={0} role="region" aria-label="Ask institution results">
           <table className="hub-table hub-table--compact">
             <caption className="visually-hidden">{result.headline}</caption>
@@ -130,7 +159,37 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
         </div>
       ) : null}
 
-      {result.rows?.map((row) => (
+      {identity ? (
+        <>
+          <p>{result.body}</p>
+          <details className="intel-disclose">
+            <summary>We interpreted your question as</summary>
+            <dl className="intel-interpretation-grid">
+              {result.interpretation.map((line) => (
+                <div key={`${line.label}-${line.value}`}><dt>{line.label}</dt><dd>{line.value}</dd><dd><a className="intel-text-link" href="#ask-lender-input">Edit request</a></dd></div>
+              ))}
+            </dl>
+            <p>
+              Change interpretation by using the filters above or editing the question. Property geography is not converted to lender location. “Most” is
+              not converted to “best.”
+            </p>
+            {result.period ? (
+              <p className="intel-kicker">
+                Source period: {result.period}. Grain: {result.grain ?? 'see trace'}.
+              </p>
+            ) : null}
+          </details>
+          {result.facts?.length ? (
+            <ul className="intel-plain-list">
+              {result.facts.map((f) => (
+                <li key={f.label}>{f.label}: {f.value}</li>
+              ))}
+            </ul>
+          ) : null}
+        </>
+      ) : null}
+
+      {!identity && result.rows?.map((row) => (
         <details key={`why-${row.rank}-${row.lei}`} className="intel-disclose" data-specialist-event="trace_open">
           <summary>
             Trace this result · {row.displayName}

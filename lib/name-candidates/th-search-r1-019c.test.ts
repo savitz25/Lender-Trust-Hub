@@ -294,7 +294,7 @@ test('20 paging, edits and new submissions never carry another institution or st
 
 test('21 rendered native result: candidates table, inline research row with official action, honest pager noun, name retained on miss', () => {
   const html = (q: string, pageSize = 25) => renderToStaticMarkup(React.createElement(AskResultView, { result: executeAskQuery({ q, pageSize }), question: q }));
-  const bmo = html('BMO Bank'); assert.match(bmo, /data-name-candidates-state="CANDIDATES"/); assert.match(bmo, /BMO Bank/); assert.match(bmo, /Research this lender/); assert.match(bmo, /NMLS 401052/);
+  const bmo = html('BMO Bank'); assert.match(bmo, /data-name-candidates-state="CANDIDATES"/); assert.match(bmo, /BMO Bank/); assert.match(bmo, /View lender profile/); assert.match(bmo, /NMLS <\/dt><dd class="inline">#401052/);
   const frost = html('Frost Bank'); assert.match(frost, /Unpublished research identity/); assert.match(frost, /No LenderTrustHub profile/); assert.match(frost, /search\.gleif\.org/); assert.doesNotMatch(frost, /href="\/lender\/frost/);
   const many = html('First', 10); assert.match(many, /name candidate records/); assert.doesNotMatch(many, /reporting institutions<\/span>/);
   const miss = html('Zzqx Nonexistent Lending'); assert.match(miss, /data-name-candidates-state="NO_MATCH"/); assert.match(miss, /Zzqx Nonexistent Lending/);
