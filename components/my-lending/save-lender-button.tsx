@@ -65,6 +65,7 @@ export function SaveLenderButton({
   const [error, setError] = useState<string | null>(null);
   const [fullPanel, setFullPanel] = useState<SavedLender[] | null>(null);
   const [keepOpen, setKeepOpen] = useState(false);
+  const [releaseAdmitted, setReleaseAdmitted] = useState(false);
 
   const sync = useCallback(() => {
     setSaved(isLenderSaved(lenderSlug));
@@ -102,9 +103,26 @@ export function SaveLenderButton({
 
   useEffect(() => {
     if (!parentHandoff) return;
+    let cancelled = false;
+    setReleaseAdmitted(false);
+    void fetch(`/api/my-lending/profile-save?slug=${encodeURIComponent(lenderSlug)}`)
+      .then((response) => (response.ok ? response.json() : null))
+      .then((body: { admitted?: boolean } | null) => {
+        if (!cancelled) setReleaseAdmitted(body?.admitted === true);
+      })
+      .catch(() => {
+        if (!cancelled) setReleaseAdmitted(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [parentHandoff, lenderSlug]);
+
+  useEffect(() => {
+    if (!parentHandoff || !releaseAdmitted) return;
     const ticket = readHandoff(sessionStorage, lenderSlug, Date.now());
     if (resumeDecision(ticket, document.visibilityState) === 'submit' && ticket) submitTicket(ticket);
-  }, [parentHandoff, lenderSlug, submitTicket]);
+  }, [parentHandoff, releaseAdmitted, lenderSlug, submitTicket]);
 
   const payload = {
     lenderSlug,
@@ -121,7 +139,7 @@ export function SaveLenderButton({
   }
 
   async function beginHandoff(intent: HandoffIntent): Promise<boolean> {
-    if (!parentHandoff || pageHidden()) return false;
+    if (!parentHandoff || !releaseAdmitted || pageHidden()) return false;
     setKeepOpen(true);
     try {
       const response = await fetch('/api/my-lending/profile-save', {
@@ -195,7 +213,7 @@ export function SaveLenderButton({
       >
         {profileSaveLabel(saved)}
       </Button>
-      {parentHandoff ? (
+      {parentHandoff && releaseAdmitted ? (
         <a
           href={MY_TRUSTHUB_ACCOUNT_ENTRY_HREF}
           className="mt-1 block text-xs font-semibold text-[#0A2540] underline"

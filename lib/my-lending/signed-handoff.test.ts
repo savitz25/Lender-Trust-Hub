@@ -256,7 +256,7 @@ test('production gate and a closed page do not call Ask', async () => {
   const parent = async () => { called = true; return { ok: false as const }; };
   const deps = { catalog: catalog.lenders, now: () => now, key: pair.privateKey, parent, browserBinding: browser };
   const production = await handoff.stageParentHandoff({
-    slug: 'freedom-mortgage', intent: 'save', pageOpen: true, signedIn: true, gate: oneClick.productionParentGate(),
+    slug: 'freedom-mortgage', intent: 'save', pageOpen: true, signedIn: true, gate: oneClick.productionParentGate({}),
   }, deps);
   const closed = await handoff.stageParentHandoff({
     slug: 'freedom-mortgage', intent: 'save', pageOpen: false, signedIn: true, gate,
@@ -264,8 +264,10 @@ test('production gate and a closed page do not call Ask', async () => {
   assert.equal(production.state, 'local_only');
   if (production.state === 'local_only') assert.equal(production.reason, 'sync_off');
   if (closed.state === 'local_only') assert.equal(closed.reason, 'page_closed');
-  assert.equal(oneClick.LENDER_CANARY_ACTIVE, false);
-  assert.equal(oneClick.LENDER_PARENT_SYNC_BROAD, false);
+  const absent = oneClick.productionParentGate({});
+  assert.equal(absent.parentSync, 'off');
+  assert.equal(absent.canary, false);
+  assert.equal(absent.broad, false);
   assert.equal(called, false);
 });
 

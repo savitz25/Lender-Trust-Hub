@@ -1,13 +1,29 @@
 import { NextResponse } from 'next/server';
 import { lenders } from '@/lib/lenders';
-import { productionParentGate } from '@/lib/my-lending/one-click';
+import { productionParentGate, releaseAdmits, type ParentRelease } from '@/lib/my-lending/one-click';
 import { productionHandoffDeps, stageParentHandoff, type StageDeps } from '@/lib/my-lending/signed-handoff';
 import type { HandoffIntent } from '@/lib/my-lending/handoff-form';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-/** Production parent sync stays off. The canary constant is not an environment flag. */
+function releaseBody(gate: ParentRelease, slug: string) {
+  return {
+    parentSync: gate.parentSync,
+    broad: gate.broad,
+    canary: gate.canary,
+    admitted: releaseAdmits(slug, gate),
+    watchCreated: false as const,
+  };
+}
+
+/** Same release decision for the profile control and this endpoint. */
+export async function GET(request: Request) {
+  const slug = new URL(request.url).searchParams.get('slug') ?? '';
+  const gate = productionParentGate();
+  return NextResponse.json({ ...releaseBody(gate, slug), state: 'local_only' as const });
+}
+
 export async function POST(request: Request) {
   const gate = productionParentGate();
   let slug = '';
@@ -29,31 +45,25 @@ export async function POST(request: Request) {
     if (typeof body.entityId === 'string') claimedEntityId = body.entityId;
     if (typeof body.name === 'string') claimedName = body.name;
   } catch {
-    return NextResponse.json({ parentSync: 'off', state: 'local_only', broad: gate.broad, canary: gate.canary, watchCreated: false });
+    return NextResponse.json({ ...releaseBody(gate, ''), state: 'local_only' });
   }
   const deps: StageDeps = { catalog: lenders };
-  if (gate.canary && !gate.broad) Object.assign(deps, productionHandoffDeps());
+  if (releaseAdmits(slug, gate)) Object.assign(deps, productionHandoffDeps());
   const staged = await stageParentHandoff({
     slug, intent, pageOpen, signedIn, gate, claimedNmls, claimedReturnPath, claimedEntityId, claimedName,
   }, deps);
   if (staged.state !== 'continue') {
     return NextResponse.json({
-      parentSync: 'off',
+      ...releaseBody(gate, slug),
       state: 'local_only',
       reason: staged.reason,
-      broad: gate.broad,
-      canary: gate.canary,
-      watchCreated: false,
     });
   }
   return NextResponse.json({
-    parentSync: 'staged',
+    ...releaseBody(gate, slug),
     state: 'continue',
     target: staged.target,
     continuationRef: staged.continuationRef,
     intent: staged.intent,
-    broad: gate.broad,
-    canary: gate.canary,
-    watchCreated: false,
   });
 }

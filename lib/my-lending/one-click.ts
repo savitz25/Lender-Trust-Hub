@@ -1,7 +1,13 @@
 /**
  * Lender one-click Save prep.
- * Production broad sync and the three-profile canary are both off.
- * A test may pass canaryActive: true to prove the closed path. The route must not.
+ * Release exposure comes from the production environment, not a compiled flag.
+ * NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED and
+ * NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS are read as process.env
+ * NEXT_PUBLIC values, so Next bundles them at build. Lender must redeploy
+ * when the master switch or the canary list changes.
+ * MTH_LENDER_PARENT_SAVE_MODE is read on the server at request time.
+ * The profile control asks that same server decision and does not decide
+ * admission itself.
  */
 
 import { cleanNmlsId } from '../verification/nmls';
@@ -14,8 +20,6 @@ import {
   type DeviceProfileSaveResult,
 } from './parent-adapter';
 
-export const LENDER_PARENT_SYNC_BROAD = false;
-export const LENDER_CANARY_ACTIVE = false;
 export const NMLS_NAMESPACE = 'nmls';
 export const LENDER_PROFILE_CLASS = 'marketplace_company';
 
@@ -27,8 +31,74 @@ export const LENDER_CANARIES = [
 
 export type CanaryProfile = (typeof LENDER_CANARIES)[number];
 
-export function productionParentGate(): { broad: false; canary: false } {
-  return { broad: false, canary: false };
+const RELEASE_SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+
+export type ParentRelease = {
+  enabled: boolean;
+  parentSync: 'off' | 'production';
+  canary: boolean;
+  broad: boolean;
+  slugs: readonly string[];
+};
+
+export type OneClickGate = {
+  broad: boolean;
+  canary: boolean;
+  slugs?: readonly string[];
+};
+
+function canarySlugList(raw: string | undefined): readonly string[] | null {
+  if (raw === undefined || raw.trim() === '') return [];
+  const slugs: string[] = [];
+  for (const part of raw.split(',')) {
+    const slug = part.trim();
+    if (!slug) continue;
+    if (!RELEASE_SLUG.test(slug) || slugs.includes(slug)) return null;
+    slugs.push(slug);
+  }
+  return slugs;
+}
+
+const RELEASE_OFF: ParentRelease = {
+  enabled: false,
+  parentSync: 'off',
+  canary: false,
+  broad: false,
+  slugs: [],
+};
+
+export type ReleaseEnv = {
+  NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED?: string;
+  NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS?: string;
+  MTH_LENDER_PARENT_SAVE_MODE?: string;
+};
+
+/** Master off, or any malformed mode or slug list, stays off. */
+export function productionParentGate(env?: ReleaseEnv): ParentRelease {
+  const source: ReleaseEnv = env ?? {
+    NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED: process.env.NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED,
+    NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS: process.env.NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS,
+    MTH_LENDER_PARENT_SAVE_MODE: process.env.MTH_LENDER_PARENT_SAVE_MODE,
+  };
+  const slugs = canarySlugList(source.NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS);
+  const enabled = source.NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED === '1';
+  const mode = (source.MTH_LENDER_PARENT_SAVE_MODE ?? '').trim();
+  if (slugs === null || !enabled || mode !== 'production') return { ...RELEASE_OFF, slugs: [] };
+  if (slugs.length === 0) return { enabled: true, parentSync: 'production', canary: false, broad: true, slugs };
+  return { enabled: true, parentSync: 'production', canary: true, broad: false, slugs };
+}
+
+export function canaryAllows(slug: string, gate: OneClickGate): boolean {
+  if (gate.broad && gate.canary) return false;
+  if (gate.broad) return true;
+  if (!gate.canary) return false;
+  const list = gate.slugs ?? LENDER_CANARIES.map((item) => item.slug);
+  return list.includes(slug);
+}
+
+/** Release exposure for one profile. Publication and NMLS checks stay separate. */
+export function releaseAdmits(slug: string, gate: ParentRelease): boolean {
+  return gate.parentSync === 'production' && RELEASE_SLUG.test(slug) && canaryAllows(slug, gate);
 }
 
 export function lenderNativeId(nmls: string): string | null {
@@ -110,12 +180,7 @@ export type ParentResearchRow = {
   watchCreated: false;
 };
 
-export type OneClickGate = { broad: boolean; canary: boolean };
 
-export function canaryAllows(slug: string, gate: OneClickGate): boolean {
-  if (gate.broad || !gate.canary) return false;
-  return LENDER_CANARIES.some((item) => item.slug === slug);
-}
 
 type PublicationDenyReason = Extract<MarketplacePublication, { ok: false }>['reason'];
 type BindingDenyReason = Extract<BindingDecision, { eligible: false }>['reason'];

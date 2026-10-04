@@ -159,11 +159,13 @@ test('signed-out save stays on the device and sign-in completes it without a sec
 });
 
 test('production gate and a closed page do not write a parent row', () => {
-  assert.equal(oneClick.LENDER_PARENT_SYNC_BROAD, false);
-  assert.equal(oneClick.LENDER_CANARY_ACTIVE, false);
+  const absent = oneClick.productionParentGate({});
+  assert.equal(absent.parentSync, 'off');
+  assert.equal(absent.canary, false);
+  assert.equal(absent.broad, false);
   const production = oneClick.clickProfileSave({
     lenderSlug: canary().slug, lenderName: canary().name, nmlsId: canary().nmls, catalog: catalog.lenders,
-    bindings: [accepted()], signedIn: true, pageOpen: true,
+    bindings: [accepted()], signedIn: true, pageOpen: true, gate: absent,
   });
   assert.equal(production.parent, 'off');
   assert.equal(oneClick.listParentRows().length, 0);
@@ -179,4 +181,77 @@ test('production gate and a closed page do not write a parent row', () => {
   });
   assert.equal(broad.parent, 'off');
   assert.equal(oneClick.listParentRows().length, 0);
+});
+
+const CANARY_ENV = {
+  NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED: '1',
+  MTH_LENDER_PARENT_SAVE_MODE: 'production',
+  NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS: 'freedom-mortgage,loandepot,guaranteed-rate',
+};
+
+test('A absent flags stay off', () => {
+  const gate = oneClick.productionParentGate({});
+  assert.equal(gate.enabled, false);
+  assert.equal(gate.parentSync, 'off');
+  assert.equal(gate.canary, false);
+  assert.equal(gate.broad, false);
+  assert.equal(oneClick.releaseAdmits('freedom-mortgage', gate), false);
+});
+
+test('B enabled production with the three slugs is canary and not broad', () => {
+  const gate = oneClick.productionParentGate(CANARY_ENV);
+  assert.equal(gate.parentSync, 'production');
+  assert.equal(gate.canary, true);
+  assert.equal(gate.broad, false);
+  assert.equal(gate.enabled, true);
+});
+
+test('C D E the three approved slugs are admitted', () => {
+  const gate = oneClick.productionParentGate(CANARY_ENV);
+  assert.equal(oneClick.releaseAdmits('freedom-mortgage', gate), true);
+  assert.equal(oneClick.releaseAdmits('loandepot', gate), true);
+  assert.equal(oneClick.releaseAdmits('guaranteed-rate', gate), true);
+});
+
+test('F an unrelated lender is not admitted', () => {
+  const gate = oneClick.productionParentGate(CANARY_ENV);
+  assert.equal(oneClick.releaseAdmits('rocket-mortgage', gate), false);
+  assert.equal(oneClick.releaseAdmits('windy-city-mortgage', gate), false);
+});
+
+test('G empty slug list with enabled production is broad', () => {
+  const gate = oneClick.productionParentGate({
+    NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED: '1',
+    MTH_LENDER_PARENT_SAVE_MODE: 'production',
+    NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS: '',
+  });
+  assert.equal(gate.parentSync, 'production');
+  assert.equal(gate.canary, false);
+  assert.equal(gate.broad, true);
+  assert.equal(oneClick.releaseAdmits('rocket-mortgage', gate), true);
+  const denied = oneClick.clickProfileSave({
+    lenderSlug: 'freedom-mortgage', lenderName: 'Freedom Mortgage', nmlsId: '2767', catalog: catalog.lenders,
+    bindings: [], signedIn: true, pageOpen: true, gate,
+  });
+  assert.equal(denied.parent, 'denied');
+  if (denied.parent === 'denied') assert.equal(denied.denyReason, 'missing');
+});
+
+test('H bad mode or slug config fails closed', () => {
+  const cases = [
+    { NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED: '1', MTH_LENDER_PARENT_SAVE_MODE: 'preview', NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS: 'freedom-mortgage' },
+    { NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED: '1', MTH_LENDER_PARENT_SAVE_MODE: 'Production', NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS: 'freedom-mortgage' },
+    { NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED: 'true', MTH_LENDER_PARENT_SAVE_MODE: 'production', NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS: 'freedom-mortgage' },
+    { NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED: '1', MTH_LENDER_PARENT_SAVE_MODE: 'production', NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS: 'Freedom Mortgage' },
+    { NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED: '1', MTH_LENDER_PARENT_SAVE_MODE: 'production', NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS: 'freedom-mortgage,freedom-mortgage' },
+    { NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED: '1', MTH_LENDER_PARENT_SAVE_MODE: 'production', NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS: '../freedom-mortgage' },
+    { NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED: '1', NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS: 'freedom-mortgage,loandepot,guaranteed-rate' },
+  ];
+  for (const env of cases) {
+    const gate = oneClick.productionParentGate(env);
+    assert.equal(gate.parentSync, 'off', JSON.stringify(env));
+    assert.equal(gate.canary, false);
+    assert.equal(gate.broad, false);
+    assert.equal(oneClick.releaseAdmits('freedom-mortgage', gate), false);
+  }
 });
