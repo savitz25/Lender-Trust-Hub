@@ -502,6 +502,7 @@ export const LENDER_FOOTER_COLUMNS = [
       { href: '/maryland', label: 'Maryland Research' },
       { href: '/wisconsin', label: 'Wisconsin Research' },
       { href: '/indiana', label: 'Indiana Research' },
+      { href: '/louisiana', label: 'Louisiana Research' },
       { href: '/fdic-insured-banks', label: 'FDIC Banks' },
       { href: '/auto-loan-companies', label: 'Auto Loan Companies' },
       { href: '/compare', label: 'Compare Lenders' },
