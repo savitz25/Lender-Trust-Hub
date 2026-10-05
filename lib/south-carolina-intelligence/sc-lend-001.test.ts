@@ -50,9 +50,12 @@ test("South Carolina lender page and Ask do not invent a census or a city route"
   assert.doesNotMatch(many.failReason ?? "", /statewide application/);
   const brokers = parseLenderAsk("South Carolina mortgage brokers");
   assert.match(brokers.failReason ?? "", /NOT_ACQUIRED/);
-  const hmda = parseLenderAsk("South Carolina HMDA applications");
-  assert.match(hmda.failReason ?? "", /30/);
-  assert.match(hmda.failReason ?? "", /1,009/);
+  const hmda = parseLenderAsk("How many mortgage applications in South Carolina");
+  assert.notEqual(hmda.failClosedKind, "sc-hmda-slice");
+  assert.notEqual(hmda.failClosedKind, "sc-lender-servicer-license");
+  const slice = parseLenderAsk("South Carolina HMDA county slice");
+  assert.match(slice.failReason ?? "", /30/);
+  assert.match(slice.failReason ?? "", /1,009/);
   assert.equal(parseLenderAsk("best mortgage lender in South Carolina").failClosedKind, "sc-ranking");
   assert.match(parseLenderAsk("mortgage lender Charleston South Carolina").failReason ?? "", /geography only/);
   assert.equal(parseLenderAsk("how many Kentucky mortgage lenders").failClosedKind, "ky-dfi-licensing");
