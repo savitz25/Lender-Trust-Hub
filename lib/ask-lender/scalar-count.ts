@@ -11,6 +11,7 @@ import { NEVADA_SNAPSHOT } from '@/lib/nevada-intelligence/snapshot';
 import { MINNESOTA_SNAPSHOT } from '@/lib/minnesota-intelligence/snapshot';
 import { MICHIGAN_SNAPSHOT } from '@/lib/michigan-intelligence/snapshot';
 import { INDIANA_SNAPSHOT } from '@/lib/indiana-intelligence/snapshot';
+import { KENTUCKY_SNAPSHOT } from '@/lib/kentucky-intelligence/snapshot';
 import stateRows from './generated/state.csv.json';
 import countyRows from './generated/county.csv.json';
 import markets from './generated/markets.csv.json';
@@ -174,6 +175,20 @@ function michiganPublishedHmda(): PublishedStateHmda {
 }
 
 
+function kentuckyPublishedHmda(): PublishedStateHmda {
+  return {
+    contract: KENTUCKY_SNAPSHOT.contract,
+    applications: KENTUCKY_SNAPSHOT.hmda.applications,
+    originations: KENTUCKY_SNAPSHOT.hmda.originations,
+    denials: KENTUCKY_SNAPSHOT.hmda.denials,
+    fingerprint: 'ky-lend-001-2025-county',
+    generatedAt: KENTUCKY_SNAPSHOT.generatedAt,
+    retrievedAt: null,
+    sourceFile: KENTUCKY_SNAPSHOT.hmda.source,
+    sourceGrain: 'county_market_summary county totals for Kentucky property geography',
+  };
+}
+
 function indianaPublishedHmda(): PublishedStateHmda {
   return {
     contract: INDIANA_SNAPSHOT.contract_name,
@@ -217,7 +232,9 @@ export const countSources = {
                         ? michiganPublishedHmda()
                         : state === 'IN'
                           ? indianaPublishedHmda()
-                          : null,
+                          : state === 'KY'
+                            ? kentuckyPublishedHmda()
+                            : null,
 };
 class CountSourceError extends Error {}
 type RecordRow = Record<string, unknown>;

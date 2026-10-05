@@ -17,6 +17,7 @@ export type PublishedState = {
 
 /** Newest published states first. */
 const RECENT: Record<string, string> = {
+  kentucky: 'DFI mortgage company and broker license rows, originator registrations, and 2025 Kentucky-property HMDA activity',
   indiana: 'DFI mortgage lender roster, Loan Broker Act orders, and 2025 Indiana-property HMDA activity',
   wisconsin: 'DFI license verification, 2025 Wisconsin-property HMDA activity, and selected servicing settlements',
   maryland: 'OFR license verification, 2025 Maryland-property HMDA activity, and 2022–2026 enforcement actions',
