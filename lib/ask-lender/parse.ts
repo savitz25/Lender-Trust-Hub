@@ -251,6 +251,19 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   }
   if (scState && scRanking) return { mode: 'fail_closed', failClosedKind: 'sc-ranking', failReason: 'LenderTrustHub does not rank South Carolina mortgage lenders and does not publish a Trust Score. See /south-carolina.', coverageState: 'UNSUPPORTED' };
 
+  // MS-LEND-001: 7,093 mixes lenders, branches, and originators. Banks and HMDA stay separate.
+  // Placed after South Carolina so "in sc" is already claimed. "in ms" is two tokens, not Missouri or Massachusetts.
+  const msState = /\bmississippi\b|\bin ms\b/i.test(q);
+  const msCity = /\b(gulfport|biloxi)\b/i.test(q);
+  const msHmda = /\bhmda\b|\bapplications?\b|\boriginations?\b|\boriginated\b|\bdenials?\b/i.test(q);
+  const msRanking = /\bbest\b|\bsafest\b|\brecommend\w*\b|\bmost trustworthy\b|\btop[- ]rated\b|\bhighest[- ]rated\b|#1\b|\bnumber one\b|\btrust score\b|\baggregaterating\b|\bratingvalue\b|\bpaid ranking\b|\bsponsored ranking\b/i.test(q);
+  if ((msState || msCity) && msRanking) return { mode: 'fail_closed', failClosedKind: 'ms-ranking', failReason: 'LenderTrustHub does not rank Mississippi mortgage lenders and does not publish a Trust Score. See /mississippi.', coverageState: 'UNSUPPORTED' };
+  if (msState || msCity) {
+    if (!msHmda && /\bbanks?\b|\bthrifts?\b|\bcharter/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'ms-banks', failReason: 'As of June 30, 2025, DBCF regulated 53 state-chartered commercial banks. That charter count is not a mortgage license. Federal bank and thrift rows in the facility table are separate. A credit-union count was not printed. See /mississippi.', coverageState: 'KNOWN' };
+    if (!msHmda && (msCity || (msState && /\b(jackson|gulfport|biloxi)\b/i.test(q))) && /\bmortgage\b|\blenders?\b|\bbrokers?\b|\bservicers?\b|\blicen[cs]e\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'ms-city-context', failReason: 'Jackson, Gulfport, and Biloxi are geography only. This page publishes no city lender route. See /mississippi.', coverageState: 'NOT_ACQUIRED' };
+    if (!msHmda && /\bmortgage\b|\blenders?\b|\bbrokers?\b|\bservicers?\b|\boriginators?\b|\blicen[cs]e\b|\bnmls\b|\bdbcf\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'ms-mortgage-mixed', failReason: 'DBCF printed 7,093 mortgage lenders, branches, and loan originators as of June 30, 2025. That sentence is not split into a lender count, a broker count, a branch count, or an originator count. Consumer-finance companies are 2,092 and are not mortgage licenses. A bulk NMLS roster was NOT_ACQUIRED. HMDA applications are not a DBCF license. See /mississippi.', coverageState: 'NOT_ACQUIRED' };
+  }
+
   // MD-LEND-001: labeled NMLS identifiers above keep exact-identity precedence.
   const mdState = /\bmaryland\b|\bmd ofr\b|\bmaryland ofr\b/i.test(q);
   const mdCity = /\b(baltimore|annapolis|frederick|rockville)\b/i.test(q);
