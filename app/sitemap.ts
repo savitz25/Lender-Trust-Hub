@@ -103,6 +103,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/wisconsin', priority: 0.88, changeFrequency: 'weekly' },
     { path: '/indiana', priority: 0.88, changeFrequency: 'weekly' },
     { path: '/louisiana', priority: 0.88, changeFrequency: 'weekly' },
+    { path: '/alabama', priority: 0.88, changeFrequency: 'weekly' },
     // NJ-LEND-COUNTY-001 indexed county research:
     // /new-jersey/monmouth-county
     // /new-jersey/middlesex-county
