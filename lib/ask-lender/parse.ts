@@ -174,6 +174,20 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     if (wiState && !wiHmda && /\bmortgage\b|\blenders?\b|\bbrokers?\b|\bservicers?\b|\blicen[cs]e\b|\bdfi\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'wi-dfi-licensing', failReason: 'Wisconsin DFI directs consumers to NMLS Consumer Access for mortgage banker, broker and MLO license verification. Banker and broker branches are separate licenses; servicing is included in DFI’s Mortgage Banker License description, with no separate servicer class listed. A statewide roster and class counts were NOT_ACQUIRED; missing is not zero. Wisconsin licenses, NMLS identities and HMDA activity are separate. See /wisconsin.', coverageState: 'NOT_ACQUIRED' };
   }
 
+  // LA-LEND-001: labeled NMLS identifiers above keep exact-identity precedence.
+  // 9,812 is an originator-under-lender row count, not a combined lender total.
+  const laState = /\blouisiana\b|\bla ofi\b|\blouisiana ofi\b|\b(?:in|within|state of)\s+la\b/i.test(q);
+  const laCity = /\b(new orleans|baton rouge|shreveport|lafayette)\b/i.test(q);
+  const laHmda = /\bhmda\b|\bapplications?\b|\boriginations?\b|\boriginated\b|\bdenials?\b/i.test(q);
+  const laRanking = /\bbest\b|\bsafest\b|\brecommend\w*\b|\bmost trustworthy\b|\btop[- ]rated\b|\bhighest[- ]rated\b|#1\b|\bnumber one\b|\btrust score\b|\baggregaterating\b|\bratingvalue\b|\bpaid ranking\b|\bsponsored ranking\b/i.test(q);
+  if ((laState || laCity) && !laRanking) {
+    if (!laHmda && /\b\d{4,8}\b/.test(q) && !/\b(nmls|lei|license)\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'la-untyped-number', failReason: 'That number has no label. Specify NMLS or an exact Louisiana license; no identity was inferred. The OFI figure of 9,812 is originator-under-lender row items, not a lender total or a person census. See /louisiana.', coverageState: 'NOT_ACQUIRED' };
+    if (/\benforcement\b|\bdisciplin|\borders?\b|\bconsent\b|\brevok|\bpenalt/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'la-ofi-enforcement', failReason: 'A bounded Louisiana OFI residential-mortgage enforcement corpus was NOT_ACQUIRED. Exact canonical attachments are 0. Name-only adverse attachment is not used. Missing orders are not zero orders, and CFPB complaints are not OFI orders. See /louisiana.', coverageState: 'NOT_ACQUIRED' };
+    if (/\bcomplaints?\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'la-ofi-complaints', failReason: 'Louisiana OFI accepts written residential mortgage complaints for lenders, brokers, and originators. Public provider-level rows were NOT_ACQUIRED and outcomes are request-only. A complaint is not an enforcement finding and is not added to OFI orders. See /louisiana.', coverageState: 'REQUEST_ONLY' };
+    if (laCity && /\bmortgage\b|\blenders?\b|\bbrokers?\b|\bservicers?\b|\blicen[cs]e\b|\bhmda\b|\bapplications?\b|\boriginations?\b|\bdenials?\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'la-city-context', failReason: 'New Orleans, Baton Rouge, Shreveport, and Lafayette stay on the statewide Louisiana page. They are not separate license populations or parish intelligence routes. See /louisiana.', coverageState: 'NOT_ACQUIRED' };
+    if (laState && !laHmda && /\bmortgage\b|\blenders?\b|\bbrokers?\b|\bservicers?\b|\boriginators?\b|\blicen[cs]e\b|\bofi\b|\bcompany\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'la-ofi-licensing', failReason: 'Louisiana OFI printed 9,812 originator-under-lender row items on October 05, 2026 at 06:26 AM. The same lender name repeats once per originator. That is not a lender census, a broker census, a distinct-person census, or a combined Louisiana lender total. Lender, broker, branch, and servicer class counts were NOT_ACQUIRED. NMLS Consumer Access is search-only. HMDA applications are not a license count. See /louisiana.', coverageState: 'NOT_ACQUIRED' };
+  }
+
   // MD-LEND-001: labeled NMLS identifiers above keep exact-identity precedence.
   const mdState = /\bmaryland\b|\bmd ofr\b|\bmaryland ofr\b/i.test(q);
   const mdCity = /\b(baltimore|annapolis|frederick|rockville)\b/i.test(q);
