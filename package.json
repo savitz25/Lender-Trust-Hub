@@ -35,6 +35,7 @@
     "assert:ct-lend-001": "tsx scripts/assert-ct-lend-001.mts",
     "assert:md-lend-001": "tsx scripts/assert-md-lend-001.mts",
     "assert:wi-lend-001": "tsx scripts/assert-wi-lend-001.mts",
+    "assert:la-lend-001": "tsx scripts/assert-la-lend-001.mts",
     "assert:in-lend-001": "tsx scripts/assert-in-lend-001.mts",
     "assert:intel-004": "tsx scripts/assert-intel-004.mts",
     "assert:lend-home-003": "tsx scripts/assert-lend-home-003.mts",
