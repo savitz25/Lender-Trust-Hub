@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
+import { executeAskQuery } from "../ask-lender/execute-query";
 import { parseLenderAsk } from "../ask-lender/parse";
 import { MS_BANK_FACILITIES, MS_CONSUMER_EXAMS, MISSISSIPPI_SNAPSHOT as ms } from "./snapshot";
 import { normalizedPublishedStatePath } from "../seo/published-state-path";
@@ -69,10 +70,14 @@ test("Mississippi page keeps the mixed mortgage sentence from banks and HMDA", (
 });
 
 test("Mississippi Ask does not invent a lender, broker, or originator census", () => {
-  const hmda = parseLenderAsk("HMDA applications in Mississippi");
-  assert.equal(hmda.mode, "fail_closed");
-  assert.match(hmda.failReason ?? "", /102,491/);
-  assert.match(hmda.failReason ?? "", /not a DBCF license/);
+  const hmda = executeAskQuery({ q: "How many mortgage applications in Mississippi?" });
+  assert.equal(hmda.countEvidence?.value, 102491);
+  assert.match(JSON.stringify(hmda), /not institutions|applications/);
+  const license = parseLenderAsk("HMDA applications in Mississippi");
+  assert.equal(license.mode, "count");
+  assert.equal(license.geography?.state, "MS");
+  assert.equal(license.actionTaken?.[0], "application");
+  assert.match(license.geography?.note ?? "", /not lender headquarters/);
   const mixed = parseLenderAsk("how many mortgage lenders in Mississippi");
   assert.match(mixed.failReason ?? "", /7,093/);
   assert.match(mixed.failReason ?? "", /not split/);
