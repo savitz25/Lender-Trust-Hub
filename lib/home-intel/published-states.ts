@@ -17,6 +17,7 @@ export type PublishedState = {
 
 /** Newest published states first. */
 const RECENT: Record<string, string> = {
+  mississippi: 'DBCF 7,093 mortgage lenders, branches, and originators stay unsplit; banks and 2025 HMDA stay separate',
   'south-carolina': 'SC-BFI mortgage lender/servicer license rows, with brokers, branches, originators, and HMDA kept separate',
   kentucky: 'DFI mortgage company and broker license rows, originator registrations, and 2025 Kentucky-property HMDA activity',
   indiana: 'DFI mortgage lender roster, Loan Broker Act orders, and 2025 Indiana-property HMDA activity',
