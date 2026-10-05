@@ -25,6 +25,7 @@
     "assert:or-lend-001": "python -X utf8 scripts/build-or-public-snapshot.py --check && python -X utf8 scripts/or-lend-001-recon.py && tsx scripts/assert-or-lend-001.mts",
     "assert:pa-lend-001": "python -X utf8 scripts/build-pa-public-snapshot.py --check && python -X utf8 scripts/pa-lend-001-recon.py && tsx scripts/assert-pa-lend-001.mts",
     "test:pa-rel-001": "tsx --test lib/seo/pa-rel-001.test.ts",
+    "test:sc-lend-001": "tsx --test lib/south-carolina-intelligence/sc-lend-001.test.ts",
     "assert:nc-lend-001": "python -X utf8 scripts/build-nc-public-snapshot.py --check && python -X utf8 scripts/nc-lend-001-recon.py && tsx scripts/assert-nc-lend-001.mts",
     "assert:oh-lend-001": "python -X utf8 scripts/build-oh-public-snapshot.py --check && python -X utf8 scripts/oh-lend-001-recon.py && tsx scripts/assert-oh-lend-001.mts",
     "assert:ma-lend-001": "python -X utf8 scripts/build-ma-public-snapshot.py --check && tsx scripts/assert-ma-lend-001.mts",
