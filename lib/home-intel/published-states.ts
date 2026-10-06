@@ -17,6 +17,7 @@ export type PublishedState = {
 
 /** Newest published states first. */
 const RECENT: Record<string, string> = {
+  oklahoma: 'Oklahoma consumer-credit class rosters stay separate from NMLS mortgage identities and from 2025 HMDA',
   arkansas: 'Arkansas Securities Department company, branch, and loan-officer sheets stay separate from 2025 HMDA',
   mississippi: 'DBCF 7,093 mortgage lenders, branches, and originators stay unsplit; banks and 2025 HMDA stay separate',
   'south-carolina': 'SC-BFI mortgage lender/servicer license rows, with brokers, branches, originators, and HMDA kept separate',

@@ -1,0 +1,88 @@
+import assert from "node:assert/strict";
+import { existsSync, readFileSync } from "node:fs";
+import test from "node:test";
+import { executeAskQuery } from "../ask-lender/execute-query";
+import { parseLenderAsk } from "../ask-lender/parse";
+import { OK_ODCC_CLASSES, OKLAHOMA_SNAPSHOT as ok } from "./snapshot";
+import { normalizedPublishedStatePath } from "../seo/published-state-path";
+
+test("Oklahoma consumer-credit classes, NMLS, and HMDA stay separate", () => {
+  const accepted = JSON.parse(readFileSync(ok.hmda.acceptedSource, "utf8")) as {
+    geography: { state: string; applications: number; originations: number; denials: number }[];
+  };
+  const row = accepted.geography.find((item) => item.state === "OK");
+  assert.equal(row?.applications, ok.hmda.applications);
+  assert.equal(row?.originations, ok.hmda.originations);
+  assert.equal(row?.denials, ok.hmda.denials);
+  assert.equal(Math.round((ok.hmda.denials / ok.hmda.applications) * 10000) / 100, ok.hmda.denialApplicationPct);
+  const csv = readFileSync(ok.hmda.countyFile, "utf8").trim().split(/\r?\n/);
+  const keys = csv[0]!.split(",");
+  const records = csv.slice(1).map((line) => Object.fromEntries(line.split(",").map((value, index) => [keys[index], value])));
+  const sum = (key: string) => records.reduce((total, item) => total + Number(item[key]), 0);
+  assert.equal(records.length, 77);
+  assert.equal(new Set(records.map((item) => item.county_fips)).size, 77);
+  assert.equal(sum("total_applications"), ok.hmda.countyFileApplications);
+  assert.equal(sum("total_originations"), ok.hmda.countyFileOriginations);
+  assert.equal(sum("denial_count"), ok.hmda.countyFileDenials);
+  assert.notEqual(ok.hmda.countyFileApplications, ok.hmda.applications);
+  assert.equal(ok.hmda.countyFileOriginations, ok.hmda.originations);
+  assert.equal(ok.hmda.countyFileReplacesAccepted, false);
+  assert.equal(readFileSync(ok.hmda.leiSummarySource, "utf8").trim().split(/\r?\n/).length - 1, 733);
+  assert.equal(readFileSync(ok.hmda.majorMarketSliceSource, "utf8").trim().split(/\r?\n/).length - 1, 26);
+  assert.equal(ok.hmda.leiRowsAreLicenses, false);
+  assert.equal(ok.hmda.majorMarketSliceIsStatewide, false);
+  assert.equal(ok.mortgage.nmlsBulkRoster, "NOT_ACQUIRED");
+  assert.equal(ok.mortgage.brokerRoster, "NOT_ACQUIRED");
+  assert.equal(ok.mortgage.originatorRoster, "NOT_ACQUIRED");
+  assert.equal(ok.odcc.classesAreMortgageLicenses, false);
+  assert.equal(ok.odcc.inStateAddedToAllLocations, false);
+  assert.equal(OK_ODCC_CLASSES.length, 9);
+  assert.equal(ok.populationsAreAdded, false);
+  assert.equal(ok.notAcquired.enforcementOrders, "NOT_ACQUIRED");
+  assert.equal(ok.nameOnlyAdverseJoins, 0);
+  assert.equal(ok.graphWrites, 0);
+});
+
+test("Oklahoma page does not add consumer-credit classes or invent a city route", () => {
+  const page = readFileSync("app/oklahoma/page.tsx", "utf8");
+  const sitemap = readFileSync("app/sitemap.ts", "utf8");
+  assert.match(page, /NOT_ACQUIRED/);
+  assert.match(page, /136,810/);
+  assert.match(page, /countyFileApplications/);
+  assert.match(page, /does not replace the accepted aggregate/);
+  assert.match(page, /does not rank/);
+  assert.match(page, /Supervised Lenders/);
+  assert.doesNotMatch(page, /3,873|3873|4,862|4862/);
+  assert.doesNotMatch(page, /AggregateRating|Trust Score|ratingValue/);
+  assert.equal(existsSync("app/oklahoma/tulsa"), false);
+  assert.equal(existsSync("app/oklahoma/oklahoma-city"), false);
+  assert.equal((sitemap.match(/path: '\/oklahoma'/g) ?? []).length, 1);
+});
+
+test("Oklahoma Ask does not turn consumer credit into a mortgage census", () => {
+  const hmda = executeAskQuery({ q: "How many mortgage applications in Oklahoma?" });
+  assert.equal(hmda.countEvidence?.value, 136810);
+  const brokers = parseLenderAsk("how many mortgage brokers in Oklahoma");
+  assert.match(brokers.failReason ?? "", /NOT_ACQUIRED/);
+  assert.equal(brokers.count ?? null, null);
+  const supervised = parseLenderAsk("supervised lenders in Oklahoma");
+  assert.match(supervised.failReason ?? "", /781/);
+  assert.match(supervised.failReason ?? "", /1,310/);
+  assert.match(supervised.failReason ?? "", /not a mortgage/);
+  const pawn = parseLenderAsk("pawn brokers in Oklahoma");
+  assert.match(pawn.failReason ?? "", /218/);
+  const rank = parseLenderAsk("best mortgage lender in Oklahoma");
+  assert.match(rank.failReason ?? "", /does not rank/);
+  const city = parseLenderAsk("mortgage lender in Tulsa");
+  assert.match(city.failReason ?? "", /geography only/);
+  const token = parseLenderAsk("mortgage companies in ok");
+  assert.equal(token.failClosedKind, "ok-mortgage-not-acquired");
+  const arkansas = parseLenderAsk("mortgage companies in Arkansas");
+  assert.equal(String(arkansas.failClosedKind ?? "").startsWith("ok-"), false);
+  const missouri = parseLenderAsk("mortgage brokers in Missouri");
+  assert.equal(String(missouri.failClosedKind ?? "").startsWith("ok-"), false);
+  const utah = parseLenderAsk("mortgage lenders in Utah");
+  assert.equal(String(utah.failClosedKind ?? "").startsWith("ok-"), false);
+  assert.equal(normalizedPublishedStatePath("/Oklahoma"), "/oklahoma");
+  assert.equal(normalizedPublishedStatePath("/oklahoma/tulsa"), null);
+});

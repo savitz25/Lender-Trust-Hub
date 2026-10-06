@@ -283,6 +283,19 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     if (!arHmda && /\bcompan(?:y|ies)\b|\blenders?\b|\blicen[cs]e\b|\bnmls\b|\bmortgage\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'ar-companies', failReason: 'The Arkansas Securities Department workbook labeled as of September 1, 2026 has 683 approved company rows and 683 company IDs. License names are Combination Mortgage Banker-Broker-Servicer 444, Mortgage Broker 188, Mortgage Servicer 44, and Mortgage Banker 7. Those classes are not one lender census. Branch rows are 1,536. Mortgage loan officers are 11,239 persons. The populations are not added. An Arkansas street address is not the license count. HMDA applications are not a license. See /arkansas.', coverageState: 'KNOWN' };
   }
 
+  // OK-LEND-001: consumer-credit classes, NMLS mortgage identities, and HMDA stay separate. "in ok" is two tokens.
+  const okState = /\boklahoma\b|\bin ok\b/i.test(q);
+  const okCity = /\b(oklahoma city|tulsa|norman|edmond|lawton|broken arrow)\b/i.test(q);
+  const okHmda = /\bhmda\b|\bapplications?\b|\boriginations?\b|\boriginated\b|\bdenials?\b/i.test(q);
+  const okRanking = /\bbest\b|\bsafest\b|\brecommend\w*\b|\bmost trustworthy\b|\btop[- ]rated\b|\bhighest[- ]rated\b|#1\b|\bnumber one\b|\btrust score\b|\baggregaterating\b|\bratingvalue\b|\bpaid ranking\b|\bsponsored ranking\b/i.test(q);
+  if ((okState || okCity) && okRanking) return { mode: 'fail_closed', failClosedKind: 'ok-ranking', failReason: 'LenderTrustHub does not rank Oklahoma mortgage lenders and does not publish a Trust Score. See /oklahoma.', coverageState: 'UNSUPPORTED' };
+  if (okState || okCity) {
+    if (!okHmda && /\bsupervised lenders?\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'ok-supervised-lenders', failReason: 'The Oklahoma Department of Consumer Credit roster printed Thursday, Oct 01, 2026 has 781 Supervised Lenders in Oklahoma and 1,310 Supervised Lenders at all locations. Those columns are not added. A supervised lender is not a mortgage lender. See /oklahoma.', coverageState: 'KNOWN' };
+    if (!okHmda && /\bpawn\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'ok-pawn', failReason: 'The same printed roster has 218 Pawn Brokers in Oklahoma and 218 at all locations. A pawn broker is not a mortgage broker. See /oklahoma.', coverageState: 'KNOWN' };
+    if (!okHmda && (okCity || (okState && /\b(oklahoma city|tulsa|norman|edmond|lawton|broken arrow)\b/i.test(q))) && /\bmortgage\b|\blenders?\b|\bbrokers?\b|\bservicers?\b|\blicen[cs]e\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'ok-city-context', failReason: 'Oklahoma City, Tulsa, Norman, Edmond, Lawton, and Broken Arrow are geography only. This page publishes no city lender route. See /oklahoma.', coverageState: 'NOT_ACQUIRED' };
+    if (!okHmda && /\bbrokers?\b|\blenders?\b|\bcompan(?:y|ies)\b|\boriginators?\b|\bmlos?\b|\bnmls\b|\bmortgage\b|\bbranch/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'ok-mortgage-not-acquired', failReason: 'Oklahoma mortgage broker, mortgage lender, mortgage company, branch, and mortgage loan originator bulk rosters were NOT_ACQUIRED. The Department points those classes to NMLS Consumer Access. A missing bulk file is not zero licensees. Consumer-credit class counts are not a mortgage census. HMDA applications are not licenses. See /oklahoma.', coverageState: 'NOT_ACQUIRED' };
+  }
+
   // MD-LEND-001: labeled NMLS identifiers above keep exact-identity precedence.
   const mdState = /\bmaryland\b|\bmd ofr\b|\bmaryland ofr\b/i.test(q);
   const mdCity = /\b(baltimore|annapolis|frederick|rockville)\b/i.test(q);
