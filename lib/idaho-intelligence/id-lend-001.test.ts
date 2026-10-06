@@ -1,0 +1,105 @@
+import assert from "node:assert/strict";
+import { existsSync, readFileSync } from "node:fs";
+import test from "node:test";
+import { parseLenderAsk } from "../ask-lender/parse";
+import { normalizedPublishedStatePath } from "../seo/published-state-path";
+import { IDAHO_LENDER_SNAPSHOT as id } from "./snapshot";
+
+function dataRows(path: string): string[] {
+  return readFileSync(path, "utf8").trim().split(/\r?\n/).slice(1);
+}
+
+test("Idaho license lines stay separate from the HMDA slice", () => {
+  const counties = dataRows(id.hmda.countyMarketSource);
+  const ada = counties.map((line) => line.split(",")).find((cols) => cols[3] === "Ada");
+  assert.equal(counties.length, 24);
+  assert.equal(Number(ada?.[5]), 16030);
+  assert.equal(id.hmda.countyMarketRows, 24);
+  assert.equal(id.hmda.allIdahoCounties, 44);
+  assert.equal(id.hmda.countyMarketRowsAreAllCounties, false);
+  assert.equal(dataRows(id.hmda.lenderCountyActivitySource).length, 2356);
+  assert.equal(dataRows(id.hmda.leiSummarySource).length, 529);
+  assert.equal(dataRows(id.hmda.highConfidenceMappingSource).length, 144);
+  assert.equal(id.hmda.leiRowsAreLicenses, false);
+  assert.equal(id.hmda.countyOriginationsAddedToStatewide, false);
+  assert.equal(id.hmda.statewideAcceptedAggregate, "NOT_ACQUIRED");
+  assert.equal(id.mortgage.current, 2584);
+  assert.equal(id.mortgage.companyVersusBranch, "NOT_SEPARATED");
+  assert.equal(id.mortgage.servicingSplitFromBrokersAndLenders, false);
+  assert.equal(id.mortgageLoanOriginators.current, 8641);
+  assert.equal(id.mortgageLoanOriginators.addedToCompanyCount, false);
+  assert.equal(id.regulatedLenders.current, 817);
+  assert.equal(id.regulatedLenders.addedToMortgageCount, false);
+  assert.equal(id.collectionAgencyAct.addedToMortgageCount, false);
+  assert.equal(id.allDepartmentFilings.isMortgageCount, false);
+  assert.equal(id.banks.addedToMortgageCount, false);
+  assert.equal(id.creditUnions.clocksAreTheSame, false);
+  assert.equal(id.notAcquired.fdicInstitutionRecount, "NOT_RECOUNTED");
+  assert.equal(id.graphWrites, 0);
+  assert.equal(id.nameOnlyAdverseJoins, 0);
+  assert.equal(existsSync(id.fdicFile), true);
+  assert.equal(id.sources.annualReportSha256, "aa60c854f7dc161e685019d78804d7648680621b19f5051ba527aa136b6a84da");
+  assert.equal(id.mortgage.current + id.mortgageLoanOriginators.current, 11225);
+});
+
+test("Idaho page does not combine grains or open a city route", () => {
+  const page = readFileSync("app/idaho/page.tsx", "utf8");
+  const sitemap = readFileSync("app/sitemap.ts", "utf8");
+  assert.match(page, /2,584/);
+  assert.match(page, /8,641/);
+  assert.match(page, /companyVersusBranch/);
+  assert.match(page, /regulatedLenders/);
+  assert.match(page, /largestPrintedCounty/);
+  assert.match(page, /allDepartmentFilings/);
+  assert.match(page, /not an Idaho mortgage count/);
+  assert.match(page, /namedRoster/);
+  assert.match(page, /fdicInstitutionRecount/);
+  assert.match(page, /does not rank/);
+  assert.match(page, /not added/);
+  assert.doesNotMatch(page, /11,225|11225|47,506|47506|9,252|9252|3,401|3401/);
+  assert.doesNotMatch(page, /AggregateRating|Trust Score|ratingValue/);
+  assert.doesNotMatch(page, /\/idaho\/boise/);
+  assert.equal(existsSync("app/idaho/boise"), false);
+  assert.equal((sitemap.match(/path: '\/idaho'/g) ?? []).length, 1);
+  assert.equal(normalizedPublishedStatePath("/Idaho"), "/idaho");
+  assert.equal(normalizedPublishedStatePath("/idaho"), null);
+  assert.equal(normalizedPublishedStatePath("/idaho/boise"), null);
+});
+
+test("Idaho Ask keeps the license lines apart and ignores bare id", () => {
+  const rank = parseLenderAsk("best mortgage lender in Idaho");
+  assert.equal(rank.failClosedKind, "id-ranking");
+  assert.match(rank.failReason ?? "", /does not rank/);
+  const companies = parseLenderAsk("how many mortgage lenders in Idaho");
+  assert.match(companies.failReason ?? "", /2,584/);
+  assert.match(companies.failReason ?? "", /not added/);
+  assert.match(companies.failReason ?? "", /NOT_SEPARATED/);
+  const originators = parseLenderAsk("mortgage loan originators in Idaho");
+  assert.match(originators.failReason ?? "", /8,641/);
+  assert.match(originators.failReason ?? "", /not added/);
+  const credit = parseLenderAsk("regulated lenders in Idaho");
+  assert.match(credit.failReason ?? "", /817/);
+  assert.match(credit.failReason ?? "", /not added/);
+  const collection = parseLenderAsk("collection agencies in Idaho");
+  assert.match(collection.failReason ?? "", /1,323/);
+  assert.match(collection.failReason ?? "", /not added/);
+  const banks = parseLenderAsk("how many banks in Idaho");
+  assert.match(banks.failReason ?? "", /9 state-chartered banks/);
+  assert.match(banks.failReason ?? "", /NOT_RECOUNTED/);
+  const hmda = parseLenderAsk("How many mortgage applications in Idaho?");
+  assert.equal(String(hmda.failClosedKind ?? "").startsWith("id-"), false);
+  const hmdaCode = parseLenderAsk("How many applications in ID?");
+  assert.equal(String(hmdaCode.failClosedKind ?? "").startsWith("id-"), false);
+  const city = parseLenderAsk("how many mortgage lenders in Boise Idaho");
+  assert.match(city.failReason ?? "", /geography only/);
+  assert.match(city.failReason ?? "", /2,584/);
+  const bare = parseLenderAsk("mortgage lenders id");
+  assert.equal(String(bare.failClosedKind ?? "").startsWith("id-"), false);
+  const upper = parseLenderAsk("mortgage lenders ID");
+  assert.equal(String(upper.failClosedKind ?? "").startsWith("id-"), false);
+  const postal = parseLenderAsk("how many mortgage lenders in id");
+  assert.equal(postal.failClosedKind, "id-mortgage-licenses");
+  const nm = parseLenderAsk("how many mortgage loan companies in New Mexico");
+  assert.match(nm.failReason ?? "", /NOT_ACQUIRED/);
+  assert.equal(String(nm.failClosedKind ?? "").startsWith("id-"), false);
+});

@@ -17,6 +17,7 @@ export type PublishedState = {
 
 /** Newest published states first. */
 const RECENT: Record<string, string> = {
+  idaho: 'Department of Finance fiscal year 2025: 2,584 mortgage broker, lender, and servicing licenses and 8,641 originator licensees, kept separate from Credit Code lenders and HMDA',
   'new-mexico': 'New Mexico mortgage bulk rosters stay unacquired. The owned HMDA file is an 18-county slice, not a statewide license census',
   oklahoma: 'Oklahoma consumer-credit class rosters stay separate from NMLS mortgage identities and from 2025 HMDA',
   arkansas: 'Arkansas Securities Department company, branch, and loan-officer sheets stay separate from 2025 HMDA',
