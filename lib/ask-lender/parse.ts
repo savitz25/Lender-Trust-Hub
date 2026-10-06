@@ -296,6 +296,23 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     if (!okHmda && /\bbrokers?\b|\blenders?\b|\bcompan(?:y|ies)\b|\boriginators?\b|\bmlos?\b|\bnmls\b|\bmortgage\b|\bbranch/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'ok-mortgage-not-acquired', failReason: 'Oklahoma mortgage broker, mortgage lender, mortgage company, branch, and mortgage loan originator bulk rosters were NOT_ACQUIRED. The Department points those classes to NMLS Consumer Access. A missing bulk file is not zero licensees. Consumer-credit class counts are not a mortgage census. HMDA applications are not licenses. See /oklahoma.', coverageState: 'NOT_ACQUIRED' };
   }
 
+  // NM-LEND-001. Bare "nm" is not New Mexico. "new mexico" and "in nm" are.
+  // Rankings return before later name search. Plain discovery ("mortgage companies Albuquerque New Mexico") stays on the entity path.
+  const nmState = /\bnew mexico\b|\b(?:in|within|state of)\s+nm\b/i.test(q);
+  const nmCity = /\b(?:albuquerque|santa fe)\b/i.test(q);
+  const nmRanking = /\bbest\b|\bsafest\b|\brecommend\w*\b|\bmost trustworthy\b|\btop[- ]rated\b|\bhighest[- ]rated\b|#1\b|\bnumber one\b|\btrust score\b|\baggregaterating\b|\bratingvalue\b|\bpaid ranking\b|\bsponsored ranking\b/i.test(q);
+  const nmHmda = /\bhmda\b|\bapplications?\b|\boriginations?\b|\boriginated\b|\bdenials?\b/i.test(q);
+  if ((nmState || nmCity) && nmRanking) return { mode: 'fail_closed', failClosedKind: 'nm-ranking', failReason: 'LenderTrustHub does not rank New Mexico mortgage lenders and does not publish a Trust Score. See /new-mexico.', coverageState: 'UNSUPPORTED' };
+  if (nmState || nmCity) {
+    if (!nmHmda && /\bcomplaints?\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'nm-complaints', failReason: 'New Mexico Financial Institutions Division complaints were NOT_ACQUIRED. A complaint is not a violation. Missing complaints are not zero complaints. No name-only adverse join was made. See /new-mexico.', coverageState: 'NOT_ACQUIRED' };
+    if (!nmHmda && /\benforcement\b|\bdisciplin|\borders?\b|\bconsent\b|\brevok|\bpenalt/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'nm-enforcement', failReason: 'New Mexico mortgage enforcement orders were NOT_ACQUIRED. Exact canonical attachments are 0. Name-only adverse joins are 0. Missing orders are not zero orders. See /new-mexico.', coverageState: 'NOT_ACQUIRED' };
+    if (!nmHmda && /\bsmall loan\b|\bcollection agenc|\bescrow compan|\bendowed[- ]care|\bcemeter|\bmoney services?\b|\bstate-chartered credit unions?\b|\bhow many credit unions?\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'nm-other-fid', failReason: 'State-chartered banks, credit unions, small loan companies, collection agencies, escrow companies, endowed-care cemeteries, and money services were NOT_ACQUIRED as rosters. They are not mortgage licenses and are not blended into a mortgage count. See /new-mexico.', coverageState: 'NOT_ACQUIRED' };
+    if (!nmHmda && /\bfdic\b|\bstate-chartered banks?\b|\bhow many banks\b|\bchartered banks?\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'nm-fdic-not-recounted', failReason: 'FDIC New Mexico institutions were NOT_RECOUNTED. Banks are not mortgage licenses. See /new-mexico.', coverageState: 'NOT_ACQUIRED' };
+    if (!nmHmda && /\boriginators?\b|\bmlos?\b|\bmortgage loan originator/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'nm-originators', failReason: 'New Mexico mortgage loan originator persons were NOT_ACQUIRED. A person is not a mortgage loan company. Originators are not added to a company count. No bulk file was acquired, so missing is not zero. See /new-mexico.', coverageState: 'NOT_ACQUIRED' };
+    if (!nmHmda && /\bbranch(?:es)?\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'nm-branches', failReason: 'New Mexico mortgage company branch rosters were NOT_ACQUIRED. A branch is not a company. A missing bulk file is not zero licensees. See /new-mexico.', coverageState: 'NOT_ACQUIRED' };
+    if (!nmHmda && /\bhow many\b|\bnumber of\b|\bcount of\b|\blicens|\broster\b|\bnmls\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'nm-mortgage-not-acquired', failReason: 'New Mexico mortgage loan company, mortgage company branch, and mortgage loan originator bulk rosters were NOT_ACQUIRED. Lender, broker, and servicer were not split because no bulk file was acquired. NMLS Consumer Access is a search. A missing bulk file is not zero licensees. The printed host nmlsconsumeracess.org is not a census. Albuquerque and Santa Fe are geography only. This page publishes no city route. HMDA activity is not a license. See /new-mexico.', coverageState: 'NOT_ACQUIRED' };
+  }
+
   // MD-LEND-001: labeled NMLS identifiers above keep exact-identity precedence.
   const mdState = /\bmaryland\b|\bmd ofr\b|\bmaryland ofr\b/i.test(q);
   const mdCity = /\b(baltimore|annapolis|frederick|rockville)\b/i.test(q);
@@ -773,11 +790,13 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     const preceded = new RegExp(`\\b(?:in|within|state of)\\s+${code}\\b`);
     const precededCi = new RegExp(`\\b(?:in|within|state of)\\s+${code}\\b`, 'i');
     const bare = new RegExp(`\\b${code}\\b`);
-    // IN/OR/VA as English or loan-type tokens are not jurisdictions. Require the
-    // two-letter code itself; full names were already consumed above.
-    const hit = ['IN', 'OR', 'VA'].includes(code)
-      ? preceded.test(unnamed) || preceded.test(raw)
-      : precededCi.test(unnamed) || bare.test(unnamed);
+    // IN/OR/VA as English or loan-type tokens are not jurisdictions. Bare "nm"
+    // is not New Mexico; "in nm" is. Full names were already consumed above.
+    const hit = code === 'NM'
+      ? precededCi.test(unnamed) || precededCi.test(raw)
+      : ['IN', 'OR', 'VA'].includes(code)
+        ? preceded.test(unnamed) || preceded.test(raw)
+        : precededCi.test(unnamed) || bare.test(unnamed);
     if (hit && !states.includes(code)) states.push(code);
   }
   // TH-DISCOVERY-RESET-001 (production certification fix): "mortgage companies in Miami" named
