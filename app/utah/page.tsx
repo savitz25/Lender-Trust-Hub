@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/directory/categories";
-import snapshot from "@/data/hmda/utah/ut-lend-001-summary.json";
+import { UTAH_HMDA_SNAPSHOT as snapshot } from "@/lib/utah-intelligence/snapshot";
 
 const fmt = (n: number) => n.toLocaleString("en-US");
 
