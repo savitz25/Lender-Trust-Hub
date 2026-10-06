@@ -13,6 +13,7 @@ import { MICHIGAN_SNAPSHOT } from '@/lib/michigan-intelligence/snapshot';
 import { INDIANA_SNAPSHOT } from '@/lib/indiana-intelligence/snapshot';
 import { KENTUCKY_SNAPSHOT } from '@/lib/kentucky-intelligence/snapshot';
 import { MISSISSIPPI_SNAPSHOT } from '@/lib/mississippi-intelligence/snapshot';
+import { ARKANSAS_SNAPSHOT } from '@/lib/arkansas-intelligence/snapshot';
 import stateRows from './generated/state.csv.json';
 import countyRows from './generated/county.csv.json';
 import markets from './generated/markets.csv.json';
@@ -176,6 +177,20 @@ function michiganPublishedHmda(): PublishedStateHmda {
 }
 
 
+function arkansasPublishedHmda(): PublishedStateHmda {
+  return {
+    contract: ARKANSAS_SNAPSHOT.contract,
+    applications: ARKANSAS_SNAPSHOT.hmda.applications,
+    originations: ARKANSAS_SNAPSHOT.hmda.originations,
+    denials: ARKANSAS_SNAPSHOT.hmda.denials,
+    fingerprint: 'ar-lend-001-2025-county',
+    generatedAt: ARKANSAS_SNAPSHOT.generatedAt,
+    retrievedAt: ARKANSAS_SNAPSHOT.retrievedAt,
+    sourceFile: ARKANSAS_SNAPSHOT.hmda.source,
+    sourceGrain: 'county_market_summary county totals for Arkansas property geography',
+  };
+}
+
 function mississippiPublishedHmda(): PublishedStateHmda {
   return {
     contract: MISSISSIPPI_SNAPSHOT.contract,
@@ -251,7 +266,9 @@ export const countSources = {
                             ? kentuckyPublishedHmda()
                             : state === 'MS'
                               ? mississippiPublishedHmda()
-                              : null,
+                              : state === 'AR'
+                                ? arkansasPublishedHmda()
+                                : null,
 };
 class CountSourceError extends Error {}
 type RecordRow = Record<string, unknown>;
