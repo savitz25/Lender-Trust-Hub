@@ -17,6 +17,7 @@ export const PUBLISHED_STATEWIDE_SLUGS = [
   'missouri',
   'utah',
   'new-mexico',
+  'nebraska',
   'florida',
   'georgia',
   'illinois',
