@@ -1,0 +1,51 @@
+{
+  "state": "KS",
+  "sourceVintage": 2025,
+  "sourceRetrievedAt": "NOT_RETAINED",
+  "generatedAt": "2026-10-06",
+  "countyAggregate": {
+    "rows": 105,
+    "applications": 94350,
+    "originations": 60230,
+    "denials": 14012,
+    "sourceFile": "data/hmda/by-state/KS/county_market_summary.csv",
+    "sha256": "397e4621514d96411912cf6fef1058345f946389f8dea270dae3e5d54dbec6b4"
+  },
+  "leiStateSummary": {
+    "rows": 677,
+    "distinctLeis": 677,
+    "applications": 94243,
+    "originations": 60230,
+    "sourceFile": "data/hmda/by-state/KS/lender_state_summary.csv",
+    "sha256": "8ec1c6f6985ac73c991402553d987329eeb54fada2fd6f8b01c5c74801ad062f"
+  },
+  "lenderCountyActivity": {
+    "rows": 6157,
+    "distinctLeis": 678,
+    "applications": 91833,
+    "originations": 60230,
+    "denials": 12966,
+    "sourceFile": "data/hmda/by-state/KS/lender_activity_by_county.csv",
+    "sha256": "3d33f7ae41fd9287a3ee62cdd2a610bec89ce3458b05ea93cac8e5afec4cc215"
+  },
+  "knownReconciliationDifferences": {
+    "countyVsLeiApplications": 107,
+    "countyVsLenderCountyApplications": 2517
+  },
+  "existingKansasHmdaSlice": {
+    "majorMarketCountyRows": 16,
+    "lenderCountyActivityRows": 2767,
+    "leiSummaryRows": 677,
+    "highConfidenceLeiDirectoryMappings": 137,
+    "source": "data/hmda/kansas/"
+  },
+  "licensing": {
+    "mortgageCompany": "NOT_ACQUIRED",
+    "branch": "NOT_ACQUIRED",
+    "mloPerson": "NOT_ACQUIRED",
+    "supervisedLender": "NOT_ACQUIRED",
+    "stateCharteredBank": "NOT_ACQUIRED",
+    "graphWrites": 0,
+    "canonicalEntityWrites": 0
+  }
+}
