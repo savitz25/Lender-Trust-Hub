@@ -1,0 +1,40 @@
+{
+  "contract": "iowa-banking-fy2025-annual-observations-v1",
+  "source": "https://idob.iowa.gov/media/49/download?inline=",
+  "reportPeriodEnd": "2025-06-30",
+  "reportPublishedAt": "2025-12-01",
+  "retrievedAt": "2026-10-06T16:03:54.058488+00:00",
+  "pdfSha256": "1bdfa65aaac3541770028b34f4cbdce5ac72f8977de952515864ae784fee9b64",
+  "reportPage": 6,
+  "annualObservations": [
+    {
+      "class": "Mortgage banker licenses",
+      "count": 610,
+      "grain": "licenses"
+    },
+    {
+      "class": "Mortgage broker licenses",
+      "count": 143,
+      "grain": "licenses"
+    },
+    {
+      "class": "Mortgage banker company registrants",
+      "count": 32,
+      "grain": "company registrations"
+    },
+    {
+      "class": "Mortgage loan originators",
+      "count": 8083,
+      "grain": "people"
+    },
+    {
+      "class": "Closing agents",
+      "count": 97,
+      "grain": "agent licenses"
+    }
+  ],
+  "hmdaYear": 2025,
+  "hmdaStateSummaryRows": 645,
+  "hmdaDistinctLei": 645,
+  "graphWrites": 0
+}
