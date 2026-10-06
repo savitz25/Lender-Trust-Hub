@@ -4,7 +4,7 @@ import { SITE_URL } from "@/lib/directory/categories";
 
 export const metadata: Metadata = {
   title: "Arkansas Mortgage Companies, Branches, and Loan Officers | LenderTrustHub",
-  description: "The Arkansas Securities Department workbook, labeled as of September 1, 2026, has 683 approved company rows, 1,536 branch rows, and 11,239 mortgage loan officer persons. Those populations are not added. 2025 HMDA applications on Arkansas property are 116,797 across 75 counties and are not licenses.",
+  description: "The Arkansas Securities Department workbook, labeled as of September 1, 2026, has 683 approved company rows, 1,536 branch rows, and 11,239 mortgage loan officer persons. Those populations are not added. The accepted 2025 HMDA jurisdiction aggregate is 114,072 Arkansas-property applications. That is not a license count.",
   alternates: { canonical: `${SITE_URL}/arkansas` },
   robots: { index: true, follow: true },
 };
@@ -46,8 +46,8 @@ export default function ArkansasLenderPage() {
     </section>
 
     <section className="mt-12" id="hmda"><h2 className="text-2xl font-semibold">2025 HMDA Arkansas-property activity</h2>
-      <p className="mt-3 text-slate-700">{fmt(ar.hmda.applications)} applications; {fmt(ar.hmda.originations)} originations; {fmt(ar.hmda.denials)} denials ({ar.hmda.denialApplicationPct}% of applications). {ar.hmda.counties} county rows in the existing statewide county file. {fmt(ar.hmda.leiSummaryRows)} LEI summary rows. A LEI row is a reporting identity, not an Arkansas Securities Department license and not an NMLS company record. Purchase {fmt(ar.hmda.purchase)}, refinance {fmt(ar.hmda.refinance)}, other purpose {fmt(ar.hmda.otherPurpose)}. Application loan types: conventional {fmt(ar.hmda.conventional)}, FHA {fmt(ar.hmda.fha)}, VA {fmt(ar.hmda.va)}, USDA/other {fmt(ar.hmda.usdaOther)}.</p>
-      <p className="mt-2 text-sm text-slate-600">These figures sum the existing 2025 Arkansas-property county file. A separate major-market slice has {ar.hmda.majorMarketSliceRows} county rows and is not this statewide total. The denial/application ratio is not a lender quality score. HMDA applications are not license rows. This page does not publish a county or city route.</p>
+      <p className="mt-3 text-slate-700">The accepted jurisdiction aggregate already used by Ask records {fmt(ar.hmda.applications)} applications, {fmt(ar.hmda.originations)} originations, and {fmt(ar.hmda.denials)} denials ({ar.hmda.denialApplicationPct}% of the accepted application count). The existing county file has {ar.hmda.counties} county rows and sums to {fmt(ar.hmda.countyFileApplications)} applications and {fmt(ar.hmda.countyFileDenials)} denials, with the same {fmt(ar.hmda.countyFileOriginations)} originations. This page does not replace the accepted aggregate with that county-file sum. The difference is unresolved. {fmt(ar.hmda.leiSummaryRows)} LEI summary rows are reporting identities, not Arkansas Securities Department licenses and not NMLS company records.</p>
+      <p className="mt-2 text-sm text-slate-600">A separate major-market slice has {ar.hmda.majorMarketSliceRows} county rows and is not the statewide aggregate. The denial/application ratio is not a lender quality score. HMDA applications are not license rows. This page does not publish a county or city route.</p>
     </section>
 
     <section className="mt-12" id="other"><h2 className="text-2xl font-semibold">What this workbook does not contain</h2>
@@ -55,7 +55,7 @@ export default function ArkansasLenderPage() {
     </section>
 
     <section className="mt-12" id="clocks"><h2 className="text-2xl font-semibold">Source clocks and limits</h2>
-      <p className="mt-3 text-sm text-slate-600">Department page label {ar.sources.pageLabel}. Workbook last modified {ar.sources.workbookLastModified}. Page dateModified {ar.sources.pageModified}. Retrieved {ar.retrievedAt}. Workbook SHA-256 {ar.sources.workbookSha256}. {fmt(ar.sources.workbookBytes)} bytes. HMDA vintage {ar.hmda.year}, from the existing statewide file, not a new HMDA download. Page data generated {ar.generatedAt}. The September 1 page label and the September 29 file clock are both kept. No single clock covers licenses and HMDA. Net-new canonical organizations {ar.newCanonicalOrganizations}. Graph writes {ar.graphWrites}. Claim eligibility changes {ar.claimEligibilityChanges}. Little Rock, Fayetteville, and Fort Smith are geography only. This page publishes no city or county route.</p>
+      <p className="mt-3 text-sm text-slate-600">Department page label {ar.sources.pageLabel}. Workbook last modified {ar.sources.workbookLastModified}. Page dateModified {ar.sources.pageModified}. Retrieved {ar.retrievedAt}. Workbook SHA-256 {ar.sources.workbookSha256}. {fmt(ar.sources.workbookBytes)} bytes. HMDA vintage {ar.hmda.year}. The published application count is the accepted jurisdiction aggregate. The county file was not re-downloaded and was not substituted for that aggregate. Page data generated {ar.generatedAt}. The September 1 page label and the September 29 file clock are both kept. No single clock covers licenses and HMDA. Net-new canonical organizations {ar.newCanonicalOrganizations}. Graph writes {ar.graphWrites}. Claim eligibility changes {ar.claimEligibilityChanges}. Little Rock, Fayetteville, and Fort Smith are geography only. This page publishes no city or county route.</p>
     </section>
   </main>;
 }

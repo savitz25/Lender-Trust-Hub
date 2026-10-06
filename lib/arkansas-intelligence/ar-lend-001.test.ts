@@ -7,25 +7,23 @@ import { AR_COMPANY_LICENSES, AR_MLO_STATUSES, ARKANSAS_SNAPSHOT as ar } from ".
 import { normalizedPublishedStatePath } from "../seo/published-state-path";
 
 test("Arkansas company, branch, person, and HMDA grains stay separate", () => {
-  const csv = readFileSync(ar.hmda.source, "utf8").trim().split(/\r?\n/);
+  const accepted = JSON.parse(readFileSync(ar.hmda.acceptedSource, "utf8")) as { geography: { state: string; applications: number; originations: number; denials: number }[] };
+  const row = accepted.geography.find((item) => item.state === "AR");
+  assert.equal(row?.applications, ar.hmda.applications);
+  assert.equal(row?.originations, ar.hmda.originations);
+  assert.equal(row?.denials, ar.hmda.denials);
+  assert.equal(Math.round((ar.hmda.denials / ar.hmda.applications) * 10000) / 100, ar.hmda.denialApplicationPct);
+  const csv = readFileSync(ar.hmda.countyFile, "utf8").trim().split(/\r?\n/);
   const keys = csv[0]!.split(",");
   const records = csv.slice(1).map((line) => Object.fromEntries(line.split(",").map((value, index) => [keys[index], value])));
-  const sum = (key: string) => records.reduce((total, row) => total + Number(row[key]), 0);
+  const sum = (key: string) => records.reduce((total, item) => total + Number(item[key]), 0);
   assert.equal(records.length, 75);
-  assert.equal(new Set(records.map((row) => row.county_fips)).size, 75);
-  assert.equal(sum("total_applications"), ar.hmda.applications);
-  assert.equal(sum("total_originations"), ar.hmda.originations);
-  assert.equal(sum("denial_count"), ar.hmda.denials);
-  assert.equal(sum("purchase_count"), ar.hmda.purchase);
-  assert.equal(sum("refinance_count"), ar.hmda.refinance);
-  assert.equal(sum("purpose_other_count"), ar.hmda.otherPurpose);
-  assert.equal(sum("apps_conventional"), ar.hmda.conventional);
-  assert.equal(sum("apps_fha"), ar.hmda.fha);
-  assert.equal(sum("apps_va"), ar.hmda.va);
-  assert.equal(sum("apps_usda_other"), ar.hmda.usdaOther);
-  assert.equal(ar.hmda.purchase + ar.hmda.refinance + ar.hmda.otherPurpose, ar.hmda.applications);
-  assert.equal(ar.hmda.conventional + ar.hmda.fha + ar.hmda.va + ar.hmda.usdaOther + ar.hmda.otherLoanType, ar.hmda.applications);
-  assert.equal(Math.round((ar.hmda.denials / ar.hmda.applications) * 10000) / 100, ar.hmda.denialApplicationPct);
+  assert.equal(new Set(records.map((item) => item.county_fips)).size, 75);
+  assert.equal(sum("total_applications"), ar.hmda.countyFileApplications);
+  assert.equal(sum("total_originations"), ar.hmda.countyFileOriginations);
+  assert.equal(sum("denial_count"), ar.hmda.countyFileDenials);
+  assert.notEqual(ar.hmda.countyFileApplications, ar.hmda.applications);
+  assert.equal(ar.hmda.countyFileReplacesAccepted, false);
   assert.equal(readFileSync(ar.hmda.leiSummarySource, "utf8").trim().split(/\r?\n/).length - 1, 674);
   assert.equal(readFileSync(ar.hmda.majorMarketSliceSource, "utf8").trim().split(/\r?\n/).length - 1, 19);
   assert.equal(ar.hmda.leiRowsAreLicenses, false);
@@ -56,7 +54,9 @@ test("Arkansas page does not add the three populations or invent a city route", 
   assert.match(page, /683/);
   assert.match(page, /1,536/);
   assert.match(page, /11,239/);
-  assert.match(page, /116,797/);
+  assert.match(page, /114,072/);
+  assert.match(page, /countyFileApplications/);
+  assert.match(page, /does not replace the accepted aggregate/);
   assert.match(page, /NOT_ACQUIRED/);
   assert.match(page, /does not rank/);
   assert.match(page, /not a company/);
@@ -70,7 +70,7 @@ test("Arkansas page does not add the three populations or invent a city route", 
 
 test("Arkansas Ask keeps classes, persons, branches, and HMDA apart", () => {
   const hmda = executeAskQuery({ q: "How many mortgage applications in Arkansas?" });
-  assert.equal(hmda.countEvidence?.value, 116797);
+  assert.equal(hmda.countEvidence?.value, 114072);
   const companies = parseLenderAsk("how many mortgage companies in Arkansas");
   assert.match(companies.failReason ?? "", /683/);
   assert.match(companies.failReason ?? "", /not added/);
