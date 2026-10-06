@@ -17,6 +17,7 @@ export type PublishedState = {
 
 /** Newest published states first. */
 const RECENT: Record<string, string> = {
+  'west-virginia': 'Division of Financial Institutions FY2025 report: 475 licensed mortgage company rows. Lender, broker, and servicer are not split. Examinations and the 2025 HMDA slice stay separate',
   idaho: 'Department of Finance fiscal year 2025: 2,584 mortgage broker, lender, and servicing licenses and 8,641 originator licensees, kept separate from Credit Code lenders and HMDA',
   'new-mexico': 'New Mexico mortgage bulk rosters stay unacquired. The owned HMDA file is an 18-county slice, not a statewide license census',
   oklahoma: 'Oklahoma consumer-credit class rosters stay separate from NMLS mortgage identities and from 2025 HMDA',
