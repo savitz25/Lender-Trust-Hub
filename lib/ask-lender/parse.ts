@@ -265,12 +265,13 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
   }
 
   // NE-LEND-001: 6/30/2024 department counts. "in ne" is two tokens and does not match Nevada. Omaha and Lincoln are not triggers.
+  // Application, origination, and denial questions stay on the accepted HMDA oracle. Do not replace that count.
   const neState = (/\bnebraska\b|\bin ne\b/i.test(q)) && !/\bnevada\b/i.test(q);
-  const neHmda = /\bhmda\b|\bapplications?\b|\boriginations?\b|\boriginated\b|\bdenials?\b/i.test(q);
+  const neMeasure = /\bapplications?\b|\boriginations?\b|\boriginated\b|\bdenials?\b/i.test(q);
   const neRanking = /\bbest\b|\bsafest\b|\brecommend\w*\b|\bmost trustworthy\b|\btop[- ]rated\b|\bhighest[- ]rated\b|#1\b|\bnumber one\b|\btrust score\b|\baggregaterating\b|\bratingvalue\b|\bpaid ranking\b|\bsponsored ranking\b/i.test(q);
   if (neState && neRanking) return { mode: 'fail_closed', failClosedKind: 'ne-ranking', failReason: 'LenderTrustHub does not rank Nebraska mortgage lenders and does not publish a Trust Score. See /nebraska.', coverageState: 'UNSUPPORTED' };
-  if (neState) {
-    if (neHmda) return { mode: 'fail_closed', failClosedKind: 'ne-hmda', failReason: 'A single accepted statewide Nebraska HMDA aggregate was NOT_ACQUIRED. The existing 2025 product slice has 14 major-county markets and 491 LEI summaries. Those rows were not summed into a new statewide total. HMDA is not a mortgage banker license. See /nebraska.', coverageState: 'NOT_ACQUIRED' };
+  if (neState && !neMeasure) {
+    if (/\bhmda\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'ne-hmda', failReason: 'A single accepted statewide Nebraska HMDA aggregate was NOT_ACQUIRED. The existing 2025 product slice has 14 major-county markets and 491 LEI summaries. Those rows were not summed into a new statewide total. HMDA is not a mortgage banker license. See /nebraska.', coverageState: 'NOT_ACQUIRED' };
     if (/\b(omaha|lincoln)\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'ne-city-context', failReason: 'Omaha and Lincoln are geography only. This page publishes no city lender route. See /nebraska.', coverageState: 'NOT_ACQUIRED' };
     if (/\boriginators?\b|\bmlos?\b|\bloan officers?\b/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'ne-mlo-count', failReason: 'The Department of Banking and Finance table for the period ending June 30, 2024 prints 3,954 mortgage loan originators. That figure is not the 499 mortgage banker company licenses and is not an acquired person roster. Numbers include main offices only. See /nebraska.', coverageState: 'KNOWN' };
     if (/\bbanks?\b|\bcredit unions?\b|\btrust compan/i.test(q)) return { mode: 'fail_closed', failClosedKind: 'ne-charters', failReason: 'As of June 30, 2024, the same main-office table prints 134 state-chartered banks, 0 savings and loan associations, 10 credit unions, and 5 trust companies. The zero is printed by the source. Those rows are not mortgage banker licenses and are not added together. See /nebraska.', coverageState: 'KNOWN' };
