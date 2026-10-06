@@ -86,9 +86,10 @@ test("Idaho Ask keeps the license lines apart and ignores bare id", () => {
   const banks = parseLenderAsk("how many banks in Idaho");
   assert.match(banks.failReason ?? "", /9 state-chartered banks/);
   assert.match(banks.failReason ?? "", /NOT_RECOUNTED/);
-  const hmda = parseLenderAsk("HMDA originations in Idaho");
-  assert.match(hmda.failReason ?? "", /16,030/);
-  assert.match(hmda.failReason ?? "", /not an Idaho mortgage license/);
+  const hmda = parseLenderAsk("How many mortgage applications in Idaho?");
+  assert.equal(String(hmda.failClosedKind ?? "").startsWith("id-"), false);
+  const hmdaCode = parseLenderAsk("How many applications in ID?");
+  assert.equal(String(hmdaCode.failClosedKind ?? "").startsWith("id-"), false);
   const city = parseLenderAsk("how many mortgage lenders in Boise Idaho");
   assert.match(city.failReason ?? "", /geography only/);
   assert.match(city.failReason ?? "", /2,584/);
