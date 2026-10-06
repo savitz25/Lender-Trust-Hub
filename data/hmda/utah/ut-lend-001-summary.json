@@ -1,0 +1,16 @@
+{
+  "state": "UT",
+  "vintage": 2025,
+  "countyRows": 29,
+  "applications": 151347,
+  "originations": 95932,
+  "denials": 24029,
+  "purchase": 62203,
+  "refinance": 52696,
+  "otherPurpose": 36448,
+  "distinctLeiReportingIds": 499,
+  "leiSummaryApplications": 151141,
+  "leiSummaryOriginations": 95932,
+  "countyFileSha256": "feb4e1a31f2cbe4e5f81a44a134968d9988031db244b22fa7162b433626ec0d4",
+  "leiSummarySha256": "5b7d8bd574ece87f6723dfe86d9c73822c1f5e2bbd6cf3df0a078dc222d33963"
+}
