@@ -538,6 +538,23 @@ function parseLenderAskCore(raw: string): LenderResearchQuery {
     return { mode: 'fail_closed', failClosedKind: 'unsupported-identity-grain', failReason: 'This public research experience covers lender institutions. NMLS person/MLO and branch identifiers are separate identity grains and are not silently treated as institutions.', coverageState: 'UNSUPPORTED' };
   }
 
+  // WV-LEND-001. "west virginia" and "in wv" are West Virginia. Bare "wv" is not.
+  // Application, origination, and denial questions fall through to the HMDA path.
+  const wvState = /\bwest virginia\b|\bin wv\b/i.test(q);
+  const wvHmda = /\bhmda\b|\bapplications?\b|\boriginations?\b|\boriginated\b|\bdenials?\b|\bdenied\b/.test(q);
+  const wvRanking = /\bbest\b|\bsafest\b|\brecommend\w*\b|\bmost trustworthy\b|\btop[- ]rated\b|\bhighest[- ]rated\b|#1\b|\bnumber one\b|\btrust score\b|\baggregaterating\b|\bratingvalue\b|\bpaid ranking\b|\bsponsored ranking\b/i.test(q);
+  const wvCity = /\b(?:charleston|morgantown|huntington)\b/i.test(q);
+  if (wvState && wvRanking && !wvHmda) return { mode: 'fail_closed', failClosedKind: 'wv-ranking', failReason: 'LenderTrustHub does not rank West Virginia mortgage companies and does not publish a Trust Score. See /west-virginia.', coverageState: 'UNSUPPORTED' };
+  if (wvState && !wvHmda) {
+    const wvGeo = wvCity ? ' Charleston, Morgantown, and Huntington are geography only. This page publishes no city route.' : '';
+    if (/\bexamin/.test(q)) return { mode: 'fail_closed', failClosedKind: 'wv-examinations', failReason: 'FY2025 mortgage lender/broker/servicer examinations and visitations are 11. FY2024 printed 15. An examination is not a license. The all-class examination totals are not added to the company rows. See /west-virginia.', coverageState: 'KNOWN' };
+    if (/\boriginators?\b|\bmlos?\b|\bmortgage loan originator/.test(q)) return { mode: 'fail_closed', failClosedKind: 'wv-originators', failReason: 'A West Virginia mortgage loan originator roster was NOT_ACQUIRED. A person is not a company. Missing is not zero. See /west-virginia.', coverageState: 'NOT_ACQUIRED' };
+    if (/\bbranch/.test(q)) return { mode: 'fail_closed', failClosedKind: 'wv-branches', failReason: 'A West Virginia mortgage branch roster was NOT_ACQUIRED. A branch is not a company. Missing is not zero. See /west-virginia.', coverageState: 'NOT_ACQUIRED' };
+    if (/\bbanks?\b|\bfdic\b|\bcredit unions?\b/.test(q)) return { mode: 'fail_closed', failClosedKind: 'wv-banks', failReason: 'State-chartered bank rows in the FY2025 report were not counted on this page. FDIC institutions were NOT_RECOUNTED. A bank charter is not a licensed mortgage company row. See /west-virginia.', coverageState: 'NOT_ACQUIRED' };
+    if (wvCity && /\bmortgage\b|\blenders?\b|\bbrokers?\b|\blicen/.test(q)) return { mode: 'fail_closed', failClosedKind: 'wv-city', failReason: `Charleston, Morgantown, and Huntington are geography only. This page publishes no city route. See /west-virginia.`, coverageState: 'NOT_ACQUIRED' };
+    if (/\bhow many\b|\bnumber of\b|\bcount of\b|\blicens|\broster\b|\bnmls\b|\bmortgage\b|\blenders?\b|\bcompan/.test(q)) return { mode: 'fail_closed', failClosedKind: 'wv-mortgage-companies', failReason: `The FY2025 annual report, fiscal year ending June 30, 2025, prints a named list of West Virginia licensed mortgage companies. This page counted 475 named rows. The report does not print a total. Lender, broker, and servicer are NOT_SEPARATED. Examinations are not licenses and are not added. Mortgage loan originators, branches, and a current NMLS bulk roster were NOT_ACQUIRED. Missing is not zero. HMDA is not a license.${wvGeo} See /west-virginia.`, coverageState: 'KNOWN' };
+  }
+
   // New Jersey has no acquired complete RMLA-licensed lender roster, but real federal
   // HMDA institution/scalar data for NJ IS acquired (see scalar-count.ts, institution-volume.ts).
   // TH-SEARCH-R1-015: a missing roster must degrade to a caveat on that real data, never a
