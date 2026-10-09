@@ -3,7 +3,7 @@ import { MS_BANK_FACILITIES, MS_CONSUMER_EXAMS, MISSISSIPPI_SNAPSHOT as ms } fro
 import { SITE_URL } from "@/lib/directory/categories";
 
 export const metadata: Metadata = {
-  title: "Mississippi Mortgage Licensing, HMDA & DBCF Evidence | LenderTrustHub",
+  title: "Mississippi Mortgage Licensing, HMDA & DBCF Evidence",
   description: "Mississippi DBCF prints 7,093 mortgage lenders, branches, and loan originators together and 2,092 consumer-finance companies. 9,185 is the report's own sum of those two sentences. State-chartered banks are 53. 2025 HMDA applications on Mississippi property are 102,491 across 82 counties. 102,491 is not a DBCF license count.",
   alternates: { canonical: `${SITE_URL}/mississippi` },
   robots: { index: true, follow: true },

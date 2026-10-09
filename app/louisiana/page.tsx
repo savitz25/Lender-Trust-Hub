@@ -3,7 +3,7 @@ import { LOUISIANA_SNAPSHOT as la } from '@/lib/louisiana-intelligence/snapshot'
 import { SITE_URL } from '@/lib/directory/categories';
 
 export const metadata: Metadata = {
-  title: 'Louisiana Mortgage Licensing, HMDA & OFI Evidence | LenderTrustHub',
+  title: 'Louisiana Mortgage Licensing, HMDA & OFI Evidence',
   description: 'Louisiana OFI originator-under-lender row items, license classes not separately counted, 2025 Louisiana-property HMDA activity, and complaint intake.',
   alternates: { canonical: `${SITE_URL}/louisiana` },
   robots: { index: true, follow: true },

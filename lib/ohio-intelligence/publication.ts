@@ -8,7 +8,8 @@ export const OHIO_INTELLIGENCE_GATE = {
   path: '/ohio',
   robotsIndex: true,
   sitemap: true,
-  title: 'Ohio Mortgage & Lending Intelligence | LenderTrustHub',
+  title: 'Ohio Mortgage & Lending Intelligence',
+  socialTitle: 'Ohio Mortgage & Lending Intelligence | LenderTrustHub',
   description:
     'Research 2025 HMDA Ohio mortgage activity, DFI/NMLS RMLA verification, CFPB 2025 mortgage complaints, OHFA participating-lender county lists, and FDIC depository context. Independent research. Not a ranking, recommendation, or Trust Score. Current RMLA company registration is search-only and is not a combined Ohio lenders count.',
 } as const;

@@ -16,7 +16,7 @@ export function buildArizonaIntelligenceJsonLd(
         '@type': 'WebPage',
         '@id': `${url}#webpage`,
         url,
-        name: ARIZONA_INTELLIGENCE_GATE.title,
+        name: ARIZONA_INTELLIGENCE_GATE.socialTitle,
         description: ARIZONA_INTELLIGENCE_GATE.description,
         isPartOf: { '@id': `${SITE_URL}/#website` },
         about: { '@id': `${url}#dataset` },

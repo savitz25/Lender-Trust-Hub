@@ -8,7 +8,7 @@ import { ProgramDisclaimer } from '@/components/programs/ProgramDisclaimer';
 import { JsonLd } from '@/components/directory/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Mortgage Programs Overview — FHA, VA, Conventional, DPA | Lender Trust Hub',
+  title: 'Mortgage Programs Overview — FHA, VA, Conventional, DPA',
   description:
     'Educational overviews of FHA, VA, conventional, USDA, and down-payment assistance themes. Independent research — not eligibility determination or a lead form.',
   alternates: { canonical: 'https://www.lendertrusthub.com/programs' },

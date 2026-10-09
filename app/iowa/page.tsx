@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/directory/categories';
 import snapshot from '@/data/iowa/ia-lend-001/annual-report-snapshot.json';
 
 export const metadata: Metadata = {
-  title: 'Iowa Mortgage Licensing and HMDA Evidence | LenderTrustHub',
+  title: 'Iowa Mortgage Licensing and HMDA Evidence',
   description: 'Iowa Division of Banking mortgage licensing classes, NMLS current-status research, and separate historical IDOB and HMDA observations.',
   alternates: { canonical: `${SITE_URL}/iowa` },
   robots: { index: true, follow: true },

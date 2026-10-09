@@ -22,7 +22,7 @@ export function generateMetadata(): Metadata {
     robots,
     alternates: { canonical: url },
     openGraph: {
-      title: ARIZONA_INTELLIGENCE_GATE.title,
+      title: ARIZONA_INTELLIGENCE_GATE.socialTitle,
       description: ARIZONA_INTELLIGENCE_GATE.description,
       url,
     },

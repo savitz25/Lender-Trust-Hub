@@ -8,7 +8,8 @@ export const COLORADO_INTELLIGENCE_GATE = {
   path: '/colorado',
   robotsIndex: true,
   sitemap: true,
-  title: 'Colorado Mortgage & Lending Intelligence | LenderTrustHub',
+  title: 'Colorado Mortgage & Lending Intelligence',
+  socialTitle: 'Colorado Mortgage & Lending Intelligence | LenderTrustHub',
   description:
     'Research Colorado mortgage activity using 2025 HMDA, DRE Mortgage Loan Originator licensing, NMLS company-registration verification, CFPB mortgage complaints, and CHFA homebuyer resources. Independent research. Not a ranking, recommendation, or score.',
 } as const;

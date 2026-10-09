@@ -12,7 +12,7 @@ import { ASK_TRUST_HUB } from '@/lib/network/ask-trust-hub';
 import { TrustMark } from '@/components/network/trust-mark';
 
 export const metadata: Metadata = {
-  title: 'Methodology — How Lender Trust Hub Researches Mortgage Lenders',
+  title: 'Methodology — How We Research Mortgage Lenders',
   description:
     'Lender Trust Hub methodology under The Ask Trust Hub Standard: NMLS context, evidence sources and limits, CFPB signals, close-time honesty, coverage scope. No paid rankings, no Trust Score. Not a lender.',
   alternates: { canonical: 'https://www.lendertrusthub.com/methodology' },

@@ -7,7 +7,8 @@ export const TEXAS_INTELLIGENCE_GATE = {
   path: '/texas',
   robotsIndex: true,
   sitemap: true,
-  title: 'Texas Mortgage & Lending Intelligence | LenderTrustHub',
+  title: 'Texas Mortgage & Lending Intelligence',
+  socialTitle: 'Texas Mortgage & Lending Intelligence | LenderTrustHub',
   description:
     'Research Texas mortgage activity using 2025 HMDA, Texas SML enforcement orders with exact NMLS identity, and current TDHCA/TSAHC homebuyer programs. Independent research. Not a ranking, recommendation, or score.',
 } as const;

@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     'mortgage broker directory',
   ],
   openGraph: {
-    title: buildMortgageHubTitle(),
+    title: buildMortgageHubTitle() + ' | Lender Trust Hub',
     description: buildMortgageHubDescription(publicCounts.distinctEntities),
     url: `${SITE_URL}${MORTGAGE_CATEGORY.hubPath}`,
     locale: 'en_US',

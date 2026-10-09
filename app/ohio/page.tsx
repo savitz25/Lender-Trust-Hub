@@ -22,7 +22,7 @@ export function generateMetadata(): Metadata {
     robots,
     alternates: { canonical: url },
     openGraph: {
-      title: OHIO_INTELLIGENCE_GATE.title,
+      title: OHIO_INTELLIGENCE_GATE.socialTitle,
       description: OHIO_INTELLIGENCE_GATE.description,
       url,
     },

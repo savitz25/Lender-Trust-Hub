@@ -41,7 +41,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { state: slug } = await params;
   const stateMeta = STATE_BY_SLUG.get(slug);
-  if (!stateMeta) return { title: 'Auto Loan Companies | LenderTrustHub' };
+  if (!stateMeta) return { title: 'Auto Loan Companies' };
 
   const stats = getStateAutoStats(slug);
   const title = buildAutoStateTitle(stateMeta.fullName, stats.total);
@@ -61,7 +61,7 @@ export async function generateMetadata({
       `best auto lenders ${stateMeta.fullName}`,
       'auto finance directory',
     ],
-    openGraph: { title, description, url: autoStateUrl(slug), locale: 'en_US' },
+    openGraph: { title: title + ' | LenderTrustHub', description, url: autoStateUrl(slug), locale: 'en_US' },
     alternates: { canonical: autoStateUrl(slug) },
     robots: { index: true, follow: true },
   };

@@ -22,7 +22,7 @@ export function generateMetadata(): Metadata {
     robots,
     alternates: { canonical: url },
     openGraph: {
-      title: NORTH_CAROLINA_INTELLIGENCE_GATE.title,
+      title: NORTH_CAROLINA_INTELLIGENCE_GATE.socialTitle,
       description: NORTH_CAROLINA_INTELLIGENCE_GATE.description,
       url,
     },

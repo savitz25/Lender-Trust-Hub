@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { SITE_URL } from '@/lib/directory/categories';
 import { lenders } from '@/lib/mockData';
-import { stateData } from '@/lib/fdic/stateData';
+import { US_STATES } from '@/lib/fdic/states';
 import { getStateSlugsWithLenders } from '@/lib/mortgage/stateLenders';
 import { getSitemapCounties } from '@/lib/mortgage/county-quality-tiers';
 import { HIGH_VOLUME_STATE_SLUGS } from '@/lib/mortgage/seo';
@@ -155,8 +155,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   let fdicStates: MetadataRoute.Sitemap = [];
   try {
-    fdicStates = Object.keys(stateData ?? {}).map((state) => ({
-      url: `${SITE_URL}/fdic-insured-banks/${state}`,
+    fdicStates = US_STATES.filter((s) => s.hasData).map((s) => ({
+      url: `${SITE_URL}/fdic-insured-banks/${s.slug}`,
       lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: 0.7,

@@ -7,7 +7,8 @@ export const NEW_JERSEY_INTELLIGENCE_GATE = {
   path: '/new-jersey',
   robotsIndex: true,
   sitemap: true,
-  title: 'New Jersey Mortgage & Lending Intelligence | LenderTrustHub',
+  title: 'New Jersey Mortgage & Lending Intelligence',
+  socialTitle: 'New Jersey Mortgage & Lending Intelligence | LenderTrustHub',
   description:
     'Research New Jersey mortgage activity using 2025 HMDA, NJHMFA homeownership programs, and NJDOBI regulatory evidence. Independent research. Not a ranking, recommendation, or score.',
 } as const;

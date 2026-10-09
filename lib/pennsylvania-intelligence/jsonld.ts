@@ -16,7 +16,7 @@ export function buildPennsylvaniaIntelligenceJsonLd(
         '@type': 'WebPage',
         '@id': `${url}#webpage`,
         url,
-        name: PENNSYLVANIA_INTELLIGENCE_GATE.title,
+        name: PENNSYLVANIA_INTELLIGENCE_GATE.socialTitle,
         description: PENNSYLVANIA_INTELLIGENCE_GATE.description,
         isPartOf: { '@id': `${SITE_URL}/#website` },
         about: { '@id': `${url}#dataset` },

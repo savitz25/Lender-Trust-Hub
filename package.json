@@ -56,6 +56,7 @@
     "check:fl-lend-002f": "python scripts/fl-lend-002f.py check && tsx scripts/assert-fl-lend-002f.mts",
     "check:lend-cap-001": "tsx scripts/assert-lend-cap-001.mts",
     "check:lend-cap-002": "tsx scripts/assert-lend-cap-002.mts",
+    "check:seo-integrity": "tsx scripts/assert-seo-integrity.mts",
     "check:th-p0-lender-01": "tsx scripts/check-th-p0-lender-01.ts",
     "check:ath-cust-net-001b": "tsx --test lib/customer-integration/customer-integration.test.ts",
     "assert:visual": "node scripts/assert-visual-004.mjs",

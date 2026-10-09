@@ -1,6 +1,7 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import { updateSession } from '@/lib/supabase/middleware';
 import { normalizedPublishedStatePath } from '@/lib/seo/published-state-path';
+import { STATE_BY_CODE } from '@/lib/fdic/states';
 
 /**
  * Edge middleware:
@@ -11,6 +12,14 @@ const ADMIN_COOKIE = 'lth_admin_session';
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const fdicCode = pathname.match(/^\/fdic-insured-banks\/([A-Za-z]{2})\/?$/);
+  const fdicState = fdicCode && STATE_BY_CODE.get(fdicCode[1].toUpperCase());
+  if (fdicState) {
+    const url = new URL(request.url);
+    url.pathname = `/fdic-insured-banks/${fdicState.slug}`;
+    return NextResponse.redirect(url, 301);
+  }
+
   const statePath = normalizedPublishedStatePath(pathname);
   if (statePath) {
     const url = request.nextUrl.clone();

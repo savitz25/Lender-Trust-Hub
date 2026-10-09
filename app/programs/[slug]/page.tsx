@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const program = getProgramBySlug(slug);
   if (!program) return { title: 'Program not found' };
   return {
-    title: `${program.name} — Educational Overview | Lender Trust Hub`,
+    title: `${program.name} — Educational Overview`,
     description: program.tagline,
     alternates: { canonical: `https://www.lendertrusthub.com/programs/${program.slug}` },
   };

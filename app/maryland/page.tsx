@@ -3,7 +3,7 @@ import { MARYLAND_SNAPSHOT as md } from '@/lib/maryland-intelligence/snapshot';
 import { SITE_URL } from '@/lib/directory/categories';
 
 export const metadata: Metadata = {
-  title: 'Maryland Mortgage Licensing, HMDA & Enforcement | LenderTrustHub',
+  title: 'Maryland Mortgage Licensing, HMDA & Enforcement',
   description: 'Maryland OFR mortgage license verification, 2025 Maryland-property HMDA activity, bounded 2022–2026 enforcement actions and complaint intake.',
   alternates: { canonical: `${SITE_URL}/maryland` },
   robots: { index: true, follow: true },

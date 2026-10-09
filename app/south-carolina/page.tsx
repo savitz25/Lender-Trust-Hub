@@ -3,7 +3,7 @@ import { SC_LENDER_SNAPSHOT as sc, SC_MORTGAGE_ROSTER } from "@/lib/south-caroli
 import { SITE_URL } from "@/lib/directory/categories";
 
 export const metadata: Metadata = {
-  title: "South Carolina Mortgage Lender/Servicer Licenses | LenderTrustHub",
+  title: "South Carolina Mortgage Lender/Servicer Licenses",
   description:
     "South Carolina Board of Financial Institutions mortgage lender/servicer license rows from the NMLS file approved as of September 3, 2026. Brokers, branches, originators, and HMDA stay separate.",
   alternates: { canonical: `${SITE_URL}/south-carolina` },

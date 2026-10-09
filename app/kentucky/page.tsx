@@ -3,7 +3,7 @@ import { KENTUCKY_SNAPSHOT as ky } from '@/lib/kentucky-intelligence/snapshot';
 import { SITE_URL } from '@/lib/directory/categories';
 
 export const metadata: Metadata = {
-  title: 'Kentucky Mortgage Licensing, HMDA & DFI Evidence | LenderTrustHub',
+  title: 'Kentucky Mortgage Licensing, HMDA & DFI Evidence',
   description: 'Kentucky DFI mortgage company and broker license rows, originator registrations, complaint and examination counts, the public mortgage order index, and 2025 Kentucky-property HMDA activity.',
   alternates: { canonical: `${SITE_URL}/kentucky` },
   robots: { index: true, follow: true },

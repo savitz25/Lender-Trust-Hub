@@ -64,7 +64,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { state: slug } = await params;
   const stateMeta = STATE_BY_SLUG.get(slug);
-  if (!stateMeta) return { title: 'Mortgage Lenders | LenderTrustHub' };
+  if (!stateMeta) return { title: 'Mortgage Lenders' };
 
   const stats = getStateMortgageStats(slug);
   const title = buildMortgageStateTitle(stateMeta.fullName, stats.total);
@@ -83,7 +83,7 @@ export async function generateMetadata({
       `mortgage research directory ${stateMeta.fullName}`,
       'NMLS mortgage directory',
     ],
-    openGraph: { title, description, url: mortgageStateUrl(slug), locale: 'en_US' },
+    openGraph: { title: title + ' | Lender Trust Hub', description, url: mortgageStateUrl(slug), locale: 'en_US' },
     alternates: { canonical: mortgageStateUrl(slug) },
     robots: { index: true, follow: true },
   };

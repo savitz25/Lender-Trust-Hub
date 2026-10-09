@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     'used car loan lenders',
   ],
   openGraph: {
-    title: buildAutoHubTitle(),
+    title: buildAutoHubTitle() + ' | LenderTrustHub',
     description: buildAutoHubDescription(autoProviders.length),
     url: `${SITE_URL}${AUTO_CATEGORY.hubPath}`,
     locale: 'en_US',
