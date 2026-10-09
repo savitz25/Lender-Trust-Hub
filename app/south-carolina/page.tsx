@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from "next";
 import { SC_LENDER_SNAPSHOT as sc, SC_MORTGAGE_ROSTER } from "@/lib/south-carolina-intelligence/snapshot";
 import { SITE_URL } from "@/lib/directory/categories";
@@ -119,6 +120,7 @@ export default function SouthCarolinaPage() {
           <li>Net-new canonical organizations {sc.newCanonicalOrganizations}. Graph writes {sc.graphWrites}. Claim eligibility changes {sc.claimEligibilityChanges}.</li>
         </ul>
       </section>
+      <StateCountyLinks stateSlug="south-carolina" stateName="South Carolina" />
     </main>
   );
 }

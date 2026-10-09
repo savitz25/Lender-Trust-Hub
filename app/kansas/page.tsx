@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import snapshot from '@/data/kansas/hmda-snapshot.json';
 import { JsonLd } from '@/components/directory/JsonLd';
@@ -44,5 +45,6 @@ export default function KansasLenderPage() {
       <h2 className="text-xl font-semibold text-slate-950">Evidence limits</h2>
       <p className="mt-3">Kansas mortgage-company, branch, MLO, supervised-lender, bank, examination, enforcement, and complaint populations were not acquired here. Complaint intake is not an enforcement finding; exams and enforcement are separate. Existing Kansas HMDA data were reused; no license entities or graph attachments were created. Source files do not retain an HMDA retrieval clock.</p>
     </section>
+    <StateCountyLinks stateSlug="kansas" stateName="Kansas" />
   </main>;
 }

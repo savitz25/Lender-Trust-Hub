@@ -126,6 +126,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
     })),
     { path: '/local-lenders', priority: 0.95, changeFrequency: 'weekly' },
+    { path: '/states', priority: 0.86, changeFrequency: 'weekly' },
     { path: '/tools/loan-estimate-analyzer', priority: 0.92, changeFrequency: 'weekly' },
     { path: '/tools/compare-loan-estimates', priority: 0.92, changeFrequency: 'weekly' },
     { path: '/tools/program-finder', priority: 0.9, changeFrequency: 'weekly' },

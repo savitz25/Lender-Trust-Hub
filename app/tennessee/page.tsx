@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -32,12 +33,18 @@ export function generateMetadata(): Metadata {
 export default async function TennesseeIntelligencePage() {
   const loaded = await loadTennesseeIntelligence();
   if (loaded.status !== 'ok') {
-    return <TennesseeStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <TennesseeStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="tennessee" stateName="Tennessee" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildTennesseeIntelligenceJsonLd(loaded.snapshot)} />
       <TennesseeStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="tennessee" stateName="Tennessee" />
     </>
   );
 }

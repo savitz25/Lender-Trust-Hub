@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -32,12 +33,18 @@ export function generateMetadata(): Metadata {
 export default async function OregonIntelligencePage() {
   const loaded = await loadOregonIntelligence();
   if (loaded.status !== 'ok') {
-    return <OregonStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <OregonStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="oregon" stateName="Oregon" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildOregonIntelligenceJsonLd(loaded.snapshot)} />
       <OregonStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="oregon" stateName="Oregon" />
     </>
   );
 }

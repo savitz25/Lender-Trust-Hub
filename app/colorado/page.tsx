@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -32,12 +33,18 @@ export function generateMetadata(): Metadata {
 export default async function ColoradoIntelligencePage() {
   const loaded = await loadColoradoIntelligence();
   if (loaded.status !== 'ok') {
-    return <ColoradoStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <ColoradoStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="colorado" stateName="Colorado" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildColoradoIntelligenceJsonLd(loaded.snapshot)} />
       <ColoradoStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="colorado" stateName="Colorado" />
     </>
   );
 }

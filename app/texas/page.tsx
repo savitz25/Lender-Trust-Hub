@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -32,12 +33,18 @@ export function generateMetadata(): Metadata {
 export default async function TexasIntelligencePage() {
   const loaded = await loadTexasIntelligence();
   if (loaded.status !== 'ok') {
-    return <TexasStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <TexasStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="texas" stateName="Texas" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildTexasIntelligenceJsonLd(loaded.snapshot)} />
       <TexasStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="texas" stateName="Texas" />
     </>
   );
 }

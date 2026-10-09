@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { INDIANA_SNAPSHOT as ind } from '@/lib/indiana-intelligence/snapshot';
 import evidence from '@/lib/indiana-intelligence/evidence.json';
@@ -66,5 +67,6 @@ export default function IndianaPage() {
       <p className="mt-3 text-slate-700"><a className="underline" href={ind.sources.dfiComplaints}>DFI takes complaints</a> about lending and credit activity. The <a className="underline" href={ind.sources.sosComplaints}>Securities Division takes complaints</a> about loan-broker matters. Public provider-level complaint rows are NOT_ACQUIRED, and outcomes are REQUEST_ONLY/NOT_ACQUIRED. A complaint is not an enforcement finding.</p>
       <p className="mt-3 text-sm text-slate-600">DFI roster retrieved {ind.dfi.rosterClock.retrievedAt} (no DFI as-of date). Securities Division index retrieved {ind.loanBrokerEnforcement.retrievedAt}; order dates are the Division index dates shown above. Loan Broker roster clock: not applicable (NOT_ACQUIRED). NMLS verification is live at NMLS Consumer Access. HMDA vintage {ind.hmda.year}. Page data generated {ind.generatedAt}. There is no single Indiana as-of date. New canonical organizations 0; graph writes 0; claim eligibility changes 0. Indianapolis, Fort Wayne, Evansville and South Bend are geographic context only; there are no city pages.</p>
     </section>
+    <StateCountyLinks stateSlug="indiana" stateName="Indiana" />
   </main>;
 }

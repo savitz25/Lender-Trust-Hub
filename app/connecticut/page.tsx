@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { CONNECTICUT_SNAPSHOT as ct } from '@/lib/connecticut-intelligence/snapshot';
 import rosters from '@/lib/connecticut-intelligence/rosters.json';
@@ -50,5 +51,6 @@ export default async function ConnecticutPage({ searchParams }: Props) {
       <p className="mt-3 text-sm text-slate-600">Order source review: {ct.enforcement.retrievedAt}; action dates are listed above. <a className="underline" href={ct.sources.ordersIndex}>DOB administrative-orders indexes</a> contain additional matters not counted here.</p></section>
 
     <section className="mt-12" id="complaints"><h2 className="text-2xl font-semibold">Complaints, source clocks and gaps</h2><p className="mt-3 text-slate-700">DOB accepts <a className="underline" href={ct.sources.complaints}>mortgage complaints</a>. Provider-level complaint rows are NOT_ACQUIRED; outcomes are REQUEST_ONLY. A complaint is not an enforcement finding.</p><p className="mt-3 text-sm text-slate-600">License workbook as-of {ct.licensing.asOf}; retrieved {rosters.retrievedAt}. HMDA vintage 2025. DOB order actions carry their own dates; order review {ct.enforcement.retrievedAt}; page evidence generated {ct.generated_at}. There is no universal Connecticut as-of clock. MLO/exempt rosters, an NMLS-ID field in the DOB workbooks, comprehensive enforcement outcomes, and provider complaint records remain gaps. Net-new canonical organizations 0; graph writes 0; claim eligibility unchanged.</p></section>
+    <StateCountyLinks stateSlug="connecticut" stateName="Connecticut" />
   </main>;
 }

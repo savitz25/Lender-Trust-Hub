@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -32,12 +33,18 @@ export function generateMetadata(): Metadata {
 export default async function IllinoisIntelligencePage() {
   const loaded = await loadIllinoisIntelligence();
   if (loaded.status !== 'ok') {
-    return <IllinoisStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <IllinoisStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="illinois" stateName="Illinois" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildIllinoisIntelligenceJsonLd(loaded.snapshot)} />
       <IllinoisStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="illinois" stateName="Illinois" />
     </>
   );
 }

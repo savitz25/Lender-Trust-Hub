@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -32,12 +33,18 @@ export function generateMetadata(): Metadata {
 export default async function NevadaIntelligencePage() {
   const loaded = await loadNevadaIntelligence();
   if (loaded.status !== 'ok') {
-    return <NevadaStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <NevadaStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="nevada" stateName="Nevada" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildNevadaIntelligenceJsonLd(loaded.snapshot)} />
       <NevadaStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="nevada" stateName="Nevada" />
     </>
   );
 }

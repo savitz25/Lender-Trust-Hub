@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -38,12 +39,18 @@ export default async function MassachusettsIntelligencePage({ searchParams }: Pr
   const lookup = raw ? lookupMaDob(raw) : null;
   const loaded = await loadMassachusettsIntelligence();
   if (loaded.status !== 'ok') {
-    return <MassachusettsStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <MassachusettsStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="massachusetts" stateName="Massachusetts" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildMassachusettsIntelligenceJsonLd(loaded.snapshot)} />
       <MassachusettsStateIntelligence snapshot={loaded.snapshot} lookup={lookup} />
+      <StateCountyLinks stateSlug="massachusetts" stateName="Massachusetts" />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { ALABAMA_SNAPSHOT as al } from '@/lib/alabama-intelligence/snapshot';
 import { SITE_URL } from '@/lib/directory/categories';
@@ -58,5 +59,6 @@ export default function AlabamaPage() {
       <p className="mt-3 text-slate-700"><a className="underline" href={al.sources.complaints}>The Department accepts complaints</a> by mail. Bank complaints use {al.complaints.bankIntake}. Finance companies, mortgage companies and brokers, mortgage loan originators, pawn shops, and deferred-presentment lenders use {al.complaints.lendingIntake}. Intake is known. Public provider-level complaint rows were NOT_ACQUIRED. A complaint is not an enforcement finding.</p>
       <p className="mt-3 text-sm text-slate-600">Report letter December 31, 2025. Bureau of Banks clock {banks.clock}. Bureau of Loans composition {loans.compositionClock}. Class tables {loans.classTableClock}. Report retrieved {al.retrievedAt}. HMDA vintage {al.hmda.year}. Enforcement corpus NOT_ACQUIRED. Page data generated {al.generatedAt}. No universal Alabama as-of date. Net-new canonical organizations 0; graph writes {al.graphWrites}; claim eligibility changes 0. Birmingham, Montgomery, Huntsville, Tuscaloosa, and Mobile are geographic context only; no city or county intelligence pages.</p>
     </section>
+    <StateCountyLinks stateSlug="alabama" stateName="Alabama" />
   </main>;
 }

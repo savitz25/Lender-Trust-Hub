@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { MARYLAND_SNAPSHOT as md } from '@/lib/maryland-intelligence/snapshot';
 import { SITE_URL } from '@/lib/directory/categories';
@@ -43,5 +44,6 @@ export default function MarylandPage() {
     <section className="mt-12" id="transition"><h2 className="text-2xl font-semibold">2026 licensing transition</h2><p className="mt-3 text-slate-700">In its <a className="underline" href={md.sources.advisory}>June 8, 2026 advisory</a>, OFR explained that 2026 legislation removed an exemption that had been incorrectly published after the 2025 Secondary Market Stability Act. OFR described a July 1, 2026 licensing deadline for affected persons relying on that provision in good faith. This is policy context; it does not identify any provider here as noncompliant or subject to an order.</p></section>
 
     <section className="mt-12" id="complaints"><h2 className="text-2xl font-semibold">Complaints and source clocks</h2><p className="mt-3 text-slate-700"><a className="underline" href={md.sources.complaints}>OFR accepts consumer complaints</a> about regulated financial service providers and can investigate or refer them. Provider-level Maryland complaint rows are NOT_ACQUIRED; outcomes are REQUEST_ONLY/NOT_ACQUIRED. A complaint is not an enforcement finding.</p><p className="mt-3 text-sm text-slate-600">License verification retrieved {md.retrievedAt}; no roster as-of date. HMDA vintage {md.hmda.year}; order action dates above and index review {md.enforcement.retrievedAt}; page data generated {md.generatedAt}. There is no universal Maryland as-of date. Net-new canonical organizations 0; graph writes 0; claim eligibility changes 0. Baltimore, Annapolis, Frederick and Rockville are geographic context only; no city intelligence pages.</p></section>
+    <StateCountyLinks stateSlug="maryland" stateName="Maryland" />
   </main>;
 }

@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import { FloridaStateIntelligence, FloridaStateIntelligenceUnavailable } from '@/components/florida/florida-state-intelligence';
@@ -29,12 +30,18 @@ export function generateMetadata(): Metadata {
 export default async function FloridaIntelligencePage() {
   const loaded = await loadFloridaIntelligence();
   if (loaded.status !== 'ok') {
-    return <FloridaStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <FloridaStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="florida" stateName="Florida" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildFloridaIntelligenceJsonLd(loaded.snapshot)} />
       <FloridaStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="florida" stateName="Florida" />
     </>
   );
 }

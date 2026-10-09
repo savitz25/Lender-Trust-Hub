@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from "next";
 import { OK_ODCC_CLASSES, OKLAHOMA_SNAPSHOT as ok } from "@/lib/oklahoma-intelligence/snapshot";
 import { SITE_URL } from "@/lib/directory/categories";
@@ -97,6 +98,7 @@ export default function OklahomaLenderPage() {
           Roster index retrieved {ok.retrievedAt}. Printed roster date {ok.sources.printedAsOfLabel}. Filename clock {ok.sources.filenameClock}. HMDA vintage {ok.hmda.year}. The published application count is the accepted jurisdiction aggregate. The county file was not re-downloaded and was not substituted for that aggregate. Page data generated {ok.generatedAt}. No single clock covers consumer-credit rosters, NMLS identities, and HMDA. Net-new canonical organizations {ok.newCanonicalOrganizations}. Graph writes {ok.graphWrites}. Claim eligibility changes {ok.claimEligibilityChanges}. Oklahoma City, Tulsa, Norman, Edmond, Lawton, and Broken Arrow are geography only. This page publishes no city or county route.
         </p>
       </section>
+      <StateCountyLinks stateSlug="oklahoma" stateName="Oklahoma" />
     </main>
   );
 }

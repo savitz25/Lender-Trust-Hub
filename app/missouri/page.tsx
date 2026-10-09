@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import { SITE_URL } from '@/lib/directory/categories';
@@ -30,5 +31,6 @@ export default function MissouriLenderPage() {
       <h2 className="text-xl font-semibold text-slate-950">Orders and complaints</h2><p>A bounded <a className="underline" href={snapshot.ordersUrl}>DoF removal and prohibition index</a> has {fmt(snapshot.orderIndexRows)} text summaries; {fmt(snapshot.orderRowsExplicitlyMentioningChapter443)} explicitly mention Chapter 443 mortgage activity. The index mixes banks, mortgage and other regulated entities. It is not a mortgage enforcement census. There are {snapshot.exactOrderAttachments} exact order attachments to company or MLO directory records because the index summaries lack a verified identifier bridge. A shared name is not an adverse match. A consumer complaint, if filed, is not a finding.</p>
       <h2 className="text-xl font-semibold text-slate-950">Coverage limits</h2><ul className="list-disc space-y-1 pl-5"><li>Company, branch and person rows stay separate; no combined provider total or rating.</li><li>Current per-license status, lender/servicer subclass, branch-parent links, NMLS identity confirmation and HMDA-license bridges: NOT_ACQUIRED.</li><li>Existing canonical matches: {snapshot.existingCanonicalMatches}. Net-new entities and evidence attachments: {snapshot.netNewEntities}. No city or county work.</li><li>DoF directory retrieval and 2025 HMDA reporting year are separate clocks. Neither is a license effective date.</li></ul>
     </section>
+    <StateCountyLinks stateSlug="missouri" stateName="Missouri" />
   </main>;
 }

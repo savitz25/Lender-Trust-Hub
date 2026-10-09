@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -32,12 +33,18 @@ export function generateMetadata(): Metadata {
 export default async function NorthCarolinaIntelligencePage() {
   const loaded = await loadNorthCarolinaIntelligence();
   if (loaded.status !== 'ok') {
-    return <NorthCarolinaStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <NorthCarolinaStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="north-carolina" stateName="North Carolina" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildNorthCarolinaIntelligenceJsonLd(loaded.snapshot)} />
       <NorthCarolinaStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="north-carolina" stateName="North Carolina" />
     </>
   );
 }
