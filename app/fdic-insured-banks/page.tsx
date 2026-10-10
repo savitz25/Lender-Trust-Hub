@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     'FDIC banks near me',
   ],
   openGraph: {
-    title: buildHubTitle(),
+    title: buildHubTitle() + ' | LenderTrustHub',
     description: buildHubDescription(totalBanks),
     siteName: 'Lender Trust Hub',
     type: 'website',

@@ -16,7 +16,7 @@ export function buildWashingtonIntelligenceJsonLd(
         '@type': 'WebPage',
         '@id': `${url}#webpage`,
         url,
-        name: WASHINGTON_INTELLIGENCE_GATE.title,
+        name: WASHINGTON_INTELLIGENCE_GATE.socialTitle,
         description: WASHINGTON_INTELLIGENCE_GATE.description,
         isPartOf: { '@id': `${SITE_URL}/#website` },
         about: { '@id': `${url}#dataset` },

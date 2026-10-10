@@ -22,7 +22,7 @@ export function generateMetadata(): Metadata {
     robots,
     alternates: { canonical: url },
     openGraph: {
-      title: CALIFORNIA_INTELLIGENCE_GATE.title,
+      title: CALIFORNIA_INTELLIGENCE_GATE.socialTitle,
       description: CALIFORNIA_INTELLIGENCE_GATE.description,
       url,
     },

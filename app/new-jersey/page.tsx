@@ -22,7 +22,7 @@ export function generateMetadata(): Metadata {
     robots,
     alternates: { canonical: url },
     openGraph: {
-      title: NEW_JERSEY_INTELLIGENCE_GATE.title,
+      title: NEW_JERSEY_INTELLIGENCE_GATE.socialTitle,
       description: NEW_JERSEY_INTELLIGENCE_GATE.description,
       url,
     },

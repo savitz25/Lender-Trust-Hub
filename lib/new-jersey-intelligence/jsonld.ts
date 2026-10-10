@@ -16,7 +16,7 @@ export function buildNewJerseyIntelligenceJsonLd(
         '@type': 'WebPage',
         '@id': `${url}#webpage`,
         url,
-        name: NEW_JERSEY_INTELLIGENCE_GATE.title,
+        name: NEW_JERSEY_INTELLIGENCE_GATE.socialTitle,
         description: NEW_JERSEY_INTELLIGENCE_GATE.description,
         isPartOf: { '@id': `${SITE_URL}/#website` },
         about: { '@id': `${url}#dataset` },

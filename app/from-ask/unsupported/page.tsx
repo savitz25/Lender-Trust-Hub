@@ -7,7 +7,7 @@ import {
 } from '@/components/research/empty-coverage-panel';
 
 export const metadata: Metadata = {
-  title: 'Search not available | LenderTrustHub',
+  title: 'Search not available',
   robots: { index: false, follow: false },
   alternates: { canonical: 'https://www.lendertrusthub.com/from-ask/unsupported' },
 };

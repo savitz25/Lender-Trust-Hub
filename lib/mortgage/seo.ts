@@ -56,7 +56,7 @@ export const HIGH_VOLUME_STATE_SLUGS = new Set([
 
 export function buildMortgageStateTitle(stateName: string, count?: number): string {
   void count;
-  return `Mortgage Lenders in ${stateName} — HMDA Evidence & Local Directory | ${BRAND}`;
+  return `Mortgage Lenders in ${stateName} — HMDA Evidence & Local Directory`;
 }
 
 export function buildMortgageStateH1(stateName: string): string {
@@ -72,7 +72,7 @@ export function buildMortgageStateDescription(
 }
 
 export function buildMortgageHubTitle(): string {
-  return `Mortgage Lenders by State — National Research Directory | ${BRAND}`;
+  return `Mortgage Lenders by State — National Research Directory`;
 }
 
 export function buildMortgageHubDescription(total: number): string {
@@ -80,7 +80,7 @@ export function buildMortgageHubDescription(total: number): string {
 }
 
 export function buildMortgageCountyTitle(countyName: string): string {
-  return `${countyName} County Mortgage Market — Lenders, Volume & Research Tools | ${BRAND}`;
+  return `${countyName} County Mortgage Market — Lenders, Volume & Research Tools`;
 }
 
 export function buildMortgageCountyH1(countyName: string, stateName: string): string {
@@ -97,7 +97,7 @@ export function buildMortgageCountyDescription(
 
 export function buildLenderProfileTitle(lenderName: string, nmlsId?: string): string {
   const nmls = nmlsId ? ` · NMLS #${nmlsId}` : '';
-  return `${lenderName} — NMLS, HMDA Activity & Loan Estimate Research${nmls} | ${BRAND}`;
+  return `${lenderName} — NMLS, HMDA Activity & Loan Estimate Research${nmls}`;
 }
 
 export function buildLenderProfileDescription(
@@ -112,15 +112,15 @@ export function buildLenderProfileDescription(
 }
 
 export function buildAnalyzerTitle(): string {
-  return `Understand Your Loan Estimate — Fee Bands & Market Context | ${BRAND}`;
+  return `Understand Your Loan Estimate — Fee Bands & Market Context`;
 }
 
 export function buildCompareTitle(): string {
-  return `Compare Loan Estimates Side by Side — Educational Research | ${BRAND}`;
+  return `Compare Loan Estimates Side by Side — Educational Research`;
 }
 
 export function buildProgramFinderTitle(): string {
-  return `Mortgage Program Finder — FHA, VA, DPA Education | ${BRAND}`;
+  return `Mortgage Program Finder — FHA, VA, DPA Education`;
 }
 
 // ── JSON-LD ────────────────────────────────────────────────────────────
@@ -131,7 +131,7 @@ export function buildMortgageStateJsonLd(
 ): Record<string, unknown> {
   const stats = getStateMortgageStats(stateMeta.slug);
   const pageUrl = mortgageStateUrl(stateMeta.slug);
-  const title = buildMortgageStateTitle(stateMeta.fullName, stats.total);
+  const title = buildMortgageStateTitle(stateMeta.fullName, stats.total) + ` | ${BRAND}`;
 
   return {
     '@context': 'https://schema.org',
@@ -230,7 +230,7 @@ export function buildMortgageCountyJsonLd(input: {
   description: string;
 }): Record<string, unknown> {
   const pageUrl = mortgageCountyUrl(input.stateSlug, input.countySlug);
-  const title = buildMortgageCountyTitle(input.countyName);
+  const title = buildMortgageCountyTitle(input.countyName) + ` | ${BRAND}`;
 
   return {
     '@context': 'https://schema.org',
@@ -360,7 +360,7 @@ export function buildMortgageHubJsonLd(totalLenders: number, stateCount: number)
       buildLenderOrganizationSchema(),
       {
         '@type': 'WebPage',
-        name: buildMortgageHubTitle(),
+        name: buildMortgageHubTitle() + ' | Lender Trust Hub',
         description: buildMortgageHubDescription(totalLenders),
         url: `${SITE_URL}${MORTGAGE_CATEGORY.hubPath}`,
       },

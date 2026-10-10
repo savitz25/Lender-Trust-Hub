@@ -17,7 +17,7 @@ export function buildNjCountyIntelligenceJsonLd(
         '@type': 'WebPage',
         '@id': `${url}#webpage`,
         url,
-        name: gate.title,
+        name: gate.socialTitle,
         description: gate.description,
         isPartOf: { '@id': `${SITE_URL}/#website` },
         about: { '@id': `${url}#dataset` },

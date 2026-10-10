@@ -16,7 +16,7 @@ export function buildNorthCarolinaIntelligenceJsonLd(
         '@type': 'WebPage',
         '@id': `${url}#webpage`,
         url,
-        name: NORTH_CAROLINA_INTELLIGENCE_GATE.title,
+        name: NORTH_CAROLINA_INTELLIGENCE_GATE.socialTitle,
         description: NORTH_CAROLINA_INTELLIGENCE_GATE.description,
         isPartOf: { '@id': `${SITE_URL}/#website` },
         about: { '@id': `${url}#dataset` },

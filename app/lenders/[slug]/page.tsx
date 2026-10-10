@@ -64,7 +64,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical: `https://www.lendertrusthub.com/lenders/${lender.slug}` },
-    openGraph: { title, description, images: [image] },
+    openGraph: { title: title + ' | Lender Trust Hub', description, images: [image] },
     twitter: {
       card: 'summary_large_image',
       title,

@@ -16,7 +16,7 @@ export function buildNevadaIntelligenceJsonLd(
         '@type': 'WebPage',
         '@id': `${url}#webpage`,
         url,
-        name: NEVADA_INTELLIGENCE_GATE.title,
+        name: NEVADA_INTELLIGENCE_GATE.socialTitle,
         description: NEVADA_INTELLIGENCE_GATE.description,
         isPartOf: { '@id': `${SITE_URL}/#website` },
         about: { '@id': `${url}#dataset` },

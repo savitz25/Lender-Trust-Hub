@@ -22,7 +22,7 @@ export function generateMetadata(): Metadata {
     robots,
     alternates: { canonical: url },
     openGraph: {
-      title: PENNSYLVANIA_INTELLIGENCE_GATE.title,
+      title: PENNSYLVANIA_INTELLIGENCE_GATE.socialTitle,
       description: PENNSYLVANIA_INTELLIGENCE_GATE.description,
       url,
     },

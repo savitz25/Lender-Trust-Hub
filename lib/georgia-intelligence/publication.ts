@@ -4,7 +4,8 @@ export const GEORGIA_INTELLIGENCE_GATE = {
   path: "/georgia",
   robotsIndex: true,
   sitemap: true,
-  title: "Georgia Mortgage & Lending Intelligence | LenderTrustHub",
+  title: "Georgia Mortgage & Lending Intelligence",
+  socialTitle: "Georgia Mortgage & Lending Intelligence | LenderTrustHub",
   description:
     "Research Georgia mortgage brokers, mortgage lenders, and mortgage loan originators through the Department of Banking and Finance and NMLS Consumer Access. Final orders are on the NMLS record, not a separate name-matched list. Not a ranking or a count of all Georgia lenders.",
 } as const;

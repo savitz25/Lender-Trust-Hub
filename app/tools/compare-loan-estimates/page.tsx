@@ -11,7 +11,7 @@ import { JourneySessionSync } from '@/components/network/journey-session-sync';
 import { parseJourneyContext } from '@/lib/network/journey-context';
 
 export const metadata: Metadata = {
-  title: 'Compare Loan Estimates Side by Side — Educational Research | Lender Trust Hub',
+  title: 'Compare Loan Estimates Side by Side — Educational Research',
   description:
     'Compare 2 or 3 Loan Estimates side by side: rate, APR, origination, points, credits, net fees, and monthly P&I. Educational research — no lead form required.',
   alternates: {

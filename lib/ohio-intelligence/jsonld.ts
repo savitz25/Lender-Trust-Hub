@@ -16,7 +16,7 @@ export function buildOhioIntelligenceJsonLd(
         '@type': 'WebPage',
         '@id': `${url}#webpage`,
         url,
-        name: OHIO_INTELLIGENCE_GATE.title,
+        name: OHIO_INTELLIGENCE_GATE.socialTitle,
         description: OHIO_INTELLIGENCE_GATE.description,
         isPartOf: { '@id': `${SITE_URL}/#website` },
         about: { '@id': `${url}#dataset` },

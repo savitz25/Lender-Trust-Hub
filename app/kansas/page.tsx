@@ -6,7 +6,7 @@ import { SITE_URL } from '@/lib/directory/categories';
 const fmt = (n: number) => n.toLocaleString('en-US');
 
 export const metadata: Metadata = {
-  title: 'Kansas Mortgage Licensing and HMDA Evidence | LenderTrustHub',
+  title: 'Kansas Mortgage Licensing and HMDA Evidence',
   description: 'Kansas OSBC mortgage company, branch, and MLO authority are distinct. Current license rosters were not acquired. 2025 HMDA activity is reported separately.',
   alternates: { canonical: `${SITE_URL}/kansas` },
   robots: { index: true, follow: true },
