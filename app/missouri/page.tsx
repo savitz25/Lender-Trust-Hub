@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/directory/categories';
 import snapshot from '@/data/missouri/mo-lend-001/accepted-snapshot.json';
 
 export const metadata: Metadata = {
-  title: 'Missouri Mortgage Licensing and HMDA Evidence | LenderTrustHub',
+  title: 'Missouri Mortgage Licensing and HMDA Evidence',
   description: 'Missouri Division of Finance directory observations for mortgage broker companies, branches and MLO people, kept separate from 2025 HMDA market activity and orders.',
   alternates: { canonical: `${SITE_URL}/missouri` },
   robots: { index: true, follow: true },

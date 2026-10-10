@@ -16,7 +16,7 @@ export function buildMinnesotaIntelligenceJsonLd(
         '@type': 'WebPage',
         '@id': `${url}#webpage`,
         url,
-        name: MINNESOTA_INTELLIGENCE_GATE.title,
+        name: MINNESOTA_INTELLIGENCE_GATE.socialTitle,
         description: MINNESOTA_INTELLIGENCE_GATE.description,
         isPartOf: { '@id': `${SITE_URL}/#website` },
         about: { '@id': `${url}#dataset` },

@@ -4,7 +4,7 @@ import { OK_ODCC_CLASSES, OKLAHOMA_SNAPSHOT as ok } from "@/lib/oklahoma-intelli
 import { SITE_URL } from "@/lib/directory/categories";
 
 export const metadata: Metadata = {
-  title: "Oklahoma Mortgage Evidence and Consumer Credit Rosters | LenderTrustHub",
+  title: "Oklahoma Mortgage Evidence and Consumer Credit Rosters",
   description:
     "Oklahoma mortgage broker, mortgage lender, and mortgage loan originator bulk rosters were not acquired. Department of Consumer Credit class counts as of October 1, 2026 stay separate from NMLS identities. The accepted 2025 HMDA jurisdiction aggregate is 136,810 Oklahoma-property applications.",
   alternates: { canonical: `${SITE_URL}/oklahoma` },

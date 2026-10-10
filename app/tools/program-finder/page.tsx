@@ -7,7 +7,7 @@ import { DPA_GUIDANCE_STATE_SLUGS } from '@/lib/programs/location-notes';
 import { ResearchPathNav } from '@/components/research/research-path-nav';
 
 export const metadata: Metadata = {
-  title: 'Mortgage Program Finder — FHA, VA, DPA Education | Lender Trust Hub',
+  title: 'Mortgage Program Finder — FHA, VA, DPA Education',
   description:
     'Answer a few optional questions to see educational mortgage program fits (FHA, VA, conventional, USDA, DPA). Not an eligibility tool. No lead form.',
   alternates: { canonical: 'https://www.lendertrusthub.com/tools/program-finder' },

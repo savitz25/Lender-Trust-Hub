@@ -7,7 +7,7 @@ import { UTAH_HMDA_SNAPSHOT as snapshot } from "@/lib/utah-intelligence/snapshot
 const fmt = (n: number) => n.toLocaleString("en-US");
 
 export const metadata: Metadata = {
-  title: "Utah Mortgage Regulation and HMDA Market Evidence | LenderTrustHub",
+  title: "Utah Mortgage Regulation and HMDA Market Evidence",
   description:
     "Utah DFI and DRE regulate different mortgage activities. Statewide licensing rosters were not acquired. 2025 HMDA market activity is reported separately.",
   alternates: { canonical: `${SITE_URL}/utah` },

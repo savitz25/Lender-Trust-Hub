@@ -26,7 +26,7 @@ export function generateMetadata(): Metadata {
     robots,
     alternates: { canonical: url },
     openGraph: {
-      title: MASSACHUSETTS_INTELLIGENCE_GATE.title,
+      title: MASSACHUSETTS_INTELLIGENCE_GATE.socialTitle,
       description: MASSACHUSETTS_INTELLIGENCE_GATE.description,
       url,
     },

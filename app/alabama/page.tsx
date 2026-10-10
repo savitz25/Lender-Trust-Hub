@@ -4,7 +4,7 @@ import { ALABAMA_SNAPSHOT as al } from '@/lib/alabama-intelligence/snapshot';
 import { SITE_URL } from '@/lib/directory/categories';
 
 export const metadata: Metadata = {
-  title: 'Alabama Mortgage Licensing, HMDA & Banking Department Evidence | LenderTrustHub',
+  title: 'Alabama Mortgage Licensing, HMDA & Banking Department Evidence',
   description: 'Alabama Banking Department mortgage-broker and originator license counts, separate Bureau of Loans statutes, and 2025 Alabama-property HMDA activity.',
   alternates: { canonical: `${SITE_URL}/alabama` },
   robots: { index: true, follow: true },

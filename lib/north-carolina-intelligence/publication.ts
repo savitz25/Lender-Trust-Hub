@@ -8,7 +8,8 @@ export const NORTH_CAROLINA_INTELLIGENCE_GATE = {
   path: '/north-carolina',
   robotsIndex: true,
   sitemap: true,
-  title: 'North Carolina Mortgage & Lending Intelligence | LenderTrustHub',
+  title: 'North Carolina Mortgage & Lending Intelligence',
+  socialTitle: 'North Carolina Mortgage & Lending Intelligence | LenderTrustHub',
   description:
     'Research 2025 HMDA North Carolina mortgage activity, NCCOB current license classes, CFPB 2025 mortgage complaints, NCCOB mortgage enforcement, and FDIC depository context. Independent research. Not a ranking, recommendation, or Trust Score. 1,380 current licensed entities are not a combined North Carolina lenders count.',
 } as const;

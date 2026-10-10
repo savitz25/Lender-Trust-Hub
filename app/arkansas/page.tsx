@@ -4,7 +4,7 @@ import { AR_COMPANY_LICENSES, AR_MLO_STATUSES, ARKANSAS_SNAPSHOT as ar } from "@
 import { SITE_URL } from "@/lib/directory/categories";
 
 export const metadata: Metadata = {
-  title: "Arkansas Mortgage Companies, Branches, and Loan Officers | LenderTrustHub",
+  title: "Arkansas Mortgage Companies, Branches, and Loan Officers",
   description: "The Arkansas Securities Department workbook, labeled as of September 1, 2026, has 683 approved company rows, 1,536 branch rows, and 11,239 mortgage loan officer persons. Those populations are not added. The accepted 2025 HMDA jurisdiction aggregate is 114,072 Arkansas-property applications. That is not a license count.",
   alternates: { canonical: `${SITE_URL}/arkansas` },
   robots: { index: true, follow: true },

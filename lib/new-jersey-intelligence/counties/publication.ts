@@ -6,6 +6,7 @@ export type NjCountyPublicationGate = {
   robotsIndex: boolean;
   sitemap: boolean;
   title: string;
+  socialTitle: string;
   description: string;
 };
 
@@ -15,7 +16,8 @@ export const NJ_COUNTY_INTELLIGENCE_GATES: Record<NjCountySlug, NjCountyPublicat
     path: '/new-jersey/monmouth-county',
     robotsIndex: true,
     sitemap: true,
-    title: 'Monmouth County Mortgage & Property-Market Research | LenderTrustHub',
+    title: 'Monmouth County Mortgage & Property-Market Research',
+    socialTitle: 'Monmouth County Mortgage & Property-Market Research | LenderTrustHub',
     description:
       'Research Monmouth County mortgage activity using 2025 HMDA, NJHMFA down-payment geography, OPRS land-record access, and a sheriff-sale status snapshot. Independent research. Not a ranking or recommendation.',
   },
@@ -24,7 +26,8 @@ export const NJ_COUNTY_INTELLIGENCE_GATES: Record<NjCountySlug, NjCountyPublicat
     path: '/new-jersey/middlesex-county',
     robotsIndex: true,
     sitemap: true,
-    title: 'Middlesex County Mortgage & Property-Market Research | LenderTrustHub',
+    title: 'Middlesex County Mortgage & Property-Market Research',
+    socialTitle: 'Middlesex County Mortgage & Property-Market Research | LenderTrustHub',
     description:
       'Research Middlesex County mortgage activity using 2025 HMDA, NJHMFA down-payment geography, SearchNG land-record access, and a sheriff-sale status snapshot. Independent research. Not a ranking or recommendation.',
   },
@@ -33,7 +36,8 @@ export const NJ_COUNTY_INTELLIGENCE_GATES: Record<NjCountySlug, NjCountyPublicat
     path: '/new-jersey/somerset-county',
     robotsIndex: true,
     sitemap: true,
-    title: 'Somerset County Mortgage & Property-Market Research | LenderTrustHub',
+    title: 'Somerset County Mortgage & Property-Market Research',
+    socialTitle: 'Somerset County Mortgage & Property-Market Research | LenderTrustHub',
     description:
       'Research Somerset County mortgage activity using 2025 HMDA, NJHMFA down-payment geography, Acclaim land-record access, and parcel/property context. Independent research. Not a ranking or recommendation.',
   },
@@ -42,7 +46,8 @@ export const NJ_COUNTY_INTELLIGENCE_GATES: Record<NjCountySlug, NjCountyPublicat
     path: '/new-jersey/union-county',
     robotsIndex: true,
     sitemap: true,
-    title: 'Union County Mortgage & Property-Market Research | LenderTrustHub',
+    title: 'Union County Mortgage & Property-Market Research',
+    socialTitle: 'Union County Mortgage & Property-Market Research | LenderTrustHub',
     description:
       'Research Union County mortgage activity using 2025 HMDA, NJHMFA down-payment geography, Clerk land-record access, and local housing/repair resources. Independent research. Not a ranking or recommendation.',
   },

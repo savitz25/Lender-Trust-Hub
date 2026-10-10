@@ -32,10 +32,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { state: slug } = await params;
   const stateMeta = STATE_BY_SLUG.get(slug);
-  if (!stateMeta?.hasData) return { title: 'FDIC Banks | LenderTrustHub' };
+  if (!stateMeta?.hasData) return { title: 'FDIC Banks' };
 
   const stateData = getStateData(stateMeta.code);
-  if (!stateData) return { title: 'FDIC Banks | LenderTrustHub' };
+  if (!stateData) return { title: 'FDIC Banks' };
 
   const hqCount = stateData.banks.filter((b) =>
     new RegExp(`, ${stateMeta.code}(?:\\s|$)`).test(b.headquarters_address)
@@ -61,7 +61,7 @@ export async function generateMetadata({
       'verified FDIC institutions',
     ],
     openGraph: {
-      title,
+      title: title + ' | LenderTrustHub',
       description,
       siteName: 'Lender Trust Hub',
       type: 'website',

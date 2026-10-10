@@ -16,7 +16,7 @@ export function buildOregonIntelligenceJsonLd(
         '@type': 'WebPage',
         '@id': `${url}#webpage`,
         url,
-        name: OREGON_INTELLIGENCE_GATE.title,
+        name: OREGON_INTELLIGENCE_GATE.socialTitle,
         description: OREGON_INTELLIGENCE_GATE.description,
         isPartOf: { '@id': `${SITE_URL}/#website` },
         about: { '@id': `${url}#dataset` },

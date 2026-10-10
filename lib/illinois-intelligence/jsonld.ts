@@ -16,7 +16,7 @@ export function buildIllinoisIntelligenceJsonLd(
         '@type': 'WebPage',
         '@id': `${url}#webpage`,
         url,
-        name: ILLINOIS_INTELLIGENCE_GATE.title,
+        name: ILLINOIS_INTELLIGENCE_GATE.socialTitle,
         description: ILLINOIS_INTELLIGENCE_GATE.description,
         isPartOf: { '@id': `${SITE_URL}/#website` },
         about: { '@id': `${url}#dataset` },

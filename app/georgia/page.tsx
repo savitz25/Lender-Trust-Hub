@@ -20,7 +20,7 @@ export function generateMetadata(): Metadata {
     robots: { index: true, follow: true },
     alternates: { canonical: url },
     openGraph: {
-      title: GEORGIA_INTELLIGENCE_GATE.title,
+      title: GEORGIA_INTELLIGENCE_GATE.socialTitle,
       description: GEORGIA_INTELLIGENCE_GATE.description,
       url,
     },

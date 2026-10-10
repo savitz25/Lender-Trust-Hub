@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'HMDA County Snapshot | Lender Trust Hub',
+  title: 'HMDA County Snapshot',
   description:
     'Read-only public HMDA mortgage market snapshot for embedding. Research only — not a lead form.',
   robots: { index: false, follow: true },

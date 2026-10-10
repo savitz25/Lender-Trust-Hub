@@ -5,7 +5,7 @@ import rosters from '@/lib/connecticut-intelligence/rosters.json';
 import { SITE_URL } from '@/lib/directory/categories';
 
 export const metadata: Metadata = {
-  title: 'Connecticut Mortgage Licenses, HMDA & Enforcement | LenderTrustHub',
+  title: 'Connecticut Mortgage Licenses, HMDA & Enforcement',
   description: 'Connecticut Department of Banking mortgage company and branch license workbooks, 2025 HMDA property activity, and selected exact-NMLS enforcement orders.',
   alternates: { canonical: `${SITE_URL}/connecticut` },
   robots: { index: true, follow: true },

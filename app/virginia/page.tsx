@@ -23,7 +23,7 @@ export function generateMetadata(): Metadata {
     robots,
     alternates: { canonical: url },
     openGraph: {
-      title: VIRGINIA_INTELLIGENCE_GATE.title,
+      title: VIRGINIA_INTELLIGENCE_GATE.socialTitle,
       description: VIRGINIA_INTELLIGENCE_GATE.description,
       url,
     },

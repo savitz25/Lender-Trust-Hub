@@ -23,7 +23,7 @@ export function generateMetadata(): Metadata {
     robots,
     alternates: { canonical: url },
     openGraph: {
-      title: COLORADO_INTELLIGENCE_GATE.title,
+      title: COLORADO_INTELLIGENCE_GATE.socialTitle,
       description: COLORADO_INTELLIGENCE_GATE.description,
       url,
     },

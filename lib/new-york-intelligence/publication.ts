@@ -8,7 +8,8 @@ export const NEW_YORK_INTELLIGENCE_GATE = {
   path: '/new-york',
   robotsIndex: true,
   sitemap: true,
-  title: 'New York Mortgage Licensing & Lending Intelligence | LenderTrustHub',
+  title: 'New York Mortgage Licensing & Lending Intelligence',
+  socialTitle: 'New York Mortgage Licensing & Lending Intelligence | LenderTrustHub',
   description:
     'Research NYDFS mortgage banker, broker, servicer, and MLO classes, 2024 dated supervision counts, 2026 licensing activity, mortgage enforcement actions, and 2025 HMDA New York lending. Independent research. Not a ranking, recommendation, or Trust Score. Directory presence is not current authorization.',
 } as const;

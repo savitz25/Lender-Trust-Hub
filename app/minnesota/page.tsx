@@ -23,7 +23,7 @@ export function generateMetadata(): Metadata {
     robots,
     alternates: { canonical: url },
     openGraph: {
-      title: MINNESOTA_INTELLIGENCE_GATE.title,
+      title: MINNESOTA_INTELLIGENCE_GATE.socialTitle,
       description: MINNESOTA_INTELLIGENCE_GATE.description,
       url,
     },

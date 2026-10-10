@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { permanentRedirect } from 'next/navigation';
+import { STATE_BY_SLUG } from '@/lib/fdic/states';
 import { ChevronRight } from 'lucide-react';
 import { SearchBar } from '@/components/SearchBar';
 import { LenderDirectoryLoader } from '@/components/directory/LenderDirectoryLoader';
@@ -49,6 +51,19 @@ function titleCase(slug: string): string {
     .join(' ');
 }
 
+function redirectLegacyCounty(state: string, county: string): void {
+  const stateMeta = STATE_BY_SLUG.get(state);
+  if (!stateMeta) return;
+  const prefix = `${stateMeta.code.toLowerCase()}-`;
+  if (!county.startsWith(prefix)) return;
+  const counties = getAllCounties().filter((c) => c.stateSlug === state);
+  if (counties.some((c) => c.countySlug === county)) return;
+  const canonicalCounty = county.slice(prefix.length);
+  if (counties.some((c) => c.countySlug === canonicalCounty)) {
+    permanentRedirect(`/local-lenders/${state}/${canonicalCounty}`);
+  }
+}
+
 export function generateStaticParams() {
   return getAllCounties().map((c) => ({
     state: c.stateSlug,
@@ -62,6 +77,7 @@ export async function generateMetadata({
   params: Promise<{ state: string; county: string }>;
 }): Promise<Metadata> {
   const { state, county } = await params;
+  redirectLegacyCounty(state, county);
   const stateName = titleCase(state);
   const countyName = titleCase(county);
   const quality = assessCountyForPage(state, county);
@@ -78,7 +94,7 @@ export async function generateMetadata({
     title,
     description,
     openGraph: {
-      title,
+      title: title + ' | Lender Trust Hub',
       description,
       url: mortgageCountyUrl(state, county),
       locale: 'en_US',
@@ -96,6 +112,7 @@ export default async function CountyLendersPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { state, county } = await params;
+  redirectLegacyCounty(state, county);
   const sp = await searchParams;
   const zip = typeof sp.zip === 'string' ? sp.zip : Array.isArray(sp.zip) ? sp.zip[0] : undefined;
   const stateName = titleCase(state);

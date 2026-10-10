@@ -10,7 +10,7 @@ import { parseJourneyContext } from '@/lib/network/journey-context';
 import { parseAnalyzerCountyOption } from '@/lib/tools/loan-estimate-analyzer/county-option';
 
 export const metadata: Metadata = {
-  title: 'Understand Your Loan Estimate — Fee Bands & Market Context | Lender Trust Hub',
+  title: 'Understand Your Loan Estimate — Fee Bands & Market Context',
   description:
     'Paste key numbers from your Loan Estimate and see educational fee bands, APR/rate context, and multi-state HMDA activity for matched lenders and counties. Free research tool — no lead form required.',
   alternates: {

@@ -5,7 +5,7 @@ import evidence from '@/lib/indiana-intelligence/evidence.json';
 import { SITE_URL } from '@/lib/directory/categories';
 
 export const metadata: Metadata = {
-  title: 'Indiana Mortgage Lender & Loan Broker Licensing, HMDA & Enforcement | LenderTrustHub',
+  title: 'Indiana Mortgage Lender & Loan Broker Licensing, HMDA & Enforcement',
   description: 'Indiana splits mortgage regulation: DFI licenses mortgage lenders; the Securities Division licenses loan brokers. DFI roster, Loan Broker Act orders, 2025 Indiana-property HMDA and complaint intake.',
   alternates: { canonical: `${SITE_URL}/indiana` },
   robots: { index: true, follow: true },

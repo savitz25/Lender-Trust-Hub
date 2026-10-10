@@ -4,7 +4,7 @@ import { MICHIGAN_SNAPSHOT as mi } from '@/lib/michigan-intelligence/snapshot';
 import { SITE_URL } from '@/lib/directory/categories';
 
 export const metadata: Metadata = {
-  title: 'Michigan Mortgage Licensing & Lending Evidence | LenderTrustHub',
+  title: 'Michigan Mortgage Licensing & Lending Evidence',
   description: 'DIFS licensing verification, selected mortgage enforcement orders, and 2025 Michigan HMDA activity. No license roster or lender ranking.',
   alternates: { canonical: `${SITE_URL}/michigan` },
   robots: { index: true, follow: true },

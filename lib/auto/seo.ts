@@ -15,7 +15,7 @@ export function autoStateUrl(slug: string): string {
 }
 
 export function buildAutoStateTitle(stateName: string, count: number): string {
-  return `Auto Loan Companies in ${stateName} ${YEAR} | ${count} in Research Catalog | LenderTrustHub`;
+  return `Auto Loan Companies in ${stateName} ${YEAR} | ${count} in Research Catalog`;
 }
 
 export function buildAutoStateDescription(
@@ -28,7 +28,7 @@ export function buildAutoStateDescription(
 }
 
 export function buildAutoHubTitle(): string {
-  return `Auto Loan Companies by State ${YEAR} | Research Directory | LenderTrustHub`;
+  return `Auto Loan Companies by State ${YEAR} | Research Directory`;
 }
 
 export function buildAutoHubDescription(total: number): string {
@@ -62,7 +62,7 @@ export function buildAutoStateJsonLd(
       {
         '@type': 'WebPage',
         '@id': pageUrl,
-        name: buildAutoStateTitle(stateMeta.fullName, stats.total),
+        name: buildAutoStateTitle(stateMeta.fullName, stats.total) + ' | LenderTrustHub',
         description: buildAutoStateDescription(
           stateMeta.fullName,
           stats.total,
@@ -131,7 +131,7 @@ export function buildAutoHubJsonLd(totalProviders: number, stateCount: number) {
       buildLenderOrganizationSchema(),
       {
         '@type': 'WebPage',
-        name: buildAutoHubTitle(),
+        name: buildAutoHubTitle() + ' | LenderTrustHub',
         description: buildAutoHubDescription(totalProviders),
         url: `${SITE_URL}${AUTO_CATEGORY.hubPath}`,
       },

@@ -4,7 +4,7 @@ import { WISCONSIN_SNAPSHOT as wi } from '@/lib/wisconsin-intelligence/snapshot'
 import { SITE_URL } from '@/lib/directory/categories';
 
 export const metadata: Metadata = {
-  title: 'Wisconsin Mortgage Licensing, HMDA & Enforcement | LenderTrustHub',
+  title: 'Wisconsin Mortgage Licensing, HMDA & Enforcement',
   description: 'Wisconsin DFI mortgage license verification, 2025 Wisconsin-property HMDA activity, selected mortgage-servicing settlements and complaint intake.',
   alternates: { canonical: `${SITE_URL}/wisconsin` },
   robots: { index: true, follow: true },

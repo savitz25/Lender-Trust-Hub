@@ -7,7 +7,7 @@ import { NEW_MEXICO_SNAPSHOT as nm } from "@/lib/new-mexico-intelligence/snapsho
 const fmt = (n: number) => n.toLocaleString("en-US");
 
 export const metadata: Metadata = {
-  title: "New Mexico Mortgage Limits and HMDA Slice | LenderTrustHub",
+  title: "New Mexico Mortgage Limits and HMDA Slice",
   description:
     "New Mexico mortgage loan company, branch, and originator bulk rosters were not acquired. The owned 2025 HMDA slice has 18 county rows, 2,556 lender-county rows, 513 LEI summaries, and 146 mappings. Bernalillo has 14,288 originations inside that slice, which is not a statewide total.",
   alternates: { canonical: `${SITE_URL}/new-mexico` },

@@ -16,7 +16,7 @@ export function statePageUrl(slug: string): string {
 
 export function buildStateTitle(stateName: string, bankCount?: number): string {
   const countPart = bankCount ? ` — ${bankCount} Verified Institutions` : '';
-  return `FDIC Insured Banks in ${stateName} ${CURRENT_YEAR} | Full List${countPart} | LenderTrustHub`;
+  return `FDIC Insured Banks in ${stateName} ${CURRENT_YEAR} | Full List${countPart}`;
 }
 
 export function buildStateDescription(
@@ -30,7 +30,7 @@ export function buildStateDescription(
 }
 
 export function buildHubTitle(): string {
-  return `FDIC Insured Banks by State ${CURRENT_YEAR} | All 50 States + DC | LenderTrustHub`;
+  return `FDIC Insured Banks by State ${CURRENT_YEAR} | All 50 States + DC`;
 }
 
 export function buildHubDescription(totalBanks: number): string {
@@ -206,7 +206,7 @@ export function buildStateJsonLd(
       {
         '@type': 'WebPage',
         '@id': pageUrl,
-        name: buildStateTitle(stateMeta.fullName, stats.total),
+        name: buildStateTitle(stateMeta.fullName, stats.total) + ' | LenderTrustHub',
         description: buildStateDescription(
           stateMeta.fullName,
           stats.total,
@@ -303,7 +303,7 @@ export function buildHubJsonLd(totalBanks: number, stateCount: number): Record<s
       {
         '@type': 'WebPage',
         '@id': `${SITE_URL}${FDIC_CATEGORY.hubPath}`,
-        name: buildHubTitle(),
+        name: buildHubTitle() + ' | LenderTrustHub',
         description: buildHubDescription(totalBanks),
         url: `${SITE_URL}${FDIC_CATEGORY.hubPath}`,
         inLanguage: 'en-US',

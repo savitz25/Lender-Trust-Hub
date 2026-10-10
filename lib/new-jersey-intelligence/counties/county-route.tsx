@@ -22,7 +22,7 @@ export function generateNjCountyMetadata(slug: NjCountySlug): Metadata {
       : { index: false, follow: false, googleBot: { index: false, follow: false } },
     alternates: { canonical: url },
     openGraph: {
-      title: gate.title,
+      title: gate.socialTitle,
       description: gate.description,
       url,
     },

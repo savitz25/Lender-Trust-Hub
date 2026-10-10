@@ -7,7 +7,7 @@ import { WEST_VIRGINIA_LENDER_SNAPSHOT as s } from "@/lib/west-virginia-intellig
 const fmt = (n: number) => n.toLocaleString("en-US");
 
 export const metadata: Metadata = {
-  title: "West Virginia licensed mortgage companies | LenderTrustHub",
+  title: "West Virginia licensed mortgage companies",
   description:
     "The West Virginia Division of Financial Institutions FY2025 annual report lists licensed mortgage companies. That named list is not loan originators, branches, examinations, or HMDA.",
   alternates: { canonical: `${SITE_URL}/west-virginia` },

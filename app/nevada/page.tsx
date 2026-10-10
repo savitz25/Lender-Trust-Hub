@@ -23,7 +23,7 @@ export function generateMetadata(): Metadata {
     robots,
     alternates: { canonical: url },
     openGraph: {
-      title: NEVADA_INTELLIGENCE_GATE.title,
+      title: NEVADA_INTELLIGENCE_GATE.socialTitle,
       description: NEVADA_INTELLIGENCE_GATE.description,
       url,
     },

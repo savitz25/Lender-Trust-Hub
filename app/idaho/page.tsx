@@ -7,7 +7,7 @@ import { IDAHO_LENDER_SNAPSHOT as id } from "@/lib/idaho-intelligence/snapshot";
 const fmt = (n: number) => n.toLocaleString("en-US");
 
 export const metadata: Metadata = {
-  title: "Idaho Mortgage License Lines and HMDA Slice | LenderTrustHub",
+  title: "Idaho Mortgage License Lines and HMDA Slice",
   description:
     "Idaho Department of Finance fiscal year 2025: 2,584 mortgage broker, lender, and servicing licenses and 8,641 mortgage loan originator licensees. Credit Code regulated lenders, collection-agency classes, banks, credit unions, and the owned HMDA slice stay separate.",
   alternates: { canonical: `${SITE_URL}/idaho` },

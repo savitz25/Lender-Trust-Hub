@@ -7,7 +7,7 @@ import { NEBRASKA_LENDER_SNAPSHOT as s } from "@/lib/nebraska-intelligence/snaps
 const fmt = (n: number) => n.toLocaleString("en-US");
 
 export const metadata: Metadata = {
-  title: "Nebraska Mortgage Banker Licenses and Separate Market Evidence | LenderTrustHub",
+  title: "Nebraska Mortgage Banker Licenses and Separate Market Evidence",
   description:
     "Nebraska Department of Banking and Finance reported 499 mortgage banker company licenses as of June 30, 2024. That count is not brokers, branches, loan originators, or HMDA.",
   alternates: { canonical: `${SITE_URL}/nebraska` },
