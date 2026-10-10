@@ -733,7 +733,10 @@ export function upsertSavedLender(
   if (!plan) {
     plan = ensureActivePlan({ label: 'My financing research' });
     Object.assign(state, loadState());
-    plan = getActivePlan(state)!;
+    plan = getActivePlan(state);
+    if (!plan) {
+      return { ok: false, error: getLastSaveError() ?? 'Could not save My Lending on this device.' };
+    }
   }
 
   const profilePath = input.profilePath || `/lenders/${input.lenderSlug}`;
@@ -868,7 +871,11 @@ export function saveAsResearching(input: UpsertSavedLenderInput): UpsertSavedLen
   return upsertSavedLender({ ...input, status: 'researching', shortlistPolicy: 'block' });
 }
 
-export function removeSavedLender(lenderSlug: string, planId?: string): void {
+export type RemoveSavedLenderResult =
+  | { ok: true; removed: boolean }
+  | { ok: false; removed: false; error: string };
+
+export function removeSavedLender(lenderSlug: string, planId?: string): RemoveSavedLenderResult {
   const state = loadState();
   const plan = planId
     ? state.plans.find((p) => p.id === planId)
@@ -878,7 +885,7 @@ export function removeSavedLender(lenderSlug: string, planId?: string): void {
       l.lenderSlug === lenderSlug &&
       (!plan || l.planId === plan.id || plan.savedLenderIds.includes(l.id))
   );
-  if (toRemove.length === 0) return;
+  if (toRemove.length === 0) return { ok: true, removed: false };
   const removeIds = new Set(toRemove.map((l) => l.id));
   state.savedLenders = state.savedLenders.filter((l) => !removeIds.has(l.id));
   const ts = nowIso();
@@ -887,7 +894,8 @@ export function removeSavedLender(lenderSlug: string, planId?: string): void {
     savedLenderIds: p.savedLenderIds.filter((id) => !removeIds.has(id)),
     updatedAt: ts,
   }));
-  saveState(state);
+  const result = saveState(state);
+  return result.ok ? { ok: true, removed: true } : { ...result, removed: false };
 }
 
 export function updateSavedLenderStatus(

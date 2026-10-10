@@ -1,0 +1,31 @@
+name: My Lending Save and retry
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  save-retry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Save, persistence, result semantics and existing handoff contracts
+        run: npm run test:my-lending
+      - name: Install isolated browser test tooling
+        run: |
+          npm install --prefix "$RUNNER_TEMP/lender-browser-tools" --no-save --package-lock=false --ignore-scripts playwright-core@1.49.1
+          node "$RUNNER_TEMP/lender-browser-tools/node_modules/playwright-core/cli.js" install --with-deps chromium
+      - name: Real Save control with local storage and mocked handoff transport
+        env:
+          LENDER_BROWSER_TOOLS: ${{ runner.temp }}/lender-browser-tools
+        run: node --test tests/my-lending/save-button.browser.test.mjs
