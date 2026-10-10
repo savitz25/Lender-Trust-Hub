@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -32,12 +33,18 @@ export function generateMetadata(): Metadata {
 export default async function CaliforniaIntelligencePage() {
   const loaded = await loadCaliforniaIntelligence();
   if (loaded.status !== 'ok') {
-    return <CaliforniaStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <CaliforniaStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="california" stateName="California" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildCaliforniaIntelligenceJsonLd(loaded.snapshot)} />
       <CaliforniaStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="california" stateName="California" />
     </>
   );
 }

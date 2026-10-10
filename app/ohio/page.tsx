@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -32,12 +33,18 @@ export function generateMetadata(): Metadata {
 export default async function OhioIntelligencePage() {
   const loaded = await loadOhioIntelligence();
   if (loaded.status !== 'ok') {
-    return <OhioStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <OhioStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="ohio" stateName="Ohio" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildOhioIntelligenceJsonLd(loaded.snapshot)} />
       <OhioStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="ohio" stateName="Ohio" />
     </>
   );
 }

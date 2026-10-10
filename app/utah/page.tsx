@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/directory/categories";
@@ -160,6 +161,7 @@ export default function UtahLenderPage() {
           </Link>
         </p>
       </section>
+      <StateCountyLinks stateSlug="utah" stateName="Utah" />
     </main>
   );
 }

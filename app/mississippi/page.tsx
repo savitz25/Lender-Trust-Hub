@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from "next";
 import { MS_BANK_FACILITIES, MS_CONSUMER_EXAMS, MISSISSIPPI_SNAPSHOT as ms } from "@/lib/mississippi-intelligence/snapshot";
 import { SITE_URL } from "@/lib/directory/categories";
@@ -65,5 +66,6 @@ export default function MississippiLenderPage() {
     <section className="mt-12" id="clocks"><h2 className="text-2xl font-semibold">Source clocks and limits</h2>
       <p className="mt-3 text-sm text-slate-600">License and bank clocks {lic.clock}. Examination and penalty clocks {exams.clock}. Report retrieved {ms.retrievedAt}. Report SHA-256 {ms.sources.annualReportSha256}. {ms.sources.annualReportBytes.toLocaleString("en-US")} bytes. HMDA vintage {ms.hmda.year}. Page data generated {ms.generatedAt}. No universal Mississippi as-of date. Net-new canonical organizations {ms.newCanonicalOrganizations}. Graph writes {ms.graphWrites}. Claim eligibility changes {ms.claimEligibilityChanges}. Jackson, Gulfport, and Biloxi are geography only. This page publishes no city or county route. Confirm a current mortgage license on <a className="underline" href={ms.sources.mortgagePage}>the DBCF mortgage page</a> and in NMLS Consumer Access.</p>
     </section>
+    <StateCountyLinks stateSlug="mississippi" stateName="Mississippi" />
   </main>;
 }

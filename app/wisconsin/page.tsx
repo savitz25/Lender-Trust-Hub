@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { WISCONSIN_SNAPSHOT as wi } from '@/lib/wisconsin-intelligence/snapshot';
 import { SITE_URL } from '@/lib/directory/categories';
@@ -41,5 +42,6 @@ export default function WisconsinPage() {
     </section>
 
     <section className="mt-12" id="complaints"><h2 className="text-2xl font-semibold">Complaints and source clocks</h2><p className="mt-3 text-slate-700"><a className="underline" href={wi.sources.complaints}>DFI accepts mortgage banking complaints</a> online, by email or by mail and may investigate alleged violations. Public provider-level complaint rows were NOT_ACQUIRED; outcomes are REQUEST_ONLY/NOT_ACQUIRED. A complaint is not an enforcement finding.</p><p className="mt-3 text-sm text-slate-600">License and NMLS verification pages retrieved {wi.retrievedAt}; no roster source clock. HMDA vintage {wi.hmda.year}; selected DFI announcement dates appear above and were reviewed {wi.enforcement.retrievedAt}; page data generated {wi.generatedAt}. No universal Wisconsin as-of date. Net-new canonical organizations 0; graph writes 0; claim eligibility changes 0. Milwaukee, Madison, Green Bay and Kenosha are geographic context only; no city intelligence pages.</p></section>
+    <StateCountyLinks stateSlug="wisconsin" stateName="Wisconsin" />
   </main>;
 }

@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/directory/categories";
 import {
@@ -105,6 +106,7 @@ export default function GeorgiaLenderPage() {
       <p className="mt-3 text-sm leading-relaxed text-zinc-700">
         Installment lenders, money transmitters, and check cashers are DBF classes. They are not added to the mortgage company population in this sprint. County deeds, foreclosures, UCC filings, and corporate-officer graphs are not part of this page.
       </p>
+      <StateCountyLinks stateSlug="georgia" stateName="Georgia" />
     </main>
   );
 }

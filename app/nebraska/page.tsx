@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/directory/categories";
@@ -97,6 +98,7 @@ export default function NebraskaLenderPage() {
           <Link className="underline" href="/ask?q=Nebraska%20mortgage%20banker%20licenses">Ask about Nebraska mortgage evidence</Link>
         </p>
       </section>
+      <StateCountyLinks stateSlug="nebraska" stateName="Nebraska" />
     </main>
   );
 }

@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from "next";
 import { AR_COMPANY_LICENSES, AR_MLO_STATUSES, ARKANSAS_SNAPSHOT as ar } from "@/lib/arkansas-intelligence/snapshot";
 import { SITE_URL } from "@/lib/directory/categories";
@@ -57,5 +58,6 @@ export default function ArkansasLenderPage() {
     <section className="mt-12" id="clocks"><h2 className="text-2xl font-semibold">Source clocks and limits</h2>
       <p className="mt-3 text-sm text-slate-600">Department page label {ar.sources.pageLabel}. Workbook last modified {ar.sources.workbookLastModified}. Page dateModified {ar.sources.pageModified}. Retrieved {ar.retrievedAt}. Workbook SHA-256 {ar.sources.workbookSha256}. {fmt(ar.sources.workbookBytes)} bytes. HMDA vintage {ar.hmda.year}. The published application count is the accepted jurisdiction aggregate. The county file was not re-downloaded and was not substituted for that aggregate. Page data generated {ar.generatedAt}. The September 1 page label and the September 29 file clock are both kept. No single clock covers licenses and HMDA. Net-new canonical organizations {ar.newCanonicalOrganizations}. Graph writes {ar.graphWrites}. Claim eligibility changes {ar.claimEligibilityChanges}. Little Rock, Fayetteville, and Fort Smith are geography only. This page publishes no city or county route.</p>
     </section>
+    <StateCountyLinks stateSlug="arkansas" stateName="Arkansas" />
   </main>;
 }

@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -32,12 +33,18 @@ export function generateMetadata(): Metadata {
 export default async function VirginiaIntelligencePage() {
   const loaded = await loadVirginiaIntelligence();
   if (loaded.status !== 'ok') {
-    return <VirginiaStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <VirginiaStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="virginia" stateName="Virginia" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildVirginiaIntelligenceJsonLd(loaded.snapshot)} />
       <VirginiaStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="virginia" stateName="Virginia" />
     </>
   );
 }

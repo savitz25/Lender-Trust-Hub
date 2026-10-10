@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -32,12 +33,18 @@ export function generateMetadata(): Metadata {
 export default async function MinnesotaIntelligencePage() {
   const loaded = await loadMinnesotaIntelligence();
   if (loaded.status !== 'ok') {
-    return <MinnesotaStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <MinnesotaStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="minnesota" stateName="Minnesota" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildMinnesotaIntelligenceJsonLd(loaded.snapshot)} />
       <MinnesotaStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="minnesota" stateName="Minnesota" />
     </>
   );
 }

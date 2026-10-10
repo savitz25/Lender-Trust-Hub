@@ -478,6 +478,7 @@ export const LENDER_FOOTER_COLUMNS = [
     title: 'Research',
     links: [
       { href: '/local-lenders', label: 'Local Lenders' },
+      { href: '/states', label: 'All states' },
       { href: '/florida', label: 'Florida Research' },
       { href: '/new-jersey', label: 'New Jersey Research' },
       { href: '/california', label: 'California Research' },

@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -32,12 +33,18 @@ export function generateMetadata(): Metadata {
 export default async function NewJerseyIntelligencePage() {
   const loaded = await loadNewJerseyIntelligence();
   if (loaded.status !== 'ok') {
-    return <NewJerseyStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <NewJerseyStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="new-jersey" stateName="New Jersey" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildNewJerseyIntelligenceJsonLd(loaded.snapshot)} />
       <NewJerseyStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="new-jersey" stateName="New Jersey" />
     </>
   );
 }

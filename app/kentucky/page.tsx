@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { KENTUCKY_SNAPSHOT as ky } from '@/lib/kentucky-intelligence/snapshot';
 import { SITE_URL } from '@/lib/directory/categories';
@@ -61,5 +62,6 @@ export default function KentuckyPage() {
     <section className="mt-12" id="clocks"><h2 className="text-2xl font-semibold">Source clocks and limits</h2>
       <p className="mt-3 text-sm text-slate-600">License, examination, complaint, and depository clocks {lic.clock}. Report retrieved {ky.retrievedAt}. Report SHA-256 {ky.sources.annualReportSha256}. Mortgage order index retrieved {orders.indexRetrievedAt}. HMDA vintage {ky.hmda.year}. Page data generated {ky.generatedAt}. No universal Kentucky as-of date. Net-new canonical organizations {ky.newCanonicalOrganizations}; graph writes {ky.graphWrites}; claim eligibility changes {ky.claimEligibilityChanges}. Louisville and Lexington are geographic context. This page does not add a city route. County HMDA pages that already exist under local lender geography stay HMDA geography.</p>
     </section>
+    <StateCountyLinks stateSlug="kentucky" stateName="Kentucky" />
   </main>;
 }

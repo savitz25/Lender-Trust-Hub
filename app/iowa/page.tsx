@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import { SITE_URL } from '@/lib/directory/categories';
@@ -28,5 +29,6 @@ export default function IowaLenderPage() {
       <h2 className="text-xl font-semibold text-slate-950">Orders and limits</h2>
       <p>Enforcement orders, complaints and examinations require their own case records and exact identity bridge; they are NOT_ACQUIRED as Iowa attachments. A complaint is not a finding. Existing canonical matches and net-new entities: NOT_ACQUIRED. Graph writes and record-level evidence attachments from this publication: 0. No city or county work.</p>
     </section>
+    <StateCountyLinks stateSlug="iowa" stateName="Iowa" />
   </main>;
 }

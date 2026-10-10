@@ -115,6 +115,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/nebraska', priority: 0.88, changeFrequency: 'weekly' },
     { path: '/idaho', priority: 0.88, changeFrequency: 'weekly' },
     { path: '/west-virginia', priority: 0.88, changeFrequency: 'weekly' },
+    { path: '/iowa', priority: 0.88, changeFrequency: 'weekly' },
+    { path: '/kansas', priority: 0.88, changeFrequency: 'weekly' },
     // NJ-LEND-COUNTY-001 indexed county research:
     // /new-jersey/monmouth-county
     // /new-jersey/middlesex-county
@@ -126,6 +128,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
     })),
     { path: '/local-lenders', priority: 0.95, changeFrequency: 'weekly' },
+    { path: '/states', priority: 0.86, changeFrequency: 'weekly' },
     { path: '/tools/loan-estimate-analyzer', priority: 0.92, changeFrequency: 'weekly' },
     { path: '/tools/compare-loan-estimates', priority: 0.92, changeFrequency: 'weekly' },
     { path: '/tools/program-finder', priority: 0.9, changeFrequency: 'weekly' },

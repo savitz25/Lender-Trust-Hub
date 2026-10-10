@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { LOUISIANA_SNAPSHOT as la } from '@/lib/louisiana-intelligence/snapshot';
 import { SITE_URL } from '@/lib/directory/categories';
@@ -42,5 +43,6 @@ export default function LouisianaPage() {
       <p className="mt-3 text-slate-700"><a className="underline" href={la.sources.complaints}>OFI accepts written residential mortgage complaints</a> for lenders, brokers, and originators by mail or fax. Intake is known. Public provider-level complaint rows were NOT_ACQUIRED; outcomes are REQUEST_ONLY/NOT_ACQUIRED. A complaint is not an enforcement finding.</p>
       <p className="mt-3 text-sm text-slate-600">Originator-under-lender table clock {la.licensing.originatorUnderLenderClock}; pages retrieved {la.retrievedAt}. HMDA vintage {la.hmda.year}. Enforcement corpus NOT_ACQUIRED. Page data generated {la.generatedAt}. No universal Louisiana as-of date. Net-new canonical organizations 0; graph writes {la.graphWrites}; claim eligibility changes 0. New Orleans, Baton Rouge, Shreveport, and Lafayette are geographic context only; no parish or city intelligence pages.</p>
     </section>
+    <StateCountyLinks stateSlug="louisiana" stateName="Louisiana" />
   </main>;
 }

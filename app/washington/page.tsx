@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -32,12 +33,18 @@ export function generateMetadata(): Metadata {
 export default async function WashingtonIntelligencePage() {
   const loaded = await loadWashingtonIntelligence();
   if (loaded.status !== 'ok') {
-    return <WashingtonStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <WashingtonStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="washington" stateName="Washington" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildWashingtonIntelligenceJsonLd(loaded.snapshot)} />
       <WashingtonStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="washington" stateName="Washington" />
     </>
   );
 }

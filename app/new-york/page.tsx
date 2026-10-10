@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -32,12 +33,18 @@ export function generateMetadata(): Metadata {
 export default async function NewYorkIntelligencePage() {
   const loaded = await loadNewYorkIntelligence();
   if (loaded.status !== 'ok') {
-    return <NewYorkStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <NewYorkStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="new-york" stateName="New York" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildNewYorkIntelligenceJsonLd(loaded.snapshot)} />
       <NewYorkStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="new-york" stateName="New York" />
     </>
   );
 }

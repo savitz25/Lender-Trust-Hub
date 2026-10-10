@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -32,12 +33,18 @@ export function generateMetadata(): Metadata {
 export default async function PennsylvaniaIntelligencePage() {
   const loaded = await loadPennsylvaniaIntelligence();
   if (loaded.status !== 'ok') {
-    return <PennsylvaniaStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <PennsylvaniaStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="pennsylvania" stateName="Pennsylvania" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildPennsylvaniaIntelligenceJsonLd(loaded.snapshot)} />
       <PennsylvaniaStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="pennsylvania" stateName="Pennsylvania" />
     </>
   );
 }

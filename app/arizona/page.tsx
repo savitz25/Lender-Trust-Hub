@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/mortgage/state-county-links';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/directory/JsonLd';
 import {
@@ -32,12 +33,18 @@ export function generateMetadata(): Metadata {
 export default async function ArizonaIntelligencePage() {
   const loaded = await loadArizonaIntelligence();
   if (loaded.status !== 'ok') {
-    return <ArizonaStateIntelligenceUnavailable reason={loaded.reason} />;
+    return (
+      <>
+        <ArizonaStateIntelligenceUnavailable reason={loaded.reason} />
+        <StateCountyLinks stateSlug="arizona" stateName="Arizona" />
+      </>
+    );
   }
   return (
     <>
       <JsonLd data={buildArizonaIntelligenceJsonLd(loaded.snapshot)} />
       <ArizonaStateIntelligence snapshot={loaded.snapshot} />
+      <StateCountyLinks stateSlug="arizona" stateName="Arizona" />
     </>
   );
 }
