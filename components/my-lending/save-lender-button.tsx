@@ -101,13 +101,22 @@ export function SaveLenderButton({
   }, []);
 
   useEffect(() => {
+    const restoreFromCache = (event: PageTransitionEvent) => {
+      if (!event.persisted) return;
+      handoffRequest.current?.abort();
+      handoffRequest.current = null;
+      setKeepOpen(false);
+      sync();
+    };
     const initialize = window.setTimeout(sync, 0);
     window.addEventListener('lth-my-lending-store', sync);
     window.addEventListener('storage', sync);
+    window.addEventListener('pageshow', restoreFromCache);
     return () => {
       window.clearTimeout(initialize);
       window.removeEventListener('lth-my-lending-store', sync);
       window.removeEventListener('storage', sync);
+      window.removeEventListener('pageshow', restoreFromCache);
       handoffRequest.current?.abort();
       handoffRequest.current = null;
     };

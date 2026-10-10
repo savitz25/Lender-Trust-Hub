@@ -206,6 +206,7 @@ test('a submitted handoff stays guarded while navigation is pending', async () =
   // The form-submit fixture holds navigation open after successful submission.
   await page.waitForFunction(() => window.submittedIntents.length === 1);
   await page.clock.fastForward(20_000);
+  await page.evaluate(() => window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: false })));
   assert.equal(await page.locator('button[aria-pressed]').isDisabled(), true);
   assert.equal(await page.getByRole('status').textContent(), 'Keep this page open');
   assert.equal(await page.getByRole('link', { name: 'Sign in to My TrustHub', exact: true }).getAttribute('aria-disabled'), 'true');
@@ -222,6 +223,53 @@ test('a submitted handoff stays guarded while navigation is pending', async () =
   assert.equal(await page.getByRole('alert').count(), 0);
   await page.evaluate(() => window.fixture.unmount());
   assert.equal(await page.locator('#root').textContent(), '');
+});
+
+test('cached pageshow unlocks a submitted handoff and refreshes device state without replay', async () => {
+  await open(true); await save();
+  await page.waitForFunction(() => window.submittedIntents.length === 1);
+  assert.equal(await page.locator('button[aria-pressed]').isDisabled(), true);
+  await page.evaluate(() => {
+    document.querySelector('button[aria-pressed]').click();
+    document.querySelector('a').click();
+  });
+  assert.deepEqual(posts, ['save']);
+  const sentTicket = await page.evaluate(() => JSON.stringify(sessionStorage));
+  // Simulate device persistence changing while this page was cached, without
+  // emitting a storage event that would refresh the control before pageshow.
+  await page.evaluate(() => {
+    const state = window.fixture.storage.loadState();
+    state.savedLenders = [];
+    localStorage.setItem('lth:my-lending:v1', JSON.stringify(state));
+  });
+  assert.equal(await page.locator('button[aria-pressed]').getAttribute('aria-pressed'), 'true');
+  await page.evaluate(() => window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true })));
+  await page.waitForFunction(() => {
+    const button = document.querySelector('button[aria-pressed]');
+    return button && !button.disabled && button.getAttribute('aria-pressed') === 'false';
+  });
+  assert.equal(await page.getByText('Keep this page open', { exact: true }).count(), 0);
+  assert.equal(await page.getByRole('link', { name: 'Sign in to My TrustHub', exact: true }).getAttribute('aria-disabled'), 'false');
+  assert.equal(await count(), 0);
+  assert.deepEqual(posts, ['save']);
+  assert.deepEqual(await page.evaluate(() => window.submittedIntents), ['save_signin']);
+  assert.equal(await page.evaluate(() => JSON.stringify(sessionStorage)), sentTicket);
+  // A new explicit action works without reloading the page.
+  await save();
+  await page.waitForFunction(() => window.submittedIntents.length === 2);
+  assert.deepEqual(posts, ['save', 'save']);
+  assert.equal(await count(), 1);
+  assert.equal(await page.locator('button[aria-pressed]').isDisabled(), true);
+  await page.evaluate(() => window.fixture.unmount());
+  const readsAfterCleanup = await page.evaluate(() => {
+    let reads = 0;
+    const getItem = Storage.prototype.getItem;
+    Storage.prototype.getItem = function (key) { reads++; return getItem.call(this, key); };
+    window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true }));
+    Storage.prototype.getItem = getItem;
+    return reads;
+  });
+  assert.equal(readsAfterCleanup, 0, 'Unmount removes the pageshow storage refresh listener');
 });
 
 test('shortlist alternative storage failure shows no success toast and preserves existing research', async () => {
