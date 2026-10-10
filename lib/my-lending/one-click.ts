@@ -16,7 +16,6 @@ import type { Lender } from '../mockData';
 import {
   deviceFirstProfileSave,
   deviceFirstProfileUnsave,
-  listPendingParentOps,
   type DeviceProfileSaveResult,
 } from './parent-adapter';
 
@@ -188,10 +187,10 @@ type BindingDenyReason = Extract<BindingDecision, { eligible: false }>['reason']
 export type ClickSaveResult = {
   device: DeviceProfileSaveResult['device'];
   parent: 'off' | 'saved' | 'already_saved' | 'denied';
-  denyReason?: PublicationDenyReason | BindingDenyReason | 'sync_off' | 'signed_out' | 'page_closed';
+  denyReason?: PublicationDenyReason | BindingDenyReason | 'sync_off' | 'signed_out' | 'page_closed' | 'device_save_blocked';
   watchCreated: false;
   message: string;
-  pending: true;
+  pending: false;
 };
 
 const parents = new Map<string, ParentResearchRow>();
@@ -232,10 +231,10 @@ export function clickProfileSave(input: {
   const base = {
     device,
     watchCreated: false as const,
-    pending: true as const,
+    pending: false as const,
   };
   if (!device.ok) {
-    return { ...base, parent: 'denied', denyReason: 'sync_off', message: 'Saved on this device' };
+    return { ...base, parent: 'denied', denyReason: 'device_save_blocked', message: device.error };
   }
   if (!input.signedIn) {
     return { ...base, parent: 'off', denyReason: 'signed_out', message: message('off', false) };
@@ -274,16 +273,18 @@ export function clickProfileUnsave(input: {
   nmlsId?: string | null;
   gate?: OneClickGate;
   signedIn: boolean;
-}): { removed: boolean; parentRemoved: boolean; watchCreated: false } {
+}): { removed: boolean; parentRemoved: boolean; watchCreated: false; error?: string } {
   const gate = input.gate ?? productionParentGate();
-  const removed = deviceFirstProfileUnsave({ lenderSlug: input.lenderSlug, nmlsId: input.nmlsId }).removed;
+  const device = deviceFirstProfileUnsave({ lenderSlug: input.lenderSlug, nmlsId: input.nmlsId });
+  if (device.error) return { removed: false, parentRemoved: false, watchCreated: false, error: device.error };
+  const removed = device.removed;
   const nativeId = lenderNativeId(input.nmlsId ?? '');
   const allowed = input.signedIn && nativeId && canaryAllows(input.lenderSlug, gate);
   const parentRemoved = Boolean(allowed && nativeId && parents.delete(nativeId));
   return { removed, parentRemoved, watchCreated: false };
 }
 
-/** After My TrustHub sign-in, one pending device Save is enough. No second click. */
+/** In-memory compatibility helper: re-evaluate Save after sign-in, not a queue consumer. */
 export function completePendingAfterSignIn(input: {
   lenderSlug: string;
   lenderName: string;
@@ -293,9 +294,5 @@ export function completePendingAfterSignIn(input: {
   pageOpen: boolean;
   gate?: OneClickGate;
 }): ClickSaveResult {
-  const pending = listPendingParentOps().some((row) => row.returnPath === `/lenders/${input.lenderSlug}` && row.action === 'save');
-  if (!pending) {
-    return clickProfileSave({ ...input, signedIn: true, profileClass: LENDER_PROFILE_CLASS });
-  }
   return clickProfileSave({ ...input, signedIn: true, profileClass: LENDER_PROFILE_CLASS });
 }

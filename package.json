@@ -4,6 +4,7 @@
   "description": "LenderTrustHub.com \u2014 Independent directory of verified mortgage lenders with interactive calculators",
   "private": true,
   "scripts": {
+    "test:my-lending": "tsx --test lib/my-lending/*.test.ts",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",

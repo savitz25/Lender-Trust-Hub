@@ -41,14 +41,16 @@ export type ParentPrepAck =
       ok: true;
       action: 'save' | 'unsave';
       identity: MarketplaceSaveIdentity;
-      pendingSync: true;
+      localQueued: true;
+      pendingSync: false;
       acknowledged: 'save' | 'unsave';
       watchCreated: false;
       parentSync: 'off';
     }
   | {
       ok: false;
-      reason: 'identity_unresolved' | 'device_save_blocked' | 'not_saved';
+      reason: 'identity_unresolved' | 'device_save_blocked' | 'device_remove_blocked' | 'pending_storage_blocked' | 'not_saved';
+      localQueued: false;
       pendingSync: false;
       watchCreated: false;
       parentSync: 'off';
@@ -73,14 +75,16 @@ export type DeviceProfileSaveResult = {
 
 export type DeviceProfileUnsaveResult = {
   removed: boolean;
+  error?: string;
   parent: ParentPrepAck;
   watchCreated: false;
 };
 
-function closed(reason: 'identity_unresolved' | 'device_save_blocked' | 'not_saved'): ParentPrepAck {
+function closed(reason: Extract<ParentPrepAck, { ok: false }>['reason']): ParentPrepAck {
   return {
     ok: false,
     reason,
+    localQueued: false,
     pendingSync: false,
     watchCreated: false,
     parentSync: 'off',
@@ -127,10 +131,15 @@ function readPending(): PendingParentOp[] {
   }
 }
 
-function writePending(rows: PendingParentOp[]): void {
-  if (typeof window === 'undefined') return;
-  if (PRODUCTION_PARENT_SYNC) return;
-  localStorage.setItem(PARENT_PENDING_KEY, JSON.stringify(rows));
+function writePending(rows: PendingParentOp[]): boolean {
+  if (typeof window === 'undefined') return false;
+  if (PRODUCTION_PARENT_SYNC) return false;
+  try {
+    localStorage.setItem(PARENT_PENDING_KEY, JSON.stringify(rows));
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 export function listPendingParentOps(): PendingParentOp[] {
@@ -151,12 +160,13 @@ function queuePending(identity: MarketplaceSaveIdentity, action: 'save' | 'unsav
     at: new Date().toISOString(),
   };
   next.push(op);
-  writePending(next);
+  if (!writePending(next)) return closed('pending_storage_blocked');
   return {
     ok: true,
     action,
     identity,
-    pendingSync: true,
+    localQueued: true,
+    pendingSync: false,
     acknowledged: action,
     watchCreated: false,
     parentSync: 'off',
@@ -201,7 +211,13 @@ export function deviceFirstProfileUnsave(input: {
   if (!saved) {
     return { removed: false, parent: closed('not_saved'), watchCreated: false };
   }
-  removeSavedLender(input.lenderSlug);
+  const result = removeSavedLender(input.lenderSlug);
+  if (!result.ok) {
+    return { removed: false, error: result.error, parent: closed('device_remove_blocked'), watchCreated: false };
+  }
+  if (!result.removed) {
+    return { removed: false, parent: closed('not_saved'), watchCreated: false };
+  }
   const identity = resolveMarketplaceSaveIdentity(input);
   if (!identity) {
     return { removed: true, parent: closed('identity_unresolved'), watchCreated: false };

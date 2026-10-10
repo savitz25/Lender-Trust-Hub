@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ShortlistFullPanel } from '@/components/my-lending/shortlist-full-panel';
 import { WorkspaceSaveToast } from '@/components/my-lending/workspace-save-toast';
@@ -66,6 +66,16 @@ export function SaveLenderButton({
   const [fullPanel, setFullPanel] = useState<SavedLender[] | null>(null);
   const [keepOpen, setKeepOpen] = useState(false);
   const [releaseAdmitted, setReleaseAdmitted] = useState(false);
+  const [retryIntent, setRetryIntent] = useState<HandoffIntent | null>(null);
+  const handoffRequest = useRef<AbortController | null>(null);
+
+  const reportHandoffFailure = useCallback((intent: HandoffIntent) => {
+    setToast(null);
+    setRetryIntent(intent);
+    setError(intent === 'unsave'
+      ? 'Removal from My TrustHub is not confirmed. Retry removal; your research on this device is unchanged.'
+      : 'We could not continue to My TrustHub. Retry to continue; your research on this device is unchanged.');
+  }, []);
 
   const sync = useCallback(() => {
     setSaved(isLenderSaved(lenderSlug));
@@ -98,6 +108,8 @@ export function SaveLenderButton({
       window.clearTimeout(initialize);
       window.removeEventListener('lth-my-lending-store', sync);
       window.removeEventListener('storage', sync);
+      handoffRequest.current?.abort();
+      handoffRequest.current = null;
     };
   }, [sync]);
 
@@ -120,9 +132,22 @@ export function SaveLenderButton({
 
   useEffect(() => {
     if (!parentHandoff || !releaseAdmitted) return;
-    const ticket = readHandoff(sessionStorage, lenderSlug, Date.now());
-    if (resumeDecision(ticket, document.visibilityState) === 'submit' && ticket) submitTicket(ticket);
-  }, [parentHandoff, releaseAdmitted, lenderSlug, submitTicket]);
+    let cancelled = false;
+    queueMicrotask(() => {
+      if (cancelled) return;
+      let ticket: StoredHandoff | null = null;
+      try {
+        ticket = readHandoff(sessionStorage, lenderSlug, Date.now());
+        if (resumeDecision(ticket, document.visibilityState) === 'submit' && ticket && !submitTicket(ticket)) {
+          reportHandoffFailure(ticket.intent);
+        }
+      } catch {
+        if (ticket) reportHandoffFailure(ticket.intent);
+        else setError('Could not resume My TrustHub. Try your Save or Unsave again.');
+      }
+    });
+    return () => { cancelled = true; };
+  }, [parentHandoff, releaseAdmitted, lenderSlug, submitTicket, reportHandoffFailure]);
 
   const payload = {
     lenderSlug,
@@ -139,18 +164,32 @@ export function SaveLenderButton({
   }
 
   async function beginHandoff(intent: HandoffIntent): Promise<boolean> {
-    if (!parentHandoff || !releaseAdmitted || pageHidden()) return false;
+    if (!parentHandoff || !releaseAdmitted || handoffRequest.current) return false;
+    if (pageHidden()) {
+      reportHandoffFailure(intent);
+      return false;
+    }
+    const controller = new AbortController();
+    handoffRequest.current = controller;
+    const timeout = window.setTimeout(() => controller.abort(), 15_000);
+    setError(null);
+    setRetryIntent(null);
     setKeepOpen(true);
     try {
       const response = await fetch('/api/my-lending/profile-save', {
         method: 'POST',
+        signal: controller.signal,
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ slug: lenderSlug, intent, pageOpen: true }),
       });
+      if (!response.ok) throw new Error('Handoff unavailable');
       const body = await response.json() as { state?: string; target?: string; continuationRef?: string; intent?: string };
-      if (body.state !== 'continue' || !body.target || !body.continuationRef || !body.intent) return false;
+      if (handoffRequest.current !== controller) return false;
+      if (controller.signal.aborted || body.state !== 'continue' || !body.target || !body.continuationRef || !body.intent) {
+        throw new Error('Handoff unavailable');
+      }
       const form = handoffForm(body.target, body.continuationRef, body.intent);
-      if (!form) return false;
+      if (!form) throw new Error('Handoff unavailable');
       const ticket: StoredHandoff = {
         slug: lenderSlug,
         target: form.action,
@@ -160,17 +199,25 @@ export function SaveLenderButton({
         expiresAt: Date.now() + 600_000,
       };
       rememberHandoff(sessionStorage, ticket);
-      if (pageHidden()) return false;
-      return submitTicket(ticket);
+      if (!submitTicket(ticket)) throw new Error('Handoff unavailable');
+      return true;
     } catch {
+      if (handoffRequest.current === controller) reportHandoffFailure(intent);
       return false;
     } finally {
-      setKeepOpen(false);
+      window.clearTimeout(timeout);
+      if (handoffRequest.current === controller) {
+        handoffRequest.current = null;
+        setKeepOpen(false);
+      }
     }
   }
 
   function onSave() {
+    if (handoffRequest.current) return;
+    setToast(null);
     setError(null);
+    setRetryIntent(null);
     const res = deviceFirstProfileSave({ ...payload, status: defaultStatus });
     if (!res.device.ok) {
       if (res.device.reason === 'shortlist_full' && res.device.shortlisted) {
@@ -188,14 +235,24 @@ export function SaveLenderButton({
     showToast(
       res.device.alreadySaved
         ? 'Already saved on this device'
-        : 'Saved on this device. Sign in to My TrustHub to sync this lender.',
+        : 'Saved on this device',
     );
     if (parentHandoff) void beginHandoff('save');
   }
 
   function onUnsave() {
+    if (handoffRequest.current) return;
+    setToast(null);
     setError(null);
-    deviceFirstProfileUnsave({ lenderSlug, nmlsId });
+    setRetryIntent(null);
+    const result = deviceFirstProfileUnsave({ lenderSlug, nmlsId });
+    if (!result.removed) {
+      setError(result.error
+        ? 'Could not remove this lender on this device. Try again.'
+        : 'This lender is not saved on this device.');
+      sync();
+      return;
+    }
     sync();
     showToast('Removed on this device');
     if (parentHandoff) void beginHandoff('unsave');
@@ -208,6 +265,7 @@ export function SaveLenderButton({
         variant={saved ? 'outline' : 'trust'}
         size={size}
         onClick={saved ? onUnsave : onSave}
+        disabled={keepOpen}
         aria-pressed={saved}
         aria-label={profileSaveLabel(saved)}
       >
@@ -217,11 +275,10 @@ export function SaveLenderButton({
         <a
           href={MY_TRUSTHUB_ACCOUNT_ENTRY_HREF}
           className="mt-1 block text-xs font-semibold text-[#0A2540] underline"
+          aria-disabled={keepOpen}
           onClick={(event) => {
             event.preventDefault();
-            void beginHandoff('save_signin').then((left) => {
-              if (!left) window.location.assign(MY_TRUSTHUB_ACCOUNT_ENTRY_HREF);
-            });
+            void beginHandoff('save_signin');
           }}
         >
           Sign in to My TrustHub
@@ -239,9 +296,19 @@ export function SaveLenderButton({
         onDismiss={() => setToast(null)}
       />
       {error && !fullPanel ? (
-        <p className="mt-1 text-xs text-rose-700" role="alert">
-          {error}
-        </p>
+        <div className="mt-1 text-xs text-rose-700" role="alert">
+          <p>{error}</p>
+          {retryIntent ? (
+            <button
+              type="button"
+              className="mt-1 font-semibold underline"
+              disabled={keepOpen}
+              onClick={() => void beginHandoff(retryIntent)}
+            >
+              {retryIntent === 'unsave' ? 'Retry My TrustHub removal' : 'Retry My TrustHub'}
+            </button>
+          ) : null}
+        </div>
       ) : null}
 
       {fullPanel ? (
@@ -251,11 +318,13 @@ export function SaveLenderButton({
           onCancel={() => {
             setFullPanel(null);
             setError(null);
+            setToast(null);
           }}
           onDemoteOldest={() => {
             const res = shortlistWithDemoteOldest({ ...payload, status: 'shortlisted' });
             setFullPanel(null);
             setError(null);
+            setToast(null);
             if (res.ok) {
               acknowledgeDeviceSave(payload, res);
               sync();
@@ -266,6 +335,7 @@ export function SaveLenderButton({
             const res = shortlistReplacing({ ...payload, status: 'shortlisted' }, slug);
             setFullPanel(null);
             setError(null);
+            setToast(null);
             if (res.ok) {
               acknowledgeDeviceSave(payload, res);
               sync();
@@ -276,6 +346,7 @@ export function SaveLenderButton({
             const res = saveAsResearching(payload);
             setFullPanel(null);
             setError(null);
+            setToast(null);
             if (res.ok) {
               acknowledgeDeviceSave(payload, res);
               sync();
