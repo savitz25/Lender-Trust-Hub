@@ -201,6 +201,29 @@ test('a pending handoff blocks duplicate clicks and times out into a retryable e
   assert.equal(await count(), 1);
 });
 
+test('a submitted handoff stays guarded while navigation is pending', async () => {
+  await open(true); await page.clock.install(); await save();
+  // The form-submit fixture holds navigation open after successful submission.
+  await page.waitForFunction(() => window.submittedIntents.length === 1);
+  await page.clock.fastForward(20_000);
+  assert.equal(await page.locator('button[aria-pressed]').isDisabled(), true);
+  assert.equal(await page.getByRole('status').textContent(), 'Keep this page open');
+  assert.equal(await page.getByRole('link', { name: 'Sign in to My TrustHub', exact: true }).getAttribute('aria-disabled'), 'true');
+  await page.evaluate(() => {
+    for (let i = 0; i < 2; i++) {
+      document.querySelector('button[aria-pressed]').click();
+      // Native anchor clicks exercise the ref guard independently of disabled UI.
+      document.querySelector('a').click();
+    }
+  });
+  assert.deepEqual(posts, ['save']);
+  assert.deepEqual(await page.evaluate(() => window.submittedIntents), ['save_signin']);
+  assert.equal(await count(), 1);
+  assert.equal(await page.getByRole('alert').count(), 0);
+  await page.evaluate(() => window.fixture.unmount());
+  assert.equal(await page.locator('#root').textContent(), '');
+});
+
 test('shortlist alternative storage failure shows no success toast and preserves existing research', async () => {
   await open();
   await page.evaluate(() => {

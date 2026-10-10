@@ -171,6 +171,7 @@ export function SaveLenderButton({
     }
     const controller = new AbortController();
     handoffRequest.current = controller;
+    let submitted = false;
     const timeout = window.setTimeout(() => controller.abort(), 15_000);
     setError(null);
     setRetryIntent(null);
@@ -200,13 +201,15 @@ export function SaveLenderButton({
       };
       rememberHandoff(sessionStorage, ticket);
       if (!submitTicket(ticket)) throw new Error('Handoff unavailable');
+      submitted = true;
       return true;
     } catch {
       if (handoffRequest.current === controller) reportHandoffFailure(intent);
       return false;
     } finally {
       window.clearTimeout(timeout);
-      if (handoffRequest.current === controller) {
+      // Successful form submission must stay guarded until navigation/cleanup.
+      if (!submitted && handoffRequest.current === controller) {
         handoffRequest.current = null;
         setKeepOpen(false);
       }
