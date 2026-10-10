@@ -59,7 +59,7 @@ test('every top-level state page renders the county links, including unavailable
   }
 });
 
-test('/states lists every published state and leaves Iowa and Kansas unpublished', () => {
+test('/states lists every published state, including Iowa and Kansas', () => {
   const source = readFileSync(path.join(root, 'app', 'states', 'page.tsx'), 'utf8');
   assert.match(source, /const PATH = '\/states'/);
   assert.match(source, /canonical: `\$\{SITE_URL\}\$\{PATH\}`/);
@@ -67,16 +67,16 @@ test('/states lists every published state and leaves Iowa and Kansas unpublished
   const hrefs = PUBLISHED_STATES.map((state) => state.href).sort();
   assert.deepEqual(hrefs, PUBLISHED_STATEWIDE_SLUGS.map((slug) => `/${slug}`).sort());
   const published = PUBLISHED_STATEWIDE_SLUGS as readonly string[];
-  assert.equal(published.includes('iowa'), false);
-  assert.equal(published.includes('kansas'), false);
+  assert.equal(published.includes('iowa'), true);
+  assert.equal(published.includes('kansas'), true);
 });
 
 test('sitemap and footer expose /states for every published state', () => {
   const paths = sitemap().map((entry) => new URL(entry.url).pathname);
   assert.ok(paths.includes('/states'));
   for (const state of PUBLISHED_STATES) assert.ok(paths.includes(state.href), state.href);
-  assert.ok(!paths.includes('/iowa'));
-  assert.ok(!paths.includes('/kansas'));
+  assert.ok(paths.includes('/iowa'));
+  assert.ok(paths.includes('/kansas'));
   const footer = readFileSync(path.join(root, 'lib', 'design', 'lender-design-system.ts'), 'utf8');
   assert.match(footer, /href: '\/states', label: 'All states'/);
 });
