@@ -6,12 +6,12 @@ import { PUBLISHED_STATES } from '@/lib/home-intel/published-states';
 const PATH = '/states';
 
 export const metadata: Metadata = {
-  title: 'All states | LenderTrustHub',
+  title: 'All states',
   description: 'Published LenderTrustHub state research pages.',
   alternates: { canonical: `${SITE_URL}${PATH}` },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'All states | LenderTrustHub',
+    title: 'All states | Lender Trust Hub',
     description: 'Published LenderTrustHub state research pages.',
     url: `${SITE_URL}${PATH}`,
   },
