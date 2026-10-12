@@ -1,0 +1,25 @@
+{
+  "hmda_year": 2025,
+  "snapshot_data_freeze_date": "2026-06-02",
+  "derived_at": "2026-10-12",
+  "geography": "Maine property geography; FIPS state 23",
+  "county_market_rows": 16,
+  "applications": 56760,
+  "originations": 35441,
+  "denials": 9103,
+  "state_summary_lei_rows": 455,
+  "lender_county_activity_rows": 2531,
+  "lei_to_nmls_crosswalk_rows": 86,
+  "crosswalk_match_confidence_rows": {
+    "high": 83,
+    "medium": 3
+  },
+  "distinct_nmls_identifiers_in_crosswalk": 81,
+  "source": "https://ffiec.cfpb.gov/data-publication/snapshot-national-loan-level-dataset/2025",
+  "limitations": [
+    "HMDA is property-market activity, not Maine licensing or a lender census.",
+    "An LEI, NMLS identifier, company license, branch license, and MLO person are distinct identities.",
+    "Crosswalk rows are not current-state license verification.",
+    "No current BCCP NMLS company, branch, or MLO roster has been acquired."
+  ]
+}
