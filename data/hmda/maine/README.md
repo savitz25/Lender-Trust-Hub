@@ -5,7 +5,7 @@
 - County market rows: **16**
 - Lender–county activity (major counties): **2531**
 - LEI state summaries: **455**
-- High-confidence LEI→directory mappings: **86**
+- LEI-to-NMLS crosswalk rows: **86** (83 labeled high match confidence; 3 medium; 81 distinct NMLS identifiers)
 - Major counties with names: **16**
 
 ## Top mapped LEIs by ME originations
@@ -55,6 +55,8 @@
 - Reuse prior product-state curated LEI maps when the LEI has state activity
 - NE curated: Washington Trust, BankNewport, PRMI, Bangor Savings, Camden National
 - No fuzzy LEI inventing
+
+The crosswalk associates HMDA LEIs with candidate directory/NMLS identities; it does not establish a current Maine license. NMLS identifiers, HMDA LEIs, state license records, and legal companies remain separate grains.
 
 ## Rebuild
 
