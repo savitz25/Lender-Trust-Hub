@@ -72,7 +72,9 @@ export type ReleaseEnv = {
   MTH_LENDER_PARENT_SAVE_MODE?: string;
 };
 
-/** Master off, or any malformed mode or slug list, stays off. */
+/** Master off, a mode other than production, a malformed slug list, or an
+ * absent, empty, whitespace-only, or effectively empty canary list stays off.
+ * An empty list never opens broad admission. */
 export function productionParentGate(env?: ReleaseEnv): ParentRelease {
   const source: ReleaseEnv = env ?? {
     NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED: process.env.NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED,
@@ -82,8 +84,9 @@ export function productionParentGate(env?: ReleaseEnv): ParentRelease {
   const slugs = canarySlugList(source.NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS);
   const enabled = source.NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED === '1';
   const mode = (source.MTH_LENDER_PARENT_SAVE_MODE ?? '').trim();
-  if (slugs === null || !enabled || mode !== 'production') return { ...RELEASE_OFF, slugs: [] };
-  if (slugs.length === 0) return { enabled: true, parentSync: 'production', canary: false, broad: true, slugs };
+  if (slugs === null || slugs.length === 0 || !enabled || mode !== 'production') {
+    return { ...RELEASE_OFF, slugs: [] };
+  }
   return { enabled: true, parentSync: 'production', canary: true, broad: false, slugs };
 }
 

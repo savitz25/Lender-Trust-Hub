@@ -219,22 +219,65 @@ test('F an unrelated lender is not admitted', () => {
   assert.equal(oneClick.releaseAdmits('windy-city-mortgage', gate), false);
 });
 
-test('G empty slug list with enabled production is broad', () => {
+test('G empty or effectively empty slug lists stay off in enabled production', () => {
+  const lists: Array<string | undefined> = [undefined, '', '   ', '\t\n', ',', ',,', ' , , ', ' ,', ', '];
+  for (const list of lists) {
+    const env = {
+      NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED: '1',
+      MTH_LENDER_PARENT_SAVE_MODE: 'production',
+      ...(list === undefined ? {} : { NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS: list }),
+    };
+    const gate = oneClick.productionParentGate(env);
+    const label = JSON.stringify(list);
+    assert.equal(gate.enabled, false, label);
+    assert.equal(gate.parentSync, 'off', label);
+    assert.equal(gate.canary, false, label);
+    assert.equal(gate.broad, false, label);
+    assert.deepEqual([...gate.slugs], [], label);
+    assert.equal(oneClick.releaseAdmits('freedom-mortgage', gate), false, label);
+    assert.equal(oneClick.releaseAdmits('rocket-mortgage', gate), false, label);
+    const saved = oneClick.clickProfileSave({
+      lenderSlug: 'freedom-mortgage', lenderName: 'Freedom Mortgage', nmlsId: '2767', catalog: catalog.lenders,
+      bindings: [accepted()], signedIn: true, pageOpen: true, gate,
+    });
+    assert.equal(saved.parent, 'off', label);
+    assert.equal(saved.denyReason, 'sync_off', label);
+    assert.equal(oneClick.listParentRows().length, 0, label);
+  }
+});
+
+test('a configured freedom-mortgage slug admits only that profile', () => {
+  for (const list of ['freedom-mortgage', ' freedom-mortgage ', 'freedom-mortgage,']) {
+    const gate = oneClick.productionParentGate({
+      NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED: '1',
+      MTH_LENDER_PARENT_SAVE_MODE: 'production',
+      NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS: list,
+    });
+    assert.equal(gate.enabled, true, list);
+    assert.equal(gate.parentSync, 'production', list);
+    assert.equal(gate.canary, true, list);
+    assert.equal(gate.broad, false, list);
+    assert.deepEqual([...gate.slugs], ['freedom-mortgage'], list);
+    assert.equal(oneClick.releaseAdmits('freedom-mortgage', gate), true, list);
+    assert.equal(oneClick.releaseAdmits('loandepot', gate), false, list);
+    assert.equal(oneClick.releaseAdmits('guaranteed-rate', gate), false, list);
+    assert.equal(oneClick.releaseAdmits('rocket-mortgage', gate), false, list);
+    assert.equal(oneClick.releaseAdmits('windy-city-mortgage', gate), false, list);
+  }
+});
+
+test('a missing allowlist cannot activate broad admission', () => {
   const gate = oneClick.productionParentGate({
     NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED: '1',
     MTH_LENDER_PARENT_SAVE_MODE: 'production',
-    NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS: '',
   });
-  assert.equal(gate.parentSync, 'production');
-  assert.equal(gate.canary, false);
-  assert.equal(gate.broad, true);
-  assert.equal(oneClick.releaseAdmits('rocket-mortgage', gate), true);
-  const denied = oneClick.clickProfileSave({
-    lenderSlug: 'freedom-mortgage', lenderName: 'Freedom Mortgage', nmlsId: '2767', catalog: catalog.lenders,
-    bindings: [], signedIn: true, pageOpen: true, gate,
-  });
-  assert.equal(denied.parent, 'denied');
-  if (denied.parent === 'denied') assert.equal(denied.denyReason, 'missing');
+  assert.equal(gate.broad, false);
+  assert.equal(gate.parentSync, 'off');
+  assert.equal(gate.enabled, false);
+  assert.equal(oneClick.releaseAdmits('freedom-mortgage', gate), false);
+  assert.equal(oneClick.releaseAdmits('rocket-mortgage', gate), false);
+  assert.equal(oneClick.canaryAllows('freedom-mortgage', gate), false);
+  assert.equal(oneClick.canaryAllows('rocket-mortgage', gate), false);
 });
 
 test('H bad mode or slug config fails closed', () => {
