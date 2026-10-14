@@ -35,6 +35,7 @@ const RECENT: Record<string, string> = {
   tennessee: 'Tennessee mortgage licensing and lending intelligence',
   massachusetts: 'Massachusetts mortgage licensing and lending intelligence',
   georgia: 'Georgia mortgage licensing and lending intelligence',
+  hawaii: 'Hawaii DFI licensing pathways; mortgage company, branch, servicer, and MLO roster rows were not acquired. HMDA is separate from licensing.',
 };
 
 const CODE_BY_NAME = new Map(Object.entries(STATE_NAMES).map(([code, name]) => [name.toLowerCase(), code]));
