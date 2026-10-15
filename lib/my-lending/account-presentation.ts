@@ -8,7 +8,7 @@ export const MY_TRUSTHUB_ACCOUNT_LABEL = 'My TrustHub';
 export const MY_LENDING_WORKSPACE_LABEL = 'My Lending';
 
 /** Account authority on Ask. Rendered only while the entry flag is on. */
-export const MY_TRUSTHUB_ACCOUNT_ENTRY_HREF = 'https://www.asktrusthub.com/my';
+export const MY_TRUSTHUB_ACCOUNT_ENTRY_HREF = 'https://www.asktrusthub.com/my/sign-in';
 
 export const PROFILE_SAVE_LABEL = '♡ Save';
 export const PROFILE_SAVED_LABEL = '♥ Saved';
