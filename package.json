@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "test:my-lending": "tsx --test lib/my-lending/*.test.ts",
+    "test:sd-lend-001": "node --test scripts/test-south-dakota-lender.test.mjs",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
