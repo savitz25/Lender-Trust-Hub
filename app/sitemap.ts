@@ -118,6 +118,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/west-virginia', priority: 0.88, changeFrequency: 'weekly' },
     { path: '/iowa', priority: 0.88, changeFrequency: 'weekly' },
     { path: '/kansas', priority: 0.88, changeFrequency: 'weekly' },
+    { path: '/hawaii', priority: 0.88, changeFrequency: 'weekly' },
+    { path: '/alaska', priority: 0.88, changeFrequency: 'weekly' },
+    { path: '/delaware', priority: 0.88, changeFrequency: 'weekly' },
+    { path: '/maine', priority: 0.88, changeFrequency: 'weekly' },
+    { path: '/new-hampshire', priority: 0.88, changeFrequency: 'weekly' },
+    { path: '/north-dakota', priority: 0.88, changeFrequency: 'weekly' },
+    { path: '/rhode-island', priority: 0.88, changeFrequency: 'weekly' },
+    { path: '/south-dakota', priority: 0.88, changeFrequency: 'weekly' },
+    { path: '/vermont', priority: 0.88, changeFrequency: 'weekly' },
+    { path: '/wyoming', priority: 0.88, changeFrequency: 'weekly' },
     // NJ-LEND-COUNTY-001 indexed county research:
     // /new-jersey/monmouth-county
     // /new-jersey/middlesex-county
