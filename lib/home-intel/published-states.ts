@@ -17,6 +17,16 @@ export type PublishedState = {
 
 /** Newest published states first. */
 const RECENT: Record<string, string> = {
+  delaware: 'OSBC reports dated September 30, 2026: 486 Licensed Lender filing records and 174 Mortgage Loan Broker filing records, kept separate from 6,309 MLO person records dated October 1, 2026',
+  alaska: 'Mortgage broker-lender company rows and MLO person rows remain NOT_ACQUIRED. Live NMLS lookup is the public path; missing rows are not zero',
+  maine: 'Current BCCP company, branch, and MLO person rosters remain NOT_ACQUIRED and are not shown as zero',
+  montana: 'Current company, branch, lender, broker, servicer, and MLO row populations remain NOT_ACQUIRED. No combined license count is published',
+  'new-hampshire': 'Current mortgage lender, broker, branch, servicer, and MLO person rosters remain NOT_ACQUIRED. Missing rows are not zero',
+  'north-dakota': 'Current residential mortgage lender, servicer, and MLO person rows remain NOT_ACQUIRED. DFI directs lookup to NMLS Consumer Access',
+  'rhode-island': 'Current company, branch, and MLO person rows remain NOT_ACQUIRED. Live NMLS lookup exists; no statewide count is asserted',
+  'south-dakota': 'Mortgage company, broker, branch, and MLO person rows remain NOT_ACQUIRED. The 2025 HMDA slice and 56 stored FDIC bank records stay separate',
+  vermont: 'Current mortgage lender, broker, servicer, and MLO person bulk rows remain NOT_ACQUIRED. DFR and NMLS are live lookup paths',
+  wyoming: 'Current mortgage company, branch, and MLO person bulk rosters remain NOT_ACQUIRED. The 2025 HMDA slice stays a market observation, not a license count',
   'west-virginia': 'Division of Financial Institutions FY2025 report: 475 licensed mortgage company rows. Lender, broker, and servicer are not split. Examinations and the 2025 HMDA slice stay separate',
   idaho: 'Department of Finance fiscal year 2025: 2,584 mortgage broker, lender, and servicing licenses and 8,641 originator licensees, kept separate from Credit Code lenders and HMDA',
   'new-mexico': 'New Mexico mortgage bulk rosters stay unacquired. The owned HMDA file is an 18-county slice, not a statewide license census',

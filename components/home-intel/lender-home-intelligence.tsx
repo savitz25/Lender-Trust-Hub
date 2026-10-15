@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { LENDER_EVIDENCE_FAMILY_LABELS } from '@/lib/home-intel/evidence-inventory';
 import type { HomepageEvidenceMeasure, LenderEvidenceFamily, LenderHomeIntel } from '@/lib/home-intel/types';
-import { PUBLISHED_STATE_COUNT, PUBLISHED_STATES, RECENT_PUBLISHED_STATES } from '@/lib/home-intel/published-states';
+import { PUBLISHED_STATE_COUNT, PUBLISHED_STATES } from '@/lib/home-intel/published-states';
 import { AskTrustHubSearch } from './ask-trust-hub-search';
 import { LenderHomeChecklist } from './lender-home-checklist';
 
@@ -74,6 +74,15 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
   const moreStates = PUBLISHED_STATES.filter((state) => !cardCodes.has(state.code));
   const nationalScale = ['national_institutions', 'hmda_applications', 'hmda_originations', 'cfpb_complaints', 'federal_enforcement']
     .map((key) => intel.evidenceInventory.find((item) => item.key === key)).filter(Boolean) as HomepageEvidenceMeasure[];
+  const publishedHrefs = new Set(PUBLISHED_STATES.map((state) => state.href));
+  const featuredDestinations = new Set<string>();
+  const featuredLicenses: HomepageEvidenceMeasure[] = [];
+  for (const item of evidenceInventory.filter((entry) => entry.family === 'INSTITUTION_IDENTITY_LICENSING' && entry.publicationStatus === 'PUBLIC' && typeof entry.value === 'number' && publishedHrefs.has(entry.researchDestination) && !/person|mlo|originator/i.test(`${entry.key} ${entry.grain} ${entry.entityClass}`)).sort((a, b) => (b.value ?? 0) - (a.value ?? 0))) {
+    if (featuredDestinations.has(item.researchDestination)) continue;
+    featuredDestinations.add(item.researchDestination);
+    featuredLicenses.push(item);
+    if (featuredLicenses.length === 4) break;
+  }
 
   return (
     <div className="intel-home">
@@ -102,8 +111,9 @@ export function LenderHomeIntelligence({ intel }: { intel: LenderHomeIntel }) {
         <div className="intel-heading intel-heading--wide"><p className="intel-eyebrow">Research footprint</p><h2 id="footprint-title">{PUBLISHED_STATE_COUNT} states with published mortgage intelligence</h2><p>Each state page is built from that state&rsquo;s own regulator, licensing, enforcement, and HMDA evidence. Coverage keeps expanding state by state.</p></div>
         <div className="intel-scale-band"><article><p className="intel-measure__value">{PUBLISHED_STATE_COUNT}</p><h3>Published state intelligence pages</h3><p>published state page</p></article>{depthMetrics.map((item) => <article key={item.key}><p className="intel-measure__value">{item.display}</p><h3>{item.label}</h3><p>{item.grain}</p></article>)}</div>
         <p className="intel-semantic-note">These are different kinds of records and are never added into one total.</p>
-        <p className="intel-kicker"><strong>Newest state pages:</strong></p>
-        <div className="intel-ask-examples" role="list">{RECENT_PUBLISHED_STATES.slice(0, 6).map((state) => <Link key={state.slug} role="listitem" className="intel-chip" href={state.href} title={state.recentSummary}>{state.name}</Link>)}</div>
+        <p className="intel-kicker"><strong>Featured company licensing</strong></p>
+        <p className="intel-semantic-note">These are source-native license or credential records. They are not unique companies, and they are not added to the national institution count. Person originator rows stay out. States whose company roster was not acquired stay in the full inventory and are not shown as zero.</p>
+        <div className="intel-scale-band">{featuredLicenses.map((item) => <article key={item.key}><p className="intel-measure__value">{item.display}</p><h3>{item.label}</h3><p>{item.grain}</p><p className="intel-freshness"><span>{item.sourceClockLabel}</span> {item.sourceClock}</p><p>Does not count: {item.doesNotCount}</p><Link className="intel-text-link" href={item.researchDestination}>Review the published evidence</Link></article>)}</div>
         <div className="intel-hero__actions"><a className="intel-btn intel-btn--primary" href="#states">Explore all {PUBLISHED_STATE_COUNT} states</a><a className="intel-text-link intel-hero__text-link" href="#inventory">See the evidence inventory →</a></div>
       </section>
 

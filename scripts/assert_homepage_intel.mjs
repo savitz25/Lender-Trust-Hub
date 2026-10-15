@@ -34,6 +34,18 @@ assert(v1.homeProjection.publicRender === 181, "181 render");
 assert(v1.homeProjection.publicIndex === 180, "180 index");
 assert(v1.homeProjection.floridaPublic === 130, "130 florida public");
 assert(!JSON.stringify(v1.metrics.find((m) => m.key === "lenders_lending_institutions")).includes("Canonical institutions"), "no canonical primary");
+assert(hero.includes("INSTITUTION_IDENTITY_LICENSING"), "featured licensing family");
+assert(hero.includes("publicationStatus === 'PUBLIC'"), "featured licensing stays public");
+assert(hero.includes("publishedHrefs.has(entry.researchDestination)"), "featured licensing uses a published state page");
+assert(hero.includes("person|mlo|originator"), "person originator rows stay out of the strip");
+assert(hero.includes("Review the published evidence"), "featured licensing action");
+assert(!hero.includes("Newest state pages"), "recency chips are not the upper footprint");
+const slugs = read("lib/seo/published-state-path.ts");
+const sitemap = read("app/sitemap.ts");
+for (const slug of ["alaska", "delaware", "maine", "montana", "new-hampshire", "north-dakota", "rhode-island", "south-dakota", "vermont", "wyoming", "hawaii"]) {
+  assert(slugs.includes(`'${slug}'`), `${slug} stays on the published-state list`);
+  assert(sitemap.includes(`path: '/${slug}'`), `${slug} stays in the sitemap`);
+}
 
 if (failures.length) {
   console.error("ATH-METRICS-003A HOMEPAGE FAIL");
