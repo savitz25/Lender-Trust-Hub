@@ -7,6 +7,7 @@ import { WorkspaceSaveToast } from '@/components/my-lending/workspace-save-toast
 import { MY_TRUSTHUB_ACCOUNT_ENTRY_HREF, profileSaveLabel } from '@/lib/my-lending/account-presentation';
 import {
   handoffForm,
+  handoffParentOrigin,
   markHandoffSent,
   readHandoff,
   rememberHandoff,
@@ -82,7 +83,7 @@ export function SaveLenderButton({
   }, [lenderSlug]);
 
   const submitTicket = useCallback((ticket: StoredHandoff) => {
-    const form = handoffForm(ticket.target, ticket.continuationRef, ticket.intent);
+    const form = handoffForm(ticket.target, ticket.continuationRef, ticket.intent, handoffParentOrigin());
     if (!form || pageHidden()) return false;
     markHandoffSent(sessionStorage, ticket);
     const element = document.createElement('form');
@@ -198,7 +199,7 @@ export function SaveLenderButton({
       if (controller.signal.aborted || body.state !== 'continue' || !body.target || !body.continuationRef || !body.intent) {
         throw new Error('Handoff unavailable');
       }
-      const form = handoffForm(body.target, body.continuationRef, body.intent);
+      const form = handoffForm(body.target, body.continuationRef, body.intent, handoffParentOrigin());
       if (!form) throw new Error('Handoff unavailable');
       const ticket: StoredHandoff = {
         slug: lenderSlug,

@@ -4,11 +4,13 @@ import { cleanNmlsId } from '../verification/nmls';
 import { isCanonicalLenderProfile } from '../verification/entity-identity';
 import {
   ASSERTION_HEADER,
+  LENDER_PRODUCTION_PINS,
   verifyLenderAssertion,
   type AssertionKey,
+  type LenderPins,
   type NonceStore,
 } from './lender-assertion';
-import { LENDER_ORIGIN, SOURCE_PATH, lenderManifest, manifestDigest, type LenderManifest } from './manifest';
+import { SOURCE_PATH, lenderManifest, manifestDigest, type LenderManifest } from './manifest';
 
 const headers = {
   'Cache-Control': 'private, no-store, max-age=0',
@@ -53,12 +55,13 @@ function sameManifest(posted: unknown, rebuilt: LenderManifest): boolean {
 
 export async function handleLenderSource(
   request: Request,
-  options: { catalog: readonly Lender[]; key: AssertionKey | null; nonces: NonceStore; now?: () => number },
+  options: { catalog: readonly Lender[]; key: AssertionKey | null; nonces: NonceStore; now?: () => number; pins?: LenderPins },
 ): Promise<Response> {
   if (!options.key) return reply({ ok: false, error: 'unavailable' }, 503);
   const url = new URL(request.url);
   if (request.method !== 'POST') return reply({ ok: false, error: 'invalid' }, 405);
-  if (url.origin !== LENDER_ORIGIN || url.pathname !== SOURCE_PATH || url.search) return reply({ ok: false, error: 'invalid' }, 400);
+  const pins = options.pins ?? LENDER_PRODUCTION_PINS;
+  if (url.origin !== pins.lenderOrigin || url.pathname !== SOURCE_PATH || url.search) return reply({ ok: false, error: 'invalid' }, 400);
   if (request.headers.get('content-type')?.split(';')[0]?.trim() !== 'application/json') return reply({ ok: false, error: 'invalid' }, 400);
   const bytes = Buffer.from(await request.arrayBuffer());
   if (bytes.length > 131072) return reply({ ok: false, error: 'invalid' }, 413);
@@ -69,7 +72,7 @@ export async function handleLenderSource(
   const proof = new Request(request.url, { method: 'POST', headers: request.headers, body: bytes });
   try {
     if (body.action === 'resolve' && exact(body, ['action', 'profile']) && object(body.profile) && exact(body.profile, ['hub', 'nativeId', 'profileClass'])) {
-      await verifyLenderAssertion(proof, bytes, options.key, 'ask', 'source:read', options.nonces, now);
+      await verifyLenderAssertion(proof, bytes, options.key, 'ask', 'source:read', options.nonces, now, pins);
       if (body.profile.hub !== 'lender' || body.profile.profileClass !== 'marketplace_company' || typeof body.profile.nativeId !== 'string') {
         return reply({ ok: false, error: 'unavailable' }, 503);
       }
@@ -77,7 +80,7 @@ export async function handleLenderSource(
       return result ? reply({ ok: true, result }, 200) : reply({ ok: false, error: 'unavailable' }, 503);
     }
     if (body.action === 'source' && exact(body, ['action', 'continuationRef', 'transferRef', 'manifest', 'manifestDigest', 'expiresAt'])) {
-      const claims = await verifyLenderAssertion(proof, bytes, options.key, 'ask', 'source:read', options.nonces, now);
+      const claims = await verifyLenderAssertion(proof, bytes, options.key, 'ask', 'source:read', options.nonces, now, pins);
       if (!opaque(body.continuationRef) || !opaque(body.transferRef) || typeof body.manifestDigest !== 'string') return reply({ ok: false, error: 'unauthorized' }, 403);
       if (typeof body.expiresAt !== 'number' || body.expiresAt <= now || body.expiresAt > now + 600_000) return reply({ ok: false, error: 'unauthorized' }, 403);
       const posted = body.manifest;
@@ -100,7 +103,7 @@ export async function handleLenderSource(
       }, 200);
     }
     if (body.action === 'acknowledge' && exact(body, ['action', 'continuationRef', 'receipts']) && Array.isArray(body.receipts)) {
-      const claims = await verifyLenderAssertion(proof, bytes, options.key, 'ask', 'source:ack', options.nonces, now);
+      const claims = await verifyLenderAssertion(proof, bytes, options.key, 'ask', 'source:ack', options.nonces, now, pins);
       if (!opaque(body.continuationRef) || body.receipts.length !== 1) return reply({ ok: false, error: 'unauthorized' }, 403);
       const receipt = body.receipts[0];
       if (!object(receipt) || receipt.localCopy !== 'keep' || !object(receipt.parent) || !object(receipt.item)) return reply({ ok: false, error: 'unauthorized' }, 403);

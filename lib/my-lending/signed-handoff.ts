@@ -1,7 +1,8 @@
 import { randomBytes } from 'node:crypto';
 import type { Lender } from '../mockData';
 import { assessMarketplaceProfile, canaryAllows, type OneClickGate } from './one-click';
-import { ASSERTION_HEADER, signLenderAssertion, type AssertionKey } from './lender-assertion';
+import { isolatedLenderPins, type PilotEnv } from './isolated-pilot';
+import { ASSERTION_HEADER, signLenderAssertion, type AssertionKey, type LenderPins } from './lender-assertion';
 import {
   PARENT_API_PATH,
   PARENT_FORM_PATH,
@@ -41,6 +42,9 @@ export type StageDeps = {
   key?: AssertionKey | null;
   parent?: (call: { operation: string; body: string; assertion: string }) => Promise<ParentResponse>;
   browserBinding?: string;
+  /** Defaults to the production Ask origin. */
+  origin?: string;
+  pins?: LenderPins;
 };
 
 export type StageResult =
@@ -88,6 +92,34 @@ export function productionHandoffDeps(env: NodeJS.ProcessEnv = process.env): Pic
   };
 }
 
+/** Isolated pilot signer. It never uses the production origin pair. */
+export function isolatedHandoffDeps(env: PilotEnv = process.env): Pick<StageDeps, 'key' | 'parent' | 'origin' | 'pins'> {
+  const pins = isolatedLenderPins(env);
+  const kid = env.MY_TRUSTHUB_V23_LENDER_KEY_ID?.trim() ?? '';
+  const pem = env.MY_TRUSTHUB_V23_LENDER_SIGNING_PRIVATE_KEY_PEM ?? '';
+  if (!pins || !/^[A-Za-z0-9_-]{1,64}$/.test(kid) || !pem.includes('PRIVATE KEY')) return {};
+  const key = { kid, pem };
+  return {
+    key,
+    origin: pins.parentOrigin,
+    pins,
+    parent: async (call) => {
+      const response = await fetch(pins.parentOrigin + PARENT_API_PATH, {
+        method: 'POST',
+        body: call.body,
+        headers: { 'content-type': 'application/json', [ASSERTION_HEADER]: call.assertion },
+        cache: 'no-store',
+        redirect: 'error',
+        signal: AbortSignal.timeout(8000),
+      });
+      if (!response.ok) return { ok: false };
+      const body = await response.json() as { ok?: boolean; operation?: string; result?: ParentResult };
+      if (!body || body.ok !== true || typeof body.operation !== 'string' || !body.result) return { ok: false };
+      return { ok: true, operation: body.operation, result: body.result };
+    },
+  };
+}
+
 export async function stageParentHandoff(input: StageRequest, deps: StageDeps): Promise<StageResult> {
   if (!input.pageOpen) return local('page_closed');
   if (!canaryAllows(input.slug, input.gate)) return local('sync_off');
@@ -98,6 +130,7 @@ export async function stageParentHandoff(input: StageRequest, deps: StageDeps): 
   if (input.claimedEntityId) return local('tampered_identity');
   if (input.claimedName) return local('tampered_name');
   if (!deps.key || !deps.parent) return local('unsigned');
+  const origin = deps.origin ?? PARENT_ORIGIN;
   const now = deps.now?.() ?? Date.now();
   const browser = deps.browserBinding ?? randomBytes(32).toString('base64url');
   if (!opaque(browser)) return local('unsigned');
@@ -119,7 +152,7 @@ export async function stageParentHandoff(input: StageRequest, deps: StageDeps): 
     }
     return {
       state: 'continue',
-      target: PARENT_ORIGIN + PARENT_FORM_PATH,
+      target: origin + PARENT_FORM_PATH,
       continuationRef: continuation.continuationRef,
       intent,
       watchCreated: false,
@@ -139,7 +172,8 @@ async function postParent(
 ): Promise<ParentResult | null> {
   if (!deps.key || !deps.parent) return null;
   const body = JSON.stringify({ version: RUNTIME_VERSION, operation, input });
-  const assertion = signLenderAssertion(deps.key, 'lender', PARENT_ORIGIN + PARENT_API_PATH, 'transfer:stage', Buffer.from(body), browser, null, null, now);
+  const origin = deps.origin ?? PARENT_ORIGIN;
+  const assertion = signLenderAssertion(deps.key, 'lender', origin + PARENT_API_PATH, 'transfer:stage', Buffer.from(body), browser, null, null, now, deps.pins);
   if (!assertion) return null;
   const response = await deps.parent({ operation, body, assertion });
   if (!response.ok || response.operation !== operation) return null;

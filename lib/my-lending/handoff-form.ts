@@ -1,6 +1,12 @@
 /** Client-safe handoff form. No signing material and no node:crypto. */
 
 export const LENDER_PARENT_ORIGIN = 'https://www.asktrusthub.com';
+export const ISOLATED_ASK_ORIGIN = 'https://conumers-trust-hub-git-mth-v2-3-pare-3127df-savitz25-s-projects.vercel.app';
+
+/** The isolated Ask alias is accepted only when the public preview value is exactly that alias. */
+export function handoffParentOrigin(value = process.env.NEXT_PUBLIC_MY_TRUSTHUB_V23_PARENT_ORIGIN): string {
+  return value === ISOLATED_ASK_ORIGIN ? ISOLATED_ASK_ORIGIN : LENDER_PARENT_ORIGIN;
+}
 export const HANDOFF_FORM_PATH = '/my/profile-save';
 export const HANDOFF_TICKET_PREFIX = 'lth:lender-handoff:v1:';
 
@@ -50,7 +56,7 @@ export function readHandoff(store: TicketStore, slug: string, now: number): Stor
   try {
     const ticket = JSON.parse(raw) as StoredHandoff;
     if (!ticket || ticket.slug !== slug || !INTENTS.has(ticket.intent) || (ticket.phase !== 'staged' && ticket.phase !== 'sent')) return null;
-    if (!handoffForm(ticket.target, ticket.continuationRef, ticket.intent)) return null;
+    if (!handoffForm(ticket.target, ticket.continuationRef, ticket.intent, handoffParentOrigin())) return null;
     if (!Number.isFinite(ticket.expiresAt) || ticket.expiresAt <= now) {
       store.removeItem(ticketKey(slug));
       return null;

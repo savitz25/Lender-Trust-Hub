@@ -1,5 +1,6 @@
 import { lenders } from '@/lib/lenders';
 import type { AssertionKey, NonceStore } from '@/lib/my-lending/lender-assertion';
+import { isolatedLenderPins } from '@/lib/my-lending/isolated-pilot';
 import { handleLenderSource } from '@/lib/my-lending/source-callback';
 
 export const runtime = 'nodejs';
@@ -24,5 +25,5 @@ function askVerifyKey(): AssertionKey | null {
 }
 
 export async function POST(request: Request) {
-  return handleLenderSource(request, { catalog: lenders, key: askVerifyKey(), nonces });
+  return handleLenderSource(request, { catalog: lenders, key: askVerifyKey(), nonces, pins: isolatedLenderPins() ?? undefined });
 }

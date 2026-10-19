@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import { lenders } from '@/lib/lenders';
+import { isolatedPilotAdmits } from '@/lib/my-lending/isolated-pilot';
 import { productionParentGate, releaseAdmits, type ParentRelease } from '@/lib/my-lending/one-click';
-import { productionHandoffDeps, stageParentHandoff, type StageDeps } from '@/lib/my-lending/signed-handoff';
+import { isolatedHandoffDeps, productionHandoffDeps, stageParentHandoff, type StageDeps } from '@/lib/my-lending/signed-handoff';
 import type { HandoffIntent } from '@/lib/my-lending/handoff-form';
 
 export const runtime = 'nodejs';
@@ -12,7 +13,7 @@ function releaseBody(gate: ParentRelease, slug: string) {
     parentSync: gate.parentSync,
     broad: gate.broad,
     canary: gate.canary,
-    admitted: releaseAdmits(slug, gate),
+    admitted: releaseAdmits(slug, gate) || isolatedPilotAdmits(slug),
     watchCreated: false as const,
   };
 }
@@ -48,9 +49,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ ...releaseBody(gate, ''), state: 'local_only' });
   }
   const deps: StageDeps = { catalog: lenders };
+  const isolated = !gate.enabled && isolatedPilotAdmits(slug);
   if (releaseAdmits(slug, gate)) Object.assign(deps, productionHandoffDeps());
+  else if (isolated) Object.assign(deps, isolatedHandoffDeps());
   const staged = await stageParentHandoff({
-    slug, intent, pageOpen, signedIn, gate, claimedNmls, claimedReturnPath, claimedEntityId, claimedName,
+    slug, intent, pageOpen, signedIn,
+    gate: isolated ? { broad: false, canary: true, slugs: [slug] } : gate,
+    claimedNmls, claimedReturnPath, claimedEntityId, claimedName,
   }, deps);
   if (staged.state !== 'continue') {
     return NextResponse.json({
