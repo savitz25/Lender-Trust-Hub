@@ -41,9 +41,21 @@ test('production handoff stays closed for the isolated parent origin', () => {
 
 test('one explicit lender origin admits only the proposed profile', () => {
   assert.equal(exactIsolatedLenderOrigin(LENDER), LENDER);
-  for (const rejected of ['*', LENDER + '?next=/', 'http://lender-pilot.preview.example', 'https://www.lendertrusthub.com', 'https://www.asktrusthub.com', ISOLATED_ASK_ORIGIN, LENDER + '/lenders/freedom-mortgage']) {
+  for (const rejected of [
+    '*', LENDER + '?next=/', 'http://lender-pilot.preview.example', LENDER + '/lenders/freedom-mortgage',
+    'https://www.lendertrusthub.com', 'https://lendertrusthub.com',
+    'https://www.asktrusthub.com', 'https://asktrusthub.com', 'https://www.consumerstrusthub.com',
+    'https://www.movetrusthub.com', 'https://movetrusthub.com',
+    'https://www.insurancetrusthub.com', 'https://insurancetrusthub.com',
+    'https://www.contractortrusthub.com', 'https://contractortrusthub.com',
+    'https://www.seniortrusthub.com', 'https://seniortrusthub.com',
+    'https://www.investortrusthub.com', 'https://investortrusthub.com',
+    ISOLATED_ASK_ORIGIN,
+    'https://move-trust-hub-git-mth-v2-3-move-cur-0a05f1-savitz25-s-projects.vercel.app',
+  ]) {
     assert.equal(exactIsolatedLenderOrigin(rejected), null, rejected);
   }
+  assert.equal(isolatedLenderPins({ ...pilotEnv, MY_TRUSTHUB_V23_LENDER_ORIGIN: 'https://lendertrusthub.com' }), null);
   const pins = isolatedLenderPins(pilotEnv);
   assert.deepEqual(pins, { parentOrigin: ISOLATED_ASK_ORIGIN, lenderOrigin: LENDER, project: ISOLATED_PROJECT, assertionEnvironment: 'isolated' });
   assert.equal(isolatedPilotAdmits('freedom-mortgage', pilotEnv), true);
