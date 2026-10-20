@@ -1,7 +1,7 @@
 /** Client-safe handoff form. No signing material and no node:crypto. */
 
 export const LENDER_PARENT_ORIGIN = 'https://www.asktrusthub.com';
-export const ISOLATED_ASK_ORIGIN = 'https://conumers-trust-hub-git-mth-v2-3-pare-3127df-savitz25-s-projects.vercel.app';
+export const ISOLATED_ASK_ORIGIN = 'https://conumers-trust-hub-git-b4-lender-ask-710157-savitz25-s-projects.vercel.app';
 
 /** The isolated Ask alias is accepted only when the public preview value is exactly that alias. */
 export function handoffParentOrigin(value = process.env.NEXT_PUBLIC_MY_TRUSTHUB_V23_PARENT_ORIGIN): string {

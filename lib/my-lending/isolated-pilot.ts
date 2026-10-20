@@ -21,6 +21,8 @@ export type PilotEnv = ReleaseEnv & {
 };
 
 const MOVE_PREVIEW = 'https://move-trust-hub-git-mth-v2-3-move-cur-0a05f1-savitz25-s-projects.vercel.app';
+/** Retained parent-runtime Ask alias. It stays rejected as a Lender destination. */
+const RETAINED_PARE_ASK_ORIGIN = 'https://conumers-trust-hub-git-mth-v2-3-pare-3127df-savitz25-s-projects.vercel.app';
 /** Production hub registrable domains. Apex and every subdomain are rejected. */
 const PRODUCTION_HUB_ROOTS = [
   'asktrusthub.com',
@@ -39,8 +41,9 @@ function productionHubHost(hostname: string): boolean {
 }
 
 /** One exact https origin for this Lender Preview. Production hub hosts, the
- * pinned Ask and Move preview hosts, wildcards, credentials, queries, hashes
- * and non-root paths are rejected. A missing value stays closed.
+ * B4 Ask host, the retained pare Ask host, the Move preview host, wildcards,
+ * credentials, queries, hashes and non-root paths are rejected. A missing
+ * value stays closed.
  */
 export function exactIsolatedLenderOrigin(value: string | undefined): string | null {
   if (!value || value !== value.trim() || value.includes('*')) return null;
@@ -52,6 +55,7 @@ export function exactIsolatedLenderOrigin(value: string | undefined): string | n
       new URL(PARENT_ORIGIN).hostname,
       new URL(LENDER_ORIGIN).hostname,
       new URL(ISOLATED_ASK_ORIGIN).hostname,
+      new URL(RETAINED_PARE_ASK_ORIGIN).hostname,
       new URL(MOVE_PREVIEW).hostname,
       new URL(LENDER_PRODUCTION_PINS.lenderOrigin).hostname,
     ]);
