@@ -7,7 +7,8 @@ import { exactIsolatedLenderOrigin, ISOLATED_PILOT_SLUG, ISOLATED_PROJECT, isola
 import { LENDER_PRODUCTION_PINS, signLenderAssertion, verifyLenderAssertion } from './lender-assertion';
 import { manifestDigest } from './manifest';
 import { productionParentGate } from './one-click';
-import { isolatedHandoffDeps, productionHandoffDeps, stageParentHandoff } from './signed-handoff';
+import { isolatedHandoffDeps, parentProtectionHeader, productionHandoffDeps, stageParentHandoff } from './signed-handoff';
+import { PARENT_API_PATH, PARENT_ORIGIN } from './manifest';
 import { handleLenderSource } from './source-callback';
 
 const LENDER = 'https://lender-pilot.preview.example';
@@ -101,4 +102,48 @@ test('isolated assertions and the source origin stay on the explicit pair', asyn
   });
   assert.equal(staged.state, 'continue');
   if (staged.state === 'continue') assert.equal(staged.target, ISOLATED_ASK_ORIGIN + '/my/profile-save');
+});
+
+test('protection bypass is sent only to the exact isolated Ask origin', async () => {
+  const pair = keys();
+  const target = ISOLATED_ASK_ORIGIN + PARENT_API_PATH;
+  assert.deepEqual(parentProtectionHeader(ISOLATED_ASK_ORIGIN, target, 'fixture-parent-bypass'), {
+    'x-vercel-protection-bypass': 'fixture-parent-bypass',
+  });
+  assert.deepEqual(parentProtectionHeader(ISOLATED_ASK_ORIGIN, PARENT_ORIGIN + PARENT_API_PATH, 'fixture-parent-bypass'), {});
+  assert.deepEqual(parentProtectionHeader(ISOLATED_ASK_ORIGIN, target, '  '), {});
+  const seen: Array<{ url: string; init: RequestInit | undefined }> = [];
+  const previous = globalThis.fetch;
+  globalThis.fetch = (async (input, init) => {
+    seen.push({ url: String(input), init });
+    return new Response(JSON.stringify({ ok: false }), { status: 401, headers: { 'content-type': 'application/json' } });
+  }) as typeof fetch;
+  try {
+    const isolated = isolatedHandoffDeps({
+      ...pilotEnv,
+      MY_TRUSTHUB_V23_LENDER_KEY_ID: pair.privateKey.kid,
+      MY_TRUSTHUB_V23_LENDER_SIGNING_PRIVATE_KEY_PEM: pair.privateKey.pem,
+      MY_TRUSTHUB_V23_PARENT_PROTECTION_BYPASS: 'fixture-parent-bypass',
+    });
+    assert.deepEqual(await isolated.parent?.({ operation: 'prepareGuestProfileTransfer', body: '{}', assertion: 'signed-assertion' }), { ok: false });
+    const production = productionHandoffDeps({
+      MY_TRUSTHUB_V23_LENDER_KEY_ID: pair.privateKey.kid,
+      MY_TRUSTHUB_V23_LENDER_SIGNING_PRIVATE_KEY_PEM: pair.privateKey.pem,
+      MY_TRUSTHUB_V23_PARENT_PROTECTION_BYPASS: 'fixture-parent-bypass',
+    });
+    await production.parent?.({ operation: 'prepareGuestProfileTransfer', body: '{}', assertion: 'signed-assertion' });
+  } finally {
+    globalThis.fetch = previous;
+  }
+  assert.equal(seen.length, 2);
+  assert.equal(seen[0]?.url, target);
+  assert.equal(seen[0]?.init?.redirect, 'error');
+  const isolatedHeaders = seen[0]?.init?.headers as Record<string, string>;
+  assert.equal(isolatedHeaders['x-vercel-protection-bypass'], 'fixture-parent-bypass');
+  assert.equal(isolatedHeaders['x-trusthub-v23-assertion'], 'signed-assertion');
+  assert.equal(seen[1]?.url, PARENT_ORIGIN + PARENT_API_PATH);
+  assert.equal(seen[1]?.init?.redirect, 'error');
+  const productionHeaders = seen[1]?.init?.headers as Record<string, string>;
+  assert.equal(productionHeaders['x-vercel-protection-bypass'], undefined);
+  assert.equal(productionHeaders['x-trusthub-v23-assertion'], 'signed-assertion');
 });

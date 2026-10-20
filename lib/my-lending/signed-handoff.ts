@@ -58,6 +58,19 @@ export type StageResult =
       parentSync: 'staged';
     };
 
+/** Exact isolated Ask origin only. A blank secret or any other URL gets no header. */
+export function parentProtectionHeader(parentOrigin: string, target: string, bypass: string | undefined): Record<string, string> {
+  const secret = bypass?.trim();
+  if (!secret) return {};
+  try {
+    const url = new URL(target);
+    if (url.origin !== parentOrigin || url.protocol !== 'https:') return {};
+  } catch {
+    return {};
+  }
+  return { 'x-vercel-protection-bypass': secret };
+}
+
 const local = (reason: string): StageResult => ({ state: 'local_only', reason, watchCreated: false, parentSync: 'off' });
 const opaque = (value: unknown): value is string => typeof value === 'string' && /^[A-Za-z0-9_-]{43}$/.test(value);
 
@@ -104,10 +117,15 @@ export function isolatedHandoffDeps(env: PilotEnv = process.env): Pick<StageDeps
     origin: pins.parentOrigin,
     pins,
     parent: async (call) => {
-      const response = await fetch(pins.parentOrigin + PARENT_API_PATH, {
+      const target = pins.parentOrigin + PARENT_API_PATH;
+      const response = await fetch(target, {
         method: 'POST',
         body: call.body,
-        headers: { 'content-type': 'application/json', [ASSERTION_HEADER]: call.assertion },
+        headers: {
+          'content-type': 'application/json',
+          [ASSERTION_HEADER]: call.assertion,
+          ...parentProtectionHeader(pins.parentOrigin, target, env.MY_TRUSTHUB_V23_PARENT_PROTECTION_BYPASS),
+        },
         cache: 'no-store',
         redirect: 'error',
         signal: AbortSignal.timeout(8000),

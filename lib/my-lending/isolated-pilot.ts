@@ -16,6 +16,8 @@ export type PilotEnv = ReleaseEnv & {
   NEXT_PUBLIC_MY_TRUSTHUB_V23_PARENT_ORIGIN?: string;
   MY_TRUSTHUB_V23_LENDER_KEY_ID?: string;
   MY_TRUSTHUB_V23_LENDER_SIGNING_PRIVATE_KEY_PEM?: string;
+  /** Server-only. Never NEXT_PUBLIC. Sent only to the exact isolated Ask origin. */
+  MY_TRUSTHUB_V23_PARENT_PROTECTION_BYPASS?: string;
 };
 
 const MOVE_PREVIEW = 'https://move-trust-hub-git-mth-v2-3-move-cur-0a05f1-savitz25-s-projects.vercel.app';
