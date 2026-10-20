@@ -1,4 +1,9 @@
 {
+  "git": {
+    "deploymentEnabled": {
+      "b4/lender-ask-save-journey-isolated": false
+    }
+  },
   "functions": {
     "app/api/ask/route.ts": {
       "includeFiles": "data/**"
