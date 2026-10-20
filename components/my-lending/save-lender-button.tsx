@@ -8,7 +8,9 @@ import { MY_TRUSTHUB_ACCOUNT_ENTRY_HREF, profileSaveLabel } from '@/lib/my-lendi
 import {
   handoffForm,
   handoffParentOrigin,
+  ISOLATED_ASK_ORIGIN,
   markHandoffSent,
+  profileSignInHref,
   readHandoff,
   rememberHandoff,
   resumeDecision,
@@ -271,6 +273,9 @@ export function SaveLenderButton({
     if (parentHandoff) void beginHandoff('unsave');
   }
 
+  const isolatedSignIn = handoffParentOrigin() === ISOLATED_ASK_ORIGIN;
+  const signInHref = isolatedSignIn ? profileSignInHref() : MY_TRUSTHUB_ACCOUNT_ENTRY_HREF;
+
   return (
     <div className={cn('relative', className)}>
       <Button
@@ -286,13 +291,18 @@ export function SaveLenderButton({
       </Button>
       {parentHandoff && releaseAdmitted ? (
         <a
-          href={MY_TRUSTHUB_ACCOUNT_ENTRY_HREF}
+          href={signInHref}
           className="mt-1 block text-xs font-semibold text-[#0A2540] underline"
           aria-disabled={keepOpen}
           onClick={(event) => {
             event.preventDefault();
             void beginHandoff('save_signin');
           }}
+          onAuxClick={isolatedSignIn ? (event) => {
+            if (event.button !== 1) return;
+            event.preventDefault();
+            void beginHandoff('save_signin');
+          } : undefined}
         >
           Sign in to My TrustHub
         </a>

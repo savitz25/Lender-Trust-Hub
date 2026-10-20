@@ -7,6 +7,16 @@ export const ISOLATED_ASK_ORIGIN = 'https://conumers-trust-hub-git-b4-lender-ask
 export function handoffParentOrigin(value = process.env.NEXT_PUBLIC_MY_TRUSTHUB_V23_PARENT_ORIGIN): string {
   return value === ISOLATED_ASK_ORIGIN ? ISOLATED_ASK_ORIGIN : LENDER_PARENT_ORIGIN;
 }
+
+const PROFILE_SIGN_IN_PATH = '/my/sign-in';
+
+/** Sign-in href for the profile anchor. Only the exact isolated Ask alias leaves production. */
+export function profileSignInHref(value = process.env.NEXT_PUBLIC_MY_TRUSTHUB_V23_PARENT_ORIGIN): string {
+  return handoffParentOrigin(value) === ISOLATED_ASK_ORIGIN
+    ? ISOLATED_ASK_ORIGIN + PROFILE_SIGN_IN_PATH
+    : LENDER_PARENT_ORIGIN + PROFILE_SIGN_IN_PATH;
+}
+
 export const HANDOFF_FORM_PATH = '/my/profile-save';
 export const HANDOFF_TICKET_PREFIX = 'lth:lender-handoff:v1:';
 

@@ -1,7 +1,10 @@
 import assert from 'node:assert/strict';
 import { generateKeyPairSync } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import test from 'node:test';
-import { handoffForm, handoffParentOrigin, ISOLATED_ASK_ORIGIN, LENDER_PARENT_ORIGIN } from './handoff-form';
+import { MY_TRUSTHUB_ACCOUNT_ENTRY_HREF } from './account-presentation';
+import { handoffForm, handoffParentOrigin, ISOLATED_ASK_ORIGIN, LENDER_PARENT_ORIGIN, profileSignInHref } from './handoff-form';
 import { exactIsolatedLenderOrigin, ISOLATED_PROJECT, isolatedLenderPins } from './isolated-pilot';
 import { signLenderAssertion, verifyLenderAssertion } from './lender-assertion';
 import { PARENT_ORIGIN } from './manifest';
@@ -113,4 +116,21 @@ test('production handoff stays on www.asktrusthub.com', () => {
   assert.equal(handoffForm(PRODUCTION_ASK + '/my/profile-save', browser, 'save', handoffParentOrigin(PRODUCTION_ASK))?.action, PRODUCTION_ASK + '/my/profile-save');
   assert.equal(handoffForm(B4 + '/my/profile-save', browser, 'save', PRODUCTION_ASK), null);
   assert.equal(handoffForm(PARE + '/my/profile-save', browser, 'save', PRODUCTION_ASK), null);
+});
+
+test('the profile sign-in href is the B4 alias only for that exact public parent', () => {
+  assert.equal(MY_TRUSTHUB_ACCOUNT_ENTRY_HREF, PRODUCTION_ASK + '/my/sign-in');
+  assert.equal(profileSignInHref(B4), B4 + '/my/sign-in');
+  assert.equal(profileSignInHref(undefined), MY_TRUSTHUB_ACCOUNT_ENTRY_HREF);
+  assert.equal(profileSignInHref(PARE), MY_TRUSTHUB_ACCOUNT_ENTRY_HREF);
+  assert.equal(profileSignInHref(MOVE), MY_TRUSTHUB_ACCOUNT_ENTRY_HREF);
+  assert.equal(profileSignInHref(PRODUCTION_ASK), MY_TRUSTHUB_ACCOUNT_ENTRY_HREF);
+  assert.equal(profileSignInHref(''), MY_TRUSTHUB_ACCOUNT_ENTRY_HREF);
+  const source = readFileSync(join(process.cwd(), 'components', 'my-lending', 'save-lender-button.tsx'), 'utf8');
+  assert.match(source, /const isolatedSignIn = handoffParentOrigin\(\) === ISOLATED_ASK_ORIGIN/);
+  assert.match(source, /const signInHref = isolatedSignIn \? profileSignInHref\(\) : MY_TRUSTHUB_ACCOUNT_ENTRY_HREF/);
+  assert.match(source, /href=\{signInHref\}/);
+  assert.match(source, /onClick=\{\(event\) => \{\s*event\.preventDefault\(\);\s*void beginHandoff\('save_signin'\);/s);
+  assert.match(source, /onAuxClick=\{isolatedSignIn \? \(event\) => \{\s*if \(event\.button !== 1\) return;\s*event\.preventDefault\(\);\s*void beginHandoff\('save_signin'\);/s);
+  assert.equal(source.includes('https://www.asktrusthub.com/my/sign-in'), false);
 });
