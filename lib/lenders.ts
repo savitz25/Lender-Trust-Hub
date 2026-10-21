@@ -99,9 +99,7 @@ export function filterLenders(filters: LenderFilters): Lender[] {
     );
   }
 
-  if (filters.minRating) {
-    result = result.filter((l) => l.rating >= filters.minRating!);
-  }
+  // filters.minRating is ignored. Catalog ratings are unsourced placeholders.
 
   if (filters.nmlsVerified) {
     result = result.filter((l) => l.nmlsVerified);

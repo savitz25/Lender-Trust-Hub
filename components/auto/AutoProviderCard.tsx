@@ -1,7 +1,6 @@
-import { Star, ShieldCheck, ExternalLink } from 'lucide-react';
+import { ShieldCheck, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import type { AutoLoanProvider } from '@/lib/auto/types';
-import { hasDisplayableLenderRating } from '@/lib/research/lender-rating';
 import { cleanDisplayPhone } from '@/lib/verification';
 
 export function AutoProviderCard({
@@ -18,30 +17,19 @@ export function AutoProviderCard({
       aria-label={`#${rank} ${provider.name} — auto loan ${provider.type.toLowerCase()} in ${provider.state}`}
       className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition-colors hover:border-[#00A3A1]/40 sm:p-6"
     >
-      <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
-        <div className="flex min-w-0 items-start gap-3">
-          <div
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0A2540]/10 text-sm font-bold text-[#0A2540]"
-            aria-hidden="true"
-          >
-            {rank}
-          </div>
-          <div className="min-w-0">
-            <h3 className="text-lg font-semibold leading-tight text-[#0A2540]">{provider.name}</h3>
-            <p className="mt-0.5 text-xs text-zinc-500">
-              {provider.city}, {provider.state} · {provider.type}
-            </p>
-          </div>
+      <div className="mb-3 flex min-w-0 items-start gap-3">
+        <div
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0A2540]/10 text-sm font-bold text-[#0A2540]"
+          aria-hidden="true"
+        >
+          {rank}
         </div>
-        {hasDisplayableLenderRating(provider.rating, provider.reviewCount) ? (
-          <div className="flex items-center gap-1.5 rounded-full bg-amber-500/10 px-2.5 py-1 text-sm font-semibold text-amber-700">
-            <Star className="h-3.5 w-3.5 fill-current" aria-hidden="true" />
-            {provider.rating.toFixed(1)}
-            <span className="text-xs font-normal text-zinc-500">
-              ({provider.reviewCount.toLocaleString()})
-            </span>
-          </div>
-        ) : null}
+        <div className="min-w-0">
+          <h3 className="text-lg font-semibold leading-tight text-[#0A2540]">{provider.name}</h3>
+          <p className="mt-0.5 text-xs text-zinc-500">
+            {provider.city}, {provider.state} · {provider.type}
+          </p>
+        </div>
       </div>
 
       <p className="mb-4 text-sm leading-relaxed text-zinc-600">{provider.shortDescription}</p>

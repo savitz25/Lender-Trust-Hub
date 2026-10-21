@@ -29,6 +29,10 @@ export interface LenderDirectoryQuery {
   search?: string;
   sort?: LenderSortOption;
   loanType?: LoanType | '';
+  /**
+   * Legacy query field. Ignored. Sanitized catalog ratings are unsupported
+   * placeholders, so this must not filter lenders or mark a star filter active.
+   */
   minRating?: number;
   nmlsVerifiedOnly?: boolean;
   bbbAPlusOnly?: boolean;
@@ -71,10 +75,6 @@ export function filterAndSortLenders(
 
   if (query.loanType) {
     result = result.filter((l) => l.loanTypes.includes(query.loanType as LoanType));
-  }
-
-  if (query.minRating && query.minRating > 0) {
-    result = result.filter((l) => l.rating >= query.minRating!);
   }
 
   if (query.nmlsVerifiedOnly) {

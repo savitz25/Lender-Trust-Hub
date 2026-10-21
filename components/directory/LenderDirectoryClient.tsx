@@ -44,7 +44,6 @@ export interface LenderDirectoryClientProps {
   initialSearch?: string;
   initialSort?: LenderSortOption;
   initialLoanType?: LoanType | '';
-  initialMinRating?: number;
   /** Hide search when parent already provides a hero search. */
   showSearch?: boolean;
   /** Show rank numbers on cards (useful on small county lists). */
@@ -65,7 +64,6 @@ export function LenderDirectoryClient({
   initialSearch = '',
   initialSort = 'trust',
   initialLoanType = '',
-  initialMinRating = 0,
   showSearch = true,
   showRank = false,
   emptyMessage,
@@ -77,7 +75,6 @@ export function LenderDirectoryClient({
   const [debouncedSearch, setDebouncedSearch] = useState(initialSearch);
   const [sort, setSort] = useState<LenderSortOption>(initialSort);
   const [loanType, setLoanType] = useState<LoanType | ''>(initialLoanType);
-  const [minRating, setMinRating] = useState(initialMinRating);
   const [nmlsVerifiedOnly, setNmlsVerifiedOnly] = useState(false);
   const [bbbAPlusOnly, setBbbAPlusOnly] = useState(false);
   const [showFilters, setShowFilters] = useState(true);
@@ -96,11 +93,10 @@ export function LenderDirectoryClient({
       search: debouncedSearch,
       sort,
       loanType,
-      minRating,
       nmlsVerifiedOnly,
       bbbAPlusOnly,
     }),
-    [debouncedSearch, sort, loanType, minRating, nmlsVerifiedOnly, bbbAPlusOnly],
+    [debouncedSearch, sort, loanType, nmlsVerifiedOnly, bbbAPlusOnly],
   );
 
   const filtered = useMemo(
@@ -127,7 +123,6 @@ export function LenderDirectoryClient({
 
   const activeFilterCount =
     (loanType ? 1 : 0) +
-    (minRating > 0 ? 1 : 0) +
     (nmlsVerifiedOnly ? 1 : 0) +
     (bbbAPlusOnly ? 1 : 0) +
     (debouncedSearch.trim() ? 1 : 0);
@@ -137,7 +132,6 @@ export function LenderDirectoryClient({
     setDebouncedSearch('');
     setSort('trust');
     setLoanType('');
-    setMinRating(0);
     setNmlsVerifiedOnly(false);
     setBbbAPlusOnly(false);
   }, []);
@@ -258,20 +252,6 @@ export function LenderDirectoryClient({
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-              <label className="flex items-center gap-2 text-sm text-zinc-600">
-                <span className="font-medium text-[#0A2540]">Min rating</span>
-                <select
-                  value={minRating || ''}
-                  onChange={(e) => setMinRating(e.target.value ? Number(e.target.value) : 0)}
-                  className="h-9 rounded-lg border border-zinc-200 bg-white px-3 text-sm focus:border-[#059669] focus:outline-none focus:ring-2 focus:ring-[#059669]/20"
-                >
-                  <option value="">Any</option>
-                  <option value="4.5">4.5+ stars</option>
-                  <option value="4.0">4.0+ stars</option>
-                  <option value="3.5">3.5+ stars</option>
-                </select>
-              </label>
-
               <label className="flex cursor-pointer items-center gap-2 text-sm text-zinc-600">
                 <input
                   type="checkbox"

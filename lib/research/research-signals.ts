@@ -12,7 +12,6 @@
  */
 
 import type { Lender } from '@/lib/mockData';
-import { hasDisplayableLenderRating } from '@/lib/research/lender-rating';
 import {
   cleanNmlsId,
   resolveNmlsVerification,
@@ -100,10 +99,6 @@ export function getLenderEvidenceBadges(
     nmlsVerified: lender.nmlsVerified,
   });
   const local = computeLocalMarketEvidence(lender);
-  const hasRating = hasDisplayableLenderRating(
-    lender.googleRating ?? lender.rating,
-    lender.reviewCount,
-  );
   const cfpbPresent =
     opts?.cfpbRecordAvailable === true ||
     (typeof lender.cfpbComplaints === 'number' && lender.cfpbComplaints > 0);
@@ -127,11 +122,9 @@ export function getLenderEvidenceBadges(
     },
     {
       id: 'ratings',
-      label: hasRating ? 'Third-party rating attributed' : 'No attributed rating',
-      present: hasRating,
-      detail: hasRating
-        ? `Catalog snapshot · ${(lender.googleRating || lender.rating).toFixed(1)} · ${lender.reviewCount} reviews (confirm on source platforms)`
-        : 'No volume-backed third-party rating on file',
+      label: 'No attributed rating',
+      present: false,
+      detail: 'No volume-backed third-party rating on file',
     },
     {
       id: 'cfpb',
@@ -220,11 +213,8 @@ export function computeLenderResearchScore(lender: Lender): {
     label: 'Third-party reputation snapshot',
     points: repPts,
     maxPoints: 26,
-    detail: hasDisplayableLenderRating(gRating, gCount)
-      ? `Catalog snapshot · ${gRating.toFixed(1)} · ${gCount} listed reviews (confirm on source platforms)`
-      : gCount > 0
-        ? 'No supported rating on file'
-        : 'No review volume on file',
+    detail:
+      gCount > 0 ? 'No supported rating on file' : 'No review volume on file',
   });
   total += repPts;
 
