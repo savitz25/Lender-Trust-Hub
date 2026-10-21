@@ -66,13 +66,38 @@ export function exactIsolatedLenderOrigin(value: string | undefined): string | n
   }
 }
 
+/** ProcessEnv has no PilotEnv fields in common with this type. Read the named
+ * fields when a caller omits env. NEXT_PUBLIC_* stay direct property reads so
+ * Next can substitute them at build, and the read stays at call time.
+ */
+export function pilotEnvFromProcess(): PilotEnv {
+  return {
+    NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED: process.env.NEXT_PUBLIC_LENDER_PARENT_SAVE_ENABLED,
+    NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS: process.env.NEXT_PUBLIC_LENDER_PARENT_SAVE_CANARY_SLUGS,
+    MTH_LENDER_PARENT_SAVE_MODE: process.env.MTH_LENDER_PARENT_SAVE_MODE,
+    VERCEL_ENV: process.env.VERCEL_ENV,
+    MY_TRUSTHUB_V23_PARENT_ORIGIN: process.env.MY_TRUSTHUB_V23_PARENT_ORIGIN,
+    MY_TRUSTHUB_V23_LENDER_ORIGIN: process.env.MY_TRUSTHUB_V23_LENDER_ORIGIN,
+    MY_TRUSTHUB_V23_ISOLATED_PROJECT: process.env.MY_TRUSTHUB_V23_ISOLATED_PROJECT,
+    NEXT_PUBLIC_MY_TRUSTHUB_V23_PARENT_ORIGIN: process.env.NEXT_PUBLIC_MY_TRUSTHUB_V23_PARENT_ORIGIN,
+    MY_TRUSTHUB_V23_LENDER_KEY_ID: process.env.MY_TRUSTHUB_V23_LENDER_KEY_ID,
+    MY_TRUSTHUB_V23_LENDER_SIGNING_PRIVATE_KEY_PEM: process.env.MY_TRUSTHUB_V23_LENDER_SIGNING_PRIVATE_KEY_PEM,
+    MY_TRUSTHUB_V23_PARENT_PROTECTION_BYPASS: process.env.MY_TRUSTHUB_V23_PARENT_PROTECTION_BYPASS,
+  };
+}
+
+function resolvePilotEnv(env?: PilotEnv): PilotEnv {
+  return env ?? pilotEnvFromProcess();
+}
+
 /** Preview-only pins. Production mode and a missing lender origin stay closed. */
-export function isolatedLenderPins(env: PilotEnv = process.env): LenderPins | null {
-  if (env.VERCEL_ENV !== 'preview') return null;
-  if (productionParentGate(env).enabled) return null;
-  const lenderOrigin = exactIsolatedLenderOrigin(env.MY_TRUSTHUB_V23_LENDER_ORIGIN);
-  if (!lenderOrigin || env.MY_TRUSTHUB_V23_PARENT_ORIGIN !== ISOLATED_ASK_ORIGIN) return null;
-  if (env.MY_TRUSTHUB_V23_ISOLATED_PROJECT !== ISOLATED_PROJECT) return null;
+export function isolatedLenderPins(env?: PilotEnv): LenderPins | null {
+  const source = resolvePilotEnv(env);
+  if (source.VERCEL_ENV !== 'preview') return null;
+  if (productionParentGate(source).enabled) return null;
+  const lenderOrigin = exactIsolatedLenderOrigin(source.MY_TRUSTHUB_V23_LENDER_ORIGIN);
+  if (!lenderOrigin || source.MY_TRUSTHUB_V23_PARENT_ORIGIN !== ISOLATED_ASK_ORIGIN) return null;
+  if (source.MY_TRUSTHUB_V23_ISOLATED_PROJECT !== ISOLATED_PROJECT) return null;
   return {
     parentOrigin: ISOLATED_ASK_ORIGIN,
     lenderOrigin,
@@ -81,7 +106,7 @@ export function isolatedLenderPins(env: PilotEnv = process.env): LenderPins | nu
   };
 }
 
-export function isolatedPilotAdmits(slug: string, env: PilotEnv = process.env): boolean {
+export function isolatedPilotAdmits(slug: string, env?: PilotEnv): boolean {
   return slug === ISOLATED_PILOT_SLUG && isolatedLenderPins(env) !== null;
 }
 
@@ -90,11 +115,12 @@ const ACCOUNT_SIGN_IN_PATH = '/my/sign-in';
 /** Isolated-pilot deployment identity. The parent strings are not part of this check,
  * so a missing or unapproved parent cannot reclassify the pilot as production.
  */
-export function isolatedPilotDeployment(env: PilotEnv = process.env): boolean {
-  if (env.VERCEL_ENV !== 'preview') return false;
-  if (productionParentGate(env).enabled) return false;
-  if (!exactIsolatedLenderOrigin(env.MY_TRUSTHUB_V23_LENDER_ORIGIN)) return false;
-  if (env.MY_TRUSTHUB_V23_ISOLATED_PROJECT !== ISOLATED_PROJECT) return false;
+export function isolatedPilotDeployment(env?: PilotEnv): boolean {
+  const source = resolvePilotEnv(env);
+  if (source.VERCEL_ENV !== 'preview') return false;
+  if (productionParentGate(source).enabled) return false;
+  if (!exactIsolatedLenderOrigin(source.MY_TRUSTHUB_V23_LENDER_ORIGIN)) return false;
+  if (source.MY_TRUSTHUB_V23_ISOLATED_PROJECT !== ISOLATED_PROJECT) return false;
   return true;
 }
 
@@ -104,11 +130,12 @@ export function isolatedPilotDeployment(env: PilotEnv = process.env): boolean {
  * unavailable and is not a production login. Every other deployment, including
  * actual production, keeps the production sign-in href.
  */
-export function lenderAccountSignInDestination(env: PilotEnv = process.env): string | null {
-  if (!isolatedPilotDeployment(env)) return LENDER_PARENT_ORIGIN + ACCOUNT_SIGN_IN_PATH;
+export function lenderAccountSignInDestination(env?: PilotEnv): string | null {
+  const source = resolvePilotEnv(env);
+  if (!isolatedPilotDeployment(source)) return LENDER_PARENT_ORIGIN + ACCOUNT_SIGN_IN_PATH;
   if (
-    env.MY_TRUSTHUB_V23_PARENT_ORIGIN === ISOLATED_ASK_ORIGIN &&
-    env.NEXT_PUBLIC_MY_TRUSTHUB_V23_PARENT_ORIGIN === ISOLATED_ASK_ORIGIN
+    source.MY_TRUSTHUB_V23_PARENT_ORIGIN === ISOLATED_ASK_ORIGIN &&
+    source.NEXT_PUBLIC_MY_TRUSTHUB_V23_PARENT_ORIGIN === ISOLATED_ASK_ORIGIN
   ) {
     return ISOLATED_ASK_ORIGIN + ACCOUNT_SIGN_IN_PATH;
   }

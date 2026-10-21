@@ -1,7 +1,7 @@
 import { randomBytes } from 'node:crypto';
 import type { Lender } from '../mockData';
 import { assessMarketplaceProfile, canaryAllows, type OneClickGate } from './one-click';
-import { isolatedLenderPins, type PilotEnv } from './isolated-pilot';
+import { isolatedLenderPins, pilotEnvFromProcess, type PilotEnv } from './isolated-pilot';
 import { ASSERTION_HEADER, signLenderAssertion, type AssertionKey, type LenderPins } from './lender-assertion';
 import {
   PARENT_API_PATH,
@@ -106,10 +106,11 @@ export function productionHandoffDeps(env: NodeJS.ProcessEnv = process.env): Pic
 }
 
 /** Isolated pilot signer. It never uses the production origin pair. */
-export function isolatedHandoffDeps(env: PilotEnv = process.env): Pick<StageDeps, 'key' | 'parent' | 'origin' | 'pins'> {
-  const pins = isolatedLenderPins(env);
-  const kid = env.MY_TRUSTHUB_V23_LENDER_KEY_ID?.trim() ?? '';
-  const pem = env.MY_TRUSTHUB_V23_LENDER_SIGNING_PRIVATE_KEY_PEM ?? '';
+export function isolatedHandoffDeps(env?: PilotEnv): Pick<StageDeps, 'key' | 'parent' | 'origin' | 'pins'> {
+  const source = env ?? pilotEnvFromProcess();
+  const pins = isolatedLenderPins(source);
+  const kid = source.MY_TRUSTHUB_V23_LENDER_KEY_ID?.trim() ?? '';
+  const pem = source.MY_TRUSTHUB_V23_LENDER_SIGNING_PRIVATE_KEY_PEM ?? '';
   if (!pins || !/^[A-Za-z0-9_-]{1,64}$/.test(kid) || !pem.includes('PRIVATE KEY')) return {};
   const key = { kid, pem };
   return {
@@ -124,7 +125,7 @@ export function isolatedHandoffDeps(env: PilotEnv = process.env): Pick<StageDeps
         headers: {
           'content-type': 'application/json',
           [ASSERTION_HEADER]: call.assertion,
-          ...parentProtectionHeader(pins.parentOrigin, target, env.MY_TRUSTHUB_V23_PARENT_PROTECTION_BYPASS),
+          ...parentProtectionHeader(pins.parentOrigin, target, source.MY_TRUSTHUB_V23_PARENT_PROTECTION_BYPASS),
         },
         cache: 'no-store',
         redirect: 'error',
