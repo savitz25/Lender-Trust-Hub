@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { Star, ShieldCheck } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 import { lenders, type Lender } from '@/lib/mockData';
+import { CompareLenderChoices } from '@/components/compare/compare-lender-choices';
 import { Button } from '@/components/ui/button';
 import { trackLenderCompareSession } from '@/lib/analytics/ga-events';
 
@@ -42,37 +43,11 @@ export default function ComparePage() {
         </p>
       </div>
 
-      <div className="mx-auto mb-10 max-w-3xl space-y-3">
-        {lenders.slice(0, 10).map((lender) => (
-          <label
-            key={lender.id}
-            className={`flex cursor-pointer items-center gap-4 rounded-xl border p-4 transition-colors ${
-              selected.includes(lender.id)
-                ? 'border-[#059669] bg-emerald-50'
-                : 'border-zinc-200 bg-white hover:border-zinc-300'
-            }`}
-          >
-            <input
-              type="checkbox"
-              checked={selected.includes(lender.id)}
-              onChange={() => toggleLender(lender.id)}
-              disabled={!selected.includes(lender.id) && selected.length >= 3}
-              className="h-4 w-4 rounded border-zinc-300"
-              aria-label={`Select ${lender.name} for comparison`}
-            />
-            <div className="flex-1">
-              <div className="font-semibold text-[#0A2540]">{lender.name}</div>
-              <div className="text-xs text-zinc-500">
-                {lender.county} County, {lender.state} · NMLS {lender.nmlsId}
-              </div>
-            </div>
-            <div className="flex items-center gap-1 text-sm font-semibold text-amber-700">
-              <Star className="h-4 w-4 fill-current" aria-hidden="true" />
-              {lender.rating.toFixed(1)}
-            </div>
-          </label>
-        ))}
-      </div>
+      <CompareLenderChoices
+        lenders={lenders.slice(0, 10)}
+        selected={selected}
+        onToggle={toggleLender}
+      />
 
       {compared.length >= 2 && (
         <div className="mx-auto max-w-5xl overflow-x-auto">

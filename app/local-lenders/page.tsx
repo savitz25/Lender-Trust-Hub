@@ -95,7 +95,8 @@ export default async function LocalLendersHubPage({ searchParams }: PageProps) {
   const initialSearch = firstParam(params.q) || firstParam(params.search) || firstParam(params.zip);
   const loanTypeRaw = firstParam(params.loanType) as LoanType | '';
   const sortRaw = (firstParam(params.sort) || 'trust') as LenderSortOption;
-  const minRating = Number(firstParam(params.minRating)) || 0;
+  // Legacy ?minRating= is ignored. It must not filter or become active-filter copy.
+  void firstParam(params.minRating);
 
   return (
     <>
@@ -155,7 +156,6 @@ export default async function LocalLendersHubPage({ searchParams }: PageProps) {
             initialSearch={initialSearch}
             initialSort={sortRaw}
             initialLoanType={loanTypeRaw}
-            initialMinRating={minRating}
             showSearch
           />
         </div>

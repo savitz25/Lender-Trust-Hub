@@ -99,8 +99,6 @@ export function getLenderEvidenceBadges(
     nmlsVerified: lender.nmlsVerified,
   });
   const local = computeLocalMarketEvidence(lender);
-  const hasRating =
-    ((lender.googleRating ?? lender.rating) ?? 0) > 0 && (lender.reviewCount ?? 0) > 0;
   const cfpbPresent =
     opts?.cfpbRecordAvailable === true ||
     (typeof lender.cfpbComplaints === 'number' && lender.cfpbComplaints > 0);
@@ -124,11 +122,9 @@ export function getLenderEvidenceBadges(
     },
     {
       id: 'ratings',
-      label: hasRating ? 'Third-party rating attributed' : 'No attributed rating',
-      present: hasRating,
-      detail: hasRating
-        ? `Catalog snapshot · ${(lender.googleRating || lender.rating).toFixed(1)} · ${lender.reviewCount} reviews (confirm on source platforms)`
-        : 'No volume-backed third-party rating on file',
+      label: 'No attributed rating',
+      present: false,
+      detail: 'No volume-backed third-party rating on file',
     },
     {
       id: 'cfpb',
@@ -218,9 +214,7 @@ export function computeLenderResearchScore(lender: Lender): {
     points: repPts,
     maxPoints: 26,
     detail:
-      gCount > 0
-        ? `Catalog snapshot · ${gRating.toFixed(1)} · ${gCount} listed reviews (confirm on source platforms)`
-        : 'No review volume on file',
+      gCount > 0 ? 'No supported rating on file' : 'No review volume on file',
   });
   total += repPts;
 

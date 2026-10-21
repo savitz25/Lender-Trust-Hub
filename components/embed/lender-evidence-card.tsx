@@ -92,9 +92,6 @@ export function LenderEvidenceCard({
     return `https://www.lendertrusthub.com/tools/loan-estimate-analyzer?${p.toString()}`;
   })();
 
-  const hasRating =
-    ((lender.googleRating ?? lender.rating) ?? 0) > 0 && (lender.reviewCount ?? 0) > 0;
-
   return (
     <article
       className="mx-auto max-w-lg overflow-hidden rounded-2xl border border-[#0A2540]/12 bg-white shadow-sm"
@@ -180,13 +177,6 @@ export function LenderEvidenceCard({
             />
           ) : null}
 
-          {hasRating ? (
-            <Metric
-              label="Attributed rating snapshot"
-              value={`${(lender.googleRating || lender.rating).toFixed(1)} · ${lender.reviewCount}`}
-              hint="Catalog snapshot · confirm on source platforms"
-            />
-          ) : null}
         </div>
 
         {!hmda && !cfpb ? (

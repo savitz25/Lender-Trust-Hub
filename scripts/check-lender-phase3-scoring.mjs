@@ -38,7 +38,7 @@ ok('profile ResearchScoreDisplay', profile.includes('ResearchScoreDisplay'));
 ok('profile provenance-gated metrics', profile.includes('provenance-gated') || profile.includes('Public metrics'));
 
 const compare = read('app/compare/page.tsx');
-ok('compare Research Score', compare.includes('Research Score'));
+ok('compare does not render a star rating', !compare.includes('<Star') && !compare.includes('rating.toFixed'));
 ok('compare no raw BBB without context', !compare.includes("{ label: 'BBB'"));
 
 const county = read('app/local-lenders/[state]/[county]/page.tsx');

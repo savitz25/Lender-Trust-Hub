@@ -84,11 +84,6 @@ export function buildAutoStateJsonLd(
             name: p.name,
             url: p.website || `${SITE_URL}${AUTO_CATEGORY.hubPath}/${stateMeta.slug}#provider-${p.id}`,
             areaServed: stateMeta.fullName,
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: String(p.rating),
-              reviewCount: String(p.reviewCount),
-            },
           },
         })),
       },
