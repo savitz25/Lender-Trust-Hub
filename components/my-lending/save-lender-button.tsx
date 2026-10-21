@@ -4,13 +4,12 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ShortlistFullPanel } from '@/components/my-lending/shortlist-full-panel';
 import { WorkspaceSaveToast } from '@/components/my-lending/workspace-save-toast';
-import { MY_TRUSTHUB_ACCOUNT_ENTRY_HREF, profileSaveLabel } from '@/lib/my-lending/account-presentation';
+import { profileSaveLabel } from '@/lib/my-lending/account-presentation';
+import { LenderProfileSignInLink } from '@/components/my-lending/my-trusthub-account-entry';
 import {
   handoffForm,
   handoffParentOrigin,
-  ISOLATED_ASK_ORIGIN,
   markHandoffSent,
-  profileSignInHref,
   readHandoff,
   rememberHandoff,
   resumeDecision,
@@ -48,6 +47,8 @@ type Props = {
   defaultStatus?: LenderResearchStatus;
   /** Profile pages only. Directory cards stay on the device. */
   parentHandoff?: boolean;
+  /** Server-chosen account href. Null hides the sign-in anchor. */
+  accountSignInHref?: string | null;
 };
 
 /**
@@ -62,6 +63,7 @@ export function SaveLenderButton({
   size = 'default',
   defaultStatus = 'shortlisted',
   parentHandoff = false,
+  accountSignInHref = null,
 }: Props) {
   const [saved, setSaved] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
@@ -273,9 +275,6 @@ export function SaveLenderButton({
     if (parentHandoff) void beginHandoff('unsave');
   }
 
-  const isolatedSignIn = handoffParentOrigin() === ISOLATED_ASK_ORIGIN;
-  const signInHref = isolatedSignIn ? profileSignInHref() : MY_TRUSTHUB_ACCOUNT_ENTRY_HREF;
-
   return (
     <div className={cn('relative', className)}>
       <Button
@@ -289,23 +288,12 @@ export function SaveLenderButton({
       >
         {profileSaveLabel(saved)}
       </Button>
-      {parentHandoff && releaseAdmitted ? (
-        <a
-          href={signInHref}
-          className="mt-1 block text-xs font-semibold text-[#0A2540] underline"
-          aria-disabled={keepOpen}
-          onClick={(event) => {
-            event.preventDefault();
-            void beginHandoff('save_signin');
-          }}
-          onAuxClick={isolatedSignIn ? (event) => {
-            if (event.button !== 1) return;
-            event.preventDefault();
-            void beginHandoff('save_signin');
-          } : undefined}
-        >
-          Sign in to My TrustHub
-        </a>
+      {parentHandoff && releaseAdmitted && accountSignInHref ? (
+        <LenderProfileSignInLink
+          href={accountSignInHref}
+          keepOpen={keepOpen}
+          onSignIn={() => void beginHandoff('save_signin')}
+        />
       ) : null}
       {keepOpen ? (
         <p className="mt-1 text-xs text-zinc-600" role="status">Keep this page open</p>

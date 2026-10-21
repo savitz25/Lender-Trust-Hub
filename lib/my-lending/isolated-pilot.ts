@@ -1,4 +1,4 @@
-import { ISOLATED_ASK_ORIGIN, handoffParentOrigin } from './handoff-form';
+import { ISOLATED_ASK_ORIGIN, LENDER_PARENT_ORIGIN, handoffParentOrigin } from './handoff-form';
 import { LENDER_PRODUCTION_PINS, type LenderPins } from './lender-assertion';
 import { LENDER_ORIGIN, PARENT_ORIGIN } from './manifest';
 import { productionParentGate, type ReleaseEnv } from './one-click';
@@ -83,6 +83,36 @@ export function isolatedLenderPins(env: PilotEnv = process.env): LenderPins | nu
 
 export function isolatedPilotAdmits(slug: string, env: PilotEnv = process.env): boolean {
   return slug === ISOLATED_PILOT_SLUG && isolatedLenderPins(env) !== null;
+}
+
+const ACCOUNT_SIGN_IN_PATH = '/my/sign-in';
+
+/** Isolated-pilot deployment identity. The parent strings are not part of this check,
+ * so a missing or unapproved parent cannot reclassify the pilot as production.
+ */
+export function isolatedPilotDeployment(env: PilotEnv = process.env): boolean {
+  if (env.VERCEL_ENV !== 'preview') return false;
+  if (productionParentGate(env).enabled) return false;
+  if (!exactIsolatedLenderOrigin(env.MY_TRUSTHUB_V23_LENDER_ORIGIN)) return false;
+  if (env.MY_TRUSTHUB_V23_ISOLATED_PROJECT !== ISOLATED_PROJECT) return false;
+  return true;
+}
+
+/** Shared href for the profile sign-in anchor and the navbar account entry.
+ * The isolated pilot returns the B4 Preview sign-in only when both parent values
+ * are exactly that origin. Any other parent returns null: the account action is
+ * unavailable and is not a production login. Every other deployment, including
+ * actual production, keeps the production sign-in href.
+ */
+export function lenderAccountSignInDestination(env: PilotEnv = process.env): string | null {
+  if (!isolatedPilotDeployment(env)) return LENDER_PARENT_ORIGIN + ACCOUNT_SIGN_IN_PATH;
+  if (
+    env.MY_TRUSTHUB_V23_PARENT_ORIGIN === ISOLATED_ASK_ORIGIN &&
+    env.NEXT_PUBLIC_MY_TRUSTHUB_V23_PARENT_ORIGIN === ISOLATED_ASK_ORIGIN
+  ) {
+    return ISOLATED_ASK_ORIGIN + ACCOUNT_SIGN_IN_PATH;
+  }
+  return null;
 }
 
 

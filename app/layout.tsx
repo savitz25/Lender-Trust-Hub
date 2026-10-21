@@ -12,6 +12,7 @@ import { AskSearchContextBanner } from '@/components/search-handoff/ask-search-c
 import { BRAND_ICONS } from '@/lib/brand';
 import { ASK_NETWORK_STANDARD_VERSION } from '@/lib/network/standard-version';
 import { TH_CHASSIS_VERSION } from '@/lib/design/trusthub-visual-standard';
+import { lenderAccountSignInDestination } from '@/lib/my-lending/isolated-pilot';
 import {
   SHARE_HUB,
   resolveShareOrigin,
@@ -117,7 +118,7 @@ export default function RootLayout({
             <HubLastLocationBridge hubId="lender" />
             <GtagProvider />
             <SiteChrome
-              chrome={<Navbar />}
+              chrome={<Navbar accountSignInHref={lenderAccountSignInDestination()} />}
               footer={<Footer />}
             >
               <Suspense fallback={null}>

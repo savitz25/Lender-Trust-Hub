@@ -37,7 +37,7 @@ function navActive(pathname: string, href: string) {
  * VISUAL-004 Lender network shell — one sticky header, 69 / 65 / 57.
  * No Ask Network bar. One Switch Hub.
  */
-export default function Navbar() {
+export default function Navbar({ accountSignInHref }: { accountSignInHref: string | null }) {
   const pathname = usePathname() || '/';
   const [open, setOpen] = useState(false);
   const [directoriesOpen, setDirectoriesOpen] = useState(false);
@@ -199,13 +199,13 @@ export default function Navbar() {
         </nav>
 
         <div className="th-header-actions">
-          <MyTrustHubAccountEntry />
+          <MyTrustHubAccountEntry href={accountSignInHref} />
           {myLendingDesktop}
           <SwitchHubMenu />
         </div>
 
         <div className="th-header-mobile-actions">
-          <MyTrustHubAccountEntry variant="icon" />
+          <MyTrustHubAccountEntry variant="icon" href={accountSignInHref} />
           <Link
             href="/my-lending"
             className="th-btn-icon"
@@ -281,7 +281,7 @@ export default function Navbar() {
                   {item.label}
                 </Link>
               ))}
-              <MyTrustHubAccountEntry variant="drawer" />
+              <MyTrustHubAccountEntry variant="drawer" href={accountSignInHref} />
               <Link
                 href="/my-lending"
                 className="th-drawer-link"

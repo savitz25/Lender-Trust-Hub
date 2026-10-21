@@ -18,6 +18,7 @@ import { ResearchPathNav } from '@/components/research/research-path-nav';
 import { LenderProfileViewTracker } from '@/components/analytics/lender-profile-view-tracker';
 import { AskProfileBackLink } from '@/components/search-handoff/ask-profile-back-link';
 import { deriveLenderHomeLocality, homeLocalityLine } from '@/lib/geo';
+import { lenderAccountSignInDestination } from '@/lib/my-lending/isolated-pilot';
 import { resolveNmlsVerification } from '@/lib/verification';
 import { NmlsVerificationBadge } from '@/components/nmls-verification-badge';
 import { computeLenderResearchSignals } from '@/lib/research/research-signals';
@@ -285,6 +286,7 @@ export default async function LenderProfilePage({
               nmlsId={lender.nmlsId}
               loanTypes={lender.loanTypes}
               parentHandoff
+              accountSignInHref={lenderAccountSignInDestination()}
             />
             {lender.phone && (
               <a
