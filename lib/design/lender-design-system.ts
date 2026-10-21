@@ -409,7 +409,7 @@ export const LENDER_NETWORK_SECTION = {
  */
 export const LENDER_HEADER_NAV = [
   { href: '/local-lenders', label: 'Local Lenders' },
-  { href: '/compare', label: 'Compare rates' },
+  { href: '/compare', label: 'Compare companies' },
   { href: '/calculators', label: 'Calculators' },
   { href: '/methodology', label: 'Methodology' },
   { href: '/about', label: 'Trust' },

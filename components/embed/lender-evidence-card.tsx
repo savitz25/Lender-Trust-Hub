@@ -3,6 +3,7 @@ import type { Lender } from '@/lib/mockData';
 import type { HmdaCountyEvidence, HmdaLenderEvidence } from '@/lib/hmda';
 import type { CfpbComplaintEvidence } from '@/lib/cfpb';
 import { resolveNmlsVerification } from '@/lib/verification';
+import { hasDisplayableLenderRating } from '@/lib/research/lender-rating';
 import { getLenderEvidenceBadges } from '@/lib/research/research-signals';
 import { homeLocalityLine } from '@/lib/geo';
 import { EmbedAnalytics } from '@/components/embed/embed-analytics';
@@ -92,8 +93,10 @@ export function LenderEvidenceCard({
     return `https://www.lendertrusthub.com/tools/loan-estimate-analyzer?${p.toString()}`;
   })();
 
-  const hasRating =
-    ((lender.googleRating ?? lender.rating) ?? 0) > 0 && (lender.reviewCount ?? 0) > 0;
+  const hasRating = hasDisplayableLenderRating(
+    lender.googleRating ?? lender.rating,
+    lender.reviewCount,
+  );
 
   return (
     <article

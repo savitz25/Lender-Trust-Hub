@@ -12,6 +12,7 @@
  */
 
 import type { Lender } from '@/lib/mockData';
+import { hasDisplayableLenderRating } from '@/lib/research/lender-rating';
 import {
   cleanNmlsId,
   resolveNmlsVerification,
@@ -99,8 +100,10 @@ export function getLenderEvidenceBadges(
     nmlsVerified: lender.nmlsVerified,
   });
   const local = computeLocalMarketEvidence(lender);
-  const hasRating =
-    ((lender.googleRating ?? lender.rating) ?? 0) > 0 && (lender.reviewCount ?? 0) > 0;
+  const hasRating = hasDisplayableLenderRating(
+    lender.googleRating ?? lender.rating,
+    lender.reviewCount,
+  );
   const cfpbPresent =
     opts?.cfpbRecordAvailable === true ||
     (typeof lender.cfpbComplaints === 'number' && lender.cfpbComplaints > 0);
@@ -217,9 +220,10 @@ export function computeLenderResearchScore(lender: Lender): {
     label: 'Third-party reputation snapshot',
     points: repPts,
     maxPoints: 26,
-    detail:
-      gCount > 0
-        ? `Catalog snapshot · ${gRating.toFixed(1)} · ${gCount} listed reviews (confirm on source platforms)`
+    detail: hasDisplayableLenderRating(gRating, gCount)
+      ? `Catalog snapshot · ${gRating.toFixed(1)} · ${gCount} listed reviews (confirm on source platforms)`
+      : gCount > 0
+        ? 'No supported rating on file'
         : 'No review volume on file',
   });
   total += repPts;

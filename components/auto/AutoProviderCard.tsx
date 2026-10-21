@@ -1,6 +1,7 @@
 import { Star, ShieldCheck, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import type { AutoLoanProvider } from '@/lib/auto/types';
+import { hasDisplayableLenderRating } from '@/lib/research/lender-rating';
 import { cleanDisplayPhone } from '@/lib/verification';
 
 export function AutoProviderCard({
@@ -32,13 +33,15 @@ export function AutoProviderCard({
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-1.5 rounded-full bg-amber-500/10 px-2.5 py-1 text-sm font-semibold text-amber-700">
-          <Star className="h-3.5 w-3.5 fill-current" aria-hidden="true" />
-          {provider.rating.toFixed(1)}
-          <span className="text-xs font-normal text-zinc-500">
-            ({provider.reviewCount.toLocaleString()})
-          </span>
-        </div>
+        {hasDisplayableLenderRating(provider.rating, provider.reviewCount) ? (
+          <div className="flex items-center gap-1.5 rounded-full bg-amber-500/10 px-2.5 py-1 text-sm font-semibold text-amber-700">
+            <Star className="h-3.5 w-3.5 fill-current" aria-hidden="true" />
+            {provider.rating.toFixed(1)}
+            <span className="text-xs font-normal text-zinc-500">
+              ({provider.reviewCount.toLocaleString()})
+            </span>
+          </div>
+        ) : null}
       </div>
 
       <p className="mb-4 text-sm leading-relaxed text-zinc-600">{provider.shortDescription}</p>

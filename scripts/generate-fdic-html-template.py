@@ -599,8 +599,7 @@ ADAPT FOR OTHER VERTICALS (one-line CATEGORY swap):
         const url = `${{this.category.siteUrl}}${{this.category.hubPath}}/florida`;
         try {{ this.bookmarked = JSON.parse(localStorage.getItem('lth-fdic-bookmarks')||'[]').includes(url); }} catch(e){{}}
         const graph = [
-          {{ '@type':'Organization', name:'Lender Trust Hub', url:this.category.siteUrl,
-             aggregateRating:{{ '@type':'AggregateRating', ratingValue:'4.9', reviewCount:'128', bestRating:'5', worstRating:'1' }} }},
+          {{ '@type':'Organization', name:'Lender Trust Hub', url:this.category.siteUrl }},
           {{ '@type':'WebPage', name:this.pageTitle, description:document.querySelector('meta[name=description]').content, url }},
           {{ '@type':'ItemList', name:`FDIC Banks in ${{this.meta.fullName}}`, numberOfItems:this.banks.length,
              itemListElement: this.banks.slice(0,50).map((b,i) => ({{
