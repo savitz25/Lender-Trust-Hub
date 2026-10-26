@@ -28,14 +28,7 @@ import { NEVADA_INTELLIGENCE_GATE } from '@/lib/nevada-intelligence/publication'
 import { MINNESOTA_INTELLIGENCE_GATE } from '@/lib/minnesota-intelligence/publication';
 import { indexedNjCountyGates } from '@/lib/new-jersey-intelligence/counties';
 
-/** Meaningful lastmod for sitemap — day of generation (catalog is static build data). */
-function catalogLastMod(): Date {
-  return new Date();
-}
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = catalogLastMod();
-
   /** Indexable public research surfaces only — workspace routes excluded */
   const staticPaths: Array<{ path: string; priority: number; changeFrequency: 'weekly' | 'monthly' }> = [
     { path: '/', priority: 1, changeFrequency: 'weekly' },
@@ -162,7 +155,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes: MetadataRoute.Sitemap = staticPaths.map(({ path, priority, changeFrequency }) => ({
     url: `${SITE_URL}${path === '/' ? '' : path}`,
-    lastModified: now,
     changeFrequency,
     priority,
   }));
@@ -171,7 +163,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   try {
     fdicStates = US_STATES.filter((s) => s.hasData).map((s) => ({
       url: `${SITE_URL}/fdic-insured-banks/${s.slug}`,
-      lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     }));
@@ -183,7 +174,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   try {
     mortgageStates = getStateSlugsWithLenders().map((state) => ({
       url: `${SITE_URL}/local-lenders/${state}`,
-      lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: HIGH_VOLUME_STATE_SLUGS.has(state) ? 0.92 : 0.84,
     }));
@@ -206,7 +196,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             : 0.65;
       return {
         url: `${SITE_URL}/local-lenders/${c.stateSlug}/${c.countySlug}`,
-        lastModified: now,
         changeFrequency: 'weekly' as const,
         priority,
       };
@@ -220,7 +209,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((l) => l.nmlsVerified && cleanNmlsId(l.nmlsId))
     .map((l) => ({
       url: `${SITE_URL}/lenders/${l.slug}`,
-      lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: HIGH_VOLUME_STATE_SLUGS.has(l.stateSlug) ? 0.74 : 0.68,
     }));
