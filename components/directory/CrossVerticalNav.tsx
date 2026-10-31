@@ -6,6 +6,11 @@ import {
   MORTGAGE_CATEGORY,
   AUTO_CATEGORY,
 } from '@/lib/directory/categories';
+import {
+  publishedAutoStatePath,
+  publishedFdicStatePath,
+  publishedMortgageStatePath,
+} from '@/lib/directory/published-state-routes';
 
 const ICONS = {
   fdic: Landmark,
@@ -29,6 +34,11 @@ export function CrossVerticalNav({
   stateName?: string;
   activeVertical?: ActiveVertical;
 }) {
+  const fdicHref = stateSlug ? publishedFdicStatePath(stateSlug) : FDIC_CATEGORY.hubPath;
+  const mortgageHref = stateSlug
+    ? publishedMortgageStatePath(stateSlug)
+    : MORTGAGE_CATEGORY.hubPath;
+  const autoHref = stateSlug ? publishedAutoStatePath(stateSlug) : AUTO_CATEGORY.hubPath;
   const items: {
     id: ActiveVertical | 'calculators';
     label: string;
@@ -36,27 +46,33 @@ export function CrossVerticalNav({
     icon: typeof ICONS[keyof typeof ICONS];
     description: string;
   }[] = [
-    {
-      id: 'fdic',
-      label: stateName ? `FDIC Banks in ${stateName}` : 'FDIC Insured Banks',
-      href: stateSlug ? FDIC_CATEGORY.statePath(stateSlug) : FDIC_CATEGORY.hubPath,
-      icon: ICONS.fdic,
-      description: 'Verified deposit institutions',
-    },
-    {
-      id: 'mortgage',
-      label: stateName ? `Mortgage Lenders in ${stateName}` : 'Mortgage Lenders',
-      href: stateSlug ? MORTGAGE_CATEGORY.statePath(stateSlug) : MORTGAGE_CATEGORY.hubPath,
-      icon: ICONS.mortgage,
-      description: 'NMLS-oriented research directory',
-    },
-    {
-      id: 'auto',
-      label: stateName ? `Auto Loans in ${stateName}` : 'Auto Loan Companies',
-      href: stateSlug ? AUTO_CATEGORY.statePath(stateSlug) : AUTO_CATEGORY.hubPath,
-      icon: ICONS.auto,
-      description: 'Compare APR ranges & research scores',
-    },
+    ...(fdicHref
+      ? [{
+          id: 'fdic' as const,
+          label: stateName ? `FDIC Banks in ${stateName}` : 'FDIC Insured Banks',
+          href: fdicHref,
+          icon: ICONS.fdic,
+          description: 'Verified deposit institutions',
+        }]
+      : []),
+    ...(mortgageHref
+      ? [{
+          id: 'mortgage' as const,
+          label: stateName ? `Mortgage Lenders in ${stateName}` : 'Mortgage Lenders',
+          href: mortgageHref,
+          icon: ICONS.mortgage,
+          description: 'NMLS-oriented research directory',
+        }]
+      : []),
+    ...(autoHref
+      ? [{
+          id: 'auto' as const,
+          label: stateName ? `Auto Loans in ${stateName}` : 'Auto Loan Companies',
+          href: autoHref,
+          icon: ICONS.auto,
+          description: 'Compare APR ranges & research scores',
+        }]
+      : []),
     {
       id: 'calculators',
       label: 'Mortgage Calculators',

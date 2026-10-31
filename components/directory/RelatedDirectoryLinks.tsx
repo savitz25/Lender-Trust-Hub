@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import {
-  FDIC_CATEGORY,
-  MORTGAGE_CATEGORY,
-  AUTO_CATEGORY,
-} from '@/lib/directory/categories';
+  publishedAutoStatePath,
+  publishedFdicStatePath,
+  publishedMortgageStatePath,
+} from '@/lib/directory/published-state-routes';
 
 /** Related research links on lender profiles. */
 export function RelatedDirectoryLinks({
@@ -13,12 +13,17 @@ export function RelatedDirectoryLinks({
   stateSlug: string;
   stateName: string;
 }) {
+  const mortgageHref = publishedMortgageStatePath(stateSlug);
+  const fdicHref = publishedFdicStatePath(stateSlug);
+  const autoHref = publishedAutoStatePath(stateSlug);
   const links = [
-    {
-      label: `Mortgage lenders in ${stateName}`,
-      href: MORTGAGE_CATEGORY.statePath(stateSlug),
-      description: 'State hub · county markets · HMDA evidence',
-    },
+    ...(mortgageHref
+      ? [{
+          label: `Mortgage lenders in ${stateName}`,
+          href: mortgageHref,
+          description: 'State hub · county markets · HMDA evidence',
+        }]
+      : []),
     {
       label: 'Understand your Loan Estimate',
       href: '/tools/loan-estimate-analyzer',
@@ -34,16 +39,20 @@ export function RelatedDirectoryLinks({
       href: `/tools/program-finder?state=${encodeURIComponent(stateSlug)}`,
       description: 'FHA, VA, conventional, USDA, and DPA research pathways',
     },
-    {
-      label: `FDIC insured banks in ${stateName}`,
-      href: FDIC_CATEGORY.statePath(stateSlug),
-      description: 'Confirm deposit insurance context before you bank or close',
-    },
-    {
-      label: `Auto loan companies in ${stateName}`,
-      href: AUTO_CATEGORY.statePath(stateSlug),
-      description: 'Compare APR ranges and research scores',
-    },
+    ...(fdicHref
+      ? [{
+          label: `FDIC insured banks in ${stateName}`,
+          href: fdicHref,
+          description: 'Confirm deposit insurance context before you bank or close',
+        }]
+      : []),
+    ...(autoHref
+      ? [{
+          label: `Auto loan companies in ${stateName}`,
+          href: autoHref,
+          description: 'Compare APR ranges and research scores',
+        }]
+      : []),
     {
       label: 'Free mortgage calculators',
       href: '/calculators',
