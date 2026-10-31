@@ -10,7 +10,10 @@ import { EditorialByline } from '@/components/directory/EditorialByline';
 import { AutoProviderCard } from '@/components/auto/AutoProviderCard';
 import { SearchBar } from '@/components/SearchBar';
 import { STATE_BY_SLUG } from '@/lib/fdic/states';
-import { FDIC_CATEGORY, MORTGAGE_CATEGORY } from '@/lib/directory/categories';
+import {
+  publishedFdicStatePath,
+  publishedMortgageStatePath,
+} from '@/lib/directory/published-state-routes';
 import {
   getProvidersByStateSlug,
   getStateSlugsWithAutoProviders,
@@ -81,6 +84,8 @@ export default async function AutoLoanStatePage({
   const jsonLd = buildAutoStateJsonLd(stateMeta, providers);
 
   if (providers.length === 0) notFound();
+  const fdicStateHref = publishedFdicStatePath(slug);
+  const mortgageStateHref = publishedMortgageStatePath(slug);
 
   return (
     <>
@@ -166,24 +171,28 @@ export default async function AutoLoanStatePage({
             <aside className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5 text-sm">
               <h2 className="font-semibold text-[#0A2540]">Also in {stateMeta.fullName}</h2>
               <ul className="mt-3 space-y-2">
-                <li>
-                  <Link
-                    href={FDIC_CATEGORY.statePath(slug)}
-                    prefetch
-                    className="text-[#00A3A1] hover:underline"
-                  >
-                    FDIC Insured Banks in {stateMeta.fullName} →
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={MORTGAGE_CATEGORY.statePath(slug)}
-                    prefetch
-                    className="text-[#00A3A1] hover:underline"
-                  >
-                    Mortgage Lenders in {stateMeta.fullName} →
-                  </Link>
-                </li>
+                {fdicStateHref ? (
+                  <li>
+                    <Link
+                      href={fdicStateHref}
+                      prefetch
+                      className="text-[#00A3A1] hover:underline"
+                    >
+                      FDIC Insured Banks in {stateMeta.fullName} →
+                    </Link>
+                  </li>
+                ) : null}
+                {mortgageStateHref ? (
+                  <li>
+                    <Link
+                      href={mortgageStateHref}
+                      prefetch
+                      className="text-[#00A3A1] hover:underline"
+                    >
+                      Mortgage Lenders in {stateMeta.fullName} →
+                    </Link>
+                  </li>
+                ) : null}
                 <li>
                   <Link href="/calculators" className="text-[#00A3A1] hover:underline">
                     Free Mortgage Calculators →

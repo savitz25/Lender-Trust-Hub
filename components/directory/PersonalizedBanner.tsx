@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import { Compass } from 'lucide-react';
 import { FDIC_CATEGORY, MORTGAGE_CATEGORY } from '@/lib/directory/categories';
+import {
+  publishedFdicStatePath,
+  publishedMortgageStatePath,
+} from '@/lib/directory/published-state-routes';
 
 type Vertical = 'fdic' | 'mortgage' | 'auto';
 
@@ -56,6 +60,12 @@ export function PersonalizedBanner({
 }) {
   void _topEntityName;
   const config = BANNER_COPY[vertical];
+  const href =
+    vertical === 'fdic'
+      ? (publishedMortgageStatePath(stateSlug) ?? MORTGAGE_CATEGORY.hubPath)
+      : vertical === 'auto'
+        ? (publishedFdicStatePath(stateSlug) ?? FDIC_CATEGORY.hubPath)
+        : config.href(stateSlug);
 
   return (
     <aside
@@ -73,7 +83,7 @@ export function PersonalizedBanner({
         </div>
       </div>
       <Link
-        href={config.href(stateSlug)}
+        href={href}
         prefetch
         className="mt-4 inline-flex shrink-0 rounded-xl bg-[#0A2540] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#0d3a5c] md:mt-0"
       >
