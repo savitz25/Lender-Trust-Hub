@@ -2,21 +2,36 @@ import Link from 'next/link';
 import { Building2, Car, Calculator, Shield, Wrench, Landmark } from 'lucide-react';
 import type { StateMeta } from '@/lib/fdic/types';
 import { FDIC_CATEGORY } from '@/lib/directory/categories';
+import {
+  publishedAutoStatePath,
+  publishedMortgageStatePath,
+} from '@/lib/directory/published-state-routes';
 
 const ICONS = [Building2, Calculator, Car, Wrench, Shield, Landmark] as const;
 
 export function CategoryCTAs({ stateMeta }: { stateMeta: StateMeta }) {
   const items = [
-    ...FDIC_CATEGORY.relatedVerticals.map((v, i) => ({
-      href: v.href(stateMeta.slug),
-      icon: ICONS[i] ?? Building2,
-      title: v.label.includes('Calculator')
-        ? v.label
-        : `${v.label} in ${stateMeta.fullName}`,
-      desc: v.description,
-      live: v.live,
-      external: false as boolean,
-    })),
+    ...FDIC_CATEGORY.relatedVerticals.flatMap((v, i) => {
+      // Coming-soon verticals do not have public routes yet. State routes exist
+      // only where that vertical's catalog has inventory.
+      const unavailableAuto =
+        v.label === 'Auto Loan Companies' && !publishedAutoStatePath(stateMeta.slug);
+      const unavailableMortgage =
+        v.label === 'Mortgage Lenders' && !publishedMortgageStatePath(stateMeta.slug);
+      if (!v.live || unavailableAuto || unavailableMortgage) {
+        return [];
+      }
+      return [{
+        href: v.href(stateMeta.slug),
+        icon: ICONS[i] ?? Building2,
+        title: v.label.includes('Calculator')
+          ? v.label
+          : `${v.label} in ${stateMeta.fullName}`,
+        desc: v.description,
+        live: v.live,
+        external: false as boolean,
+      }];
+    }),
     {
       href: 'https://www.movetrusthub.com',
       icon: Shield,

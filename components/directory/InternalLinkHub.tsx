@@ -1,5 +1,9 @@
 import Link from 'next/link';
-import { FDIC_CATEGORY, MORTGAGE_CATEGORY, AUTO_CATEGORY } from '@/lib/directory/categories';
+import { FDIC_CATEGORY } from '@/lib/directory/categories';
+import {
+  publishedAutoStatePath,
+  publishedMortgageStatePath,
+} from '@/lib/directory/published-state-routes';
 import { statePagePath } from '@/lib/fdic/seo';
 import type { StateMeta } from '@/lib/fdic/types';
 
@@ -14,6 +18,9 @@ export function InternalLinkHub({
   /** Same-region states for contextual linking */
   neighborSlugs?: string[];
 }) {
+  const mortgageHref = publishedMortgageStatePath(stateMeta.slug);
+  const autoHref = publishedAutoStatePath(stateMeta.slug);
+
   return (
     <aside
       aria-labelledby="internal-links-heading"
@@ -28,22 +35,20 @@ export function InternalLinkHub({
             All FDIC Banks by State →
           </Link>
         </li>
-        <li>
-          <Link
-            href={MORTGAGE_CATEGORY.statePath(stateMeta.slug)}
-            className="text-[#0A2540] hover:text-[#00A3A1]"
-          >
-            Mortgage lenders in {stateMeta.fullName}
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={AUTO_CATEGORY.statePath(stateMeta.slug)}
-            className="text-[#0A2540] hover:text-[#00A3A1]"
-          >
-            Auto loan companies in {stateMeta.fullName}
-          </Link>
-        </li>
+        {mortgageHref ? (
+          <li>
+            <Link href={mortgageHref} className="text-[#0A2540] hover:text-[#00A3A1]">
+              Mortgage lenders in {stateMeta.fullName}
+            </Link>
+          </li>
+        ) : null}
+        {autoHref ? (
+          <li>
+            <Link href={autoHref} className="text-[#0A2540] hover:text-[#00A3A1]">
+              Auto loan companies in {stateMeta.fullName}
+            </Link>
+          </li>
+        ) : null}
         <li>
           <Link href="/calculators" className="text-[#0A2540] hover:text-[#00A3A1]">
             Free mortgage calculators

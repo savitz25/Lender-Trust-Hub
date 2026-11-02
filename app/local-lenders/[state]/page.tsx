@@ -9,7 +9,8 @@ import { PersonalizedBanner } from '@/components/directory/PersonalizedBanner';
 import { LenderCard } from '@/components/LenderCard';
 import { SearchBar } from '@/components/SearchBar';
 import { STATE_BY_SLUG } from '@/lib/fdic/states';
-import { FDIC_CATEGORY, AUTO_CATEGORY } from '@/lib/directory/categories';
+import { FDIC_CATEGORY } from '@/lib/directory/categories';
+import { publishedAutoStatePath } from '@/lib/directory/published-state-routes';
 import {
   getLendersByStateSlug,
   getStateMortgageStats,
@@ -119,6 +120,7 @@ export default async function MortgageStatePage({
   };
 
   if (stateLenders.length === 0) notFound();
+  const autoStateHref = publishedAutoStatePath(slug);
 
   return (
     <>
@@ -784,15 +786,17 @@ export default async function MortgageStatePage({
                     FDIC Insured Banks in {stateMeta.fullName} →
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href={AUTO_CATEGORY.statePath(slug)}
-                    prefetch
-                    className="text-[#00A3A1] hover:underline"
-                  >
-                    Auto Loan Companies in {stateMeta.fullName} →
-                  </Link>
-                </li>
+                {autoStateHref ? (
+                  <li>
+                    <Link
+                      href={autoStateHref}
+                      prefetch
+                      className="text-[#00A3A1] hover:underline"
+                    >
+                      Auto Loan Companies in {stateMeta.fullName} →
+                    </Link>
+                  </li>
+                ) : null}
                 <li>
                   <Link href="/calculators" className="text-[#00A3A1] hover:underline">
                     Free Mortgage Calculators →
