@@ -2,11 +2,13 @@ import type { Metadata } from 'next';
 import { Shield, Database, Eye, Ban } from 'lucide-react';
 import { TrustBar } from '@/components/TrustBar';
 import { getMortgagePublicCounts, formatExactCount } from '@/lib/directory/public-counts';
+import { SITE_URL } from '@/lib/directory/categories';
 
 export const metadata: Metadata = {
   title: 'Trust & Transparency',
   description:
     'Learn how Lender Trust Hub verifies mortgage lenders using NMLS, CFPB, BBB, Google, and Trustpilot data. Independent, zero paid placements.',
+  alternates: { canonical: `${SITE_URL}/about` },
 };
 
 export default function AboutPage() {
