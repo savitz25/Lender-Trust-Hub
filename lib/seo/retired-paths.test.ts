@@ -72,7 +72,13 @@ test('retired paths are 410 or 301 and live paths are left alone', async () => {
   assert.equal(dispositionForPathname('/lender/credit-repair').action, 'gone');
   assert.equal(dispositionForPathname('/lender/not-a-real-lender').action, 'gone');
   assert.equal(dispositionForPathname('/lenders/not-a-real-lender').action, 'gone');
+  assert.deepEqual(dispositionForPathname('/lender/freedom-mortgage'), {
+    action: 'redirect',
+    status: 301,
+    pathname: '/lenders/freedom-mortgage',
+  });
   assert.equal(dispositionForPathname('/lender/rocket-mortgage').action, 'next');
+  assert.equal(dispositionForPathname('/lender/freedom-mortgage-corporation').action, 'next');
   assert.equal(dispositionForPathname('/lenders/freedom-mortgage').action, 'next');
   assert.equal(dispositionForPathname('/lenders/freedom-mortgage/share-og').action, 'next');
   assert.deepEqual(dispositionForPathname('/auto-loan-companies/FL'), {

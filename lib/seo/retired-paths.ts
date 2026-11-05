@@ -129,9 +129,14 @@ export function dispositionForPathname(input: string): PathDisposition {
 
   const national = pathname.match(/^\/lender\/([^/]+)$/);
   if (national) {
-    return isLiveNationalLenderSlug(decodeSegment(national[1]))
-      ? { action: 'next' }
-      : { action: 'gone' };
+    const slug = decodeSegment(national[1]);
+    // Live national profiles stay on /lender/{slug}. A marketplace-only slug
+    // has a successor. Anything else is gone.
+    if (isLiveNationalLenderSlug(slug)) return { action: 'next' };
+    if (MARKETPLACE_LENDER_SLUGS.has(slug)) {
+      return { action: 'redirect', status: 301, pathname: `/lenders/${slug}` };
+    }
+    return { action: 'gone' };
   }
 
   const marketplace = pathname.match(/^\/lenders\/([^/]+)(?:\/.*)?$/);
