@@ -186,6 +186,16 @@ export function placeLabel(ctx: JourneyContext): string | null {
   return null;
 }
 
+/**
+ * Geography on the national hub moves to the path. Query filters such as
+ * loanType are not copied. Cross-hub links still use resolveLenderLandingPath.
+ */
+export function cleanLocalLendersQueryPath(ctx: JourneyContext): string | null {
+  if (!ctx.stateSlug) return null;
+  if (ctx.county) return `/local-lenders/${ctx.stateSlug}/${ctx.county}`;
+  return `/local-lenders/${ctx.stateSlug}`;
+}
+
 /** Path on LenderTrustHub (absolute origin applied separately). */
 export function resolveLenderLandingPath(ctx: JourneyContext): string {
   if (ctx.stateSlug && ctx.county) {
