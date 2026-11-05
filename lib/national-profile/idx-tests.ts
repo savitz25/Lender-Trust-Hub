@@ -71,8 +71,8 @@ export function runIdxContractTests(): IdxResult[] {
   check('IDX19', nationalIndexingSitemapCount() === INDEXING_COHORT.length, 'sitemap size = indexing cohort');
   check(
     'IDX19b',
-    nationalIndexingSitemapLocs().every((u) => u.includes('/lender/') && !u.includes('/lenders/')),
-    'national sitemap uses /lender/{slug}'
+    nationalIndexingSitemapLocs().every((u) => u.includes('/lenders/') && !u.includes('/lender/')),
+    'national sitemap uses /lenders/{slug}'
   );
   check('IDX20', publicLenderRobots({ isLanding: true }).index === false, 'unknown/landing helper remains fail-closed for profiles');
 

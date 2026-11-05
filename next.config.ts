@@ -15,8 +15,8 @@ const nextConfig: NextConfig = {
     return [
       { source: '/calculators-hub', destination: '/calculators', permanent: true },
       { source: '/calculators-hub/:path*', destination: '/calculators', permanent: true },
-      // /lender/{slug} is the national profile-intelligence route (LEND-NAT-012).
-      // Do not redirect it to catalog clones at /lenders/{slug}.
+      // Canonical profile URL is /lenders/{slug}. The /lender index (no slug) stays.
+      { source: '/lender/:slug', destination: '/lenders/:slug', permanent: true },
     ];
   },
   async headers() {

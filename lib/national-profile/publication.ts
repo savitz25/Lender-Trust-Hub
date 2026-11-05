@@ -6,7 +6,7 @@
 import indexingFile from '@/docs/lend-nat-014-indexing-cohort.json';
 import renderFile from '@/docs/lend-nat-014-render-cohort.json';
 import { SITE_URL } from '@/lib/directory/categories';
-import { NATIONAL_PROFILE_GATE, nationalProfilePath } from './cohort';
+import { NATIONAL_PROFILE_GATE } from './cohort';
 
 export const PUBLICATION_STATUSES = [
   'PUBLICATION_ELIGIBLE',
@@ -113,7 +113,7 @@ export function nationalIndexingSitemapLocs(): string[] {
   if (!NATIONAL_PROFILE_GATE.sitemap || !NATIONAL_PROFILE_GATE.productionLaunchEnabled) {
     return [];
   }
-  return INDEXING_COHORT.map((row) => `${SITE_URL}${nationalProfilePath(row.slug)}`);
+  return INDEXING_COHORT.map((row) => `${SITE_URL}/lenders/${row.slug}`);
 }
 
 export function nationalIndexingSitemapCount(): number {
