@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import { updateSession } from '@/lib/supabase/middleware';
+import { dispositionForPathname } from '@/lib/seo/retired-paths';
 import { normalizedPublishedStatePath } from '@/lib/seo/published-state-path';
 import { STATE_BY_CODE } from '@/lib/fdic/states';
 
@@ -12,6 +13,20 @@ const ADMIN_COOKIE = 'lth_admin_session';
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const retired = dispositionForPathname(pathname);
+  if (retired.action === 'gone') {
+    return new NextResponse('Gone', {
+      status: 410,
+      headers: { 'content-type': 'text/plain; charset=utf-8' },
+    });
+  }
+  if (retired.action === 'redirect') {
+    const url = request.nextUrl.clone();
+    url.pathname = retired.pathname;
+    url.search = '';
+    return NextResponse.redirect(url, retired.status);
+  }
+
   const fdicCode = pathname.match(/^\/fdic-insured-banks\/([A-Za-z]{2})\/?$/);
   const fdicState = fdicCode && STATE_BY_CODE.get(fdicCode[1].toUpperCase());
   if (fdicState) {

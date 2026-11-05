@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { redirect } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
 import { JsonLd } from '@/components/directory/JsonLd';
 import { Breadcrumbs } from '@/components/directory/Breadcrumbs';
 import { NationalHubShell } from '@/components/directory/NationalHubShell';
@@ -25,8 +25,8 @@ import { NetworkBelongingLine } from '@/components/network/network-belonging-lin
 import { catalogDistinctEntities } from '@/lib/verification';
 import { getMortgagePublicCounts } from '@/lib/directory/public-counts';
 import {
+  cleanLocalLendersQueryPath,
   parseJourneyContext,
-  resolveLenderLandingPath,
 } from '@/lib/network/journey-context';
 import {
   JourneySessionSync,
@@ -84,11 +84,9 @@ export default async function LocalLendersHubPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const journey = parseJourneyContext(params);
 
-  // Stage A′: never dump known geography on the national hub homepage
-  if (journey.stateSlug) {
-    const path = resolveLenderLandingPath(journey);
-    redirect(path.startsWith('/') ? path : `/${path}`);
-  }
+  // Stage A′: known geography leaves the national hub on a permanent clean path.
+  const cleanPath = cleanLocalLendersQueryPath(journey);
+  if (cleanPath) permanentRedirect(cleanPath);
 
   const jsonLd = buildMortgageHubJsonLd(lenders.length, stateGrid.length);
 
