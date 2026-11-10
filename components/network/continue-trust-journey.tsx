@@ -7,6 +7,8 @@ import {
   type JourneySrc,
 } from '@/lib/network/journey-context';
 import { trackJourneyHandoff } from '@/lib/analytics/ga-events';
+import { captureTrustEvent } from '@/lib/analytics/trusthub';
+import { TRUSTHUB_EVENTS } from '@/lib/analytics/trusthub-events';
 import { cn } from '@/lib/utils';
 
 type Props = {
@@ -62,7 +64,7 @@ export function ContinueTrustJourney({
               rel="noopener noreferrer"
               data-journey-hub={step.hub}
               data-journey-priority={step.priority}
-              onClick={() =>
+              onClick={() => {
                 trackJourneyHandoff({
                   from_hub: currentHub,
                   to_hub: step.hub,
@@ -71,8 +73,18 @@ export function ContinueTrustJourney({
                   intent: context.intent,
                   state: context.stateCode || context.stateSlug,
                   county: context.county,
-                })
-              }
+                });
+                captureTrustEvent(
+                  TRUSTHUB_EVENTS.SPECIALIST_HANDOFF_STARTED,
+                  {
+                    surface: 'continue_journey',
+                    specialist_hub: step.hub,
+                    state: context.stateCode,
+                    success: true,
+                  },
+                  { sendBeforeUnload: true },
+                );
+              }}
             >
               <span className="text-[11px] font-semibold uppercase tracking-wide text-zinc-500">
                 {step.priority === 'primary' ? 'Next step' : 'Also useful'}

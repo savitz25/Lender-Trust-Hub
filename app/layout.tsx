@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { PosthogRoot } from '@/components/analytics/posthog-root';
 import { GtagProvider } from '@/components/directory/GtagProvider';
 import { MyLendingShell } from '@/components/my-lending/my-lending-shell';
 import { HubLastLocationBridge } from '@/components/network/hub-last-location-bridge';
@@ -12,6 +13,7 @@ import { AskSearchContextBanner } from '@/components/search-handoff/ask-search-c
 import { BRAND_ICONS } from '@/lib/brand';
 import { ASK_NETWORK_STANDARD_VERSION } from '@/lib/network/standard-version';
 import { TH_CHASSIS_VERSION } from '@/lib/design/trusthub-visual-standard';
+import { analyticsEnvironment } from '@/lib/analytics/environment';
 import {
   SHARE_HUB,
   resolveShareOrigin,
@@ -95,7 +97,13 @@ export default function RootLayout({
   const gaId = process.env.NEXT_PUBLIC_GA4_ID;
 
   return (
-    <html lang="en-US" className={inter.variable} suppressHydrationWarning style={{ colorScheme: 'light' }}>
+    <html
+      lang="en-US"
+      className={inter.variable}
+      data-analytics-environment={analyticsEnvironment()}
+      suppressHydrationWarning
+      style={{ colorScheme: 'light' }}
+    >
       <head>
         <meta name="color-scheme" content="light" />
         {gaId && (
@@ -113,6 +121,7 @@ export default function RootLayout({
       >
         {/* network-standard: {ASK_NETWORK_STANDARD_VERSION} */}
         <ThemeProvider>
+          <PosthogRoot />
           <MyLendingShell>
             <HubLastLocationBridge hubId="lender" />
             <GtagProvider />
