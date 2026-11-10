@@ -41,10 +41,32 @@ export function posthogDebugEnabled(): boolean {
   return flag === '1' || flag === 'true' || flag === 'yes';
 }
 
+/**
+ * Crawlers and headless drivers. Substring match, case-insensitive.
+ * A normal Chrome, Safari, or Firefox user agent does not contain these tokens.
+ */
+const AUTOMATED_BROWSER_UA =
+  /bot|spider|crawler|crawl|slurp|headless|phantomjs|puppeteer|playwright|selenium|webdriver|lighthouse|pagespeed|facebookexternalhit|embedly|linkedinbot|twitterbot|slackbot|discordbot|telegrambot|whatsapp|pinterestbot|redditbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|uptimerobot|pingdom|statuscake/i;
+
+export function isAutomatedBrowser(signals?: { webdriver?: boolean; userAgent?: string | null }): boolean {
+  try {
+    const webdriver =
+      signals?.webdriver ?? (typeof navigator !== 'undefined' && Boolean(navigator.webdriver));
+    if (webdriver) return true;
+    const userAgent =
+      signals?.userAgent ?? (typeof navigator !== 'undefined' ? navigator.userAgent : '');
+    if (!userAgent) return false;
+    return AUTOMATED_BROWSER_UA.test(userAgent);
+  } catch {
+    return false;
+  }
+}
+
 export function shouldEnablePosthog(): boolean {
   try {
     if (!posthogKey()) return false;
     if (analyticsEnvironment() === 'development' && !posthogDebugEnabled()) return false;
+    if (isAutomatedBrowser()) return false;
     return true;
   } catch {
     return false;
