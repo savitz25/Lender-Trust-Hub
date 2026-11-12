@@ -267,14 +267,14 @@ export function AskResultView({ result, question }: { result: AskExecution; ques
               <li>Retrieved: {result.countEvidence.retrievedAt ?? 'not supplied by this artifact'}; generated: {result.countEvidence.generatedAt ?? 'not supplied by this artifact'}</li>
               <li>Reporting year is a vintage, not an exact official effective timestamp or a live check.</li>
             </> : null}
-            <li>Question: {question}</li>
+            <li data-ph-mask="">Question: {question}</li>
           </ul>
         </details>
       ) : null}
 
       {result.sharePath ? (
         <p className="intel-kicker">
-          Shareable research URL (noindex): <code style={{ overflowWrap: 'anywhere' }}>{result.sharePath}</code>
+          Shareable research URL (noindex): <code data-ph-mask="" style={{ overflowWrap: 'anywhere' }}>{result.sharePath}</code>
         </p>
       ) : null}
     </div>

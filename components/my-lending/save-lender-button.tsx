@@ -28,6 +28,8 @@ import {
 import { type LenderResearchStatus, type SavedLender } from '@/lib/my-lending/types';
 import { cn } from '@/lib/utils';
 import { trackMyLendingSave } from '@/lib/analytics/ga-events';
+import { captureTrustEvent } from '@/lib/analytics/trusthub';
+import { TRUSTHUB_EVENTS } from '@/lib/analytics/trusthub-events';
 
 function pageHidden(): boolean {
   return document.visibilityState === 'hidden';
@@ -232,6 +234,7 @@ export function SaveLenderButton({
     setRetryIntent(null);
     const res = deviceFirstProfileSave({ ...payload, status: defaultStatus });
     if (!res.device.ok) {
+      captureTrustEvent(TRUSTHUB_EVENTS.PROFILE_SAVE_FAILED, { surface: 'lender_profile', success: false });
       if (res.device.reason === 'shortlist_full' && res.device.shortlisted) {
         setFullPanel(res.device.shortlisted);
         setError(res.device.error);
@@ -243,6 +246,7 @@ export function SaveLenderButton({
     sync();
     if (!res.device.alreadySaved) {
       trackMyLendingSave({ slug: lenderSlug });
+      captureTrustEvent(TRUSTHUB_EVENTS.PROFILE_SAVED, { surface: 'lender_profile', success: true });
     }
     showToast(
       res.device.alreadySaved
@@ -266,6 +270,7 @@ export function SaveLenderButton({
       return;
     }
     sync();
+    captureTrustEvent(TRUSTHUB_EVENTS.PROFILE_UNSAVED, { surface: 'lender_profile', success: true });
     showToast('Removed on this device');
     if (parentHandoff) void beginHandoff('unsave');
   }
@@ -340,8 +345,12 @@ export function SaveLenderButton({
             if (res.ok) {
               acknowledgeDeviceSave(payload, res);
               sync();
+              captureTrustEvent(TRUSTHUB_EVENTS.PROFILE_SAVED, { surface: 'lender_profile', success: true });
               showToast('Saved on this device');
-            } else setError(res.error);
+            } else {
+              captureTrustEvent(TRUSTHUB_EVENTS.PROFILE_SAVE_FAILED, { surface: 'lender_profile', success: false });
+              setError(res.error);
+            }
           }}
           onReplace={(slug) => {
             const res = shortlistReplacing({ ...payload, status: 'shortlisted' }, slug);
@@ -351,8 +360,12 @@ export function SaveLenderButton({
             if (res.ok) {
               acknowledgeDeviceSave(payload, res);
               sync();
+              captureTrustEvent(TRUSTHUB_EVENTS.PROFILE_SAVED, { surface: 'lender_profile', success: true });
               showToast('Saved on this device');
-            } else setError(res.error);
+            } else {
+              captureTrustEvent(TRUSTHUB_EVENTS.PROFILE_SAVE_FAILED, { surface: 'lender_profile', success: false });
+              setError(res.error);
+            }
           }}
           onSaveAsResearching={() => {
             const res = saveAsResearching(payload);
@@ -362,8 +375,12 @@ export function SaveLenderButton({
             if (res.ok) {
               acknowledgeDeviceSave(payload, res);
               sync();
+              captureTrustEvent(TRUSTHUB_EVENTS.PROFILE_SAVED, { surface: 'lender_profile', success: true });
               showToast('Saved on this device');
-            } else setError(res.error);
+            } else {
+              captureTrustEvent(TRUSTHUB_EVENTS.PROFILE_SAVE_FAILED, { surface: 'lender_profile', success: false });
+              setError(res.error);
+            }
           }}
         />
       ) : null}

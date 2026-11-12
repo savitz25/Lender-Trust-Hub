@@ -21,6 +21,8 @@ const OPTIONAL = [
   'SUPABASE_SERVICE_ROLE_KEY',
   'ADMIN_SECRET',
   'NEXT_PUBLIC_GA4_ID',
+  'NEXT_PUBLIC_POSTHOG_KEY',
+  'NEXT_PUBLIC_POSTHOG_HOST',
   'NEXT_PUBLIC_SITE_URL',
   /** Freddie Mac PMMS via FRED (Loan Estimate rate context) */
   'FRED_API_KEY',

@@ -22,6 +22,7 @@ import { FLORIDA_PHASE1_ROWS, FLORIDA_PHASE1_GATE, getPhase1Row } from '@/lib/fl
 import { FLORIDA_PHASE2_ROWS, FLORIDA_PHASE2_GATE, getPhase2Row } from '@/lib/florida-profile/phase2';
 import { fetchPublicLenderProfile } from '@/lib/florida-profile/fetch-public';
 import { buildFloridaCompanyJsonLd } from '@/lib/florida-profile/jsonld';
+import { ProfileViewed } from '@/components/analytics/profile-viewed';
 import { ProfileCustomerLayer } from '@/components/customer-integration/profile-customer-layer';
 import { claimCtaEnabledFor, lenderClaimProfile } from '@/lib/customer-integration/eligibility';
 import { fetchBusinessProfile, fetchBusinessReplies } from '@/lib/customer-integration/public';
@@ -113,6 +114,7 @@ export default async function NationalLenderPage({
     return (
       <>
         <JsonLd data={jsonLd} />
+        <ProfileViewed surface="national_profile" />
         <NationalLenderProfile
           entry={result.entry}
           profile={result.profile}
@@ -140,6 +142,7 @@ export default async function NationalLenderPage({
   return (
     <>
       <JsonLd data={jsonLd} />
+      <ProfileViewed surface="florida_profile" />
       <FloridaCompanyProfile
         florida={pub.florida}
         national={pub.national ? { profile: pub.national.profile, fetchMs: pub.national.fetchMs } : null}

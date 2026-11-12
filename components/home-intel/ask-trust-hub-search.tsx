@@ -23,6 +23,8 @@ export function AskTrustHubSearch({ initialQuery = '', overrides = {} }: { initi
             defaultValue={initialQuery}
             aria-describedby="ask-query-limit"
             required
+            data-ph-mask=""
+            data-ph-no-autocapture=""
             placeholder="Ask a question, enter a lender, NMLS ID, market, county or state..."
           />
           <button className="intel-btn intel-btn--primary" type="submit">
@@ -37,7 +39,7 @@ export function AskTrustHubSearch({ initialQuery = '', overrides = {} }: { initi
       </p>
       <div className="intel-ask-examples" role="list">
         {examples.map((q) => (
-          <Link key={q} href={`/ask?q=${encodeURIComponent(q)}`} className="intel-chip">
+          <Link key={q} href={`/ask?q=${encodeURIComponent(q)}`} className="intel-chip" data-ph-mask="">
             {q}
           </Link>
         ))}

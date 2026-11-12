@@ -4,6 +4,7 @@ import type {
 } from "@/lib/customer-integration/public";
 import { safeBusinessWebsite } from "@/lib/customer-integration/security";
 import Link from "next/link";
+import { ClaimStartLink } from "@/components/analytics/claim-start-link";
 export function ProfileCustomerLayer({
   slug,
   enabled,
@@ -96,16 +97,21 @@ export function ProfileCustomerLayer({
           {profile ? "Managed by the business" : "Is this your institution?"}
         </p>
         {enabled ? (
-          <a
-            className="mt-3 inline-flex min-h-11 items-center rounded-xl border border-[#059669] px-4 text-sm font-semibold text-[#0A2540]"
-            href={
-              profile
-                ? "https://www.asktrusthub.com/manage"
-                : `/api/claim/handoff/${encodeURIComponent(slug)}`
-            }
-          >
-            {profile ? "Manage on AskTrustHub" : "Claim this profile"}
-          </a>
+          profile ? (
+            <a
+              className="mt-3 inline-flex min-h-11 items-center rounded-xl border border-[#059669] px-4 text-sm font-semibold text-[#0A2540]"
+              href="https://www.asktrusthub.com/manage"
+            >
+              Manage on AskTrustHub
+            </a>
+          ) : (
+            <ClaimStartLink
+              className="mt-3 inline-flex min-h-11 items-center rounded-xl border border-[#059669] px-4 text-sm font-semibold text-[#0A2540]"
+              href={`/api/claim/handoff/${encodeURIComponent(slug)}`}
+            >
+              Claim this profile
+            </ClaimStartLink>
+          )
         ) : null}
         <p className="mt-2 text-sm text-zinc-600">
           {enabled
