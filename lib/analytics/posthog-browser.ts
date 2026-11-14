@@ -3,7 +3,13 @@
 import type { PostHog } from 'posthog-js';
 import { analyticsEnvironment, posthogHost, posthogKey, shouldEnablePosthog } from './environment';
 import { createPosthogClientGate } from './posthog-gate';
-import { maskReplayAttribute, sanitizeCaptureResult, sanitizeCapturedNetworkRequest } from './privacy';
+import {
+  isReplayEvent,
+  maskReplayAttribute,
+  sanitizeCaptureResult,
+  sanitizeCapturedNetworkRequest,
+  suppressExceptionCapture,
+} from './privacy';
 import { TRUSTHUB_HUB } from './trusthub-events';
 
 async function loadPosthog(): Promise<PostHog | null> {
@@ -19,7 +25,17 @@ async function loadPosthog(): Promise<PostHog | null> {
     person_profiles: 'identified_only',
     capture_pageview: false,
     capture_pageleave: true,
+    capture_exceptions: false,
+    respect_dnt: true,
     persistence: 'localStorage+cookie',
+    // Privacy: replay DOM snapshots can carry saved private notes and search text
+    // echoed into result pages outside any mask selector, so session replay is off
+    // for this hub regardless of the shared project setting. Heatmaps and dead-click
+    // capture are off for the same reason.
+    disable_session_recording: true,
+    enable_heatmaps: false,
+    capture_heatmaps: false,
+    capture_dead_clicks: false,
     mask_all_text: true,
     autocapture: {
       capture_copied_text: false,
@@ -30,7 +46,11 @@ async function loadPosthog(): Promise<PostHog | null> {
     },
     before_send: (event) => {
       try {
-        return sanitizeCaptureResult(event);
+        // Replay is disabled; drop any replay payload outright as defense in depth.
+        if (event && isReplayEvent(event.event)) return null;
+        const kept = suppressExceptionCapture(event);
+        if (!kept) return null;
+        return sanitizeCaptureResult(kept);
       } catch {
         return null;
       }
@@ -49,7 +69,8 @@ async function loadPosthog(): Promise<PostHog | null> {
         url: true,
         hidden: true,
       },
-      maskTextSelector: 'input, textarea, select, [contenteditable], [data-ph-mask]',
+      // Only relevant if replay is ever re-enabled in code: mask every text node.
+      maskTextSelector: '*',
       maskAttributeFn: (name, value) => maskReplayAttribute(name, value),
       maskCapturedNetworkRequestFn: (request) => sanitizeCapturedNetworkRequest(request),
     },
