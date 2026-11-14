@@ -36,6 +36,12 @@ export default function PrivacyPage() {
         <li>We do not accept paid placements that change rankings</li>
         <li>We are not a lender or mortgage broker</li>
       </ul>
+      <h2>Analytics and cookies</h2>
+      <p>
+        We use PostHog for product analytics. It collects pages viewed, clicks, and device and
+        browser info. No email addresses and no search text are sent. You can opt out with the
+        browser Do Not Track setting, or by blocking cookies.
+      </p>
       <h2>Contact</h2>
       <p>
         Privacy questions: <a href="/contact">Contact us</a>.
