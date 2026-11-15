@@ -3,13 +3,14 @@ import test from 'node:test';
 import { analyticsEnvironment, isAutomatedBrowser, posthogHost, shouldEnablePosthog } from './environment';
 import { captureTrustEvent } from './trusthub';
 
-const KEYS = ['NEXT_PUBLIC_POSTHOG_KEY', 'NEXT_PUBLIC_POSTHOG_HOST', 'NEXT_PUBLIC_POSTHOG_DEBUG', 'VERCEL_ENV', 'NEXT_PUBLIC_VERCEL_ENV'] as const;
+const KEYS = ['NEXT_PUBLIC_POSTHOG_KEY', 'NEXT_PUBLIC_POSTHOG_HOST', 'NEXT_PUBLIC_POSTHOG_DEBUG', 'NEXT_PUBLIC_POSTHOG_ACTIVATION', 'VERCEL_ENV', 'NEXT_PUBLIC_VERCEL_ENV'] as const;
 
 function snapshotEnv(): Record<(typeof KEYS)[number], string | undefined> {
   return {
     NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
     NEXT_PUBLIC_POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST,
     NEXT_PUBLIC_POSTHOG_DEBUG: process.env.NEXT_PUBLIC_POSTHOG_DEBUG,
+    NEXT_PUBLIC_POSTHOG_ACTIVATION: process.env.NEXT_PUBLIC_POSTHOG_ACTIVATION,
     VERCEL_ENV: process.env.VERCEL_ENV,
     NEXT_PUBLIC_VERCEL_ENV: process.env.NEXT_PUBLIC_VERCEL_ENV,
   };
@@ -43,10 +44,20 @@ test('PostHog stays off without a key and in development unless debug is set', (
     assert.equal(shouldEnablePosthog(), false);
 
     process.env.NEXT_PUBLIC_POSTHOG_DEBUG = '1';
+    assert.equal(shouldEnablePosthog(), false);
+    process.env.NEXT_PUBLIC_POSTHOG_ACTIVATION = 'enabled';
     assert.equal(shouldEnablePosthog(), true);
+    for (const activation of [' enabled', 'enabled ', '\tenabled\n', 'ENABLED', 'Enabled', '1', '']) {
+      process.env.NEXT_PUBLIC_POSTHOG_ACTIVATION = activation;
+      assert.equal(shouldEnablePosthog(), false, JSON.stringify(activation));
+    }
+    process.env.NEXT_PUBLIC_POSTHOG_ACTIVATION = 'enabled';
 
     delete process.env.NEXT_PUBLIC_POSTHOG_DEBUG;
+    delete process.env.NEXT_PUBLIC_POSTHOG_ACTIVATION;
     process.env.VERCEL_ENV = 'preview';
+    assert.equal(shouldEnablePosthog(), false);
+    process.env.NEXT_PUBLIC_POSTHOG_ACTIVATION = 'enabled';
     assert.equal(analyticsEnvironment(), 'preview');
     assert.equal(shouldEnablePosthog(), true);
 
@@ -67,6 +78,7 @@ test('PostHog stays off for webdriver and common bot user agents', () => {
   const previousNavigator = globalThis.navigator;
   try {
     process.env.NEXT_PUBLIC_POSTHOG_KEY = 'phc_test';
+    process.env.NEXT_PUBLIC_POSTHOG_ACTIVATION = 'enabled';
     delete process.env.NEXT_PUBLIC_POSTHOG_DEBUG;
     delete process.env.NEXT_PUBLIC_VERCEL_ENV;
     process.env.VERCEL_ENV = 'production';

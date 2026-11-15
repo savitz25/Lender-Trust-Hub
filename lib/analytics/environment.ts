@@ -62,11 +62,27 @@ export function isAutomatedBrowser(signals?: { webdriver?: boolean; userAgent?: 
   }
 }
 
+/** Do Not Track, Global Privacy Control, or cookies turned off opts out of product analytics. */
+export function analyticsBrowserOptOut(): boolean {
+  try {
+    if (typeof navigator === 'undefined') return false;
+    const dnt = navigator.doNotTrack;
+    if (dnt === '1' || dnt === 'yes') return true;
+    const gpc = (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl;
+    if (gpc === true) return true;
+    return navigator.cookieEnabled === false;
+  } catch {
+    return false;
+  }
+}
+
 export function shouldEnablePosthog(): boolean {
   try {
     if (!posthogKey()) return false;
     if (analyticsEnvironment() === 'development' && !posthogDebugEnabled()) return false;
     if (isAutomatedBrowser()) return false;
+    if (analyticsBrowserOptOut()) return false;
+    if (process.env.NEXT_PUBLIC_POSTHOG_ACTIVATION !== 'enabled') return false;
     return true;
   } catch {
     return false;

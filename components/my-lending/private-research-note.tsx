@@ -52,8 +52,10 @@ export function PrivateResearchNote({
       <button
         type="button"
         onClick={() => setOpen(true)}
+        data-ph-mask=""
         className={cn(
-          'mt-2 flex w-full max-w-full items-start gap-2 rounded-lg border px-2.5 py-2 text-left text-xs transition-colors',
+          // ph-no-capture: private notes are never autocaptured or recorded.
+          'ph-no-capture mt-2 flex w-full max-w-full items-start gap-2 rounded-lg border px-2.5 py-2 text-left text-xs transition-colors',
           preview
             ? 'border-amber-200/90 bg-amber-50/70 text-zinc-700 hover:border-amber-300 hover:bg-amber-50'
             : 'border-dashed border-amber-200/80 bg-amber-50/30 text-zinc-500 hover:border-amber-300 hover:bg-amber-50/60 hover:text-teal-900',
@@ -91,8 +93,9 @@ export function PrivateResearchNote({
 
   return (
     <div
+      data-ph-mask=""
       className={cn(
-        'mt-2 rounded-lg border border-amber-200 bg-amber-50/50 p-2.5 shadow-sm',
+        'ph-no-capture mt-2 rounded-lg border border-amber-200 bg-amber-50/50 p-2.5 shadow-sm',
         className
       )}
     >
