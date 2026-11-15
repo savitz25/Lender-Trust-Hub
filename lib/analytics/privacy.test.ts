@@ -7,6 +7,7 @@ import {
   isReplayEvent,
   maskReplayAttribute,
   sanitizeAnalyticsPathname,
+  sanitizeAnalyticsRequestBody,
   sanitizeAnalyticsUrl,
   sanitizeCaptureResult,
   stripElementsChainText,
@@ -329,5 +330,42 @@ test('sdk privacy 002 strips auth properties, adversarial urls, and private attr
   assert.equal(json.includes('PRIVATE_'), false);
   assert.equal(event?.properties?.stateCode, 'FL');
   assert.equal(event?.properties?.$geoip_disable, true);
+});
+
+test('sdk privacy 003 strips encoded urls and nested flag fields', () => {
+  const urls = [
+    'https://qa.invalid/search?%2571=eldercare-sensitive-query',
+    'https://qa.invalid/search?redirect_uri=https%3A%2F%2Ftarget.invalid%2F%3FauthCode%3DAuthZ9x7',
+    'https://qa.invalid/search?%2570assword=PwdZ9x7',
+    'https://qa.invalid/search?searchTerm=eldercare-sensitive-query',
+    'https://qa.invalid/search#access_token=AuthZ9x7',
+  ];
+  for (const input of urls) {
+    const output = sanitizeAnalyticsUrl(input) || '';
+    assert.equal(/eldercare-sensitive-query|AuthZ9x7|PwdZ9x7/.test(output), false, input);
+  }
+  assert.match(sanitizeAnalyticsUrl('https://qa.invalid/auth/callback?code=ab&state=FL') || '', /state=FL/);
+  const body = sanitizeAnalyticsRequestBody(
+    JSON.stringify({
+      token: 'phc_test',
+      distinct_id: 'visitor',
+      person_properties: {
+        query: 'eldercare-sensitive-query',
+        question: 'family-sensitive-question',
+        search: 'treatment-sensitive-search',
+        token: 'AuthZ9x7',
+        password: 'PwdZ9x7',
+        email: 'alex@example.invalid',
+        $lib: 'web',
+      },
+    }),
+  );
+  assert.ok(body);
+  assert.match(body, /phc_test/);
+  assert.match(body, /"\$lib":"web"/);
+  assert.equal(
+    /eldercare-sensitive-query|family-sensitive-question|treatment-sensitive-search|AuthZ9x7|PwdZ9x7|alex@/.test(body),
+    false,
+  );
 });
 

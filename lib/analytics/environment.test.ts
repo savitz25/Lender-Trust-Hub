@@ -47,6 +47,11 @@ test('PostHog stays off without a key and in development unless debug is set', (
     assert.equal(shouldEnablePosthog(), false);
     process.env.NEXT_PUBLIC_POSTHOG_ACTIVATION = 'enabled';
     assert.equal(shouldEnablePosthog(), true);
+    for (const activation of [' enabled', 'enabled ', '\tenabled\n', 'ENABLED', 'Enabled', '1', '']) {
+      process.env.NEXT_PUBLIC_POSTHOG_ACTIVATION = activation;
+      assert.equal(shouldEnablePosthog(), false, JSON.stringify(activation));
+    }
+    process.env.NEXT_PUBLIC_POSTHOG_ACTIVATION = 'enabled';
 
     delete process.env.NEXT_PUBLIC_POSTHOG_DEBUG;
     delete process.env.NEXT_PUBLIC_POSTHOG_ACTIVATION;
