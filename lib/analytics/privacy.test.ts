@@ -294,3 +294,40 @@ test('identify, pageview, and custom event payloads drop email, search, and auth
   assert.equal(customJson.includes(email), false);
   assert.equal(customJson.includes('hunter2-secret'), false);
 });
+
+test('sdk privacy 002 strips auth properties, adversarial urls, and private attributes', () => {
+  const urls = [
+    'https://qa.invalid/?state=qa%40example.invalid',
+    'https://qa.invalid/?state=qa%2540example.invalid',
+    'https://qa.invalid/?custom=%E0%A4%A',
+    'https://qa.invalid/?custom=qa%40example.invalid',
+    'https://qa.invalid/?auth_code=123456',
+    'https://qa.invalid/?redirect_uri=https%3A%2F%2Ftarget.invalid%2F%3Fcode%3D123456',
+    'https://qa.invalid/search/qa%40example.invalid',
+    'https://qa.invalid/auth/callback?code=ab&state=FL',
+  ];
+  for (const input of urls) {
+    const output = sanitizeAnalyticsUrl(input) || '';
+    assert.equal(decodeURIComponent(output).includes('qa@example'), false, input);
+    assert.equal(decodeURIComponent(output).includes('123456'), false, input);
+  }
+  assert.match(sanitizeAnalyticsUrl('https://qa.invalid/auth/callback?code=ab&state=FL') || '', /state=FL/);
+
+  const event = sanitizeCaptureResult({
+    event: '$autocapture',
+    properties: {
+      code: '123456',
+      auth_code: '654321',
+      stateCode: 'FL',
+      $elements_chain: 'button:attr__data-note="PRIVATE_NOTE"attr__id="safe"attr_id="safe"',
+      $elements: [{ tag_name: 'button', 'attr__data-note': 'PRIVATE_NOTE', attr__id: 'safe', attr_id: 'safe' }],
+    },
+  });
+  const json = JSON.stringify(event);
+  assert.equal(json.includes('123456'), false);
+  assert.equal(json.includes('654321'), false);
+  assert.equal(json.includes('PRIVATE_'), false);
+  assert.equal(event?.properties?.stateCode, 'FL');
+  assert.equal(event?.properties?.$geoip_disable, true);
+});
+

@@ -8,6 +8,7 @@ import {
   maskReplayAttribute,
   sanitizeCaptureResult,
   sanitizeCapturedNetworkRequest,
+  installAnalyticsTransportGuard,
   suppressExceptionCapture,
 } from './privacy';
 import { TRUSTHUB_HUB } from './trusthub-events';
@@ -15,6 +16,7 @@ import { TRUSTHUB_HUB } from './trusthub-events';
 async function loadPosthog(): Promise<PostHog | null> {
   const key = posthogKey();
   if (!key) return null;
+  installAnalyticsTransportGuard();
   const posthog = (await import('posthog-js')).default;
   const superProperties = {
     hub: TRUSTHUB_HUB,
