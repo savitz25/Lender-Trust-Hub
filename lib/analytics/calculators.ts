@@ -3,10 +3,7 @@
 import { useCallback, useRef } from 'react';
 
 /**
- * Calculator analytics — GA4 events with consent gating.
- *
- * Consent: set localStorage.setItem('analytics_consent', 'granted') after user opt-in.
- * GA4: requires NEXT_PUBLIC_GA4_ID + GtagProvider in app/layout.tsx.
+ * Calculator analytics. Dispatches an internal event for debugging.
  *
  * SUPABASE_READY: mirror events to saved_scenarios table for logged-in users.
  */
@@ -44,24 +41,6 @@ export interface CalcEventParams {
   [key: string]: string | number | boolean | undefined;
 }
 
-type GtagWindow = Window & {
-  gtag?: (...args: unknown[]) => void;
-  dataLayer?: unknown[];
-};
-
-const CONSENT_KEY = 'analytics_consent';
-const CONSENT_GRANTED_VALUES = new Set(['granted', 'true', '1']);
-
-function hasAnalyticsConsent(): boolean {
-  if (typeof window === 'undefined') return false;
-  try {
-    const consent = localStorage.getItem(CONSENT_KEY);
-    return consent != null && CONSENT_GRANTED_VALUES.has(consent.toLowerCase());
-  } catch {
-    return false;
-  }
-}
-
 function sanitizeParams(params?: CalcEventParams): Record<string, string | number | boolean> {
   if (!params) return {};
   const out: Record<string, string | number | boolean> = {};
@@ -85,8 +64,8 @@ function dispatchCalcEvent(name: CalcEventName, params: Record<string, string | 
 }
 
 /**
- * Track a calculator event. Respects analytics consent before calling gtag.
- * Always dispatches internal CustomEvent for debugging / future pipelines.
+ * Track a calculator event.
+ * Dispatches an internal CustomEvent for debugging.
  */
 export function trackCalcEvent(
   name: CalcEventName,
@@ -97,35 +76,28 @@ export function trackCalcEvent(
   const safeParams = sanitizeParams(params);
 
   try {
-    const w = window as GtagWindow;
-    const consent = hasAnalyticsConsent();
-
-    if (consent && typeof w.gtag === 'function') {
-      w.gtag('event', name, {
-        event_category: 'calculators',
-        hub: 'lender',
-        ...safeParams,
-      });
-      // Phase 5 priority alias
-      if (name === 'calculator_complete' || name === 'calc_export_csv' || name === 'calc_match_click') {
-        w.gtag('event', 'calculator_complete', {
-          event_category: 'calculators',
-          hub: 'lender',
-          ...safeParams,
-          completion_via: name,
-        });
-      }
-    }
-
     dispatchCalcEvent(name, safeParams);
 
     if (process.env.NODE_ENV === 'development') {
-      console.debug('[LTH Calc Analytics]', name, safeParams, { consent, gtag: !!w.gtag });
+      console.debug('[LTH Calc Analytics]', name, safeParams);
     }
   } catch (err) {
     if (process.env.NODE_ENV === 'development') {
       console.warn('[LTH Calc Analytics] trackCalcEvent failed:', name, err);
     }
+  }
+}
+
+const CONSENT_KEY = 'analytics_consent';
+const CONSENT_GRANTED_VALUES = new Set(['granted', 'true', '1']);
+
+function hasAnalyticsConsent(): boolean {
+  if (typeof window === 'undefined') return false;
+  try {
+    const consent = localStorage.getItem(CONSENT_KEY);
+    return consent != null && CONSENT_GRANTED_VALUES.has(consent.toLowerCase());
+  } catch {
+    return false;
   }
 }
 

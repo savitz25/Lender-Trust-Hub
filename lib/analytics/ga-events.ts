@@ -1,6 +1,6 @@
 /**
  * Phase 5 — priority GA4 event helpers for Lender Trust Hub research product.
- * No PII. Consent-aware when possible; falls back to gtag when present.
+ * No PII. Consent-aware when possible.
  */
 
 import {
@@ -8,17 +8,11 @@ import {
   LENDER_MEASUREMENT_BASELINE_LABEL,
 } from '@/lib/analytics/measurement-baseline';
 
-type GtagWindow = Window & {
-  gtag?: (...args: unknown[]) => void;
-  __LTH_MEASUREMENT_BASELINE?: string;
-  __LTH_MEASUREMENT_LABEL?: string;
-};
-
 function hasConsent(): boolean {
   if (typeof window === 'undefined') return false;
   try {
     const c = localStorage.getItem('analytics_consent');
-    if (c == null) return true; // page_view already fires; allow research events unless revoked
+    if (c == null) return true;
     return ['granted', 'true', '1'].includes(c.toLowerCase());
   } catch {
     return true;
@@ -30,7 +24,6 @@ export function trackLenderEvent(
   params?: Record<string, string | number | boolean | undefined>
 ): void {
   if (typeof window === 'undefined') return;
-  const w = window as GtagWindow;
   if (!hasConsent()) return;
 
   const safe: Record<string, string | number | boolean> = {
@@ -48,9 +41,6 @@ export function trackLenderEvent(
   }
 
   try {
-    if (typeof w.gtag === 'function') {
-      w.gtag('event', name, safe);
-    }
     if (process.env.NODE_ENV === 'development') {
       console.debug('[LTH Phase5]', name, safe);
     }

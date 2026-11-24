@@ -31,9 +31,9 @@ ok('click tracker NMLS', tracker.includes('nmlsconsumeraccess'));
 ok('click tracker cross-hub', tracker.includes('insurancetrusthub') || tracker.includes('outbound_specialist'));
 ok('click tracker research paths', tracker.includes('hub_to_profile'));
 
-const gtag = read('components/directory/GtagProvider.tsx');
-ok('GtagProvider mounts ResearchClickTracker', gtag.includes('ResearchClickTracker'));
-ok('baseline globals', gtag.includes('__LTH_MEASUREMENT_BASELINE'));
+ok('GtagProvider removed', !fs.existsSync('components/directory/GtagProvider.tsx'));
+const layout = read('app/layout.tsx');
+ok('layout has no Google tag loader', !layout.includes('GtagProvider') && !layout.includes('googletagmanager'));
 
 // Phase 0–4 residual integrity (spot checks)
 const nmls = read('lib/verification/nmls.ts');

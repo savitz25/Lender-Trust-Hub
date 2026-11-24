@@ -18,7 +18,7 @@
 | Count honesty | Distinct companies vs location rows; no SEO scaffolding in UI |
 | Score separation | Research Score / Data Confidence / NMLS Status / Local Evidence |
 | County quality tiers | Tier 1–2 indexable; Tier 3 noindex,follow; tier-aware sitemap |
-| Measurement (Phase 5) | Priority GA4 events + click tracker + baseline globals |
+| Measurement (Phase 5) | Research event helpers and click tracker. No Google tag. |
 
 ### Sitemaps to submit (GSC — Lender property)
 
@@ -44,7 +44,6 @@ Includes: core tools, state hubs, **Tier 1/2 counties**, NMLS-verified distinct 
 | Metric enrichment | Google/BBB only with observed provenance |
 | State DPA / housing URL refresh | Update `state-housing-resources.ts` from primary sources |
 | Calculator assumption refresh | Educational limits and default assumptions on a cadence |
-| GA4 env | Ensure `NEXT_PUBLIC_GA4_ID` is set on LTH Vercel project |
 | GSC URL Inspection | Sample Tier 1 county, state hub, calculator, verified profile |
 
 ---
@@ -80,14 +79,11 @@ Includes: core tools, state hubs, **Tier 1/2 counties**, NMLS-verified distinct 
 
 ## 5. Manual post-deploy checklist
 
-- [ ] LTH GA4 ID present on lendertrusthub.com deploy  
-- [ ] Realtime: NMLS outbound click, calculator complete (export/match), compare 2+, profile view, My Lending save  
-- [ ] `window.__LTH_MEASUREMENT_BASELINE === '2026-08-07'` and `__LTH_HUB === 'lender'`  
 - [ ] GSC sitemap submitted; sample Tier 1/2 counties + state hub + calculator  
 - [ ] Spot-check: no SEE-NMLS / 555 / close-day estimates / Targets: SEO copy  
 - [ ] Mobile smoke: county cards, research score panel, compare, calculators, focus rings on CTAs  
 
-### Priority GA4 events
+### Priority research events
 
 | Event | When |
 |-------|------|

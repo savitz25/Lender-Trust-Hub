@@ -17,12 +17,6 @@ export const IMPLEMENTATION_ORDER = [
     verify: 'GSC shows 55+ URLs indexed (hub + 51 FDIC states + core pages)',
   },
   {
-    step: 3,
-    task: 'Set NEXT_PUBLIC_GA4_ID in Vercel env and redeploy',
-    files: ['components/directory/GtagProvider.tsx', 'app/layout.tsx'],
-    verify: 'GA4 Realtime shows page_view events',
-  },
-  {
     step: 4,
     task: 'Mortgage state pages go live at /local-lenders/[state]',
     files: ['app/local-lenders/[state]/page.tsx', 'lib/mortgage/'],
