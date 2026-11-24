@@ -17,12 +17,11 @@ export interface GrowthDayAction {
 export const GROWTH_PLAN_30_DAY: GrowthDayAction[] = [
   // Week 1 — Launch & Index
   { day: 1, week: 1, priority: 'P0', category: 'SEO', action: 'Submit sitemap.xml to GSC; verify robots.txt', metric: 'GSC: sitemap processed, 0 errors' },
-  { day: 1, week: 1, priority: 'P0', category: 'Analytics', action: 'Set NEXT_PUBLIC_GA4_ID in Vercel; redeploy', metric: 'GA4 Realtime: page_view events' },
   { day: 2, week: 1, priority: 'P0', category: 'Indexing', action: 'URL Inspection → Request indexing: /fdic-insured-banks, /local-lenders, /auto-loan-companies', metric: '3 hub pages indexed within 48h' },
   { day: 3, week: 1, priority: 'P1', category: 'Indexing', action: 'Request indexing: FL, TX, CA, NY, IL state pages (all 3 verticals)', metric: '15 priority URLs indexed' },
   { day: 4, week: 1, priority: 'P1', category: 'Monitoring', action: 'Add GSC performance filters for MONITORING_QUERIES templates', metric: 'Baseline impressions captured' },
-  { day: 5, week: 1, priority: 'P1', category: 'Conversion', action: 'Review GA4 events: directory_lead_submit, directory_cta_click by variant', metric: 'Lead form CTR > 2%' },
-  { day: 6, week: 1, priority: 'P2', category: 'Content', action: 'Share top 5 state pages on social / communities (no spam)', metric: '5 referral sessions in GA4' },
+  { day: 5, week: 1, priority: 'P1', category: 'Conversion', action: 'Review directory events: directory_lead_submit, directory_cta_click by variant', metric: 'Lead form CTR > 2%' },
+  { day: 6, week: 1, priority: 'P2', category: 'Content', action: 'Share top 5 state pages on social / communities (no spam)', metric: '5 referral sessions' },
   { day: 7, week: 1, priority: 'P1', category: 'Performance', action: 'Run Lighthouse on 3 state pages; fix any LCP > 2.5s', metric: 'Performance score 95+' },
 
   // Week 2 — Authority mesh

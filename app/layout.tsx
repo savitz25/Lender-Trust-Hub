@@ -4,7 +4,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { PosthogRoot } from '@/components/analytics/posthog-root';
-import { GtagProvider } from '@/components/directory/GtagProvider';
 import { MyLendingShell } from '@/components/my-lending/my-lending-shell';
 import { HubLastLocationBridge } from '@/components/network/hub-last-location-bridge';
 import { SiteChrome } from '@/components/embed/site-chrome';
@@ -94,8 +93,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const gaId = process.env.NEXT_PUBLIC_GA4_ID;
-
   return (
     <html
       lang="en-US"
@@ -106,12 +103,6 @@ export default function RootLayout({
     >
       <head>
         <meta name="color-scheme" content="light" />
-        {gaId && (
-          <>
-            <link rel="preconnect" href="https://www.googletagmanager.com" />
-            <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-          </>
-        )}
       </head>
       <body
         className="flex min-h-screen flex-col bg-[#F8FAFC] text-[#1E293B] antialiased"
@@ -124,7 +115,6 @@ export default function RootLayout({
           <PosthogRoot />
           <MyLendingShell>
             <HubLastLocationBridge hubId="lender" />
-            <GtagProvider />
             <SiteChrome
               chrome={<Navbar />}
               footer={<Footer />}

@@ -14,7 +14,7 @@ export const LENDER_MEASUREMENT_BASELINE_NOTE =
   'Baseline: 2026-08-07 — Phase 5 priority research events + canonical sitemap (Tier 1/2 counties, state hubs, tools, verified profiles).';
 
 /**
- * Priority GA4 event names for the Lender stream (NEXT_PUBLIC_GA4_ID).
+ * Priority research event names for the Lender stream.
  */
 export const LENDER_PRIORITY_EVENTS = [
   'nmls_verification_lookup',

@@ -35,7 +35,7 @@ PHASE 4 — CLONE NEW VERTICAL IN <5 MINUTES
   MCA:           see VERTICAL_CLONE_GUIDE.mca in growth-plan.ts
 
 PHASE 5 — LAUNCH (see LAUNCH_CHECKLIST + GROWTH_PLAN_30_DAY)
-  P0: GSC sitemap, robots.txt, GA4, Speed Insights, hub indexing
+  P0: GSC sitemap, robots.txt, Speed Insights, hub indexing
   P1: Index top states, internal link mesh, A/B lead forms
   P2: Credit repair + MCA launch, 98+ Lighthouse, authority backlinks
 
@@ -43,13 +43,12 @@ CONVERSION SYSTEM:
   • LeadCaptureForm variants: default | hero-compact | sidebar-minimal | state-page-v2
   • PersonalizedBanner per vertical: fdic | mortgage | auto
   • HubCTAStrip on all national hubs
-  • GA4 events: directory_lead_submit, directory_cta_click (via data-variant)
+  • Directory events: directory_lead_submit, directory_cta_click (via data-variant)
 
 PERFORMANCE TARGETS:
   • Single-state data passed from server (no 51-state client bundle)
   • ISR revalidate=86400 on all directory pages
   • CDN Cache-Control on /fdic-insured-banks/*, /local-lenders/*, /auto-loan-companies/*
-  • GA4 preconnect in app/layout.tsx
   • Dynamic import: USMap, FDICBanksExplorer
 
 SEO AUTHORITY:
@@ -60,8 +59,6 @@ SEO AUTHORITY:
   • JSON-LD ItemList + FAQPage per state page
 
 ANALYTICS:
-  • Set NEXT_PUBLIC_GA4_ID in Vercel
-  • trackDirectoryEvent() fires to gtag automatically
   • A/B variants via data-variant on LeadCaptureForm + PersonalizedBanner
   • Monitor: MONITORING_QUERIES + GA4_EVENTS_TO_MONITOR in launch-checklist.ts
 ` as const;

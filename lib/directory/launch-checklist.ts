@@ -39,13 +39,6 @@ export const LAUNCH_CHECKLIST: LaunchChecklistItem[] = [
   },
   {
     priority: 'P0',
-    category: 'Analytics',
-    task: 'Configure GA4 property + NEXT_PUBLIC_GA4_ID',
-    action: 'Create GA4 stream → add env var in Vercel → redeploy',
-    done: false,
-  },
-  {
-    priority: 'P0',
     category: 'Indexing',
     task: 'Request indexing for all 3 national hubs',
     action: 'GSC URL Inspection → /fdic-insured-banks, /local-lenders, /auto-loan-companies',
@@ -78,7 +71,7 @@ export const LAUNCH_CHECKLIST: LaunchChecklistItem[] = [
     priority: 'P1',
     category: 'Conversion',
     task: 'A/B test LeadCaptureForm variants',
-    action: 'Compare data-variant="state-page-v2" vs "hero-compact" vs "sidebar-minimal" in GA4',
+    action: 'Compare data-variant="state-page-v2" vs "hero-compact" vs "sidebar-minimal"',
     done: false,
   },
   {
@@ -122,7 +115,7 @@ export const LAUNCH_CHECKLIST: LaunchChecklistItem[] = [
     priority: 'P2',
     category: 'Performance',
     task: 'Target 98+ Lighthouse on directory pages',
-    action: 'Preconnect GA4; ISR + CDN headers; lean client bundles',
+    action: 'ISR + CDN headers; lean client bundles',
     done: false,
   },
   {
